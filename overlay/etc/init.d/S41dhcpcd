@@ -1,0 +1,7 @@
+#!/bin/sh
+# NetworkManager launches dhcpcd itself when a connection needs DHCP.
+# Starting a standalone instance here would make two managers own eth0.
+case "${1:-}" in
+    start|stop|restart) exit 0 ;;
+    *) echo "Usage: $0 {start|stop|restart}" >&2; exit 2 ;;
+esac

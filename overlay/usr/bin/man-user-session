@@ -1,0 +1,217 @@
+#!/bin/sh
+# Complete per-user COSMIC session selected by greetd.
+#
+# MAN uses BusyBox rather than systemd/logind.  cosmic-session assumes the
+# systemd user-session process manager is available and kills cosmic-comp when
+# that manager fails.  Start one compositor directly instead.
+uid=$(id -u)
+username=$(id -un)
+# agreety authenticates the account but does not promise to replace every
+# variable inherited from root's init service.  In particular, a retained
+# HOME=/root makes COSMIC fail after successful authentication.  Resolve the
+# real home directory from passwd and set the complete identity explicitly.
+user_home=$(awk -F: -v user="$username" '$1 == user {print $6; exit}' /etc/passwd)
+[ -n "$user_home" ] || user_home="/home/$username"
+export HOME="$user_home"
+export USER="$username"
+export LOGNAME="$username"
+export SHELL="/bin/bash"
+export XDG_RUNTIME_DIR="/run/user/$uid"
+# greetd itself is launched by the root bootstrap service and therefore
+# inherits root's XDG_* variables. PAM changes HOME/USER when it authenticates
+# the desktop account, but inherited XDG paths remain untouched unless we
+# replace them here. Never let an authenticated session read or write /root.
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+if [ -z "${MAN_USER_DBUS:-}" ]; then
+    export MAN_USER_DBUS=1
+    exec /usr/bin/dbus-run-session -- "$0"
+fi
+flatpak_user_exports="$XDG_DATA_HOME/flatpak/exports/share"
+flatpak_system_exports=/var/lib/flatpak/exports/share
+# Do not inherit init/greetd's data-path list.  COSMIC's default schemas live
+# in /usr/share/cosmic; if /usr/share is absent, cosmic-config reports “No
+# schemas installed” and cosmic-panel panics immediately after login.
+export XDG_DATA_DIRS="$flatpak_user_exports:$flatpak_system_exports:/usr/local/share:/usr/share"
+export XDG_CURRENT_DESKTOP=COSMIC
+export XDG_SESSION_DESKTOP=COSMIC
+export XDG_SESSION_TYPE=wayland
+# Apply the system locale saved by man-utilities' language chooser so the
+# installed COSMIC session inherits the user's language preference.
+if [ -r /etc/default/locale ]; then
+    . /etc/default/locale 2>/dev/null || true
+fi
+if [ -z "${LANG:-}" ] && [ -r /var/lib/man/man-language ]; then
+    _MAN_LANG=$(cat /var/lib/man/man-language 2>/dev/null | tr -d '[:space:]')
+    [ -n "$_MAN_LANG" ] && export LANG="${_MAN_LANG}.UTF-8" LC_ALL="${_MAN_LANG}.UTF-8"
+    unset _MAN_LANG
+fi
+: "${LANG:=en_US.UTF-8}"
+export LANG LC_ALL
+export XDG_SEAT=seat0
+export XDG_VTNR=2
+# seatd owns the VT/DRM devices and passes them to this unprivileged session.
+export LIBSEAT_BACKEND=seatd
+export GDK_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+# warn level avoids the heavy I/O of info/debug logging from the dozens of
+# COSMIC Rust components at session startup, while still capturing errors.
+export RUST_LOG="${RUST_LOG:-warn}"
+[ -r /usr/lib/libman-atexit-shim.so ] && export LD_PRELOAD=/usr/lib/libman-atexit-shim.so
+mkdir -p "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$XDG_CACHE_HOME"
+
+# Some desktop shells only search the standard per-user icon directory when
+# resolving a newly installed Flatpak.  Keep that directory linked to
+# Flatpak's export tree so application icons work in the launcher, panel, and
+# task list as soon as the app is installed (the link may initially dangle).
+mkdir -p "$XDG_DATA_HOME/icons"
+mkdir -p "$XDG_DATA_HOME/icons/hicolor"
+# Flatpak's export tree does not ship its own hicolor index.theme.  Without
+# one, COSMIC's freedesktop icon resolver ignores that per-user theme entirely.
+if [ ! -f "$XDG_DATA_HOME/icons/hicolor/index.theme" ] && [ -f /usr/share/icons/hicolor/index.theme ]; then
+    cp /usr/share/icons/hicolor/index.theme "$XDG_DATA_HOME/icons/hicolor/index.theme"
+fi
+# Link each size directory individually so an already-created hicolor theme
+# cannot hide Flatpak's exported application icons from COSMIC.
+for icon_size in 16x16 22x22 24x24 32x32 48x48 64x64 96x96 128x128 256x256 scalable; do
+    if [ ! -e "$XDG_DATA_HOME/icons/hicolor/$icon_size" ] && [ ! -L "$XDG_DATA_HOME/icons/hicolor/$icon_size" ]; then
+        for flatpak_icon_dir in "$flatpak_user_exports/icons/hicolor" "/var/lib/flatpak/exports/share/icons/hicolor"; do
+            if [ -d "$flatpak_icon_dir/$icon_size" ]; then
+                ln -s "$flatpak_icon_dir/$icon_size" "$XDG_DATA_HOME/icons/hicolor/$icon_size"
+                break
+            fi
+        done
+    fi
+done
+
+# Flatpak creates new export directories after an installation.  Mirror newly
+# exported app icons into the active user theme so COSMIC's already-running
+# launcher can resolve them without requiring a logout or reboot.
+sync_flatpak_icons() {
+    while sleep 3; do
+        for flatpak_icons in "$flatpak_user_exports/icons/hicolor" "/var/lib/flatpak/exports/share/icons/hicolor"; do
+            [ -d "$flatpak_icons" ] || continue
+            find "$flatpak_icons" -type f -path '*/apps/*' 2>/dev/null | while IFS= read -r icon_file; do
+                icon_size=${icon_file#"$flatpak_icons/"}
+                icon_size=${icon_size%%/*}
+                icon_name=${icon_file##*/}
+                [ -n "$icon_size" ] || continue
+                mkdir -p "$XDG_DATA_HOME/icons/hicolor/$icon_size/apps"
+                [ -e "$XDG_DATA_HOME/icons/hicolor/$icon_size/apps/$icon_name" ] || \
+                    ln -s "$icon_file" "$XDG_DATA_HOME/icons/hicolor/$icon_size/apps/$icon_name" 2>/dev/null || true
+            done
+        done
+    done
+}
+sync_flatpak_icons >/dev/null 2>&1 &
+
+# greetd stops the greeter before it starts this session, but its compositor
+# can take a moment to release the seatd DRM/VT file descriptors.  Starting a
+# second compositor during that window makes cosmic-comp return code 1.  Wait
+# briefly for the previous compositor to disappear; the loop is bounded so a
+# damaged earlier session cannot prevent login forever.
+attempt=0
+while pidof cosmic-comp >/dev/null 2>&1 && [ "$attempt" -lt 100 ]; do
+    sleep 0.1
+    attempt=$((attempt + 1))
+done
+unset attempt
+if [ -x /usr/bin/man-flatpak-setup ]; then
+    /usr/bin/man-flatpak-setup >>"$XDG_STATE_HOME/man-flatpak.log" 2>&1
+fi
+if [ -x /usr/bin/pipewire ]; then
+    /usr/bin/pipewire >>"$XDG_STATE_HOME/pipewire.log" 2>&1 &
+fi
+
+SESSION_LOG="$XDG_STATE_HOME/man-session.log"
+recover_corrupt_cosmic_config() {
+    # A forced VM reset can leave COSMIC's small config database inconsistent.
+    # cosmic-comp reports Linux EUCLEAN as “Structure needs cleaning” and
+    # exits before creating Wayland. Preserve the damaged data for inspection
+    # and retry once with clean compositor settings instead of trapping the
+    # user on the diagnostic console forever.
+    [ "${MAN_COSMIC_CONFIG_RECOVERED:-0}" != 1 ] || return 1
+    grep -q 'Structure needs cleaning' "$SESSION_LOG" 2>/dev/null || return 1
+    config_dir="$XDG_CONFIG_HOME/cosmic"
+    if [ -e "$config_dir" ]; then
+        backup_dir="$XDG_CONFIG_HOME/cosmic-corrupt-$(date +%s)"
+        mv "$config_dir" "$backup_dir" 2>/dev/null || return 1
+    fi
+    export MAN_COSMIC_CONFIG_RECOVERED=1
+    exec "$0"
+}
+show_failure() {
+    {
+        printf '\033[2J\033[H'
+        echo 'MAN desktop session failed; diagnostic log follows.'
+        echo 'Do not enter another login. Capture this screen for diagnosis.'
+        echo
+        tail -n 120 "$SESSION_LOG" 2>/dev/null || true
+    } > /dev/tty2 2>/dev/null || true
+    # Keep the evidence visible instead of returning to agreety, which hides
+    # the only useful compositor error behind a fresh login prompt.
+    exec /bin/sh -i </dev/tty2 >/dev/tty2 2>&1
+}
+/usr/bin/cosmic-comp >>"$SESSION_LOG" 2>&1 &
+compositor_pid=$!
+cleanup() {
+    kill "$compositor_pid" 2>/dev/null || true
+    wait "$compositor_pid" 2>/dev/null || true
+}
+trap cleanup EXIT INT TERM
+
+attempt=0
+while [ "$attempt" -lt 200 ]; do
+    for candidate in "$XDG_RUNTIME_DIR"/wayland-*; do
+        if [ -S "$candidate" ]; then
+            export WAYLAND_DISPLAY="${candidate##*/}"
+            break 2
+        fi
+    done
+    kill -0 "$compositor_pid" 2>/dev/null || {
+        recover_corrupt_cosmic_config
+        show_failure
+    }
+    attempt=$((attempt + 1))
+    sleep 0.1
+done
+[ -n "${WAYLAND_DISPLAY:-}" ] || show_failure
+
+apply_oobe_wallpaper() {
+    wallpaper=$(sed -n 's/^WALLPAPER=//p' /etc/man-oobe.conf 2>/dev/null | head -n 1)
+    case "$wallpaper" in
+        webb) file=webb-inspired-wallpaper-system76.jpg ;;
+        earth) file=otherworldly_earth_nasa_ISS064-E-29444.jpg ;;
+        moons) file=round_moons_nasa.jpg ;;
+        *) file=orion_nebula_nasa_heic0601a.jpg ;;
+    esac
+    source_path="/usr/share/backgrounds/cosmic/$file"
+    [ -f "$source_path" ] || return 0
+    state_dir="$XDG_STATE_HOME/cosmic/com.system76.CosmicBackground/v1"
+    mkdir -p "$state_dir"
+    printf '[('"'"'all'"'"', Path("%s"))]\n' "$source_path" > "$state_dir/wallpapers.man-new"
+    mv "$state_dir/wallpapers.man-new" "$state_dir/wallpapers"
+}
+apply_oobe_wallpaper
+
+# These clients provide the actual COSMIC desktop.  They are independent of
+# cosmic-session and automatically disappear when the compositor exits.
+for component in cosmic-settings-daemon cosmic-bg cosmic-panel cosmic-idle; do
+    if [ -x "/usr/bin/$component" ]; then
+        "/usr/bin/$component" >>"$SESSION_LOG" 2>&1 &
+    fi
+done
+
+wait "$compositor_pid"
+# The power menu's logout action intentionally stops the compositor.  Do not
+# replace the greeter with the crash diagnostics shell in that case; returning
+# normally lets greetd start the graphical greeter again.
+if [ -e /run/man-logout ]; then
+    rm -f /run/man-logout
+    exit 0
+fi
+recover_corrupt_cosmic_config
+show_failure

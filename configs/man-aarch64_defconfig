@@ -1,0 +1,184 @@
+##################################################################
+#
+# MAN Linux Distribution — aarch64 (ARM64) Defconfig
+#
+# Build with:
+#   make O=output/aarch64 man-aarch64_defconfig
+#   make O=output/aarch64
+#
+# MAN: https://github.com/kristihack/MAN
+#
+##################################################################
+
+# Architecture: AArch64 (ARM64)
+BR2_aarch64=y
+BR2_ARCH="aarch64"
+
+# Toolchain — use Toolchain's cross toolchain (glibc)
+BR2_TOOLCHAIN_BUILDROOT=y
+BR2_TOOLCHAIN_BUILDROOT_GLIBC=y
+BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
+BR2_TOOLCHAIN_BUILDROOT_LOCALE=y
+BR2_TOOLCHAIN_BUILDROOT_CXX=y
+
+# Target board: generic ARM64 (works with QEMU virt)
+BR2_TARGET_GENERIC=y
+BR2_TARGET_GENERIC_ARM_V8=y
+BR2_TARGET_GENERIC_ARM_V8_CORTEX_A53=y
+BR2_TARGET_GENERIC_ARM_V8_NEON=y
+BR2_TARGET_GENERIC_ARM_V8_CRYPTO=y
+
+# Kernel
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_CUSTOM_VERSION=y
+BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE="6.10.8"
+BR2_KERNEL_HEADERS_6_10=y
+BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG=y
+# OpenSSL headers needed for kernel cert extraction tool on macOS
+BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
+# macOS compatibility patch for uuid_t typedef conflict in scripts/mod/file2alias.c
+BR2_LINUX_KERNEL_PATCH="board/man/linux-patches/0001-fix-uuid_t-conflict-on-macos.patch"
+
+# Filesystem images
+BR2_TARGET_ROOTFS_EXT2=y
+BR2_TARGET_ROOTFS_EXT2_2r1=y
+BR2_TARGET_ROOTFS_EXT2_SIZE="8192M"
+BR2_TARGET_ROOTFS_EXT2_MKFS_OPTIONS="-O ^64bit,^resize_inode,^dir_index"
+BR2_TARGET_ROOTFS_TAR=y
+BR2_TARGET_ROOTFS_SQUASHFS=y
+
+# Base system: busybox (shell + core utilities)
+BR2_PACKAGE_BUSYBOX=y
+BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="../configs/busybox-man.fragment"
+BR2_PACKAGE_LINUX_PAM=y
+BR2_PACKAGE_FLATPAK=y
+BR2_PACKAGE_LIBARCHIVE_BSDTAR=y
+BR2_PACKAGE_LIBSOUP3=y
+BR2_PACKAGE_LIBSOUP3_SSL=y
+# Flatpak's HTTPS remotes use GIO; without this TLS backend Flathub metadata
+# cannot be downloaded even when the network and CA bundle are present.
+BR2_PACKAGE_GLIB_NETWORKING=y
+BR2_WGET="man-wget"
+
+# User-space MAN rootfs overlay (relative to Toolchain source dir)
+BR2_ROOTFS_OVERLAY="../overlay"
+BR2_ROOTFS_USERS_TABLES="../system/users.txt"
+
+# Core utilities — uutils/coreutils (compiled in post-build.sh)
+# Note: uutils is not yet a Toolchain package, so we compile it post-build
+
+# Rust toolchain on the host (for compiling manctl and uutils in post-build)
+BR2_PACKAGE_HOST_RUSTC=y
+
+# Additional packages
+BR2_PACKAGE_STRACE=y
+BR2_PACKAGE_PROCPS_NG=y
+BR2_PACKAGE_UTIL_LINUX=y
+BR2_PACKAGE_UTIL_LINUX_BINARIES=y
+BR2_PACKAGE_UTIL_LINUX_PARTX=y
+BR2_PACKAGE_UTIL_LINUX_WIPEFS=y
+BR2_PACKAGE_DOSFSTOOLS=y
+BR2_PACKAGE_DOSFSTOOLS_MKFS_FAT=y
+BR2_PACKAGE_DOSFSTOOLS_FSCK_FAT=y
+BR2_PACKAGE_E2FSPROGS=y
+BR2_PACKAGE_PCIUTILS=y
+BR2_PACKAGE_NET_TOOLS=y
+BR2_PACKAGE_IPROUTE2=y
+BR2_PACKAGE_IPTABLES=y
+BR2_PACKAGE_DHCP=y
+BR2_PACKAGE_DHCPCD=y
+BR2_PACKAGE_NETWORK_MANAGER=y
+BR2_PACKAGE_NETWORK_MANAGER_CLI=y
+BR2_PACKAGE_OPENSSH=y
+BR2_PACKAGE_NANO=y
+BR2_PACKAGE_VIM=y
+BR2_PACKAGE_BASH=y
+BR2_PACKAGE_BASH_AGGR=y
+BR2_PACKAGE_ZSH=y
+BR2_PACKAGE_TMUX=y
+BR2_PACKAGE_SQLITE=y
+
+# Additional system utilities
+# curl: needed by App Depot for HTTPS, and by users for API/script interactions
+BR2_PACKAGE_LIBCURL_CURL=y
+# ca-certificates: TLS root store — required for curl/wget HTTPS verification
+BR2_PACKAGE_CA_CERTIFICATES=y
+# wget: simple HTTP/HTTPS/FTP downloader
+BR2_PACKAGE_WGET=y
+# rsync: fast file synchronization and remote copy utility
+BR2_PACKAGE_RSYNC=y
+# git: distributed version control (useful for developers and dotfiles)
+BR2_PACKAGE_GIT=y
+# jq: JSON processor — essential for parsing JSON in scripts and APIs
+BR2_PACKAGE_JQ=y
+# htop: interactive process viewer with colour UI (much better than top)
+BR2_PACKAGE_HTOP=y
+# tree: recursive directory listing in a tree view
+BR2_PACKAGE_TREE=y
+# lsof: list open files, sockets, and pipes (essential for debugging)
+BR2_PACKAGE_LSOF=y
+# unzip: extract ZIP archives
+BR2_PACKAGE_UNZIP=y
+# p7zip: extract and create 7z/XZ archives
+BR2_PACKAGE_P7ZIP=y
+# bat: cat clone with syntax highlighting and Git integration (Rust)
+BR2_PACKAGE_BAT=y
+# fd: fast, user-friendly alternative to find (Rust)
+BR2_PACKAGE_FD=y
+# ripgrep: fast recursive search tool (rg) (Rust)
+BR2_PACKAGE_RIPGREP=y
+
+# Lightweight Wayland desktop applications
+# mpv: Wayland-compatible media player (video/audio)
+BR2_PACKAGE_MPV=y
+# mupdf: lightweight PDF, XPS, and E-book viewer
+BR2_PACKAGE_MUPDF=y
+
+# Wayland + GPU stack (for MAN Desktop — built via scripts/build-cosmic.sh)
+# libseat uses its builtin backend, matching MAN's BusyBox init system.
+BR2_PACKAGE_WAYLAND=y
+BR2_PACKAGE_LIBINPUT=y
+BR2_PACKAGE_LIBDRM=y
+BR2_PACKAGE_MESA3D=y
+BR2_PACKAGE_MESA3D_GALLIUM_DRIVER_SWRAST=y
+BR2_PACKAGE_MESA3D_GALLIUM_DRIVER_VIRGL=y
+BR2_PACKAGE_MESA3D_OPENGL_EGL=y
+BR2_PACKAGE_MESA3D_OPENGL_ES=y
+BR2_PACKAGE_LIBXKBCOMMON=y
+BR2_PACKAGE_FONTCONFIG=y
+BR2_PACKAGE_FREETYPE=y
+BR2_PACKAGE_PNG=y
+BR2_PACKAGE_JPEG_TURBO=y
+BR2_PACKAGE_DBUS=y
+BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_EUDEV=y
+# Host-side hwdb generation requires Linux; target udev rules work on macOS builds.
+# BR2_PACKAGE_EUDEV_ENABLE_HWDB is not set
+BR2_PACKAGE_LIBDISPLAY_INFO=y
+BR2_PACKAGE_PIXMAN=y
+BR2_PACKAGE_SEATD=y
+# The root-only builtin backend can start the greeter compositor but prevents
+# an authenticated, unprivileged COSMIC session from acquiring the seat.
+# Run seatd instead and grant desktop users membership of its video group.
+# BR2_PACKAGE_SEATD_BUILTIN is not set
+BR2_PACKAGE_SEATD_DAEMON=y
+BR2_PACKAGE_DEJAVU=y
+# alsa-lib: ALSA client library — enables PipeWire ALSA compatibility and
+# gives mpv an audio output path through PipeWire
+BR2_PACKAGE_ALSA_LIB=y
+BR2_PACKAGE_PIPEWIRE=y
+
+# System configuration
+BR2_TARGET_SYSV_INIT=y
+BR2_TARGET_SYSV_INIT_BOOT_SCRIPTS=y
+BR2_TARGET_ETC_HOSTNAME="man"
+BR2_TARGET_ETC_OS_RELEASE=y
+
+# Internationalization: gettext runtime + locale data for 50+ languages
+BR2_PACKAGE_GETTEXT=y
+
+# Custom scripts (relative to Toolchain source dir)
+BR2_ROOTFS_POST_BUILD_SCRIPT="../scripts/post-build.sh"
+BR2_ROOTFS_POST_IMAGE_SCRIPT="../scripts/post-image.sh"
+
+# Kernel config fragment (sets CONFIG_CMDLINE for EFI stub boot)
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="board/man/linux-fragment.cfg"

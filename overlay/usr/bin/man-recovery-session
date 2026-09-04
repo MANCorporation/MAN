@@ -1,0 +1,110 @@
+#!/bin/sh
+# Minimal graphical shell for the live installer and MAN Recovery.
+# cosmic-session is intentionally not used: it starts the normal panel, dock,
+# launcher and workspace services, none of which belong in Recovery.
+
+set -u
+
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=COSMIC
+export XDG_SESSION_DESKTOP=MAN-Recovery
+export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/run/user/0}
+
+# Files
+MAN_LANG_FILE="/var/lib/man/man-language"
+LOCALE_FILE="/etc/default/locale"
+LOG=/var/log/man-recovery-session.log
+
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 0700 "$XDG_RUNTIME_DIR"
+
+# --- Apply locale from /etc/default/locale or language preference ----------
+# /etc/default/locale is written by man-utilities when the user confirms
+# their language choice.  The language preference file is written on every
+# selection change so it is available even if /etc/default/locale is not.
+apply_locale() {
+    unset LANG LC_ALL LC_MESSAGES LANGUAGE
+    # Prefer /etc/default/locale (written by man-utilities on confirm)
+    if [ -r "$LOCALE_FILE" ]; then
+        . "$LOCALE_FILE" 2>/dev/null || true
+    fi
+    # Fall back to the language preference file
+    if [ -z "${LANG:-}" ] && [ -r "$MAN_LANG_FILE" ]; then
+        MAN_LANG=$(cat "$MAN_LANG_FILE" 2>/dev/null | tr -d '[:space:]')
+        if [ -n "$MAN_LANG" ]; then
+            export LANG="${MAN_LANG}.UTF-8"
+            export LC_ALL="${MAN_LANG}.UTF-8"
+        fi
+    fi
+    # Ensure at least C.UTF-8
+    : "${LANG:=C.UTF-8}"
+    export LANG LC_ALL
+}
+
+# --- Outer loop: full session restart --------------------------------------
+# When man-utilities exits with code 42 (language confirmed), we restart the
+# entire session — cosmic-comp + man-utilities — so that all Wayland clients
+# (COSMIC desktop, panels, etc.) pick up the new locale environment.
+while true; do
+    apply_locale
+    echo "MAN Recovery: starting session with LANG=$LANG" >>"$LOG"
+
+    /usr/bin/cosmic-comp >>"$LOG" 2>&1 &
+    compositor_pid=$!
+
+    # Wait for the Wayland socket to appear.
+    wayland_socket=
+    attempt=0
+    while [ "$attempt" -lt 200 ]; do
+        for candidate in "$XDG_RUNTIME_DIR"/wayland-*; do
+            if [ -S "$candidate" ]; then
+                wayland_socket=${candidate##*/}
+                break 2
+            fi
+        done
+        kill -0 "$compositor_pid" 2>/dev/null || break
+        attempt=$((attempt + 1))
+        sleep 0.1
+    done
+
+    if [ -z "$wayland_socket" ]; then
+        echo "MAN Recovery: COSMIC compositor did not create a Wayland socket" >>"$LOG"
+        break
+    fi
+    export WAYLAND_DISPLAY=$wayland_socket
+
+    # Inner loop: run man-utilities.  If it exits with 42 (language changed),
+    # break out of BOTH loops so the session restarts with the new locale.
+    restart_session=0
+    while kill -0 "$compositor_pid" 2>/dev/null; do
+        /usr/bin/man-utilities >>"$LOG" 2>&1
+        rc=$?
+        if [ "$rc" -eq 42 ]; then
+            echo "MAN Recovery: language confirmed — restarting session with new locale" >>"$LOG"
+            restart_session=1
+            break
+        fi
+        # Any other exit: let the supervisor bring it back.
+        sleep 1
+    done
+
+    # Kill the old compositor before restarting so we don't have two
+    # cosmic-comp processes fighting over the Wayland socket / DRM device.
+    kill "$compositor_pid" 2>/dev/null || true
+    wait "$compositor_pid" 2>/dev/null || true
+    sleep 1
+
+    # Clean up old Wayland socket
+    rm -f "$XDG_RUNTIME_DIR/wayland-"* 2>/dev/null || true
+    rm -f "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" 2>/dev/null || true
+    unset WAYLAND_DISPLAY
+
+    # If man-utilities asked for a restart, loop and re-initialise.
+    # If cosmic-comp died, also restart.
+    # If neither, exit (session was killed externally).
+    if [ "$restart_session" -ne 1 ]; then
+        break
+    fi
+done
+
+wait "$compositor_pid" 2>/dev/null || true

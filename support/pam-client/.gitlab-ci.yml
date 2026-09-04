@@ -1,0 +1,159 @@
+stages:
+  - build
+  - test
+  - pages
+  - deploy
+
+cache: &global_cache
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .cargo/apt-cache
+    - .cargo/bin
+    - .cargo/registry/index
+    - .cargo/registry/cache
+    - target/debug/deps
+    - target/debug/build
+  policy: pull-push
+
+variables:
+  CARGO_INCREMENTAL: 0
+  CARGO_HOME: ${CI_PROJECT_DIR}/.cargo
+  RUSTUP_HOME: /usr/local/rustup
+  CLIPPY_OPTS: -W clippy::pedantic -A clippy::must_use_candidate -A clippy::doc_markdown -A clippy::empty_enum -A clippy::module_name_repetitions -A clippy::missing_errors_doc -A clippy::cast_possible_wrap
+
+default:
+  image: rust:bullseye
+
+build:stable:
+  stage: build
+  before_script:
+    - mkdir -p .cargo/apt-cache
+    - apt-get update -qy
+    - apt-get -qy -o dir::cache::archives="${CI_PROJECT_DIR}/.cargo/apt-cache" install libpam0g-dev llvm clang
+  script:
+    - cargo build --workspace --all-features --color=always
+  artifacts:
+    paths:
+      - target/debug/
+    expire_in: 1 day
+
+test:stable:
+  stage: test
+  needs:
+    - build:stable
+  dependencies:
+    - build:stable
+  before_script:
+    - mkdir -p .cargo/apt-cache
+    - apt-get update -qy
+    - apt-get -qy -o dir::cache::archives="${CI_PROJECT_DIR}/.cargo/apt-cache" install libpam0g-dev llvm clang
+    - cargo install cargo-hack --force
+    - wget https://grenz-bonn.de/rust2junit.py
+    - chmod +x rust2junit.py
+  script:
+    - cargo hack check --workspace --feature-powerset --no-dev-deps --color=always
+    - cargo test --workspace --all-features --verbose | ./rust2junit.py
+  artifacts:
+    expire_in: 1 week
+    reports:
+      junit: junit.xml
+
+coverage:
+  stage: test
+  variables:
+    CARGO_HOME: /usr/local/cargo
+  before_script:
+    - mkdir -p .cargo/apt-cache
+    - apt-get update -qy
+    - apt-get -qy -o dir::cache::archives="${CI_PROJECT_DIR}/.cargo/apt-cache" install libpam0g-dev llvm clang
+    - rustup toolchain install nightly --profile=minimal
+    - rustup component add llvm-tools-preview --toolchain nightly
+    - rustup default nightly
+    - cargo install cargo-llvm-cov --force
+    - useradd -u 65534 -d /nonexistent -UMl -s /usr/sbin/nologin nobody || true
+  script:
+    - cargo llvm-cov clean
+    - cargo llvm-cov --doctests --html --hide-instantiations --remap-path-prefix --ignore-filename-regex builds/ -- --include-ignored
+    - COVERAGE=$(grep '</table>' target/llvm-cov/html/index.html | sed 's#.*<pre>\s*\([0-9.]*\)%[^<>]*</pre></td><td[^<>]*><pre>[^<>]*</pre></td></tr></table>.*#\1#')
+    - echo "Coverage:" $COVERAGE
+  coverage: '/Coverage: \d+.\d+/'
+  artifacts:
+    paths:
+      - target/llvm-cov/
+    expire_in: 1 week
+  needs: []
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .cargo/apt-cache
+    policy: pull
+
+clippy:
+  stage: test
+  before_script:
+    - mkdir -p .cargo/apt-cache
+    - apt-get update -qy
+    - apt-get -qy -o dir::cache::archives="${CI_PROJECT_DIR}/.cargo/apt-cache" install libpam0g-dev llvm clang
+    - rustup component add clippy
+    - cargo install gitlab_clippy --force
+  script:
+    - cargo clippy -- ${CLIPPY_OPTS}
+  after_script:
+    - 'cargo clippy --message-format=json -- ${CLIPPY_OPTS} | ${CARGO_HOME}/bin/gitlab-clippy > gl-code-quality-report.json'
+  artifacts:
+    reports:
+      codequality: gl-code-quality-report.json
+    expire_in: 1 week
+  only:
+    - master
+  needs: []
+  cache:
+    <<: *global_cache
+    policy: pull
+
+pages:
+  stage: pages
+  only:
+    - master
+  needs:
+    - coverage
+  dependencies:
+    - coverage
+  before_script:
+    - mkdir -p .cargo/apt-cache
+    - apt-get update -qy
+    - apt-get -qy -o dir::cache::archives="${CI_PROJECT_DIR}/.cargo/apt-cache" install libpam0g-dev llvm clang
+  script:
+    - cargo doc --workspace --all-features --color=always
+    - rm -rf public || true
+    - mkdir public
+    - cp -R target/doc/* public
+    - cp -R target/llvm-cov public/
+    - mv public/llvm-cov/html public/cov
+    - rm -r public/llvm-cov
+  artifacts:
+    paths:
+      - public
+  cache:
+    <<: *global_cache
+    policy: pull
+
+publish:
+  stage: deploy
+  dependencies: []
+  when: manual
+  needs:
+    - "test:stable"
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^v[0-9]/
+  script:
+    - cargo publish --no-verify
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .cargo/registry/index
+      - .cargo/registry/cache
+    policy: pull

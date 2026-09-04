@@ -1,0 +1,166 @@
+#!/bin/sh
+# Apply the trusted, allow-listed request written by the MAN first-boot UI.
+set -eu
+
+request=/run/man-oobe.request
+password_file=/run/man-oobe.password
+status=/run/man-oobe.status
+marker=/var/lib/man/oobe-complete
+config=/etc/man-oobe.conf
+
+restart_after_completion() {
+    # This runs as root, independently of the Wayland OOBE process.  Record
+    # every stage because a reboot failure otherwise looks exactly like a
+    # black-screen compositor failure.  BusyBox reboot should not return; if
+    # the init hand-off is unavailable, Magic SysRq is the kernel fallback.
+    (
+        sleep 2
+        sync
+        printf '%s reboot-request: signalling-init\n' "$(date -u '+%FT%TZ')" >> /var/log/man-oobe.log
+        # BusyBox init defines SIGTERM as a real reboot request.  This has to
+        # go to PID 1: invoking reboot from a Wayland child can leave the UI
+        # black while its process tree is still alive.
+        kill -TERM 1
+        printf '%s init-signal-returned; trying-sysrq\n' "$(date -u '+%FT%TZ')" >> /var/log/man-oobe.log
+        printf b > /proc/sysrq-trigger 2>> /var/log/man-oobe.log || true
+    ) </dev/null >/dev/null 2>&1 &
+}
+
+fail() {
+    printf '%s\n' "$1" >> /var/log/man-oobe.log
+    printf 'failed|@oobe_error_sub\n' > "$status"
+    exit 1
+}
+[ -r "$request" ] && [ -r "$password_file" ] || fail 'The setup request is missing.'
+umask 077
+
+full_name= username= personalize=false
+language=en_US; region=US; keyboard=us
+theme=dark; accent='Cosmic Blue'; wallpaper=orion; layout=balanced
+dock=auto; timezone=Europe/Prague
+large_text=false; high_contrast=false; reduced_motion=false; screen_reader=false
+location=false; diagnostics=false; auto_updates=true; gestures=true; tiling=false
+favorite_terminal=true; favorite_files=true; favorite_settings=true
+
+while IFS='=' read -r key value; do
+    case "$key" in
+        full_name) full_name=$value ;; username) username=$value ;;
+        personalize) personalize=$value ;; language) language=$value ;; region) region=$value ;;
+        keyboard) keyboard=$value ;; theme) theme=$value ;; accent) accent=$value ;;
+        wallpaper) wallpaper=$value ;; layout) layout=$value ;; dock) dock=$value ;;
+        timezone) timezone=$value ;; large_text) large_text=$value ;; high_contrast) high_contrast=$value ;;
+        reduced_motion) reduced_motion=$value ;; screen_reader) screen_reader=$value ;;
+        location) location=$value ;; diagnostics) diagnostics=$value ;; auto_updates) auto_updates=$value ;;
+        gestures) gestures=$value ;; tiling) tiling=$value ;; favorite_terminal) favorite_terminal=$value ;;
+        favorite_files) favorite_files=$value ;; favorite_settings) favorite_settings=$value ;;
+    esac
+done < "$request"
+
+case "$username" in ''|*[!a-z0-9_-]*|[0-9_-]*) fail 'The account name is invalid.' ;; esac
+case "$full_name" in ''|*:* ) fail 'The full name is invalid.' ;; esac
+password_length=$(wc -c < "$password_file" | tr -d ' ')
+[ "$password_length" -ge 6 ] || fail 'The password must have at least six characters.'
+
+printf 'working|@oobe_applying\n' > "$status"
+if id "$username" >/dev/null 2>&1; then
+    existing_home=$(awk -F: -v user="$username" '$1 == user {print $6}' /etc/passwd)
+    [ "$existing_home" = "/home/$username" ] || fail 'That account name is reserved by the system.'
+else
+    # The first MAN account is the desktop administrator.  UID 1000 makes it
+    # a normal visible login account (instead of a Buildroot service uid).
+    /usr/sbin/adduser -D -u 1000 -h "/home/$username" -s /bin/bash -g "$full_name" "$username" \
+        >>/var/log/man-oobe.log 2>&1 || fail 'Could not create the local account.'
+fi
+# BusyBox adduser behaviour differs between builds: it can either leave the
+# home absent or create it as root.  This script uses umask 077 for passwords,
+# so mkdir -p would otherwise create the /home parent as root:0700 and prevent
+# every user from traversing it. Create that parent deliberately, then repair
+# the account directory for both new and retried OOBE accounts.
+mkdir -p /home || fail 'Could not create the home parent directory.'
+chown root:root /home || fail 'Could not own the home parent directory.'
+chmod 0755 /home || fail 'Could not secure the home parent directory.'
+mkdir -p "/home/$username" || fail 'Could not create home directory.'
+chown "$username:$username" "/home/$username" || fail 'Could not own home directory.'
+chmod 0700 "/home/$username" || fail 'Could not secure home directory.'
+for group in wheel audio video input seat; do
+    grep -q "^$group:" /etc/group 2>/dev/null || continue
+    /usr/sbin/addgroup "$username" "$group" >/dev/null 2>&1 || true
+done
+hash=$(/usr/bin/mkpasswd -m sha-512 -P 0 < "$password_file") || fail 'Could not secure the account password.'
+awk -F: -v OFS=: -v user="$username" -v hash="$hash" '$1 == user {$2=hash} {print}' /etc/shadow > /etc/shadow.man-new || fail 'Could not update the account password.'
+chmod 0600 /etc/shadow.man-new
+mv /etc/shadow.man-new /etc/shadow
+unset hash
+rm -f "$password_file"
+
+printf 'working|Saving regional and privacy choices…\n' > "$status"
+mkdir -p /var/lib/man /root/.config/cosmic
+{
+    printf 'FULL_NAME=%s\nUSERNAME=%s\n' "$full_name" "$username"
+    printf 'LANGUAGE=%s\nREGION=%s\nKEYBOARD=%s\nTIMEZONE=%s\n' "$language" "$region" "$keyboard" "$timezone"
+    printf 'THEME=%s\nACCENT=%s\nWALLPAPER=%s\nLAYOUT=%s\nDOCK=%s\n' "$theme" "$accent" "$wallpaper" "$layout" "$dock"
+    printf 'LARGE_TEXT=%s\nHIGH_CONTRAST=%s\nREDUCED_MOTION=%s\nSCREEN_READER=%s\n' "$large_text" "$high_contrast" "$reduced_motion" "$screen_reader"
+    printf 'LOCATION=%s\nDIAGNOSTICS=%s\nAUTO_UPDATES=%s\nGESTURES=%s\nTILING=%s\n' "$location" "$diagnostics" "$auto_updates" "$gestures" "$tiling"
+    printf 'FAVORITE_TERMINAL=%s\nFAVORITE_FILES=%s\nFAVORITE_SETTINGS=%s\n' "$favorite_terminal" "$favorite_files" "$favorite_settings"
+} > "$config"
+chmod 0600 "$config"
+printf '%s\n' "$timezone" > /etc/timezone
+case "$keyboard" in gb|cz|de) keymap=$keyboard ;; *) keymap=us ;; esac
+printf 'KEYMAP=%s\n' "$keymap" > /etc/vconsole.conf
+
+# Preserve the locale chosen in the live installer.  OOBE stores display
+# labels (which are themselves translated), so they are not safe locale IDs
+# and must never replace the installer preference.
+locale=$language
+case "$locale" in
+    [a-z][a-z]_[A-Z][A-Z])
+        printf '%s\n' "$locale" > /var/lib/man/man-language
+        printf 'LANG=%s.UTF-8\nLC_ALL=%s.UTF-8\n' "$locale" "$locale" > /etc/default/locale
+        ;;
+    *)
+        # A malformed preference must not make the entire desktop fall back
+        # to the C locale.  Keep the known-good default instead.
+        printf '%s\n' en_US > /var/lib/man/man-language
+        printf 'LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8\n' > /etc/default/locale
+        ;;
+esac
+
+if [ "$personalize" = true ]; then
+    printf 'working|@oobe_applying\n' > "$status"
+    case "$theme" in light|automatic) preview_theme=$theme ;; *) preview_theme=dark ;; esac
+    /usr/bin/man-oobe-preview theme "$preview_theme"
+    case "$wallpaper" in
+        webb) wallfile=webb-inspired-wallpaper-system76.jpg ;;
+        earth) wallfile=otherworldly_earth_nasa_ISS064-E-29444.jpg ;;
+        moons) wallfile=round_moons_nasa.jpg ;;
+        *) wallfile=orion_nebula_nasa_heic0601a.jpg ;;
+    esac
+    /usr/bin/man-oobe-preview wallpaper "$wallfile"
+    mkdir -p /root/.config/cosmic/com.system76.CosmicPanel.Dock/v1
+    case "$dock" in visible) autohide=Never ;; hidden) autohide=Always ;; *) autohide=OnOverlap ;; esac
+    printf '%s\n' "$autohide" > /root/.config/cosmic/com.system76.CosmicPanel.Dock/v1/autohide
+    case "$layout" in compact|focused) dock_size=S ;; *) dock_size=L ;; esac
+    printf '%s\n' "$dock_size" > /root/.config/cosmic/com.system76.CosmicPanel.Dock/v1/size
+fi
+
+# The OOBE runs in a root-owned bootstrap session. Do not copy COSMIC's
+# per-user database to the real account: it contains user/seat-specific state
+# and can make the authenticated compositor exit immediately. OOBE settings
+# are stored safely in /etc/man-oobe.conf; the real user gets a clean database.
+mkdir -p "/home/$username/.config" "/home/$username/.local/state"
+rm -rf "/home/$username/.config/cosmic" "/home/$username/.local/state/cosmic"
+# Include the home directory itself.  If a prior OOBE run or BusyBox adduser
+# left it root-owned, the greeter can authenticate successfully but the user
+# session cannot set its working directory or create its runtime files.
+chown "$username:$username" "/home/$username"
+chmod 0700 "/home/$username"
+chown -R "$username:$username" "/home/$username/.config" "/home/$username/.local"
+
+printf 'working|@oobe_applying\n' > "$status"
+date -u '+completed=%Y-%m-%dT%H:%M:%SZ' > "$marker"
+printf 'user=%s\n' "$username" >> "$marker"
+chmod 0600 "$marker"
+rm -f "$request"
+sync
+printf 'complete|@oobe_complete\n' > "$status"
+restart_after_completion

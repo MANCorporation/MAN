@@ -1,0 +1,62 @@
+#!/bin/sh
+# Supervise greetd and the privileged COSMIC user-data service without systemd.
+set -eu
+
+greeter_uid=$(id -u cosmic-greeter)
+install -d -m 0700 -o cosmic-greeter -g cosmic-greeter "/run/user/$greeter_uid"
+install -d -m 0700 -o cosmic-greeter -g cosmic-greeter /var/lib/cosmic-greeter
+
+username=$(sed -n 's/^user=//p' /var/lib/man/oobe-complete | head -n 1)
+if [ -n "$username" ] && id "$username" >/dev/null 2>&1; then
+    user_uid=$(id -u "$username")
+    install -d -m 0700 -o "$username" -g "$username" "/run/user/$user_uid"
+    # Repair accounts created by earlier OOBE images. seatd owns its socket as
+    # group video; without this supplementary group cosmic-comp fails with
+    # “Failed to acquire session” immediately after a successful login.
+    if grep -q '^video:' /etc/group 2>/dev/null; then
+        /usr/sbin/addgroup "$username" video >/dev/null 2>&1 || true
+    fi
+    if grep -q '^input:' /etc/group 2>/dev/null; then
+        /usr/sbin/addgroup "$username" input >/dev/null 2>&1 || true
+    fi
+    # Repair images completed by an older OOBE implementation before greetd
+    # drops privileges.  A root-owned 0700 home makes login appear to work,
+    # then immediately kills COSMIC with "unable to set working directory".
+    user_home=$(awk -F: -v user="$username" '$1 == user {print $6; exit}' /etc/passwd)
+    if [ "$user_home" = "/home/$username" ]; then
+        # OOBE historically created /home while umask 077 was active. Repair
+        # the parent as well: a user-owned child directory is still unusable
+        # when its root-owned parent cannot be traversed.
+        mkdir -p /home
+        chown root:root /home
+        chmod 0755 /home
+        mkdir -p "$user_home"
+        chown "$username:$username" "$user_home"
+        chmod 0700 "$user_home"
+    fi
+    # greetd's terminal frontend runs on VT2, but BusyBox init leaves that
+    # device owned by root.  Give the authenticated desktop account its VT so
+    # PAM/greetd can create a real interactive session and COSMIC diagnostics
+    # (and fallback terminal) are not denied access to /dev/tty2.
+    if [ -e /dev/tty2 ]; then
+        if grep -q '^tty:' /etc/group 2>/dev/null; then
+            chown "$username:tty" /dev/tty2
+        else
+            chown "$username:$username" /dev/tty2
+        fi
+        chmod 0620 /dev/tty2
+    fi
+    # This is a single-user desktop after OOBE.  Give that account the seatd
+    # socket itself as well as its video membership: old BusyBox accounts can
+    # retain a stale supplementary-group list, but libseat authorizes the
+    # connection at this socket before COSMIC can acquire DRM/VT resources.
+    if [ -S /run/seatd.sock ]; then
+        chown "$username:$username" /run/seatd.sock
+        chmod 0600 /run/seatd.sock
+    fi
+fi
+
+/usr/bin/cosmic-greeter-daemon >>/var/log/cosmic-greeter-daemon.log 2>&1 &
+daemon_pid=$!
+trap 'kill "$daemon_pid" 2>/dev/null || true' EXIT INT TERM
+exec /usr/sbin/greetd --config /etc/greetd/cosmic-greeter.toml

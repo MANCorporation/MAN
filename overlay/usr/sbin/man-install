@@ -1,0 +1,226 @@
+#!/bin/sh
+set -eu
+
+STATUS=/run/man-installer.status
+TARGET=/mnt/man-target
+EFI=/mnt/man-efi
+BOOT_SOURCE=/usr/share/man-installer/efi
+SYSTEM_ARCHIVE=/usr/share/man-recovery/man-system.cpio.gz
+result=failed
+failure_message="Installation failed. See /var/log/man-installer.log for details."
+installer_locale="$(sed -n '1p' /var/lib/man/man-language 2>/dev/null || true)"
+
+localize_status() {
+    message="$1"
+    case "$installer_locale:$message" in
+        cs_CZ*:"Checking the destination disk…") message="Kontroluje se cílový disk…" ;;
+        cs_CZ*:"Preparing a fresh MAN Recovery image…") message="Připravuje se nový obraz pro obnovení MAN…" ;;
+        cs_CZ*:"Erasing the old partition map…") message="Maže se stará tabulka oddílů…" ;;
+        cs_CZ*:"Creating the MAN partition map…") message="Vytváří se tabulka oddílů MAN…" ;;
+        cs_CZ*:"Formatting the EFI System Partition…") message="Formátuje se systémový oddíl EFI…" ;;
+        cs_CZ*:"Formatting the MAN system partition…") message="Formátuje se systémový oddíl MAN…" ;;
+        cs_CZ*:"Mounting the new MAN system…") message="Připojuje se nový systém MAN…" ;;
+        cs_CZ*:"Extracting the pristine MAN system…") message="Rozbaluje se čistý systém MAN…" ;;
+        cs_CZ*:"Writing filesystem configuration…") message="Zapisuje se konfigurace souborového systému…" ;;
+        cs_CZ*:"Installing the graphical boot loader…") message="Instaluje se grafický zavaděč…" ;;
+        cs_CZ*:"Finishing the MAN installation…") message="Dokončuje se instalace MAN…" ;;
+        cs_CZ*:"Installation complete.") message="Instalace je dokončena." ;;
+        cs_CZ*:"Installation cancelled. The destination may be incomplete.") message="Instalace byla zrušena. Cílový systém nemusí být úplný." ;;
+        cs_CZ*:Copying\ MAN\ system\ files:*) message="Kopírují se systémové soubory MAN: ${message#*:}" ;;
+    esac
+    printf '%s' "$message"
+}
+
+status() {
+    printf '%s|%s\n' "$1" "$(localize_status "$2")" > "${STATUS}.new"
+    mv "${STATUS}.new" "$STATUS"
+}
+
+cleanup() {
+    rc=$?
+    umount "$EFI" 2>/dev/null || true
+    umount "$TARGET" 2>/dev/null || true
+    if [ "$result" = complete ]; then
+        status 100 "Installation complete."
+    elif [ "$rc" -eq 130 ]; then
+        status -1 "Installation cancelled. The destination may be incomplete."
+    else
+        status -1 "$failure_message"
+    fi
+}
+
+trap cleanup EXIT
+trap 'exit 130' HUP INT TERM
+
+if [ "${1:-}" = --yes ]; then
+    disk="${2:-}"
+else
+    echo "This installer is controlled by MAN Utilities." >&2
+    echo "Usage: man-install --yes /dev/DISK" >&2
+    exit 2
+fi
+
+status 2 "Checking the destination disk…"
+case "$disk" in /dev/*) ;; *) failure_message="The destination device name is invalid."; exit 2 ;; esac
+[ "$(id -u)" = 0 ] || { failure_message="The installer must run as root."; exit 1; }
+[ -b "$disk" ] || { failure_message="$disk is not a block device."; exit 1; }
+
+for tool in sfdisk wipefs partx blockdev mkfs.fat mke2fs blkid mount umount cpio gzip; do
+    command -v "$tool" >/dev/null 2>&1 || {
+        failure_message="Required installation tool '$tool' is missing."
+        exit 1
+    }
+done
+
+if [ -f "$BOOT_SOURCE/BOOTAA64.EFI" ] && [ -f "$BOOT_SOURCE/Image" ]; then
+    kernel_name=Image
+    serial_console=ttyAMA0,115200
+elif [ -f "$BOOT_SOURCE/BOOTX64.EFI" ] && [ -f "$BOOT_SOURCE/vmlinuz" ]; then
+    kernel_name=vmlinuz
+    serial_console=ttyS0,115200
+else
+    failure_message="The verified MAN boot payload is missing."
+    exit 1
+fi
+[ -f "$SYSTEM_ARCHIVE" ] || {
+    failure_message="The pristine MAN system payload is missing."
+    exit 1
+}
+
+recovery_image="$BOOT_SOURCE/man-recovery.cpio.gz"
+if [ ! -s "$recovery_image" ]; then
+    status 5 "Preparing a fresh MAN Recovery image…"
+    /usr/sbin/man-make-recovery /run/man-recovery.cpio.gz || {
+        failure_message="MAN Recovery could not recreate its boot image."
+        exit 1
+    }
+    recovery_image=/run/man-recovery.cpio.gz
+fi
+
+root_source="$(awk '$2 == "/" { print $1; exit }' /proc/mounts)"
+case "$root_source" in "$disk"*) failure_message="MAN will not erase the disk containing the running system."; exit 1 ;; esac
+
+if awk -v disk="$disk" '$1 == disk || index($1, disk) == 1 { found=1 } END { exit !found }' /proc/mounts; then
+    failure_message="The selected disk is in use. Unmount all of its partitions first."
+    exit 1
+fi
+
+status 8 "Erasing the old partition map…"
+wipefs -a "$disk"
+status 16 "Creating the MAN partition map…"
+recovery_bytes="$(wc -c <"$recovery_image")"
+esp_size_mb=$(( (recovery_bytes + 1024 * 1024 - 1) / (1024 * 1024) + 128 ))
+[ "$esp_size_mb" -ge 512 ] || esp_size_mb=512
+disk_bytes="$(blockdev --getsize64 "$disk")"
+minimum_system_mb=8192
+minimum_bytes=$(( (esp_size_mb + minimum_system_mb) * 1024 * 1024 ))
+[ "$disk_bytes" -ge "$minimum_bytes" ] || {
+    failure_message="The disk needs at least $((esp_size_mb + minimum_system_mb)) MiB for MAN, apps, and Recovery."
+    exit 1
+}
+printf 'label: gpt\nsize=%sM,type=U,name="MAN EFI + Recovery"\ntype=L,name="MAN"\n' "$esp_size_mb" |
+    sfdisk --wipe always "$disk"
+partx -u "$disk" 2>/dev/null || partx -a "$disk" 2>/dev/null || blockdev --rereadpt "$disk"
+sleep 2
+
+case "$disk" in
+    *[0-9]) esp="${disk}p1"; root="${disk}p2" ;;
+    *) esp="${disk}1"; root="${disk}2" ;;
+esac
+[ -b "$esp" ] && [ -b "$root" ] || {
+    failure_message="The new partitions did not appear. Reconnect the disk and try again."
+    exit 1
+}
+
+status 27 "Formatting the EFI System Partition…"
+mkfs.fat -F 32 -n 'MAN EFI' "$esp"
+status 36 "Formatting the MAN system partition…"
+mke2fs -t ext2 -F -L rootfs "$root"
+
+mkdir -p "$TARGET" "$EFI"
+status 43 "Mounting the new MAN system…"
+mount "$root" "$TARGET"
+mount "$esp" "$EFI"
+
+copy_tree() {
+    progress="$1"
+    directory="$2"
+    status "$progress" "Copying MAN system files: /$directory…"
+    [ ! -e "/$directory" ] || cp -a "/$directory" "$TARGET/"
+}
+
+status 49 "Extracting the pristine MAN system…"
+gzip -dc "$SYSTEM_ARCHIVE" | (cd "$TARGET" && cpio -idm 2>/dev/null)
+
+mkdir -p "$TARGET/dev" "$TARGET/proc" "$TARGET/run" "$TARGET/sys" "$TARGET/tmp"
+chmod 1777 "$TARGET/tmp"
+
+status 86 "Writing filesystem configuration…"
+root_uuid="$(blkid -s UUID -o value "$root")"
+root_partuuid="$(blkid -s PARTUUID -o value "$root")"
+efi_uuid="$(blkid -s UUID -o value "$esp")"
+[ -n "$root_uuid" ] && [ -n "$root_partuuid" ] && [ -n "$efi_uuid" ] || {
+    echo "Could not determine the new partitions' UUIDs." >&2
+    exit 1
+}
+cat > "$TARGET/etc/fstab" <<EOF
+UUID=$root_uuid / ext2 defaults 0 1
+UUID=$efi_uuid /boot/efi vfat umask=0077 0 2
+proc /proc proc defaults 0 0
+sysfs /sys sysfs defaults 0 0
+devtmpfs /dev devtmpfs defaults 0 0
+EOF
+
+status 91 "Installing the graphical boot loader…"
+mkdir -p "$EFI/EFI/BOOT"
+cp -a "$BOOT_SOURCE/." "$EFI/EFI/BOOT/"
+
+# If the boot theme is not in the EFI source, install it from the
+# system-wide theme directory so rEFind finds man-system.png etc.
+if [ ! -d "$EFI/EFI/BOOT/theme" ]; then
+    for theme_dir in "$BOOT_SOURCE/theme" /usr/share/man-installer/efi/theme /usr/share/man-bootloader/theme; do
+        if [ -d "$theme_dir" ]; then
+            mkdir -p "$EFI/EFI/BOOT/theme"
+            cp "$theme_dir"/*.png "$EFI/EFI/BOOT/theme/" 2>/dev/null || true
+            break
+        fi
+    done
+fi
+
+cp "$recovery_image" "$EFI/EFI/BOOT/man-recovery.cpio.gz"
+
+# Copy the language preference saved during the live session so the
+# installed OS boots in the user's chosen language from the first boot.
+if [ -f /var/lib/man/man-language ]; then
+    mkdir -p "$TARGET/var/lib/man"
+    cp /var/lib/man/man-language "$TARGET/var/lib/man/man-language"
+fi
+if [ -f /etc/default/locale ]; then
+    cp /etc/default/locale "$TARGET/etc/default/locale"
+fi
+
+# Generate the boot config from man-boot.conf (single source of truth).
+# There is deliberately no normal-boot initramfs.  Linux can resolve a GPT
+# PARTUUID itself, while LABEL= requires an initramfs/userspace helper and
+# otherwise panics with unknown-block(0,0).  PARTUUID also remains stable when
+# VirtIO, NVMe, SATA or USB changes the partition's /dev name.
+BOOT_CONFIG="/tmp/man-boot.conf.$$"
+sed \
+    -e "s|@KERNEL_NAME@|${kernel_name}|g" \
+    -e "s|@SERIAL_CONSOLE@|${serial_console}|g" \
+    -e "s|@ROOT_DEVICE@|PARTUUID=${root_partuuid}|g" \
+    /usr/share/man-bootloader/man-boot.conf > "$BOOT_CONFIG"
+
+# rEFind looks for refind.conf in the same directory as the boot manager
+# binary.  Install the same config under that name so boot entries are
+# discoverable.
+cp "$BOOT_CONFIG" "$EFI/EFI/BOOT/man-os.conf"
+cp "$BOOT_CONFIG" "$EFI/EFI/BOOT/refind.conf"
+rm -f "$BOOT_CONFIG"
+
+status 97 "Finishing the MAN installation…"
+sync
+umount "$EFI"
+umount "$TARGET"
+result=complete
+exit 0

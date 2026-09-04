@@ -1,0 +1,47 @@
+#!/bin/sh
+# First boot is deliberately smaller than a normal COSMIC desktop session.
+# On MAN's BusyBox init system cosmic-session may start and supervise a second
+# compositor while it is preparing its services.  That makes the first OOBE
+# compositor exit immediately (the error seen after boot).  Run one compositor
+# directly, wait until it has a Wayland socket, and only then launch OOBE.
+
+set -u
+
+if [ -z "${MAN_OOBE_DBUS:-}" ]; then
+    export MAN_OOBE_DBUS=1
+    exec /usr/bin/dbus-run-session -- "$0"
+fi
+
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=COSMIC
+export XDG_SESSION_DESKTOP=MAN-OOBE
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/0}"
+export LIBSEAT_BACKEND="${LIBSEAT_BACKEND:-seatd}"
+
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 0700 "$XDG_RUNTIME_DIR"
+rm -f "$XDG_RUNTIME_DIR"/wayland-* 2>/dev/null || true
+
+/usr/bin/cosmic-comp >>/var/log/man-oobe-session.log 2>&1 &
+compositor_pid=$!
+cleanup() {
+    kill "$compositor_pid" 2>/dev/null || true
+    wait "$compositor_pid" 2>/dev/null || true
+}
+trap cleanup EXIT INT TERM
+
+attempt=0
+while [ "$attempt" -lt 200 ]; do
+    for candidate in "$XDG_RUNTIME_DIR"/wayland-*; do
+        if [ -S "$candidate" ]; then
+            export WAYLAND_DISPLAY="${candidate##*/}"
+            break 2
+        fi
+    done
+    kill -0 "$compositor_pid" 2>/dev/null || exit 1
+    attempt=$((attempt + 1))
+    sleep 0.1
+done
+
+[ -n "${WAYLAND_DISPLAY:-}" ] || exit 1
+/usr/bin/man-oobe >>/var/log/man-oobe-session.log 2>&1

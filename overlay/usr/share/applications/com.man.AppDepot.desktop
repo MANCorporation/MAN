@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=App Depot
+Comment=Discover and manage Flatpak applications
+Exec=/usr/bin/app-depot %u
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=com.man.AppDepot
+Categories=COSMIC;Utility;System;PackageManager;
+Keywords=App;Software;Store;Flatpak;Flathub;Updates;
+MimeType=application/vnd.flatpak.ref;x-scheme-handler/appstream;
+StartupWMClass=com.man.AppDepot
+Actions=Help;
+
+[Desktop Action Help]
+Name=How to use App Depot
+Exec=/usr/bin/man-help --open --article apps

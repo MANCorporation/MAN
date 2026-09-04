@@ -1,0 +1,59 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: MAN
+Source: https://github.com/kristihack/MAN
+
+Files: man/**
+       scripts/**
+       configs/**
+       system/**
+       overlay/etc/**
+       overlay/root/**
+       overlay/sbin/**
+       overlay/usr/bin/**
+       overlay/usr/sbin/**
+       overlay/usr/src/manctl/**
+       overlay/usr/share/applications/com.man.*
+       overlay/usr/share/man/**
+       overlay/usr/share/man-utilities/i18n/**
+       support/man-splash/**
+       support/man-utilities/**
+       support/cosmic/**
+       README.md
+       Dockerfile
+       man.toml
+       .github/**
+Copyright: 2026 MAN project contributors
+License: LicenseRef-MAN-Proprietary
+
+Files: support/pam-client/**
+Copyright: 2016-2024 Christoph Grenz and contributors
+License: MPL-2.0
+Comment: Vendored upstream crate. Retain its upstream LICENSE and notices.
+
+Files: toolchain/**
+Copyright: Buildroot developers and respective contributors
+License: GPL-2.0-or-later
+Comment: Vendored Buildroot tree. Individual packages and patches have their
+ own licenses; use Buildroot legal-info for the complete release inventory.
+
+Files: patches/**
+Copyright: Respective upstream copyright holders and MAN contributors
+License: GPL-3.0-only
+Comment: Patches modify GPL-licensed COSMIC projects. Do not present them as
+ proprietary; convey corresponding source with matching binaries.
+
+Files: scripts/bootloader/**
+       EFI/**
+       drivers_aa64_/**
+Copyright: rEFInd and respective asset authors
+License: LicenseRef-See-Third-Party-Notices
+Comment: Rebranded EFI boot-manager binaries and assets. See
+ scripts/bootloader/THIRD_PARTY-ICON-LICENSES.md and THIRD_PARTY_NOTICES.md.
+
+Files: ICONS/**
+       overlay/usr/share/icons/**
+       theme_/**
+Copyright: Haiku, Inc. and respective icon contributors
+License: MIT
+Comment: PNG exports of Haiku icon artwork. Haiku names and logo/leaf marks
+ are trademarks and are not licensed by MIT; do not use those marked assets.

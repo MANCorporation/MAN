@@ -1,0 +1,29 @@
+#!/bin/sh
+# MAN Linux boot splash — early loading bar.
+#
+# Displays a text + framebuffer loading bar during system boot while
+# systemd-free SysV init runs. Runs early (S01) right after rcS.
+#
+# The kernel logo (Tux / MAN logo via CONFIG_LOGO) appears during the
+# kernel's own DRM/fb initialization. After that, this script draws a
+# simple progress bar on the framebuffer (/dev/fb0) via a tiny Rust
+# helper (or fallback to fbcon text on /dev/console).
+
+case "$1" in
+    start)
+        # Start early and give the helper time to create its marker watcher
+        # before S99 can signal completion.  This preserves the loading screen
+        # without the old start/complete race that left it above the login UI.
+        rm -f /run/man-splash.complete /run/man-splash.stop
+        [ -x /usr/bin/man-splash ] && /usr/bin/man-splash --auto &
+        sleep 1
+        ;;
+    stop)
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0

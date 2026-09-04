@@ -1,0 +1,88 @@
+#!/bin/sh
+# Create MAN's system-wide Flathub source before the desktop starts.  Doing
+# this at boot makes App Depot functional for OOBE and every subsequently
+# created account, without an external setup window or per-user race.
+
+REMOTE=flathub
+REPO=https://dl.flathub.org/repo/flathub.flatpakrepo
+
+sync_resolver() {
+    # Buildroot's resolv.conf points at /tmp/resolv.conf.  Without a resolver
+    # manager, NetworkManager learns DHCP DNS but has nowhere to publish it.
+    # Export its active IPv4 servers before Flatpak contacts Flathub.
+    servers=$(nmcli -g IP4.DNS device show 2>/dev/null | sed '/^$/d' | sort -u)
+    [ -n "$servers" ] || return 1
+    : > /tmp/resolv.conf
+    for server in $servers; do
+        printf 'nameserver %s\n' "$server" >> /tmp/resolv.conf
+    done
+}
+
+case "${1:-}" in
+    start)
+        command -v flatpak >/dev/null 2>&1 || exit 0
+        flatpak remote-delete --system --force cosmic >/dev/null 2>&1 || true
+        attempts=0
+        while ! flatpak remotes --system --columns=name 2>/dev/null | grep -qx "$REMOTE" \
+            && [ "$attempts" -lt 30 ]; do
+            # NetworkManager needs a moment to acquire DHCP and DNS after its
+            # daemon starts. Retry rather than starting COSMIC with no remote.
+            sync_resolver || true
+            flatpak remote-add --system --if-not-exists "$REMOTE" "$REPO" >/dev/null 2>&1 || true
+            attempts=$((attempts + 1))
+            flatpak remotes --system --columns=name 2>/dev/null | grep -qx "$REMOTE" || sleep 1
+        done
+        unset attempts
+        flatpak remotes --system --columns=name 2>/dev/null | grep -qx "$REMOTE" || exit 0
+        # Flatpak defaults to reserving 500 MB.  MAN's live and default
+        # installed images are intentionally compact, so that reservation
+        # aborts the AppStream pull after creating only a .commitpartial file
+        # and App Depot consequently has an empty search index.  Retain a
+        # modest safety margin while permitting the catalog to be stored.
+        if [ -f /var/lib/flatpak/repo/config ]; then
+            sed -i 's/^min-free-space-size=.*/min-free-space-size=50MB/' \
+                /var/lib/flatpak/repo/config
+        fi
+        # This is deliberately synchronous: S99 starts COSMIC, and App Depot
+        # must not see an empty catalog on the first launch.
+        flatpak update --system --appstream --assumeyes >/dev/null 2>&1 || true
+        # Keep system Flatpak icons in the system hicolor theme.  COSMIC's
+        # task list resolves window app IDs against this canonical theme path;
+        # exporting only under /var/lib/flatpak is not sufficient for all
+        # Flatpak desktop entries.
+        (
+            while sleep 3; do
+                for icon_file in /var/lib/flatpak/exports/share/icons/hicolor/*/apps/*; do
+                    [ -f "$icon_file" ] || continue
+                    icon_size=${icon_file#/var/lib/flatpak/exports/share/icons/hicolor/}
+                    icon_size=${icon_size%%/*}
+                    mkdir -p "/usr/share/icons/hicolor/$icon_size/apps"
+                    cp -Lf "$icon_file" "/usr/share/icons/hicolor/$icon_size/apps/" 2>/dev/null || true
+                    mkdir -p "/usr/share/icons/Cosmic/$icon_size/apps"
+                    cp -Lf "$icon_file" "/usr/share/icons/Cosmic/$icon_size/apps/" 2>/dev/null || true
+                done
+                # Some Flatpak runtimes do not create export symlinks. Read
+                # the deployed app payload directly as a fallback.
+                for icon_file in /var/lib/flatpak/app/*/*/active/files/share/icons/hicolor/*/apps/* /home/*/.local/share/flatpak/app/*/*/active/files/share/icons/hicolor/*/apps/*; do
+                    [ -f "$icon_file" ] || continue
+                    icon_size=${icon_file##*/hicolor/}
+                    icon_size=${icon_size%%/*}
+                    mkdir -p "/usr/share/icons/hicolor/$icon_size/apps"
+                    cp -Lf "$icon_file" "/usr/share/icons/hicolor/$icon_size/apps/" 2>/dev/null || true
+                    mkdir -p "/usr/share/icons/Cosmic/$icon_size/apps"
+                    cp -Lf "$icon_file" "/usr/share/icons/Cosmic/$icon_size/apps/" 2>/dev/null || true
+                done
+                # AppStream may retain the only cached icon when an app
+                # package omits exported icon links. Install that cache copy
+                # under a standard size as well.
+                for icon_file in /var/lib/flatpak/appstream/*/icons/*/*; do
+                    [ -f "$icon_file" ] || continue
+                    mkdir -p /usr/share/icons/hicolor/128x128/apps
+                    cp -Lf "$icon_file" /usr/share/icons/hicolor/128x128/apps/ 2>/dev/null || true
+                done
+            done
+        ) >/dev/null 2>&1 &
+        ;;
+    stop|restart) exit 0 ;;
+    *) echo "Usage: $0 {start|stop|restart}" >&2; exit 2 ;;
+esac

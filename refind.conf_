@@ -1,0 +1,45 @@
+# MAN Boot Manager configuration.
+
+# Auto-boot after 3 seconds
+timeout 3
+
+# Default boot entry
+default_selection "MAN"
+
+# Only show manually defined boot entries
+scanfor manual
+
+resolution max
+banner \EFI\BOOT\theme\man-background.png
+banner_scale fillscreen
+big_icon_size 128
+small_icon_size 32
+
+# Hide all UI chrome except labels (so entries remain readable)
+hideui arrows,hints,badges,editor
+
+# Hide all built-in tools
+showtools
+
+use_graphics_for linux
+
+# Diagnostics are retained without appearing in the menu.
+log_level 3
+log_file \EFI\BOOT\debug.log
+
+# Boot entry: MAN Linux (normal boot)
+menuentry "MAN" {
+    loader \EFI\BOOT\vmlinuz
+    options "console=tty0 console=ttyS0,115200 net.ifnames=0 root=LABEL=rootfs rw rootwait quiet loglevel=1 vt.global_cursor_default=0 video=efifb:off"
+    ostype Linux
+    icon \EFI\BOOT\theme\man-system.png
+}
+
+# Boot entry: the independent, RAM-resident MAN Recovery operating system.
+menuentry "MAN Recovery" {
+    loader \EFI\BOOT\vmlinuz
+    initrd \EFI\BOOT\man-recovery.cpio.gz
+    options "console=tty0 console=ttyS0,115200 rdinit=/sbin/init rw quiet loglevel=1 vt.global_cursor_default=0 net.ifnames=0 video=efifb:off man.recovery=1"
+    ostype Linux
+    icon \EFI\BOOT\theme\man-recovery.png
+}

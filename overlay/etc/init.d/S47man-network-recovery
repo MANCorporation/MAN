@@ -1,0 +1,33 @@
+#!/bin/sh
+# Small watchdog for transient UTM/virtio link drops. NetworkManager remains
+# the only DHCP client; this merely asks it to reconnect a disappeared link.
+
+PIDFILE=/run/man-network-recovery.pid
+
+case "${1:-}" in
+    start)
+        command -v nmcli >/dev/null 2>&1 || exit 0
+        if [ -s "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+            exit 0
+        fi
+        (
+            while sleep 10; do
+                nmcli networking on >/dev/null 2>&1 || continue
+                nmcli -t -f DEVICE,TYPE,STATE device 2>/dev/null |
+                awk -F: '$2 == "ethernet" && ($3 == "disconnected" || $3 == "unavailable") {print $1}' |
+                while IFS= read -r device; do
+                    [ -n "$device" ] && nmcli device connect "$device" >/dev/null 2>&1 || true
+                done
+            done
+        ) >/var/log/man-network-recovery.log 2>&1 &
+        echo $! > "$PIDFILE"
+        ;;
+    stop)
+        if [ -s "$PIDFILE" ]; then
+            kill "$(cat "$PIDFILE")" 2>/dev/null || true
+            rm -f "$PIDFILE"
+        fi
+        ;;
+    restart) "$0" stop; "$0" start ;;
+    *) echo "Usage: $0 {start|stop|restart}" >&2; exit 2 ;;
+esac

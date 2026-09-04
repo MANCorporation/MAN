@@ -1,0 +1,29 @@
+#!/bin/sh
+# Root-side control bridge for the Rust MAN Network application.
+# NetworkManager (S45NetworkManager) is the one authoritative network manager.
+set -u
+
+request=/run/man-network.request
+: > "$request"
+chown root:root "$request"
+chmod 0622 "$request"
+
+while :; do
+    read_request=$(cat "$request" 2>/dev/null || true)
+    [ -n "$read_request" ] || { sleep 1; continue; }
+    : > "$request"
+    set -- $read_request
+    action=${1:-}
+    interface=${2:-}
+    case "$interface" in ''|*[!A-Za-z0-9_-]*) sleep 1; continue ;; esac
+    case "$action" in
+        connect)
+            /usr/bin/nmcli --wait 20 device connect "$interface" \
+                >>/var/log/man-network.log 2>&1 || true
+            ;;
+        disconnect)
+            /usr/bin/nmcli device disconnect "$interface" \
+                >>/var/log/man-network.log 2>&1 || true
+            ;;
+    esac
+done

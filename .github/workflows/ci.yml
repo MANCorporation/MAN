@@ -1,0 +1,87 @@
+name: MAN CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+env:
+  CARGO_TERM_COLOR: auto
+
+jobs:
+  # ── Check the Rust CLI compiles ──────────────────────────
+  clippy:
+    name: Rust CLI — clippy & fmt
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: man
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Check formatting
+        run: cargo fmt --check
+      - name: Clippy lints
+        run: cargo clippy -- -D warnings
+
+  # ── Build for both architectures via Docker ─────────────
+  build:
+    name: Build MAN (${{ matrix.arch }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x86_64, aarch64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build MAN Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          build-args: |
+            TARGET_ARCH=${{ matrix.arch }}
+          tags: man:ci-${{ matrix.arch }}
+
+      - name: Run Toolchain build inside container
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/output:/MAN/output \
+            -v ${{ github.workspace }}/configs:/MAN/configs \
+            -v ${{ github.workspace }}/overlay:/MAN/overlay \
+            -v ${{ github.workspace }}/scripts:/MAN/scripts \
+            man:ci-${{ matrix.arch }} \
+            make O=/MAN/output/${{ matrix.arch }} /MAN/configs/man-${{ matrix.arch }}_defconfig && \
+            make O=/MAN/output/${{ matrix.arch }} -j$(nproc)
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: man-${{ matrix.arch }}-images
+          path: output/${{ matrix.arch }}/images/
+
+  # ── Build & test the Rust CLI ────────────────────────────
+  test:
+    name: Test MAN CLI
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: man
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build CLI
+        run: cargo build --release
+      - name: Test CLI info
+        run: |
+          cd ..
+          ./man/target/release/man info
+          ./man/target/release/man --help

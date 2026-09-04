@@ -1,0 +1,65 @@
+# MAN Linux Distribution — Configuration File
+# ===========================================
+# This file is read by the `man` CLI orchestrator.
+# All settings are optional — defaults are shown in brackets.
+
+[distro]
+name = "MAN"
+version = "0.1.0"
+description = "A custom Linux distribution built with Rust and Toolchain"
+
+[build]
+# Toolchain source (will be cloned by `man setup`)
+toolchain_repo = "https://github.com/buildroot/buildroot.git"
+toolchain_tag = "2024.08"
+
+# Default number of parallel build jobs (0 = auto-detect)
+jobs = 0
+
+# Cross-compilation toolchain
+libc = "glibc"    # or "musl" for size optimization
+compiler = "gcc"  # or "clang"
+
+[targets]
+# Architectures to build by default (comma-separated)
+default_arches = ["x86_64", "aarch64"]
+
+# x86_64 specific settings
+[x86_64]
+qemu_machine = "q35"
+image_format = "iso9660"
+
+# aarch64 specific settings
+[aarch64]
+qemu_machine = "virt"
+qemu_cpu = "cortex-a57"
+image_format = "ext2"
+
+# UEFI boot via kernel EFI stub (CONFIG_EFI_STUB=y).
+# The kernel EFI stub is launched by the bundled MAN Boot Manager.
+[uefi]
+# Keep the EFI stub enabled; no GRUB stage is required.
+use_efi_stub = true
+# ESP size in MB
+esp_size_mb = 100
+# Total disk image size in MB
+disk_size_mb = 1024
+# QEMU UEFI firmware path (aarch64)
+qemu_efi_aarch64 = "$HOME/.homebrew/share/qemu/edk2-aarch64-code.fd"
+
+[rust]
+# Include Rust toolchain in the target image
+include_rust = true
+# Include uutils/coreutils (Rust reimplementation of GNU coreutils)
+include_uutils = true
+# Rust targets to build for
+targets = ["x86_64-unknown-linux-gnu", "aarch64-unknown-linux-gnu"]
+
+[qemu]
+# Memory allocation for QEMU testing (MB)
+# COSMIC desktop requires at least 4 GiB for smooth operation.
+default_memory = 4096
+# Default CPU count
+default_cpus = 4
+# Use hardware acceleration when available
+enable_hvf = true

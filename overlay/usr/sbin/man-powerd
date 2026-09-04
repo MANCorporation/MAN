@@ -1,0 +1,42 @@
+#!/bin/sh
+# Root-side power bridge for MAN's BusyBox init system. COSMIC's upstream
+# power applet expects systemd-logind; MAN has neither systemd nor logind.
+set -u
+
+request=/run/man-power.request
+: > "$request"
+chown root:root "$request"
+chmod 0622 "$request"
+
+while :; do
+    action=$(cat "$request" 2>/dev/null || true)
+    case "$action" in
+        restart)
+            : > "$request"
+            sync
+            kill -TERM 1
+            ;;
+        shutdown)
+            : > "$request"
+            sync
+            kill -USR2 1
+            ;;
+        suspend)
+            : > "$request"
+            printf mem > /sys/power/state 2>/dev/null || true
+            ;;
+        logout)
+            : > "$request"
+            # Tell the user-session wrapper this compositor exit was an
+            # intentional logout, not a desktop crash. greetd will then
+            # receive a clean session exit and restore its greeter.
+            : > /run/man-logout
+            chmod 0644 /run/man-logout
+            # greetd notices the compositor exiting and returns to the
+            # graphical greeter. This is restricted to the desktop session;
+            # no greeter compositor is running while a user is logged in.
+            killall cosmic-comp 2>/dev/null || true
+            ;;
+    esac
+    sleep 1
+done

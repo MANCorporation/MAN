@@ -1,0 +1,9 @@
+#!/bin/sh
+# NetworkManager is the sole owner of interfaces on MAN.  Buildroot's
+# ifupdown service would otherwise bring eth0 up before NetworkManager starts,
+# leaving it as "connected (externally)" and preventing the MAN Wired profile
+# from being activated.
+case "${1:-}" in
+    start|stop|restart) exit 0 ;;
+    *) echo "Usage: $0 {start|stop|restart}" >&2; exit 2 ;;
+esac

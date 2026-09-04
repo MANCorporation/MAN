@@ -1,0 +1,14 @@
+#!/bin/sh
+# Register GLib runtime modules before any HTTPS client starts. Flatpak uses
+# GIO to reach Flathub; without this cache GIO can fail to discover its TLS
+# backend in the minimal image.
+
+case "${1:-}" in
+    start)
+        if [ -x /usr/bin/gio-querymodules ] && [ -d /usr/lib/gio/modules ]; then
+            /usr/bin/gio-querymodules /usr/lib/gio/modules
+        fi
+        ;;
+    stop|restart) ;;
+    *) echo "Usage: $0 {start|stop|restart}" >&2; exit 2 ;;
+esac

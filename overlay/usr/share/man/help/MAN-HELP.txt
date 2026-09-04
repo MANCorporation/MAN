@@ -1,0 +1,77 @@
+MAN Guide
+========
+
+Welcome! This offline guide explains MAN's common services and error codes.
+It is available without an internet connection. The language follows the
+system language for the surrounding desktop; technical command names and
+error codes remain unchanged so they can be searched reliably.
+
+How to use MAN
+--------------
+Open the app launcher, choose an application, and use its Help action whenever
+you need guidance. Help articles are local, safe, and remain available offline.
+Settings changes are reversible unless a page clearly says that a disk will be
+erased. Keep error codes when requesting support.
+
+Applications and App Depot
+--------------------------
+App Depot uses Flathub. Select an application, review its permissions, and
+choose Install. If it does not start, open Settings > Privacy and Security >
+App Permissions and review the application's sandbox permissions.
+
+Network and internet
+--------------------
+NetworkManager automatically configures wired UTM networking and refreshes DNS
+after link or DHCP changes. Check the Network applet first; it is safe to wait
+for automatic reconnection.
+
+Getting started
+---------------
+* App Depot installs applications from Flathub.
+* Network settings are managed by NetworkManager.
+* Privacy and Security contains App Permissions for Flatpak applications.
+* Settings includes accessibility options such as Reduce motion.
+
+When something goes wrong
+-------------------------
+MAN should first explain what happened in friendly language, then show an
+error code. Search that code in this document or run:
+
+    man-help ERROR-CODE
+
+Keep the complete code when asking for support. It identifies the operation
+and the safe next step without exposing personal files.
+
+Common error codes
+------------------
+ERROR MAN-NET-0001
+  MAN could not obtain a network address. Check that the VM network adapter
+  is enabled, then wait for NetworkManager to reconnect automatically.
+
+ERROR MAN-NET-0002
+  The network link is up but DNS is unavailable. MAN refreshes DNS after each
+  DHCP renewal; restarting the connection from Network settings is safe.
+
+ERROR MAN-APP-0001
+  An application could not be installed. Confirm free disk space and retry;
+  App Depot will not leave a partial installation active.
+
+ERROR MAN-APP-0002
+  An application installed but did not launch. Open App Depot details and
+  check its permissions in Settings > Privacy and Security > App Permissions.
+
+ERROR MAN-INSTALL-0001
+  The installer could not write the selected disk. Verify the disk selection,
+  unmount it, and retry. Destructive disk operations always require consent.
+
+ERROR MAN-HELP-0001
+  The local help document is missing. Reinstall the MAN base system.
+
+Troubleshooting commands
+------------------------
+Network status:  nmcli general status
+Devices:         nmcli device status
+Flatpak remotes: flatpak remotes --system
+System log:      logread
+
+MAN Guide is intentionally local and safe to use offline.

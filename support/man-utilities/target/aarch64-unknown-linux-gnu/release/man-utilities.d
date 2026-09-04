@@ -1,0 +1,1 @@
+/Users/kristihack/RustroverProjects/MAN/support/man-utilities/target/aarch64-unknown-linux-gnu/release/man-utilities: /Users/kristihack/RustroverProjects/MAN/support/man-utilities/src/i18n.rs /Users/kristihack/RustroverProjects/MAN/support/man-utilities/src/main.rs /Users/kristihack/RustroverProjects/MAN/support/man-utilities/src/oobe.rs

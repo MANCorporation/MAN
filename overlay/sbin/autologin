@@ -1,0 +1,16 @@
+#!/bin/sh
+# /sbin/autologin - auto-login as root on a terminal
+# Called from /etc/inittab with stdin/stdout/stderr on the target tty.
+# Uses busybox login -f (CONFIG_FEATURE_TELNET_AUTOLOGIN) for fast login.
+# Falls back to /bin/sh -l if login -f is unsupported or fails.
+# login -f displays motd and starts a proper login shell as root.
+
+# Reset terminal to sane defaults (kernel TTY defaults are usually fine)
+stty sane 2>/dev/null
+stty echo 2>/dev/null
+stty onlcr 2>/dev/null
+
+# Auto-login as root
+# login -f skips password, displays motd, starts login shell
+# If -f is not supported, fall back to a login shell
+/bin/login -f root 2>/dev/null || { sleep 2; exec /bin/sh -l; }

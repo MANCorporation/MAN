@@ -1,0 +1,6 @@
+#!/bin/sh
+# Start the first-boot assistant only in an installed normal MAN system.
+grep -Eq '(^| )(man\.live|man\.recovery)=1( |$)' /proc/cmdline && exit 0
+[ -e /etc/man-recovery ] && exit 0
+[ -e /var/lib/man/oobe-complete ] && exit 0
+exec /usr/bin/man-oobe

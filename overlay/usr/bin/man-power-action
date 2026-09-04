@@ -1,0 +1,19 @@
+#!/bin/sh
+# User-side half of MAN's BusyBox power controls.  Privileged actions are
+# handed to the root-owned daemon through a write-only runtime request file.
+set -eu
+
+action=${1:-}
+case "$action" in
+    lock)
+        # cosmic-greeter becomes the COSMIC locker when launched as a normal
+        # desktop user and connects to the current Wayland compositor.
+        exec /usr/bin/cosmic-greeter
+        ;;
+    logout|suspend|restart|shutdown)
+        request=/run/man-power.request
+        [ -w "$request" ] || exit 1
+        printf '%s\n' "$action" > "$request"
+        ;;
+    *) exit 2 ;;
+esac

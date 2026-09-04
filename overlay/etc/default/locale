@@ -1,0 +1,7 @@
+# MAN Linux Distribution — default locale.
+# This file is read by the recovery session and by /etc/profile.
+# The language chooser in man-utilities writes the user's selection to
+# /var/lib/man/man-language; the recovery session translates that into
+# LANG/LC_ALL here at boot.
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8

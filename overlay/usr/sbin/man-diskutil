@@ -1,0 +1,128 @@
+#!/bin/sh
+set -eu
+
+STATUS=/run/man-diskulator.status
+result=failed
+failure_message="Diskulator could not complete the operation. See /var/log/man-diskulator.log for details."
+
+status() {
+    printf '%s|%s\n' "$1" "$2" > "${STATUS}.new"
+    mv "${STATUS}.new" "$STATUS"
+}
+
+finish() {
+    rc=$?
+    if [ "$result" = complete ]; then
+        status 100 "Disk operation complete."
+    elif [ "$rc" -eq 130 ]; then
+        status -1 "Disk operation cancelled. The disk may be incomplete."
+    else
+        status -1 "$failure_message"
+    fi
+}
+
+trap finish EXIT
+trap 'exit 130' HUP INT TERM
+
+operation="${1:-}"
+disk="${2:-}"
+case "$operation" in partition-man|erase-fat32|erase-ext2|first-aid) ;; *) failure_message="Unknown Diskulator operation."; exit 2 ;; esac
+case "$disk" in /dev/*) ;; *) failure_message="The disk device name is invalid."; exit 2 ;; esac
+[ "$(id -u)" = 0 ] || { failure_message="Diskulator must run as root."; exit 1; }
+[ -b "$disk" ] || { failure_message="$disk is not a block device."; exit 1; }
+
+root_source="$(awk '$2 == "/" { print $1; exit }' /proc/mounts)"
+case "$root_source" in "$disk"*) failure_message="Diskulator will not modify the running system disk."; exit 1 ;; esac
+
+if [ "$operation" != first-aid ] && awk -v disk="$disk" '$1 == disk || index($1, disk) == 1 { found=1 } END { exit !found }' /proc/mounts; then
+    failure_message="The selected disk is in use. Unmount all of its partitions first."
+    exit 1
+fi
+
+refresh_partitions() {
+    partx -u "$disk" 2>/dev/null || partx -a "$disk" 2>/dev/null || blockdev --rereadpt "$disk"
+    sleep 2
+}
+
+first_partition() {
+    case "$disk" in *[0-9]) printf '%sp1\n' "$disk" ;; *) printf '%s1\n' "$disk" ;; esac
+}
+
+partition_man() {
+    for tool in sfdisk wipefs partx blockdev mkfs.fat mke2fs; do
+        command -v "$tool" >/dev/null 2>&1 || { failure_message="Required disk tool '$tool' is missing."; exit 1; }
+    done
+    status 10 "Erasing the old partition map…"
+    wipefs -a "$disk"
+    status 30 "Creating a GPT partition map…"
+    printf 'label: gpt\nsize=256M,type=U,name="MAN EFI"\ntype=L,name="MAN"\n' | sfdisk --wipe always "$disk"
+    refresh_partitions
+    case "$disk" in *[0-9]) esp="${disk}p1"; data="${disk}p2" ;; *) esp="${disk}1"; data="${disk}2" ;; esac
+    [ -b "$esp" ] && [ -b "$data" ] || { failure_message="The new partitions did not appear."; exit 1; }
+    status 58 "Formatting the EFI partition as FAT32…"
+    mkfs.fat -F 32 -n 'MAN EFI' "$esp"
+    status 78 "Formatting the MAN partition as ext2…"
+    mke2fs -t ext2 -F -L MAN "$data"
+}
+
+erase_single() {
+    filesystem="$1"
+    for tool in sfdisk wipefs partx blockdev; do
+        command -v "$tool" >/dev/null 2>&1 || { failure_message="Required disk tool '$tool' is missing."; exit 1; }
+    done
+    status 12 "Erasing the old partition map…"
+    wipefs -a "$disk"
+    status 38 "Creating a compatible MBR partition map…"
+    if [ "$filesystem" = fat32 ]; then
+        printf 'label: dos\ntype=c,bootable\n' | sfdisk --wipe always "$disk"
+    else
+        printf 'label: dos\ntype=83\n' | sfdisk --wipe always "$disk"
+    fi
+    refresh_partitions
+    partition="$(first_partition)"
+    [ -b "$partition" ] || { failure_message="The new partition did not appear."; exit 1; }
+    if [ "$filesystem" = fat32 ]; then
+        command -v mkfs.fat >/dev/null 2>&1 || { failure_message="mkfs.fat is missing."; exit 1; }
+        status 70 "Formatting the disk as FAT32…"
+        mkfs.fat -F 32 -n MAN "$partition"
+    else
+        command -v mke2fs >/dev/null 2>&1 || { failure_message="mke2fs is missing."; exit 1; }
+        status 70 "Formatting the disk as ext2…"
+        mke2fs -t ext2 -F -L MAN "$partition"
+    fi
+}
+
+first_aid() {
+    base="${disk#/dev/}"
+    total=0
+    for entry in "/sys/class/block/$base"/*; do [ -f "$entry/partition" ] && total=$((total + 1)); done
+    [ "$total" -gt 0 ] || { failure_message="This disk has no partitions to check."; exit 1; }
+    checked=0
+    for entry in "/sys/class/block/$base"/*; do
+        [ -f "$entry/partition" ] || continue
+        name="${entry##*/}"
+        device="/dev/$name"
+        filesystem="$(blkid -s TYPE -o value "$device" 2>/dev/null || true)"
+        checked=$((checked + 1))
+        progress=$((10 + checked * 80 / total))
+        status "$progress" "Checking $device (${filesystem:-unknown})…"
+        case "$filesystem" in
+            ext2|ext3|ext4) e2fsck -fn "$device" ;;
+            vfat|fat|msdos) fsck.fat -n "$device" ;;
+            '') ;;
+            *) failure_message="First Aid does not yet support $filesystem on $device."; exit 1 ;;
+        esac
+    done
+}
+
+case "$operation" in
+    partition-man) partition_man ;;
+    erase-fat32) erase_single fat32 ;;
+    erase-ext2) erase_single ext2 ;;
+    first-aid) first_aid ;;
+esac
+
+status 96 "Synchronizing the disk…"
+sync
+result=complete
+exit 0

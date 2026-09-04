@@ -1,0 +1,45 @@
+#!/bin/sh
+# Apply allow-listed OOBE appearance choices to the running root session.
+set -eu
+
+case "${1:-}" in
+    theme)
+        case "${2:-}" in light) dark=false ;; dark|automatic) dark=true ;; *) exit 2 ;; esac
+        directory=/root/.config/cosmic/com.system76.CosmicTheme.Mode/v1
+        mkdir -p "$directory"
+        printf '%s\n' "$dark" > "$directory/is_dark.man-new"
+        mv "$directory/is_dark.man-new" "$directory/is_dark"
+        if [ "${2:-}" = automatic ]; then printf 'true\n'; else printf 'false\n'; fi \
+            > "$directory/auto_switch.man-new"
+        mv "$directory/auto_switch.man-new" "$directory/auto_switch"
+        ;;
+    wallpaper)
+        case "${2:-}" in
+            orion_nebula_nasa_heic0601a.jpg|webb-inspired-wallpaper-system76.jpg|otherworldly_earth_nasa_ISS064-E-29444.jpg|round_moons_nasa.jpg) wallfile=$2 ;;
+            *) exit 2 ;;
+        esac
+        config_dir=/root/.config/cosmic/com.system76.CosmicBackground/v1
+        state_dir=/root/.local/state/cosmic/com.system76.CosmicBackground/v1
+        source_path="/usr/share/backgrounds/cosmic/$wallfile"
+        mkdir -p "$config_dir" "$state_dir"
+        # cosmic-bg consults this state before loading an Entry. Update it
+        # first, then replace `all` so the config watcher reloads the new image.
+        printf '[("all", Path("%s"))]\n' "$source_path" > "$state_dir/wallpapers.man-new"
+        mv "$state_dir/wallpapers.man-new" "$state_dir/wallpapers"
+        cat > "$config_dir/all.man-new" <<EOF
+(
+    output: "all",
+    source: Path("$source_path"),
+    filter_by_theme: #false,
+    rotation_frequency: 3600,
+    filter_method: Lanczos,
+    scaling_mode: Zoom,
+    sampling_method: Alphanumeric,
+)
+EOF
+        mv "$config_dir/all.man-new" "$config_dir/all"
+        printf 'true\n' > "$config_dir/same-on-all.man-new"
+        mv "$config_dir/same-on-all.man-new" "$config_dir/same-on-all"
+        ;;
+    *) exit 2 ;;
+esac

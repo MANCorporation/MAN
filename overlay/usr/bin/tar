@@ -1,0 +1,13 @@
+#!/bin/sh
+# Flatpak extra-data installers (notably Google Chrome) invoke `tar -xf` on
+# .tar.xz payloads. BusyBox tar is intentionally small and does not auto-detect
+# compression, although XZ support is present in MAN. Preserve every normal
+# invocation and add the required decompressor when the archive is XZ.
+for arg in "$@"; do
+    case "$arg" in
+        *.tar.xz|*.txz)
+            exec /bin/busybox tar -J "$@"
+            ;;
+    esac
+done
+exec /bin/busybox tar "$@"

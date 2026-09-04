@@ -1,0 +1,58 @@
+#!/bin/sh
+# MAN Guide: a local, offline help browser available even without networking.
+# With --open this script starts the installed COSMIC terminal and then
+# re-enters itself, so all desktop Help actions use one reliable launcher.
+
+if [ "${1:-}" = --open ]; then
+    shift
+    if [ ! -x /usr/bin/cosmic-term ]; then
+        printf '%s\n' 'MAN Guide cannot open because COSMIC Terminal is not installed (MAN-GUIDE-0001).' >&2
+        exit 1
+    fi
+    # A terminal command that exits immediately is indistinguishable from a
+    # launcher that did nothing.  Render the guide and retain an interactive
+    # shell so the reader can scroll, search, and close it when finished.
+    exec /usr/bin/cosmic-term --no-daemon -- /bin/sh -c '
+        clear 2>/dev/null || :
+        /usr/bin/man-help "$@"
+        printf "\\n--- MAN Guide ---\\nClose this window when you are finished.\\n"
+        exec /bin/sh -i
+    ' man-guide "$@"
+fi
+
+locale=${LANG%%.*}
+[ -n "$locale" ] || locale=en_US
+HELP=/usr/share/man/help/$locale/MAN-HELP.txt
+[ -r "$HELP" ] || HELP=/usr/share/man/help/MAN-HELP.txt
+code=${1:-}
+
+if [ "${1:-}" = --article ]; then
+    article=${2:-how-to-use}
+    case "$article" in
+        how-to-use) pattern='How to use MAN' ;;
+        network) pattern='Network and internet' ;;
+        apps) pattern='Applications and App Depot' ;;
+        *) pattern="$article" ;;
+    esac
+    awk -v pattern="$pattern" 'index($0, pattern) { found=1; next } found && /^[^ ]/ && $0 !~ /^[-=]+$/ { exit } found { print }' "$HELP"
+    exit 0
+fi
+
+if [ "${1:-}" = --text ]; then
+    code=${2:-}
+fi
+
+if [ ! -r "$HELP" ]; then
+    printf '%s\n' 'MAN Guide is unavailable (MAN-GUIDE-0001).' >&2
+    exit 1
+fi
+
+if [ -n "$code" ] && [ "$code" != --text ]; then
+    awk -v code="$code" '
+        $0 ~ "ERROR " code { found=1; start=NR-2 }
+        found && NR >= start { print }
+        found && NR > start+12 { exit }
+    ' "$HELP"
+else
+    cat "$HELP"
+fi

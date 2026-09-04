@@ -1,0 +1,10 @@
+#!/bin/sh
+# NetworkManager (S45NetworkManager) is MAN's single network manager. It owns
+# device discovery, DHCP, routes, and DNS. Keep this compatibility hook empty
+# so no second DHCP client races NetworkManager at boot.
+
+case "${1:-}" in
+    start|stop) ;;
+    stop) ;;
+    *) echo "Usage: $0 {start|stop}" >&2; exit 2 ;;
+esac

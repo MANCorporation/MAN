@@ -1,0 +1,25 @@
+#!/bin/sh
+# Configure MAN's per-user Flatpak installation before COSMIC starts.
+# App Depot discovers its catalog from this installation, so adding the remote
+# in the background races the store and leaves its first window empty.
+set -u
+
+[ "$(id -u)" -ne 0 ] || exit 0
+command -v flatpak >/dev/null 2>&1 || exit 0
+
+state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/man"
+mkdir -p "$state_dir" "${XDG_DATA_HOME:-$HOME/.local/share}/flatpak"
+
+# Flathub is MAN's sole default catalog. Remove the legacy COSMIC remote from
+# the user installation so App Depot cannot offer it as a competing source.
+flatpak remote-delete --user --force cosmic >/dev/null 2>&1 || true
+
+if ! flatpak remotes --user --columns=name 2>/dev/null | grep -qx flathub; then
+    flatpak remote-add --user flathub \
+        https://dl.flathub.org/repo/flathub.flatpakrepo || exit 0
+    # Fetch the catalog now. This lets App Depot render applications on its
+    # first launch instead of waiting for a later refresh.
+    flatpak update --user --appstream --assumeyes || true
+fi
+
+: > "$state_dir/flathub-configured"

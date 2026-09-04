@@ -1,0 +1,25 @@
+#!/bin/sh
+# Publish NetworkManager's current DHCP DNS servers for the Buildroot image.
+# This runs on every link/lease change, not only once at boot.
+
+ACTION=${2:-}
+case "$ACTION" in
+    up|dhcp4-change|dhcp6-change|connectivity-change|reapply) ;;
+    *) exit 0 ;;
+esac
+
+RESOLV=/tmp/resolv.conf
+TMP=$(mktemp /tmp/resolv.conf.XXXXXX) || exit 0
+trap 'rm -f "$TMP"' EXIT HUP INT TERM
+
+servers=$(nmcli -g IP4.DNS,IP6.DNS device show "${1:-}" 2>/dev/null |
+    sed 's/^\s*//; /^$/d; /^--$/d; /^none$/d; /^0\.0\.0\.0$/d; /^::$/d' |
+    sort -u)
+[ -n "$servers" ] || exit 0
+
+for server in $servers; do
+    printf 'nameserver %s\n' "$server" >> "$TMP"
+done
+chmod 0644 "$TMP"
+mv -f "$TMP" "$RESOLV"
+trap - EXIT HUP INT TERM

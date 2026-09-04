@@ -1,0 +1,78 @@
+#!/bin/sh
+# COSMIC Greeter's unprivileged compositor session. The compositor is supervised here
+# instead of replacing this process with dbus-run-session: greetd terminates
+# the default session before starting the authenticated one, and
+# dbus-run-session does not reliably forward that signal to cosmic-comp.
+# Leaving the root greeter compositor alive keeps seat0/DRM busy and makes the
+# user's compositor immediately exit with code 1.
+set -u
+
+session_pid=
+
+stop_greeter() {
+    trap - TERM INT HUP
+    [ -z "$session_pid" ] || kill -TERM "$session_pid" 2>/dev/null || true
+    # The greeter is the only compositor while greetd is stopping its default
+    # session. Terminate an orphaned grandchild as well, then wait until seatd
+    # observes the disconnect before allowing the user session to be started.
+    killall cosmic-comp 2>/dev/null || true
+    attempts=0
+    while pidof cosmic-comp >/dev/null 2>&1 && [ "$attempts" -lt 50 ]; do
+        sleep 0.1
+        attempts=$((attempts + 1))
+    done
+    if pidof cosmic-comp >/dev/null 2>&1; then
+        killall -KILL cosmic-comp 2>/dev/null || true
+        sleep 0.1
+    fi
+    [ -z "$session_pid" ] || wait "$session_pid" 2>/dev/null || true
+    exit 0
+}
+
+trap stop_greeter TERM INT HUP
+
+uid=$(id -u)
+export HOME=/var/lib/cosmic-greeter
+export USER=cosmic-greeter
+export LOGNAME=cosmic-greeter
+export SHELL=/bin/sh
+export XDG_RUNTIME_DIR="/run/user/$uid"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CURRENT_DESKTOP=COSMIC
+export XDG_SESSION_DESKTOP=COSMIC
+export XDG_SESSION_TYPE=wayland
+# The greeter is started directly by rcS/greetd rather than a login shell.
+# Apply the language selected during installation before its COSMIC clients
+# are launched, matching the normal desktop session.
+if [ -r /etc/default/locale ]; then
+    . /etc/default/locale 2>/dev/null || true
+fi
+if [ -z "${LANG:-}" ] && [ -r /var/lib/man/man-language ]; then
+    man_lang=$(tr -d '[:space:]' < /var/lib/man/man-language 2>/dev/null || true)
+    [ -n "$man_lang" ] && export LANG="${man_lang}.UTF-8"
+    unset man_lang
+fi
+: "${LANG:=en_US.UTF-8}"
+export LANG
+export LANGUAGE="${LANGUAGE:-${LANG%%.*}}"
+export XDG_SEAT=seat0
+export XDG_VTNR=2
+export LIBSEAT_BACKEND=seatd
+# warn level avoids the heavy I/O of info/debug logging from the COSMIC Rust
+# compositor at session startup, while still capturing errors.
+export RUST_LOG="${RUST_LOG:-warn}"
+[ -r /usr/lib/libman-atexit-shim.so ] && export LD_PRELOAD=/usr/lib/libman-atexit-shim.so
+mkdir -p "$HOME/.config" "$HOME/.local/share" "$HOME/.local/state"
+# cosmic-comp must retain root's DRM/VT access, but the visible greeter must
+# not run as root.  The wrapper grants the locked cosmic-greeter account only
+# the Wayland and greetd sockets it needs, then drops privileges before it
+# starts the UI.  Running cosmic-greeter directly here made its per-user
+# state resolve to root and is the reason root could be presented after OOBE.
+/usr/bin/dbus-run-session -- /usr/bin/cosmic-comp /usr/bin/man-cosmic-greeter-ui &
+session_pid=$!
+wait "$session_pid"
+status=$?
+session_pid=
+exit "$status"

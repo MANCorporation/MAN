@@ -1,0 +1,40 @@
+# MAN Linux Distribution — Gitignore
+# ================================
+
+# Rust build artifacts
+man/target/
+man/Cargo.lock
+
+# Buildroot build output
+output/
+buildroot/
+
+# QEMU / VM artifacts
+*.img
+*.iso
+*.vdi
+*.qcow2
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icons
+__MACOSX
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Poolside
+.poolside/
+.dirac/

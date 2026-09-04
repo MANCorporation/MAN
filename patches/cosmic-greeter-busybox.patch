@@ -1,0 +1,42 @@
+diff --git a/src/greeter.rs b/src/greeter.rs
+index 6431496..924331d 100644
+--- a/src/greeter.rs
++++ b/src/greeter.rs
+@@ -280,7 +280,10 @@ pub fn main() -> Result<(), Box<dyn Error>> {
+         sessions
+     };
+ 
+-    let logind_available = cfg!(feature = "logind") && crate::logind::is_available();
++    #[cfg(feature = "logind")]
++    let logind_available = crate::logind::is_available();
++    #[cfg(not(feature = "logind"))]
++    let logind_available = false;
+ 
+     let flags = Flags {
+         user_icons: user_datas
+diff --git a/src/locker.rs b/src/locker.rs
+index 482a335..6766b53 100644
+--- a/src/locker.rs
++++ b/src/locker.rs
+@@ -79,7 +79,10 @@ pub fn main(user: pwd::Passwd) -> Result<(), Box<dyn std::error::Error>> {
+     // We are already the user at this point
+     user_data.load_config_as_user();
+ 
+-    let logind_available = cfg!(feature = "logind") && crate::logind::is_available();
++    #[cfg(feature = "logind")]
++    let logind_available = crate::logind::is_available();
++    #[cfg(not(feature = "logind"))]
++    let logind_available = false;
+ 
+     let flags = Flags {
+         user_icon: user_data
+@@ -1220,7 +1223,8 @@ impl cosmic::Application for App {
+             }),
+         );
+ 
+-        if cfg!(feature = "logind") && self.flags.logind_available {
++        #[cfg(feature = "logind")]
++        if self.flags.logind_available {
+             subscriptions.push(crate::logind::subscription());
+         }
+ 

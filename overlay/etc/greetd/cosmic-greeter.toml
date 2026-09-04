@@ -1,0 +1,11 @@
+[terminal]
+vt = "2"
+
+[general]
+service = "cosmic-greeter"
+
+[default_session]
+# Run the COSMIC greeter through MAN's supervisor.  The wrapper terminates its
+# compositor before greetd starts the authenticated desktop session.
+command = "/usr/bin/man-cosmic-greeter-start"
+user = "root"

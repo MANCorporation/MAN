@@ -1,0 +1,3 @@
+#!/bin/sh
+grep -qw 'man.live=1' /proc/cmdline || exit 0
+exec /usr/bin/man-utilities

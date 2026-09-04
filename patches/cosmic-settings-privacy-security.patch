@@ -1,0 +1,292 @@
+diff --git a/cosmic-settings/build.rs b/cosmic-settings/build.rs
+index 5be3e7c..7f69e96 100644
+--- a/cosmic-settings/build.rs
++++ b/cosmic-settings/build.rs
+@@ -221,4 +221,12 @@ fn main() {
+         )
+         .unwrap();
+     });
++
++    let output = PathBuf::from("../target/xdgen");
++    fs::create_dir_all(&output).unwrap();
++    fs::copy(
++        "../resources/applications/com.system76.CosmicSettings.PrivacySecurity.desktop",
++        output.join("com.system76.CosmicSettings.PrivacySecurity.desktop"),
++    )
++    .unwrap();
+ }
+diff --git a/cosmic-settings/src/app.rs b/cosmic-settings/src/app.rs
+index 1596305..2347e38 100644
+--- a/cosmic-settings/src/app.rs
++++ b/cosmic-settings/src/app.rs
+@@ -16,6 +16,7 @@ use crate::pages::input;
+ use crate::pages::networking;
+ #[cfg(feature = "page-power")]
+ use crate::pages::power;
++use crate::pages::privacy_security;
+ #[cfg(feature = "page-sound")]
+ use crate::pages::sound;
+ use crate::pages::{self, applications, system, time};
+@@ -116,6 +117,7 @@ impl SettingsApp {
+             }
+             #[cfg(feature = "page-power")]
+             PageCommands::Power => self.pages.page_id::<power::Page>(),
++            PageCommands::PrivacySecurity => self.pages.page_id::<privacy_security::Page>(),
+             #[cfg(feature = "page-region")]
+             PageCommands::RegionLanguage => self.pages.page_id::<time::region::Page>(),
+             #[cfg(feature = "page-sound")]
+@@ -226,6 +228,7 @@ impl cosmic::Application for SettingsApp {
+         #[cfg(feature = "page-input")]
+         app.insert_page::<input::Page>();
+         app.insert_page::<applications::Page>();
++        app.insert_page::<privacy_security::Page>();
+         app.insert_page::<time::Page>();
+         app.insert_page::<system::Page>();
+ 
+@@ -661,6 +664,12 @@ impl cosmic::Application for SettingsApp {
+                     }
+                 }
+ 
++                crate::pages::Message::PrivacySecurity(message) => {
++                    if let Some(page) = self.pages.page_mut::<privacy_security::Page>() {
++                        return page.update(message).map(Into::into);
++                    }
++                }
++
+                 #[cfg(feature = "page-networking")]
+                 crate::pages::Message::Vpn(message) => {
+                     if let Some(page) = self.pages.page_mut::<networking::vpn::Page>() {
+diff --git a/cosmic-settings/src/main.rs b/cosmic-settings/src/main.rs
+index 7a39baf..3ed3118 100644
+--- a/cosmic-settings/src/main.rs
++++ b/cosmic-settings/src/main.rs
+@@ -122,6 +122,8 @@ pub enum PageCommands {
+     /// Power settings page
+     #[cfg(feature = "page-power")]
+     Power,
++    /// Privacy and security settings page
++    PrivacySecurity,
+     /// Region & Language settings page
+     #[cfg(feature = "page-region")]
+     RegionLanguage,
+diff --git a/cosmic-settings/src/pages/mod.rs b/cosmic-settings/src/pages/mod.rs
+index 84f82c4..46b8403 100644
+--- a/cosmic-settings/src/pages/mod.rs
++++ b/cosmic-settings/src/pages/mod.rs
+@@ -17,6 +17,7 @@ pub mod input;
+ pub mod networking;
+ #[cfg(feature = "page-power")]
+ pub mod power;
++pub mod privacy_security;
+ #[cfg(feature = "page-sound")]
+ pub mod sound;
+ pub mod system;
+@@ -82,6 +83,7 @@ pub enum Message {
+     PanelApplet(desktop::panel::applets_inner::Message),
+     #[cfg(feature = "page-power")]
+     Power(power::Message),
++    PrivacySecurity(privacy_security::Message),
+     #[cfg(feature = "page-region")]
+     Region(time::region::Message),
+     #[cfg(feature = "page-sound")]
+diff --git a/cosmic-settings/src/pages/privacy_security.rs b/cosmic-settings/src/pages/privacy_security.rs
+new file mode 100644
+index 0000000..2bbb61c
+--- /dev/null
++++ b/cosmic-settings/src/pages/privacy_security.rs
+@@ -0,0 +1,178 @@
++// SPDX-License-Identifier: GPL-3.0-only
++
++use cosmic::Task;
++use cosmic::widget::{button, settings};
++use cosmic_settings_page::{self as page, Section, section};
++use slotmap::SlotMap;
++use std::process::Command;
++
++#[derive(Clone, Debug)]
++pub enum Message {
++    Select(String),
++    ToggleHome(bool),
++    ToggleNetwork(bool),
++    Reset,
++    Refresh,
++}
++
++pub struct Page {
++    entity: page::Entity,
++    apps: Vec<FlatpakApp>,
++    selected: Option<String>,
++}
++
++#[derive(Clone)]
++struct FlatpakApp {
++    id: String,
++    name: String,
++    home: bool,
++    network: bool,
++}
++
++impl Default for Page {
++    fn default() -> Self {
++        Self {
++            entity: page::Entity::default(),
++            apps: flatpak_apps(),
++            selected: None,
++        }
++    }
++}
++
++impl page::AutoBind<crate::pages::Message> for Page {}
++
++impl page::Page<crate::pages::Message> for Page {
++    fn set_id(&mut self, entity: page::Entity) {
++        self.entity = entity;
++    }
++
++    fn content(
++        &self,
++        sections: &mut SlotMap<section::Entity, Section<crate::pages::Message>>,
++    ) -> Option<page::Content> {
++        Some(vec![sections.insert(app_permissions())])
++    }
++
++    fn info(&self) -> page::Info {
++        page::Info::new("privacy-security", "preferences-system-privacy-symbolic")
++            .title("Privacy and Security")
++            .description("Privacy controls and application permissions")
++    }
++}
++
++impl Page {
++    pub fn update(&mut self, message: Message) -> Task<crate::Message> {
++        match message {
++            Message::Select(id) => self.selected = Some(id),
++            Message::ToggleHome(enabled) => {
++                self.override_permission("--filesystem=home", "--nofilesystem=home", enabled)
++            }
++            Message::ToggleNetwork(enabled) => {
++                self.override_permission("--share=network", "--unshare=network", enabled)
++            }
++            Message::Reset => {
++                if let Some(id) = &self.selected {
++                    let _ = Command::new("flatpak")
++                        .args(["override", "--user", "--reset", id])
++                        .status();
++                }
++                self.reload();
++            }
++            Message::Refresh => self.reload(),
++        }
++        Task::none()
++    }
++
++    fn override_permission(&mut self, allow: &str, deny: &str, enabled: bool) {
++        if let Some(id) = &self.selected {
++            let _ = Command::new("flatpak")
++                .args(["override", "--user", if enabled { allow } else { deny }, id])
++                .status();
++        }
++        self.reload();
++    }
++
++    fn reload(&mut self) {
++        let selected = self.selected.clone();
++        self.apps = flatpak_apps();
++        self.selected = selected.filter(|id| self.apps.iter().any(|app| &app.id == id));
++    }
++}
++
++fn app_permissions() -> Section<crate::pages::Message> {
++    Section::default()
++        .title("App Permissions")
++        .view::<Page>(move |_binder, page, section| {
++            let mut content = settings::section().title(&section.title);
++            for app in &page.apps {
++                content = content.add(settings::item(
++                    &app.name,
++                    button::standard("Manage").on_press(crate::pages::Message::PrivacySecurity(
++                        Message::Select(app.id.clone()),
++                    )),
++                ));
++            }
++            if page.apps.is_empty() {
++                content = content.add(settings::item(
++                    "No Flatpak apps installed",
++                    button::standard("Refresh")
++                        .on_press(crate::pages::Message::PrivacySecurity(Message::Refresh)),
++                ));
++            }
++            if let Some(app) = page
++                .apps
++                .iter()
++                .find(|app| Some(&app.id) == page.selected.as_ref())
++            {
++                content = content
++                    .add(settings::item::builder("Network access").toggler(
++                        app.network,
++                        |enabled| {
++                            crate::pages::Message::PrivacySecurity(Message::ToggleNetwork(enabled))
++                        },
++                    ))
++                    .add(settings::item::builder("Home folder access").toggler(
++                        app.home,
++                        |enabled| {
++                            crate::pages::Message::PrivacySecurity(Message::ToggleHome(enabled))
++                        },
++                    ))
++                    .add(settings::item(
++                        "Reset this app's permissions",
++                        button::standard("Reset")
++                            .on_press(crate::pages::Message::PrivacySecurity(Message::Reset)),
++                    ));
++            }
++            content.into()
++        })
++}
++
++fn flatpak_apps() -> Vec<FlatpakApp> {
++    let Ok(output) = Command::new("flatpak")
++        .args(["list", "--app", "--columns=application,name"])
++        .output()
++    else {
++        return Vec::new();
++    };
++    String::from_utf8_lossy(&output.stdout)
++        .lines()
++        .filter_map(|line| {
++            let (id, name) = line.split_once('\t')?;
++            let permissions = Command::new("flatpak")
++                .args(["info", "--show-permissions", id])
++                .output()
++                .ok()?;
++            let permissions = String::from_utf8_lossy(&permissions.stdout);
++            Some(FlatpakApp {
++                id: id.into(),
++                name: if name.is_empty() {
++                    id.into()
++                } else {
++                    name.into()
++                },
++                home: permissions.contains("filesystems=home"),
++                network: permissions.contains("shared=network"),
++            })
++        })
++        .collect()
++}
+diff --git a/resources/applications/com.system76.CosmicSettings.PrivacySecurity.desktop b/resources/applications/com.system76.CosmicSettings.PrivacySecurity.desktop
+new file mode 100644
+index 0000000..242e900
+--- /dev/null
++++ b/resources/applications/com.system76.CosmicSettings.PrivacySecurity.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Name=Privacy and Security
++Comment=Manage Flatpak application permissions
++Type=Application
++Exec=cosmic-settings privacy-security
++Icon=preferences-system-privacy
++Categories=COSMIC;
++Keywords=Privacy;Security;Permissions;Flatpak;
++NoDisplay=true
++OnlyShowIn=COSMIC;
++StartupNotify=true

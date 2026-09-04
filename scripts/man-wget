@@ -1,0 +1,39 @@
+#!/bin/sh
+# Minimal wget-compatible downloader for Buildroot hosts that only provide
+# curl (notably a stock macOS installation).
+set -eu
+
+case "${1:-}" in
+    --version|-V)
+        echo "man-wget (curl compatibility wrapper)"
+        exit 0
+        ;;
+esac
+
+output=""
+url=""
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        -O|--output-document)
+            output="$2"
+            shift 2
+            ;;
+        -nd|-q|--quiet|--no-check-certificate)
+            shift
+            ;;
+        -t|--tries)
+            shift 2
+            ;;
+        http://*|https://*|ftp://*)
+            url="$1"
+            shift
+            ;;
+        *) shift ;;
+    esac
+done
+
+[ -n "$url" ] || { echo "man-wget: URL is required" >&2; exit 2; }
+if [ -n "$output" ]; then
+    exec /usr/bin/curl -L -f --retry 3 -o "$output" "$url"
+fi
+exec /usr/bin/curl -L -f --retry 3 -O "$url"

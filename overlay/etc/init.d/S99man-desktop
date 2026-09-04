@@ -1,0 +1,157 @@
+#!/bin/sh
+# Start COSMIC on MAN's BusyBox/libseat system.
+
+PID_FILE=/run/man-desktop.pid
+PIPEWIRE_PID_FILE=/run/man-pipewire.pid
+LOG_FILE=/var/log/man-desktop.log
+
+start() {
+    greeter_mode=0
+    if grep -Eq '(^| )(man\.live|man\.recovery)=1( |$)' /proc/cmdline; then
+        session_command='/usr/bin/man-recovery-session'
+        required_command=/usr/bin/cosmic-comp
+    elif [ -e /var/lib/man/oobe-complete ]; then
+        session_command='/usr/bin/man-greeter-session'
+        required_command=/usr/sbin/greetd
+        greeter_mode=1
+    else
+        # OOBE runs with one direct compositor.  cosmic-session is reserved
+        # for a logged-in user; on first boot it can race its compositor and
+        # makes OOBE fail before its window can open.
+        session_command='/usr/bin/man-oobe-session'
+        required_command=/usr/bin/man-oobe-session
+    fi
+    [ -x "$required_command" ] || {
+        echo "MAN Desktop: required shell is not installed; skipping"
+        return 0
+    }
+    [ -r "$PID_FILE" ] && kill -0 "$(cat "$PID_FILE")" 2>/dev/null && return 0
+
+    echo "Starting MAN Desktop (COSMIC bootstrap)..."
+    # COSMIC's power applet normally asks systemd-logind for these actions.
+    # MAN uses BusyBox init, so keep a tiny root-owned bridge available to
+    # the logged-in desktop instead.
+    if [ -x /usr/sbin/man-powerd ] && ! pidof man-powerd >/dev/null 2>&1; then
+        /usr/sbin/man-powerd >>/var/log/man-powerd.log 2>&1 &
+    fi
+    mkdir -p /run/user/0 /root/.config /root/.local/share /tmp/.X11-unix
+    chmod 0700 /run/user/0
+    chmod 1777 /tmp /tmp/.X11-unix
+
+    export HOME=/root
+    export USER=root
+    export LOGNAME=root
+    export SHELL=/bin/bash
+    export TMPDIR=/tmp
+    export XDG_RUNTIME_DIR=/run/user/0
+    export XDG_CONFIG_HOME=/root/.config
+    export XDG_DATA_HOME=/root/.local/share
+    export XDG_CURRENT_DESKTOP=COSMIC
+    export XDG_SESSION_DESKTOP=COSMIC
+    export XDG_SESSION_TYPE=wayland
+    # rcS does not source /etc/profile.  Import the language chosen in the
+    # installer before the first COSMIC process starts, so OOBE and every
+    # desktop component get the same locale as the installer.
+    if [ -r /etc/default/locale ]; then
+        . /etc/default/locale 2>/dev/null || true
+    fi
+    if [ -z "${LANG:-}" ] && [ -r /var/lib/man/man-language ]; then
+        man_lang=$(tr -d '[:space:]' < /var/lib/man/man-language 2>/dev/null || true)
+        [ -n "$man_lang" ] && export LANG="${man_lang}.UTF-8"
+        unset man_lang
+    fi
+    : "${LANG:=en_US.UTF-8}"
+    export LANG
+    export LANGUAGE="${LANGUAGE:-${LANG%%.*}}"
+    export XDG_SEAT=seat0
+    export XDG_VTNR=2
+    export LIBSEAT_BACKEND=seatd
+    if [ -r /usr/lib/libman-atexit-shim.so ]; then
+        export LD_PRELOAD=/usr/lib/libman-atexit-shim.so
+    fi
+    export RUST_BACKTRACE=1
+    # warn level avoids the heavy I/O of info/debug logging from the dozens of
+    # COSMIC Rust components at session startup, while still capturing errors.
+    export RUST_LOG=warn
+
+    # S01 has already started the loading screen.  Complete it synchronously
+    # before the first compositor owns the framebuffer; never leave a splash
+    # process drawing above the login or desktop session.
+    [ -x /usr/bin/man-splash ] && /usr/bin/man-splash --complete >/dev/null 2>&1 || true
+    # --complete asks the helper to draw its final frame for 350ms.  Starting
+    # the greeter during that interval lets the final raw-fb write overwrite
+    # the login prompt.  Wait for its pid marker to disappear first.
+    splash_wait=0
+    while [ -e /run/man-splash.pid ] && [ "$splash_wait" -lt 20 ]; do
+        sleep 0.1
+        splash_wait=$((splash_wait + 1))
+    done
+    unset splash_wait
+
+    # Keep enough evidence in the image to diagnose the complete path from
+    # QEMU USB HID devices through udev and libinput/COSMIC.
+    {
+        echo "=== MAN input devices ==="
+        cat /proc/bus/input/devices 2>/dev/null || true
+        echo "=== /dev/input ==="
+        ls -l /dev/input 2>/dev/null || true
+    } > /var/log/man-input.log
+
+    # The settings daemon and audio applet use PipeWire. Keep it in the same
+    # runtime directory as the desktop session so its native socket is found.
+    if [ "$greeter_mode" -eq 0 ] && [ -x /usr/bin/pipewire ]; then
+        /usr/bin/pipewire >>/var/log/pipewire.log 2>&1 &
+        echo $! > "$PIPEWIRE_PID_FILE"
+    fi
+
+    if [ "$greeter_mode" -eq 1 ]; then
+        "$session_command" >>"$LOG_FILE" 2>&1 &
+    elif command -v openvt >/dev/null 2>&1; then
+        # -w keeps openvt as the tracked parent. Redirection must happen inside
+        # the new VT because openvt replaces its own standard descriptors.
+        openvt -c 2 -w -s -f -- /bin/sh -c \
+            "exec $session_command >>/var/log/man-desktop.log 2>&1" &
+    else
+        /bin/sh -c "exec $session_command" >>"$LOG_FILE" 2>&1 &
+    fi
+    echo $! > "$PID_FILE"
+
+    # man-splash leaves its final frame in fb0 after it exits.  greetd's
+    # agreety is intentionally placed on VT2, so select that VT once the
+    # greeter supervisor has been launched; otherwise the completed splash
+    # looks like a permanent hang even though the login prompt is ready.
+    if [ "$greeter_mode" -eq 1 ] && command -v chvt >/dev/null 2>&1; then
+        sleep 1
+        chvt 2 >/dev/null 2>&1 || true
+    fi
+
+    sleep 2
+    if kill -0 "$(cat "$PID_FILE")" 2>/dev/null; then
+        echo "MAN Desktop: COSMIC session is running"
+        return 0
+    fi
+
+    echo "MAN Desktop: COSMIC failed; see $LOG_FILE" >&2
+    rm -f "$PID_FILE"
+    return 1
+}
+
+stop() {
+    if [ -r "$PID_FILE" ]; then
+        kill "$(cat "$PID_FILE")" 2>/dev/null || true
+        rm -f "$PID_FILE"
+    fi
+    killall greetd cosmic-greeter cosmic-greeter-daemon cosmic-session cosmic-comp 2>/dev/null || true
+    killall man-powerd 2>/dev/null || true
+    if [ -r "$PIPEWIRE_PID_FILE" ]; then
+        kill "$(cat "$PIPEWIRE_PID_FILE")" 2>/dev/null || true
+        rm -f "$PIPEWIRE_PID_FILE"
+    fi
+}
+
+case "${1:-}" in
+    start) start ;;
+    stop) stop ;;
+    restart) stop; sleep 1; start ;;
+    *) echo "Usage: $0 {start|stop|restart}" >&2; exit 2 ;;
+esac

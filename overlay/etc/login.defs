@@ -1,0 +1,5 @@
+# Only regular desktop accounts are visible to COSMIC Greeter.  Buildroot's
+# service accounts (including sync, UID 4) occupy the low UID range; OOBE
+# deliberately creates the first MAN account at UID 1000.
+UID_MIN 1000
+UID_MAX 60000

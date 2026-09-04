@@ -1,0 +1,16 @@
+[build]
+# Strip debug symbols to keep binaries small
+rustflags = ["-C", "link-dead-code=false"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[target.x86_64-unknown-linux-gnu]
+runner = ".cargo/runner-x86_64.sh"
+
+[target.aarch64-unknown-linux-gnu]
+runner = ".cargo/runner-aarch64.sh"
