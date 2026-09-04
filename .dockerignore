@@ -1,0 +1,10 @@
+# The builder image clones its own pinned Buildroot source. These local trees
+# are generated or cloned at runtime and need not be transferred as context.
+output
+toolchain
+
+# Local development metadata.
+.git/
+man/target
+**/target
+.DS_Store

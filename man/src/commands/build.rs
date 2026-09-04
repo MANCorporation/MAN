@@ -57,6 +57,21 @@ pub fn run(args: &BuildArgs, project_root: &Path) -> anyhow::Result<()> {
     // after the setup command.
     std::fs::copy(&project_defconfig, &toolchain_defconfig)?;
 
+    // Keep project-owned Buildroot compatibility patches available when the
+    // Toolchain checkout is bind-mounted over the Docker image's /MAN tree.
+    let mpv_patch = utils::project_path(
+        project_root,
+        "patches/buildroot/mpv/0002-fix-python-3.12-argparse-type.patch",
+    );
+    if mpv_patch.exists() {
+        std::fs::copy(
+            &mpv_patch,
+            br_dir
+                .join("package/mpv")
+                .join(mpv_patch.file_name().unwrap()),
+        )?;
+    }
+
     // Optionally clean
     if args.clean {
         println!("  {} Cleaning previous build output", "→".cyan());
@@ -91,7 +106,10 @@ pub fn run(args: &BuildArgs, project_root: &Path) -> anyhow::Result<()> {
 
     if using_docker {
         println!("  {} macOS detected — using Docker for Linux build", "🐳".cyan());
-        run_docker_build(project_root, arch, jobs, out_str, &defconfig)?;
+        // Docker mounts the project root at /MAN, so its output argument must
+        // be project-relative. `out_str` is an absolute host path.
+        let docker_out_dir = format!("output/{}", arch.output_dir());
+        run_docker_build(project_root, arch, jobs, &docker_out_dir, &defconfig)?;
     } else if is_macos {
         println!(
             "  {} macOS detected — using {} with macOS cross-compile env",
@@ -207,7 +225,13 @@ fn run_docker_build(
             &image_name,
             "sh",
             "-c",
-            &format!("make O=/MAN/{} {} && make O=/MAN/{} -j{}", out_str, defconfig, out_str, jobs),
+            &format!(
+                "make O=/MAN/{0} {1} && \
+                 sed -i 's|^BR2_LINUX_KERNEL_PATCH=.*|BR2_LINUX_KERNEL_PATCH=\"\"|' /MAN/{0}/.config && \
+                 make O=/MAN/{0} olddefconfig && \
+                 make O=/MAN/{0} -j{2}",
+                out_str, defconfig, jobs
+            ),
         ],
         None,
     )?;

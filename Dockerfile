@@ -44,6 +44,7 @@ RUN apt-get update && \
         gperf \
         flex \
         bison \
+        file \
         ninja-build \
         mtools \
         dosfstools \
@@ -74,6 +75,12 @@ RUN ln -s /MAN/man/target/release/man /usr/local/bin/man
 COPY configs/ /MAN/configs/
 COPY overlay/ /MAN/overlay/
 COPY scripts/ /MAN/scripts/
+COPY support/ /MAN/support/
+COPY system/ /MAN/system/
+COPY ICONS/ /MAN/ICONS/
+COPY LICENSE THIRD_PARTY_NOTICES.md DISTRIBUTION_COMPLIANCE.md \
+    ASSET_PROVENANCE.md /MAN/
+COPY LICENSES/ /MAN/LICENSES/
 COPY Makefile /MAN/Makefile
 COPY man.toml /MAN/man.toml
 
@@ -84,9 +91,17 @@ ARG TARGET_ARCH=x86_64
 ARG BR_VERSION=2024.08
 RUN git clone --depth 1 --branch ${BR_VERSION} https://github.com/buildroot/buildroot.git /MAN/toolchain
 
-# Copy defconfigs into Toolchain
-RUN cp /MAN/configs/man-x86_64_defconfig /MAN/toolchain/configs/ \
+# The x86 kernel patch is only for a native Darwin host. Docker builds on
+# Linux, where the stock kernel host tools and objtool should remain enabled.
+RUN sed -i 's|^BR2_LINUX_KERNEL_PATCH=.*|BR2_LINUX_KERNEL_PATCH=""|' \
+        /MAN/configs/man-x86_64_defconfig \
+    && cp /MAN/configs/man-x86_64_defconfig /MAN/toolchain/configs/ \
     && cp /MAN/configs/man-aarch64_defconfig /MAN/toolchain/configs/
+
+# mpv 0.35.1's Waf script uses the removed argparse type name "string".
+# Python 3.12 requires the callable `str` instead.
+COPY patches/buildroot/mpv/0002-fix-python-3.12-argparse-type.patch \
+    /MAN/toolchain/package/mpv/0002-fix-python-3.12-argparse-type.patch
 
 # Default command: show help
 CMD ["man", "--help"]

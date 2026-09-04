@@ -61,8 +61,12 @@ ESP_IMAGE="$ISO_TREE/EFI/BOOT/efiboot.img"
 INITRAMFS="$IMAGES_DIR/man-live-recovery.cpio.gz"
 mkdir -p "$ISO_TREE/EFI/BOOT"
 
-"$SCRIPT_DIR/create-recovery-image.sh" \
-    "$TARGET_DIR" "$IMAGES_DIR/$KERNEL_NAME" "$BOOTLOADER_DIR" "$IMAGES_DIR" "$ARCH"
+if [ "${MAN_REUSE_LIVE_RECOVERY:-0}" = 1 ] && [ -f "$INITRAMFS" ]; then
+    echo "  → Reusing existing MAN live recovery image..."
+else
+    "$SCRIPT_DIR/create-recovery-image.sh" \
+        "$TARGET_DIR" "$IMAGES_DIR/$KERNEL_NAME" "$BOOTLOADER_DIR" "$IMAGES_DIR" "$ARCH"
+fi
 
 initramfs_bytes="$(stat -f%z "$INITRAMFS" 2>/dev/null || stat -c%s "$INITRAMFS")"
 kernel_bytes="$(stat -f%z "$IMAGES_DIR/$KERNEL_NAME" 2>/dev/null || stat -c%s "$IMAGES_DIR/$KERNEL_NAME")"
