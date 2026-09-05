@@ -1,0 +1,10 @@
+/Users/kristihack/Documents/GitHub/MAN/support/man-utilities/target/debug/deps/derive_utils-78de97917bdc36f1.d: /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/lib.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/error.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/ast.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/parse.rs
+
+/Users/kristihack/Documents/GitHub/MAN/support/man-utilities/target/debug/deps/libderive_utils-78de97917bdc36f1.rlib: /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/lib.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/error.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/ast.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/parse.rs
+
+/Users/kristihack/Documents/GitHub/MAN/support/man-utilities/target/debug/deps/libderive_utils-78de97917bdc36f1.rmeta: /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/lib.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/error.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/ast.rs /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/parse.rs
+
+/Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/lib.rs:
+/Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/error.rs:
+/Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/ast.rs:
+/Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/derive_utils-0.16.0/src/parse.rs:

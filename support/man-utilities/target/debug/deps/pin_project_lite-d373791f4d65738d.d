@@ -1,5 +1,0 @@
-/Users/kristihack/RustroverProjects/MAN/support/man-utilities/target/debug/deps/pin_project_lite-d373791f4d65738d.d: /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pin-project-lite-0.2.17/src/lib.rs
-
-/Users/kristihack/RustroverProjects/MAN/support/man-utilities/target/debug/deps/libpin_project_lite-d373791f4d65738d.rmeta: /Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pin-project-lite-0.2.17/src/lib.rs
-
-/Users/kristihack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pin-project-lite-0.2.17/src/lib.rs:

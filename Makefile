@@ -46,8 +46,9 @@ build-x86_64:
 build-aarch64:
 	$(CLI_BIN) build --arch aarch64
 
-# Cross-compile and image the Rust-based COSMIC desktop.
-cosmic: cosmic-aarch64
+# Rebuild the desktop for both architectures. `man build` already includes
+# COSMIC; use these targets when iterating on desktop-only changes.
+cosmic: cosmic-x86_64 cosmic-aarch64
 
 cosmic-aarch64: cli
 	$(CLI_BIN) cosmic --arch aarch64

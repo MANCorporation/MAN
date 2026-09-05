@@ -1,4 +1,4 @@
-//! `man build` — build the MAN distribution via Toolchain.
+//! `man build` — build the complete MAN distribution via Toolchain.
 //!
 //! On macOS, Toolchain can build natively using GNU Make (gmake) with
 //! a macOS-compatible toolchain shim (gnu-shim) that wraps GCC, autoconf,
@@ -150,6 +150,39 @@ pub fn run(args: &BuildArgs, project_root: &Path) -> anyhow::Result<()> {
         )?;
     }
 
+    // The desktop is part of the MAN distribution, rather than an optional
+    // post-processing step.  Installing it here keeps `man build` feature
+    // equivalent for x86_64 and aarch64 and prevents a base-only ISO from
+    // being published accidentally.
+    println!("  {} Building and installing MAN Desktop (COSMIC)…", "→".cyan());
+    let cosmic_script = utils::project_path(project_root, "scripts/build-cosmic.sh");
+    utils::run_command(
+        "bash",
+        &[cosmic_script.to_str().unwrap(), arch.output_dir()],
+        Some(project_root),
+    )?;
+
+    // COSMIC is installed into the Buildroot staging rootfs. Re-run image
+    // generation so every artifact, including Recovery and the UEFI disk,
+    // contains the same desktop payload.
+    println!("  {} Regenerating MAN images with COSMIC…", "→".cyan());
+    let image_env = if is_macos {
+        Some(utils::setup_macos_env())
+    } else {
+        None
+    };
+    utils::run_command_with_env(
+        make_cmd,
+        &[&format!("O={}", out_str)],
+        Some(Path::new(br_str)),
+        image_env,
+        if is_macos {
+            Some(utils::UNSET_ENV_VARS.to_vec())
+        } else {
+            None
+        },
+    )?;
+
     let elapsed = start.elapsed();
     println!("\n  {} Build completed in {:.1}s", "✓".green(), elapsed.as_secs_f64());
 
@@ -218,6 +251,8 @@ fn run_docker_build(
         &[
             "run",
             "--rm",
+            "--user",
+            "0:0",
             "-v",
             &format!("{}:/MAN", project_str),
             "-w",
@@ -226,7 +261,7 @@ fn run_docker_build(
             "sh",
             "-c",
             &format!(
-                "make O=/MAN/{0} {1} && \
+                "umask 022 && make O=/MAN/{0} {1} && \
                  sed -i 's|^BR2_LINUX_KERNEL_PATCH=.*|BR2_LINUX_KERNEL_PATCH=\"\"|' /MAN/{0}/.config && \
                  make O=/MAN/{0} olddefconfig && \
                  make O=/MAN/{0} -j{2}",

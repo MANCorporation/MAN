@@ -30,7 +30,7 @@ targeting both **x86_64** and **aarch64** (ARM64).
 # 1. Set up the environment (install deps, clone Toolchain)
 man setup
 
-# 2. Build the distribution for x86_64
+# 2. Build the complete distribution for x86_64 (including COSMIC)
 man build --arch x86-64
 
 # 3. Boot and test in QEMU
@@ -40,7 +40,6 @@ man test --arch x86-64
 For ARM (aarch64), the same commands work:
 ```bash
 man build --arch aarch64
-man cosmic --arch aarch64
 man test --arch aarch64
 ```
 
@@ -179,11 +178,11 @@ launcher, workspaces, notifications, background, idle service, OSD, and
 settings daemon.
 
 ```bash
-# Build the base rootfs/toolchain once, then build and image COSMIC.
+# Build a complete rootfs, COSMIC desktop, Recovery image, and boot artifacts.
+# The same command produces feature-equivalent x86_64 and aarch64 systems.
 man build --arch aarch64
-man cosmic --arch aarch64
 
-# Keep the installed rootfs only (useful while developing components).
+# Rebuild only COSMIC while developing components; this reuses the built rootfs.
 man cosmic --arch aarch64 --no-image
 
 # Rebuild a different pinned upstream release.

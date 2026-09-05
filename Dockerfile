@@ -55,7 +55,7 @@ RUN apt-get update && \
 
 # Install Rust toolchain (for the man CLI orchestrator)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
+ENV PATH="/MAN/scripts:/root/.cargo/bin:${PATH}"
 ENV CARGO_HOME=/root/.cargo
 ENV RUSTUP_HOME=/root/.rustup
 

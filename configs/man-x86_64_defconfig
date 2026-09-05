@@ -43,8 +43,16 @@ BR2_TARGET_ROOTFS_SQUASHFS=y
 
 # Base system: busybox (shell + core utilities)
 BR2_PACKAGE_BUSYBOX=y
+BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="../configs/busybox-man.fragment"
 BR2_PACKAGE_LINUX_PAM=y
 BR2_PACKAGE_FLATPAK=y
+BR2_PACKAGE_LIBARCHIVE_BSDTAR=y
+BR2_PACKAGE_LIBSOUP3=y
+BR2_PACKAGE_LIBSOUP3_SSL=y
+# Flatpak's HTTPS remotes use GIO; without this TLS backend Flathub metadata
+# cannot be downloaded even when the network and CA bundle are present.
+BR2_PACKAGE_GLIB_NETWORKING=y
+BR2_WGET="man-wget"
 
 # User-space MAN rootfs overlay (relative to Toolchain source dir)
 BR2_ROOTFS_OVERLAY="../overlay"
@@ -54,7 +62,12 @@ BR2_ROOTFS_USERS_TABLES="../system/users.txt"
 # Note: uutils is not yet a Toolchain package, so we compile it post-build
 
 # Rust toolchain on the host (for compiling manctl and uutils in post-build)
-BR2_PACKAGE_HOST_RUSTC=y
+# NOTE: host-rustc downloads a prebuilt Linux binary that cannot run on macOS.
+# manctl/uutils are still built in post-build.sh via the system cargo/rustup,
+# and COSMIC is built separately via scripts/build-cosmic.sh. bat/fd/ripgrep
+# are Rust packages that also require host-rustc, so they are disabled here
+# and can be installed manually into the rootfs after the build if needed.
+# BR2_PACKAGE_HOST_RUSTC=y
 
 # Additional packages
 BR2_PACKAGE_STRACE=y
@@ -108,11 +121,11 @@ BR2_PACKAGE_UNZIP=y
 # p7zip: extract and create 7z/XZ archives
 BR2_PACKAGE_P7ZIP=y
 # bat: cat clone with syntax highlighting and Git integration (Rust)
-BR2_PACKAGE_BAT=y
+# BR2_PACKAGE_BAT=y
 # fd: fast, user-friendly alternative to find (Rust)
-BR2_PACKAGE_FD=y
+# BR2_PACKAGE_FD=y
 # ripgrep: fast recursive search tool (rg) (Rust)
-BR2_PACKAGE_RIPGREP=y
+# BR2_PACKAGE_RIPGREP=y
 
 # Lightweight Wayland desktop applications
 # mpv: Wayland-compatible media player (video/audio)
