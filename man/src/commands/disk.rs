@@ -42,6 +42,7 @@ pub fn run(args: &DiskArgs, project_root: &Path) -> anyhow::Result<()> {
     );
 
     let output_dir = utils::project_path(project_root, format!("output/{}", arch.output_dir()));
+    let target_dir = output_dir.join("target");
     let images_dir = output_dir.join("images");
 
     if !images_dir.exists() {
@@ -205,6 +206,31 @@ pub fn run(args: &DiskArgs, project_root: &Path) -> anyhow::Result<()> {
         env.insert("HOST_DIR".to_string(), host_dir.to_string_lossy().to_string());
         env
     };
+
+    // Normal builds intentionally omit this large recovery artifact until it
+    // is needed. A disk image does need it on its EFI partition, so generate
+    // it immediately before assembling the disk.
+    let recovery_script = utils::project_path(project_root, "scripts/create-recovery-image.sh");
+    if !recovery_script.exists() {
+        anyhow::bail!("create-recovery-image.sh not found at {:?}", recovery_script);
+    }
+    println!("  {} Creating MAN Recovery image", "→".cyan());
+    utils::run_command_with_env(
+        "bash",
+        &[
+            recovery_script.to_str().unwrap(),
+            target_dir.to_str().unwrap(),
+            kernel_str.as_str(),
+            utils::project_path(project_root, "scripts/bootloader")
+                .to_str()
+                .unwrap(),
+            images_str.as_str(),
+            arch_name,
+        ],
+        Some(project_root),
+        Some(env.clone()),
+        Some(utils::UNSET_ENV_VARS.to_vec()),
+    )?;
 
     utils::run_command_with_env(
         "bash",

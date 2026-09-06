@@ -10,6 +10,10 @@ COSMIC_VERSION="$4"
 XKB_DIR="$5"
 GREETD_DIR="${6:-}"
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# COSMIC components share the architecture-specific Cargo target directory
+# selected by build-cosmic.sh. Keep the installer independent of whether the
+# source checkout itself has a target/ directory.
+COSMIC_TARGET_DIR="${COSMIC_TARGET_DIR:-$PROJECT_ROOT/output/${RUST_TRIPLE%%-*}/build/cosmic-target}"
 
 # GNU install treats -D as "create destination parents"; BSD/macOS install
 # gives -D a different meaning. Normalize the GNU spelling used below so the
@@ -224,10 +228,10 @@ done
 
 install -Dm0755 "$PROJECT_ROOT/support/man-splash/target/$RUST_TRIPLE/release/man-splash" \
     "$TARGET_DIR/usr/bin/man-splash"
-install -Dm0755 "$COSMIC_DIR/target/$RUST_TRIPLE/release/man-utilities" \
+install -Dm0755 "$PROJECT_ROOT/support/man-utilities/target/$RUST_TRIPLE/release/man-utilities" \
     "$TARGET_DIR/usr/bin/man-utilities"
-if [ -x "$COSMIC_DIR/target/$RUST_TRIPLE/release/cosmic-store" ]; then
-    install -Dm0755 "$COSMIC_DIR/target/$RUST_TRIPLE/release/cosmic-store" \
+if [ -x "$COSMIC_TARGET_DIR/$RUST_TRIPLE/release/cosmic-store" ]; then
+    install -Dm0755 "$COSMIC_TARGET_DIR/$RUST_TRIPLE/release/cosmic-store" \
         "$TARGET_DIR/usr/bin/app-depot"
 else
     echo "warning: cosmic-store not built (MAN_UTILITIES_ONLY=1); skipping app-depot install" >&2
@@ -285,14 +289,26 @@ install -Dm0600 "$PROJECT_ROOT/overlay/etc/NetworkManager/system-connections/MAN
 ln -snf man-utilities "$TARGET_DIR/usr/bin/man-diskulator"
 ln -snf man-utilities "$TARGET_DIR/usr/bin/man-oobe"
 ln -snf man-utilities "$TARGET_DIR/usr/bin/man-network"
-install -Dm0755 "$COSMIC_DIR/target/$RUST_TRIPLE/release/man-guide" \
-    "$TARGET_DIR/usr/bin/man-guide"
+if [ -x "$PROJECT_ROOT/support/man-utilities/target/$RUST_TRIPLE/release/man-guide" ]; then
+    install -Dm0755 "$PROJECT_ROOT/support/man-utilities/target/$RUST_TRIPLE/release/man-guide" \
+        "$TARGET_DIR/usr/bin/man-guide"
+fi
 if [ -x "${COSMIC_STRIP:-}" ]; then
     "$COSMIC_STRIP" --strip-unneeded \
         "$TARGET_DIR/usr/bin/man-splash" \
         "$TARGET_DIR/usr/bin/man-utilities"
     [ -x "$TARGET_DIR/usr/bin/app-depot" ] && "$COSMIC_STRIP" --strip-unneeded "$TARGET_DIR/usr/bin/app-depot" || true
 fi
+
+install -Dm0755 "$PROJECT_ROOT/overlay/usr/sbin/man-update" \
+    "$TARGET_DIR/usr/sbin/man-update"
+install -Dm0755 "$PROJECT_ROOT/overlay/usr/sbin/man-install" \
+    "$TARGET_DIR/usr/sbin/man-install" 2>/dev/null || true
+install -Dm0755 "$PROJECT_ROOT/overlay/usr/sbin/man-diskutil" \
+    "$TARGET_DIR/usr/sbin/man-diskutil" 2>/dev/null || true
+mkdir -p "$TARGET_DIR/var/lib/man"
+install -m0644 "$PROJECT_ROOT/overlay/var/lib/man/man-beta-updates" \
+    "$TARGET_DIR/var/lib/man/man-beta-updates" 2>/dev/null || true
 
 if [ "${MAN_UTILITIES_ONLY:-0}" = 1 ]; then
     echo "  → Installed MAN Utilities-only update"
@@ -329,7 +345,8 @@ install_xdgen() {
 
 install_binary() {
     name="$1"
-    source="$(find "$COSMIC_DIR" -path "*/target/$RUST_TRIPLE/release/$name" -type f -perm -111 -print -quit)"
+    source="$COSMIC_TARGET_DIR/$RUST_TRIPLE/release/$name"
+    [ -x "$source" ] || source="$(find "$COSMIC_DIR" -path "*/target/$RUST_TRIPLE/release/$name" -type f -perm -111 -print -quit)"
     [ -x "$source" ] || { echo "error: required COSMIC binary is missing: $source" >&2; exit 1; }
     install -Dm0755 "$source" "$TARGET_DIR/usr/bin/$name"
     if [ -x "${COSMIC_STRIP:-}" ]; then
@@ -356,7 +373,8 @@ install_binary cosmic-term
 
 OPTIONAL_BINARIES="cosmic-settings cosmic-files cosmic-files-applet cosmic-monitor cosmic-randr cosmic-screenshot"
 for binary in $OPTIONAL_BINARIES; do
-    source="$(find "$COSMIC_DIR" -path "*/target/$RUST_TRIPLE/release/$binary" -type f -perm -111 -print -quit)"
+    source="$COSMIC_TARGET_DIR/$RUST_TRIPLE/release/$binary"
+    [ -x "$source" ] || source="$(find "$COSMIC_DIR" -path "*/target/$RUST_TRIPLE/release/$binary" -type f -perm -111 -print -quit)"
     if [ -n "$source" ]; then
         install -Dm0755 "$source" "$TARGET_DIR/usr/bin/$binary"
         if [ -x "${COSMIC_STRIP:-}" ]; then

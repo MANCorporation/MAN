@@ -47,6 +47,7 @@ You can also use the Makefile wrappers:
 ```bash
 make setup
 make build        # builds both architectures
+make release      # builds and packages x86_64 and ARM64 UEFI ISOs
 make test         # boots x86_64 in QEMU
 make disk         # creates UEFI disk images for both arches
 ```
@@ -167,6 +168,39 @@ man build --arch aarch64     # Build aarch64
 man build --arch x86-64 -j 8 # Use 8 parallel jobs
 man build --arch x86-64 --clean # Clean first, then build
 ```
+
+### Full multi-architecture ISO release
+
+Use the release command to build and package the two supported platforms in
+one reproducible run:
+
+```bash
+# Builds x86_64 first, then ARM64, replacing each previous UEFI ISO.
+man release
+
+# Limit each architecture build to eight make jobs.
+man release --jobs 8
+
+# Makefile equivalent.
+make release
+```
+
+The resulting files are:
+
+| Architecture | ISO |
+|---|---|
+| x86_64 (AMD64/Intel) | `output/x86_64/man-x86-64.iso` |
+| aarch64 (ARM64) | `output/aarch64/man-aarch64.iso` |
+
+`man release` builds targets one after the other so each build can use the
+selected CPU capacity without competing for memory. Both configurations share
+`.cache/buildroot-dl` for downloaded sources and use the Buildroot source
+mirror first, avoiding repeated upstream downloads. The live ISO is a compressed
+recovery image; large UEFI disk images are only created by the explicit
+`man disk --arch <architecture>` command.
+
+When packaging succeeds, `man release` removes the prior ISO for that
+architecture and writes its replacement at the same path.
 
 ## COSMIC Desktop
 

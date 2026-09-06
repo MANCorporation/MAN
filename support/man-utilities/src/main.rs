@@ -15,6 +15,9 @@ const INSTALL_STATUS: &str = "/run/man-installer.status";
 const INSTALL_PID: &str = "/run/man-installer.pid";
 const DISK_STATUS: &str = "/run/man-diskulator.status";
 const DISK_PID: &str = "/run/man-diskulator.pid";
+const UPDATE_STATUS: &str = "/run/man-update.status";
+const UPDATE_PID: &str = "/run/man-update.pid";
+const BETA_FILE: &str = "/var/lib/man/man-beta-updates";
 const LICENSE: &str = "MAN SOFTWARE NOTICE\n\nMAN-authored components are proprietary: Copyright (c) 2026 MAN project contributors. All Rights Reserved. This notice does not apply to included open-source software, which retains its own copyright notices and license terms. Third-party notices and release compliance information are available in /usr/share/doc/MAN.\n\nTHE SOFTWARE IS PROVIDED WITHOUT WARRANTY OF ANY KIND. You are responsible for backups and for choosing the correct installation disk. Installation and Diskulator erase operations permanently destroy data on the selected device.\n\nBy choosing Agree, you confirm that you are authorized to install this software, accept the applicable third-party terms, and understand that the selected destination disk will be erased.";
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -82,6 +85,14 @@ enum Message {
     EnsureFullscreen,
     RebootTick,
     RebootNow,
+    // Settings / System Update
+    Settings,
+    ToggleBetaUpdates,
+    CheckForUpdate,
+    UpdateChecked(Option<String>),
+    BeginUpdate,
+    PollUpdate,
+    CancelUpdate,
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -99,6 +110,8 @@ enum Page {
     DiskConfirm,
     DiskWorking,
     DiskComplete,
+    Settings,
+    Updating,
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -170,6 +183,9 @@ struct Utilities {
     status: String,
     diskulator_mode: bool,
     reboot_seconds: u8,
+    beta_updates: bool,
+    update_version: String,
+    update_status: String,
 }
 
 impl Application for Utilities {
@@ -215,6 +231,9 @@ impl Application for Utilities {
                 status: String::new(),
                 diskulator_mode: false,
                 reboot_seconds: 59,
+                beta_updates: load_beta_preference(),
+                update_version: String::new(),
+                update_status: String::new(),
             },
             Task::batch([immediate, delayed]),
         )
@@ -279,6 +298,76 @@ impl Application for Utilities {
             }
             Message::Terminal => {
                 let _ = Command::new("/usr/bin/cosmic-term").spawn();
+            }
+            Message::Settings => {
+                self.page = Page::Settings;
+                self.update_status = String::new();
+            }
+            Message::ToggleBetaUpdates => {
+                self.beta_updates = !self.beta_updates;
+                // Persist the preference so man-update honours it.
+                let value = if self.beta_updates { "1" } else { "0" };
+                let _ = fs::create_dir_all("/var/lib/man");
+                let _ = fs::write(BETA_FILE, format!("{}\n", value));
+            }
+            Message::CheckForUpdate => {
+                let beta = self.beta_updates;
+                self.update_status = i18n::tr("checking_for_update");
+                return Task::perform(
+                    tokio::task::spawn_blocking(move || check_update(beta)),
+                    |result| cosmic::Action::App(Message::UpdateChecked(result.unwrap_or(None))),
+                );
+            }
+            Message::BeginUpdate => {
+                self.update_status = String::new();
+                self.progress = 0.0;
+                let beta = self.beta_updates;
+                let args: &[&str] = if beta { &["--beta"] } else { &[] };
+                match start_backend(
+                    "/usr/sbin/man-update",
+                    args,
+                    UPDATE_STATUS,
+                    UPDATE_PID,
+                    "/var/log/man-update.log",
+                ) {
+                    Ok(()) => self.page = Page::Updating,
+                    Err(error) => {
+                        self.update_status = error;
+                    }
+                }
+            }
+            Message::PollUpdate => {
+                if let Some((progress, status)) = read_status(UPDATE_STATUS) {
+                    self.update_status = status;
+                    if progress < 0 {
+                        self.page = Page::Settings;
+                    } else if progress >= 100 {
+                        self.page = Page::Settings;
+                        self.update_status = i18n::tr("update_complete");
+                    } else {
+                        self.progress = progress as f32 / 100.0;
+                        return Task::none();
+                    }
+                }
+            }
+            Message::CancelUpdate => {
+                if let Ok(pid) = fs::read_to_string(UPDATE_PID) {
+                    let _ = Command::new("kill").arg(pid.trim()).status();
+                }
+                self.update_status = i18n::tr("operation_cancelled");
+                self.page = Page::Settings;
+            }
+            Message::UpdateChecked(version) => {
+                match version {
+                    Some(v) => {
+                        self.update_version = v;
+                        self.update_status = i18n::tr("update_available");
+                    }
+                    None => {
+                        self.update_version = String::new();
+                        self.update_status = i18n::tr("up_to_date");
+                    }
+                }
             }
             Message::SelectDisk(path) => self.selected = Some(path),
             Message::BeginInstall => {
@@ -394,12 +483,16 @@ impl Application for Utilities {
             Page::DiskConfirm => self.disk_confirm(),
             Page::DiskWorking => self.disk_working(),
             Page::DiskComplete => self.disk_complete(),
+            Page::Settings => self.settings(),
+            Page::Updating => self.updating(),
         }
     }
 
     fn subscription(&self) -> Subscription<Message> {
         if matches!(self.page, Page::Installing | Page::DiskWorking) {
             cosmic::iced::time::every(Duration::from_millis(300)).map(|_| Message::PollJob)
+        } else if self.page == Page::Updating {
+            cosmic::iced::time::every(Duration::from_millis(300)).map(|_| Message::PollUpdate)
         } else if self.page == Page::InstallComplete && self.reboot_seconds > 0 {
             cosmic::iced::time::every(Duration::from_secs(1)).map(|_| Message::RebootTick)
         } else {
@@ -444,6 +537,9 @@ impl Application for DiskulatorApp {
                 status: String::new(),
                 diskulator_mode: true,
                 reboot_seconds: 59,
+                beta_updates: load_beta_preference(),
+                update_version: String::new(),
+                update_status: String::new(),
             }),
             Task::none(),
         )
@@ -560,7 +656,7 @@ impl Utilities {
     }
 
     fn home(&self) -> Element<'_, Message> {
-        let actions = widget::row::with_capacity(3)
+        let actions = widget::row::with_capacity(4)
             .spacing(22)
             .align_y(Alignment::Center)
             .push(self.utility_button(
@@ -577,6 +673,11 @@ impl Utilities {
                 "com.man.Diskulator",
                 i18n::tr("diskulator"),
                 Message::Diskulator,
+            ))
+            .push(self.utility_button(
+                "preferences-system",
+                i18n::tr("settings"),
+                Message::Settings,
             ));
         self.window(i18n::tr("app_title"), actions.into())
     }
@@ -1064,6 +1165,106 @@ impl Utilities {
             .push(widget::button::suggested(i18n::tr("done")).on_press(Message::BackToDiskList));
         self.window(i18n::tr("diskulator"), body.max_width(680).into())
     }
+
+    fn settings(&self) -> Element<'_, Message> {
+        let mut beta_label = i18n::tr("on_state");
+        if !self.beta_updates {
+            beta_label = i18n::tr("off_state");
+        }
+        let status_text = if self.update_status.is_empty() {
+            i18n::tr("checking_for_update")
+        } else {
+            self.update_status.clone()
+        };
+        let update_button = if !self.update_version.is_empty() {
+            widget::button::suggested(format!(
+                "{} — {}",
+                i18n::tr("update_to_version").replace("{0}", &self.update_version),
+                i18n::tr("install_now"),
+            ))
+            .on_press(Message::BeginUpdate)
+        } else {
+            widget::button::suggested(i18n::tr("check_for_update")).on_press(Message::CheckForUpdate)
+        };
+        let body = widget::column::with_capacity(8)
+            .spacing(18)
+            .align_x(Alignment::Center)
+            .push(widget::icon::from_name("preferences-system").size(96))
+            .push(widget::text::heading(i18n::tr("settings")))
+            .push(widget::text::body(status_text))
+            .push(
+                widget::row::with_capacity(2)
+                    .spacing(12)
+                    .align_y(Alignment::Center)
+                    .push(widget::text::body(i18n::tr("beta_updates")))
+                    .push(widget::button::standard(beta_label).on_press(Message::ToggleBetaUpdates)),
+            )
+            .push(widget::text::body(i18n::tr("beta_updates_desc")))
+            .push(
+                widget::row::with_capacity(2)
+                    .spacing(12)
+                    .push(widget::button::standard(i18n::tr("back")).on_press(Message::Home))
+                    .push(update_button),
+            );
+        self.window(i18n::tr("settings"), body.max_width(680).into())
+    }
+
+    fn updating(&self) -> Element<'_, Message> {
+        let body = widget::column::with_capacity(8)
+            .spacing(18)
+            .align_x(Alignment::Center)
+            .push(widget::icon::from_name("system-upgrade").size(112))
+            .push(widget::text::title1(i18n::tr("installing_update")))
+            .push(
+                widget::progress_bar::linear::Linear::new()
+                    .progress(self.progress)
+                    .width(Length::Fixed(520.0)),
+            )
+            .push(widget::text::body(&self.update_status))
+            .push(
+                widget::button::standard(i18n::tr("cancel")).on_press(Message::CancelUpdate),
+            );
+        widget::container(body)
+            .class(theme::Container::WindowBackground)
+            .center_x(Length::Fill)
+            .center_y(Length::Fill)
+            .into()
+    }
+}
+
+/// Check the GitHub API for the latest MAN release.
+/// Returns `Some(version)` if a new release is available, or `None` if the
+/// system is up to date (or the check failed silently).
+fn check_update(beta: bool) -> Option<String> {
+    // Run man-update --check-only and parse the tag it prints to stdout.
+    let args: Vec<&str> = if beta {
+        vec!["--beta", "--check-only"]
+    } else {
+        vec!["--check-only"]
+    };
+    let output = Command::new("/usr/sbin/man-update")
+        .args(&args)
+        .output()
+        .ok()?;
+    if !output.status.success() {
+        return None;
+    }
+    let tag = String::from_utf8_lossy(&output.stdout);
+    let tag = tag.trim();
+    if tag.is_empty() || tag == "null" {
+        None
+    } else {
+        // Strip leading 'v' if present (e.g. "v1.2.3" → "1.2.3")
+        let version = tag.strip_prefix('v').unwrap_or(tag).to_string();
+        Some(version)
+    }
+}
+
+/// Load the persisted Beta Updates preference (0 = stable, 1 = beta).
+fn load_beta_preference() -> bool {
+    std::fs::read_to_string(BETA_FILE)
+        .map(|content| content.trim() == "1")
+        .unwrap_or(false)
 }
 
 fn start_backend(

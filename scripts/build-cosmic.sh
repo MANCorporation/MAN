@@ -10,14 +10,18 @@ ARCH="${1:-aarch64}"
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUTPUT_DIR="${2:-$PROJECT_ROOT/output/$ARCH}"
 COSMIC_VERSION="${COSMIC_VERSION:-epoch-1.6.0}"
-COSMIC_DIR="$OUTPUT_DIR/build/cosmic-epoch"
+if [ -d "$PROJECT_ROOT/Desktop" ]; then
+    COSMIC_DIR="$PROJECT_ROOT/Desktop"
+else
+    COSMIC_DIR="$OUTPUT_DIR/build/cosmic-epoch"
+fi
 GREETD_DIR="$OUTPUT_DIR/build/greetd"
 GREETD_VERSION="0.10.3"
 XKB_DIR="$OUTPUT_DIR/build/xkeyboard-config"
 XKB_VERSION="xkeyboard-config-2.38"
 TARGET_DIR="$OUTPUT_DIR/target"
 HOST_DIR="$OUTPUT_DIR/host"
-COSMIC_TARGET_DIR="$COSMIC_DIR/target"
+COSMIC_TARGET_DIR="$OUTPUT_DIR/build/cosmic-target"
 
 case "$ARCH" in
     aarch64)
@@ -64,8 +68,9 @@ export "AR_${RUST_TRIPLE//-/_}=$GNU_TRIPLE-ar"
 export COSMIC_STRIP="$HOST_DIR/bin/$GNU_TRIPLE-strip"
 export COSMIC_CC="$HOST_DIR/bin/$GNU_TRIPLE-gcc"
 
-# pam-sys uses bindgen. On macOS Homebrew's libclang uses @rpath and its build
-# helper must be able to load that host library while producing Linux output.
+# pam-sys uses bindgen. On macOS Homebrew's libclang is used by bindgen.
+# Do NOT export DYLD_LIBRARY_PATH as it will cause rustc to dynamically link
+# against Homebrew's LLVM dylibs and crash with SIGSEGV due to ABI mismatch.
 if [ "$(uname -s)" = Darwin ]; then
     for llvm_lib in \
         "$HOME/.homebrew/opt/llvm@21/lib" \
@@ -75,7 +80,6 @@ if [ "$(uname -s)" = Darwin ]; then
         /usr/local/opt/llvm/lib; do
         if [ -f "$llvm_lib/libclang.dylib" ]; then
             export LIBCLANG_PATH="$llvm_lib"
-            export DYLD_LIBRARY_PATH="$llvm_lib${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
             break
         fi
     done
@@ -85,6 +89,7 @@ fi
 linker_target="$(printf '%s' "$RUST_TRIPLE" | tr '[:lower:]-' '[:upper:]_')"
 linker_var="CARGO_TARGET_${linker_target}_LINKER"
 export "$linker_var=$GNU_TRIPLE-gcc"
+export RUSTFLAGS="${RUSTFLAGS:-} -C link-arg=--sysroot=$SYSROOT -L $SYSROOT/usr/lib -L $SYSROOT/lib"
 
 if ! "$RUSTUP_BIN" target list --installed | grep -qx "$RUST_TRIPLE"; then
     "$RUSTUP_BIN" target add "$RUST_TRIPLE"
@@ -100,16 +105,18 @@ else
     git -C "$XKB_DIR" checkout --detach "$XKB_VERSION"
 fi
 
-echo "=== COSMIC $COSMIC_VERSION for MAN/$ARCH ==="
-if [ ! -d "$COSMIC_DIR/.git" ]; then
-    git clone --branch "$COSMIC_VERSION" --depth 1 --recurse-submodules \
-        --shallow-submodules https://github.com/pop-os/cosmic-epoch.git "$COSMIC_DIR"
-else
-    if [ "$(git -C "$COSMIC_DIR" describe --tags --exact-match 2>/dev/null || true)" != "$COSMIC_VERSION" ]; then
-        git -C "$COSMIC_DIR" fetch --tags --force origin "$COSMIC_VERSION"
-        git -C "$COSMIC_DIR" checkout --detach "$COSMIC_VERSION"
+echo "=== COSMIC $COSMIC_VERSION for MAN/$ARCH (Source: $COSMIC_DIR) ==="
+if [ "$COSMIC_DIR" != "$PROJECT_ROOT/Desktop" ]; then
+    if [ ! -d "$COSMIC_DIR/.git" ]; then
+        git clone --branch "$COSMIC_VERSION" --depth 1 --recurse-submodules \
+            --shallow-submodules https://github.com/pop-os/cosmic-epoch.git "$COSMIC_DIR"
+    else
+        if [ "$(git -C "$COSMIC_DIR" describe --tags --exact-match 2>/dev/null || true)" != "$COSMIC_VERSION" ]; then
+            git -C "$COSMIC_DIR" fetch --tags --force origin "$COSMIC_VERSION"
+            git -C "$COSMIC_DIR" checkout --detach "$COSMIC_VERSION"
+        fi
+        git -C "$COSMIC_DIR" submodule update --init --recursive
     fi
-    git -C "$COSMIC_DIR" submodule update --init --recursive
 fi
 
 # Add MAN's in-process Flatpak permissions page as a first-class COSMIC

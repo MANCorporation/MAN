@@ -12,6 +12,7 @@ pub mod cosmic;
 pub mod disk;
 pub mod info;
 pub mod iso;
+pub mod release;
 pub mod setup;
 pub mod test;
 
@@ -24,5 +25,6 @@ pub use cosmic::CosmicArgs;
 pub use disk::DiskArgs;
 pub use info::InfoArgs;
 pub use iso::IsoArgs;
+pub use release::ReleaseArgs;
 pub use setup::SetupArgs;
 pub use test::TestArgs;

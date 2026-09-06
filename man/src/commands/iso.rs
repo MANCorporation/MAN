@@ -29,6 +29,12 @@ pub fn run(args: &IsoArgs, project_root: &Path) -> anyhow::Result<()> {
         if !target_dir.exists() || !images_dir.join(kernel_name).exists() {
             anyhow::bail!("Build MAN/{} before creating its UEFI ISO", arch.name());
         }
+        // xorriso does not reliably replace an existing output on every host.
+        // Remove the prior artifact only after the inputs have been checked.
+        if iso_path.exists() {
+            std::fs::remove_file(&iso_path)?;
+            println!("  {} Removed previous ISO: {}", "→".cyan(), iso_path.display());
+        }
         utils::run_command(
             "bash",
             &[

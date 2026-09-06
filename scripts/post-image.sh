@@ -95,7 +95,10 @@ else
     DISK_KERNEL=""
 fi
 
-if [ -n "$DISK_KERNEL" ] && [ -f "${IMAGES_DIR}/rootfs.ext2" ] && [ -f "$CREATE_EFI_SCRIPT" ]; then
+# Disk images are large development artifacts. ISO releases do not need one,
+# so create them only when explicitly requested through `man disk` (or with
+# MAN_CREATE_DISK=1 for a direct Buildroot invocation).
+if [ "${MAN_CREATE_DISK:-0}" = "1" ] && [ -n "$DISK_KERNEL" ] && [ -f "${IMAGES_DIR}/rootfs.ext2" ] && [ -f "$CREATE_EFI_SCRIPT" ]; then
     # Ensure sfdisk (Toolchain host tools) is on PATH
     if [ -n "${HOST_DIR:-}" ]; then
         export PATH="${HOST_DIR}/sbin:${HOST_DIR}/bin:${PATH}"

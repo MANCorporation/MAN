@@ -8,9 +8,10 @@
 #   make test-aarch64 — boot aarch64 in QEMU
 #   make disk      — create UEFI disk images for both arches
 #   make clean    — clean all build artifacts
-#   make iso      — create ISO images
+#   make iso      — create ISO images from existing builds
+#   make release  — build and package ISO images for both architectures
 
-.PHONY: all setup build build-x86_64 build-aarch64 cosmic cosmic-aarch64 cosmic-x86_64 test test-x86_64 test-aarch64 iso iso-x86_64 iso-aarch64 disk disk-x86_64 disk-aarch64 clean cli info help check
+.PHONY: all setup build build-x86_64 build-aarch64 release cosmic cosmic-aarch64 cosmic-x86_64 test test-x86_64 test-aarch64 iso iso-x86_64 iso-aarch64 disk disk-x86_64 disk-aarch64 clean cli info help check
 
 # Project root is the directory containing this Makefile
 ROOT_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
@@ -45,6 +46,12 @@ build-x86_64:
 
 build-aarch64:
 	$(CLI_BIN) build --arch aarch64
+
+# Build both targets and package their UEFI ISO images. The CLI builds the
+# targets in sequence so each can use the selected CPU capacity and shared
+# caches without exhausting host memory.
+release: cli
+	$(CLI_BIN) release
 
 # Rebuild the desktop for both architectures. `man build` already includes
 # COSMIC; use these targets when iterating on desktop-only changes.
@@ -99,6 +106,7 @@ help:
 	@echo "  make build           — build both x86_64 & aarch64"
 	@echo "  make build-x86_64    — build x86_64 only"
 	@echo "  make build-aarch64   — build aarch64 only"
+	@echo "  make release         — build and package ISOs for both architectures"
 	@echo "  make cosmic-aarch64  — build COSMIC and regenerate the ARM64 image"
 	@echo "  make cosmic-x86_64   — build COSMIC and regenerate the x86_64 image"
 	@echo "  make test            — boot x86_64 in QEMU"

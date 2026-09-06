@@ -1,8 +1,8 @@
-//! `man cosmic` — build and install the MAN Desktop (rebranded COSMIC) from source.
+//! `man cosmic` — build and install the MAN Desktop (COSMIC) from source.
 //!
 //! COSMIC (pop-os/cosmic-epoch) is a Rust + Wayland desktop. MAN Desktop is a
-//! rebranded build of COSMIC. Because COSMIC is not available as a Buildroot
-//! package, this subcommand delegates to `scripts/build-cosmic.sh` which
+//! customized build of COSMIC hosted in the `Desktop/` folder.
+//! This subcommand delegates to `scripts/build-cosmic.sh` which
 //! cross-compiles each COSMIC crate with cargo and installs the binaries +
 //! shared libraries into the rootfs staging directory.
 
@@ -53,7 +53,7 @@ pub fn run(args: &CosmicArgs, project_root: &Path) -> anyhow::Result<()> {
     if args.clean {
         let build_dir = utils::project_path(
             project_root,
-            format!("output/{}/build/cosmic-epoch", arch.output_dir()),
+            format!("output/{}/build/cosmic-target", arch.output_dir()),
         );
         println!("  {} Cleaning previous COSMIC build…", "→".cyan());
         let _ = std::fs::remove_dir_all(&build_dir);
@@ -62,8 +62,8 @@ pub fn run(args: &CosmicArgs, project_root: &Path) -> anyhow::Result<()> {
     let bar = ProgressBar::new(if args.no_image { 3 } else { 4 });
     let start = Instant::now();
 
-    // Step 1 — clone / update source
-    bar.set_message("Downloading COSMIC source");
+    // Step 1 — prepare source
+    bar.set_message("Preparing COSMIC Desktop source");
     bar.inc(1);
 
     // Step 2 + 3 — cross-compile (delegated to the shell script)

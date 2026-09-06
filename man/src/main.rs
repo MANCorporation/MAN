@@ -14,7 +14,7 @@ mod utils;
 
 use commands::{
     BrandBootloaderArgs, BuildArgs, CleanArgs, ConfigArgs, CosmicArgs, DiskArgs, InfoArgs, IsoArgs,
-    SetupArgs, TestArgs,
+    ReleaseArgs, SetupArgs, TestArgs,
 };
 
 #[derive(Parser)]
@@ -45,6 +45,9 @@ enum Commands {
 
     /// Create an ISO image from the built root filesystem.
     Iso(IsoArgs),
+
+    /// Build and package bootable ISO images for every supported architecture.
+    Release(ReleaseArgs),
 
     /// Create a UEFI-bootable disk image from the built rootfs.
     Disk(DiskArgs),
@@ -78,6 +81,7 @@ fn main() -> anyhow::Result<()> {
         Commands::Build(args) => commands::build::run(args, &project_root),
         Commands::Test(args) => commands::test::run(args, &project_root),
         Commands::Iso(args) => commands::iso::run(args, &project_root),
+        Commands::Release(args) => commands::release::run(args, &project_root),
         Commands::Disk(args) => commands::disk::run(args, &project_root),
         Commands::Config(args) => commands::config::run(args, &project_root),
         Commands::Clean(args) => commands::clean::run(args, &project_root),

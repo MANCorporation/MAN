@@ -1,0 +1,139 @@
+diff --git a/src/main.rs b/src/main.rs
+index 82fdc44..d7b4706 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -1991,7 +1991,7 @@ impl Application for App {
+     type Message = Message;
+ 
+     /// The unique application ID to supply to the window manager.
+-    const APP_ID: &'static str = "com.system76.CosmicStore";
++    const APP_ID: &'static str = "com.man.AppDepot";
+ 
+     fn core(&self) -> &Core {
+         &self.core
+diff --git a/src/main.rs b/src/main.rs
+index a18e9c7..54f8d1a 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -1827,11 +1827,0 @@
+-            sources.push(Source {
+-                backend_name: BackendName::FlatpakUser,
+-                id: "cosmic".to_string(),
+-                name: "COSMIC Flatpak".to_string(),
+-                kind: SourceKind::Recommended {
+-                    data: include_bytes!("../res/cosmic.flatpakrepo"),
+-                    enabled: false,
+-                },
+-                //TODO: can this be defined in flatpakrepo file?
+-                requires: vec!["flathub".to_string()],
+-            });
+diff --git a/i18n/en/cosmic_store.ftl b/i18n/en/cosmic_store.ftl
+index 0642e22..08a6dbd 100644
+--- a/i18n/en/cosmic_store.ftl
++++ b/i18n/en/cosmic_store.ftl
+@@ -1,5 +1,5 @@
+-app-name = COSMIC Store
+-comment = Application store for the COSMIC desktop
++app-name = App Depot
++comment = Discover and manage Flatpak applications on MAN
+ keywords = App;Software;Store;Shop;
+ back = Back
+ cancel = Cancel
+diff --git a/Cargo.toml b/Cargo.toml
+index 0ada002..4cd0227 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -80,7 +80,8 @@
+     "dep:freedesktop-desktop-entry",
+     "dep:switcheroo-control",
+     "libcosmic/desktop",
++    "dep:zbus",
+ ]
+ desktop-systemd-scope = ["desktop", "libcosmic/desktop-systemd-scope"]
+ flatpak = ["dep:libflatpak", "xdg-portal"]
+ logind = ["dep:logind-zbus", "dep:zbus"]
+diff --git a/src/backend/flatpak.rs b/src/backend/flatpak.rs
+--- a/src/backend/flatpak.rs
++++ b/src/backend/flatpak.rs
+@@ -49 +49,13 @@
+-        for remote in inst.list_remotes(Cancellable::NONE)? {
++        let mut remotes = inst.list_remotes(Cancellable::NONE)?;
++        // App Depot is usable on the very first login: create its sole
++        // supported user catalog here instead of relying on a login helper
++        // that may have raced the application startup.
++        if user && !remotes.iter().any(|remote| remote.name().as_deref() == Some("flathub")) {
++            let flathub = Remote::from_file(
++                "flathub",
++                &glib::Bytes::from_static(include_bytes!("../../res/flathub.flatpakrepo")),
++            )?;
++            inst.add_remote(&flathub, true, Cancellable::NONE)?;
++            remotes = inst.list_remotes(Cancellable::NONE)?;
++        }
++        for remote in remotes {
+diff --git a/src/main.rs b/src/main.rs
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -2108 +2108,4 @@
+-        let command = Task::batch([app.update_title(), app.update_backends(false)]);
++        // A new Flathub remote has no local AppStream data. Force its first
++        // backend load to refresh catalog metadata so Explore and Search do
++        // not open as an empty page.
++        let command = Task::batch([app.update_title(), app.update_backends(true)]);
+diff --git a/src/backend/flatpak.rs b/src/backend/flatpak.rs
+--- a/src/backend/flatpak.rs
++++ b/src/backend/flatpak.rs
+@@ -394,19 +394,0 @@ impl Backend for Flatpak {
+-                                match inst.fetch_remote_ref_sync(
+-                                    &remote_name,
+-                                    r.kind(),
+-                                    &r.name().unwrap_or_default(),
+-                                    r.arch().as_deref(),
+-                                    r.branch().as_deref(),
+-                                    Cancellable::NONE,
+-                                ) {
+-                                    Ok(_) => {}
+-                                    Err(err) => {
+-                                        log::info!(
+-                                            "failed to find {} in {}: {}",
+-                                            r_str,
+-                                            remote_name,
+-                                            err
+-                                        );
+-                                        continue;
+-                                    }
+-                                };
+-
+diff --git a/src/backend/flatpak.rs b/src/backend/flatpak.rs
+--- a/src/backend/flatpak.rs
++++ b/src/backend/flatpak.rs
+@@ -279,3 +279,29 @@ impl Backend for Flatpak {
+             .await
+         });
++
++        // Fall back to Flathub's compact remote summary when its AppStream
++        // cache cannot be stored, instead of presenting an empty depot.
++        for cache in self.appstream_caches.iter_mut() {
++            if !cache.infos.is_empty() { continue; }
++            let source = cache.source_id.replace(" (system)", "");
++            let Ok(output) = std::process::Command::new("flatpak")
++                .args(["remote-ls", if self.user { "--user" } else { "--system" },
++                    "--columns=application,name,description,branch,arch", &source])
++                .output() else { continue; };
++            if !output.status.success() { continue; }
++            for line in String::from_utf8_lossy(&output.stdout).lines() {
++                let fields: Vec<_> = line.split('\t').collect();
++                if fields.len() != 5 || fields[0].is_empty() { continue; }
++                let id = AppId::new(fields[0]);
++                cache.infos.insert(id, Arc::new(AppInfo {
++                    source_id: cache.source_id.clone(),
++                    source_name: cache.source_name.clone(),
++                    name: if fields[1].is_empty() { fields[0].to_string() } else { fields[1].to_string() },
++                    summary: fields[2].to_string(),
++                    flatpak_refs: vec![format!("app/{}/{}/{}", fields[0], fields[4], fields[3])],
++                    ..Default::default()
++                }));
++            }
++        }
++
+         Ok(())
+     }

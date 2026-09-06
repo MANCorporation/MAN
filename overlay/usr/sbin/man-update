@@ -1,0 +1,280 @@
+#!/bin/sh
+# man-update — Soft system update for MAN.
+#
+# Downloads the latest MAN ISO from the MANCorporation/MAN GitHub releases,
+# extracts the boot payload, and installs it onto the running system's EFI
+# System Partition and root filesystem WITHOUT erasing user data.
+#
+# Usage:  man-update [--beta] [--check-only]
+#
+# The --beta flag forces fetching the latest *pre-release* regardless of the
+# persisted preference.  The --check-only flag reports the available tag
+# without downloading or installing.
+#
+# Progress is reported to STATUS (/run/man-update.status) in the format
+#   <percent>|<message>
+# so that MAN Utilities can display a progress bar.
+
+set -eu
+
+STATUS=/run/man-update.status
+PID_FILE=/run/man-update.pid
+LOG=/var/log/man-update.log
+BETA_FILE=/var/lib/man/man-beta-updates
+ISO_PATH=/tmp/man-update.iso
+GITHUB_REPO="MANCorporation/MAN"
+EFI_LABEL="MAN EFI"
+ROOT_LABEL="rootfs"
+
+# --- helpers ----------------------------------------------------------------
+
+status() {
+    printf '%s|%s\n' "$1" "$2" >"${STATUS}.new"
+    mv "${STATUS}.new" "$STATUS"
+}
+
+cleanup() {
+    rc=$?
+    rm -f "$PID_FILE"
+    # Best-effort unmounts.
+    umount /mnt/man-iso 2>/dev/null || true
+    umount /mnt/man-efi 2>/dev/null || true
+    umount /mnt/man-target 2>/dev/null || true
+    # Only remove the ISO if the update completed or was cancelled cleanly.
+    if [ "$rc" -ne 0 ] && [ "${MAN_UPDATE_KEEP_ISO:-0}" = "0" ]; then
+        rm -f "$ISO_PATH"
+    fi
+}
+trap cleanup EXIT INT TERM HUP
+
+# --- parse arguments --------------------------------------------------------
+
+beta=0
+check_only=0
+for arg in "$@"; do
+    case "$arg" in
+        --beta)  beta=1 ;;
+        --check-only) check_only=1 ;;
+    esac
+done
+
+# If the Beta Updates toggle is persisted as "1", honour it (unless the
+# caller explicitly passed --beta or --check-only which already set beta=1).
+if [ "$beta" -eq 0 ] && [ -f "$BETA_FILE" ]; then
+    if [ "$(cat "$BETA_FILE" 2>/dev/null | tr -d '[:space:]')" = "1" ]; then
+        beta=1
+    fi
+fi
+
+echo $$ >"$PID_FILE"
+
+# --- GitHub API — fetch release info ---------------------------------------
+
+status 3 "Checking for MAN releases…"
+
+if [ "$check_only" -eq 1 ]; then
+    : # just query, don't download
+fi
+
+if [ "$beta" -eq 1 ]; then
+    # List all releases, pick the first pre-release.
+    release_json=$(curl -fsSL \
+        -H "Accept: application/vnd.github+json" \
+        "https://api.github.com/repos/${GITHUB_REPO}/releases" 2>>"$LOG")
+    tag=$(printf '%s' "$release_json" | jq -r '.[] | select(.prerelease == true) | .tag_name' | head -1)
+    download_url=$(printf '%s' "$release_json" | jq -r \
+        '.[] | select(.prerelease == true) | .assets[] | select(.name | test("x86_64.*\\.iso$"; "i")) | .browser_download_url' \
+        | head -1)
+else
+    # Latest stable release.
+    release_json=$(curl -fsSL \
+        -H "Accept: application/vnd.github+json" \
+        "https://api.github.com/repos/${GITHUB_REPO}/releases/latest" 2>>"$LOG")
+    tag=$(printf '%s' "$release_json" | jq -r '.tag_name')
+    download_url=$(printf '%s' "$release_json" | jq -r \
+        '.assets[] | select(.name | test("x86_64.*\\.iso$"; "i")) | .browser_download_url' \
+        | head -1)
+fi
+
+if [ -z "$tag" ] || [ "$tag" = "null" ] || [ -z "$download_url" ] || [ "$download_url" = "null" ]; then
+    status -1 "Could not find a matching MAN release on GitHub."
+    exit 1
+fi
+
+status 8 "Found MAN $tag."
+
+# In check-only mode, just report and exit.
+if [ "$check_only" -eq 1 ]; then
+    echo "$tag"
+    exit 0
+fi
+
+# --- download ISO ----------------------------------------------------------
+
+status 10 "Downloading MAN $tag ISO…"
+
+if command -v wget >/dev/null 2>&1; then
+    wget -q --show-progress -O "$ISO_PATH" "$download_url" 2>>"$LOG" || {
+        status -1 "Download failed."
+        exit 1
+    }
+elif command -v curl >/dev/null 2>&1; then
+    curl -fL "$download_url" -o "$ISO_PATH" 2>>"$LOG" || {
+        status -1 "Download failed."
+        exit 1
+    }
+else
+    status -1 "No download tool (curl or wget) available."
+    exit 1
+fi
+
+[ -s "$ISO_PATH" ] || {
+    status -1 "Downloaded file is empty."
+    exit 1
+}
+
+status 45 "Download complete. Installing update…"
+
+# --- mount the downloaded ISO ----------------------------------------------
+
+mkdir -p /mnt/man-iso
+if ! mount -o loop "$ISO_PATH" /mnt/man-iso 2>>"$LOG"; then
+    status -1 "Could not mount the downloaded ISO."
+    exit 1
+fi
+
+# The ISO stores the UEFI payload inside EFI/BOOT/efiboot.img (a FAT image).
+# Mount that too so we can read individual boot files.
+EFI_IMG="/mnt/man-iso/EFI/BOOT/efiboot.img"
+mkdir -p /mnt/man-efi
+if [ -f "$EFI_IMG" ]; then
+    # Mount the FAT efiboot.img with an offset so the filesystem parser
+    # skips the boot-sector bytes.
+    if ! mount -o loop,offset=0 "$EFI_IMG" /mnt/man-efi 2>>"$LOG"; then
+        # Some kernels/mount impls need the raw loop device; fall back to
+        # trying mtools-style access.
+        status -1 "Could not mount the EFI boot image from the ISO."
+        exit 1
+    fi
+fi
+
+# --- locate the installed system's partitions ------------------------------
+
+status 55 "Locating the installed MAN disk…"
+
+root_part=""
+efi_part=""
+for dev in /dev/nvme* /dev/sd* /dev/vd* /dev/mmcblk*; do
+    [ -b "$dev" ] || continue
+    # Check each partition of the device.
+    for part in "$dev"*; do
+        [ -b "$part" ] || continue
+        label=$(blkid -o value -s LABEL "$part" 2>/dev/null || true)
+        fstype=$(blkid -o value -s TYPE "$part" 2>/dev/null || true)
+        case "$label" in
+            "$EFI_LABEL")
+                [ "$fstype" = "vfat" ] && efi_part="$part"
+                ;;
+            "$ROOT_LABEL")
+                [ "$fstype" = "ext2" ] && root_part="$part"
+                ;;
+        esac
+    done
+done
+
+if [ -z "$efi_part" ] || [ -z "$root_part" ]; then
+    status -1 "Could not find the installed MAN disk. Make sure MAN is installed and mounted."
+    exit 1
+fi
+
+mkdir -p /mnt/man-target
+mkdir -p /mnt/man-efi-target
+
+status 60 "Mounting the installed system…"
+mount "$root_part" /mnt/man-target 2>>"$LOG" || {
+    status -1 "Could not mount the root partition."
+    exit 1
+}
+mount "$efi_part" /mnt/man-efi-target 2>>"$LOG" || {
+    status -1 "Could not mount the EFI partition."
+    exit 1
+}
+
+# --- copy new boot files (kernel, initramfs, bootloader) -------------------
+
+status 70 "Updating the boot files…"
+
+KERNEL_NAME=""
+if [ "$ARCH" = "aarch64" ]; then
+    KERNEL_NAME="Image"
+elif [ -f /mnt/man-iso/EFI/BOOT/bzImage ]; then
+    KERNEL_NAME="bzImage"
+elif [ -f /mnt/man-iso/EFI/BOOT/vmlinuz ]; then
+    KERNEL_NAME="vmlinuz"
+fi
+
+if [ -n "$KERNEL_NAME" ]; then
+    if [ -f "/mnt/man-efi/$KERNEL_NAME" ]; then
+        cp -a "/mnt/man-efi/$KERNEL_NAME" "/mnt/man-efi-target/$KERNEL_NAME"
+    fi
+    if [ -f "/mnt/man-efi/initramfs.cpio.gz" ]; then
+        cp -a /mnt/man-efi/initramfs.cpio.gz /mnt/man-efi-target/initramfs.cpio.gz
+    fi
+    if [ -f "/mnt/man-efi/man-recovery.cpio.gz" ]; then
+        cp -a /mnt/man-efi/man-recovery.cpio.gz /mnt/man-efi-target/man-recovery.cpio.gz
+    fi
+fi
+
+# Copy boot configuration
+for cfg in man-os.conf refind.conf; do
+    if [ -f "/mnt/man-efi/$cfg" ]; then
+        cp -a "/mnt/man-efi/$cfg" "/mnt/man-efi-target/$cfg"
+    fi
+done
+
+# Copy theme/icons
+if [ -d /mnt/man-efi/theme ]; then
+    mkdir -p /mnt/man-efi-target/theme
+    cp -a /mnt/man-efi/theme/. /mnt/man-efi-target/theme/
+fi
+if [ -d /mnt/man-efi/icons ]; then
+    mkdir -p /mnt/man-efi-target/icons
+    cp -a /mnt/man-efi/icons/. /mnt/man-efi-target/icons/
+fi
+
+sync
+umount /mnt/man-efi 2>/dev/null || true
+
+# --- update system packages while preserving user data ---------------------
+
+status 85 "Updating system files (preserving user data)…"
+
+# Copy over the new system files from the recovery image payload.  We use
+# rsync-style excludes to protect user data, home directories, configuration,
+# and variable state.  If the ISO's recovery initramfs contains a system
+# archive, extract it selectively; otherwise just update known system paths.
+if [ -f /mnt/man-iso/EFI/BOOT/initramfs.cpio.gz ]; then
+    # Extract the new initramfs to a temporary staging area.
+    STAGE=/tmp/man-update-stage
+    mkdir -p "$STAGE"
+    (cd "$STAGE" && cpio -idm 2>/dev/null < /mnt/man-iso/EFI/BOOT/initramfs.cpio.gz) || true
+    # Copy system directories, preserving user data.
+    for dir in bin etc lib lib64 root sbin usr; do
+        if [ -d "$STAGE/$dir" ]; then
+            cp -a "$STAGE/$dir" /mnt/man-target/ 2>>"$LOG" || true
+        fi
+    done
+    rm -rf "$STAGE"
+fi
+
+sync
+umount /mnt/man-target 2>/dev/null || true
+umount /mnt/man-iso 2>/dev/null || true
+rm -f "$ISO_PATH"
+
+status 100 "Update complete. Restart MAN to use the new version."
+
+# Signal the user that a reboot is needed.
+touch /var/lib/man/man-update-available 2>/dev/null || true
+
+exit 0

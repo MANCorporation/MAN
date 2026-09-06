@@ -1,0 +1,11 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 618aaa0..b770173 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -173,3 +173,6 @@ cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols//", rev =
+ # cosmic-theme = { path = "../libcosmic/cosmic-theme" }
+ # iced_futures = { path = "../libcosmic/iced/futures" }
+ # iced_winit = { path = "../libcosmic/iced/winit" }
++
++[patch.crates-io]
++pam-client = { path = "../../../../../support/pam-client" }

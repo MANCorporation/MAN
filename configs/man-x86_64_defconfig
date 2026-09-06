@@ -21,6 +21,11 @@ BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
 BR2_TOOLCHAIN_BUILDROOT_LOCALE=y
 BR2_TOOLCHAIN_BUILDROOT_CXX=y
 
+# The two target builds share one download cache, avoiding duplicate source
+# archives while remaining portable to Buildroot's macOS host-tool builds.
+BR2_DL_DIR="$(TOPDIR)/../.cache/buildroot-dl"
+BR2_PRIMARY_SITE="https://sources.buildroot.net"
+
 # Kernel
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_VERSION=y
@@ -40,6 +45,8 @@ BR2_TARGET_ROOTFS_ISO9660=y
 BR2_TARGET_ROOTFS_ISO9660_INITRD=y
 BR2_TARGET_ROOTFS_TAR=y
 BR2_TARGET_ROOTFS_SQUASHFS=y
+BR2_TARGET_ROOTFS_SQUASHFS4_ZSTD=y
+BR2_TARGET_ROOTFS_SQUASHFS_BS_256K=y
 
 # Base system: busybox (shell + core utilities)
 BR2_PACKAGE_BUSYBOX=y

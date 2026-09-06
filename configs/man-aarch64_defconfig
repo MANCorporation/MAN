@@ -21,6 +21,11 @@ BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
 BR2_TOOLCHAIN_BUILDROOT_LOCALE=y
 BR2_TOOLCHAIN_BUILDROOT_CXX=y
 
+# The two target builds share one download cache, avoiding duplicate source
+# archives while remaining portable to Buildroot's macOS host-tool builds.
+BR2_DL_DIR="$(TOPDIR)/../.cache/buildroot-dl"
+BR2_PRIMARY_SITE="https://sources.buildroot.net"
+
 # Target board: generic ARM64 (works with QEMU virt)
 BR2_TARGET_GENERIC=y
 BR2_TARGET_GENERIC_ARM_V8=y
@@ -46,6 +51,8 @@ BR2_TARGET_ROOTFS_EXT2_SIZE="8192M"
 BR2_TARGET_ROOTFS_EXT2_MKFS_OPTIONS="-O ^64bit,^resize_inode,^dir_index"
 BR2_TARGET_ROOTFS_TAR=y
 BR2_TARGET_ROOTFS_SQUASHFS=y
+BR2_TARGET_ROOTFS_SQUASHFS4_ZSTD=y
+BR2_TARGET_ROOTFS_SQUASHFS_BS_256K=y
 
 # Base system: busybox (shell + core utilities)
 BR2_PACKAGE_BUSYBOX=y
@@ -67,8 +74,12 @@ BR2_ROOTFS_USERS_TABLES="../system/users.txt"
 # Core utilities — uutils/coreutils (compiled in post-build.sh)
 # Note: uutils is not yet a Toolchain package, so we compile it post-build
 
-# Rust toolchain on the host (for compiling manctl and uutils in post-build)
-BR2_PACKAGE_HOST_RUSTC=y
+# NOTE: host-rustc downloads a prebuilt Linux binary that cannot run on macOS.
+# manctl/uutils are still built in post-build.sh via the system cargo/rustup,
+# and COSMIC is built separately via scripts/build-cosmic.sh. bat/fd/ripgrep
+# are Rust packages that also require host-rustc, so they are disabled here
+# and can be installed manually into the rootfs after the build if needed.
+# BR2_PACKAGE_HOST_RUSTC=y
 
 # Additional packages
 BR2_PACKAGE_STRACE=y
@@ -122,11 +133,11 @@ BR2_PACKAGE_UNZIP=y
 # p7zip: extract and create 7z/XZ archives
 BR2_PACKAGE_P7ZIP=y
 # bat: cat clone with syntax highlighting and Git integration (Rust)
-BR2_PACKAGE_BAT=y
+# BR2_PACKAGE_BAT=y
 # fd: fast, user-friendly alternative to find (Rust)
-BR2_PACKAGE_FD=y
+# BR2_PACKAGE_FD=y
 # ripgrep: fast recursive search tool (rg) (Rust)
-BR2_PACKAGE_RIPGREP=y
+# BR2_PACKAGE_RIPGREP=y
 
 # Lightweight Wayland desktop applications
 # mpv: Wayland-compatible media player (video/audio)

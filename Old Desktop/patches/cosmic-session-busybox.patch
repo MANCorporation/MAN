@@ -1,0 +1,75 @@
+diff --git a/src/main.rs b/src/main.rs
+index 4df1f5a..633c05e 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -29,8 +29,9 @@ use std::sync::Arc;
+ #[cfg(feature = "autostart")]
+ use std::process::{Command, Stdio};
+ use std::sync::Arc;
++use systemd::is_systemd_used;
+ #[cfg(feature = "systemd")]
+-use systemd::{get_systemd_env, is_systemd_used, spawn_scope};
++use systemd::{get_systemd_env, spawn_scope};
+ use tokio::signal::unix::{SignalKind, signal};
+ use tokio::sync::mpsc::{Receiver, Sender};
+ use tokio::sync::{Mutex, oneshot};
+@@ -342,8 +343,14 @@ async fn start_session(
+ 	let span = info_span!(parent: None, "cosmic-bg");
+ 	start_component("cosmic-bg", span, &process_manager, &env_vars).await;
+ 
+-	let span = info_span!(parent: None, "cosmic-greeter");
+-	start_component("cosmic-greeter", span, &process_manager, &env_vars).await;
++	// The greeter doubles as a logind-driven lock screen. BusyBox sessions have
++	// no logind unlock signal, so starting it here would permanently cover OOBE
++	// and every authenticated desktop. greetd launches it separately for login.
++	#[cfg(feature = "systemd")]
++	{
++		let span = info_span!(parent: None, "cosmic-greeter");
++		start_component("cosmic-greeter", span, &process_manager, &env_vars).await;
++	}
+ 
+ 	let span = info_span!(parent: None, "cosmic-files-applet");
+ 	start_component("cosmic-files-applet", span, &process_manager, &env_vars).await;
+diff --git a/src/systemd.rs b/src/systemd.rs
+--- a/src/systemd.rs
++++ b/src/systemd.rs
+@@ -23,21 +23,27 @@ use zbus_systemd::systemd1::ManagerProxy as SystemdManagerProxy;
+ 
+ pub async fn set_systemd_environment(key: &str, value: &str) {
+-	run_optional_command(
+-		"systemctl",
+-		&["--user", "set-environment", &format!("{key}={value}")],
+-	)
++	if *is_systemd_used() {
++		run_optional_command(
++			"systemctl",
++			&["--user", "set-environment", &format!("{key}={value}")],
++		)
++	}
+ }
+ 
+ pub async fn start_systemd_target() {
+-	run_optional_command(
+-		"systemctl",
+-		&["--user", "start", "--no-block", "cosmic-session.target"],
+-	)
++	if *is_systemd_used() {
++		run_optional_command(
++			"systemctl",
++			&["--user", "start", "--no-block", "cosmic-session.target"],
++		)
++	}
+ }
+ 
+ pub fn stop_systemd_target() {
+-	run_optional_command(
+-		"systemctl",
+-		&["--user", "stop", "--no-block", "cosmic-session.target"],
+-	)
++	if *is_systemd_used() {
++		run_optional_command(
++			"systemctl",
++			&["--user", "stop", "--no-block", "cosmic-session.target"],
++		)
++	}
+ }

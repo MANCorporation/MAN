@@ -93,6 +93,8 @@ install_legal_docs() {
     # identical for GPL-3.0-only and GPL-3.0-or-later; the component mapping
     # in THIRD_PARTY_NOTICES.md records which term applies to each component.
     for gpl3_source in \
+        "$PROJECT_ROOT/Desktop/cosmic-comp/LICENSE" \
+        "$PROJECT_ROOT/Desktop/cosmic-greeter/LICENSE" \
         "$PROJECT_ROOT/output/$OUTPUT_ARCH/build/cosmic-epoch/cosmic-comp/LICENSE" \
         "$PROJECT_ROOT/output/$OUTPUT_ARCH/build/cosmic-epoch/cosmic-greeter/LICENSE"; do
         if [ -f "$gpl3_source" ]; then
