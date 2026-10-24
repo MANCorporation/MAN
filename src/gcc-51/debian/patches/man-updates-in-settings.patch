@@ -1,0 +1,1470 @@
+Description: MAN: install updates inside Settings → Updates (license, location,
+ summary, snapshot, preparing, restart as subpages); main buttons in fixed
+ bottom bars.
+Author: MAN Corporation
+Forwarded: not-needed
+
+diff -ruN a/panels/man-updates/cc-man-updates-panel.c b/panels/man-updates/cc-man-updates-panel.c
+--- a/panels/man-updates/cc-man-updates-panel.c	2026-10-24 12:41:36.489783077 +0200
++++ b/panels/man-updates/cc-man-updates-panel.c	2026-10-24 16:04:04.467051872 +0200
+@@ -4,30 +4,57 @@
+  *
+  * MAN: Settings → Updates. Checks for a newer MAN as soon as the panel opens
+  * (man-update-check looks at the GitHub releases of MAN), downloads it and
+- * hands the file to MAN Update, which verifies the signature and installs it.
++ * installs it right here: the update is verified by MAN's system helper
++ * (man-installer-backend update_inspect, signature check), then License →
++ * Install Location (only when there is a choice) → Summary → snapshot
++ * question → Preparing (update_stage through pkexec) → Restart.
++ *
++ * Every page keeps its main button in a fixed bottom bar; only the content
++ * above it scrolls. Preparing an update keeps running when the panel is
++ * closed; reopening the panel shows it again, and a notification says when
++ * it is ready.
+  */
+ 
++#ifndef _GNU_SOURCE
++#define _GNU_SOURCE /* strverscmp */
++#endif
+ #include <config.h>
+ #include <signal.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
++#include <json-glib/json-glib.h>
+ 
+ #include "cc-man-updates-panel.h"
+ #include "cc-man-i18n.h"
+ 
+ #undef _
+ #define _(s) cc_man_gettext (s)
++/* Strings shared with MAN Update are translated in its catalog. */
++#define M_(s) g_dgettext ("man-installer", s)
++#define MN_(s) (s)
++
++/* MAN Update's translation of a string from the system helper. */
++static const char *
++m_tr (const char *s)
++{
++  return s && *s ? g_dgettext ("man-installer", s) : "";
++}
+ 
+ #define UPDATES_SCHEMA "com.man.Updates"
++#define BACKEND "/usr/libexec/man-installer/man-installer-backend"
+ 
+ typedef enum {
+   STATE_CHECKING,
+   STATE_CURRENT,
+   STATE_AVAILABLE,
+   STATE_DOWNLOADING,
+-  STATE_READY,
++  STATE_VERIFYING,
+   STATE_CHECK_ERROR,
+   STATE_DOWNLOAD_ERROR,
++  STATE_INVALID,
++  STATE_PREPARING,
++  STATE_RESTART,
+   STATE_LIVE,
+ } UpdateState;
+ 
+@@ -39,28 +66,1026 @@
+   GCancellable   *cancellable;
+   GSubprocess    *download;
+ 
+-  AdwStatusPage  *status;
++  /* Main page */
++  GtkWidget      *status;
++  GtkWidget      *status_icon;
++  GtkWidget      *status_title;
++  GtkWidget      *status_desc;
+   GtkWidget      *spinner;
+-  GtkWidget      *progress;
+-  GtkWidget      *button;
+   GtkWidget      *notes_group;
+   GtkWidget      *notes_label;
+   GtkWidget      *auto_row;
+   GtkWidget      *last_row;
++  GtkWidget      *progress;
++  GtkWidget      *button;
++  GtkWidget      *file_row;
+ 
+   UpdateState     state;
+   char           *current;
+   char           *version;
+   guint64         size;
++
++  /* The update being installed */
+   char           *file;
++  JsonNode       *info;
++  char           *device;
++  gboolean        accepted;
++
++  /* Preparing page widgets (while shown) */
++  GtkWidget      *prep_step;
++  GtkWidget      *prep_bar;
++  GtkWidget      *prep_detail;
++  GtkTextBuffer  *prep_log;
++
++  guint           countdown_id;
++  guint           countdown;
++  GtkWidget      *countdown_label;
+ };
+ 
+ CC_PANEL_REGISTER (CcManUpdatesPanel, cc_man_updates_panel)
+ 
+ static void start_check (CcManUpdatesPanel *self);
+-static void start_download (CcManUpdatesPanel *self);
++static void start_inspect (CcManUpdatesPanel *self, const char *path);
++static void set_state (CcManUpdatesPanel *self, UpdateState state, const char *detail);
++
++/* ─────────────────────────── helpers ─────────────────────────── */
++
++/* Fill "{key}" placeholders (MAN Update's string style): fill (t, "k", "v", …, NULL). */
++static char *
++fill (const char *tmpl, ...)
++{
++  g_autoptr(GString) s = g_string_new (tmpl);
++  const char *key;
++  va_list ap;
++
++  va_start (ap, tmpl);
++  while ((key = va_arg (ap, const char *)) != NULL)
++    {
++      const char *value = va_arg (ap, const char *);
++      g_autofree char *needle = g_strdup_printf ("{%s}", key);
++      g_string_replace (s, needle, value ? value : "", 0);
++    }
++  va_end (ap);
++  return g_string_free (g_steal_pointer (&s), FALSE);
++}
++
++static const char *
++obj_str (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_VALUE (n) && json_node_get_value_type (n) == G_TYPE_STRING ? json_node_get_string (n) : "";
++}
++
++static gint64
++obj_int (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_VALUE (n) ? json_node_get_int (n) : 0;
++}
++
++static gboolean
++obj_bool (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_VALUE (n) && json_node_get_boolean (n);
++}
++
++static JsonObject *
++info_obj (CcManUpdatesPanel *self)
++{
++  return self->info ? json_node_get_object (self->info) : NULL;
++}
++
++static JsonObject *
++manifest (CcManUpdatesPanel *self)
++{
++  JsonObject *o = info_obj (self);
++  return o && json_object_has_member (o, "manifest") ? json_object_get_object_member (o, "manifest") : NULL;
++}
++
++static GtkWidget *
++pill (const char *mnemonic, gboolean suggested)
++{
++  GtkWidget *b = gtk_button_new_with_mnemonic (mnemonic);
++
++  gtk_widget_add_css_class (b, "pill");
++  if (suggested)
++    gtk_widget_add_css_class (b, "suggested-action");
++  return b;
++}
++
++/* The fixed bar at the bottom of every page. */
++static GtkWidget *
++bottom_bar (GtkWidget *first, ...)
++{
++  GtkWidget *bar = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
++  GtkWidget *row = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
++  GtkWidget *w;
++  va_list ap;
++
++  gtk_widget_set_margin_top (bar, 12);
++  gtk_widget_set_margin_bottom (bar, 12);
++  gtk_widget_set_margin_start (bar, 12);
++  gtk_widget_set_margin_end (bar, 12);
++  gtk_widget_set_halign (row, GTK_ALIGN_CENTER);
++  va_start (ap, first);
++  for (w = first; w; w = va_arg (ap, GtkWidget *))
++    {
++      if (GTK_IS_BUTTON (w))
++        {
++          gtk_widget_set_size_request (w, 200, -1);
++          gtk_box_append (GTK_BOX (row), w);
++        }
++      else
++        gtk_box_append (GTK_BOX (bar), w);
++    }
++  va_end (ap);
++  gtk_box_append (GTK_BOX (bar), row);
++  return bar;
++}
++
++/* A Settings subpage: header bar, scrolling content, fixed bottom bar. */
++static AdwNavigationPage *
++subpage (const char *title, const char *tag, GtkWidget *content, GtkWidget *bottom, gboolean can_pop)
++{
++  GtkWidget *toolbar = adw_toolbar_view_new ();
++  AdwNavigationPage *page;
++
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar), adw_header_bar_new ());
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar), content);
++  if (bottom)
++    {
++      adw_toolbar_view_add_bottom_bar (ADW_TOOLBAR_VIEW (toolbar), bottom);
++      adw_toolbar_view_set_bottom_bar_style (ADW_TOOLBAR_VIEW (toolbar), ADW_TOOLBAR_RAISED);
++    }
++  page = adw_navigation_page_new (toolbar, title);
++  adw_navigation_page_set_tag (page, tag);
++  adw_navigation_page_set_can_pop (page, can_pop);
++  return page;
++}
++
++static GtkWidget *
++info_row (const char *title, const char *value, const char *icon)
++{
++  GtkWidget *row = adw_action_row_new ();
++  g_autofree char *escaped = g_markup_escape_text (value, -1);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (row), escaped);
++  adw_action_row_set_subtitle_selectable (ADW_ACTION_ROW (row), TRUE);
++  gtk_widget_add_css_class (row, "property");
++  adw_action_row_add_prefix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name (icon));
++  return row;
++}
++
++static void
++pop_subpages (CcManUpdatesPanel *self)
++{
++  GtkWidget *nav = gtk_widget_get_ancestor (GTK_WIDGET (self), ADW_TYPE_NAVIGATION_VIEW);
++
++  if (nav)
++    adw_navigation_view_pop_to_page (ADW_NAVIGATION_VIEW (nav), ADW_NAVIGATION_PAGE (self));
++}
++
++static void
++replace_top (CcManUpdatesPanel *self, AdwNavigationPage *page)
++{
++  pop_subpages (self);
++  cc_panel_push_subpage (CC_PANEL (self), page);
++}
++
++/* ───────────────────── preparing the update (outlives the panel) ───────────────────── */
++
++/* Weight of each backend step in the overall progress bar (as MAN Update). */
++static const double WEIGHTS[] = { 2, 3, 2, 70, 8, 15 };
++
++typedef struct {
++  GSubprocess      *proc;
++  GDataInputStream *out;
++  char             *name;      /* "MAN" */
++  char             *version;   /* "10.9" */
++  char             *step;
++  char             *detail;
++  double            fraction;
++  guint             current;
++  GString          *log;
++  gboolean          done;
++  gboolean          ok;
++  char             *message;
++  char             *error;
++  char             *error_detail;
++  GWeakRef          panel;
++} StageJob;
++
++static StageJob *job;
++
++static void show_prepare_result (CcManUpdatesPanel *self);
++
++static void
++job_refresh (CcManUpdatesPanel *self)
++{
++  if (!job || !self->prep_bar)
++    return;
++  gtk_label_set_text (GTK_LABEL (self->prep_step), job->step ? job->step : M_("Starting…"));
++  gtk_label_set_text (GTK_LABEL (self->prep_detail), job->detail ? job->detail : "");
++  gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (self->prep_bar), job->fraction);
++  gtk_text_buffer_set_text (self->prep_log, job->log->str, -1);
++}
++
++static void
++job_finished (void)
++{
++  g_autoptr(CcManUpdatesPanel) self = g_weak_ref_get (&job->panel);
++
++  job->done = TRUE;
++  if (self)
++    {
++      show_prepare_result (self);
++      return;
++    }
++  /* The panel was closed: tell the user with a notification. */
++  if (job->ok && g_application_get_default ())
++    {
++      g_autoptr(GNotification) n = g_notification_new (M_("Restart to Install"));
++
++      g_notification_set_body (n, M_("The update is installed the next time you restart."));
++      g_notification_set_icon (n, G_ICON (g_themed_icon_new ("com.man.Updater")));
++      g_application_send_notification (g_application_get_default (), "man-update-ready", n);
++    }
++}
++
++static void
++job_wait_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  int status;
++
++  g_subprocess_wait_finish (G_SUBPROCESS (source), res, NULL);
++  status = g_subprocess_get_if_exited (job->proc) ? g_subprocess_get_exit_status (job->proc) : -1;
++  if (!job->ok && !job->error)
++    {
++      /* pkexec: 126 = authorization dismissed, 127 = not authorized. */
++      if (status == 126 || status == 127)
++        {
++          job->error = g_strdup (M_("Authorization was cancelled."));
++          job->error_detail = g_strdup (M_("Administrator rights are needed for this action."));
++        }
++      else
++        {
++          job->error = g_strdup (M_("The system helper stopped unexpectedly."));
++          job->error_detail = g_strdup_printf ("Exit status %d", status);
++        }
++    }
++  job_finished ();
++}
++
++static void
++job_read_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  g_autoptr(GError) error = NULL;
++  g_autofree char *line = g_data_input_stream_read_line_finish_utf8 (G_DATA_INPUT_STREAM (source), res, NULL, &error);
++  g_autoptr(JsonParser) parser = NULL;
++  g_autoptr(CcManUpdatesPanel) self = NULL;
++  JsonObject *ev;
++  const char *type;
++  double total = 0;
++  guint i;
++
++  if (!line)
++    {
++      g_subprocess_wait_async (job->proc, NULL, job_wait_cb, NULL);
++      return;
++    }
++
++  parser = json_parser_new ();
++  if (json_parser_load_from_data (parser, line, -1, NULL) && JSON_NODE_HOLDS_OBJECT (json_parser_get_root (parser)))
++    {
++      ev = json_node_get_object (json_parser_get_root (parser));
++      type = obj_str (ev, "type");
++      for (i = 0; i < G_N_ELEMENTS (WEIGHTS); i++)
++        total += WEIGHTS[i];
++
++      if (g_str_equal (type, "step"))
++        {
++          g_autofree char *index = g_strdup_printf ("%" G_GINT64_FORMAT, obj_int (ev, "index"));
++          g_autofree char *n = g_strdup_printf ("%" G_GINT64_FORMAT, obj_int (ev, "total"));
++          double before = 0;
++
++          job->current = MIN ((guint) MAX (obj_int (ev, "index") - 1, 0), G_N_ELEMENTS (WEIGHTS) - 1);
++          for (i = 0; i < job->current; i++)
++            before += WEIGHTS[i];
++          g_free (job->step);
++          job->step = fill (M_("Step {index} of {n}  ·  {title}"), "index", index, "n", n, "title", m_tr (obj_str (ev, "title")), NULL);
++          g_clear_pointer (&job->detail, g_free);
++          job->fraction = before / total;
++        }
++      else if (g_str_equal (type, "progress"))
++        {
++          double before = 0;
++
++          for (i = 0; i < job->current; i++)
++            before += WEIGHTS[i];
++          job->fraction = (before + WEIGHTS[job->current] * json_object_get_double_member_with_default (ev, "fraction", 0)) / total;
++          g_free (job->detail);
++          job->detail = g_strdup (m_tr (obj_str (ev, "detail")));
++        }
++      else if (g_str_equal (type, "log"))
++        {
++          g_string_append (job->log, obj_str (ev, "line"));
++          g_string_append_c (job->log, '\n');
++        }
++      else if (g_str_equal (type, "done"))
++        {
++          job->ok = TRUE;
++          job->message = g_strdup (m_tr (obj_str (ev, "message")));
++        }
++      else if (g_str_equal (type, "error"))
++        {
++          job->error = g_strdup (m_tr (obj_str (ev, "message")));
++          job->error_detail = g_strdup (obj_str (ev, "detail"));
++        }
++    }
++
++  self = g_weak_ref_get (&job->panel);
++  if (self)
++    job_refresh (self);
++  g_data_input_stream_read_line_async (job->out, G_PRIORITY_DEFAULT, NULL, job_read_cb, NULL);
++}
++
++static void
++job_free (void)
++{
++  if (!job)
++    return;
++  g_clear_object (&job->proc);
++  g_clear_object (&job->out);
++  g_free (job->name);
++  g_free (job->version);
++  g_free (job->step);
++  g_free (job->detail);
++  g_string_free (job->log, TRUE);
++  g_free (job->message);
++  g_free (job->error);
++  g_free (job->error_detail);
++  g_weak_ref_clear (&job->panel);
++  g_clear_pointer (&job, g_free);
++}
++
++static gboolean
++job_start (CcManUpdatesPanel *self, gboolean snapshot, GError **error)
++{
++  g_autoptr(JsonBuilder) b = json_builder_new ();
++  g_autoptr(JsonGenerator) gen = json_generator_new ();
++  g_autoptr(JsonNode) root = NULL;
++  g_autofree char *request = NULL;
++  g_autoptr(GBytes) input = NULL;
++  GOutputStream *in;
++
++  json_builder_begin_object (b);
++  json_builder_set_member_name (b, "op");
++  json_builder_add_string_value (b, "update_stage");
++  json_builder_set_member_name (b, "path");
++  json_builder_add_string_value (b, self->file);
++  json_builder_set_member_name (b, "device");
++  json_builder_add_string_value (b, self->device ? self->device : "");
++  json_builder_set_member_name (b, "snapshot");
++  json_builder_add_boolean_value (b, snapshot);
++  json_builder_end_object (b);
++  root = json_builder_get_root (b);
++  json_generator_set_root (gen, root);
++  request = json_generator_to_data (gen, NULL);
++
++  job_free ();
++  job = g_new0 (StageJob, 1);
++  job->log = g_string_new (NULL);
++  job->name = g_strdup (obj_str (manifest (self), "name"));
++  job->version = g_strdup (obj_str (manifest (self), "version"));
++  g_weak_ref_init (&job->panel, self);
++  job->proc = g_subprocess_new (G_SUBPROCESS_FLAGS_STDIN_PIPE | G_SUBPROCESS_FLAGS_STDOUT_PIPE | G_SUBPROCESS_FLAGS_STDERR_SILENCE,
++                                error, "pkexec", BACKEND, "request", NULL);
++  if (!job->proc)
++    {
++      job_free ();
++      return FALSE;
++    }
++  in = g_subprocess_get_stdin_pipe (job->proc);
++  g_output_stream_write_all (in, request, strlen (request), NULL, NULL, NULL);
++  g_output_stream_close (in, NULL, NULL);
++  job->out = g_data_input_stream_new (g_subprocess_get_stdout_pipe (job->proc));
++  g_data_input_stream_read_line_async (job->out, G_PRIORITY_DEFAULT, NULL, job_read_cb, NULL);
++  return TRUE;
++}
++
++/* ─────────────────────────── restart / failed pages ─────────────────────────── */
++
++static void
++reboot_now (void)
++{
++  g_autoptr(GSubprocess) p = g_subprocess_new (G_SUBPROCESS_FLAGS_NONE, NULL, "systemctl", "reboot", NULL);
++}
++
++static void
++stop_countdown (CcManUpdatesPanel *self)
++{
++  g_clear_handle_id (&self->countdown_id, g_source_remove);
++}
++
++static gboolean
++countdown_tick (gpointer user_data)
++{
++  CcManUpdatesPanel *self = user_data;
++  g_autofree char *r = NULL;
++  g_autofree char *text = NULL;
++
++  if (--self->countdown == 0)
++    {
++      self->countdown_id = 0;
++      reboot_now ();
++      return G_SOURCE_REMOVE;
++    }
++  r = g_strdup_printf ("%u", self->countdown);
++  text = fill (M_("Restarting automatically in {r} seconds"), "r", r, NULL);
++  gtk_label_set_text (GTK_LABEL (self->countdown_label), text);
++  return G_SOURCE_CONTINUE;
++}
++
++static void
++restart_later_cb (CcManUpdatesPanel *self)
++{
++  stop_countdown (self);
++  pop_subpages (self);
++  set_state (self, STATE_RESTART, NULL);
++}
++
++static AdwNavigationPage *
++ready_page (CcManUpdatesPanel *self)
++{
++  GtkWidget *status = adw_status_page_new ();
++  GtkWidget *now = pill (M_("_Restart Now"), TRUE);
++  GtkWidget *later = pill (M_("Restart _Later"), FALSE);
++  g_autofree char *desc = g_strdup_printf ("%s\n%s", job && job->message ? job->message : "", M_("The computer restarts twice. Your files are safe."));
++  AdwNavigationPage *page;
++
++  adw_status_page_set_icon_name (ADW_STATUS_PAGE (status), "system-reboot-symbolic");
++  adw_status_page_set_title (ADW_STATUS_PAGE (status), M_("Restart to Install"));
++  adw_status_page_set_description (ADW_STATUS_PAGE (status), desc);
++  self->countdown_label = gtk_label_new (NULL);
++  gtk_widget_add_css_class (self->countdown_label, "dim-label");
++  g_signal_connect_swapped (now, "clicked", G_CALLBACK (reboot_now), NULL);
++  g_signal_connect_swapped (later, "clicked", G_CALLBACK (restart_later_cb), self);
++  page = subpage (M_("Ready"), "ready", status, bottom_bar (self->countdown_label, later, now, NULL), FALSE);
++
++  /* Restart automatically after a short countdown, unless postponed. */
++  stop_countdown (self);
++  self->countdown = 31;
++  countdown_tick (self);
++  self->countdown_id = g_timeout_add_seconds (1, countdown_tick, self);
++  return page;
++}
++
++static void
++show_details_cb (GtkWidget *button)
++{
++  AdwDialog *dialog = adw_dialog_new ();
++  GtkWidget *toolbar = adw_toolbar_view_new ();
++  GtkWidget *view = gtk_text_view_new ();
++  GtkWidget *scroll = gtk_scrolled_window_new ();
++  g_autofree char *text = g_strdup_printf ("%s\n\n── %s ──\n%s", job && job->error_detail ? job->error_detail : "", M_("Log"), job ? job->log->str : "");
++
++  gtk_text_view_set_editable (GTK_TEXT_VIEW (view), FALSE);
++  gtk_text_view_set_monospace (GTK_TEXT_VIEW (view), TRUE);
++  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view), GTK_WRAP_WORD_CHAR);
++  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)), text, -1);
++  gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scroll), view);
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar), adw_header_bar_new ());
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar), scroll);
++  adw_dialog_set_child (dialog, toolbar);
++  adw_dialog_set_title (dialog, M_("Update Log"));
++  adw_dialog_set_content_width (dialog, 640);
++  adw_dialog_set_content_height (dialog, 480);
++  adw_dialog_present (dialog, button);
++}
++
++static void
++try_again_cb (CcManUpdatesPanel *self)
++{
++  GtkWidget *nav = gtk_widget_get_ancestor (GTK_WIDGET (self), ADW_TYPE_NAVIGATION_VIEW);
++
++  if (!nav || !adw_navigation_view_pop_to_tag (ADW_NAVIGATION_VIEW (nav), "confirm"))
++    pop_subpages (self);
++}
++
++static AdwNavigationPage *
++failed_page (CcManUpdatesPanel *self)
++{
++  GtkWidget *status = adw_status_page_new ();
++  GtkWidget *again = pill (M_("_Try Again"), TRUE);
++  GtkWidget *details = pill (M_("_Show Details"), FALSE);
++  g_autofree char *desc = g_strdup_printf ("%s\n\n%s", job && job->error ? job->error : "", M_("Nothing was changed on your system."));
++  g_autofree char *escaped = g_markup_escape_text (desc, -1);
++
++  adw_status_page_set_icon_name (ADW_STATUS_PAGE (status), "dialog-error-symbolic");
++  adw_status_page_set_title (ADW_STATUS_PAGE (status), M_("The Update Could Not Be Prepared"));
++  adw_status_page_set_description (ADW_STATUS_PAGE (status), escaped);
++  g_signal_connect_swapped (again, "clicked", G_CALLBACK (try_again_cb), self);
++  g_signal_connect (details, "clicked", G_CALLBACK (show_details_cb), NULL);
++  return subpage (M_("Failed"), "failed", status, bottom_bar (details, again, NULL), TRUE);
++}
++
++static void
++show_prepare_result (CcManUpdatesPanel *self)
++{
++  self->prep_bar = NULL;
++  if (job->ok)
++    {
++      replace_top (self, ready_page (self));
++      set_state (self, STATE_RESTART, NULL);
++    }
++  else
++    {
++      GtkWidget *nav = gtk_widget_get_ancestor (GTK_WIDGET (self), ADW_TYPE_NAVIGATION_VIEW);
++
++      /* Back to the summary, with the failure on top of it. */
++      if (!nav || !adw_navigation_view_pop_to_tag (ADW_NAVIGATION_VIEW (nav), "confirm"))
++        pop_subpages (self);
++      cc_panel_push_subpage (CC_PANEL (self), failed_page (self));
++      set_state (self, STATE_AVAILABLE, NULL);
++    }
++}
++
++/* ─────────────────────────── preparing page ─────────────────────────── */
++
++static AdwNavigationPage *
++preparing_page (CcManUpdatesPanel *self)
++{
++  GtkWidget *box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
++  GtkWidget *clamp = adw_clamp_new ();
++  GtkWidget *hero = gtk_image_new_from_icon_name ("com.man.Updater");
++  GtkWidget *title;
++  GtkWidget *view = gtk_text_view_new ();
++  GtkWidget *scroll = gtk_scrolled_window_new ();
++  GtkWidget *expander = gtk_expander_new (M_("Details"));
++  GtkWidget *safe = gtk_label_new (M_("The computer restarts twice. Your files are safe."));
++  /* From the job: after reopening the panel there is no update info. */
++  g_autofree char *heading = fill (M_("Preparing {name} {version}"), "name", job->name, "version", job->version, NULL);
++
++  gtk_widget_set_valign (box, GTK_ALIGN_CENTER);
++  gtk_widget_set_margin_start (box, 24);
++  gtk_widget_set_margin_end (box, 24);
++  gtk_widget_set_margin_top (box, 24);
++  gtk_widget_set_margin_bottom (box, 24);
++  gtk_image_set_pixel_size (GTK_IMAGE (hero), 128);
++  title = gtk_label_new (heading);
++  gtk_widget_add_css_class (title, "title-1");
++  gtk_label_set_wrap (GTK_LABEL (title), TRUE);
++  self->prep_step = gtk_label_new (NULL);
++  gtk_widget_add_css_class (self->prep_step, "dim-label");
++  gtk_label_set_wrap (GTK_LABEL (self->prep_step), TRUE);
++  self->prep_bar = gtk_progress_bar_new ();
++  self->prep_detail = gtk_label_new (NULL);
++  gtk_widget_add_css_class (self->prep_detail, "caption");
++  gtk_widget_add_css_class (self->prep_detail, "dim-label");
++  gtk_text_view_set_editable (GTK_TEXT_VIEW (view), FALSE);
++  gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (view), FALSE);
++  gtk_text_view_set_monospace (GTK_TEXT_VIEW (view), TRUE);
++  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view), GTK_WRAP_WORD_CHAR);
++  self->prep_log = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
++  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scroll), 180);
++  gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scroll), view);
++  gtk_widget_add_css_class (scroll, "card");
++  gtk_expander_set_child (GTK_EXPANDER (expander), scroll);
++  gtk_box_append (GTK_BOX (box), hero);
++  gtk_box_append (GTK_BOX (box), title);
++  gtk_box_append (GTK_BOX (box), self->prep_step);
++  gtk_box_append (GTK_BOX (box), self->prep_bar);
++  gtk_box_append (GTK_BOX (box), self->prep_detail);
++  gtk_box_append (GTK_BOX (box), expander);
++  adw_clamp_set_maximum_size (ADW_CLAMP (clamp), 560);
++  adw_clamp_set_child (ADW_CLAMP (clamp), box);
++  gtk_widget_add_css_class (safe, "dim-label");
++  gtk_widget_set_margin_top (safe, 12);
++  gtk_widget_set_margin_bottom (safe, 12);
++  job_refresh (self);
++  {
++    GtkWidget *scrolled = gtk_scrolled_window_new ();
++
++    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
++    gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scrolled), clamp);
++    return subpage (M_("Preparing"), "preparing", scrolled, safe, FALSE);
++  }
++}
++
++static void
++start_install (CcManUpdatesPanel *self, gboolean snapshot)
++{
++  g_autoptr(GError) error = NULL;
++
++  if (!job_start (self, snapshot, &error))
++    {
++      AdwDialog *d = adw_alert_dialog_new (M_("Could not start the system helper."), error->message);
++
++      adw_alert_dialog_add_response (ADW_ALERT_DIALOG (d), "ok", M_("_Cancel"));
++      adw_dialog_present (d, GTK_WIDGET (self));
++      return;
++    }
++  set_state (self, STATE_PREPARING, NULL);
++  cc_panel_push_subpage (CC_PANEL (self), preparing_page (self));
++}
++
++static void
++snapshot_response_cb (AdwAlertDialog *dialog, GAsyncResult *res, CcManUpdatesPanel *self)
++{
++  const char *response = adw_alert_dialog_choose_finish (dialog, res);
++
++  if (g_str_equal (response, "snapshot"))
++    start_install (self, TRUE);
++  else if (g_str_equal (response, "skip"))
++    start_install (self, FALSE);
++  g_object_unref (self);
++}
++
++static void
++install_clicked_cb (CcManUpdatesPanel *self, GtkWidget *button)
++{
++  AdwDialog *dialog = adw_alert_dialog_new (M_("Create a Snapshot First?"),
++                                            M_("A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."));
++
++  adw_alert_dialog_add_responses (ADW_ALERT_DIALOG (dialog),
++                                  "cancel", M_("_Cancel"),
++                                  "skip", M_("_Don't Create"),
++                                  "snapshot", M_("_Create Snapshot"),
++                                  NULL);
++  adw_alert_dialog_set_response_appearance (ADW_ALERT_DIALOG (dialog), "snapshot", ADW_RESPONSE_SUGGESTED);
++  adw_alert_dialog_set_default_response (ADW_ALERT_DIALOG (dialog), "snapshot");
++  adw_alert_dialog_set_close_response (ADW_ALERT_DIALOG (dialog), "cancel");
++  adw_alert_dialog_choose (ADW_ALERT_DIALOG (dialog), button, NULL, (GAsyncReadyCallback) snapshot_response_cb, g_object_ref (self));
++}
++
++/* ─────────────────────────── summary page ─────────────────────────── */
++
++static JsonObject *
++target_obj (CcManUpdatesPanel *self)
++{
++  JsonObject *o = info_obj (self);
++  JsonArray *targets = o && json_object_has_member (o, "targets") ? json_object_get_array_member (o, "targets") : NULL;
++  guint i;
++
++  for (i = 0; targets && i < json_array_get_length (targets); i++)
++    {
++      JsonObject *t = json_array_get_object_element (targets, i);
++      if (g_strcmp0 (obj_str (t, "device"), self->device) == 0)
++        return t;
++    }
++  return NULL;
++}
++
++static AdwNavigationPage *
++confirm_page (CcManUpdatesPanel *self)
++{
++  JsonObject *m = manifest (self);
++  JsonObject *t = target_obj (self);
++  const char *name = obj_str (m, "name");
++  const char *version = obj_str (m, "version");
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *summary = adw_preferences_group_new ();
++  GtkWidget *kept = adw_preferences_group_new ();
++  GtkWidget *replaced = adw_preferences_group_new ();
++  GtkWidget *restart = adw_preferences_group_new ();
++  GtkWidget *row;
++  GtkWidget *go = pill (M_("_Install Update"), TRUE);
++  g_autofree char *update = g_strdup_printf ("%s %s → %s %s", name, obj_str (info_obj (self), "current_version"), name, version);
++  g_autofree char *where = g_strdup_printf ("%s (%s)", obj_str (t, "model"), obj_str (t, "disk"));
++  g_autofree char *signer = fill (M_("Verified, signed by “{signer}”"), "signer", obj_str (info_obj (self), "signed_by"), NULL);
++  g_autofree char *space = g_format_size (obj_int (m, "installed_size"));
++  g_autofree char *os = fill (M_("Replaced by {name} {version}. The current system can be restored from a snapshot."), "name", name, "version", version, NULL);
++  static const char *kept_rows[][3] = {
++    { MN_("Your Files"), MN_("Everything in your Home folder"), "user-home-symbolic" },
++    { MN_("Accounts and Passwords"), MN_("Users, groups, the computer name"), "system-users-symbolic" },
++    { MN_("Connections and Settings"), MN_("Wi-Fi, time zone, keyboard, look and snapshots"), "emblem-system-symbolic" },
++    { MN_("Flatpak Apps"), MN_("Plus anything in /usr/local and /opt"), "application-x-addon-symbolic" },
++  };
++  guint i;
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (summary), M_("Summary"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (summary), info_row (M_("Update"), update, "software-update-available-symbolic"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (summary), info_row (M_("Installation"), where, "drive-harddisk-symbolic"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (summary), info_row (M_("Authenticity"), signer, "security-high-symbolic"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (summary), info_row (M_("Space Needed"), space, "drive-harddisk-symbolic"));
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (summary));
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (kept), M_("Kept"));
++  for (i = 0; i < G_N_ELEMENTS (kept_rows); i++)
++    {
++      row = adw_action_row_new ();
++      adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), M_(kept_rows[i][0]));
++      adw_action_row_set_subtitle (ADW_ACTION_ROW (row), M_(kept_rows[i][1]));
++      adw_action_row_add_prefix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name (kept_rows[i][2]));
++      adw_action_row_add_suffix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name ("object-select-symbolic"));
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (kept), row);
++    }
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (kept));
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (replaced), M_("Replaced"));
++  adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (replaced), M_("Software installed with apt and other changes to system files are replaced by the new system."));
++  row = adw_action_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), M_("The Operating System"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (row), os);
++  adw_action_row_add_prefix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name ("view-refresh-symbolic"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (replaced), row);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (replaced));
++
++  row = adw_action_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), M_("The computer restarts to install the update"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (row), M_("After preparing, MAN restarts, installs the update in a few seconds and restarts again."));
++  adw_action_row_add_prefix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name ("dialog-information-symbolic"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (restart), row);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (restart));
++
++  g_signal_connect_swapped (go, "clicked", G_CALLBACK (install_clicked_cb), self);
++  return subpage (M_("Ready to Install"), "confirm", page, bottom_bar (go, NULL), TRUE);
++}
++
++/* ─────────────────────────── install location page ─────────────────────────── */
++
++static void
++target_toggled_cb (GtkCheckButton *check, CcManUpdatesPanel *self)
++{
++  if (!gtk_check_button_get_active (check))
++    return;
++  g_free (self->device);
++  self->device = g_strdup (g_object_get_data (G_OBJECT (check), "device"));
++}
++
++static void
++target_next_cb (CcManUpdatesPanel *self)
++{
++  if (self->device)
++    cc_panel_push_subpage (CC_PANEL (self), confirm_page (self));
++}
++
++static AdwNavigationPage *
++target_page (CcManUpdatesPanel *self)
++{
++  JsonObject *o = info_obj (self);
++  JsonArray *targets = json_object_get_array_member (o, "targets");
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *anchor = NULL;
++  GtkWidget *next = pill (M_("_Next"), TRUE);
++  gboolean selected = FALSE;
++  guint i;
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), M_("Where Should the Update Be Installed?"));
++  adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (group), M_("The system is replaced; files in your Home folder are not touched."));
++  for (i = 0; i < json_array_get_length (targets); i++)
++    {
++      JsonObject *t = json_array_get_object_element (targets, i);
++      GtkWidget *row = adw_action_row_new ();
++      GtkWidget *check = gtk_check_button_new ();
++      const char *problem = obj_str (t, "problem");
++      g_autofree char *title = NULL;
++      g_autofree char *free_size = g_format_size (obj_int (t, "free"));
++      g_autofree char *free_text = fill (M_("{size} free"), "size", free_size, NULL);
++      g_autoptr(GString) sub = g_string_new (NULL);
++
++      if (obj_bool (t, "running"))
++        title = fill (M_("{name} {version} on this computer"), "name", obj_str (manifest (self), "name"), "version", obj_str (o, "current_version"), NULL);
++      else
++        title = fill (M_("{name} on {model}"), "name", obj_str (manifest (self), "name"), "model", obj_str (t, "model"), NULL);
++      g_string_append_printf (sub, "%s (%s)", obj_str (t, "model"), obj_str (t, "disk"));
++      if (obj_bool (t, "running"))
++        g_string_append_printf (sub, "  ·  %s  ·  %s", M_("running now"), free_text);
++      if (*problem)
++        g_string_append_printf (sub, "\n%s", problem);
++      adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++      adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (row), FALSE);
++      adw_action_row_set_subtitle (ADW_ACTION_ROW (row), sub->str);
++      if (anchor)
++        gtk_check_button_set_group (GTK_CHECK_BUTTON (check), GTK_CHECK_BUTTON (anchor));
++      else
++        anchor = check;
++      g_object_set_data_full (G_OBJECT (check), "device", g_strdup (obj_str (t, "device")), g_free);
++      g_signal_connect (check, "toggled", G_CALLBACK (target_toggled_cb), self);
++      adw_action_row_add_prefix (ADW_ACTION_ROW (row), check);
++      adw_action_row_set_activatable_widget (ADW_ACTION_ROW (row), check);
++      gtk_widget_set_sensitive (row, *problem == '\0');
++      if (!*problem && !selected)
++        {
++          gtk_check_button_set_active (GTK_CHECK_BUTTON (check), TRUE);
++          selected = TRUE;
++        }
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), row);
++    }
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (group));
++  gtk_widget_set_sensitive (next, selected);
++  g_signal_connect_swapped (next, "clicked", G_CALLBACK (target_next_cb), self);
++  return subpage (M_("Install Location"), "target", page, bottom_bar (next, NULL), TRUE);
++}
++
++/* After the license: choose where only when there is a choice. */
++static void
++continue_to_target (CcManUpdatesPanel *self)
++{
++  JsonArray *targets = json_object_get_array_member (info_obj (self), "targets");
++  guint i, usable = 0;
++
++  g_clear_pointer (&self->device, g_free);
++  for (i = 0; i < json_array_get_length (targets); i++)
++    {
++      JsonObject *t = json_array_get_object_element (targets, i);
++      if (*obj_str (t, "problem") == '\0')
++        {
++          usable++;
++          if (!self->device || obj_bool (t, "running"))
++            {
++              g_free (self->device);
++              self->device = g_strdup (obj_str (t, "device"));
++            }
++        }
++    }
++  if (usable > 1)
++    cc_panel_push_subpage (CC_PANEL (self), target_page (self));
++  else
++    cc_panel_push_subpage (CC_PANEL (self), confirm_page (self));
++}
++
++/* ─────────────────────────── license page ─────────────────────────── */
++
++static void
++accept_toggled_cb (GtkCheckButton *check, GtkWidget *next)
++{
++  CcManUpdatesPanel *self = g_object_get_data (G_OBJECT (check), "panel");
++
++  self->accepted = gtk_check_button_get_active (check);
++  gtk_widget_set_sensitive (next, self->accepted);
++}
++
++static AdwNavigationPage *
++license_page (CcManUpdatesPanel *self)
++{
++  GtkWidget *box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
++  GtkWidget *clamp = adw_clamp_new ();
++  GtkWidget *intro = gtk_label_new (M_("Please read the license terms of this update."));
++  GtkWidget *view = gtk_text_view_new ();
++  GtkWidget *scroll = gtk_scrolled_window_new ();
++  GtkWidget *accept = gtk_check_button_new_with_label (M_("I accept the license terms"));
++  GtkWidget *next = pill (M_("_Next"), TRUE);
++  g_autofree char *text = g_strstrip (g_strdup (obj_str (info_obj (self), "license")));
++
++  gtk_widget_set_margin_top (box, 12);
++  gtk_widget_set_margin_bottom (box, 12);
++  gtk_widget_set_margin_start (box, 12);
++  gtk_widget_set_margin_end (box, 12);
++  gtk_widget_add_css_class (intro, "dim-label");
++  gtk_text_view_set_editable (GTK_TEXT_VIEW (view), FALSE);
++  gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (view), FALSE);
++  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view), GTK_WRAP_WORD_CHAR);
++  gtk_text_view_set_top_margin (GTK_TEXT_VIEW (view), 12);
++  gtk_text_view_set_bottom_margin (GTK_TEXT_VIEW (view), 12);
++  gtk_text_view_set_left_margin (GTK_TEXT_VIEW (view), 12);
++  gtk_text_view_set_right_margin (GTK_TEXT_VIEW (view), 12);
++  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)), text, -1);
++  gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scroll), view);
++  gtk_widget_set_vexpand (scroll, TRUE);
++  gtk_widget_add_css_class (scroll, "card");
++  gtk_widget_set_overflow (scroll, GTK_OVERFLOW_HIDDEN);
++  gtk_box_append (GTK_BOX (box), intro);
++  gtk_box_append (GTK_BOX (box), scroll);
++  adw_clamp_set_maximum_size (ADW_CLAMP (clamp), 720);
++  adw_clamp_set_child (ADW_CLAMP (clamp), box);
++
++  /* The checkbox lives in the fixed bar next to the button. */
++  gtk_widget_set_halign (accept, GTK_ALIGN_CENTER);
++  gtk_check_button_set_active (GTK_CHECK_BUTTON (accept), self->accepted);
++  gtk_widget_set_sensitive (next, self->accepted);
++  g_object_set_data (G_OBJECT (accept), "panel", self);
++  g_signal_connect (accept, "toggled", G_CALLBACK (accept_toggled_cb), next);
++  g_signal_connect_swapped (next, "clicked", G_CALLBACK (continue_to_target), self);
++  return subpage (M_("License Agreement"), "license", clamp, bottom_bar (accept, next, NULL), TRUE);
++}
++
++/* ─────────────────────────── verifying a file ─────────────────────────── */
++
++/* License (when there is one), then where and the summary. */
++static void
++resume_install (CcManUpdatesPanel *self)
++{
++  g_autofree char *license = g_strdup (obj_str (info_obj (self), "license"));
++
++  pop_subpages (self);
++  if (*g_strstrip (license) != '\0')
++    cc_panel_push_subpage (CC_PANEL (self), license_page (self));
++  else
++    continue_to_target (self);
++}
++
++static void
++show_invalid (CcManUpdatesPanel *self, const char *message)
++{
++  set_state (self, STATE_INVALID, message);
++}
++
++static void
++inspect_done_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  CcManUpdatesPanel *self;
++  g_autoptr(GError) error = NULL;
++  g_autofree char *out = NULL;
++  g_auto(GStrv) lines = NULL;
++  const char *message = NULL;
++  JsonNode *info = NULL;
++  guint i;
++
++  if (!g_subprocess_communicate_utf8_finish (G_SUBPROCESS (source), res, &out, NULL, &error) &&
++      g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    return;
++  self = CC_MAN_UPDATES_PANEL (user_data);
++  lines = g_strsplit (out ? out : "", "\n", -1);
++  for (i = 0; lines[i]; i++)
++    {
++      g_autoptr(JsonParser) p = json_parser_new ();
++      JsonObject *ev;
++
++      if (!json_parser_load_from_data (p, lines[i], -1, NULL) || !JSON_NODE_HOLDS_OBJECT (json_parser_get_root (p)))
++        continue;
++      ev = json_node_get_object (json_parser_get_root (p));
++      if (g_str_equal (obj_str (ev, "type"), "update") && json_object_has_member (ev, "info"))
++        {
++          g_clear_pointer (&info, json_node_unref);
++          info = json_node_copy (json_object_get_member (ev, "info"));
++        }
++      else if (g_str_equal (obj_str (ev, "type"), "error"))
++        message = g_intern_string (m_tr (obj_str (ev, "message")));
++    }
++
++  if (!info)
++    {
++      show_invalid (self, message ? message : M_("The update could not be read."));
++      return;
++    }
++  g_clear_pointer (&self->info, json_node_unref);
++  self->info = info;
++
++  {
++    JsonObject *o = info_obj (self);
++    const char *version = obj_str (manifest (self), "version");
++    const char *current = obj_str (o, "current_version");
++    JsonArray *targets = json_object_get_array_member (o, "targets");
++
++    if (!targets || json_array_get_length (targets) == 0)
++      {
++        show_invalid (self, M_("Updates are installed from a running, installed MAN system, not from the live session."));
++        return;
++      }
++    /* Not newer than what is installed: the helper's own check says so. */
++    if (strverscmp (version, current) <= 0)
++      {
++        g_autofree char *msg = fill (M_("This update is not newer than the installed {name} {version}."), "name", obj_str (manifest (self), "name"), "version", current, NULL);
++        show_invalid (self, msg);
++        return;
++      }
++    g_free (self->version);
++    self->version = g_strdup (version);
++  }
+ 
+-/* ───────────────────────────── display ───────────────────────────── */
++  set_state (self, STATE_AVAILABLE, NULL);
++  self->accepted = FALSE;
++  resume_install (self);
++}
++
++static void
++start_inspect (CcManUpdatesPanel *self, const char *path)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GSubprocess) proc = NULL;
++  g_autoptr(JsonBuilder) b = json_builder_new ();
++  g_autoptr(JsonGenerator) gen = json_generator_new ();
++  g_autoptr(JsonNode) root = NULL;
++  g_autofree char *request = NULL;
++
++  g_free (self->file);
++  self->file = g_strdup (path);
++  json_builder_begin_object (b);
++  json_builder_set_member_name (b, "op");
++  json_builder_add_string_value (b, "update_inspect");
++  json_builder_set_member_name (b, "path");
++  json_builder_add_string_value (b, path);
++  json_builder_end_object (b);
++  root = json_builder_get_root (b);
++  json_generator_set_root (gen, root);
++  request = json_generator_to_data (gen, NULL);
++
++  set_state (self, STATE_VERIFYING, NULL);
++  proc = g_subprocess_new (G_SUBPROCESS_FLAGS_STDIN_PIPE | G_SUBPROCESS_FLAGS_STDOUT_PIPE | G_SUBPROCESS_FLAGS_STDERR_SILENCE,
++                           &error, BACKEND, "request", NULL);
++  if (!proc)
++    {
++      show_invalid (self, error->message);
++      return;
++    }
++  g_subprocess_communicate_utf8_async (proc, request, self->cancellable, inspect_done_cb, self);
++}
++
++/* ─────────────────────────── main page ─────────────────────────── */
+ 
+ static void
+ update_last_checked (CcManUpdatesPanel *self)
+@@ -78,14 +1103,16 @@
+   g_autofree char *title = NULL;
+   g_autofree char *description = NULL;
+   const char *button = NULL;
+-  gboolean suggested = FALSE;
++  const char *icon = "com.man.Updater";
++  gboolean suggested = FALSE, sensitive = TRUE;
+ 
+   self->state = state;
+-
+   switch (state)
+     {
+     case STATE_CHECKING:
+       title = g_strdup (_("Checking for Updates…"));
++      button = _("_Check Again");
++      sensitive = FALSE;
+       break;
+     case STATE_CURRENT:
+       title = g_strdup (_("MAN Is Up to Date"));
+@@ -96,7 +1123,7 @@
+       {
+         g_autofree char *size = g_format_size (self->size);
+         title = g_strdup_printf (_("MAN %s Is Available"), self->version);
+-        description = g_strdup_printf (_("You have MAN %s. Download size: %s."), self->current, size);
++        description = self->size ? g_strdup_printf (_("You have MAN %s. Download size: %s."), self->current, size) : NULL;
+         button = _("_Download and Install…");
+         suggested = TRUE;
+       }
+@@ -106,11 +1133,12 @@
+       description = g_strdup (_("You can keep using the computer. The update is installed after the download."));
+       button = _("_Cancel");
+       break;
+-    case STATE_READY:
+-      title = g_strdup_printf (_("MAN %s Is Ready to Install"), self->version);
+-      description = g_strdup (_("MAN Update has opened. Follow its steps to install the update; your files are kept."));
+-      button = _("_Open MAN Update");
++    case STATE_VERIFYING:
++      title = g_strdup (M_("Checking the Update"));
++      description = g_strdup (M_("Making sure the update is genuine and complete…"));
++      button = _("_Download and Install…");
+       suggested = TRUE;
++      sensitive = FALSE;
+       break;
+     case STATE_CHECK_ERROR:
+       title = g_strdup (_("Could Not Check for Updates"));
+@@ -122,32 +1150,54 @@
+       description = g_strdup (_("Check your internet connection and try again. The download continues where it stopped."));
+       button = _("_Try Again");
+       break;
++    case STATE_INVALID:
++      title = g_strdup (M_("This Update Cannot Be Installed"));
++      description = g_strdup (detail);
++      icon = "dialog-error-symbolic";
++      button = _("_Check Again");
++      detail = NULL;
++      break;
++    case STATE_PREPARING:
++      title = fill (M_("Preparing {name} {version}"), "name", "MAN", "version", self->version ? self->version : "", NULL);
++      description = g_strdup (M_("The computer restarts twice. Your files are safe."));
++      button = M_("Details");
++      break;
++    case STATE_RESTART:
++      title = g_strdup_printf (_("MAN %s Will Be Installed When You Restart"), self->version ? self->version : "");
++      description = g_strdup (M_("The update is installed the next time you restart."));
++      icon = "system-reboot-symbolic";
++      button = M_("_Restart Now");
++      suggested = TRUE;
++      break;
+     case STATE_LIVE:
+       title = g_strdup (_("Updates Are Not Available Here"));
+       description = g_strdup (_("Updates are installed from a running, installed MAN system, not from the live session."));
+       break;
+     }
+ 
+-  adw_status_page_set_title (self->status, title);
+-  adw_status_page_set_description (self->status, description);
+-  gtk_widget_set_tooltip_text (GTK_WIDGET (self->status), detail);
+-  gtk_widget_set_visible (self->spinner, state == STATE_CHECKING);
++  gtk_image_set_from_icon_name (GTK_IMAGE (self->status_icon), icon);
++  gtk_label_set_text (GTK_LABEL (self->status_title), title);
++  gtk_label_set_text (GTK_LABEL (self->status_desc), description ? description : "");
++  gtk_widget_set_visible (self->status_desc, description != NULL);
++  gtk_widget_set_tooltip_text (self->status, detail);
++  gtk_widget_set_visible (self->spinner, state == STATE_CHECKING || state == STATE_VERIFYING);
+   gtk_widget_set_visible (self->progress, state == STATE_DOWNLOADING);
+   gtk_widget_set_visible (self->button, button != NULL);
+   if (button)
+     gtk_button_set_label (GTK_BUTTON (self->button), button);
++  gtk_widget_set_sensitive (self->button, sensitive);
+   if (suggested)
+     gtk_widget_add_css_class (self->button, "suggested-action");
+   else
+     gtk_widget_remove_css_class (self->button, "suggested-action");
+   gtk_widget_set_visible (self->notes_group,
+-                          (state == STATE_AVAILABLE || state == STATE_DOWNLOADING || state == STATE_DOWNLOAD_ERROR || state == STATE_READY) &&
++                          (state == STATE_AVAILABLE || state == STATE_DOWNLOADING || state == STATE_DOWNLOAD_ERROR || state == STATE_VERIFYING) &&
+                           *gtk_label_get_text (GTK_LABEL (self->notes_label)) != '\0');
++  gtk_widget_set_sensitive (self->file_row, state != STATE_PREPARING && state != STATE_RESTART &&
++                                            state != STATE_VERIFYING && state != STATE_DOWNLOADING);
+   update_last_checked (self);
+ }
+ 
+-/* ───────────────────────────── checking ───────────────────────────── */
+-
+ static void
+ check_done_cb (GObject *source, GAsyncResult *res, gpointer user_data)
+ {
+@@ -212,17 +1262,7 @@
+   g_subprocess_communicate_utf8_async (proc, NULL, self->cancellable, check_done_cb, self);
+ }
+ 
+-/* ───────────────────────────── downloading ───────────────────────────── */
+-
+-static void
+-open_man_update (CcManUpdatesPanel *self)
+-{
+-  g_autoptr(GError) error = NULL;
+-  g_autoptr(GSubprocess) proc = g_subprocess_new (G_SUBPROCESS_FLAGS_NONE, &error, "man-update", self->file, NULL);
+-
+-  if (!proc)
+-    g_warning ("Could not start MAN Update: %s", error->message);
+-}
++/* ─────────────────────────── downloading ─────────────────────────── */
+ 
+ static void
+ read_line_cb (GObject *source, GAsyncResult *res, gpointer user_data)
+@@ -257,11 +1297,8 @@
+     }
+   else if (g_str_has_prefix (line, "file "))
+     {
+-      g_free (self->file);
+-      self->file = g_strdup (line + 5);
+       g_clear_object (&self->download);
+-      set_state (self, STATE_READY, NULL);
+-      open_man_update (self);
++      start_inspect (self, line + 5);
+       return;
+     }
+   else if (g_str_has_prefix (line, "error "))
+@@ -322,6 +1359,11 @@
+   switch (self->state)
+     {
+     case STATE_AVAILABLE:
++      if (self->info && g_strcmp0 (obj_str (manifest (self), "version"), self->version) == 0)
++        resume_install (self);
++      else
++        start_download (self);
++      break;
+     case STATE_DOWNLOAD_ERROR:
+       start_download (self);
+       break;
+@@ -329,8 +1371,11 @@
+       stop_download (self);
+       set_state (self, STATE_AVAILABLE, NULL);
+       break;
+-    case STATE_READY:
+-      open_man_update (self);
++    case STATE_PREPARING:
++      cc_panel_push_subpage (CC_PANEL (self), preparing_page (self));
++      break;
++    case STATE_RESTART:
++      reboot_now ();
+       break;
+     default:
+       start_check (self);
+@@ -339,16 +1384,33 @@
+ }
+ 
+ static void
+-install_file_cb (CcManUpdatesPanel *self)
++file_chosen_cb (GtkFileDialog *dialog, GAsyncResult *res, CcManUpdatesPanel *self)
+ {
+-  g_autoptr(GError) error = NULL;
+-  g_autoptr(GSubprocess) proc = g_subprocess_new (G_SUBPROCESS_FLAGS_NONE, &error, "man-update", NULL);
++  g_autoptr(GFile) file = gtk_file_dialog_open_finish (dialog, res, NULL);
++  g_autofree char *path = file ? g_file_get_path (file) : NULL;
+ 
+-  if (!proc)
+-    g_warning ("Could not start MAN Update: %s", error->message);
++  if (path)
++    start_inspect (self, path);
++  g_object_unref (self);
++}
++
++static void
++install_file_cb (CcManUpdatesPanel *self)
++{
++  g_autoptr(GtkFileDialog) dialog = gtk_file_dialog_new ();
++  g_autoptr(GtkFileFilter) filter = gtk_file_filter_new ();
++  g_autoptr(GListStore) filters = g_list_store_new (GTK_TYPE_FILE_FILTER);
++
++  gtk_file_dialog_set_title (dialog, M_("Open a MAN Update"));
++  gtk_file_filter_set_name (filter, M_("MAN updates"));
++  gtk_file_filter_add_pattern (filter, "*.upd");
++  g_list_store_append (filters, filter);
++  gtk_file_dialog_set_filters (dialog, G_LIST_MODEL (filters));
++  gtk_file_dialog_open (dialog, GTK_WINDOW (gtk_widget_get_root (GTK_WIDGET (self))), NULL,
++                        (GAsyncReadyCallback) file_chosen_cb, g_object_ref (self));
+ }
+ 
+-/* ───────────────────────────── GObject ───────────────────────────── */
++/* ─────────────────────────── GObject ─────────────────────────── */
+ 
+ static void
+ cc_man_updates_panel_dispose (GObject *object)
+@@ -357,6 +1419,8 @@
+ 
+   g_cancellable_cancel (self->cancellable);
+   stop_download (self);
++  stop_countdown (self);
++  self->prep_bar = NULL;
+   g_clear_object (&self->cancellable);
+   g_clear_object (&self->settings);
+   G_OBJECT_CLASS (cc_man_updates_panel_parent_class)->dispose (object);
+@@ -370,6 +1434,8 @@
+   g_free (self->current);
+   g_free (self->version);
+   g_free (self->file);
++  g_free (self->device);
++  g_clear_pointer (&self->info, json_node_unref);
+   G_OBJECT_CLASS (cc_man_updates_panel_parent_class)->finalize (object);
+ }
+ 
+@@ -382,6 +1448,16 @@
+   object_class->finalize = cc_man_updates_panel_finalize;
+ }
+ 
++static gboolean
++reattach_job (gpointer user_data)
++{
++  CcManUpdatesPanel *self = user_data;
++
++  if (job && !job->done)
++    cc_panel_push_subpage (CC_PANEL (self), preparing_page (self));
++  return G_SOURCE_REMOVE;
++}
++
+ static void
+ cc_man_updates_panel_init (CcManUpdatesPanel *self)
+ {
+@@ -390,10 +1466,10 @@
+   GtkWidget *toolbar = adw_toolbar_view_new ();
+   GtkWidget *page = adw_preferences_page_new ();
+   GtkWidget *top = adw_preferences_group_new ();
+-  GtkWidget *box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
+   GtkWidget *auto_group = adw_preferences_group_new ();
+   GtkWidget *file_group = adw_preferences_group_new ();
+-  GtkWidget *file_row = adw_button_row_new ();
++  GtkWidget *file_row = self->file_row = adw_button_row_new ();
++  GtkWidget *card = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+ 
+   self->cancellable = g_cancellable_new ();
+   if (schema)
+@@ -402,25 +1478,27 @@
+   adw_navigation_page_set_title (ADW_NAVIGATION_PAGE (self), _("Updates"));
+   adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar), adw_header_bar_new ());
+ 
+-  /* Status: icon, title, description, spinner / progress, one button. */
+-  self->status = ADW_STATUS_PAGE (adw_status_page_new ());
+-  adw_status_page_set_icon_name (self->status, "com.man.Updater");
+-  gtk_widget_add_css_class (GTK_WIDGET (self->status), "compact");
++  /* Status: icon, title, description (spinner while checking). */
++  self->status = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
++  gtk_widget_set_margin_top (self->status, 12);
++  self->status_icon = gtk_image_new_from_icon_name ("com.man.Updater");
++  gtk_image_set_pixel_size (GTK_IMAGE (self->status_icon), 96);
++  gtk_widget_set_margin_bottom (self->status_icon, 12);
++  self->status_title = gtk_label_new (NULL);
++  gtk_label_set_wrap (GTK_LABEL (self->status_title), TRUE);
++  gtk_label_set_justify (GTK_LABEL (self->status_title), GTK_JUSTIFY_CENTER);
++  gtk_widget_add_css_class (self->status_title, "title-2");
++  self->status_desc = gtk_label_new (NULL);
++  gtk_label_set_wrap (GTK_LABEL (self->status_desc), TRUE);
++  gtk_label_set_justify (GTK_LABEL (self->status_desc), GTK_JUSTIFY_CENTER);
+   self->spinner = adw_spinner_new ();
+   gtk_widget_set_size_request (self->spinner, 32, 32);
+-  self->progress = gtk_progress_bar_new ();
+-  gtk_progress_bar_set_show_text (GTK_PROGRESS_BAR (self->progress), TRUE);
+-  gtk_widget_set_size_request (self->progress, 320, -1);
+-  gtk_widget_set_halign (self->progress, GTK_ALIGN_CENTER);
+-  self->button = gtk_button_new_with_mnemonic ("");
+-  gtk_widget_add_css_class (self->button, "pill");
+-  gtk_widget_set_halign (self->button, GTK_ALIGN_CENTER);
+-  g_signal_connect_swapped (self->button, "clicked", G_CALLBACK (button_clicked_cb), self);
+-  gtk_box_append (GTK_BOX (box), self->spinner);
+-  gtk_box_append (GTK_BOX (box), self->progress);
+-  gtk_box_append (GTK_BOX (box), self->button);
+-  adw_status_page_set_child (self->status, box);
+-  adw_preferences_group_add (ADW_PREFERENCES_GROUP (top), GTK_WIDGET (self->status));
++  gtk_widget_set_halign (self->spinner, GTK_ALIGN_CENTER);
++  gtk_box_append (GTK_BOX (self->status), self->status_icon);
++  gtk_box_append (GTK_BOX (self->status), self->status_title);
++  gtk_box_append (GTK_BOX (self->status), self->status_desc);
++  gtk_box_append (GTK_BOX (self->status), self->spinner);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (top), self->status);
+   adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (top));
+ 
+   /* Release notes of the available version. */
+@@ -430,16 +1508,13 @@
+   gtk_label_set_wrap (GTK_LABEL (self->notes_label), TRUE);
+   gtk_label_set_xalign (GTK_LABEL (self->notes_label), 0.0);
+   gtk_label_set_selectable (GTK_LABEL (self->notes_label), TRUE);
+-  {
+-    GtkWidget *frame = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+-    gtk_widget_add_css_class (frame, "card");
+-    gtk_widget_set_margin_start (self->notes_label, 12);
+-    gtk_widget_set_margin_end (self->notes_label, 12);
+-    gtk_widget_set_margin_top (self->notes_label, 12);
+-    gtk_widget_set_margin_bottom (self->notes_label, 12);
+-    gtk_box_append (GTK_BOX (frame), self->notes_label);
+-    adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->notes_group), frame);
+-  }
++  gtk_widget_set_margin_start (self->notes_label, 12);
++  gtk_widget_set_margin_end (self->notes_label, 12);
++  gtk_widget_set_margin_top (self->notes_label, 12);
++  gtk_widget_set_margin_bottom (self->notes_label, 12);
++  gtk_widget_add_css_class (card, "card");
++  gtk_box_append (GTK_BOX (card), self->notes_label);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->notes_group), card);
+   gtk_widget_set_visible (self->notes_group, FALSE);
+   adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (self->notes_group));
+ 
+@@ -470,9 +1545,35 @@
+   adw_preferences_group_add (ADW_PREFERENCES_GROUP (file_group), file_row);
+   adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (file_group));
+ 
++  /* The fixed bar: download progress and the main button. */
++  self->progress = gtk_progress_bar_new ();
++  gtk_progress_bar_set_show_text (GTK_PROGRESS_BAR (self->progress), TRUE);
++  gtk_widget_set_size_request (self->progress, 360, -1);
++  gtk_widget_set_halign (self->progress, GTK_ALIGN_CENTER);
++  self->button = pill ("", FALSE);
++  g_signal_connect_swapped (self->button, "clicked", G_CALLBACK (button_clicked_cb), self);
++
+   adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar), page);
++  adw_toolbar_view_add_bottom_bar (ADW_TOOLBAR_VIEW (toolbar), bottom_bar (self->progress, self->button, NULL));
++  adw_toolbar_view_set_bottom_bar_style (ADW_TOOLBAR_VIEW (toolbar), ADW_TOOLBAR_RAISED);
+   adw_navigation_page_set_child (ADW_NAVIGATION_PAGE (self), toolbar);
+ 
++  /* An update being prepared keeps going while Settings is open. */
++  if (job && job->done && job->ok)
++    {
++      self->version = g_strdup (job->version);
++      set_state (self, STATE_RESTART, NULL);
++      return;
++    }
++  if (job && !job->done)
++    {
++      self->version = g_strdup (job->version);
++      g_weak_ref_set (&job->panel, self);
++      set_state (self, STATE_PREPARING, NULL);
++      g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, reattach_job, g_object_ref (self), g_object_unref);
++      return;
++    }
++
+   /* Opening the panel checks right away. */
+   start_check (self);
+ }
+diff -ruN a/panels/man-updates/meson.build b/panels/man-updates/meson.build
+--- a/panels/man-updates/meson.build	2026-10-24 12:41:51.602573313 +0200
++++ b/panels/man-updates/meson.build	2026-10-24 15:22:44.245092865 +0200
+@@ -14,6 +14,6 @@
+   cappletname,
+   sources: files('cc-man-updates-panel.c'),
+   include_directories: [ top_inc, common_inc ],
+-  dependencies: common_deps,
++  dependencies: [ common_deps, json_glib_dep ],
+   c_args: cflags,
+ )

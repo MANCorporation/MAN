@@ -81,3 +81,19 @@ inhibitor appears/disappears, autostart file added/removed).
   `man-settings-po/` (`tool.py import LANG tx/LANG.txt`, machine-written,
   native review welcome); `repack-gcc-deb.sh man4` builds the .deb with the
   binary, the `man-settings.mo` files and the translated panel desktop file.
+
+## 1:51.0-1man5 (MAN 10.9, 2026-10-24)
+
+`debian/patches/man-updates-in-settings.patch`: Settings → Updates installs
+the update itself, no separate MAN Update window. After the download (or
+"Install an Update File…") the file is checked by `man-installer-backend
+update_inspect` (unprivileged), then License → Install Location (only when
+there is more than one disk) → Summary → snapshot question → Preparing
+(`pkexec … update_stage`) → Restart (30 s countdown, Restart Later) are
+subpages. Every page keeps its main button in a fixed bottom bar; only the
+content scrolls. Preparing keeps running when the panel is left and is shown
+again on return (notification if the panel is gone). Strings shared with MAN
+Update come from the `man-installer` catalog (`M_()`), one new string in
+`man-settings` (`man-settings-po/new-man5.py`). Needs json-glib.
+Pitfall: AdwStatusPage inside a preferences page lost its title after a state
+change (own scroller), so the panel uses a plain box.

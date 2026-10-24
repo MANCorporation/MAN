@@ -138,3 +138,12 @@ GitHub allows at most **2 GiB per file**: the .upd (1.96 GB) and the ISO
 (1.9 GB) fit, but a bigger system needs a smaller payload (or splitting,
 which man-update-check does not support yet). The release notes on GitHub
 are what Settings shows under "What's New".
+
+## MAN 10.9 (2026-10-24)
+
+Updates install inside Settings → Updates (Settings 1:51.0-1man5, see
+src/README.md); main buttons stay in a fixed bar at the bottom. Tested in
+QEMU on installed systems: 10.7 → 10.8 from the (fake) GitHub release with a
+snapshot, including a cancelled password prompt + Try Again and leaving and
+reopening the panel while preparing; 10.8 → 10.9 in Czech from a file in
+Downloads without a snapshot. Both ended with "Your System Was Updated".
