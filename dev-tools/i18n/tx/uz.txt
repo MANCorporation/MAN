@@ -30,7 +30,7 @@
 29|Veb-sayt
 30|Fayl
 31|Bu ilova allaqachon o‘rnatilgan. Qayta o‘rnatish uni almashtiradi.
-32|.deb paketlaridagi ilovalar tizimning bir qismiga aylanadi. MAN yangilanganda ular o‘chiriladi va qayta o‘rnatish kerak bo‘ladi. Flatpak ilovalari va AppImage saqlanib qoladi.
+32|.deb paketlaridagi ilovalar tizimning bir qismiga aylanadi. MAN yangilanishi tizimni almashtiradi, shuning uchun yangilanishdan keyin ular faqat saqlasangiz qayta o‘rnatiladi (keyingi qadamlar).
 33|Ilovalarni faqat ishonchli manbalardan o‘rnating.
 34|{name} qayerga o‘rnatilsin?
 35|Ilovadan faqat sizning hisobingiz foydalana oladi.
@@ -42,521 +42,524 @@
 41|Ilova bu kompyuterning barcha foydalanuvchilari uchun o‘rnatiladi.
 42|Ilova faqat siz uchun o‘rnatiladi.
 43|AppImage {folder} jildiga ko‘chiriladi va ilovalaringizga qo‘shiladi.
-44|{name} o‘rnatish uchun “O‘rnatish” tugmasini bosing.
-45|Ilovaga yana nima kerakligi tekshirilmoqda…
-46|Kerakli paketlarni ham o‘rnatadi: {list}
-47|Ilovaga kerakli ba’zi paketlar hali mavjud emas. O‘rnatish avval eng yangi paketlar ro‘yxatini oladi; agar ular hali ham yetishmasa, ilovani o‘rnatib bo‘lmaydi.
-48|{name} o‘rnatilmoqda…
-49|Tayyorlanmoqda…
-50|Tafsilotlar
-51|Paket o‘rnatilmoqda…
-52|Ilova o‘z jildiga ko‘chirilmoqda…
-53|Ilovani o‘rnatib bo‘lmadi.
-54|Ilova Flatpak orqali o‘rnatilmoqda…
-55|Jurnal
-56|_Yopish
-57|O‘rnatish muvaffaqiyatli bo‘ldi
-58|Ilova o‘rnatildi.
-59|O‘rnatish amalga oshmadi
-60|_Ochish
-61|Tafsilotlarni _koʻrsatish
-62|Oʻrnatish jurnali
-63|Ilova o‘rnatuvchisi
-64|_Orqaga
-65|Ilova o‘qilmoqda…
-66|{name} o‘rnatish
-67|Ilovalar
-68|O‘rnatish uchun ilova tanlang
-69|Tizim yordamchisini ishga tushirib boʻlmadi.
-70|Tizim yordamchisi bilan aloqa oʻrnatib boʻlmadi.
-71|Tizim yordamchisi bilan aloqa uzildi.
-72|Avtorizatsiya bekor qilindi.
-73|Bu amal uchun administrator huquqlari kerak.
-74|Tizim yordamchisi kutilmaganda toʻxtadi.
-75|EFI tizim boʻlimi yoʻq
-76|Faqat {free} boʻsh, MAN uchun {need} kerak. Windows’da DUHACH! yordamida joy boʻshating.
-77|Boʻsh joy yoʻq. MAN uchun joy ochish uchun Windows’da DUHACH!’ni ishga tushiring.
-78|MAN shu diskdan ishlayapti
-79|Foydalanilmoqda: boʻlim ulangan
-80|Juda kichik, MAN uchun {need} kerak
-81|MAN’ni oʻrnatish
-82|MAN oʻrnatilmoqda. Tugashini kuting.
-83|Til
-84|Shu tilda _qayta ishga tushirish
-85|Jonli seans tanlangan tilda qayta ishga tushadi va MAN shu tilda oʻrnatiladi.
-86|MAN’ga xush kelibsiz
-87|Tez, ochiq va toʻliq sozlanadigan GNOME tizimi.\nUni shu kompyuterga oʻrnating yoki jonli seansni oʻrganishda davom eting.
-88|MAN’ni _oʻrnatish…
-89|MAN’ni sinashda _davom etish
-90|Disklar qidirilmoqda…
-91|Xush kelibsiz
-92|Bu kompyuter eski BIOS rejimida ishga tushirilgan. MAN faqat UEFI kompyuterlarga oʻrnatiladi: qayta ishga tushiring va UEFI yuklash variantini tanlang.
-93|Tizim yordamchisi disklar haqida maʼlumot qaytarmadi.
-94|  ·  EFI
-95|_Keyingi
-96|Diskni tozalab MAN’ni oʻrnatish
-97|Tanlangan diskdagi hamma narsa oʻchiriladi, Windows ham.
-98|Tavsiya etiladi. Tanlangan diskdagi hamma narsa oʻchiriladi.
-99|Windows yoniga oʻrnatish
-100|Tavsiya etiladi. MAN Windows yonidagi boʻsh joydan foydalanadi; Windows va uning fayllari qoladi. Har ishga tushirishda tizimni tanlaysiz.
-101|MAN’ni qayta oʻrnatish
-102|Tizimni almashtiradi, lekin /home ichidagi shaxsiy fayllarni saqlaydi. Joriy tizim snapshot sifatida saqlanadi.
-103|Maxsus boʻlimlar
-104|Mutaxassislar uchun: boʻlimlarni oʻzingiz tanlang yoki Disklar bilan yarating.
-105|Disk
-106|Tozalanadigan diskni tanlang. Foydalanib boʻlmaydigan disklar sababi bilan koʻrsatiladi.
-107|Disklar topilmadi
-108|Windows yonidagi boʻsh joy
-109|Windows boʻlimlariga tegilmaydi. MAN EFI tizim boʻlimini birga ishlatadi va Windows’ni yuklash menyusiga qoʻshadi.
-110|{size} boʻsh
-111|boʻsh joy yoʻq
-112|{model} (Windows)
-113|Almashtiriladigan oʻrnatma
-114|uy jildlari yoʻq
-115|uy jildlari: {list}
-116|snapshotlar: {n}
-117|{model}dagi MAN
-118|{device} uchun maxfiy ibora
-119|Qulfdan chiqarish
-120|Oʻrnatmani tekshirib boʻlmadi.
-121|Boʻlimlar
-122|Tizim boʻlimi Btrfs sifatida formatlanadi va @system, @home va @snapshots’ni oʻz ichiga oladi. MAN ishlayotgan diskning boʻlimlari koʻrsatilmaydi.
-123|Boʻlim yaratish yoki hajmini oʻzgartirish uchun Disklarni ochish
-124|Boʻlimlar roʻyxatini yangilash
-125|Boʻlimni tanlang
-126|EFI tizim boʻlimi
-127|EFI tizim boʻlimini formatlash
-128|Boshqa tizimlarning yuklovchilarini saqlash uchun oʻchiq qoldiring
-129|Tizim boʻlimi (Btrfs sifatida formatlanadi)
-130|Yuklash boʻlimi (shifrlash uchun kerak)
-131|Boʻlimlar roʻyxati yangilandi
-132|Xavfsizlik
-133|Tizimni shifrlash
-134|Kompyuter yoʻqolsa yoki oʻgʻirlansa, maʼlumotlaringizni himoya qiladi. Har ishga tushirishda maxfiy ibora soʻraladi.
-135|Maxfiy ibora
-136|Maxfiy iborani tasdiqlash
-137|Bu maxfiy iborani xavfsiz joyda saqlang
-138|U yoʻqolsa, maʼlumotlarni hech kim tiklay olmaydi. Yadro va yuklash fayllari kichik shifrlanmagan yuklash boʻlimida qoladi.
-139|Maxfiy ibora kamida 8 belgidan iborat boʻlishi kerak.
-140|Maxfiy iboralar mos kelmaydi.
-141|Disk tanlang.
-142|Windows bor diskni tanlang.
-143|Almashtiriladigan oʻrnatmani tanlang.
-144|Avval shifrlangan oʻrnatmani qulfdan chiqaring.
-145|Bu boʻlimda MAN tizimi yoʻq.
-146|EFI tizim boʻlimini tanlang.
-147|Tizim boʻlimini tanlang.
-148|EFI va tizim boʻlimlari har xil boʻlishi kerak.
-149|Shifrlash uchun alohida yuklash boʻlimi kerak.
-150|Tizim boʻlimi kamida {size} boʻlishi kerak.
-151|EFI boʻlimi FAT formatida emas; formatlashni yoqing.
-152|Tizim boʻlimi ulangan; avval uni Disklarda uzing.
-153|MAN qayerga oʻrnatilsin?
-154|Vaqt va klaviatura
-155|Vaqt mintaqasi
-156|Klaviatura tartibi
-157|Klaviaturani sinab koʻring
-158|Tugmalar toʻgʻri belgilarni yozishini tekshirish uchun shu yerga yozing.
-159|Shu yerga yozing
-160|Vaqt mintaqasi va klaviatura
-161|Disk tanlanmagan
-162|Tizim boʻlimi tanlanmagan
-163|Tizim boʻlimi yoʻqoldi
-164|Oʻrnatma tanlanmagan
-165|Disk yoʻqoldi
-166|Koʻrib chiqish
-167|Manzil
-168|Diskni tozalab oʻrnatish
-169|Maxsus boʻlimlar
-170|/home saqlanib qayta oʻrnatish
-171|Windows yoniga
-172| (formatlanadi)
-173| (saqlanadi)
-174|Tizim boʻlimi
-175|{partition} (formatlanadi)
-176|Yuklash boʻlimi
-177|MAN uchun joy
-178|{free} boʻsh joy (yuklash boʻlimi va tizim boʻlimi yaratiladi)
-179|Windows
-180|Oʻzgarmaydi. U MAN yuklash menyusida chiqadi; EFI tizim boʻlimi umumiy.
-181|Shifrlash
-182|Yoqilgan (LUKS2)
-183|Oʻchirilgan
-184|Fayl tizimi
-185|Btrfs: @system — MAN uchun, @home — fayllaringiz uchun, @snapshots — tiklash nuqtalari uchun. Hammasi boʻsh joyni birga ishlatadi.
-186|Tizim
-187|Hisobingiz
-188|Kompyuter birinchi marta ishga tushganda MAN Setup’da kompyuter nomi, koʻrinish va maxfiylik sozlamalari bilan birga yaratiladi.
-189|Klaviatura
-190|{model} ({path}) dagi barcha maʼlumotlar oʻchiriladi.
-191|_Tozalash va oʻrnatish
-192|Tanlangan boʻlimlar formatlanadi. Boshqa boʻlimlar oʻzgarmaydi.
-193|_Formatlash va oʻrnatish
-194|Joriy tizim almashtiriladi. /home dagi fayllaringiz qoladi, eski tizim esa snapshot sifatida saqlanadi.
-195|_Qayta oʻrnatish
-196|MAN boʻsh joyga oʻrnatiladi. Windows va uning fayllari oʻzgarmaydi.
-197|Oʻrnatishga tayyor
-198|{model} tozalansinmi?
-199|{path} ({size}) dagi barcha fayllar va boʻlimlar butunlay oʻchiriladi. Buni bekor qilib boʻlmaydi.
-200|Tozalash va oʻrnatish
-201|Tanlangan boʻlimlar formatlansinmi?
-202|Tanlangan boʻlimlardagi barcha maʼlumotlar butunlay oʻchiriladi. Boshqa boʻlimlar oʻzgarmaydi.
-203|Formatlash va oʻrnatish
-204|MAN Windows yoniga oʻrnatilsinmi?
-205|MAN {model} ({path}) dagi {free} boʻsh joyga oʻrnatiladi. Windows va uning fayllari oʻzgarmaydi.
-206|Oʻrnatish
-207|MAN qayta oʻrnatilsinmi?
-208|Oʻrnatilgan tizim yangi nusxa bilan almashtiriladi. /home dagi shaxsiy fayllar qoladi, eski tizim esa snapshot sifatida mavjud boʻladi.
-209|Qayta oʻrnatish
-210|_Bekor qilish
-211|MAN oʻrnatilmoqda
-212|Boshlanmoqda…
-213|Oʻrnatilmoqda
-214|{n} qadamdan {index}-qadam  ·  {title}
-215|MAN oʻrnatildi
-216|MAN’dan foydalanishni boshlash uchun kompyuterni qayta ishga tushiring. Har ishga tushirishda menyu MAN yoki Windows’ni tanlash imkonini beradi; vaqtinchalik oʻrnatuvchi boʻlimini MAN birinchi ishga tushishda oʻchiradi.
-217|MAN’dan foydalanishni boshlash uchun kompyuterni qayta ishga tushiring. Oʻrnatish vositasini chiqarib olishingiz mumkin; ulangan qolsa ham MAN yangi diskdan ishga tushadi.
-218|Hozir _qayta ishga tushirish
-219|Tayyor
-220|Oʻrnatish muvaffaqiyatsiz tugadi
-221|Boshqa hech qaysi disk oʻzgartirilmadi va oʻrnatuvchi maqsadli diskni boʻshatdi. Rejani koʻrib chiqib, qayta urinishingiz mumkin.
-222|_Koʻrib chiqish va qayta urinish
-223|Tillarni qidirish
-224|Mamlakatlarni qidirish
-225|Tizim diski topilmadi.
-226|Shifrlash uchun MAN oʻrnatuvchisi yaratgan Btrfs tuzilmasi kerak.
-227|Bu oʻrnatmada shifrlash uchun zarur alohida yuklash boʻlimi yoʻq. Shifrlashdan foydalanish uchun MAN’ni “Diskni tozalash” bilan qayta oʻrnating.
-228|MAN Setup
-229|Qayerdasiz?
-230|Mamlakatingiz yoki mintaqangiz sana, vaqt va raqamlar formatini belgilaydi.
-231|Mamlakat
-232|GNU Umumiy ommaviy litsenziyasi, 2-versiya
-233|Linux yadrosi va koʻplab tizim vositalari
-234|GNU Umumiy ommaviy litsenziyasi, 3-versiya
-235|Koʻplab GNU va GNOME dasturlari
-236|GNU Kichik umumiy ommaviy litsenziyasi, 2.1-versiya
-237|GTK, GLib va koʻplab kutubxonalar
-238|GNU Kichik umumiy ommaviy litsenziyasi, 3-versiya
-239|Kutubxonalar
-240|Mozilla ommaviy litsenziyasi 2.0
-241|Mozilla va boshqalarning dastur va kutubxonalari
-242|Apache litsenziyasi 2.0
-243|Kutubxonalar va vositalar
-244|Litsenziya shartnomasi
-245|MAN taqdim etiladigan shartlarni oʻqing va qabul qiling.
-246|Litsenziyalar
-247|Litsenziya matni mavjud emas ({path}).
-248|Litsenziya shartlarini oʻqidim va qabul qilaman
-249|Simli
-250|Ulanmagan
-251|Internetga ulanish
-252|Ulanish boʻlsa, MAN vaqtni sozlay oladi va dasturlaringizni yangilab turadi. Buni keyin ham qilishingiz mumkin.
-253|Ulanish tekshirilmoqda…
-254|Wi-Fi tarmoqlari
-255|Qayta qidirish
-256|_Oʻtkazib yuborish
-257|Keyinroq Sozlamalarda ulanishingiz mumkin.
-258|Ulangan
-259|Ulanmagan
-260|Tarmoqlar topilmadi
-261|Internet
-262|“{ssid}” tarmogʻiga ulandi
-263|“{ssid}” tarmogʻiga ulanib boʻlmadi
-264|“{ssid}” tarmogʻiga ulanish
-265|Tarmoq parolini kiriting.
-266|_Ulanish
-267|Hisobingizni yarating
-268|Siz bu kompyuterning administratori boʻlasiz, sudo orqali toʻliq root huquqi bilan.
-269|Toʻliq ism
-270|Foydalanuvchi nomi
-271|Parol
-272|Parolni tasdiqlash
-273|Avtomatik kirish
-274|Kompyuter ishga tushganda kirish ekranini oʻtkazib yuborish
-275|Mavjud uy jildlari
-276|Oldingi oʻrnatmadan qolgan jilddan foydalanishda davom etish uchun oʻsha foydalanuvchi nomini ishlating.
-277|Foydalanish
-278|Qoʻshimcha
-279|Kompyuter nomi
-280|Root parolini oʻrnatish
-281|Bevosita root sifatida kirishga imkon beradi. Usiz oʻz parolingiz bilan sudo’dan foydalaning.
-282|Root paroli
-283|Root parolini tasdiqlash
-284|Ismingizni kiriting.
-285|Foydalanuvchi nomini tanlang.
-286|Bu foydalanuvchi nomidan tizim allaqachon foydalanmoqda.
-287|Bu foydalanuvchi nomi tizim uchun band qilingan.
-288|Foydalanuvchi nomlari kichik lotin harflari, raqamlar, - va _ dan iborat boʻlib, harf bilan boshlanadi.
-289|Parol tanlang.
-290|Parollar mos kelmaydi.
-291|Kompyuter nomida harflar, raqamlar va chiziqchalar boʻlishi mumkin.
-292|Root parolini ikki marta kiriting.
-293|Maslahat: 8 va undan ortiq belgili parol ancha xavfsizroq.
-294|Hisob
-295|Toʻq
-296|Och
-297|Oʻzingizga moslang
-298|Uslub, urgʻu rangi va fon rasmini tanlang. Har bir oʻzgarishni darhol koʻrasiz.
-299|Uslub
-300|Urgʻu rangi
-301|Fon rasmi
-302|Moslash
-303|Maxfiylik
-304|Qaysi funksiyalar siz haqingizdagi maʼlumotdan foydalanishi mumkinligini tanlang. Buni istalgan vaqtda Sozlamalarda oʻzgartirishingiz mumkin.
-305|Joylashuv xizmatlari
-306|Xaritalar va Ob-havo kabi ilovalarga yaqin Wi-Fi tarmoqlari orqali taxminiy joylashuvingizni aniqlashga ruxsat beradi.
-307|Avtomatik vaqt mintaqasi
-308|Sayohat paytida vaqt mintaqasini toʻgʻri saqlash uchun joylashuvingizdan foydalanadi.
-309|Sozlashni _tugatish
-310|Diskingiz shifrlangan
-311|Maʼlumotlaringiz himoyalangan. Kompyuter har ishga tushganda maxfiy ibora soʻraladi.
-312|Diskni shifrlash
-313|Shifrlash kompyuter yoʻqolsa yoki oʻgʻirlansa, maʼlumotlaringizni himoya qiladi.
-314|Bu oʻrnatmada mavjud emas
-315|Shifrlash kompyuter yoʻqolsa yoki oʻgʻirlansa, fayllaringizni himoya qiladi. Maxfiy iborasiz diskni hech kim oʻqiy olmaydi.
-316|Diskni shifrlash
-317|Kompyuter har ishga tushganda maxfiy ibora soʻraladi.
-318|Shifrlash keyingi qayta ishga tushirishda boshlanadi
-319|Keyin kompyuterdan foydalanayotganingizda disk fonda shifrlanadi. Maxfiy ibora yoʻqolsa, maʼlumotlarni hech kim tiklay olmaydi.
-320|MAN tayyorlanmoqda
-321|Hammasi tayyorlanmoqda…
-322|_Qayta ishga tushirish
-323|_Orqaga
-324|Tayyorlanmoqda
-325|Sozlash jurnali
-326|Hammasi tayyor!
-327|Nimadir xato ketdi
-328|Kundalik
-329|Yangilashdan oldin
-330|Tiklashdan oldin
-331|Qayta oʻrnatishdan oldin
-332|Qoʻlda
-333|Hali snapshotlar yoʻq
-334|Tizimga katta oʻzgarishlar kiritishdan oldin bittasini yarating.
-335|Tiklash…
-336|Snapshotni oʻchirish
-337|{size} dan {free} boʻsh. Tizim, uy jildlari va snapshotlar bu joyni birga ishlatadi; snapshotlar faqat yaratilganidan beri oʻzgargan narsalar uchun joy egallaydi.
-338|_OK
-339|Snapshot yaratish
-340|Tizimning joriy holatini saqlaydi. Uy jildidagi shaxsiy fayllar kirmaydi.
-341|Tavsif, masalan “Drayverlarni oʻrnatishdan oldin”
-342|_Yaratish
-343|Qoʻlda yaratilgan snapshot
-344|Snapshot oʻchirilsinmi?
-345|{date} sanasidagi “{description}” butunlay oʻchiriladi.
-346|_Oʻchirish
-347|Bu snapshot tiklansinmi?
-348|Qayta ishga tushirilgandan soʻng tizim {date} sanasidagi “{description}” holatiga qaytadi. Shaxsiy fayllaringiz oʻzgarmaydi.\n\nJoriy tizim avval snapshot sifatida saqlanadi, shuning uchun buni bekor qilish mumkin.
-349|_Tiklash
-350|Tiklashni tugatish uchun qayta ishga tushiring
-351|_Keyinroq qayta ishga tushirish
-352|_Hozir qayta ishga tushirish
-353|Snapshotlar
-354|Tiklash nuqtalari
-355|Snapshotlar operatsion tizim holatini saqlaydi. Bittasini tiklash tizimni oʻsha lahzaga qaytaradi, bu muvaffaqiyatsiz yangilash yoki sozlama oʻzgarishidan keyin yordam beradi. Shaxsiy fayllaringizga hech qachon tegilmaydi.
-356|Avtomatik snapshotlar
-357|Kundalik snapshotlar
-358|Kompyuter yoqiq paytda kuniga bir marta
-359|Saqlanadigan kundalik snapshotlar
-360|Dastur yangilanishlaridan oldin
-361|Paketlar oʻrnatilganda, yangilanganda yoki oʻchirilganda avtomatik olinadi
-362|Saqlanadigan yangilash snapshotlari
-363|Xotira
-364|Disk maydoni
-365|Agar MAN ishga tushmasa
-366|Ishlaydigan tizimni qaytarish uchun yuklash menyusida “Restore a MAN snapshot” ni tanlang.
-367|Snapshotlar mavjud emas
-368|Snapshotlar MAN oʻrnatuvchisining Btrfs tuzilmasi bilan oʻrnatilgan MAN’da ishlaydi. Bu tizim (masalan, jonli seans) undan foydalanmaydi.
-369|Tiklash kutilmoqda: tugatish uchun kompyuterni qayta ishga tushiring
-370|Hozir qayta ishga tushirish
-371|Joriy amal tugashini kuting.
-372|Qidirish
-373|Bufer xotiraga nusxalash
-374|Muvofiqlashtirilgan umumjahon vaqti
-375|Ingliz (AQSh)
-376|MAN {version} chiqdi!
-377|Unga yangilashingiz mumkin.
-378|Yangilanishlarni ochish
-379|Yangilanish tekshirilmoqda
-380|Yangilanish haqiqiy va toʻliq ekani tekshirilmoqda…
-381|MAN yangilanishi
-382|Bu yangilanishni oʻrnatib boʻlmaydi
-383|Yangilanishni oʻqib boʻlmadi.
-384|{name} {version} dan yangilanish
-385|{name} {version} oʻrnatilgan
-386|Chiqarilgan sana
-387|Yuklab olish hajmi
-388|Kerakli joy
-389|Haqiqiylik
-390|Tekshirildi, “{signer}” imzolagan
-391|Yangiliklar
-392|Bu yangilanish oʻrnatilgan {name} {version} dan yangiroq emas.
-393|Yangilanish
-394|Bu yangilanishning litsenziya shartlarini oʻqing.
-395|Litsenziya shartlarini qabul qilaman
-396|Yangilanish qayerga oʻrnatilsin?
-397|Tizim almashtiriladi; uy jildingizdagi fayllarga tegilmaydi.
-398|Oʻrnatmani tanlang.
-399|hozir ishlamoqda
-400|Shu kompyuterdagi {name} {version}
-401|{model}dagi {name}
-402|MAN oʻrnatmasi topilmadi
-403|Yangilanishlar jonli seansdan emas, ishlab turgan oʻrnatilgan MAN tizimidan oʻrnatiladi.
-404|Oʻrnatma joyi
-405|Saqlanadi
-406|Fayllaringiz
-407|Uy jildingizdagi hamma narsa
-408|Hisoblar va parollar
-409|Foydalanuvchilar, guruhlar, kompyuter nomi
-410|Ulanishlar va sozlamalar
-411|Wi-Fi, vaqt mintaqasi, klaviatura, koʻrinish va snapshotlar
-412|Flatpak ilovalari
-413|Shuningdek /usr/local va /opt dagi hamma narsa
-414|Almashtiriladi
-415|apt bilan oʻrnatilgan dasturlar va tizim fayllaridagi boshqa oʻzgarishlar yangi tizim bilan almashtiriladi.
-416|Operatsion tizim
-417|{name} {version} bilan almashtiriladi. Joriy tizimni snapshotdan tiklash mumkin.
-418|Yangilanishni oʻrnatish uchun kompyuter qayta ishga tushadi
-419|Tayyorgarlikdan soʻng MAN qayta ishga tushadi, yangilanishni bir necha soniyada oʻrnatadi va yana qayta ishga tushadi.
-420|Yangilanishni _oʻrnatish
-421|Avval snapshot yaratilsinmi?
-422|Snapshot joriy tizimni saqlaydi, shunda yangilanishdan keyin biror narsa ishlamasa, unga qaytishingiz mumkin. Tavsiya etiladi.
-423|_Yaratmaslik
-424|Snapshot _yaratish
-425|{name} {version} tayyorlanmoqda
-426|Oʻrnatish uchun qayta ishga tushirish
-427|Kompyuter ikki marta qayta ishga tushadi. Fayllaringiz xavfsiz.
-428|{r} soniyadan keyin avtomatik qayta ishga tushadi
-429|30 soniyadan keyin avtomatik qayta ishga tushadi
-430|Yangilanish keyingi qayta ishga tushirishda oʻrnatiladi.
-431|Tayyor
-432|Yangilanishni tayyorlab boʻlmadi
-433|Tizimingizda hech narsa oʻzgarmadi.
-434|_Qayta urinish
-435|Yangilash jurnali
-436|Muvaffaqiyatsiz
-437|Tizimingiz yangilandi
-438|MAN {version} versiyasiga yangilandi.\nAvval: MAN {previous}.
-439|_Tayyor
-440|MAN yangilanishini ochish
-441|MAN yangilanishlari
-442|Eng yangi paketlar ro‘yxati olinmoqda…
-443|Ilova nusxalanmoqda
-444|Ilova menyuga qo‘shilmoqda
-445|Fayl topilmadi.
-446|Paketni o‘rnatib bo‘lmadi.
-447|Ilovaning menyu yozuvi yaroqsiz.
-448|Oʻrnatish rejasi tekshirilmoqda
-449|Disk tayyorlanmoqda
-450|MAN diskka nusxalanmoqda
-451|Yangi tizim sozlanmoqda
-452|Yuklovchi oʻrnatilmoqda
-453|Birinchi snapshot yaratilmoqda
-454|Yakunlanmoqda
-455|Eski boʻlim imzolari oʻchirilmoqda
-456|Boʻlimlar yaratilmoqda
-457|EFI tizim boʻlimi formatlanmoqda
-458|Tizim boʻlimi shifrlanmoqda
-459|Yuklash boʻlimi formatlanmoqda
-460|Btrfs fayl tizimi yaratilmoqda
-461|Eski fayl tizimi imzolari oʻchirilmoqda
-462|Shifrlangan oʻrnatma qulfdan chiqarilmoqda
-463|Joriy tizim snapshot sifatida saqlanmoqda
-464|Oldingi tizim oʻchirilmoqda
-465|Fayl tizimlari jadvali yozilmoqda
-466|Kompyuter nomi va identifikatori oʻrnatilmoqda
-467|Jonli seans hisoblari oʻchirilmoqda
-468|Hisobingiz yaratilmoqda
-469|MAN Setup birinchi ishga tushishga tayyorlanmoqda
-470|Vaqt mintaqasi va klaviatura oʻrnatilmoqda
-471|Oʻrnatuvchi yangi tizimdan oʻchirilmoqda
-472|Yuklash tasviri (initramfs) yaratilmoqda
-473|GRUB sozlanmoqda
-474|GRUB EFI tizim boʻlimiga oʻrnatilmoqda
-475|Zaxira yuklovchi oʻrnatilmoqda
-476|Yuklash menyusi yozilmoqda
-477|Disk tayyor
-478|Yangi tizimning snapshoti yaratilmoqda
-479|Snapshot yuklash menyusiga qoʻshilmoqda
-480|Uzilmoqda
-481|Oʻrnatuvchi yordamchisi root sifatida ishlashi kerak.
-482|Bu kompyuter UEFI rejimida ishga tushirilmagan. MAN uchun UEFI kerak.
-483|Foydalanuvchi nomi notoʻgʻri.
-484|Parol talab qilinadi.
-485|Kompyuter nomi notoʻgʻri.
-486|Nomaʼlum til.
-487|Shifrlash maxfiy iborasi kamida 8 belgidan iborat boʻlishi kerak.
-488|Oʻrnatishni tasdiqlaganingizdan keyin disk oʻzgardi. Hech narsa oʻzgartirilmadi; koʻrib chiqib, qayta tasdiqlang.
-489|Tizim boʻlimini tanlang.
-490|Tasdiqlangan diskda tanlangan tizim boʻlimi yoʻq.
-491|Yuklash boʻlimi EFI va tizim boʻlimlaridan alohida boʻlishi kerak.
-492|Yuklash boʻlimi kamida 512 MB boʻlishi kerak.
-493|Oʻrnatma tanlanmagan.
-494|Tasdiqlangan diskda tanlangan oʻrnatma yoʻq.
-495|Shifrlangan oʻrnatmada MAN_BOOT boʻlimi yoʻq.
-496|/boot ichida mos modullarga ega yadro topilmadi.
-497|Tilni tizim yordamchisi oʻzgartirishi kerak.
-498|Sozlamalaringiz qoʻllanilmoqda
-499|Diskni shifrlash tayyorlanmoqda
-500|Yakunlanmoqda
-501|MAN Setup’ni tizim yordamchisi tugatishi kerak.
-502|Bu kompyuterda MAN Setup allaqachon bajarilgan.
-503|Nomaʼlum urgʻu rangi.
-504|Tanlangan fon rasmi mavjud emas.
-505|Bu tizimni shifrlab boʻlmaydi.
-506|Sozlash kaliti yoʻq, shuning uchun shifrlash fonda davom eta olmaydi.
-507|Tizim Btrfs’ga oʻrnatilmagan, shuning uchun snapshotlar mavjud emas.
-508|Snapshotni tiklash qayta ishga tushirishni kutmoqda. Tugatish uchun avval kompyuterni qayta ishga tushiring.
-509|Notoʻgʻri snapshot ID.
-510|Yangilanish tekshirilmoqda
-511|Snapshot yaratilmoqda
-512|Yangilash maydoni tayyorlanmoqda
-513|Yangi tizim ochilmoqda
-514|Hisoblaringiz va sozlamalaringiz koʻchirilmoqda
-515|Qayta ishga tushirish tayyorlanmoqda
-516|Ochildi
-517|Hisoblar
-518|Faqat oʻrnatuvchiga tegishli dasturlar oʻchirilmoqda
-519|Yangilanishning yuklash tasviri yaratilmoqda
-520|Bir martalik yuklash yozuvi qoʻshilmoqda
-521|Yangilanish haqiqiy
-522|Snapshot yaratildi
-523|Oʻtkazib yuborildi
-524|Yangilash maydoni tayyor
-525|Yangi tizim tayyorlanmoqda
-526|Yangilanish fayli shikastlangan (nazorat yigʻindisi mos emas). Uni qayta yuklab oling.
-527|Yangilanish faylini toʻliq oʻqib boʻlmadi.
-528|Yangilanishda yadro yoʻq.
-529|Yangilanishlarni tizim yordamchisi oʻrnatishi kerak.
-530|Tanlangan oʻrnatma topilmadi.
-531|Faqat ishlab turgan MAN oʻrnatmasini yangilash mumkin.
-532|Bu MAN yangilanish fayli emas (manifest yoʻq).
-533|Yangilanish imzolanmagan, shuning uchun unga ishonib boʻlmaydi.
-534|Yangilanish imzosi shikastlangan.
-535|Yangilanish MAN tomonidan imzolanmagan. U oʻzgartirilgan yoki ishonchsiz manbadan kelgan boʻlishi mumkin.
-536|Yangilanish manifesti notoʻgʻri.
-537|Maxfiy ibora notoʻgʻri yoki shifrlangan boʻlimni ochib boʻlmaydi.
-538|Koʻk
-539|Moviy-yashil
-540|Yashil
-541|Sariq
-542|Toʻq sariq
-543|Qizil
-544|Pushti
-545|Binafsha
-546|Shifer
-547|Paket o‘rnatuvchisi
-548|.deb, Flatpak va AppImage fayllaridan ilovalar o‘rnating
-549|Tizim oʻrnatuvchisi
-550|MAN’ni shu kompyuterga oʻrnatish
-551|Tizimni tiklash
-552|Tizim snapshotlarini yaratish va tiklash
-553|Tizim yangilanishlari oʻrnatuvchisi
-554|MAN tizim yangilanish faylini oʻrnatish
-555|Jonli seans boshlanganda MAN’ni oʻrnatishni taklif qiladi
-556|MAN yangilanish bildirishnomasi
-557|Kirishdan keyin bir marta MAN yangilanganini bildiradi
-558|Yangi MAN kompyuteringizni sozlang
-559|MAN’ning birinchi sozlanishi
-560|MAN yangilanishlari
-561|MAN ning yangi versiyasi chiqqanda xabar beradi
+44|MAN yangilanishlaridan keyin ham saqlash
+45|MAN har bir yangilanishdan keyin ilovani qayta o‘rnatadi. Buning uchun uning paket fayllari saqlanadi.
+46|{name} o‘rnatish uchun “O‘rnatish” tugmasini bosing.
+47|Ilovaga yana nima kerakligi tekshirilmoqda…
+48|Kerakli paketlarni ham o‘rnatadi: {list}
+49|Ilovaga kerakli ba’zi paketlar hali mavjud emas. O‘rnatish avval eng yangi paketlar ro‘yxatini oladi; agar ular hali ham yetishmasa, ilovani o‘rnatib bo‘lmaydi.
+50|{name} o‘rnatilmoqda…
+51|Tayyorlanmoqda…
+52|Tafsilotlar
+53|Paket o‘rnatilmoqda…
+54|Ilova o‘z jildiga ko‘chirilmoqda…
+55|Ilovani o‘rnatib bo‘lmadi.
+56|Ilova Flatpak orqali o‘rnatilmoqda…
+57|Jurnal
+58|_Yopish
+59|O‘rnatish muvaffaqiyatli bo‘ldi
+60|Ilova o‘rnatildi.
+61|O‘rnatish amalga oshmadi
+62|_Ochish
+63|Tafsilotlarni _koʻrsatish
+64|Oʻrnatish jurnali
+65|Ilova o‘rnatuvchisi
+66|_Orqaga
+67|Ilova o‘qilmoqda…
+68|{name} o‘rnatish
+69|Ilovalar
+70|O‘rnatish uchun ilova tanlang
+71|Tizim yordamchisini ishga tushirib boʻlmadi.
+72|Tizim yordamchisi bilan aloqa oʻrnatib boʻlmadi.
+73|Tizim yordamchisi bilan aloqa uzildi.
+74|Avtorizatsiya bekor qilindi.
+75|Bu amal uchun administrator huquqlari kerak.
+76|Tizim yordamchisi kutilmaganda toʻxtadi.
+77|EFI tizim boʻlimi yoʻq
+78|Faqat {free} boʻsh, MAN uchun {need} kerak. Windows’da DUHACH! yordamida joy boʻshating.
+79|Boʻsh joy yoʻq. MAN uchun joy ochish uchun Windows’da DUHACH!’ni ishga tushiring.
+80|MAN shu diskdan ishlayapti
+81|Foydalanilmoqda: boʻlim ulangan
+82|Juda kichik, MAN uchun {need} kerak
+83|MAN’ni oʻrnatish
+84|MAN oʻrnatilmoqda. Tugashini kuting.
+85|Til
+86|Shu tilda _qayta ishga tushirish
+87|Jonli seans tanlangan tilda qayta ishga tushadi va MAN shu tilda oʻrnatiladi.
+88|MAN’ga xush kelibsiz
+89|Tez, ochiq va toʻliq sozlanadigan GNOME tizimi.\nUni shu kompyuterga oʻrnating yoki jonli seansni oʻrganishda davom eting.
+90|MAN’ni _oʻrnatish…
+91|MAN’ni sinashda _davom etish
+92|Disklar qidirilmoqda…
+93|Xush kelibsiz
+94|Bu kompyuter eski BIOS rejimida ishga tushirilgan. MAN faqat UEFI kompyuterlarga oʻrnatiladi: qayta ishga tushiring va UEFI yuklash variantini tanlang.
+95|Tizim yordamchisi disklar haqida maʼlumot qaytarmadi.
+96|  ·  EFI
+97|_Keyingi
+98|Diskni tozalab MAN’ni oʻrnatish
+99|Tanlangan diskdagi hamma narsa oʻchiriladi, Windows ham.
+100|Tavsiya etiladi. Tanlangan diskdagi hamma narsa oʻchiriladi.
+101|Windows yoniga oʻrnatish
+102|Tavsiya etiladi. MAN Windows yonidagi boʻsh joydan foydalanadi; Windows va uning fayllari qoladi. Har ishga tushirishda tizimni tanlaysiz.
+103|MAN’ni qayta oʻrnatish
+104|Tizimni almashtiradi, lekin /home ichidagi shaxsiy fayllarni saqlaydi. Joriy tizim snapshot sifatida saqlanadi.
+105|Maxsus boʻlimlar
+106|Mutaxassislar uchun: boʻlimlarni oʻzingiz tanlang yoki Disklar bilan yarating.
+107|Disk
+108|Tozalanadigan diskni tanlang. Foydalanib boʻlmaydigan disklar sababi bilan koʻrsatiladi.
+109|Disklar topilmadi
+110|Windows yonidagi boʻsh joy
+111|Windows boʻlimlariga tegilmaydi. MAN EFI tizim boʻlimini birga ishlatadi va Windows’ni yuklash menyusiga qoʻshadi.
+112|{size} boʻsh
+113|boʻsh joy yoʻq
+114|{model} (Windows)
+115|Almashtiriladigan oʻrnatma
+116|uy jildlari yoʻq
+117|uy jildlari: {list}
+118|snapshotlar: {n}
+119|{model}dagi MAN
+120|{device} uchun maxfiy ibora
+121|Qulfdan chiqarish
+122|Oʻrnatmani tekshirib boʻlmadi.
+123|Boʻlimlar
+124|Tizim boʻlimi Btrfs sifatida formatlanadi va @system, @home va @snapshots’ni oʻz ichiga oladi. MAN ishlayotgan diskning boʻlimlari koʻrsatilmaydi.
+125|Boʻlim yaratish yoki hajmini oʻzgartirish uchun Disklarni ochish
+126|Boʻlimlar roʻyxatini yangilash
+127|Boʻlimni tanlang
+128|EFI tizim boʻlimi
+129|EFI tizim boʻlimini formatlash
+130|Boshqa tizimlarning yuklovchilarini saqlash uchun oʻchiq qoldiring
+131|Tizim boʻlimi (Btrfs sifatida formatlanadi)
+132|Yuklash boʻlimi (shifrlash uchun kerak)
+133|Boʻlimlar roʻyxati yangilandi
+134|Xavfsizlik
+135|Tizimni shifrlash
+136|Kompyuter yoʻqolsa yoki oʻgʻirlansa, maʼlumotlaringizni himoya qiladi. Har ishga tushirishda maxfiy ibora soʻraladi.
+137|Maxfiy ibora
+138|Maxfiy iborani tasdiqlash
+139|Bu maxfiy iborani xavfsiz joyda saqlang
+140|U yoʻqolsa, maʼlumotlarni hech kim tiklay olmaydi. Yadro va yuklash fayllari kichik shifrlanmagan yuklash boʻlimida qoladi.
+141|Maxfiy ibora kamida 8 belgidan iborat boʻlishi kerak.
+142|Maxfiy iboralar mos kelmaydi.
+143|Disk tanlang.
+144|Windows bor diskni tanlang.
+145|Almashtiriladigan oʻrnatmani tanlang.
+146|Avval shifrlangan oʻrnatmani qulfdan chiqaring.
+147|Bu boʻlimda MAN tizimi yoʻq.
+148|EFI tizim boʻlimini tanlang.
+149|Tizim boʻlimini tanlang.
+150|EFI va tizim boʻlimlari har xil boʻlishi kerak.
+151|Shifrlash uchun alohida yuklash boʻlimi kerak.
+152|Tizim boʻlimi kamida {size} boʻlishi kerak.
+153|EFI boʻlimi FAT formatida emas; formatlashni yoqing.
+154|Tizim boʻlimi ulangan; avval uni Disklarda uzing.
+155|MAN qayerga oʻrnatilsin?
+156|Vaqt va klaviatura
+157|Vaqt mintaqasi
+158|Klaviatura tartibi
+159|Klaviaturani sinab koʻring
+160|Tugmalar toʻgʻri belgilarni yozishini tekshirish uchun shu yerga yozing.
+161|Shu yerga yozing
+162|Vaqt mintaqasi va klaviatura
+163|Disk tanlanmagan
+164|Tizim boʻlimi tanlanmagan
+165|Tizim boʻlimi yoʻqoldi
+166|Oʻrnatma tanlanmagan
+167|Disk yoʻqoldi
+168|Koʻrib chiqish
+169|Manzil
+170|Diskni tozalab oʻrnatish
+171|Maxsus boʻlimlar
+172|/home saqlanib qayta oʻrnatish
+173|Windows yoniga
+174| (formatlanadi)
+175| (saqlanadi)
+176|Tizim boʻlimi
+177|{partition} (formatlanadi)
+178|Yuklash boʻlimi
+179|MAN uchun joy
+180|{free} boʻsh joy (yuklash boʻlimi va tizim boʻlimi yaratiladi)
+181|Windows
+182|Oʻzgarmaydi. U MAN yuklash menyusida chiqadi; EFI tizim boʻlimi umumiy.
+183|Shifrlash
+184|Yoqilgan (LUKS2)
+185|Oʻchirilgan
+186|Fayl tizimi
+187|Btrfs: @system — MAN uchun, @home — fayllaringiz uchun, @snapshots — tiklash nuqtalari uchun. Hammasi boʻsh joyni birga ishlatadi.
+188|Tizim
+189|Hisobingiz
+190|Kompyuter birinchi marta ishga tushganda MAN Setup’da kompyuter nomi, koʻrinish va maxfiylik sozlamalari bilan birga yaratiladi.
+191|Klaviatura
+192|{model} ({path}) dagi barcha maʼlumotlar oʻchiriladi.
+193|_Tozalash va oʻrnatish
+194|Tanlangan boʻlimlar formatlanadi. Boshqa boʻlimlar oʻzgarmaydi.
+195|_Formatlash va oʻrnatish
+196|Joriy tizim almashtiriladi. /home dagi fayllaringiz qoladi, eski tizim esa snapshot sifatida saqlanadi.
+197|_Qayta oʻrnatish
+198|MAN boʻsh joyga oʻrnatiladi. Windows va uning fayllari oʻzgarmaydi.
+199|Oʻrnatishga tayyor
+200|{model} tozalansinmi?
+201|{path} ({size}) dagi barcha fayllar va boʻlimlar butunlay oʻchiriladi. Buni bekor qilib boʻlmaydi.
+202|Tozalash va oʻrnatish
+203|Tanlangan boʻlimlar formatlansinmi?
+204|Tanlangan boʻlimlardagi barcha maʼlumotlar butunlay oʻchiriladi. Boshqa boʻlimlar oʻzgarmaydi.
+205|Formatlash va oʻrnatish
+206|MAN Windows yoniga oʻrnatilsinmi?
+207|MAN {model} ({path}) dagi {free} boʻsh joyga oʻrnatiladi. Windows va uning fayllari oʻzgarmaydi.
+208|Oʻrnatish
+209|MAN qayta oʻrnatilsinmi?
+210|Oʻrnatilgan tizim yangi nusxa bilan almashtiriladi. /home dagi shaxsiy fayllar qoladi, eski tizim esa snapshot sifatida mavjud boʻladi.
+211|Qayta oʻrnatish
+212|_Bekor qilish
+213|MAN oʻrnatilmoqda
+214|Boshlanmoqda…
+215|Oʻrnatilmoqda
+216|{n} qadamdan {index}-qadam  ·  {title}
+217|MAN oʻrnatildi
+218|MAN’dan foydalanishni boshlash uchun kompyuterni qayta ishga tushiring. Har ishga tushirishda menyu MAN yoki Windows’ni tanlash imkonini beradi; vaqtinchalik oʻrnatuvchi boʻlimini MAN birinchi ishga tushishda oʻchiradi.
+219|MAN’dan foydalanishni boshlash uchun kompyuterni qayta ishga tushiring. Oʻrnatish vositasini chiqarib olishingiz mumkin; ulangan qolsa ham MAN yangi diskdan ishga tushadi.
+220|Hozir _qayta ishga tushirish
+221|Tayyor
+222|Oʻrnatish muvaffaqiyatsiz tugadi
+223|Boshqa hech qaysi disk oʻzgartirilmadi va oʻrnatuvchi maqsadli diskni boʻshatdi. Rejani koʻrib chiqib, qayta urinishingiz mumkin.
+224|_Koʻrib chiqish va qayta urinish
+225|Tillarni qidirish
+226|Mamlakatlarni qidirish
+227|Tizim diski topilmadi.
+228|Shifrlash uchun MAN oʻrnatuvchisi yaratgan Btrfs tuzilmasi kerak.
+229|Bu oʻrnatmada shifrlash uchun zarur alohida yuklash boʻlimi yoʻq. Shifrlashdan foydalanish uchun MAN’ni “Diskni tozalash” bilan qayta oʻrnating.
+230|MAN Setup
+231|Qayerdasiz?
+232|Mamlakatingiz yoki mintaqangiz sana, vaqt va raqamlar formatini belgilaydi.
+233|Mamlakat
+234|GNU Umumiy ommaviy litsenziyasi, 2-versiya
+235|Linux yadrosi va koʻplab tizim vositalari
+236|GNU Umumiy ommaviy litsenziyasi, 3-versiya
+237|Koʻplab GNU va GNOME dasturlari
+238|GNU Kichik umumiy ommaviy litsenziyasi, 2.1-versiya
+239|GTK, GLib va koʻplab kutubxonalar
+240|GNU Kichik umumiy ommaviy litsenziyasi, 3-versiya
+241|Kutubxonalar
+242|Mozilla ommaviy litsenziyasi 2.0
+243|Mozilla va boshqalarning dastur va kutubxonalari
+244|Apache litsenziyasi 2.0
+245|Kutubxonalar va vositalar
+246|Litsenziya shartnomasi
+247|MAN taqdim etiladigan shartlarni oʻqing va qabul qiling.
+248|Litsenziyalar
+249|Litsenziya matni mavjud emas ({path}).
+250|Litsenziya shartlarini oʻqidim va qabul qilaman
+251|Simli
+252|Ulanmagan
+253|Internetga ulanish
+254|Ulanish boʻlsa, MAN vaqtni sozlay oladi va dasturlaringizni yangilab turadi. Buni keyin ham qilishingiz mumkin.
+255|Ulanish tekshirilmoqda…
+256|Wi-Fi tarmoqlari
+257|Qayta qidirish
+258|_Oʻtkazib yuborish
+259|Keyinroq Sozlamalarda ulanishingiz mumkin.
+260|Ulangan
+261|Ulanmagan
+262|Tarmoqlar topilmadi
+263|Internet
+264|“{ssid}” tarmogʻiga ulandi
+265|“{ssid}” tarmogʻiga ulanib boʻlmadi
+266|“{ssid}” tarmogʻiga ulanish
+267|Tarmoq parolini kiriting.
+268|_Ulanish
+269|Hisobingizni yarating
+270|Siz bu kompyuterning administratori boʻlasiz, sudo orqali toʻliq root huquqi bilan.
+271|Toʻliq ism
+272|Foydalanuvchi nomi
+273|Parol
+274|Parolni tasdiqlash
+275|Avtomatik kirish
+276|Kompyuter ishga tushganda kirish ekranini oʻtkazib yuborish
+277|Mavjud uy jildlari
+278|Oldingi oʻrnatmadan qolgan jilddan foydalanishda davom etish uchun oʻsha foydalanuvchi nomini ishlating.
+279|Foydalanish
+280|Qoʻshimcha
+281|Kompyuter nomi
+282|Root parolini oʻrnatish
+283|Bevosita root sifatida kirishga imkon beradi. Usiz oʻz parolingiz bilan sudo’dan foydalaning.
+284|Root paroli
+285|Root parolini tasdiqlash
+286|Ismingizni kiriting.
+287|Foydalanuvchi nomini tanlang.
+288|Bu foydalanuvchi nomidan tizim allaqachon foydalanmoqda.
+289|Bu foydalanuvchi nomi tizim uchun band qilingan.
+290|Foydalanuvchi nomlari kichik lotin harflari, raqamlar, - va _ dan iborat boʻlib, harf bilan boshlanadi.
+291|Parol tanlang.
+292|Parollar mos kelmaydi.
+293|Kompyuter nomida harflar, raqamlar va chiziqchalar boʻlishi mumkin.
+294|Root parolini ikki marta kiriting.
+295|Maslahat: 8 va undan ortiq belgili parol ancha xavfsizroq.
+296|Hisob
+297|Toʻq
+298|Och
+299|Oʻzingizga moslang
+300|Uslub, urgʻu rangi va fon rasmini tanlang. Har bir oʻzgarishni darhol koʻrasiz.
+301|Uslub
+302|Urgʻu rangi
+303|Fon rasmi
+304|Moslash
+305|Maxfiylik
+306|Qaysi funksiyalar siz haqingizdagi maʼlumotdan foydalanishi mumkinligini tanlang. Buni istalgan vaqtda Sozlamalarda oʻzgartirishingiz mumkin.
+307|Joylashuv xizmatlari
+308|Xaritalar va Ob-havo kabi ilovalarga yaqin Wi-Fi tarmoqlari orqali taxminiy joylashuvingizni aniqlashga ruxsat beradi.
+309|Avtomatik vaqt mintaqasi
+310|Sayohat paytida vaqt mintaqasini toʻgʻri saqlash uchun joylashuvingizdan foydalanadi.
+311|Sozlashni _tugatish
+312|Diskingiz shifrlangan
+313|Maʼlumotlaringiz himoyalangan. Kompyuter har ishga tushganda maxfiy ibora soʻraladi.
+314|Diskni shifrlash
+315|Shifrlash kompyuter yoʻqolsa yoki oʻgʻirlansa, maʼlumotlaringizni himoya qiladi.
+316|Bu oʻrnatmada mavjud emas
+317|Shifrlash kompyuter yoʻqolsa yoki oʻgʻirlansa, fayllaringizni himoya qiladi. Maxfiy iborasiz diskni hech kim oʻqiy olmaydi.
+318|Diskni shifrlash
+319|Kompyuter har ishga tushganda maxfiy ibora soʻraladi.
+320|Shifrlash keyingi qayta ishga tushirishda boshlanadi
+321|Keyin kompyuterdan foydalanayotganingizda disk fonda shifrlanadi. Maxfiy ibora yoʻqolsa, maʼlumotlarni hech kim tiklay olmaydi.
+322|MAN tayyorlanmoqda
+323|Hammasi tayyorlanmoqda…
+324|_Qayta ishga tushirish
+325|_Orqaga
+326|Tayyorlanmoqda
+327|Sozlash jurnali
+328|Hammasi tayyor!
+329|Nimadir xato ketdi
+330|Kundalik
+331|Yangilashdan oldin
+332|Tiklashdan oldin
+333|Qayta oʻrnatishdan oldin
+334|Qoʻlda
+335|Hali snapshotlar yoʻq
+336|Tizimga katta oʻzgarishlar kiritishdan oldin bittasini yarating.
+337|Tiklash…
+338|Snapshotni oʻchirish
+339|{size} dan {free} boʻsh. Tizim, uy jildlari va snapshotlar bu joyni birga ishlatadi; snapshotlar faqat yaratilganidan beri oʻzgargan narsalar uchun joy egallaydi.
+340|_OK
+341|Snapshot yaratish
+342|Tizimning joriy holatini saqlaydi. Uy jildidagi shaxsiy fayllar kirmaydi.
+343|Tavsif, masalan “Drayverlarni oʻrnatishdan oldin”
+344|_Yaratish
+345|Qoʻlda yaratilgan snapshot
+346|Snapshot oʻchirilsinmi?
+347|{date} sanasidagi “{description}” butunlay oʻchiriladi.
+348|_Oʻchirish
+349|Bu snapshot tiklansinmi?
+350|Qayta ishga tushirilgandan soʻng tizim {date} sanasidagi “{description}” holatiga qaytadi. Shaxsiy fayllaringiz oʻzgarmaydi.\n\nJoriy tizim avval snapshot sifatida saqlanadi, shuning uchun buni bekor qilish mumkin.
+351|_Tiklash
+352|Tiklashni tugatish uchun qayta ishga tushiring
+353|_Keyinroq qayta ishga tushirish
+354|_Hozir qayta ishga tushirish
+355|Snapshotlar
+356|Tiklash nuqtalari
+357|Snapshotlar operatsion tizim holatini saqlaydi. Bittasini tiklash tizimni oʻsha lahzaga qaytaradi, bu muvaffaqiyatsiz yangilash yoki sozlama oʻzgarishidan keyin yordam beradi. Shaxsiy fayllaringizga hech qachon tegilmaydi.
+358|Avtomatik snapshotlar
+359|Kundalik snapshotlar
+360|Kompyuter yoqiq paytda kuniga bir marta
+361|Saqlanadigan kundalik snapshotlar
+362|Dastur yangilanishlaridan oldin
+363|Paketlar oʻrnatilganda, yangilanganda yoki oʻchirilganda avtomatik olinadi
+364|Saqlanadigan yangilash snapshotlari
+365|Xotira
+366|Disk maydoni
+367|Agar MAN ishga tushmasa
+368|Ishlaydigan tizimni qaytarish uchun yuklash menyusida “Restore a MAN snapshot” ni tanlang.
+369|Snapshotlar mavjud emas
+370|Snapshotlar MAN oʻrnatuvchisining Btrfs tuzilmasi bilan oʻrnatilgan MAN’da ishlaydi. Bu tizim (masalan, jonli seans) undan foydalanmaydi.
+371|Tiklash kutilmoqda: tugatish uchun kompyuterni qayta ishga tushiring
+372|Hozir qayta ishga tushirish
+373|Joriy amal tugashini kuting.
+374|Qidirish
+375|Bufer xotiraga nusxalash
+376|Muvofiqlashtirilgan umumjahon vaqti
+377|Ingliz (AQSh)
+378|MAN {version} chiqdi!
+379|Unga yangilashingiz mumkin.
+380|Yangilanishlarni ochish
+381|Yangilanish tekshirilmoqda
+382|Yangilanish haqiqiy va toʻliq ekani tekshirilmoqda…
+383|MAN yangilanishi
+384|Bu yangilanishni oʻrnatib boʻlmaydi
+385|Yangilanishni oʻqib boʻlmadi.
+386|{name} {version} dan yangilanish
+387|{name} {version} oʻrnatilgan
+388|Chiqarilgan sana
+389|Yuklab olish hajmi
+390|Kerakli joy
+391|Haqiqiylik
+392|Tekshirildi, “{signer}” imzolagan
+393|Yangiliklar
+394|Bu yangilanish oʻrnatilgan {name} {version} dan yangiroq emas.
+395|Yangilanish
+396|Bu yangilanishning litsenziya shartlarini oʻqing.
+397|Litsenziya shartlarini qabul qilaman
+398|Yangilanish qayerga oʻrnatilsin?
+399|Tizim almashtiriladi; uy jildingizdagi fayllarga tegilmaydi.
+400|Oʻrnatmani tanlang.
+401|hozir ishlamoqda
+402|Shu kompyuterdagi {name} {version}
+403|{model}dagi {name}
+404|MAN oʻrnatmasi topilmadi
+405|Yangilanishlar jonli seansdan emas, ishlab turgan oʻrnatilgan MAN tizimidan oʻrnatiladi.
+406|Oʻrnatma joyi
+407|Saqlanadi
+408|Fayllaringiz
+409|Uy jildingizdagi hamma narsa
+410|Hisoblar va parollar
+411|Foydalanuvchilar, guruhlar, kompyuter nomi
+412|Ulanishlar va sozlamalar
+413|Wi-Fi, vaqt mintaqasi, klaviatura, koʻrinish va snapshotlar
+414|Flatpak ilovalari
+415|Shuningdek /usr/local va /opt dagi hamma narsa
+416|Almashtiriladi
+417|apt bilan oʻrnatilgan dasturlar va tizim fayllaridagi boshqa oʻzgarishlar yangi tizim bilan almashtiriladi.
+418|Operatsion tizim
+419|{name} {version} bilan almashtiriladi. Joriy tizimni snapshotdan tiklash mumkin.
+420|Yangilanishni oʻrnatish uchun kompyuter qayta ishga tushadi
+421|Tayyorgarlikdan soʻng MAN qayta ishga tushadi, yangilanishni bir necha soniyada oʻrnatadi va yana qayta ishga tushadi.
+422|Yangilanishni _oʻrnatish
+423|Avval snapshot yaratilsinmi?
+424|Snapshot joriy tizimni saqlaydi, shunda yangilanishdan keyin biror narsa ishlamasa, unga qaytishingiz mumkin. Tavsiya etiladi.
+425|_Yaratmaslik
+426|Snapshot _yaratish
+427|{name} {version} tayyorlanmoqda
+428|Oʻrnatish uchun qayta ishga tushirish
+429|Kompyuter ikki marta qayta ishga tushadi. Fayllaringiz xavfsiz.
+430|{r} soniyadan keyin avtomatik qayta ishga tushadi
+431|30 soniyadan keyin avtomatik qayta ishga tushadi
+432|Yangilanish keyingi qayta ishga tushirishda oʻrnatiladi.
+433|Tayyor
+434|Yangilanishni tayyorlab boʻlmadi
+435|Tizimingizda hech narsa oʻzgarmadi.
+436|_Qayta urinish
+437|Yangilash jurnali
+438|Muvaffaqiyatsiz
+439|Tizimingiz yangilandi
+440|MAN {version} versiyasiga yangilandi.\nAvval: MAN {previous}.
+441|_Tayyor
+442|MAN yangilanishini ochish
+443|MAN yangilanishlari
+444|Eng yangi paketlar ro‘yxati olinmoqda…
+445|Ilova nusxalanmoqda
+446|Ilova menyuga qo‘shilmoqda
+447|Fayl topilmadi.
+448|Paketni o‘rnatib bo‘lmadi.
+449|Ilovaning menyu yozuvi yaroqsiz.
+450|Oʻrnatish rejasi tekshirilmoqda
+451|Disk tayyorlanmoqda
+452|MAN diskka nusxalanmoqda
+453|Yangi tizim sozlanmoqda
+454|Yuklovchi oʻrnatilmoqda
+455|Birinchi snapshot yaratilmoqda
+456|Yakunlanmoqda
+457|Eski boʻlim imzolari oʻchirilmoqda
+458|Boʻlimlar yaratilmoqda
+459|EFI tizim boʻlimi formatlanmoqda
+460|Tizim boʻlimi shifrlanmoqda
+461|Yuklash boʻlimi formatlanmoqda
+462|Btrfs fayl tizimi yaratilmoqda
+463|Eski fayl tizimi imzolari oʻchirilmoqda
+464|Shifrlangan oʻrnatma qulfdan chiqarilmoqda
+465|Joriy tizim snapshot sifatida saqlanmoqda
+466|Oldingi tizim oʻchirilmoqda
+467|Fayl tizimlari jadvali yozilmoqda
+468|Kompyuter nomi va identifikatori oʻrnatilmoqda
+469|Jonli seans hisoblari oʻchirilmoqda
+470|Hisobingiz yaratilmoqda
+471|MAN Setup birinchi ishga tushishga tayyorlanmoqda
+472|Vaqt mintaqasi va klaviatura oʻrnatilmoqda
+473|Oʻrnatuvchi yangi tizimdan oʻchirilmoqda
+474|Yuklash tasviri (initramfs) yaratilmoqda
+475|GRUB sozlanmoqda
+476|GRUB EFI tizim boʻlimiga oʻrnatilmoqda
+477|Zaxira yuklovchi oʻrnatilmoqda
+478|Yuklash menyusi yozilmoqda
+479|Disk tayyor
+480|Yangi tizimning snapshoti yaratilmoqda
+481|Snapshot yuklash menyusiga qoʻshilmoqda
+482|Uzilmoqda
+483|Oʻrnatuvchi yordamchisi root sifatida ishlashi kerak.
+484|Bu kompyuter UEFI rejimida ishga tushirilmagan. MAN uchun UEFI kerak.
+485|Foydalanuvchi nomi notoʻgʻri.
+486|Parol talab qilinadi.
+487|Kompyuter nomi notoʻgʻri.
+488|Nomaʼlum til.
+489|Shifrlash maxfiy iborasi kamida 8 belgidan iborat boʻlishi kerak.
+490|Oʻrnatishni tasdiqlaganingizdan keyin disk oʻzgardi. Hech narsa oʻzgartirilmadi; koʻrib chiqib, qayta tasdiqlang.
+491|Tizim boʻlimini tanlang.
+492|Tasdiqlangan diskda tanlangan tizim boʻlimi yoʻq.
+493|Yuklash boʻlimi EFI va tizim boʻlimlaridan alohida boʻlishi kerak.
+494|Yuklash boʻlimi kamida 512 MB boʻlishi kerak.
+495|Oʻrnatma tanlanmagan.
+496|Tasdiqlangan diskda tanlangan oʻrnatma yoʻq.
+497|Shifrlangan oʻrnatmada MAN_BOOT boʻlimi yoʻq.
+498|/boot ichida mos modullarga ega yadro topilmadi.
+499|Tilni tizim yordamchisi oʻzgartirishi kerak.
+500|Sozlamalaringiz qoʻllanilmoqda
+501|Diskni shifrlash tayyorlanmoqda
+502|Yakunlanmoqda
+503|MAN Setup’ni tizim yordamchisi tugatishi kerak.
+504|Bu kompyuterda MAN Setup allaqachon bajarilgan.
+505|Nomaʼlum urgʻu rangi.
+506|Tanlangan fon rasmi mavjud emas.
+507|Bu tizimni shifrlab boʻlmaydi.
+508|Sozlash kaliti yoʻq, shuning uchun shifrlash fonda davom eta olmaydi.
+509|Tizim Btrfs’ga oʻrnatilmagan, shuning uchun snapshotlar mavjud emas.
+510|Snapshotni tiklash qayta ishga tushirishni kutmoqda. Tugatish uchun avval kompyuterni qayta ishga tushiring.
+511|Notoʻgʻri snapshot ID.
+512|Yangilanish tekshirilmoqda
+513|Snapshot yaratilmoqda
+514|Yangilash maydoni tayyorlanmoqda
+515|Yangi tizim ochilmoqda
+516|Hisoblaringiz va sozlamalaringiz koʻchirilmoqda
+517|Qayta ishga tushirish tayyorlanmoqda
+518|Ochildi
+519|Hisoblar
+520|Saqlangan ilovalar qayta o‘rnatilmoqda
+521|Faqat oʻrnatuvchiga tegishli dasturlar oʻchirilmoqda
+522|Yangilanishning yuklash tasviri yaratilmoqda
+523|Bir martalik yuklash yozuvi qoʻshilmoqda
+524|Yangilanish haqiqiy
+525|Snapshot yaratildi
+526|Oʻtkazib yuborildi
+527|Yangilash maydoni tayyor
+528|Yangi tizim tayyorlanmoqda
+529|Yangilanish fayli shikastlangan (nazorat yigʻindisi mos emas). Uni qayta yuklab oling.
+530|Yangilanish faylini toʻliq oʻqib boʻlmadi.
+531|Yangilanishda yadro yoʻq.
+532|Yangilanishlarni tizim yordamchisi oʻrnatishi kerak.
+533|Tanlangan oʻrnatma topilmadi.
+534|Faqat ishlab turgan MAN oʻrnatmasini yangilash mumkin.
+535|Bu MAN yangilanish fayli emas (manifest yoʻq).
+536|Yangilanish imzolanmagan, shuning uchun unga ishonib boʻlmaydi.
+537|Yangilanish imzosi shikastlangan.
+538|Yangilanish MAN tomonidan imzolanmagan. U oʻzgartirilgan yoki ishonchsiz manbadan kelgan boʻlishi mumkin.
+539|Yangilanish manifesti notoʻgʻri.
+540|Maxfiy ibora notoʻgʻri yoki shifrlangan boʻlimni ochib boʻlmaydi.
+541|Koʻk
+542|Moviy-yashil
+543|Yashil
+544|Sariq
+545|Toʻq sariq
+546|Qizil
+547|Pushti
+548|Binafsha
+549|Shifer
+550|Paket o‘rnatuvchisi
+551|.deb, Flatpak va AppImage fayllaridan ilovalar o‘rnating
+552|Tizim oʻrnatuvchisi
+553|MAN’ni shu kompyuterga oʻrnatish
+554|Tizimni tiklash
+555|Tizim snapshotlarini yaratish va tiklash
+556|Tizim yangilanishlari oʻrnatuvchisi
+557|MAN tizim yangilanish faylini oʻrnatish
+558|Jonli seans boshlanganda MAN’ni oʻrnatishni taklif qiladi
+559|MAN yangilanish bildirishnomasi
+560|Kirishdan keyin bir marta MAN yangilanganini bildiradi
+561|Yangi MAN kompyuteringizni sozlang
+562|MAN’ning birinchi sozlanishi
+563|MAN yangilanishlari
+564|MAN ning yangi versiyasi chiqqanda xabar beradi

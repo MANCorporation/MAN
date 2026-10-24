@@ -30,7 +30,7 @@
 29|Webová stránka
 30|Súbor
 31|Táto aplikácia je už nainštalovaná. Nová inštalácia ju nahradí.
-32|Aplikácie z balíkov .deb sa stávajú súčasťou systému. Pri aktualizácii MAN sa odstránia a treba ich nainštalovať znova. Aplikácie Flatpak a AppImage zostanú zachované.
+32|Aplikácie z balíkov .deb sa stávajú súčasťou systému. Aktualizácia MAN systém nahradí, takže sa po nej znova nainštalujú len tie, ktoré zachováte (ďalšie kroky).
 33|Inštalujte len aplikácie zo zdrojov, ktorým dôverujete.
 34|Kam chcete aplikáciu {name} nainštalovať?
 35|Aplikáciu môže používať len váš účet.
@@ -42,521 +42,524 @@
 41|Aplikácia sa nainštaluje pre všetkých používateľov tohto počítača.
 42|Aplikácia sa nainštaluje len pre vás.
 43|AppImage sa presunie do {folder} a pridá sa medzi vaše aplikácie.
-44|Kliknutím na Inštalovať nainštalujete aplikáciu {name}.
-45|Zisťuje sa, čo ďalšie aplikácia potrebuje…
-46|Nainštalujú sa aj balíky, ktoré potrebuje: {list}
-47|Niektoré balíky, ktoré aplikácia potrebuje, zatiaľ nie sú dostupné. Inštalácia najprv získa najnovšie zoznamy balíkov; ak budú stále chýbať, aplikáciu nemožno nainštalovať.
-48|Inštaluje sa {name}…
-49|Pripravuje sa…
-50|Podrobnosti
-51|Inštaluje sa balík…
-52|Aplikácia sa presúva do svojho priečinka…
-53|Aplikáciu nemožno nainštalovať.
-54|Aplikácia sa inštaluje pomocou Flatpaku…
-55|Záznam
-56|_Zavrieť
-57|Inštalácia bola úspešná
-58|Aplikácia bola nainštalovaná.
-59|Inštalácia zlyhala
-60|_Otvoriť
-61|_Zobraziť podrobnosti
-62|Záznam inštalácie
-63|Inštalátor aplikácií
-64|_Späť
-65|Načítava sa aplikácia…
-66|Inštalovať {name}
-67|Aplikácie
-68|Vyberte aplikáciu na inštaláciu
-69|Systémového pomocníka nemožno spustiť.
-70|So systémovým pomocníkom nemožno komunikovať.
-71|Spojenie so systémovým pomocníkom sa stratilo.
-72|Overenie bolo zrušené.
-73|Na túto akciu sú potrebné práva správcu.
-74|Systémový pomocník sa neočakávane ukončil.
-75|Chýba systémový oddiel EFI
-76|Voľné je len {free}, MAN potrebuje {need}. Uvoľnite miesto pomocou DUHACH! vo Windows.
-77|Žiadne voľné miesto. Spustite vo Windows DUHACH! a uvoľnite miesto pre MAN.
-78|Z tohto disku práve beží MAN
-79|Používa sa: oddiel je pripojený
-80|Príliš malý, MAN potrebuje {need}
-81|Inštalovať MAN
-82|MAN sa inštaluje. Počkajte, prosím, na dokončenie.
-83|Jazyk
-84|_Reštartovať v tomto jazyku
-85|Živá relácia sa reštartuje vo zvolenom jazyku a MAN sa v ňom aj nainštaluje.
-86|Vitajte v MAN
-87|Rýchly, otvorený a plne prispôsobiteľný systém GNOME.\nNainštalujte ho do tohto počítača alebo pokračujte v skúšaní živej relácie.
-88|_Inštalovať MAN…
-89|_Ďalej skúšať MAN
-90|Hľadajú sa disky…
-91|Vitajte
-92|Tento počítač bol spustený v režime legacy BIOS. MAN možno nainštalovať len na počítače s UEFI: reštartujte a zvoľte možnosť spustenia UEFI.
-93|Systémový pomocník nevrátil žiadne informácie o diskoch.
-94|  ·  EFI
-95|Ď_alej
-96|Vymazať disk a nainštalovať MAN
-97|Všetko na zvolenom disku sa vymaže, vrátane Windows.
-98|Odporúčané. Všetko na zvolenom disku sa vymaže.
-99|Inštalovať vedľa Windows
-100|Odporúčané. MAN využije voľné miesto vedľa Windows; Windows aj jeho súbory zostanú. Systém si zvolíte pri každom spustení.
-101|Preinštalovať MAN
-102|Nahradí systém, ale ponechá osobné súbory v /home. Súčasný systém sa uloží ako snímka.
-103|Vlastné oddiely
-104|Pre odborníkov: zvoľte oddiely sami alebo ich vytvorte v aplikácii Disky.
-105|Disk
-106|Zvoľte disk, ktorý sa vymaže. Disky, ktoré nemožno použiť, sú zobrazené s dôvodom.
-107|Nenašli sa žiadne disky
-108|Voľné miesto vedľa Windows
-109|Oddiely Windows zostanú nedotknuté. MAN zdieľa systémový oddiel EFI a pridá Windows do svojej ponuky pri spustení.
-110|{size} voľné
-111|žiadne voľné miesto
-112|{model} (Windows)
-113|Inštalácia na nahradenie
-114|žiadne domovské priečinky
-115|domovské priečinky: {list}
-116|snímky: {n}
-117|MAN na {model}
-118|Heslo pre {device}
-119|Odomknúť
-120|Inštaláciu sa nepodarilo preskúmať.
-121|Oddiely
-122|Systémový oddiel sa naformátuje na Btrfs a obsahuje @system, @home a @snapshots. Oddiely na disku, z ktorého MAN beží, nie sú uvedené.
-123|Otvoriť Disky na vytvorenie alebo zmenu veľkosti oddielov
-124|Obnoviť zoznam oddielov
-125|Zvoľte oddiel
-126|Systémový oddiel EFI
-127|Naformátovať systémový oddiel EFI
-128|Nechajte vypnuté, aby zostali zavádzače iných systémov
-129|Systémový oddiel (naformátuje sa na Btrfs)
-130|Zavádzací oddiel (potrebný pre šifrovanie)
-131|Zoznam oddielov bol obnovený
-132|Zabezpečenie
-133|Šifrovať systém
-134|Chráni vaše údaje, ak počítač stratíte alebo vám ho ukradnú. Heslo sa zadáva pri každom spustení.
-135|Heslo
-136|Potvrdenie hesla
-137|Uschovajte si toto heslo
-138|Ak ho stratíte, údaje už nikto neobnoví. Jadro a zavádzacie súbory zostanú na malom nešifrovanom zavádzacom oddiele.
-139|Heslo musí mať aspoň 8 znakov.
-140|Heslá sa nezhodujú.
-141|Zvoľte disk.
-142|Zvoľte disk s Windows.
-143|Zvoľte inštaláciu, ktorá sa nahradí.
-144|Najprv odomknite šifrovanú inštaláciu.
-145|Tento oddiel neobsahuje systém MAN.
-146|Zvoľte systémový oddiel EFI.
-147|Zvoľte systémový oddiel.
-148|Oddiel EFI a systémový oddiel sa musia líšiť.
-149|Šifrovanie potrebuje samostatný zavádzací oddiel.
-150|Systémový oddiel musí mať aspoň {size}.
-151|Oddiel EFI nie je vo formáte FAT; zapnite formátovanie.
-152|Systémový oddiel je pripojený; najprv ho odpojte v aplikácii Disky.
-153|Kam nainštalovať MAN?
-154|Čas a klávesnica
-155|Časové pásmo
-156|Rozloženie klávesnice
-157|Vyskúšajte klávesnicu
-158|Píšte sem a overte, že klávesy píšu správne znaky.
-159|Píšte sem
-160|Časové pásmo a klávesnica
-161|Nie je zvolený disk
-162|Nie je zvolený systémový oddiel
-163|Systémový oddiel zmizol
-164|Nie je zvolená inštalácia
-165|Disk zmizol
-166|Prehľad
-167|Cieľ
-168|Vymazať disk a nainštalovať
-169|Vlastné oddiely
-170|Preinštalovať, ponechať /home
-171|Vedľa Windows
-172| (naformátuje sa)
-173| (ponechá sa)
-174|Systémový oddiel
-175|{partition} (naformátuje sa)
-176|Zavádzací oddiel
-177|Miesto pre MAN
-178|{free} voľného miesta (vytvorí sa zavádzací a systémový oddiel)
-179|Windows
-180|Bez zmeny. Objaví sa v ponuke pri spustení MAN; systémový oddiel EFI je zdieľaný.
-181|Šifrovanie
-182|Zapnuté (LUKS2)
-183|Vypnuté
-184|Súborový systém
-185|Btrfs: @system pre MAN, @home pre vaše súbory, @snapshots pre body obnovenia. Všetky zdieľajú voľné miesto.
-186|Systém
-187|Váš účet
-188|Vytvorí sa v MAN Setup pri prvom spustení počítača, spolu s názvom počítača, vzhľadom a nastaveniami súkromia.
-189|Klávesnica
-190|Všetky údaje na {model} ({path}) sa vymažú.
-191|_Vymazať a nainštalovať
-192|Zvolené oddiely sa naformátujú. Ostatné oddiely sa nezmenia.
-193|_Naformátovať a nainštalovať
-194|Súčasný systém sa nahradí. Vaše súbory v /home zostanú a starý systém sa uloží ako snímka.
-195|_Preinštalovať
-196|MAN sa nainštaluje do voľného miesta. Windows a jeho súbory sa nezmenia.
-197|Pripravené na inštaláciu
-198|Vymazať {model}?
-199|Všetky súbory a oddiely na {path} ({size}) sa natrvalo vymažú. Túto akciu nemožno vrátiť.
-200|Vymazať a nainštalovať
-201|Naformátovať zvolené oddiely?
-202|Všetky údaje na zvolených oddieloch sa natrvalo vymažú. Ostatné oddiely sa nezmenia.
-203|Naformátovať a nainštalovať
-204|Nainštalovať MAN vedľa Windows?
-205|MAN sa nainštaluje do {free} voľného miesta na {model} ({path}). Windows a jeho súbory sa nezmenia.
-206|Inštalovať
-207|Preinštalovať MAN?
-208|Nainštalovaný systém sa nahradí novou kópiou. Osobné súbory v /home zostanú a starý systém bude dostupný ako snímka.
-209|Preinštalovať
-210|_Zrušiť
-211|Inštalácia MAN
-212|Spúšťa sa…
-213|Inštalácia
-214|Krok {index} z {n}  ·  {title}
-215|MAN je nainštalovaný
-216|Reštartujte počítač a začnite MAN používať. Pri každom spustení si v ponuke zvolíte MAN alebo Windows; dočasný oddiel inštalátora MAN odstráni pri prvom spustení.
-217|Reštartujte počítač a začnite MAN používať. Inštalačné médium môžete odpojiť; ak zostane pripojené, MAN sa aj tak spustí z nového disku.
-218|_Reštartovať teraz
-219|Hotovo
-220|Inštalácia zlyhala
-221|Žiadny iný disk sa nezmenil a inštalátor uvoľnil cieľový disk. Môžete plán skontrolovať a skúsiť to znova.
-222|_Skontrolovať a skúsiť znova
-223|Hľadať jazyky
-224|Hľadať krajiny
-225|Systémový disk sa nenašiel.
-226|Šifrovanie vyžaduje rozloženie Btrfs vytvorené inštalátorom MAN.
-227|Táto inštalácia nemá samostatný zavádzací oddiel, ktorý šifrovanie potrebuje. Pre šifrovanie preinštalujte MAN s voľbou „Vymazať disk“.
-228|MAN Setup
-229|Kde sa nachádzate?
-230|Vaša krajina alebo oblasť určuje formát dátumu, času a čísel.
-231|Krajina
-232|GNU General Public License, verzia 2
-233|Jadro Linux a mnoho systémových nástrojov
-234|GNU General Public License, verzia 3
-235|Mnoho programov GNU a GNOME
-236|GNU Lesser General Public License, verzia 2.1
-237|GTK, GLib a mnoho knižníc
-238|GNU Lesser General Public License, verzia 3
-239|Knižnice
-240|Mozilla Public License 2.0
-241|Programy a knižnice od Mozilly a ďalších
-242|Apache License 2.0
-243|Knižnice a nástroje
-244|Licenčná zmluva
-245|Prečítajte si a prijmite podmienky, za ktorých sa MAN poskytuje.
-246|Licencie
-247|Text licencie nie je k dispozícii ({path}).
-248|Prečítal(a) som si licenčné podmienky a prijímam ich
-249|Káblové
-250|Nepripojené
-251|Pripojenie na internet
-252|Vďaka pripojeniu môže MAN nastaviť čas a udržiavať softvér aktuálny. Môžete to urobiť aj neskôr.
-253|Kontroluje sa pripojenie…
-254|Siete Wi-Fi
-255|Hľadať znova
-256|_Preskočiť
-257|Pripojiť sa môžete neskôr v Nastaveniach.
-258|Pripojené
-259|Nepripojené
-260|Nenašli sa žiadne siete
-261|Internet
-262|Pripojené k „{ssid}“
-263|K „{ssid}“ sa nepodarilo pripojiť
-264|Pripojiť k „{ssid}“
-265|Zadajte heslo siete.
-266|_Pripojiť
-267|Vytvorte si účet
-268|Budete správcom tohto počítača s plným prístupom roota cez sudo.
-269|Celé meno
-270|Používateľské meno
-271|Heslo
-272|Potvrdenie hesla
-273|Prihlasovať automaticky
-274|Pri spustení počítača preskočiť prihlasovaciu obrazovku
-275|Existujúce domovské priečinky
-276|Použite rovnaké používateľské meno a ďalej používajte priečinok z predchádzajúcej inštalácie.
-277|Použiť
-278|Pokročilé
-279|Názov počítača
-280|Nastaviť heslo roota
-281|Umožní prihlásiť sa priamo ako root. Bez neho používajte sudo s vlastným heslom.
-282|Heslo roota
-283|Potvrdenie hesla roota
-284|Zadajte svoje meno.
-285|Zvoľte používateľské meno.
-286|Toto používateľské meno už systém používa.
-287|Toto používateľské meno je vyhradené pre systém.
-288|Používateľské mená sa skladajú z malých písmen, číslic, - a _ a začínajú písmenom.
-289|Zvoľte heslo.
-290|Heslá sa nezhodujú.
-291|Názov počítača môže obsahovať písmená, číslice a pomlčky.
-292|Zadajte heslo roota dvakrát.
-293|Tip: heslo s 8 a viac znakmi je oveľa bezpečnejšie.
-294|Účet
-295|Tmavý
-296|Svetlý
-297|Prispôsobte si ho
-298|Vyberte štýl, farbu zvýraznenia a tapetu. Každú zmenu uvidíte hneď.
-299|Štýl
-300|Farba zvýraznenia
-301|Tapeta
-302|Prispôsobenie
-303|Súkromie
-304|Zvoľte, ktoré funkcie môžu používať informácie o vás. Kedykoľvek to môžete zmeniť v Nastaveniach.
-305|Lokalizačné služby
-306|Umožní aplikáciám ako Mapy a Počasie zistiť vašu približnú polohu pomocou okolitých sietí Wi-Fi.
-307|Automatické časové pásmo
-308|Podľa vašej polohy udržiava správne časové pásmo, keď cestujete.
-309|_Dokončiť nastavenie
-310|Váš disk je šifrovaný
-311|Vaše údaje sú chránené. Heslo sa zadáva pri každom spustení počítača.
-312|Šifrovanie disku
-313|Šifrovanie chráni vaše údaje, ak počítač stratíte alebo vám ho ukradnú.
-314|V tejto inštalácii nie je k dispozícii
-315|Šifrovanie chráni vaše súbory, ak počítač stratíte alebo vám ho ukradnú. Bez hesla disk nikto neprečíta.
-316|Šifrovať disk
-317|Heslo sa zadáva pri každom spustení počítača.
-318|Šifrovanie začne pri ďalšom reštarte
-319|Disk sa potom šifruje na pozadí, kým počítač používate. Ak heslo stratíte, údaje už nikto neobnoví.
-320|Príprava MAN
-321|Všetko sa pripravuje…
-322|_Reštartovať
-323|_Späť
-324|Príprava
-325|Záznam nastavenia
-326|Hotovo!
-327|Niečo sa pokazilo
-328|Denná
-329|Pred aktualizáciou
-330|Pred obnovením
-331|Pred preinštalovaním
-332|Ručná
-333|Zatiaľ žiadne snímky
-334|Vytvorte si ju pred veľkými zmenami systému.
-335|Obnoviť…
-336|Vymazať snímku
-337|{free} voľné z {size}. Systém, domovský priečinok a snímky zdieľajú toto miesto; snímky zaberajú miesto len pre to, čo sa od ich vytvorenia zmenilo.
-338|_OK
-339|Vytvoriť snímku
-340|Uloží súčasný stav systému. Vaše osobné súbory v domovskom priečinku nie sú zahrnuté.
-341|Popis, napríklad „Pred inštaláciou ovládačov“
-342|_Vytvoriť
-343|Ručná snímka
-344|Vymazať snímku?
-345|„{description}“ z {date} sa natrvalo vymaže.
-346|_Vymazať
-347|Obnoviť túto snímku?
-348|Systém sa po reštarte vráti do stavu „{description}“ z {date}. Vaše osobné súbory v domovskom priečinku sa nezmenia.\n\nSúčasný systém sa najprv uloží ako snímka, takže to možno vrátiť.
-349|_Obnoviť
-350|Reštartujte na dokončenie obnovenia
-351|Reštartovať _neskôr
-352|Reštartovať _teraz
-353|Snímky
-354|Body obnovenia
-355|Snímky ukladajú stav operačného systému. Obnovenie vráti systém do tohto okamihu, čo pomôže po nepodarenej aktualizácii alebo zmene nastavení. Vašich osobných súborov v domovskom priečinku sa to nikdy nedotkne.
-356|Automatické snímky
-357|Denné snímky
-358|Raz denne, keď je počítač zapnutý
-359|Počet denných snímok
-360|Pred aktualizáciami softvéru
-361|Robia sa automaticky pri inštalácii, aktualizácii alebo odstránení balíkov
-362|Počet snímok pred aktualizáciou
-363|Úložisko
-364|Miesto na disku
-365|Ak sa MAN nespustí
-366|V zavádzacej ponuke zvoľte „Restore a MAN snapshot“ a vráťte funkčný systém.
-367|Snímky nie sú k dispozícii
-368|Snímky fungujú na MAN nainštalovanom s rozložením Btrfs, ktoré vytvára inštalátor MAN. Tento systém (napríklad živá relácia) ho nepoužíva.
-369|Obnovenie čaká: dokončite ho reštartom počítača
-370|Reštartovať teraz
-371|Počkajte, prosím, kým sa dokončí súčasná operácia.
-372|Hľadať
-373|Kopírovať do schránky
-374|Koordinovaný svetový čas
-375|Angličtina (USA)
-376|Vyšiel MAN {version}!
-377|Môžete naň aktualizovať.
-378|Otvoriť aktualizácie
-379|Kontrola aktualizácie
-380|Overuje sa, či je aktualizácia pravá a úplná…
-381|Aktualizácia MAN
-382|Túto aktualizáciu nemožno nainštalovať
-383|Aktualizáciu sa nepodarilo prečítať.
-384|Aktualizácia z {name} {version}
-385|{name} {version} je nainštalovaný
-386|Vydané
-387|Veľkosť
-388|Potrebné miesto
-389|Pravosť
-390|Overené, podpísal „{signer}“
-391|Čo je nové
-392|Táto aktualizácia nie je novšia ako nainštalovaný {name} {version}.
-393|Aktualizácia
-394|Prečítajte si, prosím, licenčné podmienky tejto aktualizácie.
-395|Prijímam licenčné podmienky
-396|Kam nainštalovať aktualizáciu?
-397|Systém sa nahradí; súbory v domovskom priečinku zostanú nedotknuté.
-398|Zvoľte inštaláciu.
-399|práve beží
-400|{name} {version} na tomto počítači
-401|{name} na {model}
-402|Nenašla sa žiadna inštalácia MAN
-403|Aktualizácie sa inštalujú z bežiaceho nainštalovaného systému MAN, nie zo živej relácie.
-404|Umiestnenie inštalácie
-405|Zachová sa
-406|Vaše súbory
-407|Všetko v domovskom priečinku
-408|Účty a heslá
-409|Používatelia, skupiny, názov počítača
-410|Pripojenia a nastavenia
-411|Wi-Fi, časové pásmo, klávesnica, vzhľad a snímky
-412|Aplikácie Flatpak
-413|A tiež všetko v /usr/local a /opt
-414|Nahradí sa
-415|Softvér nainštalovaný cez apt a ďalšie zmeny systémových súborov nahradí nový systém.
-416|Operačný systém
-417|Nahradí ho {name} {version}. Súčasný systém možno obnoviť zo snímky.
-418|Na inštaláciu aktualizácie sa počítač reštartuje
-419|Po príprave sa MAN reštartuje, za pár sekúnd aktualizáciu nainštaluje a znova sa reštartuje.
-420|_Inštalovať aktualizáciu
-421|Najprv vytvoriť snímku?
-422|Snímka uloží súčasný systém, takže sa k nemu môžete vrátiť, ak po aktualizácii niečo nebude fungovať. Odporúčame.
-423|_Nevytvárať
-424|_Vytvoriť snímku
-425|Príprava {name} {version}
-426|Reštartovať a inštalovať
-427|Počítač sa dvakrát reštartuje. Vaše súbory sú v bezpečí.
-428|Automatický reštart o {r} s
-429|Automatický reštart o 30 s
-430|Aktualizácia sa nainštaluje pri ďalšom reštarte.
-431|Pripravené
-432|Aktualizáciu sa nepodarilo pripraviť
-433|Vo vašom systéme sa nič nezmenilo.
-434|_Skúsiť znova
-435|Záznam aktualizácie
-436|Zlyhalo
-437|Váš systém bol aktualizovaný
-438|MAN bol aktualizovaný na verziu {version}.\nPredtým: MAN {previous}.
-439|_Hotovo
-440|Otvoriť aktualizáciu MAN
-441|Aktualizácie MAN
-442|Získavajú sa najnovšie zoznamy balíkov…
-443|Kopíruje sa aplikácia
-444|Aplikácia sa pridáva do ponuky
-445|Súbor sa nenašiel.
-446|Balík nemožno nainštalovať.
-447|Položka ponuky aplikácie nie je platná.
-448|Kontrola plánu inštalácie
-449|Príprava disku
-450|Kopírovanie MAN na disk
-451|Nastavenie nového systému
-452|Inštalácia zavádzača
-453|Vytvorenie prvej snímky
-454|Dokončovanie
-455|Odstraňovanie starých podpisov oddielov
-456|Vytváranie oddielov
-457|Formátovanie systémového oddielu EFI
-458|Šifrovanie systémového oddielu
-459|Formátovanie zavádzacieho oddielu
-460|Vytváranie súborového systému Btrfs
-461|Odstraňovanie starých podpisov súborových systémov
-462|Odomykanie šifrovanej inštalácie
-463|Ukladanie súčasného systému ako snímky
-464|Odstraňovanie predchádzajúceho systému
-465|Zápis tabuľky súborových systémov
-466|Nastavenie názvu a identity počítača
-467|Odstraňovanie účtov živej relácie
-468|Vytváranie vášho účtu
-469|Príprava MAN Setup na prvé spustenie
-470|Nastavenie časového pásma a klávesnice
-471|Odstraňovanie inštalátora z nového systému
-472|Zostavenie zavádzacieho obrazu (initramfs)
-473|Nastavenie GRUB
-474|Inštalácia GRUB do systémového oddielu EFI
-475|Inštalácia záložného zavádzača
-476|Zápis zavádzacej ponuky
-477|Disk je pripravený
-478|Vytváranie snímky nového systému
-479|Pridanie snímky do zavádzacej ponuky
-480|Odpájanie
-481|Pomocník inštalátora musí bežať ako root.
-482|Tento počítač nebol spustený v režime UEFI. MAN vyžaduje UEFI.
-483|Používateľské meno nie je platné.
-484|Vyžaduje sa heslo.
-485|Názov počítača nie je platný.
-486|Neznámy jazyk.
-487|Heslo na šifrovanie musí mať aspoň 8 znakov.
-488|Disk sa po potvrdení inštalácie zmenil. Nič sa neupravilo; skontrolujte plán a potvrďte ho znova.
-489|Zvoľte systémový oddiel.
-490|Potvrdený disk neobsahuje zvolený systémový oddiel.
-491|Zavádzací oddiel musí byť oddelený od oddielu EFI a systémového oddielu.
-492|Zavádzací oddiel musí mať aspoň 512 MB.
-493|Nie je zvolená inštalácia.
-494|Potvrdený disk neobsahuje zvolenú inštaláciu.
-495|Šifrovaná inštalácia nemá oddiel MAN_BOOT.
-496|V /boot sa nenašlo jadro so zodpovedajúcimi modulmi.
-497|Jazyk musí zmeniť systémový pomocník.
-498|Použitie vašich nastavení
-499|Príprava šifrovania disku
-500|Dokončovanie
-501|MAN Setup musí dokončiť systémový pomocník.
-502|MAN Setup už bol na tomto počítači dokončený.
-503|Neznáma farba zvýraznenia.
-504|Zvolená tapeta nie je k dispozícii.
-505|Tento systém nemožno zašifrovať.
-506|Chýba inštalačný kľúč, takže šifrovanie nemôže pokračovať na pozadí.
-507|Systém nie je nainštalovaný na Btrfs, takže snímky nie sú k dispozícii.
-508|Obnovenie snímky čaká na reštart. Najprv ho dokončite reštartom počítača.
-509|Neplatné ID snímky.
-510|Kontrola aktualizácie
-511|Vytváranie snímky
-512|Príprava oblasti pre aktualizáciu
-513|Rozbaľovanie nového systému
-514|Presun vašich účtov a nastavení
-515|Príprava reštartu
-516|Rozbalené
-517|Účty
-518|Odstraňovanie softvéru len pre inštalátor
-519|Zostavenie zavádzacieho obrazu aktualizácie
-520|Pridanie jednorazovej položky spustenia
-521|Aktualizácia je pravá
-522|Snímka bola vytvorená
-523|Preskočené
-524|Oblasť pre aktualizáciu je pripravená
-525|Príprava nového systému
-526|Súbor aktualizácie je poškodený (kontrolný súčet nesedí). Stiahnite ho znova.
-527|Súbor aktualizácie sa nepodarilo prečítať celý.
-528|Aktualizácia neobsahuje jadro.
-529|Aktualizácie musí inštalovať systémový pomocník.
-530|Zvolená inštalácia sa nenašla.
-531|Aktualizovať možno len bežiacu inštaláciu MAN.
-532|Toto nie je súbor aktualizácie MAN (chýba manifest).
-533|Aktualizácia nie je podpísaná, preto jej nemožno dôverovať.
-534|Podpis aktualizácie je poškodený.
-535|Aktualizácia nie je podpísaná MAN. Mohla byť upravená alebo pochádza z nedôveryhodného zdroja.
-536|Manifest aktualizácie je neplatný.
-537|Heslo nie je správne alebo šifrovaný oddiel nemožno otvoriť.
-538|Modrá
-539|Modrozelená
-540|Zelená
-541|Žltá
-542|Oranžová
-543|Červená
-544|Ružová
-545|Fialová
-546|Bridlicová
-547|Inštalátor balíkov
-548|Inštalácia aplikácií zo súborov .deb, Flatpak a AppImage
-549|Inštalátor systému
-550|Nainštalovať MAN do tohto počítača
-551|Obnovenie systému
-552|Vytváranie a obnovovanie snímok systému
-553|Inštalátor aktualizácií systému
-554|Inštalácia súboru aktualizácie systému MAN
-555|Ponúkne inštaláciu MAN pri spustení živej relácie
-556|Upozornenie na aktualizáciu MAN
-557|Raz po prihlásení oznámi, že MAN bol aktualizovaný
-558|Nastavte si svoj nový počítač s MAN
-559|Nastavenie MAN pri prvom spustení
-560|Aktualizácie MAN
-561|Dá vám vedieť, keď vyjde nová verzia MAN
+44|Zachovať po aktualizáciách MAN
+45|MAN aplikáciu po každej aktualizácii znova nainštaluje. Na to sa uchovajú súbory jej balíka.
+46|Kliknutím na Inštalovať nainštalujete aplikáciu {name}.
+47|Zisťuje sa, čo ďalšie aplikácia potrebuje…
+48|Nainštalujú sa aj balíky, ktoré potrebuje: {list}
+49|Niektoré balíky, ktoré aplikácia potrebuje, zatiaľ nie sú dostupné. Inštalácia najprv získa najnovšie zoznamy balíkov; ak budú stále chýbať, aplikáciu nemožno nainštalovať.
+50|Inštaluje sa {name}…
+51|Pripravuje sa…
+52|Podrobnosti
+53|Inštaluje sa balík…
+54|Aplikácia sa presúva do svojho priečinka…
+55|Aplikáciu nemožno nainštalovať.
+56|Aplikácia sa inštaluje pomocou Flatpaku…
+57|Záznam
+58|_Zavrieť
+59|Inštalácia bola úspešná
+60|Aplikácia bola nainštalovaná.
+61|Inštalácia zlyhala
+62|_Otvoriť
+63|_Zobraziť podrobnosti
+64|Záznam inštalácie
+65|Inštalátor aplikácií
+66|_Späť
+67|Načítava sa aplikácia…
+68|Inštalovať {name}
+69|Aplikácie
+70|Vyberte aplikáciu na inštaláciu
+71|Systémového pomocníka nemožno spustiť.
+72|So systémovým pomocníkom nemožno komunikovať.
+73|Spojenie so systémovým pomocníkom sa stratilo.
+74|Overenie bolo zrušené.
+75|Na túto akciu sú potrebné práva správcu.
+76|Systémový pomocník sa neočakávane ukončil.
+77|Chýba systémový oddiel EFI
+78|Voľné je len {free}, MAN potrebuje {need}. Uvoľnite miesto pomocou DUHACH! vo Windows.
+79|Žiadne voľné miesto. Spustite vo Windows DUHACH! a uvoľnite miesto pre MAN.
+80|Z tohto disku práve beží MAN
+81|Používa sa: oddiel je pripojený
+82|Príliš malý, MAN potrebuje {need}
+83|Inštalovať MAN
+84|MAN sa inštaluje. Počkajte, prosím, na dokončenie.
+85|Jazyk
+86|_Reštartovať v tomto jazyku
+87|Živá relácia sa reštartuje vo zvolenom jazyku a MAN sa v ňom aj nainštaluje.
+88|Vitajte v MAN
+89|Rýchly, otvorený a plne prispôsobiteľný systém GNOME.\nNainštalujte ho do tohto počítača alebo pokračujte v skúšaní živej relácie.
+90|_Inštalovať MAN…
+91|_Ďalej skúšať MAN
+92|Hľadajú sa disky…
+93|Vitajte
+94|Tento počítač bol spustený v režime legacy BIOS. MAN možno nainštalovať len na počítače s UEFI: reštartujte a zvoľte možnosť spustenia UEFI.
+95|Systémový pomocník nevrátil žiadne informácie o diskoch.
+96|  ·  EFI
+97|Ď_alej
+98|Vymazať disk a nainštalovať MAN
+99|Všetko na zvolenom disku sa vymaže, vrátane Windows.
+100|Odporúčané. Všetko na zvolenom disku sa vymaže.
+101|Inštalovať vedľa Windows
+102|Odporúčané. MAN využije voľné miesto vedľa Windows; Windows aj jeho súbory zostanú. Systém si zvolíte pri každom spustení.
+103|Preinštalovať MAN
+104|Nahradí systém, ale ponechá osobné súbory v /home. Súčasný systém sa uloží ako snímka.
+105|Vlastné oddiely
+106|Pre odborníkov: zvoľte oddiely sami alebo ich vytvorte v aplikácii Disky.
+107|Disk
+108|Zvoľte disk, ktorý sa vymaže. Disky, ktoré nemožno použiť, sú zobrazené s dôvodom.
+109|Nenašli sa žiadne disky
+110|Voľné miesto vedľa Windows
+111|Oddiely Windows zostanú nedotknuté. MAN zdieľa systémový oddiel EFI a pridá Windows do svojej ponuky pri spustení.
+112|{size} voľné
+113|žiadne voľné miesto
+114|{model} (Windows)
+115|Inštalácia na nahradenie
+116|žiadne domovské priečinky
+117|domovské priečinky: {list}
+118|snímky: {n}
+119|MAN na {model}
+120|Heslo pre {device}
+121|Odomknúť
+122|Inštaláciu sa nepodarilo preskúmať.
+123|Oddiely
+124|Systémový oddiel sa naformátuje na Btrfs a obsahuje @system, @home a @snapshots. Oddiely na disku, z ktorého MAN beží, nie sú uvedené.
+125|Otvoriť Disky na vytvorenie alebo zmenu veľkosti oddielov
+126|Obnoviť zoznam oddielov
+127|Zvoľte oddiel
+128|Systémový oddiel EFI
+129|Naformátovať systémový oddiel EFI
+130|Nechajte vypnuté, aby zostali zavádzače iných systémov
+131|Systémový oddiel (naformátuje sa na Btrfs)
+132|Zavádzací oddiel (potrebný pre šifrovanie)
+133|Zoznam oddielov bol obnovený
+134|Zabezpečenie
+135|Šifrovať systém
+136|Chráni vaše údaje, ak počítač stratíte alebo vám ho ukradnú. Heslo sa zadáva pri každom spustení.
+137|Heslo
+138|Potvrdenie hesla
+139|Uschovajte si toto heslo
+140|Ak ho stratíte, údaje už nikto neobnoví. Jadro a zavádzacie súbory zostanú na malom nešifrovanom zavádzacom oddiele.
+141|Heslo musí mať aspoň 8 znakov.
+142|Heslá sa nezhodujú.
+143|Zvoľte disk.
+144|Zvoľte disk s Windows.
+145|Zvoľte inštaláciu, ktorá sa nahradí.
+146|Najprv odomknite šifrovanú inštaláciu.
+147|Tento oddiel neobsahuje systém MAN.
+148|Zvoľte systémový oddiel EFI.
+149|Zvoľte systémový oddiel.
+150|Oddiel EFI a systémový oddiel sa musia líšiť.
+151|Šifrovanie potrebuje samostatný zavádzací oddiel.
+152|Systémový oddiel musí mať aspoň {size}.
+153|Oddiel EFI nie je vo formáte FAT; zapnite formátovanie.
+154|Systémový oddiel je pripojený; najprv ho odpojte v aplikácii Disky.
+155|Kam nainštalovať MAN?
+156|Čas a klávesnica
+157|Časové pásmo
+158|Rozloženie klávesnice
+159|Vyskúšajte klávesnicu
+160|Píšte sem a overte, že klávesy píšu správne znaky.
+161|Píšte sem
+162|Časové pásmo a klávesnica
+163|Nie je zvolený disk
+164|Nie je zvolený systémový oddiel
+165|Systémový oddiel zmizol
+166|Nie je zvolená inštalácia
+167|Disk zmizol
+168|Prehľad
+169|Cieľ
+170|Vymazať disk a nainštalovať
+171|Vlastné oddiely
+172|Preinštalovať, ponechať /home
+173|Vedľa Windows
+174| (naformátuje sa)
+175| (ponechá sa)
+176|Systémový oddiel
+177|{partition} (naformátuje sa)
+178|Zavádzací oddiel
+179|Miesto pre MAN
+180|{free} voľného miesta (vytvorí sa zavádzací a systémový oddiel)
+181|Windows
+182|Bez zmeny. Objaví sa v ponuke pri spustení MAN; systémový oddiel EFI je zdieľaný.
+183|Šifrovanie
+184|Zapnuté (LUKS2)
+185|Vypnuté
+186|Súborový systém
+187|Btrfs: @system pre MAN, @home pre vaše súbory, @snapshots pre body obnovenia. Všetky zdieľajú voľné miesto.
+188|Systém
+189|Váš účet
+190|Vytvorí sa v MAN Setup pri prvom spustení počítača, spolu s názvom počítača, vzhľadom a nastaveniami súkromia.
+191|Klávesnica
+192|Všetky údaje na {model} ({path}) sa vymažú.
+193|_Vymazať a nainštalovať
+194|Zvolené oddiely sa naformátujú. Ostatné oddiely sa nezmenia.
+195|_Naformátovať a nainštalovať
+196|Súčasný systém sa nahradí. Vaše súbory v /home zostanú a starý systém sa uloží ako snímka.
+197|_Preinštalovať
+198|MAN sa nainštaluje do voľného miesta. Windows a jeho súbory sa nezmenia.
+199|Pripravené na inštaláciu
+200|Vymazať {model}?
+201|Všetky súbory a oddiely na {path} ({size}) sa natrvalo vymažú. Túto akciu nemožno vrátiť.
+202|Vymazať a nainštalovať
+203|Naformátovať zvolené oddiely?
+204|Všetky údaje na zvolených oddieloch sa natrvalo vymažú. Ostatné oddiely sa nezmenia.
+205|Naformátovať a nainštalovať
+206|Nainštalovať MAN vedľa Windows?
+207|MAN sa nainštaluje do {free} voľného miesta na {model} ({path}). Windows a jeho súbory sa nezmenia.
+208|Inštalovať
+209|Preinštalovať MAN?
+210|Nainštalovaný systém sa nahradí novou kópiou. Osobné súbory v /home zostanú a starý systém bude dostupný ako snímka.
+211|Preinštalovať
+212|_Zrušiť
+213|Inštalácia MAN
+214|Spúšťa sa…
+215|Inštalácia
+216|Krok {index} z {n}  ·  {title}
+217|MAN je nainštalovaný
+218|Reštartujte počítač a začnite MAN používať. Pri každom spustení si v ponuke zvolíte MAN alebo Windows; dočasný oddiel inštalátora MAN odstráni pri prvom spustení.
+219|Reštartujte počítač a začnite MAN používať. Inštalačné médium môžete odpojiť; ak zostane pripojené, MAN sa aj tak spustí z nového disku.
+220|_Reštartovať teraz
+221|Hotovo
+222|Inštalácia zlyhala
+223|Žiadny iný disk sa nezmenil a inštalátor uvoľnil cieľový disk. Môžete plán skontrolovať a skúsiť to znova.
+224|_Skontrolovať a skúsiť znova
+225|Hľadať jazyky
+226|Hľadať krajiny
+227|Systémový disk sa nenašiel.
+228|Šifrovanie vyžaduje rozloženie Btrfs vytvorené inštalátorom MAN.
+229|Táto inštalácia nemá samostatný zavádzací oddiel, ktorý šifrovanie potrebuje. Pre šifrovanie preinštalujte MAN s voľbou „Vymazať disk“.
+230|MAN Setup
+231|Kde sa nachádzate?
+232|Vaša krajina alebo oblasť určuje formát dátumu, času a čísel.
+233|Krajina
+234|GNU General Public License, verzia 2
+235|Jadro Linux a mnoho systémových nástrojov
+236|GNU General Public License, verzia 3
+237|Mnoho programov GNU a GNOME
+238|GNU Lesser General Public License, verzia 2.1
+239|GTK, GLib a mnoho knižníc
+240|GNU Lesser General Public License, verzia 3
+241|Knižnice
+242|Mozilla Public License 2.0
+243|Programy a knižnice od Mozilly a ďalších
+244|Apache License 2.0
+245|Knižnice a nástroje
+246|Licenčná zmluva
+247|Prečítajte si a prijmite podmienky, za ktorých sa MAN poskytuje.
+248|Licencie
+249|Text licencie nie je k dispozícii ({path}).
+250|Prečítal(a) som si licenčné podmienky a prijímam ich
+251|Káblové
+252|Nepripojené
+253|Pripojenie na internet
+254|Vďaka pripojeniu môže MAN nastaviť čas a udržiavať softvér aktuálny. Môžete to urobiť aj neskôr.
+255|Kontroluje sa pripojenie…
+256|Siete Wi-Fi
+257|Hľadať znova
+258|_Preskočiť
+259|Pripojiť sa môžete neskôr v Nastaveniach.
+260|Pripojené
+261|Nepripojené
+262|Nenašli sa žiadne siete
+263|Internet
+264|Pripojené k „{ssid}“
+265|K „{ssid}“ sa nepodarilo pripojiť
+266|Pripojiť k „{ssid}“
+267|Zadajte heslo siete.
+268|_Pripojiť
+269|Vytvorte si účet
+270|Budete správcom tohto počítača s plným prístupom roota cez sudo.
+271|Celé meno
+272|Používateľské meno
+273|Heslo
+274|Potvrdenie hesla
+275|Prihlasovať automaticky
+276|Pri spustení počítača preskočiť prihlasovaciu obrazovku
+277|Existujúce domovské priečinky
+278|Použite rovnaké používateľské meno a ďalej používajte priečinok z predchádzajúcej inštalácie.
+279|Použiť
+280|Pokročilé
+281|Názov počítača
+282|Nastaviť heslo roota
+283|Umožní prihlásiť sa priamo ako root. Bez neho používajte sudo s vlastným heslom.
+284|Heslo roota
+285|Potvrdenie hesla roota
+286|Zadajte svoje meno.
+287|Zvoľte používateľské meno.
+288|Toto používateľské meno už systém používa.
+289|Toto používateľské meno je vyhradené pre systém.
+290|Používateľské mená sa skladajú z malých písmen, číslic, - a _ a začínajú písmenom.
+291|Zvoľte heslo.
+292|Heslá sa nezhodujú.
+293|Názov počítača môže obsahovať písmená, číslice a pomlčky.
+294|Zadajte heslo roota dvakrát.
+295|Tip: heslo s 8 a viac znakmi je oveľa bezpečnejšie.
+296|Účet
+297|Tmavý
+298|Svetlý
+299|Prispôsobte si ho
+300|Vyberte štýl, farbu zvýraznenia a tapetu. Každú zmenu uvidíte hneď.
+301|Štýl
+302|Farba zvýraznenia
+303|Tapeta
+304|Prispôsobenie
+305|Súkromie
+306|Zvoľte, ktoré funkcie môžu používať informácie o vás. Kedykoľvek to môžete zmeniť v Nastaveniach.
+307|Lokalizačné služby
+308|Umožní aplikáciám ako Mapy a Počasie zistiť vašu približnú polohu pomocou okolitých sietí Wi-Fi.
+309|Automatické časové pásmo
+310|Podľa vašej polohy udržiava správne časové pásmo, keď cestujete.
+311|_Dokončiť nastavenie
+312|Váš disk je šifrovaný
+313|Vaše údaje sú chránené. Heslo sa zadáva pri každom spustení počítača.
+314|Šifrovanie disku
+315|Šifrovanie chráni vaše údaje, ak počítač stratíte alebo vám ho ukradnú.
+316|V tejto inštalácii nie je k dispozícii
+317|Šifrovanie chráni vaše súbory, ak počítač stratíte alebo vám ho ukradnú. Bez hesla disk nikto neprečíta.
+318|Šifrovať disk
+319|Heslo sa zadáva pri každom spustení počítača.
+320|Šifrovanie začne pri ďalšom reštarte
+321|Disk sa potom šifruje na pozadí, kým počítač používate. Ak heslo stratíte, údaje už nikto neobnoví.
+322|Príprava MAN
+323|Všetko sa pripravuje…
+324|_Reštartovať
+325|_Späť
+326|Príprava
+327|Záznam nastavenia
+328|Hotovo!
+329|Niečo sa pokazilo
+330|Denná
+331|Pred aktualizáciou
+332|Pred obnovením
+333|Pred preinštalovaním
+334|Ručná
+335|Zatiaľ žiadne snímky
+336|Vytvorte si ju pred veľkými zmenami systému.
+337|Obnoviť…
+338|Vymazať snímku
+339|{free} voľné z {size}. Systém, domovský priečinok a snímky zdieľajú toto miesto; snímky zaberajú miesto len pre to, čo sa od ich vytvorenia zmenilo.
+340|_OK
+341|Vytvoriť snímku
+342|Uloží súčasný stav systému. Vaše osobné súbory v domovskom priečinku nie sú zahrnuté.
+343|Popis, napríklad „Pred inštaláciou ovládačov“
+344|_Vytvoriť
+345|Ručná snímka
+346|Vymazať snímku?
+347|„{description}“ z {date} sa natrvalo vymaže.
+348|_Vymazať
+349|Obnoviť túto snímku?
+350|Systém sa po reštarte vráti do stavu „{description}“ z {date}. Vaše osobné súbory v domovskom priečinku sa nezmenia.\n\nSúčasný systém sa najprv uloží ako snímka, takže to možno vrátiť.
+351|_Obnoviť
+352|Reštartujte na dokončenie obnovenia
+353|Reštartovať _neskôr
+354|Reštartovať _teraz
+355|Snímky
+356|Body obnovenia
+357|Snímky ukladajú stav operačného systému. Obnovenie vráti systém do tohto okamihu, čo pomôže po nepodarenej aktualizácii alebo zmene nastavení. Vašich osobných súborov v domovskom priečinku sa to nikdy nedotkne.
+358|Automatické snímky
+359|Denné snímky
+360|Raz denne, keď je počítač zapnutý
+361|Počet denných snímok
+362|Pred aktualizáciami softvéru
+363|Robia sa automaticky pri inštalácii, aktualizácii alebo odstránení balíkov
+364|Počet snímok pred aktualizáciou
+365|Úložisko
+366|Miesto na disku
+367|Ak sa MAN nespustí
+368|V zavádzacej ponuke zvoľte „Restore a MAN snapshot“ a vráťte funkčný systém.
+369|Snímky nie sú k dispozícii
+370|Snímky fungujú na MAN nainštalovanom s rozložením Btrfs, ktoré vytvára inštalátor MAN. Tento systém (napríklad živá relácia) ho nepoužíva.
+371|Obnovenie čaká: dokončite ho reštartom počítača
+372|Reštartovať teraz
+373|Počkajte, prosím, kým sa dokončí súčasná operácia.
+374|Hľadať
+375|Kopírovať do schránky
+376|Koordinovaný svetový čas
+377|Angličtina (USA)
+378|Vyšiel MAN {version}!
+379|Môžete naň aktualizovať.
+380|Otvoriť aktualizácie
+381|Kontrola aktualizácie
+382|Overuje sa, či je aktualizácia pravá a úplná…
+383|Aktualizácia MAN
+384|Túto aktualizáciu nemožno nainštalovať
+385|Aktualizáciu sa nepodarilo prečítať.
+386|Aktualizácia z {name} {version}
+387|{name} {version} je nainštalovaný
+388|Vydané
+389|Veľkosť
+390|Potrebné miesto
+391|Pravosť
+392|Overené, podpísal „{signer}“
+393|Čo je nové
+394|Táto aktualizácia nie je novšia ako nainštalovaný {name} {version}.
+395|Aktualizácia
+396|Prečítajte si, prosím, licenčné podmienky tejto aktualizácie.
+397|Prijímam licenčné podmienky
+398|Kam nainštalovať aktualizáciu?
+399|Systém sa nahradí; súbory v domovskom priečinku zostanú nedotknuté.
+400|Zvoľte inštaláciu.
+401|práve beží
+402|{name} {version} na tomto počítači
+403|{name} na {model}
+404|Nenašla sa žiadna inštalácia MAN
+405|Aktualizácie sa inštalujú z bežiaceho nainštalovaného systému MAN, nie zo živej relácie.
+406|Umiestnenie inštalácie
+407|Zachová sa
+408|Vaše súbory
+409|Všetko v domovskom priečinku
+410|Účty a heslá
+411|Používatelia, skupiny, názov počítača
+412|Pripojenia a nastavenia
+413|Wi-Fi, časové pásmo, klávesnica, vzhľad a snímky
+414|Aplikácie Flatpak
+415|A tiež všetko v /usr/local a /opt
+416|Nahradí sa
+417|Softvér nainštalovaný cez apt a ďalšie zmeny systémových súborov nahradí nový systém.
+418|Operačný systém
+419|Nahradí ho {name} {version}. Súčasný systém možno obnoviť zo snímky.
+420|Na inštaláciu aktualizácie sa počítač reštartuje
+421|Po príprave sa MAN reštartuje, za pár sekúnd aktualizáciu nainštaluje a znova sa reštartuje.
+422|_Inštalovať aktualizáciu
+423|Najprv vytvoriť snímku?
+424|Snímka uloží súčasný systém, takže sa k nemu môžete vrátiť, ak po aktualizácii niečo nebude fungovať. Odporúčame.
+425|_Nevytvárať
+426|_Vytvoriť snímku
+427|Príprava {name} {version}
+428|Reštartovať a inštalovať
+429|Počítač sa dvakrát reštartuje. Vaše súbory sú v bezpečí.
+430|Automatický reštart o {r} s
+431|Automatický reštart o 30 s
+432|Aktualizácia sa nainštaluje pri ďalšom reštarte.
+433|Pripravené
+434|Aktualizáciu sa nepodarilo pripraviť
+435|Vo vašom systéme sa nič nezmenilo.
+436|_Skúsiť znova
+437|Záznam aktualizácie
+438|Zlyhalo
+439|Váš systém bol aktualizovaný
+440|MAN bol aktualizovaný na verziu {version}.\nPredtým: MAN {previous}.
+441|_Hotovo
+442|Otvoriť aktualizáciu MAN
+443|Aktualizácie MAN
+444|Získavajú sa najnovšie zoznamy balíkov…
+445|Kopíruje sa aplikácia
+446|Aplikácia sa pridáva do ponuky
+447|Súbor sa nenašiel.
+448|Balík nemožno nainštalovať.
+449|Položka ponuky aplikácie nie je platná.
+450|Kontrola plánu inštalácie
+451|Príprava disku
+452|Kopírovanie MAN na disk
+453|Nastavenie nového systému
+454|Inštalácia zavádzača
+455|Vytvorenie prvej snímky
+456|Dokončovanie
+457|Odstraňovanie starých podpisov oddielov
+458|Vytváranie oddielov
+459|Formátovanie systémového oddielu EFI
+460|Šifrovanie systémového oddielu
+461|Formátovanie zavádzacieho oddielu
+462|Vytváranie súborového systému Btrfs
+463|Odstraňovanie starých podpisov súborových systémov
+464|Odomykanie šifrovanej inštalácie
+465|Ukladanie súčasného systému ako snímky
+466|Odstraňovanie predchádzajúceho systému
+467|Zápis tabuľky súborových systémov
+468|Nastavenie názvu a identity počítača
+469|Odstraňovanie účtov živej relácie
+470|Vytváranie vášho účtu
+471|Príprava MAN Setup na prvé spustenie
+472|Nastavenie časového pásma a klávesnice
+473|Odstraňovanie inštalátora z nového systému
+474|Zostavenie zavádzacieho obrazu (initramfs)
+475|Nastavenie GRUB
+476|Inštalácia GRUB do systémového oddielu EFI
+477|Inštalácia záložného zavádzača
+478|Zápis zavádzacej ponuky
+479|Disk je pripravený
+480|Vytváranie snímky nového systému
+481|Pridanie snímky do zavádzacej ponuky
+482|Odpájanie
+483|Pomocník inštalátora musí bežať ako root.
+484|Tento počítač nebol spustený v režime UEFI. MAN vyžaduje UEFI.
+485|Používateľské meno nie je platné.
+486|Vyžaduje sa heslo.
+487|Názov počítača nie je platný.
+488|Neznámy jazyk.
+489|Heslo na šifrovanie musí mať aspoň 8 znakov.
+490|Disk sa po potvrdení inštalácie zmenil. Nič sa neupravilo; skontrolujte plán a potvrďte ho znova.
+491|Zvoľte systémový oddiel.
+492|Potvrdený disk neobsahuje zvolený systémový oddiel.
+493|Zavádzací oddiel musí byť oddelený od oddielu EFI a systémového oddielu.
+494|Zavádzací oddiel musí mať aspoň 512 MB.
+495|Nie je zvolená inštalácia.
+496|Potvrdený disk neobsahuje zvolenú inštaláciu.
+497|Šifrovaná inštalácia nemá oddiel MAN_BOOT.
+498|V /boot sa nenašlo jadro so zodpovedajúcimi modulmi.
+499|Jazyk musí zmeniť systémový pomocník.
+500|Použitie vašich nastavení
+501|Príprava šifrovania disku
+502|Dokončovanie
+503|MAN Setup musí dokončiť systémový pomocník.
+504|MAN Setup už bol na tomto počítači dokončený.
+505|Neznáma farba zvýraznenia.
+506|Zvolená tapeta nie je k dispozícii.
+507|Tento systém nemožno zašifrovať.
+508|Chýba inštalačný kľúč, takže šifrovanie nemôže pokračovať na pozadí.
+509|Systém nie je nainštalovaný na Btrfs, takže snímky nie sú k dispozícii.
+510|Obnovenie snímky čaká na reštart. Najprv ho dokončite reštartom počítača.
+511|Neplatné ID snímky.
+512|Kontrola aktualizácie
+513|Vytváranie snímky
+514|Príprava oblasti pre aktualizáciu
+515|Rozbaľovanie nového systému
+516|Presun vašich účtov a nastavení
+517|Príprava reštartu
+518|Rozbalené
+519|Účty
+520|Opätovná inštalácia zachovaných aplikácií
+521|Odstraňovanie softvéru len pre inštalátor
+522|Zostavenie zavádzacieho obrazu aktualizácie
+523|Pridanie jednorazovej položky spustenia
+524|Aktualizácia je pravá
+525|Snímka bola vytvorená
+526|Preskočené
+527|Oblasť pre aktualizáciu je pripravená
+528|Príprava nového systému
+529|Súbor aktualizácie je poškodený (kontrolný súčet nesedí). Stiahnite ho znova.
+530|Súbor aktualizácie sa nepodarilo prečítať celý.
+531|Aktualizácia neobsahuje jadro.
+532|Aktualizácie musí inštalovať systémový pomocník.
+533|Zvolená inštalácia sa nenašla.
+534|Aktualizovať možno len bežiacu inštaláciu MAN.
+535|Toto nie je súbor aktualizácie MAN (chýba manifest).
+536|Aktualizácia nie je podpísaná, preto jej nemožno dôverovať.
+537|Podpis aktualizácie je poškodený.
+538|Aktualizácia nie je podpísaná MAN. Mohla byť upravená alebo pochádza z nedôveryhodného zdroja.
+539|Manifest aktualizácie je neplatný.
+540|Heslo nie je správne alebo šifrovaný oddiel nemožno otvoriť.
+541|Modrá
+542|Modrozelená
+543|Zelená
+544|Žltá
+545|Oranžová
+546|Červená
+547|Ružová
+548|Fialová
+549|Bridlicová
+550|Inštalátor balíkov
+551|Inštalácia aplikácií zo súborov .deb, Flatpak a AppImage
+552|Inštalátor systému
+553|Nainštalovať MAN do tohto počítača
+554|Obnovenie systému
+555|Vytváranie a obnovovanie snímok systému
+556|Inštalátor aktualizácií systému
+557|Inštalácia súboru aktualizácie systému MAN
+558|Ponúkne inštaláciu MAN pri spustení živej relácie
+559|Upozornenie na aktualizáciu MAN
+560|Raz po prihlásení oznámi, že MAN bol aktualizovaný
+561|Nastavte si svoj nový počítač s MAN
+562|Nastavenie MAN pri prvom spustení
+563|Aktualizácie MAN
+564|Dá vám vedieť, keď vyjde nová verzia MAN

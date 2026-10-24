@@ -30,7 +30,7 @@
 29|Veebileht
 30|Fail
 31|See rakendus on juba paigaldatud. Uuesti paigaldamine asendab selle.
-32|.deb-pakettide rakendused saavad süsteemi osaks. MAN-i uuendamisel need eemaldatakse ja tuleb uuesti paigaldada. Flatpaki rakendused ja AppImage'id jäävad alles.
+32|.deb-pakettide rakendused saavad süsteemi osaks. MAN-i uuendus asendab süsteemi, nii et pärast uuendust paigaldatakse need uuesti vaid siis, kui need säilitad (järgmised sammud).
 33|Paigalda rakendusi ainult usaldusväärsetest allikatest.
 34|Kuhu soovid rakenduse {name} paigaldada?
 35|Rakendust saab kasutada ainult sinu konto.
@@ -42,521 +42,524 @@
 41|Rakendus paigaldatakse kõigile selle arvuti kasutajatele.
 42|Rakendus paigaldatakse ainult sinule.
 43|AppImage teisaldatakse kausta {folder} ja lisatakse sinu rakenduste hulka.
-44|Rakenduse {name} paigaldamiseks klõpsa nupul Paigalda.
-45|Kontrollitakse, mida rakendus veel vajab…
-46|Paigaldab ka vajalikud paketid: {list}
-47|Mõned rakenduse vajatud paketid pole veel saadaval. Paigaldamine hangib esmalt uusimad paketiloendid; kui need ikka puuduvad, ei saa rakendust paigaldada.
-48|Rakenduse {name} paigaldamine…
-49|Ettevalmistamine…
-50|Üksikasjad
-51|Paketi paigaldamine…
-52|Rakenduse teisaldamine oma kausta…
-53|Rakendust ei saanud paigaldada.
-54|Rakenduse paigaldamine Flatpakiga…
-55|Logi
-56|_Sulge
-57|Paigaldamine õnnestus
-58|Rakendus paigaldati.
-59|Paigaldamine nurjus
-60|_Ava
-61|_Näita üksikasju
-62|Paigalduslogi
-63|Rakenduste paigaldaja
-64|_Tagasi
-65|Rakenduse lugemine…
-66|Paigalda {name}
-67|Rakendused
-68|Vali paigaldatav rakendus
-69|Süsteemiabilist ei saanud käivitada.
-70|Süsteemiabilisega ei saa suhelda.
-71|Ühendus süsteemiabilisega katkes.
-72|Autentimine katkestati.
-73|Selleks toiminguks on vaja administraatori õigusi.
-74|Süsteemiabiline peatus ootamatult.
-75|EFI süsteemisektsioon puudub
-76|Vaba on ainult {free}, MAN vajab {need}. Vabasta ruumi Windowsis DUHACH!-iga.
-77|Vaba ruumi pole. Käivita Windowsis DUHACH!, et teha MAN-ile ruumi.
-78|MAN töötab sellelt kettalt
-79|Kasutusel: sektsioon on haagitud
-80|Liiga väike, MAN vajab {need}
-81|Paigalda MAN
-82|MAN-i paigaldatakse. Palun oota, kuni see lõpeb.
-83|Keel
-84|_Taaskäivita selles keeles
-85|Live-seanss taaskäivitub valitud keeles ja MAN paigaldatakse selles keeles.
-86|Tere tulemast MAN-i
-87|Kiire, avatud ja täielikult kohandatav GNOME süsteem.\nPaigalda see sellesse arvutisse või jätka live-seansi avastamist.
-88|_Paigalda MAN…
-89|_Jätka MAN-i proovimist
-90|Ketaste otsimine…
-91|Tere tulemast
-92|See arvuti käivitati vanas BIOS-režiimis. MAN-i saab paigaldada ainult UEFI-arvutitesse: taaskäivita ja vali UEFI alglaadimisvalik.
-93|Süsteemiabiline ei tagastanud ketaste teavet.
-94|  ·  EFI
-95|_Edasi
-96|Kustuta ketas ja paigalda MAN
-97|Kõik valitud kettal kustutatakse, ka Windows.
-98|Soovitatav. Kõik valitud kettal kustutatakse.
-99|Paigalda Windowsi kõrvale
-100|Soovitatav. MAN kasutab Windowsi kõrval olevat vaba ruumi; Windows ja selle failid jäävad alles. Süsteemi valid igal käivitamisel.
-101|Paigalda MAN uuesti
-102|Asendab süsteemi, kuid hoiab alles isiklikud failid kaustas /home. Praegune süsteem salvestatakse hetktõmmisena.
-103|Kohandatud sektsioonid
-104|Asjatundjatele: vali sektsioonid ise või loo need rakendusega Kettad.
-105|Ketas
-106|Vali kustutatav ketas. Kasutamiskõlbmatud kettad kuvatakse koos põhjusega.
-107|Kettaid ei leitud
-108|Vaba ruum Windowsi kõrval
-109|Windowsi sektsioone ei puudutata. MAN jagab EFI süsteemisektsiooni ja lisab Windowsi oma alglaadimismenüüsse.
-110|vaba {size}
-111|vaba ruumi pole
-112|{model} (Windows)
-113|Asendatav paigaldus
-114|kodukaustu pole
-115|kodukaustad: {list}
-116|hetktõmmiseid: {n}
-117|MAN kettal {model}
-118|Paroolifraas seadmele {device}
-119|Ava lukk
-120|Paigaldust ei saanud uurida.
-121|Sektsioonid
-122|Süsteemisektsioon vormindatakse Btrfs-iks ja see sisaldab @system, @home ja @snapshots alamköiteid. Ketta, millelt MAN töötab, sektsioone ei näidata.
-123|Ava Kettad sektsioonide loomiseks või suuruse muutmiseks
-124|Värskenda sektsioonide loendit
-125|Vali sektsioon
-126|EFI süsteemisektsioon
-127|Vorminda EFI süsteemisektsioon
-128|Jäta välja lülitatuks, et teiste süsteemide alglaadurid alles jääksid
-129|Süsteemisektsioon (vormindatakse Btrfs-iks)
-130|Alglaadimissektsioon (vajalik krüptimisel)
-131|Sektsioonide loend värskendatud
-132|Turvalisus
-133|Krüpti süsteem
-134|Kaitseb sinu andmeid, kui arvuti kaob või varastatakse. Igal käivitamisel küsitakse paroolifraasi.
-135|Paroolifraas
-136|Kinnita paroolifraas
-137|Hoia seda paroolifraasi kindlas kohas
-138|Kui see kaob, ei saa keegi andmeid taastada. Tuum ja alglaadimisfailid jäävad väikesele krüptimata alglaadimissektsioonile.
-139|Paroolifraas peab olema vähemalt 8 märki.
-140|Paroolifraasid ei kattu.
-141|Vali ketas.
-142|Vali Windowsiga ketas.
-143|Vali asendatav paigaldus.
-144|Ava esmalt krüptitud paigalduse lukk.
-145|Selles sektsioonis pole MAN-i süsteemi.
-146|Vali EFI süsteemisektsioon.
-147|Vali süsteemisektsioon.
-148|EFI- ja süsteemisektsioon peavad olema erinevad.
-149|Krüptimiseks on vaja eraldi alglaadimissektsiooni.
-150|Süsteemisektsioon peab olema vähemalt {size}.
-151|EFI-sektsioon pole FAT-vormingus; lülita vormindamine sisse.
-152|Süsteemisektsioon on haagitud; haagi see esmalt rakenduses Kettad lahti.
-153|Kuhu MAN paigaldada?
-154|Aeg ja klaviatuur
-155|Ajavöönd
-156|Klaviatuuripaigutus
-157|Proovi klaviatuuri
-158|Kirjuta siia, et kontrollida, kas klahvid annavad õiged märgid.
-159|Kirjuta siia
-160|Ajavöönd ja klaviatuur
-161|Ketast pole valitud
-162|Süsteemisektsiooni pole valitud
-163|Süsteemisektsioon kadus
-164|Paigaldust pole valitud
-165|Ketas kadus
-166|Ülevaade
-167|Sihtkoht
-168|Kustuta ketas ja paigalda
-169|Kohandatud sektsioonid
-170|Paigalda uuesti, hoia /home alles
-171|Windowsi kõrvale
-172| (vormindatakse)
-173| (jääb alles)
-174|Süsteemisektsioon
-175|{partition} (vormindatakse)
-176|Alglaadimissektsioon
-177|Ruum MAN-i jaoks
-178|{free} vaba ruumi (luuakse alglaadimissektsioon ja süsteemisektsioon)
-179|Windows
-180|Muutmata. See ilmub MAN-i alglaadimismenüüsse; EFI süsteemisektsioon on ühine.
-181|Krüptimine
-182|Sees (LUKS2)
-183|Väljas
-184|Failisüsteem
-185|Btrfs: @system MAN-ile, @home sinu failidele, @snapshots taastepunktidele. Kõik jagavad vaba ruumi.
-186|Süsteem
-187|Sinu konto
-188|Luuakse MAN Setupis arvuti esimesel käivitamisel koos arvuti nime, välimuse ja privaatsusseadetega.
-189|Klaviatuur
-190|Kõik andmed kettal {model} ({path}) kustutatakse.
-191|_Kustuta ja paigalda
-192|Valitud sektsioonid vormindatakse. Teised sektsioonid ei muutu.
-193|_Vorminda ja paigalda
-194|Praegune süsteem asendatakse. Sinu failid kaustas /home jäävad alles ja vana süsteem salvestatakse hetktõmmisena.
-195|Paigalda _uuesti
-196|MAN paigaldatakse vabasse ruumi. Windows ja selle failid ei muutu.
-197|Valmis paigaldamiseks
-198|Kas kustutada {model}?
-199|Kõik failid ja sektsioonid kettal {path} ({size}) kustutatakse jäädavalt. Seda ei saa tagasi võtta.
-200|Kustuta ja paigalda
-201|Kas vormindada valitud sektsioonid?
-202|Kõik andmed valitud sektsioonidel kustutatakse jäädavalt. Teised sektsioonid ei muutu.
-203|Vorminda ja paigalda
-204|Kas paigaldada MAN Windowsi kõrvale?
-205|MAN paigaldatakse kettal {model} ({path}) olevasse {free} vabasse ruumi. Windows ja selle failid ei muutu.
-206|Paigalda
-207|Kas paigaldada MAN uuesti?
-208|Paigaldatud süsteem asendatakse värske koopiaga. Isiklikud failid kaustas /home jäävad alles ja vana süsteem on saadaval hetktõmmisena.
-209|Paigalda uuesti
-210|_Loobu
-211|MAN-i paigaldamine
-212|Alustamine…
-213|Paigaldamine
-214|Samm {index}/{n}  ·  {title}
-215|MAN on paigaldatud
-216|Taaskäivita arvuti, et MAN-i kasutama hakata. Igal käivitamisel saad menüüst valida MAN-i või Windowsi; ajutise paigaldussektsiooni eemaldab MAN esimesel käivitamisel.
-217|Taaskäivita arvuti, et MAN-i kasutama hakata. Paigaldusmeediumi võid eemaldada; kui see jääb ühendatuks, käivitub MAN ikkagi uuelt kettalt.
-218|_Taaskäivita kohe
-219|Valmis
-220|Paigaldamine nurjus
-221|Ühtegi teist ketast ei muudetud ja paigaldaja vabastas sihtketta. Võid plaani üle vaadata ja uuesti proovida.
-222|_Vaata üle ja proovi uuesti
-223|Otsi keeli
-224|Otsi riike
-225|Süsteemiketast ei leitud.
-226|Krüptimiseks on vaja MAN-i paigaldaja loodud Btrfs-paigutust.
-227|Sellel paigaldusel pole eraldi alglaadimissektsiooni, mida krüptimine vajab. Krüptimiseks paigalda MAN uuesti valikuga „Kustuta ketas“.
-228|MAN Setup
-229|Kus sa asud?
-230|Sinu riik või piirkond määrab kuupäeva, kellaaja ja arvude vormingu.
-231|Riik
-232|GNU üldine avalik litsents, versioon 2
-233|Linuxi tuum ja palju süsteemitööriistu
-234|GNU üldine avalik litsents, versioon 3
-235|Palju GNU ja GNOME programme
-236|GNU vähem üldine avalik litsents, versioon 2.1
-237|GTK, GLib ja palju teeke
-238|GNU vähem üldine avalik litsents, versioon 3
-239|Teegid
-240|Mozilla avalik litsents 2.0
-241|Mozilla ja teiste programmid ja teegid
-242|Apache litsents 2.0
-243|Teegid ja tööriistad
-244|Litsentsileping
-245|Palun loe ja nõustu tingimustega, millel MAN-i pakutakse.
-246|Litsentsid
-247|Litsentsi tekst pole saadaval ({path}).
-248|Olen litsentsitingimused läbi lugenud ja nõustun nendega
-249|Juhtmega
-250|Pole ühendatud
-251|Ühenda internetiga
-252|Ühendusega saab MAN kella õigeks seada ja tarkvara ajakohasena hoida. Saad seda teha ka hiljem.
-253|Ühenduse kontrollimine…
-254|Wi-Fi võrgud
-255|Otsi uuesti
-256|_Jäta vahele
-257|Saad hiljem ühenduda menüüs Seaded.
-258|Ühendatud
-259|Pole ühendatud
-260|Võrke ei leitud
-261|Internet
-262|Ühendatud võrguga „{ssid}“
-263|Võrguga „{ssid}“ ei saanud ühendust
-264|Ühenda võrguga „{ssid}“
-265|Sisesta võrgu parool.
-266|_Ühenda
-267|Loo oma konto
-268|Sinust saab selle arvuti administraator, kellel on sudo kaudu täielik root-ligipääs.
-269|Täisnimi
-270|Kasutajanimi
-271|Parool
-272|Kinnita parool
-273|Logi automaatselt sisse
-274|Jäta arvuti käivitamisel sisselogimisekraan vahele
-275|Olemasolevad kodukaustad
-276|Kasuta sama kasutajanime, et jätkata eelmisest paigaldusest jäänud kausta kasutamist.
-277|Kasuta
-278|Täpsemad
-279|Arvuti nimi
-280|Määra root-parool
-281|Võimaldab otse root-kasutajana sisse logida. Ilma selleta kasuta sudo oma parooliga.
-282|Root-parool
-283|Kinnita root-parool
-284|Sisesta oma nimi.
-285|Vali kasutajanimi.
-286|Seda kasutajanime kasutab juba süsteem.
-287|See kasutajanimi on süsteemi jaoks reserveeritud.
-288|Kasutajanimed koosnevad väiketähtedest, numbritest, - ja _ märgist ning algavad tähega.
-289|Vali parool.
-290|Paroolid ei kattu.
-291|Arvuti nimi võib sisaldada tähti, numbreid ja sidekriipse.
-292|Sisesta root-parool kaks korda.
-293|Nõuanne: 8 või enama märgiga parool on palju turvalisem.
-294|Konto
-295|Tume
-296|Hele
-297|Tee see enda omaks
-298|Vali stiil, rõhuvärv ja taustapilt. Näed iga muudatust kohe.
-299|Stiil
-300|Rõhuvärv
-301|Taustapilt
-302|Kohanda
-303|Privaatsus
-304|Vali, millised funktsioonid tohivad sinu kohta teavet kasutada. Saad seda igal ajal muuta menüüs Seaded.
-305|Asukohateenused
-306|Lubab rakendustel nagu Kaardid ja Ilm leida sinu ligikaudse asukoha lähedalasuvate Wi-Fi võrkude abil.
-307|Automaatne ajavöönd
-308|Kasutab sinu asukohta, et reisides ajavöönd õige püsiks.
-309|_Lõpeta seadistamine
-310|Sinu ketas on krüptitud
-311|Sinu andmed on kaitstud. Paroolifraasi küsitakse iga kord, kui arvuti käivitub.
-312|Ketta krüptimine
-313|Krüptimine kaitseb sinu andmeid, kui arvuti kaob või varastatakse.
-314|Selles paigalduses pole saadaval
-315|Krüptimine kaitseb sinu faile, kui arvuti kaob või varastatakse. Ilma paroolifraasita ei saa keegi ketast lugeda.
-316|Krüpti ketas
-317|Paroolifraasi küsitakse iga kord, kui arvuti käivitub.
-318|Krüptimine algab järgmisel taaskäivitusel
-319|Seejärel krüptitakse ketas taustal, kuni sa arvutit kasutad. Kui paroolifraas kaob, ei saa keegi andmeid taastada.
-320|MAN-i ettevalmistamine
-321|Kõike valmistatakse ette…
-322|_Taaskäivita
-323|_Tagasi
-324|Ettevalmistamine
-325|Seadistuslogi
-326|Kõik valmis!
-327|Midagi läks valesti
-328|Igapäevane
-329|Enne uuendust
-330|Enne taastamist
-331|Enne uuesti paigaldamist
-332|Käsitsi
-333|Hetktõmmiseid veel pole
-334|Loo üks enne suuri süsteemimuudatusi.
-335|Taasta…
-336|Kustuta hetktõmmis
-337|Vaba {free} kokku {size}-st. Süsteem, kodukaustad ja hetktõmmised jagavad seda ruumi; hetktõmmised võtavad ruumi ainult selle jaoks, mis on pärast nende loomist muutunud.
-338|_OK
-339|Loo hetktõmmis
-340|Salvestab süsteemi praeguse oleku. Sinu kodukausta isiklikud failid pole kaasatud.
-341|Kirjeldus, näiteks „Enne draiverite paigaldamist“
-342|_Loo
-343|Käsitsi tehtud hetktõmmis
-344|Kas kustutada hetktõmmis?
-345|„{description}“ ({date}) kustutatakse jäädavalt.
-346|_Kustuta
-347|Kas taastada see hetktõmmis?
-348|Pärast taaskäivitust naaseb süsteem olekusse „{description}“ ({date}). Sinu isiklikud failid ei muutu.\n\nPraegune süsteem salvestatakse enne hetktõmmisena, nii et seda saab tagasi võtta.
-349|_Taasta
-350|Taastamise lõpetamiseks taaskäivita
-351|Taaskäivita _hiljem
-352|Taaskäivita _kohe
-353|Hetktõmmised
-354|Taastepunktid
-355|Hetktõmmised salvestavad operatsioonisüsteemi oleku. Ühe taastamine viib süsteemi tagasi sellesse hetke, mis aitab pärast ebaõnnestunud uuendust või seadete muudatust. Sinu isiklikke faile ei puudutata kunagi.
-356|Automaatsed hetktõmmised
-357|Igapäevased hetktõmmised
-358|Kord päevas, kui arvuti on sees
-359|Säilitatavaid igapäevaseid tõmmiseid
-360|Enne tarkvarauuendusi
-361|Tehakse automaatselt pakettide paigaldamisel, uuendamisel või eemaldamisel
-362|Säilitatavaid uuendustõmmiseid
-363|Salvestusruum
-364|Kettaruum
-365|Kui MAN ei käivitu
-366|Vali alglaadimismenüüs „Restore a MAN snapshot“, et saada tagasi töötav süsteem.
-367|Hetktõmmised pole saadaval
-368|Hetktõmmised töötavad MAN-is, mis on paigaldatud MAN-i paigaldaja Btrfs-paigutusega. See süsteem (näiteks live-seanss) seda ei kasuta.
-369|Taastamine ootab: lõpetamiseks taaskäivita arvuti
-370|Taaskäivita kohe
-371|Palun oota, kuni praegune toiming lõpeb.
-372|Otsi
-373|Kopeeri lõikelauale
-374|Koordineeritud maailmaaeg
-375|Inglise (USA)
-376|MAN {version} on välja antud!
-377|Saad sellele uuendada.
-378|Ava uuendused
-379|Uuenduse kontrollimine
-380|Kontrollitakse, kas uuendus on ehtne ja terviklik…
-381|MAN-i uuendus
-382|Seda uuendust ei saa paigaldada
-383|Uuendust ei saanud lugeda.
-384|Uuendus versioonist {name} {version}
-385|{name} {version} on paigaldatud
-386|Välja antud
-387|Allalaadimise suurus
-388|Vajalik ruum
-389|Ehtsus
-390|Kontrollitud, allkirjastaja „{signer}“
-391|Mis on uut
-392|See uuendus pole uuem kui paigaldatud {name} {version}.
-393|Uuendus
-394|Palun loe selle uuenduse litsentsitingimusi.
-395|Nõustun litsentsitingimustega
-396|Kuhu uuendus paigaldada?
-397|Süsteem asendatakse; sinu kodukausta faile ei puudutata.
-398|Vali paigaldus.
-399|praegu töös
-400|{name} {version} selles arvutis
-401|{name} kettal {model}
-402|MAN-i paigaldust ei leitud
-403|Uuendused paigaldatakse töötavast paigaldatud MAN-i süsteemist, mitte live-seansist.
-404|Paigalduse asukoht
-405|Säilitatakse
-406|Sinu failid
-407|Kõik sinu kodukaustas
-408|Kontod ja paroolid
-409|Kasutajad, rühmad, arvuti nimi
-410|Ühendused ja seaded
-411|Wi-Fi, ajavöönd, klaviatuur, välimus ja hetktõmmised
-412|Flatpaki rakendused
-413|Lisaks kõik kaustades /usr/local ja /opt
-414|Asendatakse
-415|apt-iga paigaldatud tarkvara ja muud süsteemifailide muudatused asendab uus süsteem.
-416|Operatsioonisüsteem
-417|Asendatakse versiooniga {name} {version}. Praeguse süsteemi saab hetktõmmisest taastada.
-418|Arvuti taaskäivitub uuenduse paigaldamiseks
-419|Pärast ettevalmistust MAN taaskäivitub, paigaldab uuenduse mõne sekundiga ja taaskäivitub uuesti.
-420|_Paigalda uuendus
-421|Kas luua enne hetktõmmis?
-422|Hetktõmmis salvestab praeguse süsteemi, et saaksid sellesse naasta, kui pärast uuendust miski ei tööta. Soovitatav.
-423|_Ära loo
-424|_Loo hetktõmmis
-425|{name} {version} ettevalmistamine
-426|Taaskäivita paigaldamiseks
-427|Arvuti taaskäivitub kaks korda. Sinu failid on ohutud.
-428|Automaatne taaskäivitus {r} sekundi pärast
-429|Automaatne taaskäivitus 30 sekundi pärast
-430|Uuendus paigaldatakse järgmisel taaskäivitusel.
-431|Valmis
-432|Uuendust ei saanud ette valmistada
-433|Sinu süsteemis ei muudetud midagi.
-434|_Proovi uuesti
-435|Uuenduse logi
-436|Nurjus
-437|Sinu süsteem on uuendatud
-438|MAN uuendati versioonile {version}.\nVaranem: MAN {previous}.
-439|_Valmis
-440|Ava MAN-i uuendus
-441|MAN-i uuendused
-442|Uusimate paketiloendite hankimine…
-443|Rakenduse kopeerimine
-444|Rakenduse lisamine menüüsse
-445|Faili ei leitud.
-446|Paketti ei saanud paigaldada.
-447|Rakenduse menüükirje on vigane.
-448|Paigaldusplaani kontrollimine
-449|Ketta ettevalmistamine
-450|MAN-i kopeerimine kettale
-451|Uue süsteemi seadistamine
-452|Alglaaduri paigaldamine
-453|Esimese hetktõmmise loomine
-454|Lõpetamine
-455|Vanade sektsioonisignatuuride eemaldamine
-456|Sektsioonide loomine
-457|EFI süsteemisektsiooni vormindamine
-458|Süsteemisektsiooni krüptimine
-459|Alglaadimissektsiooni vormindamine
-460|Btrfs-failisüsteemi loomine
-461|Vanade failisüsteemisignatuuride eemaldamine
-462|Krüptitud paigalduse lukust avamine
-463|Praeguse süsteemi salvestamine hetktõmmisena
-464|Eelmise süsteemi eemaldamine
-465|Failisüsteemide tabeli kirjutamine
-466|Arvuti nime ja identiteedi määramine
-467|Live-seansi kontode eemaldamine
-468|Sinu konto loomine
-469|MAN Setupi ettevalmistamine esimeseks käivituseks
-470|Ajavööndi ja klaviatuuri määramine
-471|Paigaldaja eemaldamine uuest süsteemist
-472|Alglaadimistõmmise (initramfs) koostamine
-473|GRUB-i seadistamine
-474|GRUB-i paigaldamine EFI süsteemisektsiooni
-475|Varualglaaduri paigaldamine
-476|Alglaadimismenüü kirjutamine
-477|Ketas valmis
-478|Uue süsteemi hetktõmmise loomine
-479|Hetktõmmise lisamine alglaadimismenüüsse
-480|Lahtihaakimine
-481|Paigaldaja abiline peab töötama root-kasutajana.
-482|Seda arvutit ei käivitatud UEFI-režiimis. MAN vajab UEFI-t.
-483|Kasutajanimi pole sobiv.
-484|Parool on nõutav.
-485|Arvuti nimi pole sobiv.
-486|Tundmatu keel.
-487|Krüptimise paroolifraas peab olema vähemalt 8 märki.
-488|Ketas muutus pärast paigalduse kinnitamist. Midagi ei muudetud; vaata üle ja kinnita uuesti.
-489|Vali süsteemisektsioon.
-490|Kinnitatud ketas ei sisalda valitud süsteemisektsiooni.
-491|Alglaadimissektsioon peab olema EFI- ja süsteemisektsioonist eraldi.
-492|Alglaadimissektsioon peab olema vähemalt 512 MB.
-493|Paigaldust pole valitud.
-494|Kinnitatud ketas ei sisalda valitud paigaldust.
-495|Krüptitud paigaldusel pole MAN_BOOT sektsiooni.
-496|Kaustast /boot ei leitud sobivate moodulitega tuuma.
-497|Keelt peab muutma süsteemiabiline.
-498|Sinu seadete rakendamine
-499|Ketta krüptimise ettevalmistamine
-500|Lõpetamine
-501|MAN Setupi peab lõpetama süsteemiabiline.
-502|MAN Setup on selles arvutis juba tehtud.
-503|Tundmatu rõhuvärv.
-504|Valitud taustapilt pole saadaval.
-505|Seda süsteemi ei saa krüptida.
-506|Seadistusvõti puudub, seega ei saa krüptimine taustal jätkuda.
-507|Süsteem pole paigaldatud Btrfs-ile, seega hetktõmmised pole saadaval.
-508|Hetktõmmise taastamine ootab taaskäivitust. Lõpetamiseks taaskäivita esmalt arvuti.
-509|Vigane hetktõmmise ID.
-510|Uuenduse kontrollimine
-511|Hetktõmmise loomine
-512|Uuendusala ettevalmistamine
-513|Uue süsteemi lahtipakkimine
-514|Sinu kontode ja seadete ületoomine
-515|Taaskäivituse ettevalmistamine
-516|Lahti pakitud
-517|Kontod
-518|Ainult paigaldaja tarkvara eemaldamine
-519|Uuenduse alglaadimistõmmise koostamine
-520|Ühekordse alglaadimiskirje lisamine
-521|Uuendus on ehtne
-522|Hetktõmmis loodud
-523|Vahele jäetud
-524|Uuendusala valmis
-525|Uue süsteemi ettevalmistamine
-526|Uuendusfail on rikutud (kontrollsumma ei klapi). Laadi see uuesti alla.
-527|Uuendusfaili ei saanud täielikult lugeda.
-528|Uuendus ei sisalda tuuma.
-529|Uuendusi peab paigaldama süsteemiabiline.
-530|Valitud paigaldust ei leitud.
-531|Uuendada saab ainult töötavat MAN-i paigaldust.
-532|See pole MAN-i uuendusfail (manifest puudub).
-533|Uuendus pole allkirjastatud, seega ei saa seda usaldada.
-534|Uuenduse allkiri on rikutud.
-535|Uuendus pole MAN-i allkirjastatud. Seda võib olla muudetud või see pärineb ebausaldusväärsest allikast.
-536|Uuenduse manifest on vigane.
-537|Paroolifraas on vale või krüptitud sektsiooni ei saa avada.
-538|Sinine
-539|Sinakasroheline
-540|Roheline
-541|Kollane
-542|Oranž
-543|Punane
-544|Roosa
-545|Lilla
-546|Kiltkivi
-547|Pakettide paigaldaja
-548|Rakenduste paigaldamine .deb-, Flatpaki ja AppImage-failidest
-549|Süsteemi paigaldaja
-550|Paigalda MAN sellesse arvutisse
-551|Süsteemi taastamine
-552|Loo ja taasta süsteemi hetktõmmiseid
-553|Süsteemiuuenduste paigaldaja
-554|Paigalda MAN-i süsteemiuuenduse fail
-555|Pakub live-seansi algamisel MAN-i paigaldamist
-556|MAN-i uuenduse teade
-557|Teatab pärast sisselogimist ühe korra, et MAN-i uuendati
-558|Seadista oma uus MAN-i arvuti
-559|MAN-i esmane seadistamine
-560|MAN-i uuendused
-561|Annab teada, kui MAN-i uus versioon on saadaval
+44|Säilita pärast MAN-i uuendusi
+45|MAN paigaldab rakenduse pärast iga uuendust uuesti. Selleks hoitakse alles selle paketifailid.
+46|Rakenduse {name} paigaldamiseks klõpsa nupul Paigalda.
+47|Kontrollitakse, mida rakendus veel vajab…
+48|Paigaldab ka vajalikud paketid: {list}
+49|Mõned rakenduse vajatud paketid pole veel saadaval. Paigaldamine hangib esmalt uusimad paketiloendid; kui need ikka puuduvad, ei saa rakendust paigaldada.
+50|Rakenduse {name} paigaldamine…
+51|Ettevalmistamine…
+52|Üksikasjad
+53|Paketi paigaldamine…
+54|Rakenduse teisaldamine oma kausta…
+55|Rakendust ei saanud paigaldada.
+56|Rakenduse paigaldamine Flatpakiga…
+57|Logi
+58|_Sulge
+59|Paigaldamine õnnestus
+60|Rakendus paigaldati.
+61|Paigaldamine nurjus
+62|_Ava
+63|_Näita üksikasju
+64|Paigalduslogi
+65|Rakenduste paigaldaja
+66|_Tagasi
+67|Rakenduse lugemine…
+68|Paigalda {name}
+69|Rakendused
+70|Vali paigaldatav rakendus
+71|Süsteemiabilist ei saanud käivitada.
+72|Süsteemiabilisega ei saa suhelda.
+73|Ühendus süsteemiabilisega katkes.
+74|Autentimine katkestati.
+75|Selleks toiminguks on vaja administraatori õigusi.
+76|Süsteemiabiline peatus ootamatult.
+77|EFI süsteemisektsioon puudub
+78|Vaba on ainult {free}, MAN vajab {need}. Vabasta ruumi Windowsis DUHACH!-iga.
+79|Vaba ruumi pole. Käivita Windowsis DUHACH!, et teha MAN-ile ruumi.
+80|MAN töötab sellelt kettalt
+81|Kasutusel: sektsioon on haagitud
+82|Liiga väike, MAN vajab {need}
+83|Paigalda MAN
+84|MAN-i paigaldatakse. Palun oota, kuni see lõpeb.
+85|Keel
+86|_Taaskäivita selles keeles
+87|Live-seanss taaskäivitub valitud keeles ja MAN paigaldatakse selles keeles.
+88|Tere tulemast MAN-i
+89|Kiire, avatud ja täielikult kohandatav GNOME süsteem.\nPaigalda see sellesse arvutisse või jätka live-seansi avastamist.
+90|_Paigalda MAN…
+91|_Jätka MAN-i proovimist
+92|Ketaste otsimine…
+93|Tere tulemast
+94|See arvuti käivitati vanas BIOS-režiimis. MAN-i saab paigaldada ainult UEFI-arvutitesse: taaskäivita ja vali UEFI alglaadimisvalik.
+95|Süsteemiabiline ei tagastanud ketaste teavet.
+96|  ·  EFI
+97|_Edasi
+98|Kustuta ketas ja paigalda MAN
+99|Kõik valitud kettal kustutatakse, ka Windows.
+100|Soovitatav. Kõik valitud kettal kustutatakse.
+101|Paigalda Windowsi kõrvale
+102|Soovitatav. MAN kasutab Windowsi kõrval olevat vaba ruumi; Windows ja selle failid jäävad alles. Süsteemi valid igal käivitamisel.
+103|Paigalda MAN uuesti
+104|Asendab süsteemi, kuid hoiab alles isiklikud failid kaustas /home. Praegune süsteem salvestatakse hetktõmmisena.
+105|Kohandatud sektsioonid
+106|Asjatundjatele: vali sektsioonid ise või loo need rakendusega Kettad.
+107|Ketas
+108|Vali kustutatav ketas. Kasutamiskõlbmatud kettad kuvatakse koos põhjusega.
+109|Kettaid ei leitud
+110|Vaba ruum Windowsi kõrval
+111|Windowsi sektsioone ei puudutata. MAN jagab EFI süsteemisektsiooni ja lisab Windowsi oma alglaadimismenüüsse.
+112|vaba {size}
+113|vaba ruumi pole
+114|{model} (Windows)
+115|Asendatav paigaldus
+116|kodukaustu pole
+117|kodukaustad: {list}
+118|hetktõmmiseid: {n}
+119|MAN kettal {model}
+120|Paroolifraas seadmele {device}
+121|Ava lukk
+122|Paigaldust ei saanud uurida.
+123|Sektsioonid
+124|Süsteemisektsioon vormindatakse Btrfs-iks ja see sisaldab @system, @home ja @snapshots alamköiteid. Ketta, millelt MAN töötab, sektsioone ei näidata.
+125|Ava Kettad sektsioonide loomiseks või suuruse muutmiseks
+126|Värskenda sektsioonide loendit
+127|Vali sektsioon
+128|EFI süsteemisektsioon
+129|Vorminda EFI süsteemisektsioon
+130|Jäta välja lülitatuks, et teiste süsteemide alglaadurid alles jääksid
+131|Süsteemisektsioon (vormindatakse Btrfs-iks)
+132|Alglaadimissektsioon (vajalik krüptimisel)
+133|Sektsioonide loend värskendatud
+134|Turvalisus
+135|Krüpti süsteem
+136|Kaitseb sinu andmeid, kui arvuti kaob või varastatakse. Igal käivitamisel küsitakse paroolifraasi.
+137|Paroolifraas
+138|Kinnita paroolifraas
+139|Hoia seda paroolifraasi kindlas kohas
+140|Kui see kaob, ei saa keegi andmeid taastada. Tuum ja alglaadimisfailid jäävad väikesele krüptimata alglaadimissektsioonile.
+141|Paroolifraas peab olema vähemalt 8 märki.
+142|Paroolifraasid ei kattu.
+143|Vali ketas.
+144|Vali Windowsiga ketas.
+145|Vali asendatav paigaldus.
+146|Ava esmalt krüptitud paigalduse lukk.
+147|Selles sektsioonis pole MAN-i süsteemi.
+148|Vali EFI süsteemisektsioon.
+149|Vali süsteemisektsioon.
+150|EFI- ja süsteemisektsioon peavad olema erinevad.
+151|Krüptimiseks on vaja eraldi alglaadimissektsiooni.
+152|Süsteemisektsioon peab olema vähemalt {size}.
+153|EFI-sektsioon pole FAT-vormingus; lülita vormindamine sisse.
+154|Süsteemisektsioon on haagitud; haagi see esmalt rakenduses Kettad lahti.
+155|Kuhu MAN paigaldada?
+156|Aeg ja klaviatuur
+157|Ajavöönd
+158|Klaviatuuripaigutus
+159|Proovi klaviatuuri
+160|Kirjuta siia, et kontrollida, kas klahvid annavad õiged märgid.
+161|Kirjuta siia
+162|Ajavöönd ja klaviatuur
+163|Ketast pole valitud
+164|Süsteemisektsiooni pole valitud
+165|Süsteemisektsioon kadus
+166|Paigaldust pole valitud
+167|Ketas kadus
+168|Ülevaade
+169|Sihtkoht
+170|Kustuta ketas ja paigalda
+171|Kohandatud sektsioonid
+172|Paigalda uuesti, hoia /home alles
+173|Windowsi kõrvale
+174| (vormindatakse)
+175| (jääb alles)
+176|Süsteemisektsioon
+177|{partition} (vormindatakse)
+178|Alglaadimissektsioon
+179|Ruum MAN-i jaoks
+180|{free} vaba ruumi (luuakse alglaadimissektsioon ja süsteemisektsioon)
+181|Windows
+182|Muutmata. See ilmub MAN-i alglaadimismenüüsse; EFI süsteemisektsioon on ühine.
+183|Krüptimine
+184|Sees (LUKS2)
+185|Väljas
+186|Failisüsteem
+187|Btrfs: @system MAN-ile, @home sinu failidele, @snapshots taastepunktidele. Kõik jagavad vaba ruumi.
+188|Süsteem
+189|Sinu konto
+190|Luuakse MAN Setupis arvuti esimesel käivitamisel koos arvuti nime, välimuse ja privaatsusseadetega.
+191|Klaviatuur
+192|Kõik andmed kettal {model} ({path}) kustutatakse.
+193|_Kustuta ja paigalda
+194|Valitud sektsioonid vormindatakse. Teised sektsioonid ei muutu.
+195|_Vorminda ja paigalda
+196|Praegune süsteem asendatakse. Sinu failid kaustas /home jäävad alles ja vana süsteem salvestatakse hetktõmmisena.
+197|Paigalda _uuesti
+198|MAN paigaldatakse vabasse ruumi. Windows ja selle failid ei muutu.
+199|Valmis paigaldamiseks
+200|Kas kustutada {model}?
+201|Kõik failid ja sektsioonid kettal {path} ({size}) kustutatakse jäädavalt. Seda ei saa tagasi võtta.
+202|Kustuta ja paigalda
+203|Kas vormindada valitud sektsioonid?
+204|Kõik andmed valitud sektsioonidel kustutatakse jäädavalt. Teised sektsioonid ei muutu.
+205|Vorminda ja paigalda
+206|Kas paigaldada MAN Windowsi kõrvale?
+207|MAN paigaldatakse kettal {model} ({path}) olevasse {free} vabasse ruumi. Windows ja selle failid ei muutu.
+208|Paigalda
+209|Kas paigaldada MAN uuesti?
+210|Paigaldatud süsteem asendatakse värske koopiaga. Isiklikud failid kaustas /home jäävad alles ja vana süsteem on saadaval hetktõmmisena.
+211|Paigalda uuesti
+212|_Loobu
+213|MAN-i paigaldamine
+214|Alustamine…
+215|Paigaldamine
+216|Samm {index}/{n}  ·  {title}
+217|MAN on paigaldatud
+218|Taaskäivita arvuti, et MAN-i kasutama hakata. Igal käivitamisel saad menüüst valida MAN-i või Windowsi; ajutise paigaldussektsiooni eemaldab MAN esimesel käivitamisel.
+219|Taaskäivita arvuti, et MAN-i kasutama hakata. Paigaldusmeediumi võid eemaldada; kui see jääb ühendatuks, käivitub MAN ikkagi uuelt kettalt.
+220|_Taaskäivita kohe
+221|Valmis
+222|Paigaldamine nurjus
+223|Ühtegi teist ketast ei muudetud ja paigaldaja vabastas sihtketta. Võid plaani üle vaadata ja uuesti proovida.
+224|_Vaata üle ja proovi uuesti
+225|Otsi keeli
+226|Otsi riike
+227|Süsteemiketast ei leitud.
+228|Krüptimiseks on vaja MAN-i paigaldaja loodud Btrfs-paigutust.
+229|Sellel paigaldusel pole eraldi alglaadimissektsiooni, mida krüptimine vajab. Krüptimiseks paigalda MAN uuesti valikuga „Kustuta ketas“.
+230|MAN Setup
+231|Kus sa asud?
+232|Sinu riik või piirkond määrab kuupäeva, kellaaja ja arvude vormingu.
+233|Riik
+234|GNU üldine avalik litsents, versioon 2
+235|Linuxi tuum ja palju süsteemitööriistu
+236|GNU üldine avalik litsents, versioon 3
+237|Palju GNU ja GNOME programme
+238|GNU vähem üldine avalik litsents, versioon 2.1
+239|GTK, GLib ja palju teeke
+240|GNU vähem üldine avalik litsents, versioon 3
+241|Teegid
+242|Mozilla avalik litsents 2.0
+243|Mozilla ja teiste programmid ja teegid
+244|Apache litsents 2.0
+245|Teegid ja tööriistad
+246|Litsentsileping
+247|Palun loe ja nõustu tingimustega, millel MAN-i pakutakse.
+248|Litsentsid
+249|Litsentsi tekst pole saadaval ({path}).
+250|Olen litsentsitingimused läbi lugenud ja nõustun nendega
+251|Juhtmega
+252|Pole ühendatud
+253|Ühenda internetiga
+254|Ühendusega saab MAN kella õigeks seada ja tarkvara ajakohasena hoida. Saad seda teha ka hiljem.
+255|Ühenduse kontrollimine…
+256|Wi-Fi võrgud
+257|Otsi uuesti
+258|_Jäta vahele
+259|Saad hiljem ühenduda menüüs Seaded.
+260|Ühendatud
+261|Pole ühendatud
+262|Võrke ei leitud
+263|Internet
+264|Ühendatud võrguga „{ssid}“
+265|Võrguga „{ssid}“ ei saanud ühendust
+266|Ühenda võrguga „{ssid}“
+267|Sisesta võrgu parool.
+268|_Ühenda
+269|Loo oma konto
+270|Sinust saab selle arvuti administraator, kellel on sudo kaudu täielik root-ligipääs.
+271|Täisnimi
+272|Kasutajanimi
+273|Parool
+274|Kinnita parool
+275|Logi automaatselt sisse
+276|Jäta arvuti käivitamisel sisselogimisekraan vahele
+277|Olemasolevad kodukaustad
+278|Kasuta sama kasutajanime, et jätkata eelmisest paigaldusest jäänud kausta kasutamist.
+279|Kasuta
+280|Täpsemad
+281|Arvuti nimi
+282|Määra root-parool
+283|Võimaldab otse root-kasutajana sisse logida. Ilma selleta kasuta sudo oma parooliga.
+284|Root-parool
+285|Kinnita root-parool
+286|Sisesta oma nimi.
+287|Vali kasutajanimi.
+288|Seda kasutajanime kasutab juba süsteem.
+289|See kasutajanimi on süsteemi jaoks reserveeritud.
+290|Kasutajanimed koosnevad väiketähtedest, numbritest, - ja _ märgist ning algavad tähega.
+291|Vali parool.
+292|Paroolid ei kattu.
+293|Arvuti nimi võib sisaldada tähti, numbreid ja sidekriipse.
+294|Sisesta root-parool kaks korda.
+295|Nõuanne: 8 või enama märgiga parool on palju turvalisem.
+296|Konto
+297|Tume
+298|Hele
+299|Tee see enda omaks
+300|Vali stiil, rõhuvärv ja taustapilt. Näed iga muudatust kohe.
+301|Stiil
+302|Rõhuvärv
+303|Taustapilt
+304|Kohanda
+305|Privaatsus
+306|Vali, millised funktsioonid tohivad sinu kohta teavet kasutada. Saad seda igal ajal muuta menüüs Seaded.
+307|Asukohateenused
+308|Lubab rakendustel nagu Kaardid ja Ilm leida sinu ligikaudse asukoha lähedalasuvate Wi-Fi võrkude abil.
+309|Automaatne ajavöönd
+310|Kasutab sinu asukohta, et reisides ajavöönd õige püsiks.
+311|_Lõpeta seadistamine
+312|Sinu ketas on krüptitud
+313|Sinu andmed on kaitstud. Paroolifraasi küsitakse iga kord, kui arvuti käivitub.
+314|Ketta krüptimine
+315|Krüptimine kaitseb sinu andmeid, kui arvuti kaob või varastatakse.
+316|Selles paigalduses pole saadaval
+317|Krüptimine kaitseb sinu faile, kui arvuti kaob või varastatakse. Ilma paroolifraasita ei saa keegi ketast lugeda.
+318|Krüpti ketas
+319|Paroolifraasi küsitakse iga kord, kui arvuti käivitub.
+320|Krüptimine algab järgmisel taaskäivitusel
+321|Seejärel krüptitakse ketas taustal, kuni sa arvutit kasutad. Kui paroolifraas kaob, ei saa keegi andmeid taastada.
+322|MAN-i ettevalmistamine
+323|Kõike valmistatakse ette…
+324|_Taaskäivita
+325|_Tagasi
+326|Ettevalmistamine
+327|Seadistuslogi
+328|Kõik valmis!
+329|Midagi läks valesti
+330|Igapäevane
+331|Enne uuendust
+332|Enne taastamist
+333|Enne uuesti paigaldamist
+334|Käsitsi
+335|Hetktõmmiseid veel pole
+336|Loo üks enne suuri süsteemimuudatusi.
+337|Taasta…
+338|Kustuta hetktõmmis
+339|Vaba {free} kokku {size}-st. Süsteem, kodukaustad ja hetktõmmised jagavad seda ruumi; hetktõmmised võtavad ruumi ainult selle jaoks, mis on pärast nende loomist muutunud.
+340|_OK
+341|Loo hetktõmmis
+342|Salvestab süsteemi praeguse oleku. Sinu kodukausta isiklikud failid pole kaasatud.
+343|Kirjeldus, näiteks „Enne draiverite paigaldamist“
+344|_Loo
+345|Käsitsi tehtud hetktõmmis
+346|Kas kustutada hetktõmmis?
+347|„{description}“ ({date}) kustutatakse jäädavalt.
+348|_Kustuta
+349|Kas taastada see hetktõmmis?
+350|Pärast taaskäivitust naaseb süsteem olekusse „{description}“ ({date}). Sinu isiklikud failid ei muutu.\n\nPraegune süsteem salvestatakse enne hetktõmmisena, nii et seda saab tagasi võtta.
+351|_Taasta
+352|Taastamise lõpetamiseks taaskäivita
+353|Taaskäivita _hiljem
+354|Taaskäivita _kohe
+355|Hetktõmmised
+356|Taastepunktid
+357|Hetktõmmised salvestavad operatsioonisüsteemi oleku. Ühe taastamine viib süsteemi tagasi sellesse hetke, mis aitab pärast ebaõnnestunud uuendust või seadete muudatust. Sinu isiklikke faile ei puudutata kunagi.
+358|Automaatsed hetktõmmised
+359|Igapäevased hetktõmmised
+360|Kord päevas, kui arvuti on sees
+361|Säilitatavaid igapäevaseid tõmmiseid
+362|Enne tarkvarauuendusi
+363|Tehakse automaatselt pakettide paigaldamisel, uuendamisel või eemaldamisel
+364|Säilitatavaid uuendustõmmiseid
+365|Salvestusruum
+366|Kettaruum
+367|Kui MAN ei käivitu
+368|Vali alglaadimismenüüs „Restore a MAN snapshot“, et saada tagasi töötav süsteem.
+369|Hetktõmmised pole saadaval
+370|Hetktõmmised töötavad MAN-is, mis on paigaldatud MAN-i paigaldaja Btrfs-paigutusega. See süsteem (näiteks live-seanss) seda ei kasuta.
+371|Taastamine ootab: lõpetamiseks taaskäivita arvuti
+372|Taaskäivita kohe
+373|Palun oota, kuni praegune toiming lõpeb.
+374|Otsi
+375|Kopeeri lõikelauale
+376|Koordineeritud maailmaaeg
+377|Inglise (USA)
+378|MAN {version} on välja antud!
+379|Saad sellele uuendada.
+380|Ava uuendused
+381|Uuenduse kontrollimine
+382|Kontrollitakse, kas uuendus on ehtne ja terviklik…
+383|MAN-i uuendus
+384|Seda uuendust ei saa paigaldada
+385|Uuendust ei saanud lugeda.
+386|Uuendus versioonist {name} {version}
+387|{name} {version} on paigaldatud
+388|Välja antud
+389|Allalaadimise suurus
+390|Vajalik ruum
+391|Ehtsus
+392|Kontrollitud, allkirjastaja „{signer}“
+393|Mis on uut
+394|See uuendus pole uuem kui paigaldatud {name} {version}.
+395|Uuendus
+396|Palun loe selle uuenduse litsentsitingimusi.
+397|Nõustun litsentsitingimustega
+398|Kuhu uuendus paigaldada?
+399|Süsteem asendatakse; sinu kodukausta faile ei puudutata.
+400|Vali paigaldus.
+401|praegu töös
+402|{name} {version} selles arvutis
+403|{name} kettal {model}
+404|MAN-i paigaldust ei leitud
+405|Uuendused paigaldatakse töötavast paigaldatud MAN-i süsteemist, mitte live-seansist.
+406|Paigalduse asukoht
+407|Säilitatakse
+408|Sinu failid
+409|Kõik sinu kodukaustas
+410|Kontod ja paroolid
+411|Kasutajad, rühmad, arvuti nimi
+412|Ühendused ja seaded
+413|Wi-Fi, ajavöönd, klaviatuur, välimus ja hetktõmmised
+414|Flatpaki rakendused
+415|Lisaks kõik kaustades /usr/local ja /opt
+416|Asendatakse
+417|apt-iga paigaldatud tarkvara ja muud süsteemifailide muudatused asendab uus süsteem.
+418|Operatsioonisüsteem
+419|Asendatakse versiooniga {name} {version}. Praeguse süsteemi saab hetktõmmisest taastada.
+420|Arvuti taaskäivitub uuenduse paigaldamiseks
+421|Pärast ettevalmistust MAN taaskäivitub, paigaldab uuenduse mõne sekundiga ja taaskäivitub uuesti.
+422|_Paigalda uuendus
+423|Kas luua enne hetktõmmis?
+424|Hetktõmmis salvestab praeguse süsteemi, et saaksid sellesse naasta, kui pärast uuendust miski ei tööta. Soovitatav.
+425|_Ära loo
+426|_Loo hetktõmmis
+427|{name} {version} ettevalmistamine
+428|Taaskäivita paigaldamiseks
+429|Arvuti taaskäivitub kaks korda. Sinu failid on ohutud.
+430|Automaatne taaskäivitus {r} sekundi pärast
+431|Automaatne taaskäivitus 30 sekundi pärast
+432|Uuendus paigaldatakse järgmisel taaskäivitusel.
+433|Valmis
+434|Uuendust ei saanud ette valmistada
+435|Sinu süsteemis ei muudetud midagi.
+436|_Proovi uuesti
+437|Uuenduse logi
+438|Nurjus
+439|Sinu süsteem on uuendatud
+440|MAN uuendati versioonile {version}.\nVaranem: MAN {previous}.
+441|_Valmis
+442|Ava MAN-i uuendus
+443|MAN-i uuendused
+444|Uusimate paketiloendite hankimine…
+445|Rakenduse kopeerimine
+446|Rakenduse lisamine menüüsse
+447|Faili ei leitud.
+448|Paketti ei saanud paigaldada.
+449|Rakenduse menüükirje on vigane.
+450|Paigaldusplaani kontrollimine
+451|Ketta ettevalmistamine
+452|MAN-i kopeerimine kettale
+453|Uue süsteemi seadistamine
+454|Alglaaduri paigaldamine
+455|Esimese hetktõmmise loomine
+456|Lõpetamine
+457|Vanade sektsioonisignatuuride eemaldamine
+458|Sektsioonide loomine
+459|EFI süsteemisektsiooni vormindamine
+460|Süsteemisektsiooni krüptimine
+461|Alglaadimissektsiooni vormindamine
+462|Btrfs-failisüsteemi loomine
+463|Vanade failisüsteemisignatuuride eemaldamine
+464|Krüptitud paigalduse lukust avamine
+465|Praeguse süsteemi salvestamine hetktõmmisena
+466|Eelmise süsteemi eemaldamine
+467|Failisüsteemide tabeli kirjutamine
+468|Arvuti nime ja identiteedi määramine
+469|Live-seansi kontode eemaldamine
+470|Sinu konto loomine
+471|MAN Setupi ettevalmistamine esimeseks käivituseks
+472|Ajavööndi ja klaviatuuri määramine
+473|Paigaldaja eemaldamine uuest süsteemist
+474|Alglaadimistõmmise (initramfs) koostamine
+475|GRUB-i seadistamine
+476|GRUB-i paigaldamine EFI süsteemisektsiooni
+477|Varualglaaduri paigaldamine
+478|Alglaadimismenüü kirjutamine
+479|Ketas valmis
+480|Uue süsteemi hetktõmmise loomine
+481|Hetktõmmise lisamine alglaadimismenüüsse
+482|Lahtihaakimine
+483|Paigaldaja abiline peab töötama root-kasutajana.
+484|Seda arvutit ei käivitatud UEFI-režiimis. MAN vajab UEFI-t.
+485|Kasutajanimi pole sobiv.
+486|Parool on nõutav.
+487|Arvuti nimi pole sobiv.
+488|Tundmatu keel.
+489|Krüptimise paroolifraas peab olema vähemalt 8 märki.
+490|Ketas muutus pärast paigalduse kinnitamist. Midagi ei muudetud; vaata üle ja kinnita uuesti.
+491|Vali süsteemisektsioon.
+492|Kinnitatud ketas ei sisalda valitud süsteemisektsiooni.
+493|Alglaadimissektsioon peab olema EFI- ja süsteemisektsioonist eraldi.
+494|Alglaadimissektsioon peab olema vähemalt 512 MB.
+495|Paigaldust pole valitud.
+496|Kinnitatud ketas ei sisalda valitud paigaldust.
+497|Krüptitud paigaldusel pole MAN_BOOT sektsiooni.
+498|Kaustast /boot ei leitud sobivate moodulitega tuuma.
+499|Keelt peab muutma süsteemiabiline.
+500|Sinu seadete rakendamine
+501|Ketta krüptimise ettevalmistamine
+502|Lõpetamine
+503|MAN Setupi peab lõpetama süsteemiabiline.
+504|MAN Setup on selles arvutis juba tehtud.
+505|Tundmatu rõhuvärv.
+506|Valitud taustapilt pole saadaval.
+507|Seda süsteemi ei saa krüptida.
+508|Seadistusvõti puudub, seega ei saa krüptimine taustal jätkuda.
+509|Süsteem pole paigaldatud Btrfs-ile, seega hetktõmmised pole saadaval.
+510|Hetktõmmise taastamine ootab taaskäivitust. Lõpetamiseks taaskäivita esmalt arvuti.
+511|Vigane hetktõmmise ID.
+512|Uuenduse kontrollimine
+513|Hetktõmmise loomine
+514|Uuendusala ettevalmistamine
+515|Uue süsteemi lahtipakkimine
+516|Sinu kontode ja seadete ületoomine
+517|Taaskäivituse ettevalmistamine
+518|Lahti pakitud
+519|Kontod
+520|Säilitatud rakenduste uuesti paigaldamine
+521|Ainult paigaldaja tarkvara eemaldamine
+522|Uuenduse alglaadimistõmmise koostamine
+523|Ühekordse alglaadimiskirje lisamine
+524|Uuendus on ehtne
+525|Hetktõmmis loodud
+526|Vahele jäetud
+527|Uuendusala valmis
+528|Uue süsteemi ettevalmistamine
+529|Uuendusfail on rikutud (kontrollsumma ei klapi). Laadi see uuesti alla.
+530|Uuendusfaili ei saanud täielikult lugeda.
+531|Uuendus ei sisalda tuuma.
+532|Uuendusi peab paigaldama süsteemiabiline.
+533|Valitud paigaldust ei leitud.
+534|Uuendada saab ainult töötavat MAN-i paigaldust.
+535|See pole MAN-i uuendusfail (manifest puudub).
+536|Uuendus pole allkirjastatud, seega ei saa seda usaldada.
+537|Uuenduse allkiri on rikutud.
+538|Uuendus pole MAN-i allkirjastatud. Seda võib olla muudetud või see pärineb ebausaldusväärsest allikast.
+539|Uuenduse manifest on vigane.
+540|Paroolifraas on vale või krüptitud sektsiooni ei saa avada.
+541|Sinine
+542|Sinakasroheline
+543|Roheline
+544|Kollane
+545|Oranž
+546|Punane
+547|Roosa
+548|Lilla
+549|Kiltkivi
+550|Pakettide paigaldaja
+551|Rakenduste paigaldamine .deb-, Flatpaki ja AppImage-failidest
+552|Süsteemi paigaldaja
+553|Paigalda MAN sellesse arvutisse
+554|Süsteemi taastamine
+555|Loo ja taasta süsteemi hetktõmmiseid
+556|Süsteemiuuenduste paigaldaja
+557|Paigalda MAN-i süsteemiuuenduse fail
+558|Pakub live-seansi algamisel MAN-i paigaldamist
+559|MAN-i uuenduse teade
+560|Teatab pärast sisselogimist ühe korra, et MAN-i uuendati
+561|Seadista oma uus MAN-i arvuti
+562|MAN-i esmane seadistamine
+563|MAN-i uuendused
+564|Annab teada, kui MAN-i uus versioon on saadaval

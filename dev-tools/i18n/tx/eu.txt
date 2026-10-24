@@ -30,7 +30,7 @@
 29|Webgunea
 30|Fitxategia
 31|Aplikazio hau instalatuta dago dagoeneko. Berriro instalatuz gero, ordeztu egingo da.
-32|.deb paketeetako aplikazioak sistemaren parte bihurtzen dira. MAN eguneratzean kendu egiten dira eta berriro instalatu behar dira. Flatpak aplikazioak eta AppImageak gorde egiten dira.
+32|.deb paketeetako aplikazioak sistemaren parte bihurtzen dira. MAN eguneraketa batek sistema ordezten du; beraz, eguneraketaren ondoren mantentzen badituzu soilik instalatzen dira berriro (hurrengo urratsak).
 33|Instalatu konfiantzazko iturrietako aplikazioak soilik.
 34|Non instalatu nahi duzu {name}?
 35|Zure kontuak bakarrik erabil dezake aplikazioa.
@@ -42,521 +42,524 @@
 41|Aplikazioa ordenagailu honetako erabiltzaile guztientzat instalatzen da.
 42|Aplikazioa zuretzat bakarrik instalatzen da.
 43|AppImagea {folder} karpetara eramaten da eta zure aplikazioetara gehitzen da.
-44|Egin klik Instalatu botoian {name} instalatzeko.
-45|Aplikazioak beste zer behar duen egiaztatzen…
-46|Behar dituen paketeak ere instalatzen ditu: {list}
-47|Aplikazioak behar dituen pakete batzuk ez daude oraindik eskuragarri. Instalazioak lehenik pakete-zerrenda berrienak eskuratzen ditu; oraindik falta badira, ezin da aplikazioa instalatu.
-48|{name} instalatzen…
-49|Prestatzen…
-50|Xehetasunak
-51|Paketea instalatzen…
-52|Aplikazioa bere karpetara eramaten…
-53|Ezin izan da aplikazioa instalatu.
-54|Aplikazioa Flatpak bidez instalatzen…
-55|Egunkaria
-56|It_xi
-57|Instalazioa ondo amaitu da
-58|Aplikazioa instalatu da.
-59|Instalazioak huts egin du
-60|_Ireki
-61|_Erakutsi xehetasunak
-62|Instalazioaren egunkaria
-63|Aplikazio-instalatzailea
-64|_Atzera
-65|Aplikazioa irakurtzen…
-66|Instalatu {name}
-67|Aplikazioak
-68|Aukeratu instalatzeko aplikazio bat
-69|Ezin izan da sistemaren laguntzailea abiarazi.
-70|Ezin izan da sistemaren laguntzailearekin komunikatu.
-71|Sistemaren laguntzailearekiko konexioa galdu da.
-72|Baimena bertan behera utzi da.
-73|Ekintza honek administratzaile-baimenak behar ditu.
-74|Sistemaren laguntzailea ustekabean gelditu da.
-75|Ez dago EFI sistema-partiziorik
-76|{free} bakarrik daude libre, MANek {need} behar ditu. Egin leku gehiago DUHACH!-ekin Windowsen.
-77|Ez dago leku librerik. Abiarazi DUHACH! Windowsen MANi lekua egiteko.
-78|MAN disko honetatik exekutatzen ari da
-79|Erabilita: partizio bat muntatuta dago
-80|Txikiegia, MANek {need} behar ditu
-81|Instalatu MAN
-82|MAN instalatzen ari da. Itxaron amaitu arte.
-83|Hizkuntza
-84|_Berrabiarazi hizkuntza honetan
-85|Saio zuzena aukeratutako hizkuntzan berrabiaraziko da, eta MAN hizkuntza horretan instalatuko da.
-86|Ongi etorri MANera
-87|GNOME sistema azkar, ireki eta guztiz pertsonalizagarria.\nInstalatu ordenagailu honetan, edo jarraitu saio zuzena arakatzen.
-88|_Instalatu MAN…
-89|_Jarraitu MAN probatzen
-90|Diskoak bilatzen…
-91|Ongi etorri
-92|Ordenagailu hau BIOS zaharreko moduan abiarazi da. MAN UEFI ordenagailuetan soilik instala daiteke: berrabiarazi eta aukeratu UEFI abioko aukera.
-93|Sistemaren laguntzaileak ez du diskoei buruzko informaziorik itzuli.
-94|  ·  EFI
-95|_Hurrengoa
-96|Ezabatu diskoa eta instalatu MAN
-97|Aukeratutako diskoko guztia ezabatuko da, Windows barne.
-98|Gomendatua. Aukeratutako diskoko guztia ezabatuko da.
-99|Instalatu Windowsen ondoan
-100|Gomendatua. MANek Windowsen ondoko leku librea erabiltzen du; Windows eta bere fitxategiak geratzen dira. Abio bakoitzean aukeratzen duzu sistema.
-101|Berrinstalatu MAN
-102|Sistema ordezkatzen du, baina /home-ko fitxategi pertsonalak gordetzen ditu. Uneko sistema argazki gisa gordetzen da.
-103|Partizio pertsonalizatuak
-104|Adituentzat: aukeratu zuk partizioak, edo sortu Diskoak aplikazioarekin.
-105|Diskoa
-106|Aukeratu ezabatuko den diskoa. Erabil ezin diren diskoak arrazoiarekin erakusten dira.
-107|Ez da diskorik aurkitu
-108|Leku librea Windowsen ondoan
-109|Windowsen partizioak ez dira ukitzen. MANek EFI sistema-partizioa partekatzen du eta Windows bere abio-menuan gehitzen du.
-110|{size} libre
-111|leku librerik ez
-112|{model} (Windows)
-113|Ordezkatuko den instalazioa
-114|etxeko karpetarik ez
-115|etxeko karpetak: {list}
-116|argazkiak: {n}
-117|MAN {model}(e)n
-118|{device}(r)en pasaesaldia
-119|Desblokeatu
-120|Ezin izan da instalazioa aztertu.
-121|Partizioak
-122|Sistema-partizioa Btrfs-rekin formateatzen da eta @system, @home eta @snapshots ditu. MAN exekutatzen ari den diskoko partizioak ez dira zerrendatzen.
-123|Ireki Diskoak partizioak sortzeko edo tamainaz aldatzeko
-124|Freskatu partizio-zerrenda
-125|Aukeratu partizio bat
-126|EFI sistema-partizioa
-127|Formateatu EFI sistema-partizioa
-128|Utzi desaktibatuta beste sistemen abio-kargatzaileak gordetzeko
-129|Sistema-partizioa (Btrfs gisa formateatua)
-130|Abio-partizioa (zifratzeko beharrezkoa)
-131|Partizio-zerrenda freskatu da
-132|Segurtasuna
-133|Zifratu sistema
-134|Zure datuak babesten ditu ordenagailua galdu edo lapurtzen badizute. Abio bakoitzean pasaesaldia eskatzen da.
-135|Pasaesaldia
-136|Berretsi pasaesaldia
-137|Gorde pasaesaldi hau leku seguruan
-138|Galtzen bada, inork ezingo ditu datuak berreskuratu. Nukleoa eta abio-fitxategiak zifratu gabeko abio-partizio txiki batean geratzen dira.
-139|Pasaesaldiak gutxienez 8 karaktere izan behar ditu.
-140|Pasaesaldiak ez datoz bat.
-141|Aukeratu disko bat.
-142|Aukeratu Windows duen diskoa.
-143|Aukeratu ordezkatuko den instalazioa.
-144|Desblokeatu lehenik instalazio zifratua.
-145|Partizio honek ez du MAN sistemarik.
-146|Aukeratu EFI sistema-partizio bat.
-147|Aukeratu sistema-partizioa.
-148|EFI partizioak eta sistema-partizioak desberdinak izan behar dute.
-149|Zifratzeak abio-partizio bereizia behar du.
-150|Sistema-partizioak gutxienez {size} izan behar ditu.
-151|EFI partizioa ez dago FAT formatuan; aktibatu formateatzea.
-152|Sistema-partizioa muntatuta dago; desmuntatu lehenik Diskoak aplikazioan.
-153|Non instalatu MAN?
-154|Ordua eta teklatua
-155|Ordu-zona
-156|Teklatuaren diseinua
-157|Probatu teklatua
-158|Idatzi hemen teklek karaktere zuzenak sortzen dituztela egiaztatzeko.
-159|Idatzi hemen
-160|Ordu-zona eta teklatua
-161|Ez da diskorik aukeratu
-162|Ez da sistema-partiziorik aukeratu
-163|Sistema-partizioa desagertu da
-164|Ez da instalaziorik aukeratu
-165|Diskoa desagertu da
-166|Berrikusi
-167|Helburua
-168|Ezabatu diskoa eta instalatu
-169|Partizio pertsonalizatuak
-170|Berrinstalatu, /home gordeta
-171|Windowsen ondoan
-172| (formateatuko da)
-173| (gordetzen da)
-174|Sistema-partizioa
-175|{partition} (formateatuko da)
-176|Abio-partizioa
-177|MANentzako lekua
-178|{free} leku libre (abio-partizioa eta sistema-partizioa sortzen dira)
-179|Windows
-180|Aldatu gabe. MANen abio-menuan agertzen da; EFI sistema-partizioa partekatua da.
-181|Zifratzea
-182|Aktibatuta (LUKS2)
-183|Desaktibatuta
-184|Fitxategi-sistema
-185|Btrfs: @system MANentzat, @home zure fitxategientzat, @snapshots leheneratze-puntuentzat. Denek partekatzen dute leku librea.
-186|Sistema
-187|Zure kontua
-188|MAN Setup-en sortzen da ordenagailua lehen aldiz abiarazten denean, ordenagailuaren izena, itxura eta pribatutasun-ezarpenekin batera.
-189|Teklatua
-190|{model} ({path}) gailuko datu guztiak ezabatuko dira.
-191|_Ezabatu eta instalatu
-192|Aukeratutako partizioak formateatuko dira. Beste partizioak ez dira aldatzen.
-193|_Formateatu eta instalatu
-194|Uneko sistema ordezkatzen da. /home-ko zure fitxategiak gordetzen dira, eta sistema zaharra argazki gisa gordetzen da.
-195|_Berrinstalatu
-196|MAN leku librean instalatzen da. Windows eta bere fitxategiak ez dira aldatzen.
-197|Instalatzeko prest
-198|{model} ezabatu?
-199|{path} ({size}) gailuko fitxategi eta partizio guztiak betiko ezabatuko dira. Ezin da desegin.
-200|Ezabatu eta instalatu
-201|Aukeratutako partizioak formateatu?
-202|Aukeratutako partizioetako datu guztiak betiko ezabatuko dira. Beste partizioak ez dira aldatzen.
-203|Formateatu eta instalatu
-204|MAN Windowsen ondoan instalatu?
-205|MAN {model} ({path}) gailuko {free} leku librean instalatzen da. Windows eta bere fitxategiak ez dira aldatzen.
-206|Instalatu
-207|MAN berrinstalatu?
-208|Instalatutako sistema kopia berri batekin ordezkatuko da. /home-ko fitxategi pertsonalak gordetzen dira eta sistema zaharra argazki gisa erabilgarri geratzen da.
-209|Berrinstalatu
-210|_Utzi
-211|MAN instalatzen
-212|Abiarazten…
-213|Instalatzen
-214|{index}/{n} urratsa  ·  {title}
-215|MAN instalatuta dago
-216|Berrabiarazi ordenagailua MAN erabiltzen hasteko. Abio bakoitzean menu batek MAN edo Windows aukeratzen uzten dizu; instalatzailearen aldi baterako partizioa MANek kentzen du lehen abioan.
-217|Berrabiarazi ordenagailua MAN erabiltzen hasteko. Instalazio-euskarria ken dezakezu; konektatuta geratzen bada ere, MAN disko berritik abiaraziko da.
-218|_Berrabiarazi orain
-219|Eginda
-220|Instalazioak huts egin du
-221|Ez da beste diskorik aldatu, eta instalatzaileak helburuko diskoa askatu du. Plana berrikusi eta berriro saia zaitezke.
-222|_Berrikusi eta saiatu berriro
-223|Bilatu hizkuntzak
-224|Bilatu herrialdeak
-225|Ez da sistemaren diskoa aurkitu.
-226|Zifratzeak MAN instalatzaileak sortutako Btrfs diseinua behar du.
-227|Instalazio honek ez du zifratzeak behar duen abio-partizio bereizirik. Zifratzea erabiltzeko, berrinstalatu MAN «Ezabatu diskoa» aukerarekin.
-228|MAN Setup
-229|Non zaude?
-230|Zure herrialdeak edo eskualdeak data, ordu eta zenbakien formatua zehazten du.
-231|Herrialdea
-232|GNU Lizentzia Publiko Orokorra, 2. bertsioa
-233|Linux nukleoa eta sistema-tresna asko
-234|GNU Lizentzia Publiko Orokorra, 3. bertsioa
-235|GNU eta GNOME programa asko
-236|GNU Lizentzia Publiko Orokor Txikiagoa, 2.1 bertsioa
-237|GTK, GLib eta liburutegi asko
-238|GNU Lizentzia Publiko Orokor Txikiagoa, 3. bertsioa
-239|Liburutegiak
-240|Mozilla Lizentzia Publikoa 2.0
-241|Mozillaren eta besteen programak eta liburutegiak
-242|Apache lizentzia 2.0
-243|Liburutegiak eta tresnak
-244|Lizentzia-hitzarmena
-245|Irakurri eta onartu MAN ematen den baldintzak.
-246|Lizentziak
-247|Lizentziaren testua ez dago erabilgarri ({path}).
-248|Lizentziaren baldintzak irakurri ditut eta onartzen ditut
-249|Kableduna
-250|Konektatu gabe
-251|Konektatu Internetera
-252|Konexioarekin, MANek ordua ezar dezake eta softwarea eguneratuta mantendu. Geroago ere egin dezakezu.
-253|Konexioa egiaztatzen…
-254|Wi-Fi sareak
-255|Bilatu berriro
-256|_Saltatu
-257|Geroago konekta zaitezke Ezarpenak atalean.
-258|Konektatuta
-259|Konektatu gabe
-260|Ez da sarerik aurkitu
-261|Internet
-262|«{ssid}» sarera konektatuta
-263|Ezin izan da «{ssid}» sarera konektatu
-264|Konektatu «{ssid}» sarera
-265|Idatzi sarearen pasahitza.
-266|_Konektatu
-267|Sortu zure kontua
-268|Ordenagailu honen administratzailea izango zara, sudo bidez root sarbide osoarekin.
-269|Izen osoa
-270|Erabiltzaile-izena
-271|Pasahitza
-272|Berretsi pasahitza
-273|Hasi saioa automatikoki
-274|Saltatu saio-hasierako pantaila ordenagailua abiaraztean
-275|Lehendik dauden etxeko karpetak
-276|Erabili erabiltzaile-izen bera aurreko instalazio bateko karpeta erabiltzen jarraitzeko.
-277|Erabili
-278|Aurreratua
-279|Ordenagailuaren izena
-280|Ezarri root pasahitza
-281|Zuzenean root gisa saioa hastea ahalbidetzen du. Hori gabe, erabili sudo zure pasahitzarekin.
-282|Root pasahitza
-283|Berretsi root pasahitza
-284|Idatzi zure izena.
-285|Aukeratu erabiltzaile-izen bat.
-286|Sistemak dagoeneko erabiltzen du erabiltzaile-izen hau.
-287|Erabiltzaile-izen hau sistemak erreserbatuta du.
-288|Erabiltzaile-izenek letra xeheak, zenbakiak, - eta _ erabiltzen dituzte, eta letraz hasten dira.
-289|Aukeratu pasahitz bat.
-290|Pasahitzak ez datoz bat.
-291|Ordenagailuaren izenak letrak, zenbakiak eta marratxoak izan ditzake.
-292|Idatzi root pasahitza bi aldiz.
-293|Aholkua: 8 karaktere edo gehiagoko pasahitza askoz seguruagoa da.
-294|Kontua
-295|Iluna
-296|Argia
-297|Egin zurea
-298|Aukeratu estilo bat, nabarmentze-kolore bat eta horma-paper bat. Aldaketa bakoitza berehala ikusten duzu.
-299|Estiloa
-300|Nabarmentze-kolorea
-301|Horma-papera
-302|Pertsonalizatu
-303|Pribatutasuna
-304|Aukeratu zein eginbidek erabil dezaketen zuri buruzko informazioa. Edozein unetan alda dezakezu Ezarpenak atalean.
-305|Kokapen-zerbitzuak
-306|Mapak eta Eguraldia bezalako aplikazioei zure gutxi gorabeherako kokapena aurkitzen uzten die inguruko Wi-Fi sareak erabiliz.
-307|Ordu-zona automatikoa
-308|Zure kokapena erabiltzen du bidaiatzean ordu-zona zuzen mantentzeko.
-309|_Amaitu konfigurazioa
-310|Zure diskoa zifratuta dago
-311|Zure datuak babestuta daude. Ordenagailua abiarazten den bakoitzean pasaesaldia eskatzen da.
-312|Diskoaren zifratzea
-313|Zifratzeak zure datuak babesten ditu ordenagailua galdu edo lapurtzen badizute.
-314|Ez dago erabilgarri instalazio honetan
-315|Zifratzeak zure fitxategiak babesten ditu ordenagailua galdu edo lapurtzen badizute. Pasaesaldirik gabe, inork ezin du diskoa irakurri.
-316|Zifratu diskoa
-317|Ordenagailua abiarazten den bakoitzean pasaesaldia eskatzen da.
-318|Zifratzea hurrengo berrabiaraztean hasiko da
-319|Ondoren diskoa atzeko planoan zifratzen da ordenagailua erabiltzen duzun bitartean. Pasaesaldia galtzen bada, inork ezingo ditu datuak berreskuratu.
-320|MAN prestatzen
-321|Dena prestatzen…
-322|_Berrabiarazi
-323|_Atzera
-324|Prestatzen
-325|Konfigurazioaren egunkaria
-326|Dena prest!
-327|Zerbaitek huts egin du
-328|Egunerokoa
-329|Eguneratu aurretik
-330|Leheneratu aurretik
-331|Berrinstalatu aurretik
-332|Eskuzkoa
-333|Oraindik ez dago argazkirik
-334|Sortu bat sisteman aldaketa handiak egin aurretik.
-335|Leheneratu…
-336|Ezabatu argazkia
-337|{free} libre {size}(e)tik. Sistemak, etxeko karpetek eta argazkiek leku hau partekatzen dute; argazkiek sortu zirenetik aldatu denarentzako lekua soilik hartzen dute.
-338|_Ados
-339|Sortu argazkia
-340|Sistemaren uneko egoera gordetzen du. Etxeko karpetako fitxategi pertsonalak ez daude barne.
-341|Deskribapena, adibidez «Kontrolatzaileak instalatu aurretik»
-342|_Sortu
-343|Eskuzko argazkia
-344|Argazkia ezabatu?
-345|{date}(e)ko «{description}» betiko ezabatuko da.
-346|_Ezabatu
-347|Argazki hau leheneratu?
-348|Berrabiarazi ondoren sistema {date}(e)ko «{description}» egoerara itzuliko da. Zure fitxategi pertsonalak ez dira aldatzen.\n\nUneko sistema argazki gisa gordetzen da lehenik, beraz desegin daiteke.
-349|_Leheneratu
-350|Berrabiarazi leheneratzea amaitzeko
-351|Berrabiarazi _geroago
-352|Berrabiarazi _orain
-353|Argazkiak
-354|Leheneratze-puntuak
-355|Argazkiek sistema eragilearen egoera gordetzen dute. Bat leheneratzeak sistema une horretara itzultzen du, eta horrek laguntzen du eguneraketa edo konfigurazio-aldaketa txar baten ondoren. Zure fitxategi pertsonalak ez dira inoiz ukitzen.
-356|Argazki automatikoak
-357|Eguneroko argazkiak
-358|Egunean behin ordenagailua piztuta dagoen bitartean
-359|Gorde beharreko eguneroko argazkiak
-360|Software-eguneraketak baino lehen
-361|Automatikoki ateratzen dira paketeak instalatu, bertsio-berritu edo kentzean
-362|Gorde beharreko eguneraketa-argazkiak
-363|Biltegiratzea
-364|Diskoko lekua
-365|MAN abiarazten ez bada
-366|Aukeratu «Restore a MAN snapshot» abio-menuan sistema funtzional bat berreskuratzeko.
-367|Argazkiak ez daude erabilgarri
-368|Argazkiek MAN instalatzailearen Btrfs diseinuarekin instalatutako MANen funtzionatzen dute. Sistema honek (adibidez saio zuzen batek) ez du erabiltzen.
-369|Leheneratze bat zain dago: berrabiarazi ordenagailua amaitzeko
-370|Berrabiarazi orain
-371|Itxaron uneko eragiketa amaitu arte.
-372|Bilatu
-373|Kopiatu arbelean
-374|Ordu Unibertsal Koordinatua
-375|Ingelesa (AEB)
-376|MAN {version} kaleratu da!
-377|Bertsio honetara egunera zaitezke.
-378|Ireki eguneraketak
-379|Eguneraketa egiaztatzen
-380|Eguneraketa benetakoa eta osoa dela ziurtatzen…
-381|MAN eguneraketa
-382|Eguneraketa hau ezin da instalatu
-383|Ezin izan da eguneraketa irakurri.
-384|{name} {version}(e)tik eguneraketa
-385|{name} {version} instalatuta dago
-386|Argitaratua
-387|Deskargaren tamaina
-388|Behar den lekua
-389|Benetakotasuna
-390|Egiaztatua, «{signer}»(e)k sinatua
-391|Zer berri
-392|Eguneraketa hau ez da instalatutako {name} {version} baino berriagoa.
-393|Eguneraketa
-394|Irakurri eguneraketa honen lizentzia-baldintzak.
-395|Lizentzia-baldintzak onartzen ditut
-396|Non instalatu eguneraketa?
-397|Sistema ordezkatzen da; zure etxeko karpetako fitxategiak ez dira ukitzen.
-398|Aukeratu instalazio bat.
-399|exekutatzen orain
-400|{name} {version} ordenagailu honetan
-401|{name} {model}(e)n
-402|Ez da MAN instalaziorik aurkitu
-403|Eguneraketak instalatutako eta exekutatzen ari den MAN sistema batetik instalatzen dira, ez saio zuzenetik.
-404|Instalazioaren kokapena
-405|Gordetzen da
-406|Zure fitxategiak
-407|Zure etxeko karpetako guztia
-408|Kontuak eta pasahitzak
-409|Erabiltzaileak, taldeak, ordenagailuaren izena
-410|Konexioak eta ezarpenak
-411|Wi-Fi, ordu-zona, teklatua, itxura eta argazkiak
-412|Flatpak aplikazioak
-413|Gehi /usr/local eta /opt-eko guztia
-414|Ordezkatzen da
-415|apt bidez instalatutako softwarea eta sistema-fitxategietako beste aldaketak sistema berriak ordezkatzen ditu.
-416|Sistema eragilea
-417|{name} {version}(e)k ordezkatzen du. Uneko sistema argazki batetik leheneratu daiteke.
-418|Ordenagailua berrabiarazten da eguneraketa instalatzeko
-419|Prestatu ondoren, MAN berrabiarazten da, eguneraketa segundo gutxitan instalatzen du eta berriro berrabiarazten da.
-420|_Instalatu eguneraketa
-421|Lehenik argazki bat sortu?
-422|Argazki batek uneko sistema gordetzen du, eguneraketaren ondoren zerbaitek funtzionatzen ez badu hara itzultzeko. Gomendatzen da.
-423|_Ez sortu
-424|_Sortu argazkia
-425|{name} {version} prestatzen
-426|Berrabiarazi instalatzeko
-427|Ordenagailua bi aldiz berrabiaraziko da. Zure fitxategiak seguru daude.
-428|Automatikoki berrabiaraziko da {r} segundotan
-429|Automatikoki berrabiaraziko da 30 segundotan
-430|Eguneraketa hurrengo berrabiaraztean instalatuko da.
-431|Prest
-432|Ezin izan da eguneraketa prestatu
-433|Ez da ezer aldatu zure sisteman.
-434|_Saiatu berriro
-435|Eguneraketaren egunkaria
-436|Huts egin du
-437|Zure sistema eguneratu da
-438|MAN {version} bertsiora eguneratu da.\nAurretik: MAN {previous}.
-439|_Eginda
-440|Ireki MAN eguneraketa bat
-441|MAN eguneraketak
-442|Pakete-zerrenda berrienak eskuratzen…
-443|Aplikazioa kopiatzen
-444|Aplikazioa menuan gehitzen
-445|Ez da fitxategia aurkitu.
-446|Ezin izan da paketea instalatu.
-447|Aplikazioaren menu-sarrera ez da baliozkoa.
-448|Instalazio-plana egiaztatzen
-449|Diskoa prestatzen
-450|MAN diskora kopiatzen
-451|Sistema berria konfiguratzen
-452|Abio-kargatzailea instalatzen
-453|Lehen argazkia sortzen
-454|Amaitzen
-455|Partizio-sinadura zaharrak kentzen
-456|Partizioak sortzen
-457|EFI sistema-partizioa formateatzen
-458|Sistema-partizioa zifratzen
-459|Abio-partizioa formateatzen
-460|Btrfs fitxategi-sistema sortzen
-461|Fitxategi-sistemen sinadura zaharrak kentzen
-462|Instalazio zifratua desblokeatzen
-463|Uneko sistema argazki gisa gordetzen
-464|Aurreko sistema kentzen
-465|Fitxategi-sistemen taula idazten
-466|Ordenagailuaren izena eta identitatea ezartzen
-467|Saio zuzeneko kontuak kentzen
-468|Zure kontua sortzen
-469|MAN Setup lehen abiorako prestatzen
-470|Ordu-zona eta teklatua ezartzen
-471|Instalatzailea sistema berritik kentzen
-472|Abio-irudia (initramfs) eraikitzen
-473|GRUB konfiguratzen
-474|GRUB EFI sistema-partizioan instalatzen
-475|Ordezko abio-kargatzailea instalatzen
-476|Abio-menua idazten
-477|Diskoa prest
-478|Sistema berriaren argazkia sortzen
-479|Argazkia abio-menuan gehitzen
-480|Desmuntatzen
-481|Instalatzailearen laguntzaileak root gisa exekutatu behar du.
-482|Ordenagailu hau ez da UEFI moduan abiarazi. MANek UEFI behar du.
-483|Erabiltzaile-izena ez da baliozkoa.
-484|Pasahitza behar da.
-485|Ordenagailuaren izena ez da baliozkoa.
-486|Hizkuntza ezezaguna.
-487|Zifratzeko pasaesaldiak gutxienez 8 karaktere izan behar ditu.
-488|Diskoa aldatu egin da instalazioa berretsi ondoren. Ez da ezer aldatu; berrikusi eta berretsi berriro.
-489|Aukeratu sistema-partizio bat.
-490|Berretsitako diskoak ez du aukeratutako sistema-partizioa.
-491|Abio-partizioak EFI eta sistema-partizioetatik bereizita egon behar du.
-492|Abio-partizioak gutxienez 512 MB izan behar ditu.
-493|Ez da instalaziorik aukeratu.
-494|Berretsitako diskoak ez du aukeratutako instalazioa.
-495|Instalazio zifratuak ez du MAN_BOOT partiziorik.
-496|Ez da /boot-en modulu egokiak dituen nukleorik aurkitu.
-497|Hizkuntza sistemaren laguntzaileak aldatu behar du.
-498|Zure ezarpenak aplikatzen
-499|Diskoaren zifratzea prestatzen
-500|Amaitzen
-501|MAN Setup sistemaren laguntzaileak amaitu behar du.
-502|MAN Setup dagoeneko osatu da ordenagailu honetan.
-503|Nabarmentze-kolore ezezaguna.
-504|Aukeratutako horma-papera ez dago erabilgarri.
-505|Sistema hau ezin da zifratu.
-506|Konfigurazio-gakoa falta da, beraz zifratzeak ezin du atzeko planoan jarraitu.
-507|Sistema ez dago Btrfs-en instalatuta, beraz argazkiak ez daude erabilgarri.
-508|Argazki-leheneratze bat berrabiaraztearen zain dago. Berrabiarazi lehenik ordenagailua amaitzeko.
-509|Argazki-ID baliogabea.
-510|Eguneraketa egiaztatzen
-511|Argazkia sortzen
-512|Eguneraketa-eremua prestatzen
-513|Sistema berria deskonprimatzen
-514|Zure kontuak eta ezarpenak eramaten
-515|Berrabiaraztea prestatzen
-516|Deskonprimatuta
-517|Kontuak
-518|Instalatzailearentzako soilik den softwarea kentzen
-519|Eguneraketaren abio-irudia eraikitzen
-520|Behin erabiltzeko abio-sarrera gehitzen
-521|Eguneraketa benetakoa da
-522|Argazkia sortu da
-523|Saltatuta
-524|Eguneraketa-eremua prest
-525|Sistema berria prestatzen
-526|Eguneraketa-fitxategia hondatuta dago (kontrol-batura ez dator bat). Deskargatu berriro.
-527|Ezin izan da eguneraketa-fitxategia osorik irakurri.
-528|Eguneraketak ez du nukleorik.
-529|Eguneraketak sistemaren laguntzaileak instalatu behar ditu.
-530|Ez da aukeratutako instalazioa aurkitu.
-531|Exekutatzen ari den MAN instalazioa soilik egunera daiteke.
-532|Hau ez da MAN eguneraketa-fitxategia (ez du manifesturik).
-533|Eguneraketa ez dago sinatuta, beraz ezin zaio fidatu.
-534|Eguneraketaren sinadura hondatuta dago.
-535|Eguneraketa ez du MANek sinatu. Aldatuta egon daiteke edo iturri ez-fidagarri batetik etorri.
-536|Eguneraketaren manifestua baliogabea da.
-537|Pasaesaldia ez da zuzena, edo ezin da partizio zifratua ireki.
-538|Urdina
-539|Urdin-berdea
-540|Berdea
-541|Horia
-542|Laranja
-543|Gorria
-544|Arrosa
-545|Morea
-546|Arbela
-547|Pakete-instalatzailea
-548|Instalatu aplikazioak .deb, Flatpak eta AppImage fitxategietatik
-549|Sistema-instalatzailea
-550|Instalatu MAN ordenagailu honetan
-551|Sistema leheneratzea
-552|Sortu eta leheneratu sistemaren argazkiak
-553|Sistema-eguneraketen instalatzailea
-554|Instalatu MAN sistemaren eguneraketa-fitxategi bat
-555|Saio zuzena abiaraztean MAN instalatzea eskaintzen du
-556|MAN eguneraketaren jakinarazpena
-557|Saioa hasi ondoren behin esaten dizu MAN eguneratu dela
-558|Konfiguratu zure MAN ordenagailu berria
-559|MANen lehen konfigurazioa
-560|MAN eguneraketak
-561|MANen bertsio berri bat dagoenean jakinarazten dizu
+44|Mantendu MANen eguneraketen ondoren
+45|MANek berriro instalatzen du aplikazioa eguneraketa bakoitzaren ondoren. Horretarako bere pakete-fitxategiak gordetzen dira.
+46|Egin klik Instalatu botoian {name} instalatzeko.
+47|Aplikazioak beste zer behar duen egiaztatzen…
+48|Behar dituen paketeak ere instalatzen ditu: {list}
+49|Aplikazioak behar dituen pakete batzuk ez daude oraindik eskuragarri. Instalazioak lehenik pakete-zerrenda berrienak eskuratzen ditu; oraindik falta badira, ezin da aplikazioa instalatu.
+50|{name} instalatzen…
+51|Prestatzen…
+52|Xehetasunak
+53|Paketea instalatzen…
+54|Aplikazioa bere karpetara eramaten…
+55|Ezin izan da aplikazioa instalatu.
+56|Aplikazioa Flatpak bidez instalatzen…
+57|Egunkaria
+58|It_xi
+59|Instalazioa ondo amaitu da
+60|Aplikazioa instalatu da.
+61|Instalazioak huts egin du
+62|_Ireki
+63|_Erakutsi xehetasunak
+64|Instalazioaren egunkaria
+65|Aplikazio-instalatzailea
+66|_Atzera
+67|Aplikazioa irakurtzen…
+68|Instalatu {name}
+69|Aplikazioak
+70|Aukeratu instalatzeko aplikazio bat
+71|Ezin izan da sistemaren laguntzailea abiarazi.
+72|Ezin izan da sistemaren laguntzailearekin komunikatu.
+73|Sistemaren laguntzailearekiko konexioa galdu da.
+74|Baimena bertan behera utzi da.
+75|Ekintza honek administratzaile-baimenak behar ditu.
+76|Sistemaren laguntzailea ustekabean gelditu da.
+77|Ez dago EFI sistema-partiziorik
+78|{free} bakarrik daude libre, MANek {need} behar ditu. Egin leku gehiago DUHACH!-ekin Windowsen.
+79|Ez dago leku librerik. Abiarazi DUHACH! Windowsen MANi lekua egiteko.
+80|MAN disko honetatik exekutatzen ari da
+81|Erabilita: partizio bat muntatuta dago
+82|Txikiegia, MANek {need} behar ditu
+83|Instalatu MAN
+84|MAN instalatzen ari da. Itxaron amaitu arte.
+85|Hizkuntza
+86|_Berrabiarazi hizkuntza honetan
+87|Saio zuzena aukeratutako hizkuntzan berrabiaraziko da, eta MAN hizkuntza horretan instalatuko da.
+88|Ongi etorri MANera
+89|GNOME sistema azkar, ireki eta guztiz pertsonalizagarria.\nInstalatu ordenagailu honetan, edo jarraitu saio zuzena arakatzen.
+90|_Instalatu MAN…
+91|_Jarraitu MAN probatzen
+92|Diskoak bilatzen…
+93|Ongi etorri
+94|Ordenagailu hau BIOS zaharreko moduan abiarazi da. MAN UEFI ordenagailuetan soilik instala daiteke: berrabiarazi eta aukeratu UEFI abioko aukera.
+95|Sistemaren laguntzaileak ez du diskoei buruzko informaziorik itzuli.
+96|  ·  EFI
+97|_Hurrengoa
+98|Ezabatu diskoa eta instalatu MAN
+99|Aukeratutako diskoko guztia ezabatuko da, Windows barne.
+100|Gomendatua. Aukeratutako diskoko guztia ezabatuko da.
+101|Instalatu Windowsen ondoan
+102|Gomendatua. MANek Windowsen ondoko leku librea erabiltzen du; Windows eta bere fitxategiak geratzen dira. Abio bakoitzean aukeratzen duzu sistema.
+103|Berrinstalatu MAN
+104|Sistema ordezkatzen du, baina /home-ko fitxategi pertsonalak gordetzen ditu. Uneko sistema argazki gisa gordetzen da.
+105|Partizio pertsonalizatuak
+106|Adituentzat: aukeratu zuk partizioak, edo sortu Diskoak aplikazioarekin.
+107|Diskoa
+108|Aukeratu ezabatuko den diskoa. Erabil ezin diren diskoak arrazoiarekin erakusten dira.
+109|Ez da diskorik aurkitu
+110|Leku librea Windowsen ondoan
+111|Windowsen partizioak ez dira ukitzen. MANek EFI sistema-partizioa partekatzen du eta Windows bere abio-menuan gehitzen du.
+112|{size} libre
+113|leku librerik ez
+114|{model} (Windows)
+115|Ordezkatuko den instalazioa
+116|etxeko karpetarik ez
+117|etxeko karpetak: {list}
+118|argazkiak: {n}
+119|MAN {model}(e)n
+120|{device}(r)en pasaesaldia
+121|Desblokeatu
+122|Ezin izan da instalazioa aztertu.
+123|Partizioak
+124|Sistema-partizioa Btrfs-rekin formateatzen da eta @system, @home eta @snapshots ditu. MAN exekutatzen ari den diskoko partizioak ez dira zerrendatzen.
+125|Ireki Diskoak partizioak sortzeko edo tamainaz aldatzeko
+126|Freskatu partizio-zerrenda
+127|Aukeratu partizio bat
+128|EFI sistema-partizioa
+129|Formateatu EFI sistema-partizioa
+130|Utzi desaktibatuta beste sistemen abio-kargatzaileak gordetzeko
+131|Sistema-partizioa (Btrfs gisa formateatua)
+132|Abio-partizioa (zifratzeko beharrezkoa)
+133|Partizio-zerrenda freskatu da
+134|Segurtasuna
+135|Zifratu sistema
+136|Zure datuak babesten ditu ordenagailua galdu edo lapurtzen badizute. Abio bakoitzean pasaesaldia eskatzen da.
+137|Pasaesaldia
+138|Berretsi pasaesaldia
+139|Gorde pasaesaldi hau leku seguruan
+140|Galtzen bada, inork ezingo ditu datuak berreskuratu. Nukleoa eta abio-fitxategiak zifratu gabeko abio-partizio txiki batean geratzen dira.
+141|Pasaesaldiak gutxienez 8 karaktere izan behar ditu.
+142|Pasaesaldiak ez datoz bat.
+143|Aukeratu disko bat.
+144|Aukeratu Windows duen diskoa.
+145|Aukeratu ordezkatuko den instalazioa.
+146|Desblokeatu lehenik instalazio zifratua.
+147|Partizio honek ez du MAN sistemarik.
+148|Aukeratu EFI sistema-partizio bat.
+149|Aukeratu sistema-partizioa.
+150|EFI partizioak eta sistema-partizioak desberdinak izan behar dute.
+151|Zifratzeak abio-partizio bereizia behar du.
+152|Sistema-partizioak gutxienez {size} izan behar ditu.
+153|EFI partizioa ez dago FAT formatuan; aktibatu formateatzea.
+154|Sistema-partizioa muntatuta dago; desmuntatu lehenik Diskoak aplikazioan.
+155|Non instalatu MAN?
+156|Ordua eta teklatua
+157|Ordu-zona
+158|Teklatuaren diseinua
+159|Probatu teklatua
+160|Idatzi hemen teklek karaktere zuzenak sortzen dituztela egiaztatzeko.
+161|Idatzi hemen
+162|Ordu-zona eta teklatua
+163|Ez da diskorik aukeratu
+164|Ez da sistema-partiziorik aukeratu
+165|Sistema-partizioa desagertu da
+166|Ez da instalaziorik aukeratu
+167|Diskoa desagertu da
+168|Berrikusi
+169|Helburua
+170|Ezabatu diskoa eta instalatu
+171|Partizio pertsonalizatuak
+172|Berrinstalatu, /home gordeta
+173|Windowsen ondoan
+174| (formateatuko da)
+175| (gordetzen da)
+176|Sistema-partizioa
+177|{partition} (formateatuko da)
+178|Abio-partizioa
+179|MANentzako lekua
+180|{free} leku libre (abio-partizioa eta sistema-partizioa sortzen dira)
+181|Windows
+182|Aldatu gabe. MANen abio-menuan agertzen da; EFI sistema-partizioa partekatua da.
+183|Zifratzea
+184|Aktibatuta (LUKS2)
+185|Desaktibatuta
+186|Fitxategi-sistema
+187|Btrfs: @system MANentzat, @home zure fitxategientzat, @snapshots leheneratze-puntuentzat. Denek partekatzen dute leku librea.
+188|Sistema
+189|Zure kontua
+190|MAN Setup-en sortzen da ordenagailua lehen aldiz abiarazten denean, ordenagailuaren izena, itxura eta pribatutasun-ezarpenekin batera.
+191|Teklatua
+192|{model} ({path}) gailuko datu guztiak ezabatuko dira.
+193|_Ezabatu eta instalatu
+194|Aukeratutako partizioak formateatuko dira. Beste partizioak ez dira aldatzen.
+195|_Formateatu eta instalatu
+196|Uneko sistema ordezkatzen da. /home-ko zure fitxategiak gordetzen dira, eta sistema zaharra argazki gisa gordetzen da.
+197|_Berrinstalatu
+198|MAN leku librean instalatzen da. Windows eta bere fitxategiak ez dira aldatzen.
+199|Instalatzeko prest
+200|{model} ezabatu?
+201|{path} ({size}) gailuko fitxategi eta partizio guztiak betiko ezabatuko dira. Ezin da desegin.
+202|Ezabatu eta instalatu
+203|Aukeratutako partizioak formateatu?
+204|Aukeratutako partizioetako datu guztiak betiko ezabatuko dira. Beste partizioak ez dira aldatzen.
+205|Formateatu eta instalatu
+206|MAN Windowsen ondoan instalatu?
+207|MAN {model} ({path}) gailuko {free} leku librean instalatzen da. Windows eta bere fitxategiak ez dira aldatzen.
+208|Instalatu
+209|MAN berrinstalatu?
+210|Instalatutako sistema kopia berri batekin ordezkatuko da. /home-ko fitxategi pertsonalak gordetzen dira eta sistema zaharra argazki gisa erabilgarri geratzen da.
+211|Berrinstalatu
+212|_Utzi
+213|MAN instalatzen
+214|Abiarazten…
+215|Instalatzen
+216|{index}/{n} urratsa  ·  {title}
+217|MAN instalatuta dago
+218|Berrabiarazi ordenagailua MAN erabiltzen hasteko. Abio bakoitzean menu batek MAN edo Windows aukeratzen uzten dizu; instalatzailearen aldi baterako partizioa MANek kentzen du lehen abioan.
+219|Berrabiarazi ordenagailua MAN erabiltzen hasteko. Instalazio-euskarria ken dezakezu; konektatuta geratzen bada ere, MAN disko berritik abiaraziko da.
+220|_Berrabiarazi orain
+221|Eginda
+222|Instalazioak huts egin du
+223|Ez da beste diskorik aldatu, eta instalatzaileak helburuko diskoa askatu du. Plana berrikusi eta berriro saia zaitezke.
+224|_Berrikusi eta saiatu berriro
+225|Bilatu hizkuntzak
+226|Bilatu herrialdeak
+227|Ez da sistemaren diskoa aurkitu.
+228|Zifratzeak MAN instalatzaileak sortutako Btrfs diseinua behar du.
+229|Instalazio honek ez du zifratzeak behar duen abio-partizio bereizirik. Zifratzea erabiltzeko, berrinstalatu MAN «Ezabatu diskoa» aukerarekin.
+230|MAN Setup
+231|Non zaude?
+232|Zure herrialdeak edo eskualdeak data, ordu eta zenbakien formatua zehazten du.
+233|Herrialdea
+234|GNU Lizentzia Publiko Orokorra, 2. bertsioa
+235|Linux nukleoa eta sistema-tresna asko
+236|GNU Lizentzia Publiko Orokorra, 3. bertsioa
+237|GNU eta GNOME programa asko
+238|GNU Lizentzia Publiko Orokor Txikiagoa, 2.1 bertsioa
+239|GTK, GLib eta liburutegi asko
+240|GNU Lizentzia Publiko Orokor Txikiagoa, 3. bertsioa
+241|Liburutegiak
+242|Mozilla Lizentzia Publikoa 2.0
+243|Mozillaren eta besteen programak eta liburutegiak
+244|Apache lizentzia 2.0
+245|Liburutegiak eta tresnak
+246|Lizentzia-hitzarmena
+247|Irakurri eta onartu MAN ematen den baldintzak.
+248|Lizentziak
+249|Lizentziaren testua ez dago erabilgarri ({path}).
+250|Lizentziaren baldintzak irakurri ditut eta onartzen ditut
+251|Kableduna
+252|Konektatu gabe
+253|Konektatu Internetera
+254|Konexioarekin, MANek ordua ezar dezake eta softwarea eguneratuta mantendu. Geroago ere egin dezakezu.
+255|Konexioa egiaztatzen…
+256|Wi-Fi sareak
+257|Bilatu berriro
+258|_Saltatu
+259|Geroago konekta zaitezke Ezarpenak atalean.
+260|Konektatuta
+261|Konektatu gabe
+262|Ez da sarerik aurkitu
+263|Internet
+264|«{ssid}» sarera konektatuta
+265|Ezin izan da «{ssid}» sarera konektatu
+266|Konektatu «{ssid}» sarera
+267|Idatzi sarearen pasahitza.
+268|_Konektatu
+269|Sortu zure kontua
+270|Ordenagailu honen administratzailea izango zara, sudo bidez root sarbide osoarekin.
+271|Izen osoa
+272|Erabiltzaile-izena
+273|Pasahitza
+274|Berretsi pasahitza
+275|Hasi saioa automatikoki
+276|Saltatu saio-hasierako pantaila ordenagailua abiaraztean
+277|Lehendik dauden etxeko karpetak
+278|Erabili erabiltzaile-izen bera aurreko instalazio bateko karpeta erabiltzen jarraitzeko.
+279|Erabili
+280|Aurreratua
+281|Ordenagailuaren izena
+282|Ezarri root pasahitza
+283|Zuzenean root gisa saioa hastea ahalbidetzen du. Hori gabe, erabili sudo zure pasahitzarekin.
+284|Root pasahitza
+285|Berretsi root pasahitza
+286|Idatzi zure izena.
+287|Aukeratu erabiltzaile-izen bat.
+288|Sistemak dagoeneko erabiltzen du erabiltzaile-izen hau.
+289|Erabiltzaile-izen hau sistemak erreserbatuta du.
+290|Erabiltzaile-izenek letra xeheak, zenbakiak, - eta _ erabiltzen dituzte, eta letraz hasten dira.
+291|Aukeratu pasahitz bat.
+292|Pasahitzak ez datoz bat.
+293|Ordenagailuaren izenak letrak, zenbakiak eta marratxoak izan ditzake.
+294|Idatzi root pasahitza bi aldiz.
+295|Aholkua: 8 karaktere edo gehiagoko pasahitza askoz seguruagoa da.
+296|Kontua
+297|Iluna
+298|Argia
+299|Egin zurea
+300|Aukeratu estilo bat, nabarmentze-kolore bat eta horma-paper bat. Aldaketa bakoitza berehala ikusten duzu.
+301|Estiloa
+302|Nabarmentze-kolorea
+303|Horma-papera
+304|Pertsonalizatu
+305|Pribatutasuna
+306|Aukeratu zein eginbidek erabil dezaketen zuri buruzko informazioa. Edozein unetan alda dezakezu Ezarpenak atalean.
+307|Kokapen-zerbitzuak
+308|Mapak eta Eguraldia bezalako aplikazioei zure gutxi gorabeherako kokapena aurkitzen uzten die inguruko Wi-Fi sareak erabiliz.
+309|Ordu-zona automatikoa
+310|Zure kokapena erabiltzen du bidaiatzean ordu-zona zuzen mantentzeko.
+311|_Amaitu konfigurazioa
+312|Zure diskoa zifratuta dago
+313|Zure datuak babestuta daude. Ordenagailua abiarazten den bakoitzean pasaesaldia eskatzen da.
+314|Diskoaren zifratzea
+315|Zifratzeak zure datuak babesten ditu ordenagailua galdu edo lapurtzen badizute.
+316|Ez dago erabilgarri instalazio honetan
+317|Zifratzeak zure fitxategiak babesten ditu ordenagailua galdu edo lapurtzen badizute. Pasaesaldirik gabe, inork ezin du diskoa irakurri.
+318|Zifratu diskoa
+319|Ordenagailua abiarazten den bakoitzean pasaesaldia eskatzen da.
+320|Zifratzea hurrengo berrabiaraztean hasiko da
+321|Ondoren diskoa atzeko planoan zifratzen da ordenagailua erabiltzen duzun bitartean. Pasaesaldia galtzen bada, inork ezingo ditu datuak berreskuratu.
+322|MAN prestatzen
+323|Dena prestatzen…
+324|_Berrabiarazi
+325|_Atzera
+326|Prestatzen
+327|Konfigurazioaren egunkaria
+328|Dena prest!
+329|Zerbaitek huts egin du
+330|Egunerokoa
+331|Eguneratu aurretik
+332|Leheneratu aurretik
+333|Berrinstalatu aurretik
+334|Eskuzkoa
+335|Oraindik ez dago argazkirik
+336|Sortu bat sisteman aldaketa handiak egin aurretik.
+337|Leheneratu…
+338|Ezabatu argazkia
+339|{free} libre {size}(e)tik. Sistemak, etxeko karpetek eta argazkiek leku hau partekatzen dute; argazkiek sortu zirenetik aldatu denarentzako lekua soilik hartzen dute.
+340|_Ados
+341|Sortu argazkia
+342|Sistemaren uneko egoera gordetzen du. Etxeko karpetako fitxategi pertsonalak ez daude barne.
+343|Deskribapena, adibidez «Kontrolatzaileak instalatu aurretik»
+344|_Sortu
+345|Eskuzko argazkia
+346|Argazkia ezabatu?
+347|{date}(e)ko «{description}» betiko ezabatuko da.
+348|_Ezabatu
+349|Argazki hau leheneratu?
+350|Berrabiarazi ondoren sistema {date}(e)ko «{description}» egoerara itzuliko da. Zure fitxategi pertsonalak ez dira aldatzen.\n\nUneko sistema argazki gisa gordetzen da lehenik, beraz desegin daiteke.
+351|_Leheneratu
+352|Berrabiarazi leheneratzea amaitzeko
+353|Berrabiarazi _geroago
+354|Berrabiarazi _orain
+355|Argazkiak
+356|Leheneratze-puntuak
+357|Argazkiek sistema eragilearen egoera gordetzen dute. Bat leheneratzeak sistema une horretara itzultzen du, eta horrek laguntzen du eguneraketa edo konfigurazio-aldaketa txar baten ondoren. Zure fitxategi pertsonalak ez dira inoiz ukitzen.
+358|Argazki automatikoak
+359|Eguneroko argazkiak
+360|Egunean behin ordenagailua piztuta dagoen bitartean
+361|Gorde beharreko eguneroko argazkiak
+362|Software-eguneraketak baino lehen
+363|Automatikoki ateratzen dira paketeak instalatu, bertsio-berritu edo kentzean
+364|Gorde beharreko eguneraketa-argazkiak
+365|Biltegiratzea
+366|Diskoko lekua
+367|MAN abiarazten ez bada
+368|Aukeratu «Restore a MAN snapshot» abio-menuan sistema funtzional bat berreskuratzeko.
+369|Argazkiak ez daude erabilgarri
+370|Argazkiek MAN instalatzailearen Btrfs diseinuarekin instalatutako MANen funtzionatzen dute. Sistema honek (adibidez saio zuzen batek) ez du erabiltzen.
+371|Leheneratze bat zain dago: berrabiarazi ordenagailua amaitzeko
+372|Berrabiarazi orain
+373|Itxaron uneko eragiketa amaitu arte.
+374|Bilatu
+375|Kopiatu arbelean
+376|Ordu Unibertsal Koordinatua
+377|Ingelesa (AEB)
+378|MAN {version} kaleratu da!
+379|Bertsio honetara egunera zaitezke.
+380|Ireki eguneraketak
+381|Eguneraketa egiaztatzen
+382|Eguneraketa benetakoa eta osoa dela ziurtatzen…
+383|MAN eguneraketa
+384|Eguneraketa hau ezin da instalatu
+385|Ezin izan da eguneraketa irakurri.
+386|{name} {version}(e)tik eguneraketa
+387|{name} {version} instalatuta dago
+388|Argitaratua
+389|Deskargaren tamaina
+390|Behar den lekua
+391|Benetakotasuna
+392|Egiaztatua, «{signer}»(e)k sinatua
+393|Zer berri
+394|Eguneraketa hau ez da instalatutako {name} {version} baino berriagoa.
+395|Eguneraketa
+396|Irakurri eguneraketa honen lizentzia-baldintzak.
+397|Lizentzia-baldintzak onartzen ditut
+398|Non instalatu eguneraketa?
+399|Sistema ordezkatzen da; zure etxeko karpetako fitxategiak ez dira ukitzen.
+400|Aukeratu instalazio bat.
+401|exekutatzen orain
+402|{name} {version} ordenagailu honetan
+403|{name} {model}(e)n
+404|Ez da MAN instalaziorik aurkitu
+405|Eguneraketak instalatutako eta exekutatzen ari den MAN sistema batetik instalatzen dira, ez saio zuzenetik.
+406|Instalazioaren kokapena
+407|Gordetzen da
+408|Zure fitxategiak
+409|Zure etxeko karpetako guztia
+410|Kontuak eta pasahitzak
+411|Erabiltzaileak, taldeak, ordenagailuaren izena
+412|Konexioak eta ezarpenak
+413|Wi-Fi, ordu-zona, teklatua, itxura eta argazkiak
+414|Flatpak aplikazioak
+415|Gehi /usr/local eta /opt-eko guztia
+416|Ordezkatzen da
+417|apt bidez instalatutako softwarea eta sistema-fitxategietako beste aldaketak sistema berriak ordezkatzen ditu.
+418|Sistema eragilea
+419|{name} {version}(e)k ordezkatzen du. Uneko sistema argazki batetik leheneratu daiteke.
+420|Ordenagailua berrabiarazten da eguneraketa instalatzeko
+421|Prestatu ondoren, MAN berrabiarazten da, eguneraketa segundo gutxitan instalatzen du eta berriro berrabiarazten da.
+422|_Instalatu eguneraketa
+423|Lehenik argazki bat sortu?
+424|Argazki batek uneko sistema gordetzen du, eguneraketaren ondoren zerbaitek funtzionatzen ez badu hara itzultzeko. Gomendatzen da.
+425|_Ez sortu
+426|_Sortu argazkia
+427|{name} {version} prestatzen
+428|Berrabiarazi instalatzeko
+429|Ordenagailua bi aldiz berrabiaraziko da. Zure fitxategiak seguru daude.
+430|Automatikoki berrabiaraziko da {r} segundotan
+431|Automatikoki berrabiaraziko da 30 segundotan
+432|Eguneraketa hurrengo berrabiaraztean instalatuko da.
+433|Prest
+434|Ezin izan da eguneraketa prestatu
+435|Ez da ezer aldatu zure sisteman.
+436|_Saiatu berriro
+437|Eguneraketaren egunkaria
+438|Huts egin du
+439|Zure sistema eguneratu da
+440|MAN {version} bertsiora eguneratu da.\nAurretik: MAN {previous}.
+441|_Eginda
+442|Ireki MAN eguneraketa bat
+443|MAN eguneraketak
+444|Pakete-zerrenda berrienak eskuratzen…
+445|Aplikazioa kopiatzen
+446|Aplikazioa menuan gehitzen
+447|Ez da fitxategia aurkitu.
+448|Ezin izan da paketea instalatu.
+449|Aplikazioaren menu-sarrera ez da baliozkoa.
+450|Instalazio-plana egiaztatzen
+451|Diskoa prestatzen
+452|MAN diskora kopiatzen
+453|Sistema berria konfiguratzen
+454|Abio-kargatzailea instalatzen
+455|Lehen argazkia sortzen
+456|Amaitzen
+457|Partizio-sinadura zaharrak kentzen
+458|Partizioak sortzen
+459|EFI sistema-partizioa formateatzen
+460|Sistema-partizioa zifratzen
+461|Abio-partizioa formateatzen
+462|Btrfs fitxategi-sistema sortzen
+463|Fitxategi-sistemen sinadura zaharrak kentzen
+464|Instalazio zifratua desblokeatzen
+465|Uneko sistema argazki gisa gordetzen
+466|Aurreko sistema kentzen
+467|Fitxategi-sistemen taula idazten
+468|Ordenagailuaren izena eta identitatea ezartzen
+469|Saio zuzeneko kontuak kentzen
+470|Zure kontua sortzen
+471|MAN Setup lehen abiorako prestatzen
+472|Ordu-zona eta teklatua ezartzen
+473|Instalatzailea sistema berritik kentzen
+474|Abio-irudia (initramfs) eraikitzen
+475|GRUB konfiguratzen
+476|GRUB EFI sistema-partizioan instalatzen
+477|Ordezko abio-kargatzailea instalatzen
+478|Abio-menua idazten
+479|Diskoa prest
+480|Sistema berriaren argazkia sortzen
+481|Argazkia abio-menuan gehitzen
+482|Desmuntatzen
+483|Instalatzailearen laguntzaileak root gisa exekutatu behar du.
+484|Ordenagailu hau ez da UEFI moduan abiarazi. MANek UEFI behar du.
+485|Erabiltzaile-izena ez da baliozkoa.
+486|Pasahitza behar da.
+487|Ordenagailuaren izena ez da baliozkoa.
+488|Hizkuntza ezezaguna.
+489|Zifratzeko pasaesaldiak gutxienez 8 karaktere izan behar ditu.
+490|Diskoa aldatu egin da instalazioa berretsi ondoren. Ez da ezer aldatu; berrikusi eta berretsi berriro.
+491|Aukeratu sistema-partizio bat.
+492|Berretsitako diskoak ez du aukeratutako sistema-partizioa.
+493|Abio-partizioak EFI eta sistema-partizioetatik bereizita egon behar du.
+494|Abio-partizioak gutxienez 512 MB izan behar ditu.
+495|Ez da instalaziorik aukeratu.
+496|Berretsitako diskoak ez du aukeratutako instalazioa.
+497|Instalazio zifratuak ez du MAN_BOOT partiziorik.
+498|Ez da /boot-en modulu egokiak dituen nukleorik aurkitu.
+499|Hizkuntza sistemaren laguntzaileak aldatu behar du.
+500|Zure ezarpenak aplikatzen
+501|Diskoaren zifratzea prestatzen
+502|Amaitzen
+503|MAN Setup sistemaren laguntzaileak amaitu behar du.
+504|MAN Setup dagoeneko osatu da ordenagailu honetan.
+505|Nabarmentze-kolore ezezaguna.
+506|Aukeratutako horma-papera ez dago erabilgarri.
+507|Sistema hau ezin da zifratu.
+508|Konfigurazio-gakoa falta da, beraz zifratzeak ezin du atzeko planoan jarraitu.
+509|Sistema ez dago Btrfs-en instalatuta, beraz argazkiak ez daude erabilgarri.
+510|Argazki-leheneratze bat berrabiaraztearen zain dago. Berrabiarazi lehenik ordenagailua amaitzeko.
+511|Argazki-ID baliogabea.
+512|Eguneraketa egiaztatzen
+513|Argazkia sortzen
+514|Eguneraketa-eremua prestatzen
+515|Sistema berria deskonprimatzen
+516|Zure kontuak eta ezarpenak eramaten
+517|Berrabiaraztea prestatzen
+518|Deskonprimatuta
+519|Kontuak
+520|Mantendutako aplikazioak berriro instalatzen
+521|Instalatzailearentzako soilik den softwarea kentzen
+522|Eguneraketaren abio-irudia eraikitzen
+523|Behin erabiltzeko abio-sarrera gehitzen
+524|Eguneraketa benetakoa da
+525|Argazkia sortu da
+526|Saltatuta
+527|Eguneraketa-eremua prest
+528|Sistema berria prestatzen
+529|Eguneraketa-fitxategia hondatuta dago (kontrol-batura ez dator bat). Deskargatu berriro.
+530|Ezin izan da eguneraketa-fitxategia osorik irakurri.
+531|Eguneraketak ez du nukleorik.
+532|Eguneraketak sistemaren laguntzaileak instalatu behar ditu.
+533|Ez da aukeratutako instalazioa aurkitu.
+534|Exekutatzen ari den MAN instalazioa soilik egunera daiteke.
+535|Hau ez da MAN eguneraketa-fitxategia (ez du manifesturik).
+536|Eguneraketa ez dago sinatuta, beraz ezin zaio fidatu.
+537|Eguneraketaren sinadura hondatuta dago.
+538|Eguneraketa ez du MANek sinatu. Aldatuta egon daiteke edo iturri ez-fidagarri batetik etorri.
+539|Eguneraketaren manifestua baliogabea da.
+540|Pasaesaldia ez da zuzena, edo ezin da partizio zifratua ireki.
+541|Urdina
+542|Urdin-berdea
+543|Berdea
+544|Horia
+545|Laranja
+546|Gorria
+547|Arrosa
+548|Morea
+549|Arbela
+550|Pakete-instalatzailea
+551|Instalatu aplikazioak .deb, Flatpak eta AppImage fitxategietatik
+552|Sistema-instalatzailea
+553|Instalatu MAN ordenagailu honetan
+554|Sistema leheneratzea
+555|Sortu eta leheneratu sistemaren argazkiak
+556|Sistema-eguneraketen instalatzailea
+557|Instalatu MAN sistemaren eguneraketa-fitxategi bat
+558|Saio zuzena abiaraztean MAN instalatzea eskaintzen du
+559|MAN eguneraketaren jakinarazpena
+560|Saioa hasi ondoren behin esaten dizu MAN eguneratu dela
+561|Konfiguratu zure MAN ordenagailu berria
+562|MANen lehen konfigurazioa
+563|MAN eguneraketak
+564|MANen bertsio berri bat dagoenean jakinarazten dizu

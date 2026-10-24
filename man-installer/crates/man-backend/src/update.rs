@@ -287,6 +287,74 @@ fn running_kernel() -> Result<String> {
     Ok(run("uname", &["-r"])?.trim().to_string())
 }
 
+/// Package name of a kept .deb (`<package>.deb`) when it is still installed.
+fn still_installed(deb: &Path) -> Option<String> {
+    let pkg = deb.file_stem()?.to_str()?.to_string();
+    query("dpkg-query", &["-W", "-f=${Status}", &pkg]).filter(|s| s.ends_with("install ok installed")).map(|_| pkg)
+}
+
+/// .deb apps installed with "Keep After MAN Updates": install them again in
+/// the new system. The saved packages (and those they pulled in, as apt's
+/// download cache) make this work offline when nothing changed; anything
+/// else comes from the apt sources. Not fatal: if it fails, the new system
+/// tries again when it starts (man-kept-debs.service).
+fn reinstall_kept(new: &Path) {
+    let dir = Path::new(KEPT_DEBS);
+    let Ok(entries) = std::fs::read_dir(dir) else { return };
+    let mut debs = vec![];
+    for e in entries.flatten() {
+        let p = e.path();
+        if p.extension().is_some_and(|x| x == "deb") {
+            match still_installed(&p) {
+                Some(_) => debs.push(format!("{KEPT_DEBS}/{}", e.file_name().to_string_lossy())),
+                // Removed since: forget it.
+                None => {
+                    let _ = std::fs::remove_file(&p);
+                }
+            }
+        }
+    }
+    let rel = KEPT_DEBS.trim_start_matches('/');
+    if copy_over(new, rel).is_err() || debs.is_empty() {
+        return;
+    }
+    progress(0.2, "Reinstalling kept apps");
+    let _ = copy_over(new, "var/lib/apt/lists");
+    // Name resolution for apt: resolv.conf points into /run, a fresh tmpfs here.
+    if let (Ok(text), Ok(target)) = (std::fs::read_to_string("/etc/resolv.conf"), std::fs::read_link(new.join("etc/resolv.conf"))) {
+        let inside = if target.is_absolute() { new.join(target.strip_prefix("/").unwrap_or(&target)) } else { new.join("etc").join(target) };
+        let _ = std::fs::create_dir_all(inside.parent().unwrap_or(new));
+        let _ = std::fs::write(inside, text);
+    }
+    // No snapshot hook and no services starting inside the update.
+    let conf = new.join("etc/apt/apt.conf.d/99man-update-staging");
+    let policy = new.join("usr/sbin/policy-rc.d");
+    let _ = std::fs::write(&conf, "#clear DPkg::Pre-Invoke;\n");
+    let had_policy = policy.exists();
+    if !had_policy {
+        let _ = write_file(policy.clone(), "#!/bin/sh\nexit 101\n", 0o755);
+    }
+    let _ = std::fs::create_dir_all(new.join(rel).join("archives/partial"));
+    let archives = format!("Dir::Cache::Archives={KEPT_DEBS}/archives/");
+    let mut args = vec![new.to_str().unwrap(), "apt-get", "install", "-y", "--no-install-recommends", "-o", &archives];
+    args.extend(debs.iter().map(String::as_str));
+    let out = Command::new("chroot").args(&args).env("DEBIAN_FRONTEND", "noninteractive").stdin(Stdio::null()).output();
+    let ok = out.as_ref().is_ok_and(|o| o.status.success());
+    if let Ok(o) = &out {
+        for l in String::from_utf8_lossy(&o.stdout).lines().chain(String::from_utf8_lossy(&o.stderr).lines()) {
+            info(l);
+        }
+    }
+    let _ = std::fs::remove_file(&conf);
+    if !had_policy {
+        let _ = std::fs::remove_file(&policy);
+    }
+    if !ok {
+        info("The kept apps could not be installed now; the new system tries again when it starts.");
+        let _ = std::fs::write(new.join(rel).join("pending"), debs.join("\n") + "\n");
+    }
+}
+
 /// Inside the new system: purge installer-only packages, build initramfs
 /// images and the boot menu it will use after the swap.
 fn prepare_new_system(dev: &str, new: &Path, mounts: &mut Mounts) -> Result<()> {
@@ -309,6 +377,7 @@ fn prepare_new_system(dev: &str, new: &Path, mounts: &mut Mounts) -> Result<()> 
     if query("chroot", &[new.to_str().unwrap(), "dpkg-query", "-W", "-f=${Status}", "man-installer"]).is_some_and(|s| s.contains("installed")) {
         let _ = chroot(new, &["dpkg", "--purge", "man-installer"]);
     }
+    reinstall_kept(new);
     progress(0.3, "Building the boot image (initramfs)");
     let kernels: Vec<String> = std::fs::read_dir(new.join("usr/lib/modules"))?
         .filter_map(|e| e.ok())

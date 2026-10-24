@@ -30,7 +30,7 @@
 29|Site web
 30|Fichier
 31|Cette application est déjà installée. La réinstaller la remplace.
-32|Les applications des paquets .deb font partie du système. Lors d’une mise à jour de MAN, elles sont supprimées et doivent être réinstallées. Les applications Flatpak et les AppImage sont conservées.
+32|Les applications des paquets .deb font partie du système. Une mise à jour de MAN remplace le système : elles ne sont réinstallées après une mise à jour que si vous les conservez (étapes suivantes).
 33|N’installez que des applications provenant de sources de confiance.
 34|Où voulez-vous installer {name} ?
 35|Seul votre compte peut utiliser l’application.
@@ -42,521 +42,524 @@
 41|L’application est installée pour tous les utilisateurs de cet ordinateur.
 42|L’application est installée uniquement pour vous.
 43|L’AppImage est déplacé dans {folder} et ajouté à vos applications.
-44|Cliquez sur Installer pour installer {name}.
-45|Vérification de ce dont l’application a encore besoin…
-46|Installe aussi les paquets nécessaires : {list}
-47|Certains paquets dont l’application a besoin ne sont pas encore disponibles. L’installation récupère d’abord les listes de paquets les plus récentes ; s’ils manquent toujours, l’application ne peut pas être installée.
-48|Installation de {name}…
-49|Préparation…
-50|Détails
-51|Installation du paquet…
-52|Déplacement de l’application dans son dossier…
-53|L’application n’a pas pu être installée.
-54|Installation de l’application avec Flatpak…
-55|Journal
-56|_Fermer
-57|L’installation a réussi
-58|L’application a été installée.
-59|L’installation a échoué
-60|_Ouvrir
-61|_Afficher les détails
-62|Journal d’installation
-63|Installateur d’applications
-64|_Retour
-65|Lecture de l’application…
-66|Installer {name}
-67|Applications
-68|Choisir une application à installer
-69|Impossible de démarrer l’assistant système.
-70|Impossible de communiquer avec l’assistant système.
-71|La connexion avec l’assistant système a été perdue.
-72|L’autorisation a été annulée.
-73|Des droits d’administrateur sont nécessaires pour cette action.
-74|L’assistant système s’est arrêté de façon inattendue.
-75|Aucune partition système EFI
-76|Seulement {free} libres, MAN a besoin de {need}. Libérez de la place avec DUHACH! sous Windows.
-77|Aucun espace libre. Lancez DUHACH! sous Windows pour faire de la place à MAN.
-78|MAN fonctionne depuis ce disque
-79|Utilisé : une partition est montée
-80|Trop petit, MAN a besoin de {need}
-81|Installer MAN
-82|MAN est en cours d’installation. Veuillez patienter jusqu’à la fin.
-83|Langue
-84|_Redémarrer dans cette langue
-85|La session live redémarre dans la langue choisie, et MAN est installé dans cette langue.
-86|Bienvenue dans MAN
-87|Un système GNOME rapide, ouvert et entièrement personnalisable.\nInstallez-le sur cet ordinateur ou continuez à découvrir la session live.
-88|_Installer MAN…
-89|_Continuer à essayer MAN
-90|Recherche des disques…
-91|Bienvenue
-92|Cet ordinateur a démarré en mode BIOS hérité. MAN ne peut être installé que sur des ordinateurs UEFI : redémarrez et choisissez l’option de démarrage UEFI.
-93|L’assistant système n’a renvoyé aucune information sur les disques.
-94|  ·  EFI
-95|_Suivant
-96|Effacer le disque et installer MAN
-97|Tout le contenu du disque choisi est supprimé, Windows compris.
-98|Recommandé. Tout le contenu du disque choisi est supprimé.
-99|Installer à côté de Windows
-100|Recommandé. MAN utilise l’espace libre à côté de Windows ; Windows et ses fichiers sont conservés. Vous choisissez le système à chaque démarrage.
-101|Réinstaller MAN
-102|Remplace le système mais conserve les fichiers personnels dans /home. Le système actuel est enregistré en tant qu’instantané.
-103|Partitions personnalisées
-104|Pour les experts : choisissez vous-même les partitions, ou créez-les avec Disques.
-105|Disque
-106|Choisissez le disque à effacer. Les disques inutilisables sont affichés avec la raison.
-107|Aucun disque trouvé
-108|Espace libre à côté de Windows
-109|Les partitions de Windows ne sont pas modifiées. MAN partage la partition système EFI et ajoute Windows à son menu de démarrage.
-110|{size} libres
-111|aucun espace libre
-112|{model} (Windows)
-113|Installation à remplacer
-114|aucun dossier personnel
-115|dossiers personnels : {list}
-116|instantanés : {n}
-117|MAN sur {model}
-118|Phrase de passe pour {device}
-119|Déverrouiller
-120|L’installation n’a pas pu être examinée.
-121|Partitions
-122|La partition système est formatée en Btrfs et contient @system, @home et @snapshots. Les partitions du disque depuis lequel MAN fonctionne ne sont pas listées.
-123|Ouvrir Disques pour créer ou redimensionner des partitions
-124|Actualiser la liste des partitions
-125|Choisir une partition
-126|Partition système EFI
-127|Formater la partition système EFI
-128|Laisser désactivé pour conserver les chargeurs d’amorçage des autres systèmes
-129|Partition système (formatée en Btrfs)
-130|Partition de démarrage (nécessaire au chiffrement)
-131|Liste des partitions actualisée
-132|Sécurité
-133|Chiffrer le système
-134|Protège vos données si l’ordinateur est perdu ou volé. Une phrase de passe est demandée à chaque démarrage.
-135|Phrase de passe
-136|Confirmer la phrase de passe
-137|Conservez cette phrase de passe en lieu sûr
-138|Si elle est perdue, personne ne pourra récupérer les données. Le noyau et les fichiers de démarrage restent sur une petite partition de démarrage non chiffrée.
-139|La phrase de passe doit comporter au moins 8 caractères.
-140|Les phrases de passe ne correspondent pas.
-141|Choisissez un disque.
-142|Choisissez le disque contenant Windows.
-143|Choisissez l’installation à remplacer.
-144|Déverrouillez d’abord l’installation chiffrée.
-145|Cette partition ne contient aucun système MAN.
-146|Choisissez une partition système EFI.
-147|Choisissez la partition système.
-148|Les partitions EFI et système doivent être différentes.
-149|Le chiffrement nécessite une partition de démarrage séparée.
-150|La partition système doit faire au moins {size}.
-151|La partition EFI n’est pas au format FAT ; activez le formatage.
-152|La partition système est montée ; démontez-la d’abord dans Disques.
-153|Où installer MAN ?
-154|Heure et clavier
-155|Fuseau horaire
-156|Disposition du clavier
-157|Testez votre clavier
-158|Tapez ici pour vérifier que vos touches produisent les bons caractères.
-159|Tapez ici
-160|Fuseau horaire et clavier
-161|Aucun disque choisi
-162|Aucune partition système choisie
-163|La partition système a disparu
-164|Aucune installation choisie
-165|Le disque a disparu
-166|Vérification
-167|Destination
-168|Effacer le disque et installer
-169|Partitions personnalisées
-170|Réinstaller en conservant /home
-171|À côté de Windows
-172| (sera formatée)
-173| (conservée)
-174|Partition système
-175|{partition} (sera formatée)
-176|Partition de démarrage
-177|Espace pour MAN
-178|{free} d’espace libre (une partition de démarrage et la partition système sont créées)
-179|Windows
-180|Inchangé. Il apparaît dans le menu de démarrage de MAN ; la partition système EFI est partagée.
-181|Chiffrement
-182|Activé (LUKS2)
-183|Désactivé
-184|Système de fichiers
-185|Btrfs : @system pour MAN, @home pour vos fichiers, @snapshots pour les points de restauration. Tous partagent l’espace libre.
-186|Système
-187|Votre compte
-188|Créé dans MAN Setup au premier démarrage de l’ordinateur, avec le nom de l’ordinateur, l’apparence et les paramètres de confidentialité.
-189|Clavier
-190|Toutes les données de {model} ({path}) seront effacées.
-191|_Effacer et installer
-192|Les partitions choisies seront formatées. Les autres partitions ne sont pas modifiées.
-193|_Formater et installer
-194|Le système actuel est remplacé. Vos fichiers dans /home sont conservés et l’ancien système est enregistré en tant qu’instantané.
-195|_Réinstaller
-196|MAN est installé dans l’espace libre. Windows et ses fichiers ne sont pas modifiés.
-197|Prêt pour l’installation
-198|Effacer {model} ?
-199|Tous les fichiers et partitions de {path} ({size}) seront définitivement supprimés. Cette action est irréversible.
-200|Effacer et installer
-201|Formater les partitions choisies ?
-202|Toutes les données des partitions choisies seront définitivement supprimées. Les autres partitions ne sont pas modifiées.
-203|Formater et installer
-204|Installer MAN à côté de Windows ?
-205|MAN s’installe dans les {free} d’espace libre de {model} ({path}). Windows et ses fichiers ne sont pas modifiés.
-206|Installer
-207|Réinstaller MAN ?
-208|Le système installé sera remplacé par une copie neuve. Les fichiers personnels dans /home sont conservés et l’ancien système reste disponible en tant qu’instantané.
-209|Réinstaller
-210|_Annuler
-211|Installation de MAN
-212|Démarrage…
-213|Installation
-214|Étape {index} sur {n}  ·  {title}
-215|MAN est installé
-216|Redémarrez l’ordinateur pour commencer à utiliser MAN. Un menu à chaque démarrage vous permet de choisir MAN ou Windows ; MAN supprime la partition temporaire de l’installateur à son premier démarrage.
-217|Redémarrez l’ordinateur pour commencer à utiliser MAN. Vous pouvez retirer le support d’installation ; s’il reste branché, MAN démarre quand même depuis le nouveau disque.
-218|_Redémarrer maintenant
-219|Terminé
-220|Échec de l’installation
-221|Aucun autre disque n’a été modifié, et l’installateur a libéré le disque cible. Vous pouvez vérifier le plan et réessayer.
-222|_Vérifier et réessayer
-223|Rechercher une langue
-224|Rechercher un pays
-225|Le disque système est introuvable.
-226|Le chiffrement nécessite la disposition Btrfs créée par l’installateur MAN.
-227|Cette installation n’a pas de partition de démarrage séparée, nécessaire au chiffrement. Réinstallez MAN avec « Effacer le disque » pour utiliser le chiffrement.
-228|MAN Setup
-229|Où êtes-vous ?
-230|Votre pays ou votre région définit le format des dates, des heures et des nombres.
-231|Pays
-232|Licence publique générale GNU, version 2
-233|Le noyau Linux et de nombreux outils système
-234|Licence publique générale GNU, version 3
-235|De nombreux programmes GNU et GNOME
-236|Licence publique générale limitée GNU, version 2.1
-237|GTK, GLib et de nombreuses bibliothèques
-238|Licence publique générale limitée GNU, version 3
-239|Bibliothèques
-240|Mozilla Public License 2.0
-241|Programmes et bibliothèques de Mozilla et d’autres
-242|Licence Apache 2.0
-243|Bibliothèques et outils
-244|Contrat de licence
-245|Veuillez lire et accepter les conditions dans lesquelles MAN est fourni.
-246|Licences
-247|Le texte de la licence n’est pas disponible ({path}).
-248|J’ai lu et j’accepte les conditions de licence
-249|Filaire
-250|Non connecté
-251|Se connecter à Internet
-252|Une connexion permet à MAN de régler l’heure et de tenir vos logiciels à jour. Vous pouvez aussi le faire plus tard.
-253|Vérification de la connexion…
-254|Réseaux Wi-Fi
-255|Rechercher à nouveau
-256|_Passer
-257|Vous pourrez vous connecter plus tard dans les Paramètres.
-258|Connecté
-259|Non connecté
-260|Aucun réseau trouvé
-261|Internet
-262|Connecté à « {ssid} »
-263|Impossible de se connecter à « {ssid} »
-264|Se connecter à « {ssid} »
-265|Saisissez le mot de passe du réseau.
-266|Se _connecter
-267|Créez votre compte
-268|Vous serez l’administrateur de cet ordinateur, avec un accès root complet via sudo.
-269|Nom complet
-270|Nom d’utilisateur
-271|Mot de passe
-272|Confirmer le mot de passe
-273|Connexion automatique
-274|Passer l’écran de connexion au démarrage de l’ordinateur
-275|Dossiers personnels existants
-276|Utilisez le même nom d’utilisateur pour continuer à utiliser un dossier conservé d’une installation précédente.
-277|Utiliser
-278|Avancé
-279|Nom de l’ordinateur
-280|Définir un mot de passe root
-281|Permet de se connecter directement en tant que root. Sans lui, utilisez sudo avec votre propre mot de passe.
-282|Mot de passe root
-283|Confirmer le mot de passe root
-284|Saisissez votre nom.
-285|Choisissez un nom d’utilisateur.
-286|Ce nom d’utilisateur est déjà utilisé par le système.
-287|Ce nom d’utilisateur est réservé par le système.
-288|Les noms d’utilisateur se composent de lettres minuscules, de chiffres, de - et de _, et commencent par une lettre.
-289|Choisissez un mot de passe.
-290|Les mots de passe ne correspondent pas.
-291|Le nom de l’ordinateur peut contenir des lettres, des chiffres et des tirets.
-292|Saisissez deux fois le mot de passe root.
-293|Astuce : un mot de passe de 8 caractères ou plus est beaucoup plus sûr.
-294|Compte
-295|Sombre
-296|Clair
-297|Faites-le vôtre
-298|Choisissez un style, une couleur d’accentuation et un fond d’écran. Vous voyez chaque changement immédiatement.
-299|Style
-300|Couleur d’accentuation
-301|Fond d’écran
-302|Personnaliser
-303|Confidentialité
-304|Choisissez quelles fonctions peuvent utiliser des informations vous concernant. Vous pouvez le modifier à tout moment dans les Paramètres.
-305|Services de localisation
-306|Permet aux applications comme Cartes et Météo de déterminer votre position approximative à l’aide des réseaux Wi-Fi à proximité.
-307|Fuseau horaire automatique
-308|Utilise votre position pour garder le bon fuseau horaire lorsque vous voyagez.
-309|_Terminer la configuration
-310|Votre disque est chiffré
-311|Vos données sont protégées. La phrase de passe est demandée à chaque démarrage de l’ordinateur.
-312|Chiffrement du disque
-313|Le chiffrement protège vos données si l’ordinateur est perdu ou volé.
-314|Non disponible sur cette installation
-315|Le chiffrement protège vos fichiers si l’ordinateur est perdu ou volé. Sans la phrase de passe, personne ne peut lire le disque.
-316|Chiffrer le disque
-317|La phrase de passe est demandée à chaque démarrage de l’ordinateur.
-318|Le chiffrement commence au prochain redémarrage
-319|Votre disque est ensuite chiffré en arrière-plan pendant que vous utilisez l’ordinateur. Si la phrase de passe est perdue, personne ne pourra récupérer les données.
-320|Préparation de MAN
-321|Préparation de tout le nécessaire…
-322|_Redémarrer
-323|_Retour
-324|Préparation
-325|Journal de configuration
-326|Terminé !
-327|Un problème est survenu
-328|Quotidien
-329|Avant mise à jour
-330|Avant restauration
-331|Avant réinstallation
-332|Manuel
-333|Aucun instantané pour l’instant
-334|Créez-en un avant d’apporter de gros changements au système.
-335|Restaurer…
-336|Supprimer l’instantané
-337|{free} libres sur {size}. Le système, les dossiers personnels et les instantanés partagent cet espace ; les instantanés n’occupent de la place que pour ce qui a changé depuis leur création.
-338|_OK
-339|Créer un instantané
-340|Enregistre l’état actuel du système. Vos fichiers personnels du dossier personnel ne sont pas inclus.
-341|Description, par exemple « Avant l’installation des pilotes »
-342|_Créer
-343|Instantané manuel
-344|Supprimer l’instantané ?
-345|« {description} » du {date} sera supprimé définitivement.
-346|_Supprimer
-347|Restaurer cet instantané ?
-348|Le système reviendra à « {description} » du {date} après un redémarrage. Vos fichiers personnels ne sont pas modifiés.\n\nLe système actuel est d’abord enregistré en tant qu’instantané, cette opération est donc réversible.
-349|_Restaurer
-350|Redémarrer pour terminer la restauration
-351|Redémarrer _plus tard
-352|Redémarrer _maintenant
-353|Instantanés
-354|Points de restauration
-355|Les instantanés enregistrent l’état du système d’exploitation. En restaurer un ramène le système à ce moment-là, ce qui aide après une mise à jour ou une modification de configuration ratée. Vos fichiers personnels ne sont jamais touchés.
-356|Instantanés automatiques
-357|Instantanés quotidiens
-358|Une fois par jour quand l’ordinateur est allumé
-359|Instantanés quotidiens à conserver
-360|Avant les mises à jour logicielles
-361|Pris automatiquement lors de l’installation, la mise à jour ou la suppression de paquets
-362|Instantanés de mise à jour à conserver
-363|Stockage
-364|Espace disque
-365|Si MAN ne démarre pas
-366|Choisissez « Restore a MAN snapshot » dans le menu de démarrage pour retrouver un système fonctionnel.
-367|Les instantanés ne sont pas disponibles
-368|Les instantanés fonctionnent sur un MAN installé avec la disposition Btrfs créée par l’installateur MAN. Ce système (par exemple une session live) ne l’utilise pas.
-369|Une restauration est en attente : redémarrez l’ordinateur pour la terminer
-370|Redémarrer maintenant
-371|Veuillez attendre la fin de l’opération en cours.
-372|Rechercher
-373|Copier dans le presse-papiers
-374|Temps universel coordonné
-375|Anglais (États-Unis)
-376|MAN {version} est sorti !
-377|Vous pouvez faire la mise à jour.
-378|Ouvrir les mises à jour
-379|Vérification de la mise à jour
-380|Vérification que la mise à jour est authentique et complète…
-381|Mise à jour de MAN
-382|Cette mise à jour ne peut pas être installée
-383|La mise à jour n’a pas pu être lue.
-384|Mise à jour depuis {name} {version}
-385|{name} {version} est installé
-386|Publiée
-387|Taille du téléchargement
-388|Espace nécessaire
-389|Authenticité
-390|Vérifiée, signée par « {signer} »
-391|Nouveautés
-392|Cette mise à jour n’est pas plus récente que {name} {version} installé.
-393|Mise à jour
-394|Veuillez lire les conditions de licence de cette mise à jour.
-395|J’accepte les conditions de licence
-396|Où installer la mise à jour ?
-397|Le système est remplacé ; les fichiers de votre dossier personnel ne sont pas touchés.
-398|Choisissez une installation.
-399|en cours d’exécution
-400|{name} {version} sur cet ordinateur
-401|{name} sur {model}
-402|Aucune installation de MAN trouvée
-403|Les mises à jour s’installent depuis un système MAN installé et en cours d’exécution, pas depuis la session live.
-404|Emplacement de l’installation
-405|Conservé
-406|Vos fichiers
-407|Tout le contenu de votre dossier personnel
-408|Comptes et mots de passe
-409|Utilisateurs, groupes, nom de l’ordinateur
-410|Connexions et paramètres
-411|Wi-Fi, fuseau horaire, clavier, apparence et instantanés
-412|Applications Flatpak
-413|Ainsi que tout le contenu de /usr/local et /opt
-414|Remplacé
-415|Les logiciels installés avec apt et les autres modifications des fichiers système sont remplacés par le nouveau système.
-416|Le système d’exploitation
-417|Remplacé par {name} {version}. Le système actuel peut être restauré depuis un instantané.
-418|L’ordinateur redémarre pour installer la mise à jour
-419|Après la préparation, MAN redémarre, installe la mise à jour en quelques secondes et redémarre à nouveau.
-420|_Installer la mise à jour
-421|Créer d’abord un instantané ?
-422|Un instantané enregistre le système actuel, pour pouvoir y revenir si quelque chose ne fonctionne pas après la mise à jour. C’est recommandé.
-423|_Ne pas créer
-424|_Créer un instantané
-425|Préparation de {name} {version}
-426|Redémarrer pour installer
-427|L’ordinateur redémarre deux fois. Vos fichiers sont en sécurité.
-428|Redémarrage automatique dans {r} secondes
-429|Redémarrage automatique dans 30 secondes
-430|La mise à jour sera installée au prochain redémarrage.
-431|Prêt
-432|La mise à jour n’a pas pu être préparée
-433|Rien n’a été modifié sur votre système.
-434|_Réessayer
-435|Journal de mise à jour
-436|Échec
-437|Votre système a été mis à jour
-438|MAN a été mis à jour vers la version {version}.\nAuparavant : MAN {previous}.
-439|_Terminé
-440|Ouvrir une mise à jour de MAN
-441|Mises à jour de MAN
-442|Récupération des listes de paquets les plus récentes…
-443|Copie de l’application
-444|Ajout de l’application au menu
-445|Le fichier est introuvable.
-446|Le paquet n’a pas pu être installé.
-447|L’entrée de menu de l’application n’est pas valide.
-448|Vérification du plan d’installation
-449|Préparation du disque
-450|Copie de MAN sur le disque
-451|Configuration du nouveau système
-452|Installation du chargeur d’amorçage
-453|Création du premier instantané
-454|Finalisation
-455|Suppression des anciennes signatures de partition
-456|Création des partitions
-457|Formatage de la partition système EFI
-458|Chiffrement de la partition système
-459|Formatage de la partition de démarrage
-460|Création du système de fichiers Btrfs
-461|Suppression des anciennes signatures de système de fichiers
-462|Déverrouillage de l’installation chiffrée
-463|Enregistrement du système actuel en tant qu’instantané
-464|Suppression du système précédent
-465|Écriture de la table des systèmes de fichiers
-466|Définition du nom et de l’identité de l’ordinateur
-467|Suppression des comptes de la session live
-468|Création de votre compte
-469|Préparation de MAN Setup pour le premier démarrage
-470|Réglage du fuseau horaire et du clavier
-471|Suppression de l’installateur du nouveau système
-472|Création de l’image de démarrage (initramfs)
-473|Configuration de GRUB
-474|Installation de GRUB sur la partition système EFI
-475|Installation du chargeur d’amorçage de secours
-476|Écriture du menu de démarrage
-477|Disque prêt
-478|Création d’un instantané du système neuf
-479|Ajout de l’instantané au menu de démarrage
-480|Démontage
-481|L’assistant de l’installateur doit être exécuté en tant que root.
-482|Cet ordinateur n’a pas démarré en mode UEFI. MAN nécessite l’UEFI.
-483|Le nom d’utilisateur n’est pas valide.
-484|Un mot de passe est requis.
-485|Le nom de l’ordinateur n’est pas valide.
-486|Langue inconnue.
-487|La phrase de passe de chiffrement doit comporter au moins 8 caractères.
-488|Le disque a changé après votre confirmation de l’installation. Rien n’a été modifié ; veuillez vérifier et confirmer à nouveau.
-489|Choisissez une partition système.
-490|Le disque confirmé ne contient pas la partition système choisie.
-491|La partition de démarrage doit être distincte des partitions EFI et système.
-492|La partition de démarrage doit faire au moins 512 Mo.
-493|Aucune installation choisie.
-494|Le disque confirmé ne contient pas l’installation choisie.
-495|L’installation chiffrée n’a pas de partition MAN_BOOT.
-496|Aucun noyau avec les modules correspondants n’a été trouvé dans /boot.
-497|La langue doit être changée par l’assistant système.
-498|Application de vos paramètres
-499|Préparation du chiffrement du disque
-500|Finalisation
-501|MAN Setup doit être terminé par l’assistant système.
-502|MAN Setup a déjà été effectué sur cet ordinateur.
-503|Couleur d’accentuation inconnue.
-504|Le fond d’écran choisi n’est pas disponible.
-505|Ce système ne peut pas être chiffré.
-506|La clé de configuration est manquante, le chiffrement ne peut donc pas continuer en arrière-plan.
-507|Le système n’est pas installé sur Btrfs, les instantanés ne sont donc pas disponibles.
-508|Une restauration d’instantané attend un redémarrage. Redémarrez d’abord l’ordinateur pour la terminer.
-509|Identifiant d’instantané non valide.
-510|Vérification de la mise à jour
-511|Création d’un instantané
-512|Préparation de la zone de mise à jour
-513|Décompression du nouveau système
-514|Transfert de vos comptes et paramètres
-515|Préparation du redémarrage
-516|Décompressé
-517|Comptes
-518|Suppression des logiciels propres à l’installateur
-519|Création de l’image de démarrage de la mise à jour
-520|Ajout de l’entrée de démarrage unique
-521|La mise à jour est authentique
-522|Instantané créé
-523|Ignoré
-524|Zone de mise à jour prête
-525|Préparation du nouveau système
-526|Le fichier de mise à jour est endommagé (somme de contrôle incorrecte). Téléchargez-le à nouveau.
-527|Le fichier de mise à jour n’a pas pu être lu entièrement.
-528|La mise à jour ne contient pas de noyau.
-529|Les mises à jour doivent être installées par l’assistant système.
-530|L’installation choisie est introuvable.
-531|Seule l’installation de MAN en cours d’exécution peut être mise à jour.
-532|Ce n’est pas un fichier de mise à jour MAN (aucun manifeste).
-533|La mise à jour n’est pas signée, on ne peut donc pas lui faire confiance.
-534|La signature de la mise à jour est endommagée.
-535|La mise à jour n’est pas signée par MAN. Elle a peut-être été modifiée ou provient d’une source non fiable.
-536|Le manifeste de la mise à jour n’est pas valide.
-537|La phrase de passe est incorrecte, ou la partition chiffrée ne peut pas être ouverte.
-538|Bleu
-539|Bleu-vert
-540|Vert
-541|Jaune
-542|Orange
-543|Rouge
-544|Rose
-545|Violet
-546|Ardoise
-547|Installateur de paquets
-548|Installer des applications à partir de fichiers .deb, Flatpak et AppImage
-549|Installateur du système
-550|Installer MAN sur cet ordinateur
-551|Restauration du système
-552|Créer et restaurer des instantanés du système
-553|Installateur de mises à jour du système
-554|Installer un fichier de mise à jour du système MAN
-555|Propose d’installer MAN au démarrage de la session live
-556|Avis de mise à jour de MAN
-557|Vous informe une fois après la connexion que MAN a été mis à jour
-558|Configurez votre nouvel ordinateur MAN
-559|Configuration de MAN au premier démarrage
-560|Mises à jour de MAN
-561|Vous prévient quand une nouvelle version de MAN est disponible
+44|Conserver après les mises à jour de MAN
+45|MAN réinstalle l’application après chaque mise à jour. Ses fichiers de paquet sont conservés pour cela.
+46|Cliquez sur Installer pour installer {name}.
+47|Vérification de ce dont l’application a encore besoin…
+48|Installe aussi les paquets nécessaires : {list}
+49|Certains paquets dont l’application a besoin ne sont pas encore disponibles. L’installation récupère d’abord les listes de paquets les plus récentes ; s’ils manquent toujours, l’application ne peut pas être installée.
+50|Installation de {name}…
+51|Préparation…
+52|Détails
+53|Installation du paquet…
+54|Déplacement de l’application dans son dossier…
+55|L’application n’a pas pu être installée.
+56|Installation de l’application avec Flatpak…
+57|Journal
+58|_Fermer
+59|L’installation a réussi
+60|L’application a été installée.
+61|L’installation a échoué
+62|_Ouvrir
+63|_Afficher les détails
+64|Journal d’installation
+65|Installateur d’applications
+66|_Retour
+67|Lecture de l’application…
+68|Installer {name}
+69|Applications
+70|Choisir une application à installer
+71|Impossible de démarrer l’assistant système.
+72|Impossible de communiquer avec l’assistant système.
+73|La connexion avec l’assistant système a été perdue.
+74|L’autorisation a été annulée.
+75|Des droits d’administrateur sont nécessaires pour cette action.
+76|L’assistant système s’est arrêté de façon inattendue.
+77|Aucune partition système EFI
+78|Seulement {free} libres, MAN a besoin de {need}. Libérez de la place avec DUHACH! sous Windows.
+79|Aucun espace libre. Lancez DUHACH! sous Windows pour faire de la place à MAN.
+80|MAN fonctionne depuis ce disque
+81|Utilisé : une partition est montée
+82|Trop petit, MAN a besoin de {need}
+83|Installer MAN
+84|MAN est en cours d’installation. Veuillez patienter jusqu’à la fin.
+85|Langue
+86|_Redémarrer dans cette langue
+87|La session live redémarre dans la langue choisie, et MAN est installé dans cette langue.
+88|Bienvenue dans MAN
+89|Un système GNOME rapide, ouvert et entièrement personnalisable.\nInstallez-le sur cet ordinateur ou continuez à découvrir la session live.
+90|_Installer MAN…
+91|_Continuer à essayer MAN
+92|Recherche des disques…
+93|Bienvenue
+94|Cet ordinateur a démarré en mode BIOS hérité. MAN ne peut être installé que sur des ordinateurs UEFI : redémarrez et choisissez l’option de démarrage UEFI.
+95|L’assistant système n’a renvoyé aucune information sur les disques.
+96|  ·  EFI
+97|_Suivant
+98|Effacer le disque et installer MAN
+99|Tout le contenu du disque choisi est supprimé, Windows compris.
+100|Recommandé. Tout le contenu du disque choisi est supprimé.
+101|Installer à côté de Windows
+102|Recommandé. MAN utilise l’espace libre à côté de Windows ; Windows et ses fichiers sont conservés. Vous choisissez le système à chaque démarrage.
+103|Réinstaller MAN
+104|Remplace le système mais conserve les fichiers personnels dans /home. Le système actuel est enregistré en tant qu’instantané.
+105|Partitions personnalisées
+106|Pour les experts : choisissez vous-même les partitions, ou créez-les avec Disques.
+107|Disque
+108|Choisissez le disque à effacer. Les disques inutilisables sont affichés avec la raison.
+109|Aucun disque trouvé
+110|Espace libre à côté de Windows
+111|Les partitions de Windows ne sont pas modifiées. MAN partage la partition système EFI et ajoute Windows à son menu de démarrage.
+112|{size} libres
+113|aucun espace libre
+114|{model} (Windows)
+115|Installation à remplacer
+116|aucun dossier personnel
+117|dossiers personnels : {list}
+118|instantanés : {n}
+119|MAN sur {model}
+120|Phrase de passe pour {device}
+121|Déverrouiller
+122|L’installation n’a pas pu être examinée.
+123|Partitions
+124|La partition système est formatée en Btrfs et contient @system, @home et @snapshots. Les partitions du disque depuis lequel MAN fonctionne ne sont pas listées.
+125|Ouvrir Disques pour créer ou redimensionner des partitions
+126|Actualiser la liste des partitions
+127|Choisir une partition
+128|Partition système EFI
+129|Formater la partition système EFI
+130|Laisser désactivé pour conserver les chargeurs d’amorçage des autres systèmes
+131|Partition système (formatée en Btrfs)
+132|Partition de démarrage (nécessaire au chiffrement)
+133|Liste des partitions actualisée
+134|Sécurité
+135|Chiffrer le système
+136|Protège vos données si l’ordinateur est perdu ou volé. Une phrase de passe est demandée à chaque démarrage.
+137|Phrase de passe
+138|Confirmer la phrase de passe
+139|Conservez cette phrase de passe en lieu sûr
+140|Si elle est perdue, personne ne pourra récupérer les données. Le noyau et les fichiers de démarrage restent sur une petite partition de démarrage non chiffrée.
+141|La phrase de passe doit comporter au moins 8 caractères.
+142|Les phrases de passe ne correspondent pas.
+143|Choisissez un disque.
+144|Choisissez le disque contenant Windows.
+145|Choisissez l’installation à remplacer.
+146|Déverrouillez d’abord l’installation chiffrée.
+147|Cette partition ne contient aucun système MAN.
+148|Choisissez une partition système EFI.
+149|Choisissez la partition système.
+150|Les partitions EFI et système doivent être différentes.
+151|Le chiffrement nécessite une partition de démarrage séparée.
+152|La partition système doit faire au moins {size}.
+153|La partition EFI n’est pas au format FAT ; activez le formatage.
+154|La partition système est montée ; démontez-la d’abord dans Disques.
+155|Où installer MAN ?
+156|Heure et clavier
+157|Fuseau horaire
+158|Disposition du clavier
+159|Testez votre clavier
+160|Tapez ici pour vérifier que vos touches produisent les bons caractères.
+161|Tapez ici
+162|Fuseau horaire et clavier
+163|Aucun disque choisi
+164|Aucune partition système choisie
+165|La partition système a disparu
+166|Aucune installation choisie
+167|Le disque a disparu
+168|Vérification
+169|Destination
+170|Effacer le disque et installer
+171|Partitions personnalisées
+172|Réinstaller en conservant /home
+173|À côté de Windows
+174| (sera formatée)
+175| (conservée)
+176|Partition système
+177|{partition} (sera formatée)
+178|Partition de démarrage
+179|Espace pour MAN
+180|{free} d’espace libre (une partition de démarrage et la partition système sont créées)
+181|Windows
+182|Inchangé. Il apparaît dans le menu de démarrage de MAN ; la partition système EFI est partagée.
+183|Chiffrement
+184|Activé (LUKS2)
+185|Désactivé
+186|Système de fichiers
+187|Btrfs : @system pour MAN, @home pour vos fichiers, @snapshots pour les points de restauration. Tous partagent l’espace libre.
+188|Système
+189|Votre compte
+190|Créé dans MAN Setup au premier démarrage de l’ordinateur, avec le nom de l’ordinateur, l’apparence et les paramètres de confidentialité.
+191|Clavier
+192|Toutes les données de {model} ({path}) seront effacées.
+193|_Effacer et installer
+194|Les partitions choisies seront formatées. Les autres partitions ne sont pas modifiées.
+195|_Formater et installer
+196|Le système actuel est remplacé. Vos fichiers dans /home sont conservés et l’ancien système est enregistré en tant qu’instantané.
+197|_Réinstaller
+198|MAN est installé dans l’espace libre. Windows et ses fichiers ne sont pas modifiés.
+199|Prêt pour l’installation
+200|Effacer {model} ?
+201|Tous les fichiers et partitions de {path} ({size}) seront définitivement supprimés. Cette action est irréversible.
+202|Effacer et installer
+203|Formater les partitions choisies ?
+204|Toutes les données des partitions choisies seront définitivement supprimées. Les autres partitions ne sont pas modifiées.
+205|Formater et installer
+206|Installer MAN à côté de Windows ?
+207|MAN s’installe dans les {free} d’espace libre de {model} ({path}). Windows et ses fichiers ne sont pas modifiés.
+208|Installer
+209|Réinstaller MAN ?
+210|Le système installé sera remplacé par une copie neuve. Les fichiers personnels dans /home sont conservés et l’ancien système reste disponible en tant qu’instantané.
+211|Réinstaller
+212|_Annuler
+213|Installation de MAN
+214|Démarrage…
+215|Installation
+216|Étape {index} sur {n}  ·  {title}
+217|MAN est installé
+218|Redémarrez l’ordinateur pour commencer à utiliser MAN. Un menu à chaque démarrage vous permet de choisir MAN ou Windows ; MAN supprime la partition temporaire de l’installateur à son premier démarrage.
+219|Redémarrez l’ordinateur pour commencer à utiliser MAN. Vous pouvez retirer le support d’installation ; s’il reste branché, MAN démarre quand même depuis le nouveau disque.
+220|_Redémarrer maintenant
+221|Terminé
+222|Échec de l’installation
+223|Aucun autre disque n’a été modifié, et l’installateur a libéré le disque cible. Vous pouvez vérifier le plan et réessayer.
+224|_Vérifier et réessayer
+225|Rechercher une langue
+226|Rechercher un pays
+227|Le disque système est introuvable.
+228|Le chiffrement nécessite la disposition Btrfs créée par l’installateur MAN.
+229|Cette installation n’a pas de partition de démarrage séparée, nécessaire au chiffrement. Réinstallez MAN avec « Effacer le disque » pour utiliser le chiffrement.
+230|MAN Setup
+231|Où êtes-vous ?
+232|Votre pays ou votre région définit le format des dates, des heures et des nombres.
+233|Pays
+234|Licence publique générale GNU, version 2
+235|Le noyau Linux et de nombreux outils système
+236|Licence publique générale GNU, version 3
+237|De nombreux programmes GNU et GNOME
+238|Licence publique générale limitée GNU, version 2.1
+239|GTK, GLib et de nombreuses bibliothèques
+240|Licence publique générale limitée GNU, version 3
+241|Bibliothèques
+242|Mozilla Public License 2.0
+243|Programmes et bibliothèques de Mozilla et d’autres
+244|Licence Apache 2.0
+245|Bibliothèques et outils
+246|Contrat de licence
+247|Veuillez lire et accepter les conditions dans lesquelles MAN est fourni.
+248|Licences
+249|Le texte de la licence n’est pas disponible ({path}).
+250|J’ai lu et j’accepte les conditions de licence
+251|Filaire
+252|Non connecté
+253|Se connecter à Internet
+254|Une connexion permet à MAN de régler l’heure et de tenir vos logiciels à jour. Vous pouvez aussi le faire plus tard.
+255|Vérification de la connexion…
+256|Réseaux Wi-Fi
+257|Rechercher à nouveau
+258|_Passer
+259|Vous pourrez vous connecter plus tard dans les Paramètres.
+260|Connecté
+261|Non connecté
+262|Aucun réseau trouvé
+263|Internet
+264|Connecté à « {ssid} »
+265|Impossible de se connecter à « {ssid} »
+266|Se connecter à « {ssid} »
+267|Saisissez le mot de passe du réseau.
+268|Se _connecter
+269|Créez votre compte
+270|Vous serez l’administrateur de cet ordinateur, avec un accès root complet via sudo.
+271|Nom complet
+272|Nom d’utilisateur
+273|Mot de passe
+274|Confirmer le mot de passe
+275|Connexion automatique
+276|Passer l’écran de connexion au démarrage de l’ordinateur
+277|Dossiers personnels existants
+278|Utilisez le même nom d’utilisateur pour continuer à utiliser un dossier conservé d’une installation précédente.
+279|Utiliser
+280|Avancé
+281|Nom de l’ordinateur
+282|Définir un mot de passe root
+283|Permet de se connecter directement en tant que root. Sans lui, utilisez sudo avec votre propre mot de passe.
+284|Mot de passe root
+285|Confirmer le mot de passe root
+286|Saisissez votre nom.
+287|Choisissez un nom d’utilisateur.
+288|Ce nom d’utilisateur est déjà utilisé par le système.
+289|Ce nom d’utilisateur est réservé par le système.
+290|Les noms d’utilisateur se composent de lettres minuscules, de chiffres, de - et de _, et commencent par une lettre.
+291|Choisissez un mot de passe.
+292|Les mots de passe ne correspondent pas.
+293|Le nom de l’ordinateur peut contenir des lettres, des chiffres et des tirets.
+294|Saisissez deux fois le mot de passe root.
+295|Astuce : un mot de passe de 8 caractères ou plus est beaucoup plus sûr.
+296|Compte
+297|Sombre
+298|Clair
+299|Faites-le vôtre
+300|Choisissez un style, une couleur d’accentuation et un fond d’écran. Vous voyez chaque changement immédiatement.
+301|Style
+302|Couleur d’accentuation
+303|Fond d’écran
+304|Personnaliser
+305|Confidentialité
+306|Choisissez quelles fonctions peuvent utiliser des informations vous concernant. Vous pouvez le modifier à tout moment dans les Paramètres.
+307|Services de localisation
+308|Permet aux applications comme Cartes et Météo de déterminer votre position approximative à l’aide des réseaux Wi-Fi à proximité.
+309|Fuseau horaire automatique
+310|Utilise votre position pour garder le bon fuseau horaire lorsque vous voyagez.
+311|_Terminer la configuration
+312|Votre disque est chiffré
+313|Vos données sont protégées. La phrase de passe est demandée à chaque démarrage de l’ordinateur.
+314|Chiffrement du disque
+315|Le chiffrement protège vos données si l’ordinateur est perdu ou volé.
+316|Non disponible sur cette installation
+317|Le chiffrement protège vos fichiers si l’ordinateur est perdu ou volé. Sans la phrase de passe, personne ne peut lire le disque.
+318|Chiffrer le disque
+319|La phrase de passe est demandée à chaque démarrage de l’ordinateur.
+320|Le chiffrement commence au prochain redémarrage
+321|Votre disque est ensuite chiffré en arrière-plan pendant que vous utilisez l’ordinateur. Si la phrase de passe est perdue, personne ne pourra récupérer les données.
+322|Préparation de MAN
+323|Préparation de tout le nécessaire…
+324|_Redémarrer
+325|_Retour
+326|Préparation
+327|Journal de configuration
+328|Terminé !
+329|Un problème est survenu
+330|Quotidien
+331|Avant mise à jour
+332|Avant restauration
+333|Avant réinstallation
+334|Manuel
+335|Aucun instantané pour l’instant
+336|Créez-en un avant d’apporter de gros changements au système.
+337|Restaurer…
+338|Supprimer l’instantané
+339|{free} libres sur {size}. Le système, les dossiers personnels et les instantanés partagent cet espace ; les instantanés n’occupent de la place que pour ce qui a changé depuis leur création.
+340|_OK
+341|Créer un instantané
+342|Enregistre l’état actuel du système. Vos fichiers personnels du dossier personnel ne sont pas inclus.
+343|Description, par exemple « Avant l’installation des pilotes »
+344|_Créer
+345|Instantané manuel
+346|Supprimer l’instantané ?
+347|« {description} » du {date} sera supprimé définitivement.
+348|_Supprimer
+349|Restaurer cet instantané ?
+350|Le système reviendra à « {description} » du {date} après un redémarrage. Vos fichiers personnels ne sont pas modifiés.\n\nLe système actuel est d’abord enregistré en tant qu’instantané, cette opération est donc réversible.
+351|_Restaurer
+352|Redémarrer pour terminer la restauration
+353|Redémarrer _plus tard
+354|Redémarrer _maintenant
+355|Instantanés
+356|Points de restauration
+357|Les instantanés enregistrent l’état du système d’exploitation. En restaurer un ramène le système à ce moment-là, ce qui aide après une mise à jour ou une modification de configuration ratée. Vos fichiers personnels ne sont jamais touchés.
+358|Instantanés automatiques
+359|Instantanés quotidiens
+360|Une fois par jour quand l’ordinateur est allumé
+361|Instantanés quotidiens à conserver
+362|Avant les mises à jour logicielles
+363|Pris automatiquement lors de l’installation, la mise à jour ou la suppression de paquets
+364|Instantanés de mise à jour à conserver
+365|Stockage
+366|Espace disque
+367|Si MAN ne démarre pas
+368|Choisissez « Restore a MAN snapshot » dans le menu de démarrage pour retrouver un système fonctionnel.
+369|Les instantanés ne sont pas disponibles
+370|Les instantanés fonctionnent sur un MAN installé avec la disposition Btrfs créée par l’installateur MAN. Ce système (par exemple une session live) ne l’utilise pas.
+371|Une restauration est en attente : redémarrez l’ordinateur pour la terminer
+372|Redémarrer maintenant
+373|Veuillez attendre la fin de l’opération en cours.
+374|Rechercher
+375|Copier dans le presse-papiers
+376|Temps universel coordonné
+377|Anglais (États-Unis)
+378|MAN {version} est sorti !
+379|Vous pouvez faire la mise à jour.
+380|Ouvrir les mises à jour
+381|Vérification de la mise à jour
+382|Vérification que la mise à jour est authentique et complète…
+383|Mise à jour de MAN
+384|Cette mise à jour ne peut pas être installée
+385|La mise à jour n’a pas pu être lue.
+386|Mise à jour depuis {name} {version}
+387|{name} {version} est installé
+388|Publiée
+389|Taille du téléchargement
+390|Espace nécessaire
+391|Authenticité
+392|Vérifiée, signée par « {signer} »
+393|Nouveautés
+394|Cette mise à jour n’est pas plus récente que {name} {version} installé.
+395|Mise à jour
+396|Veuillez lire les conditions de licence de cette mise à jour.
+397|J’accepte les conditions de licence
+398|Où installer la mise à jour ?
+399|Le système est remplacé ; les fichiers de votre dossier personnel ne sont pas touchés.
+400|Choisissez une installation.
+401|en cours d’exécution
+402|{name} {version} sur cet ordinateur
+403|{name} sur {model}
+404|Aucune installation de MAN trouvée
+405|Les mises à jour s’installent depuis un système MAN installé et en cours d’exécution, pas depuis la session live.
+406|Emplacement de l’installation
+407|Conservé
+408|Vos fichiers
+409|Tout le contenu de votre dossier personnel
+410|Comptes et mots de passe
+411|Utilisateurs, groupes, nom de l’ordinateur
+412|Connexions et paramètres
+413|Wi-Fi, fuseau horaire, clavier, apparence et instantanés
+414|Applications Flatpak
+415|Ainsi que tout le contenu de /usr/local et /opt
+416|Remplacé
+417|Les logiciels installés avec apt et les autres modifications des fichiers système sont remplacés par le nouveau système.
+418|Le système d’exploitation
+419|Remplacé par {name} {version}. Le système actuel peut être restauré depuis un instantané.
+420|L’ordinateur redémarre pour installer la mise à jour
+421|Après la préparation, MAN redémarre, installe la mise à jour en quelques secondes et redémarre à nouveau.
+422|_Installer la mise à jour
+423|Créer d’abord un instantané ?
+424|Un instantané enregistre le système actuel, pour pouvoir y revenir si quelque chose ne fonctionne pas après la mise à jour. C’est recommandé.
+425|_Ne pas créer
+426|_Créer un instantané
+427|Préparation de {name} {version}
+428|Redémarrer pour installer
+429|L’ordinateur redémarre deux fois. Vos fichiers sont en sécurité.
+430|Redémarrage automatique dans {r} secondes
+431|Redémarrage automatique dans 30 secondes
+432|La mise à jour sera installée au prochain redémarrage.
+433|Prêt
+434|La mise à jour n’a pas pu être préparée
+435|Rien n’a été modifié sur votre système.
+436|_Réessayer
+437|Journal de mise à jour
+438|Échec
+439|Votre système a été mis à jour
+440|MAN a été mis à jour vers la version {version}.\nAuparavant : MAN {previous}.
+441|_Terminé
+442|Ouvrir une mise à jour de MAN
+443|Mises à jour de MAN
+444|Récupération des listes de paquets les plus récentes…
+445|Copie de l’application
+446|Ajout de l’application au menu
+447|Le fichier est introuvable.
+448|Le paquet n’a pas pu être installé.
+449|L’entrée de menu de l’application n’est pas valide.
+450|Vérification du plan d’installation
+451|Préparation du disque
+452|Copie de MAN sur le disque
+453|Configuration du nouveau système
+454|Installation du chargeur d’amorçage
+455|Création du premier instantané
+456|Finalisation
+457|Suppression des anciennes signatures de partition
+458|Création des partitions
+459|Formatage de la partition système EFI
+460|Chiffrement de la partition système
+461|Formatage de la partition de démarrage
+462|Création du système de fichiers Btrfs
+463|Suppression des anciennes signatures de système de fichiers
+464|Déverrouillage de l’installation chiffrée
+465|Enregistrement du système actuel en tant qu’instantané
+466|Suppression du système précédent
+467|Écriture de la table des systèmes de fichiers
+468|Définition du nom et de l’identité de l’ordinateur
+469|Suppression des comptes de la session live
+470|Création de votre compte
+471|Préparation de MAN Setup pour le premier démarrage
+472|Réglage du fuseau horaire et du clavier
+473|Suppression de l’installateur du nouveau système
+474|Création de l’image de démarrage (initramfs)
+475|Configuration de GRUB
+476|Installation de GRUB sur la partition système EFI
+477|Installation du chargeur d’amorçage de secours
+478|Écriture du menu de démarrage
+479|Disque prêt
+480|Création d’un instantané du système neuf
+481|Ajout de l’instantané au menu de démarrage
+482|Démontage
+483|L’assistant de l’installateur doit être exécuté en tant que root.
+484|Cet ordinateur n’a pas démarré en mode UEFI. MAN nécessite l’UEFI.
+485|Le nom d’utilisateur n’est pas valide.
+486|Un mot de passe est requis.
+487|Le nom de l’ordinateur n’est pas valide.
+488|Langue inconnue.
+489|La phrase de passe de chiffrement doit comporter au moins 8 caractères.
+490|Le disque a changé après votre confirmation de l’installation. Rien n’a été modifié ; veuillez vérifier et confirmer à nouveau.
+491|Choisissez une partition système.
+492|Le disque confirmé ne contient pas la partition système choisie.
+493|La partition de démarrage doit être distincte des partitions EFI et système.
+494|La partition de démarrage doit faire au moins 512 Mo.
+495|Aucune installation choisie.
+496|Le disque confirmé ne contient pas l’installation choisie.
+497|L’installation chiffrée n’a pas de partition MAN_BOOT.
+498|Aucun noyau avec les modules correspondants n’a été trouvé dans /boot.
+499|La langue doit être changée par l’assistant système.
+500|Application de vos paramètres
+501|Préparation du chiffrement du disque
+502|Finalisation
+503|MAN Setup doit être terminé par l’assistant système.
+504|MAN Setup a déjà été effectué sur cet ordinateur.
+505|Couleur d’accentuation inconnue.
+506|Le fond d’écran choisi n’est pas disponible.
+507|Ce système ne peut pas être chiffré.
+508|La clé de configuration est manquante, le chiffrement ne peut donc pas continuer en arrière-plan.
+509|Le système n’est pas installé sur Btrfs, les instantanés ne sont donc pas disponibles.
+510|Une restauration d’instantané attend un redémarrage. Redémarrez d’abord l’ordinateur pour la terminer.
+511|Identifiant d’instantané non valide.
+512|Vérification de la mise à jour
+513|Création d’un instantané
+514|Préparation de la zone de mise à jour
+515|Décompression du nouveau système
+516|Transfert de vos comptes et paramètres
+517|Préparation du redémarrage
+518|Décompressé
+519|Comptes
+520|Réinstallation des applications conservées
+521|Suppression des logiciels propres à l’installateur
+522|Création de l’image de démarrage de la mise à jour
+523|Ajout de l’entrée de démarrage unique
+524|La mise à jour est authentique
+525|Instantané créé
+526|Ignoré
+527|Zone de mise à jour prête
+528|Préparation du nouveau système
+529|Le fichier de mise à jour est endommagé (somme de contrôle incorrecte). Téléchargez-le à nouveau.
+530|Le fichier de mise à jour n’a pas pu être lu entièrement.
+531|La mise à jour ne contient pas de noyau.
+532|Les mises à jour doivent être installées par l’assistant système.
+533|L’installation choisie est introuvable.
+534|Seule l’installation de MAN en cours d’exécution peut être mise à jour.
+535|Ce n’est pas un fichier de mise à jour MAN (aucun manifeste).
+536|La mise à jour n’est pas signée, on ne peut donc pas lui faire confiance.
+537|La signature de la mise à jour est endommagée.
+538|La mise à jour n’est pas signée par MAN. Elle a peut-être été modifiée ou provient d’une source non fiable.
+539|Le manifeste de la mise à jour n’est pas valide.
+540|La phrase de passe est incorrecte, ou la partition chiffrée ne peut pas être ouverte.
+541|Bleu
+542|Bleu-vert
+543|Vert
+544|Jaune
+545|Orange
+546|Rouge
+547|Rose
+548|Violet
+549|Ardoise
+550|Installateur de paquets
+551|Installer des applications à partir de fichiers .deb, Flatpak et AppImage
+552|Installateur du système
+553|Installer MAN sur cet ordinateur
+554|Restauration du système
+555|Créer et restaurer des instantanés du système
+556|Installateur de mises à jour du système
+557|Installer un fichier de mise à jour du système MAN
+558|Propose d’installer MAN au démarrage de la session live
+559|Avis de mise à jour de MAN
+560|Vous informe une fois après la connexion que MAN a été mis à jour
+561|Configurez votre nouvel ordinateur MAN
+562|Configuration de MAN au premier démarrage
+563|Mises à jour de MAN
+564|Vous prévient quand une nouvelle version de MAN est disponible

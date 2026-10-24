@@ -30,7 +30,7 @@
 29|Sajti
 30|Skedari
 31|Ky aplikacion është instaluar tashmë. Instalimi sërish e zëvendëson.
-32|Aplikacionet nga paketat .deb bëhen pjesë e sistemit. Kur përditësohet MAN, ato hiqen dhe duhen instaluar sërish. Aplikacionet Flatpak dhe AppImage ruhen.
+32|Aplikacionet nga paketat .deb bëhen pjesë e sistemit. Një përditësim i MAN e zëvendëson sistemin, ndaj pas përditësimit riinstalohen vetëm nëse i mbani (hapat e ardhshëm).
 33|Instaloni vetëm aplikacione nga burime që u besoni.
 34|Ku doni ta instaloni {name}?
 35|Vetëm llogaria juaj mund ta përdorë aplikacionin.
@@ -42,521 +42,524 @@
 41|Aplikacioni instalohet për të gjithë përdoruesit e këtij kompjuteri.
 42|Aplikacioni instalohet vetëm për ju.
 43|AppImage zhvendoset te {folder} dhe shtohet te aplikacionet tuaja.
-44|Klikoni Instalo për të instaluar {name}.
-45|Po kontrollohet çfarë tjetër i duhet aplikacionit…
-46|Instalon edhe paketat që i duhen: {list}
-47|Disa paketa që i duhen aplikacionit nuk janë ende të disponueshme. Instalimi merr së pari listat më të reja të paketave; nëse mungojnë ende, aplikacioni nuk mund të instalohet.
-48|Po instalohet {name}…
-49|Po përgatitet…
-50|Hollësi
-51|Po instalohet paketa…
-52|Aplikacioni po zhvendoset te dosja e tij…
-53|Aplikacioni nuk u instalua dot.
-54|Aplikacioni po instalohet me Flatpak…
-55|Regjistër
-56|_Mbyll
-57|Instalimi pati sukses
-58|Aplikacioni u instalua.
-59|Instalimi dështoi
-60|_Hap
-61|_Shfaq hollësitë
-62|Regjistri i instalimit
-63|Instaluesi i aplikacioneve
-64|_Mbrapa
-65|Po lexohet aplikacioni…
-66|Instalo {name}
-67|Aplikacione
-68|Zgjidhni një aplikacion për ta instaluar
-69|Ndihmësi i sistemit nuk mund të nisej.
-70|Nuk mund të komunikohej me ndihmësin e sistemit.
-71|Lidhja me ndihmësin e sistemit humbi.
-72|Autorizimi u anulua.
-73|Ky veprim kërkon të drejta administratori.
-74|Ndihmësi i sistemit ndaloi papritur.
-75|Nuk ka ndarje sistemi EFI
-76|Vetëm {free} të lira, MAN-i ka nevojë për {need}. Lironi vend me DUHACH! në Windows.
-77|Nuk ka hapësirë të lirë. Nisni DUHACH! në Windows për t’i bërë vend MAN-it.
-78|MAN-i po xhiron nga ky disk
-79|Në përdorim: një ndarje është e montuar
-80|Shumë i vogël, MAN-i ka nevojë për {need}
-81|Instalo MAN-in
-82|MAN-i po instalohet. Ju lutemi, prisni derisa të mbarojë.
-83|Gjuha
-84|_Rinise në këtë gjuhë
-85|Sesioni live riniset në gjuhën e zgjedhur dhe MAN-i instalohet në të.
-86|Mirë se vini në MAN
-87|Një sistem GNOME i shpejtë, i hapur dhe plotësisht i përshtatshëm.\nInstalojeni në këtë kompjuter ose vazhdoni të eksploroni sesionin live.
-88|_Instalo MAN-in…
-89|_Vazhdo ta provosh MAN-in
-90|Po kërkohen disqe…
-91|Mirë se vini
-92|Ky kompjuter u nis në mënyrën e vjetër BIOS. MAN-i mund të instalohet vetëm në kompjuterë UEFI: riniseni dhe zgjidhni mundësinë e nisjes UEFI.
-93|Ndihmësi i sistemit nuk ktheu të dhëna për disqet.
-94|  ·  EFI
-95|_Pasuesi
-96|Fshi diskun dhe instalo MAN-in
-97|Gjithçka në diskun e zgjedhur fshihet, përfshirë Windows-in.
-98|E rekomanduar. Gjithçka në diskun e zgjedhur fshihet.
-99|Instalo krahas Windows-it
-100|E rekomanduar. MAN-i përdor hapësirën e lirë pranë Windows-it; Windows-i dhe kartelat e tij mbeten. Zgjidhni sistemin në çdo nisje.
-101|Riinstalo MAN-in
-102|Zëvendëson sistemin, por mban kartelat personale në /home. Sistemi i tanishëm ruhet si fotografim.
-103|Ndarje të përshtatura
-104|Për ekspertë: zgjidhni vetë ndarjet ose krijojini me Disqet.
-105|Disk
-106|Zgjidhni diskun që do të fshihet. Disqet që s’mund të përdoren shfaqen me arsyen.
-107|Nuk u gjetën disqe
-108|Hapësirë e lirë pranë Windows-it
-109|Ndarjet e Windows-it nuk preken. MAN-i ndan ndarjen e sistemit EFI dhe shton Windows-in në menynë e vet të nisjes.
-110|{size} të lira
-111|pa hapësirë të lirë
-112|{model} (Windows)
-113|Instalimi për t’u zëvendësuar
-114|pa dosje shtëpie
-115|dosje shtëpie: {list}
-116|fotografime: {n}
-117|MAN në {model}
-118|Frazëkalim për {device}
-119|Shkyç
-120|Instalimi nuk mund të shqyrtohej.
-121|Ndarjet
-122|Ndarja e sistemit formatohet me Btrfs dhe përmban @system, @home dhe @snapshots. Ndarjet e diskut nga i cili xhiron MAN-i nuk shfaqen.
-123|Hap Disqet për të krijuar ose ndryshuar madhësinë e ndarjeve
-124|Rifresko listën e ndarjeve
-125|Zgjidhni një ndarje
-126|Ndarje sistemi EFI
-127|Formato ndarjen e sistemit EFI
-128|Lëreni të fikur për të mbajtur ngarkuesit e nisjes së sistemeve të tjera
-129|Ndarje sistemi (formatohet si Btrfs)
-130|Ndarje nisjeje (e nevojshme me fshehtëzim)
-131|Lista e ndarjeve u rifreskua
-132|Siguria
-133|Fshehtëzo sistemin
-134|Mbron të dhënat tuaja nëse kompjuteri humbet ose vidhet. Në çdo nisje kërkohet një frazëkalim.
-135|Frazëkalim
-136|Ripohoni frazëkalimin
-137|Mbajeni këtë frazëkalim në vend të sigurt
-138|Nëse humbet, askush s’mund t’i rimarrë të dhënat. Kerneli dhe kartelat e nisjes mbeten në një ndarje të vogël nisjeje të pafshehtëzuar.
-139|Frazëkalimi duhet të ketë të paktën 8 shenja.
-140|Frazëkalimet nuk përputhen.
-141|Zgjidhni një disk.
-142|Zgjidhni diskun me Windows.
-143|Zgjidhni instalimin për t’u zëvendësuar.
-144|Shkyçni së pari instalimin e fshehtëzuar.
-145|Kjo ndarje nuk përmban sistem MAN.
-146|Zgjidhni një ndarje sistemi EFI.
-147|Zgjidhni ndarjen e sistemit.
-148|Ndarja EFI dhe ajo e sistemit duhet të jenë të ndryshme.
-149|Fshehtëzimi kërkon një ndarje nisjeje më vete.
-150|Ndarja e sistemit duhet të jetë të paktën {size}.
-151|Ndarja EFI nuk është e formatuar FAT; aktivizoni formatimin.
-152|Ndarja e sistemit është e montuar; çmontojeni së pari te Disqet.
-153|Ku të instalohet MAN-i?
-154|Ora dhe tastiera
-155|Zona kohore
-156|Skema e tastierës
-157|Provoni tastierën
-158|Shkruani këtu për të kontrolluar që tastet japin shenjat e duhura.
-159|Shkruani këtu
-160|Zona kohore dhe tastiera
-161|S’është zgjedhur disk
-162|S’është zgjedhur ndarje sistemi
-163|Ndarja e sistemit u zhduk
-164|S’është zgjedhur instalim
-165|Disku u zhduk
-166|Shqyrtim
-167|Vendmbërritja
-168|Fshi diskun dhe instalo
-169|Ndarje të përshtatura
-170|Riinstalo, duke mbajtur /home
-171|Krahas Windows-it
-172| (do të formatohet)
-173| (mbahet)
-174|Ndarje sistemi
-175|{partition} (do të formatohet)
-176|Ndarje nisjeje
-177|Hapësirë për MAN-in
-178|{free} hapësirë e lirë (krijohen një ndarje nisjeje dhe ndarja e sistemit)
-179|Windows
-180|Pa ndryshime. Shfaqet në menynë e nisjes së MAN-it; ndarja e sistemit EFI është e përbashkët.
-181|Fshehtëzim
-182|Aktiv (LUKS2)
-183|Joaktiv
-184|Sistem kartelash
-185|Btrfs: @system për MAN-in, @home për kartelat tuaja, @snapshots për pikat e rikthimit. Të gjitha ndajnë hapësirën e lirë.
-186|Sistemi
-187|Llogaria juaj
-188|Krijohet në MAN Setup kur kompjuteri niset për herë të parë, bashkë me emrin e kompjuterit, pamjen dhe rregullimet e privatësisë.
-189|Tastiera
-190|Të gjitha të dhënat në {model} ({path}) do të fshihen.
-191|_Fshi dhe instalo
-192|Ndarjet e zgjedhura do të formatohen. Ndarjet e tjera nuk ndryshojnë.
-193|_Formato dhe instalo
-194|Sistemi i tanishëm zëvendësohet. Kartelat tuaja në /home mbahen dhe sistemi i vjetër ruhet si fotografim.
-195|_Riinstalo
-196|MAN-i instalohet në hapësirën e lirë. Windows-i dhe kartelat e tij nuk ndryshojnë.
-197|Gati për instalim
-198|Të fshihet {model}?
-199|Çdo kartelë dhe ndarje në {path} ({size}) do të fshihet përgjithmonë. Kjo s’mund të zhbëhet.
-200|Fshi dhe instalo
-201|Të formatohen ndarjet e zgjedhura?
-202|Të gjitha të dhënat në ndarjet e zgjedhura do të fshihen përgjithmonë. Ndarjet e tjera nuk ndryshojnë.
-203|Formato dhe instalo
-204|Të instalohet MAN-i krahas Windows-it?
-205|MAN-i instalohet në {free} hapësirë të lirë në {model} ({path}). Windows-i dhe kartelat e tij nuk ndryshojnë.
-206|Instalo
-207|Të riinstalohet MAN-i?
-208|Sistemi i instaluar do të zëvendësohet me një kopje të re. Kartelat personale në /home mbahen dhe sistemi i vjetër mbetet i passhëm si fotografim.
-209|Riinstalo
-210|_Anuloje
-211|Po instalohet MAN-i
-212|Po niset…
-213|Po instalohet
-214|Hapi {index} nga {n}  ·  {title}
-215|MAN-i u instalua
-216|Riniseni kompjuterin për të filluar të përdorni MAN-in. Në çdo nisje një meny ju lejon të zgjidhni MAN-in ose Windows-in; ndarjen e përkohshme të instaluesit MAN-i e heq në nisjen e parë.
-217|Riniseni kompjuterin për të filluar të përdorni MAN-in. Mund ta hiqni median e instalimit; nëse mbetet e lidhur, MAN-i niset gjithsesi nga disku i ri.
-218|_Rinise tani
-219|U krye
-220|Instalimi dështoi
-221|Asnjë disk tjetër s’u ndryshua dhe instaluesi e liroi diskun e synuar. Mund ta shqyrtoni planin dhe të riprovoni.
-222|_Shqyrto dhe riprovo
-223|Kërko gjuhë
-224|Kërko vende
-225|Disku i sistemit nuk u gjet.
-226|Fshehtëzimi kërkon skemën Btrfs të krijuar nga instaluesi i MAN-it.
-227|Ky instalim s’ka ndarje nisjeje më vete, që e kërkon fshehtëzimi. Riinstalojeni MAN-in me “Fshi diskun” për të përdorur fshehtëzimin.
-228|MAN Setup
-229|Ku ndodheni?
-230|Vendi ose rajoni juaj përcakton formatin e datës, orës dhe numrave.
-231|Vendi
-232|GNU General Public License, versioni 2
-233|Kerneli Linux dhe shumë mjete sistemi
-234|GNU General Public License, versioni 3
-235|Shumë programe GNU dhe GNOME
-236|GNU Lesser General Public License, versioni 2.1
-237|GTK, GLib dhe shumë biblioteka
-238|GNU Lesser General Public License, versioni 3
-239|Biblioteka
-240|Mozilla Public License 2.0
-241|Programe dhe biblioteka nga Mozilla dhe të tjerë
-242|Licenca Apache 2.0
-243|Biblioteka dhe mjete
-244|Marrëveshje licence
-245|Ju lutemi, lexoni dhe pranoni kushtet me të cilat ofrohet MAN-i.
-246|Licenca
-247|Teksti i licencës nuk është i passhëm ({path}).
-248|I kam lexuar dhe i pranoj kushtet e licencës
-249|Me kabllo
-250|Jo i lidhur
-251|Lidhuni me internetin
-252|Me lidhje, MAN-i mund të rregullojë orën dhe të mbajë software-in të përditësuar. Mund ta bëni edhe më vonë.
-253|Po kontrollohet lidhja…
-254|Rrjete Wi-Fi
-255|Kërko sërish
-256|_Anashkalo
-257|Mund të lidheni më vonë te Rregullimet.
-258|I lidhur
-259|Jo i lidhur
-260|Nuk u gjetën rrjete
-261|Internet
-262|U lidh me “{ssid}”
-263|S’u lidh dot me “{ssid}”
-264|Lidhu me “{ssid}”
-265|Jepni fjalëkalimin e rrjetit.
-266|_Lidhu
-267|Krijoni llogarinë tuaj
-268|Do të jeni administratori i këtij kompjuteri, me qasje të plotë root përmes sudo.
-269|Emri i plotë
-270|Emër përdoruesi
-271|Fjalëkalim
-272|Ripohoni fjalëkalimin
-273|Hyr automatikisht
-274|Anashkalo ekranin e hyrjes kur niset kompjuteri
-275|Dosje shtëpie ekzistuese
-276|Përdorni të njëjtin emër përdoruesi për të vazhduar të përdorni një dosje nga një instalim i mëparshëm.
-277|Përdore
-278|Të mëtejshme
-279|Emri i kompjuterit
-280|Cakto fjalëkalim root
-281|Lejon hyrje drejtpërdrejt si root. Pa të, përdorni sudo me fjalëkalimin tuaj.
-282|Fjalëkalim root
-283|Ripohoni fjalëkalimin root
-284|Jepni emrin tuaj.
-285|Zgjidhni një emër përdoruesi.
-286|Ky emër përdoruesi përdoret tashmë nga sistemi.
-287|Ky emër përdoruesi është i rezervuar nga sistemi.
-288|Emrat e përdoruesve përdorin shkronja të vogla, shifra, - dhe _, dhe fillojnë me shkronjë.
-289|Zgjidhni një fjalëkalim.
-290|Fjalëkalimet nuk përputhen.
-291|Emri i kompjuterit mund të përmbajë shkronja, shifra dhe viza.
-292|Jepni fjalëkalimin root dy herë.
-293|Ndihmëz: një fjalëkalim me 8 ose më shumë shenja është shumë më i sigurt.
-294|Llogari
-295|E errët
-296|E çelët
-297|Bëjeni tuajin
-298|Zgjidhni një stil, një ngjyrë theksimi dhe një sfond. E shihni çdo ndryshim menjëherë.
-299|Stil
-300|Ngjyrë theksimi
-301|Sfond
-302|Përshtatje
-303|Privatësi
-304|Zgjidhni cilat veçori mund të përdorin të dhëna rreth jush. Mund ta ndryshoni kurdo te Rregullimet.
-305|Shërbime vendndodhjeje
-306|Lejon aplikacione si Hartat dhe Moti të gjejnë vendndodhjen tuaj të përafërt përmes rrjeteve Wi-Fi aty pranë.
-307|Zonë kohore automatike
-308|Përdor vendndodhjen tuaj për ta mbajtur zonën kohore të saktë kur udhëtoni.
-309|_Përfundo rregullimin
-310|Disku juaj është i fshehtëzuar
-311|Të dhënat tuaja janë të mbrojtura. Frazëkalimi kërkohet sa herë niset kompjuteri.
-312|Fshehtëzim disku
-313|Fshehtëzimi mbron të dhënat tuaja nëse kompjuteri humbet ose vidhet.
-314|S’ofrohet në këtë instalim
-315|Fshehtëzimi mbron kartelat tuaja nëse kompjuteri humbet ose vidhet. Pa frazëkalimin, askush s’mund ta lexojë diskun.
-316|Fshehtëzo diskun
-317|Frazëkalimi kërkohet sa herë niset kompjuteri.
-318|Fshehtëzimi fillon në rinisjen e ardhshme
-319|Pastaj disku fshehtëzohet në prapaskenë ndërsa përdorni kompjuterin. Nëse frazëkalimi humbet, askush s’mund t’i rimarrë të dhënat.
-320|Po përgatitet MAN-i
-321|Po përgatitet gjithçka…
-322|_Rinise
-323|_Kthehu
-324|Po përgatitet
-325|Regjistri i rregullimit
-326|Gjithçka gati!
-327|Diçka shkoi keq
-328|E përditshme
-329|Para përditësimit
-330|Para rikthimit
-331|Para riinstalimit
-332|Dorazi
-333|Ende s’ka fotografime
-334|Krijoni një para se të bëni ndryshime të mëdha në sistem.
-335|Riktheje…
-336|Fshi fotografimin
-337|{free} të lira nga {size}. Sistemi, dosjet e shtëpisë dhe fotografimet ndajnë këtë hapësirë; fotografimet zënë vend vetëm për atë që ka ndryshuar që kur u bënë.
-338|_OK
-339|Krijo fotografim
-340|Ruan gjendjen e tanishme të sistemit. Kartelat personale në dosjen e shtëpisë nuk përfshihen.
-341|Përshkrim, për shembull “Para instalimit të përudhësve”
-342|_Krijo
-343|Fotografim dorazi
-344|Të fshihet fotografimi?
-345|“{description}” nga {date} do të fshihet përgjithmonë.
-346|_Fshije
-347|Të rikthehet ky fotografim?
-348|Pas rinisjes sistemi do të kthehet te “{description}” nga {date}. Kartelat tuaja personale nuk ndryshojnë.\n\nSistemi i tanishëm ruhet së pari si fotografim, ndaj kjo mund të zhbëhet.
-349|_Riktheje
-350|Rinisni për të përfunduar rikthimin
-351|Rinise _më vonë
-352|Rinise _tani
-353|Fotografime
-354|Pika rikthimi
-355|Fotografimet ruajnë gjendjen e sistemit operativ. Rikthimi i njërit e çon sistemin te ai çast, gjë që ndihmon pas një përditësimi ose ndryshimi rregullimesh të dështuar. Kartelat tuaja personale nuk preken kurrë.
-356|Fotografime automatike
-357|Fotografime të përditshme
-358|Një herë në ditë, kur kompjuteri është ndezur
-359|Fotografime të përditshme për t’u mbajtur
-360|Para përditësimeve të software-it
-361|Bëhen automatikisht kur paketat instalohen, përmirësohen ose hiqen
-362|Fotografime përditësimesh për t’u mbajtur
-363|Depozitim
-364|Hapësirë disku
-365|Nëse MAN-i nuk niset
-366|Zgjidhni “Restore a MAN snapshot” te menyja e nisjes për të rimarrë një sistem që funksionon.
-367|Fotografimet s’ofrohen
-368|Fotografimet funksionojnë në MAN të instaluar me skemën Btrfs të instaluesit të MAN-it. Ky sistem (për shembull, një sesion live) nuk e përdor.
-369|Një rikthim pret: rinisni kompjuterin për ta përfunduar
-370|Rinise tani
-371|Ju lutemi, prisni derisa të mbarojë veprimi i tanishëm.
-372|Kërko
-373|Kopjoje në të papastër
-374|Kohë Universale e Koordinuar
-375|Anglisht (SHBA)
-376|Doli MAN {version}!
-377|Mund të përditësoni në të.
-378|Hap përditësimet
-379|Po kontrollohet përditësimi
-380|Po sigurohemi që përditësimi është origjinal dhe i plotë…
-381|Përditësim MAN
-382|Ky përditësim s’mund të instalohet
-383|Përditësimi s’u lexua dot.
-384|Përditësim nga {name} {version}
-385|{name} {version} është i instaluar
-386|Hedhur në qarkullim
-387|Madhësi shkarkimi
-388|Hapësirë e nevojshme
-389|Origjinalitet
-390|I verifikuar, nënshkruar nga “{signer}”
-391|Ç’ka të re
-392|Ky përditësim s’është më i ri se {name} {version} i instaluar.
-393|Përditësim
-394|Ju lutemi, lexoni kushtet e licencës së këtij përditësimi.
-395|I pranoj kushtet e licencës
-396|Ku të instalohet përditësimi?
-397|Sistemi zëvendësohet; kartelat në dosjen tuaj të shtëpisë nuk preken.
-398|Zgjidhni një instalim.
-399|po xhiron tani
-400|{name} {version} në këtë kompjuter
-401|{name} në {model}
-402|Nuk u gjet instalim MAN
-403|Përditësimet instalohen nga një sistem MAN i instaluar dhe në punë, jo nga sesioni live.
-404|Vendi i instalimit
-405|Mbahet
-406|Kartelat tuaja
-407|Gjithçka në dosjen tuaj të shtëpisë
-408|Llogari dhe fjalëkalime
-409|Përdorues, grupe, emri i kompjuterit
-410|Lidhje dhe rregullime
-411|Wi-Fi, zonë kohore, tastierë, pamje dhe fotografime
-412|Aplikacione Flatpak
-413|Plus gjithçka në /usr/local dhe /opt
-414|Zëvendësohet
-415|Software-i i instaluar me apt dhe ndryshime të tjera në kartelat e sistemit zëvendësohen nga sistemi i ri.
-416|Sistemi operativ
-417|Zëvendësohet nga {name} {version}. Sistemi i tanishëm mund të rikthehet nga një fotografim.
-418|Kompjuteri riniset për të instaluar përditësimin
-419|Pas përgatitjes, MAN-i riniset, e instalon përditësimin për pak sekonda dhe riniset sërish.
-420|_Instalo përditësimin
-421|Të krijohet së pari një fotografim?
-422|Një fotografim ruan sistemin e tanishëm, që të mund të ktheheni te ai nëse diçka s’funksionon pas përditësimit. Rekomandohet.
-423|_Mos e krijo
-424|_Krijo fotografim
-425|Po përgatitet {name} {version}
-426|Rinise për ta instaluar
-427|Kompjuteri do të riniset dy herë. Kartelat tuaja janë të sigurta.
-428|Rinisje automatike pas {r} sekondash
-429|Rinisje automatike pas 30 sekondash
-430|Përditësimi do të instalohet në rinisjen e ardhshme.
-431|Gati
-432|Përditësimi s’u përgatit dot
-433|Asgjë s’u ndryshua në sistemin tuaj.
-434|_Riprovo
-435|Regjistër përditësimi
-436|Dështoi
-437|Sistemi juaj u përditësua
-438|MAN-i u përditësua me versionin {version}.\nMë parë: MAN {previous}.
-439|_U krye
-440|Hap një përditësim MAN
-441|Përditësime MAN
-442|Po merren listat më të reja të paketave…
-443|Po kopjohet aplikacioni
-444|Aplikacioni po shtohet në menu
-445|Skedari nuk u gjet.
-446|Paketa nuk u instalua dot.
-447|Zëri i menusë së aplikacionit nuk është i vlefshëm.
-448|Po kontrollohet plani i instalimit
-449|Po përgatitet disku
-450|Po kopjohet MAN-i në disk
-451|Po formësohet sistemi i ri
-452|Po instalohet ngarkuesi i nisjes
-453|Po krijohet fotografimi i parë
-454|Po përfundohet
-455|Po hiqen nënshkrime të vjetra ndarjesh
-456|Po krijohen ndarjet
-457|Po formatohet ndarja e sistemit EFI
-458|Po fshehtëzohet ndarja e sistemit
-459|Po formatohet ndarja e nisjes
-460|Po krijohet sistemi i kartelave Btrfs
-461|Po hiqen nënshkrime të vjetra sistemesh kartelash
-462|Po shkyçet instalimi i fshehtëzuar
-463|Po ruhet sistemi i tanishëm si fotografim
-464|Po hiqet sistemi i mëparshëm
-465|Po shkruhet tabela e sistemeve të kartelave
-466|Po caktohen emri dhe identiteti i kompjuterit
-467|Po hiqen llogaritë e sesionit live
-468|Po krijohet llogaria juaj
-469|Po përgatitet MAN Setup për nisjen e parë
-470|Po caktohen zona kohore dhe tastiera
-471|Po hiqet instaluesi nga sistemi i ri
-472|Po ndërtohet figura e nisjes (initramfs)
-473|Po formësohet GRUB-i
-474|Po instalohet GRUB-i në ndarjen e sistemit EFI
-475|Po instalohet ngarkuesi rezervë i nisjes
-476|Po shkruhet menyja e nisjes
-477|Disku gati
-478|Po krijohet një fotografim i sistemit të ri
-479|Po shtohet fotografimi te menyja e nisjes
-480|Po çmontohet
-481|Ndihmësi i instaluesit duhet të xhirojë si root.
-482|Ky kompjuter s’u nis në mënyrën UEFI. MAN-i kërkon UEFI.
-483|Emri i përdoruesit s’është i vlefshëm.
-484|Lypset një fjalëkalim.
-485|Emri i kompjuterit s’është i vlefshëm.
-486|Gjuhë e panjohur.
-487|Frazëkalimi i fshehtëzimit duhet të ketë të paktën 8 shenja.
-488|Disku ndryshoi pasi e ripohuat instalimin. S’u ndryshua gjë; shqyrtoni dhe ripohoni sërish.
-489|Zgjidhni një ndarje sistemi.
-490|Disku i ripohuar nuk përmban ndarjen e zgjedhur të sistemit.
-491|Ndarja e nisjes duhet të jetë më vete nga ndarjet EFI dhe e sistemit.
-492|Ndarja e nisjes duhet të jetë të paktën 512 MB.
-493|S’është zgjedhur instalim.
-494|Disku i ripohuar nuk përmban instalimin e zgjedhur.
-495|Instalimi i fshehtëzuar s’ka ndarje MAN_BOOT.
-496|S’u gjet në /boot kernel me module që përputhen.
-497|Gjuha duhet ndryshuar nga ndihmësi i sistemit.
-498|Po aplikohen rregullimet tuaja
-499|Po përgatitet fshehtëzimi i diskut
-500|Po përfundohet
-501|MAN Setup duhet përfunduar nga ndihmësi i sistemit.
-502|MAN Setup është kryer tashmë në këtë kompjuter.
-503|Ngjyrë theksimi e panjohur.
-504|Sfondi i zgjedhur s’ofrohet.
-505|Ky sistem s’mund të fshehtëzohet.
-506|Mungon kyçi i rregullimit, ndaj fshehtëzimi s’mund të vazhdojë në prapaskenë.
-507|Sistemi s’është instaluar në Btrfs, ndaj fotografimet s’ofrohen.
-508|Një rikthim fotografimi pret një rinisje. Rinisni së pari kompjuterin për ta përfunduar.
-509|ID fotografimi e pavlefshme.
-510|Po kontrollohet përditësimi
-511|Po krijohet një fotografim
-512|Po përgatitet zona e përditësimit
-513|Po shpaketohet sistemi i ri
-514|Po kalohen llogaritë dhe rregullimet tuaja
-515|Po përgatitet rinisja
-516|U shpaketua
-517|Llogari
-518|Po hiqet software-i vetëm për instaluesin
-519|Po ndërtohet figura e nisjes së përditësimit
-520|Po shtohet zëri njëpërdorimësh i nisjes
-521|Përditësimi është origjinal
-522|Fotografimi u krijua
-523|U anashkalua
-524|Zona e përditësimit gati
-525|Po përgatitet sistemi i ri
-526|Kartela e përditësimit është e dëmtuar (shuma kontrolli s’përputhet). Shkarkojeni sërish.
-527|Kartela e përditësimit s’u lexua dot plotësisht.
-528|Përditësimi s’përmban kernel.
-529|Përditësimet duhet t’i instalojë ndihmësi i sistemit.
-530|Instalimi i zgjedhur s’u gjet.
-531|Mund të përditësohet vetëm instalimi MAN në punë.
-532|Kjo s’është kartelë përditësimi MAN (s’ka manifest).
-533|Përditësimi s’është i nënshkruar, ndaj s’mund t’i besohet.
-534|Nënshkrimi i përditësimit është i dëmtuar.
-535|Përditësimi s’është nënshkruar nga MAN. Mund të jetë ndryshuar ose të vijë nga një burim jo i besuar.
-536|Manifesti i përditësimit s’është i vlefshëm.
-537|Frazëkalimi s’është i saktë, ose ndarja e fshehtëzuar s’mund të hapet.
-538|Blu
-539|Blu në të gjelbër
-540|E gjelbër
-541|E verdhë
-542|Portokalli
-543|E kuqe
-544|Rozë
-545|Vjollcë
-546|Gri rrasë
-547|Instaluesi i paketave
-548|Instaloni aplikacione nga skedarë .deb, Flatpak dhe AppImage
-549|Instalues sistemi
-550|Instalo MAN-in në këtë kompjuter
-551|Rikthim sistemi
-552|Krijoni dhe riktheni fotografime të sistemit
-553|Instalues përditësimesh sistemi
-554|Instaloni një kartelë përditësimi sistemi MAN
-555|Ofron instalimin e MAN-it kur niset sesioni live
-556|Njoftim përditësimi MAN
-557|Ju tregon një herë pas hyrjes se MAN-i u përditësua
-558|Rregulloni kompjuterin tuaj të ri MAN
-559|Rregullimi i parë i MAN-it
-560|Përditësimet e MAN
-561|Ju njofton kur del një version i ri i MAN
+44|Mbaje pas përditësimeve të MAN
+45|MAN e riinstalon aplikacionin pas çdo përditësimi. Për këtë ruhen skedarët e paketës së tij.
+46|Klikoni Instalo për të instaluar {name}.
+47|Po kontrollohet çfarë tjetër i duhet aplikacionit…
+48|Instalon edhe paketat që i duhen: {list}
+49|Disa paketa që i duhen aplikacionit nuk janë ende të disponueshme. Instalimi merr së pari listat më të reja të paketave; nëse mungojnë ende, aplikacioni nuk mund të instalohet.
+50|Po instalohet {name}…
+51|Po përgatitet…
+52|Hollësi
+53|Po instalohet paketa…
+54|Aplikacioni po zhvendoset te dosja e tij…
+55|Aplikacioni nuk u instalua dot.
+56|Aplikacioni po instalohet me Flatpak…
+57|Regjistër
+58|_Mbyll
+59|Instalimi pati sukses
+60|Aplikacioni u instalua.
+61|Instalimi dështoi
+62|_Hap
+63|_Shfaq hollësitë
+64|Regjistri i instalimit
+65|Instaluesi i aplikacioneve
+66|_Mbrapa
+67|Po lexohet aplikacioni…
+68|Instalo {name}
+69|Aplikacione
+70|Zgjidhni një aplikacion për ta instaluar
+71|Ndihmësi i sistemit nuk mund të nisej.
+72|Nuk mund të komunikohej me ndihmësin e sistemit.
+73|Lidhja me ndihmësin e sistemit humbi.
+74|Autorizimi u anulua.
+75|Ky veprim kërkon të drejta administratori.
+76|Ndihmësi i sistemit ndaloi papritur.
+77|Nuk ka ndarje sistemi EFI
+78|Vetëm {free} të lira, MAN-i ka nevojë për {need}. Lironi vend me DUHACH! në Windows.
+79|Nuk ka hapësirë të lirë. Nisni DUHACH! në Windows për t’i bërë vend MAN-it.
+80|MAN-i po xhiron nga ky disk
+81|Në përdorim: një ndarje është e montuar
+82|Shumë i vogël, MAN-i ka nevojë për {need}
+83|Instalo MAN-in
+84|MAN-i po instalohet. Ju lutemi, prisni derisa të mbarojë.
+85|Gjuha
+86|_Rinise në këtë gjuhë
+87|Sesioni live riniset në gjuhën e zgjedhur dhe MAN-i instalohet në të.
+88|Mirë se vini në MAN
+89|Një sistem GNOME i shpejtë, i hapur dhe plotësisht i përshtatshëm.\nInstalojeni në këtë kompjuter ose vazhdoni të eksploroni sesionin live.
+90|_Instalo MAN-in…
+91|_Vazhdo ta provosh MAN-in
+92|Po kërkohen disqe…
+93|Mirë se vini
+94|Ky kompjuter u nis në mënyrën e vjetër BIOS. MAN-i mund të instalohet vetëm në kompjuterë UEFI: riniseni dhe zgjidhni mundësinë e nisjes UEFI.
+95|Ndihmësi i sistemit nuk ktheu të dhëna për disqet.
+96|  ·  EFI
+97|_Pasuesi
+98|Fshi diskun dhe instalo MAN-in
+99|Gjithçka në diskun e zgjedhur fshihet, përfshirë Windows-in.
+100|E rekomanduar. Gjithçka në diskun e zgjedhur fshihet.
+101|Instalo krahas Windows-it
+102|E rekomanduar. MAN-i përdor hapësirën e lirë pranë Windows-it; Windows-i dhe kartelat e tij mbeten. Zgjidhni sistemin në çdo nisje.
+103|Riinstalo MAN-in
+104|Zëvendëson sistemin, por mban kartelat personale në /home. Sistemi i tanishëm ruhet si fotografim.
+105|Ndarje të përshtatura
+106|Për ekspertë: zgjidhni vetë ndarjet ose krijojini me Disqet.
+107|Disk
+108|Zgjidhni diskun që do të fshihet. Disqet që s’mund të përdoren shfaqen me arsyen.
+109|Nuk u gjetën disqe
+110|Hapësirë e lirë pranë Windows-it
+111|Ndarjet e Windows-it nuk preken. MAN-i ndan ndarjen e sistemit EFI dhe shton Windows-in në menynë e vet të nisjes.
+112|{size} të lira
+113|pa hapësirë të lirë
+114|{model} (Windows)
+115|Instalimi për t’u zëvendësuar
+116|pa dosje shtëpie
+117|dosje shtëpie: {list}
+118|fotografime: {n}
+119|MAN në {model}
+120|Frazëkalim për {device}
+121|Shkyç
+122|Instalimi nuk mund të shqyrtohej.
+123|Ndarjet
+124|Ndarja e sistemit formatohet me Btrfs dhe përmban @system, @home dhe @snapshots. Ndarjet e diskut nga i cili xhiron MAN-i nuk shfaqen.
+125|Hap Disqet për të krijuar ose ndryshuar madhësinë e ndarjeve
+126|Rifresko listën e ndarjeve
+127|Zgjidhni një ndarje
+128|Ndarje sistemi EFI
+129|Formato ndarjen e sistemit EFI
+130|Lëreni të fikur për të mbajtur ngarkuesit e nisjes së sistemeve të tjera
+131|Ndarje sistemi (formatohet si Btrfs)
+132|Ndarje nisjeje (e nevojshme me fshehtëzim)
+133|Lista e ndarjeve u rifreskua
+134|Siguria
+135|Fshehtëzo sistemin
+136|Mbron të dhënat tuaja nëse kompjuteri humbet ose vidhet. Në çdo nisje kërkohet një frazëkalim.
+137|Frazëkalim
+138|Ripohoni frazëkalimin
+139|Mbajeni këtë frazëkalim në vend të sigurt
+140|Nëse humbet, askush s’mund t’i rimarrë të dhënat. Kerneli dhe kartelat e nisjes mbeten në një ndarje të vogël nisjeje të pafshehtëzuar.
+141|Frazëkalimi duhet të ketë të paktën 8 shenja.
+142|Frazëkalimet nuk përputhen.
+143|Zgjidhni një disk.
+144|Zgjidhni diskun me Windows.
+145|Zgjidhni instalimin për t’u zëvendësuar.
+146|Shkyçni së pari instalimin e fshehtëzuar.
+147|Kjo ndarje nuk përmban sistem MAN.
+148|Zgjidhni një ndarje sistemi EFI.
+149|Zgjidhni ndarjen e sistemit.
+150|Ndarja EFI dhe ajo e sistemit duhet të jenë të ndryshme.
+151|Fshehtëzimi kërkon një ndarje nisjeje më vete.
+152|Ndarja e sistemit duhet të jetë të paktën {size}.
+153|Ndarja EFI nuk është e formatuar FAT; aktivizoni formatimin.
+154|Ndarja e sistemit është e montuar; çmontojeni së pari te Disqet.
+155|Ku të instalohet MAN-i?
+156|Ora dhe tastiera
+157|Zona kohore
+158|Skema e tastierës
+159|Provoni tastierën
+160|Shkruani këtu për të kontrolluar që tastet japin shenjat e duhura.
+161|Shkruani këtu
+162|Zona kohore dhe tastiera
+163|S’është zgjedhur disk
+164|S’është zgjedhur ndarje sistemi
+165|Ndarja e sistemit u zhduk
+166|S’është zgjedhur instalim
+167|Disku u zhduk
+168|Shqyrtim
+169|Vendmbërritja
+170|Fshi diskun dhe instalo
+171|Ndarje të përshtatura
+172|Riinstalo, duke mbajtur /home
+173|Krahas Windows-it
+174| (do të formatohet)
+175| (mbahet)
+176|Ndarje sistemi
+177|{partition} (do të formatohet)
+178|Ndarje nisjeje
+179|Hapësirë për MAN-in
+180|{free} hapësirë e lirë (krijohen një ndarje nisjeje dhe ndarja e sistemit)
+181|Windows
+182|Pa ndryshime. Shfaqet në menynë e nisjes së MAN-it; ndarja e sistemit EFI është e përbashkët.
+183|Fshehtëzim
+184|Aktiv (LUKS2)
+185|Joaktiv
+186|Sistem kartelash
+187|Btrfs: @system për MAN-in, @home për kartelat tuaja, @snapshots për pikat e rikthimit. Të gjitha ndajnë hapësirën e lirë.
+188|Sistemi
+189|Llogaria juaj
+190|Krijohet në MAN Setup kur kompjuteri niset për herë të parë, bashkë me emrin e kompjuterit, pamjen dhe rregullimet e privatësisë.
+191|Tastiera
+192|Të gjitha të dhënat në {model} ({path}) do të fshihen.
+193|_Fshi dhe instalo
+194|Ndarjet e zgjedhura do të formatohen. Ndarjet e tjera nuk ndryshojnë.
+195|_Formato dhe instalo
+196|Sistemi i tanishëm zëvendësohet. Kartelat tuaja në /home mbahen dhe sistemi i vjetër ruhet si fotografim.
+197|_Riinstalo
+198|MAN-i instalohet në hapësirën e lirë. Windows-i dhe kartelat e tij nuk ndryshojnë.
+199|Gati për instalim
+200|Të fshihet {model}?
+201|Çdo kartelë dhe ndarje në {path} ({size}) do të fshihet përgjithmonë. Kjo s’mund të zhbëhet.
+202|Fshi dhe instalo
+203|Të formatohen ndarjet e zgjedhura?
+204|Të gjitha të dhënat në ndarjet e zgjedhura do të fshihen përgjithmonë. Ndarjet e tjera nuk ndryshojnë.
+205|Formato dhe instalo
+206|Të instalohet MAN-i krahas Windows-it?
+207|MAN-i instalohet në {free} hapësirë të lirë në {model} ({path}). Windows-i dhe kartelat e tij nuk ndryshojnë.
+208|Instalo
+209|Të riinstalohet MAN-i?
+210|Sistemi i instaluar do të zëvendësohet me një kopje të re. Kartelat personale në /home mbahen dhe sistemi i vjetër mbetet i passhëm si fotografim.
+211|Riinstalo
+212|_Anuloje
+213|Po instalohet MAN-i
+214|Po niset…
+215|Po instalohet
+216|Hapi {index} nga {n}  ·  {title}
+217|MAN-i u instalua
+218|Riniseni kompjuterin për të filluar të përdorni MAN-in. Në çdo nisje një meny ju lejon të zgjidhni MAN-in ose Windows-in; ndarjen e përkohshme të instaluesit MAN-i e heq në nisjen e parë.
+219|Riniseni kompjuterin për të filluar të përdorni MAN-in. Mund ta hiqni median e instalimit; nëse mbetet e lidhur, MAN-i niset gjithsesi nga disku i ri.
+220|_Rinise tani
+221|U krye
+222|Instalimi dështoi
+223|Asnjë disk tjetër s’u ndryshua dhe instaluesi e liroi diskun e synuar. Mund ta shqyrtoni planin dhe të riprovoni.
+224|_Shqyrto dhe riprovo
+225|Kërko gjuhë
+226|Kërko vende
+227|Disku i sistemit nuk u gjet.
+228|Fshehtëzimi kërkon skemën Btrfs të krijuar nga instaluesi i MAN-it.
+229|Ky instalim s’ka ndarje nisjeje më vete, që e kërkon fshehtëzimi. Riinstalojeni MAN-in me “Fshi diskun” për të përdorur fshehtëzimin.
+230|MAN Setup
+231|Ku ndodheni?
+232|Vendi ose rajoni juaj përcakton formatin e datës, orës dhe numrave.
+233|Vendi
+234|GNU General Public License, versioni 2
+235|Kerneli Linux dhe shumë mjete sistemi
+236|GNU General Public License, versioni 3
+237|Shumë programe GNU dhe GNOME
+238|GNU Lesser General Public License, versioni 2.1
+239|GTK, GLib dhe shumë biblioteka
+240|GNU Lesser General Public License, versioni 3
+241|Biblioteka
+242|Mozilla Public License 2.0
+243|Programe dhe biblioteka nga Mozilla dhe të tjerë
+244|Licenca Apache 2.0
+245|Biblioteka dhe mjete
+246|Marrëveshje licence
+247|Ju lutemi, lexoni dhe pranoni kushtet me të cilat ofrohet MAN-i.
+248|Licenca
+249|Teksti i licencës nuk është i passhëm ({path}).
+250|I kam lexuar dhe i pranoj kushtet e licencës
+251|Me kabllo
+252|Jo i lidhur
+253|Lidhuni me internetin
+254|Me lidhje, MAN-i mund të rregullojë orën dhe të mbajë software-in të përditësuar. Mund ta bëni edhe më vonë.
+255|Po kontrollohet lidhja…
+256|Rrjete Wi-Fi
+257|Kërko sërish
+258|_Anashkalo
+259|Mund të lidheni më vonë te Rregullimet.
+260|I lidhur
+261|Jo i lidhur
+262|Nuk u gjetën rrjete
+263|Internet
+264|U lidh me “{ssid}”
+265|S’u lidh dot me “{ssid}”
+266|Lidhu me “{ssid}”
+267|Jepni fjalëkalimin e rrjetit.
+268|_Lidhu
+269|Krijoni llogarinë tuaj
+270|Do të jeni administratori i këtij kompjuteri, me qasje të plotë root përmes sudo.
+271|Emri i plotë
+272|Emër përdoruesi
+273|Fjalëkalim
+274|Ripohoni fjalëkalimin
+275|Hyr automatikisht
+276|Anashkalo ekranin e hyrjes kur niset kompjuteri
+277|Dosje shtëpie ekzistuese
+278|Përdorni të njëjtin emër përdoruesi për të vazhduar të përdorni një dosje nga një instalim i mëparshëm.
+279|Përdore
+280|Të mëtejshme
+281|Emri i kompjuterit
+282|Cakto fjalëkalim root
+283|Lejon hyrje drejtpërdrejt si root. Pa të, përdorni sudo me fjalëkalimin tuaj.
+284|Fjalëkalim root
+285|Ripohoni fjalëkalimin root
+286|Jepni emrin tuaj.
+287|Zgjidhni një emër përdoruesi.
+288|Ky emër përdoruesi përdoret tashmë nga sistemi.
+289|Ky emër përdoruesi është i rezervuar nga sistemi.
+290|Emrat e përdoruesve përdorin shkronja të vogla, shifra, - dhe _, dhe fillojnë me shkronjë.
+291|Zgjidhni një fjalëkalim.
+292|Fjalëkalimet nuk përputhen.
+293|Emri i kompjuterit mund të përmbajë shkronja, shifra dhe viza.
+294|Jepni fjalëkalimin root dy herë.
+295|Ndihmëz: një fjalëkalim me 8 ose më shumë shenja është shumë më i sigurt.
+296|Llogari
+297|E errët
+298|E çelët
+299|Bëjeni tuajin
+300|Zgjidhni një stil, një ngjyrë theksimi dhe një sfond. E shihni çdo ndryshim menjëherë.
+301|Stil
+302|Ngjyrë theksimi
+303|Sfond
+304|Përshtatje
+305|Privatësi
+306|Zgjidhni cilat veçori mund të përdorin të dhëna rreth jush. Mund ta ndryshoni kurdo te Rregullimet.
+307|Shërbime vendndodhjeje
+308|Lejon aplikacione si Hartat dhe Moti të gjejnë vendndodhjen tuaj të përafërt përmes rrjeteve Wi-Fi aty pranë.
+309|Zonë kohore automatike
+310|Përdor vendndodhjen tuaj për ta mbajtur zonën kohore të saktë kur udhëtoni.
+311|_Përfundo rregullimin
+312|Disku juaj është i fshehtëzuar
+313|Të dhënat tuaja janë të mbrojtura. Frazëkalimi kërkohet sa herë niset kompjuteri.
+314|Fshehtëzim disku
+315|Fshehtëzimi mbron të dhënat tuaja nëse kompjuteri humbet ose vidhet.
+316|S’ofrohet në këtë instalim
+317|Fshehtëzimi mbron kartelat tuaja nëse kompjuteri humbet ose vidhet. Pa frazëkalimin, askush s’mund ta lexojë diskun.
+318|Fshehtëzo diskun
+319|Frazëkalimi kërkohet sa herë niset kompjuteri.
+320|Fshehtëzimi fillon në rinisjen e ardhshme
+321|Pastaj disku fshehtëzohet në prapaskenë ndërsa përdorni kompjuterin. Nëse frazëkalimi humbet, askush s’mund t’i rimarrë të dhënat.
+322|Po përgatitet MAN-i
+323|Po përgatitet gjithçka…
+324|_Rinise
+325|_Kthehu
+326|Po përgatitet
+327|Regjistri i rregullimit
+328|Gjithçka gati!
+329|Diçka shkoi keq
+330|E përditshme
+331|Para përditësimit
+332|Para rikthimit
+333|Para riinstalimit
+334|Dorazi
+335|Ende s’ka fotografime
+336|Krijoni një para se të bëni ndryshime të mëdha në sistem.
+337|Riktheje…
+338|Fshi fotografimin
+339|{free} të lira nga {size}. Sistemi, dosjet e shtëpisë dhe fotografimet ndajnë këtë hapësirë; fotografimet zënë vend vetëm për atë që ka ndryshuar që kur u bënë.
+340|_OK
+341|Krijo fotografim
+342|Ruan gjendjen e tanishme të sistemit. Kartelat personale në dosjen e shtëpisë nuk përfshihen.
+343|Përshkrim, për shembull “Para instalimit të përudhësve”
+344|_Krijo
+345|Fotografim dorazi
+346|Të fshihet fotografimi?
+347|“{description}” nga {date} do të fshihet përgjithmonë.
+348|_Fshije
+349|Të rikthehet ky fotografim?
+350|Pas rinisjes sistemi do të kthehet te “{description}” nga {date}. Kartelat tuaja personale nuk ndryshojnë.\n\nSistemi i tanishëm ruhet së pari si fotografim, ndaj kjo mund të zhbëhet.
+351|_Riktheje
+352|Rinisni për të përfunduar rikthimin
+353|Rinise _më vonë
+354|Rinise _tani
+355|Fotografime
+356|Pika rikthimi
+357|Fotografimet ruajnë gjendjen e sistemit operativ. Rikthimi i njërit e çon sistemin te ai çast, gjë që ndihmon pas një përditësimi ose ndryshimi rregullimesh të dështuar. Kartelat tuaja personale nuk preken kurrë.
+358|Fotografime automatike
+359|Fotografime të përditshme
+360|Një herë në ditë, kur kompjuteri është ndezur
+361|Fotografime të përditshme për t’u mbajtur
+362|Para përditësimeve të software-it
+363|Bëhen automatikisht kur paketat instalohen, përmirësohen ose hiqen
+364|Fotografime përditësimesh për t’u mbajtur
+365|Depozitim
+366|Hapësirë disku
+367|Nëse MAN-i nuk niset
+368|Zgjidhni “Restore a MAN snapshot” te menyja e nisjes për të rimarrë një sistem që funksionon.
+369|Fotografimet s’ofrohen
+370|Fotografimet funksionojnë në MAN të instaluar me skemën Btrfs të instaluesit të MAN-it. Ky sistem (për shembull, një sesion live) nuk e përdor.
+371|Një rikthim pret: rinisni kompjuterin për ta përfunduar
+372|Rinise tani
+373|Ju lutemi, prisni derisa të mbarojë veprimi i tanishëm.
+374|Kërko
+375|Kopjoje në të papastër
+376|Kohë Universale e Koordinuar
+377|Anglisht (SHBA)
+378|Doli MAN {version}!
+379|Mund të përditësoni në të.
+380|Hap përditësimet
+381|Po kontrollohet përditësimi
+382|Po sigurohemi që përditësimi është origjinal dhe i plotë…
+383|Përditësim MAN
+384|Ky përditësim s’mund të instalohet
+385|Përditësimi s’u lexua dot.
+386|Përditësim nga {name} {version}
+387|{name} {version} është i instaluar
+388|Hedhur në qarkullim
+389|Madhësi shkarkimi
+390|Hapësirë e nevojshme
+391|Origjinalitet
+392|I verifikuar, nënshkruar nga “{signer}”
+393|Ç’ka të re
+394|Ky përditësim s’është më i ri se {name} {version} i instaluar.
+395|Përditësim
+396|Ju lutemi, lexoni kushtet e licencës së këtij përditësimi.
+397|I pranoj kushtet e licencës
+398|Ku të instalohet përditësimi?
+399|Sistemi zëvendësohet; kartelat në dosjen tuaj të shtëpisë nuk preken.
+400|Zgjidhni një instalim.
+401|po xhiron tani
+402|{name} {version} në këtë kompjuter
+403|{name} në {model}
+404|Nuk u gjet instalim MAN
+405|Përditësimet instalohen nga një sistem MAN i instaluar dhe në punë, jo nga sesioni live.
+406|Vendi i instalimit
+407|Mbahet
+408|Kartelat tuaja
+409|Gjithçka në dosjen tuaj të shtëpisë
+410|Llogari dhe fjalëkalime
+411|Përdorues, grupe, emri i kompjuterit
+412|Lidhje dhe rregullime
+413|Wi-Fi, zonë kohore, tastierë, pamje dhe fotografime
+414|Aplikacione Flatpak
+415|Plus gjithçka në /usr/local dhe /opt
+416|Zëvendësohet
+417|Software-i i instaluar me apt dhe ndryshime të tjera në kartelat e sistemit zëvendësohen nga sistemi i ri.
+418|Sistemi operativ
+419|Zëvendësohet nga {name} {version}. Sistemi i tanishëm mund të rikthehet nga një fotografim.
+420|Kompjuteri riniset për të instaluar përditësimin
+421|Pas përgatitjes, MAN-i riniset, e instalon përditësimin për pak sekonda dhe riniset sërish.
+422|_Instalo përditësimin
+423|Të krijohet së pari një fotografim?
+424|Një fotografim ruan sistemin e tanishëm, që të mund të ktheheni te ai nëse diçka s’funksionon pas përditësimit. Rekomandohet.
+425|_Mos e krijo
+426|_Krijo fotografim
+427|Po përgatitet {name} {version}
+428|Rinise për ta instaluar
+429|Kompjuteri do të riniset dy herë. Kartelat tuaja janë të sigurta.
+430|Rinisje automatike pas {r} sekondash
+431|Rinisje automatike pas 30 sekondash
+432|Përditësimi do të instalohet në rinisjen e ardhshme.
+433|Gati
+434|Përditësimi s’u përgatit dot
+435|Asgjë s’u ndryshua në sistemin tuaj.
+436|_Riprovo
+437|Regjistër përditësimi
+438|Dështoi
+439|Sistemi juaj u përditësua
+440|MAN-i u përditësua me versionin {version}.\nMë parë: MAN {previous}.
+441|_U krye
+442|Hap një përditësim MAN
+443|Përditësime MAN
+444|Po merren listat më të reja të paketave…
+445|Po kopjohet aplikacioni
+446|Aplikacioni po shtohet në menu
+447|Skedari nuk u gjet.
+448|Paketa nuk u instalua dot.
+449|Zëri i menusë së aplikacionit nuk është i vlefshëm.
+450|Po kontrollohet plani i instalimit
+451|Po përgatitet disku
+452|Po kopjohet MAN-i në disk
+453|Po formësohet sistemi i ri
+454|Po instalohet ngarkuesi i nisjes
+455|Po krijohet fotografimi i parë
+456|Po përfundohet
+457|Po hiqen nënshkrime të vjetra ndarjesh
+458|Po krijohen ndarjet
+459|Po formatohet ndarja e sistemit EFI
+460|Po fshehtëzohet ndarja e sistemit
+461|Po formatohet ndarja e nisjes
+462|Po krijohet sistemi i kartelave Btrfs
+463|Po hiqen nënshkrime të vjetra sistemesh kartelash
+464|Po shkyçet instalimi i fshehtëzuar
+465|Po ruhet sistemi i tanishëm si fotografim
+466|Po hiqet sistemi i mëparshëm
+467|Po shkruhet tabela e sistemeve të kartelave
+468|Po caktohen emri dhe identiteti i kompjuterit
+469|Po hiqen llogaritë e sesionit live
+470|Po krijohet llogaria juaj
+471|Po përgatitet MAN Setup për nisjen e parë
+472|Po caktohen zona kohore dhe tastiera
+473|Po hiqet instaluesi nga sistemi i ri
+474|Po ndërtohet figura e nisjes (initramfs)
+475|Po formësohet GRUB-i
+476|Po instalohet GRUB-i në ndarjen e sistemit EFI
+477|Po instalohet ngarkuesi rezervë i nisjes
+478|Po shkruhet menyja e nisjes
+479|Disku gati
+480|Po krijohet një fotografim i sistemit të ri
+481|Po shtohet fotografimi te menyja e nisjes
+482|Po çmontohet
+483|Ndihmësi i instaluesit duhet të xhirojë si root.
+484|Ky kompjuter s’u nis në mënyrën UEFI. MAN-i kërkon UEFI.
+485|Emri i përdoruesit s’është i vlefshëm.
+486|Lypset një fjalëkalim.
+487|Emri i kompjuterit s’është i vlefshëm.
+488|Gjuhë e panjohur.
+489|Frazëkalimi i fshehtëzimit duhet të ketë të paktën 8 shenja.
+490|Disku ndryshoi pasi e ripohuat instalimin. S’u ndryshua gjë; shqyrtoni dhe ripohoni sërish.
+491|Zgjidhni një ndarje sistemi.
+492|Disku i ripohuar nuk përmban ndarjen e zgjedhur të sistemit.
+493|Ndarja e nisjes duhet të jetë më vete nga ndarjet EFI dhe e sistemit.
+494|Ndarja e nisjes duhet të jetë të paktën 512 MB.
+495|S’është zgjedhur instalim.
+496|Disku i ripohuar nuk përmban instalimin e zgjedhur.
+497|Instalimi i fshehtëzuar s’ka ndarje MAN_BOOT.
+498|S’u gjet në /boot kernel me module që përputhen.
+499|Gjuha duhet ndryshuar nga ndihmësi i sistemit.
+500|Po aplikohen rregullimet tuaja
+501|Po përgatitet fshehtëzimi i diskut
+502|Po përfundohet
+503|MAN Setup duhet përfunduar nga ndihmësi i sistemit.
+504|MAN Setup është kryer tashmë në këtë kompjuter.
+505|Ngjyrë theksimi e panjohur.
+506|Sfondi i zgjedhur s’ofrohet.
+507|Ky sistem s’mund të fshehtëzohet.
+508|Mungon kyçi i rregullimit, ndaj fshehtëzimi s’mund të vazhdojë në prapaskenë.
+509|Sistemi s’është instaluar në Btrfs, ndaj fotografimet s’ofrohen.
+510|Një rikthim fotografimi pret një rinisje. Rinisni së pari kompjuterin për ta përfunduar.
+511|ID fotografimi e pavlefshme.
+512|Po kontrollohet përditësimi
+513|Po krijohet një fotografim
+514|Po përgatitet zona e përditësimit
+515|Po shpaketohet sistemi i ri
+516|Po kalohen llogaritë dhe rregullimet tuaja
+517|Po përgatitet rinisja
+518|U shpaketua
+519|Llogari
+520|Po riinstalohen aplikacionet e mbajtura
+521|Po hiqet software-i vetëm për instaluesin
+522|Po ndërtohet figura e nisjes së përditësimit
+523|Po shtohet zëri njëpërdorimësh i nisjes
+524|Përditësimi është origjinal
+525|Fotografimi u krijua
+526|U anashkalua
+527|Zona e përditësimit gati
+528|Po përgatitet sistemi i ri
+529|Kartela e përditësimit është e dëmtuar (shuma kontrolli s’përputhet). Shkarkojeni sërish.
+530|Kartela e përditësimit s’u lexua dot plotësisht.
+531|Përditësimi s’përmban kernel.
+532|Përditësimet duhet t’i instalojë ndihmësi i sistemit.
+533|Instalimi i zgjedhur s’u gjet.
+534|Mund të përditësohet vetëm instalimi MAN në punë.
+535|Kjo s’është kartelë përditësimi MAN (s’ka manifest).
+536|Përditësimi s’është i nënshkruar, ndaj s’mund t’i besohet.
+537|Nënshkrimi i përditësimit është i dëmtuar.
+538|Përditësimi s’është nënshkruar nga MAN. Mund të jetë ndryshuar ose të vijë nga një burim jo i besuar.
+539|Manifesti i përditësimit s’është i vlefshëm.
+540|Frazëkalimi s’është i saktë, ose ndarja e fshehtëzuar s’mund të hapet.
+541|Blu
+542|Blu në të gjelbër
+543|E gjelbër
+544|E verdhë
+545|Portokalli
+546|E kuqe
+547|Rozë
+548|Vjollcë
+549|Gri rrasë
+550|Instaluesi i paketave
+551|Instaloni aplikacione nga skedarë .deb, Flatpak dhe AppImage
+552|Instalues sistemi
+553|Instalo MAN-in në këtë kompjuter
+554|Rikthim sistemi
+555|Krijoni dhe riktheni fotografime të sistemit
+556|Instalues përditësimesh sistemi
+557|Instaloni një kartelë përditësimi sistemi MAN
+558|Ofron instalimin e MAN-it kur niset sesioni live
+559|Njoftim përditësimi MAN
+560|Ju tregon një herë pas hyrjes se MAN-i u përditësua
+561|Rregulloni kompjuterin tuaj të ri MAN
+562|Rregullimi i parë i MAN-it
+563|Përditësimet e MAN
+564|Ju njofton kur del një version i ri i MAN

@@ -187,3 +187,12 @@ gh release create v10-test1 --repo MANCorporation/MAN --prerelease --title "MAN 
     release/MAN-10-TEST-1.upd release/MAN-10-TEST-1.upd.sha256 \
     release/MAN-10-TEST-1-amd64.iso release/MAN-10-TEST-1-amd64.iso.sha256
 ```
+
+## MAN 10.11 (2026-10-24)
+
+App Installer fixes: Flatpak for all users installs as root through
+man-app-installer-helper; Flatpak export folders exist at login; `.deb` apps
+with "Keep After MAN Updates" are reinstalled inside every update
+(`reinstall_kept` in update.rs, from `/var/lib/man/kept-debs`). Tested:
+xterm (+ 2 dependencies from Debian) kept through 10.10 → 10 TEST 1 with
+"Need to get 0 B", i.e. offline.

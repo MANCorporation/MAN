@@ -46,239 +46,247 @@ msgstr "Asennus"
 msgid "Summary"
 msgstr "Yhteenveto"
 
-#: appinstaller.rs:788
+#: appinstaller.rs:790
 msgid "_Continue"
 msgstr "_Jatka"
 
-#: appinstaller.rs:797
+#: appinstaller.rs:799
 msgid "Welcome to the {name} Installer"
 msgstr "Tervetuloa sovelluksen {name} asennusohjelmaan"
 
-#: appinstaller.rs:801
+#: appinstaller.rs:803
 msgid "Software License Agreement"
 msgstr "Ohjelmiston käyttöoikeussopimus"
 
-#: appinstaller.rs:811
+#: appinstaller.rs:813
 msgid "Do You Agree to the License?"
 msgstr "Hyväksytkö lisenssin?"
 
-#: appinstaller.rs:812
+#: appinstaller.rs:814
 msgid "To continue installing, you must agree to the terms of the software license agreement."
 msgstr "Jatkaaksesi asennusta sinun on hyväksyttävä ohjelmiston käyttöoikeussopimuksen ehdot."
 
-#: appinstaller.rs:814
+#: appinstaller.rs:816
 msgid "_Read License"
 msgstr "_Lue lisenssi"
 
-#: appinstaller.rs:815
+#: appinstaller.rs:817
 msgid "_Agree"
 msgstr "_Hyväksy"
 
-#: appinstaller.rs:828
+#: appinstaller.rs:830
 msgid "Select a Destination"
 msgstr "Valitse kohde"
 
-#: appinstaller.rs:832
+#: appinstaller.rs:834
 msgid "Standard Install"
 msgstr "Vakioasennus"
 
-#: appinstaller.rs:833
+#: appinstaller.rs:835
 msgid "_Install"
 msgstr "_Asenna"
 
-#: appinstaller.rs:846
+#: appinstaller.rs:848
 msgid "Debian package (.deb)"
 msgstr "Debian-paketti (.deb)"
 
-#: appinstaller.rs:847
+#: appinstaller.rs:849
 msgid "Flatpak app"
 msgstr "Flatpak-sovellus"
 
-#: appinstaller.rs:848
+#: appinstaller.rs:850
 msgid "Flatpak app from {source}"
 msgstr "Flatpak-sovellus lähteestä {source}"
 
-#: appinstaller.rs:849
+#: appinstaller.rs:851
 msgid "AppImage"
 msgstr "AppImage"
 
-#: appinstaller.rs:867
+#: appinstaller.rs:869
 msgid "You will be guided through the steps necessary to install this software."
 msgstr "Sinut opastetaan tämän ohjelmiston asentamiseen tarvittavien vaiheiden läpi."
 
-#: appinstaller.rs:878
+#: appinstaller.rs:880
 msgid "Version"
 msgstr "Versio"
 
-#: appinstaller.rs:881
+#: appinstaller.rs:883
 msgid "Publisher"
 msgstr "Julkaisija"
 
-#: appinstaller.rs:883
+#: appinstaller.rs:885
 msgid "Type"
 msgstr "Tyyppi"
 
-#: appinstaller.rs:885
+#: appinstaller.rs:887
 msgid "Size"
 msgstr "Koko"
 
-#: appinstaller.rs:891
+#: appinstaller.rs:893
 msgid "Website"
 msgstr "Verkkosivusto"
 
-#: appinstaller.rs:893
+#: appinstaller.rs:895
 msgid "File"
 msgstr "Tiedosto"
 
-#: appinstaller.rs:903
+#: appinstaller.rs:905
 msgid "This app is installed already. Installing it again replaces it."
 msgstr "Tämä sovellus on jo asennettu. Uusi asennus korvaa sen."
 
-#: appinstaller.rs:906
-msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
-msgstr ".deb-pakettien sovelluksista tulee osa järjestelmää. Kun MAN päivitetään, ne poistetaan ja ne on asennettava uudelleen. Flatpak-sovellukset ja AppImaget säilyvät."
+#: appinstaller.rs:908
+msgid "Apps from .deb packages become part of the system. A MAN update replaces the system, so they are only installed again after an update if you keep them (next steps)."
+msgstr ".deb-pakettien sovelluksista tulee osa järjestelmää. MAN-päivitys korvaa järjestelmän, joten ne asennetaan päivityksen jälkeen uudelleen vain, jos säilytät ne (seuraavat vaiheet)."
 
-#: appinstaller.rs:909
+#: appinstaller.rs:911
 msgid "Only install apps from sources you trust."
 msgstr "Asenna sovelluksia vain luotettavista lähteistä."
 
-#: appinstaller.rs:915
+#: appinstaller.rs:917
 msgid "Where do you want to install {name}?"
 msgstr "Mihin haluat asentaa sovelluksen {name}?"
 
-#: appinstaller.rs:920
+#: appinstaller.rs:922
 msgid "Only your account can use the app."
 msgstr "Vain sinun tilisi voi käyttää sovellusta."
 
-#: appinstaller.rs:921
+#: appinstaller.rs:923
 msgid "Needs administrator rights."
 msgstr "Vaatii ylläpitäjän oikeudet."
 
-#: appinstaller.rs:928
+#: appinstaller.rs:930
 msgid "Only for Me"
 msgstr "Vain minulle"
 
-#: appinstaller.rs:928
+#: appinstaller.rs:930
 msgid "For All Users of This Computer"
 msgstr "Kaikille tämän tietokoneen käyttäjille"
 
-#: appinstaller.rs:943
+#: appinstaller.rs:945
 msgid "This will take {size} of space on your computer."
 msgstr "Tämä vie {size} tilaa tietokoneelta."
 
-#: appinstaller.rs:945
+#: appinstaller.rs:947
 msgid "The app is downloaded from {source}."
 msgstr "Sovellus ladataan lähteestä {source}."
 
-#: appinstaller.rs:947
+#: appinstaller.rs:949
 msgid "The app is installed for all users of this computer."
 msgstr "Sovellus asennetaan kaikille tämän tietokoneen käyttäjille."
 
-#: appinstaller.rs:947
+#: appinstaller.rs:949
 msgid "The app is installed only for you."
 msgstr "Sovellus asennetaan vain sinulle."
 
-#: appinstaller.rs:950
+#: appinstaller.rs:952
 msgid "The AppImage is moved to {folder} and added to your apps."
 msgstr "AppImage siirretään kansioon {folder} ja lisätään sovelluksiisi."
 
-#: appinstaller.rs:952
+#: appinstaller.rs:958
+msgid "Keep After MAN Updates"
+msgstr "Säilytä MAN-päivitysten jälkeen"
+
+#: appinstaller.rs:959
+msgid "MAN installs the app again after each update. Its package files are kept for that."
+msgstr "MAN asentaa sovelluksen uudelleen jokaisen päivityksen jälkeen. Sitä varten sen pakettitiedostot säilytetään."
+
+#: appinstaller.rs:967
 msgid "Click Install to install {name}."
 msgstr "Asenna {name} napsauttamalla Asenna."
 
-#: appinstaller.rs:958
+#: appinstaller.rs:973
 msgid "Checking what else the app needs…"
 msgstr "Tarkistetaan, mitä muuta sovellus tarvitsee…"
 
-#: appinstaller.rs:968
+#: appinstaller.rs:983
 msgid "Also installs the packages it needs: {list}"
 msgstr "Asentaa myös tarvittavat paketit: {list}"
 
-#: appinstaller.rs:974
+#: appinstaller.rs:989
 msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
 msgstr "Kaikki sovelluksen tarvitsemat paketit eivät ole vielä saatavilla. Asennus hakee ensin uusimmat pakettiluettelot; jos ne puuttuvat yhä, sovellusta ei voi asentaa."
 
-#: appinstaller.rs:1035
+#: appinstaller.rs:1050
 msgid "Installing {name}…"
 msgstr "Asennetaan {name}…"
 
-#: appinstaller.rs:1041
+#: appinstaller.rs:1056
 msgid "Preparing…"
 msgstr "Valmistellaan…"
 
-#: appinstaller.rs:1048
+#: appinstaller.rs:1063
 msgid "Details"
 msgstr "Tiedot"
 
-#: appinstaller.rs:1088
+#: appinstaller.rs:1103
 msgid "Installing the package…"
 msgstr "Asennetaan pakettia…"
 
-#: appinstaller.rs:1107
+#: appinstaller.rs:1122
 msgid "Moving the app to its folder…"
 msgstr "Siirretään sovellusta kansioonsa…"
 
-#: appinstaller.rs:1116
+#: appinstaller.rs:1131
 msgid "The app could not be installed."
 msgstr "Sovellusta ei voitu asentaa."
 
-#: appinstaller.rs:1120
+#: appinstaller.rs:1135
 msgid "Installing the app with Flatpak…"
 msgstr "Asennetaan sovellusta Flatpakilla…"
 
-#: appinstaller.rs:1139
+#: appinstaller.rs:1159
 msgid "Log"
 msgstr "Loki"
 
-#: appinstaller.rs:1169
+#: appinstaller.rs:1189
 msgid "_Close"
 msgstr "_Sulje"
 
-#: appinstaller.rs:1179
+#: appinstaller.rs:1199
 msgid "The Installation Was Successful"
 msgstr "Asennus onnistui"
 
-#: appinstaller.rs:1179
+#: appinstaller.rs:1199
 msgid "The app was installed."
 msgstr "Sovellus asennettiin."
 
-#: appinstaller.rs:1184
+#: appinstaller.rs:1204
 msgid "The Installation Failed"
 msgstr "Asennus epäonnistui"
 
-#: appinstaller.rs:1195
+#: appinstaller.rs:1215
 msgid "_Open"
 msgstr "_Avaa"
 
-#: appinstaller.rs:1205
+#: appinstaller.rs:1225
 msgid "_Show Details"
 msgstr "_Näytä tiedot"
 
-#: appinstaller.rs:1208
+#: appinstaller.rs:1228
 msgid "Installation Log"
 msgstr "Asennusloki"
 
-#: appinstaller.rs:1235
+#: appinstaller.rs:1255
 msgid "App Installer"
 msgstr "Sovellusten asennus"
 
-#: appinstaller.rs:1256
+#: appinstaller.rs:1276
 msgid "Go _Back"
 msgstr "_Takaisin"
 
-#: appinstaller.rs:1328
+#: appinstaller.rs:1349
 msgid "Reading the app…"
 msgstr "Luetaan sovellusta…"
 
-#: appinstaller.rs:1337
+#: appinstaller.rs:1358
 msgid "Install {name}"
 msgstr "Asenna {name}"
 
-#: appinstaller.rs:1356
+#: appinstaller.rs:1377
 msgid "Apps"
 msgstr "Sovellukset"
 
-#: appinstaller.rs:1362
+#: appinstaller.rs:1383
 msgid "Choose an App to Install"
 msgstr "Valitse asennettava sovellus"
 
@@ -1788,27 +1796,27 @@ msgstr "Avaa MAN-päivitys"
 msgid "MAN updates"
 msgstr "MAN-päivitykset"
 
-#: apphelper.rs:59
+#: apphelper.rs:97
 msgid "Getting the newest package lists…"
 msgstr "Haetaan uusimpia pakettiluetteloita…"
 
-#: apphelper.rs:146
+#: apphelper.rs:211
 msgid "Copying the app"
 msgstr "Kopioidaan sovellusta"
 
-#: apphelper.rs:150
+#: apphelper.rs:215
 msgid "Adding the app to the menu"
 msgstr "Lisätään sovellus valikkoon"
 
-#: apphelper.rs:56
+#: apphelper.rs:94
 msgid "The file was not found."
 msgstr "Tiedostoa ei löytynyt."
 
-#: apphelper.rs:77
+#: apphelper.rs:116
 msgid "The package could not be installed."
 msgstr "Pakettia ei voitu asentaa."
 
-#: apphelper.rs:136
+#: apphelper.rs:201
 msgid "The app's menu entry is not valid."
 msgstr "Sovelluksen valikkokohta ei kelpaa."
 
@@ -2092,35 +2100,39 @@ msgstr "Purettu"
 msgid "Accounts"
 msgstr "Tilit"
 
-#: update.rs:308
+#: update.rs:321
+msgid "Reinstalling kept apps"
+msgstr "Asennetaan säilytettyjä sovelluksia uudelleen"
+
+#: update.rs:376
 msgid "Removing installer-only software"
 msgstr "Poistetaan vain asentimen käyttämiä ohjelmistoja"
 
-#: update.rs:347
+#: update.rs:416
 msgid "Building the update boot image"
 msgstr "Rakennetaan päivityksen käynnistyskuvaa"
 
-#: update.rs:350
+#: update.rs:419
 msgid "Adding the one-time boot entry"
 msgstr "Lisätään kertakäyttöistä käynnistysmerkintää"
 
-#: update.rs:384
+#: update.rs:453
 msgid "The update is genuine"
 msgstr "Päivitys on aito"
 
-#: update.rs:390
+#: update.rs:459
 msgid "Snapshot created"
 msgstr "Tilannevedos luotu"
 
-#: update.rs:392
+#: update.rs:461
 msgid "Skipped"
 msgstr "Ohitettu"
 
-#: update.rs:401
+#: update.rs:470
 msgid "Update area ready"
 msgstr "Päivitysalue valmis"
 
-#: update.rs:423
+#: update.rs:493
 msgid "Preparing the new system"
 msgstr "Valmistellaan uutta järjestelmää"
 
@@ -2132,19 +2144,19 @@ msgstr "Päivitystiedosto on vioittunut (tarkistussumma ei täsmää). Lataa se 
 msgid "The update file could not be read completely."
 msgstr "Päivitystiedostoa ei voitu lukea kokonaan."
 
-#: update.rs:319
+#: update.rs:388
 msgid "The update contains no kernel."
 msgstr "Päivitys ei sisällä ydintä."
 
-#: update.rs:367
+#: update.rs:436
 msgid "Updates must be installed by the system helper."
 msgstr "Päivitykset asentaa järjestelmäavustaja."
 
-#: update.rs:376
+#: update.rs:445
 msgid "The chosen installation was not found."
 msgstr "Valittua asennusta ei löytynyt."
 
-#: update.rs:378
+#: update.rs:447
 msgid "Only the running MAN installation can be updated."
 msgstr "Vain käynnissä olevan MAN-asennuksen voi päivittää."
 

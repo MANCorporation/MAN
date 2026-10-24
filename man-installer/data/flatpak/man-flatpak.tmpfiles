@@ -1,0 +1,4 @@
+# MAN: Flatpak's export folders exist before the session starts, so apps
+# installed later appear in the app grid right away.
+d /var/lib/flatpak/exports/share/applications 0755 root root -
+d /var/lib/flatpak/exports/share/icons/hicolor 0755 root root -

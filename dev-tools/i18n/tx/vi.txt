@@ -30,7 +30,7 @@
 29|Trang web
 30|Tệp
 31|Ứng dụng này đã được cài đặt. Cài đặt lại sẽ thay thế nó.
-32|Ứng dụng từ gói .deb trở thành một phần của hệ thống. Khi MAN được cập nhật, chúng bị gỡ bỏ và cần cài đặt lại. Ứng dụng Flatpak và AppImage được giữ lại.
+32|Ứng dụng từ gói .deb trở thành một phần của hệ thống. Bản cập nhật MAN thay thế hệ thống, nên chúng chỉ được cài đặt lại sau khi cập nhật nếu bạn giữ chúng (các bước tiếp theo).
 33|Chỉ cài đặt ứng dụng từ nguồn bạn tin tưởng.
 34|Bạn muốn cài đặt {name} ở đâu?
 35|Chỉ tài khoản của bạn có thể dùng ứng dụng.
@@ -42,521 +42,524 @@
 41|Ứng dụng được cài đặt cho tất cả người dùng máy tính này.
 42|Ứng dụng chỉ được cài đặt cho bạn.
 43|AppImage được chuyển đến {folder} và thêm vào các ứng dụng của bạn.
-44|Nhấn Cài đặt để cài đặt {name}.
-45|Đang kiểm tra ứng dụng còn cần gì…
-46|Cũng cài đặt các gói mà nó cần: {list}
-47|Một số gói mà ứng dụng cần chưa có sẵn. Quá trình cài đặt sẽ lấy danh sách gói mới nhất trước; nếu vẫn thiếu, ứng dụng không thể được cài đặt.
-48|Đang cài đặt {name}…
-49|Đang chuẩn bị…
-50|Chi tiết
-51|Đang cài đặt gói…
-52|Đang chuyển ứng dụng vào thư mục của nó…
-53|Không thể cài đặt ứng dụng.
-54|Đang cài đặt ứng dụng bằng Flatpak…
-55|Nhật ký
-56|Đón_g
-57|Cài đặt thành công
-58|Ứng dụng đã được cài đặt.
-59|Cài đặt thất bại
-60|_Mở
-61|_Hiện chi tiết
-62|Nhật ký cài đặt
-63|Trình cài đặt ứng dụng
-64|_Quay lại
-65|Đang đọc ứng dụng…
-66|Cài đặt {name}
-67|Ứng dụng
-68|Chọn ứng dụng để cài đặt
-69|Không thể khởi động trình trợ giúp hệ thống.
-70|Không thể giao tiếp với trình trợ giúp hệ thống.
-71|Mất kết nối với trình trợ giúp hệ thống.
-72|Đã hủy xác thực.
-73|Thao tác này cần quyền quản trị.
-74|Trình trợ giúp hệ thống dừng đột ngột.
-75|Không có phân vùng hệ thống EFI
-76|Chỉ còn trống {free}, MAN cần {need}. Hãy giải phóng dung lượng bằng DUHACH! trong Windows.
-77|Không còn dung lượng trống. Hãy chạy DUHACH! trong Windows để dành chỗ cho MAN.
-78|MAN đang chạy từ ổ đĩa này
-79|Đang dùng: có phân vùng đang được gắn
-80|Quá nhỏ, MAN cần {need}
-81|Cài đặt MAN
-82|MAN đang được cài đặt. Vui lòng chờ đến khi xong.
-83|Ngôn ngữ
-84|_Khởi động lại bằng ngôn ngữ này
-85|Phiên live sẽ khởi động lại bằng ngôn ngữ đã chọn, và MAN được cài bằng ngôn ngữ đó.
-86|Chào mừng đến với MAN
-87|Hệ thống GNOME nhanh, mở và tùy biến hoàn toàn.\nCài đặt lên máy tính này, hoặc tiếp tục khám phá phiên live.
-88|_Cài đặt MAN…
-89|_Tiếp tục dùng thử MAN
-90|Đang tìm ổ đĩa…
-91|Chào mừng
-92|Máy tính này khởi động ở chế độ BIOS cũ. MAN chỉ cài được trên máy tính UEFI: hãy khởi động lại và chọn tùy chọn khởi động UEFI.
-93|Trình trợ giúp hệ thống không trả về thông tin ổ đĩa.
-94|  ·  EFI
-95|_Tiếp
-96|Xóa ổ đĩa và cài MAN
-97|Mọi thứ trên ổ đĩa đã chọn sẽ bị xóa, kể cả Windows.
-98|Khuyên dùng. Mọi thứ trên ổ đĩa đã chọn sẽ bị xóa.
-99|Cài bên cạnh Windows
-100|Khuyên dùng. MAN dùng dung lượng trống cạnh Windows; Windows và tệp của nó vẫn giữ nguyên. Chọn hệ thống mỗi lần khởi động.
-101|Cài lại MAN
-102|Thay hệ thống nhưng giữ tệp cá nhân trong /home. Hệ thống hiện tại được lưu thành ảnh chụp.
-103|Phân vùng tùy chỉnh
-104|Dành cho chuyên gia: tự chọn phân vùng, hoặc tạo bằng Đĩa.
-105|Ổ đĩa
-106|Chọn ổ đĩa sẽ bị xóa. Các ổ không dùng được sẽ hiện kèm lý do.
-107|Không tìm thấy ổ đĩa
-108|Dung lượng trống cạnh Windows
-109|Các phân vùng của Windows không bị động đến. MAN dùng chung phân vùng hệ thống EFI và thêm Windows vào trình đơn khởi động.
-110|Trống {size}
-111|không còn trống
-112|{model} (Windows)
-113|Bản cài đặt sẽ thay thế
-114|không có thư mục nhà
-115|thư mục nhà: {list}
-116|ảnh chụp: {n}
-117|MAN trên {model}
-118|Cụm mật khẩu cho {device}
-119|Mở khóa
-120|Không thể kiểm tra bản cài đặt.
-121|Phân vùng
-122|Phân vùng hệ thống được định dạng Btrfs và chứa @system, @home và @snapshots. Các phân vùng trên ổ đĩa MAN đang chạy không được liệt kê.
-123|Mở Đĩa để tạo hoặc đổi kích thước phân vùng
-124|Làm mới danh sách phân vùng
-125|Chọn phân vùng
-126|Phân vùng hệ thống EFI
-127|Định dạng phân vùng hệ thống EFI
-128|Để tắt để giữ trình nạp khởi động của các hệ thống khác
-129|Phân vùng hệ thống (định dạng Btrfs)
-130|Phân vùng khởi động (cần khi mã hóa)
-131|Đã làm mới danh sách phân vùng
-132|Bảo mật
-133|Mã hóa hệ thống
-134|Bảo vệ dữ liệu nếu máy tính bị mất hoặc bị đánh cắp. Mỗi lần khởi động sẽ hỏi cụm mật khẩu.
-135|Cụm mật khẩu
-136|Xác nhận cụm mật khẩu
-137|Hãy giữ cụm mật khẩu này an toàn
-138|Nếu mất, không ai khôi phục được dữ liệu. Nhân và tệp khởi động nằm trên một phân vùng khởi động nhỏ không mã hóa.
-139|Cụm mật khẩu phải có ít nhất 8 ký tự.
-140|Cụm mật khẩu không khớp.
-141|Hãy chọn ổ đĩa.
-142|Hãy chọn ổ đĩa có Windows.
-143|Hãy chọn bản cài đặt sẽ thay thế.
-144|Hãy mở khóa bản cài đặt đã mã hóa trước.
-145|Phân vùng này không chứa hệ thống MAN.
-146|Hãy chọn phân vùng hệ thống EFI.
-147|Hãy chọn phân vùng hệ thống.
-148|Phân vùng EFI và phân vùng hệ thống phải khác nhau.
-149|Mã hóa cần một phân vùng khởi động riêng.
-150|Phân vùng hệ thống phải có ít nhất {size}.
-151|Phân vùng EFI không phải định dạng FAT; hãy bật định dạng.
-152|Phân vùng hệ thống đang được gắn; hãy gỡ nó trong Đĩa trước.
-153|Cài MAN vào đâu?
-154|Thời gian và bàn phím
-155|Múi giờ
-156|Bố cục bàn phím
-157|Thử bàn phím
-158|Gõ vào đây để kiểm tra các phím có tạo đúng ký tự không.
-159|Gõ vào đây
-160|Múi giờ và bàn phím
-161|Chưa chọn ổ đĩa
-162|Chưa chọn phân vùng hệ thống
-163|Phân vùng hệ thống đã biến mất
-164|Chưa chọn bản cài đặt
-165|Ổ đĩa đã biến mất
-166|Xem lại
-167|Đích
-168|Xóa ổ đĩa và cài đặt
-169|Phân vùng tùy chỉnh
-170|Cài lại, giữ /home
-171|Cạnh Windows
-172| (sẽ được định dạng)
-173| (giữ nguyên)
-174|Phân vùng hệ thống
-175|{partition} (sẽ được định dạng)
-176|Phân vùng khởi động
-177|Chỗ cho MAN
-178|{free} dung lượng trống (tạo phân vùng khởi động và phân vùng hệ thống)
-179|Windows
-180|Không thay đổi. Nó xuất hiện trong trình đơn khởi động của MAN; phân vùng hệ thống EFI được dùng chung.
-181|Mã hóa
-182|Bật (LUKS2)
-183|Tắt
-184|Hệ thống tệp
-185|Btrfs: @system cho MAN, @home cho tệp của bạn, @snapshots cho điểm khôi phục. Tất cả dùng chung dung lượng trống.
-186|Hệ thống
-187|Tài khoản của bạn
-188|Được tạo trong MAN Setup khi máy tính khởi động lần đầu, cùng với tên máy, giao diện và cài đặt quyền riêng tư.
-189|Bàn phím
-190|Toàn bộ dữ liệu trên {model} ({path}) sẽ bị xóa.
-191|_Xóa và cài đặt
-192|Các phân vùng đã chọn sẽ được định dạng. Các phân vùng khác không thay đổi.
-193|_Định dạng và cài đặt
-194|Hệ thống hiện tại sẽ bị thay. Tệp của bạn trong /home được giữ, và hệ thống cũ được lưu thành ảnh chụp.
-195|Cài _lại
-196|MAN được cài vào dung lượng trống. Windows và tệp của nó không thay đổi.
-197|Sẵn sàng cài đặt
-198|Xóa {model}?
-199|Mọi tệp và phân vùng trên {path} ({size}) sẽ bị xóa vĩnh viễn. Không thể hoàn tác.
-200|Xóa và cài đặt
-201|Định dạng các phân vùng đã chọn?
-202|Toàn bộ dữ liệu trên các phân vùng đã chọn sẽ bị xóa vĩnh viễn. Các phân vùng khác không thay đổi.
-203|Định dạng và cài đặt
-204|Cài MAN bên cạnh Windows?
-205|MAN được cài vào {free} dung lượng trống trên {model} ({path}). Windows và tệp của nó không thay đổi.
-206|Cài đặt
-207|Cài lại MAN?
-208|Hệ thống đã cài sẽ được thay bằng một bản mới. Tệp cá nhân trong /home được giữ và hệ thống cũ vẫn có sẵn dưới dạng ảnh chụp.
-209|Cài lại
-210|_Hủy
-211|Đang cài MAN
-212|Đang bắt đầu…
-213|Đang cài đặt
-214|Bước {index}/{n}  ·  {title}
-215|Đã cài MAN
-216|Khởi động lại máy để bắt đầu dùng MAN. Mỗi lần khởi động, trình đơn cho phép chọn MAN hoặc Windows; MAN sẽ gỡ phân vùng cài đặt tạm thời ở lần khởi động đầu tiên.
-217|Khởi động lại máy để bắt đầu dùng MAN. Bạn có thể rút phương tiện cài đặt; nếu vẫn cắm, MAN vẫn khởi động từ ổ đĩa mới.
-218|_Khởi động lại ngay
-219|Xong
-220|Cài đặt thất bại
-221|Không ổ đĩa nào khác bị thay đổi, và trình cài đặt đã giải phóng ổ đĩa đích. Bạn có thể xem lại kế hoạch rồi thử lại.
-222|_Xem lại và thử lại
-223|Tìm ngôn ngữ
-224|Tìm quốc gia
-225|Không tìm thấy ổ đĩa hệ thống.
-226|Mã hóa cần bố cục Btrfs do trình cài đặt MAN tạo.
-227|Bản cài đặt này không có phân vùng khởi động riêng mà mã hóa cần. Hãy cài lại MAN với “Xóa ổ đĩa” để dùng mã hóa.
-228|MAN Setup
-229|Bạn đang ở đâu?
-230|Quốc gia hoặc vùng của bạn quyết định định dạng ngày, giờ và số.
-231|Quốc gia
-232|Giấy phép Công cộng GNU, phiên bản 2
-233|Nhân Linux và nhiều công cụ hệ thống
-234|Giấy phép Công cộng GNU, phiên bản 3
-235|Nhiều chương trình GNU và GNOME
-236|Giấy phép Công cộng Hạn chế GNU, phiên bản 2.1
-237|GTK, GLib và nhiều thư viện
-238|Giấy phép Công cộng Hạn chế GNU, phiên bản 3
-239|Thư viện
-240|Giấy phép Công cộng Mozilla 2.0
-241|Chương trình và thư viện của Mozilla và những bên khác
-242|Giấy phép Apache 2.0
-243|Thư viện và công cụ
-244|Thỏa thuận giấy phép
-245|Vui lòng đọc và chấp nhận các điều khoản cung cấp MAN.
-246|Giấy phép
-247|Không có văn bản giấy phép ({path}).
-248|Tôi đã đọc và chấp nhận điều khoản giấy phép
-249|Có dây
-250|Chưa kết nối
-251|Kết nối Internet
-252|Khi có kết nối, MAN có thể chỉnh giờ và giữ phần mềm luôn mới. Bạn cũng có thể làm việc này sau.
-253|Đang kiểm tra kết nối…
-254|Mạng Wi-Fi
-255|Tìm lại
-256|_Bỏ qua
-257|Bạn có thể kết nối sau trong Cài đặt.
-258|Đã kết nối
-259|Chưa kết nối
-260|Không tìm thấy mạng
-261|Internet
-262|Đã kết nối với “{ssid}”
-263|Không thể kết nối với “{ssid}”
-264|Kết nối với “{ssid}”
-265|Nhập mật khẩu mạng.
-266|_Kết nối
-267|Tạo tài khoản của bạn
-268|Bạn sẽ là quản trị viên của máy tính này, với toàn quyền root qua sudo.
-269|Họ và tên
-270|Tên người dùng
-271|Mật khẩu
-272|Xác nhận mật khẩu
-273|Tự động đăng nhập
-274|Bỏ qua màn hình đăng nhập khi máy khởi động
-275|Thư mục nhà hiện có
-276|Dùng cùng tên người dùng để tiếp tục dùng thư mục giữ lại từ bản cài đặt trước.
-277|Dùng
-278|Nâng cao
-279|Tên máy tính
-280|Đặt mật khẩu root
-281|Cho phép đăng nhập trực tiếp bằng root. Nếu không đặt, hãy dùng sudo với mật khẩu của bạn.
-282|Mật khẩu root
-283|Xác nhận mật khẩu root
-284|Nhập tên của bạn.
-285|Chọn tên người dùng.
-286|Tên người dùng này đã được hệ thống dùng.
-287|Tên người dùng này được hệ thống dành riêng.
-288|Tên người dùng gồm chữ thường không dấu, chữ số, - và _, và bắt đầu bằng một chữ cái.
-289|Chọn mật khẩu.
-290|Mật khẩu không khớp.
-291|Tên máy tính có thể chứa chữ cái, chữ số và dấu gạch ngang.
-292|Nhập mật khẩu root hai lần.
-293|Mẹo: mật khẩu từ 8 ký tự trở lên an toàn hơn nhiều.
-294|Tài khoản
-295|Tối
-296|Sáng
-297|Làm theo ý bạn
-298|Chọn kiểu, màu nhấn và hình nền. Bạn thấy mọi thay đổi ngay lập tức.
-299|Kiểu
-300|Màu nhấn
-301|Hình nền
-302|Tùy biến
-303|Quyền riêng tư
-304|Chọn những tính năng được dùng thông tin về bạn. Bạn có thể đổi bất cứ lúc nào trong Cài đặt.
-305|Dịch vụ vị trí
-306|Cho phép các ứng dụng như Bản đồ và Thời tiết tìm vị trí gần đúng của bạn qua các mạng Wi-Fi gần đó.
-307|Múi giờ tự động
-308|Dùng vị trí của bạn để giữ múi giờ đúng khi đi du lịch.
-309|_Hoàn tất thiết lập
-310|Ổ đĩa của bạn đã được mã hóa
-311|Dữ liệu của bạn được bảo vệ. Cụm mật khẩu được hỏi mỗi lần máy khởi động.
-312|Mã hóa ổ đĩa
-313|Mã hóa bảo vệ dữ liệu nếu máy tính bị mất hoặc bị đánh cắp.
-314|Không có trên bản cài đặt này
-315|Mã hóa bảo vệ tệp của bạn nếu máy tính bị mất hoặc bị đánh cắp. Không có cụm mật khẩu thì không ai đọc được ổ đĩa.
-316|Mã hóa ổ đĩa
-317|Cụm mật khẩu được hỏi mỗi lần máy khởi động.
-318|Mã hóa bắt đầu ở lần khởi động lại tiếp theo
-319|Sau đó ổ đĩa được mã hóa ở chế độ nền trong lúc bạn dùng máy. Nếu mất cụm mật khẩu, không ai khôi phục được dữ liệu.
-320|Đang chuẩn bị MAN
-321|Đang chuẩn bị mọi thứ…
-322|_Khởi động lại
-323|_Quay lại
-324|Đang chuẩn bị
-325|Nhật ký thiết lập
-326|Xong hết rồi!
-327|Đã xảy ra lỗi
-328|Hằng ngày
-329|Trước khi cập nhật
-330|Trước khi khôi phục
-331|Trước khi cài lại
-332|Thủ công
-333|Chưa có ảnh chụp nào
-334|Hãy tạo một ảnh chụp trước khi thay đổi lớn hệ thống.
-335|Khôi phục…
-336|Xóa ảnh chụp
-337|Trống {free} trên {size}. Hệ thống, thư mục nhà và ảnh chụp dùng chung dung lượng này; ảnh chụp chỉ chiếm chỗ cho phần đã thay đổi kể từ khi chụp.
-338|_OK
-339|Tạo ảnh chụp
-340|Lưu trạng thái hiện tại của hệ thống. Không bao gồm tệp cá nhân trong thư mục nhà.
-341|Mô tả, ví dụ “Trước khi cài trình điều khiển”
-342|_Tạo
-343|Ảnh chụp thủ công
-344|Xóa ảnh chụp?
-345|“{description}” lúc {date} sẽ bị xóa vĩnh viễn.
-346|_Xóa
-347|Khôi phục ảnh chụp này?
-348|Sau khi khởi động lại, hệ thống sẽ trở về “{description}” lúc {date}. Tệp cá nhân của bạn không thay đổi.\n\nHệ thống hiện tại được lưu thành ảnh chụp trước, nên có thể hoàn tác.
-349|_Khôi phục
-350|Khởi động lại để hoàn tất khôi phục
-351|Khởi động lại _sau
-352|Khởi động lại _ngay
-353|Ảnh chụp
-354|Điểm khôi phục
-355|Ảnh chụp lưu trạng thái của hệ điều hành. Khôi phục một ảnh chụp đưa hệ thống về thời điểm đó, hữu ích sau một lần cập nhật hoặc đổi cấu hình bị lỗi. Tệp cá nhân của bạn không bao giờ bị động đến.
-356|Ảnh chụp tự động
-357|Ảnh chụp hằng ngày
-358|Mỗi ngày một lần khi máy đang bật
-359|Số ảnh chụp hằng ngày giữ lại
-360|Trước khi cập nhật phần mềm
-361|Tự động chụp khi cài, nâng cấp hoặc gỡ gói
-362|Số ảnh chụp cập nhật giữ lại
-363|Lưu trữ
-364|Dung lượng đĩa
-365|Nếu MAN không khởi động
-366|Chọn “Restore a MAN snapshot” trong trình đơn khởi động để lấy lại hệ thống hoạt động được.
-367|Không có ảnh chụp
-368|Ảnh chụp hoạt động trên MAN cài với bố cục Btrfs do trình cài đặt MAN tạo. Hệ thống này (ví dụ phiên live) không dùng bố cục đó.
-369|Có một lần khôi phục đang chờ: hãy khởi động lại máy để hoàn tất
-370|Khởi động lại ngay
-371|Vui lòng chờ thao tác hiện tại hoàn tất.
-372|Tìm kiếm
-373|Chép vào bảng tạm
-374|Giờ Phối hợp Quốc tế
-375|Tiếng Anh (Mỹ)
-376|MAN {version} đã phát hành!
-377|Bạn có thể cập nhật lên phiên bản này.
-378|Mở Cập nhật
-379|Đang kiểm tra bản cập nhật
-380|Đang xác minh bản cập nhật là chính thức và đầy đủ…
-381|Cập nhật MAN
-382|Không thể cài bản cập nhật này
-383|Không thể đọc bản cập nhật.
-384|Cập nhật từ {name} {version}
-385|Đã cài {name} {version}
-386|Ngày phát hành
-387|Dung lượng tải về
-388|Dung lượng cần
-389|Tính xác thực
-390|Đã xác minh, ký bởi “{signer}”
-391|Có gì mới
-392|Bản cập nhật này không mới hơn {name} {version} đã cài.
-393|Cập nhật
-394|Vui lòng đọc điều khoản giấy phép của bản cập nhật này.
-395|Tôi chấp nhận điều khoản giấy phép
-396|Cài bản cập nhật vào đâu?
-397|Hệ thống sẽ bị thay; tệp trong thư mục nhà không bị động đến.
-398|Chọn một bản cài đặt.
-399|đang chạy
-400|{name} {version} trên máy này
-401|{name} trên {model}
-402|Không tìm thấy bản cài MAN
-403|Bản cập nhật được cài từ một hệ thống MAN đã cài và đang chạy, không phải từ phiên live.
-404|Vị trí cài đặt
-405|Được giữ
-406|Tệp của bạn
-407|Mọi thứ trong thư mục nhà
-408|Tài khoản và mật khẩu
-409|Người dùng, nhóm, tên máy tính
-410|Kết nối và cài đặt
-411|Wi-Fi, múi giờ, bàn phím, giao diện và ảnh chụp
-412|Ứng dụng Flatpak
-413|Cùng mọi thứ trong /usr/local và /opt
-414|Bị thay
-415|Phần mềm cài bằng apt và các thay đổi khác với tệp hệ thống sẽ được thay bằng hệ thống mới.
-416|Hệ điều hành
-417|Được thay bằng {name} {version}. Có thể khôi phục hệ thống hiện tại từ ảnh chụp.
-418|Máy tính khởi động lại để cài bản cập nhật
-419|Sau khi chuẩn bị, MAN khởi động lại, cài bản cập nhật trong vài giây rồi khởi động lại lần nữa.
-420|_Cài bản cập nhật
-421|Tạo ảnh chụp trước?
-422|Ảnh chụp lưu hệ thống hiện tại, để bạn có thể quay lại nếu có gì không ổn sau khi cập nhật. Nên làm.
-423|_Không tạo
-424|_Tạo ảnh chụp
-425|Đang chuẩn bị {name} {version}
-426|Khởi động lại để cài đặt
-427|Máy tính sẽ khởi động lại hai lần. Tệp của bạn an toàn.
-428|Tự động khởi động lại sau {r} giây
-429|Tự động khởi động lại sau 30 giây
-430|Bản cập nhật sẽ được cài ở lần khởi động lại tiếp theo.
-431|Sẵn sàng
-432|Không thể chuẩn bị bản cập nhật
-433|Không có gì thay đổi trên hệ thống của bạn.
-434|_Thử lại
-435|Nhật ký cập nhật
-436|Thất bại
-437|Hệ thống của bạn đã được cập nhật
-438|MAN đã được cập nhật lên phiên bản {version}.\nTrước đó: MAN {previous}.
-439|_Xong
-440|Mở bản cập nhật MAN
-441|Bản cập nhật MAN
-442|Đang lấy danh sách gói mới nhất…
-443|Đang sao chép ứng dụng
-444|Đang thêm ứng dụng vào trình đơn
-445|Không tìm thấy tệp.
-446|Không thể cài đặt gói.
-447|Mục trình đơn của ứng dụng không hợp lệ.
-448|Đang kiểm tra kế hoạch cài đặt
-449|Đang chuẩn bị ổ đĩa
-450|Đang chép MAN vào ổ đĩa
-451|Đang cấu hình hệ thống mới
-452|Đang cài trình nạp khởi động
-453|Đang tạo ảnh chụp đầu tiên
-454|Đang hoàn tất
-455|Đang gỡ chữ ký phân vùng cũ
-456|Đang tạo phân vùng
-457|Đang định dạng phân vùng hệ thống EFI
-458|Đang mã hóa phân vùng hệ thống
-459|Đang định dạng phân vùng khởi động
-460|Đang tạo hệ thống tệp Btrfs
-461|Đang gỡ chữ ký hệ thống tệp cũ
-462|Đang mở khóa bản cài đặt đã mã hóa
-463|Đang lưu hệ thống hiện tại thành ảnh chụp
-464|Đang gỡ hệ thống trước
-465|Đang ghi bảng hệ thống tệp
-466|Đang đặt tên và định danh máy tính
-467|Đang gỡ các tài khoản phiên live
-468|Đang tạo tài khoản của bạn
-469|Đang chuẩn bị MAN Setup cho lần khởi động đầu
-470|Đang đặt múi giờ và bàn phím
-471|Đang gỡ trình cài đặt khỏi hệ thống mới
-472|Đang tạo ảnh khởi động (initramfs)
-473|Đang cấu hình GRUB
-474|Đang cài GRUB vào phân vùng hệ thống EFI
-475|Đang cài trình nạp khởi động dự phòng
-476|Đang ghi trình đơn khởi động
-477|Ổ đĩa đã sẵn sàng
-478|Đang tạo ảnh chụp của hệ thống mới
-479|Đang thêm ảnh chụp vào trình đơn khởi động
-480|Đang gỡ gắn
-481|Trình trợ giúp của bộ cài phải chạy với quyền root.
-482|Máy tính này không khởi động ở chế độ UEFI. MAN cần UEFI.
-483|Tên người dùng không hợp lệ.
-484|Cần có mật khẩu.
-485|Tên máy tính không hợp lệ.
-486|Ngôn ngữ không xác định.
-487|Cụm mật khẩu mã hóa phải có ít nhất 8 ký tự.
-488|Ổ đĩa đã thay đổi sau khi bạn xác nhận cài đặt. Chưa có gì bị sửa; hãy xem lại và xác nhận lần nữa.
-489|Hãy chọn phân vùng hệ thống.
-490|Ổ đĩa đã xác nhận không chứa phân vùng hệ thống đã chọn.
-491|Phân vùng khởi động phải tách biệt với phân vùng EFI và phân vùng hệ thống.
-492|Phân vùng khởi động phải có ít nhất 512 MB.
-493|Chưa chọn bản cài đặt.
-494|Ổ đĩa đã xác nhận không chứa bản cài đặt đã chọn.
-495|Bản cài đặt đã mã hóa không có phân vùng MAN_BOOT.
-496|Không tìm thấy nhân có mô-đun phù hợp trong /boot.
-497|Ngôn ngữ phải do trình trợ giúp hệ thống thay đổi.
-498|Đang áp dụng cài đặt của bạn
-499|Đang chuẩn bị mã hóa ổ đĩa
-500|Đang hoàn tất
-501|MAN Setup phải do trình trợ giúp hệ thống hoàn tất.
-502|MAN Setup đã được hoàn tất trên máy này.
-503|Màu nhấn không xác định.
-504|Hình nền đã chọn không có sẵn.
-505|Không thể mã hóa hệ thống này.
-506|Thiếu khóa thiết lập, nên không thể tiếp tục mã hóa ở chế độ nền.
-507|Hệ thống không được cài trên Btrfs, nên không có ảnh chụp.
-508|Một lần khôi phục ảnh chụp đang chờ khởi động lại. Hãy khởi động lại máy trước để hoàn tất.
-509|ID ảnh chụp không hợp lệ.
-510|Đang kiểm tra bản cập nhật
-511|Đang tạo ảnh chụp
-512|Đang chuẩn bị vùng cập nhật
-513|Đang giải nén hệ thống mới
-514|Đang chuyển tài khoản và cài đặt của bạn
-515|Đang chuẩn bị khởi động lại
-516|Đã giải nén
-517|Tài khoản
-518|Đang gỡ phần mềm chỉ dành cho trình cài đặt
-519|Đang tạo ảnh khởi động của bản cập nhật
-520|Đang thêm mục khởi động dùng một lần
-521|Bản cập nhật là chính thức
-522|Đã tạo ảnh chụp
-523|Đã bỏ qua
-524|Vùng cập nhật đã sẵn sàng
-525|Đang chuẩn bị hệ thống mới
-526|Tệp cập nhật bị hỏng (tổng kiểm không khớp). Hãy tải lại.
-527|Không thể đọc hết tệp cập nhật.
-528|Bản cập nhật không chứa nhân.
-529|Bản cập nhật phải do trình trợ giúp hệ thống cài.
-530|Không tìm thấy bản cài đặt đã chọn.
-531|Chỉ cập nhật được bản cài MAN đang chạy.
-532|Đây không phải tệp cập nhật MAN (không có manifest).
-533|Bản cập nhật không được ký, nên không đáng tin cậy.
-534|Chữ ký của bản cập nhật bị hỏng.
-535|Bản cập nhật không được MAN ký. Nó có thể đã bị sửa đổi hoặc đến từ nguồn không đáng tin.
-536|Manifest của bản cập nhật không hợp lệ.
-537|Cụm mật khẩu không đúng, hoặc không thể mở phân vùng đã mã hóa.
-538|Xanh dương
-539|Xanh mòng két
-540|Xanh lá
-541|Vàng
-542|Cam
-543|Đỏ
-544|Hồng
-545|Tím
-546|Xám đá
-547|Trình cài đặt gói
-548|Cài đặt ứng dụng từ tệp .deb, Flatpak và AppImage
-549|Trình cài đặt hệ thống
-550|Cài MAN lên máy tính này
-551|Khôi phục hệ thống
-552|Tạo và khôi phục ảnh chụp hệ thống
-553|Trình cài bản cập nhật hệ thống
-554|Cài tệp cập nhật hệ thống MAN
-555|Đề nghị cài MAN khi phiên live bắt đầu
-556|Thông báo cập nhật MAN
-557|Báo một lần sau khi đăng nhập rằng MAN đã được cập nhật
-558|Thiết lập máy tính MAN mới của bạn
-559|Thiết lập MAN lần đầu
-560|Cập nhật MAN
-561|Báo cho bạn khi có phiên bản MAN mới
+44|Giữ lại sau khi cập nhật MAN
+45|MAN cài đặt lại ứng dụng sau mỗi lần cập nhật. Các tệp gói của nó được giữ lại cho việc này.
+46|Nhấn Cài đặt để cài đặt {name}.
+47|Đang kiểm tra ứng dụng còn cần gì…
+48|Cũng cài đặt các gói mà nó cần: {list}
+49|Một số gói mà ứng dụng cần chưa có sẵn. Quá trình cài đặt sẽ lấy danh sách gói mới nhất trước; nếu vẫn thiếu, ứng dụng không thể được cài đặt.
+50|Đang cài đặt {name}…
+51|Đang chuẩn bị…
+52|Chi tiết
+53|Đang cài đặt gói…
+54|Đang chuyển ứng dụng vào thư mục của nó…
+55|Không thể cài đặt ứng dụng.
+56|Đang cài đặt ứng dụng bằng Flatpak…
+57|Nhật ký
+58|Đón_g
+59|Cài đặt thành công
+60|Ứng dụng đã được cài đặt.
+61|Cài đặt thất bại
+62|_Mở
+63|_Hiện chi tiết
+64|Nhật ký cài đặt
+65|Trình cài đặt ứng dụng
+66|_Quay lại
+67|Đang đọc ứng dụng…
+68|Cài đặt {name}
+69|Ứng dụng
+70|Chọn ứng dụng để cài đặt
+71|Không thể khởi động trình trợ giúp hệ thống.
+72|Không thể giao tiếp với trình trợ giúp hệ thống.
+73|Mất kết nối với trình trợ giúp hệ thống.
+74|Đã hủy xác thực.
+75|Thao tác này cần quyền quản trị.
+76|Trình trợ giúp hệ thống dừng đột ngột.
+77|Không có phân vùng hệ thống EFI
+78|Chỉ còn trống {free}, MAN cần {need}. Hãy giải phóng dung lượng bằng DUHACH! trong Windows.
+79|Không còn dung lượng trống. Hãy chạy DUHACH! trong Windows để dành chỗ cho MAN.
+80|MAN đang chạy từ ổ đĩa này
+81|Đang dùng: có phân vùng đang được gắn
+82|Quá nhỏ, MAN cần {need}
+83|Cài đặt MAN
+84|MAN đang được cài đặt. Vui lòng chờ đến khi xong.
+85|Ngôn ngữ
+86|_Khởi động lại bằng ngôn ngữ này
+87|Phiên live sẽ khởi động lại bằng ngôn ngữ đã chọn, và MAN được cài bằng ngôn ngữ đó.
+88|Chào mừng đến với MAN
+89|Hệ thống GNOME nhanh, mở và tùy biến hoàn toàn.\nCài đặt lên máy tính này, hoặc tiếp tục khám phá phiên live.
+90|_Cài đặt MAN…
+91|_Tiếp tục dùng thử MAN
+92|Đang tìm ổ đĩa…
+93|Chào mừng
+94|Máy tính này khởi động ở chế độ BIOS cũ. MAN chỉ cài được trên máy tính UEFI: hãy khởi động lại và chọn tùy chọn khởi động UEFI.
+95|Trình trợ giúp hệ thống không trả về thông tin ổ đĩa.
+96|  ·  EFI
+97|_Tiếp
+98|Xóa ổ đĩa và cài MAN
+99|Mọi thứ trên ổ đĩa đã chọn sẽ bị xóa, kể cả Windows.
+100|Khuyên dùng. Mọi thứ trên ổ đĩa đã chọn sẽ bị xóa.
+101|Cài bên cạnh Windows
+102|Khuyên dùng. MAN dùng dung lượng trống cạnh Windows; Windows và tệp của nó vẫn giữ nguyên. Chọn hệ thống mỗi lần khởi động.
+103|Cài lại MAN
+104|Thay hệ thống nhưng giữ tệp cá nhân trong /home. Hệ thống hiện tại được lưu thành ảnh chụp.
+105|Phân vùng tùy chỉnh
+106|Dành cho chuyên gia: tự chọn phân vùng, hoặc tạo bằng Đĩa.
+107|Ổ đĩa
+108|Chọn ổ đĩa sẽ bị xóa. Các ổ không dùng được sẽ hiện kèm lý do.
+109|Không tìm thấy ổ đĩa
+110|Dung lượng trống cạnh Windows
+111|Các phân vùng của Windows không bị động đến. MAN dùng chung phân vùng hệ thống EFI và thêm Windows vào trình đơn khởi động.
+112|Trống {size}
+113|không còn trống
+114|{model} (Windows)
+115|Bản cài đặt sẽ thay thế
+116|không có thư mục nhà
+117|thư mục nhà: {list}
+118|ảnh chụp: {n}
+119|MAN trên {model}
+120|Cụm mật khẩu cho {device}
+121|Mở khóa
+122|Không thể kiểm tra bản cài đặt.
+123|Phân vùng
+124|Phân vùng hệ thống được định dạng Btrfs và chứa @system, @home và @snapshots. Các phân vùng trên ổ đĩa MAN đang chạy không được liệt kê.
+125|Mở Đĩa để tạo hoặc đổi kích thước phân vùng
+126|Làm mới danh sách phân vùng
+127|Chọn phân vùng
+128|Phân vùng hệ thống EFI
+129|Định dạng phân vùng hệ thống EFI
+130|Để tắt để giữ trình nạp khởi động của các hệ thống khác
+131|Phân vùng hệ thống (định dạng Btrfs)
+132|Phân vùng khởi động (cần khi mã hóa)
+133|Đã làm mới danh sách phân vùng
+134|Bảo mật
+135|Mã hóa hệ thống
+136|Bảo vệ dữ liệu nếu máy tính bị mất hoặc bị đánh cắp. Mỗi lần khởi động sẽ hỏi cụm mật khẩu.
+137|Cụm mật khẩu
+138|Xác nhận cụm mật khẩu
+139|Hãy giữ cụm mật khẩu này an toàn
+140|Nếu mất, không ai khôi phục được dữ liệu. Nhân và tệp khởi động nằm trên một phân vùng khởi động nhỏ không mã hóa.
+141|Cụm mật khẩu phải có ít nhất 8 ký tự.
+142|Cụm mật khẩu không khớp.
+143|Hãy chọn ổ đĩa.
+144|Hãy chọn ổ đĩa có Windows.
+145|Hãy chọn bản cài đặt sẽ thay thế.
+146|Hãy mở khóa bản cài đặt đã mã hóa trước.
+147|Phân vùng này không chứa hệ thống MAN.
+148|Hãy chọn phân vùng hệ thống EFI.
+149|Hãy chọn phân vùng hệ thống.
+150|Phân vùng EFI và phân vùng hệ thống phải khác nhau.
+151|Mã hóa cần một phân vùng khởi động riêng.
+152|Phân vùng hệ thống phải có ít nhất {size}.
+153|Phân vùng EFI không phải định dạng FAT; hãy bật định dạng.
+154|Phân vùng hệ thống đang được gắn; hãy gỡ nó trong Đĩa trước.
+155|Cài MAN vào đâu?
+156|Thời gian và bàn phím
+157|Múi giờ
+158|Bố cục bàn phím
+159|Thử bàn phím
+160|Gõ vào đây để kiểm tra các phím có tạo đúng ký tự không.
+161|Gõ vào đây
+162|Múi giờ và bàn phím
+163|Chưa chọn ổ đĩa
+164|Chưa chọn phân vùng hệ thống
+165|Phân vùng hệ thống đã biến mất
+166|Chưa chọn bản cài đặt
+167|Ổ đĩa đã biến mất
+168|Xem lại
+169|Đích
+170|Xóa ổ đĩa và cài đặt
+171|Phân vùng tùy chỉnh
+172|Cài lại, giữ /home
+173|Cạnh Windows
+174| (sẽ được định dạng)
+175| (giữ nguyên)
+176|Phân vùng hệ thống
+177|{partition} (sẽ được định dạng)
+178|Phân vùng khởi động
+179|Chỗ cho MAN
+180|{free} dung lượng trống (tạo phân vùng khởi động và phân vùng hệ thống)
+181|Windows
+182|Không thay đổi. Nó xuất hiện trong trình đơn khởi động của MAN; phân vùng hệ thống EFI được dùng chung.
+183|Mã hóa
+184|Bật (LUKS2)
+185|Tắt
+186|Hệ thống tệp
+187|Btrfs: @system cho MAN, @home cho tệp của bạn, @snapshots cho điểm khôi phục. Tất cả dùng chung dung lượng trống.
+188|Hệ thống
+189|Tài khoản của bạn
+190|Được tạo trong MAN Setup khi máy tính khởi động lần đầu, cùng với tên máy, giao diện và cài đặt quyền riêng tư.
+191|Bàn phím
+192|Toàn bộ dữ liệu trên {model} ({path}) sẽ bị xóa.
+193|_Xóa và cài đặt
+194|Các phân vùng đã chọn sẽ được định dạng. Các phân vùng khác không thay đổi.
+195|_Định dạng và cài đặt
+196|Hệ thống hiện tại sẽ bị thay. Tệp của bạn trong /home được giữ, và hệ thống cũ được lưu thành ảnh chụp.
+197|Cài _lại
+198|MAN được cài vào dung lượng trống. Windows và tệp của nó không thay đổi.
+199|Sẵn sàng cài đặt
+200|Xóa {model}?
+201|Mọi tệp và phân vùng trên {path} ({size}) sẽ bị xóa vĩnh viễn. Không thể hoàn tác.
+202|Xóa và cài đặt
+203|Định dạng các phân vùng đã chọn?
+204|Toàn bộ dữ liệu trên các phân vùng đã chọn sẽ bị xóa vĩnh viễn. Các phân vùng khác không thay đổi.
+205|Định dạng và cài đặt
+206|Cài MAN bên cạnh Windows?
+207|MAN được cài vào {free} dung lượng trống trên {model} ({path}). Windows và tệp của nó không thay đổi.
+208|Cài đặt
+209|Cài lại MAN?
+210|Hệ thống đã cài sẽ được thay bằng một bản mới. Tệp cá nhân trong /home được giữ và hệ thống cũ vẫn có sẵn dưới dạng ảnh chụp.
+211|Cài lại
+212|_Hủy
+213|Đang cài MAN
+214|Đang bắt đầu…
+215|Đang cài đặt
+216|Bước {index}/{n}  ·  {title}
+217|Đã cài MAN
+218|Khởi động lại máy để bắt đầu dùng MAN. Mỗi lần khởi động, trình đơn cho phép chọn MAN hoặc Windows; MAN sẽ gỡ phân vùng cài đặt tạm thời ở lần khởi động đầu tiên.
+219|Khởi động lại máy để bắt đầu dùng MAN. Bạn có thể rút phương tiện cài đặt; nếu vẫn cắm, MAN vẫn khởi động từ ổ đĩa mới.
+220|_Khởi động lại ngay
+221|Xong
+222|Cài đặt thất bại
+223|Không ổ đĩa nào khác bị thay đổi, và trình cài đặt đã giải phóng ổ đĩa đích. Bạn có thể xem lại kế hoạch rồi thử lại.
+224|_Xem lại và thử lại
+225|Tìm ngôn ngữ
+226|Tìm quốc gia
+227|Không tìm thấy ổ đĩa hệ thống.
+228|Mã hóa cần bố cục Btrfs do trình cài đặt MAN tạo.
+229|Bản cài đặt này không có phân vùng khởi động riêng mà mã hóa cần. Hãy cài lại MAN với “Xóa ổ đĩa” để dùng mã hóa.
+230|MAN Setup
+231|Bạn đang ở đâu?
+232|Quốc gia hoặc vùng của bạn quyết định định dạng ngày, giờ và số.
+233|Quốc gia
+234|Giấy phép Công cộng GNU, phiên bản 2
+235|Nhân Linux và nhiều công cụ hệ thống
+236|Giấy phép Công cộng GNU, phiên bản 3
+237|Nhiều chương trình GNU và GNOME
+238|Giấy phép Công cộng Hạn chế GNU, phiên bản 2.1
+239|GTK, GLib và nhiều thư viện
+240|Giấy phép Công cộng Hạn chế GNU, phiên bản 3
+241|Thư viện
+242|Giấy phép Công cộng Mozilla 2.0
+243|Chương trình và thư viện của Mozilla và những bên khác
+244|Giấy phép Apache 2.0
+245|Thư viện và công cụ
+246|Thỏa thuận giấy phép
+247|Vui lòng đọc và chấp nhận các điều khoản cung cấp MAN.
+248|Giấy phép
+249|Không có văn bản giấy phép ({path}).
+250|Tôi đã đọc và chấp nhận điều khoản giấy phép
+251|Có dây
+252|Chưa kết nối
+253|Kết nối Internet
+254|Khi có kết nối, MAN có thể chỉnh giờ và giữ phần mềm luôn mới. Bạn cũng có thể làm việc này sau.
+255|Đang kiểm tra kết nối…
+256|Mạng Wi-Fi
+257|Tìm lại
+258|_Bỏ qua
+259|Bạn có thể kết nối sau trong Cài đặt.
+260|Đã kết nối
+261|Chưa kết nối
+262|Không tìm thấy mạng
+263|Internet
+264|Đã kết nối với “{ssid}”
+265|Không thể kết nối với “{ssid}”
+266|Kết nối với “{ssid}”
+267|Nhập mật khẩu mạng.
+268|_Kết nối
+269|Tạo tài khoản của bạn
+270|Bạn sẽ là quản trị viên của máy tính này, với toàn quyền root qua sudo.
+271|Họ và tên
+272|Tên người dùng
+273|Mật khẩu
+274|Xác nhận mật khẩu
+275|Tự động đăng nhập
+276|Bỏ qua màn hình đăng nhập khi máy khởi động
+277|Thư mục nhà hiện có
+278|Dùng cùng tên người dùng để tiếp tục dùng thư mục giữ lại từ bản cài đặt trước.
+279|Dùng
+280|Nâng cao
+281|Tên máy tính
+282|Đặt mật khẩu root
+283|Cho phép đăng nhập trực tiếp bằng root. Nếu không đặt, hãy dùng sudo với mật khẩu của bạn.
+284|Mật khẩu root
+285|Xác nhận mật khẩu root
+286|Nhập tên của bạn.
+287|Chọn tên người dùng.
+288|Tên người dùng này đã được hệ thống dùng.
+289|Tên người dùng này được hệ thống dành riêng.
+290|Tên người dùng gồm chữ thường không dấu, chữ số, - và _, và bắt đầu bằng một chữ cái.
+291|Chọn mật khẩu.
+292|Mật khẩu không khớp.
+293|Tên máy tính có thể chứa chữ cái, chữ số và dấu gạch ngang.
+294|Nhập mật khẩu root hai lần.
+295|Mẹo: mật khẩu từ 8 ký tự trở lên an toàn hơn nhiều.
+296|Tài khoản
+297|Tối
+298|Sáng
+299|Làm theo ý bạn
+300|Chọn kiểu, màu nhấn và hình nền. Bạn thấy mọi thay đổi ngay lập tức.
+301|Kiểu
+302|Màu nhấn
+303|Hình nền
+304|Tùy biến
+305|Quyền riêng tư
+306|Chọn những tính năng được dùng thông tin về bạn. Bạn có thể đổi bất cứ lúc nào trong Cài đặt.
+307|Dịch vụ vị trí
+308|Cho phép các ứng dụng như Bản đồ và Thời tiết tìm vị trí gần đúng của bạn qua các mạng Wi-Fi gần đó.
+309|Múi giờ tự động
+310|Dùng vị trí của bạn để giữ múi giờ đúng khi đi du lịch.
+311|_Hoàn tất thiết lập
+312|Ổ đĩa của bạn đã được mã hóa
+313|Dữ liệu của bạn được bảo vệ. Cụm mật khẩu được hỏi mỗi lần máy khởi động.
+314|Mã hóa ổ đĩa
+315|Mã hóa bảo vệ dữ liệu nếu máy tính bị mất hoặc bị đánh cắp.
+316|Không có trên bản cài đặt này
+317|Mã hóa bảo vệ tệp của bạn nếu máy tính bị mất hoặc bị đánh cắp. Không có cụm mật khẩu thì không ai đọc được ổ đĩa.
+318|Mã hóa ổ đĩa
+319|Cụm mật khẩu được hỏi mỗi lần máy khởi động.
+320|Mã hóa bắt đầu ở lần khởi động lại tiếp theo
+321|Sau đó ổ đĩa được mã hóa ở chế độ nền trong lúc bạn dùng máy. Nếu mất cụm mật khẩu, không ai khôi phục được dữ liệu.
+322|Đang chuẩn bị MAN
+323|Đang chuẩn bị mọi thứ…
+324|_Khởi động lại
+325|_Quay lại
+326|Đang chuẩn bị
+327|Nhật ký thiết lập
+328|Xong hết rồi!
+329|Đã xảy ra lỗi
+330|Hằng ngày
+331|Trước khi cập nhật
+332|Trước khi khôi phục
+333|Trước khi cài lại
+334|Thủ công
+335|Chưa có ảnh chụp nào
+336|Hãy tạo một ảnh chụp trước khi thay đổi lớn hệ thống.
+337|Khôi phục…
+338|Xóa ảnh chụp
+339|Trống {free} trên {size}. Hệ thống, thư mục nhà và ảnh chụp dùng chung dung lượng này; ảnh chụp chỉ chiếm chỗ cho phần đã thay đổi kể từ khi chụp.
+340|_OK
+341|Tạo ảnh chụp
+342|Lưu trạng thái hiện tại của hệ thống. Không bao gồm tệp cá nhân trong thư mục nhà.
+343|Mô tả, ví dụ “Trước khi cài trình điều khiển”
+344|_Tạo
+345|Ảnh chụp thủ công
+346|Xóa ảnh chụp?
+347|“{description}” lúc {date} sẽ bị xóa vĩnh viễn.
+348|_Xóa
+349|Khôi phục ảnh chụp này?
+350|Sau khi khởi động lại, hệ thống sẽ trở về “{description}” lúc {date}. Tệp cá nhân của bạn không thay đổi.\n\nHệ thống hiện tại được lưu thành ảnh chụp trước, nên có thể hoàn tác.
+351|_Khôi phục
+352|Khởi động lại để hoàn tất khôi phục
+353|Khởi động lại _sau
+354|Khởi động lại _ngay
+355|Ảnh chụp
+356|Điểm khôi phục
+357|Ảnh chụp lưu trạng thái của hệ điều hành. Khôi phục một ảnh chụp đưa hệ thống về thời điểm đó, hữu ích sau một lần cập nhật hoặc đổi cấu hình bị lỗi. Tệp cá nhân của bạn không bao giờ bị động đến.
+358|Ảnh chụp tự động
+359|Ảnh chụp hằng ngày
+360|Mỗi ngày một lần khi máy đang bật
+361|Số ảnh chụp hằng ngày giữ lại
+362|Trước khi cập nhật phần mềm
+363|Tự động chụp khi cài, nâng cấp hoặc gỡ gói
+364|Số ảnh chụp cập nhật giữ lại
+365|Lưu trữ
+366|Dung lượng đĩa
+367|Nếu MAN không khởi động
+368|Chọn “Restore a MAN snapshot” trong trình đơn khởi động để lấy lại hệ thống hoạt động được.
+369|Không có ảnh chụp
+370|Ảnh chụp hoạt động trên MAN cài với bố cục Btrfs do trình cài đặt MAN tạo. Hệ thống này (ví dụ phiên live) không dùng bố cục đó.
+371|Có một lần khôi phục đang chờ: hãy khởi động lại máy để hoàn tất
+372|Khởi động lại ngay
+373|Vui lòng chờ thao tác hiện tại hoàn tất.
+374|Tìm kiếm
+375|Chép vào bảng tạm
+376|Giờ Phối hợp Quốc tế
+377|Tiếng Anh (Mỹ)
+378|MAN {version} đã phát hành!
+379|Bạn có thể cập nhật lên phiên bản này.
+380|Mở Cập nhật
+381|Đang kiểm tra bản cập nhật
+382|Đang xác minh bản cập nhật là chính thức và đầy đủ…
+383|Cập nhật MAN
+384|Không thể cài bản cập nhật này
+385|Không thể đọc bản cập nhật.
+386|Cập nhật từ {name} {version}
+387|Đã cài {name} {version}
+388|Ngày phát hành
+389|Dung lượng tải về
+390|Dung lượng cần
+391|Tính xác thực
+392|Đã xác minh, ký bởi “{signer}”
+393|Có gì mới
+394|Bản cập nhật này không mới hơn {name} {version} đã cài.
+395|Cập nhật
+396|Vui lòng đọc điều khoản giấy phép của bản cập nhật này.
+397|Tôi chấp nhận điều khoản giấy phép
+398|Cài bản cập nhật vào đâu?
+399|Hệ thống sẽ bị thay; tệp trong thư mục nhà không bị động đến.
+400|Chọn một bản cài đặt.
+401|đang chạy
+402|{name} {version} trên máy này
+403|{name} trên {model}
+404|Không tìm thấy bản cài MAN
+405|Bản cập nhật được cài từ một hệ thống MAN đã cài và đang chạy, không phải từ phiên live.
+406|Vị trí cài đặt
+407|Được giữ
+408|Tệp của bạn
+409|Mọi thứ trong thư mục nhà
+410|Tài khoản và mật khẩu
+411|Người dùng, nhóm, tên máy tính
+412|Kết nối và cài đặt
+413|Wi-Fi, múi giờ, bàn phím, giao diện và ảnh chụp
+414|Ứng dụng Flatpak
+415|Cùng mọi thứ trong /usr/local và /opt
+416|Bị thay
+417|Phần mềm cài bằng apt và các thay đổi khác với tệp hệ thống sẽ được thay bằng hệ thống mới.
+418|Hệ điều hành
+419|Được thay bằng {name} {version}. Có thể khôi phục hệ thống hiện tại từ ảnh chụp.
+420|Máy tính khởi động lại để cài bản cập nhật
+421|Sau khi chuẩn bị, MAN khởi động lại, cài bản cập nhật trong vài giây rồi khởi động lại lần nữa.
+422|_Cài bản cập nhật
+423|Tạo ảnh chụp trước?
+424|Ảnh chụp lưu hệ thống hiện tại, để bạn có thể quay lại nếu có gì không ổn sau khi cập nhật. Nên làm.
+425|_Không tạo
+426|_Tạo ảnh chụp
+427|Đang chuẩn bị {name} {version}
+428|Khởi động lại để cài đặt
+429|Máy tính sẽ khởi động lại hai lần. Tệp của bạn an toàn.
+430|Tự động khởi động lại sau {r} giây
+431|Tự động khởi động lại sau 30 giây
+432|Bản cập nhật sẽ được cài ở lần khởi động lại tiếp theo.
+433|Sẵn sàng
+434|Không thể chuẩn bị bản cập nhật
+435|Không có gì thay đổi trên hệ thống của bạn.
+436|_Thử lại
+437|Nhật ký cập nhật
+438|Thất bại
+439|Hệ thống của bạn đã được cập nhật
+440|MAN đã được cập nhật lên phiên bản {version}.\nTrước đó: MAN {previous}.
+441|_Xong
+442|Mở bản cập nhật MAN
+443|Bản cập nhật MAN
+444|Đang lấy danh sách gói mới nhất…
+445|Đang sao chép ứng dụng
+446|Đang thêm ứng dụng vào trình đơn
+447|Không tìm thấy tệp.
+448|Không thể cài đặt gói.
+449|Mục trình đơn của ứng dụng không hợp lệ.
+450|Đang kiểm tra kế hoạch cài đặt
+451|Đang chuẩn bị ổ đĩa
+452|Đang chép MAN vào ổ đĩa
+453|Đang cấu hình hệ thống mới
+454|Đang cài trình nạp khởi động
+455|Đang tạo ảnh chụp đầu tiên
+456|Đang hoàn tất
+457|Đang gỡ chữ ký phân vùng cũ
+458|Đang tạo phân vùng
+459|Đang định dạng phân vùng hệ thống EFI
+460|Đang mã hóa phân vùng hệ thống
+461|Đang định dạng phân vùng khởi động
+462|Đang tạo hệ thống tệp Btrfs
+463|Đang gỡ chữ ký hệ thống tệp cũ
+464|Đang mở khóa bản cài đặt đã mã hóa
+465|Đang lưu hệ thống hiện tại thành ảnh chụp
+466|Đang gỡ hệ thống trước
+467|Đang ghi bảng hệ thống tệp
+468|Đang đặt tên và định danh máy tính
+469|Đang gỡ các tài khoản phiên live
+470|Đang tạo tài khoản của bạn
+471|Đang chuẩn bị MAN Setup cho lần khởi động đầu
+472|Đang đặt múi giờ và bàn phím
+473|Đang gỡ trình cài đặt khỏi hệ thống mới
+474|Đang tạo ảnh khởi động (initramfs)
+475|Đang cấu hình GRUB
+476|Đang cài GRUB vào phân vùng hệ thống EFI
+477|Đang cài trình nạp khởi động dự phòng
+478|Đang ghi trình đơn khởi động
+479|Ổ đĩa đã sẵn sàng
+480|Đang tạo ảnh chụp của hệ thống mới
+481|Đang thêm ảnh chụp vào trình đơn khởi động
+482|Đang gỡ gắn
+483|Trình trợ giúp của bộ cài phải chạy với quyền root.
+484|Máy tính này không khởi động ở chế độ UEFI. MAN cần UEFI.
+485|Tên người dùng không hợp lệ.
+486|Cần có mật khẩu.
+487|Tên máy tính không hợp lệ.
+488|Ngôn ngữ không xác định.
+489|Cụm mật khẩu mã hóa phải có ít nhất 8 ký tự.
+490|Ổ đĩa đã thay đổi sau khi bạn xác nhận cài đặt. Chưa có gì bị sửa; hãy xem lại và xác nhận lần nữa.
+491|Hãy chọn phân vùng hệ thống.
+492|Ổ đĩa đã xác nhận không chứa phân vùng hệ thống đã chọn.
+493|Phân vùng khởi động phải tách biệt với phân vùng EFI và phân vùng hệ thống.
+494|Phân vùng khởi động phải có ít nhất 512 MB.
+495|Chưa chọn bản cài đặt.
+496|Ổ đĩa đã xác nhận không chứa bản cài đặt đã chọn.
+497|Bản cài đặt đã mã hóa không có phân vùng MAN_BOOT.
+498|Không tìm thấy nhân có mô-đun phù hợp trong /boot.
+499|Ngôn ngữ phải do trình trợ giúp hệ thống thay đổi.
+500|Đang áp dụng cài đặt của bạn
+501|Đang chuẩn bị mã hóa ổ đĩa
+502|Đang hoàn tất
+503|MAN Setup phải do trình trợ giúp hệ thống hoàn tất.
+504|MAN Setup đã được hoàn tất trên máy này.
+505|Màu nhấn không xác định.
+506|Hình nền đã chọn không có sẵn.
+507|Không thể mã hóa hệ thống này.
+508|Thiếu khóa thiết lập, nên không thể tiếp tục mã hóa ở chế độ nền.
+509|Hệ thống không được cài trên Btrfs, nên không có ảnh chụp.
+510|Một lần khôi phục ảnh chụp đang chờ khởi động lại. Hãy khởi động lại máy trước để hoàn tất.
+511|ID ảnh chụp không hợp lệ.
+512|Đang kiểm tra bản cập nhật
+513|Đang tạo ảnh chụp
+514|Đang chuẩn bị vùng cập nhật
+515|Đang giải nén hệ thống mới
+516|Đang chuyển tài khoản và cài đặt của bạn
+517|Đang chuẩn bị khởi động lại
+518|Đã giải nén
+519|Tài khoản
+520|Đang cài đặt lại các ứng dụng được giữ
+521|Đang gỡ phần mềm chỉ dành cho trình cài đặt
+522|Đang tạo ảnh khởi động của bản cập nhật
+523|Đang thêm mục khởi động dùng một lần
+524|Bản cập nhật là chính thức
+525|Đã tạo ảnh chụp
+526|Đã bỏ qua
+527|Vùng cập nhật đã sẵn sàng
+528|Đang chuẩn bị hệ thống mới
+529|Tệp cập nhật bị hỏng (tổng kiểm không khớp). Hãy tải lại.
+530|Không thể đọc hết tệp cập nhật.
+531|Bản cập nhật không chứa nhân.
+532|Bản cập nhật phải do trình trợ giúp hệ thống cài.
+533|Không tìm thấy bản cài đặt đã chọn.
+534|Chỉ cập nhật được bản cài MAN đang chạy.
+535|Đây không phải tệp cập nhật MAN (không có manifest).
+536|Bản cập nhật không được ký, nên không đáng tin cậy.
+537|Chữ ký của bản cập nhật bị hỏng.
+538|Bản cập nhật không được MAN ký. Nó có thể đã bị sửa đổi hoặc đến từ nguồn không đáng tin.
+539|Manifest của bản cập nhật không hợp lệ.
+540|Cụm mật khẩu không đúng, hoặc không thể mở phân vùng đã mã hóa.
+541|Xanh dương
+542|Xanh mòng két
+543|Xanh lá
+544|Vàng
+545|Cam
+546|Đỏ
+547|Hồng
+548|Tím
+549|Xám đá
+550|Trình cài đặt gói
+551|Cài đặt ứng dụng từ tệp .deb, Flatpak và AppImage
+552|Trình cài đặt hệ thống
+553|Cài MAN lên máy tính này
+554|Khôi phục hệ thống
+555|Tạo và khôi phục ảnh chụp hệ thống
+556|Trình cài bản cập nhật hệ thống
+557|Cài tệp cập nhật hệ thống MAN
+558|Đề nghị cài MAN khi phiên live bắt đầu
+559|Thông báo cập nhật MAN
+560|Báo một lần sau khi đăng nhập rằng MAN đã được cập nhật
+561|Thiết lập máy tính MAN mới của bạn
+562|Thiết lập MAN lần đầu
+563|Cập nhật MAN
+564|Báo cho bạn khi có phiên bản MAN mới

@@ -1,0 +1,13 @@
+[Unit]
+Description=Install the .deb apps kept across a MAN update
+ConditionPathExists=/var/lib/man/kept-debs/pending
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-installer/man-app-installer-helper reinstall-kept
+TimeoutStartSec=30min
+
+[Install]
+WantedBy=multi-user.target

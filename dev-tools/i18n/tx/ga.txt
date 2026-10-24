@@ -30,7 +30,7 @@
 29|Suíomh Gréasáin
 30|Comhad
 31|Tá an aip seo suiteáilte cheana. Má shuiteálann tú arís í, cuirfear ina háit í.
-32|Éiríonn aipeanna ó phacáistí .deb mar chuid den chóras. Nuair a nuashonraítear MAN, baintear iad agus caithfear iad a shuiteáil arís. Coinnítear aipeanna Flatpak agus AppImages.
+32|Éiríonn aipeanna ó phacáistí .deb mar chuid den chóras. Cuireann nuashonrú MAN córas nua ina áit, mar sin ní shuiteáiltear arís iad i ndiaidh nuashonraithe ach amháin má choinníonn tú iad (na chéad chéimeanna eile).
 33|Ná suiteáil aipeanna ach ó fhoinsí a bhfuil muinín agat astu.
 34|Cá háit ar mhaith leat {name} a shuiteáil?
 35|Ní féidir ach le do chuntas an aip a úsáid.
@@ -42,521 +42,524 @@
 41|Suiteáiltear an aip do gach úsáideoir ar an ríomhaire seo.
 42|Suiteáiltear an aip duit féin amháin.
 43|Bogtar an AppImage go {folder} agus cuirtear le d'aipeanna é.
-44|Cliceáil Suiteáil chun {name} a shuiteáil.
-45|Ag seiceáil cad eile atá ag teastáil ón aip…
-46|Suiteálann sé na pacáistí atá ag teastáil uaidh freisin: {list}
-47|Níl roinnt pacáistí atá ag teastáil ón aip ar fáil fós. Faigheann an tsuiteáil na liostaí pacáistí is nuaí ar dtús; má tá siad fós ar iarraidh, ní féidir an aip a shuiteáil.
-48|Ag suiteáil {name}…
-49|Ag ullmhú…
-50|Sonraí
-51|Ag suiteáil an phacáiste…
-52|Ag bogadh na haipe chuig a fillteán…
-53|Níorbh fhéidir an aip a shuiteáil.
-54|Ag suiteáil na haipe le Flatpak…
-55|Logchomhad
-56|_Dún
-57|D'Éirigh leis an tSuiteáil
-58|Suiteáladh an aip.
-59|Theip ar an tSuiteáil
-60|_Oscail
-61|_Taispeáin sonraí
-62|Logchomhad suiteála
-63|Suiteálaí Aipeanna
-64|_Siar
-65|Ag léamh na haipe…
-66|Suiteáil {name}
-67|Aipeanna
-68|Roghnaigh Aip le Suiteáil
-69|Níorbh fhéidir cúntóir an chórais a thosú.
-70|Níorbh fhéidir cumarsáid a dhéanamh le cúntóir an chórais.
-71|Cailleadh an ceangal le cúntóir an chórais.
-72|Cealaíodh an t-údarú.
-73|Teastaíonn cearta riarthóra don ghníomh seo.
-74|Stop cúntóir an chórais gan choinne.
-75|Níl aon deighilt chórais EFI ann
-76|Níl ach {free} saor, teastaíonn {need} ó MAN. Saor spás le DUHACH! i Windows.
-77|Níl aon spás saor. Tosaigh DUHACH! i Windows chun spás a dhéanamh do MAN.
-78|Tá MAN ag rith ón diosca seo
-79|In úsáid: tá deighilt feistithe
-80|Ró-bheag, teastaíonn {need} ó MAN
-81|Suiteáil MAN
-82|Tá MAN á shuiteáil. Fan go gcríochnóidh sé.
-83|Teanga
-84|_Atosaigh sa teanga seo
-85|Atosóidh an seisiún beo sa teanga a roghnaíodh, agus suiteálfar MAN inti.
-86|Fáilte go MAN
-87|Córas GNOME tapa, oscailte agus inoiriúnaithe go hiomlán.\nSuiteáil ar an ríomhaire seo é, nó lean ort ag fiosrú an tseisiúin bheo.
-88|_Suiteáil MAN…
-89|_Lean ort ag triail MAN
-90|Dioscaí á lorg…
-91|Fáilte
-92|Tosaíodh an ríomhaire seo i mód BIOS oidhreachta. Ní féidir MAN a shuiteáil ach ar ríomhairí UEFI: atosaigh agus roghnaigh an rogha tosaithe UEFI.
-93|Níor sheol cúntóir an chórais aon fhaisnéis faoi dhioscaí.
-94|  ·  EFI
-95|_Ar aghaidh
-96|Glan an diosca agus suiteáil MAN
-97|Scriosfar gach rud ar an diosca roghnaithe, Windows san áireamh.
-98|Molta. Scriosfar gach rud ar an diosca roghnaithe.
-99|Suiteáil taobh le Windows
-100|Molta. Úsáideann MAN an spás saor taobh le Windows; fanann Windows agus a chuid comhad. Roghnaigh an córas gach uair a thosaíonn tú.
-101|Athshuiteáil MAN
-102|Cuireann sé córas nua in ionad an chórais ach coimeádann sé comhaid phearsanta i /home. Sábháiltear an córas reatha mar léargas.
-103|Deighiltí saincheaptha
-104|Do shaineolaithe: roghnaigh na deighiltí tú féin, nó cruthaigh iad le Dioscaí.
-105|Diosca
-106|Roghnaigh an diosca a ghlanfar. Taispeántar dioscaí nach féidir a úsáid in éineacht leis an gcúis.
-107|Níor aimsíodh aon dioscaí
-108|Spás saor taobh le Windows
-109|Ní dhéantar teagmháil le deighiltí Windows. Roinneann MAN deighilt chórais EFI agus cuireann sé Windows lena roghchlár tosaithe.
-110|{size} saor
-111|gan spás saor
-112|{model} (Windows)
-113|Suiteáil le hathsholáthar
-114|gan fillteáin bhaile
-115|fillteáin bhaile: {list}
-116|léargais: {n}
-117|MAN ar {model}
-118|Frása faire do {device}
-119|Díghlasáil
-120|Níorbh fhéidir an tsuiteáil a scrúdú.
-121|Deighiltí
-122|Formáidítear deighilt an chórais le Btrfs agus tá @system, @home agus @snapshots inti. Ní liostaítear deighiltí ar an diosca óna bhfuil MAN ag rith.
-123|Oscail Dioscaí chun deighiltí a chruthú nó a athmhéadú
-124|Athnuaigh liosta na ndeighiltí
-125|Roghnaigh deighilt
-126|Deighilt chórais EFI
-127|Formáidigh deighilt chórais EFI
-128|Fág as chun lódálaithe tosaithe córas eile a choimeád
-129|Deighilt chórais (formáidithe mar Btrfs)
-130|Deighilt tosaithe (riachtanach le criptiú)
-131|Athnuadh liosta na ndeighiltí
-132|Slándáil
-133|Criptigh an córas
-134|Cosnaíonn sé do shonraí má chailltear nó má ghoidtear an ríomhaire. Iarrtar frása faire gach uair a thosaíonn sé.
-135|Frása faire
-136|Deimhnigh an frása faire
-137|Coimeád an frása faire seo slán
-138|Má chailltear é, ní féidir le duine ar bith na sonraí a aisghabháil. Fanann an t-eithne agus comhaid tosaithe ar dheighilt tosaithe bheag gan chriptiú.
-139|Caithfidh 8 gcarachtar ar a laghad a bheith sa fhrása faire.
-140|Ní mheaitseálann na frásaí faire.
-141|Roghnaigh diosca.
-142|Roghnaigh an diosca ina bhfuil Windows.
-143|Roghnaigh an tsuiteáil le hathsholáthar.
-144|Díghlasáil an tsuiteáil chriptithe ar dtús.
-145|Níl córas MAN sa deighilt seo.
-146|Roghnaigh deighilt chórais EFI.
-147|Roghnaigh deighilt an chórais.
-148|Caithfidh an deighilt EFI agus deighilt an chórais a bheith difriúil.
-149|Teastaíonn deighilt tosaithe ar leith don chriptiú.
-150|Caithfidh deighilt an chórais a bheith {size} ar a laghad.
-151|Níl an deighilt EFI formáidithe mar FAT; cas formáidiú air.
-152|Tá deighilt an chórais feistithe; díshuiteáil i nDioscaí í ar dtús.
-153|Cá suiteálfar MAN?
-154|Am agus méarchlár
-155|Crios ama
-156|Leagan amach méarchláir
-157|Tástáil do mhéarchlár
-158|Clóscríobh anseo chun a sheiceáil go dtugann na heochracha na carachtair cheart.
-159|Clóscríobh anseo
-160|Crios ama agus méarchlár
-161|Níor roghnaíodh diosca
-162|Níor roghnaíodh deighilt chórais
-163|D'imigh deighilt an chórais
-164|Níor roghnaíodh suiteáil
-165|D'imigh an diosca
-166|Athbhreithniú
-167|Ceann scríbe
-168|Glan an diosca agus suiteáil
-169|Deighiltí saincheaptha
-170|Athshuiteáil, ag coimeád /home
-171|Taobh le Windows
-172| (formáidfear í)
-173| (coimeádtar í)
-174|Deighilt chórais
-175|{partition} (formáidfear í)
-176|Deighilt tosaithe
-177|Spás do MAN
-178|{free} spás saor (cruthaítear deighilt tosaithe agus deighilt an chórais)
-179|Windows
-180|Gan athrú. Feictear é i roghchlár tosaithe MAN; roinntear deighilt chórais EFI.
-181|Criptiú
-182|Ar siúl (LUKS2)
-183|As
-184|Córas comhad
-185|Btrfs: @system do MAN, @home do do chomhaid, @snapshots do phointí athchóirithe. Roinneann siad uile an spás saor.
-186|Córas
-187|Do chuntas
-188|Cruthaítear é in MAN Setup nuair a thosaíonn an ríomhaire den chéad uair, mar aon le hainm an ríomhaire, an chuma agus socruithe príobháideachais.
-189|Méarchlár
-190|Glanfar na sonraí go léir ar {model} ({path}).
-191|_Glan agus suiteáil
-192|Formáidfear na deighiltí roghnaithe. Ní athraíonn deighiltí eile.
-193|_Formáidigh agus suiteáil
-194|Cuirtear córas nua in ionad an chórais reatha. Coimeádtar do chomhaid i /home, agus sábháiltear an seanchóras mar léargas.
-195|_Athshuiteáil
-196|Suiteáiltear MAN sa spás saor. Ní athraíonn Windows ná a chuid comhad.
-197|Réidh le suiteáil
-198|Glan {model}?
-199|Scriosfar gach comhad agus deighilt ar {path} ({size}) go buan. Ní féidir é seo a chealú.
-200|Glan agus suiteáil
-201|Formáidigh na deighiltí roghnaithe?
-202|Scriosfar na sonraí go léir ar na deighiltí roghnaithe go buan. Ní athraíonn deighiltí eile.
-203|Formáidigh agus suiteáil
-204|Suiteáil MAN taobh le Windows?
-205|Suiteáiltear MAN sa {free} spás saor ar {model} ({path}). Ní athraíonn Windows ná a chuid comhad.
-206|Suiteáil
-207|Athshuiteáil MAN?
-208|Cuirfear cóip úr in ionad an chórais suiteáilte. Coimeádtar comhaid phearsanta i /home agus fanann an seanchóras ar fáil mar léargas.
-209|Athshuiteáil
-210|_Cealaigh
-211|MAN á shuiteáil
-212|Á thosú…
-213|Á shuiteáil
-214|Céim {index} as {n}  ·  {title}
-215|Tá MAN suiteáilte
-216|Atosaigh an ríomhaire chun tosú ag úsáid MAN. Ligeann roghchlár gach tosú duit MAN nó Windows a roghnú; baineann MAN deighilt shealadach an tsuiteálaí ag an gcéad tosú.
-217|Atosaigh an ríomhaire chun tosú ag úsáid MAN. Is féidir leat an meán suiteála a bhaint; má fhanann sé ceangailte, tosaíonn MAN ón diosca nua mar sin féin.
-218|_Atosaigh anois
-219|Déanta
-220|Theip ar an tsuiteáil
-221|Níor athraíodh aon diosca eile, agus scaoil an suiteálaí an sprioc-diosca. Is féidir leat an plean a athbhreithniú agus triail eile a bhaint as.
-222|_Athbhreithnigh agus triail arís
-223|Cuardaigh teangacha
-224|Cuardaigh tíortha
-225|Níor aimsíodh diosca an chórais.
-226|Teastaíonn an leagan amach Btrfs a chruthaíonn suiteálaí MAN don chriptiú.
-227|Níl deighilt tosaithe ar leith sa tsuiteáil seo, rud a theastaíonn don chriptiú. Athshuiteáil MAN le “Glan an diosca” chun criptiú a úsáid.
-228|MAN Setup
-229|Cá bhfuil tú?
-230|Socraíonn do thír nó do réigiún formáid an dáta, an ama agus na n-uimhreacha.
-231|Tír
-232|Ceadúnas Poiblí Ginearálta GNU, leagan 2
-233|Eithne Linux agus go leor uirlisí córais
-234|Ceadúnas Poiblí Ginearálta GNU, leagan 3
-235|Go leor clár GNU agus GNOME
-236|Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 2.1
-237|GTK, GLib agus go leor leabharlann
-238|Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 3
-239|Leabharlanna
-240|Ceadúnas Poiblí Mozilla 2.0
-241|Cláir agus leabharlanna ó Mozilla agus daoine eile
-242|Ceadúnas Apache 2.0
-243|Leabharlanna agus uirlisí
-244|Comhaontú ceadúnais
-245|Léigh agus glac leis na téarmaí faoina gcuirtear MAN ar fáil.
-246|Ceadúnais
-247|Níl téacs an cheadúnais ar fáil ({path}).
-248|Léigh mé téarmaí an cheadúnais agus glacaim leo
-249|Sreangaithe
-250|Gan cheangal
-251|Ceangail leis an idirlíon
-252|Le ceangal, is féidir le MAN an t-am a shocrú agus do bhogearraí a choimeád cothrom le dáta. Is féidir é seo a dhéanamh níos déanaí freisin.
-253|An ceangal á sheiceáil…
-254|Líonraí Wi-Fi
-255|Cuardaigh arís
-256|_Scipeáil
-257|Is féidir leat ceangal níos déanaí sna Socruithe.
-258|Ceangailte
-259|Gan cheangal
-260|Níor aimsíodh aon líonraí
-261|Idirlíon
-262|Ceangailte le “{ssid}”
-263|Níorbh fhéidir ceangal le “{ssid}”
-264|Ceangail le “{ssid}”
-265|Cuir isteach pasfhocal an líonra.
-266|_Ceangail
-267|Cruthaigh do chuntas
-268|Beidh tú i do riarthóir ar an ríomhaire seo, le rochtain iomlán root trí sudo.
-269|Ainm iomlán
-270|Ainm úsáideora
-271|Pasfhocal
-272|Deimhnigh an pasfhocal
-273|Logáil isteach go huathoibríoch
-274|Scipeáil an scáileán logála isteach nuair a thosaíonn an ríomhaire
-275|Fillteáin bhaile atá ann
-276|Úsáid an t-ainm úsáideora céanna chun leanúint ag úsáid fillteáin ó shuiteáil roimhe seo.
-277|Úsáid
-278|Ardleibhéal
-279|Ainm an ríomhaire
-280|Socraigh pasfhocal root
-281|Ceadaíonn sé logáil isteach go díreach mar root. Gan é, úsáid sudo le do phasfhocal féin.
-282|Pasfhocal root
-283|Deimhnigh an pasfhocal root
-284|Cuir isteach d'ainm.
-285|Roghnaigh ainm úsáideora.
-286|Tá an t-ainm úsáideora seo in úsáid ag an gcóras cheana.
-287|Tá an t-ainm úsáideora seo curtha in áirithe ag an gcóras.
-288|Úsáideann ainmneacha úsáideora litreacha beaga, digití, - agus _, agus tosaíonn siad le litir.
-289|Roghnaigh pasfhocal.
-290|Ní mheaitseálann na pasfhocail.
-291|Is féidir litreacha, digití agus fleiscíní a bheith in ainm an ríomhaire.
-292|Cuir isteach an pasfhocal root faoi dhó.
-293|Leid: tá pasfhocal le 8 gcarachtar nó níos mó i bhfad níos sábháilte.
-294|Cuntas
-295|Dorcha
-296|Geal
-297|Déan do chuid féin de
-298|Roghnaigh stíl, dath béime agus cúlbhrat. Feiceann tú gach athrú láithreach.
-299|Stíl
-300|Dath béime
-301|Cúlbhrat
-302|Saincheap
-303|Príobháideacht
-304|Roghnaigh cé na gnéithe ar féidir leo faisnéis fút a úsáid. Is féidir é seo a athrú am ar bith sna Socruithe.
-305|Seirbhísí suímh
-306|Ligeann sé d'aipeanna mar Léarscáileanna agus Aimsir do shuíomh garbh a aimsiú trí líonraí Wi-Fi in aice láimhe.
-307|Crios ama uathoibríoch
-308|Úsáideann sé do shuíomh chun an crios ama a choimeád ceart agus tú ag taisteal.
-309|_Críochnaigh an socrú
-310|Tá do dhiosca criptithe
-311|Tá do shonraí cosanta. Iarrtar an frása faire gach uair a thosaíonn an ríomhaire.
-312|Criptiú diosca
-313|Cosnaíonn criptiú do shonraí má chailltear nó má ghoidtear an ríomhaire.
-314|Níl sé ar fáil ar an tsuiteáil seo
-315|Cosnaíonn criptiú do chomhaid má chailltear nó má ghoidtear an ríomhaire. Gan an frása faire, ní féidir le duine ar bith an diosca a léamh.
-316|Criptigh an diosca
-317|Iarrtar an frása faire gach uair a thosaíonn an ríomhaire.
-318|Tosóidh an criptiú ag an gcéad atosú eile
-319|Ansin criptítear do dhiosca sa chúlra agus tú ag úsáid an ríomhaire. Má chailltear an frása faire, ní féidir le duine ar bith na sonraí a aisghabháil.
-320|MAN á ullmhú
-321|Gach rud á ullmhú…
-322|_Atosaigh
-323|_Siar
-324|Á ullmhú
-325|Logchomhad socraithe
-326|Gach rud déanta!
-327|Chuaigh rud éigin mícheart
-328|Laethúil
-329|Roimh nuashonrú
-330|Roimh athchóiriú
-331|Roimh athshuiteáil
-332|De láimh
-333|Níl aon léargais fós
-334|Cruthaigh ceann sula ndéanann tú athruithe móra ar an gcóras.
-335|Athchóirigh…
-336|Scrios léargas
-337|{free} saor as {size}. Roinneann an córas, fillteáin bhaile agus léargais an spás seo; ní úsáideann léargais spás ach don mhéid a d'athraigh ó tógadh iad.
-338|_OK
-339|Cruthaigh léargas
-340|Sábhálann sé staid reatha an chórais. Níl do chomhaid phearsanta san fhillteán baile san áireamh.
-341|Cur síos, mar shampla “Roimh thiománaithe a shuiteáil”
-342|_Cruthaigh
-343|Léargas de láimh
-344|Scrios an léargas?
-345|Scriosfar “{description}” ó {date} go buan.
-346|_Scrios
-347|Athchóirigh an léargas seo?
-348|Fillfidh an córas ar “{description}” ó {date} tar éis atosú. Ní athraíonn do chomhaid phearsanta.\n\nSábháiltear an córas reatha mar léargas ar dtús, mar sin is féidir é seo a chealú.
-349|_Athchóirigh
-350|Atosaigh chun an t-athchóiriú a chríochnú
-351|Atosaigh _níos déanaí
-352|Atosaigh _anois
-353|Léargais
-354|Pointí athchóirithe
-355|Sábhálann léargais staid an chórais oibriúcháin. Nuair a athchóiríonn tú ceann, filleann an córas ar an nóiméad sin, rud a chabhraíonn tar éis droch-nuashonraithe nó athraithe cumraíochta. Ní dhéantar teagmháil le do chomhaid phearsanta riamh.
-356|Léargais uathoibríocha
-357|Léargais laethúla
-358|Uair sa lá fad atá an ríomhaire ar siúl
-359|Léargais laethúla le coimeád
-360|Roimh nuashonruithe bogearraí
-361|Tógtar iad go huathoibríoch nuair a shuiteáiltear, a uasghrádaítear nó a bhaintear pacáistí
-362|Léargais nuashonraithe le coimeád
-363|Stóráil
-364|Spás diosca
-365|Mura dtosaíonn MAN
-366|Roghnaigh “Restore a MAN snapshot” sa roghchlár tosaithe chun córas oibre a fháil ar ais.
-367|Níl léargais ar fáil
-368|Oibríonn léargais ar MAN atá suiteáilte leis an leagan amach Btrfs ó shuiteálaí MAN. Ní úsáideann an córas seo (seisiún beo, mar shampla) é.
-369|Tá athchóiriú ag fanacht: atosaigh an ríomhaire chun é a chríochnú
-370|Atosaigh anois
-371|Fan go gcríochnóidh an oibríocht reatha.
-372|Cuardaigh
-373|Cóipeáil chuig an ngearrthaisce
-374|Am Uilíoch Comhordaithe
-375|Béarla (SAM)
-376|Tá MAN {version} eisithe!
-377|Is féidir leat nuashonrú chuige.
-378|Oscail Nuashonruithe
-379|An nuashonrú á sheiceáil
-380|Á dhearbhú go bhfuil an nuashonrú barántúil agus iomlán…
-381|Nuashonrú MAN
-382|Ní féidir an nuashonrú seo a shuiteáil
-383|Níorbh fhéidir an nuashonrú a léamh.
-384|Nuashonrú ó {name} {version}
-385|Tá {name} {version} suiteáilte
-386|Eisithe
-387|Méid íoslódála
-388|Spás riachtanach
-389|Barántúlacht
-390|Fíoraithe, sínithe ag “{signer}”
-391|Cad atá nua
-392|Níl an nuashonrú seo níos nuaí ná {name} {version} atá suiteáilte.
-393|Nuashonrú
-394|Léigh téarmaí ceadúnais an nuashonraithe seo.
-395|Glacaim le téarmaí an cheadúnais
-396|Cá suiteálfar an nuashonrú?
-397|Cuirtear córas nua in ionad an chórais; ní dhéantar teagmháil le comhaid i d'fhillteán baile.
-398|Roghnaigh suiteáil.
-399|ag rith anois
-400|{name} {version} ar an ríomhaire seo
-401|{name} ar {model}
-402|Níor aimsíodh suiteáil MAN
-403|Suiteáiltear nuashonruithe ó chóras MAN suiteáilte atá ag rith, ní ón seisiún beo.
-404|Suíomh na suiteála
-405|Coimeádtar
-406|Do chomhaid
-407|Gach rud i d'fhillteán baile
-408|Cuntais agus pasfhocail
-409|Úsáideoirí, grúpaí, ainm an ríomhaire
-410|Ceangail agus socruithe
-411|Wi-Fi, crios ama, méarchlár, cuma agus léargais
-412|Aipeanna Flatpak
-413|Móide gach rud i /usr/local agus /opt
-414|Athsholáthraítear
-415|Cuirtear an córas nua in ionad bogearraí a suiteáladh le apt agus athruithe eile ar chomhaid an chórais.
-416|An córas oibriúcháin
-417|Cuirtear {name} {version} ina ionad. Is féidir an córas reatha a athchóiriú ó léargas.
-418|Atosaíonn an ríomhaire chun an nuashonrú a shuiteáil
-419|Tar éis ullmhúcháin, atosaíonn MAN, suiteálann sé an nuashonrú i gcúpla soicind agus atosaíonn sé arís.
-420|_Suiteáil an nuashonrú
-421|Cruthaigh léargas ar dtús?
-422|Sábhálann léargas an córas reatha, ionas gur féidir leat filleadh air mura n-oibríonn rud éigin tar éis an nuashonraithe. Moltar é seo.
-423|_Ná cruthaigh
-424|_Cruthaigh léargas
-425|{name} {version} á ullmhú
-426|Atosaigh le suiteáil
-427|Atosóidh an ríomhaire faoi dhó. Tá do chomhaid slán.
-428|Atosú uathoibríoch i gceann {r} soicind
-429|Atosú uathoibríoch i gceann 30 soicind
-430|Suiteálfar an nuashonrú an chéad uair eile a atosaíonn tú.
-431|Réidh
-432|Níorbh fhéidir an nuashonrú a ullmhú
-433|Níor athraíodh aon rud ar do chóras.
-434|_Triail arís
-435|Logchomhad nuashonraithe
-436|Theip air
-437|Nuashonraíodh do chóras
-438|Nuashonraíodh MAN go leagan {version}.\nRoimhe seo: MAN {previous}.
-439|_Déanta
-440|Oscail nuashonrú MAN
-441|Nuashonruithe MAN
-442|Ag fáil na liostaí pacáistí is nuaí…
-443|Ag cóipeáil na haipe
-444|Ag cur na haipe leis an roghchlár
-445|Níor aimsíodh an comhad.
-446|Níorbh fhéidir an pacáiste a shuiteáil.
-447|Níl iontráil roghchláir na haipe bailí.
-448|An plean suiteála á sheiceáil
-449|An diosca á ullmhú
-450|MAN á chóipeáil chuig an diosca
-451|An córas nua á chumrú
-452|An lódálaí tosaithe á shuiteáil
-453|An chéad léargas á chruthú
-454|Á chríochnú
-455|Seanshínithe deighiltí á mbaint
-456|Deighiltí á gcruthú
-457|Deighilt chórais EFI á formáidiú
-458|Deighilt an chórais á criptiú
-459|An deighilt tosaithe á formáidiú
-460|An córas comhad Btrfs á chruthú
-461|Seanshínithe córas comhad á mbaint
-462|An tsuiteáil chriptithe á díghlasáil
-463|An córas reatha á shábháil mar léargas
-464|An córas roimhe seo á bhaint
-465|Tábla na gcóras comhad á scríobh
-466|Ainm agus aitheantas an ríomhaire á socrú
-467|Cuntais an tseisiúin bheo á mbaint
-468|Do chuntas á chruthú
-469|MAN Setup á ullmhú don chéad tosú
-470|An crios ama agus an méarchlár á socrú
-471|An suiteálaí á bhaint as an gcóras nua
-472|An íomhá tosaithe (initramfs) á tógáil
-473|GRUB á chumrú
-474|GRUB á shuiteáil ar dheighilt chórais EFI
-475|An lódálaí tosaithe cúltaca á shuiteáil
-476|An roghchlár tosaithe á scríobh
-477|Diosca réidh
-478|Léargas den chóras nua á chruthú
-479|An léargas á chur leis an roghchlár tosaithe
-480|Á dhífheistiú
-481|Caithfidh cúntóir an tsuiteálaí rith mar root.
-482|Níor tosaíodh an ríomhaire seo i mód UEFI. Teastaíonn UEFI ó MAN.
-483|Níl an t-ainm úsáideora bailí.
-484|Teastaíonn pasfhocal.
-485|Níl ainm an ríomhaire bailí.
-486|Teanga anaithnid.
-487|Caithfidh 8 gcarachtar ar a laghad a bheith i bhfrása faire an chriptithe.
-488|D'athraigh an diosca tar éis duit an tsuiteáil a dheimhniú. Níor athraíodh aon rud; athbhreithnigh agus deimhnigh arís.
-489|Roghnaigh deighilt chórais.
-490|Níl an deighilt chórais roghnaithe ar an diosca deimhnithe.
-491|Caithfidh an deighilt tosaithe a bheith ar leith ó dheighiltí EFI agus an chórais.
-492|Caithfidh an deighilt tosaithe a bheith 512 MB ar a laghad.
-493|Níor roghnaíodh suiteáil.
-494|Níl an tsuiteáil roghnaithe ar an diosca deimhnithe.
-495|Níl deighilt MAN_BOOT ag an tsuiteáil chriptithe.
-496|Níor aimsíodh eithne le modúil chomhoiriúnacha i /boot.
-497|Caithfidh cúntóir an chórais an teanga a athrú.
-498|Do shocruithe á gcur i bhfeidhm
-499|Criptiú diosca á ullmhú
-500|Á chríochnú
-501|Caithfidh cúntóir an chórais MAN Setup a chríochnú.
-502|Tá MAN Setup críochnaithe cheana ar an ríomhaire seo.
-503|Dath béime anaithnid.
-504|Níl an cúlbhrat roghnaithe ar fáil.
-505|Ní féidir an córas seo a chriptiú.
-506|Tá eochair an tsocraithe in easnamh, mar sin ní féidir leis an gcriptiú leanúint ar aghaidh sa chúlra.
-507|Níl an córas suiteáilte ar Btrfs, mar sin níl léargais ar fáil.
-508|Tá athchóiriú léargais ag fanacht le hatosú. Atosaigh an ríomhaire ar dtús chun é a chríochnú.
-509|Aitheantas léargais neamhbhailí.
-510|An nuashonrú á sheiceáil
-511|Léargas á chruthú
-512|Limistéar an nuashonraithe á ullmhú
-513|An córas nua á dhíphacáil
-514|Do chuntais agus do shocruithe á n-aistriú
-515|An t-atosú á ullmhú
-516|Díphacáilte
-517|Cuntais
-518|Bogearraí an tsuiteálaí amháin á mbaint
-519|Íomhá tosaithe an nuashonraithe á tógáil
-520|An iontráil tosaithe aon uaire á cur leis
-521|Tá an nuashonrú barántúil
-522|Cruthaíodh an léargas
-523|Scipeáilte
-524|Limistéar an nuashonraithe réidh
-525|An córas nua á ullmhú
-526|Tá comhad an nuashonraithe damáistithe (ní mheaitseálann an tsuim seiceála). Íoslódáil arís é.
-527|Níorbh fhéidir comhad an nuashonraithe a léamh go hiomlán.
-528|Níl eithne sa nuashonrú.
-529|Caithfidh cúntóir an chórais nuashonruithe a shuiteáil.
-530|Níor aimsíodh an tsuiteáil roghnaithe.
-531|Ní féidir ach an tsuiteáil MAN atá ag rith a nuashonrú.
-532|Ní comhad nuashonraithe MAN é seo (gan léiriú).
-533|Níl an nuashonrú sínithe, mar sin ní féidir muinín a bheith agat as.
-534|Tá síniú an nuashonraithe damáistithe.
-535|Níl an nuashonrú sínithe ag MAN. D'fhéadfadh go ndearnadh athrú air nó gur tháinig sé ó fhoinse neamhiontaofa.
-536|Tá léiriú an nuashonraithe neamhbhailí.
-537|Níl an frása faire ceart, nó ní féidir an deighilt chriptithe a oscailt.
-538|Gorm
-539|Gormghlas
-540|Glas
-541|Buí
-542|Oráiste
-543|Dearg
-544|Bándearg
-545|Corcra
-546|Sclátaí
-547|Suiteálaí Pacáistí
-548|Suiteáil aipeanna ó chomhaid .deb, Flatpak agus AppImage
-549|Suiteálaí córais
-550|Suiteáil MAN ar an ríomhaire seo
-551|Athchóiriú córais
-552|Cruthaigh agus athchóirigh léargais den chóras
-553|Suiteálaí nuashonruithe córais
-554|Suiteáil comhad nuashonraithe córais MAN
-555|Tairgeann sé MAN a shuiteáil nuair a thosaíonn an seisiún beo
-556|Fógra nuashonraithe MAN
-557|Insíonn sé duit uair amháin tar éis logáil isteach gur nuashonraíodh MAN
-558|Socraigh do ríomhaire MAN nua
-559|Céad socrú MAN
-560|Nuashonruithe MAN
-561|Cuireann sé in iúl duit nuair a bhíonn leagan nua de MAN ar fáil
+44|Coinnigh i ndiaidh Nuashonruithe MAN
+45|Suiteálann MAN an aip arís i ndiaidh gach nuashonraithe. Coinnítear comhaid a pacáiste chuige sin.
+46|Cliceáil Suiteáil chun {name} a shuiteáil.
+47|Ag seiceáil cad eile atá ag teastáil ón aip…
+48|Suiteálann sé na pacáistí atá ag teastáil uaidh freisin: {list}
+49|Níl roinnt pacáistí atá ag teastáil ón aip ar fáil fós. Faigheann an tsuiteáil na liostaí pacáistí is nuaí ar dtús; má tá siad fós ar iarraidh, ní féidir an aip a shuiteáil.
+50|Ag suiteáil {name}…
+51|Ag ullmhú…
+52|Sonraí
+53|Ag suiteáil an phacáiste…
+54|Ag bogadh na haipe chuig a fillteán…
+55|Níorbh fhéidir an aip a shuiteáil.
+56|Ag suiteáil na haipe le Flatpak…
+57|Logchomhad
+58|_Dún
+59|D'Éirigh leis an tSuiteáil
+60|Suiteáladh an aip.
+61|Theip ar an tSuiteáil
+62|_Oscail
+63|_Taispeáin sonraí
+64|Logchomhad suiteála
+65|Suiteálaí Aipeanna
+66|_Siar
+67|Ag léamh na haipe…
+68|Suiteáil {name}
+69|Aipeanna
+70|Roghnaigh Aip le Suiteáil
+71|Níorbh fhéidir cúntóir an chórais a thosú.
+72|Níorbh fhéidir cumarsáid a dhéanamh le cúntóir an chórais.
+73|Cailleadh an ceangal le cúntóir an chórais.
+74|Cealaíodh an t-údarú.
+75|Teastaíonn cearta riarthóra don ghníomh seo.
+76|Stop cúntóir an chórais gan choinne.
+77|Níl aon deighilt chórais EFI ann
+78|Níl ach {free} saor, teastaíonn {need} ó MAN. Saor spás le DUHACH! i Windows.
+79|Níl aon spás saor. Tosaigh DUHACH! i Windows chun spás a dhéanamh do MAN.
+80|Tá MAN ag rith ón diosca seo
+81|In úsáid: tá deighilt feistithe
+82|Ró-bheag, teastaíonn {need} ó MAN
+83|Suiteáil MAN
+84|Tá MAN á shuiteáil. Fan go gcríochnóidh sé.
+85|Teanga
+86|_Atosaigh sa teanga seo
+87|Atosóidh an seisiún beo sa teanga a roghnaíodh, agus suiteálfar MAN inti.
+88|Fáilte go MAN
+89|Córas GNOME tapa, oscailte agus inoiriúnaithe go hiomlán.\nSuiteáil ar an ríomhaire seo é, nó lean ort ag fiosrú an tseisiúin bheo.
+90|_Suiteáil MAN…
+91|_Lean ort ag triail MAN
+92|Dioscaí á lorg…
+93|Fáilte
+94|Tosaíodh an ríomhaire seo i mód BIOS oidhreachta. Ní féidir MAN a shuiteáil ach ar ríomhairí UEFI: atosaigh agus roghnaigh an rogha tosaithe UEFI.
+95|Níor sheol cúntóir an chórais aon fhaisnéis faoi dhioscaí.
+96|  ·  EFI
+97|_Ar aghaidh
+98|Glan an diosca agus suiteáil MAN
+99|Scriosfar gach rud ar an diosca roghnaithe, Windows san áireamh.
+100|Molta. Scriosfar gach rud ar an diosca roghnaithe.
+101|Suiteáil taobh le Windows
+102|Molta. Úsáideann MAN an spás saor taobh le Windows; fanann Windows agus a chuid comhad. Roghnaigh an córas gach uair a thosaíonn tú.
+103|Athshuiteáil MAN
+104|Cuireann sé córas nua in ionad an chórais ach coimeádann sé comhaid phearsanta i /home. Sábháiltear an córas reatha mar léargas.
+105|Deighiltí saincheaptha
+106|Do shaineolaithe: roghnaigh na deighiltí tú féin, nó cruthaigh iad le Dioscaí.
+107|Diosca
+108|Roghnaigh an diosca a ghlanfar. Taispeántar dioscaí nach féidir a úsáid in éineacht leis an gcúis.
+109|Níor aimsíodh aon dioscaí
+110|Spás saor taobh le Windows
+111|Ní dhéantar teagmháil le deighiltí Windows. Roinneann MAN deighilt chórais EFI agus cuireann sé Windows lena roghchlár tosaithe.
+112|{size} saor
+113|gan spás saor
+114|{model} (Windows)
+115|Suiteáil le hathsholáthar
+116|gan fillteáin bhaile
+117|fillteáin bhaile: {list}
+118|léargais: {n}
+119|MAN ar {model}
+120|Frása faire do {device}
+121|Díghlasáil
+122|Níorbh fhéidir an tsuiteáil a scrúdú.
+123|Deighiltí
+124|Formáidítear deighilt an chórais le Btrfs agus tá @system, @home agus @snapshots inti. Ní liostaítear deighiltí ar an diosca óna bhfuil MAN ag rith.
+125|Oscail Dioscaí chun deighiltí a chruthú nó a athmhéadú
+126|Athnuaigh liosta na ndeighiltí
+127|Roghnaigh deighilt
+128|Deighilt chórais EFI
+129|Formáidigh deighilt chórais EFI
+130|Fág as chun lódálaithe tosaithe córas eile a choimeád
+131|Deighilt chórais (formáidithe mar Btrfs)
+132|Deighilt tosaithe (riachtanach le criptiú)
+133|Athnuadh liosta na ndeighiltí
+134|Slándáil
+135|Criptigh an córas
+136|Cosnaíonn sé do shonraí má chailltear nó má ghoidtear an ríomhaire. Iarrtar frása faire gach uair a thosaíonn sé.
+137|Frása faire
+138|Deimhnigh an frása faire
+139|Coimeád an frása faire seo slán
+140|Má chailltear é, ní féidir le duine ar bith na sonraí a aisghabháil. Fanann an t-eithne agus comhaid tosaithe ar dheighilt tosaithe bheag gan chriptiú.
+141|Caithfidh 8 gcarachtar ar a laghad a bheith sa fhrása faire.
+142|Ní mheaitseálann na frásaí faire.
+143|Roghnaigh diosca.
+144|Roghnaigh an diosca ina bhfuil Windows.
+145|Roghnaigh an tsuiteáil le hathsholáthar.
+146|Díghlasáil an tsuiteáil chriptithe ar dtús.
+147|Níl córas MAN sa deighilt seo.
+148|Roghnaigh deighilt chórais EFI.
+149|Roghnaigh deighilt an chórais.
+150|Caithfidh an deighilt EFI agus deighilt an chórais a bheith difriúil.
+151|Teastaíonn deighilt tosaithe ar leith don chriptiú.
+152|Caithfidh deighilt an chórais a bheith {size} ar a laghad.
+153|Níl an deighilt EFI formáidithe mar FAT; cas formáidiú air.
+154|Tá deighilt an chórais feistithe; díshuiteáil i nDioscaí í ar dtús.
+155|Cá suiteálfar MAN?
+156|Am agus méarchlár
+157|Crios ama
+158|Leagan amach méarchláir
+159|Tástáil do mhéarchlár
+160|Clóscríobh anseo chun a sheiceáil go dtugann na heochracha na carachtair cheart.
+161|Clóscríobh anseo
+162|Crios ama agus méarchlár
+163|Níor roghnaíodh diosca
+164|Níor roghnaíodh deighilt chórais
+165|D'imigh deighilt an chórais
+166|Níor roghnaíodh suiteáil
+167|D'imigh an diosca
+168|Athbhreithniú
+169|Ceann scríbe
+170|Glan an diosca agus suiteáil
+171|Deighiltí saincheaptha
+172|Athshuiteáil, ag coimeád /home
+173|Taobh le Windows
+174| (formáidfear í)
+175| (coimeádtar í)
+176|Deighilt chórais
+177|{partition} (formáidfear í)
+178|Deighilt tosaithe
+179|Spás do MAN
+180|{free} spás saor (cruthaítear deighilt tosaithe agus deighilt an chórais)
+181|Windows
+182|Gan athrú. Feictear é i roghchlár tosaithe MAN; roinntear deighilt chórais EFI.
+183|Criptiú
+184|Ar siúl (LUKS2)
+185|As
+186|Córas comhad
+187|Btrfs: @system do MAN, @home do do chomhaid, @snapshots do phointí athchóirithe. Roinneann siad uile an spás saor.
+188|Córas
+189|Do chuntas
+190|Cruthaítear é in MAN Setup nuair a thosaíonn an ríomhaire den chéad uair, mar aon le hainm an ríomhaire, an chuma agus socruithe príobháideachais.
+191|Méarchlár
+192|Glanfar na sonraí go léir ar {model} ({path}).
+193|_Glan agus suiteáil
+194|Formáidfear na deighiltí roghnaithe. Ní athraíonn deighiltí eile.
+195|_Formáidigh agus suiteáil
+196|Cuirtear córas nua in ionad an chórais reatha. Coimeádtar do chomhaid i /home, agus sábháiltear an seanchóras mar léargas.
+197|_Athshuiteáil
+198|Suiteáiltear MAN sa spás saor. Ní athraíonn Windows ná a chuid comhad.
+199|Réidh le suiteáil
+200|Glan {model}?
+201|Scriosfar gach comhad agus deighilt ar {path} ({size}) go buan. Ní féidir é seo a chealú.
+202|Glan agus suiteáil
+203|Formáidigh na deighiltí roghnaithe?
+204|Scriosfar na sonraí go léir ar na deighiltí roghnaithe go buan. Ní athraíonn deighiltí eile.
+205|Formáidigh agus suiteáil
+206|Suiteáil MAN taobh le Windows?
+207|Suiteáiltear MAN sa {free} spás saor ar {model} ({path}). Ní athraíonn Windows ná a chuid comhad.
+208|Suiteáil
+209|Athshuiteáil MAN?
+210|Cuirfear cóip úr in ionad an chórais suiteáilte. Coimeádtar comhaid phearsanta i /home agus fanann an seanchóras ar fáil mar léargas.
+211|Athshuiteáil
+212|_Cealaigh
+213|MAN á shuiteáil
+214|Á thosú…
+215|Á shuiteáil
+216|Céim {index} as {n}  ·  {title}
+217|Tá MAN suiteáilte
+218|Atosaigh an ríomhaire chun tosú ag úsáid MAN. Ligeann roghchlár gach tosú duit MAN nó Windows a roghnú; baineann MAN deighilt shealadach an tsuiteálaí ag an gcéad tosú.
+219|Atosaigh an ríomhaire chun tosú ag úsáid MAN. Is féidir leat an meán suiteála a bhaint; má fhanann sé ceangailte, tosaíonn MAN ón diosca nua mar sin féin.
+220|_Atosaigh anois
+221|Déanta
+222|Theip ar an tsuiteáil
+223|Níor athraíodh aon diosca eile, agus scaoil an suiteálaí an sprioc-diosca. Is féidir leat an plean a athbhreithniú agus triail eile a bhaint as.
+224|_Athbhreithnigh agus triail arís
+225|Cuardaigh teangacha
+226|Cuardaigh tíortha
+227|Níor aimsíodh diosca an chórais.
+228|Teastaíonn an leagan amach Btrfs a chruthaíonn suiteálaí MAN don chriptiú.
+229|Níl deighilt tosaithe ar leith sa tsuiteáil seo, rud a theastaíonn don chriptiú. Athshuiteáil MAN le “Glan an diosca” chun criptiú a úsáid.
+230|MAN Setup
+231|Cá bhfuil tú?
+232|Socraíonn do thír nó do réigiún formáid an dáta, an ama agus na n-uimhreacha.
+233|Tír
+234|Ceadúnas Poiblí Ginearálta GNU, leagan 2
+235|Eithne Linux agus go leor uirlisí córais
+236|Ceadúnas Poiblí Ginearálta GNU, leagan 3
+237|Go leor clár GNU agus GNOME
+238|Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 2.1
+239|GTK, GLib agus go leor leabharlann
+240|Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 3
+241|Leabharlanna
+242|Ceadúnas Poiblí Mozilla 2.0
+243|Cláir agus leabharlanna ó Mozilla agus daoine eile
+244|Ceadúnas Apache 2.0
+245|Leabharlanna agus uirlisí
+246|Comhaontú ceadúnais
+247|Léigh agus glac leis na téarmaí faoina gcuirtear MAN ar fáil.
+248|Ceadúnais
+249|Níl téacs an cheadúnais ar fáil ({path}).
+250|Léigh mé téarmaí an cheadúnais agus glacaim leo
+251|Sreangaithe
+252|Gan cheangal
+253|Ceangail leis an idirlíon
+254|Le ceangal, is féidir le MAN an t-am a shocrú agus do bhogearraí a choimeád cothrom le dáta. Is féidir é seo a dhéanamh níos déanaí freisin.
+255|An ceangal á sheiceáil…
+256|Líonraí Wi-Fi
+257|Cuardaigh arís
+258|_Scipeáil
+259|Is féidir leat ceangal níos déanaí sna Socruithe.
+260|Ceangailte
+261|Gan cheangal
+262|Níor aimsíodh aon líonraí
+263|Idirlíon
+264|Ceangailte le “{ssid}”
+265|Níorbh fhéidir ceangal le “{ssid}”
+266|Ceangail le “{ssid}”
+267|Cuir isteach pasfhocal an líonra.
+268|_Ceangail
+269|Cruthaigh do chuntas
+270|Beidh tú i do riarthóir ar an ríomhaire seo, le rochtain iomlán root trí sudo.
+271|Ainm iomlán
+272|Ainm úsáideora
+273|Pasfhocal
+274|Deimhnigh an pasfhocal
+275|Logáil isteach go huathoibríoch
+276|Scipeáil an scáileán logála isteach nuair a thosaíonn an ríomhaire
+277|Fillteáin bhaile atá ann
+278|Úsáid an t-ainm úsáideora céanna chun leanúint ag úsáid fillteáin ó shuiteáil roimhe seo.
+279|Úsáid
+280|Ardleibhéal
+281|Ainm an ríomhaire
+282|Socraigh pasfhocal root
+283|Ceadaíonn sé logáil isteach go díreach mar root. Gan é, úsáid sudo le do phasfhocal féin.
+284|Pasfhocal root
+285|Deimhnigh an pasfhocal root
+286|Cuir isteach d'ainm.
+287|Roghnaigh ainm úsáideora.
+288|Tá an t-ainm úsáideora seo in úsáid ag an gcóras cheana.
+289|Tá an t-ainm úsáideora seo curtha in áirithe ag an gcóras.
+290|Úsáideann ainmneacha úsáideora litreacha beaga, digití, - agus _, agus tosaíonn siad le litir.
+291|Roghnaigh pasfhocal.
+292|Ní mheaitseálann na pasfhocail.
+293|Is féidir litreacha, digití agus fleiscíní a bheith in ainm an ríomhaire.
+294|Cuir isteach an pasfhocal root faoi dhó.
+295|Leid: tá pasfhocal le 8 gcarachtar nó níos mó i bhfad níos sábháilte.
+296|Cuntas
+297|Dorcha
+298|Geal
+299|Déan do chuid féin de
+300|Roghnaigh stíl, dath béime agus cúlbhrat. Feiceann tú gach athrú láithreach.
+301|Stíl
+302|Dath béime
+303|Cúlbhrat
+304|Saincheap
+305|Príobháideacht
+306|Roghnaigh cé na gnéithe ar féidir leo faisnéis fút a úsáid. Is féidir é seo a athrú am ar bith sna Socruithe.
+307|Seirbhísí suímh
+308|Ligeann sé d'aipeanna mar Léarscáileanna agus Aimsir do shuíomh garbh a aimsiú trí líonraí Wi-Fi in aice láimhe.
+309|Crios ama uathoibríoch
+310|Úsáideann sé do shuíomh chun an crios ama a choimeád ceart agus tú ag taisteal.
+311|_Críochnaigh an socrú
+312|Tá do dhiosca criptithe
+313|Tá do shonraí cosanta. Iarrtar an frása faire gach uair a thosaíonn an ríomhaire.
+314|Criptiú diosca
+315|Cosnaíonn criptiú do shonraí má chailltear nó má ghoidtear an ríomhaire.
+316|Níl sé ar fáil ar an tsuiteáil seo
+317|Cosnaíonn criptiú do chomhaid má chailltear nó má ghoidtear an ríomhaire. Gan an frása faire, ní féidir le duine ar bith an diosca a léamh.
+318|Criptigh an diosca
+319|Iarrtar an frása faire gach uair a thosaíonn an ríomhaire.
+320|Tosóidh an criptiú ag an gcéad atosú eile
+321|Ansin criptítear do dhiosca sa chúlra agus tú ag úsáid an ríomhaire. Má chailltear an frása faire, ní féidir le duine ar bith na sonraí a aisghabháil.
+322|MAN á ullmhú
+323|Gach rud á ullmhú…
+324|_Atosaigh
+325|_Siar
+326|Á ullmhú
+327|Logchomhad socraithe
+328|Gach rud déanta!
+329|Chuaigh rud éigin mícheart
+330|Laethúil
+331|Roimh nuashonrú
+332|Roimh athchóiriú
+333|Roimh athshuiteáil
+334|De láimh
+335|Níl aon léargais fós
+336|Cruthaigh ceann sula ndéanann tú athruithe móra ar an gcóras.
+337|Athchóirigh…
+338|Scrios léargas
+339|{free} saor as {size}. Roinneann an córas, fillteáin bhaile agus léargais an spás seo; ní úsáideann léargais spás ach don mhéid a d'athraigh ó tógadh iad.
+340|_OK
+341|Cruthaigh léargas
+342|Sábhálann sé staid reatha an chórais. Níl do chomhaid phearsanta san fhillteán baile san áireamh.
+343|Cur síos, mar shampla “Roimh thiománaithe a shuiteáil”
+344|_Cruthaigh
+345|Léargas de láimh
+346|Scrios an léargas?
+347|Scriosfar “{description}” ó {date} go buan.
+348|_Scrios
+349|Athchóirigh an léargas seo?
+350|Fillfidh an córas ar “{description}” ó {date} tar éis atosú. Ní athraíonn do chomhaid phearsanta.\n\nSábháiltear an córas reatha mar léargas ar dtús, mar sin is féidir é seo a chealú.
+351|_Athchóirigh
+352|Atosaigh chun an t-athchóiriú a chríochnú
+353|Atosaigh _níos déanaí
+354|Atosaigh _anois
+355|Léargais
+356|Pointí athchóirithe
+357|Sábhálann léargais staid an chórais oibriúcháin. Nuair a athchóiríonn tú ceann, filleann an córas ar an nóiméad sin, rud a chabhraíonn tar éis droch-nuashonraithe nó athraithe cumraíochta. Ní dhéantar teagmháil le do chomhaid phearsanta riamh.
+358|Léargais uathoibríocha
+359|Léargais laethúla
+360|Uair sa lá fad atá an ríomhaire ar siúl
+361|Léargais laethúla le coimeád
+362|Roimh nuashonruithe bogearraí
+363|Tógtar iad go huathoibríoch nuair a shuiteáiltear, a uasghrádaítear nó a bhaintear pacáistí
+364|Léargais nuashonraithe le coimeád
+365|Stóráil
+366|Spás diosca
+367|Mura dtosaíonn MAN
+368|Roghnaigh “Restore a MAN snapshot” sa roghchlár tosaithe chun córas oibre a fháil ar ais.
+369|Níl léargais ar fáil
+370|Oibríonn léargais ar MAN atá suiteáilte leis an leagan amach Btrfs ó shuiteálaí MAN. Ní úsáideann an córas seo (seisiún beo, mar shampla) é.
+371|Tá athchóiriú ag fanacht: atosaigh an ríomhaire chun é a chríochnú
+372|Atosaigh anois
+373|Fan go gcríochnóidh an oibríocht reatha.
+374|Cuardaigh
+375|Cóipeáil chuig an ngearrthaisce
+376|Am Uilíoch Comhordaithe
+377|Béarla (SAM)
+378|Tá MAN {version} eisithe!
+379|Is féidir leat nuashonrú chuige.
+380|Oscail Nuashonruithe
+381|An nuashonrú á sheiceáil
+382|Á dhearbhú go bhfuil an nuashonrú barántúil agus iomlán…
+383|Nuashonrú MAN
+384|Ní féidir an nuashonrú seo a shuiteáil
+385|Níorbh fhéidir an nuashonrú a léamh.
+386|Nuashonrú ó {name} {version}
+387|Tá {name} {version} suiteáilte
+388|Eisithe
+389|Méid íoslódála
+390|Spás riachtanach
+391|Barántúlacht
+392|Fíoraithe, sínithe ag “{signer}”
+393|Cad atá nua
+394|Níl an nuashonrú seo níos nuaí ná {name} {version} atá suiteáilte.
+395|Nuashonrú
+396|Léigh téarmaí ceadúnais an nuashonraithe seo.
+397|Glacaim le téarmaí an cheadúnais
+398|Cá suiteálfar an nuashonrú?
+399|Cuirtear córas nua in ionad an chórais; ní dhéantar teagmháil le comhaid i d'fhillteán baile.
+400|Roghnaigh suiteáil.
+401|ag rith anois
+402|{name} {version} ar an ríomhaire seo
+403|{name} ar {model}
+404|Níor aimsíodh suiteáil MAN
+405|Suiteáiltear nuashonruithe ó chóras MAN suiteáilte atá ag rith, ní ón seisiún beo.
+406|Suíomh na suiteála
+407|Coimeádtar
+408|Do chomhaid
+409|Gach rud i d'fhillteán baile
+410|Cuntais agus pasfhocail
+411|Úsáideoirí, grúpaí, ainm an ríomhaire
+412|Ceangail agus socruithe
+413|Wi-Fi, crios ama, méarchlár, cuma agus léargais
+414|Aipeanna Flatpak
+415|Móide gach rud i /usr/local agus /opt
+416|Athsholáthraítear
+417|Cuirtear an córas nua in ionad bogearraí a suiteáladh le apt agus athruithe eile ar chomhaid an chórais.
+418|An córas oibriúcháin
+419|Cuirtear {name} {version} ina ionad. Is féidir an córas reatha a athchóiriú ó léargas.
+420|Atosaíonn an ríomhaire chun an nuashonrú a shuiteáil
+421|Tar éis ullmhúcháin, atosaíonn MAN, suiteálann sé an nuashonrú i gcúpla soicind agus atosaíonn sé arís.
+422|_Suiteáil an nuashonrú
+423|Cruthaigh léargas ar dtús?
+424|Sábhálann léargas an córas reatha, ionas gur féidir leat filleadh air mura n-oibríonn rud éigin tar éis an nuashonraithe. Moltar é seo.
+425|_Ná cruthaigh
+426|_Cruthaigh léargas
+427|{name} {version} á ullmhú
+428|Atosaigh le suiteáil
+429|Atosóidh an ríomhaire faoi dhó. Tá do chomhaid slán.
+430|Atosú uathoibríoch i gceann {r} soicind
+431|Atosú uathoibríoch i gceann 30 soicind
+432|Suiteálfar an nuashonrú an chéad uair eile a atosaíonn tú.
+433|Réidh
+434|Níorbh fhéidir an nuashonrú a ullmhú
+435|Níor athraíodh aon rud ar do chóras.
+436|_Triail arís
+437|Logchomhad nuashonraithe
+438|Theip air
+439|Nuashonraíodh do chóras
+440|Nuashonraíodh MAN go leagan {version}.\nRoimhe seo: MAN {previous}.
+441|_Déanta
+442|Oscail nuashonrú MAN
+443|Nuashonruithe MAN
+444|Ag fáil na liostaí pacáistí is nuaí…
+445|Ag cóipeáil na haipe
+446|Ag cur na haipe leis an roghchlár
+447|Níor aimsíodh an comhad.
+448|Níorbh fhéidir an pacáiste a shuiteáil.
+449|Níl iontráil roghchláir na haipe bailí.
+450|An plean suiteála á sheiceáil
+451|An diosca á ullmhú
+452|MAN á chóipeáil chuig an diosca
+453|An córas nua á chumrú
+454|An lódálaí tosaithe á shuiteáil
+455|An chéad léargas á chruthú
+456|Á chríochnú
+457|Seanshínithe deighiltí á mbaint
+458|Deighiltí á gcruthú
+459|Deighilt chórais EFI á formáidiú
+460|Deighilt an chórais á criptiú
+461|An deighilt tosaithe á formáidiú
+462|An córas comhad Btrfs á chruthú
+463|Seanshínithe córas comhad á mbaint
+464|An tsuiteáil chriptithe á díghlasáil
+465|An córas reatha á shábháil mar léargas
+466|An córas roimhe seo á bhaint
+467|Tábla na gcóras comhad á scríobh
+468|Ainm agus aitheantas an ríomhaire á socrú
+469|Cuntais an tseisiúin bheo á mbaint
+470|Do chuntas á chruthú
+471|MAN Setup á ullmhú don chéad tosú
+472|An crios ama agus an méarchlár á socrú
+473|An suiteálaí á bhaint as an gcóras nua
+474|An íomhá tosaithe (initramfs) á tógáil
+475|GRUB á chumrú
+476|GRUB á shuiteáil ar dheighilt chórais EFI
+477|An lódálaí tosaithe cúltaca á shuiteáil
+478|An roghchlár tosaithe á scríobh
+479|Diosca réidh
+480|Léargas den chóras nua á chruthú
+481|An léargas á chur leis an roghchlár tosaithe
+482|Á dhífheistiú
+483|Caithfidh cúntóir an tsuiteálaí rith mar root.
+484|Níor tosaíodh an ríomhaire seo i mód UEFI. Teastaíonn UEFI ó MAN.
+485|Níl an t-ainm úsáideora bailí.
+486|Teastaíonn pasfhocal.
+487|Níl ainm an ríomhaire bailí.
+488|Teanga anaithnid.
+489|Caithfidh 8 gcarachtar ar a laghad a bheith i bhfrása faire an chriptithe.
+490|D'athraigh an diosca tar éis duit an tsuiteáil a dheimhniú. Níor athraíodh aon rud; athbhreithnigh agus deimhnigh arís.
+491|Roghnaigh deighilt chórais.
+492|Níl an deighilt chórais roghnaithe ar an diosca deimhnithe.
+493|Caithfidh an deighilt tosaithe a bheith ar leith ó dheighiltí EFI agus an chórais.
+494|Caithfidh an deighilt tosaithe a bheith 512 MB ar a laghad.
+495|Níor roghnaíodh suiteáil.
+496|Níl an tsuiteáil roghnaithe ar an diosca deimhnithe.
+497|Níl deighilt MAN_BOOT ag an tsuiteáil chriptithe.
+498|Níor aimsíodh eithne le modúil chomhoiriúnacha i /boot.
+499|Caithfidh cúntóir an chórais an teanga a athrú.
+500|Do shocruithe á gcur i bhfeidhm
+501|Criptiú diosca á ullmhú
+502|Á chríochnú
+503|Caithfidh cúntóir an chórais MAN Setup a chríochnú.
+504|Tá MAN Setup críochnaithe cheana ar an ríomhaire seo.
+505|Dath béime anaithnid.
+506|Níl an cúlbhrat roghnaithe ar fáil.
+507|Ní féidir an córas seo a chriptiú.
+508|Tá eochair an tsocraithe in easnamh, mar sin ní féidir leis an gcriptiú leanúint ar aghaidh sa chúlra.
+509|Níl an córas suiteáilte ar Btrfs, mar sin níl léargais ar fáil.
+510|Tá athchóiriú léargais ag fanacht le hatosú. Atosaigh an ríomhaire ar dtús chun é a chríochnú.
+511|Aitheantas léargais neamhbhailí.
+512|An nuashonrú á sheiceáil
+513|Léargas á chruthú
+514|Limistéar an nuashonraithe á ullmhú
+515|An córas nua á dhíphacáil
+516|Do chuntais agus do shocruithe á n-aistriú
+517|An t-atosú á ullmhú
+518|Díphacáilte
+519|Cuntais
+520|Ag athshuiteáil na n-aipeanna a coinníodh
+521|Bogearraí an tsuiteálaí amháin á mbaint
+522|Íomhá tosaithe an nuashonraithe á tógáil
+523|An iontráil tosaithe aon uaire á cur leis
+524|Tá an nuashonrú barántúil
+525|Cruthaíodh an léargas
+526|Scipeáilte
+527|Limistéar an nuashonraithe réidh
+528|An córas nua á ullmhú
+529|Tá comhad an nuashonraithe damáistithe (ní mheaitseálann an tsuim seiceála). Íoslódáil arís é.
+530|Níorbh fhéidir comhad an nuashonraithe a léamh go hiomlán.
+531|Níl eithne sa nuashonrú.
+532|Caithfidh cúntóir an chórais nuashonruithe a shuiteáil.
+533|Níor aimsíodh an tsuiteáil roghnaithe.
+534|Ní féidir ach an tsuiteáil MAN atá ag rith a nuashonrú.
+535|Ní comhad nuashonraithe MAN é seo (gan léiriú).
+536|Níl an nuashonrú sínithe, mar sin ní féidir muinín a bheith agat as.
+537|Tá síniú an nuashonraithe damáistithe.
+538|Níl an nuashonrú sínithe ag MAN. D'fhéadfadh go ndearnadh athrú air nó gur tháinig sé ó fhoinse neamhiontaofa.
+539|Tá léiriú an nuashonraithe neamhbhailí.
+540|Níl an frása faire ceart, nó ní féidir an deighilt chriptithe a oscailt.
+541|Gorm
+542|Gormghlas
+543|Glas
+544|Buí
+545|Oráiste
+546|Dearg
+547|Bándearg
+548|Corcra
+549|Sclátaí
+550|Suiteálaí Pacáistí
+551|Suiteáil aipeanna ó chomhaid .deb, Flatpak agus AppImage
+552|Suiteálaí córais
+553|Suiteáil MAN ar an ríomhaire seo
+554|Athchóiriú córais
+555|Cruthaigh agus athchóirigh léargais den chóras
+556|Suiteálaí nuashonruithe córais
+557|Suiteáil comhad nuashonraithe córais MAN
+558|Tairgeann sé MAN a shuiteáil nuair a thosaíonn an seisiún beo
+559|Fógra nuashonraithe MAN
+560|Insíonn sé duit uair amháin tar éis logáil isteach gur nuashonraíodh MAN
+561|Socraigh do ríomhaire MAN nua
+562|Céad socrú MAN
+563|Nuashonruithe MAN
+564|Cuireann sé in iúl duit nuair a bhíonn leagan nua de MAN ar fáil

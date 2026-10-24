@@ -262,6 +262,10 @@ pub struct OobeConfig {
 pub const UPDATE_KEYS_DIR: &str = "/usr/share/man/update-keys";
 /// Version of the installed MAN system (written by the installer and updates).
 pub const VERSION_FILE: &str = "/usr/lib/man/version";
+/// .deb apps kept across MAN updates (App Installer's "Keep After MAN
+/// Updates"): `<package>.deb`, the packages they pulled in under
+/// `archives/`, and `pending` while a reinstall still has to be done.
+pub const KEPT_DEBS: &str = "/var/lib/man/kept-debs";
 /// On TEST builds: the release the build was made after (see `man_version_cmp`).
 pub const VERSION_BASE_FILE: &str = "/usr/lib/man/version-base";
 /// Details of the last installed update, read by the login pop-up.

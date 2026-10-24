@@ -30,7 +30,7 @@
 29|Vefsvæði
 30|Skrá
 31|Þetta forrit er þegar uppsett. Ef þú setur það upp aftur kemur það í staðinn.
-32|Forrit úr .deb-pökkum verða hluti af kerfinu. Þegar MAN er uppfært eru þau fjarlægð og þarf að setja þau upp aftur. Flatpak-forrit og AppImage halda sér.
+32|Forrit úr .deb-pökkum verða hluti af kerfinu. MAN-uppfærsla skiptir kerfinu út, svo þau eru aðeins sett upp aftur eftir uppfærslu ef þú heldur þeim (næstu skref).
 33|Settu aðeins upp forrit frá traustum uppruna.
 34|Hvar viltu setja upp {name}?
 35|Aðeins aðgangurinn þinn getur notað forritið.
@@ -42,521 +42,524 @@
 41|Forritið er sett upp fyrir alla notendur þessarar tölvu.
 42|Forritið er aðeins sett upp fyrir þig.
 43|AppImage-skráin er færð í {folder} og bætt við forritin þín.
-44|Smelltu á Setja upp til að setja upp {name}.
-45|Athugar hvað annað forritið þarf…
-46|Setur einnig upp pakkana sem það þarf: {list}
-47|Sumir pakkar sem forritið þarf eru ekki enn tiltækir. Uppsetningin sækir fyrst nýjustu pakkalistana; ef þá vantar enn er ekki hægt að setja forritið upp.
-48|Set upp {name}…
-49|Undirbý…
-50|Nánar
-51|Set upp pakkann…
-52|Færi forritið í möppuna sína…
-53|Ekki tókst að setja forritið upp.
-54|Set upp forritið með Flatpak…
-55|Atvikaskrá
-56|_Loka
-57|Uppsetningin tókst
-58|Forritið var sett upp.
-59|Uppsetningin mistókst
-60|_Opna
-61|_Sýna nánar
-62|Atvikaskrá uppsetningar
-63|Forritauppsetning
-64|_Til baka
-65|Les forritið…
-66|Setja upp {name}
-67|Forrit
-68|Veldu forrit til að setja upp
-69|Ekki tókst að ræsa kerfishjálparann.
-70|Ekki tókst að eiga samskipti við kerfishjálparann.
-71|Samband við kerfishjálparann rofnaði.
-72|Hætt var við auðkenningu.
-73|Þessi aðgerð krefst stjórnandaréttinda.
-74|Kerfishjálparinn stöðvaðist óvænt.
-75|Engin EFI-kerfissneið
-76|Aðeins {free} laust, MAN þarf {need}. Losaðu pláss með DUHACH! í Windows.
-77|Ekkert laust pláss. Ræstu DUHACH! í Windows til að búa til pláss fyrir MAN.
-78|MAN keyrir af þessum diski
-79|Í notkun: sneið er tengd
-80|Of lítið, MAN þarf {need}
-81|Setja upp MAN
-82|Verið er að setja upp MAN. Bíddu þar til því lýkur.
-83|Tungumál
-84|_Endurræsa á þessu tungumáli
-85|Lifandi setan endurræsist á valda tungumálinu og MAN er sett upp á því.
-86|Velkomin í MAN
-87|Hratt, opið og fullkomlega sérsníðanlegt GNOME-kerfi.\nSettu það upp á þessa tölvu eða haltu áfram að skoða lifandi setuna.
-88|_Setja upp MAN…
-89|_Halda áfram að prófa MAN
-90|Leita að diskum…
-91|Velkomin
-92|Þessi tölva var ræst í gömlum BIOS-ham. Aðeins er hægt að setja MAN upp á UEFI-tölvur: endurræstu og veldu UEFI-ræsingarkostinn.
-93|Kerfishjálparinn skilaði engum upplýsingum um diska.
-94|  ·  EFI
-95|_Næsta
-96|Hreinsa disk og setja upp MAN
-97|Allt á valda diskinum verður eytt, Windows meðtalið.
-98|Mælt með. Allt á valda diskinum verður eytt.
-99|Setja upp við hlið Windows
-100|Mælt með. MAN notar lausa plássið við hlið Windows; Windows og skrárnar þess haldast. Þú velur kerfi við hverja ræsingu.
-101|Setja MAN upp aftur
-102|Skiptir út kerfinu en heldur persónulegum skrám í /home. Núverandi kerfi er vistað sem skyndimynd.
-103|Sérsniðnar sneiðar
-104|Fyrir sérfræðinga: veldu sneiðar sjálf(ur) eða búðu þær til með Diskum.
-105|Diskur
-106|Veldu diskinn sem á að hreinsa. Diskar sem ekki er hægt að nota eru sýndir með ástæðunni.
-107|Engir diskar fundust
-108|Laust pláss við hlið Windows
-109|Sneiðum Windows er ekki breytt. MAN deilir EFI-kerfissneiðinni og bætir Windows við ræsivalmynd sína.
-110|{size} laust
-111|ekkert laust pláss
-112|{model} (Windows)
-113|Uppsetning sem skipt er út
-114|engar heimamöppur
-115|heimamöppur: {list}
-116|skyndimyndir: {n}
-117|MAN á {model}
-118|Lykilfrasi fyrir {device}
-119|Aflæsa
-120|Ekki tókst að skoða uppsetninguna.
-121|Sneiðar
-122|Kerfissneiðin er forsniðin með Btrfs og inniheldur @system, @home og @snapshots. Sneiðar á diskinum sem MAN keyrir af eru ekki sýndar.
-123|Opna Diska til að búa til eða breyta stærð sneiða
-124|Uppfæra lista yfir sneiðar
-125|Veldu sneið
-126|EFI-kerfissneið
-127|Forsníða EFI-kerfissneið
-128|Hafðu slökkt til að halda ræsiforritum annarra kerfa
-129|Kerfissneið (forsniðin sem Btrfs)
-130|Ræsisneið (þarf við dulritun)
-131|Listi yfir sneiðar uppfærður
-132|Öryggi
-133|Dulrita kerfið
-134|Verndar gögnin þín ef tölvan týnist eða henni er stolið. Beðið er um lykilfrasa við hverja ræsingu.
-135|Lykilfrasi
-136|Staðfesta lykilfrasa
-137|Geymdu þennan lykilfrasa á öruggum stað
-138|Ef hann glatast getur enginn endurheimt gögnin. Kjarninn og ræsiskrárnar eru á lítilli ódulritaðri ræsisneið.
-139|Lykilfrasinn verður að vera minnst 8 stafir.
-140|Lykilfrasarnir stemma ekki.
-141|Veldu disk.
-142|Veldu diskinn með Windows.
-143|Veldu uppsetninguna sem skipt er út.
-144|Aflæstu fyrst dulrituðu uppsetningunni.
-145|Þessi sneið inniheldur ekkert MAN-kerfi.
-146|Veldu EFI-kerfissneið.
-147|Veldu kerfissneiðina.
-148|EFI-sneiðin og kerfissneiðin verða að vera ólíkar.
-149|Dulritun þarfnast sérstakrar ræsisneiðar.
-150|Kerfissneiðin verður að vera minnst {size}.
-151|EFI-sneiðin er ekki FAT-forsniðin; kveiktu á forsníðingu.
-152|Kerfissneiðin er tengd; aftengdu hana fyrst í Diskum.
-153|Hvar á að setja MAN upp?
-154|Tími og lyklaborð
-155|Tímabelti
-156|Lyklaborðsuppsetning
-157|Prófaðu lyklaborðið
-158|Skrifaðu hér til að ganga úr skugga um að lyklarnir skili réttum stöfum.
-159|Skrifaðu hér
-160|Tímabelti og lyklaborð
-161|Enginn diskur valinn
-162|Engin kerfissneið valin
-163|Kerfissneiðin hvarf
-164|Engin uppsetning valin
-165|Diskurinn hvarf
-166|Yfirlit
-167|Áfangastaður
-168|Hreinsa disk og setja upp
-169|Sérsniðnar sneiðar
-170|Setja upp aftur, halda /home
-171|Við hlið Windows
-172| (verður forsniðin)
-173| (haldið)
-174|Kerfissneið
-175|{partition} (verður forsniðin)
-176|Ræsisneið
-177|Pláss fyrir MAN
-178|{free} laust pláss (ræsisneið og kerfissneið verða búnar til)
-179|Windows
-180|Óbreytt. Það birtist í ræsivalmynd MAN; EFI-kerfissneiðinni er deilt.
-181|Dulritun
-182|Kveikt (LUKS2)
-183|Slökkt
-184|Skráakerfi
-185|Btrfs: @system fyrir MAN, @home fyrir skrárnar þínar, @snapshots fyrir endurheimtarpunkta. Öll deila lausa plássinu.
-186|Kerfi
-187|Aðgangurinn þinn
-188|Búinn til í MAN Setup þegar tölvan ræsist í fyrsta sinn, ásamt heiti tölvunnar, útliti og persónuverndarstillingum.
-189|Lyklaborð
-190|Öllum gögnum á {model} ({path}) verður eytt.
-191|_Hreinsa og setja upp
-192|Valdar sneiðar verða forsniðnar. Aðrar sneiðar breytast ekki.
-193|_Forsníða og setja upp
-194|Núverandi kerfi er skipt út. Skrárnar þínar í /home haldast og gamla kerfið er vistað sem skyndimynd.
-195|Setja _upp aftur
-196|MAN er sett upp í lausa plássið. Windows og skrárnar þess breytast ekki.
-197|Tilbúið til uppsetningar
-198|Hreinsa {model}?
-199|Öllum skrám og sneiðum á {path} ({size}) verður eytt varanlega. Ekki er hægt að afturkalla þetta.
-200|Hreinsa og setja upp
-201|Forsníða valdar sneiðar?
-202|Öllum gögnum á völdum sneiðum verður eytt varanlega. Aðrar sneiðar breytast ekki.
-203|Forsníða og setja upp
-204|Setja MAN upp við hlið Windows?
-205|MAN er sett upp í {free} laust pláss á {model} ({path}). Windows og skrárnar þess breytast ekki.
-206|Setja upp
-207|Setja MAN upp aftur?
-208|Uppsetta kerfinu verður skipt út fyrir nýtt eintak. Persónulegar skrár í /home haldast og gamla kerfið er áfram tiltækt sem skyndimynd.
-209|Setja upp aftur
-210|_Hætta við
-211|Set upp MAN
-212|Ræsi…
-213|Set upp
-214|Skref {index} af {n}  ·  {title}
-215|MAN hefur verið sett upp
-216|Endurræstu tölvuna til að byrja að nota MAN. Valmynd við hverja ræsingu leyfir þér að velja MAN eða Windows; MAN fjarlægir bráðabirgðasneið uppsetningarforritsins við fyrstu ræsingu.
-217|Endurræstu tölvuna til að byrja að nota MAN. Þú getur fjarlægt uppsetningarmiðilinn; ef hann er áfram tengdur ræsist MAN samt af nýja diskinum.
-218|_Endurræsa núna
-219|Lokið
-220|Uppsetning mistókst
-221|Engum öðrum diski var breytt og uppsetningarforritið hefur sleppt markdiskinum. Þú getur farið yfir áætlunina og reynt aftur.
-222|_Fara yfir og reyna aftur
-223|Leita að tungumálum
-224|Leita að löndum
-225|Kerfisdiskurinn fannst ekki.
-226|Dulritun krefst Btrfs-uppsetningarinnar sem uppsetningarforrit MAN býr til.
-227|Þessi uppsetning er ekki með sérstaka ræsisneið, sem dulritun þarfnast. Settu MAN upp aftur með „Hreinsa disk“ til að nota dulritun.
-228|MAN Setup
-229|Hvar ertu?
-230|Landið eða svæðið þitt ákvarðar snið dagsetninga, tíma og talna.
-231|Land
-232|GNU General Public License, útgáfa 2
-233|Linux-kjarninn og mörg kerfistól
-234|GNU General Public License, útgáfa 3
-235|Mörg GNU- og GNOME-forrit
-236|GNU Lesser General Public License, útgáfa 2.1
-237|GTK, GLib og mörg aðgerðasöfn
-238|GNU Lesser General Public License, útgáfa 3
-239|Aðgerðasöfn
-240|Mozilla Public License 2.0
-241|Forrit og aðgerðasöfn frá Mozilla og öðrum
-242|Apache-leyfi 2.0
-243|Aðgerðasöfn og tól
-244|Leyfissamningur
-245|Lestu og samþykktu skilmálana sem MAN er veitt undir.
-246|Leyfi
-247|Texti leyfisins er ekki tiltækur ({path}).
-248|Ég hef lesið leyfisskilmálana og samþykki þá
-249|Snúrutengt
-250|Ekki tengt
-251|Tengjast netinu
-252|Með tengingu getur MAN stillt klukkuna og haldið hugbúnaðinum uppfærðum. Þú getur líka gert þetta seinna.
-253|Athuga tengingu…
-254|Wi-Fi net
-255|Leita aftur
-256|_Sleppa
-257|Þú getur tengst seinna í Stillingum.
-258|Tengt
-259|Ekki tengt
-260|Engin net fundust
-261|Internet
-262|Tengt við „{ssid}“
-263|Ekki tókst að tengjast „{ssid}“
-264|Tengjast „{ssid}“
-265|Sláðu inn lykilorð netsins.
-266|_Tengjast
-267|Búðu til aðganginn þinn
-268|Þú verður stjórnandi þessarar tölvu, með fullan root-aðgang í gegnum sudo.
-269|Fullt nafn
-270|Notandanafn
-271|Lykilorð
-272|Staðfesta lykilorð
-273|Skrá sjálfkrafa inn
-274|Sleppa innskráningarskjánum þegar tölvan ræsist
-275|Fyrirliggjandi heimamöppur
-276|Notaðu sama notandanafn til að halda áfram að nota möppu úr fyrri uppsetningu.
-277|Nota
-278|Ítarlegt
-279|Heiti tölvu
-280|Setja root-lykilorð
-281|Leyfir beina innskráningu sem root. Án þess notarðu sudo með eigin lykilorði.
-282|Root-lykilorð
-283|Staðfesta root-lykilorð
-284|Sláðu inn nafnið þitt.
-285|Veldu notandanafn.
-286|Kerfið notar þegar þetta notandanafn.
-287|Þetta notandanafn er frátekið af kerfinu.
-288|Notandanöfn nota lágstafi, tölustafi, - og _ og byrja á staf.
-289|Veldu lykilorð.
-290|Lykilorðin stemma ekki.
-291|Heiti tölvunnar má innihalda stafi, tölustafi og bandstrik.
-292|Sláðu root-lykilorðið inn tvisvar.
-293|Ábending: lykilorð með 8 eða fleiri stöfum er miklu öruggara.
-294|Aðgangur
-295|Dökkt
-296|Ljóst
-297|Gerðu það að þínu
-298|Veldu stíl, áherslulit og bakgrunn. Þú sérð hverja breytingu strax.
-299|Stíll
-300|Áherslulitur
-301|Bakgrunnur
-302|Sérsníða
-303|Persónuvernd
-304|Veldu hvaða eiginleikar mega nota upplýsingar um þig. Þú getur breytt þessu hvenær sem er í Stillingum.
-305|Staðsetningarþjónustur
-306|Leyfir forritum eins og Kortum og Veðri að finna áætlaða staðsetningu þína með nálægum Wi-Fi netum.
-307|Sjálfvirkt tímabelti
-308|Notar staðsetningu þína til að halda tímabeltinu réttu á ferðalögum.
-309|_Ljúka uppsetningu
-310|Diskurinn þinn er dulritaður
-311|Gögnin þín eru vernduð. Beðið er um lykilfrasann í hvert sinn sem tölvan ræsist.
-312|Dulritun disks
-313|Dulritun verndar gögnin þín ef tölvan týnist eða henni er stolið.
-314|Ekki tiltækt í þessari uppsetningu
-315|Dulritun verndar skrárnar þínar ef tölvan týnist eða henni er stolið. Án lykilfrasans getur enginn lesið diskinn.
-316|Dulrita diskinn
-317|Beðið er um lykilfrasann í hvert sinn sem tölvan ræsist.
-318|Dulritun hefst við næstu endurræsingu
-319|Diskurinn er síðan dulritaður í bakgrunni meðan þú notar tölvuna. Ef lykilfrasinn glatast getur enginn endurheimt gögnin.
-320|Undirbý MAN
-321|Geri allt tilbúið…
-322|_Endurræsa
-323|_Til baka
-324|Undirbý
-325|Atvikaskrá uppsetningar
-326|Allt tilbúið!
-327|Eitthvað fór úrskeiðis
-328|Dagleg
-329|Fyrir uppfærslu
-330|Fyrir endurheimt
-331|Fyrir enduruppsetningu
-332|Handvirk
-333|Engar skyndimyndir enn
-334|Búðu til eina áður en þú gerir stórar breytingar á kerfinu.
-335|Endurheimta…
-336|Eyða skyndimynd
-337|{free} laust af {size}. Kerfi, heimamöppur og skyndimyndir deila þessu plássi; skyndimyndir nota aðeins pláss fyrir það sem hefur breyst síðan þær voru teknar.
-338|_Í lagi
-339|Búa til skyndimynd
-340|Vistar núverandi ástand kerfisins. Persónulegar skrár í heimamöppunni eru ekki með.
-341|Lýsing, til dæmis „Áður en reklar eru settir upp“
-342|_Búa til
-343|Handvirk skyndimynd
-344|Eyða skyndimynd?
-345|„{description}“ frá {date} verður eytt varanlega.
-346|_Eyða
-347|Endurheimta þessa skyndimynd?
-348|Kerfið fer aftur í „{description}“ frá {date} eftir endurræsingu. Persónulegu skrárnar þínar breytast ekki.\n\nNúverandi kerfi er fyrst vistað sem skyndimynd svo hægt er að afturkalla þetta.
-349|_Endurheimta
-350|Endurræstu til að ljúka endurheimt
-351|Endurræsa _seinna
-352|Endurræsa _núna
-353|Skyndimyndir
-354|Endurheimtarpunktar
-355|Skyndimyndir vista ástand stýrikerfisins. Að endurheimta eina færir kerfið aftur til þess augnabliks, sem hjálpar eftir misheppnaða uppfærslu eða stillingabreytingu. Persónulegar skrár þínar eru aldrei snertar.
-356|Sjálfvirkar skyndimyndir
-357|Daglegar skyndimyndir
-358|Einu sinni á dag meðan kveikt er á tölvunni
-359|Daglegar skyndimyndir sem haldið er
-360|Fyrir hugbúnaðaruppfærslur
-361|Teknar sjálfkrafa þegar pakkar eru settir upp, uppfærðir eða fjarlægðir
-362|Uppfærsluskyndimyndir sem haldið er
-363|Geymsla
-364|Diskpláss
-365|Ef MAN ræsist ekki
-366|Veldu „Restore a MAN snapshot“ í ræsivalmyndinni til að fá aftur virkt kerfi.
-367|Skyndimyndir eru ekki tiltækar
-368|Skyndimyndir virka á MAN sem sett er upp með Btrfs-uppsetningu uppsetningarforrits MAN. Þetta kerfi (til dæmis lifandi seta) notar hana ekki.
-369|Endurheimt bíður: endurræstu tölvuna til að ljúka henni
-370|Endurræsa núna
-371|Bíddu þar til núverandi aðgerð lýkur.
-372|Leita
-373|Afrita á klippispjald
-374|Samræmdur heimstími
-375|Enska (Bandaríkin)
-376|MAN {version} er komið út!
-377|Þú getur uppfært í það.
-378|Opna uppfærslur
-379|Athuga uppfærsluna
-380|Geng úr skugga um að uppfærslan sé ósvikin og heil…
-381|MAN-uppfærsla
-382|Ekki er hægt að setja þessa uppfærslu upp
-383|Ekki tókst að lesa uppfærsluna.
-384|Uppfærsla úr {name} {version}
-385|{name} {version} er uppsett
-386|Gefið út
-387|Niðurhalsstærð
-388|Pláss sem þarf
-389|Áreiðanleiki
-390|Staðfest, undirritað af „{signer}“
-391|Hvað er nýtt
-392|Þessi uppfærsla er ekki nýrri en uppsett {name} {version}.
-393|Uppfærsla
-394|Lestu leyfisskilmála þessarar uppfærslu.
-395|Ég samþykki leyfisskilmálana
-396|Hvar á að setja uppfærsluna upp?
-397|Kerfinu er skipt út; skrár í heimamöppunni þinni eru ekki snertar.
-398|Veldu uppsetningu.
-399|keyrir núna
-400|{name} {version} á þessari tölvu
-401|{name} á {model}
-402|Engin MAN-uppsetning fannst
-403|Uppfærslur eru settar upp úr keyrandi, uppsettu MAN-kerfi, ekki úr lifandi setunni.
-404|Staðsetning uppsetningar
-405|Haldið
-406|Skrárnar þínar
-407|Allt í heimamöppunni þinni
-408|Aðgangar og lykilorð
-409|Notendur, hópar, heiti tölvunnar
-410|Tengingar og stillingar
-411|Wi-Fi, tímabelti, lyklaborð, útlit og skyndimyndir
-412|Flatpak-forrit
-413|Auk alls í /usr/local og /opt
-414|Skipt út
-415|Hugbúnaði sem settur var upp með apt og öðrum breytingum á kerfisskrám er skipt út fyrir nýja kerfið.
-416|Stýrikerfið
-417|Skipt út fyrir {name} {version}. Hægt er að endurheimta núverandi kerfi úr skyndimynd.
-418|Tölvan endurræsist til að setja uppfærsluna upp
-419|Eftir undirbúning endurræsist MAN, setur uppfærsluna upp á nokkrum sekúndum og endurræsist aftur.
-420|_Setja upp uppfærslu
-421|Búa fyrst til skyndimynd?
-422|Skyndimynd vistar núverandi kerfi svo þú getir farið aftur til þess ef eitthvað virkar ekki eftir uppfærsluna. Mælt er með því.
-423|_Ekki búa til
-424|_Búa til skyndimynd
-425|Undirbý {name} {version}
-426|Endurræsa til að setja upp
-427|Tölvan endurræsist tvisvar. Skrárnar þínar eru öruggar.
-428|Endurræsir sjálfkrafa eftir {r} sekúndur
-429|Endurræsir sjálfkrafa eftir 30 sekúndur
-430|Uppfærslan verður sett upp næst þegar þú endurræsir.
-431|Tilbúið
-432|Ekki tókst að undirbúa uppfærsluna
-433|Engu var breytt á kerfinu þínu.
-434|_Reyna aftur
-435|Atvikaskrá uppfærslu
-436|Mistókst
-437|Kerfið þitt hefur verið uppfært
-438|MAN hefur verið uppfært í útgáfu {version}.\nÁður: MAN {previous}.
-439|_Lokið
-440|Opna MAN-uppfærslu
-441|MAN-uppfærslur
-442|Sæki nýjustu pakkalistana…
-443|Afrita forritið
-444|Bæti forritinu í valmyndina
-445|Skráin fannst ekki.
-446|Ekki tókst að setja pakkann upp.
-447|Valmyndarfærsla forritsins er ógild.
-448|Athuga uppsetningaráætlun
-449|Undirbý diskinn
-450|Afrita MAN á diskinn
-451|Stilli nýja kerfið
-452|Set upp ræsiforrit
-453|Bý til fyrstu skyndimyndina
-454|Lýk við
-455|Fjarlægi gamlar undirskriftir sneiða
-456|Bý til sneiðar
-457|Forsníð EFI-kerfissneiðina
-458|Dulrita kerfissneiðina
-459|Forsníð ræsisneiðina
-460|Bý til Btrfs-skráakerfið
-461|Fjarlægi gamlar undirskriftir skráakerfa
-462|Aflæsi dulrituðu uppsetningunni
-463|Vista núverandi kerfi sem skyndimynd
-464|Fjarlægi fyrra kerfi
-465|Skrifa töflu skráakerfa
-466|Stilli heiti og auðkenni tölvunnar
-467|Fjarlægi aðganga lifandi setunnar
-468|Bý til aðganginn þinn
-469|Undirbý MAN Setup fyrir fyrstu ræsingu
-470|Stilli tímabelti og lyklaborð
-471|Fjarlægi uppsetningarforritið úr nýja kerfinu
-472|Bý til ræsimynd (initramfs)
-473|Stilli GRUB
-474|Set GRUB upp á EFI-kerfissneiðina
-475|Set upp vara-ræsiforrit
-476|Skrifa ræsivalmyndina
-477|Diskur tilbúinn
-478|Bý til skyndimynd af nýja kerfinu
-479|Bæti skyndimyndinni við ræsivalmyndina
-480|Aftengi
-481|Hjálparforrit uppsetningarinnar verður að keyra sem root.
-482|Þessi tölva var ekki ræst í UEFI-ham. MAN krefst UEFI.
-483|Notandanafnið er ógilt.
-484|Lykilorð er nauðsynlegt.
-485|Heiti tölvunnar er ógilt.
-486|Óþekkt tungumál.
-487|Lykilfrasi dulritunar verður að vera minnst 8 stafir.
-488|Diskurinn breyttist eftir að þú staðfestir uppsetninguna. Engu var breytt; farðu yfir og staðfestu aftur.
-489|Veldu kerfissneið.
-490|Staðfesti diskurinn inniheldur ekki völdu kerfissneiðina.
-491|Ræsisneiðin verður að vera aðskilin frá EFI- og kerfissneiðunum.
-492|Ræsisneiðin verður að vera minnst 512 MB.
-493|Engin uppsetning valin.
-494|Staðfesti diskurinn inniheldur ekki völdu uppsetninguna.
-495|Dulritaða uppsetningin er ekki með MAN_BOOT-sneið.
-496|Enginn kjarni með samsvarandi einingum fannst í /boot.
-497|Kerfishjálparinn verður að breyta tungumálinu.
-498|Beiti stillingunum þínum
-499|Undirbý dulritun disks
-500|Lýk við
-501|Kerfishjálparinn verður að ljúka MAN Setup.
-502|MAN Setup hefur þegar verið lokið á þessari tölvu.
-503|Óþekktur áherslulitur.
-504|Valinn bakgrunnur er ekki tiltækur.
-505|Ekki er hægt að dulrita þetta kerfi.
-506|Uppsetningarlykilinn vantar svo dulritun getur ekki haldið áfram í bakgrunni.
-507|Kerfið er ekki sett upp á Btrfs svo skyndimyndir eru ekki tiltækar.
-508|Endurheimt skyndimyndar bíður endurræsingar. Endurræstu tölvuna fyrst til að ljúka henni.
-509|Ógilt auðkenni skyndimyndar.
-510|Athuga uppfærsluna
-511|Bý til skyndimynd
-512|Undirbý uppfærslusvæðið
-513|Afþjappa nýja kerfið
-514|Flyt aðganga þína og stillingar
-515|Undirbý endurræsingu
-516|Afþjappað
-517|Aðgangar
-518|Fjarlægi hugbúnað sem aðeins uppsetningarforritið notar
-519|Bý til ræsimynd uppfærslunnar
-520|Bæti við einnota ræsifærslu
-521|Uppfærslan er ósvikin
-522|Skyndimynd búin til
-523|Sleppt
-524|Uppfærslusvæði tilbúið
-525|Undirbý nýja kerfið
-526|Uppfærsluskráin er skemmd (gátsumma stemmir ekki). Sæktu hana aftur.
-527|Ekki tókst að lesa uppfærsluskrána alla.
-528|Uppfærslan inniheldur engan kjarna.
-529|Kerfishjálparinn verður að setja uppfærslur upp.
-530|Valda uppsetningin fannst ekki.
-531|Aðeins er hægt að uppfæra keyrandi MAN-uppsetningu.
-532|Þetta er ekki MAN-uppfærsluskrá (ekkert upplýsingaskjal).
-533|Uppfærslan er ekki undirrituð og því ekki hægt að treysta henni.
-534|Undirskrift uppfærslunnar er skemmd.
-535|Uppfærslan er ekki undirrituð af MAN. Henni gæti hafa verið breytt eða hún komið frá ótraustum uppruna.
-536|Upplýsingaskjal uppfærslunnar er ógilt.
-537|Lykilfrasinn er rangur eða ekki er hægt að opna dulrituðu sneiðina.
-538|Blár
-539|Blágrænn
-540|Grænn
-541|Gulur
-542|Appelsínugulur
-543|Rauður
-544|Bleikur
-545|Fjólublár
-546|Flögugrár
-547|Pakkauppsetning
-548|Settu upp forrit úr .deb-, Flatpak- og AppImage-skrám
-549|Uppsetning kerfis
-550|Setja MAN upp á þessa tölvu
-551|Endurheimt kerfis
-552|Búa til og endurheimta skyndimyndir af kerfinu
-553|Uppsetning kerfisuppfærslna
-554|Setja upp MAN-kerfisuppfærsluskrá
-555|Býður upp á að setja MAN upp þegar lifandi setan hefst
-556|Tilkynning um MAN-uppfærslu
-557|Segir þér einu sinni eftir innskráningu að MAN hafi verið uppfært
-558|Settu upp nýju MAN-tölvuna þína
-559|Fyrsta uppsetning MAN
-560|MAN-uppfærslur
-561|Lætur þig vita þegar ný útgáfa af MAN er komin
+44|Halda eftir MAN-uppfærslur
+45|MAN setur forritið aftur upp eftir hverja uppfærslu. Pakkaskrár þess eru geymdar til þess.
+46|Smelltu á Setja upp til að setja upp {name}.
+47|Athugar hvað annað forritið þarf…
+48|Setur einnig upp pakkana sem það þarf: {list}
+49|Sumir pakkar sem forritið þarf eru ekki enn tiltækir. Uppsetningin sækir fyrst nýjustu pakkalistana; ef þá vantar enn er ekki hægt að setja forritið upp.
+50|Set upp {name}…
+51|Undirbý…
+52|Nánar
+53|Set upp pakkann…
+54|Færi forritið í möppuna sína…
+55|Ekki tókst að setja forritið upp.
+56|Set upp forritið með Flatpak…
+57|Atvikaskrá
+58|_Loka
+59|Uppsetningin tókst
+60|Forritið var sett upp.
+61|Uppsetningin mistókst
+62|_Opna
+63|_Sýna nánar
+64|Atvikaskrá uppsetningar
+65|Forritauppsetning
+66|_Til baka
+67|Les forritið…
+68|Setja upp {name}
+69|Forrit
+70|Veldu forrit til að setja upp
+71|Ekki tókst að ræsa kerfishjálparann.
+72|Ekki tókst að eiga samskipti við kerfishjálparann.
+73|Samband við kerfishjálparann rofnaði.
+74|Hætt var við auðkenningu.
+75|Þessi aðgerð krefst stjórnandaréttinda.
+76|Kerfishjálparinn stöðvaðist óvænt.
+77|Engin EFI-kerfissneið
+78|Aðeins {free} laust, MAN þarf {need}. Losaðu pláss með DUHACH! í Windows.
+79|Ekkert laust pláss. Ræstu DUHACH! í Windows til að búa til pláss fyrir MAN.
+80|MAN keyrir af þessum diski
+81|Í notkun: sneið er tengd
+82|Of lítið, MAN þarf {need}
+83|Setja upp MAN
+84|Verið er að setja upp MAN. Bíddu þar til því lýkur.
+85|Tungumál
+86|_Endurræsa á þessu tungumáli
+87|Lifandi setan endurræsist á valda tungumálinu og MAN er sett upp á því.
+88|Velkomin í MAN
+89|Hratt, opið og fullkomlega sérsníðanlegt GNOME-kerfi.\nSettu það upp á þessa tölvu eða haltu áfram að skoða lifandi setuna.
+90|_Setja upp MAN…
+91|_Halda áfram að prófa MAN
+92|Leita að diskum…
+93|Velkomin
+94|Þessi tölva var ræst í gömlum BIOS-ham. Aðeins er hægt að setja MAN upp á UEFI-tölvur: endurræstu og veldu UEFI-ræsingarkostinn.
+95|Kerfishjálparinn skilaði engum upplýsingum um diska.
+96|  ·  EFI
+97|_Næsta
+98|Hreinsa disk og setja upp MAN
+99|Allt á valda diskinum verður eytt, Windows meðtalið.
+100|Mælt með. Allt á valda diskinum verður eytt.
+101|Setja upp við hlið Windows
+102|Mælt með. MAN notar lausa plássið við hlið Windows; Windows og skrárnar þess haldast. Þú velur kerfi við hverja ræsingu.
+103|Setja MAN upp aftur
+104|Skiptir út kerfinu en heldur persónulegum skrám í /home. Núverandi kerfi er vistað sem skyndimynd.
+105|Sérsniðnar sneiðar
+106|Fyrir sérfræðinga: veldu sneiðar sjálf(ur) eða búðu þær til með Diskum.
+107|Diskur
+108|Veldu diskinn sem á að hreinsa. Diskar sem ekki er hægt að nota eru sýndir með ástæðunni.
+109|Engir diskar fundust
+110|Laust pláss við hlið Windows
+111|Sneiðum Windows er ekki breytt. MAN deilir EFI-kerfissneiðinni og bætir Windows við ræsivalmynd sína.
+112|{size} laust
+113|ekkert laust pláss
+114|{model} (Windows)
+115|Uppsetning sem skipt er út
+116|engar heimamöppur
+117|heimamöppur: {list}
+118|skyndimyndir: {n}
+119|MAN á {model}
+120|Lykilfrasi fyrir {device}
+121|Aflæsa
+122|Ekki tókst að skoða uppsetninguna.
+123|Sneiðar
+124|Kerfissneiðin er forsniðin með Btrfs og inniheldur @system, @home og @snapshots. Sneiðar á diskinum sem MAN keyrir af eru ekki sýndar.
+125|Opna Diska til að búa til eða breyta stærð sneiða
+126|Uppfæra lista yfir sneiðar
+127|Veldu sneið
+128|EFI-kerfissneið
+129|Forsníða EFI-kerfissneið
+130|Hafðu slökkt til að halda ræsiforritum annarra kerfa
+131|Kerfissneið (forsniðin sem Btrfs)
+132|Ræsisneið (þarf við dulritun)
+133|Listi yfir sneiðar uppfærður
+134|Öryggi
+135|Dulrita kerfið
+136|Verndar gögnin þín ef tölvan týnist eða henni er stolið. Beðið er um lykilfrasa við hverja ræsingu.
+137|Lykilfrasi
+138|Staðfesta lykilfrasa
+139|Geymdu þennan lykilfrasa á öruggum stað
+140|Ef hann glatast getur enginn endurheimt gögnin. Kjarninn og ræsiskrárnar eru á lítilli ódulritaðri ræsisneið.
+141|Lykilfrasinn verður að vera minnst 8 stafir.
+142|Lykilfrasarnir stemma ekki.
+143|Veldu disk.
+144|Veldu diskinn með Windows.
+145|Veldu uppsetninguna sem skipt er út.
+146|Aflæstu fyrst dulrituðu uppsetningunni.
+147|Þessi sneið inniheldur ekkert MAN-kerfi.
+148|Veldu EFI-kerfissneið.
+149|Veldu kerfissneiðina.
+150|EFI-sneiðin og kerfissneiðin verða að vera ólíkar.
+151|Dulritun þarfnast sérstakrar ræsisneiðar.
+152|Kerfissneiðin verður að vera minnst {size}.
+153|EFI-sneiðin er ekki FAT-forsniðin; kveiktu á forsníðingu.
+154|Kerfissneiðin er tengd; aftengdu hana fyrst í Diskum.
+155|Hvar á að setja MAN upp?
+156|Tími og lyklaborð
+157|Tímabelti
+158|Lyklaborðsuppsetning
+159|Prófaðu lyklaborðið
+160|Skrifaðu hér til að ganga úr skugga um að lyklarnir skili réttum stöfum.
+161|Skrifaðu hér
+162|Tímabelti og lyklaborð
+163|Enginn diskur valinn
+164|Engin kerfissneið valin
+165|Kerfissneiðin hvarf
+166|Engin uppsetning valin
+167|Diskurinn hvarf
+168|Yfirlit
+169|Áfangastaður
+170|Hreinsa disk og setja upp
+171|Sérsniðnar sneiðar
+172|Setja upp aftur, halda /home
+173|Við hlið Windows
+174| (verður forsniðin)
+175| (haldið)
+176|Kerfissneið
+177|{partition} (verður forsniðin)
+178|Ræsisneið
+179|Pláss fyrir MAN
+180|{free} laust pláss (ræsisneið og kerfissneið verða búnar til)
+181|Windows
+182|Óbreytt. Það birtist í ræsivalmynd MAN; EFI-kerfissneiðinni er deilt.
+183|Dulritun
+184|Kveikt (LUKS2)
+185|Slökkt
+186|Skráakerfi
+187|Btrfs: @system fyrir MAN, @home fyrir skrárnar þínar, @snapshots fyrir endurheimtarpunkta. Öll deila lausa plássinu.
+188|Kerfi
+189|Aðgangurinn þinn
+190|Búinn til í MAN Setup þegar tölvan ræsist í fyrsta sinn, ásamt heiti tölvunnar, útliti og persónuverndarstillingum.
+191|Lyklaborð
+192|Öllum gögnum á {model} ({path}) verður eytt.
+193|_Hreinsa og setja upp
+194|Valdar sneiðar verða forsniðnar. Aðrar sneiðar breytast ekki.
+195|_Forsníða og setja upp
+196|Núverandi kerfi er skipt út. Skrárnar þínar í /home haldast og gamla kerfið er vistað sem skyndimynd.
+197|Setja _upp aftur
+198|MAN er sett upp í lausa plássið. Windows og skrárnar þess breytast ekki.
+199|Tilbúið til uppsetningar
+200|Hreinsa {model}?
+201|Öllum skrám og sneiðum á {path} ({size}) verður eytt varanlega. Ekki er hægt að afturkalla þetta.
+202|Hreinsa og setja upp
+203|Forsníða valdar sneiðar?
+204|Öllum gögnum á völdum sneiðum verður eytt varanlega. Aðrar sneiðar breytast ekki.
+205|Forsníða og setja upp
+206|Setja MAN upp við hlið Windows?
+207|MAN er sett upp í {free} laust pláss á {model} ({path}). Windows og skrárnar þess breytast ekki.
+208|Setja upp
+209|Setja MAN upp aftur?
+210|Uppsetta kerfinu verður skipt út fyrir nýtt eintak. Persónulegar skrár í /home haldast og gamla kerfið er áfram tiltækt sem skyndimynd.
+211|Setja upp aftur
+212|_Hætta við
+213|Set upp MAN
+214|Ræsi…
+215|Set upp
+216|Skref {index} af {n}  ·  {title}
+217|MAN hefur verið sett upp
+218|Endurræstu tölvuna til að byrja að nota MAN. Valmynd við hverja ræsingu leyfir þér að velja MAN eða Windows; MAN fjarlægir bráðabirgðasneið uppsetningarforritsins við fyrstu ræsingu.
+219|Endurræstu tölvuna til að byrja að nota MAN. Þú getur fjarlægt uppsetningarmiðilinn; ef hann er áfram tengdur ræsist MAN samt af nýja diskinum.
+220|_Endurræsa núna
+221|Lokið
+222|Uppsetning mistókst
+223|Engum öðrum diski var breytt og uppsetningarforritið hefur sleppt markdiskinum. Þú getur farið yfir áætlunina og reynt aftur.
+224|_Fara yfir og reyna aftur
+225|Leita að tungumálum
+226|Leita að löndum
+227|Kerfisdiskurinn fannst ekki.
+228|Dulritun krefst Btrfs-uppsetningarinnar sem uppsetningarforrit MAN býr til.
+229|Þessi uppsetning er ekki með sérstaka ræsisneið, sem dulritun þarfnast. Settu MAN upp aftur með „Hreinsa disk“ til að nota dulritun.
+230|MAN Setup
+231|Hvar ertu?
+232|Landið eða svæðið þitt ákvarðar snið dagsetninga, tíma og talna.
+233|Land
+234|GNU General Public License, útgáfa 2
+235|Linux-kjarninn og mörg kerfistól
+236|GNU General Public License, útgáfa 3
+237|Mörg GNU- og GNOME-forrit
+238|GNU Lesser General Public License, útgáfa 2.1
+239|GTK, GLib og mörg aðgerðasöfn
+240|GNU Lesser General Public License, útgáfa 3
+241|Aðgerðasöfn
+242|Mozilla Public License 2.0
+243|Forrit og aðgerðasöfn frá Mozilla og öðrum
+244|Apache-leyfi 2.0
+245|Aðgerðasöfn og tól
+246|Leyfissamningur
+247|Lestu og samþykktu skilmálana sem MAN er veitt undir.
+248|Leyfi
+249|Texti leyfisins er ekki tiltækur ({path}).
+250|Ég hef lesið leyfisskilmálana og samþykki þá
+251|Snúrutengt
+252|Ekki tengt
+253|Tengjast netinu
+254|Með tengingu getur MAN stillt klukkuna og haldið hugbúnaðinum uppfærðum. Þú getur líka gert þetta seinna.
+255|Athuga tengingu…
+256|Wi-Fi net
+257|Leita aftur
+258|_Sleppa
+259|Þú getur tengst seinna í Stillingum.
+260|Tengt
+261|Ekki tengt
+262|Engin net fundust
+263|Internet
+264|Tengt við „{ssid}“
+265|Ekki tókst að tengjast „{ssid}“
+266|Tengjast „{ssid}“
+267|Sláðu inn lykilorð netsins.
+268|_Tengjast
+269|Búðu til aðganginn þinn
+270|Þú verður stjórnandi þessarar tölvu, með fullan root-aðgang í gegnum sudo.
+271|Fullt nafn
+272|Notandanafn
+273|Lykilorð
+274|Staðfesta lykilorð
+275|Skrá sjálfkrafa inn
+276|Sleppa innskráningarskjánum þegar tölvan ræsist
+277|Fyrirliggjandi heimamöppur
+278|Notaðu sama notandanafn til að halda áfram að nota möppu úr fyrri uppsetningu.
+279|Nota
+280|Ítarlegt
+281|Heiti tölvu
+282|Setja root-lykilorð
+283|Leyfir beina innskráningu sem root. Án þess notarðu sudo með eigin lykilorði.
+284|Root-lykilorð
+285|Staðfesta root-lykilorð
+286|Sláðu inn nafnið þitt.
+287|Veldu notandanafn.
+288|Kerfið notar þegar þetta notandanafn.
+289|Þetta notandanafn er frátekið af kerfinu.
+290|Notandanöfn nota lágstafi, tölustafi, - og _ og byrja á staf.
+291|Veldu lykilorð.
+292|Lykilorðin stemma ekki.
+293|Heiti tölvunnar má innihalda stafi, tölustafi og bandstrik.
+294|Sláðu root-lykilorðið inn tvisvar.
+295|Ábending: lykilorð með 8 eða fleiri stöfum er miklu öruggara.
+296|Aðgangur
+297|Dökkt
+298|Ljóst
+299|Gerðu það að þínu
+300|Veldu stíl, áherslulit og bakgrunn. Þú sérð hverja breytingu strax.
+301|Stíll
+302|Áherslulitur
+303|Bakgrunnur
+304|Sérsníða
+305|Persónuvernd
+306|Veldu hvaða eiginleikar mega nota upplýsingar um þig. Þú getur breytt þessu hvenær sem er í Stillingum.
+307|Staðsetningarþjónustur
+308|Leyfir forritum eins og Kortum og Veðri að finna áætlaða staðsetningu þína með nálægum Wi-Fi netum.
+309|Sjálfvirkt tímabelti
+310|Notar staðsetningu þína til að halda tímabeltinu réttu á ferðalögum.
+311|_Ljúka uppsetningu
+312|Diskurinn þinn er dulritaður
+313|Gögnin þín eru vernduð. Beðið er um lykilfrasann í hvert sinn sem tölvan ræsist.
+314|Dulritun disks
+315|Dulritun verndar gögnin þín ef tölvan týnist eða henni er stolið.
+316|Ekki tiltækt í þessari uppsetningu
+317|Dulritun verndar skrárnar þínar ef tölvan týnist eða henni er stolið. Án lykilfrasans getur enginn lesið diskinn.
+318|Dulrita diskinn
+319|Beðið er um lykilfrasann í hvert sinn sem tölvan ræsist.
+320|Dulritun hefst við næstu endurræsingu
+321|Diskurinn er síðan dulritaður í bakgrunni meðan þú notar tölvuna. Ef lykilfrasinn glatast getur enginn endurheimt gögnin.
+322|Undirbý MAN
+323|Geri allt tilbúið…
+324|_Endurræsa
+325|_Til baka
+326|Undirbý
+327|Atvikaskrá uppsetningar
+328|Allt tilbúið!
+329|Eitthvað fór úrskeiðis
+330|Dagleg
+331|Fyrir uppfærslu
+332|Fyrir endurheimt
+333|Fyrir enduruppsetningu
+334|Handvirk
+335|Engar skyndimyndir enn
+336|Búðu til eina áður en þú gerir stórar breytingar á kerfinu.
+337|Endurheimta…
+338|Eyða skyndimynd
+339|{free} laust af {size}. Kerfi, heimamöppur og skyndimyndir deila þessu plássi; skyndimyndir nota aðeins pláss fyrir það sem hefur breyst síðan þær voru teknar.
+340|_Í lagi
+341|Búa til skyndimynd
+342|Vistar núverandi ástand kerfisins. Persónulegar skrár í heimamöppunni eru ekki með.
+343|Lýsing, til dæmis „Áður en reklar eru settir upp“
+344|_Búa til
+345|Handvirk skyndimynd
+346|Eyða skyndimynd?
+347|„{description}“ frá {date} verður eytt varanlega.
+348|_Eyða
+349|Endurheimta þessa skyndimynd?
+350|Kerfið fer aftur í „{description}“ frá {date} eftir endurræsingu. Persónulegu skrárnar þínar breytast ekki.\n\nNúverandi kerfi er fyrst vistað sem skyndimynd svo hægt er að afturkalla þetta.
+351|_Endurheimta
+352|Endurræstu til að ljúka endurheimt
+353|Endurræsa _seinna
+354|Endurræsa _núna
+355|Skyndimyndir
+356|Endurheimtarpunktar
+357|Skyndimyndir vista ástand stýrikerfisins. Að endurheimta eina færir kerfið aftur til þess augnabliks, sem hjálpar eftir misheppnaða uppfærslu eða stillingabreytingu. Persónulegar skrár þínar eru aldrei snertar.
+358|Sjálfvirkar skyndimyndir
+359|Daglegar skyndimyndir
+360|Einu sinni á dag meðan kveikt er á tölvunni
+361|Daglegar skyndimyndir sem haldið er
+362|Fyrir hugbúnaðaruppfærslur
+363|Teknar sjálfkrafa þegar pakkar eru settir upp, uppfærðir eða fjarlægðir
+364|Uppfærsluskyndimyndir sem haldið er
+365|Geymsla
+366|Diskpláss
+367|Ef MAN ræsist ekki
+368|Veldu „Restore a MAN snapshot“ í ræsivalmyndinni til að fá aftur virkt kerfi.
+369|Skyndimyndir eru ekki tiltækar
+370|Skyndimyndir virka á MAN sem sett er upp með Btrfs-uppsetningu uppsetningarforrits MAN. Þetta kerfi (til dæmis lifandi seta) notar hana ekki.
+371|Endurheimt bíður: endurræstu tölvuna til að ljúka henni
+372|Endurræsa núna
+373|Bíddu þar til núverandi aðgerð lýkur.
+374|Leita
+375|Afrita á klippispjald
+376|Samræmdur heimstími
+377|Enska (Bandaríkin)
+378|MAN {version} er komið út!
+379|Þú getur uppfært í það.
+380|Opna uppfærslur
+381|Athuga uppfærsluna
+382|Geng úr skugga um að uppfærslan sé ósvikin og heil…
+383|MAN-uppfærsla
+384|Ekki er hægt að setja þessa uppfærslu upp
+385|Ekki tókst að lesa uppfærsluna.
+386|Uppfærsla úr {name} {version}
+387|{name} {version} er uppsett
+388|Gefið út
+389|Niðurhalsstærð
+390|Pláss sem þarf
+391|Áreiðanleiki
+392|Staðfest, undirritað af „{signer}“
+393|Hvað er nýtt
+394|Þessi uppfærsla er ekki nýrri en uppsett {name} {version}.
+395|Uppfærsla
+396|Lestu leyfisskilmála þessarar uppfærslu.
+397|Ég samþykki leyfisskilmálana
+398|Hvar á að setja uppfærsluna upp?
+399|Kerfinu er skipt út; skrár í heimamöppunni þinni eru ekki snertar.
+400|Veldu uppsetningu.
+401|keyrir núna
+402|{name} {version} á þessari tölvu
+403|{name} á {model}
+404|Engin MAN-uppsetning fannst
+405|Uppfærslur eru settar upp úr keyrandi, uppsettu MAN-kerfi, ekki úr lifandi setunni.
+406|Staðsetning uppsetningar
+407|Haldið
+408|Skrárnar þínar
+409|Allt í heimamöppunni þinni
+410|Aðgangar og lykilorð
+411|Notendur, hópar, heiti tölvunnar
+412|Tengingar og stillingar
+413|Wi-Fi, tímabelti, lyklaborð, útlit og skyndimyndir
+414|Flatpak-forrit
+415|Auk alls í /usr/local og /opt
+416|Skipt út
+417|Hugbúnaði sem settur var upp með apt og öðrum breytingum á kerfisskrám er skipt út fyrir nýja kerfið.
+418|Stýrikerfið
+419|Skipt út fyrir {name} {version}. Hægt er að endurheimta núverandi kerfi úr skyndimynd.
+420|Tölvan endurræsist til að setja uppfærsluna upp
+421|Eftir undirbúning endurræsist MAN, setur uppfærsluna upp á nokkrum sekúndum og endurræsist aftur.
+422|_Setja upp uppfærslu
+423|Búa fyrst til skyndimynd?
+424|Skyndimynd vistar núverandi kerfi svo þú getir farið aftur til þess ef eitthvað virkar ekki eftir uppfærsluna. Mælt er með því.
+425|_Ekki búa til
+426|_Búa til skyndimynd
+427|Undirbý {name} {version}
+428|Endurræsa til að setja upp
+429|Tölvan endurræsist tvisvar. Skrárnar þínar eru öruggar.
+430|Endurræsir sjálfkrafa eftir {r} sekúndur
+431|Endurræsir sjálfkrafa eftir 30 sekúndur
+432|Uppfærslan verður sett upp næst þegar þú endurræsir.
+433|Tilbúið
+434|Ekki tókst að undirbúa uppfærsluna
+435|Engu var breytt á kerfinu þínu.
+436|_Reyna aftur
+437|Atvikaskrá uppfærslu
+438|Mistókst
+439|Kerfið þitt hefur verið uppfært
+440|MAN hefur verið uppfært í útgáfu {version}.\nÁður: MAN {previous}.
+441|_Lokið
+442|Opna MAN-uppfærslu
+443|MAN-uppfærslur
+444|Sæki nýjustu pakkalistana…
+445|Afrita forritið
+446|Bæti forritinu í valmyndina
+447|Skráin fannst ekki.
+448|Ekki tókst að setja pakkann upp.
+449|Valmyndarfærsla forritsins er ógild.
+450|Athuga uppsetningaráætlun
+451|Undirbý diskinn
+452|Afrita MAN á diskinn
+453|Stilli nýja kerfið
+454|Set upp ræsiforrit
+455|Bý til fyrstu skyndimyndina
+456|Lýk við
+457|Fjarlægi gamlar undirskriftir sneiða
+458|Bý til sneiðar
+459|Forsníð EFI-kerfissneiðina
+460|Dulrita kerfissneiðina
+461|Forsníð ræsisneiðina
+462|Bý til Btrfs-skráakerfið
+463|Fjarlægi gamlar undirskriftir skráakerfa
+464|Aflæsi dulrituðu uppsetningunni
+465|Vista núverandi kerfi sem skyndimynd
+466|Fjarlægi fyrra kerfi
+467|Skrifa töflu skráakerfa
+468|Stilli heiti og auðkenni tölvunnar
+469|Fjarlægi aðganga lifandi setunnar
+470|Bý til aðganginn þinn
+471|Undirbý MAN Setup fyrir fyrstu ræsingu
+472|Stilli tímabelti og lyklaborð
+473|Fjarlægi uppsetningarforritið úr nýja kerfinu
+474|Bý til ræsimynd (initramfs)
+475|Stilli GRUB
+476|Set GRUB upp á EFI-kerfissneiðina
+477|Set upp vara-ræsiforrit
+478|Skrifa ræsivalmyndina
+479|Diskur tilbúinn
+480|Bý til skyndimynd af nýja kerfinu
+481|Bæti skyndimyndinni við ræsivalmyndina
+482|Aftengi
+483|Hjálparforrit uppsetningarinnar verður að keyra sem root.
+484|Þessi tölva var ekki ræst í UEFI-ham. MAN krefst UEFI.
+485|Notandanafnið er ógilt.
+486|Lykilorð er nauðsynlegt.
+487|Heiti tölvunnar er ógilt.
+488|Óþekkt tungumál.
+489|Lykilfrasi dulritunar verður að vera minnst 8 stafir.
+490|Diskurinn breyttist eftir að þú staðfestir uppsetninguna. Engu var breytt; farðu yfir og staðfestu aftur.
+491|Veldu kerfissneið.
+492|Staðfesti diskurinn inniheldur ekki völdu kerfissneiðina.
+493|Ræsisneiðin verður að vera aðskilin frá EFI- og kerfissneiðunum.
+494|Ræsisneiðin verður að vera minnst 512 MB.
+495|Engin uppsetning valin.
+496|Staðfesti diskurinn inniheldur ekki völdu uppsetninguna.
+497|Dulritaða uppsetningin er ekki með MAN_BOOT-sneið.
+498|Enginn kjarni með samsvarandi einingum fannst í /boot.
+499|Kerfishjálparinn verður að breyta tungumálinu.
+500|Beiti stillingunum þínum
+501|Undirbý dulritun disks
+502|Lýk við
+503|Kerfishjálparinn verður að ljúka MAN Setup.
+504|MAN Setup hefur þegar verið lokið á þessari tölvu.
+505|Óþekktur áherslulitur.
+506|Valinn bakgrunnur er ekki tiltækur.
+507|Ekki er hægt að dulrita þetta kerfi.
+508|Uppsetningarlykilinn vantar svo dulritun getur ekki haldið áfram í bakgrunni.
+509|Kerfið er ekki sett upp á Btrfs svo skyndimyndir eru ekki tiltækar.
+510|Endurheimt skyndimyndar bíður endurræsingar. Endurræstu tölvuna fyrst til að ljúka henni.
+511|Ógilt auðkenni skyndimyndar.
+512|Athuga uppfærsluna
+513|Bý til skyndimynd
+514|Undirbý uppfærslusvæðið
+515|Afþjappa nýja kerfið
+516|Flyt aðganga þína og stillingar
+517|Undirbý endurræsingu
+518|Afþjappað
+519|Aðgangar
+520|Set upp aftur forrit sem haldið er
+521|Fjarlægi hugbúnað sem aðeins uppsetningarforritið notar
+522|Bý til ræsimynd uppfærslunnar
+523|Bæti við einnota ræsifærslu
+524|Uppfærslan er ósvikin
+525|Skyndimynd búin til
+526|Sleppt
+527|Uppfærslusvæði tilbúið
+528|Undirbý nýja kerfið
+529|Uppfærsluskráin er skemmd (gátsumma stemmir ekki). Sæktu hana aftur.
+530|Ekki tókst að lesa uppfærsluskrána alla.
+531|Uppfærslan inniheldur engan kjarna.
+532|Kerfishjálparinn verður að setja uppfærslur upp.
+533|Valda uppsetningin fannst ekki.
+534|Aðeins er hægt að uppfæra keyrandi MAN-uppsetningu.
+535|Þetta er ekki MAN-uppfærsluskrá (ekkert upplýsingaskjal).
+536|Uppfærslan er ekki undirrituð og því ekki hægt að treysta henni.
+537|Undirskrift uppfærslunnar er skemmd.
+538|Uppfærslan er ekki undirrituð af MAN. Henni gæti hafa verið breytt eða hún komið frá ótraustum uppruna.
+539|Upplýsingaskjal uppfærslunnar er ógilt.
+540|Lykilfrasinn er rangur eða ekki er hægt að opna dulrituðu sneiðina.
+541|Blár
+542|Blágrænn
+543|Grænn
+544|Gulur
+545|Appelsínugulur
+546|Rauður
+547|Bleikur
+548|Fjólublár
+549|Flögugrár
+550|Pakkauppsetning
+551|Settu upp forrit úr .deb-, Flatpak- og AppImage-skrám
+552|Uppsetning kerfis
+553|Setja MAN upp á þessa tölvu
+554|Endurheimt kerfis
+555|Búa til og endurheimta skyndimyndir af kerfinu
+556|Uppsetning kerfisuppfærslna
+557|Setja upp MAN-kerfisuppfærsluskrá
+558|Býður upp á að setja MAN upp þegar lifandi setan hefst
+559|Tilkynning um MAN-uppfærslu
+560|Segir þér einu sinni eftir innskráningu að MAN hafi verið uppfært
+561|Settu upp nýju MAN-tölvuna þína
+562|Fyrsta uppsetning MAN
+563|MAN-uppfærslur
+564|Lætur þig vita þegar ný útgáfa af MAN er komin

@@ -49,6 +49,8 @@ put "$bin/man-app-installer-helper" "$r/usr/libexec/man-installer/man-app-instal
 put "$data/applications/com.man.AppInstaller.desktop" "$r/usr/share/applications/com.man.AppInstaller.desktop" 0644
 put "$data/applications/gnome-mimeapps.list" "$r/etc/xdg/gnome-mimeapps.list" 0644
 put "$data/icons/com.man.AppInstaller.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.AppInstaller.svg" 0644
+put "$data/flatpak/man-flatpak.tmpfiles" "$r/usr/lib/tmpfiles.d/man-flatpak.conf" 0644
+put "$data/flatpak/man-flatpak-user.tmpfiles" "$r/usr/share/user-tmpfiles.d/man-flatpak.conf" 0644
 put "$data/polkit/com.man.apps.policy" "$r/usr/share/polkit-1/actions/com.man.apps.policy" 0644
 put "$data/applications/com.man.Updater.desktop" "$r/usr/share/applications/com.man.Updater.desktop" 0644
 put "$data/autostart/com.man.UpdateNotice.desktop" "$r/etc/xdg/autostart/com.man.UpdateNotice.desktop" 0644
@@ -74,7 +76,7 @@ put "$data/grub/43_man_windows" "$r/etc/grub.d/43_man_windows" 0755
 put "$data/duhach/man-duhach-cleanup" "$r/usr/libexec/man/man-duhach-cleanup" 0755
 put "$data/initramfs/man-rollback.hook" "$r/usr/share/initramfs-tools/hooks/man-rollback" 0755
 put "$data/initramfs/man-rollback.premount" "$r/usr/share/initramfs-tools/scripts/local-premount/man-rollback" 0755
-for u in man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
+for u in man-kept-debs.service man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
     put "$data/systemd/$u" "$r/usr/lib/systemd/system/$u" 0644
 done
 put "$data/apt/80man-snapshot" "$r/etc/apt/apt.conf.d/80man-snapshot" 0644
@@ -111,7 +113,9 @@ set -e
 if [ "$1" = configure ]; then
     systemctl disable man-boot-cleanup.service >/dev/null 2>&1 || true
     systemctl --global enable man-update-check.timer >/dev/null 2>&1 || true
-    systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service >/dev/null 2>&1 || true
+    # Per-user tmpfiles (Flatpak export folders exist before GNOME starts).
+    systemctl --global enable systemd-tmpfiles-setup.service >/dev/null 2>&1 || true
+    systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service >/dev/null 2>&1 || true
     if [ -d /run/systemd/system ]; then
         systemctl daemon-reload || true
         systemctl start man-snapshot-daily.timer man-boot-cleanup.timer || true
@@ -121,6 +125,7 @@ if [ "$1" = configure ]; then
     if [ -f /etc/apt/sources.list ]; then
         sed -i 's|^deb \[trusted=yes\] copy:///.*|# &|' /etc/apt/sources.list
     fi
+    systemd-tmpfiles --create /usr/lib/tmpfiles.d/man-flatpak.conf >/dev/null 2>&1 || true
     update-mime-database /usr/share/mime 2>/dev/null || true
     update-desktop-database -q /usr/share/applications 2>/dev/null || true
     gtk-update-icon-cache -q -f /usr/share/icons/hicolor 2>/dev/null || true

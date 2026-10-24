@@ -46,239 +46,247 @@ msgstr "インストール"
 msgid "Summary"
 msgstr "概要"
 
-#: appinstaller.rs:788
+#: appinstaller.rs:790
 msgid "_Continue"
 msgstr "続行(_C)"
 
-#: appinstaller.rs:797
+#: appinstaller.rs:799
 msgid "Welcome to the {name} Installer"
 msgstr "{name} インストーラーへようこそ"
 
-#: appinstaller.rs:801
+#: appinstaller.rs:803
 msgid "Software License Agreement"
 msgstr "ソフトウェア使用許諾契約"
 
-#: appinstaller.rs:811
+#: appinstaller.rs:813
 msgid "Do You Agree to the License?"
 msgstr "使用許諾に同意しますか?"
 
-#: appinstaller.rs:812
+#: appinstaller.rs:814
 msgid "To continue installing, you must agree to the terms of the software license agreement."
 msgstr "インストールを続けるには、ソフトウェア使用許諾契約の条件に同意する必要があります。"
 
-#: appinstaller.rs:814
+#: appinstaller.rs:816
 msgid "_Read License"
 msgstr "使用許諾を読む(_R)"
 
-#: appinstaller.rs:815
+#: appinstaller.rs:817
 msgid "_Agree"
 msgstr "同意する(_A)"
 
-#: appinstaller.rs:828
+#: appinstaller.rs:830
 msgid "Select a Destination"
 msgstr "インストール先を選択"
 
-#: appinstaller.rs:832
+#: appinstaller.rs:834
 msgid "Standard Install"
 msgstr "標準インストール"
 
-#: appinstaller.rs:833
+#: appinstaller.rs:835
 msgid "_Install"
 msgstr "インストール(_I)"
 
-#: appinstaller.rs:846
+#: appinstaller.rs:848
 msgid "Debian package (.deb)"
 msgstr "Debian パッケージ (.deb)"
 
-#: appinstaller.rs:847
+#: appinstaller.rs:849
 msgid "Flatpak app"
 msgstr "Flatpak アプリ"
 
-#: appinstaller.rs:848
+#: appinstaller.rs:850
 msgid "Flatpak app from {source}"
 msgstr "{source} の Flatpak アプリ"
 
-#: appinstaller.rs:849
+#: appinstaller.rs:851
 msgid "AppImage"
 msgstr "AppImage"
 
-#: appinstaller.rs:867
+#: appinstaller.rs:869
 msgid "You will be guided through the steps necessary to install this software."
 msgstr "このソフトウェアのインストールに必要な手順をご案内します。"
 
-#: appinstaller.rs:878
+#: appinstaller.rs:880
 msgid "Version"
 msgstr "バージョン"
 
-#: appinstaller.rs:881
+#: appinstaller.rs:883
 msgid "Publisher"
 msgstr "発行元"
 
-#: appinstaller.rs:883
+#: appinstaller.rs:885
 msgid "Type"
 msgstr "種類"
 
-#: appinstaller.rs:885
+#: appinstaller.rs:887
 msgid "Size"
 msgstr "サイズ"
 
-#: appinstaller.rs:891
+#: appinstaller.rs:893
 msgid "Website"
 msgstr "Web サイト"
 
-#: appinstaller.rs:893
+#: appinstaller.rs:895
 msgid "File"
 msgstr "ファイル"
 
-#: appinstaller.rs:903
+#: appinstaller.rs:905
 msgid "This app is installed already. Installing it again replaces it."
 msgstr "このアプリはすでにインストールされています。もう一度インストールすると置き換えられます。"
 
-#: appinstaller.rs:906
-msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
-msgstr ".deb パッケージのアプリはシステムの一部になります。MAN を更新すると削除されるため、もう一度インストールする必要があります。Flatpak アプリと AppImage はそのまま残ります。"
+#: appinstaller.rs:908
+msgid "Apps from .deb packages become part of the system. A MAN update replaces the system, so they are only installed again after an update if you keep them (next steps)."
+msgstr ".deb パッケージのアプリはシステムの一部になります。MAN の更新はシステムを置き換えるため、保持を選んだ場合にのみ更新後に再インストールされます (次の手順)。"
 
-#: appinstaller.rs:909
+#: appinstaller.rs:911
 msgid "Only install apps from sources you trust."
 msgstr "信頼できる提供元のアプリだけをインストールしてください。"
 
-#: appinstaller.rs:915
+#: appinstaller.rs:917
 msgid "Where do you want to install {name}?"
 msgstr "{name} をどこにインストールしますか?"
 
-#: appinstaller.rs:920
+#: appinstaller.rs:922
 msgid "Only your account can use the app."
 msgstr "あなたのアカウントだけがこのアプリを使えます。"
 
-#: appinstaller.rs:921
+#: appinstaller.rs:923
 msgid "Needs administrator rights."
 msgstr "管理者権限が必要です。"
 
-#: appinstaller.rs:928
+#: appinstaller.rs:930
 msgid "Only for Me"
 msgstr "自分のみ"
 
-#: appinstaller.rs:928
+#: appinstaller.rs:930
 msgid "For All Users of This Computer"
 msgstr "このコンピューターのすべてのユーザー"
 
-#: appinstaller.rs:943
+#: appinstaller.rs:945
 msgid "This will take {size} of space on your computer."
 msgstr "コンピューターの {size} の領域を使用します。"
 
-#: appinstaller.rs:945
+#: appinstaller.rs:947
 msgid "The app is downloaded from {source}."
 msgstr "アプリは {source} からダウンロードされます。"
 
-#: appinstaller.rs:947
+#: appinstaller.rs:949
 msgid "The app is installed for all users of this computer."
 msgstr "アプリはこのコンピューターのすべてのユーザー用にインストールされます。"
 
-#: appinstaller.rs:947
+#: appinstaller.rs:949
 msgid "The app is installed only for you."
 msgstr "アプリはあなた専用にインストールされます。"
 
-#: appinstaller.rs:950
+#: appinstaller.rs:952
 msgid "The AppImage is moved to {folder} and added to your apps."
 msgstr "AppImage は {folder} に移動され、アプリに追加されます。"
 
-#: appinstaller.rs:952
+#: appinstaller.rs:958
+msgid "Keep After MAN Updates"
+msgstr "MAN の更新後も保持"
+
+#: appinstaller.rs:959
+msgid "MAN installs the app again after each update. Its package files are kept for that."
+msgstr "MAN は更新のたびにアプリを再インストールします。そのためにパッケージファイルを保持します。"
+
+#: appinstaller.rs:967
 msgid "Click Install to install {name}."
 msgstr "{name} をインストールするには [インストール] をクリックしてください。"
 
-#: appinstaller.rs:958
+#: appinstaller.rs:973
 msgid "Checking what else the app needs…"
 msgstr "アプリに必要なものを確認しています…"
 
-#: appinstaller.rs:968
+#: appinstaller.rs:983
 msgid "Also installs the packages it needs: {list}"
 msgstr "必要なパッケージもインストールします: {list}"
 
-#: appinstaller.rs:974
+#: appinstaller.rs:989
 msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
 msgstr "アプリに必要な一部のパッケージがまだ利用できません。インストール時にまず最新のパッケージ一覧を取得します。それでも見つからない場合、アプリはインストールできません。"
 
-#: appinstaller.rs:1035
+#: appinstaller.rs:1050
 msgid "Installing {name}…"
 msgstr "{name} をインストールしています…"
 
-#: appinstaller.rs:1041
+#: appinstaller.rs:1056
 msgid "Preparing…"
 msgstr "準備しています…"
 
-#: appinstaller.rs:1048
+#: appinstaller.rs:1063
 msgid "Details"
 msgstr "詳細"
 
-#: appinstaller.rs:1088
+#: appinstaller.rs:1103
 msgid "Installing the package…"
 msgstr "パッケージをインストールしています…"
 
-#: appinstaller.rs:1107
+#: appinstaller.rs:1122
 msgid "Moving the app to its folder…"
 msgstr "アプリを専用フォルダーに移動しています…"
 
-#: appinstaller.rs:1116
+#: appinstaller.rs:1131
 msgid "The app could not be installed."
 msgstr "アプリをインストールできませんでした。"
 
-#: appinstaller.rs:1120
+#: appinstaller.rs:1135
 msgid "Installing the app with Flatpak…"
 msgstr "Flatpak でアプリをインストールしています…"
 
-#: appinstaller.rs:1139
+#: appinstaller.rs:1159
 msgid "Log"
 msgstr "ログ"
 
-#: appinstaller.rs:1169
+#: appinstaller.rs:1189
 msgid "_Close"
 msgstr "閉じる(_C)"
 
-#: appinstaller.rs:1179
+#: appinstaller.rs:1199
 msgid "The Installation Was Successful"
 msgstr "インストールが完了しました"
 
-#: appinstaller.rs:1179
+#: appinstaller.rs:1199
 msgid "The app was installed."
 msgstr "アプリをインストールしました。"
 
-#: appinstaller.rs:1184
+#: appinstaller.rs:1204
 msgid "The Installation Failed"
 msgstr "インストールに失敗しました"
 
-#: appinstaller.rs:1195
+#: appinstaller.rs:1215
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: appinstaller.rs:1205
+#: appinstaller.rs:1225
 msgid "_Show Details"
 msgstr "詳細を表示(_S)"
 
-#: appinstaller.rs:1208
+#: appinstaller.rs:1228
 msgid "Installation Log"
 msgstr "インストールログ"
 
-#: appinstaller.rs:1235
+#: appinstaller.rs:1255
 msgid "App Installer"
 msgstr "アプリインストーラー"
 
-#: appinstaller.rs:1256
+#: appinstaller.rs:1276
 msgid "Go _Back"
 msgstr "戻る(_B)"
 
-#: appinstaller.rs:1328
+#: appinstaller.rs:1349
 msgid "Reading the app…"
 msgstr "アプリを読み込んでいます…"
 
-#: appinstaller.rs:1337
+#: appinstaller.rs:1358
 msgid "Install {name}"
 msgstr "{name} のインストール"
 
-#: appinstaller.rs:1356
+#: appinstaller.rs:1377
 msgid "Apps"
 msgstr "アプリ"
 
-#: appinstaller.rs:1362
+#: appinstaller.rs:1383
 msgid "Choose an App to Install"
 msgstr "インストールするアプリを選択"
 
@@ -1788,27 +1796,27 @@ msgstr "MAN アップデートを開く"
 msgid "MAN updates"
 msgstr "MAN アップデート"
 
-#: apphelper.rs:59
+#: apphelper.rs:97
 msgid "Getting the newest package lists…"
 msgstr "最新のパッケージ一覧を取得しています…"
 
-#: apphelper.rs:146
+#: apphelper.rs:211
 msgid "Copying the app"
 msgstr "アプリをコピーしています"
 
-#: apphelper.rs:150
+#: apphelper.rs:215
 msgid "Adding the app to the menu"
 msgstr "アプリをメニューに追加しています"
 
-#: apphelper.rs:56
+#: apphelper.rs:94
 msgid "The file was not found."
 msgstr "ファイルが見つかりません。"
 
-#: apphelper.rs:77
+#: apphelper.rs:116
 msgid "The package could not be installed."
 msgstr "パッケージをインストールできませんでした。"
 
-#: apphelper.rs:136
+#: apphelper.rs:201
 msgid "The app's menu entry is not valid."
 msgstr "アプリのメニュー項目が正しくありません。"
 
@@ -2092,35 +2100,39 @@ msgstr "展開しました"
 msgid "Accounts"
 msgstr "アカウント"
 
-#: update.rs:308
+#: update.rs:321
+msgid "Reinstalling kept apps"
+msgstr "保持したアプリを再インストールしています"
+
+#: update.rs:376
 msgid "Removing installer-only software"
 msgstr "インストーラー専用のソフトウェアを削除しています"
 
-#: update.rs:347
+#: update.rs:416
 msgid "Building the update boot image"
 msgstr "アップデートの起動イメージを作成しています"
 
-#: update.rs:350
+#: update.rs:419
 msgid "Adding the one-time boot entry"
 msgstr "1 回限りの起動エントリーを追加しています"
 
-#: update.rs:384
+#: update.rs:453
 msgid "The update is genuine"
 msgstr "アップデートは正規のものです"
 
-#: update.rs:390
+#: update.rs:459
 msgid "Snapshot created"
 msgstr "スナップショットを作成しました"
 
-#: update.rs:392
+#: update.rs:461
 msgid "Skipped"
 msgstr "スキップしました"
 
-#: update.rs:401
+#: update.rs:470
 msgid "Update area ready"
 msgstr "アップデート領域の準備完了"
 
-#: update.rs:423
+#: update.rs:493
 msgid "Preparing the new system"
 msgstr "新しいシステムを準備しています"
 
@@ -2132,19 +2144,19 @@ msgstr "アップデートファイルが壊れています (チェックサム�
 msgid "The update file could not be read completely."
 msgstr "アップデートファイルをすべて読み込めませんでした。"
 
-#: update.rs:319
+#: update.rs:388
 msgid "The update contains no kernel."
 msgstr "アップデートにカーネルが含まれていません。"
 
-#: update.rs:367
+#: update.rs:436
 msgid "Updates must be installed by the system helper."
 msgstr "アップデートはシステムヘルパーがインストールする必要があります。"
 
-#: update.rs:376
+#: update.rs:445
 msgid "The chosen installation was not found."
 msgstr "選んだインストールが見つかりません。"
 
-#: update.rs:378
+#: update.rs:447
 msgid "Only the running MAN installation can be updated."
 msgstr "アップデートできるのは実行中の MAN インストールだけです。"
 

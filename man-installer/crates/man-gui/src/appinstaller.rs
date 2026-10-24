@@ -704,6 +704,8 @@ struct Ctx {
     all_users: Cell<bool>,
     busy: Cell<bool>,
     deb_ok: Cell<bool>,
+    /// .deb: "Keep After MAN Updates".
+    keep: Cell<bool>,
     installed_desktop: RefCell<Option<PathBuf>>,
 }
 
@@ -903,7 +905,7 @@ fn intro_page(ctx: &C, p: &Package) -> gtk::ScrolledWindow {
             b.append(&notice("dialog-information-symbolic", tr("This app is installed already. Installing it again replaces it."), "dim-label"));
         }
         if p.kind == Kind::Deb {
-            b.append(&notice("dialog-warning-symbolic", tr("Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."), "warning"));
+            b.append(&notice("dialog-warning-symbolic", tr("Apps from .deb packages become part of the system. A MAN update replaces the system, so they are only installed again after an update if you keep them (next steps)."), "warning"));
         }
     }
     b.append(&wrap_label(tr("Only install apps from sources you trust."), &["caption", "dim-label"]));
@@ -948,6 +950,19 @@ fn type_page(ctx: &C, p: &Package) -> gtk::ScrolledWindow {
     b.append(&wrap_label(who, &[]));
     if p.kind == Kind::AppImage {
         b.append(&wrap_label(&trf("The AppImage is moved to {folder} and added to your apps.", &[("folder", &appimage_dir(ctx.all_users.get()).display())]), &[]));
+    }
+    if p.kind == Kind::Deb {
+        let list = gtk::ListBox::builder().selection_mode(gtk::SelectionMode::None).build();
+        list.add_css_class("boxed-list");
+        let row = adw::SwitchRow::builder()
+            .title(tr("Keep After MAN Updates"))
+            .subtitle(tr("MAN installs the app again after each update. Its package files are kept for that."))
+            .active(ctx.keep.get())
+            .build();
+        let c = ctx.clone();
+        row.connect_active_notify(move |r| c.keep.set(r.is_active()));
+        list.append(&row);
+        b.append(&list);
     }
     b.append(&wrap_label(&trf("Click Install to install {name}.", &[("name", &p.name)]), &["dim-label"]));
     if p.kind == Kind::Deb {
@@ -1086,7 +1101,7 @@ fn install(ctx: &C) {
         let result: Result<(), (String, String)> = match p.kind {
             Kind::Deb => {
                 status.set_label(tr("Installing the package…"));
-                let req = serde_json::json!({ "op": "deb_install", "path": p.path });
+                let req = serde_json::json!({ "op": "deb_install", "path": p.path, "keep": ctx.keep.get() });
                 backend::call_helper(HELPER, req.to_string().into_bytes(), on_event).await.map(|_| ()).map_err(|f| (f.message, f.detail))
             }
             Kind::AppImage if all => {
@@ -1116,9 +1131,14 @@ fn install(ctx: &C) {
                     Err(e) => Err((tr("The app could not be installed.").to_string(), e)),
                 }
             }
+            Kind::Flatpak | Kind::FlatpakRef if all => {
+                status.set_label(tr("Installing the app with Flatpak…"));
+                let req = serde_json::json!({ "op": "flatpak_install", "path": p.path });
+                backend::call_helper(HELPER, req.to_string().into_bytes(), on_event).await.map(|_| ()).map_err(|f| (f.message, f.detail))
+            }
             Kind::Flatpak | Kind::FlatpakRef => {
                 status.set_label(tr("Installing the app with Flatpak…"));
-                let mut argv: Vec<String> = ["flatpak", "install", if all { "--system" } else { "--user" }, "--noninteractive", "-y"].map(String::from).to_vec();
+                let mut argv: Vec<String> = ["flatpak", "install", "--user", "--noninteractive", "-y"].map(String::from).to_vec();
                 argv.push(if p.kind == Kind::Flatpak { "--bundle".into() } else { "--from".into() });
                 argv.push(p.path.to_string_lossy().into_owned());
                 log(&argv.join(" "));
@@ -1290,6 +1310,7 @@ pub fn run(app: &adw::Application, path: PathBuf) {
         all_users: Cell::new(false),
         busy: Cell::new(false),
         deb_ok: Cell::new(false),
+        keep: Cell::new(true),
         installed_desktop: RefCell::new(None),
     });
     {

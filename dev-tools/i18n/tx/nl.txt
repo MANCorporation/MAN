@@ -30,7 +30,7 @@
 29|Website
 30|Bestand
 31|Deze app is al geïnstalleerd. Opnieuw installeren vervangt hem.
-32|Apps uit .deb-pakketten worden deel van het systeem. Bij een update van MAN worden ze verwijderd en moeten ze opnieuw worden geïnstalleerd. Flatpak-apps en AppImages blijven behouden.
+32|Apps uit .deb-pakketten worden deel van het systeem. Een MAN-update vervangt het systeem, dus ze worden na een update alleen opnieuw geïnstalleerd als je ze behoudt (volgende stappen).
 33|Installeer alleen apps uit bronnen die je vertrouwt.
 34|Waar wil je {name} installeren?
 35|Alleen jouw account kan de app gebruiken.
@@ -42,521 +42,524 @@
 41|De app wordt geïnstalleerd voor alle gebruikers van deze computer.
 42|De app wordt alleen voor jou geïnstalleerd.
 43|De AppImage wordt verplaatst naar {folder} en toegevoegd aan je apps.
-44|Klik op Installeren om {name} te installeren.
-45|Nagaan wat de app verder nog nodig heeft…
-46|Installeert ook de pakketten die nodig zijn: {list}
-47|Sommige pakketten die de app nodig heeft, zijn nog niet beschikbaar. Bij het installeren worden eerst de nieuwste pakketlijsten opgehaald; ontbreken ze dan nog steeds, dan kan de app niet worden geïnstalleerd.
-48|{name} installeren…
-49|Voorbereiden…
-50|Details
-51|Pakket installeren…
-52|App naar zijn map verplaatsen…
-53|De app kon niet worden geïnstalleerd.
-54|App installeren met Flatpak…
-55|Logboek
-56|_Sluiten
-57|De installatie is gelukt
-58|De app is geïnstalleerd.
-59|De installatie is mislukt
-60|_Openen
-61|Details _tonen
-62|Installatielogboek
-63|App-installatie
-64|_Terug
-65|App lezen…
-66|{name} installeren
-67|Apps
-68|Kies een app om te installeren
-69|De systeemhulp kon niet worden gestart.
-70|Kan niet communiceren met de systeemhulp.
-71|Verbinding met de systeemhulp verbroken.
-72|Autorisatie geannuleerd.
-73|Voor deze actie zijn beheerdersrechten nodig.
-74|De systeemhulp is onverwacht gestopt.
-75|Geen EFI-systeempartitie
-76|Slechts {free} vrij, MAN heeft {need} nodig. Maak meer ruimte met DUHACH! in Windows.
-77|Geen vrije ruimte. Start DUHACH! in Windows om ruimte te maken voor MAN.
-78|MAN draait vanaf deze schijf
-79|In gebruik: er is een partitie aangekoppeld
-80|Te klein, MAN heeft {need} nodig
-81|MAN installeren
-82|MAN wordt geïnstalleerd. Wacht tot dit klaar is.
-83|Taal
-84|_Herstarten in deze taal
-85|De live-sessie herstart in de gekozen taal, en MAN wordt in die taal geïnstalleerd.
-86|Welkom bij MAN
-87|Een snel, open en volledig aanpasbaar GNOME-systeem.\nInstalleer het op deze computer, of blijf de live-sessie verkennen.
-88|MAN _installeren…
-89|MAN verder _uitproberen
-90|Schijven zoeken…
-91|Welkom
-92|Deze computer is gestart in legacy-BIOS-modus. MAN kan alleen op UEFI-computers worden geïnstalleerd: herstart en kies de UEFI-opstartoptie.
-93|De systeemhulp gaf geen schijfinformatie terug.
-94|  ·  EFI
-95|_Volgende
-96|Schijf wissen en MAN installeren
-97|Alles op de gekozen schijf wordt gewist, ook Windows.
-98|Aanbevolen. Alles op de gekozen schijf wordt gewist.
-99|Naast Windows installeren
-100|Aanbevolen. MAN gebruikt de vrije ruimte naast Windows; Windows en zijn bestanden blijven. Kies bij elke start het systeem.
-101|MAN opnieuw installeren
-102|Vervangt het systeem maar behoudt persoonlijke bestanden in /home. Het huidige systeem wordt als momentopname bewaard.
-103|Eigen partities
-104|Voor experts: kies zelf partities, of maak ze met Schijven.
-105|Schijf
-106|Kies de schijf die gewist wordt. Schijven die niet bruikbaar zijn, worden met de reden getoond.
-107|Geen schijven gevonden
-108|Vrije ruimte naast Windows
-109|De partities van Windows worden niet aangeraakt. MAN deelt de EFI-systeempartitie en voegt Windows toe aan zijn opstartmenu.
-110|{size} vrij
-111|geen vrije ruimte
-112|{model} (Windows)
-113|Te vervangen installatie
-114|geen persoonlijke mappen
-115|persoonlijke mappen: {list}
-116|momentopnamen: {n}
-117|MAN op {model}
-118|Wachtwoordzin voor {device}
-119|Ontgrendelen
-120|De installatie kon niet worden onderzocht.
-121|Partities
-122|De systeempartitie wordt met Btrfs geformatteerd en bevat @system, @home en @snapshots. Partities op de schijf waar MAN vanaf draait, worden niet getoond.
-123|Schijven openen om partities te maken of te vergroten/verkleinen
-124|Partitielijst vernieuwen
-125|Kies een partitie
-126|EFI-systeempartitie
-127|EFI-systeempartitie formatteren
-128|Laat uit om opstartladers van andere systemen te behouden
-129|Systeempartitie (geformatteerd als Btrfs)
-130|Opstartpartitie (nodig bij versleuteling)
-131|Partitielijst vernieuwd
-132|Beveiliging
-133|Systeem versleutelen
-134|Beschermt uw gegevens als de computer verloren gaat of gestolen wordt. Bij elke start wordt een wachtwoordzin gevraagd.
-135|Wachtwoordzin
-136|Wachtwoordzin bevestigen
-137|Bewaar deze wachtwoordzin goed
-138|Als u hem kwijtraakt, kan niemand de gegevens herstellen. De kernel en opstartbestanden staan op een kleine, onversleutelde opstartpartitie.
-139|De wachtwoordzin moet minstens 8 tekens hebben.
-140|De wachtwoordzinnen komen niet overeen.
-141|Kies een schijf.
-142|Kies de schijf met Windows.
-143|Kies de te vervangen installatie.
-144|Ontgrendel eerst de versleutelde installatie.
-145|Deze partitie bevat geen MAN-systeem.
-146|Kies een EFI-systeempartitie.
-147|Kies de systeempartitie.
-148|De EFI- en systeempartitie moeten verschillend zijn.
-149|Versleuteling heeft een aparte opstartpartitie nodig.
-150|De systeempartitie moet minstens {size} zijn.
-151|De EFI-partitie is niet FAT-geformatteerd; zet formatteren aan.
-152|De systeempartitie is aangekoppeld; ontkoppel haar eerst in Schijven.
-153|Waar moet MAN worden geïnstalleerd?
-154|Tijd en toetsenbord
-155|Tijdzone
-156|Toetsenbordindeling
-157|Test uw toetsenbord
-158|Typ hier om te controleren of uw toetsen de juiste tekens geven.
-159|Typ hier
-160|Tijdzone en toetsenbord
-161|Geen schijf gekozen
-162|Geen systeempartitie gekozen
-163|De systeempartitie is verdwenen
-164|Geen installatie gekozen
-165|De schijf is verdwenen
-166|Controleren
-167|Bestemming
-168|Schijf wissen en installeren
-169|Eigen partities
-170|Opnieuw installeren, /home behouden
-171|Naast Windows
-172| (wordt geformatteerd)
-173| (behouden)
-174|Systeempartitie
-175|{partition} (wordt geformatteerd)
-176|Opstartpartitie
-177|Ruimte voor MAN
-178|{free} vrije ruimte (er worden een opstartpartitie en de systeempartitie gemaakt)
-179|Windows
-180|Ongewijzigd. Het verschijnt in het opstartmenu van MAN; de EFI-systeempartitie wordt gedeeld.
-181|Versleuteling
-182|Aan (LUKS2)
-183|Uit
-184|Bestandssysteem
-185|Btrfs: @system voor MAN, @home voor uw bestanden, @snapshots voor herstelpunten. Ze delen allemaal de vrije ruimte.
-186|Systeem
-187|Uw account
-188|Wordt gemaakt in MAN Setup bij de eerste start van de computer, samen met de computernaam, het uiterlijk en de privacyinstellingen.
-189|Toetsenbord
-190|Alle gegevens op {model} ({path}) worden gewist.
-191|_Wissen en installeren
-192|De gekozen partities worden geformatteerd. Andere partities veranderen niet.
-193|_Formatteren en installeren
-194|Het huidige systeem wordt vervangen. Uw bestanden in /home blijven bewaard en het oude systeem wordt als momentopname bewaard.
-195|Opnieuw _installeren
-196|MAN wordt in de vrije ruimte geïnstalleerd. Windows en zijn bestanden veranderen niet.
-197|Klaar om te installeren
-198|{model} wissen?
-199|Alle bestanden en partities op {path} ({size}) worden definitief verwijderd. Dit kan niet ongedaan worden gemaakt.
-200|Wissen en installeren
-201|Gekozen partities formatteren?
-202|Alle gegevens op de gekozen partities worden definitief verwijderd. Andere partities veranderen niet.
-203|Formatteren en installeren
-204|MAN naast Windows installeren?
-205|MAN wordt geïnstalleerd in de {free} vrije ruimte op {model} ({path}). Windows en zijn bestanden veranderen niet.
-206|Installeren
-207|MAN opnieuw installeren?
-208|Het geïnstalleerde systeem wordt vervangen door een nieuwe kopie. Persoonlijke bestanden in /home blijven bewaard en het oude systeem blijft beschikbaar als momentopname.
-209|Opnieuw installeren
-210|_Annuleren
-211|MAN wordt geïnstalleerd
-212|Starten…
-213|Installeren
-214|Stap {index} van {n}  ·  {title}
-215|MAN is geïnstalleerd
-216|Herstart de computer om MAN te gaan gebruiken. Bij elke start laat een menu u kiezen tussen MAN en Windows; de tijdelijke installatiepartitie wordt bij de eerste start door MAN verwijderd.
-217|Herstart de computer om MAN te gaan gebruiken. U kunt het installatiemedium verwijderen; blijft het aangesloten, dan start MAN toch van de nieuwe schijf.
-218|Nu _herstarten
-219|Klaar
-220|Installatie mislukt
-221|Er is geen andere schijf gewijzigd en het installatieprogramma heeft de doelschijf vrijgegeven. U kunt het plan controleren en het opnieuw proberen.
-222|_Controleren en opnieuw proberen
-223|Talen zoeken
-224|Landen zoeken
-225|De systeemschijf is niet gevonden.
-226|Versleuteling vereist de Btrfs-indeling van het MAN-installatieprogramma.
-227|Deze installatie heeft geen aparte opstartpartitie, die versleuteling nodig heeft. Installeer MAN opnieuw met ‘Schijf wissen’ om versleuteling te gebruiken.
-228|MAN Setup
-229|Waar bent u?
-230|Uw land of regio bepaalt de notatie van datum, tijd en getallen.
-231|Land
-232|GNU General Public License, versie 2
-233|De Linux-kernel en veel systeemhulpmiddelen
-234|GNU General Public License, versie 3
-235|Veel GNU- en GNOME-programma's
-236|GNU Lesser General Public License, versie 2.1
-237|GTK, GLib en veel bibliotheken
-238|GNU Lesser General Public License, versie 3
-239|Bibliotheken
-240|Mozilla Public License 2.0
-241|Programma's en bibliotheken van Mozilla en anderen
-242|Apache-licentie 2.0
-243|Bibliotheken en hulpmiddelen
-244|Licentieovereenkomst
-245|Lees en accepteer de voorwaarden waaronder MAN wordt geleverd.
-246|Licenties
-247|De licentietekst is niet beschikbaar ({path}).
-248|Ik heb de licentievoorwaarden gelezen en ga ermee akkoord
-249|Bekabeld
-250|Niet verbonden
-251|Verbinden met internet
-252|Met een verbinding kan MAN de tijd instellen en uw software bijwerken. U kunt dit ook later doen.
-253|Verbinding controleren…
-254|Wifi-netwerken
-255|Opnieuw zoeken
-256|_Overslaan
-257|U kunt later verbinden in Instellingen.
-258|Verbonden
-259|Niet verbonden
-260|Geen netwerken gevonden
-261|Internet
-262|Verbonden met ‘{ssid}’
-263|Kan niet verbinden met ‘{ssid}’
-264|Verbinden met ‘{ssid}’
-265|Voer het netwerkwachtwoord in.
-266|_Verbinden
-267|Maak uw account
-268|U wordt de beheerder van deze computer, met volledige root-toegang via sudo.
-269|Volledige naam
-270|Gebruikersnaam
-271|Wachtwoord
-272|Wachtwoord bevestigen
-273|Automatisch aanmelden
-274|Het aanmeldscherm overslaan bij het starten van de computer
-275|Bestaande persoonlijke mappen
-276|Gebruik dezelfde gebruikersnaam om een map van een eerdere installatie te blijven gebruiken.
-277|Gebruiken
-278|Geavanceerd
-279|Computernaam
-280|Root-wachtwoord instellen
-281|Maakt direct aanmelden als root mogelijk. Gebruik anders sudo met uw eigen wachtwoord.
-282|Root-wachtwoord
-283|Root-wachtwoord bevestigen
-284|Voer uw naam in.
-285|Kies een gebruikersnaam.
-286|Deze gebruikersnaam wordt al door het systeem gebruikt.
-287|Deze gebruikersnaam is gereserveerd door het systeem.
-288|Gebruikersnamen bestaan uit kleine letters, cijfers, - en _ en beginnen met een letter.
-289|Kies een wachtwoord.
-290|De wachtwoorden komen niet overeen.
-291|De computernaam mag letters, cijfers en streepjes bevatten.
-292|Voer het root-wachtwoord twee keer in.
-293|Tip: een wachtwoord van 8 of meer tekens is veel veiliger.
-294|Account
-295|Donker
-296|Licht
-297|Maak het uw eigen
-298|Kies een stijl, een accentkleur en een achtergrond. U ziet elke wijziging meteen.
-299|Stijl
-300|Accentkleur
-301|Achtergrond
-302|Aanpassen
-303|Privacy
-304|Kies welke functies informatie over u mogen gebruiken. U kunt dit altijd wijzigen in Instellingen.
-305|Locatiediensten
-306|Hiermee kunnen apps zoals Kaarten en Weer uw geschatte locatie bepalen via wifi-netwerken in de buurt.
-307|Automatische tijdzone
-308|Gebruikt uw locatie om de tijdzone op reis juist te houden.
-309|Instellen _voltooien
-310|Uw schijf is versleuteld
-311|Uw gegevens zijn beschermd. De wachtwoordzin wordt bij elke start van de computer gevraagd.
-312|Schijfversleuteling
-313|Versleuteling beschermt uw gegevens als de computer verloren gaat of gestolen wordt.
-314|Niet beschikbaar bij deze installatie
-315|Versleuteling beschermt uw bestanden als de computer verloren gaat of gestolen wordt. Zonder de wachtwoordzin kan niemand de schijf lezen.
-316|Schijf versleutelen
-317|De wachtwoordzin wordt bij elke start van de computer gevraagd.
-318|Versleuteling begint bij de volgende herstart
-319|Uw schijf wordt daarna op de achtergrond versleuteld terwijl u de computer gebruikt. Raakt u de wachtwoordzin kwijt, dan kan niemand de gegevens herstellen.
-320|MAN wordt voorbereid
-321|Alles wordt klaargezet…
-322|_Herstarten
-323|_Terug
-324|Voorbereiden
-325|Instellingslogboek
-326|Helemaal klaar!
-327|Er is iets misgegaan
-328|Dagelijks
-329|Voor update
-330|Voor herstel
-331|Voor herinstallatie
-332|Handmatig
-333|Nog geen momentopnamen
-334|Maak er een voordat u grote wijzigingen aan het systeem doet.
-335|Herstellen…
-336|Momentopname verwijderen
-337|{free} vrij van {size}. Systeem, persoonlijke mappen en momentopnamen delen deze ruimte; momentopnamen gebruiken alleen ruimte voor wat er sinds hun aanmaak is veranderd.
-338|_OK
-339|Momentopname maken
-340|Bewaart de huidige toestand van het systeem. Uw persoonlijke bestanden worden niet meegenomen.
-341|Beschrijving, bijvoorbeeld ‘Voor het installeren van stuurprogramma's’
-342|_Maken
-343|Handmatige momentopname
-344|Momentopname verwijderen?
-345|‘{description}’ van {date} wordt definitief verwijderd.
-346|_Verwijderen
-347|Deze momentopname herstellen?
-348|Na een herstart keert het systeem terug naar ‘{description}’ van {date}. Uw persoonlijke bestanden veranderen niet.\n\nHet huidige systeem wordt eerst als momentopname bewaard, dus dit kan ongedaan worden gemaakt.
-349|_Herstellen
-350|Herstarten om het herstel te voltooien
-351|_Later herstarten
-352|Nu _herstarten
-353|Momentopnamen
-354|Herstelpunten
-355|Momentopnamen bewaren de toestand van het besturingssysteem. Er een herstellen zet het systeem terug naar dat moment, wat helpt na een mislukte update of configuratiewijziging. Uw persoonlijke bestanden worden nooit aangeraakt.
-356|Automatische momentopnamen
-357|Dagelijkse momentopnamen
-358|Eén keer per dag terwijl de computer aan staat
-359|Te bewaren dagelijkse momentopnamen
-360|Voor software-updates
-361|Automatisch gemaakt bij het installeren, bijwerken of verwijderen van pakketten
-362|Te bewaren update-momentopnamen
-363|Opslag
-364|Schijfruimte
-365|Als MAN niet start
-366|Kies ‘Restore a MAN snapshot’ in het opstartmenu om een werkend systeem terug te halen.
-367|Momentopnamen zijn niet beschikbaar
-368|Momentopnamen werken op MAN dat is geïnstalleerd met de Btrfs-indeling van het MAN-installatieprogramma. Dit systeem (bijvoorbeeld een live-sessie) gebruikt die niet.
-369|Er wacht een herstel: herstart de computer om het te voltooien
-370|Nu herstarten
-371|Wacht tot de huidige bewerking klaar is.
-372|Zoeken
-373|Naar klembord kopiëren
-374|Gecoördineerde wereldtijd
-375|Engels (VS)
-376|MAN {version} is uitgebracht!
-377|Je kunt ernaar bijwerken.
-378|Updates openen
-379|Update controleren
-380|Er wordt gecontroleerd of de update echt en volledig is…
-381|MAN-update
-382|Deze update kan niet worden geïnstalleerd
-383|De update kon niet worden gelezen.
-384|Update van {name} {version}
-385|{name} {version} is geïnstalleerd
-386|Uitgebracht
-387|Downloadgrootte
-388|Benodigde ruimte
-389|Echtheid
-390|Geverifieerd, ondertekend door ‘{signer}’
-391|Wat is er nieuw
-392|Deze update is niet nieuwer dan het geïnstalleerde {name} {version}.
-393|Update
-394|Lees de licentievoorwaarden van deze update.
-395|Ik accepteer de licentievoorwaarden
-396|Waar moet de update worden geïnstalleerd?
-397|Het systeem wordt vervangen; bestanden in uw persoonlijke map worden niet aangeraakt.
-398|Kies een installatie.
-399|draait nu
-400|{name} {version} op deze computer
-401|{name} op {model}
-402|Geen MAN-installatie gevonden
-403|Updates worden geïnstalleerd vanaf een draaiend, geïnstalleerd MAN-systeem, niet vanuit de live-sessie.
-404|Installatielocatie
-405|Behouden
-406|Uw bestanden
-407|Alles in uw persoonlijke map
-408|Accounts en wachtwoorden
-409|Gebruikers, groepen, de computernaam
-410|Verbindingen en instellingen
-411|Wifi, tijdzone, toetsenbord, uiterlijk en momentopnamen
-412|Flatpak-apps
-413|Plus alles in /usr/local en /opt
-414|Vervangen
-415|Met apt geïnstalleerde software en andere wijzigingen aan systeembestanden worden door het nieuwe systeem vervangen.
-416|Het besturingssysteem
-417|Vervangen door {name} {version}. Het huidige systeem kan uit een momentopname worden hersteld.
-418|De computer herstart om de update te installeren
-419|Na de voorbereiding herstart MAN, installeert de update in enkele seconden en herstart opnieuw.
-420|Update _installeren
-421|Eerst een momentopname maken?
-422|Een momentopname bewaart het huidige systeem, zodat u terug kunt als na de update iets niet werkt. Dit wordt aanbevolen.
-423|_Niet maken
-424|Momentopname _maken
-425|{name} {version} voorbereiden
-426|Herstarten om te installeren
-427|De computer herstart twee keer. Uw bestanden zijn veilig.
-428|Automatisch herstarten over {r} seconden
-429|Automatisch herstarten over 30 seconden
-430|De update wordt bij de volgende herstart geïnstalleerd.
-431|Klaar
-432|De update kon niet worden voorbereid
-433|Er is niets aan uw systeem veranderd.
-434|_Opnieuw proberen
-435|Updatelogboek
-436|Mislukt
-437|Uw systeem is bijgewerkt
-438|MAN is bijgewerkt naar versie {version}.\nVoorheen: MAN {previous}.
-439|_Klaar
-440|Een MAN-update openen
-441|MAN-updates
-442|Nieuwste pakketlijsten ophalen…
-443|App kopiëren
-444|App toevoegen aan het menu
-445|Het bestand is niet gevonden.
-446|Het pakket kon niet worden geïnstalleerd.
-447|Het menu-item van de app is ongeldig.
-448|Installatieplan controleren
-449|Schijf voorbereiden
-450|MAN naar de schijf kopiëren
-451|Nieuw systeem configureren
-452|Opstartlader installeren
-453|Eerste momentopname maken
-454|Afronden
-455|Oude partitiehandtekeningen verwijderen
-456|Partities maken
-457|EFI-systeempartitie formatteren
-458|Systeempartitie versleutelen
-459|Opstartpartitie formatteren
-460|Btrfs-bestandssysteem maken
-461|Oude bestandssysteemhandtekeningen verwijderen
-462|Versleutelde installatie ontgrendelen
-463|Huidig systeem als momentopname bewaren
-464|Vorig systeem verwijderen
-465|Bestandssysteemtabel schrijven
-466|Computernaam en identiteit instellen
-467|Accounts van de live-sessie verwijderen
-468|Uw account maken
-469|MAN Setup voorbereiden op de eerste start
-470|Tijdzone en toetsenbord instellen
-471|Installatieprogramma uit het nieuwe systeem verwijderen
-472|Opstartimage maken (initramfs)
-473|GRUB configureren
-474|GRUB op de EFI-systeempartitie installeren
-475|Reserve-opstartlader installeren
-476|Opstartmenu schrijven
-477|Schijf klaar
-478|Momentopname van het nieuwe systeem maken
-479|Momentopname aan het opstartmenu toevoegen
-480|Ontkoppelen
-481|De installatiehulp moet als root draaien.
-482|Deze computer is niet in UEFI-modus gestart. MAN vereist UEFI.
-483|De gebruikersnaam is ongeldig.
-484|Een wachtwoord is vereist.
-485|De computernaam is ongeldig.
-486|Onbekende taal.
-487|De versleutelingswachtwoordzin moet minstens 8 tekens hebben.
-488|De schijf is veranderd nadat u de installatie bevestigde. Er is niets gewijzigd; controleer en bevestig opnieuw.
-489|Kies een systeempartitie.
-490|De bevestigde schijf bevat de gekozen systeempartitie niet.
-491|De opstartpartitie moet los staan van de EFI- en systeempartitie.
-492|De opstartpartitie moet minstens 512 MB zijn.
-493|Geen installatie gekozen.
-494|De bevestigde schijf bevat de gekozen installatie niet.
-495|De versleutelde installatie heeft geen MAN_BOOT-partitie.
-496|Geen kernel met bijbehorende modules gevonden in /boot.
-497|De taal moet door de systeemhulp worden gewijzigd.
-498|Uw instellingen toepassen
-499|Schijfversleuteling voorbereiden
-500|Afronden
-501|MAN Setup moet door de systeemhulp worden voltooid.
-502|MAN Setup is op deze computer al voltooid.
-503|Onbekende accentkleur.
-504|De gekozen achtergrond is niet beschikbaar.
-505|Dit systeem kan niet worden versleuteld.
-506|De installatiesleutel ontbreekt, dus de versleuteling kan niet op de achtergrond doorgaan.
-507|Het systeem is niet op Btrfs geïnstalleerd, dus momentopnamen zijn niet beschikbaar.
-508|Een herstel van een momentopname wacht op een herstart. Herstart eerst de computer om het te voltooien.
-509|Ongeldige momentopname-ID.
-510|Update controleren
-511|Momentopname maken
-512|Updategebied voorbereiden
-513|Nieuw systeem uitpakken
-514|Uw accounts en instellingen overzetten
-515|Herstart voorbereiden
-516|Uitgepakt
-517|Accounts
-518|Software voor alleen het installatieprogramma verwijderen
-519|Opstartimage van de update maken
-520|Eenmalige opstartvermelding toevoegen
-521|De update is echt
-522|Momentopname gemaakt
-523|Overgeslagen
-524|Updategebied klaar
-525|Nieuw systeem voorbereiden
-526|Het updatebestand is beschadigd (controlesom klopt niet). Download het opnieuw.
-527|Het updatebestand kon niet volledig worden gelezen.
-528|De update bevat geen kernel.
-529|Updates moeten door de systeemhulp worden geïnstalleerd.
-530|De gekozen installatie is niet gevonden.
-531|Alleen de draaiende MAN-installatie kan worden bijgewerkt.
-532|Dit is geen MAN-updatebestand (geen manifest).
-533|De update is niet ondertekend en daarom niet te vertrouwen.
-534|De handtekening van de update is beschadigd.
-535|De update is niet ondertekend door MAN. Hij kan zijn gewijzigd of uit een onbetrouwbare bron komen.
-536|Het manifest van de update is ongeldig.
-537|De wachtwoordzin is onjuist, of de versleutelde partitie kan niet worden geopend.
-538|Blauw
-539|Blauwgroen
-540|Groen
-541|Geel
-542|Oranje
-543|Rood
-544|Roze
-545|Paars
-546|Leisteen
-547|Pakketinstallatie
-548|Apps installeren uit .deb-, Flatpak- en AppImage-bestanden
-549|Systeeminstallatie
-550|MAN op deze computer installeren
-551|Systeemherstel
-552|Momentopnamen van het systeem maken en herstellen
-553|Installatie van systeemupdates
-554|Een MAN-systeemupdatebestand installeren
-555|Biedt aan MAN te installeren als de live-sessie start
-556|MAN-updatemelding
-557|Meldt na het aanmelden één keer dat MAN is bijgewerkt
-558|Stel uw nieuwe MAN-computer in
-559|Eerste instelling van MAN
-560|MAN-updates
-561|Laat je weten wanneer er een nieuwe versie van MAN is
+44|Behouden na MAN-updates
+45|MAN installeert de app na elke update opnieuw. Daarvoor worden de pakketbestanden bewaard.
+46|Klik op Installeren om {name} te installeren.
+47|Nagaan wat de app verder nog nodig heeft…
+48|Installeert ook de pakketten die nodig zijn: {list}
+49|Sommige pakketten die de app nodig heeft, zijn nog niet beschikbaar. Bij het installeren worden eerst de nieuwste pakketlijsten opgehaald; ontbreken ze dan nog steeds, dan kan de app niet worden geïnstalleerd.
+50|{name} installeren…
+51|Voorbereiden…
+52|Details
+53|Pakket installeren…
+54|App naar zijn map verplaatsen…
+55|De app kon niet worden geïnstalleerd.
+56|App installeren met Flatpak…
+57|Logboek
+58|_Sluiten
+59|De installatie is gelukt
+60|De app is geïnstalleerd.
+61|De installatie is mislukt
+62|_Openen
+63|Details _tonen
+64|Installatielogboek
+65|App-installatie
+66|_Terug
+67|App lezen…
+68|{name} installeren
+69|Apps
+70|Kies een app om te installeren
+71|De systeemhulp kon niet worden gestart.
+72|Kan niet communiceren met de systeemhulp.
+73|Verbinding met de systeemhulp verbroken.
+74|Autorisatie geannuleerd.
+75|Voor deze actie zijn beheerdersrechten nodig.
+76|De systeemhulp is onverwacht gestopt.
+77|Geen EFI-systeempartitie
+78|Slechts {free} vrij, MAN heeft {need} nodig. Maak meer ruimte met DUHACH! in Windows.
+79|Geen vrije ruimte. Start DUHACH! in Windows om ruimte te maken voor MAN.
+80|MAN draait vanaf deze schijf
+81|In gebruik: er is een partitie aangekoppeld
+82|Te klein, MAN heeft {need} nodig
+83|MAN installeren
+84|MAN wordt geïnstalleerd. Wacht tot dit klaar is.
+85|Taal
+86|_Herstarten in deze taal
+87|De live-sessie herstart in de gekozen taal, en MAN wordt in die taal geïnstalleerd.
+88|Welkom bij MAN
+89|Een snel, open en volledig aanpasbaar GNOME-systeem.\nInstalleer het op deze computer, of blijf de live-sessie verkennen.
+90|MAN _installeren…
+91|MAN verder _uitproberen
+92|Schijven zoeken…
+93|Welkom
+94|Deze computer is gestart in legacy-BIOS-modus. MAN kan alleen op UEFI-computers worden geïnstalleerd: herstart en kies de UEFI-opstartoptie.
+95|De systeemhulp gaf geen schijfinformatie terug.
+96|  ·  EFI
+97|_Volgende
+98|Schijf wissen en MAN installeren
+99|Alles op de gekozen schijf wordt gewist, ook Windows.
+100|Aanbevolen. Alles op de gekozen schijf wordt gewist.
+101|Naast Windows installeren
+102|Aanbevolen. MAN gebruikt de vrije ruimte naast Windows; Windows en zijn bestanden blijven. Kies bij elke start het systeem.
+103|MAN opnieuw installeren
+104|Vervangt het systeem maar behoudt persoonlijke bestanden in /home. Het huidige systeem wordt als momentopname bewaard.
+105|Eigen partities
+106|Voor experts: kies zelf partities, of maak ze met Schijven.
+107|Schijf
+108|Kies de schijf die gewist wordt. Schijven die niet bruikbaar zijn, worden met de reden getoond.
+109|Geen schijven gevonden
+110|Vrije ruimte naast Windows
+111|De partities van Windows worden niet aangeraakt. MAN deelt de EFI-systeempartitie en voegt Windows toe aan zijn opstartmenu.
+112|{size} vrij
+113|geen vrije ruimte
+114|{model} (Windows)
+115|Te vervangen installatie
+116|geen persoonlijke mappen
+117|persoonlijke mappen: {list}
+118|momentopnamen: {n}
+119|MAN op {model}
+120|Wachtwoordzin voor {device}
+121|Ontgrendelen
+122|De installatie kon niet worden onderzocht.
+123|Partities
+124|De systeempartitie wordt met Btrfs geformatteerd en bevat @system, @home en @snapshots. Partities op de schijf waar MAN vanaf draait, worden niet getoond.
+125|Schijven openen om partities te maken of te vergroten/verkleinen
+126|Partitielijst vernieuwen
+127|Kies een partitie
+128|EFI-systeempartitie
+129|EFI-systeempartitie formatteren
+130|Laat uit om opstartladers van andere systemen te behouden
+131|Systeempartitie (geformatteerd als Btrfs)
+132|Opstartpartitie (nodig bij versleuteling)
+133|Partitielijst vernieuwd
+134|Beveiliging
+135|Systeem versleutelen
+136|Beschermt uw gegevens als de computer verloren gaat of gestolen wordt. Bij elke start wordt een wachtwoordzin gevraagd.
+137|Wachtwoordzin
+138|Wachtwoordzin bevestigen
+139|Bewaar deze wachtwoordzin goed
+140|Als u hem kwijtraakt, kan niemand de gegevens herstellen. De kernel en opstartbestanden staan op een kleine, onversleutelde opstartpartitie.
+141|De wachtwoordzin moet minstens 8 tekens hebben.
+142|De wachtwoordzinnen komen niet overeen.
+143|Kies een schijf.
+144|Kies de schijf met Windows.
+145|Kies de te vervangen installatie.
+146|Ontgrendel eerst de versleutelde installatie.
+147|Deze partitie bevat geen MAN-systeem.
+148|Kies een EFI-systeempartitie.
+149|Kies de systeempartitie.
+150|De EFI- en systeempartitie moeten verschillend zijn.
+151|Versleuteling heeft een aparte opstartpartitie nodig.
+152|De systeempartitie moet minstens {size} zijn.
+153|De EFI-partitie is niet FAT-geformatteerd; zet formatteren aan.
+154|De systeempartitie is aangekoppeld; ontkoppel haar eerst in Schijven.
+155|Waar moet MAN worden geïnstalleerd?
+156|Tijd en toetsenbord
+157|Tijdzone
+158|Toetsenbordindeling
+159|Test uw toetsenbord
+160|Typ hier om te controleren of uw toetsen de juiste tekens geven.
+161|Typ hier
+162|Tijdzone en toetsenbord
+163|Geen schijf gekozen
+164|Geen systeempartitie gekozen
+165|De systeempartitie is verdwenen
+166|Geen installatie gekozen
+167|De schijf is verdwenen
+168|Controleren
+169|Bestemming
+170|Schijf wissen en installeren
+171|Eigen partities
+172|Opnieuw installeren, /home behouden
+173|Naast Windows
+174| (wordt geformatteerd)
+175| (behouden)
+176|Systeempartitie
+177|{partition} (wordt geformatteerd)
+178|Opstartpartitie
+179|Ruimte voor MAN
+180|{free} vrije ruimte (er worden een opstartpartitie en de systeempartitie gemaakt)
+181|Windows
+182|Ongewijzigd. Het verschijnt in het opstartmenu van MAN; de EFI-systeempartitie wordt gedeeld.
+183|Versleuteling
+184|Aan (LUKS2)
+185|Uit
+186|Bestandssysteem
+187|Btrfs: @system voor MAN, @home voor uw bestanden, @snapshots voor herstelpunten. Ze delen allemaal de vrije ruimte.
+188|Systeem
+189|Uw account
+190|Wordt gemaakt in MAN Setup bij de eerste start van de computer, samen met de computernaam, het uiterlijk en de privacyinstellingen.
+191|Toetsenbord
+192|Alle gegevens op {model} ({path}) worden gewist.
+193|_Wissen en installeren
+194|De gekozen partities worden geformatteerd. Andere partities veranderen niet.
+195|_Formatteren en installeren
+196|Het huidige systeem wordt vervangen. Uw bestanden in /home blijven bewaard en het oude systeem wordt als momentopname bewaard.
+197|Opnieuw _installeren
+198|MAN wordt in de vrije ruimte geïnstalleerd. Windows en zijn bestanden veranderen niet.
+199|Klaar om te installeren
+200|{model} wissen?
+201|Alle bestanden en partities op {path} ({size}) worden definitief verwijderd. Dit kan niet ongedaan worden gemaakt.
+202|Wissen en installeren
+203|Gekozen partities formatteren?
+204|Alle gegevens op de gekozen partities worden definitief verwijderd. Andere partities veranderen niet.
+205|Formatteren en installeren
+206|MAN naast Windows installeren?
+207|MAN wordt geïnstalleerd in de {free} vrije ruimte op {model} ({path}). Windows en zijn bestanden veranderen niet.
+208|Installeren
+209|MAN opnieuw installeren?
+210|Het geïnstalleerde systeem wordt vervangen door een nieuwe kopie. Persoonlijke bestanden in /home blijven bewaard en het oude systeem blijft beschikbaar als momentopname.
+211|Opnieuw installeren
+212|_Annuleren
+213|MAN wordt geïnstalleerd
+214|Starten…
+215|Installeren
+216|Stap {index} van {n}  ·  {title}
+217|MAN is geïnstalleerd
+218|Herstart de computer om MAN te gaan gebruiken. Bij elke start laat een menu u kiezen tussen MAN en Windows; de tijdelijke installatiepartitie wordt bij de eerste start door MAN verwijderd.
+219|Herstart de computer om MAN te gaan gebruiken. U kunt het installatiemedium verwijderen; blijft het aangesloten, dan start MAN toch van de nieuwe schijf.
+220|Nu _herstarten
+221|Klaar
+222|Installatie mislukt
+223|Er is geen andere schijf gewijzigd en het installatieprogramma heeft de doelschijf vrijgegeven. U kunt het plan controleren en het opnieuw proberen.
+224|_Controleren en opnieuw proberen
+225|Talen zoeken
+226|Landen zoeken
+227|De systeemschijf is niet gevonden.
+228|Versleuteling vereist de Btrfs-indeling van het MAN-installatieprogramma.
+229|Deze installatie heeft geen aparte opstartpartitie, die versleuteling nodig heeft. Installeer MAN opnieuw met ‘Schijf wissen’ om versleuteling te gebruiken.
+230|MAN Setup
+231|Waar bent u?
+232|Uw land of regio bepaalt de notatie van datum, tijd en getallen.
+233|Land
+234|GNU General Public License, versie 2
+235|De Linux-kernel en veel systeemhulpmiddelen
+236|GNU General Public License, versie 3
+237|Veel GNU- en GNOME-programma's
+238|GNU Lesser General Public License, versie 2.1
+239|GTK, GLib en veel bibliotheken
+240|GNU Lesser General Public License, versie 3
+241|Bibliotheken
+242|Mozilla Public License 2.0
+243|Programma's en bibliotheken van Mozilla en anderen
+244|Apache-licentie 2.0
+245|Bibliotheken en hulpmiddelen
+246|Licentieovereenkomst
+247|Lees en accepteer de voorwaarden waaronder MAN wordt geleverd.
+248|Licenties
+249|De licentietekst is niet beschikbaar ({path}).
+250|Ik heb de licentievoorwaarden gelezen en ga ermee akkoord
+251|Bekabeld
+252|Niet verbonden
+253|Verbinden met internet
+254|Met een verbinding kan MAN de tijd instellen en uw software bijwerken. U kunt dit ook later doen.
+255|Verbinding controleren…
+256|Wifi-netwerken
+257|Opnieuw zoeken
+258|_Overslaan
+259|U kunt later verbinden in Instellingen.
+260|Verbonden
+261|Niet verbonden
+262|Geen netwerken gevonden
+263|Internet
+264|Verbonden met ‘{ssid}’
+265|Kan niet verbinden met ‘{ssid}’
+266|Verbinden met ‘{ssid}’
+267|Voer het netwerkwachtwoord in.
+268|_Verbinden
+269|Maak uw account
+270|U wordt de beheerder van deze computer, met volledige root-toegang via sudo.
+271|Volledige naam
+272|Gebruikersnaam
+273|Wachtwoord
+274|Wachtwoord bevestigen
+275|Automatisch aanmelden
+276|Het aanmeldscherm overslaan bij het starten van de computer
+277|Bestaande persoonlijke mappen
+278|Gebruik dezelfde gebruikersnaam om een map van een eerdere installatie te blijven gebruiken.
+279|Gebruiken
+280|Geavanceerd
+281|Computernaam
+282|Root-wachtwoord instellen
+283|Maakt direct aanmelden als root mogelijk. Gebruik anders sudo met uw eigen wachtwoord.
+284|Root-wachtwoord
+285|Root-wachtwoord bevestigen
+286|Voer uw naam in.
+287|Kies een gebruikersnaam.
+288|Deze gebruikersnaam wordt al door het systeem gebruikt.
+289|Deze gebruikersnaam is gereserveerd door het systeem.
+290|Gebruikersnamen bestaan uit kleine letters, cijfers, - en _ en beginnen met een letter.
+291|Kies een wachtwoord.
+292|De wachtwoorden komen niet overeen.
+293|De computernaam mag letters, cijfers en streepjes bevatten.
+294|Voer het root-wachtwoord twee keer in.
+295|Tip: een wachtwoord van 8 of meer tekens is veel veiliger.
+296|Account
+297|Donker
+298|Licht
+299|Maak het uw eigen
+300|Kies een stijl, een accentkleur en een achtergrond. U ziet elke wijziging meteen.
+301|Stijl
+302|Accentkleur
+303|Achtergrond
+304|Aanpassen
+305|Privacy
+306|Kies welke functies informatie over u mogen gebruiken. U kunt dit altijd wijzigen in Instellingen.
+307|Locatiediensten
+308|Hiermee kunnen apps zoals Kaarten en Weer uw geschatte locatie bepalen via wifi-netwerken in de buurt.
+309|Automatische tijdzone
+310|Gebruikt uw locatie om de tijdzone op reis juist te houden.
+311|Instellen _voltooien
+312|Uw schijf is versleuteld
+313|Uw gegevens zijn beschermd. De wachtwoordzin wordt bij elke start van de computer gevraagd.
+314|Schijfversleuteling
+315|Versleuteling beschermt uw gegevens als de computer verloren gaat of gestolen wordt.
+316|Niet beschikbaar bij deze installatie
+317|Versleuteling beschermt uw bestanden als de computer verloren gaat of gestolen wordt. Zonder de wachtwoordzin kan niemand de schijf lezen.
+318|Schijf versleutelen
+319|De wachtwoordzin wordt bij elke start van de computer gevraagd.
+320|Versleuteling begint bij de volgende herstart
+321|Uw schijf wordt daarna op de achtergrond versleuteld terwijl u de computer gebruikt. Raakt u de wachtwoordzin kwijt, dan kan niemand de gegevens herstellen.
+322|MAN wordt voorbereid
+323|Alles wordt klaargezet…
+324|_Herstarten
+325|_Terug
+326|Voorbereiden
+327|Instellingslogboek
+328|Helemaal klaar!
+329|Er is iets misgegaan
+330|Dagelijks
+331|Voor update
+332|Voor herstel
+333|Voor herinstallatie
+334|Handmatig
+335|Nog geen momentopnamen
+336|Maak er een voordat u grote wijzigingen aan het systeem doet.
+337|Herstellen…
+338|Momentopname verwijderen
+339|{free} vrij van {size}. Systeem, persoonlijke mappen en momentopnamen delen deze ruimte; momentopnamen gebruiken alleen ruimte voor wat er sinds hun aanmaak is veranderd.
+340|_OK
+341|Momentopname maken
+342|Bewaart de huidige toestand van het systeem. Uw persoonlijke bestanden worden niet meegenomen.
+343|Beschrijving, bijvoorbeeld ‘Voor het installeren van stuurprogramma's’
+344|_Maken
+345|Handmatige momentopname
+346|Momentopname verwijderen?
+347|‘{description}’ van {date} wordt definitief verwijderd.
+348|_Verwijderen
+349|Deze momentopname herstellen?
+350|Na een herstart keert het systeem terug naar ‘{description}’ van {date}. Uw persoonlijke bestanden veranderen niet.\n\nHet huidige systeem wordt eerst als momentopname bewaard, dus dit kan ongedaan worden gemaakt.
+351|_Herstellen
+352|Herstarten om het herstel te voltooien
+353|_Later herstarten
+354|Nu _herstarten
+355|Momentopnamen
+356|Herstelpunten
+357|Momentopnamen bewaren de toestand van het besturingssysteem. Er een herstellen zet het systeem terug naar dat moment, wat helpt na een mislukte update of configuratiewijziging. Uw persoonlijke bestanden worden nooit aangeraakt.
+358|Automatische momentopnamen
+359|Dagelijkse momentopnamen
+360|Eén keer per dag terwijl de computer aan staat
+361|Te bewaren dagelijkse momentopnamen
+362|Voor software-updates
+363|Automatisch gemaakt bij het installeren, bijwerken of verwijderen van pakketten
+364|Te bewaren update-momentopnamen
+365|Opslag
+366|Schijfruimte
+367|Als MAN niet start
+368|Kies ‘Restore a MAN snapshot’ in het opstartmenu om een werkend systeem terug te halen.
+369|Momentopnamen zijn niet beschikbaar
+370|Momentopnamen werken op MAN dat is geïnstalleerd met de Btrfs-indeling van het MAN-installatieprogramma. Dit systeem (bijvoorbeeld een live-sessie) gebruikt die niet.
+371|Er wacht een herstel: herstart de computer om het te voltooien
+372|Nu herstarten
+373|Wacht tot de huidige bewerking klaar is.
+374|Zoeken
+375|Naar klembord kopiëren
+376|Gecoördineerde wereldtijd
+377|Engels (VS)
+378|MAN {version} is uitgebracht!
+379|Je kunt ernaar bijwerken.
+380|Updates openen
+381|Update controleren
+382|Er wordt gecontroleerd of de update echt en volledig is…
+383|MAN-update
+384|Deze update kan niet worden geïnstalleerd
+385|De update kon niet worden gelezen.
+386|Update van {name} {version}
+387|{name} {version} is geïnstalleerd
+388|Uitgebracht
+389|Downloadgrootte
+390|Benodigde ruimte
+391|Echtheid
+392|Geverifieerd, ondertekend door ‘{signer}’
+393|Wat is er nieuw
+394|Deze update is niet nieuwer dan het geïnstalleerde {name} {version}.
+395|Update
+396|Lees de licentievoorwaarden van deze update.
+397|Ik accepteer de licentievoorwaarden
+398|Waar moet de update worden geïnstalleerd?
+399|Het systeem wordt vervangen; bestanden in uw persoonlijke map worden niet aangeraakt.
+400|Kies een installatie.
+401|draait nu
+402|{name} {version} op deze computer
+403|{name} op {model}
+404|Geen MAN-installatie gevonden
+405|Updates worden geïnstalleerd vanaf een draaiend, geïnstalleerd MAN-systeem, niet vanuit de live-sessie.
+406|Installatielocatie
+407|Behouden
+408|Uw bestanden
+409|Alles in uw persoonlijke map
+410|Accounts en wachtwoorden
+411|Gebruikers, groepen, de computernaam
+412|Verbindingen en instellingen
+413|Wifi, tijdzone, toetsenbord, uiterlijk en momentopnamen
+414|Flatpak-apps
+415|Plus alles in /usr/local en /opt
+416|Vervangen
+417|Met apt geïnstalleerde software en andere wijzigingen aan systeembestanden worden door het nieuwe systeem vervangen.
+418|Het besturingssysteem
+419|Vervangen door {name} {version}. Het huidige systeem kan uit een momentopname worden hersteld.
+420|De computer herstart om de update te installeren
+421|Na de voorbereiding herstart MAN, installeert de update in enkele seconden en herstart opnieuw.
+422|Update _installeren
+423|Eerst een momentopname maken?
+424|Een momentopname bewaart het huidige systeem, zodat u terug kunt als na de update iets niet werkt. Dit wordt aanbevolen.
+425|_Niet maken
+426|Momentopname _maken
+427|{name} {version} voorbereiden
+428|Herstarten om te installeren
+429|De computer herstart twee keer. Uw bestanden zijn veilig.
+430|Automatisch herstarten over {r} seconden
+431|Automatisch herstarten over 30 seconden
+432|De update wordt bij de volgende herstart geïnstalleerd.
+433|Klaar
+434|De update kon niet worden voorbereid
+435|Er is niets aan uw systeem veranderd.
+436|_Opnieuw proberen
+437|Updatelogboek
+438|Mislukt
+439|Uw systeem is bijgewerkt
+440|MAN is bijgewerkt naar versie {version}.\nVoorheen: MAN {previous}.
+441|_Klaar
+442|Een MAN-update openen
+443|MAN-updates
+444|Nieuwste pakketlijsten ophalen…
+445|App kopiëren
+446|App toevoegen aan het menu
+447|Het bestand is niet gevonden.
+448|Het pakket kon niet worden geïnstalleerd.
+449|Het menu-item van de app is ongeldig.
+450|Installatieplan controleren
+451|Schijf voorbereiden
+452|MAN naar de schijf kopiëren
+453|Nieuw systeem configureren
+454|Opstartlader installeren
+455|Eerste momentopname maken
+456|Afronden
+457|Oude partitiehandtekeningen verwijderen
+458|Partities maken
+459|EFI-systeempartitie formatteren
+460|Systeempartitie versleutelen
+461|Opstartpartitie formatteren
+462|Btrfs-bestandssysteem maken
+463|Oude bestandssysteemhandtekeningen verwijderen
+464|Versleutelde installatie ontgrendelen
+465|Huidig systeem als momentopname bewaren
+466|Vorig systeem verwijderen
+467|Bestandssysteemtabel schrijven
+468|Computernaam en identiteit instellen
+469|Accounts van de live-sessie verwijderen
+470|Uw account maken
+471|MAN Setup voorbereiden op de eerste start
+472|Tijdzone en toetsenbord instellen
+473|Installatieprogramma uit het nieuwe systeem verwijderen
+474|Opstartimage maken (initramfs)
+475|GRUB configureren
+476|GRUB op de EFI-systeempartitie installeren
+477|Reserve-opstartlader installeren
+478|Opstartmenu schrijven
+479|Schijf klaar
+480|Momentopname van het nieuwe systeem maken
+481|Momentopname aan het opstartmenu toevoegen
+482|Ontkoppelen
+483|De installatiehulp moet als root draaien.
+484|Deze computer is niet in UEFI-modus gestart. MAN vereist UEFI.
+485|De gebruikersnaam is ongeldig.
+486|Een wachtwoord is vereist.
+487|De computernaam is ongeldig.
+488|Onbekende taal.
+489|De versleutelingswachtwoordzin moet minstens 8 tekens hebben.
+490|De schijf is veranderd nadat u de installatie bevestigde. Er is niets gewijzigd; controleer en bevestig opnieuw.
+491|Kies een systeempartitie.
+492|De bevestigde schijf bevat de gekozen systeempartitie niet.
+493|De opstartpartitie moet los staan van de EFI- en systeempartitie.
+494|De opstartpartitie moet minstens 512 MB zijn.
+495|Geen installatie gekozen.
+496|De bevestigde schijf bevat de gekozen installatie niet.
+497|De versleutelde installatie heeft geen MAN_BOOT-partitie.
+498|Geen kernel met bijbehorende modules gevonden in /boot.
+499|De taal moet door de systeemhulp worden gewijzigd.
+500|Uw instellingen toepassen
+501|Schijfversleuteling voorbereiden
+502|Afronden
+503|MAN Setup moet door de systeemhulp worden voltooid.
+504|MAN Setup is op deze computer al voltooid.
+505|Onbekende accentkleur.
+506|De gekozen achtergrond is niet beschikbaar.
+507|Dit systeem kan niet worden versleuteld.
+508|De installatiesleutel ontbreekt, dus de versleuteling kan niet op de achtergrond doorgaan.
+509|Het systeem is niet op Btrfs geïnstalleerd, dus momentopnamen zijn niet beschikbaar.
+510|Een herstel van een momentopname wacht op een herstart. Herstart eerst de computer om het te voltooien.
+511|Ongeldige momentopname-ID.
+512|Update controleren
+513|Momentopname maken
+514|Updategebied voorbereiden
+515|Nieuw systeem uitpakken
+516|Uw accounts en instellingen overzetten
+517|Herstart voorbereiden
+518|Uitgepakt
+519|Accounts
+520|Behouden apps opnieuw installeren
+521|Software voor alleen het installatieprogramma verwijderen
+522|Opstartimage van de update maken
+523|Eenmalige opstartvermelding toevoegen
+524|De update is echt
+525|Momentopname gemaakt
+526|Overgeslagen
+527|Updategebied klaar
+528|Nieuw systeem voorbereiden
+529|Het updatebestand is beschadigd (controlesom klopt niet). Download het opnieuw.
+530|Het updatebestand kon niet volledig worden gelezen.
+531|De update bevat geen kernel.
+532|Updates moeten door de systeemhulp worden geïnstalleerd.
+533|De gekozen installatie is niet gevonden.
+534|Alleen de draaiende MAN-installatie kan worden bijgewerkt.
+535|Dit is geen MAN-updatebestand (geen manifest).
+536|De update is niet ondertekend en daarom niet te vertrouwen.
+537|De handtekening van de update is beschadigd.
+538|De update is niet ondertekend door MAN. Hij kan zijn gewijzigd of uit een onbetrouwbare bron komen.
+539|Het manifest van de update is ongeldig.
+540|De wachtwoordzin is onjuist, of de versleutelde partitie kan niet worden geopend.
+541|Blauw
+542|Blauwgroen
+543|Groen
+544|Geel
+545|Oranje
+546|Rood
+547|Roze
+548|Paars
+549|Leisteen
+550|Pakketinstallatie
+551|Apps installeren uit .deb-, Flatpak- en AppImage-bestanden
+552|Systeeminstallatie
+553|MAN op deze computer installeren
+554|Systeemherstel
+555|Momentopnamen van het systeem maken en herstellen
+556|Installatie van systeemupdates
+557|Een MAN-systeemupdatebestand installeren
+558|Biedt aan MAN te installeren als de live-sessie start
+559|MAN-updatemelding
+560|Meldt na het aanmelden één keer dat MAN is bijgewerkt
+561|Stel uw nieuwe MAN-computer in
+562|Eerste instelling van MAN
+563|MAN-updates
+564|Laat je weten wanneer er een nieuwe versie van MAN is

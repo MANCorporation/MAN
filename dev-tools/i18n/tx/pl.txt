@@ -30,7 +30,7 @@
 29|Strona internetowa
 30|Plik
 31|Ta aplikacja jest już zainstalowana. Ponowna instalacja ją zastąpi.
-32|Aplikacje z pakietów .deb stają się częścią systemu. Po aktualizacji MAN zostają usunięte i trzeba je zainstalować ponownie. Aplikacje Flatpak i AppImage zostają zachowane.
+32|Aplikacje z pakietów .deb stają się częścią systemu. Aktualizacja MAN zastępuje system, więc po aktualizacji są instalowane ponownie tylko wtedy, gdy je zachowasz (kolejne kroki).
 33|Instaluj tylko aplikacje z zaufanych źródeł.
 34|Gdzie chcesz zainstalować aplikację {name}?
 35|Z aplikacji może korzystać tylko Twoje konto.
@@ -42,521 +42,524 @@
 41|Aplikacja zostanie zainstalowana dla wszystkich użytkowników tego komputera.
 42|Aplikacja zostanie zainstalowana tylko dla Ciebie.
 43|Plik AppImage zostanie przeniesiony do {folder} i dodany do Twoich aplikacji.
-44|Kliknij Zainstaluj, aby zainstalować aplikację {name}.
-45|Sprawdzanie, czego jeszcze potrzebuje aplikacja…
-46|Zostaną też zainstalowane potrzebne pakiety: {list}
-47|Niektóre pakiety potrzebne aplikacji nie są jeszcze dostępne. Instalacja najpierw pobierze najnowsze listy pakietów; jeśli nadal będzie ich brakować, nie można zainstalować aplikacji.
-48|Instalowanie aplikacji {name}…
-49|Przygotowywanie…
-50|Szczegóły
-51|Instalowanie pakietu…
-52|Przenoszenie aplikacji do jej folderu…
-53|Nie można zainstalować aplikacji.
-54|Instalowanie aplikacji za pomocą Flatpaka…
-55|Dziennik
-56|Za_mknij
-57|Instalacja się powiodła
-58|Aplikacja została zainstalowana.
-59|Instalacja się nie powiodła
-60|_Otwórz
-61|_Pokaż szczegóły
-62|Dziennik instalacji
-63|Instalator aplikacji
-64|_Wstecz
-65|Odczytywanie aplikacji…
-66|Zainstaluj {name}
-67|Aplikacje
-68|Wybierz aplikację do zainstalowania
-69|Nie można uruchomić pomocnika systemowego.
-70|Nie można porozumieć się z pomocnikiem systemowym.
-71|Utracono połączenie z pomocnikiem systemowym.
-72|Anulowano uwierzytelnienie.
-73|Do tego działania potrzebne są uprawnienia administratora.
-74|Pomocnik systemowy nieoczekiwanie zakończył działanie.
-75|Brak partycji systemowej EFI
-76|Wolne tylko {free}, MAN potrzebuje {need}. Zwolnij miejsce za pomocą DUHACH! w Windows.
-77|Brak wolnego miejsca. Uruchom DUHACH! w Windows, aby zrobić miejsce dla MAN.
-78|MAN działa z tego dysku
-79|W użyciu: partycja jest zamontowana
-80|Za mały, MAN potrzebuje {need}
-81|Zainstaluj MAN
-82|Trwa instalacja MAN. Zaczekaj na jej zakończenie.
-83|Język
-84|_Uruchom ponownie w tym języku
-85|Sesja live uruchomi się ponownie w wybranym języku, a MAN zostanie w nim zainstalowany.
-86|Witamy w MAN
-87|Szybki, otwarty i w pełni konfigurowalny system GNOME.\nZainstaluj go na tym komputerze lub dalej poznawaj sesję live.
-88|_Zainstaluj MAN…
-89|_Dalej wypróbowuj MAN
-90|Wyszukiwanie dysków…
-91|Witamy
-92|Ten komputer został uruchomiony w trybie BIOS (legacy). MAN można zainstalować tylko na komputerach z UEFI: uruchom ponownie i wybierz opcję rozruchu UEFI.
-93|Pomocnik systemowy nie zwrócił informacji o dyskach.
-94|  ·  EFI
-95|_Dalej
-96|Wyczyść dysk i zainstaluj MAN
-97|Wszystko na wybranym dysku zostanie usunięte, także Windows.
-98|Zalecane. Wszystko na wybranym dysku zostanie usunięte.
-99|Zainstaluj obok Windows
-100|Zalecane. MAN użyje wolnego miejsca obok Windows; Windows i jego pliki pozostaną. System wybierasz przy każdym uruchomieniu.
-101|Zainstaluj MAN ponownie
-102|Zastępuje system, ale zachowuje pliki osobiste w /home. Obecny system zostanie zapisany jako migawka.
-103|Własne partycje
-104|Dla ekspertów: wybierz partycje samodzielnie lub utwórz je w programie Dyski.
-105|Dysk
-106|Wybierz dysk do wyczyszczenia. Dyski, których nie można użyć, są pokazane z przyczyną.
-107|Nie znaleziono dysków
-108|Wolne miejsce obok Windows
-109|Partycje Windows pozostaną nietknięte. MAN współdzieli partycję systemową EFI i dodaje Windows do swojego menu startowego.
-110|{size} wolne
-111|brak wolnego miejsca
-112|{model} (Windows)
-113|Instalacja do zastąpienia
-114|brak katalogów domowych
-115|katalogi domowe: {list}
-116|migawki: {n}
-117|MAN na {model}
-118|Hasło dla {device}
-119|Odblokuj
-120|Nie można zbadać instalacji.
-121|Partycje
-122|Partycja systemowa zostanie sformatowana jako Btrfs i będzie zawierać @system, @home i @snapshots. Partycje na dysku, z którego działa MAN, nie są wyświetlane.
-123|Otwórz Dyski, aby utworzyć partycje lub zmienić ich rozmiar
-124|Odśwież listę partycji
-125|Wybierz partycję
-126|Partycja systemowa EFI
-127|Sformatuj partycję systemową EFI
-128|Pozostaw wyłączone, aby zachować programy rozruchowe innych systemów
-129|Partycja systemowa (zostanie sformatowana jako Btrfs)
-130|Partycja rozruchowa (wymagana przy szyfrowaniu)
-131|Odświeżono listę partycji
-132|Bezpieczeństwo
-133|Zaszyfruj system
-134|Chroni dane w razie zgubienia lub kradzieży komputera. Hasło jest wymagane przy każdym uruchomieniu.
-135|Hasło
-136|Potwierdź hasło
-137|Przechowuj to hasło w bezpiecznym miejscu
-138|Jeśli je zgubisz, nikt nie odzyska danych. Jądro i pliki rozruchowe pozostaną na małej, niezaszyfrowanej partycji rozruchowej.
-139|Hasło musi mieć co najmniej 8 znaków.
-140|Hasła się nie zgadzają.
-141|Wybierz dysk.
-142|Wybierz dysk z Windows.
-143|Wybierz instalację do zastąpienia.
-144|Najpierw odblokuj zaszyfrowaną instalację.
-145|Ta partycja nie zawiera systemu MAN.
-146|Wybierz partycję systemową EFI.
-147|Wybierz partycję systemową.
-148|Partycja EFI i partycja systemowa muszą być różne.
-149|Szyfrowanie wymaga osobnej partycji rozruchowej.
-150|Partycja systemowa musi mieć co najmniej {size}.
-151|Partycja EFI nie jest sformatowana jako FAT; włącz formatowanie.
-152|Partycja systemowa jest zamontowana; najpierw odmontuj ją w programie Dyski.
-153|Gdzie zainstalować MAN?
-154|Czas i klawiatura
-155|Strefa czasowa
-156|Układ klawiatury
-157|Sprawdź klawiaturę
-158|Pisz tutaj, aby sprawdzić, czy klawisze wprowadzają właściwe znaki.
-159|Pisz tutaj
-160|Strefa czasowa i klawiatura
-161|Nie wybrano dysku
-162|Nie wybrano partycji systemowej
-163|Partycja systemowa zniknęła
-164|Nie wybrano instalacji
-165|Dysk zniknął
-166|Podsumowanie
-167|Miejsce docelowe
-168|Wyczyść dysk i zainstaluj
-169|Własne partycje
-170|Zainstaluj ponownie, zachowaj /home
-171|Obok Windows
-172| (zostanie sformatowana)
-173| (zachowana)
-174|Partycja systemowa
-175|{partition} (zostanie sformatowana)
-176|Partycja rozruchowa
-177|Miejsce na MAN
-178|{free} wolnego miejsca (zostanie utworzona partycja rozruchowa i systemowa)
-179|Windows
-180|Bez zmian. Pojawi się w menu startowym MAN; partycja systemowa EFI jest współdzielona.
-181|Szyfrowanie
-182|Włączone (LUKS2)
-183|Wyłączone
-184|System plików
-185|Btrfs: @system dla MAN, @home na twoje pliki, @snapshots na punkty przywracania. Wszystkie współdzielą wolne miejsce.
-186|System
-187|Twoje konto
-188|Zostanie utworzone w MAN Setup przy pierwszym uruchomieniu komputera, razem z nazwą komputera, wyglądem i ustawieniami prywatności.
-189|Klawiatura
-190|Wszystkie dane na {model} ({path}) zostaną usunięte.
-191|_Wyczyść i zainstaluj
-192|Wybrane partycje zostaną sformatowane. Pozostałe partycje się nie zmienią.
-193|_Sformatuj i zainstaluj
-194|Obecny system zostanie zastąpiony. Twoje pliki w /home pozostaną, a stary system zostanie zapisany jako migawka.
-195|_Zainstaluj ponownie
-196|MAN zostanie zainstalowany w wolnym miejscu. Windows i jego pliki się nie zmienią.
-197|Gotowe do instalacji
-198|Wyczyścić {model}?
-199|Wszystkie pliki i partycje na {path} ({size}) zostaną trwale usunięte. Tego nie można cofnąć.
-200|Wyczyść i zainstaluj
-201|Sformatować wybrane partycje?
-202|Wszystkie dane na wybranych partycjach zostaną trwale usunięte. Pozostałe partycje się nie zmienią.
-203|Sformatuj i zainstaluj
-204|Zainstalować MAN obok Windows?
-205|MAN zostanie zainstalowany w {free} wolnego miejsca na {model} ({path}). Windows i jego pliki się nie zmienią.
-206|Zainstaluj
-207|Zainstalować MAN ponownie?
-208|Zainstalowany system zostanie zastąpiony nową kopią. Pliki osobiste w /home pozostaną, a stary system będzie dostępny jako migawka.
-209|Zainstaluj ponownie
-210|_Anuluj
-211|Instalowanie MAN
-212|Uruchamianie…
-213|Instalowanie
-214|Krok {index} z {n}  ·  {title}
-215|MAN został zainstalowany
-216|Uruchom ponownie komputer, aby zacząć korzystać z MAN. Menu przy każdym uruchomieniu pozwala wybrać MAN lub Windows; tymczasową partycję instalatora MAN usunie przy pierwszym uruchomieniu.
-217|Uruchom ponownie komputer, aby zacząć korzystać z MAN. Możesz odłączyć nośnik instalacyjny; jeśli pozostanie podłączony, MAN i tak uruchomi się z nowego dysku.
-218|_Uruchom ponownie teraz
-219|Gotowe
-220|Instalacja nie powiodła się
-221|Żaden inny dysk nie został zmieniony, a instalator zwolnił dysk docelowy. Możesz przejrzeć plan i spróbować ponownie.
-222|_Przejrzyj i spróbuj ponownie
-223|Szukaj języków
-224|Szukaj krajów
-225|Nie znaleziono dysku systemowego.
-226|Szyfrowanie wymaga układu Btrfs utworzonego przez instalator MAN.
-227|Ta instalacja nie ma osobnej partycji rozruchowej, której wymaga szyfrowanie. Aby użyć szyfrowania, zainstaluj MAN ponownie z opcją „Wyczyść dysk”.
-228|MAN Setup
-229|Gdzie jesteś?
-230|Twój kraj lub region określa format daty, godziny i liczb.
-231|Kraj
-232|Powszechna Licencja Publiczna GNU, wersja 2
-233|Jądro Linux i wiele narzędzi systemowych
-234|Powszechna Licencja Publiczna GNU, wersja 3
-235|Wiele programów GNU i GNOME
-236|Mniejsza Powszechna Licencja Publiczna GNU, wersja 2.1
-237|GTK, GLib i wiele bibliotek
-238|Mniejsza Powszechna Licencja Publiczna GNU, wersja 3
-239|Biblioteki
-240|Mozilla Public License 2.0
-241|Programy i biblioteki od Mozilli i innych
-242|Licencja Apache 2.0
-243|Biblioteki i narzędzia
-244|Umowa licencyjna
-245|Przeczytaj i zaakceptuj warunki, na jakich udostępniany jest MAN.
-246|Licencje
-247|Tekst licencji jest niedostępny ({path}).
-248|Przeczytałem(-am) i akceptuję warunki licencji
-249|Przewodowe
-250|Brak połączenia
-251|Połącz z internetem
-252|Dzięki połączeniu MAN ustawi zegar i będzie aktualizować oprogramowanie. Możesz to zrobić także później.
-253|Sprawdzanie połączenia…
-254|Sieci Wi-Fi
-255|Szukaj ponownie
-256|_Pomiń
-257|Możesz połączyć się później w Ustawieniach.
-258|Połączono
-259|Brak połączenia
-260|Nie znaleziono sieci
-261|Internet
-262|Połączono z „{ssid}”
-263|Nie można połączyć z „{ssid}”
-264|Połącz z „{ssid}”
-265|Wpisz hasło sieci.
-266|_Połącz
-267|Utwórz konto
-268|Będziesz administratorem tego komputera z pełnym dostępem roota przez sudo.
-269|Imię i nazwisko
-270|Nazwa użytkownika
-271|Hasło
-272|Potwierdź hasło
-273|Loguj automatycznie
-274|Pomijaj ekran logowania przy uruchamianiu komputera
-275|Istniejące katalogi domowe
-276|Użyj tej samej nazwy użytkownika, aby dalej korzystać z katalogu z poprzedniej instalacji.
-277|Użyj
-278|Zaawansowane
-279|Nazwa komputera
-280|Ustaw hasło roota
-281|Pozwala logować się bezpośrednio jako root. Bez niego używaj sudo z własnym hasłem.
-282|Hasło roota
-283|Potwierdź hasło roota
-284|Wpisz swoje imię.
-285|Wybierz nazwę użytkownika.
-286|Ta nazwa użytkownika jest już używana przez system.
-287|Ta nazwa użytkownika jest zarezerwowana przez system.
-288|Nazwy użytkowników składają się z małych liter, cyfr, - i _ oraz zaczynają się od litery.
-289|Wybierz hasło.
-290|Hasła się nie zgadzają.
-291|Nazwa komputera może zawierać litery, cyfry i myślniki.
-292|Wpisz hasło roota dwukrotnie.
-293|Wskazówka: hasło z co najmniej 8 znakami jest dużo bezpieczniejsze.
-294|Konto
-295|Ciemny
-296|Jasny
-297|Dopasuj do siebie
-298|Wybierz styl, kolor akcentu i tapetę. Każdą zmianę zobaczysz od razu.
-299|Styl
-300|Kolor akcentu
-301|Tapeta
-302|Personalizacja
-303|Prywatność
-304|Wybierz, które funkcje mogą korzystać z informacji o tobie. Możesz to zmienić w każdej chwili w Ustawieniach.
-305|Usługi lokalizacji
-306|Pozwala programom takim jak Mapy i Pogoda ustalić twoje przybliżone położenie na podstawie pobliskich sieci Wi-Fi.
-307|Automatyczna strefa czasowa
-308|Na podstawie położenia utrzymuje właściwą strefę czasową podczas podróży.
-309|_Zakończ konfigurację
-310|Twój dysk jest zaszyfrowany
-311|Twoje dane są chronione. Hasło jest wymagane przy każdym uruchomieniu komputera.
-312|Szyfrowanie dysku
-313|Szyfrowanie chroni dane w razie zgubienia lub kradzieży komputera.
-314|Niedostępne w tej instalacji
-315|Szyfrowanie chroni pliki w razie zgubienia lub kradzieży komputera. Bez hasła nikt nie odczyta dysku.
-316|Zaszyfruj dysk
-317|Hasło jest wymagane przy każdym uruchomieniu komputera.
-318|Szyfrowanie rozpocznie się przy następnym uruchomieniu
-319|Dysk będzie wtedy szyfrowany w tle podczas korzystania z komputera. Jeśli zgubisz hasło, nikt nie odzyska danych.
-320|Przygotowywanie MAN
-321|Wszystko jest przygotowywane…
-322|_Uruchom ponownie
-323|_Wstecz
-324|Przygotowywanie
-325|Dziennik konfiguracji
-326|Gotowe!
-327|Coś poszło nie tak
-328|Codzienna
-329|Przed aktualizacją
-330|Przed przywróceniem
-331|Przed ponowną instalacją
-332|Ręczna
-333|Brak migawek
-334|Utwórz migawkę przed większymi zmianami w systemie.
-335|Przywróć…
-336|Usuń migawkę
-337|{free} wolne z {size}. System, katalogi domowe i migawki współdzielą to miejsce; migawki zajmują miejsce tylko na to, co zmieniło się od ich utworzenia.
-338|_OK
-339|Utwórz migawkę
-340|Zapisuje obecny stan systemu. Pliki osobiste w katalogu domowym nie są uwzględniane.
-341|Opis, na przykład „Przed instalacją sterowników”
-342|_Utwórz
-343|Ręczna migawka
-344|Usunąć migawkę?
-345|„{description}” z {date} zostanie trwale usunięta.
-346|_Usuń
-347|Przywrócić tę migawkę?
-348|Po ponownym uruchomieniu system wróci do stanu „{description}” z {date}. Twoje pliki osobiste się nie zmienią.\n\nObecny system zostanie najpierw zapisany jako migawka, więc można to cofnąć.
-349|_Przywróć
-350|Uruchom ponownie, aby dokończyć przywracanie
-351|Uruchom ponownie _później
-352|Uruchom ponownie _teraz
-353|Migawki
-354|Punkty przywracania
-355|Migawki zapisują stan systemu operacyjnego. Przywrócenie migawki cofa system do tamtej chwili, co pomaga po nieudanej aktualizacji lub zmianie konfiguracji. Twoje pliki osobiste nigdy nie są zmieniane.
-356|Automatyczne migawki
-357|Codzienne migawki
-358|Raz dziennie, gdy komputer jest włączony
-359|Liczba codziennych migawek
-360|Przed aktualizacjami oprogramowania
-361|Tworzone automatycznie przy instalowaniu, aktualizowaniu lub usuwaniu pakietów
-362|Liczba migawek przed aktualizacją
-363|Pamięć masowa
-364|Miejsce na dysku
-365|Jeśli MAN się nie uruchamia
-366|Wybierz „Restore a MAN snapshot” w menu startowym, aby przywrócić działający system.
-367|Migawki są niedostępne
-368|Migawki działają w MAN zainstalowanym z układem Btrfs tworzonym przez instalator MAN. Ten system (na przykład sesja live) go nie używa.
-369|Przywracanie czeka: uruchom ponownie komputer, aby je dokończyć
-370|Uruchom ponownie teraz
-371|Zaczekaj, aż bieżąca operacja się zakończy.
-372|Szukaj
-373|Skopiuj do schowka
-374|Uniwersalny czas koordynowany
-375|Angielski (USA)
-376|Wydano MAN {version}!
-377|Możesz zaktualizować system do tej wersji.
-378|Otwórz aktualizacje
-379|Sprawdzanie aktualizacji
-380|Sprawdzanie, czy aktualizacja jest autentyczna i kompletna…
-381|Aktualizacja MAN
-382|Nie można zainstalować tej aktualizacji
-383|Nie można odczytać aktualizacji.
-384|Aktualizacja z {name} {version}
-385|Zainstalowano {name} {version}
-386|Wydano
-387|Rozmiar pobierania
-388|Potrzebne miejsce
-389|Autentyczność
-390|Zweryfikowano, podpisane przez „{signer}”
-391|Co nowego
-392|Ta aktualizacja nie jest nowsza niż zainstalowany {name} {version}.
-393|Aktualizacja
-394|Przeczytaj warunki licencji tej aktualizacji.
-395|Akceptuję warunki licencji
-396|Gdzie zainstalować aktualizację?
-397|System zostanie zastąpiony; pliki w katalogu domowym pozostaną nietknięte.
-398|Wybierz instalację.
-399|obecnie uruchomiony
-400|{name} {version} na tym komputerze
-401|{name} na {model}
-402|Nie znaleziono instalacji MAN
-403|Aktualizacje instaluje się z uruchomionego, zainstalowanego systemu MAN, a nie z sesji live.
-404|Miejsce instalacji
-405|Zachowane
-406|Twoje pliki
-407|Wszystko w katalogu domowym
-408|Konta i hasła
-409|Użytkownicy, grupy, nazwa komputera
-410|Połączenia i ustawienia
-411|Wi-Fi, strefa czasowa, klawiatura, wygląd i migawki
-412|Programy Flatpak
-413|Oraz wszystko w /usr/local i /opt
-414|Zastąpione
-415|Oprogramowanie zainstalowane przez apt i inne zmiany plików systemowych zostaną zastąpione nowym systemem.
-416|System operacyjny
-417|Zastąpiony przez {name} {version}. Obecny system można przywrócić z migawki.
-418|Komputer uruchomi się ponownie, aby zainstalować aktualizację
-419|Po przygotowaniu MAN uruchomi się ponownie, w kilka sekund zainstaluje aktualizację i uruchomi się jeszcze raz.
-420|_Zainstaluj aktualizację
-421|Najpierw utworzyć migawkę?
-422|Migawka zapisuje obecny system, dzięki czemu możesz do niego wrócić, jeśli po aktualizacji coś nie będzie działać. Zalecane.
-423|_Nie twórz
-424|_Utwórz migawkę
-425|Przygotowywanie {name} {version}
-426|Uruchom ponownie, aby zainstalować
-427|Komputer uruchomi się ponownie dwa razy. Twoje pliki są bezpieczne.
-428|Automatyczne ponowne uruchomienie za {r} s
-429|Automatyczne ponowne uruchomienie za 30 s
-430|Aktualizacja zostanie zainstalowana przy następnym uruchomieniu.
-431|Gotowe
-432|Nie można przygotować aktualizacji
-433|W systemie nic nie zostało zmienione.
-434|_Spróbuj ponownie
-435|Dziennik aktualizacji
-436|Niepowodzenie
-437|System został zaktualizowany
-438|MAN został zaktualizowany do wersji {version}.\nPoprzednio: MAN {previous}.
-439|_Gotowe
-440|Otwórz aktualizację MAN
-441|Aktualizacje MAN
-442|Pobieranie najnowszych list pakietów…
-443|Kopiowanie aplikacji
-444|Dodawanie aplikacji do menu
-445|Nie znaleziono pliku.
-446|Nie można zainstalować pakietu.
-447|Wpis menu aplikacji jest nieprawidłowy.
-448|Sprawdzanie planu instalacji
-449|Przygotowywanie dysku
-450|Kopiowanie MAN na dysk
-451|Konfigurowanie nowego systemu
-452|Instalowanie programu rozruchowego
-453|Tworzenie pierwszej migawki
-454|Kończenie
-455|Usuwanie starych sygnatur partycji
-456|Tworzenie partycji
-457|Formatowanie partycji systemowej EFI
-458|Szyfrowanie partycji systemowej
-459|Formatowanie partycji rozruchowej
-460|Tworzenie systemu plików Btrfs
-461|Usuwanie starych sygnatur systemów plików
-462|Odblokowywanie zaszyfrowanej instalacji
-463|Zapisywanie obecnego systemu jako migawki
-464|Usuwanie poprzedniego systemu
-465|Zapisywanie tablicy systemów plików
-466|Ustawianie nazwy i tożsamości komputera
-467|Usuwanie kont sesji live
-468|Tworzenie twojego konta
-469|Przygotowywanie MAN Setup do pierwszego uruchomienia
-470|Ustawianie strefy czasowej i klawiatury
-471|Usuwanie instalatora z nowego systemu
-472|Tworzenie obrazu rozruchowego (initramfs)
-473|Konfigurowanie GRUB
-474|Instalowanie GRUB na partycji systemowej EFI
-475|Instalowanie zapasowego programu rozruchowego
-476|Zapisywanie menu startowego
-477|Dysk gotowy
-478|Tworzenie migawki nowego systemu
-479|Dodawanie migawki do menu startowego
-480|Odmontowywanie
-481|Pomocnik instalatora musi działać jako root.
-482|Ten komputer nie został uruchomiony w trybie UEFI. MAN wymaga UEFI.
-483|Nazwa użytkownika jest nieprawidłowa.
-484|Hasło jest wymagane.
-485|Nazwa komputera jest nieprawidłowa.
-486|Nieznany język.
-487|Hasło szyfrowania musi mieć co najmniej 8 znaków.
-488|Dysk zmienił się po potwierdzeniu instalacji. Nic nie zostało zmienione; przejrzyj plan i potwierdź ponownie.
-489|Wybierz partycję systemową.
-490|Potwierdzony dysk nie zawiera wybranej partycji systemowej.
-491|Partycja rozruchowa musi być oddzielna od partycji EFI i systemowej.
-492|Partycja rozruchowa musi mieć co najmniej 512 MB.
-493|Nie wybrano instalacji.
-494|Potwierdzony dysk nie zawiera wybranej instalacji.
-495|Zaszyfrowana instalacja nie ma partycji MAN_BOOT.
-496|W /boot nie znaleziono jądra z pasującymi modułami.
-497|Język musi zmienić pomocnik systemowy.
-498|Stosowanie twoich ustawień
-499|Przygotowywanie szyfrowania dysku
-500|Kończenie
-501|MAN Setup musi zakończyć pomocnik systemowy.
-502|MAN Setup został już ukończony na tym komputerze.
-503|Nieznany kolor akcentu.
-504|Wybrana tapeta jest niedostępna.
-505|Tego systemu nie można zaszyfrować.
-506|Brak klucza konfiguracji, więc szyfrowanie nie może być kontynuowane w tle.
-507|System nie jest zainstalowany na Btrfs, więc migawki są niedostępne.
-508|Przywracanie migawki czeka na ponowne uruchomienie. Najpierw uruchom ponownie komputer, aby je dokończyć.
-509|Nieprawidłowy identyfikator migawki.
-510|Sprawdzanie aktualizacji
-511|Tworzenie migawki
-512|Przygotowywanie obszaru aktualizacji
-513|Rozpakowywanie nowego systemu
-514|Przenoszenie kont i ustawień
-515|Przygotowywanie ponownego uruchomienia
-516|Rozpakowano
-517|Konta
-518|Usuwanie oprogramowania używanego tylko przez instalator
-519|Tworzenie obrazu rozruchowego aktualizacji
-520|Dodawanie jednorazowego wpisu rozruchowego
-521|Aktualizacja jest autentyczna
-522|Utworzono migawkę
-523|Pominięto
-524|Obszar aktualizacji gotowy
-525|Przygotowywanie nowego systemu
-526|Plik aktualizacji jest uszkodzony (niezgodna suma kontrolna). Pobierz go ponownie.
-527|Nie można odczytać całego pliku aktualizacji.
-528|Aktualizacja nie zawiera jądra.
-529|Aktualizacje musi instalować pomocnik systemowy.
-530|Nie znaleziono wybranej instalacji.
-531|Można zaktualizować tylko uruchomioną instalację MAN.
-532|To nie jest plik aktualizacji MAN (brak manifestu).
-533|Aktualizacja nie jest podpisana, więc nie można jej ufać.
-534|Podpis aktualizacji jest uszkodzony.
-535|Aktualizacja nie jest podpisana przez MAN. Mogła zostać zmieniona lub pochodzi z niezaufanego źródła.
-536|Manifest aktualizacji jest nieprawidłowy.
-537|Hasło jest nieprawidłowe lub nie można otworzyć zaszyfrowanej partycji.
-538|Niebieski
-539|Morski
-540|Zielony
-541|Żółty
-542|Pomarańczowy
-543|Czerwony
-544|Różowy
-545|Fioletowy
-546|Łupkowy
-547|Instalator pakietów
-548|Instalowanie aplikacji z plików .deb, Flatpak i AppImage
-549|Instalator systemu
-550|Zainstaluj MAN na tym komputerze
-551|Przywracanie systemu
-552|Twórz i przywracaj migawki systemu
-553|Instalator aktualizacji systemu
-554|Zainstaluj plik aktualizacji systemu MAN
-555|Proponuje instalację MAN po uruchomieniu sesji live
-556|Powiadomienie o aktualizacji MAN
-557|Informuje jednorazowo po zalogowaniu, że MAN został zaktualizowany
-558|Skonfiguruj swój nowy komputer z MAN
-559|Konfiguracja MAN przy pierwszym uruchomieniu
-560|Aktualizacje MAN
-561|Informuje, gdy pojawi się nowa wersja MAN
+44|Zachowaj po aktualizacjach MAN
+45|MAN instaluje aplikację ponownie po każdej aktualizacji. W tym celu przechowywane są jej pliki pakietu.
+46|Kliknij Zainstaluj, aby zainstalować aplikację {name}.
+47|Sprawdzanie, czego jeszcze potrzebuje aplikacja…
+48|Zostaną też zainstalowane potrzebne pakiety: {list}
+49|Niektóre pakiety potrzebne aplikacji nie są jeszcze dostępne. Instalacja najpierw pobierze najnowsze listy pakietów; jeśli nadal będzie ich brakować, nie można zainstalować aplikacji.
+50|Instalowanie aplikacji {name}…
+51|Przygotowywanie…
+52|Szczegóły
+53|Instalowanie pakietu…
+54|Przenoszenie aplikacji do jej folderu…
+55|Nie można zainstalować aplikacji.
+56|Instalowanie aplikacji za pomocą Flatpaka…
+57|Dziennik
+58|Za_mknij
+59|Instalacja się powiodła
+60|Aplikacja została zainstalowana.
+61|Instalacja się nie powiodła
+62|_Otwórz
+63|_Pokaż szczegóły
+64|Dziennik instalacji
+65|Instalator aplikacji
+66|_Wstecz
+67|Odczytywanie aplikacji…
+68|Zainstaluj {name}
+69|Aplikacje
+70|Wybierz aplikację do zainstalowania
+71|Nie można uruchomić pomocnika systemowego.
+72|Nie można porozumieć się z pomocnikiem systemowym.
+73|Utracono połączenie z pomocnikiem systemowym.
+74|Anulowano uwierzytelnienie.
+75|Do tego działania potrzebne są uprawnienia administratora.
+76|Pomocnik systemowy nieoczekiwanie zakończył działanie.
+77|Brak partycji systemowej EFI
+78|Wolne tylko {free}, MAN potrzebuje {need}. Zwolnij miejsce za pomocą DUHACH! w Windows.
+79|Brak wolnego miejsca. Uruchom DUHACH! w Windows, aby zrobić miejsce dla MAN.
+80|MAN działa z tego dysku
+81|W użyciu: partycja jest zamontowana
+82|Za mały, MAN potrzebuje {need}
+83|Zainstaluj MAN
+84|Trwa instalacja MAN. Zaczekaj na jej zakończenie.
+85|Język
+86|_Uruchom ponownie w tym języku
+87|Sesja live uruchomi się ponownie w wybranym języku, a MAN zostanie w nim zainstalowany.
+88|Witamy w MAN
+89|Szybki, otwarty i w pełni konfigurowalny system GNOME.\nZainstaluj go na tym komputerze lub dalej poznawaj sesję live.
+90|_Zainstaluj MAN…
+91|_Dalej wypróbowuj MAN
+92|Wyszukiwanie dysków…
+93|Witamy
+94|Ten komputer został uruchomiony w trybie BIOS (legacy). MAN można zainstalować tylko na komputerach z UEFI: uruchom ponownie i wybierz opcję rozruchu UEFI.
+95|Pomocnik systemowy nie zwrócił informacji o dyskach.
+96|  ·  EFI
+97|_Dalej
+98|Wyczyść dysk i zainstaluj MAN
+99|Wszystko na wybranym dysku zostanie usunięte, także Windows.
+100|Zalecane. Wszystko na wybranym dysku zostanie usunięte.
+101|Zainstaluj obok Windows
+102|Zalecane. MAN użyje wolnego miejsca obok Windows; Windows i jego pliki pozostaną. System wybierasz przy każdym uruchomieniu.
+103|Zainstaluj MAN ponownie
+104|Zastępuje system, ale zachowuje pliki osobiste w /home. Obecny system zostanie zapisany jako migawka.
+105|Własne partycje
+106|Dla ekspertów: wybierz partycje samodzielnie lub utwórz je w programie Dyski.
+107|Dysk
+108|Wybierz dysk do wyczyszczenia. Dyski, których nie można użyć, są pokazane z przyczyną.
+109|Nie znaleziono dysków
+110|Wolne miejsce obok Windows
+111|Partycje Windows pozostaną nietknięte. MAN współdzieli partycję systemową EFI i dodaje Windows do swojego menu startowego.
+112|{size} wolne
+113|brak wolnego miejsca
+114|{model} (Windows)
+115|Instalacja do zastąpienia
+116|brak katalogów domowych
+117|katalogi domowe: {list}
+118|migawki: {n}
+119|MAN na {model}
+120|Hasło dla {device}
+121|Odblokuj
+122|Nie można zbadać instalacji.
+123|Partycje
+124|Partycja systemowa zostanie sformatowana jako Btrfs i będzie zawierać @system, @home i @snapshots. Partycje na dysku, z którego działa MAN, nie są wyświetlane.
+125|Otwórz Dyski, aby utworzyć partycje lub zmienić ich rozmiar
+126|Odśwież listę partycji
+127|Wybierz partycję
+128|Partycja systemowa EFI
+129|Sformatuj partycję systemową EFI
+130|Pozostaw wyłączone, aby zachować programy rozruchowe innych systemów
+131|Partycja systemowa (zostanie sformatowana jako Btrfs)
+132|Partycja rozruchowa (wymagana przy szyfrowaniu)
+133|Odświeżono listę partycji
+134|Bezpieczeństwo
+135|Zaszyfruj system
+136|Chroni dane w razie zgubienia lub kradzieży komputera. Hasło jest wymagane przy każdym uruchomieniu.
+137|Hasło
+138|Potwierdź hasło
+139|Przechowuj to hasło w bezpiecznym miejscu
+140|Jeśli je zgubisz, nikt nie odzyska danych. Jądro i pliki rozruchowe pozostaną na małej, niezaszyfrowanej partycji rozruchowej.
+141|Hasło musi mieć co najmniej 8 znaków.
+142|Hasła się nie zgadzają.
+143|Wybierz dysk.
+144|Wybierz dysk z Windows.
+145|Wybierz instalację do zastąpienia.
+146|Najpierw odblokuj zaszyfrowaną instalację.
+147|Ta partycja nie zawiera systemu MAN.
+148|Wybierz partycję systemową EFI.
+149|Wybierz partycję systemową.
+150|Partycja EFI i partycja systemowa muszą być różne.
+151|Szyfrowanie wymaga osobnej partycji rozruchowej.
+152|Partycja systemowa musi mieć co najmniej {size}.
+153|Partycja EFI nie jest sformatowana jako FAT; włącz formatowanie.
+154|Partycja systemowa jest zamontowana; najpierw odmontuj ją w programie Dyski.
+155|Gdzie zainstalować MAN?
+156|Czas i klawiatura
+157|Strefa czasowa
+158|Układ klawiatury
+159|Sprawdź klawiaturę
+160|Pisz tutaj, aby sprawdzić, czy klawisze wprowadzają właściwe znaki.
+161|Pisz tutaj
+162|Strefa czasowa i klawiatura
+163|Nie wybrano dysku
+164|Nie wybrano partycji systemowej
+165|Partycja systemowa zniknęła
+166|Nie wybrano instalacji
+167|Dysk zniknął
+168|Podsumowanie
+169|Miejsce docelowe
+170|Wyczyść dysk i zainstaluj
+171|Własne partycje
+172|Zainstaluj ponownie, zachowaj /home
+173|Obok Windows
+174| (zostanie sformatowana)
+175| (zachowana)
+176|Partycja systemowa
+177|{partition} (zostanie sformatowana)
+178|Partycja rozruchowa
+179|Miejsce na MAN
+180|{free} wolnego miejsca (zostanie utworzona partycja rozruchowa i systemowa)
+181|Windows
+182|Bez zmian. Pojawi się w menu startowym MAN; partycja systemowa EFI jest współdzielona.
+183|Szyfrowanie
+184|Włączone (LUKS2)
+185|Wyłączone
+186|System plików
+187|Btrfs: @system dla MAN, @home na twoje pliki, @snapshots na punkty przywracania. Wszystkie współdzielą wolne miejsce.
+188|System
+189|Twoje konto
+190|Zostanie utworzone w MAN Setup przy pierwszym uruchomieniu komputera, razem z nazwą komputera, wyglądem i ustawieniami prywatności.
+191|Klawiatura
+192|Wszystkie dane na {model} ({path}) zostaną usunięte.
+193|_Wyczyść i zainstaluj
+194|Wybrane partycje zostaną sformatowane. Pozostałe partycje się nie zmienią.
+195|_Sformatuj i zainstaluj
+196|Obecny system zostanie zastąpiony. Twoje pliki w /home pozostaną, a stary system zostanie zapisany jako migawka.
+197|_Zainstaluj ponownie
+198|MAN zostanie zainstalowany w wolnym miejscu. Windows i jego pliki się nie zmienią.
+199|Gotowe do instalacji
+200|Wyczyścić {model}?
+201|Wszystkie pliki i partycje na {path} ({size}) zostaną trwale usunięte. Tego nie można cofnąć.
+202|Wyczyść i zainstaluj
+203|Sformatować wybrane partycje?
+204|Wszystkie dane na wybranych partycjach zostaną trwale usunięte. Pozostałe partycje się nie zmienią.
+205|Sformatuj i zainstaluj
+206|Zainstalować MAN obok Windows?
+207|MAN zostanie zainstalowany w {free} wolnego miejsca na {model} ({path}). Windows i jego pliki się nie zmienią.
+208|Zainstaluj
+209|Zainstalować MAN ponownie?
+210|Zainstalowany system zostanie zastąpiony nową kopią. Pliki osobiste w /home pozostaną, a stary system będzie dostępny jako migawka.
+211|Zainstaluj ponownie
+212|_Anuluj
+213|Instalowanie MAN
+214|Uruchamianie…
+215|Instalowanie
+216|Krok {index} z {n}  ·  {title}
+217|MAN został zainstalowany
+218|Uruchom ponownie komputer, aby zacząć korzystać z MAN. Menu przy każdym uruchomieniu pozwala wybrać MAN lub Windows; tymczasową partycję instalatora MAN usunie przy pierwszym uruchomieniu.
+219|Uruchom ponownie komputer, aby zacząć korzystać z MAN. Możesz odłączyć nośnik instalacyjny; jeśli pozostanie podłączony, MAN i tak uruchomi się z nowego dysku.
+220|_Uruchom ponownie teraz
+221|Gotowe
+222|Instalacja nie powiodła się
+223|Żaden inny dysk nie został zmieniony, a instalator zwolnił dysk docelowy. Możesz przejrzeć plan i spróbować ponownie.
+224|_Przejrzyj i spróbuj ponownie
+225|Szukaj języków
+226|Szukaj krajów
+227|Nie znaleziono dysku systemowego.
+228|Szyfrowanie wymaga układu Btrfs utworzonego przez instalator MAN.
+229|Ta instalacja nie ma osobnej partycji rozruchowej, której wymaga szyfrowanie. Aby użyć szyfrowania, zainstaluj MAN ponownie z opcją „Wyczyść dysk”.
+230|MAN Setup
+231|Gdzie jesteś?
+232|Twój kraj lub region określa format daty, godziny i liczb.
+233|Kraj
+234|Powszechna Licencja Publiczna GNU, wersja 2
+235|Jądro Linux i wiele narzędzi systemowych
+236|Powszechna Licencja Publiczna GNU, wersja 3
+237|Wiele programów GNU i GNOME
+238|Mniejsza Powszechna Licencja Publiczna GNU, wersja 2.1
+239|GTK, GLib i wiele bibliotek
+240|Mniejsza Powszechna Licencja Publiczna GNU, wersja 3
+241|Biblioteki
+242|Mozilla Public License 2.0
+243|Programy i biblioteki od Mozilli i innych
+244|Licencja Apache 2.0
+245|Biblioteki i narzędzia
+246|Umowa licencyjna
+247|Przeczytaj i zaakceptuj warunki, na jakich udostępniany jest MAN.
+248|Licencje
+249|Tekst licencji jest niedostępny ({path}).
+250|Przeczytałem(-am) i akceptuję warunki licencji
+251|Przewodowe
+252|Brak połączenia
+253|Połącz z internetem
+254|Dzięki połączeniu MAN ustawi zegar i będzie aktualizować oprogramowanie. Możesz to zrobić także później.
+255|Sprawdzanie połączenia…
+256|Sieci Wi-Fi
+257|Szukaj ponownie
+258|_Pomiń
+259|Możesz połączyć się później w Ustawieniach.
+260|Połączono
+261|Brak połączenia
+262|Nie znaleziono sieci
+263|Internet
+264|Połączono z „{ssid}”
+265|Nie można połączyć z „{ssid}”
+266|Połącz z „{ssid}”
+267|Wpisz hasło sieci.
+268|_Połącz
+269|Utwórz konto
+270|Będziesz administratorem tego komputera z pełnym dostępem roota przez sudo.
+271|Imię i nazwisko
+272|Nazwa użytkownika
+273|Hasło
+274|Potwierdź hasło
+275|Loguj automatycznie
+276|Pomijaj ekran logowania przy uruchamianiu komputera
+277|Istniejące katalogi domowe
+278|Użyj tej samej nazwy użytkownika, aby dalej korzystać z katalogu z poprzedniej instalacji.
+279|Użyj
+280|Zaawansowane
+281|Nazwa komputera
+282|Ustaw hasło roota
+283|Pozwala logować się bezpośrednio jako root. Bez niego używaj sudo z własnym hasłem.
+284|Hasło roota
+285|Potwierdź hasło roota
+286|Wpisz swoje imię.
+287|Wybierz nazwę użytkownika.
+288|Ta nazwa użytkownika jest już używana przez system.
+289|Ta nazwa użytkownika jest zarezerwowana przez system.
+290|Nazwy użytkowników składają się z małych liter, cyfr, - i _ oraz zaczynają się od litery.
+291|Wybierz hasło.
+292|Hasła się nie zgadzają.
+293|Nazwa komputera może zawierać litery, cyfry i myślniki.
+294|Wpisz hasło roota dwukrotnie.
+295|Wskazówka: hasło z co najmniej 8 znakami jest dużo bezpieczniejsze.
+296|Konto
+297|Ciemny
+298|Jasny
+299|Dopasuj do siebie
+300|Wybierz styl, kolor akcentu i tapetę. Każdą zmianę zobaczysz od razu.
+301|Styl
+302|Kolor akcentu
+303|Tapeta
+304|Personalizacja
+305|Prywatność
+306|Wybierz, które funkcje mogą korzystać z informacji o tobie. Możesz to zmienić w każdej chwili w Ustawieniach.
+307|Usługi lokalizacji
+308|Pozwala programom takim jak Mapy i Pogoda ustalić twoje przybliżone położenie na podstawie pobliskich sieci Wi-Fi.
+309|Automatyczna strefa czasowa
+310|Na podstawie położenia utrzymuje właściwą strefę czasową podczas podróży.
+311|_Zakończ konfigurację
+312|Twój dysk jest zaszyfrowany
+313|Twoje dane są chronione. Hasło jest wymagane przy każdym uruchomieniu komputera.
+314|Szyfrowanie dysku
+315|Szyfrowanie chroni dane w razie zgubienia lub kradzieży komputera.
+316|Niedostępne w tej instalacji
+317|Szyfrowanie chroni pliki w razie zgubienia lub kradzieży komputera. Bez hasła nikt nie odczyta dysku.
+318|Zaszyfruj dysk
+319|Hasło jest wymagane przy każdym uruchomieniu komputera.
+320|Szyfrowanie rozpocznie się przy następnym uruchomieniu
+321|Dysk będzie wtedy szyfrowany w tle podczas korzystania z komputera. Jeśli zgubisz hasło, nikt nie odzyska danych.
+322|Przygotowywanie MAN
+323|Wszystko jest przygotowywane…
+324|_Uruchom ponownie
+325|_Wstecz
+326|Przygotowywanie
+327|Dziennik konfiguracji
+328|Gotowe!
+329|Coś poszło nie tak
+330|Codzienna
+331|Przed aktualizacją
+332|Przed przywróceniem
+333|Przed ponowną instalacją
+334|Ręczna
+335|Brak migawek
+336|Utwórz migawkę przed większymi zmianami w systemie.
+337|Przywróć…
+338|Usuń migawkę
+339|{free} wolne z {size}. System, katalogi domowe i migawki współdzielą to miejsce; migawki zajmują miejsce tylko na to, co zmieniło się od ich utworzenia.
+340|_OK
+341|Utwórz migawkę
+342|Zapisuje obecny stan systemu. Pliki osobiste w katalogu domowym nie są uwzględniane.
+343|Opis, na przykład „Przed instalacją sterowników”
+344|_Utwórz
+345|Ręczna migawka
+346|Usunąć migawkę?
+347|„{description}” z {date} zostanie trwale usunięta.
+348|_Usuń
+349|Przywrócić tę migawkę?
+350|Po ponownym uruchomieniu system wróci do stanu „{description}” z {date}. Twoje pliki osobiste się nie zmienią.\n\nObecny system zostanie najpierw zapisany jako migawka, więc można to cofnąć.
+351|_Przywróć
+352|Uruchom ponownie, aby dokończyć przywracanie
+353|Uruchom ponownie _później
+354|Uruchom ponownie _teraz
+355|Migawki
+356|Punkty przywracania
+357|Migawki zapisują stan systemu operacyjnego. Przywrócenie migawki cofa system do tamtej chwili, co pomaga po nieudanej aktualizacji lub zmianie konfiguracji. Twoje pliki osobiste nigdy nie są zmieniane.
+358|Automatyczne migawki
+359|Codzienne migawki
+360|Raz dziennie, gdy komputer jest włączony
+361|Liczba codziennych migawek
+362|Przed aktualizacjami oprogramowania
+363|Tworzone automatycznie przy instalowaniu, aktualizowaniu lub usuwaniu pakietów
+364|Liczba migawek przed aktualizacją
+365|Pamięć masowa
+366|Miejsce na dysku
+367|Jeśli MAN się nie uruchamia
+368|Wybierz „Restore a MAN snapshot” w menu startowym, aby przywrócić działający system.
+369|Migawki są niedostępne
+370|Migawki działają w MAN zainstalowanym z układem Btrfs tworzonym przez instalator MAN. Ten system (na przykład sesja live) go nie używa.
+371|Przywracanie czeka: uruchom ponownie komputer, aby je dokończyć
+372|Uruchom ponownie teraz
+373|Zaczekaj, aż bieżąca operacja się zakończy.
+374|Szukaj
+375|Skopiuj do schowka
+376|Uniwersalny czas koordynowany
+377|Angielski (USA)
+378|Wydano MAN {version}!
+379|Możesz zaktualizować system do tej wersji.
+380|Otwórz aktualizacje
+381|Sprawdzanie aktualizacji
+382|Sprawdzanie, czy aktualizacja jest autentyczna i kompletna…
+383|Aktualizacja MAN
+384|Nie można zainstalować tej aktualizacji
+385|Nie można odczytać aktualizacji.
+386|Aktualizacja z {name} {version}
+387|Zainstalowano {name} {version}
+388|Wydano
+389|Rozmiar pobierania
+390|Potrzebne miejsce
+391|Autentyczność
+392|Zweryfikowano, podpisane przez „{signer}”
+393|Co nowego
+394|Ta aktualizacja nie jest nowsza niż zainstalowany {name} {version}.
+395|Aktualizacja
+396|Przeczytaj warunki licencji tej aktualizacji.
+397|Akceptuję warunki licencji
+398|Gdzie zainstalować aktualizację?
+399|System zostanie zastąpiony; pliki w katalogu domowym pozostaną nietknięte.
+400|Wybierz instalację.
+401|obecnie uruchomiony
+402|{name} {version} na tym komputerze
+403|{name} na {model}
+404|Nie znaleziono instalacji MAN
+405|Aktualizacje instaluje się z uruchomionego, zainstalowanego systemu MAN, a nie z sesji live.
+406|Miejsce instalacji
+407|Zachowane
+408|Twoje pliki
+409|Wszystko w katalogu domowym
+410|Konta i hasła
+411|Użytkownicy, grupy, nazwa komputera
+412|Połączenia i ustawienia
+413|Wi-Fi, strefa czasowa, klawiatura, wygląd i migawki
+414|Programy Flatpak
+415|Oraz wszystko w /usr/local i /opt
+416|Zastąpione
+417|Oprogramowanie zainstalowane przez apt i inne zmiany plików systemowych zostaną zastąpione nowym systemem.
+418|System operacyjny
+419|Zastąpiony przez {name} {version}. Obecny system można przywrócić z migawki.
+420|Komputer uruchomi się ponownie, aby zainstalować aktualizację
+421|Po przygotowaniu MAN uruchomi się ponownie, w kilka sekund zainstaluje aktualizację i uruchomi się jeszcze raz.
+422|_Zainstaluj aktualizację
+423|Najpierw utworzyć migawkę?
+424|Migawka zapisuje obecny system, dzięki czemu możesz do niego wrócić, jeśli po aktualizacji coś nie będzie działać. Zalecane.
+425|_Nie twórz
+426|_Utwórz migawkę
+427|Przygotowywanie {name} {version}
+428|Uruchom ponownie, aby zainstalować
+429|Komputer uruchomi się ponownie dwa razy. Twoje pliki są bezpieczne.
+430|Automatyczne ponowne uruchomienie za {r} s
+431|Automatyczne ponowne uruchomienie za 30 s
+432|Aktualizacja zostanie zainstalowana przy następnym uruchomieniu.
+433|Gotowe
+434|Nie można przygotować aktualizacji
+435|W systemie nic nie zostało zmienione.
+436|_Spróbuj ponownie
+437|Dziennik aktualizacji
+438|Niepowodzenie
+439|System został zaktualizowany
+440|MAN został zaktualizowany do wersji {version}.\nPoprzednio: MAN {previous}.
+441|_Gotowe
+442|Otwórz aktualizację MAN
+443|Aktualizacje MAN
+444|Pobieranie najnowszych list pakietów…
+445|Kopiowanie aplikacji
+446|Dodawanie aplikacji do menu
+447|Nie znaleziono pliku.
+448|Nie można zainstalować pakietu.
+449|Wpis menu aplikacji jest nieprawidłowy.
+450|Sprawdzanie planu instalacji
+451|Przygotowywanie dysku
+452|Kopiowanie MAN na dysk
+453|Konfigurowanie nowego systemu
+454|Instalowanie programu rozruchowego
+455|Tworzenie pierwszej migawki
+456|Kończenie
+457|Usuwanie starych sygnatur partycji
+458|Tworzenie partycji
+459|Formatowanie partycji systemowej EFI
+460|Szyfrowanie partycji systemowej
+461|Formatowanie partycji rozruchowej
+462|Tworzenie systemu plików Btrfs
+463|Usuwanie starych sygnatur systemów plików
+464|Odblokowywanie zaszyfrowanej instalacji
+465|Zapisywanie obecnego systemu jako migawki
+466|Usuwanie poprzedniego systemu
+467|Zapisywanie tablicy systemów plików
+468|Ustawianie nazwy i tożsamości komputera
+469|Usuwanie kont sesji live
+470|Tworzenie twojego konta
+471|Przygotowywanie MAN Setup do pierwszego uruchomienia
+472|Ustawianie strefy czasowej i klawiatury
+473|Usuwanie instalatora z nowego systemu
+474|Tworzenie obrazu rozruchowego (initramfs)
+475|Konfigurowanie GRUB
+476|Instalowanie GRUB na partycji systemowej EFI
+477|Instalowanie zapasowego programu rozruchowego
+478|Zapisywanie menu startowego
+479|Dysk gotowy
+480|Tworzenie migawki nowego systemu
+481|Dodawanie migawki do menu startowego
+482|Odmontowywanie
+483|Pomocnik instalatora musi działać jako root.
+484|Ten komputer nie został uruchomiony w trybie UEFI. MAN wymaga UEFI.
+485|Nazwa użytkownika jest nieprawidłowa.
+486|Hasło jest wymagane.
+487|Nazwa komputera jest nieprawidłowa.
+488|Nieznany język.
+489|Hasło szyfrowania musi mieć co najmniej 8 znaków.
+490|Dysk zmienił się po potwierdzeniu instalacji. Nic nie zostało zmienione; przejrzyj plan i potwierdź ponownie.
+491|Wybierz partycję systemową.
+492|Potwierdzony dysk nie zawiera wybranej partycji systemowej.
+493|Partycja rozruchowa musi być oddzielna od partycji EFI i systemowej.
+494|Partycja rozruchowa musi mieć co najmniej 512 MB.
+495|Nie wybrano instalacji.
+496|Potwierdzony dysk nie zawiera wybranej instalacji.
+497|Zaszyfrowana instalacja nie ma partycji MAN_BOOT.
+498|W /boot nie znaleziono jądra z pasującymi modułami.
+499|Język musi zmienić pomocnik systemowy.
+500|Stosowanie twoich ustawień
+501|Przygotowywanie szyfrowania dysku
+502|Kończenie
+503|MAN Setup musi zakończyć pomocnik systemowy.
+504|MAN Setup został już ukończony na tym komputerze.
+505|Nieznany kolor akcentu.
+506|Wybrana tapeta jest niedostępna.
+507|Tego systemu nie można zaszyfrować.
+508|Brak klucza konfiguracji, więc szyfrowanie nie może być kontynuowane w tle.
+509|System nie jest zainstalowany na Btrfs, więc migawki są niedostępne.
+510|Przywracanie migawki czeka na ponowne uruchomienie. Najpierw uruchom ponownie komputer, aby je dokończyć.
+511|Nieprawidłowy identyfikator migawki.
+512|Sprawdzanie aktualizacji
+513|Tworzenie migawki
+514|Przygotowywanie obszaru aktualizacji
+515|Rozpakowywanie nowego systemu
+516|Przenoszenie kont i ustawień
+517|Przygotowywanie ponownego uruchomienia
+518|Rozpakowano
+519|Konta
+520|Ponowne instalowanie zachowanych aplikacji
+521|Usuwanie oprogramowania używanego tylko przez instalator
+522|Tworzenie obrazu rozruchowego aktualizacji
+523|Dodawanie jednorazowego wpisu rozruchowego
+524|Aktualizacja jest autentyczna
+525|Utworzono migawkę
+526|Pominięto
+527|Obszar aktualizacji gotowy
+528|Przygotowywanie nowego systemu
+529|Plik aktualizacji jest uszkodzony (niezgodna suma kontrolna). Pobierz go ponownie.
+530|Nie można odczytać całego pliku aktualizacji.
+531|Aktualizacja nie zawiera jądra.
+532|Aktualizacje musi instalować pomocnik systemowy.
+533|Nie znaleziono wybranej instalacji.
+534|Można zaktualizować tylko uruchomioną instalację MAN.
+535|To nie jest plik aktualizacji MAN (brak manifestu).
+536|Aktualizacja nie jest podpisana, więc nie można jej ufać.
+537|Podpis aktualizacji jest uszkodzony.
+538|Aktualizacja nie jest podpisana przez MAN. Mogła zostać zmieniona lub pochodzi z niezaufanego źródła.
+539|Manifest aktualizacji jest nieprawidłowy.
+540|Hasło jest nieprawidłowe lub nie można otworzyć zaszyfrowanej partycji.
+541|Niebieski
+542|Morski
+543|Zielony
+544|Żółty
+545|Pomarańczowy
+546|Czerwony
+547|Różowy
+548|Fioletowy
+549|Łupkowy
+550|Instalator pakietów
+551|Instalowanie aplikacji z plików .deb, Flatpak i AppImage
+552|Instalator systemu
+553|Zainstaluj MAN na tym komputerze
+554|Przywracanie systemu
+555|Twórz i przywracaj migawki systemu
+556|Instalator aktualizacji systemu
+557|Zainstaluj plik aktualizacji systemu MAN
+558|Proponuje instalację MAN po uruchomieniu sesji live
+559|Powiadomienie o aktualizacji MAN
+560|Informuje jednorazowo po zalogowaniu, że MAN został zaktualizowany
+561|Skonfiguruj swój nowy komputer z MAN
+562|Konfiguracja MAN przy pierwszym uruchomieniu
+563|Aktualizacje MAN
+564|Informuje, gdy pojawi się nowa wersja MAN

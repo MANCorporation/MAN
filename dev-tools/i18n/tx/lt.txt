@@ -30,7 +30,7 @@
 29|Svetainė
 30|Failas
 31|Ši programa jau įdiegta. Įdiegus iš naujo, ji bus pakeista.
-32|Programos iš .deb paketų tampa sistemos dalimi. Atnaujinus MAN, jos pašalinamos ir jas reikia įdiegti iš naujo. Flatpak programos ir AppImage failai išlieka.
+32|Programos iš .deb paketų tampa sistemos dalimi. MAN naujinimas pakeičia sistemą, todėl po naujinimo jos įdiegiamos iš naujo tik jei jas išlaikote (kiti žingsniai).
 33|Diekite programas tik iš patikimų šaltinių.
 34|Kur norite įdiegti {name}?
 35|Programa gali naudotis tik jūsų paskyra.
@@ -42,521 +42,524 @@
 41|Programa įdiegiama visiems šio kompiuterio naudotojams.
 42|Programa įdiegiama tik jums.
 43|AppImage perkeliamas į {folder} ir pridedamas prie jūsų programų.
-44|Spustelėkite Įdiegti, kad įdiegtumėte {name}.
-45|Tikrinama, ko dar reikia programai…
-46|Taip pat įdiegia reikalingus paketus: {list}
-47|Kai kurių programai reikalingų paketų dar nėra. Diegimas pirmiausia gauna naujausius paketų sąrašus; jei jų vis tiek trūksta, programos įdiegti negalima.
-48|Diegiama {name}…
-49|Ruošiama…
-50|Išsamiau
-51|Diegiamas paketas…
-52|Programa perkeliama į jos aplanką…
-53|Nepavyko įdiegti programos.
-54|Programa diegiama su Flatpak…
-55|Žurnalas
-56|_Užverti
-57|Diegimas pavyko
-58|Programa įdiegta.
-59|Diegimas nepavyko
-60|_Atverti
-61|_Rodyti išsamiau
-62|Diegimo žurnalas
-63|Programų diegimas
-64|_Atgal
-65|Skaitoma programa…
-66|Įdiegti {name}
-67|Programos
-68|Pasirinkite programą diegti
-69|Nepavyko paleisti sistemos pagelbiklio.
-70|Nepavyko susisiekti su sistemos pagelbikliu.
-71|Ryšys su sistemos pagelbikliu nutrūko.
-72|Įgaliojimas atšauktas.
-73|Šiam veiksmui reikia administratoriaus teisių.
-74|Sistemos pagelbiklis netikėtai sustojo.
-75|Nėra EFI sistemos skaidinio
-76|Laisva tik {free}, MAN reikia {need}. Atlaisvinkite vietos su DUHACH! sistemoje Windows.
-77|Nėra laisvos vietos. Paleiskite DUHACH! sistemoje Windows, kad padarytumėte vietos MAN.
-78|MAN veikia iš šio disko
-79|Naudojamas: prijungtas skaidinys
-80|Per mažas, MAN reikia {need}
-81|Įdiegti MAN
-82|MAN diegiama. Palaukite, kol baigsis.
-83|Kalba
-84|_Paleisti iš naujo šia kalba
-85|Gyvoji sesija bus paleista iš naujo pasirinkta kalba, ir MAN bus įdiegta ta kalba.
-86|Sveiki atvykę į MAN
-87|Greita, atvira ir visiškai pritaikoma GNOME sistema.\nĮdiekite ją šiame kompiuteryje arba toliau tyrinėkite gyvąją sesiją.
-88|Į_diegti MAN…
-89|_Toliau bandyti MAN
-90|Ieškoma diskų…
-91|Sveiki atvykę
-92|Šis kompiuteris paleistas senuoju BIOS režimu. MAN galima įdiegti tik UEFI kompiuteriuose: paleiskite iš naujo ir pasirinkite UEFI paleidimo parinktį.
-93|Sistemos pagelbiklis negrąžino informacijos apie diskus.
-94|  ·  EFI
-95|_Toliau
-96|Ištrinti diską ir įdiegti MAN
-97|Viskas pasirinktame diske bus ištrinta, įskaitant Windows.
-98|Rekomenduojama. Viskas pasirinktame diske bus ištrinta.
-99|Įdiegti šalia Windows
-100|Rekomenduojama. MAN naudoja laisvą vietą šalia Windows; Windows ir jos failai lieka. Sistemą renkatės kaskart paleisdami.
-101|Įdiegti MAN iš naujo
-102|Pakeičia sistemą, bet išsaugo asmeninius failus kataloge /home. Dabartinė sistema išsaugoma kaip momentinė kopija.
-103|Pasirinktiniai skaidiniai
-104|Ekspertams: skaidinius pasirinkite patys arba sukurkite programa Diskai.
-105|Diskas
-106|Pasirinkite diską, kuris bus ištrintas. Netinkami diskai rodomi su priežastimi.
-107|Diskų nerasta
-108|Laisva vieta šalia Windows
-109|Windows skaidiniai neliečiami. MAN dalijasi EFI sistemos skaidiniu ir prideda Windows į savo paleidimo meniu.
-110|laisva {size}
-111|nėra laisvos vietos
-112|{model} (Windows)
-113|Keičiama įdiegtis
-114|nėra namų aplankų
-115|namų aplankai: {list}
-116|momentinės kopijos: {n}
-117|MAN diske {model}
-118|Slaptafrazė įrenginiui {device}
-119|Atrakinti
-120|Nepavyko patikrinti įdiegties.
-121|Skaidiniai
-122|Sistemos skaidinys formatuojamas Btrfs ir turi @system, @home ir @snapshots. Disko, iš kurio veikia MAN, skaidiniai nerodomi.
-123|Atverti Diskus skaidiniams kurti ar jų dydžiui keisti
-124|Atnaujinti skaidinių sąrašą
-125|Pasirinkite skaidinį
-126|EFI sistemos skaidinys
-127|Formatuoti EFI sistemos skaidinį
-128|Palikite išjungtą, kad liktų kitų sistemų paleidyklės
-129|Sistemos skaidinys (formatuojamas Btrfs)
-130|Paleidimo skaidinys (reikalingas šifruojant)
-131|Skaidinių sąrašas atnaujintas
-132|Saugumas
-133|Šifruoti sistemą
-134|Apsaugo jūsų duomenis, jei kompiuteris pamestas ar pavogtas. Slaptafrazės klausiama kaskart paleidžiant.
-135|Slaptafrazė
-136|Patvirtinkite slaptafrazę
-137|Saugokite šią slaptafrazę
-138|Ją pametus niekas negalės atkurti duomenų. Branduolys ir paleidimo failai lieka mažame nešifruotame paleidimo skaidinyje.
-139|Slaptafrazę turi sudaryti bent 8 simboliai.
-140|Slaptafrazės nesutampa.
-141|Pasirinkite diską.
-142|Pasirinkite diską su Windows.
-143|Pasirinkite keičiamą įdiegtį.
-144|Pirmiausia atrakinkite šifruotą įdiegtį.
-145|Šiame skaidinyje nėra MAN sistemos.
-146|Pasirinkite EFI sistemos skaidinį.
-147|Pasirinkite sistemos skaidinį.
-148|EFI ir sistemos skaidiniai turi skirtis.
-149|Šifravimui reikia atskiro paleidimo skaidinio.
-150|Sistemos skaidinys turi būti bent {size}.
-151|EFI skaidinys nesuformatuotas FAT; įjunkite formatavimą.
-152|Sistemos skaidinys prijungtas; pirmiausia atjunkite jį programoje Diskai.
-153|Kur įdiegti MAN?
-154|Laikas ir klaviatūra
-155|Laiko juosta
-156|Klaviatūros išdėstymas
-157|Išbandykite klaviatūrą
-158|Rašykite čia, kad patikrintumėte, ar klavišai rašo teisingus simbolius.
-159|Rašykite čia
-160|Laiko juosta ir klaviatūra
-161|Diskas nepasirinktas
-162|Sistemos skaidinys nepasirinktas
-163|Sistemos skaidinys dingo
-164|Įdiegtis nepasirinkta
-165|Diskas dingo
-166|Peržiūra
-167|Paskirtis
-168|Ištrinti diską ir įdiegti
-169|Pasirinktiniai skaidiniai
-170|Įdiegti iš naujo, išsaugant /home
-171|Šalia Windows
-172| (bus suformatuotas)
-173| (išsaugomas)
-174|Sistemos skaidinys
-175|{partition} (bus suformatuotas)
-176|Paleidimo skaidinys
-177|Vieta MAN
-178|{free} laisvos vietos (sukuriamas paleidimo ir sistemos skaidinys)
-179|Windows
-180|Nepakeista. Ji rodoma MAN paleidimo meniu; EFI sistemos skaidinys bendras.
-181|Šifravimas
-182|Įjungtas (LUKS2)
-183|Išjungtas
-184|Failų sistema
-185|Btrfs: @system skirtas MAN, @home – jūsų failams, @snapshots – atkūrimo taškams. Visi dalijasi laisva vieta.
-186|Sistema
-187|Jūsų paskyra
-188|Sukuriama MAN Setup pirmą kartą paleidus kompiuterį, kartu su kompiuterio pavadinimu, išvaizda ir privatumo nustatymais.
-189|Klaviatūra
-190|Visi duomenys diske {model} ({path}) bus ištrinti.
-191|_Ištrinti ir įdiegti
-192|Pasirinkti skaidiniai bus suformatuoti. Kiti skaidiniai nesikeičia.
-193|_Formatuoti ir įdiegti
-194|Dabartinė sistema pakeičiama. Jūsų failai kataloge /home išsaugomi, o senoji sistema išsaugoma kaip momentinė kopija.
-195|Įdiegti _iš naujo
-196|MAN įdiegiama laisvoje vietoje. Windows ir jos failai nesikeičia.
-197|Paruošta diegti
-198|Ištrinti {model}?
-199|Visi failai ir skaidiniai įrenginyje {path} ({size}) bus negrįžtamai ištrinti. To atšaukti negalima.
-200|Ištrinti ir įdiegti
-201|Formatuoti pasirinktus skaidinius?
-202|Visi duomenys pasirinktuose skaidiniuose bus negrįžtamai ištrinti. Kiti skaidiniai nesikeičia.
-203|Formatuoti ir įdiegti
-204|Įdiegti MAN šalia Windows?
-205|MAN įdiegiama {free} laisvos vietos diske {model} ({path}). Windows ir jos failai nesikeičia.
-206|Įdiegti
-207|Įdiegti MAN iš naujo?
-208|Įdiegta sistema bus pakeista nauja kopija. Asmeniniai failai kataloge /home išsaugomi, o senoji sistema lieka pasiekiama kaip momentinė kopija.
-209|Įdiegti iš naujo
-210|_Atsisakyti
-211|Diegiama MAN
-212|Pradedama…
-213|Diegiama
-214|Žingsnis {index} iš {n}  ·  {title}
-215|MAN įdiegta
-216|Paleiskite kompiuterį iš naujo, kad pradėtumėte naudoti MAN. Kaskart paleidžiant meniu leidžia rinktis MAN arba Windows; laikiną diegimo skaidinį MAN pašalina pirmą kartą paleista.
-217|Paleiskite kompiuterį iš naujo, kad pradėtumėte naudoti MAN. Diegimo laikmeną galite išimti; jei ji lieka prijungta, MAN vis tiek paleidžiama iš naujojo disko.
-218|_Paleisti iš naujo dabar
-219|Atlikta
-220|Diegimas nepavyko
-221|Joks kitas diskas nepakeistas, o diegimo programa atlaisvino paskirties diską. Galite peržiūrėti planą ir bandyti dar kartą.
-222|_Peržiūrėti ir bandyti dar kartą
-223|Ieškoti kalbų
-224|Ieškoti šalių
-225|Sistemos diskas nerastas.
-226|Šifravimui reikia MAN diegimo programos sukurto Btrfs išdėstymo.
-227|Šioje įdiegtyje nėra atskiro paleidimo skaidinio, kurio reikia šifravimui. Norėdami šifruoti, įdiekite MAN iš naujo su „Ištrinti diską“.
-228|MAN Setup
-229|Kur esate?
-230|Jūsų šalis ar regionas nustato datos, laiko ir skaičių formatą.
-231|Šalis
-232|GNU bendroji viešoji licencija, 2 versija
-233|Linux branduolys ir daug sistemos įrankių
-234|GNU bendroji viešoji licencija, 3 versija
-235|Daug GNU ir GNOME programų
-236|GNU mažesnioji bendroji viešoji licencija, 2.1 versija
-237|GTK, GLib ir daug bibliotekų
-238|GNU mažesnioji bendroji viešoji licencija, 3 versija
-239|Bibliotekos
-240|Mozilla viešoji licencija 2.0
-241|Mozilla ir kitų programos bei bibliotekos
-242|Apache licencija 2.0
-243|Bibliotekos ir įrankiai
-244|Licencinė sutartis
-245|Perskaitykite ir priimkite sąlygas, kuriomis teikiama MAN.
-246|Licencijos
-247|Licencijos tekstas neprieinamas ({path}).
-248|Perskaičiau ir priimu licencijos sąlygas
-249|Laidinis
-250|Neprisijungta
-251|Prisijunkite prie interneto
-252|Prisijungusi MAN gali nustatyti laiką ir atnaujinti programinę įrangą. Tai galite padaryti ir vėliau.
-253|Tikrinamas ryšys…
-254|Wi-Fi tinklai
-255|Ieškoti dar kartą
-256|_Praleisti
-257|Prisijungti galite vėliau Nustatymuose.
-258|Prisijungta
-259|Neprisijungta
-260|Tinklų nerasta
-261|Internetas
-262|Prisijungta prie „{ssid}“
-263|Nepavyko prisijungti prie „{ssid}“
-264|Prisijungti prie „{ssid}“
-265|Įveskite tinklo slaptažodį.
-266|_Prisijungti
-267|Susikurkite paskyrą
-268|Būsite šio kompiuterio administratorius su visa root prieiga per sudo.
-269|Vardas ir pavardė
-270|Naudotojo vardas
-271|Slaptažodis
-272|Patvirtinkite slaptažodį
-273|Prisijungti automatiškai
-274|Praleisti prisijungimo ekraną paleidžiant kompiuterį
-275|Esami namų aplankai
-276|Naudokite tą patį naudotojo vardą, kad toliau naudotumėte aplanką iš ankstesnės įdiegties.
-277|Naudoti
-278|Išplėstiniai
-279|Kompiuterio pavadinimas
-280|Nustatyti root slaptažodį
-281|Leidžia prisijungti tiesiogiai kaip root. Be jo naudokite sudo su savo slaptažodžiu.
-282|Root slaptažodis
-283|Patvirtinkite root slaptažodį
-284|Įveskite savo vardą.
-285|Pasirinkite naudotojo vardą.
-286|Šį naudotojo vardą jau naudoja sistema.
-287|Šis naudotojo vardas rezervuotas sistemai.
-288|Naudotojų vardus sudaro mažosios raidės, skaitmenys, - ir _, jie prasideda raide.
-289|Pasirinkite slaptažodį.
-290|Slaptažodžiai nesutampa.
-291|Kompiuterio pavadinime gali būti raidžių, skaitmenų ir brūkšnelių.
-292|Įveskite root slaptažodį du kartus.
-293|Patarimas: 8 ar daugiau simbolių slaptažodis yra daug saugesnis.
-294|Paskyra
-295|Tamsi
-296|Šviesi
-297|Pritaikykite sau
-298|Pasirinkite stilių, akcento spalvą ir darbalaukio foną. Kiekvieną pakeitimą matote iš karto.
-299|Stilius
-300|Akcento spalva
-301|Darbalaukio fonas
-302|Pritaikyti
-303|Privatumas
-304|Pasirinkite, kurios funkcijos gali naudoti informaciją apie jus. Tai bet kada galite pakeisti Nustatymuose.
-305|Vietos tarnybos
-306|Leidžia programoms, pvz., Žemėlapiams ir Orams, nustatyti jūsų apytikslę vietą pagal netoliese esančius Wi-Fi tinklus.
-307|Automatinė laiko juosta
-308|Naudoja jūsų vietą, kad keliaujant laiko juosta būtų teisinga.
-309|_Baigti sąranką
-310|Jūsų diskas užšifruotas
-311|Jūsų duomenys apsaugoti. Slaptafrazės klausiama kaskart paleidžiant kompiuterį.
-312|Disko šifravimas
-313|Šifravimas apsaugo jūsų duomenis, jei kompiuteris pamestas ar pavogtas.
-314|Šioje įdiegtyje neprieinama
-315|Šifravimas apsaugo jūsų failus, jei kompiuteris pamestas ar pavogtas. Be slaptafrazės niekas negali skaityti disko.
-316|Šifruoti diską
-317|Slaptafrazės klausiama kaskart paleidžiant kompiuterį.
-318|Šifravimas prasidės kitą kartą paleidus iš naujo
-319|Tada diskas šifruojamas fone, kol naudojatės kompiuteriu. Pametus slaptafrazę, niekas negalės atkurti duomenų.
-320|Ruošiama MAN
-321|Viskas ruošiama…
-322|_Paleisti iš naujo
-323|_Atgal
-324|Ruošiama
-325|Sąrankos žurnalas
-326|Viskas baigta!
-327|Kažkas nepavyko
-328|Kasdienė
-329|Prieš atnaujinimą
-330|Prieš atkūrimą
-331|Prieš įdiegimą iš naujo
-332|Rankinė
-333|Momentinių kopijų dar nėra
-334|Sukurkite kopiją prieš didesnius sistemos pakeitimus.
-335|Atkurti…
-336|Ištrinti momentinę kopiją
-337|Laisva {free} iš {size}. Sistema, namų aplankai ir momentinės kopijos dalijasi šia vieta; kopijos užima vietos tik tam, kas pasikeitė nuo jų sukūrimo.
-338|_Gerai
-339|Sukurti momentinę kopiją
-340|Išsaugo dabartinę sistemos būseną. Asmeniniai failai namų aplanke neįtraukiami.
-341|Aprašas, pvz., „Prieš diegiant tvarkykles“
-342|_Sukurti
-343|Rankinė momentinė kopija
-344|Ištrinti momentinę kopiją?
-345|„{description}“ iš {date} bus negrįžtamai ištrinta.
-346|_Ištrinti
-347|Atkurti šią momentinę kopiją?
-348|Paleidus iš naujo sistema grįš į „{description}“ iš {date}. Jūsų asmeniniai failai nesikeičia.\n\nDabartinė sistema pirmiausia išsaugoma kaip momentinė kopija, todėl tai galima atšaukti.
-349|_Atkurti
-350|Paleiskite iš naujo, kad baigtumėte atkūrimą
-351|Paleisti iš naujo _vėliau
-352|Paleisti iš naujo _dabar
-353|Momentinės kopijos
-354|Atkūrimo taškai
-355|Momentinės kopijos išsaugo operacinės sistemos būseną. Atkūrus kopiją sistema grįžta į tą akimirką, o tai padeda po nepavykusio atnaujinimo ar nustatymų pakeitimo. Jūsų asmeniniai failai niekada neliečiami.
-356|Automatinės momentinės kopijos
-357|Kasdienės momentinės kopijos
-358|Kartą per dieną, kol kompiuteris įjungtas
-359|Kiek kasdienių kopijų laikyti
-360|Prieš programinės įrangos atnaujinimus
-361|Kuriamos automatiškai diegiant, atnaujinant ar šalinant paketus
-362|Kiek atnaujinimų kopijų laikyti
-363|Saugykla
-364|Vieta diske
-365|Jei MAN nepasileidžia
-366|Paleidimo meniu pasirinkite „Restore a MAN snapshot“, kad atgautumėte veikiančią sistemą.
-367|Momentinės kopijos neprieinamos
-368|Momentinės kopijos veikia MAN, įdiegtoje su MAN diegimo programos Btrfs išdėstymu. Ši sistema (pvz., gyvoji sesija) jo nenaudoja.
-369|Laukia atkūrimas: paleiskite kompiuterį iš naujo, kad jį baigtumėte
-370|Paleisti iš naujo dabar
-371|Palaukite, kol baigsis dabartinis veiksmas.
-372|Ieškoti
-373|Kopijuoti į iškarpinę
-374|Suderintasis pasaulinis laikas
-375|Anglų (JAV)
-376|Išleista MAN {version}!
-377|Galite į ją atnaujinti.
-378|Atverti atnaujinimus
-379|Tikrinamas atnaujinimas
-380|Tikrinama, ar atnaujinimas tikras ir pilnas…
-381|MAN atnaujinimas
-382|Šio atnaujinimo įdiegti negalima
-383|Nepavyko perskaityti atnaujinimo.
-384|Atnaujinimas iš {name} {version}
-385|Įdiegta {name} {version}
-386|Išleista
-387|Atsiuntimo dydis
-388|Reikia vietos
-389|Autentiškumas
-390|Patikrinta, pasirašė „{signer}“
-391|Kas naujo
-392|Šis atnaujinimas nėra naujesnis už įdiegtą {name} {version}.
-393|Atnaujinimas
-394|Perskaitykite šio atnaujinimo licencijos sąlygas.
-395|Priimu licencijos sąlygas
-396|Kur įdiegti atnaujinimą?
-397|Sistema pakeičiama; failai jūsų namų aplanke neliečiami.
-398|Pasirinkite įdiegtį.
-399|veikia dabar
-400|{name} {version} šiame kompiuteryje
-401|{name} diske {model}
-402|MAN įdiegties nerasta
-403|Atnaujinimai diegiami iš veikiančios, įdiegtos MAN sistemos, ne iš gyvosios sesijos.
-404|Įdiegties vieta
-405|Išsaugoma
-406|Jūsų failai
-407|Viskas jūsų namų aplanke
-408|Paskyros ir slaptažodžiai
-409|Naudotojai, grupės, kompiuterio pavadinimas
-410|Ryšiai ir nustatymai
-411|Wi-Fi, laiko juosta, klaviatūra, išvaizda ir momentinės kopijos
-412|Flatpak programos
-413|Taip pat viskas kataloguose /usr/local ir /opt
-414|Pakeičiama
-415|Su apt įdiegta programinė įranga ir kiti sistemos failų pakeitimai pakeičiami naująja sistema.
-416|Operacinė sistema
-417|Pakeičiama į {name} {version}. Dabartinę sistemą galima atkurti iš momentinės kopijos.
-418|Kompiuteris paleidžiamas iš naujo atnaujinimui įdiegti
-419|Paruošusi MAN pasileidžia iš naujo, per kelias sekundes įdiegia atnaujinimą ir vėl pasileidžia iš naujo.
-420|Į_diegti atnaujinimą
-421|Pirma sukurti momentinę kopiją?
-422|Momentinė kopija išsaugo dabartinę sistemą, kad galėtumėte grįžti, jei po atnaujinimo kas nors neveiks. Rekomenduojama.
-423|_Nekurti
-424|_Sukurti momentinę kopiją
-425|Ruošiama {name} {version}
-426|Paleisti iš naujo ir įdiegti
-427|Kompiuteris bus paleistas iš naujo du kartus. Jūsų failai saugūs.
-428|Automatiškai paleidžiama iš naujo po {r} s
-429|Automatiškai paleidžiama iš naujo po 30 s
-430|Atnaujinimas bus įdiegtas kitą kartą paleidus iš naujo.
-431|Paruošta
-432|Nepavyko paruošti atnaujinimo
-433|Jūsų sistemoje niekas nepakeista.
-434|_Bandyti dar kartą
-435|Atnaujinimo žurnalas
-436|Nepavyko
-437|Jūsų sistema atnaujinta
-438|MAN atnaujinta į versiją {version}.\nAnksčiau: MAN {previous}.
-439|_Atlikta
-440|Atverti MAN atnaujinimą
-441|MAN atnaujinimai
-442|Gaunami naujausi paketų sąrašai…
-443|Kopijuojama programa
-444|Programa pridedama prie meniu
-445|Failas nerastas.
-446|Nepavyko įdiegti paketo.
-447|Programos meniu įrašas netinkamas.
-448|Tikrinamas diegimo planas
-449|Ruošiamas diskas
-450|MAN kopijuojama į diską
-451|Konfigūruojama naujoji sistema
-452|Diegiama paleidyklė
-453|Kuriama pirmoji momentinė kopija
-454|Baigiama
-455|Šalinami seni skaidinių parašai
-456|Kuriami skaidiniai
-457|Formatuojamas EFI sistemos skaidinys
-458|Šifruojamas sistemos skaidinys
-459|Formatuojamas paleidimo skaidinys
-460|Kuriama Btrfs failų sistema
-461|Šalinami seni failų sistemų parašai
-462|Atrakinama šifruota įdiegtis
-463|Dabartinė sistema išsaugoma kaip momentinė kopija
-464|Šalinama ankstesnė sistema
-465|Rašoma failų sistemų lentelė
-466|Nustatomas kompiuterio pavadinimas ir tapatybė
-467|Šalinamos gyvosios sesijos paskyros
-468|Kuriama jūsų paskyra
-469|MAN Setup ruošiama pirmam paleidimui
-470|Nustatoma laiko juosta ir klaviatūra
-471|Diegimo programa šalinama iš naujosios sistemos
-472|Kuriamas paleidimo atvaizdas (initramfs)
-473|Konfigūruojamas GRUB
-474|GRUB diegiama į EFI sistemos skaidinį
-475|Diegiama atsarginė paleidyklė
-476|Rašomas paleidimo meniu
-477|Diskas paruoštas
-478|Kuriama naujosios sistemos momentinė kopija
-479|Momentinė kopija pridedama į paleidimo meniu
-480|Atjungiama
-481|Diegimo programos pagelbiklis turi veikti kaip root.
-482|Šis kompiuteris nepaleistas UEFI režimu. MAN reikia UEFI.
-483|Naudotojo vardas netinkamas.
-484|Reikia slaptažodžio.
-485|Kompiuterio pavadinimas netinkamas.
-486|Nežinoma kalba.
-487|Šifravimo slaptafrazę turi sudaryti bent 8 simboliai.
-488|Diskas pasikeitė po to, kai patvirtinote diegimą. Niekas nepakeista; peržiūrėkite ir patvirtinkite dar kartą.
-489|Pasirinkite sistemos skaidinį.
-490|Patvirtintame diske nėra pasirinkto sistemos skaidinio.
-491|Paleidimo skaidinys turi būti atskiras nuo EFI ir sistemos skaidinių.
-492|Paleidimo skaidinys turi būti bent 512 MB.
-493|Įdiegtis nepasirinkta.
-494|Patvirtintame diske nėra pasirinktos įdiegties.
-495|Šifruota įdiegtis neturi MAN_BOOT skaidinio.
-496|Kataloge /boot nerastas branduolys su atitinkamais moduliais.
-497|Kalbą turi keisti sistemos pagelbiklis.
-498|Taikomi jūsų nustatymai
-499|Ruošiamas disko šifravimas
-500|Baigiama
-501|MAN Setup turi baigti sistemos pagelbiklis.
-502|MAN Setup šiame kompiuteryje jau atlikta.
-503|Nežinoma akcento spalva.
-504|Pasirinktas darbalaukio fonas neprieinamas.
-505|Šios sistemos šifruoti negalima.
-506|Trūksta sąrankos rakto, todėl šifravimas negali tęstis fone.
-507|Sistema neįdiegta Btrfs, todėl momentinės kopijos neprieinamos.
-508|Momentinės kopijos atkūrimas laukia paleidimo iš naujo. Pirmiausia paleiskite kompiuterį iš naujo, kad jį baigtumėte.
-509|Netinkamas momentinės kopijos ID.
-510|Tikrinamas atnaujinimas
-511|Kuriama momentinė kopija
-512|Ruošiama atnaujinimo sritis
-513|Išpakuojama naujoji sistema
-514|Perkeliamos jūsų paskyros ir nustatymai
-515|Ruošiamas paleidimas iš naujo
-516|Išpakuota
-517|Paskyros
-518|Šalinama tik diegimo programai skirta programinė įranga
-519|Kuriamas atnaujinimo paleidimo atvaizdas
-520|Pridedamas vienkartinis paleidimo įrašas
-521|Atnaujinimas tikras
-522|Momentinė kopija sukurta
-523|Praleista
-524|Atnaujinimo sritis paruošta
-525|Ruošiama naujoji sistema
-526|Atnaujinimo failas sugadintas (kontrolinė suma nesutampa). Atsisiųskite jį dar kartą.
-527|Nepavyko perskaityti viso atnaujinimo failo.
-528|Atnaujinime nėra branduolio.
-529|Atnaujinimus turi diegti sistemos pagelbiklis.
-530|Pasirinkta įdiegtis nerasta.
-531|Atnaujinti galima tik veikiančią MAN įdiegtį.
-532|Tai ne MAN atnaujinimo failas (nėra manifesto).
-533|Atnaujinimas nepasirašytas, todėl juo pasitikėti negalima.
-534|Atnaujinimo parašas sugadintas.
-535|Atnaujinimo nepasirašė MAN. Jis galėjo būti pakeistas arba gautas iš nepatikimo šaltinio.
-536|Atnaujinimo manifestas netinkamas.
-537|Slaptafrazė neteisinga arba nepavyksta atverti šifruoto skaidinio.
-538|Mėlyna
-539|Žalsvai mėlyna
-540|Žalia
-541|Geltona
-542|Oranžinė
-543|Raudona
-544|Rožinė
-545|Violetinė
-546|Skalūno
-547|Paketų diegimas
-548|Diekite programas iš .deb, Flatpak ir AppImage failų
-549|Sistemos diegimo programa
-550|Įdiegti MAN šiame kompiuteryje
-551|Sistemos atkūrimas
-552|Kurti ir atkurti sistemos momentines kopijas
-553|Sistemos atnaujinimų diegimo programa
-554|Įdiegti MAN sistemos atnaujinimo failą
-555|Pasiūlo įdiegti MAN, kai prasideda gyvoji sesija
-556|MAN atnaujinimo pranešimas
-557|Kartą po prisijungimo praneša, kad MAN atnaujinta
-558|Nustatykite savo naują MAN kompiuterį
-559|Pirmoji MAN sąranka
-560|MAN atnaujinimai
-561|Praneša, kai išleidžiama nauja MAN versija
+44|Išlaikyti po MAN naujinimų
+45|MAN po kiekvieno naujinimo iš naujo įdiegia programą. Tam saugomi jos paketo failai.
+46|Spustelėkite Įdiegti, kad įdiegtumėte {name}.
+47|Tikrinama, ko dar reikia programai…
+48|Taip pat įdiegia reikalingus paketus: {list}
+49|Kai kurių programai reikalingų paketų dar nėra. Diegimas pirmiausia gauna naujausius paketų sąrašus; jei jų vis tiek trūksta, programos įdiegti negalima.
+50|Diegiama {name}…
+51|Ruošiama…
+52|Išsamiau
+53|Diegiamas paketas…
+54|Programa perkeliama į jos aplanką…
+55|Nepavyko įdiegti programos.
+56|Programa diegiama su Flatpak…
+57|Žurnalas
+58|_Užverti
+59|Diegimas pavyko
+60|Programa įdiegta.
+61|Diegimas nepavyko
+62|_Atverti
+63|_Rodyti išsamiau
+64|Diegimo žurnalas
+65|Programų diegimas
+66|_Atgal
+67|Skaitoma programa…
+68|Įdiegti {name}
+69|Programos
+70|Pasirinkite programą diegti
+71|Nepavyko paleisti sistemos pagelbiklio.
+72|Nepavyko susisiekti su sistemos pagelbikliu.
+73|Ryšys su sistemos pagelbikliu nutrūko.
+74|Įgaliojimas atšauktas.
+75|Šiam veiksmui reikia administratoriaus teisių.
+76|Sistemos pagelbiklis netikėtai sustojo.
+77|Nėra EFI sistemos skaidinio
+78|Laisva tik {free}, MAN reikia {need}. Atlaisvinkite vietos su DUHACH! sistemoje Windows.
+79|Nėra laisvos vietos. Paleiskite DUHACH! sistemoje Windows, kad padarytumėte vietos MAN.
+80|MAN veikia iš šio disko
+81|Naudojamas: prijungtas skaidinys
+82|Per mažas, MAN reikia {need}
+83|Įdiegti MAN
+84|MAN diegiama. Palaukite, kol baigsis.
+85|Kalba
+86|_Paleisti iš naujo šia kalba
+87|Gyvoji sesija bus paleista iš naujo pasirinkta kalba, ir MAN bus įdiegta ta kalba.
+88|Sveiki atvykę į MAN
+89|Greita, atvira ir visiškai pritaikoma GNOME sistema.\nĮdiekite ją šiame kompiuteryje arba toliau tyrinėkite gyvąją sesiją.
+90|Į_diegti MAN…
+91|_Toliau bandyti MAN
+92|Ieškoma diskų…
+93|Sveiki atvykę
+94|Šis kompiuteris paleistas senuoju BIOS režimu. MAN galima įdiegti tik UEFI kompiuteriuose: paleiskite iš naujo ir pasirinkite UEFI paleidimo parinktį.
+95|Sistemos pagelbiklis negrąžino informacijos apie diskus.
+96|  ·  EFI
+97|_Toliau
+98|Ištrinti diską ir įdiegti MAN
+99|Viskas pasirinktame diske bus ištrinta, įskaitant Windows.
+100|Rekomenduojama. Viskas pasirinktame diske bus ištrinta.
+101|Įdiegti šalia Windows
+102|Rekomenduojama. MAN naudoja laisvą vietą šalia Windows; Windows ir jos failai lieka. Sistemą renkatės kaskart paleisdami.
+103|Įdiegti MAN iš naujo
+104|Pakeičia sistemą, bet išsaugo asmeninius failus kataloge /home. Dabartinė sistema išsaugoma kaip momentinė kopija.
+105|Pasirinktiniai skaidiniai
+106|Ekspertams: skaidinius pasirinkite patys arba sukurkite programa Diskai.
+107|Diskas
+108|Pasirinkite diską, kuris bus ištrintas. Netinkami diskai rodomi su priežastimi.
+109|Diskų nerasta
+110|Laisva vieta šalia Windows
+111|Windows skaidiniai neliečiami. MAN dalijasi EFI sistemos skaidiniu ir prideda Windows į savo paleidimo meniu.
+112|laisva {size}
+113|nėra laisvos vietos
+114|{model} (Windows)
+115|Keičiama įdiegtis
+116|nėra namų aplankų
+117|namų aplankai: {list}
+118|momentinės kopijos: {n}
+119|MAN diske {model}
+120|Slaptafrazė įrenginiui {device}
+121|Atrakinti
+122|Nepavyko patikrinti įdiegties.
+123|Skaidiniai
+124|Sistemos skaidinys formatuojamas Btrfs ir turi @system, @home ir @snapshots. Disko, iš kurio veikia MAN, skaidiniai nerodomi.
+125|Atverti Diskus skaidiniams kurti ar jų dydžiui keisti
+126|Atnaujinti skaidinių sąrašą
+127|Pasirinkite skaidinį
+128|EFI sistemos skaidinys
+129|Formatuoti EFI sistemos skaidinį
+130|Palikite išjungtą, kad liktų kitų sistemų paleidyklės
+131|Sistemos skaidinys (formatuojamas Btrfs)
+132|Paleidimo skaidinys (reikalingas šifruojant)
+133|Skaidinių sąrašas atnaujintas
+134|Saugumas
+135|Šifruoti sistemą
+136|Apsaugo jūsų duomenis, jei kompiuteris pamestas ar pavogtas. Slaptafrazės klausiama kaskart paleidžiant.
+137|Slaptafrazė
+138|Patvirtinkite slaptafrazę
+139|Saugokite šią slaptafrazę
+140|Ją pametus niekas negalės atkurti duomenų. Branduolys ir paleidimo failai lieka mažame nešifruotame paleidimo skaidinyje.
+141|Slaptafrazę turi sudaryti bent 8 simboliai.
+142|Slaptafrazės nesutampa.
+143|Pasirinkite diską.
+144|Pasirinkite diską su Windows.
+145|Pasirinkite keičiamą įdiegtį.
+146|Pirmiausia atrakinkite šifruotą įdiegtį.
+147|Šiame skaidinyje nėra MAN sistemos.
+148|Pasirinkite EFI sistemos skaidinį.
+149|Pasirinkite sistemos skaidinį.
+150|EFI ir sistemos skaidiniai turi skirtis.
+151|Šifravimui reikia atskiro paleidimo skaidinio.
+152|Sistemos skaidinys turi būti bent {size}.
+153|EFI skaidinys nesuformatuotas FAT; įjunkite formatavimą.
+154|Sistemos skaidinys prijungtas; pirmiausia atjunkite jį programoje Diskai.
+155|Kur įdiegti MAN?
+156|Laikas ir klaviatūra
+157|Laiko juosta
+158|Klaviatūros išdėstymas
+159|Išbandykite klaviatūrą
+160|Rašykite čia, kad patikrintumėte, ar klavišai rašo teisingus simbolius.
+161|Rašykite čia
+162|Laiko juosta ir klaviatūra
+163|Diskas nepasirinktas
+164|Sistemos skaidinys nepasirinktas
+165|Sistemos skaidinys dingo
+166|Įdiegtis nepasirinkta
+167|Diskas dingo
+168|Peržiūra
+169|Paskirtis
+170|Ištrinti diską ir įdiegti
+171|Pasirinktiniai skaidiniai
+172|Įdiegti iš naujo, išsaugant /home
+173|Šalia Windows
+174| (bus suformatuotas)
+175| (išsaugomas)
+176|Sistemos skaidinys
+177|{partition} (bus suformatuotas)
+178|Paleidimo skaidinys
+179|Vieta MAN
+180|{free} laisvos vietos (sukuriamas paleidimo ir sistemos skaidinys)
+181|Windows
+182|Nepakeista. Ji rodoma MAN paleidimo meniu; EFI sistemos skaidinys bendras.
+183|Šifravimas
+184|Įjungtas (LUKS2)
+185|Išjungtas
+186|Failų sistema
+187|Btrfs: @system skirtas MAN, @home – jūsų failams, @snapshots – atkūrimo taškams. Visi dalijasi laisva vieta.
+188|Sistema
+189|Jūsų paskyra
+190|Sukuriama MAN Setup pirmą kartą paleidus kompiuterį, kartu su kompiuterio pavadinimu, išvaizda ir privatumo nustatymais.
+191|Klaviatūra
+192|Visi duomenys diske {model} ({path}) bus ištrinti.
+193|_Ištrinti ir įdiegti
+194|Pasirinkti skaidiniai bus suformatuoti. Kiti skaidiniai nesikeičia.
+195|_Formatuoti ir įdiegti
+196|Dabartinė sistema pakeičiama. Jūsų failai kataloge /home išsaugomi, o senoji sistema išsaugoma kaip momentinė kopija.
+197|Įdiegti _iš naujo
+198|MAN įdiegiama laisvoje vietoje. Windows ir jos failai nesikeičia.
+199|Paruošta diegti
+200|Ištrinti {model}?
+201|Visi failai ir skaidiniai įrenginyje {path} ({size}) bus negrįžtamai ištrinti. To atšaukti negalima.
+202|Ištrinti ir įdiegti
+203|Formatuoti pasirinktus skaidinius?
+204|Visi duomenys pasirinktuose skaidiniuose bus negrįžtamai ištrinti. Kiti skaidiniai nesikeičia.
+205|Formatuoti ir įdiegti
+206|Įdiegti MAN šalia Windows?
+207|MAN įdiegiama {free} laisvos vietos diske {model} ({path}). Windows ir jos failai nesikeičia.
+208|Įdiegti
+209|Įdiegti MAN iš naujo?
+210|Įdiegta sistema bus pakeista nauja kopija. Asmeniniai failai kataloge /home išsaugomi, o senoji sistema lieka pasiekiama kaip momentinė kopija.
+211|Įdiegti iš naujo
+212|_Atsisakyti
+213|Diegiama MAN
+214|Pradedama…
+215|Diegiama
+216|Žingsnis {index} iš {n}  ·  {title}
+217|MAN įdiegta
+218|Paleiskite kompiuterį iš naujo, kad pradėtumėte naudoti MAN. Kaskart paleidžiant meniu leidžia rinktis MAN arba Windows; laikiną diegimo skaidinį MAN pašalina pirmą kartą paleista.
+219|Paleiskite kompiuterį iš naujo, kad pradėtumėte naudoti MAN. Diegimo laikmeną galite išimti; jei ji lieka prijungta, MAN vis tiek paleidžiama iš naujojo disko.
+220|_Paleisti iš naujo dabar
+221|Atlikta
+222|Diegimas nepavyko
+223|Joks kitas diskas nepakeistas, o diegimo programa atlaisvino paskirties diską. Galite peržiūrėti planą ir bandyti dar kartą.
+224|_Peržiūrėti ir bandyti dar kartą
+225|Ieškoti kalbų
+226|Ieškoti šalių
+227|Sistemos diskas nerastas.
+228|Šifravimui reikia MAN diegimo programos sukurto Btrfs išdėstymo.
+229|Šioje įdiegtyje nėra atskiro paleidimo skaidinio, kurio reikia šifravimui. Norėdami šifruoti, įdiekite MAN iš naujo su „Ištrinti diską“.
+230|MAN Setup
+231|Kur esate?
+232|Jūsų šalis ar regionas nustato datos, laiko ir skaičių formatą.
+233|Šalis
+234|GNU bendroji viešoji licencija, 2 versija
+235|Linux branduolys ir daug sistemos įrankių
+236|GNU bendroji viešoji licencija, 3 versija
+237|Daug GNU ir GNOME programų
+238|GNU mažesnioji bendroji viešoji licencija, 2.1 versija
+239|GTK, GLib ir daug bibliotekų
+240|GNU mažesnioji bendroji viešoji licencija, 3 versija
+241|Bibliotekos
+242|Mozilla viešoji licencija 2.0
+243|Mozilla ir kitų programos bei bibliotekos
+244|Apache licencija 2.0
+245|Bibliotekos ir įrankiai
+246|Licencinė sutartis
+247|Perskaitykite ir priimkite sąlygas, kuriomis teikiama MAN.
+248|Licencijos
+249|Licencijos tekstas neprieinamas ({path}).
+250|Perskaičiau ir priimu licencijos sąlygas
+251|Laidinis
+252|Neprisijungta
+253|Prisijunkite prie interneto
+254|Prisijungusi MAN gali nustatyti laiką ir atnaujinti programinę įrangą. Tai galite padaryti ir vėliau.
+255|Tikrinamas ryšys…
+256|Wi-Fi tinklai
+257|Ieškoti dar kartą
+258|_Praleisti
+259|Prisijungti galite vėliau Nustatymuose.
+260|Prisijungta
+261|Neprisijungta
+262|Tinklų nerasta
+263|Internetas
+264|Prisijungta prie „{ssid}“
+265|Nepavyko prisijungti prie „{ssid}“
+266|Prisijungti prie „{ssid}“
+267|Įveskite tinklo slaptažodį.
+268|_Prisijungti
+269|Susikurkite paskyrą
+270|Būsite šio kompiuterio administratorius su visa root prieiga per sudo.
+271|Vardas ir pavardė
+272|Naudotojo vardas
+273|Slaptažodis
+274|Patvirtinkite slaptažodį
+275|Prisijungti automatiškai
+276|Praleisti prisijungimo ekraną paleidžiant kompiuterį
+277|Esami namų aplankai
+278|Naudokite tą patį naudotojo vardą, kad toliau naudotumėte aplanką iš ankstesnės įdiegties.
+279|Naudoti
+280|Išplėstiniai
+281|Kompiuterio pavadinimas
+282|Nustatyti root slaptažodį
+283|Leidžia prisijungti tiesiogiai kaip root. Be jo naudokite sudo su savo slaptažodžiu.
+284|Root slaptažodis
+285|Patvirtinkite root slaptažodį
+286|Įveskite savo vardą.
+287|Pasirinkite naudotojo vardą.
+288|Šį naudotojo vardą jau naudoja sistema.
+289|Šis naudotojo vardas rezervuotas sistemai.
+290|Naudotojų vardus sudaro mažosios raidės, skaitmenys, - ir _, jie prasideda raide.
+291|Pasirinkite slaptažodį.
+292|Slaptažodžiai nesutampa.
+293|Kompiuterio pavadinime gali būti raidžių, skaitmenų ir brūkšnelių.
+294|Įveskite root slaptažodį du kartus.
+295|Patarimas: 8 ar daugiau simbolių slaptažodis yra daug saugesnis.
+296|Paskyra
+297|Tamsi
+298|Šviesi
+299|Pritaikykite sau
+300|Pasirinkite stilių, akcento spalvą ir darbalaukio foną. Kiekvieną pakeitimą matote iš karto.
+301|Stilius
+302|Akcento spalva
+303|Darbalaukio fonas
+304|Pritaikyti
+305|Privatumas
+306|Pasirinkite, kurios funkcijos gali naudoti informaciją apie jus. Tai bet kada galite pakeisti Nustatymuose.
+307|Vietos tarnybos
+308|Leidžia programoms, pvz., Žemėlapiams ir Orams, nustatyti jūsų apytikslę vietą pagal netoliese esančius Wi-Fi tinklus.
+309|Automatinė laiko juosta
+310|Naudoja jūsų vietą, kad keliaujant laiko juosta būtų teisinga.
+311|_Baigti sąranką
+312|Jūsų diskas užšifruotas
+313|Jūsų duomenys apsaugoti. Slaptafrazės klausiama kaskart paleidžiant kompiuterį.
+314|Disko šifravimas
+315|Šifravimas apsaugo jūsų duomenis, jei kompiuteris pamestas ar pavogtas.
+316|Šioje įdiegtyje neprieinama
+317|Šifravimas apsaugo jūsų failus, jei kompiuteris pamestas ar pavogtas. Be slaptafrazės niekas negali skaityti disko.
+318|Šifruoti diską
+319|Slaptafrazės klausiama kaskart paleidžiant kompiuterį.
+320|Šifravimas prasidės kitą kartą paleidus iš naujo
+321|Tada diskas šifruojamas fone, kol naudojatės kompiuteriu. Pametus slaptafrazę, niekas negalės atkurti duomenų.
+322|Ruošiama MAN
+323|Viskas ruošiama…
+324|_Paleisti iš naujo
+325|_Atgal
+326|Ruošiama
+327|Sąrankos žurnalas
+328|Viskas baigta!
+329|Kažkas nepavyko
+330|Kasdienė
+331|Prieš atnaujinimą
+332|Prieš atkūrimą
+333|Prieš įdiegimą iš naujo
+334|Rankinė
+335|Momentinių kopijų dar nėra
+336|Sukurkite kopiją prieš didesnius sistemos pakeitimus.
+337|Atkurti…
+338|Ištrinti momentinę kopiją
+339|Laisva {free} iš {size}. Sistema, namų aplankai ir momentinės kopijos dalijasi šia vieta; kopijos užima vietos tik tam, kas pasikeitė nuo jų sukūrimo.
+340|_Gerai
+341|Sukurti momentinę kopiją
+342|Išsaugo dabartinę sistemos būseną. Asmeniniai failai namų aplanke neįtraukiami.
+343|Aprašas, pvz., „Prieš diegiant tvarkykles“
+344|_Sukurti
+345|Rankinė momentinė kopija
+346|Ištrinti momentinę kopiją?
+347|„{description}“ iš {date} bus negrįžtamai ištrinta.
+348|_Ištrinti
+349|Atkurti šią momentinę kopiją?
+350|Paleidus iš naujo sistema grįš į „{description}“ iš {date}. Jūsų asmeniniai failai nesikeičia.\n\nDabartinė sistema pirmiausia išsaugoma kaip momentinė kopija, todėl tai galima atšaukti.
+351|_Atkurti
+352|Paleiskite iš naujo, kad baigtumėte atkūrimą
+353|Paleisti iš naujo _vėliau
+354|Paleisti iš naujo _dabar
+355|Momentinės kopijos
+356|Atkūrimo taškai
+357|Momentinės kopijos išsaugo operacinės sistemos būseną. Atkūrus kopiją sistema grįžta į tą akimirką, o tai padeda po nepavykusio atnaujinimo ar nustatymų pakeitimo. Jūsų asmeniniai failai niekada neliečiami.
+358|Automatinės momentinės kopijos
+359|Kasdienės momentinės kopijos
+360|Kartą per dieną, kol kompiuteris įjungtas
+361|Kiek kasdienių kopijų laikyti
+362|Prieš programinės įrangos atnaujinimus
+363|Kuriamos automatiškai diegiant, atnaujinant ar šalinant paketus
+364|Kiek atnaujinimų kopijų laikyti
+365|Saugykla
+366|Vieta diske
+367|Jei MAN nepasileidžia
+368|Paleidimo meniu pasirinkite „Restore a MAN snapshot“, kad atgautumėte veikiančią sistemą.
+369|Momentinės kopijos neprieinamos
+370|Momentinės kopijos veikia MAN, įdiegtoje su MAN diegimo programos Btrfs išdėstymu. Ši sistema (pvz., gyvoji sesija) jo nenaudoja.
+371|Laukia atkūrimas: paleiskite kompiuterį iš naujo, kad jį baigtumėte
+372|Paleisti iš naujo dabar
+373|Palaukite, kol baigsis dabartinis veiksmas.
+374|Ieškoti
+375|Kopijuoti į iškarpinę
+376|Suderintasis pasaulinis laikas
+377|Anglų (JAV)
+378|Išleista MAN {version}!
+379|Galite į ją atnaujinti.
+380|Atverti atnaujinimus
+381|Tikrinamas atnaujinimas
+382|Tikrinama, ar atnaujinimas tikras ir pilnas…
+383|MAN atnaujinimas
+384|Šio atnaujinimo įdiegti negalima
+385|Nepavyko perskaityti atnaujinimo.
+386|Atnaujinimas iš {name} {version}
+387|Įdiegta {name} {version}
+388|Išleista
+389|Atsiuntimo dydis
+390|Reikia vietos
+391|Autentiškumas
+392|Patikrinta, pasirašė „{signer}“
+393|Kas naujo
+394|Šis atnaujinimas nėra naujesnis už įdiegtą {name} {version}.
+395|Atnaujinimas
+396|Perskaitykite šio atnaujinimo licencijos sąlygas.
+397|Priimu licencijos sąlygas
+398|Kur įdiegti atnaujinimą?
+399|Sistema pakeičiama; failai jūsų namų aplanke neliečiami.
+400|Pasirinkite įdiegtį.
+401|veikia dabar
+402|{name} {version} šiame kompiuteryje
+403|{name} diske {model}
+404|MAN įdiegties nerasta
+405|Atnaujinimai diegiami iš veikiančios, įdiegtos MAN sistemos, ne iš gyvosios sesijos.
+406|Įdiegties vieta
+407|Išsaugoma
+408|Jūsų failai
+409|Viskas jūsų namų aplanke
+410|Paskyros ir slaptažodžiai
+411|Naudotojai, grupės, kompiuterio pavadinimas
+412|Ryšiai ir nustatymai
+413|Wi-Fi, laiko juosta, klaviatūra, išvaizda ir momentinės kopijos
+414|Flatpak programos
+415|Taip pat viskas kataloguose /usr/local ir /opt
+416|Pakeičiama
+417|Su apt įdiegta programinė įranga ir kiti sistemos failų pakeitimai pakeičiami naująja sistema.
+418|Operacinė sistema
+419|Pakeičiama į {name} {version}. Dabartinę sistemą galima atkurti iš momentinės kopijos.
+420|Kompiuteris paleidžiamas iš naujo atnaujinimui įdiegti
+421|Paruošusi MAN pasileidžia iš naujo, per kelias sekundes įdiegia atnaujinimą ir vėl pasileidžia iš naujo.
+422|Į_diegti atnaujinimą
+423|Pirma sukurti momentinę kopiją?
+424|Momentinė kopija išsaugo dabartinę sistemą, kad galėtumėte grįžti, jei po atnaujinimo kas nors neveiks. Rekomenduojama.
+425|_Nekurti
+426|_Sukurti momentinę kopiją
+427|Ruošiama {name} {version}
+428|Paleisti iš naujo ir įdiegti
+429|Kompiuteris bus paleistas iš naujo du kartus. Jūsų failai saugūs.
+430|Automatiškai paleidžiama iš naujo po {r} s
+431|Automatiškai paleidžiama iš naujo po 30 s
+432|Atnaujinimas bus įdiegtas kitą kartą paleidus iš naujo.
+433|Paruošta
+434|Nepavyko paruošti atnaujinimo
+435|Jūsų sistemoje niekas nepakeista.
+436|_Bandyti dar kartą
+437|Atnaujinimo žurnalas
+438|Nepavyko
+439|Jūsų sistema atnaujinta
+440|MAN atnaujinta į versiją {version}.\nAnksčiau: MAN {previous}.
+441|_Atlikta
+442|Atverti MAN atnaujinimą
+443|MAN atnaujinimai
+444|Gaunami naujausi paketų sąrašai…
+445|Kopijuojama programa
+446|Programa pridedama prie meniu
+447|Failas nerastas.
+448|Nepavyko įdiegti paketo.
+449|Programos meniu įrašas netinkamas.
+450|Tikrinamas diegimo planas
+451|Ruošiamas diskas
+452|MAN kopijuojama į diską
+453|Konfigūruojama naujoji sistema
+454|Diegiama paleidyklė
+455|Kuriama pirmoji momentinė kopija
+456|Baigiama
+457|Šalinami seni skaidinių parašai
+458|Kuriami skaidiniai
+459|Formatuojamas EFI sistemos skaidinys
+460|Šifruojamas sistemos skaidinys
+461|Formatuojamas paleidimo skaidinys
+462|Kuriama Btrfs failų sistema
+463|Šalinami seni failų sistemų parašai
+464|Atrakinama šifruota įdiegtis
+465|Dabartinė sistema išsaugoma kaip momentinė kopija
+466|Šalinama ankstesnė sistema
+467|Rašoma failų sistemų lentelė
+468|Nustatomas kompiuterio pavadinimas ir tapatybė
+469|Šalinamos gyvosios sesijos paskyros
+470|Kuriama jūsų paskyra
+471|MAN Setup ruošiama pirmam paleidimui
+472|Nustatoma laiko juosta ir klaviatūra
+473|Diegimo programa šalinama iš naujosios sistemos
+474|Kuriamas paleidimo atvaizdas (initramfs)
+475|Konfigūruojamas GRUB
+476|GRUB diegiama į EFI sistemos skaidinį
+477|Diegiama atsarginė paleidyklė
+478|Rašomas paleidimo meniu
+479|Diskas paruoštas
+480|Kuriama naujosios sistemos momentinė kopija
+481|Momentinė kopija pridedama į paleidimo meniu
+482|Atjungiama
+483|Diegimo programos pagelbiklis turi veikti kaip root.
+484|Šis kompiuteris nepaleistas UEFI režimu. MAN reikia UEFI.
+485|Naudotojo vardas netinkamas.
+486|Reikia slaptažodžio.
+487|Kompiuterio pavadinimas netinkamas.
+488|Nežinoma kalba.
+489|Šifravimo slaptafrazę turi sudaryti bent 8 simboliai.
+490|Diskas pasikeitė po to, kai patvirtinote diegimą. Niekas nepakeista; peržiūrėkite ir patvirtinkite dar kartą.
+491|Pasirinkite sistemos skaidinį.
+492|Patvirtintame diske nėra pasirinkto sistemos skaidinio.
+493|Paleidimo skaidinys turi būti atskiras nuo EFI ir sistemos skaidinių.
+494|Paleidimo skaidinys turi būti bent 512 MB.
+495|Įdiegtis nepasirinkta.
+496|Patvirtintame diske nėra pasirinktos įdiegties.
+497|Šifruota įdiegtis neturi MAN_BOOT skaidinio.
+498|Kataloge /boot nerastas branduolys su atitinkamais moduliais.
+499|Kalbą turi keisti sistemos pagelbiklis.
+500|Taikomi jūsų nustatymai
+501|Ruošiamas disko šifravimas
+502|Baigiama
+503|MAN Setup turi baigti sistemos pagelbiklis.
+504|MAN Setup šiame kompiuteryje jau atlikta.
+505|Nežinoma akcento spalva.
+506|Pasirinktas darbalaukio fonas neprieinamas.
+507|Šios sistemos šifruoti negalima.
+508|Trūksta sąrankos rakto, todėl šifravimas negali tęstis fone.
+509|Sistema neįdiegta Btrfs, todėl momentinės kopijos neprieinamos.
+510|Momentinės kopijos atkūrimas laukia paleidimo iš naujo. Pirmiausia paleiskite kompiuterį iš naujo, kad jį baigtumėte.
+511|Netinkamas momentinės kopijos ID.
+512|Tikrinamas atnaujinimas
+513|Kuriama momentinė kopija
+514|Ruošiama atnaujinimo sritis
+515|Išpakuojama naujoji sistema
+516|Perkeliamos jūsų paskyros ir nustatymai
+517|Ruošiamas paleidimas iš naujo
+518|Išpakuota
+519|Paskyros
+520|Iš naujo diegiamos išlaikytos programos
+521|Šalinama tik diegimo programai skirta programinė įranga
+522|Kuriamas atnaujinimo paleidimo atvaizdas
+523|Pridedamas vienkartinis paleidimo įrašas
+524|Atnaujinimas tikras
+525|Momentinė kopija sukurta
+526|Praleista
+527|Atnaujinimo sritis paruošta
+528|Ruošiama naujoji sistema
+529|Atnaujinimo failas sugadintas (kontrolinė suma nesutampa). Atsisiųskite jį dar kartą.
+530|Nepavyko perskaityti viso atnaujinimo failo.
+531|Atnaujinime nėra branduolio.
+532|Atnaujinimus turi diegti sistemos pagelbiklis.
+533|Pasirinkta įdiegtis nerasta.
+534|Atnaujinti galima tik veikiančią MAN įdiegtį.
+535|Tai ne MAN atnaujinimo failas (nėra manifesto).
+536|Atnaujinimas nepasirašytas, todėl juo pasitikėti negalima.
+537|Atnaujinimo parašas sugadintas.
+538|Atnaujinimo nepasirašė MAN. Jis galėjo būti pakeistas arba gautas iš nepatikimo šaltinio.
+539|Atnaujinimo manifestas netinkamas.
+540|Slaptafrazė neteisinga arba nepavyksta atverti šifruoto skaidinio.
+541|Mėlyna
+542|Žalsvai mėlyna
+543|Žalia
+544|Geltona
+545|Oranžinė
+546|Raudona
+547|Rožinė
+548|Violetinė
+549|Skalūno
+550|Paketų diegimas
+551|Diekite programas iš .deb, Flatpak ir AppImage failų
+552|Sistemos diegimo programa
+553|Įdiegti MAN šiame kompiuteryje
+554|Sistemos atkūrimas
+555|Kurti ir atkurti sistemos momentines kopijas
+556|Sistemos atnaujinimų diegimo programa
+557|Įdiegti MAN sistemos atnaujinimo failą
+558|Pasiūlo įdiegti MAN, kai prasideda gyvoji sesija
+559|MAN atnaujinimo pranešimas
+560|Kartą po prisijungimo praneša, kad MAN atnaujinta
+561|Nustatykite savo naują MAN kompiuterį
+562|Pirmoji MAN sąranka
+563|MAN atnaujinimai
+564|Praneša, kai išleidžiama nauja MAN versija

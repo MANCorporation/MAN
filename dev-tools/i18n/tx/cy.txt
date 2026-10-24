@@ -30,7 +30,7 @@
 29|Gwefan
 30|Ffeil
 31|Mae'r ap hwn wedi'i osod yn barod. Bydd ei osod eto yn ei ddisodli.
-32|Mae apiau o becynnau .deb yn dod yn rhan o'r system. Pan fydd MAN yn cael ei ddiweddaru maen nhw'n cael eu tynnu ac mae angen eu gosod eto. Mae apiau Flatpak ac AppImages yn cael eu cadw.
+32|Mae apiau o becynnau .deb yn dod yn rhan o'r system. Mae diweddariad MAN yn disodli'r system, felly dim ond os byddwch yn eu cadw y cânt eu gosod eto ar ôl diweddariad (camau nesaf).
 33|Gosodwch apiau o ffynonellau rydych chi'n ymddiried ynddyn nhw yn unig.
 34|Ble ydych chi am osod {name}?
 35|Dim ond eich cyfrif chi all ddefnyddio'r ap.
@@ -42,521 +42,524 @@
 41|Mae'r ap yn cael ei osod ar gyfer holl ddefnyddwyr y cyfrifiadur hwn.
 42|Mae'r ap yn cael ei osod i chi'n unig.
 43|Mae'r AppImage yn cael ei symud i {folder} a'i ychwanegu at eich apiau.
-44|Cliciwch Gosod i osod {name}.
-45|Yn gwirio beth arall sydd ei angen ar yr ap…
-46|Mae hefyd yn gosod y pecynnau sydd eu hangen arno: {list}
-47|Nid yw rhai pecynnau sydd eu hangen ar yr ap ar gael eto. Mae'r gosod yn nôl y rhestrau pecynnau diweddaraf yn gyntaf; os ydyn nhw'n dal ar goll, nid oes modd gosod yr ap.
-48|Yn gosod {name}…
-49|Yn paratoi…
-50|Manylion
-51|Yn gosod y pecyn…
-52|Yn symud yr ap i'w ffolder…
-53|Methu gosod yr ap.
-54|Yn gosod yr ap gyda Flatpak…
-55|Log
-56|_Cau
-57|Roedd y Gosod yn Llwyddiannus
-58|Mae'r ap wedi'i osod.
-59|Methodd y Gosod
-60|_Agor
-61|_Dangos manylion
-62|Log gosod
-63|Gosodwr Apiau
-64|Yn Ô_l
-65|Yn darllen yr ap…
-66|Gosod {name}
-67|Apiau
-68|Dewis Ap i'w Osod
-69|Methu cychwyn cynorthwyydd y system.
-70|Methu cyfathrebu â chynorthwyydd y system.
-71|Collwyd cysylltiad â chynorthwyydd y system.
-72|Diddymwyd yr awdurdodi.
-73|Mae angen hawliau gweinyddwr ar gyfer y weithred hon.
-74|Daeth cynorthwyydd y system i ben yn annisgwyl.
-75|Dim rhaniad system EFI
-76|Dim ond {free} yn rhydd, mae MAN angen {need}. Gwnewch le gyda DUHACH! yn Windows.
-77|Dim lle rhydd. Dechreuwch DUHACH! yn Windows i wneud lle i MAN.
-78|Mae MAN yn rhedeg o'r ddisg hon
-79|Yn cael ei ddefnyddio: mae rhaniad wedi'i osod
-80|Rhy fach, mae MAN angen {need}
-81|Gosod MAN
-82|Mae MAN yn cael ei osod. Arhoswch nes iddo orffen.
-83|Iaith
-84|_Ailgychwyn yn yr iaith hon
-85|Mae'r sesiwn fyw yn ailgychwyn yn yr iaith a ddewiswyd, ac mae MAN yn cael ei osod ynddi.
-86|Croeso i MAN
-87|System GNOME gyflym, agored a chwbl addasadwy.\nGosodwch hi ar y cyfrifiadur hwn, neu daliwch ati i archwilio'r sesiwn fyw.
-88|_Gosod MAN…
-89|_Dal ati i roi cynnig ar MAN
-90|Yn chwilio am ddisgiau…
-91|Croeso
-92|Cafodd y cyfrifiadur hwn ei gychwyn yn y modd BIOS hŷn. Dim ond ar gyfrifiaduron UEFI y gellir gosod MAN: ailgychwynnwch a dewis yr opsiwn cychwyn UEFI.
-93|Ni ddychwelodd cynorthwyydd y system wybodaeth am ddisgiau.
-94|  ·  EFI
-95|_Nesaf
-96|Dileu'r ddisg a gosod MAN
-97|Mae popeth ar y ddisg a ddewiswyd yn cael ei ddileu, gan gynnwys Windows.
-98|Argymhellir. Mae popeth ar y ddisg a ddewiswyd yn cael ei ddileu.
-99|Gosod wrth ochr Windows
-100|Argymhellir. Mae MAN yn defnyddio'r lle rhydd wrth ochr Windows; mae Windows a'i ffeiliau'n aros. Dewiswch y system bob tro y byddwch yn cychwyn.
-101|Ailosod MAN
-102|Yn disodli'r system ond yn cadw ffeiliau personol yn /home. Mae'r system bresennol yn cael ei chadw fel ciplun.
-103|Rhaniadau personol
-104|I arbenigwyr: dewiswch raniadau eich hun, neu eu creu gyda Disgiau.
-105|Disg
-106|Dewiswch y ddisg i'w dileu. Mae disgiau na ellir eu defnyddio yn cael eu dangos gyda'r rheswm.
-107|Ni chafwyd hyd i ddisgiau
-108|Lle rhydd wrth ochr Windows
-109|Nid yw rhaniadau Windows yn cael eu cyffwrdd. Mae MAN yn rhannu rhaniad system EFI ac yn ychwanegu Windows at ei ddewislen gychwyn.
-110|{size} yn rhydd
-111|dim lle rhydd
-112|{model} (Windows)
-113|Gosodiad i'w ddisodli
-114|dim ffolderi cartref
-115|ffolderi cartref: {list}
-116|cipluniau: {n}
-117|MAN ar {model}
-118|Cyfrinymadrodd ar gyfer {device}
-119|Datgloi
-120|Methu archwilio'r gosodiad.
-121|Rhaniadau
-122|Mae rhaniad y system yn cael ei fformatio gyda Btrfs ac yn dal @system, @home ac @snapshots. Nid yw rhaniadau ar y ddisg y mae MAN yn rhedeg ohoni yn cael eu rhestru.
-123|Agor Disgiau i greu neu newid maint rhaniadau
-124|Adnewyddu'r rhestr rhaniadau
-125|Dewiswch raniad
-126|Rhaniad system EFI
-127|Fformatio rhaniad system EFI
-128|Gadewch i ffwrdd i gadw llwythwyr cychwyn systemau eraill
-129|Rhaniad system (fformatir fel Btrfs)
-130|Rhaniad cychwyn (angen gydag amgryptio)
-131|Rhestr rhaniadau wedi'i hadnewyddu
-132|Diogelwch
-133|Amgryptio'r system
-134|Yn diogelu eich data os collir neu y dygir y cyfrifiadur. Gofynnir am gyfrinymadrodd bob tro y bydd yn cychwyn.
-135|Cyfrinymadrodd
-136|Cadarnhau'r cyfrinymadrodd
-137|Cadwch y cyfrinymadrodd hwn yn ddiogel
-138|Os caiff ei golli, ni all neb adfer y data. Mae'r cnewyllyn a'r ffeiliau cychwyn yn aros ar raniad cychwyn bach heb ei amgryptio.
-139|Rhaid i'r cyfrinymadrodd fod ag o leiaf 8 nod.
-140|Nid yw'r cyfrinymadroddion yn cyfateb.
-141|Dewiswch ddisg.
-142|Dewiswch y ddisg sydd â Windows.
-143|Dewiswch y gosodiad i'w ddisodli.
-144|Datglowch y gosodiad wedi'i amgryptio yn gyntaf.
-145|Nid oes system MAN ar y rhaniad hwn.
-146|Dewiswch raniad system EFI.
-147|Dewiswch raniad y system.
-148|Rhaid i'r rhaniad EFI a rhaniad y system fod yn wahanol.
-149|Mae amgryptio angen rhaniad cychwyn ar wahân.
-150|Rhaid i raniad y system fod yn {size} o leiaf.
-151|Nid yw'r rhaniad EFI wedi'i fformatio fel FAT; trowch fformatio ymlaen.
-152|Mae rhaniad y system wedi'i osod; datgysylltwch ef yn Disgiau yn gyntaf.
-153|Ble dylid gosod MAN?
-154|Amser a bysellfwrdd
-155|Cylchfa amser
-156|Cynllun bysellfwrdd
-157|Profi eich bysellfwrdd
-158|Teipiwch yma i wirio bod eich bysellau'n rhoi'r nodau cywir.
-159|Teipiwch yma
-160|Cylchfa amser a bysellfwrdd
-161|Dim disg wedi'i dewis
-162|Dim rhaniad system wedi'i ddewis
-163|Diflannodd rhaniad y system
-164|Dim gosodiad wedi'i ddewis
-165|Diflannodd y ddisg
-166|Adolygu
-167|Cyrchfan
-168|Dileu'r ddisg a gosod
-169|Rhaniadau personol
-170|Ailosod, gan gadw /home
-171|Wrth ochr Windows
-172| (bydd yn cael ei fformatio)
-173| (yn cael ei gadw)
-174|Rhaniad system
-175|{partition} (bydd yn cael ei fformatio)
-176|Rhaniad cychwyn
-177|Lle i MAN
-178|{free} o le rhydd (mae rhaniad cychwyn a rhaniad y system yn cael eu creu)
-179|Windows
-180|Heb newid. Mae'n ymddangos yn newislen gychwyn MAN; mae rhaniad system EFI yn cael ei rannu.
-181|Amgryptio
-182|Ymlaen (LUKS2)
-183|I ffwrdd
-184|System ffeiliau
-185|Btrfs: @system i MAN, @home i'ch ffeiliau, @snapshots i bwyntiau adfer. Maen nhw i gyd yn rhannu'r lle rhydd.
-186|System
-187|Eich cyfrif
-188|Yn cael ei greu yn MAN Setup pan fydd y cyfrifiadur yn cychwyn am y tro cyntaf, ynghyd ag enw'r cyfrifiadur, golwg a gosodiadau preifatrwydd.
-189|Bysellfwrdd
-190|Bydd yr holl ddata ar {model} ({path}) yn cael ei ddileu.
-191|_Dileu a gosod
-192|Bydd y rhaniadau a ddewiswyd yn cael eu fformatio. Nid yw rhaniadau eraill yn newid.
-193|_Fformatio a gosod
-194|Mae'r system bresennol yn cael ei disodli. Mae eich ffeiliau yn /home yn cael eu cadw, ac mae'r hen system yn cael ei chadw fel ciplun.
-195|_Ailosod
-196|Mae MAN yn cael ei osod yn y lle rhydd. Nid yw Windows a'i ffeiliau'n newid.
-197|Yn barod i osod
-198|Dileu {model}?
-199|Bydd pob ffeil a rhaniad ar {path} ({size}) yn cael eu dileu'n barhaol. Ni ellir dadwneud hyn.
-200|Dileu a gosod
-201|Fformatio'r rhaniadau a ddewiswyd?
-202|Bydd yr holl ddata ar y rhaniadau a ddewiswyd yn cael ei ddileu'n barhaol. Nid yw rhaniadau eraill yn newid.
-203|Fformatio a gosod
-204|Gosod MAN wrth ochr Windows?
-205|Mae MAN yn cael ei osod yn y {free} o le rhydd ar {model} ({path}). Nid yw Windows a'i ffeiliau'n newid.
-206|Gosod
-207|Ailosod MAN?
-208|Bydd y system a osodwyd yn cael ei disodli gan gopi newydd. Mae ffeiliau personol yn /home yn cael eu cadw ac mae'r hen system ar gael fel ciplun.
-209|Ailosod
-210|_Diddymu
-211|Yn gosod MAN
-212|Yn cychwyn…
-213|Yn gosod
-214|Cam {index} o {n}  ·  {title}
-215|Mae MAN wedi'i osod
-216|Ailgychwynnwch y cyfrifiadur i ddechrau defnyddio MAN. Mae dewislen bob tro y byddwch yn cychwyn yn gadael i chi ddewis MAN neu Windows; mae MAN yn tynnu rhaniad dros dro y gosodwr wrth gychwyn am y tro cyntaf.
-217|Ailgychwynnwch y cyfrifiadur i ddechrau defnyddio MAN. Gallwch dynnu'r cyfrwng gosod; os yw'n aros wedi'i gysylltu, mae MAN yn dal i gychwyn o'r ddisg newydd.
-218|_Ailgychwyn nawr
-219|Wedi gorffen
-220|Methodd y gosod
-221|Ni newidiwyd unrhyw ddisg arall, ac mae'r gosodwr wedi rhyddhau'r ddisg darged. Gallwch adolygu'r cynllun a rhoi cynnig arall arni.
-222|_Adolygu a cheisio eto
-223|Chwilio ieithoedd
-224|Chwilio gwledydd
-225|Ni chafwyd hyd i ddisg y system.
-226|Mae amgryptio angen y cynllun Btrfs a grëwyd gan osodwr MAN.
-227|Nid oes gan y gosodiad hwn raniad cychwyn ar wahân, sydd ei angen ar gyfer amgryptio. Ailosodwch MAN gyda “Dileu'r ddisg” i ddefnyddio amgryptio.
-228|MAN Setup
-229|Ble ydych chi?
-230|Mae eich gwlad neu ranbarth yn pennu fformat dyddiadau, amser a rhifau.
-231|Gwlad
-232|Trwydded Gyhoeddus Gyffredinol GNU, fersiwn 2
-233|Cnewyllyn Linux a llawer o offer system
-234|Trwydded Gyhoeddus Gyffredinol GNU, fersiwn 3
-235|Llawer o raglenni GNU a GNOME
-236|Trwydded Gyhoeddus Gyffredinol Lai GNU, fersiwn 2.1
-237|GTK, GLib a llawer o lyfrgelloedd
-238|Trwydded Gyhoeddus Gyffredinol Lai GNU, fersiwn 3
-239|Llyfrgelloedd
-240|Trwydded Gyhoeddus Mozilla 2.0
-241|Rhaglenni a llyfrgelloedd gan Mozilla ac eraill
-242|Trwydded Apache 2.0
-243|Llyfrgelloedd ac offer
-244|Cytundeb trwydded
-245|Darllenwch a derbyn yr amodau y darperir MAN odanynt.
-246|Trwyddedau
-247|Nid yw testun y drwydded ar gael ({path}).
-248|Rwyf wedi darllen ac yn derbyn amodau'r drwydded
-249|Gwifrog
-250|Heb gysylltu
-251|Cysylltu â'r rhyngrwyd
-252|Gyda chysylltiad, gall MAN osod yr amser a chadw eich meddalwedd yn gyfoes. Gallwch wneud hyn yn nes ymlaen hefyd.
-253|Yn gwirio'r cysylltiad…
-254|Rhwydweithiau Wi-Fi
-255|Chwilio eto
-256|_Hepgor
-257|Gallwch gysylltu yn nes ymlaen yn y Gosodiadau.
-258|Wedi cysylltu
-259|Heb gysylltu
-260|Ni chafwyd hyd i rwydweithiau
-261|Rhyngrwyd
-262|Wedi cysylltu â “{ssid}”
-263|Methu cysylltu â “{ssid}”
-264|Cysylltu â “{ssid}”
-265|Rhowch gyfrinair y rhwydwaith.
-266|C_ysylltu
-267|Crëwch eich cyfrif
-268|Chi fydd gweinyddwr y cyfrifiadur hwn, gyda mynediad root llawn drwy sudo.
-269|Enw llawn
-270|Enw defnyddiwr
-271|Cyfrinair
-272|Cadarnhau'r cyfrinair
-273|Mewngofnodi'n awtomatig
-274|Hepgor y sgrin fewngofnodi pan fydd y cyfrifiadur yn cychwyn
-275|Ffolderi cartref sy'n bodoli
-276|Defnyddiwch yr un enw defnyddiwr i ddal ati i ddefnyddio ffolder o osodiad blaenorol.
-277|Defnyddio
-278|Uwch
-279|Enw'r cyfrifiadur
-280|Gosod cyfrinair root
-281|Yn caniatáu mewngofnodi'n uniongyrchol fel root. Hebddo, defnyddiwch sudo gyda'ch cyfrinair eich hun.
-282|Cyfrinair root
-283|Cadarnhau'r cyfrinair root
-284|Rhowch eich enw.
-285|Dewiswch enw defnyddiwr.
-286|Mae'r system eisoes yn defnyddio'r enw defnyddiwr hwn.
-287|Mae'r enw defnyddiwr hwn wedi'i gadw gan y system.
-288|Mae enwau defnyddwyr yn defnyddio llythrennau bach, digidau, - a _, ac yn dechrau gyda llythyren.
-289|Dewiswch gyfrinair.
-290|Nid yw'r cyfrineiriau'n cyfateb.
-291|Gall enw'r cyfrifiadur gynnwys llythrennau, digidau a chysylltnodau.
-292|Rhowch y cyfrinair root ddwywaith.
-293|Awgrym: mae cyfrinair ag 8 nod neu fwy yn llawer mwy diogel.
-294|Cyfrif
-295|Tywyll
-296|Golau
-297|Gwnewch e'n eiddo i chi
-298|Dewiswch arddull, lliw acen a phapur wal. Rydych yn gweld pob newid ar unwaith.
-299|Arddull
-300|Lliw acen
-301|Papur wal
-302|Addasu
-303|Preifatrwydd
-304|Dewiswch pa nodweddion gaiff ddefnyddio gwybodaeth amdanoch. Gallwch newid hyn unrhyw bryd yn y Gosodiadau.
-305|Gwasanaethau lleoliad
-306|Yn gadael i apiau fel Mapiau a Thywydd ddod o hyd i'ch lleoliad bras drwy rwydweithiau Wi-Fi cyfagos.
-307|Cylchfa amser awtomatig
-308|Yn defnyddio eich lleoliad i gadw'r gylchfa amser yn gywir wrth deithio.
-309|_Gorffen y gosod
-310|Mae eich disg wedi'i hamgryptio
-311|Mae eich data wedi'i ddiogelu. Gofynnir am y cyfrinymadrodd bob tro y bydd y cyfrifiadur yn cychwyn.
-312|Amgryptio disg
-313|Mae amgryptio'n diogelu eich data os collir neu y dygir y cyfrifiadur.
-314|Ddim ar gael ar y gosodiad hwn
-315|Mae amgryptio'n diogelu eich ffeiliau os collir neu y dygir y cyfrifiadur. Heb y cyfrinymadrodd, ni all neb ddarllen y ddisg.
-316|Amgryptio'r ddisg
-317|Gofynnir am y cyfrinymadrodd bob tro y bydd y cyfrifiadur yn cychwyn.
-318|Mae amgryptio'n dechrau wrth ailgychwyn nesaf
-319|Yna mae eich disg yn cael ei hamgryptio yn y cefndir tra byddwch yn defnyddio'r cyfrifiadur. Os collir y cyfrinymadrodd, ni all neb adfer y data.
-320|Yn paratoi MAN
-321|Yn paratoi popeth…
-322|_Ailgychwyn
-323|_Nôl
-324|Yn paratoi
-325|Log gosod
-326|Popeth yn barod!
-327|Aeth rhywbeth o'i le
-328|Dyddiol
-329|Cyn diweddaru
-330|Cyn adfer
-331|Cyn ailosod
-332|Â llaw
-333|Dim cipluniau eto
-334|Crëwch un cyn gwneud newidiadau mawr i'r system.
-335|Adfer…
-336|Dileu'r ciplun
-337|{free} yn rhydd o {size}. Mae'r system, ffolderi cartref a chipluniau'n rhannu'r lle hwn; mae cipluniau ond yn defnyddio lle ar gyfer yr hyn sydd wedi newid ers iddyn nhw gael eu cymryd.
-338|_Iawn
-339|Creu ciplun
-340|Yn cadw cyflwr presennol y system. Nid yw eich ffeiliau personol yn y ffolder cartref wedi'u cynnwys.
-341|Disgrifiad, er enghraifft “Cyn gosod gyrwyr”
-342|_Creu
-343|Ciplun â llaw
-344|Dileu'r ciplun?
-345|Bydd “{description}” o {date} yn cael ei ddileu'n barhaol.
-346|_Dileu
-347|Adfer y ciplun hwn?
-348|Bydd y system yn dychwelyd i “{description}” o {date} ar ôl ailgychwyn. Nid yw eich ffeiliau personol yn newid.\n\nMae'r system bresennol yn cael ei chadw fel ciplun yn gyntaf, felly gellir dadwneud hyn.
-349|_Adfer
-350|Ailgychwynnwch i orffen adfer
-351|Ailgychwyn _wedyn
-352|Ailgychwyn _nawr
-353|Cipluniau
-354|Pwyntiau adfer
-355|Mae cipluniau'n cadw cyflwr y system weithredu. Mae adfer un yn dod â'r system yn ôl i'r adeg honno, sy'n helpu ar ôl diweddariad neu newid gosodiadau gwael. Nid yw eich ffeiliau personol byth yn cael eu cyffwrdd.
-356|Cipluniau awtomatig
-357|Cipluniau dyddiol
-358|Unwaith y dydd tra bydd y cyfrifiadur ymlaen
-359|Cipluniau dyddiol i'w cadw
-360|Cyn diweddariadau meddalwedd
-361|Yn cael eu cymryd yn awtomatig pan fydd pecynnau'n cael eu gosod, eu huwchraddio neu eu tynnu
-362|Cipluniau diweddaru i'w cadw
-363|Storfa
-364|Lle ar ddisg
-365|Os nad yw MAN yn cychwyn
-366|Dewiswch “Restore a MAN snapshot” yn y ddewislen gychwyn i gael system sy'n gweithio'n ôl.
-367|Nid yw cipluniau ar gael
-368|Mae cipluniau'n gweithio ar MAN a osodwyd gyda chynllun Btrfs gosodwr MAN. Nid yw'r system hon (er enghraifft sesiwn fyw) yn ei ddefnyddio.
-369|Mae adfer yn aros: ailgychwynnwch y cyfrifiadur i'w orffen
-370|Ailgychwyn nawr
-371|Arhoswch nes i'r weithred bresennol orffen.
-372|Chwilio
-373|Copïo i'r clipfwrdd
-374|Amser Cyffredinol Cydlynol
-375|Saesneg (UDA)
-376|Mae MAN {version} wedi'i ryddhau!
-377|Gallwch ddiweddaru iddo.
-378|Agor Diweddariadau
-379|Yn gwirio'r diweddariad
-380|Yn sicrhau bod y diweddariad yn ddilys ac yn gyflawn…
-381|Diweddariad MAN
-382|Ni ellir gosod y diweddariad hwn
-383|Methu darllen y diweddariad.
-384|Diweddariad o {name} {version}
-385|Mae {name} {version} wedi'i osod
-386|Rhyddhawyd
-387|Maint llwytho i lawr
-388|Lle sydd ei angen
-389|Dilysrwydd
-390|Wedi'i ddilysu, wedi'i lofnodi gan “{signer}”
-391|Beth sy'n newydd
-392|Nid yw'r diweddariad hwn yn fwy newydd na {name} {version} sydd wedi'i osod.
-393|Diweddariad
-394|Darllenwch amodau trwydded y diweddariad hwn.
-395|Rwy'n derbyn amodau'r drwydded
-396|Ble dylid gosod y diweddariad?
-397|Mae'r system yn cael ei disodli; nid yw ffeiliau yn eich ffolder cartref yn cael eu cyffwrdd.
-398|Dewiswch osodiad.
-399|yn rhedeg nawr
-400|{name} {version} ar y cyfrifiadur hwn
-401|{name} ar {model}
-402|Ni chafwyd hyd i osodiad MAN
-403|Mae diweddariadau'n cael eu gosod o system MAN sydd wedi'i gosod ac sy'n rhedeg, nid o'r sesiwn fyw.
-404|Lleoliad y gosodiad
-405|Yn cael ei gadw
-406|Eich ffeiliau
-407|Popeth yn eich ffolder cartref
-408|Cyfrifon a chyfrineiriau
-409|Defnyddwyr, grwpiau, enw'r cyfrifiadur
-410|Cysylltiadau a gosodiadau
-411|Wi-Fi, cylchfa amser, bysellfwrdd, golwg a chipluniau
-412|Apiau Flatpak
-413|Yn ogystal â phopeth yn /usr/local a /opt
-414|Yn cael ei ddisodli
-415|Mae meddalwedd a osodwyd gydag apt a newidiadau eraill i ffeiliau'r system yn cael eu disodli gan y system newydd.
-416|Y system weithredu
-417|Yn cael ei disodli gan {name} {version}. Gellir adfer y system bresennol o giplun.
-418|Mae'r cyfrifiadur yn ailgychwyn i osod y diweddariad
-419|Ar ôl paratoi, mae MAN yn ailgychwyn, yn gosod y diweddariad mewn ychydig eiliadau ac yn ailgychwyn eto.
-420|_Gosod y diweddariad
-421|Creu ciplun yn gyntaf?
-422|Mae ciplun yn cadw'r system bresennol, fel y gallwch fynd yn ôl ati os nad yw rhywbeth yn gweithio ar ôl y diweddariad. Argymhellir hyn.
-423|_Peidio â chreu
-424|_Creu ciplun
-425|Yn paratoi {name} {version}
-426|Ailgychwyn i osod
-427|Bydd y cyfrifiadur yn ailgychwyn ddwywaith. Mae eich ffeiliau'n ddiogel.
-428|Yn ailgychwyn yn awtomatig ymhen {r} eiliad
-429|Yn ailgychwyn yn awtomatig ymhen 30 eiliad
-430|Bydd y diweddariad yn cael ei osod y tro nesaf y byddwch yn ailgychwyn.
-431|Yn barod
-432|Methu paratoi'r diweddariad
-433|Ni newidiwyd dim ar eich system.
-434|_Ceisio eto
-435|Log diweddaru
-436|Wedi methu
-437|Mae eich system wedi'i diweddaru
-438|Mae MAN wedi'i ddiweddaru i fersiwn {version}.\nCynt: MAN {previous}.
-439|_Wedi gorffen
-440|Agor diweddariad MAN
-441|Diweddariadau MAN
-442|Yn nôl y rhestrau pecynnau diweddaraf…
-443|Yn copïo'r ap
-444|Yn ychwanegu'r ap at y ddewislen
-445|Heb ganfod y ffeil.
-446|Methu gosod y pecyn.
-447|Nid yw cofnod dewislen yr ap yn ddilys.
-448|Yn gwirio'r cynllun gosod
-449|Yn paratoi'r ddisg
-450|Yn copïo MAN i'r ddisg
-451|Yn ffurfweddu'r system newydd
-452|Yn gosod y llwythwr cychwyn
-453|Yn creu'r ciplun cyntaf
-454|Yn gorffen
-455|Yn tynnu hen lofnodion rhaniadau
-456|Yn creu rhaniadau
-457|Yn fformatio rhaniad system EFI
-458|Yn amgryptio rhaniad y system
-459|Yn fformatio'r rhaniad cychwyn
-460|Yn creu'r system ffeiliau Btrfs
-461|Yn tynnu hen lofnodion systemau ffeiliau
-462|Yn datgloi'r gosodiad wedi'i amgryptio
-463|Yn cadw'r system bresennol fel ciplun
-464|Yn tynnu'r system flaenorol
-465|Yn ysgrifennu tabl y systemau ffeiliau
-466|Yn gosod enw a hunaniaeth y cyfrifiadur
-467|Yn tynnu cyfrifon y sesiwn fyw
-468|Yn creu eich cyfrif
-469|Yn paratoi MAN Setup ar gyfer y cychwyn cyntaf
-470|Yn gosod y gylchfa amser a'r bysellfwrdd
-471|Yn tynnu'r gosodwr o'r system newydd
-472|Yn adeiladu'r ddelwedd gychwyn (initramfs)
-473|Yn ffurfweddu GRUB
-474|Yn gosod GRUB ar raniad system EFI
-475|Yn gosod y llwythwr cychwyn wrth gefn
-476|Yn ysgrifennu'r ddewislen gychwyn
-477|Disg yn barod
-478|Yn creu ciplun o'r system newydd
-479|Yn ychwanegu'r ciplun at y ddewislen gychwyn
-480|Yn datgysylltu
-481|Rhaid i gynorthwyydd y gosodwr redeg fel root.
-482|Ni chafodd y cyfrifiadur hwn ei gychwyn yn y modd UEFI. Mae MAN angen UEFI.
-483|Nid yw'r enw defnyddiwr yn ddilys.
-484|Mae angen cyfrinair.
-485|Nid yw enw'r cyfrifiadur yn ddilys.
-486|Iaith anhysbys.
-487|Rhaid i'r cyfrinymadrodd amgryptio fod ag o leiaf 8 nod.
-488|Newidiodd y ddisg ar ôl i chi gadarnhau'r gosod. Ni addaswyd dim; adolygwch a chadarnhewch eto.
-489|Dewiswch raniad system.
-490|Nid yw'r ddisg a gadarnhawyd yn dal y rhaniad system a ddewiswyd.
-491|Rhaid i'r rhaniad cychwyn fod ar wahân i'r rhaniadau EFI a system.
-492|Rhaid i'r rhaniad cychwyn fod yn 512 MB o leiaf.
-493|Dim gosodiad wedi'i ddewis.
-494|Nid yw'r ddisg a gadarnhawyd yn dal y gosodiad a ddewiswyd.
-495|Nid oes gan y gosodiad wedi'i amgryptio raniad MAN_BOOT.
-496|Ni chafwyd hyd i gnewyllyn gyda modiwlau cyfatebol yn /boot.
-497|Rhaid i gynorthwyydd y system newid yr iaith.
-498|Yn gweithredu eich gosodiadau
-499|Yn paratoi amgryptio disg
-500|Yn gorffen
-501|Rhaid i gynorthwyydd y system orffen MAN Setup.
-502|Mae MAN Setup eisoes wedi'i gwblhau ar y cyfrifiadur hwn.
-503|Lliw acen anhysbys.
-504|Nid yw'r papur wal a ddewiswyd ar gael.
-505|Ni ellir amgryptio'r system hon.
-506|Mae'r allwedd gosod ar goll, felly ni all amgryptio barhau yn y cefndir.
-507|Nid yw'r system wedi'i gosod ar Btrfs, felly nid yw cipluniau ar gael.
-508|Mae adfer ciplun yn aros am ailgychwyn. Ailgychwynnwch y cyfrifiadur yn gyntaf i'w orffen.
-509|ID ciplun annilys.
-510|Yn gwirio'r diweddariad
-511|Yn creu ciplun
-512|Yn paratoi'r ardal ddiweddaru
-513|Yn dadbacio'r system newydd
-514|Yn symud eich cyfrifon a'ch gosodiadau
-515|Yn paratoi'r ailgychwyn
-516|Wedi'i ddadbacio
-517|Cyfrifon
-518|Yn tynnu meddalwedd sydd ar gyfer y gosodwr yn unig
-519|Yn adeiladu delwedd gychwyn y diweddariad
-520|Yn ychwanegu'r cofnod cychwyn untro
-521|Mae'r diweddariad yn ddilys
-522|Ciplun wedi'i greu
-523|Wedi'i hepgor
-524|Ardal ddiweddaru'n barod
-525|Yn paratoi'r system newydd
-526|Mae'r ffeil ddiweddaru wedi'i difrodi (nid yw'r swm gwirio'n cyfateb). Llwythwch hi i lawr eto.
-527|Methu darllen y ffeil ddiweddaru'n llwyr.
-528|Nid yw'r diweddariad yn cynnwys cnewyllyn.
-529|Rhaid i gynorthwyydd y system osod diweddariadau.
-530|Ni chafwyd hyd i'r gosodiad a ddewiswyd.
-531|Dim ond y gosodiad MAN sy'n rhedeg y gellir ei ddiweddaru.
-532|Nid ffeil diweddaru MAN yw hon (dim maniffest).
-533|Nid yw'r diweddariad wedi'i lofnodi, felly ni ellir ymddiried ynddo.
-534|Mae llofnod y diweddariad wedi'i ddifrodi.
-535|Nid yw'r diweddariad wedi'i lofnodi gan MAN. Efallai ei fod wedi'i addasu neu'n dod o ffynhonnell annibynadwy.
-536|Mae maniffest y diweddariad yn annilys.
-537|Nid yw'r cyfrinymadrodd yn gywir, neu ni ellir agor y rhaniad wedi'i amgryptio.
-538|Glas
-539|Gwyrddlas
-540|Gwyrdd
-541|Melyn
-542|Oren
-543|Coch
-544|Pinc
-545|Porffor
-546|Llechen
-547|Gosodwr Pecynnau
-548|Gosod apiau o ffeiliau .deb, Flatpak ac AppImage
-549|Gosodwr y system
-550|Gosod MAN ar y cyfrifiadur hwn
-551|Adfer y system
-552|Creu ac adfer cipluniau o'r system
-553|Gosodwr diweddariadau system
-554|Gosod ffeil diweddaru system MAN
-555|Yn cynnig gosod MAN pan fydd y sesiwn fyw yn cychwyn
-556|Hysbysiad diweddaru MAN
-557|Yn dweud wrthych unwaith ar ôl mewngofnodi bod MAN wedi'i ddiweddaru
-558|Gosodwch eich cyfrifiadur MAN newydd
-559|Gosod MAN am y tro cyntaf
-560|Diweddariadau MAN
-561|Yn rhoi gwybod i chi pan fydd fersiwn newydd o MAN ar gael
+44|Cadw ar ôl Diweddariadau MAN
+45|Mae MAN yn gosod yr ap eto ar ôl pob diweddariad. Mae ffeiliau ei becyn yn cael eu cadw ar gyfer hynny.
+46|Cliciwch Gosod i osod {name}.
+47|Yn gwirio beth arall sydd ei angen ar yr ap…
+48|Mae hefyd yn gosod y pecynnau sydd eu hangen arno: {list}
+49|Nid yw rhai pecynnau sydd eu hangen ar yr ap ar gael eto. Mae'r gosod yn nôl y rhestrau pecynnau diweddaraf yn gyntaf; os ydyn nhw'n dal ar goll, nid oes modd gosod yr ap.
+50|Yn gosod {name}…
+51|Yn paratoi…
+52|Manylion
+53|Yn gosod y pecyn…
+54|Yn symud yr ap i'w ffolder…
+55|Methu gosod yr ap.
+56|Yn gosod yr ap gyda Flatpak…
+57|Log
+58|_Cau
+59|Roedd y Gosod yn Llwyddiannus
+60|Mae'r ap wedi'i osod.
+61|Methodd y Gosod
+62|_Agor
+63|_Dangos manylion
+64|Log gosod
+65|Gosodwr Apiau
+66|Yn Ô_l
+67|Yn darllen yr ap…
+68|Gosod {name}
+69|Apiau
+70|Dewis Ap i'w Osod
+71|Methu cychwyn cynorthwyydd y system.
+72|Methu cyfathrebu â chynorthwyydd y system.
+73|Collwyd cysylltiad â chynorthwyydd y system.
+74|Diddymwyd yr awdurdodi.
+75|Mae angen hawliau gweinyddwr ar gyfer y weithred hon.
+76|Daeth cynorthwyydd y system i ben yn annisgwyl.
+77|Dim rhaniad system EFI
+78|Dim ond {free} yn rhydd, mae MAN angen {need}. Gwnewch le gyda DUHACH! yn Windows.
+79|Dim lle rhydd. Dechreuwch DUHACH! yn Windows i wneud lle i MAN.
+80|Mae MAN yn rhedeg o'r ddisg hon
+81|Yn cael ei ddefnyddio: mae rhaniad wedi'i osod
+82|Rhy fach, mae MAN angen {need}
+83|Gosod MAN
+84|Mae MAN yn cael ei osod. Arhoswch nes iddo orffen.
+85|Iaith
+86|_Ailgychwyn yn yr iaith hon
+87|Mae'r sesiwn fyw yn ailgychwyn yn yr iaith a ddewiswyd, ac mae MAN yn cael ei osod ynddi.
+88|Croeso i MAN
+89|System GNOME gyflym, agored a chwbl addasadwy.\nGosodwch hi ar y cyfrifiadur hwn, neu daliwch ati i archwilio'r sesiwn fyw.
+90|_Gosod MAN…
+91|_Dal ati i roi cynnig ar MAN
+92|Yn chwilio am ddisgiau…
+93|Croeso
+94|Cafodd y cyfrifiadur hwn ei gychwyn yn y modd BIOS hŷn. Dim ond ar gyfrifiaduron UEFI y gellir gosod MAN: ailgychwynnwch a dewis yr opsiwn cychwyn UEFI.
+95|Ni ddychwelodd cynorthwyydd y system wybodaeth am ddisgiau.
+96|  ·  EFI
+97|_Nesaf
+98|Dileu'r ddisg a gosod MAN
+99|Mae popeth ar y ddisg a ddewiswyd yn cael ei ddileu, gan gynnwys Windows.
+100|Argymhellir. Mae popeth ar y ddisg a ddewiswyd yn cael ei ddileu.
+101|Gosod wrth ochr Windows
+102|Argymhellir. Mae MAN yn defnyddio'r lle rhydd wrth ochr Windows; mae Windows a'i ffeiliau'n aros. Dewiswch y system bob tro y byddwch yn cychwyn.
+103|Ailosod MAN
+104|Yn disodli'r system ond yn cadw ffeiliau personol yn /home. Mae'r system bresennol yn cael ei chadw fel ciplun.
+105|Rhaniadau personol
+106|I arbenigwyr: dewiswch raniadau eich hun, neu eu creu gyda Disgiau.
+107|Disg
+108|Dewiswch y ddisg i'w dileu. Mae disgiau na ellir eu defnyddio yn cael eu dangos gyda'r rheswm.
+109|Ni chafwyd hyd i ddisgiau
+110|Lle rhydd wrth ochr Windows
+111|Nid yw rhaniadau Windows yn cael eu cyffwrdd. Mae MAN yn rhannu rhaniad system EFI ac yn ychwanegu Windows at ei ddewislen gychwyn.
+112|{size} yn rhydd
+113|dim lle rhydd
+114|{model} (Windows)
+115|Gosodiad i'w ddisodli
+116|dim ffolderi cartref
+117|ffolderi cartref: {list}
+118|cipluniau: {n}
+119|MAN ar {model}
+120|Cyfrinymadrodd ar gyfer {device}
+121|Datgloi
+122|Methu archwilio'r gosodiad.
+123|Rhaniadau
+124|Mae rhaniad y system yn cael ei fformatio gyda Btrfs ac yn dal @system, @home ac @snapshots. Nid yw rhaniadau ar y ddisg y mae MAN yn rhedeg ohoni yn cael eu rhestru.
+125|Agor Disgiau i greu neu newid maint rhaniadau
+126|Adnewyddu'r rhestr rhaniadau
+127|Dewiswch raniad
+128|Rhaniad system EFI
+129|Fformatio rhaniad system EFI
+130|Gadewch i ffwrdd i gadw llwythwyr cychwyn systemau eraill
+131|Rhaniad system (fformatir fel Btrfs)
+132|Rhaniad cychwyn (angen gydag amgryptio)
+133|Rhestr rhaniadau wedi'i hadnewyddu
+134|Diogelwch
+135|Amgryptio'r system
+136|Yn diogelu eich data os collir neu y dygir y cyfrifiadur. Gofynnir am gyfrinymadrodd bob tro y bydd yn cychwyn.
+137|Cyfrinymadrodd
+138|Cadarnhau'r cyfrinymadrodd
+139|Cadwch y cyfrinymadrodd hwn yn ddiogel
+140|Os caiff ei golli, ni all neb adfer y data. Mae'r cnewyllyn a'r ffeiliau cychwyn yn aros ar raniad cychwyn bach heb ei amgryptio.
+141|Rhaid i'r cyfrinymadrodd fod ag o leiaf 8 nod.
+142|Nid yw'r cyfrinymadroddion yn cyfateb.
+143|Dewiswch ddisg.
+144|Dewiswch y ddisg sydd â Windows.
+145|Dewiswch y gosodiad i'w ddisodli.
+146|Datglowch y gosodiad wedi'i amgryptio yn gyntaf.
+147|Nid oes system MAN ar y rhaniad hwn.
+148|Dewiswch raniad system EFI.
+149|Dewiswch raniad y system.
+150|Rhaid i'r rhaniad EFI a rhaniad y system fod yn wahanol.
+151|Mae amgryptio angen rhaniad cychwyn ar wahân.
+152|Rhaid i raniad y system fod yn {size} o leiaf.
+153|Nid yw'r rhaniad EFI wedi'i fformatio fel FAT; trowch fformatio ymlaen.
+154|Mae rhaniad y system wedi'i osod; datgysylltwch ef yn Disgiau yn gyntaf.
+155|Ble dylid gosod MAN?
+156|Amser a bysellfwrdd
+157|Cylchfa amser
+158|Cynllun bysellfwrdd
+159|Profi eich bysellfwrdd
+160|Teipiwch yma i wirio bod eich bysellau'n rhoi'r nodau cywir.
+161|Teipiwch yma
+162|Cylchfa amser a bysellfwrdd
+163|Dim disg wedi'i dewis
+164|Dim rhaniad system wedi'i ddewis
+165|Diflannodd rhaniad y system
+166|Dim gosodiad wedi'i ddewis
+167|Diflannodd y ddisg
+168|Adolygu
+169|Cyrchfan
+170|Dileu'r ddisg a gosod
+171|Rhaniadau personol
+172|Ailosod, gan gadw /home
+173|Wrth ochr Windows
+174| (bydd yn cael ei fformatio)
+175| (yn cael ei gadw)
+176|Rhaniad system
+177|{partition} (bydd yn cael ei fformatio)
+178|Rhaniad cychwyn
+179|Lle i MAN
+180|{free} o le rhydd (mae rhaniad cychwyn a rhaniad y system yn cael eu creu)
+181|Windows
+182|Heb newid. Mae'n ymddangos yn newislen gychwyn MAN; mae rhaniad system EFI yn cael ei rannu.
+183|Amgryptio
+184|Ymlaen (LUKS2)
+185|I ffwrdd
+186|System ffeiliau
+187|Btrfs: @system i MAN, @home i'ch ffeiliau, @snapshots i bwyntiau adfer. Maen nhw i gyd yn rhannu'r lle rhydd.
+188|System
+189|Eich cyfrif
+190|Yn cael ei greu yn MAN Setup pan fydd y cyfrifiadur yn cychwyn am y tro cyntaf, ynghyd ag enw'r cyfrifiadur, golwg a gosodiadau preifatrwydd.
+191|Bysellfwrdd
+192|Bydd yr holl ddata ar {model} ({path}) yn cael ei ddileu.
+193|_Dileu a gosod
+194|Bydd y rhaniadau a ddewiswyd yn cael eu fformatio. Nid yw rhaniadau eraill yn newid.
+195|_Fformatio a gosod
+196|Mae'r system bresennol yn cael ei disodli. Mae eich ffeiliau yn /home yn cael eu cadw, ac mae'r hen system yn cael ei chadw fel ciplun.
+197|_Ailosod
+198|Mae MAN yn cael ei osod yn y lle rhydd. Nid yw Windows a'i ffeiliau'n newid.
+199|Yn barod i osod
+200|Dileu {model}?
+201|Bydd pob ffeil a rhaniad ar {path} ({size}) yn cael eu dileu'n barhaol. Ni ellir dadwneud hyn.
+202|Dileu a gosod
+203|Fformatio'r rhaniadau a ddewiswyd?
+204|Bydd yr holl ddata ar y rhaniadau a ddewiswyd yn cael ei ddileu'n barhaol. Nid yw rhaniadau eraill yn newid.
+205|Fformatio a gosod
+206|Gosod MAN wrth ochr Windows?
+207|Mae MAN yn cael ei osod yn y {free} o le rhydd ar {model} ({path}). Nid yw Windows a'i ffeiliau'n newid.
+208|Gosod
+209|Ailosod MAN?
+210|Bydd y system a osodwyd yn cael ei disodli gan gopi newydd. Mae ffeiliau personol yn /home yn cael eu cadw ac mae'r hen system ar gael fel ciplun.
+211|Ailosod
+212|_Diddymu
+213|Yn gosod MAN
+214|Yn cychwyn…
+215|Yn gosod
+216|Cam {index} o {n}  ·  {title}
+217|Mae MAN wedi'i osod
+218|Ailgychwynnwch y cyfrifiadur i ddechrau defnyddio MAN. Mae dewislen bob tro y byddwch yn cychwyn yn gadael i chi ddewis MAN neu Windows; mae MAN yn tynnu rhaniad dros dro y gosodwr wrth gychwyn am y tro cyntaf.
+219|Ailgychwynnwch y cyfrifiadur i ddechrau defnyddio MAN. Gallwch dynnu'r cyfrwng gosod; os yw'n aros wedi'i gysylltu, mae MAN yn dal i gychwyn o'r ddisg newydd.
+220|_Ailgychwyn nawr
+221|Wedi gorffen
+222|Methodd y gosod
+223|Ni newidiwyd unrhyw ddisg arall, ac mae'r gosodwr wedi rhyddhau'r ddisg darged. Gallwch adolygu'r cynllun a rhoi cynnig arall arni.
+224|_Adolygu a cheisio eto
+225|Chwilio ieithoedd
+226|Chwilio gwledydd
+227|Ni chafwyd hyd i ddisg y system.
+228|Mae amgryptio angen y cynllun Btrfs a grëwyd gan osodwr MAN.
+229|Nid oes gan y gosodiad hwn raniad cychwyn ar wahân, sydd ei angen ar gyfer amgryptio. Ailosodwch MAN gyda “Dileu'r ddisg” i ddefnyddio amgryptio.
+230|MAN Setup
+231|Ble ydych chi?
+232|Mae eich gwlad neu ranbarth yn pennu fformat dyddiadau, amser a rhifau.
+233|Gwlad
+234|Trwydded Gyhoeddus Gyffredinol GNU, fersiwn 2
+235|Cnewyllyn Linux a llawer o offer system
+236|Trwydded Gyhoeddus Gyffredinol GNU, fersiwn 3
+237|Llawer o raglenni GNU a GNOME
+238|Trwydded Gyhoeddus Gyffredinol Lai GNU, fersiwn 2.1
+239|GTK, GLib a llawer o lyfrgelloedd
+240|Trwydded Gyhoeddus Gyffredinol Lai GNU, fersiwn 3
+241|Llyfrgelloedd
+242|Trwydded Gyhoeddus Mozilla 2.0
+243|Rhaglenni a llyfrgelloedd gan Mozilla ac eraill
+244|Trwydded Apache 2.0
+245|Llyfrgelloedd ac offer
+246|Cytundeb trwydded
+247|Darllenwch a derbyn yr amodau y darperir MAN odanynt.
+248|Trwyddedau
+249|Nid yw testun y drwydded ar gael ({path}).
+250|Rwyf wedi darllen ac yn derbyn amodau'r drwydded
+251|Gwifrog
+252|Heb gysylltu
+253|Cysylltu â'r rhyngrwyd
+254|Gyda chysylltiad, gall MAN osod yr amser a chadw eich meddalwedd yn gyfoes. Gallwch wneud hyn yn nes ymlaen hefyd.
+255|Yn gwirio'r cysylltiad…
+256|Rhwydweithiau Wi-Fi
+257|Chwilio eto
+258|_Hepgor
+259|Gallwch gysylltu yn nes ymlaen yn y Gosodiadau.
+260|Wedi cysylltu
+261|Heb gysylltu
+262|Ni chafwyd hyd i rwydweithiau
+263|Rhyngrwyd
+264|Wedi cysylltu â “{ssid}”
+265|Methu cysylltu â “{ssid}”
+266|Cysylltu â “{ssid}”
+267|Rhowch gyfrinair y rhwydwaith.
+268|C_ysylltu
+269|Crëwch eich cyfrif
+270|Chi fydd gweinyddwr y cyfrifiadur hwn, gyda mynediad root llawn drwy sudo.
+271|Enw llawn
+272|Enw defnyddiwr
+273|Cyfrinair
+274|Cadarnhau'r cyfrinair
+275|Mewngofnodi'n awtomatig
+276|Hepgor y sgrin fewngofnodi pan fydd y cyfrifiadur yn cychwyn
+277|Ffolderi cartref sy'n bodoli
+278|Defnyddiwch yr un enw defnyddiwr i ddal ati i ddefnyddio ffolder o osodiad blaenorol.
+279|Defnyddio
+280|Uwch
+281|Enw'r cyfrifiadur
+282|Gosod cyfrinair root
+283|Yn caniatáu mewngofnodi'n uniongyrchol fel root. Hebddo, defnyddiwch sudo gyda'ch cyfrinair eich hun.
+284|Cyfrinair root
+285|Cadarnhau'r cyfrinair root
+286|Rhowch eich enw.
+287|Dewiswch enw defnyddiwr.
+288|Mae'r system eisoes yn defnyddio'r enw defnyddiwr hwn.
+289|Mae'r enw defnyddiwr hwn wedi'i gadw gan y system.
+290|Mae enwau defnyddwyr yn defnyddio llythrennau bach, digidau, - a _, ac yn dechrau gyda llythyren.
+291|Dewiswch gyfrinair.
+292|Nid yw'r cyfrineiriau'n cyfateb.
+293|Gall enw'r cyfrifiadur gynnwys llythrennau, digidau a chysylltnodau.
+294|Rhowch y cyfrinair root ddwywaith.
+295|Awgrym: mae cyfrinair ag 8 nod neu fwy yn llawer mwy diogel.
+296|Cyfrif
+297|Tywyll
+298|Golau
+299|Gwnewch e'n eiddo i chi
+300|Dewiswch arddull, lliw acen a phapur wal. Rydych yn gweld pob newid ar unwaith.
+301|Arddull
+302|Lliw acen
+303|Papur wal
+304|Addasu
+305|Preifatrwydd
+306|Dewiswch pa nodweddion gaiff ddefnyddio gwybodaeth amdanoch. Gallwch newid hyn unrhyw bryd yn y Gosodiadau.
+307|Gwasanaethau lleoliad
+308|Yn gadael i apiau fel Mapiau a Thywydd ddod o hyd i'ch lleoliad bras drwy rwydweithiau Wi-Fi cyfagos.
+309|Cylchfa amser awtomatig
+310|Yn defnyddio eich lleoliad i gadw'r gylchfa amser yn gywir wrth deithio.
+311|_Gorffen y gosod
+312|Mae eich disg wedi'i hamgryptio
+313|Mae eich data wedi'i ddiogelu. Gofynnir am y cyfrinymadrodd bob tro y bydd y cyfrifiadur yn cychwyn.
+314|Amgryptio disg
+315|Mae amgryptio'n diogelu eich data os collir neu y dygir y cyfrifiadur.
+316|Ddim ar gael ar y gosodiad hwn
+317|Mae amgryptio'n diogelu eich ffeiliau os collir neu y dygir y cyfrifiadur. Heb y cyfrinymadrodd, ni all neb ddarllen y ddisg.
+318|Amgryptio'r ddisg
+319|Gofynnir am y cyfrinymadrodd bob tro y bydd y cyfrifiadur yn cychwyn.
+320|Mae amgryptio'n dechrau wrth ailgychwyn nesaf
+321|Yna mae eich disg yn cael ei hamgryptio yn y cefndir tra byddwch yn defnyddio'r cyfrifiadur. Os collir y cyfrinymadrodd, ni all neb adfer y data.
+322|Yn paratoi MAN
+323|Yn paratoi popeth…
+324|_Ailgychwyn
+325|_Nôl
+326|Yn paratoi
+327|Log gosod
+328|Popeth yn barod!
+329|Aeth rhywbeth o'i le
+330|Dyddiol
+331|Cyn diweddaru
+332|Cyn adfer
+333|Cyn ailosod
+334|Â llaw
+335|Dim cipluniau eto
+336|Crëwch un cyn gwneud newidiadau mawr i'r system.
+337|Adfer…
+338|Dileu'r ciplun
+339|{free} yn rhydd o {size}. Mae'r system, ffolderi cartref a chipluniau'n rhannu'r lle hwn; mae cipluniau ond yn defnyddio lle ar gyfer yr hyn sydd wedi newid ers iddyn nhw gael eu cymryd.
+340|_Iawn
+341|Creu ciplun
+342|Yn cadw cyflwr presennol y system. Nid yw eich ffeiliau personol yn y ffolder cartref wedi'u cynnwys.
+343|Disgrifiad, er enghraifft “Cyn gosod gyrwyr”
+344|_Creu
+345|Ciplun â llaw
+346|Dileu'r ciplun?
+347|Bydd “{description}” o {date} yn cael ei ddileu'n barhaol.
+348|_Dileu
+349|Adfer y ciplun hwn?
+350|Bydd y system yn dychwelyd i “{description}” o {date} ar ôl ailgychwyn. Nid yw eich ffeiliau personol yn newid.\n\nMae'r system bresennol yn cael ei chadw fel ciplun yn gyntaf, felly gellir dadwneud hyn.
+351|_Adfer
+352|Ailgychwynnwch i orffen adfer
+353|Ailgychwyn _wedyn
+354|Ailgychwyn _nawr
+355|Cipluniau
+356|Pwyntiau adfer
+357|Mae cipluniau'n cadw cyflwr y system weithredu. Mae adfer un yn dod â'r system yn ôl i'r adeg honno, sy'n helpu ar ôl diweddariad neu newid gosodiadau gwael. Nid yw eich ffeiliau personol byth yn cael eu cyffwrdd.
+358|Cipluniau awtomatig
+359|Cipluniau dyddiol
+360|Unwaith y dydd tra bydd y cyfrifiadur ymlaen
+361|Cipluniau dyddiol i'w cadw
+362|Cyn diweddariadau meddalwedd
+363|Yn cael eu cymryd yn awtomatig pan fydd pecynnau'n cael eu gosod, eu huwchraddio neu eu tynnu
+364|Cipluniau diweddaru i'w cadw
+365|Storfa
+366|Lle ar ddisg
+367|Os nad yw MAN yn cychwyn
+368|Dewiswch “Restore a MAN snapshot” yn y ddewislen gychwyn i gael system sy'n gweithio'n ôl.
+369|Nid yw cipluniau ar gael
+370|Mae cipluniau'n gweithio ar MAN a osodwyd gyda chynllun Btrfs gosodwr MAN. Nid yw'r system hon (er enghraifft sesiwn fyw) yn ei ddefnyddio.
+371|Mae adfer yn aros: ailgychwynnwch y cyfrifiadur i'w orffen
+372|Ailgychwyn nawr
+373|Arhoswch nes i'r weithred bresennol orffen.
+374|Chwilio
+375|Copïo i'r clipfwrdd
+376|Amser Cyffredinol Cydlynol
+377|Saesneg (UDA)
+378|Mae MAN {version} wedi'i ryddhau!
+379|Gallwch ddiweddaru iddo.
+380|Agor Diweddariadau
+381|Yn gwirio'r diweddariad
+382|Yn sicrhau bod y diweddariad yn ddilys ac yn gyflawn…
+383|Diweddariad MAN
+384|Ni ellir gosod y diweddariad hwn
+385|Methu darllen y diweddariad.
+386|Diweddariad o {name} {version}
+387|Mae {name} {version} wedi'i osod
+388|Rhyddhawyd
+389|Maint llwytho i lawr
+390|Lle sydd ei angen
+391|Dilysrwydd
+392|Wedi'i ddilysu, wedi'i lofnodi gan “{signer}”
+393|Beth sy'n newydd
+394|Nid yw'r diweddariad hwn yn fwy newydd na {name} {version} sydd wedi'i osod.
+395|Diweddariad
+396|Darllenwch amodau trwydded y diweddariad hwn.
+397|Rwy'n derbyn amodau'r drwydded
+398|Ble dylid gosod y diweddariad?
+399|Mae'r system yn cael ei disodli; nid yw ffeiliau yn eich ffolder cartref yn cael eu cyffwrdd.
+400|Dewiswch osodiad.
+401|yn rhedeg nawr
+402|{name} {version} ar y cyfrifiadur hwn
+403|{name} ar {model}
+404|Ni chafwyd hyd i osodiad MAN
+405|Mae diweddariadau'n cael eu gosod o system MAN sydd wedi'i gosod ac sy'n rhedeg, nid o'r sesiwn fyw.
+406|Lleoliad y gosodiad
+407|Yn cael ei gadw
+408|Eich ffeiliau
+409|Popeth yn eich ffolder cartref
+410|Cyfrifon a chyfrineiriau
+411|Defnyddwyr, grwpiau, enw'r cyfrifiadur
+412|Cysylltiadau a gosodiadau
+413|Wi-Fi, cylchfa amser, bysellfwrdd, golwg a chipluniau
+414|Apiau Flatpak
+415|Yn ogystal â phopeth yn /usr/local a /opt
+416|Yn cael ei ddisodli
+417|Mae meddalwedd a osodwyd gydag apt a newidiadau eraill i ffeiliau'r system yn cael eu disodli gan y system newydd.
+418|Y system weithredu
+419|Yn cael ei disodli gan {name} {version}. Gellir adfer y system bresennol o giplun.
+420|Mae'r cyfrifiadur yn ailgychwyn i osod y diweddariad
+421|Ar ôl paratoi, mae MAN yn ailgychwyn, yn gosod y diweddariad mewn ychydig eiliadau ac yn ailgychwyn eto.
+422|_Gosod y diweddariad
+423|Creu ciplun yn gyntaf?
+424|Mae ciplun yn cadw'r system bresennol, fel y gallwch fynd yn ôl ati os nad yw rhywbeth yn gweithio ar ôl y diweddariad. Argymhellir hyn.
+425|_Peidio â chreu
+426|_Creu ciplun
+427|Yn paratoi {name} {version}
+428|Ailgychwyn i osod
+429|Bydd y cyfrifiadur yn ailgychwyn ddwywaith. Mae eich ffeiliau'n ddiogel.
+430|Yn ailgychwyn yn awtomatig ymhen {r} eiliad
+431|Yn ailgychwyn yn awtomatig ymhen 30 eiliad
+432|Bydd y diweddariad yn cael ei osod y tro nesaf y byddwch yn ailgychwyn.
+433|Yn barod
+434|Methu paratoi'r diweddariad
+435|Ni newidiwyd dim ar eich system.
+436|_Ceisio eto
+437|Log diweddaru
+438|Wedi methu
+439|Mae eich system wedi'i diweddaru
+440|Mae MAN wedi'i ddiweddaru i fersiwn {version}.\nCynt: MAN {previous}.
+441|_Wedi gorffen
+442|Agor diweddariad MAN
+443|Diweddariadau MAN
+444|Yn nôl y rhestrau pecynnau diweddaraf…
+445|Yn copïo'r ap
+446|Yn ychwanegu'r ap at y ddewislen
+447|Heb ganfod y ffeil.
+448|Methu gosod y pecyn.
+449|Nid yw cofnod dewislen yr ap yn ddilys.
+450|Yn gwirio'r cynllun gosod
+451|Yn paratoi'r ddisg
+452|Yn copïo MAN i'r ddisg
+453|Yn ffurfweddu'r system newydd
+454|Yn gosod y llwythwr cychwyn
+455|Yn creu'r ciplun cyntaf
+456|Yn gorffen
+457|Yn tynnu hen lofnodion rhaniadau
+458|Yn creu rhaniadau
+459|Yn fformatio rhaniad system EFI
+460|Yn amgryptio rhaniad y system
+461|Yn fformatio'r rhaniad cychwyn
+462|Yn creu'r system ffeiliau Btrfs
+463|Yn tynnu hen lofnodion systemau ffeiliau
+464|Yn datgloi'r gosodiad wedi'i amgryptio
+465|Yn cadw'r system bresennol fel ciplun
+466|Yn tynnu'r system flaenorol
+467|Yn ysgrifennu tabl y systemau ffeiliau
+468|Yn gosod enw a hunaniaeth y cyfrifiadur
+469|Yn tynnu cyfrifon y sesiwn fyw
+470|Yn creu eich cyfrif
+471|Yn paratoi MAN Setup ar gyfer y cychwyn cyntaf
+472|Yn gosod y gylchfa amser a'r bysellfwrdd
+473|Yn tynnu'r gosodwr o'r system newydd
+474|Yn adeiladu'r ddelwedd gychwyn (initramfs)
+475|Yn ffurfweddu GRUB
+476|Yn gosod GRUB ar raniad system EFI
+477|Yn gosod y llwythwr cychwyn wrth gefn
+478|Yn ysgrifennu'r ddewislen gychwyn
+479|Disg yn barod
+480|Yn creu ciplun o'r system newydd
+481|Yn ychwanegu'r ciplun at y ddewislen gychwyn
+482|Yn datgysylltu
+483|Rhaid i gynorthwyydd y gosodwr redeg fel root.
+484|Ni chafodd y cyfrifiadur hwn ei gychwyn yn y modd UEFI. Mae MAN angen UEFI.
+485|Nid yw'r enw defnyddiwr yn ddilys.
+486|Mae angen cyfrinair.
+487|Nid yw enw'r cyfrifiadur yn ddilys.
+488|Iaith anhysbys.
+489|Rhaid i'r cyfrinymadrodd amgryptio fod ag o leiaf 8 nod.
+490|Newidiodd y ddisg ar ôl i chi gadarnhau'r gosod. Ni addaswyd dim; adolygwch a chadarnhewch eto.
+491|Dewiswch raniad system.
+492|Nid yw'r ddisg a gadarnhawyd yn dal y rhaniad system a ddewiswyd.
+493|Rhaid i'r rhaniad cychwyn fod ar wahân i'r rhaniadau EFI a system.
+494|Rhaid i'r rhaniad cychwyn fod yn 512 MB o leiaf.
+495|Dim gosodiad wedi'i ddewis.
+496|Nid yw'r ddisg a gadarnhawyd yn dal y gosodiad a ddewiswyd.
+497|Nid oes gan y gosodiad wedi'i amgryptio raniad MAN_BOOT.
+498|Ni chafwyd hyd i gnewyllyn gyda modiwlau cyfatebol yn /boot.
+499|Rhaid i gynorthwyydd y system newid yr iaith.
+500|Yn gweithredu eich gosodiadau
+501|Yn paratoi amgryptio disg
+502|Yn gorffen
+503|Rhaid i gynorthwyydd y system orffen MAN Setup.
+504|Mae MAN Setup eisoes wedi'i gwblhau ar y cyfrifiadur hwn.
+505|Lliw acen anhysbys.
+506|Nid yw'r papur wal a ddewiswyd ar gael.
+507|Ni ellir amgryptio'r system hon.
+508|Mae'r allwedd gosod ar goll, felly ni all amgryptio barhau yn y cefndir.
+509|Nid yw'r system wedi'i gosod ar Btrfs, felly nid yw cipluniau ar gael.
+510|Mae adfer ciplun yn aros am ailgychwyn. Ailgychwynnwch y cyfrifiadur yn gyntaf i'w orffen.
+511|ID ciplun annilys.
+512|Yn gwirio'r diweddariad
+513|Yn creu ciplun
+514|Yn paratoi'r ardal ddiweddaru
+515|Yn dadbacio'r system newydd
+516|Yn symud eich cyfrifon a'ch gosodiadau
+517|Yn paratoi'r ailgychwyn
+518|Wedi'i ddadbacio
+519|Cyfrifon
+520|Yn ailosod apiau a gadwyd
+521|Yn tynnu meddalwedd sydd ar gyfer y gosodwr yn unig
+522|Yn adeiladu delwedd gychwyn y diweddariad
+523|Yn ychwanegu'r cofnod cychwyn untro
+524|Mae'r diweddariad yn ddilys
+525|Ciplun wedi'i greu
+526|Wedi'i hepgor
+527|Ardal ddiweddaru'n barod
+528|Yn paratoi'r system newydd
+529|Mae'r ffeil ddiweddaru wedi'i difrodi (nid yw'r swm gwirio'n cyfateb). Llwythwch hi i lawr eto.
+530|Methu darllen y ffeil ddiweddaru'n llwyr.
+531|Nid yw'r diweddariad yn cynnwys cnewyllyn.
+532|Rhaid i gynorthwyydd y system osod diweddariadau.
+533|Ni chafwyd hyd i'r gosodiad a ddewiswyd.
+534|Dim ond y gosodiad MAN sy'n rhedeg y gellir ei ddiweddaru.
+535|Nid ffeil diweddaru MAN yw hon (dim maniffest).
+536|Nid yw'r diweddariad wedi'i lofnodi, felly ni ellir ymddiried ynddo.
+537|Mae llofnod y diweddariad wedi'i ddifrodi.
+538|Nid yw'r diweddariad wedi'i lofnodi gan MAN. Efallai ei fod wedi'i addasu neu'n dod o ffynhonnell annibynadwy.
+539|Mae maniffest y diweddariad yn annilys.
+540|Nid yw'r cyfrinymadrodd yn gywir, neu ni ellir agor y rhaniad wedi'i amgryptio.
+541|Glas
+542|Gwyrddlas
+543|Gwyrdd
+544|Melyn
+545|Oren
+546|Coch
+547|Pinc
+548|Porffor
+549|Llechen
+550|Gosodwr Pecynnau
+551|Gosod apiau o ffeiliau .deb, Flatpak ac AppImage
+552|Gosodwr y system
+553|Gosod MAN ar y cyfrifiadur hwn
+554|Adfer y system
+555|Creu ac adfer cipluniau o'r system
+556|Gosodwr diweddariadau system
+557|Gosod ffeil diweddaru system MAN
+558|Yn cynnig gosod MAN pan fydd y sesiwn fyw yn cychwyn
+559|Hysbysiad diweddaru MAN
+560|Yn dweud wrthych unwaith ar ôl mewngofnodi bod MAN wedi'i ddiweddaru
+561|Gosodwch eich cyfrifiadur MAN newydd
+562|Gosod MAN am y tro cyntaf
+563|Diweddariadau MAN
+564|Yn rhoi gwybod i chi pan fydd fersiwn newydd o MAN ar gael

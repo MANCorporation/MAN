@@ -30,7 +30,7 @@
 29|Vebsayt
 30|Fayl
 31|Bu tətbiq artıq quraşdırılıb. Yenidən quraşdırmaq onu əvəz edir.
-32|.deb paketlərindən olan tətbiqlər sistemin bir hissəsi olur. MAN yeniləndikdə onlar silinir və yenidən quraşdırılmalıdır. Flatpak tətbiqləri və AppImage-lər saxlanılır.
+32|.deb paketlərindən olan tətbiqlər sistemin bir hissəsi olur. MAN yeniləməsi sistemi əvəz edir, ona görə də onlar yeniləmədən sonra yalnız saxlasanız yenidən quraşdırılır (növbəti addımlar).
 33|Tətbiqləri yalnız etibar etdiyiniz mənbələrdən quraşdırın.
 34|{name} tətbiqini harada quraşdırmaq istəyirsiniz?
 35|Tətbiqdən yalnız sizin hesabınız istifadə edə bilər.
@@ -42,521 +42,524 @@
 41|Tətbiq bu kompüterin bütün istifadəçiləri üçün quraşdırılır.
 42|Tətbiq yalnız sizin üçün quraşdırılır.
 43|AppImage {folder} qovluğuna köçürülür və tətbiqlərinizə əlavə edilir.
-44|{name} quraşdırmaq üçün Quraşdır düyməsini basın.
-45|Tətbiqin daha nəyə ehtiyacı olduğu yoxlanılır…
-46|Lazım olan paketləri də quraşdırır: {list}
-47|Tətbiqə lazım olan bəzi paketlər hələ əlçatan deyil. Quraşdırma əvvəlcə ən yeni paket siyahılarını alır; hələ də çatışmırsa, tətbiq quraşdırıla bilməz.
-48|{name} quraşdırılır…
-49|Hazırlanır…
-50|Təfərrüatlar
-51|Paket quraşdırılır…
-52|Tətbiq öz qovluğuna köçürülür…
-53|Tətbiq quraşdırıla bilmədi.
-54|Tətbiq Flatpak ilə quraşdırılır…
-55|Jurnal
-56|_Bağla
-57|Quraşdırma uğurlu oldu
-58|Tətbiq quraşdırıldı.
-59|Quraşdırma alınmadı
-60|_Aç
-61|Təfərrüatları _göstər
-62|Quraşdırma jurnalı
-63|Tətbiq quraşdırıcısı
-64|_Geri
-65|Tətbiq oxunur…
-66|{name} quraşdır
-67|Tətbiqlər
-68|Quraşdırmaq üçün tətbiq seçin
-69|Sistem köməkçisini başlatmaq mümkün olmadı.
-70|Sistem köməkçisi ilə əlaqə qurmaq mümkün olmadı.
-71|Sistem köməkçisi ilə əlaqə kəsildi.
-72|Səlahiyyətləndirmə ləğv edildi.
-73|Bu əməliyyat üçün administrator hüquqları lazımdır.
-74|Sistem köməkçisi gözlənilmədən dayandı.
-75|EFI sistem bölməsi yoxdur
-76|Yalnız {free} boşdur, MAN-a {need} lazımdır. Windows-da DUHACH! ilə yer açın.
-77|Boş yer yoxdur. MAN üçün yer açmaq üçün Windows-da DUHACH!-ı başladın.
-78|MAN bu diskdən işləyir
-79|İstifadədədir: bölmə qoşulub
-80|Çox kiçikdir, MAN-a {need} lazımdır
-81|MAN-ı quraşdır
-82|MAN quraşdırılır. Bitənə qədər gözləyin.
-83|Dil
-84|Bu dildə _yenidən başlat
-85|Canlı sessiya seçilmiş dildə yenidən başlayır və MAN həmin dildə quraşdırılır.
-86|MAN-a xoş gəlmisiniz
-87|Sürətli, açıq və tam fərdiləşdirilə bilən GNOME sistemi.\nOnu bu kompüterə quraşdırın və ya canlı sessiyanı kəşf etməyə davam edin.
-88|MAN-ı _quraşdır…
-89|MAN-ı sınamağa _davam et
-90|Disklər axtarılır…
-91|Xoş gəlmisiniz
-92|Bu kompüter köhnə BIOS rejimində başladılıb. MAN yalnız UEFI kompüterlərə quraşdırıla bilər: yenidən başladın və UEFI yükləmə seçimini seçin.
-93|Sistem köməkçisi disk məlumatı qaytarmadı.
-94|  ·  EFI
-95|_İrəli
-96|Diski sil və MAN-ı quraşdır
-97|Seçilmiş diskdəki hər şey silinir, Windows da daxil olmaqla.
-98|Tövsiyə edilir. Seçilmiş diskdəki hər şey silinir.
-99|Windows-un yanına quraşdır
-100|Tövsiyə edilir. MAN Windows-un yanındakı boş yerdən istifadə edir; Windows və faylları qalır. Hər başlanğıcda sistemi seçirsiniz.
-101|MAN-ı yenidən quraşdır
-102|Sistemi əvəz edir, amma /home daxilindəki şəxsi faylları saxlayır. Cari sistem snapşot kimi saxlanır.
-103|Fərdi bölmələr
-104|Mütəxəssislər üçün: bölmələri özünüz seçin və ya Disklər ilə yaradın.
-105|Disk
-106|Silinəcək diski seçin. İstifadə edilə bilməyən disklər səbəbi ilə göstərilir.
-107|Disk tapılmadı
-108|Windows-un yanındakı boş yer
-109|Windows bölmələrinə toxunulmur. MAN EFI sistem bölməsini paylaşır və Windows-u yükləmə menyusuna əlavə edir.
-110|{size} boş
-111|boş yer yoxdur
-112|{model} (Windows)
-113|Əvəz ediləcək quraşdırma
-114|ev qovluğu yoxdur
-115|ev qovluqları: {list}
-116|snapşotlar: {n}
-117|{model} üzərində MAN
-118|{device} üçün parol ifadəsi
-119|Kilidi aç
-120|Quraşdırmanı yoxlamaq mümkün olmadı.
-121|Bölmələr
-122|Sistem bölməsi Btrfs ilə formatlanır və @system, @home və @snapshots ehtiva edir. MAN-ın işlədiyi diskin bölmələri göstərilmir.
-123|Bölmə yaratmaq və ya ölçüsünü dəyişmək üçün Diskləri aç
-124|Bölmə siyahısını yenilə
-125|Bölmə seçin
-126|EFI sistem bölməsi
-127|EFI sistem bölməsini formatla
-128|Digər sistemlərin yükləyicilərini saxlamaq üçün söndürülmüş qoyun
-129|Sistem bölməsi (Btrfs kimi formatlanır)
-130|Yükləmə bölməsi (şifrələmə üçün lazımdır)
-131|Bölmə siyahısı yeniləndi
-132|Təhlükəsizlik
-133|Sistemi şifrələ
-134|Kompüter itsə və ya oğurlansa, məlumatlarınızı qoruyur. Hər başlanğıcda parol ifadəsi soruşulur.
-135|Parol ifadəsi
-136|Parol ifadəsini təsdiqlə
-137|Bu parol ifadəsini etibarlı yerdə saxlayın
-138|İtsə, heç kim məlumatları bərpa edə bilməz. Nüvə və yükləmə faylları kiçik, şifrələnməmiş yükləmə bölməsində qalır.
-139|Parol ifadəsi ən azı 8 simvol olmalıdır.
-140|Parol ifadələri uyğun gəlmir.
-141|Disk seçin.
-142|Windows olan diski seçin.
-143|Əvəz ediləcək quraşdırmanı seçin.
-144|Əvvəlcə şifrələnmiş quraşdırmanın kilidini açın.
-145|Bu bölmədə MAN sistemi yoxdur.
-146|EFI sistem bölməsi seçin.
-147|Sistem bölməsini seçin.
-148|EFI və sistem bölmələri fərqli olmalıdır.
-149|Şifrələmə üçün ayrıca yükləmə bölməsi lazımdır.
-150|Sistem bölməsi ən azı {size} olmalıdır.
-151|EFI bölməsi FAT ilə formatlanmayıb; formatlamanı yandırın.
-152|Sistem bölməsi qoşulub; əvvəlcə onu Disklər-də ayırın.
-153|MAN hara quraşdırılsın?
-154|Vaxt və klaviatura
-155|Saat qurşağı
-156|Klaviatura düzümü
-157|Klaviaturanızı yoxlayın
-158|Düymələrin düzgün simvollar yazdığını yoxlamaq üçün bura yazın.
-159|Bura yazın
-160|Saat qurşağı və klaviatura
-161|Disk seçilməyib
-162|Sistem bölməsi seçilməyib
-163|Sistem bölməsi yox oldu
-164|Quraşdırma seçilməyib
-165|Disk yox oldu
-166|Nəzərdən keçir
-167|Təyinat
-168|Diski sil və quraşdır
-169|Fərdi bölmələr
-170|/home saxlanmaqla yenidən quraşdır
-171|Windows-un yanına
-172| (formatlanacaq)
-173| (saxlanır)
-174|Sistem bölməsi
-175|{partition} (formatlanacaq)
-176|Yükləmə bölməsi
-177|MAN üçün yer
-178|{free} boş yer (yükləmə bölməsi və sistem bölməsi yaradılır)
-179|Windows
-180|Dəyişmir. MAN-ın yükləmə menyusunda görünür; EFI sistem bölməsi ortaqdır.
-181|Şifrələmə
-182|Açıq (LUKS2)
-183|Bağlı
-184|Fayl sistemi
-185|Btrfs: @system MAN üçün, @home fayllarınız üçün, @snapshots bərpa nöqtələri üçün. Hamısı boş yeri paylaşır.
-186|Sistem
-187|Hesabınız
-188|Kompüter ilk dəfə başlayanda MAN Setup-da kompüter adı, görünüş və məxfilik ayarları ilə birlikdə yaradılır.
-189|Klaviatura
-190|{model} ({path}) üzərindəki bütün məlumatlar silinəcək.
-191|_Sil və quraşdır
-192|Seçilmiş bölmələr formatlanacaq. Digər bölmələr dəyişmir.
-193|_Formatla və quraşdır
-194|Cari sistem əvəz edilir. /home daxilindəki fayllarınız qalır, köhnə sistem snapşot kimi saxlanır.
-195|_Yenidən quraşdır
-196|MAN boş yerə quraşdırılır. Windows və faylları dəyişmir.
-197|Quraşdırmağa hazırdır
-198|{model} silinsin?
-199|{path} ({size}) üzərindəki bütün fayllar və bölmələr həmişəlik silinəcək. Bunu geri qaytarmaq olmaz.
-200|Sil və quraşdır
-201|Seçilmiş bölmələr formatlansın?
-202|Seçilmiş bölmələrdəki bütün məlumatlar həmişəlik silinəcək. Digər bölmələr dəyişmir.
-203|Formatla və quraşdır
-204|MAN Windows-un yanına quraşdırılsın?
-205|MAN {model} ({path}) üzərindəki {free} boş yerə quraşdırılır. Windows və faylları dəyişmir.
-206|Quraşdır
-207|MAN yenidən quraşdırılsın?
-208|Quraşdırılmış sistem yeni nüsxə ilə əvəz ediləcək. /home daxilindəki şəxsi fayllar qalır, köhnə sistem snapşot kimi əlçatan qalır.
-209|Yenidən quraşdır
-210|_Ləğv et
-211|MAN quraşdırılır
-212|Başlayır…
-213|Quraşdırılır
-214|Addım {index}/{n}  ·  {title}
-215|MAN quraşdırıldı
-216|MAN-dan istifadəyə başlamaq üçün kompüteri yenidən başladın. Hər başlanğıcda menyu MAN və ya Windows seçməyə imkan verir; müvəqqəti quraşdırıcı bölməsini MAN ilk başlanğıcda silir.
-217|MAN-dan istifadəyə başlamaq üçün kompüteri yenidən başladın. Quraşdırma daşıyıcısını çıxara bilərsiniz; qoşulu qalsa da, MAN yeni diskdən başlayır.
-218|İndi _yenidən başlat
-219|Hazırdır
-220|Quraşdırma uğursuz oldu
-221|Başqa heç bir disk dəyişdirilmədi və quraşdırıcı hədəf diski azad etdi. Planı nəzərdən keçirib yenidən cəhd edə bilərsiniz.
-222|_Nəzərdən keçir və yenidən cəhd et
-223|Dilləri axtar
-224|Ölkələri axtar
-225|Sistem diski tapılmadı.
-226|Şifrələmə üçün MAN quraşdırıcısının yaratdığı Btrfs düzümü lazımdır.
-227|Bu quraşdırmada şifrələmənin tələb etdiyi ayrıca yükləmə bölməsi yoxdur. Şifrələmədən istifadə üçün MAN-ı “Diski sil” ilə yenidən quraşdırın.
-228|MAN Setup
-229|Haradasınız?
-230|Ölkəniz və ya regionunuz tarix, vaxt və rəqəmlərin formatını müəyyən edir.
-231|Ölkə
-232|GNU Ümumi İctimai Lisenziyası, versiya 2
-233|Linux nüvəsi və bir çox sistem alətləri
-234|GNU Ümumi İctimai Lisenziyası, versiya 3
-235|Bir çox GNU və GNOME proqramları
-236|GNU Kiçik Ümumi İctimai Lisenziyası, versiya 2.1
-237|GTK, GLib və bir çox kitabxanalar
-238|GNU Kiçik Ümumi İctimai Lisenziyası, versiya 3
-239|Kitabxanalar
-240|Mozilla İctimai Lisenziyası 2.0
-241|Mozilla və digərlərinin proqram və kitabxanaları
-242|Apache Lisenziyası 2.0
-243|Kitabxanalar və alətlər
-244|Lisenziya müqaviləsi
-245|MAN-ın təqdim edildiyi şərtləri oxuyun və qəbul edin.
-246|Lisenziyalar
-247|Lisenziya mətni əlçatan deyil ({path}).
-248|Lisenziya şərtlərini oxudum və qəbul edirəm
-249|Simli
-250|Qoşulmayıb
-251|İnternetə qoşulun
-252|Qoşulduqda MAN vaxtı qura və proqram təminatınızı yeni saxlaya bilər. Bunu sonra da edə bilərsiniz.
-253|Bağlantı yoxlanılır…
-254|Wi-Fi şəbəkələri
-255|Yenidən axtar
-256|_Keç
-257|Sonra Ayarlar-da qoşula bilərsiniz.
-258|Qoşulub
-259|Qoşulmayıb
-260|Şəbəkə tapılmadı
-261|İnternet
-262|“{ssid}” şəbəkəsinə qoşuldu
-263|“{ssid}” şəbəkəsinə qoşulmaq mümkün olmadı
-264|“{ssid}” şəbəkəsinə qoşul
-265|Şəbəkə parolunu daxil edin.
-266|_Qoşul
-267|Hesabınızı yaradın
-268|Bu kompüterin administratoru olacaqsınız, sudo vasitəsilə tam root girişi ilə.
-269|Tam ad
-270|İstifadəçi adı
-271|Parol
-272|Parolu təsdiqlə
-273|Avtomatik daxil ol
-274|Kompüter başlayanda giriş ekranını keç
-275|Mövcud ev qovluqları
-276|Əvvəlki quraşdırmadan qalan qovluqdan istifadəyə davam etmək üçün eyni istifadəçi adından istifadə edin.
-277|İstifadə et
-278|Əlavə
-279|Kompüter adı
-280|Root parolu təyin et
-281|Birbaşa root kimi daxil olmağa imkan verir. Onsuz öz parolunuzla sudo istifadə edin.
-282|Root parolu
-283|Root parolunu təsdiqlə
-284|Adınızı daxil edin.
-285|İstifadəçi adı seçin.
-286|Bu istifadəçi adından sistem artıq istifadə edir.
-287|Bu istifadəçi adı sistem üçün ayrılıb.
-288|İstifadəçi adları kiçik latın hərfləri, rəqəmlər, - və _ işarələrindən ibarətdir və hərflə başlayır.
-289|Parol seçin.
-290|Parollar uyğun gəlmir.
-291|Kompüter adında hərflər, rəqəmlər və defislər ola bilər.
-292|Root parolunu iki dəfə daxil edin.
-293|Məsləhət: 8 və ya daha çox simvollu parol daha təhlükəsizdir.
-294|Hesab
-295|Tünd
-296|Açıq
-297|Özünüzə uyğunlaşdırın
-298|Üslub, vurğu rəngi və divar kağızı seçin. Hər dəyişikliyi dərhal görürsünüz.
-299|Üslub
-300|Vurğu rəngi
-301|Divar kağızı
-302|Fərdiləşdir
-303|Məxfilik
-304|Hansı funksiyaların sizin haqqınızdakı məlumatdan istifadə edə biləcəyini seçin. Bunu istənilən vaxt Ayarlar-da dəyişə bilərsiniz.
-305|Məkan xidmətləri
-306|Xəritələr və Hava kimi tətbiqlərə yaxınlıqdakı Wi-Fi şəbəkələri ilə təxmini məkanınızı tapmağa imkan verir.
-307|Avtomatik saat qurşağı
-308|Səyahət edərkən saat qurşağını düzgün saxlamaq üçün məkanınızdan istifadə edir.
-309|Quraşdırmanı _bitir
-310|Diskiniz şifrələnib
-311|Məlumatlarınız qorunur. Parol ifadəsi kompüter hər başlayanda soruşulur.
-312|Disk şifrələmə
-313|Şifrələmə kompüter itsə və ya oğurlansa, məlumatlarınızı qoruyur.
-314|Bu quraşdırmada əlçatan deyil
-315|Şifrələmə kompüter itsə və ya oğurlansa, fayllarınızı qoruyur. Parol ifadəsi olmadan heç kim diski oxuya bilməz.
-316|Diski şifrələ
-317|Parol ifadəsi kompüter hər başlayanda soruşulur.
-318|Şifrələmə növbəti yenidən başladılmada başlayır
-319|Sonra kompüterdən istifadə etdiyiniz müddətdə disk arxa planda şifrələnir. Parol ifadəsi itsə, heç kim məlumatları bərpa edə bilməz.
-320|MAN hazırlanır
-321|Hər şey hazırlanır…
-322|_Yenidən başlat
-323|_Geri
-324|Hazırlanır
-325|Quraşdırma jurnalı
-326|Hər şey hazırdır!
-327|Nəsə səhv getdi
-328|Gündəlik
-329|Yeniləmədən əvvəl
-330|Bərpadan əvvəl
-331|Yenidən quraşdırmadan əvvəl
-332|Əl ilə
-333|Hələ snapşot yoxdur
-334|Sistemdə böyük dəyişikliklərdən əvvəl birini yaradın.
-335|Bərpa et…
-336|Snapşotu sil
-337|{size} həcmindən {free} boşdur. Sistem, ev qovluqları və snapşotlar bu yeri paylaşır; snapşotlar yalnız yaradıldıqdan sonra dəyişənlər üçün yer tutur.
-338|_Oldu
-339|Snapşot yarat
-340|Sistemin cari vəziyyətini saxlayır. Ev qovluğundakı şəxsi fayllar daxil deyil.
-341|Təsvir, məsələn “Drayverləri quraşdırmadan əvvəl”
-342|_Yarat
-343|Əl ilə snapşot
-344|Snapşot silinsin?
-345|{date} tarixli “{description}” həmişəlik silinəcək.
-346|_Sil
-347|Bu snapşot bərpa edilsin?
-348|Yenidən başladıqdan sonra sistem {date} tarixli “{description}” vəziyyətinə qayıdacaq. Şəxsi fayllarınız dəyişmir.\n\nCari sistem əvvəlcə snapşot kimi saxlanır, ona görə bunu geri qaytarmaq olar.
-349|_Bərpa et
-350|Bərpanı bitirmək üçün yenidən başladın
-351|_Sonra yenidən başlat
-352|_İndi yenidən başlat
-353|Snapşotlar
-354|Bərpa nöqtələri
-355|Snapşotlar əməliyyat sisteminin vəziyyətini saxlayır. Birini bərpa etmək sistemi həmin ana qaytarır, bu da uğursuz yeniləmə və ya ayar dəyişikliyindən sonra kömək edir. Şəxsi fayllarınıza heç vaxt toxunulmur.
-356|Avtomatik snapşotlar
-357|Gündəlik snapşotlar
-358|Kompüter açıq olarkən gündə bir dəfə
-359|Saxlanacaq gündəlik snapşotlar
-360|Proqram yeniləmələrindən əvvəl
-361|Paketlər quraşdırılarkən, yenilənərkən və ya silinərkən avtomatik götürülür
-362|Saxlanacaq yeniləmə snapşotları
-363|Yaddaş
-364|Disk sahəsi
-365|MAN başlamırsa
-366|İşlək sistemi geri qaytarmaq üçün yükləmə menyusunda “Restore a MAN snapshot” seçin.
-367|Snapşotlar əlçatan deyil
-368|Snapşotlar MAN quraşdırıcısının Btrfs düzümü ilə quraşdırılmış MAN-da işləyir. Bu sistem (məsələn, canlı sessiya) ondan istifadə etmir.
-369|Bərpa gözləyir: bitirmək üçün kompüteri yenidən başladın
-370|İndi yenidən başlat
-371|Cari əməliyyat bitənə qədər gözləyin.
-372|Axtar
-373|Mübadilə buferinə kopyala
-374|Əlaqələndirilmiş Ümumdünya Vaxtı
-375|İngilis (ABŞ)
-376|MAN {version} buraxıldı!
-377|Ona yeniləyə bilərsiniz.
-378|Yeniləmələri aç
-379|Yeniləmə yoxlanılır
-380|Yeniləmənin orijinal və tam olduğu yoxlanılır…
-381|MAN yeniləməsi
-382|Bu yeniləmə quraşdırıla bilməz
-383|Yeniləməni oxumaq mümkün olmadı.
-384|{name} {version} versiyasından yeniləmə
-385|{name} {version} quraşdırılıb
-386|Buraxılış tarixi
-387|Endirmə ölçüsü
-388|Lazım olan yer
-389|Orijinallıq
-390|Yoxlanılıb, “{signer}” tərəfindən imzalanıb
-391|Yeniliklər
-392|Bu yeniləmə quraşdırılmış {name} {version} versiyasından yeni deyil.
-393|Yeniləmə
-394|Bu yeniləmənin lisenziya şərtlərini oxuyun.
-395|Lisenziya şərtlərini qəbul edirəm
-396|Yeniləmə hara quraşdırılsın?
-397|Sistem əvəz edilir; ev qovluğunuzdakı fayllara toxunulmur.
-398|Quraşdırma seçin.
-399|indi işləyir
-400|Bu kompüterdəki {name} {version}
-401|{model} üzərində {name}
-402|MAN quraşdırması tapılmadı
-403|Yeniləmələr canlı sessiyadan deyil, işləyən quraşdırılmış MAN sistemindən quraşdırılır.
-404|Quraşdırma yeri
-405|Saxlanır
-406|Fayllarınız
-407|Ev qovluğunuzdakı hər şey
-408|Hesablar və parollar
-409|İstifadəçilər, qruplar, kompüter adı
-410|Bağlantılar və ayarlar
-411|Wi-Fi, saat qurşağı, klaviatura, görünüş və snapşotlar
-412|Flatpak tətbiqləri
-413|Üstəlik /usr/local və /opt daxilindəki hər şey
-414|Əvəz edilir
-415|apt ilə quraşdırılmış proqramlar və sistem fayllarındakı digər dəyişikliklər yeni sistemlə əvəz edilir.
-416|Əməliyyat sistemi
-417|{name} {version} ilə əvəz edilir. Cari sistem snapşotdan bərpa edilə bilər.
-418|Yeniləməni quraşdırmaq üçün kompüter yenidən başlayır
-419|Hazırlıqdan sonra MAN yenidən başlayır, yeniləməni bir neçə saniyəyə quraşdırır və yenə yenidən başlayır.
-420|Yeniləməni _quraşdır
-421|Əvvəlcə snapşot yaradılsın?
-422|Snapşot cari sistemi saxlayır ki, yeniləmədən sonra nəsə işləməsə ona qayıda biləsiniz. Tövsiyə olunur.
-423|_Yaratma
-424|Snapşot _yarat
-425|{name} {version} hazırlanır
-426|Quraşdırmaq üçün yenidən başlat
-427|Kompüter iki dəfə yenidən başlayacaq. Fayllarınız təhlükəsizdir.
-428|{r} saniyəyə avtomatik yenidən başlayacaq
-429|30 saniyəyə avtomatik yenidən başlayacaq
-430|Yeniləmə növbəti yenidən başladılmada quraşdırılacaq.
-431|Hazırdır
-432|Yeniləməni hazırlamaq mümkün olmadı
-433|Sisteminizdə heç nə dəyişmədi.
-434|_Yenidən cəhd et
-435|Yeniləmə jurnalı
-436|Uğursuz
-437|Sisteminiz yeniləndi
-438|MAN {version} versiyasına yeniləndi.\nƏvvəl: MAN {previous}.
-439|_Hazırdır
-440|MAN yeniləməsini aç
-441|MAN yeniləmələri
-442|Ən yeni paket siyahıları alınır…
-443|Tətbiq kopyalanır
-444|Tətbiq menyuya əlavə edilir
-445|Fayl tapılmadı.
-446|Paket quraşdırıla bilmədi.
-447|Tətbiqin menyu girişi etibarsızdır.
-448|Quraşdırma planı yoxlanılır
-449|Disk hazırlanır
-450|MAN diskə kopyalanır
-451|Yeni sistem tənzimlənir
-452|Yükləyici quraşdırılır
-453|İlk snapşot yaradılır
-454|Tamamlanır
-455|Köhnə bölmə imzaları silinir
-456|Bölmələr yaradılır
-457|EFI sistem bölməsi formatlanır
-458|Sistem bölməsi şifrələnir
-459|Yükləmə bölməsi formatlanır
-460|Btrfs fayl sistemi yaradılır
-461|Köhnə fayl sistemi imzaları silinir
-462|Şifrələnmiş quraşdırmanın kilidi açılır
-463|Cari sistem snapşot kimi saxlanır
-464|Əvvəlki sistem silinir
-465|Fayl sistemləri cədvəli yazılır
-466|Kompüter adı və kimliyi təyin edilir
-467|Canlı sessiya hesabları silinir
-468|Hesabınız yaradılır
-469|MAN Setup ilk başlanğıc üçün hazırlanır
-470|Saat qurşağı və klaviatura təyin edilir
-471|Quraşdırıcı yeni sistemdən silinir
-472|Yükləmə təsviri (initramfs) qurulur
-473|GRUB tənzimlənir
-474|GRUB EFI sistem bölməsinə quraşdırılır
-475|Ehtiyat yükləyici quraşdırılır
-476|Yükləmə menyusu yazılır
-477|Disk hazırdır
-478|Yeni sistemin snapşotu yaradılır
-479|Snapşot yükləmə menyusuna əlavə edilir
-480|Ayrılır
-481|Quraşdırıcı köməkçisi root kimi işləməlidir.
-482|Bu kompüter UEFI rejimində başladılmayıb. MAN-a UEFI lazımdır.
-483|İstifadəçi adı etibarlı deyil.
-484|Parol tələb olunur.
-485|Kompüter adı etibarlı deyil.
-486|Naməlum dil.
-487|Şifrələmə parol ifadəsi ən azı 8 simvol olmalıdır.
-488|Quraşdırmanı təsdiqlədikdən sonra disk dəyişdi. Heç nə dəyişdirilmədi; nəzərdən keçirib yenidən təsdiqləyin.
-489|Sistem bölməsi seçin.
-490|Təsdiqlənmiş diskdə seçilmiş sistem bölməsi yoxdur.
-491|Yükləmə bölməsi EFI və sistem bölmələrindən ayrı olmalıdır.
-492|Yükləmə bölməsi ən azı 512 MB olmalıdır.
-493|Quraşdırma seçilməyib.
-494|Təsdiqlənmiş diskdə seçilmiş quraşdırma yoxdur.
-495|Şifrələnmiş quraşdırmada MAN_BOOT bölməsi yoxdur.
-496|/boot daxilində uyğun modulları olan nüvə tapılmadı.
-497|Dili sistem köməkçisi dəyişməlidir.
-498|Ayarlarınız tətbiq edilir
-499|Disk şifrələməsi hazırlanır
-500|Tamamlanır
-501|MAN Setup sistem köməkçisi tərəfindən bitirilməlidir.
-502|Bu kompüterdə MAN Setup artıq tamamlanıb.
-503|Naməlum vurğu rəngi.
-504|Seçilmiş divar kağızı əlçatan deyil.
-505|Bu sistemi şifrələmək olmaz.
-506|Quraşdırma açarı yoxdur, ona görə şifrələmə arxa planda davam edə bilməz.
-507|Sistem Btrfs üzərində quraşdırılmayıb, ona görə snapşotlar əlçatan deyil.
-508|Snapşot bərpası yenidən başladılmanı gözləyir. Bitirmək üçün əvvəlcə kompüteri yenidən başladın.
-509|Etibarsız snapşot ID-si.
-510|Yeniləmə yoxlanılır
-511|Snapşot yaradılır
-512|Yeniləmə sahəsi hazırlanır
-513|Yeni sistem açılır
-514|Hesablarınız və ayarlarınız köçürülür
-515|Yenidən başladılma hazırlanır
-516|Açıldı
-517|Hesablar
-518|Yalnız quraşdırıcıya aid proqramlar silinir
-519|Yeniləmənin yükləmə təsviri qurulur
-520|Birdəfəlik yükləmə qeydi əlavə edilir
-521|Yeniləmə orijinaldır
-522|Snapşot yaradıldı
-523|Keçildi
-524|Yeniləmə sahəsi hazırdır
-525|Yeni sistem hazırlanır
-526|Yeniləmə faylı zədələnib (yoxlama cəmi uyğun deyil). Yenidən endirin.
-527|Yeniləmə faylını tam oxumaq mümkün olmadı.
-528|Yeniləmədə nüvə yoxdur.
-529|Yeniləmələri sistem köməkçisi quraşdırmalıdır.
-530|Seçilmiş quraşdırma tapılmadı.
-531|Yalnız işləyən MAN quraşdırması yenilənə bilər.
-532|Bu MAN yeniləmə faylı deyil (manifest yoxdur).
-533|Yeniləmə imzalanmayıb, ona görə ona etibar etmək olmaz.
-534|Yeniləmənin imzası zədələnib.
-535|Yeniləmə MAN tərəfindən imzalanmayıb. Dəyişdirilmiş ola və ya etibarsız mənbədən gələ bilər.
-536|Yeniləmə manifesti etibarlı deyil.
-537|Parol ifadəsi düzgün deyil və ya şifrələnmiş bölməni açmaq mümkün deyil.
-538|Mavi
-539|Firuzəyi
-540|Yaşıl
-541|Sarı
-542|Narıncı
-543|Qırmızı
-544|Çəhrayı
-545|Bənövşəyi
-546|Şifer
-547|Paket quraşdırıcısı
-548|.deb, Flatpak və AppImage fayllarından tətbiqlər quraşdırın
-549|Sistem quraşdırıcısı
-550|MAN-ı bu kompüterə quraşdır
-551|Sistemin bərpası
-552|Sistemin snapşotlarını yaradın və bərpa edin
-553|Sistem yeniləmələri quraşdırıcısı
-554|MAN sistem yeniləmə faylını quraşdır
-555|Canlı sessiya başlayanda MAN-ı quraşdırmağı təklif edir
-556|MAN yeniləmə bildirişi
-557|Daxil olduqdan sonra bir dəfə MAN-ın yeniləndiyini bildirir
-558|Yeni MAN kompüterinizi qurun
-559|MAN-ın ilk quraşdırılması
-560|MAN yeniləmələri
-561|MAN-ın yeni versiyası çıxanda xəbər verir
+44|MAN yeniləmələrindən sonra saxla
+45|MAN hər yeniləmədən sonra tətbiqi yenidən quraşdırır. Bunun üçün paket faylları saxlanılır.
+46|{name} quraşdırmaq üçün Quraşdır düyməsini basın.
+47|Tətbiqin daha nəyə ehtiyacı olduğu yoxlanılır…
+48|Lazım olan paketləri də quraşdırır: {list}
+49|Tətbiqə lazım olan bəzi paketlər hələ əlçatan deyil. Quraşdırma əvvəlcə ən yeni paket siyahılarını alır; hələ də çatışmırsa, tətbiq quraşdırıla bilməz.
+50|{name} quraşdırılır…
+51|Hazırlanır…
+52|Təfərrüatlar
+53|Paket quraşdırılır…
+54|Tətbiq öz qovluğuna köçürülür…
+55|Tətbiq quraşdırıla bilmədi.
+56|Tətbiq Flatpak ilə quraşdırılır…
+57|Jurnal
+58|_Bağla
+59|Quraşdırma uğurlu oldu
+60|Tətbiq quraşdırıldı.
+61|Quraşdırma alınmadı
+62|_Aç
+63|Təfərrüatları _göstər
+64|Quraşdırma jurnalı
+65|Tətbiq quraşdırıcısı
+66|_Geri
+67|Tətbiq oxunur…
+68|{name} quraşdır
+69|Tətbiqlər
+70|Quraşdırmaq üçün tətbiq seçin
+71|Sistem köməkçisini başlatmaq mümkün olmadı.
+72|Sistem köməkçisi ilə əlaqə qurmaq mümkün olmadı.
+73|Sistem köməkçisi ilə əlaqə kəsildi.
+74|Səlahiyyətləndirmə ləğv edildi.
+75|Bu əməliyyat üçün administrator hüquqları lazımdır.
+76|Sistem köməkçisi gözlənilmədən dayandı.
+77|EFI sistem bölməsi yoxdur
+78|Yalnız {free} boşdur, MAN-a {need} lazımdır. Windows-da DUHACH! ilə yer açın.
+79|Boş yer yoxdur. MAN üçün yer açmaq üçün Windows-da DUHACH!-ı başladın.
+80|MAN bu diskdən işləyir
+81|İstifadədədir: bölmə qoşulub
+82|Çox kiçikdir, MAN-a {need} lazımdır
+83|MAN-ı quraşdır
+84|MAN quraşdırılır. Bitənə qədər gözləyin.
+85|Dil
+86|Bu dildə _yenidən başlat
+87|Canlı sessiya seçilmiş dildə yenidən başlayır və MAN həmin dildə quraşdırılır.
+88|MAN-a xoş gəlmisiniz
+89|Sürətli, açıq və tam fərdiləşdirilə bilən GNOME sistemi.\nOnu bu kompüterə quraşdırın və ya canlı sessiyanı kəşf etməyə davam edin.
+90|MAN-ı _quraşdır…
+91|MAN-ı sınamağa _davam et
+92|Disklər axtarılır…
+93|Xoş gəlmisiniz
+94|Bu kompüter köhnə BIOS rejimində başladılıb. MAN yalnız UEFI kompüterlərə quraşdırıla bilər: yenidən başladın və UEFI yükləmə seçimini seçin.
+95|Sistem köməkçisi disk məlumatı qaytarmadı.
+96|  ·  EFI
+97|_İrəli
+98|Diski sil və MAN-ı quraşdır
+99|Seçilmiş diskdəki hər şey silinir, Windows da daxil olmaqla.
+100|Tövsiyə edilir. Seçilmiş diskdəki hər şey silinir.
+101|Windows-un yanına quraşdır
+102|Tövsiyə edilir. MAN Windows-un yanındakı boş yerdən istifadə edir; Windows və faylları qalır. Hər başlanğıcda sistemi seçirsiniz.
+103|MAN-ı yenidən quraşdır
+104|Sistemi əvəz edir, amma /home daxilindəki şəxsi faylları saxlayır. Cari sistem snapşot kimi saxlanır.
+105|Fərdi bölmələr
+106|Mütəxəssislər üçün: bölmələri özünüz seçin və ya Disklər ilə yaradın.
+107|Disk
+108|Silinəcək diski seçin. İstifadə edilə bilməyən disklər səbəbi ilə göstərilir.
+109|Disk tapılmadı
+110|Windows-un yanındakı boş yer
+111|Windows bölmələrinə toxunulmur. MAN EFI sistem bölməsini paylaşır və Windows-u yükləmə menyusuna əlavə edir.
+112|{size} boş
+113|boş yer yoxdur
+114|{model} (Windows)
+115|Əvəz ediləcək quraşdırma
+116|ev qovluğu yoxdur
+117|ev qovluqları: {list}
+118|snapşotlar: {n}
+119|{model} üzərində MAN
+120|{device} üçün parol ifadəsi
+121|Kilidi aç
+122|Quraşdırmanı yoxlamaq mümkün olmadı.
+123|Bölmələr
+124|Sistem bölməsi Btrfs ilə formatlanır və @system, @home və @snapshots ehtiva edir. MAN-ın işlədiyi diskin bölmələri göstərilmir.
+125|Bölmə yaratmaq və ya ölçüsünü dəyişmək üçün Diskləri aç
+126|Bölmə siyahısını yenilə
+127|Bölmə seçin
+128|EFI sistem bölməsi
+129|EFI sistem bölməsini formatla
+130|Digər sistemlərin yükləyicilərini saxlamaq üçün söndürülmüş qoyun
+131|Sistem bölməsi (Btrfs kimi formatlanır)
+132|Yükləmə bölməsi (şifrələmə üçün lazımdır)
+133|Bölmə siyahısı yeniləndi
+134|Təhlükəsizlik
+135|Sistemi şifrələ
+136|Kompüter itsə və ya oğurlansa, məlumatlarınızı qoruyur. Hər başlanğıcda parol ifadəsi soruşulur.
+137|Parol ifadəsi
+138|Parol ifadəsini təsdiqlə
+139|Bu parol ifadəsini etibarlı yerdə saxlayın
+140|İtsə, heç kim məlumatları bərpa edə bilməz. Nüvə və yükləmə faylları kiçik, şifrələnməmiş yükləmə bölməsində qalır.
+141|Parol ifadəsi ən azı 8 simvol olmalıdır.
+142|Parol ifadələri uyğun gəlmir.
+143|Disk seçin.
+144|Windows olan diski seçin.
+145|Əvəz ediləcək quraşdırmanı seçin.
+146|Əvvəlcə şifrələnmiş quraşdırmanın kilidini açın.
+147|Bu bölmədə MAN sistemi yoxdur.
+148|EFI sistem bölməsi seçin.
+149|Sistem bölməsini seçin.
+150|EFI və sistem bölmələri fərqli olmalıdır.
+151|Şifrələmə üçün ayrıca yükləmə bölməsi lazımdır.
+152|Sistem bölməsi ən azı {size} olmalıdır.
+153|EFI bölməsi FAT ilə formatlanmayıb; formatlamanı yandırın.
+154|Sistem bölməsi qoşulub; əvvəlcə onu Disklər-də ayırın.
+155|MAN hara quraşdırılsın?
+156|Vaxt və klaviatura
+157|Saat qurşağı
+158|Klaviatura düzümü
+159|Klaviaturanızı yoxlayın
+160|Düymələrin düzgün simvollar yazdığını yoxlamaq üçün bura yazın.
+161|Bura yazın
+162|Saat qurşağı və klaviatura
+163|Disk seçilməyib
+164|Sistem bölməsi seçilməyib
+165|Sistem bölməsi yox oldu
+166|Quraşdırma seçilməyib
+167|Disk yox oldu
+168|Nəzərdən keçir
+169|Təyinat
+170|Diski sil və quraşdır
+171|Fərdi bölmələr
+172|/home saxlanmaqla yenidən quraşdır
+173|Windows-un yanına
+174| (formatlanacaq)
+175| (saxlanır)
+176|Sistem bölməsi
+177|{partition} (formatlanacaq)
+178|Yükləmə bölməsi
+179|MAN üçün yer
+180|{free} boş yer (yükləmə bölməsi və sistem bölməsi yaradılır)
+181|Windows
+182|Dəyişmir. MAN-ın yükləmə menyusunda görünür; EFI sistem bölməsi ortaqdır.
+183|Şifrələmə
+184|Açıq (LUKS2)
+185|Bağlı
+186|Fayl sistemi
+187|Btrfs: @system MAN üçün, @home fayllarınız üçün, @snapshots bərpa nöqtələri üçün. Hamısı boş yeri paylaşır.
+188|Sistem
+189|Hesabınız
+190|Kompüter ilk dəfə başlayanda MAN Setup-da kompüter adı, görünüş və məxfilik ayarları ilə birlikdə yaradılır.
+191|Klaviatura
+192|{model} ({path}) üzərindəki bütün məlumatlar silinəcək.
+193|_Sil və quraşdır
+194|Seçilmiş bölmələr formatlanacaq. Digər bölmələr dəyişmir.
+195|_Formatla və quraşdır
+196|Cari sistem əvəz edilir. /home daxilindəki fayllarınız qalır, köhnə sistem snapşot kimi saxlanır.
+197|_Yenidən quraşdır
+198|MAN boş yerə quraşdırılır. Windows və faylları dəyişmir.
+199|Quraşdırmağa hazırdır
+200|{model} silinsin?
+201|{path} ({size}) üzərindəki bütün fayllar və bölmələr həmişəlik silinəcək. Bunu geri qaytarmaq olmaz.
+202|Sil və quraşdır
+203|Seçilmiş bölmələr formatlansın?
+204|Seçilmiş bölmələrdəki bütün məlumatlar həmişəlik silinəcək. Digər bölmələr dəyişmir.
+205|Formatla və quraşdır
+206|MAN Windows-un yanına quraşdırılsın?
+207|MAN {model} ({path}) üzərindəki {free} boş yerə quraşdırılır. Windows və faylları dəyişmir.
+208|Quraşdır
+209|MAN yenidən quraşdırılsın?
+210|Quraşdırılmış sistem yeni nüsxə ilə əvəz ediləcək. /home daxilindəki şəxsi fayllar qalır, köhnə sistem snapşot kimi əlçatan qalır.
+211|Yenidən quraşdır
+212|_Ləğv et
+213|MAN quraşdırılır
+214|Başlayır…
+215|Quraşdırılır
+216|Addım {index}/{n}  ·  {title}
+217|MAN quraşdırıldı
+218|MAN-dan istifadəyə başlamaq üçün kompüteri yenidən başladın. Hər başlanğıcda menyu MAN və ya Windows seçməyə imkan verir; müvəqqəti quraşdırıcı bölməsini MAN ilk başlanğıcda silir.
+219|MAN-dan istifadəyə başlamaq üçün kompüteri yenidən başladın. Quraşdırma daşıyıcısını çıxara bilərsiniz; qoşulu qalsa da, MAN yeni diskdən başlayır.
+220|İndi _yenidən başlat
+221|Hazırdır
+222|Quraşdırma uğursuz oldu
+223|Başqa heç bir disk dəyişdirilmədi və quraşdırıcı hədəf diski azad etdi. Planı nəzərdən keçirib yenidən cəhd edə bilərsiniz.
+224|_Nəzərdən keçir və yenidən cəhd et
+225|Dilləri axtar
+226|Ölkələri axtar
+227|Sistem diski tapılmadı.
+228|Şifrələmə üçün MAN quraşdırıcısının yaratdığı Btrfs düzümü lazımdır.
+229|Bu quraşdırmada şifrələmənin tələb etdiyi ayrıca yükləmə bölməsi yoxdur. Şifrələmədən istifadə üçün MAN-ı “Diski sil” ilə yenidən quraşdırın.
+230|MAN Setup
+231|Haradasınız?
+232|Ölkəniz və ya regionunuz tarix, vaxt və rəqəmlərin formatını müəyyən edir.
+233|Ölkə
+234|GNU Ümumi İctimai Lisenziyası, versiya 2
+235|Linux nüvəsi və bir çox sistem alətləri
+236|GNU Ümumi İctimai Lisenziyası, versiya 3
+237|Bir çox GNU və GNOME proqramları
+238|GNU Kiçik Ümumi İctimai Lisenziyası, versiya 2.1
+239|GTK, GLib və bir çox kitabxanalar
+240|GNU Kiçik Ümumi İctimai Lisenziyası, versiya 3
+241|Kitabxanalar
+242|Mozilla İctimai Lisenziyası 2.0
+243|Mozilla və digərlərinin proqram və kitabxanaları
+244|Apache Lisenziyası 2.0
+245|Kitabxanalar və alətlər
+246|Lisenziya müqaviləsi
+247|MAN-ın təqdim edildiyi şərtləri oxuyun və qəbul edin.
+248|Lisenziyalar
+249|Lisenziya mətni əlçatan deyil ({path}).
+250|Lisenziya şərtlərini oxudum və qəbul edirəm
+251|Simli
+252|Qoşulmayıb
+253|İnternetə qoşulun
+254|Qoşulduqda MAN vaxtı qura və proqram təminatınızı yeni saxlaya bilər. Bunu sonra da edə bilərsiniz.
+255|Bağlantı yoxlanılır…
+256|Wi-Fi şəbəkələri
+257|Yenidən axtar
+258|_Keç
+259|Sonra Ayarlar-da qoşula bilərsiniz.
+260|Qoşulub
+261|Qoşulmayıb
+262|Şəbəkə tapılmadı
+263|İnternet
+264|“{ssid}” şəbəkəsinə qoşuldu
+265|“{ssid}” şəbəkəsinə qoşulmaq mümkün olmadı
+266|“{ssid}” şəbəkəsinə qoşul
+267|Şəbəkə parolunu daxil edin.
+268|_Qoşul
+269|Hesabınızı yaradın
+270|Bu kompüterin administratoru olacaqsınız, sudo vasitəsilə tam root girişi ilə.
+271|Tam ad
+272|İstifadəçi adı
+273|Parol
+274|Parolu təsdiqlə
+275|Avtomatik daxil ol
+276|Kompüter başlayanda giriş ekranını keç
+277|Mövcud ev qovluqları
+278|Əvvəlki quraşdırmadan qalan qovluqdan istifadəyə davam etmək üçün eyni istifadəçi adından istifadə edin.
+279|İstifadə et
+280|Əlavə
+281|Kompüter adı
+282|Root parolu təyin et
+283|Birbaşa root kimi daxil olmağa imkan verir. Onsuz öz parolunuzla sudo istifadə edin.
+284|Root parolu
+285|Root parolunu təsdiqlə
+286|Adınızı daxil edin.
+287|İstifadəçi adı seçin.
+288|Bu istifadəçi adından sistem artıq istifadə edir.
+289|Bu istifadəçi adı sistem üçün ayrılıb.
+290|İstifadəçi adları kiçik latın hərfləri, rəqəmlər, - və _ işarələrindən ibarətdir və hərflə başlayır.
+291|Parol seçin.
+292|Parollar uyğun gəlmir.
+293|Kompüter adında hərflər, rəqəmlər və defislər ola bilər.
+294|Root parolunu iki dəfə daxil edin.
+295|Məsləhət: 8 və ya daha çox simvollu parol daha təhlükəsizdir.
+296|Hesab
+297|Tünd
+298|Açıq
+299|Özünüzə uyğunlaşdırın
+300|Üslub, vurğu rəngi və divar kağızı seçin. Hər dəyişikliyi dərhal görürsünüz.
+301|Üslub
+302|Vurğu rəngi
+303|Divar kağızı
+304|Fərdiləşdir
+305|Məxfilik
+306|Hansı funksiyaların sizin haqqınızdakı məlumatdan istifadə edə biləcəyini seçin. Bunu istənilən vaxt Ayarlar-da dəyişə bilərsiniz.
+307|Məkan xidmətləri
+308|Xəritələr və Hava kimi tətbiqlərə yaxınlıqdakı Wi-Fi şəbəkələri ilə təxmini məkanınızı tapmağa imkan verir.
+309|Avtomatik saat qurşağı
+310|Səyahət edərkən saat qurşağını düzgün saxlamaq üçün məkanınızdan istifadə edir.
+311|Quraşdırmanı _bitir
+312|Diskiniz şifrələnib
+313|Məlumatlarınız qorunur. Parol ifadəsi kompüter hər başlayanda soruşulur.
+314|Disk şifrələmə
+315|Şifrələmə kompüter itsə və ya oğurlansa, məlumatlarınızı qoruyur.
+316|Bu quraşdırmada əlçatan deyil
+317|Şifrələmə kompüter itsə və ya oğurlansa, fayllarınızı qoruyur. Parol ifadəsi olmadan heç kim diski oxuya bilməz.
+318|Diski şifrələ
+319|Parol ifadəsi kompüter hər başlayanda soruşulur.
+320|Şifrələmə növbəti yenidən başladılmada başlayır
+321|Sonra kompüterdən istifadə etdiyiniz müddətdə disk arxa planda şifrələnir. Parol ifadəsi itsə, heç kim məlumatları bərpa edə bilməz.
+322|MAN hazırlanır
+323|Hər şey hazırlanır…
+324|_Yenidən başlat
+325|_Geri
+326|Hazırlanır
+327|Quraşdırma jurnalı
+328|Hər şey hazırdır!
+329|Nəsə səhv getdi
+330|Gündəlik
+331|Yeniləmədən əvvəl
+332|Bərpadan əvvəl
+333|Yenidən quraşdırmadan əvvəl
+334|Əl ilə
+335|Hələ snapşot yoxdur
+336|Sistemdə böyük dəyişikliklərdən əvvəl birini yaradın.
+337|Bərpa et…
+338|Snapşotu sil
+339|{size} həcmindən {free} boşdur. Sistem, ev qovluqları və snapşotlar bu yeri paylaşır; snapşotlar yalnız yaradıldıqdan sonra dəyişənlər üçün yer tutur.
+340|_Oldu
+341|Snapşot yarat
+342|Sistemin cari vəziyyətini saxlayır. Ev qovluğundakı şəxsi fayllar daxil deyil.
+343|Təsvir, məsələn “Drayverləri quraşdırmadan əvvəl”
+344|_Yarat
+345|Əl ilə snapşot
+346|Snapşot silinsin?
+347|{date} tarixli “{description}” həmişəlik silinəcək.
+348|_Sil
+349|Bu snapşot bərpa edilsin?
+350|Yenidən başladıqdan sonra sistem {date} tarixli “{description}” vəziyyətinə qayıdacaq. Şəxsi fayllarınız dəyişmir.\n\nCari sistem əvvəlcə snapşot kimi saxlanır, ona görə bunu geri qaytarmaq olar.
+351|_Bərpa et
+352|Bərpanı bitirmək üçün yenidən başladın
+353|_Sonra yenidən başlat
+354|_İndi yenidən başlat
+355|Snapşotlar
+356|Bərpa nöqtələri
+357|Snapşotlar əməliyyat sisteminin vəziyyətini saxlayır. Birini bərpa etmək sistemi həmin ana qaytarır, bu da uğursuz yeniləmə və ya ayar dəyişikliyindən sonra kömək edir. Şəxsi fayllarınıza heç vaxt toxunulmur.
+358|Avtomatik snapşotlar
+359|Gündəlik snapşotlar
+360|Kompüter açıq olarkən gündə bir dəfə
+361|Saxlanacaq gündəlik snapşotlar
+362|Proqram yeniləmələrindən əvvəl
+363|Paketlər quraşdırılarkən, yenilənərkən və ya silinərkən avtomatik götürülür
+364|Saxlanacaq yeniləmə snapşotları
+365|Yaddaş
+366|Disk sahəsi
+367|MAN başlamırsa
+368|İşlək sistemi geri qaytarmaq üçün yükləmə menyusunda “Restore a MAN snapshot” seçin.
+369|Snapşotlar əlçatan deyil
+370|Snapşotlar MAN quraşdırıcısının Btrfs düzümü ilə quraşdırılmış MAN-da işləyir. Bu sistem (məsələn, canlı sessiya) ondan istifadə etmir.
+371|Bərpa gözləyir: bitirmək üçün kompüteri yenidən başladın
+372|İndi yenidən başlat
+373|Cari əməliyyat bitənə qədər gözləyin.
+374|Axtar
+375|Mübadilə buferinə kopyala
+376|Əlaqələndirilmiş Ümumdünya Vaxtı
+377|İngilis (ABŞ)
+378|MAN {version} buraxıldı!
+379|Ona yeniləyə bilərsiniz.
+380|Yeniləmələri aç
+381|Yeniləmə yoxlanılır
+382|Yeniləmənin orijinal və tam olduğu yoxlanılır…
+383|MAN yeniləməsi
+384|Bu yeniləmə quraşdırıla bilməz
+385|Yeniləməni oxumaq mümkün olmadı.
+386|{name} {version} versiyasından yeniləmə
+387|{name} {version} quraşdırılıb
+388|Buraxılış tarixi
+389|Endirmə ölçüsü
+390|Lazım olan yer
+391|Orijinallıq
+392|Yoxlanılıb, “{signer}” tərəfindən imzalanıb
+393|Yeniliklər
+394|Bu yeniləmə quraşdırılmış {name} {version} versiyasından yeni deyil.
+395|Yeniləmə
+396|Bu yeniləmənin lisenziya şərtlərini oxuyun.
+397|Lisenziya şərtlərini qəbul edirəm
+398|Yeniləmə hara quraşdırılsın?
+399|Sistem əvəz edilir; ev qovluğunuzdakı fayllara toxunulmur.
+400|Quraşdırma seçin.
+401|indi işləyir
+402|Bu kompüterdəki {name} {version}
+403|{model} üzərində {name}
+404|MAN quraşdırması tapılmadı
+405|Yeniləmələr canlı sessiyadan deyil, işləyən quraşdırılmış MAN sistemindən quraşdırılır.
+406|Quraşdırma yeri
+407|Saxlanır
+408|Fayllarınız
+409|Ev qovluğunuzdakı hər şey
+410|Hesablar və parollar
+411|İstifadəçilər, qruplar, kompüter adı
+412|Bağlantılar və ayarlar
+413|Wi-Fi, saat qurşağı, klaviatura, görünüş və snapşotlar
+414|Flatpak tətbiqləri
+415|Üstəlik /usr/local və /opt daxilindəki hər şey
+416|Əvəz edilir
+417|apt ilə quraşdırılmış proqramlar və sistem fayllarındakı digər dəyişikliklər yeni sistemlə əvəz edilir.
+418|Əməliyyat sistemi
+419|{name} {version} ilə əvəz edilir. Cari sistem snapşotdan bərpa edilə bilər.
+420|Yeniləməni quraşdırmaq üçün kompüter yenidən başlayır
+421|Hazırlıqdan sonra MAN yenidən başlayır, yeniləməni bir neçə saniyəyə quraşdırır və yenə yenidən başlayır.
+422|Yeniləməni _quraşdır
+423|Əvvəlcə snapşot yaradılsın?
+424|Snapşot cari sistemi saxlayır ki, yeniləmədən sonra nəsə işləməsə ona qayıda biləsiniz. Tövsiyə olunur.
+425|_Yaratma
+426|Snapşot _yarat
+427|{name} {version} hazırlanır
+428|Quraşdırmaq üçün yenidən başlat
+429|Kompüter iki dəfə yenidən başlayacaq. Fayllarınız təhlükəsizdir.
+430|{r} saniyəyə avtomatik yenidən başlayacaq
+431|30 saniyəyə avtomatik yenidən başlayacaq
+432|Yeniləmə növbəti yenidən başladılmada quraşdırılacaq.
+433|Hazırdır
+434|Yeniləməni hazırlamaq mümkün olmadı
+435|Sisteminizdə heç nə dəyişmədi.
+436|_Yenidən cəhd et
+437|Yeniləmə jurnalı
+438|Uğursuz
+439|Sisteminiz yeniləndi
+440|MAN {version} versiyasına yeniləndi.\nƏvvəl: MAN {previous}.
+441|_Hazırdır
+442|MAN yeniləməsini aç
+443|MAN yeniləmələri
+444|Ən yeni paket siyahıları alınır…
+445|Tətbiq kopyalanır
+446|Tətbiq menyuya əlavə edilir
+447|Fayl tapılmadı.
+448|Paket quraşdırıla bilmədi.
+449|Tətbiqin menyu girişi etibarsızdır.
+450|Quraşdırma planı yoxlanılır
+451|Disk hazırlanır
+452|MAN diskə kopyalanır
+453|Yeni sistem tənzimlənir
+454|Yükləyici quraşdırılır
+455|İlk snapşot yaradılır
+456|Tamamlanır
+457|Köhnə bölmə imzaları silinir
+458|Bölmələr yaradılır
+459|EFI sistem bölməsi formatlanır
+460|Sistem bölməsi şifrələnir
+461|Yükləmə bölməsi formatlanır
+462|Btrfs fayl sistemi yaradılır
+463|Köhnə fayl sistemi imzaları silinir
+464|Şifrələnmiş quraşdırmanın kilidi açılır
+465|Cari sistem snapşot kimi saxlanır
+466|Əvvəlki sistem silinir
+467|Fayl sistemləri cədvəli yazılır
+468|Kompüter adı və kimliyi təyin edilir
+469|Canlı sessiya hesabları silinir
+470|Hesabınız yaradılır
+471|MAN Setup ilk başlanğıc üçün hazırlanır
+472|Saat qurşağı və klaviatura təyin edilir
+473|Quraşdırıcı yeni sistemdən silinir
+474|Yükləmə təsviri (initramfs) qurulur
+475|GRUB tənzimlənir
+476|GRUB EFI sistem bölməsinə quraşdırılır
+477|Ehtiyat yükləyici quraşdırılır
+478|Yükləmə menyusu yazılır
+479|Disk hazırdır
+480|Yeni sistemin snapşotu yaradılır
+481|Snapşot yükləmə menyusuna əlavə edilir
+482|Ayrılır
+483|Quraşdırıcı köməkçisi root kimi işləməlidir.
+484|Bu kompüter UEFI rejimində başladılmayıb. MAN-a UEFI lazımdır.
+485|İstifadəçi adı etibarlı deyil.
+486|Parol tələb olunur.
+487|Kompüter adı etibarlı deyil.
+488|Naməlum dil.
+489|Şifrələmə parol ifadəsi ən azı 8 simvol olmalıdır.
+490|Quraşdırmanı təsdiqlədikdən sonra disk dəyişdi. Heç nə dəyişdirilmədi; nəzərdən keçirib yenidən təsdiqləyin.
+491|Sistem bölməsi seçin.
+492|Təsdiqlənmiş diskdə seçilmiş sistem bölməsi yoxdur.
+493|Yükləmə bölməsi EFI və sistem bölmələrindən ayrı olmalıdır.
+494|Yükləmə bölməsi ən azı 512 MB olmalıdır.
+495|Quraşdırma seçilməyib.
+496|Təsdiqlənmiş diskdə seçilmiş quraşdırma yoxdur.
+497|Şifrələnmiş quraşdırmada MAN_BOOT bölməsi yoxdur.
+498|/boot daxilində uyğun modulları olan nüvə tapılmadı.
+499|Dili sistem köməkçisi dəyişməlidir.
+500|Ayarlarınız tətbiq edilir
+501|Disk şifrələməsi hazırlanır
+502|Tamamlanır
+503|MAN Setup sistem köməkçisi tərəfindən bitirilməlidir.
+504|Bu kompüterdə MAN Setup artıq tamamlanıb.
+505|Naməlum vurğu rəngi.
+506|Seçilmiş divar kağızı əlçatan deyil.
+507|Bu sistemi şifrələmək olmaz.
+508|Quraşdırma açarı yoxdur, ona görə şifrələmə arxa planda davam edə bilməz.
+509|Sistem Btrfs üzərində quraşdırılmayıb, ona görə snapşotlar əlçatan deyil.
+510|Snapşot bərpası yenidən başladılmanı gözləyir. Bitirmək üçün əvvəlcə kompüteri yenidən başladın.
+511|Etibarsız snapşot ID-si.
+512|Yeniləmə yoxlanılır
+513|Snapşot yaradılır
+514|Yeniləmə sahəsi hazırlanır
+515|Yeni sistem açılır
+516|Hesablarınız və ayarlarınız köçürülür
+517|Yenidən başladılma hazırlanır
+518|Açıldı
+519|Hesablar
+520|Saxlanılan tətbiqlər yenidən quraşdırılır
+521|Yalnız quraşdırıcıya aid proqramlar silinir
+522|Yeniləmənin yükləmə təsviri qurulur
+523|Birdəfəlik yükləmə qeydi əlavə edilir
+524|Yeniləmə orijinaldır
+525|Snapşot yaradıldı
+526|Keçildi
+527|Yeniləmə sahəsi hazırdır
+528|Yeni sistem hazırlanır
+529|Yeniləmə faylı zədələnib (yoxlama cəmi uyğun deyil). Yenidən endirin.
+530|Yeniləmə faylını tam oxumaq mümkün olmadı.
+531|Yeniləmədə nüvə yoxdur.
+532|Yeniləmələri sistem köməkçisi quraşdırmalıdır.
+533|Seçilmiş quraşdırma tapılmadı.
+534|Yalnız işləyən MAN quraşdırması yenilənə bilər.
+535|Bu MAN yeniləmə faylı deyil (manifest yoxdur).
+536|Yeniləmə imzalanmayıb, ona görə ona etibar etmək olmaz.
+537|Yeniləmənin imzası zədələnib.
+538|Yeniləmə MAN tərəfindən imzalanmayıb. Dəyişdirilmiş ola və ya etibarsız mənbədən gələ bilər.
+539|Yeniləmə manifesti etibarlı deyil.
+540|Parol ifadəsi düzgün deyil və ya şifrələnmiş bölməni açmaq mümkün deyil.
+541|Mavi
+542|Firuzəyi
+543|Yaşıl
+544|Sarı
+545|Narıncı
+546|Qırmızı
+547|Çəhrayı
+548|Bənövşəyi
+549|Şifer
+550|Paket quraşdırıcısı
+551|.deb, Flatpak və AppImage fayllarından tətbiqlər quraşdırın
+552|Sistem quraşdırıcısı
+553|MAN-ı bu kompüterə quraşdır
+554|Sistemin bərpası
+555|Sistemin snapşotlarını yaradın və bərpa edin
+556|Sistem yeniləmələri quraşdırıcısı
+557|MAN sistem yeniləmə faylını quraşdır
+558|Canlı sessiya başlayanda MAN-ı quraşdırmağı təklif edir
+559|MAN yeniləmə bildirişi
+560|Daxil olduqdan sonra bir dəfə MAN-ın yeniləndiyini bildirir
+561|Yeni MAN kompüterinizi qurun
+562|MAN-ın ilk quraşdırılması
+563|MAN yeniləmələri
+564|MAN-ın yeni versiyası çıxanda xəbər verir

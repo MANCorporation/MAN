@@ -107,11 +107,25 @@ Installation Type, Installation, Summary) and the app's icon below them:
   are read from the package (`dpkg-deb`); `apt-get -s` shows what else it
   needs; installing runs `man-app-installer-helper` through pkexec (polkit
   `com.man.apps.install`): `apt-get update`, then `apt-get install ./file.deb`.
+  **Keep After MAN Updates** (on by default): the helper saves the package
+  as `/var/lib/man/kept-debs/<name>.deb` and the packages apt downloaded for
+  it under `archives/`. Every update reinstalls the kept packages that are
+  still installed inside the new system before the restart (apt in the
+  chroot, the saved files as its download cache, so usually offline); if
+  that fails, `man-kept-debs.service` retries at the next start
+  (`man-app-installer-helper reinstall-kept`). Removing the app with apt
+  makes the next update forget it.
   Missing dependencies come from Debian sid (`/etc/apt/sources.list.d/man-debian.sources`)
   with **Pin-Priority 50** (`/etc/apt/preferences.d/man-debian`): apt only adds
   packages that are not installed and never upgrades MAN's own. Apps from
   .deb files are part of the system, so a MAN update removes them (the
   installer says so).
+- Flatpak "For All Users" runs `flatpak install --system` as root through
+  the helper (Flatpak's own helper cannot ask for a password in
+  non-interactive mode: "ConfigureRemote not allowed"). The export folders
+  (`/var/lib/flatpak/exports/share/…` via tmpfiles.d, `~/.local/share/flatpak/exports/share/…`
+  via user tmpfiles, `systemd-tmpfiles-setup.service` enabled globally) exist
+  before GNOME starts, so new apps show up without logging out.
 - **.flatpak** bundles (metadata, AppStream and icon read straight from the
   bundle's GVariant header) and **.flatpakref** files: `flatpak install
   --user` ("Only for Me") or `--system` ("For All Users").

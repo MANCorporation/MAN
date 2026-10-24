@@ -30,7 +30,7 @@
 29|Retejo
 30|Dosiero
 31|Ĉi tiu aplikaĵo jam estas instalita. Reinstali ĝin anstataŭigas ĝin.
-32|Aplikaĵoj el .deb-pakaĵoj iĝas parto de la sistemo. Kiam MAN ĝisdatiĝas, ili estas forigitaj kaj devas esti reinstalitaj. Flatpak-aplikaĵoj kaj AppImage-oj restas.
+32|Aplikaĵoj el .deb-pakaĵoj iĝas parto de la sistemo. MAN-ĝisdatigo anstataŭigas la sistemon, do ili estas reinstalataj post ĝisdatigo nur se vi konservas ilin (sekvaj paŝoj).
 33|Instalu nur aplikaĵojn el fontoj, kiujn vi fidas.
 34|Kien vi volas instali {name}?
 35|Nur via konto povas uzi la aplikaĵon.
@@ -42,521 +42,524 @@
 41|La aplikaĵo estas instalata por ĉiuj uzantoj de ĉi tiu komputilo.
 42|La aplikaĵo estas instalata nur por vi.
 43|La AppImage estas movata al {folder} kaj aldonata al viaj aplikaĵoj.
-44|Alklaku Instali por instali {name}.
-45|Kontrolante, kion alian la aplikaĵo bezonas…
-46|Ankaŭ instalas la bezonatajn pakaĵojn: {list}
-47|Kelkaj pakaĵoj, kiujn la aplikaĵo bezonas, ankoraŭ ne disponeblas. La instalado unue akiras la plej novajn pakaĵlistojn; se ili ankoraŭ mankas, la aplikaĵo ne instaleblas.
-48|Instalante {name}…
-49|Preparante…
-50|Detaloj
-51|Instalante la pakaĵon…
-52|Movante la aplikaĵon al ĝia dosierujo…
-53|Ne eblis instali la aplikaĵon.
-54|Instalante la aplikaĵon per Flatpak…
-55|Protokolo
-56|_Fermi
-57|La instalado sukcesis
-58|La aplikaĵo estas instalita.
-59|La instalado malsukcesis
-60|_Malfermi
-61|_Montri detalojn
-62|Instala protokolo
-63|Aplikaĵa instalilo
-64|_Reen
-65|Legante la aplikaĵon…
-66|Instali {name}
-67|Aplikaĵoj
-68|Elektu aplikaĵon por instali
-69|Ne eblis lanĉi la sisteman helpilon.
-70|Ne eblis komuniki kun la sistema helpilo.
-71|La konekto al la sistema helpilo perdiĝis.
-72|La rajtigo estis nuligita.
-73|Ĉi tiu ago bezonas administrantajn rajtojn.
-74|La sistema helpilo neatendite haltis.
-75|Neniu EFI-sistema subdisko
-76|Nur {free} liberaj, MAN bezonas {need}. Liberigu spacon per DUHACH! en Windows.
-77|Neniu libera spaco. Lanĉu DUHACH! en Windows por fari lokon por MAN.
-78|MAN funkcias de ĉi tiu disko
-79|Uzata: subdisko estas surmetita
-80|Tro malgranda, MAN bezonas {need}
-81|Instali MAN
-82|MAN estas instalata. Bonvolu atendi ĝis la fino.
-83|Lingvo
-84|_Restartigi en ĉi tiu lingvo
-85|La viva seanco restartos en la elektita lingvo, kaj MAN estos instalita en ĝi.
-86|Bonvenon al MAN
-87|Rapida, malfermita kaj tute agordebla GNOME-sistemo.\nInstalu ĝin en ĉi tiun komputilon aŭ daŭre esploru la vivan seancon.
-88|_Instali MAN…
-89|_Daŭre provi MAN
-90|Serĉado de diskoj…
-91|Bonvenon
-92|Ĉi tiu komputilo startis en malnova BIOS-reĝimo. MAN instaleblas nur en UEFI-komputiloj: restartigu kaj elektu la UEFI-startan opcion.
-93|La sistema helpilo ne redonis informojn pri diskoj.
-94|  ·  EFI
-95|_Sekva
-96|Viŝi diskon kaj instali MAN
-97|Ĉio sur la elektita disko estos forigita, ankaŭ Windows.
-98|Rekomendata. Ĉio sur la elektita disko estos forigita.
-99|Instali apud Windows
-100|Rekomendata. MAN uzas la liberan spacon apud Windows; Windows kaj ĝiaj dosieroj restas. Elektu la sistemon ĉe ĉiu starto.
-101|Reinstali MAN
-102|Anstataŭigas la sistemon, sed konservas personajn dosierojn en /home. La nuna sistemo konserviĝas kiel momentkopio.
-103|Propraj subdiskoj
-104|Por spertuloj: elektu subdiskojn mem aŭ kreu ilin per Diskoj.
-105|Disko
-106|Elektu la viŝotan diskon. Neuzeblaj diskoj montriĝas kun la kialo.
-107|Neniuj diskoj trovitaj
-108|Libera spaco apud Windows
-109|La subdiskoj de Windows ne estas tuŝataj. MAN kunhavas la EFI-sisteman subdiskon kaj aldonas Windows al sia starta menuo.
-110|{size} liberaj
-111|neniu libera spaco
-112|{model} (Windows)
-113|Anstataŭigota instalaĵo
-114|neniuj hejmaj dosierujoj
-115|hejmaj dosierujoj: {list}
-116|momentkopioj: {n}
-117|MAN sur {model}
-118|Pasfrazo por {device}
-119|Malŝlosi
-120|Ne eblis ekzameni la instalaĵon.
-121|Subdiskoj
-122|La sistema subdisko estas formatita per Btrfs kaj enhavas @system, @home kaj @snapshots. Subdiskoj de la disko, de kiu MAN funkcias, ne estas listigitaj.
-123|Malfermi Diskojn por krei aŭ regrandigi subdiskojn
-124|Refreŝigi la liston de subdiskoj
-125|Elektu subdiskon
-126|EFI-sistema subdisko
-127|Formati la EFI-sisteman subdiskon
-128|Lasu malŝaltita por konservi startigilojn de aliaj sistemoj
-129|Sistema subdisko (formatota per Btrfs)
-130|Starta subdisko (necesa por ĉifrado)
-131|Listo de subdiskoj refreŝigita
-132|Sekureco
-133|Ĉifri la sistemon
-134|Protektas viajn datumojn, se la komputilo perdiĝas aŭ estas ŝtelita. Pasfrazo estas petata ĉe ĉiu starto.
-135|Pasfrazo
-136|Konfirmu pasfrazon
-137|Gardu ĉi tiun pasfrazon sekure
-138|Se ĝi perdiĝas, neniu povas restaŭri la datumojn. La kerno kaj startaj dosieroj restas sur malgranda neĉifrita starta subdisko.
-139|La pasfrazo devas havi almenaŭ 8 signojn.
-140|La pasfrazoj ne kongruas.
-141|Elektu diskon.
-142|Elektu la diskon kun Windows.
-143|Elektu la anstataŭigotan instalaĵon.
-144|Unue malŝlosu la ĉifritan instalaĵon.
-145|Ĉi tiu subdisko ne enhavas MAN-sistemon.
-146|Elektu EFI-sisteman subdiskon.
-147|Elektu la sisteman subdiskon.
-148|La EFI- kaj sistema subdiskoj devas esti malsamaj.
-149|Ĉifrado bezonas apartan startan subdiskon.
-150|La sistema subdisko devas esti almenaŭ {size}.
-151|La EFI-subdisko ne estas FAT-formatita; ŝaltu formatadon.
-152|La sistema subdisko estas surmetita; unue demetu ĝin en Diskoj.
-153|Kien instali MAN?
-154|Tempo kaj klavaro
-155|Horzono
-156|Klavararanĝo
-157|Provu vian klavaron
-158|Tajpu ĉi tie por kontroli, ke viaj klavoj donas la ĝustajn signojn.
-159|Tajpu ĉi tie
-160|Horzono kaj klavaro
-161|Neniu disko elektita
-162|Neniu sistema subdisko elektita
-163|La sistema subdisko malaperis
-164|Neniu instalaĵo elektita
-165|La disko malaperis
-166|Kontroli
-167|Celo
-168|Viŝi diskon kaj instali
-169|Propraj subdiskoj
-170|Reinstali, konservante /home
-171|Apud Windows
-172| (estos formatita)
-173| (konservata)
-174|Sistema subdisko
-175|{partition} (estos formatita)
-176|Starta subdisko
-177|Spaco por MAN
-178|{free} da libera spaco (kreiĝas starta subdisko kaj la sistema subdisko)
-179|Windows
-180|Neŝanĝita. Ĝi aperas en la starta menuo de MAN; la EFI-sistema subdisko estas kunhavata.
-181|Ĉifrado
-182|Ŝaltita (LUKS2)
-183|Malŝaltita
-184|Dosiersistemo
-185|Btrfs: @system por MAN, @home por viaj dosieroj, @snapshots por restaŭrpunktoj. Ĉiuj kunhavas la liberan spacon.
-186|Sistemo
-187|Via konto
-188|Kreata en MAN Setup, kiam la komputilo unuafoje startas, kune kun la komputilnomo, aspekto kaj privatecaj agordoj.
-189|Klavaro
-190|Ĉiuj datumoj sur {model} ({path}) estos viŝitaj.
-191|_Viŝi kaj instali
-192|La elektitaj subdiskoj estos formatitaj. Aliaj subdiskoj ne ŝanĝiĝas.
-193|_Formati kaj instali
-194|La nuna sistemo estas anstataŭigata. Viaj dosieroj en /home restas, kaj la malnova sistemo konserviĝas kiel momentkopio.
-195|_Reinstali
-196|MAN estas instalata en la liberan spacon. Windows kaj ĝiaj dosieroj ne ŝanĝiĝas.
-197|Preta por instali
-198|Ĉu viŝi {model}?
-199|Ĉiuj dosieroj kaj subdiskoj sur {path} ({size}) estos definitive forigitaj. Tio ne malfareblas.
-200|Viŝi kaj instali
-201|Ĉu formati la elektitajn subdiskojn?
-202|Ĉiuj datumoj sur la elektitaj subdiskoj estos definitive forigitaj. Aliaj subdiskoj ne ŝanĝiĝas.
-203|Formati kaj instali
-204|Ĉu instali MAN apud Windows?
-205|MAN estas instalata en la {free} da libera spaco sur {model} ({path}). Windows kaj ĝiaj dosieroj ne ŝanĝiĝas.
-206|Instali
-207|Ĉu reinstali MAN?
-208|La instalita sistemo estos anstataŭigita per freŝa kopio. Personaj dosieroj en /home restas, kaj la malnova sistemo restas havebla kiel momentkopio.
-209|Reinstali
-210|_Nuligi
-211|Instalado de MAN
-212|Startado…
-213|Instalado
-214|Paŝo {index} el {n}  ·  {title}
-215|MAN estas instalita
-216|Restartigu la komputilon por ekuzi MAN. Menuo ĉe ĉiu starto ebligas elekti MAN aŭ Windows; la provizoran instalilan subdiskon MAN forigas ĉe la unua starto.
-217|Restartigu la komputilon por ekuzi MAN. Vi povas forigi la instalan datumportilon; se ĝi restas konektita, MAN tamen startas de la nova disko.
-218|_Restartigi nun
-219|Farite
-220|Instalado malsukcesis
-221|Neniu alia disko estis ŝanĝita, kaj la instalilo liberigis la celan diskon. Vi povas kontroli la planon kaj reprovi.
-222|_Kontroli kaj reprovi
-223|Serĉi lingvojn
-224|Serĉi landojn
-225|La sistema disko ne troviĝis.
-226|Ĉifrado bezonas la Btrfs-aranĝon kreitan de la MAN-instalilo.
-227|Ĉi tiu instalaĵo ne havas apartan startan subdiskon, kiun ĉifrado bezonas. Reinstalu MAN per «Viŝi diskon» por uzi ĉifradon.
-228|MAN Setup
-229|Kie vi estas?
-230|Via lando aŭ regiono difinas la formon de dato, tempo kaj nombroj.
-231|Lando
-232|Ĝenerala Publika Permesilo de GNU, versio 2
-233|La Linuks-kerno kaj multaj sistemaj iloj
-234|Ĝenerala Publika Permesilo de GNU, versio 3
-235|Multaj GNU- kaj GNOME-programoj
-236|Malpli Ĝenerala Publika Permesilo de GNU, versio 2.1
-237|GTK, GLib kaj multaj bibliotekoj
-238|Malpli Ĝenerala Publika Permesilo de GNU, versio 3
-239|Bibliotekoj
-240|Publika Permesilo de Mozilla 2.0
-241|Programoj kaj bibliotekoj de Mozilla kaj aliaj
-242|Permesilo Apache 2.0
-243|Bibliotekoj kaj iloj
-244|Permesila interkonsento
-245|Bonvolu legi kaj akcepti la kondiĉojn, laŭ kiuj MAN estas provizata.
-246|Permesiloj
-247|La permesila teksto ne estas havebla ({path}).
-248|Mi legis kaj akceptas la permesilajn kondiĉojn
-249|Drata
-250|Ne konektita
-251|Konektiĝi al la interreto
-252|Kun konekto, MAN povas agordi la horloĝon kaj ĝisdatigi vian programaron. Vi povas fari tion ankaŭ poste.
-253|Kontrolado de la konekto…
-254|Wi-Fi-retoj
-255|Serĉi denove
-256|_Preterlasi
-257|Vi povas konektiĝi poste en Agordoj.
-258|Konektita
-259|Ne konektita
-260|Neniuj retoj trovitaj
-261|Interreto
-262|Konektita al «{ssid}»
-263|Ne eblis konektiĝi al «{ssid}»
-264|Konektiĝi al «{ssid}»
-265|Entajpu la pasvorton de la reto.
-266|_Konektiĝi
-267|Kreu vian konton
-268|Vi estos la administranto de ĉi tiu komputilo, kun plena root-aliro per sudo.
-269|Plena nomo
-270|Uzantnomo
-271|Pasvorto
-272|Konfirmu pasvorton
-273|Ensaluti aŭtomate
-274|Preterlasi la ensalutan ekranon, kiam la komputilo startas
-275|Ekzistantaj hejmaj dosierujoj
-276|Uzu la saman uzantnomon por daŭre uzi dosierujon el antaŭa instalaĵo.
-277|Uzi
-278|Altnivele
-279|Komputilnomo
-280|Agordi root-pasvorton
-281|Permesas ensaluti rekte kiel root. Sen ĝi, uzu sudo kun via propra pasvorto.
-282|Root-pasvorto
-283|Konfirmu root-pasvorton
-284|Entajpu vian nomon.
-285|Elektu uzantnomon.
-286|La sistemo jam uzas ĉi tiun uzantnomon.
-287|Ĉi tiu uzantnomo estas rezervita de la sistemo.
-288|Uzantnomoj uzas minusklojn, ciferojn, - kaj _, kaj komenciĝas per litero.
-289|Elektu pasvorton.
-290|La pasvortoj ne kongruas.
-291|La komputilnomo povas enhavi literojn, ciferojn kaj streketojn.
-292|Entajpu la root-pasvorton dufoje.
-293|Konsileto: pasvorto kun 8 aŭ pli da signoj estas multe pli sekura.
-294|Konto
-295|Malhela
-296|Hela
-297|Faru ĝin via
-298|Elektu stilon, emfazan koloron kaj fonbildon. Vi vidas ĉiun ŝanĝon tuj.
-299|Stilo
-300|Emfaza koloro
-301|Fonbildo
-302|Personecigi
-303|Privateco
-304|Elektu, kiuj funkcioj rajtas uzi informojn pri vi. Vi povas ŝanĝi tion iam ajn en Agordoj.
-305|Lokaj servoj
-306|Permesas al aplikaĵoj kiel Mapoj kaj Vetero trovi vian proksimuman lokon per proksimaj Wi-Fi-retoj.
-307|Aŭtomata horzono
-308|Uzas vian lokon por teni la horzonon ĝusta dum vojaĝoj.
-309|_Fini agordadon
-310|Via disko estas ĉifrita
-311|Viaj datumoj estas protektataj. La pasfrazo estas petata ĉiufoje, kiam la komputilo startas.
-312|Diska ĉifrado
-313|Ĉifrado protektas viajn datumojn, se la komputilo perdiĝas aŭ estas ŝtelita.
-314|Ne havebla en ĉi tiu instalaĵo
-315|Ĉifrado protektas viajn dosierojn, se la komputilo perdiĝas aŭ estas ŝtelita. Sen la pasfrazo neniu povas legi la diskon.
-316|Ĉifri la diskon
-317|La pasfrazo estas petata ĉiufoje, kiam la komputilo startas.
-318|Ĉifrado komenciĝos ĉe la sekva restartigo
-319|Poste via disko estas ĉifrata fone, dum vi uzas la komputilon. Se la pasfrazo perdiĝas, neniu povas restaŭri la datumojn.
-320|Preparado de MAN
-321|Ĉio estas preparata…
-322|_Restartigi
-323|_Reen
-324|Preparado
-325|Agorda protokolo
-326|Ĉio farita!
-327|Io fiaskis
-328|Ĉiutaga
-329|Antaŭ ĝisdatigo
-330|Antaŭ restaŭro
-331|Antaŭ reinstalo
-332|Permana
-333|Ankoraŭ neniuj momentkopioj
-334|Kreu unu antaŭ ol fari grandajn ŝanĝojn al la sistemo.
-335|Restaŭri…
-336|Forigi momentkopion
-337|{free} liberaj el {size}. Sistemo, hejmaj dosierujoj kaj momentkopioj kunhavas ĉi tiun spacon; momentkopioj okupas spacon nur por tio, kio ŝanĝiĝis post ilia kreo.
-338|_Bone
-339|Krei momentkopion
-340|Konservas la nunan staton de la sistemo. Viaj personaj dosieroj en la hejma dosierujo ne estas inkluzivitaj.
-341|Priskribo, ekzemple «Antaŭ instali pelilojn»
-342|_Krei
-343|Permana momentkopio
-344|Ĉu forigi momentkopion?
-345|«{description}» de {date} estos definitive forigita.
-346|_Forigi
-347|Ĉu restaŭri ĉi tiun momentkopion?
-348|Post restartigo la sistemo revenos al «{description}» de {date}. Viaj personaj dosieroj ne ŝanĝiĝas.\n\nLa nuna sistemo unue konserviĝas kiel momentkopio, do tio malfareblas.
-349|_Restaŭri
-350|Restartigu por fini la restaŭron
-351|Restartigi _poste
-352|Restartigi _nun
-353|Momentkopioj
-354|Restaŭrpunktoj
-355|Momentkopioj konservas la staton de la operaciumo. Restaŭri unu revenigas la sistemon al tiu momento, kio helpas post malsukcesa ĝisdatigo aŭ agorda ŝanĝo. Viaj personaj dosieroj neniam estas tuŝataj.
-356|Aŭtomataj momentkopioj
-357|Ĉiutagaj momentkopioj
-358|Unufoje tage, dum la komputilo funkcias
-359|Konservotaj ĉiutagaj momentkopioj
-360|Antaŭ programaraj ĝisdatigoj
-361|Faratas aŭtomate, kiam pakoj estas instalataj, ĝisdatigataj aŭ forigataj
-362|Konservotaj ĝisdatigaj momentkopioj
-363|Konservado
-364|Diska spaco
-365|Se MAN ne startas
-366|Elektu «Restore a MAN snapshot» en la starta menuo por rehavi funkciantan sistemon.
-367|Momentkopioj ne haveblas
-368|Momentkopioj funkcias en MAN instalita kun la Btrfs-aranĝo de la MAN-instalilo. Ĉi tiu sistemo (ekzemple viva seanco) ne uzas ĝin.
-369|Restaŭro atendas: restartigu la komputilon por fini ĝin
-370|Restartigi nun
-371|Bonvolu atendi ĝis la nuna ago finiĝos.
-372|Serĉi
-373|Kopii al tondujo
-374|Kunordigita Universala Tempo
-375|Angla (Usono)
-376|MAN {version} eldoniĝis!
-377|Vi povas ĝisdatigi al ĝi.
-378|Malfermi ĝisdatigojn
-379|Kontrolado de la ĝisdatigo
-380|Kontrolado, ke la ĝisdatigo estas aŭtentika kaj kompleta…
-381|MAN-ĝisdatigo
-382|Ĉi tiu ĝisdatigo ne instaleblas
-383|Ne eblis legi la ĝisdatigon.
-384|Ĝisdatigo de {name} {version}
-385|{name} {version} estas instalita
-386|Eldonita
-387|Elŝuta grandeco
-388|Bezonata spaco
-389|Aŭtentikeco
-390|Kontrolita, subskribita de «{signer}»
-391|Kio novas
-392|Ĉi tiu ĝisdatigo ne estas pli nova ol la instalita {name} {version}.
-393|Ĝisdatigo
-394|Bonvolu legi la permesilajn kondiĉojn de ĉi tiu ĝisdatigo.
-395|Mi akceptas la permesilajn kondiĉojn
-396|Kien instali la ĝisdatigon?
-397|La sistemo estas anstataŭigata; dosieroj en via hejma dosierujo ne estas tuŝataj.
-398|Elektu instalaĵon.
-399|funkcias nun
-400|{name} {version} en ĉi tiu komputilo
-401|{name} sur {model}
-402|Neniu MAN-instalaĵo trovita
-403|Ĝisdatigoj estas instalataj el funkcianta, instalita MAN-sistemo, ne el la viva seanco.
-404|Instala loko
-405|Konservata
-406|Viaj dosieroj
-407|Ĉio en via hejma dosierujo
-408|Kontoj kaj pasvortoj
-409|Uzantoj, grupoj, la komputilnomo
-410|Konektoj kaj agordoj
-411|Wi-Fi, horzono, klavaro, aspekto kaj momentkopioj
-412|Flatpak-aplikaĵoj
-413|Plus ĉio en /usr/local kaj /opt
-414|Anstataŭigata
-415|Programaro instalita per apt kaj aliaj ŝanĝoj al sistemaj dosieroj estas anstataŭigataj per la nova sistemo.
-416|La operaciumo
-417|Anstataŭigata per {name} {version}. La nuna sistemo restaŭreblas el momentkopio.
-418|La komputilo restartas por instali la ĝisdatigon
-419|Post la preparado MAN restartas, instalas la ĝisdatigon en kelkaj sekundoj kaj restartas denove.
-420|_Instali ĝisdatigon
-421|Ĉu unue krei momentkopion?
-422|Momentkopio konservas la nunan sistemon, por ke vi povu reveni al ĝi, se io ne funkcias post la ĝisdatigo. Tio estas rekomendata.
-423|_Ne krei
-424|_Krei momentkopion
-425|Preparado de {name} {version}
-426|Restartigi por instali
-427|La komputilo restartos dufoje. Viaj dosieroj estas sekuraj.
-428|Aŭtomata restartigo post {r} sekundoj
-429|Aŭtomata restartigo post 30 sekundoj
-430|La ĝisdatigo estos instalita ĉe la sekva restartigo.
-431|Preta
-432|Ne eblis prepari la ĝisdatigon
-433|Nenio ŝanĝiĝis en via sistemo.
-434|_Reprovi
-435|Ĝisdatiga protokolo
-436|Malsukcesis
-437|Via sistemo estas ĝisdatigita
-438|MAN estas ĝisdatigita al versio {version}.\nAntaŭe: MAN {previous}.
-439|_Farite
-440|Malfermi MAN-ĝisdatigon
-441|MAN-ĝisdatigoj
-442|Akirante la plej novajn pakaĵlistojn…
-443|Kopiante la aplikaĵon
-444|Aldonante la aplikaĵon al la menuo
-445|La dosiero ne troviĝis.
-446|Ne eblis instali la pakaĵon.
-447|La menuero de la aplikaĵo ne validas.
-448|Kontrolado de la instala plano
-449|Preparado de la disko
-450|Kopiado de MAN al la disko
-451|Agordado de la nova sistemo
-452|Instalado de la startigilo
-453|Kreado de la unua momentkopio
-454|Finado
-455|Forigado de malnovaj subdiskaj subskriboj
-456|Kreado de subdiskoj
-457|Formatado de la EFI-sistema subdisko
-458|Ĉifrado de la sistema subdisko
-459|Formatado de la starta subdisko
-460|Kreado de la Btrfs-dosiersistemo
-461|Forigado de malnovaj dosiersistemaj subskriboj
-462|Malŝlosado de la ĉifrita instalaĵo
-463|Konservado de la nuna sistemo kiel momentkopio
-464|Forigado de la antaŭa sistemo
-465|Skribado de la dosiersistema tabelo
-466|Agordado de komputilnomo kaj identeco
-467|Forigado de la kontoj de la viva seanco
-468|Kreado de via konto
-469|Preparado de MAN Setup por la unua starto
-470|Agordado de horzono kaj klavaro
-471|Forigado de la instalilo el la nova sistemo
-472|Konstruado de la starta bildo (initramfs)
-473|Agordado de GRUB
-474|Instalado de GRUB al la EFI-sistema subdisko
-475|Instalado de la rezerva startigilo
-476|Skribado de la starta menuo
-477|Disko preta
-478|Kreado de momentkopio de la nova sistemo
-479|Aldonado de la momentkopio al la starta menuo
-480|Demetado
-481|La instalila helpilo devas funkcii kiel root.
-482|Ĉi tiu komputilo ne startis en UEFI-reĝimo. MAN bezonas UEFI.
-483|La uzantnomo ne validas.
-484|Pasvorto estas bezonata.
-485|La komputilnomo ne validas.
-486|Nekonata lingvo.
-487|La ĉifra pasfrazo devas havi almenaŭ 8 signojn.
-488|La disko ŝanĝiĝis post kiam vi konfirmis la instaladon. Nenio estis ŝanĝita; bonvolu kontroli kaj konfirmi denove.
-489|Elektu sisteman subdiskon.
-490|La konfirmita disko ne enhavas la elektitan sisteman subdiskon.
-491|La starta subdisko devas esti aparta de la EFI- kaj sistema subdiskoj.
-492|La starta subdisko devas esti almenaŭ 512 MB.
-493|Neniu instalaĵo elektita.
-494|La konfirmita disko ne enhavas la elektitan instalaĵon.
-495|La ĉifrita instalaĵo ne havas MAN_BOOT-subdiskon.
-496|Neniu kerno kun kongruaj moduloj troviĝis en /boot.
-497|La lingvon devas ŝanĝi la sistema helpilo.
-498|Aplikado de viaj agordoj
-499|Preparado de diska ĉifrado
-500|Finado
-501|MAN Setup devas esti finita de la sistema helpilo.
-502|MAN Setup jam estas finita en ĉi tiu komputilo.
-503|Nekonata emfaza koloro.
-504|La elektita fonbildo ne haveblas.
-505|Ĉi tiu sistemo ne ĉifreblas.
-506|La agorda ŝlosilo mankas, do ĉifrado ne povas daŭri fone.
-507|La sistemo ne estas instalita sur Btrfs, do momentkopioj ne haveblas.
-508|Restaŭro de momentkopio atendas restartigon. Unue restartigu la komputilon por fini ĝin.
-509|Nevalida identigilo de momentkopio.
-510|Kontrolado de la ĝisdatigo
-511|Kreado de momentkopio
-512|Preparado de la ĝisdatiga areo
-513|Malpakado de la nova sistemo
-514|Transmetado de viaj kontoj kaj agordoj
-515|Preparado de la restartigo
-516|Malpakita
-517|Kontoj
-518|Forigado de programaro nur por la instalilo
-519|Konstruado de la starta bildo de la ĝisdatigo
-520|Aldonado de unufoja starta enigo
-521|La ĝisdatigo estas aŭtentika
-522|Momentkopio kreita
-523|Preterlasita
-524|Ĝisdatiga areo preta
-525|Preparado de la nova sistemo
-526|La ĝisdatiga dosiero estas difektita (kontrolsumo ne kongruas). Elŝutu ĝin denove.
-527|Ne eblis tute legi la ĝisdatigan dosieron.
-528|La ĝisdatigo ne enhavas kernon.
-529|Ĝisdatigojn devas instali la sistema helpilo.
-530|La elektita instalaĵo ne troviĝis.
-531|Nur la funkcianta MAN-instalaĵo ĝisdatigeblas.
-532|Ĉi tio ne estas MAN-ĝisdatiga dosiero (neniu manifesto).
-533|La ĝisdatigo ne estas subskribita, do ĝi ne fidindas.
-534|La subskribo de la ĝisdatigo estas difektita.
-535|La ĝisdatigo ne estas subskribita de MAN. Ĝi eble estis ŝanĝita aŭ venas de nefidinda fonto.
-536|La manifesto de la ĝisdatigo ne validas.
-537|La pasfrazo ne estas ĝusta, aŭ la ĉifrita subdisko ne malfermeblas.
-538|Blua
-539|Bluverda
-540|Verda
-541|Flava
-542|Oranĝa
-543|Ruĝa
-544|Rozkolora
-545|Purpura
-546|Ardeza
-547|Pakaĵa instalilo
-548|Instali aplikaĵojn el .deb-, Flatpak- kaj AppImage-dosieroj
-549|Sistema instalilo
-550|Instali MAN en ĉi tiun komputilon
-551|Sistema restaŭro
-552|Krei kaj restaŭri momentkopiojn de la sistemo
-553|Instalilo de sistemaj ĝisdatigoj
-554|Instali MAN-sisteman ĝisdatigan dosieron
-555|Proponas instali MAN, kiam la viva seanco startas
-556|Sciigo pri MAN-ĝisdatigo
-557|Unufoje post ensaluto diras, ke MAN estis ĝisdatigita
-558|Agordu vian novan MAN-komputilon
-559|Unua agordado de MAN
-560|MAN-ĝisdatigoj
-561|Sciigas vin, kiam nova versio de MAN disponeblas
+44|Konservi post MAN-ĝisdatigoj
+45|MAN reinstalas la aplikaĵon post ĉiu ĝisdatigo. Por tio ĝiaj pakaĵdosieroj estas konservataj.
+46|Alklaku Instali por instali {name}.
+47|Kontrolante, kion alian la aplikaĵo bezonas…
+48|Ankaŭ instalas la bezonatajn pakaĵojn: {list}
+49|Kelkaj pakaĵoj, kiujn la aplikaĵo bezonas, ankoraŭ ne disponeblas. La instalado unue akiras la plej novajn pakaĵlistojn; se ili ankoraŭ mankas, la aplikaĵo ne instaleblas.
+50|Instalante {name}…
+51|Preparante…
+52|Detaloj
+53|Instalante la pakaĵon…
+54|Movante la aplikaĵon al ĝia dosierujo…
+55|Ne eblis instali la aplikaĵon.
+56|Instalante la aplikaĵon per Flatpak…
+57|Protokolo
+58|_Fermi
+59|La instalado sukcesis
+60|La aplikaĵo estas instalita.
+61|La instalado malsukcesis
+62|_Malfermi
+63|_Montri detalojn
+64|Instala protokolo
+65|Aplikaĵa instalilo
+66|_Reen
+67|Legante la aplikaĵon…
+68|Instali {name}
+69|Aplikaĵoj
+70|Elektu aplikaĵon por instali
+71|Ne eblis lanĉi la sisteman helpilon.
+72|Ne eblis komuniki kun la sistema helpilo.
+73|La konekto al la sistema helpilo perdiĝis.
+74|La rajtigo estis nuligita.
+75|Ĉi tiu ago bezonas administrantajn rajtojn.
+76|La sistema helpilo neatendite haltis.
+77|Neniu EFI-sistema subdisko
+78|Nur {free} liberaj, MAN bezonas {need}. Liberigu spacon per DUHACH! en Windows.
+79|Neniu libera spaco. Lanĉu DUHACH! en Windows por fari lokon por MAN.
+80|MAN funkcias de ĉi tiu disko
+81|Uzata: subdisko estas surmetita
+82|Tro malgranda, MAN bezonas {need}
+83|Instali MAN
+84|MAN estas instalata. Bonvolu atendi ĝis la fino.
+85|Lingvo
+86|_Restartigi en ĉi tiu lingvo
+87|La viva seanco restartos en la elektita lingvo, kaj MAN estos instalita en ĝi.
+88|Bonvenon al MAN
+89|Rapida, malfermita kaj tute agordebla GNOME-sistemo.\nInstalu ĝin en ĉi tiun komputilon aŭ daŭre esploru la vivan seancon.
+90|_Instali MAN…
+91|_Daŭre provi MAN
+92|Serĉado de diskoj…
+93|Bonvenon
+94|Ĉi tiu komputilo startis en malnova BIOS-reĝimo. MAN instaleblas nur en UEFI-komputiloj: restartigu kaj elektu la UEFI-startan opcion.
+95|La sistema helpilo ne redonis informojn pri diskoj.
+96|  ·  EFI
+97|_Sekva
+98|Viŝi diskon kaj instali MAN
+99|Ĉio sur la elektita disko estos forigita, ankaŭ Windows.
+100|Rekomendata. Ĉio sur la elektita disko estos forigita.
+101|Instali apud Windows
+102|Rekomendata. MAN uzas la liberan spacon apud Windows; Windows kaj ĝiaj dosieroj restas. Elektu la sistemon ĉe ĉiu starto.
+103|Reinstali MAN
+104|Anstataŭigas la sistemon, sed konservas personajn dosierojn en /home. La nuna sistemo konserviĝas kiel momentkopio.
+105|Propraj subdiskoj
+106|Por spertuloj: elektu subdiskojn mem aŭ kreu ilin per Diskoj.
+107|Disko
+108|Elektu la viŝotan diskon. Neuzeblaj diskoj montriĝas kun la kialo.
+109|Neniuj diskoj trovitaj
+110|Libera spaco apud Windows
+111|La subdiskoj de Windows ne estas tuŝataj. MAN kunhavas la EFI-sisteman subdiskon kaj aldonas Windows al sia starta menuo.
+112|{size} liberaj
+113|neniu libera spaco
+114|{model} (Windows)
+115|Anstataŭigota instalaĵo
+116|neniuj hejmaj dosierujoj
+117|hejmaj dosierujoj: {list}
+118|momentkopioj: {n}
+119|MAN sur {model}
+120|Pasfrazo por {device}
+121|Malŝlosi
+122|Ne eblis ekzameni la instalaĵon.
+123|Subdiskoj
+124|La sistema subdisko estas formatita per Btrfs kaj enhavas @system, @home kaj @snapshots. Subdiskoj de la disko, de kiu MAN funkcias, ne estas listigitaj.
+125|Malfermi Diskojn por krei aŭ regrandigi subdiskojn
+126|Refreŝigi la liston de subdiskoj
+127|Elektu subdiskon
+128|EFI-sistema subdisko
+129|Formati la EFI-sisteman subdiskon
+130|Lasu malŝaltita por konservi startigilojn de aliaj sistemoj
+131|Sistema subdisko (formatota per Btrfs)
+132|Starta subdisko (necesa por ĉifrado)
+133|Listo de subdiskoj refreŝigita
+134|Sekureco
+135|Ĉifri la sistemon
+136|Protektas viajn datumojn, se la komputilo perdiĝas aŭ estas ŝtelita. Pasfrazo estas petata ĉe ĉiu starto.
+137|Pasfrazo
+138|Konfirmu pasfrazon
+139|Gardu ĉi tiun pasfrazon sekure
+140|Se ĝi perdiĝas, neniu povas restaŭri la datumojn. La kerno kaj startaj dosieroj restas sur malgranda neĉifrita starta subdisko.
+141|La pasfrazo devas havi almenaŭ 8 signojn.
+142|La pasfrazoj ne kongruas.
+143|Elektu diskon.
+144|Elektu la diskon kun Windows.
+145|Elektu la anstataŭigotan instalaĵon.
+146|Unue malŝlosu la ĉifritan instalaĵon.
+147|Ĉi tiu subdisko ne enhavas MAN-sistemon.
+148|Elektu EFI-sisteman subdiskon.
+149|Elektu la sisteman subdiskon.
+150|La EFI- kaj sistema subdiskoj devas esti malsamaj.
+151|Ĉifrado bezonas apartan startan subdiskon.
+152|La sistema subdisko devas esti almenaŭ {size}.
+153|La EFI-subdisko ne estas FAT-formatita; ŝaltu formatadon.
+154|La sistema subdisko estas surmetita; unue demetu ĝin en Diskoj.
+155|Kien instali MAN?
+156|Tempo kaj klavaro
+157|Horzono
+158|Klavararanĝo
+159|Provu vian klavaron
+160|Tajpu ĉi tie por kontroli, ke viaj klavoj donas la ĝustajn signojn.
+161|Tajpu ĉi tie
+162|Horzono kaj klavaro
+163|Neniu disko elektita
+164|Neniu sistema subdisko elektita
+165|La sistema subdisko malaperis
+166|Neniu instalaĵo elektita
+167|La disko malaperis
+168|Kontroli
+169|Celo
+170|Viŝi diskon kaj instali
+171|Propraj subdiskoj
+172|Reinstali, konservante /home
+173|Apud Windows
+174| (estos formatita)
+175| (konservata)
+176|Sistema subdisko
+177|{partition} (estos formatita)
+178|Starta subdisko
+179|Spaco por MAN
+180|{free} da libera spaco (kreiĝas starta subdisko kaj la sistema subdisko)
+181|Windows
+182|Neŝanĝita. Ĝi aperas en la starta menuo de MAN; la EFI-sistema subdisko estas kunhavata.
+183|Ĉifrado
+184|Ŝaltita (LUKS2)
+185|Malŝaltita
+186|Dosiersistemo
+187|Btrfs: @system por MAN, @home por viaj dosieroj, @snapshots por restaŭrpunktoj. Ĉiuj kunhavas la liberan spacon.
+188|Sistemo
+189|Via konto
+190|Kreata en MAN Setup, kiam la komputilo unuafoje startas, kune kun la komputilnomo, aspekto kaj privatecaj agordoj.
+191|Klavaro
+192|Ĉiuj datumoj sur {model} ({path}) estos viŝitaj.
+193|_Viŝi kaj instali
+194|La elektitaj subdiskoj estos formatitaj. Aliaj subdiskoj ne ŝanĝiĝas.
+195|_Formati kaj instali
+196|La nuna sistemo estas anstataŭigata. Viaj dosieroj en /home restas, kaj la malnova sistemo konserviĝas kiel momentkopio.
+197|_Reinstali
+198|MAN estas instalata en la liberan spacon. Windows kaj ĝiaj dosieroj ne ŝanĝiĝas.
+199|Preta por instali
+200|Ĉu viŝi {model}?
+201|Ĉiuj dosieroj kaj subdiskoj sur {path} ({size}) estos definitive forigitaj. Tio ne malfareblas.
+202|Viŝi kaj instali
+203|Ĉu formati la elektitajn subdiskojn?
+204|Ĉiuj datumoj sur la elektitaj subdiskoj estos definitive forigitaj. Aliaj subdiskoj ne ŝanĝiĝas.
+205|Formati kaj instali
+206|Ĉu instali MAN apud Windows?
+207|MAN estas instalata en la {free} da libera spaco sur {model} ({path}). Windows kaj ĝiaj dosieroj ne ŝanĝiĝas.
+208|Instali
+209|Ĉu reinstali MAN?
+210|La instalita sistemo estos anstataŭigita per freŝa kopio. Personaj dosieroj en /home restas, kaj la malnova sistemo restas havebla kiel momentkopio.
+211|Reinstali
+212|_Nuligi
+213|Instalado de MAN
+214|Startado…
+215|Instalado
+216|Paŝo {index} el {n}  ·  {title}
+217|MAN estas instalita
+218|Restartigu la komputilon por ekuzi MAN. Menuo ĉe ĉiu starto ebligas elekti MAN aŭ Windows; la provizoran instalilan subdiskon MAN forigas ĉe la unua starto.
+219|Restartigu la komputilon por ekuzi MAN. Vi povas forigi la instalan datumportilon; se ĝi restas konektita, MAN tamen startas de la nova disko.
+220|_Restartigi nun
+221|Farite
+222|Instalado malsukcesis
+223|Neniu alia disko estis ŝanĝita, kaj la instalilo liberigis la celan diskon. Vi povas kontroli la planon kaj reprovi.
+224|_Kontroli kaj reprovi
+225|Serĉi lingvojn
+226|Serĉi landojn
+227|La sistema disko ne troviĝis.
+228|Ĉifrado bezonas la Btrfs-aranĝon kreitan de la MAN-instalilo.
+229|Ĉi tiu instalaĵo ne havas apartan startan subdiskon, kiun ĉifrado bezonas. Reinstalu MAN per «Viŝi diskon» por uzi ĉifradon.
+230|MAN Setup
+231|Kie vi estas?
+232|Via lando aŭ regiono difinas la formon de dato, tempo kaj nombroj.
+233|Lando
+234|Ĝenerala Publika Permesilo de GNU, versio 2
+235|La Linuks-kerno kaj multaj sistemaj iloj
+236|Ĝenerala Publika Permesilo de GNU, versio 3
+237|Multaj GNU- kaj GNOME-programoj
+238|Malpli Ĝenerala Publika Permesilo de GNU, versio 2.1
+239|GTK, GLib kaj multaj bibliotekoj
+240|Malpli Ĝenerala Publika Permesilo de GNU, versio 3
+241|Bibliotekoj
+242|Publika Permesilo de Mozilla 2.0
+243|Programoj kaj bibliotekoj de Mozilla kaj aliaj
+244|Permesilo Apache 2.0
+245|Bibliotekoj kaj iloj
+246|Permesila interkonsento
+247|Bonvolu legi kaj akcepti la kondiĉojn, laŭ kiuj MAN estas provizata.
+248|Permesiloj
+249|La permesila teksto ne estas havebla ({path}).
+250|Mi legis kaj akceptas la permesilajn kondiĉojn
+251|Drata
+252|Ne konektita
+253|Konektiĝi al la interreto
+254|Kun konekto, MAN povas agordi la horloĝon kaj ĝisdatigi vian programaron. Vi povas fari tion ankaŭ poste.
+255|Kontrolado de la konekto…
+256|Wi-Fi-retoj
+257|Serĉi denove
+258|_Preterlasi
+259|Vi povas konektiĝi poste en Agordoj.
+260|Konektita
+261|Ne konektita
+262|Neniuj retoj trovitaj
+263|Interreto
+264|Konektita al «{ssid}»
+265|Ne eblis konektiĝi al «{ssid}»
+266|Konektiĝi al «{ssid}»
+267|Entajpu la pasvorton de la reto.
+268|_Konektiĝi
+269|Kreu vian konton
+270|Vi estos la administranto de ĉi tiu komputilo, kun plena root-aliro per sudo.
+271|Plena nomo
+272|Uzantnomo
+273|Pasvorto
+274|Konfirmu pasvorton
+275|Ensaluti aŭtomate
+276|Preterlasi la ensalutan ekranon, kiam la komputilo startas
+277|Ekzistantaj hejmaj dosierujoj
+278|Uzu la saman uzantnomon por daŭre uzi dosierujon el antaŭa instalaĵo.
+279|Uzi
+280|Altnivele
+281|Komputilnomo
+282|Agordi root-pasvorton
+283|Permesas ensaluti rekte kiel root. Sen ĝi, uzu sudo kun via propra pasvorto.
+284|Root-pasvorto
+285|Konfirmu root-pasvorton
+286|Entajpu vian nomon.
+287|Elektu uzantnomon.
+288|La sistemo jam uzas ĉi tiun uzantnomon.
+289|Ĉi tiu uzantnomo estas rezervita de la sistemo.
+290|Uzantnomoj uzas minusklojn, ciferojn, - kaj _, kaj komenciĝas per litero.
+291|Elektu pasvorton.
+292|La pasvortoj ne kongruas.
+293|La komputilnomo povas enhavi literojn, ciferojn kaj streketojn.
+294|Entajpu la root-pasvorton dufoje.
+295|Konsileto: pasvorto kun 8 aŭ pli da signoj estas multe pli sekura.
+296|Konto
+297|Malhela
+298|Hela
+299|Faru ĝin via
+300|Elektu stilon, emfazan koloron kaj fonbildon. Vi vidas ĉiun ŝanĝon tuj.
+301|Stilo
+302|Emfaza koloro
+303|Fonbildo
+304|Personecigi
+305|Privateco
+306|Elektu, kiuj funkcioj rajtas uzi informojn pri vi. Vi povas ŝanĝi tion iam ajn en Agordoj.
+307|Lokaj servoj
+308|Permesas al aplikaĵoj kiel Mapoj kaj Vetero trovi vian proksimuman lokon per proksimaj Wi-Fi-retoj.
+309|Aŭtomata horzono
+310|Uzas vian lokon por teni la horzonon ĝusta dum vojaĝoj.
+311|_Fini agordadon
+312|Via disko estas ĉifrita
+313|Viaj datumoj estas protektataj. La pasfrazo estas petata ĉiufoje, kiam la komputilo startas.
+314|Diska ĉifrado
+315|Ĉifrado protektas viajn datumojn, se la komputilo perdiĝas aŭ estas ŝtelita.
+316|Ne havebla en ĉi tiu instalaĵo
+317|Ĉifrado protektas viajn dosierojn, se la komputilo perdiĝas aŭ estas ŝtelita. Sen la pasfrazo neniu povas legi la diskon.
+318|Ĉifri la diskon
+319|La pasfrazo estas petata ĉiufoje, kiam la komputilo startas.
+320|Ĉifrado komenciĝos ĉe la sekva restartigo
+321|Poste via disko estas ĉifrata fone, dum vi uzas la komputilon. Se la pasfrazo perdiĝas, neniu povas restaŭri la datumojn.
+322|Preparado de MAN
+323|Ĉio estas preparata…
+324|_Restartigi
+325|_Reen
+326|Preparado
+327|Agorda protokolo
+328|Ĉio farita!
+329|Io fiaskis
+330|Ĉiutaga
+331|Antaŭ ĝisdatigo
+332|Antaŭ restaŭro
+333|Antaŭ reinstalo
+334|Permana
+335|Ankoraŭ neniuj momentkopioj
+336|Kreu unu antaŭ ol fari grandajn ŝanĝojn al la sistemo.
+337|Restaŭri…
+338|Forigi momentkopion
+339|{free} liberaj el {size}. Sistemo, hejmaj dosierujoj kaj momentkopioj kunhavas ĉi tiun spacon; momentkopioj okupas spacon nur por tio, kio ŝanĝiĝis post ilia kreo.
+340|_Bone
+341|Krei momentkopion
+342|Konservas la nunan staton de la sistemo. Viaj personaj dosieroj en la hejma dosierujo ne estas inkluzivitaj.
+343|Priskribo, ekzemple «Antaŭ instali pelilojn»
+344|_Krei
+345|Permana momentkopio
+346|Ĉu forigi momentkopion?
+347|«{description}» de {date} estos definitive forigita.
+348|_Forigi
+349|Ĉu restaŭri ĉi tiun momentkopion?
+350|Post restartigo la sistemo revenos al «{description}» de {date}. Viaj personaj dosieroj ne ŝanĝiĝas.\n\nLa nuna sistemo unue konserviĝas kiel momentkopio, do tio malfareblas.
+351|_Restaŭri
+352|Restartigu por fini la restaŭron
+353|Restartigi _poste
+354|Restartigi _nun
+355|Momentkopioj
+356|Restaŭrpunktoj
+357|Momentkopioj konservas la staton de la operaciumo. Restaŭri unu revenigas la sistemon al tiu momento, kio helpas post malsukcesa ĝisdatigo aŭ agorda ŝanĝo. Viaj personaj dosieroj neniam estas tuŝataj.
+358|Aŭtomataj momentkopioj
+359|Ĉiutagaj momentkopioj
+360|Unufoje tage, dum la komputilo funkcias
+361|Konservotaj ĉiutagaj momentkopioj
+362|Antaŭ programaraj ĝisdatigoj
+363|Faratas aŭtomate, kiam pakoj estas instalataj, ĝisdatigataj aŭ forigataj
+364|Konservotaj ĝisdatigaj momentkopioj
+365|Konservado
+366|Diska spaco
+367|Se MAN ne startas
+368|Elektu «Restore a MAN snapshot» en la starta menuo por rehavi funkciantan sistemon.
+369|Momentkopioj ne haveblas
+370|Momentkopioj funkcias en MAN instalita kun la Btrfs-aranĝo de la MAN-instalilo. Ĉi tiu sistemo (ekzemple viva seanco) ne uzas ĝin.
+371|Restaŭro atendas: restartigu la komputilon por fini ĝin
+372|Restartigi nun
+373|Bonvolu atendi ĝis la nuna ago finiĝos.
+374|Serĉi
+375|Kopii al tondujo
+376|Kunordigita Universala Tempo
+377|Angla (Usono)
+378|MAN {version} eldoniĝis!
+379|Vi povas ĝisdatigi al ĝi.
+380|Malfermi ĝisdatigojn
+381|Kontrolado de la ĝisdatigo
+382|Kontrolado, ke la ĝisdatigo estas aŭtentika kaj kompleta…
+383|MAN-ĝisdatigo
+384|Ĉi tiu ĝisdatigo ne instaleblas
+385|Ne eblis legi la ĝisdatigon.
+386|Ĝisdatigo de {name} {version}
+387|{name} {version} estas instalita
+388|Eldonita
+389|Elŝuta grandeco
+390|Bezonata spaco
+391|Aŭtentikeco
+392|Kontrolita, subskribita de «{signer}»
+393|Kio novas
+394|Ĉi tiu ĝisdatigo ne estas pli nova ol la instalita {name} {version}.
+395|Ĝisdatigo
+396|Bonvolu legi la permesilajn kondiĉojn de ĉi tiu ĝisdatigo.
+397|Mi akceptas la permesilajn kondiĉojn
+398|Kien instali la ĝisdatigon?
+399|La sistemo estas anstataŭigata; dosieroj en via hejma dosierujo ne estas tuŝataj.
+400|Elektu instalaĵon.
+401|funkcias nun
+402|{name} {version} en ĉi tiu komputilo
+403|{name} sur {model}
+404|Neniu MAN-instalaĵo trovita
+405|Ĝisdatigoj estas instalataj el funkcianta, instalita MAN-sistemo, ne el la viva seanco.
+406|Instala loko
+407|Konservata
+408|Viaj dosieroj
+409|Ĉio en via hejma dosierujo
+410|Kontoj kaj pasvortoj
+411|Uzantoj, grupoj, la komputilnomo
+412|Konektoj kaj agordoj
+413|Wi-Fi, horzono, klavaro, aspekto kaj momentkopioj
+414|Flatpak-aplikaĵoj
+415|Plus ĉio en /usr/local kaj /opt
+416|Anstataŭigata
+417|Programaro instalita per apt kaj aliaj ŝanĝoj al sistemaj dosieroj estas anstataŭigataj per la nova sistemo.
+418|La operaciumo
+419|Anstataŭigata per {name} {version}. La nuna sistemo restaŭreblas el momentkopio.
+420|La komputilo restartas por instali la ĝisdatigon
+421|Post la preparado MAN restartas, instalas la ĝisdatigon en kelkaj sekundoj kaj restartas denove.
+422|_Instali ĝisdatigon
+423|Ĉu unue krei momentkopion?
+424|Momentkopio konservas la nunan sistemon, por ke vi povu reveni al ĝi, se io ne funkcias post la ĝisdatigo. Tio estas rekomendata.
+425|_Ne krei
+426|_Krei momentkopion
+427|Preparado de {name} {version}
+428|Restartigi por instali
+429|La komputilo restartos dufoje. Viaj dosieroj estas sekuraj.
+430|Aŭtomata restartigo post {r} sekundoj
+431|Aŭtomata restartigo post 30 sekundoj
+432|La ĝisdatigo estos instalita ĉe la sekva restartigo.
+433|Preta
+434|Ne eblis prepari la ĝisdatigon
+435|Nenio ŝanĝiĝis en via sistemo.
+436|_Reprovi
+437|Ĝisdatiga protokolo
+438|Malsukcesis
+439|Via sistemo estas ĝisdatigita
+440|MAN estas ĝisdatigita al versio {version}.\nAntaŭe: MAN {previous}.
+441|_Farite
+442|Malfermi MAN-ĝisdatigon
+443|MAN-ĝisdatigoj
+444|Akirante la plej novajn pakaĵlistojn…
+445|Kopiante la aplikaĵon
+446|Aldonante la aplikaĵon al la menuo
+447|La dosiero ne troviĝis.
+448|Ne eblis instali la pakaĵon.
+449|La menuero de la aplikaĵo ne validas.
+450|Kontrolado de la instala plano
+451|Preparado de la disko
+452|Kopiado de MAN al la disko
+453|Agordado de la nova sistemo
+454|Instalado de la startigilo
+455|Kreado de la unua momentkopio
+456|Finado
+457|Forigado de malnovaj subdiskaj subskriboj
+458|Kreado de subdiskoj
+459|Formatado de la EFI-sistema subdisko
+460|Ĉifrado de la sistema subdisko
+461|Formatado de la starta subdisko
+462|Kreado de la Btrfs-dosiersistemo
+463|Forigado de malnovaj dosiersistemaj subskriboj
+464|Malŝlosado de la ĉifrita instalaĵo
+465|Konservado de la nuna sistemo kiel momentkopio
+466|Forigado de la antaŭa sistemo
+467|Skribado de la dosiersistema tabelo
+468|Agordado de komputilnomo kaj identeco
+469|Forigado de la kontoj de la viva seanco
+470|Kreado de via konto
+471|Preparado de MAN Setup por la unua starto
+472|Agordado de horzono kaj klavaro
+473|Forigado de la instalilo el la nova sistemo
+474|Konstruado de la starta bildo (initramfs)
+475|Agordado de GRUB
+476|Instalado de GRUB al la EFI-sistema subdisko
+477|Instalado de la rezerva startigilo
+478|Skribado de la starta menuo
+479|Disko preta
+480|Kreado de momentkopio de la nova sistemo
+481|Aldonado de la momentkopio al la starta menuo
+482|Demetado
+483|La instalila helpilo devas funkcii kiel root.
+484|Ĉi tiu komputilo ne startis en UEFI-reĝimo. MAN bezonas UEFI.
+485|La uzantnomo ne validas.
+486|Pasvorto estas bezonata.
+487|La komputilnomo ne validas.
+488|Nekonata lingvo.
+489|La ĉifra pasfrazo devas havi almenaŭ 8 signojn.
+490|La disko ŝanĝiĝis post kiam vi konfirmis la instaladon. Nenio estis ŝanĝita; bonvolu kontroli kaj konfirmi denove.
+491|Elektu sisteman subdiskon.
+492|La konfirmita disko ne enhavas la elektitan sisteman subdiskon.
+493|La starta subdisko devas esti aparta de la EFI- kaj sistema subdiskoj.
+494|La starta subdisko devas esti almenaŭ 512 MB.
+495|Neniu instalaĵo elektita.
+496|La konfirmita disko ne enhavas la elektitan instalaĵon.
+497|La ĉifrita instalaĵo ne havas MAN_BOOT-subdiskon.
+498|Neniu kerno kun kongruaj moduloj troviĝis en /boot.
+499|La lingvon devas ŝanĝi la sistema helpilo.
+500|Aplikado de viaj agordoj
+501|Preparado de diska ĉifrado
+502|Finado
+503|MAN Setup devas esti finita de la sistema helpilo.
+504|MAN Setup jam estas finita en ĉi tiu komputilo.
+505|Nekonata emfaza koloro.
+506|La elektita fonbildo ne haveblas.
+507|Ĉi tiu sistemo ne ĉifreblas.
+508|La agorda ŝlosilo mankas, do ĉifrado ne povas daŭri fone.
+509|La sistemo ne estas instalita sur Btrfs, do momentkopioj ne haveblas.
+510|Restaŭro de momentkopio atendas restartigon. Unue restartigu la komputilon por fini ĝin.
+511|Nevalida identigilo de momentkopio.
+512|Kontrolado de la ĝisdatigo
+513|Kreado de momentkopio
+514|Preparado de la ĝisdatiga areo
+515|Malpakado de la nova sistemo
+516|Transmetado de viaj kontoj kaj agordoj
+517|Preparado de la restartigo
+518|Malpakita
+519|Kontoj
+520|Reinstalante konservitajn aplikaĵojn
+521|Forigado de programaro nur por la instalilo
+522|Konstruado de la starta bildo de la ĝisdatigo
+523|Aldonado de unufoja starta enigo
+524|La ĝisdatigo estas aŭtentika
+525|Momentkopio kreita
+526|Preterlasita
+527|Ĝisdatiga areo preta
+528|Preparado de la nova sistemo
+529|La ĝisdatiga dosiero estas difektita (kontrolsumo ne kongruas). Elŝutu ĝin denove.
+530|Ne eblis tute legi la ĝisdatigan dosieron.
+531|La ĝisdatigo ne enhavas kernon.
+532|Ĝisdatigojn devas instali la sistema helpilo.
+533|La elektita instalaĵo ne troviĝis.
+534|Nur la funkcianta MAN-instalaĵo ĝisdatigeblas.
+535|Ĉi tio ne estas MAN-ĝisdatiga dosiero (neniu manifesto).
+536|La ĝisdatigo ne estas subskribita, do ĝi ne fidindas.
+537|La subskribo de la ĝisdatigo estas difektita.
+538|La ĝisdatigo ne estas subskribita de MAN. Ĝi eble estis ŝanĝita aŭ venas de nefidinda fonto.
+539|La manifesto de la ĝisdatigo ne validas.
+540|La pasfrazo ne estas ĝusta, aŭ la ĉifrita subdisko ne malfermeblas.
+541|Blua
+542|Bluverda
+543|Verda
+544|Flava
+545|Oranĝa
+546|Ruĝa
+547|Rozkolora
+548|Purpura
+549|Ardeza
+550|Pakaĵa instalilo
+551|Instali aplikaĵojn el .deb-, Flatpak- kaj AppImage-dosieroj
+552|Sistema instalilo
+553|Instali MAN en ĉi tiun komputilon
+554|Sistema restaŭro
+555|Krei kaj restaŭri momentkopiojn de la sistemo
+556|Instalilo de sistemaj ĝisdatigoj
+557|Instali MAN-sisteman ĝisdatigan dosieron
+558|Proponas instali MAN, kiam la viva seanco startas
+559|Sciigo pri MAN-ĝisdatigo
+560|Unufoje post ensaluto diras, ke MAN estis ĝisdatigita
+561|Agordu vian novan MAN-komputilon
+562|Unua agordado de MAN
+563|MAN-ĝisdatigoj
+564|Sciigas vin, kiam nova versio de MAN disponeblas
