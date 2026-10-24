@@ -1,0 +1,41 @@
+#!/bin/bash
+# MAN: remove or restore the sandbox limits of a Flatpak app (system-wide
+# override). Called by GNOME Settings > Apps through pkexec.
+#   man-flatpak-sandbox auth             only checks the administrator password
+#   man-flatpak-sandbox unsandbox APP    give APP full access to the system
+#   man-flatpak-sandbox restore APP      put the previous permissions back
+#   man-flatpak-sandbox status APP       prints "unsandboxed" or "sandboxed"
+set -euo pipefail
+STATE=/var/lib/man/unsandboxed
+OVR=/var/lib/flatpak/overrides
+cmd=${1:-}
+app=${2:-}
+valid() { [[ $app =~ ^[A-Za-z_][A-Za-z0-9_-]*(\.[A-Za-z_][A-Za-z0-9_-]*){2,}$ ]] || { echo "Invalid app id" >&2; exit 2; }; }
+case $cmd in
+    auth) exit 0 ;;
+    status) valid; [[ -e $STATE/$app ]] && echo unsandboxed || echo sandboxed ;;
+    unsandbox)
+        valid
+        flatpak info "$app" >/dev/null 2>&1 || flatpak info --user "$app" >/dev/null 2>&1 || { echo "$app is not an installed Flatpak app" >&2; exit 1; }
+        mkdir -p "$STATE" "$OVR"
+        if [[ ! -e $STATE/$app ]]; then
+            if [[ -f $OVR/$app ]]; then cp -a "$OVR/$app" "$STATE/$app.orig"; fi
+            : > "$STATE/$app"
+        fi
+        flatpak override --system "$app" \
+            --filesystem=host --filesystem=host-os --filesystem=host-etc --filesystem=/tmp \
+            --device=all --share=network --share=ipc \
+            --socket=wayland --socket=x11 --socket=fallback-x11 --socket=pulseaudio \
+            --socket=session-bus --socket=system-bus --socket=ssh-auth --socket=pcsc --socket=cups --socket=gpg-agent \
+            --allow=devel --allow=multiarch --allow=bluetooth --allow=canbus --allow=per-app-dev-shm
+        echo "$app is now unsandboxed"
+        ;;
+    restore)
+        valid
+        [[ -e $STATE/$app ]] || { echo "$app was not unsandboxed by MAN"; exit 0; }
+        if [[ -f $STATE/$app.orig ]]; then cp -a "$STATE/$app.orig" "$OVR/$app"; else rm -f "$OVR/$app"; fi
+        rm -f "$STATE/$app" "$STATE/$app.orig"
+        echo "$app sandbox restored"
+        ;;
+    *) echo "usage: $0 auth | status APP | unsandbox APP | restore APP" >&2; exit 2 ;;
+esac

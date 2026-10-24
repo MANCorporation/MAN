@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily MAN system snapshot
+Documentation=file:///etc/man/snapshots.conf
+ConditionPathIsMountPoint=/.snapshots
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-installer/man-installer-backend snapshot-auto daily
+Nice=19
+IOSchedulingClass=idle

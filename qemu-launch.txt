@@ -1,0 +1,8 @@
+# MAN Linux GNOME 51 launcher (use the script; it boots through UEFI firmware)
+
+./run-gnome.sh graphical      # live session (autologin MANInstaller, installer opens)
+./run-gnome.sh sdl            # same, SDL window
+./run-gnome.sh headless       # serial console only, for diagnosis
+./run-gnome.sh install-test   # live session + empty 40 GB test disk; after installing,
+                              # "Restart Now" boots the installed system automatically
+./run-gnome.sh installed      # boot only the test disk (USB stick removed)

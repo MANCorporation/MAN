@@ -1,0 +1,15 @@
+[Unit]
+Description=Encrypt the MAN system disk in the background
+ConditionPathExists=/etc/man/encrypt-pending
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/man-installer/man-installer-backend encrypt-online
+Nice=10
+IOSchedulingClass=idle
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,490 @@
+0|Sistemskega pomočnika ni mogoče zagnati.
+1|S sistemskim pomočnikom ni mogoče komunicirati.
+2|Povezava s sistemskim pomočnikom je bila prekinjena.
+3|Overitev je bila preklicana.
+4|Za to dejanje so potrebne skrbniške pravice.
+5|Sistemski pomočnik se je nepričakovano ustavil.
+6|Ni sistemskega razdelka EFI
+7|Prostega je le {free}, MAN potrebuje {need}. Sprostite prostor z DUHACH! v sistemu Windows.
+8|Ni prostega prostora. Zaženite DUHACH! v sistemu Windows in sprostite prostor za MAN.
+9|MAN teče s tega diska
+10|V uporabi: razdelek je priklopljen
+11|Premajhen, MAN potrebuje {need}
+12|Namesti MAN
+13|MAN se namešča. Počakajte, da se konča.
+14|Jezik
+15|_Znova zaženi v tem jeziku
+16|Živa seja se znova zažene v izbranem jeziku in MAN se namesti v njem.
+17|Dobrodošli v MAN
+18|Hiter, odprt in v celoti prilagodljiv sistem GNOME.\nNamestite ga na ta računalnik ali nadaljujte z raziskovanjem žive seje.
+19|_Namesti MAN …
+20|_Še naprej preizkušaj MAN
+21|Iskanje diskov …
+22|Dobrodošli
+23|Ta računalnik je bil zagnan v starejšem načinu BIOS. MAN je mogoče namestiti le na računalnike UEFI: znova zaženite in izberite možnost zagona UEFI.
+24|Sistemski pomočnik ni vrnil podatkov o diskih.
+25|  ·  EFI
+26|_Naprej
+27|Vrsta namestitve
+28|Izbriši disk in namesti MAN
+29|Vse na izbranem disku se izbriše, vključno z Windows.
+30|Priporočeno. Vse na izbranem disku se izbriše.
+31|Namesti poleg sistema Windows
+32|Priporočeno. MAN uporabi prosti prostor poleg sistema Windows; Windows in njegove datoteke ostanejo. Sistem izberete ob vsakem zagonu.
+33|Znova namesti MAN
+34|Zamenja sistem, vendar ohrani osebne datoteke v /home. Trenutni sistem se shrani kot posnetek.
+35|Razdelki po meri
+36|Za strokovnjake: razdelke izberite sami ali jih ustvarite z Diski.
+37|Disk
+38|Izberite disk, ki bo izbrisan. Diski, ki jih ni mogoče uporabiti, so prikazani z razlogom.
+39|Ni najdenih diskov
+40|Prosti prostor poleg sistema Windows
+41|Razdelki sistema Windows ostanejo nedotaknjeni. MAN si deli sistemski razdelek EFI in doda Windows v svoj zagonski meni.
+42|{size} prosto
+43|ni prostega prostora
+44|{model} (Windows)
+45|Namestitev za zamenjavo
+46|ni domačih map
+47|domače mape: {list}
+48|posnetki: {n}
+49|MAN na {model}
+50|Šifrirno geslo za {device}
+51|Odkleni
+52|Namestitve ni bilo mogoče pregledati.
+53|Razdelki
+54|Sistemski razdelek se formatira v Btrfs in vsebuje @system, @home in @snapshots. Razdelki na disku, s katerega teče MAN, niso prikazani.
+55|Odpri Diske za ustvarjanje ali spreminjanje velikosti razdelkov
+56|Osveži seznam razdelkov
+57|Izberite razdelek
+58|Sistemski razdelek EFI
+59|Formatiraj sistemski razdelek EFI
+60|Pustite izklopljeno, da ohranite zagonske nalagalnike drugih sistemov
+61|Sistemski razdelek (formatiran kot Btrfs)
+62|Zagonski razdelek (potreben pri šifriranju)
+63|Seznam razdelkov je osvežen
+64|Varnost
+65|Šifriraj sistem
+66|Ščiti vaše podatke, če računalnik izgubite ali vam ga ukradejo. Ob vsakem zagonu se zahteva šifrirno geslo.
+67|Šifrirno geslo
+68|Potrdi šifrirno geslo
+69|To geslo hranite na varnem
+70|Če ga izgubite, podatkov ne more obnoviti nihče. Jedro in zagonske datoteke ostanejo na majhnem nešifriranem zagonskem razdelku.
+71|Šifrirno geslo mora imeti vsaj 8 znakov.
+72|Šifrirni gesli se ne ujemata.
+73|Izberite disk.
+74|Izberite disk s sistemom Windows.
+75|Izberite namestitev za zamenjavo.
+76|Najprej odklenite šifrirano namestitev.
+77|Ta razdelek ne vsebuje sistema MAN.
+78|Izberite sistemski razdelek EFI.
+79|Izberite sistemski razdelek.
+80|Razdelek EFI in sistemski razdelek morata biti različna.
+81|Šifriranje zahteva ločen zagonski razdelek.
+82|Sistemski razdelek mora imeti vsaj {size}.
+83|Razdelek EFI ni formatiran kot FAT; vklopite formatiranje.
+84|Sistemski razdelek je priklopljen; najprej ga odklopite v Diskih.
+85|Kam namestiti MAN?
+86|Čas in tipkovnica
+87|Časovni pas
+88|Razporeditev tipkovnice
+89|Preizkusite tipkovnico
+90|Tipkajte sem in preverite, ali tipke vnašajo prave znake.
+91|Tipkajte sem
+92|Časovni pas in tipkovnica
+93|Disk ni izbran
+94|Sistemski razdelek ni izbran
+95|Sistemski razdelek je izginil
+96|Namestitev ni izbrana
+97|Disk je izginil
+98|Pregled
+99|Cilj
+100|Izbriši disk in namesti
+101|Razdelki po meri
+102|Znova namesti, ohrani /home
+103|Poleg sistema Windows
+104| (bo formatiran)
+105| (ohranjen)
+106|Sistemski razdelek
+107|{partition} (bo formatiran)
+108|Zagonski razdelek
+109|Namestitev
+110|Prostor za MAN
+111|{free} prostega prostora (ustvarita se zagonski in sistemski razdelek)
+112|Windows
+113|Brez sprememb. Prikaže se v zagonskem meniju MAN; sistemski razdelek EFI je skupen.
+114|Šifriranje
+115|Vklopljeno (LUKS2)
+116|Izklopljeno
+117|Datotečni sistem
+118|Btrfs: @system za MAN, @home za vaše datoteke, @snapshots za obnovitvene točke. Vsi si delijo prosti prostor.
+119|Sistem
+120|Vaš račun
+121|Ustvari se v MAN Setup ob prvem zagonu računalnika, skupaj z imenom računalnika, videzom in nastavitvami zasebnosti.
+122|Tipkovnica
+123|Vsi podatki na {model} ({path}) bodo izbrisani.
+124|_Izbriši in namesti
+125|Izbrani razdelki bodo formatirani. Drugi razdelki se ne spremenijo.
+126|_Formatiraj in namesti
+127|Trenutni sistem se zamenja. Vaše datoteke v /home se ohranijo, stari sistem pa se shrani kot posnetek.
+128|_Znova namesti
+129|MAN se namesti v prosti prostor. Windows in njegove datoteke se ne spremenijo.
+130|_Namesti
+131|Pripravljeno za namestitev
+132|Izbrišem {model}?
+133|Vse datoteke in razdelki na {path} ({size}) bodo trajno izbrisani. Tega ni mogoče razveljaviti.
+134|Izbriši in namesti
+135|Formatiram izbrane razdelke?
+136|Vsi podatki na izbranih razdelkih bodo trajno izbrisani. Drugi razdelki se ne spremenijo.
+137|Formatiraj in namesti
+138|Namestim MAN poleg sistema Windows?
+139|MAN se namesti v {free} prostega prostora na {model} ({path}). Windows in njegove datoteke se ne spremenijo.
+140|Namesti
+141|Znova namestim MAN?
+142|Nameščeni sistem bo zamenjan z novo kopijo. Osebne datoteke v /home se ohranijo, stari sistem pa ostane na voljo kot posnetek.
+143|Znova namesti
+144|_Prekliči
+145|Nameščanje MAN
+146|Zaganjanje …
+147|Podrobnosti
+148|Nameščanje
+149|Korak {index} od {n}  ·  {title}
+150|Dnevnik
+151|MAN je nameščen
+152|Znova zaženite računalnik in začnite uporabljati MAN. Meni ob vsakem zagonu vam omogoča izbiro med MAN in Windows; začasni razdelek namestitvenega programa MAN odstrani ob prvem zagonu.
+153|Znova zaženite računalnik in začnite uporabljati MAN. Namestitveni medij lahko odstranite; če ostane priključen, se MAN vseeno zažene z novega diska.
+154|_Znova zaženi zdaj
+155|Končano
+156|Namestitev ni uspela
+157|Noben drug disk ni bil spremenjen in namestitveni program je sprostil ciljni disk. Načrt lahko pregledate in poskusite znova.
+158|_Preglej in poskusi znova
+159|_Pokaži podrobnosti
+160|Dnevnik namestitve
+161|Iskanje jezikov
+162|Iskanje držav
+163|Sistemskega diska ni bilo mogoče najti.
+164|Šifriranje zahteva razporeditev Btrfs, ki jo ustvari namestitveni program MAN.
+165|Ta namestitev nima ločenega zagonskega razdelka, ki ga šifriranje potrebuje. Za šifriranje znova namestite MAN z možnostjo »Izbriši disk«.
+166|MAN Setup
+167|Kje ste?
+168|Vaša država ali regija določa obliko datuma, časa in števil.
+169|Država
+170|Splošno dovoljenje GNU, različica 2
+171|Jedro Linux in številna sistemska orodja
+172|Splošno dovoljenje GNU, različica 3
+173|Številni programi GNU in GNOME
+174|Manjše splošno dovoljenje GNU, različica 2.1
+175|GTK, GLib in številne knjižnice
+176|Manjše splošno dovoljenje GNU, različica 3
+177|Knjižnice
+178|Mozilla Public License 2.0
+179|Programi in knjižnice Mozille in drugih
+180|Licenca Apache 2.0
+181|Knjižnice in orodja
+182|Licenčna pogodba
+183|Preberite in sprejmite pogoje, pod katerimi je MAN na voljo.
+184|Licence
+185|Besedilo licence ni na voljo ({path}).
+186|Prebral(a) sem licenčne pogoje in jih sprejemam
+187|Žično
+188|Ni povezano
+189|Povežite se z internetom
+190|S povezavo lahko MAN nastavi uro in posodablja vašo programsko opremo. To lahko storite tudi pozneje.
+191|Preverjanje povezave …
+192|Omrežja Wi-Fi
+193|Išči znova
+194|_Preskoči
+195|Povežete se lahko pozneje v Nastavitvah.
+196|Povezano
+197|Ni povezano
+198|Ni najdenih omrežij
+199|Internet
+200|Povezano z »{ssid}«
+201|Povezava z »{ssid}« ni uspela
+202|Poveži se z »{ssid}«
+203|Vnesite geslo omrežja.
+204|_Poveži
+205|Ustvarite svoj račun
+206|Postali boste skrbnik tega računalnika s polnim dostopom root prek sudo.
+207|Polno ime
+208|Uporabniško ime
+209|Geslo
+210|Potrdi geslo
+211|Samodejna prijava
+212|Ob zagonu računalnika preskoči prijavni zaslon
+213|Obstoječe domače mape
+214|Uporabite isto uporabniško ime, da boste še naprej uporabljali mapo iz prejšnje namestitve.
+215|Uporabi
+216|Napredno
+217|Ime računalnika
+218|Nastavi geslo root
+219|Omogoča neposredno prijavo kot root. Brez njega uporabljajte sudo z lastnim geslom.
+220|Geslo root
+221|Potrdi geslo root
+222|Vnesite svoje ime.
+223|Izberite uporabniško ime.
+224|To uporabniško ime sistem že uporablja.
+225|To uporabniško ime je rezervirano za sistem.
+226|Uporabniška imena vsebujejo male črke, števke, - in _ ter se začnejo s črko.
+227|Izberite geslo.
+228|Gesli se ne ujemata.
+229|Ime računalnika lahko vsebuje črke, števke in vezaje.
+230|Geslo root vnesite dvakrat.
+231|Namig: geslo z 8 ali več znaki je veliko varnejše.
+232|Račun
+233|Temno
+234|Svetlo
+235|Naj bo vaš
+236|Izberite slog, poudarno barvo in ozadje. Vsako spremembo vidite takoj.
+237|Slog
+238|Poudarna barva
+239|Ozadje
+240|Prilagodi
+241|Zasebnost
+242|Izberite, katere funkcije smejo uporabljati podatke o vas. To lahko kadar koli spremenite v Nastavitvah.
+243|Storitve določanja lokacije
+244|Omogoča programom, kot sta Zemljevidi in Vreme, da določijo vašo približno lokacijo s pomočjo bližnjih omrežij Wi-Fi.
+245|Samodejni časovni pas
+246|Uporablja vašo lokacijo, da je časovni pas na potovanjih pravilen.
+247|_Dokončaj nastavitev
+248|Vaš disk je šifriran
+249|Vaši podatki so zaščiteni. Šifrirno geslo se zahteva ob vsakem zagonu računalnika.
+250|Šifriranje diska
+251|Šifriranje ščiti vaše podatke, če računalnik izgubite ali vam ga ukradejo.
+252|Ni na voljo v tej namestitvi
+253|Šifriranje ščiti vaše datoteke, če računalnik izgubite ali vam ga ukradejo. Brez šifrirnega gesla diska ne more prebrati nihče.
+254|Šifriraj disk
+255|Šifrirno geslo se zahteva ob vsakem zagonu računalnika.
+256|Šifriranje se začne ob naslednjem ponovnem zagonu
+257|Disk se nato šifrira v ozadju, medtem ko uporabljate računalnik. Če šifrirno geslo izgubite, podatkov ne more obnoviti nihče.
+258|Pripravljanje MAN
+259|Vse se pripravlja …
+260|_Znova zaženi
+261|_Nazaj
+262|Pripravljanje
+263|Dnevnik nastavitve
+264|Vse je pripravljeno!
+265|Nekaj je šlo narobe
+266|Dnevni
+267|Pred posodobitvijo
+268|Pred obnovitvijo
+269|Pred ponovno namestitvijo
+270|Ročni
+271|Še ni posnetkov
+272|Ustvarite ga pred večjimi spremembami sistema.
+273|Obnovi …
+274|Izbriši posnetek
+275|{free} prosto od {size}. Sistem, domače mape in posnetki si delijo ta prostor; posnetki zasedajo prostor le za tisto, kar se je spremenilo od njihovega nastanka.
+276|_V redu
+277|Ustvari posnetek
+278|Shrani trenutno stanje sistema. Osebne datoteke v domači mapi niso vključene.
+279|Opis, na primer »Pred namestitvijo gonilnikov«
+280|_Ustvari
+281|Ročni posnetek
+282|Izbrišem posnetek?
+283|»{description}« z dne {date} bo trajno izbrisan.
+284|_Izbriši
+285|Obnovim ta posnetek?
+286|Po ponovnem zagonu se sistem vrne na »{description}« z dne {date}. Vaše osebne datoteke se ne spremenijo.\n\nTrenutni sistem se najprej shrani kot posnetek, zato je to mogoče razveljaviti.
+287|_Obnovi
+288|Znova zaženite za dokončanje obnovitve
+289|Znova zaženi _pozneje
+290|Znova zaženi _zdaj
+291|Posnetki
+292|Obnovitvene točke
+293|Posnetki shranijo stanje operacijskega sistema. Obnovitev posnetka vrne sistem v tisti trenutek, kar pomaga po neuspeli posodobitvi ali spremembi nastavitev. Vaših osebnih datotek se nikoli ne dotakne.
+294|Samodejni posnetki
+295|Dnevni posnetki
+296|Enkrat na dan, ko je računalnik vklopljen
+297|Število dnevnih posnetkov
+298|Pred posodobitvami programske opreme
+299|Ustvarijo se samodejno pri nameščanju, nadgradnji ali odstranjevanju paketov
+300|Število posnetkov posodobitev
+301|Shramba
+302|Prostor na disku
+303|Če se MAN ne zažene
+304|V zagonskem meniju izberite »Restore a MAN snapshot«, da dobite nazaj delujoč sistem.
+305|Posnetki niso na voljo
+306|Posnetki delujejo na MAN, nameščenem z razporeditvijo Btrfs, ki jo ustvari namestitveni program MAN. Ta sistem (na primer živa seja) je ne uporablja.
+307|Obnovitev čaka: znova zaženite računalnik, da jo dokončate
+308|Znova zaženi zdaj
+309|Počakajte, da se trenutno dejanje konča.
+310|Iskanje
+311|Kopiraj v odložišče
+312|Usklajeni univerzalni čas
+313|Angleščina (ZDA)
+314|Preverjanje posodobitve
+315|Preverjanje, ali je posodobitev pristna in popolna …
+316|Posodobitev MAN
+317|Te posodobitve ni mogoče namestiti
+318|Posodobitve ni bilo mogoče prebrati.
+319|Posodobitev z {name} {version}
+320|{name} {version} je nameščen
+321|Različica
+322|Izdano
+323|Velikost prenosa
+324|Potreben prostor
+325|Pristnost
+326|Preverjeno, podpisal »{signer}«
+327|Kaj je novega
+328|_Nadaljuj
+329|Ta posodobitev ni novejša od nameščenega {name} {version}.
+330|Posodobitev
+331|Preberite licenčne pogoje te posodobitve.
+332|Sprejemam licenčne pogoje
+333|Kam namestiti posodobitev?
+334|Sistem se zamenja; datoteke v domači mapi ostanejo nedotaknjene.
+335|Izberite namestitev.
+336|trenutno teče
+337|{name} {version} na tem računalniku
+338|{name} na {model}
+339|Ni najdene namestitve MAN
+340|Posodobitve se nameščajo iz zagnanega, nameščenega sistema MAN, ne iz žive seje.
+341|Mesto namestitve
+342|Povzetek
+343|Ohranjeno
+344|Vaše datoteke
+345|Vse v vaši domači mapi
+346|Računi in gesla
+347|Uporabniki, skupine, ime računalnika
+348|Povezave in nastavitve
+349|Wi-Fi, časovni pas, tipkovnica, videz in posnetki
+350|Programi Flatpak
+351|Ter vse v /usr/local in /opt
+352|Zamenjano
+353|Programsko opremo, nameščeno z apt, in druge spremembe sistemskih datotek zamenja novi sistem.
+354|Operacijski sistem
+355|Zamenja ga {name} {version}. Trenutni sistem je mogoče obnoviti iz posnetka.
+356|Računalnik se znova zažene za namestitev posodobitve
+357|Po pripravi se MAN znova zažene, v nekaj sekundah namesti posodobitev in se znova zažene.
+358|_Namesti posodobitev
+359|Najprej ustvarim posnetek?
+360|Posnetek shrani trenutni sistem, da se lahko vrnete nanj, če po posodobitvi kaj ne deluje. Priporočeno.
+361|_Ne ustvari
+362|_Ustvari posnetek
+363|Pripravljanje {name} {version}
+364|Znova zaženi za namestitev
+365|Računalnik se bo dvakrat znova zagnal. Vaše datoteke so varne.
+366|Samodejni ponovni zagon čez {r} s
+367|Samodejni ponovni zagon čez 30 s
+368|Posodobitev se namesti ob naslednjem ponovnem zagonu.
+369|Pripravljeno
+370|Posodobitve ni bilo mogoče pripraviti
+371|V vašem sistemu se ni nič spremenilo.
+372|_Poskusi znova
+373|Dnevnik posodobitve
+374|Ni uspelo
+375|Vaš sistem je posodobljen
+376|MAN je posodobljen na različico {version}.\nPrej: MAN {previous}.
+377|_Končano
+378|Odpri posodobitev MAN
+379|Posodobitve MAN
+380|Preverjanje načrta namestitve
+381|Pripravljanje diska
+382|Kopiranje MAN na disk
+383|Nastavljanje novega sistema
+384|Nameščanje zagonskega nalagalnika
+385|Ustvarjanje prvega posnetka
+386|Dokončevanje
+387|Odstranjevanje starih podpisov razdelkov
+388|Ustvarjanje razdelkov
+389|Formatiranje sistemskega razdelka EFI
+390|Šifriranje sistemskega razdelka
+391|Formatiranje zagonskega razdelka
+392|Ustvarjanje datotečnega sistema Btrfs
+393|Odstranjevanje starih podpisov datotečnih sistemov
+394|Odklepanje šifrirane namestitve
+395|Shranjevanje trenutnega sistema kot posnetka
+396|Odstranjevanje prejšnjega sistema
+397|Zapisovanje tabele datotečnih sistemov
+398|Nastavljanje imena in identitete računalnika
+399|Odstranjevanje računov žive seje
+400|Ustvarjanje vašega računa
+401|Pripravljanje MAN Setup za prvi zagon
+402|Nastavljanje časovnega pasu in tipkovnice
+403|Odstranjevanje namestitvenega programa iz novega sistema
+404|Izdelava zagonske slike (initramfs)
+405|Nastavljanje GRUB
+406|Nameščanje GRUB na sistemski razdelek EFI
+407|Nameščanje rezervnega zagonskega nalagalnika
+408|Zapisovanje zagonskega menija
+409|Disk je pripravljen
+410|Ustvarjanje posnetka novega sistema
+411|Dodajanje posnetka v zagonski meni
+412|Odklapljanje
+413|Pomočnik namestitvenega programa mora teči kot root.
+414|Ta računalnik ni bil zagnan v načinu UEFI. MAN zahteva UEFI.
+415|Uporabniško ime ni veljavno.
+416|Geslo je obvezno.
+417|Ime računalnika ni veljavno.
+418|Neznan jezik.
+419|Šifrirno geslo mora imeti vsaj 8 znakov.
+420|Disk se je spremenil po tem, ko ste potrdili namestitev. Nič ni bilo spremenjeno; preglejte in znova potrdite.
+421|Izberite sistemski razdelek.
+422|Potrjeni disk ne vsebuje izbranega sistemskega razdelka.
+423|Zagonski razdelek mora biti ločen od razdelka EFI in sistemskega razdelka.
+424|Zagonski razdelek mora imeti vsaj 512 MB.
+425|Namestitev ni izbrana.
+426|Potrjeni disk ne vsebuje izbrane namestitve.
+427|Šifrirana namestitev nima razdelka MAN_BOOT.
+428|V /boot ni bilo najdeno jedro z ustreznimi moduli.
+429|Jezik mora spremeniti sistemski pomočnik.
+430|Uveljavljanje vaših nastavitev
+431|Pripravljanje šifriranja diska
+432|Dokončevanje
+433|MAN Setup mora dokončati sistemski pomočnik.
+434|MAN Setup je na tem računalniku že dokončan.
+435|Neznana poudarna barva.
+436|Izbrano ozadje ni na voljo.
+437|Tega sistema ni mogoče šifrirati.
+438|Nastavitveni ključ manjka, zato se šifriranje ne more nadaljevati v ozadju.
+439|Sistem ni nameščen na Btrfs, zato posnetki niso na voljo.
+440|Obnovitev posnetka čaka na ponovni zagon. Najprej znova zaženite računalnik, da jo dokončate.
+441|Neveljaven ID posnetka.
+442|Preverjanje posodobitve
+443|Ustvarjanje posnetka
+444|Pripravljanje območja za posodobitev
+445|Razširjanje novega sistema
+446|Prenašanje vaših računov in nastavitev
+447|Pripravljanje ponovnega zagona
+448|Razširjeno
+449|Računi
+450|Odstranjevanje programske opreme samo za namestitveni program
+451|Izdelava zagonske slike posodobitve
+452|Dodajanje enkratnega zagonskega vnosa
+453|Posodobitev je pristna
+454|Posnetek je ustvarjen
+455|Preskočeno
+456|Območje za posodobitev je pripravljeno
+457|Pripravljanje novega sistema
+458|Datoteka posodobitve je poškodovana (nadzorna vsota se ne ujema). Znova jo prenesite.
+459|Datoteke posodobitve ni bilo mogoče prebrati v celoti.
+460|Posodobitev ne vsebuje jedra.
+461|Posodobitve mora namestiti sistemski pomočnik.
+462|Izbrane namestitve ni bilo mogoče najti.
+463|Posodobiti je mogoče le zagnano namestitev MAN.
+464|To ni datoteka posodobitve MAN (ni manifesta).
+465|Posodobitev ni podpisana, zato ji ni mogoče zaupati.
+466|Podpis posodobitve je poškodovan.
+467|Posodobitve ni podpisal MAN. Morda je bila spremenjena ali izvira iz nezaupanja vrednega vira.
+468|Manifest posodobitve ni veljaven.
+469|Šifrirno geslo ni pravilno ali šifriranega razdelka ni mogoče odpreti.
+470|Modra
+471|Modrozelena
+472|Zelena
+473|Rumena
+474|Oranžna
+475|Rdeča
+476|Rožnata
+477|Vijolična
+478|Skrilasta
+479|Namestitev sistema
+480|Namesti MAN na ta računalnik
+481|Obnovitev sistema
+482|Ustvarjanje in obnavljanje posnetkov sistema
+483|Namestitev sistemskih posodobitev
+484|Namesti datoteko posodobitve sistema MAN
+485|Ponudi namestitev MAN ob zagonu žive seje
+486|Obvestilo o posodobitvi MAN
+487|Po prijavi enkrat sporoči, da je bil MAN posodobljen
+488|Nastavite svoj novi računalnik MAN
+489|Prva nastavitev MAN

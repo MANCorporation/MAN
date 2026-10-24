@@ -1,0 +1,43 @@
+#!/bin/sh
+# Boot-menu entries that restore a MAN snapshot (see man-rollback in the initramfs).
+set -e
+prefix="/usr"
+exec_prefix="/usr"
+datarootdir="/usr/share"
+. "${pkgdatadir:-/usr/share/grub}/grub-mkconfig_lib"
+
+SNAPDIR=/.snapshots
+[ -d "$SNAPDIR" ] || exit 0
+[ -n "${GRUB_DEVICE_UUID}" ] || exit 0
+kernels=$(for k in /boot/vmlinuz-*; do [ -f "$k" ] && [ -f "/boot/initrd.img-${k#/boot/vmlinuz-}" ] && echo "$k"; done | version_sort -r)
+[ -n "$kernels" ] || exit 0
+ids=$(for d in "$SNAPDIR"/*/; do
+          id=$(basename "$d")
+          [ -d "$d/snapshot" ] && [ -f "$d/info.json" ] && echo "$id"
+      done | sort -r | head -n 15)
+[ -n "$ids" ] || exit 0
+
+echo "Found MAN snapshots: $(echo $ids | wc -w)" >&2
+echo "submenu 'Restore a MAN snapshot' --class recovery \$menuentry_id_option 'man-snapshots' {"
+for id in $ids; do
+    info="$SNAPDIR/$id/info.json"
+    desc=$(sed -n 's/.*"description":"\([^"]*\)".*/\1/p' "$info" | tr -cd 'A-Za-z0-9 .,:()+_/-')
+    created=$(sed -n 's/.*"created":"\([^"]*\)".*/\1/p' "$info" | tr 'TZ' '  ')
+    # /boot may be a separate partition, so kernels are not part of the
+    # snapshot: use the newest kernel whose modules the snapshot contains.
+    kernel=""
+    for k in $kernels; do
+        if [ -d "$SNAPDIR/$id/snapshot/usr/lib/modules/${k#/boot/vmlinuz-}" ]; then kernel=$k; break; fi
+    done
+    [ -n "$kernel" ] || kernel=$(echo "$kernels" | head -n 1)
+    version=${kernel#/boot/vmlinuz-}
+    rel_kernel=$(make_system_path_relative_to_its_root "$kernel")
+    rel_initrd=$(make_system_path_relative_to_its_root "/boot/initrd.img-$version")
+    echo "  menuentry '${desc:-Snapshot} -- ${created}UTC' --class recovery \$menuentry_id_option 'man-snapshot-$id' {"
+    prepare_grub_to_access_device "${GRUB_DEVICE_BOOT}" | sed 's/^/    /'
+    echo "    echo 'Restoring MAN snapshot $id...'"
+    echo "    linux ${rel_kernel} root=UUID=${GRUB_DEVICE_UUID} ro rootflags=subvol=@system ${GRUB_CMDLINE_LINUX} man.rollback=$id"
+    echo "    initrd ${rel_initrd}"
+    echo "  }"
+done
+echo "}"

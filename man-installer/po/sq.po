@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Ndihmësi i sistemit nuk mund të nisej."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Nuk mund të komunikohej me ndihmësin e sistemit."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Lidhja me ndihmësin e sistemit humbi."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Autorizimi u anulua."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Ky veprim kërkon të drejta administratori."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Ndihmësi i sistemit ndaloi papritur."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Nuk ka ndarje sistemi EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Vetëm {free} të lira, MAN-i ka nevojë për {need}. Lironi vend me DUHACH! në Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Nuk ka hapësirë të lirë. Nisni DUHACH! në Windows për t’i bërë vend MAN-it."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN-i po xhiron nga ky disk"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Në përdorim: një ndarje është e montuar"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Shumë i vogël, MAN-i ka nevojë për {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Instalo MAN-in"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN-i po instalohet. Ju lutemi, prisni derisa të mbarojë."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Gjuha"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Rinise në këtë gjuhë"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Sesioni live riniset në gjuhën e zgjedhur dhe MAN-i instalohet në të."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Mirë se vini në MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Një sistem GNOME i shpejtë, i hapur dhe plotësisht i përshtatshëm.\n"
+"Instalojeni në këtë kompjuter ose vazhdoni të eksploroni sesionin live."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Instalo MAN-in…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Vazhdo ta provosh MAN-in"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Po kërkohen disqe…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Mirë se vini"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Ky kompjuter u nis në mënyrën e vjetër BIOS. MAN-i mund të instalohet vetëm në kompjuterë UEFI: riniseni dhe zgjidhni mundësinë e nisjes UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Ndihmësi i sistemit nuk ktheu të dhëna për disqet."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Pasuesi"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Lloji i instalimit"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Fshi diskun dhe instalo MAN-in"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Gjithçka në diskun e zgjedhur fshihet, përfshirë Windows-in."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "E rekomanduar. Gjithçka në diskun e zgjedhur fshihet."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Instalo krahas Windows-it"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "E rekomanduar. MAN-i përdor hapësirën e lirë pranë Windows-it; Windows-i dhe kartelat e tij mbeten. Zgjidhni sistemin në çdo nisje."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Riinstalo MAN-in"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Zëvendëson sistemin, por mban kartelat personale në /home. Sistemi i tanishëm ruhet si fotografim."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Ndarje të përshtatura"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Për ekspertë: zgjidhni vetë ndarjet ose krijojini me Disqet."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disk"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Zgjidhni diskun që do të fshihet. Disqet që s’mund të përdoren shfaqen me arsyen."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Nuk u gjetën disqe"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Hapësirë e lirë pranë Windows-it"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Ndarjet e Windows-it nuk preken. MAN-i ndan ndarjen e sistemit EFI dhe shton Windows-in në menynë e vet të nisjes."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} të lira"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "pa hapësirë të lirë"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Instalimi për t’u zëvendësuar"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "pa dosje shtëpie"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "dosje shtëpie: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "fotografime: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN në {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Frazëkalim për {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Shkyç"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Instalimi nuk mund të shqyrtohej."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Ndarjet"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Ndarja e sistemit formatohet me Btrfs dhe përmban @system, @home dhe @snapshots. Ndarjet e diskut nga i cili xhiron MAN-i nuk shfaqen."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Hap Disqet për të krijuar ose ndryshuar madhësinë e ndarjeve"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Rifresko listën e ndarjeve"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Zgjidhni një ndarje"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Ndarje sistemi EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Formato ndarjen e sistemit EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Lëreni të fikur për të mbajtur ngarkuesit e nisjes së sistemeve të tjera"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Ndarje sistemi (formatohet si Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Ndarje nisjeje (e nevojshme me fshehtëzim)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Lista e ndarjeve u rifreskua"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Siguria"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Fshehtëzo sistemin"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Mbron të dhënat tuaja nëse kompjuteri humbet ose vidhet. Në çdo nisje kërkohet një frazëkalim."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Frazëkalim"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Ripohoni frazëkalimin"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Mbajeni këtë frazëkalim në vend të sigurt"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Nëse humbet, askush s’mund t’i rimarrë të dhënat. Kerneli dhe kartelat e nisjes mbeten në një ndarje të vogël nisjeje të pafshehtëzuar."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Frazëkalimi duhet të ketë të paktën 8 shenja."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Frazëkalimet nuk përputhen."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Zgjidhni një disk."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Zgjidhni diskun me Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Zgjidhni instalimin për t’u zëvendësuar."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Shkyçni së pari instalimin e fshehtëzuar."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Kjo ndarje nuk përmban sistem MAN."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Zgjidhni një ndarje sistemi EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Zgjidhni ndarjen e sistemit."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Ndarja EFI dhe ajo e sistemit duhet të jenë të ndryshme."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Fshehtëzimi kërkon një ndarje nisjeje më vete."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Ndarja e sistemit duhet të jetë të paktën {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Ndarja EFI nuk është e formatuar FAT; aktivizoni formatimin."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Ndarja e sistemit është e montuar; çmontojeni së pari te Disqet."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Ku të instalohet MAN-i?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Ora dhe tastiera"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Zona kohore"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Skema e tastierës"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Provoni tastierën"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Shkruani këtu për të kontrolluar që tastet japin shenjat e duhura."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Shkruani këtu"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Zona kohore dhe tastiera"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "S’është zgjedhur disk"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "S’është zgjedhur ndarje sistemi"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Ndarja e sistemit u zhduk"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "S’është zgjedhur instalim"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Disku u zhduk"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Shqyrtim"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Vendmbërritja"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Fshi diskun dhe instalo"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Ndarje të përshtatura"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Riinstalo, duke mbajtur /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Krahas Windows-it"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (do të formatohet)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (mbahet)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Ndarje sistemi"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (do të formatohet)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Ndarje nisjeje"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Instalimi"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Hapësirë për MAN-in"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} hapësirë e lirë (krijohen një ndarje nisjeje dhe ndarja e sistemit)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Pa ndryshime. Shfaqet në menynë e nisjes së MAN-it; ndarja e sistemit EFI është e përbashkët."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Fshehtëzim"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Aktiv (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Joaktiv"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Sistem kartelash"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system për MAN-in, @home për kartelat tuaja, @snapshots për pikat e rikthimit. Të gjitha ndajnë hapësirën e lirë."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Sistemi"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Llogaria juaj"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Krijohet në MAN Setup kur kompjuteri niset për herë të parë, bashkë me emrin e kompjuterit, pamjen dhe rregullimet e privatësisë."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Tastiera"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Të gjitha të dhënat në {model} ({path}) do të fshihen."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Fshi dhe instalo"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Ndarjet e zgjedhura do të formatohen. Ndarjet e tjera nuk ndryshojnë."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Formato dhe instalo"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Sistemi i tanishëm zëvendësohet. Kartelat tuaja në /home mbahen dhe sistemi i vjetër ruhet si fotografim."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Riinstalo"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN-i instalohet në hapësirën e lirë. Windows-i dhe kartelat e tij nuk ndryshojnë."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Instalo"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Gati për instalim"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Të fshihet {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Çdo kartelë dhe ndarje në {path} ({size}) do të fshihet përgjithmonë. Kjo s’mund të zhbëhet."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Fshi dhe instalo"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Të formatohen ndarjet e zgjedhura?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Të gjitha të dhënat në ndarjet e zgjedhura do të fshihen përgjithmonë. Ndarjet e tjera nuk ndryshojnë."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Formato dhe instalo"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Të instalohet MAN-i krahas Windows-it?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN-i instalohet në {free} hapësirë të lirë në {model} ({path}). Windows-i dhe kartelat e tij nuk ndryshojnë."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Instalo"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Të riinstalohet MAN-i?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Sistemi i instaluar do të zëvendësohet me një kopje të re. Kartelat personale në /home mbahen dhe sistemi i vjetër mbetet i passhëm si fotografim."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Riinstalo"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Anuloje"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Po instalohet MAN-i"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Po niset…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Hollësi"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Po instalohet"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Hapi {index} nga {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Regjistër"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN-i u instalua"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Riniseni kompjuterin për të filluar të përdorni MAN-in. Në çdo nisje një meny ju lejon të zgjidhni MAN-in ose Windows-in; ndarjen e përkohshme të instaluesit MAN-i e heq në nisjen e parë."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Riniseni kompjuterin për të filluar të përdorni MAN-in. Mund ta hiqni median e instalimit; nëse mbetet e lidhur, MAN-i niset gjithsesi nga disku i ri."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Rinise tani"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "U krye"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Instalimi dështoi"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Asnjë disk tjetër s’u ndryshua dhe instaluesi e liroi diskun e synuar. Mund ta shqyrtoni planin dhe të riprovoni."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Shqyrto dhe riprovo"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Shfaq hollësitë"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Regjistri i instalimit"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Kërko gjuhë"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Kërko vende"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Disku i sistemit nuk u gjet."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Fshehtëzimi kërkon skemën Btrfs të krijuar nga instaluesi i MAN-it."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Ky instalim s’ka ndarje nisjeje më vete, që e kërkon fshehtëzimi. Riinstalojeni MAN-in me “Fshi diskun” për të përdorur fshehtëzimin."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Ku ndodheni?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Vendi ose rajoni juaj përcakton formatin e datës, orës dhe numrave."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Vendi"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, versioni 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Kerneli Linux dhe shumë mjete sistemi"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, versioni 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Shumë programe GNU dhe GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, versioni 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib dhe shumë biblioteka"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, versioni 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Biblioteka"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Programe dhe biblioteka nga Mozilla dhe të tjerë"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Licenca Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Biblioteka dhe mjete"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Marrëveshje licence"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Ju lutemi, lexoni dhe pranoni kushtet me të cilat ofrohet MAN-i."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licenca"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Teksti i licencës nuk është i passhëm ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "I kam lexuar dhe i pranoj kushtet e licencës"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Me kabllo"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Jo i lidhur"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Lidhuni me internetin"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Me lidhje, MAN-i mund të rregullojë orën dhe të mbajë software-in të përditësuar. Mund ta bëni edhe më vonë."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Po kontrollohet lidhja…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Rrjete Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Kërko sërish"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Anashkalo"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Mund të lidheni më vonë te Rregullimet."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "I lidhur"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Jo i lidhur"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Nuk u gjetën rrjete"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "U lidh me “{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "S’u lidh dot me “{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Lidhu me “{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Jepni fjalëkalimin e rrjetit."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Lidhu"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Krijoni llogarinë tuaj"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Do të jeni administratori i këtij kompjuteri, me qasje të plotë root përmes sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Emri i plotë"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Emër përdoruesi"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Fjalëkalim"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Ripohoni fjalëkalimin"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Hyr automatikisht"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Anashkalo ekranin e hyrjes kur niset kompjuteri"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Dosje shtëpie ekzistuese"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Përdorni të njëjtin emër përdoruesi për të vazhduar të përdorni një dosje nga një instalim i mëparshëm."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Përdore"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Të mëtejshme"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Emri i kompjuterit"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Cakto fjalëkalim root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Lejon hyrje drejtpërdrejt si root. Pa të, përdorni sudo me fjalëkalimin tuaj."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Fjalëkalim root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Ripohoni fjalëkalimin root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Jepni emrin tuaj."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Zgjidhni një emër përdoruesi."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Ky emër përdoruesi përdoret tashmë nga sistemi."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Ky emër përdoruesi është i rezervuar nga sistemi."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Emrat e përdoruesve përdorin shkronja të vogla, shifra, - dhe _, dhe fillojnë me shkronjë."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Zgjidhni një fjalëkalim."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Fjalëkalimet nuk përputhen."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Emri i kompjuterit mund të përmbajë shkronja, shifra dhe viza."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Jepni fjalëkalimin root dy herë."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Ndihmëz: një fjalëkalim me 8 ose më shumë shenja është shumë më i sigurt."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Llogari"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "E errët"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "E çelët"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Bëjeni tuajin"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Zgjidhni një stil, një ngjyrë theksimi dhe një sfond. E shihni çdo ndryshim menjëherë."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Stil"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Ngjyrë theksimi"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Sfond"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Përshtatje"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Privatësi"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Zgjidhni cilat veçori mund të përdorin të dhëna rreth jush. Mund ta ndryshoni kurdo te Rregullimet."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Shërbime vendndodhjeje"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Lejon aplikacione si Hartat dhe Moti të gjejnë vendndodhjen tuaj të përafërt përmes rrjeteve Wi-Fi aty pranë."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Zonë kohore automatike"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Përdor vendndodhjen tuaj për ta mbajtur zonën kohore të saktë kur udhëtoni."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Përfundo rregullimin"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Disku juaj është i fshehtëzuar"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Të dhënat tuaja janë të mbrojtura. Frazëkalimi kërkohet sa herë niset kompjuteri."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Fshehtëzim disku"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Fshehtëzimi mbron të dhënat tuaja nëse kompjuteri humbet ose vidhet."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "S’ofrohet në këtë instalim"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Fshehtëzimi mbron kartelat tuaja nëse kompjuteri humbet ose vidhet. Pa frazëkalimin, askush s’mund ta lexojë diskun."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Fshehtëzo diskun"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Frazëkalimi kërkohet sa herë niset kompjuteri."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Fshehtëzimi fillon në rinisjen e ardhshme"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Pastaj disku fshehtëzohet në prapaskenë ndërsa përdorni kompjuterin. Nëse frazëkalimi humbet, askush s’mund t’i rimarrë të dhënat."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Po përgatitet MAN-i"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Po përgatitet gjithçka…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Rinise"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Kthehu"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Po përgatitet"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Regjistri i rregullimit"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Gjithçka gati!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Diçka shkoi keq"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "E përditshme"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Para përditësimit"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Para rikthimit"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Para riinstalimit"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Dorazi"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Ende s’ka fotografime"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Krijoni një para se të bëni ndryshime të mëdha në sistem."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Riktheje…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Fshi fotografimin"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} të lira nga {size}. Sistemi, dosjet e shtëpisë dhe fotografimet ndajnë këtë hapësirë; fotografimet zënë vend vetëm për atë që ka ndryshuar që kur u bënë."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_OK"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Krijo fotografim"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Ruan gjendjen e tanishme të sistemit. Kartelat personale në dosjen e shtëpisë nuk përfshihen."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Përshkrim, për shembull “Para instalimit të përudhësve”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Krijo"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Fotografim dorazi"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Të fshihet fotografimi?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "“{description}” nga {date} do të fshihet përgjithmonë."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Fshije"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Të rikthehet ky fotografim?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Pas rinisjes sistemi do të kthehet te “{description}” nga {date}. Kartelat tuaja personale nuk ndryshojnë.\n"
+"\n"
+"Sistemi i tanishëm ruhet së pari si fotografim, ndaj kjo mund të zhbëhet."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Riktheje"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Rinisni për të përfunduar rikthimin"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Rinise _më vonë"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Rinise _tani"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Fotografime"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Pika rikthimi"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Fotografimet ruajnë gjendjen e sistemit operativ. Rikthimi i njërit e çon sistemin te ai çast, gjë që ndihmon pas një përditësimi ose ndryshimi rregullimesh të dështuar. Kartelat tuaja personale nuk preken kurrë."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Fotografime automatike"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Fotografime të përditshme"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Një herë në ditë, kur kompjuteri është ndezur"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Fotografime të përditshme për t’u mbajtur"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Para përditësimeve të software-it"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Bëhen automatikisht kur paketat instalohen, përmirësohen ose hiqen"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Fotografime përditësimesh për t’u mbajtur"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Depozitim"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Hapësirë disku"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Nëse MAN-i nuk niset"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Zgjidhni “Restore a MAN snapshot” te menyja e nisjes për të rimarrë një sistem që funksionon."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Fotografimet s’ofrohen"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Fotografimet funksionojnë në MAN të instaluar me skemën Btrfs të instaluesit të MAN-it. Ky sistem (për shembull, një sesion live) nuk e përdor."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Një rikthim pret: rinisni kompjuterin për ta përfunduar"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Rinise tani"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Ju lutemi, prisni derisa të mbarojë veprimi i tanishëm."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Kërko"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Kopjoje në të papastër"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Kohë Universale e Koordinuar"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Anglisht (SHBA)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Po kontrollohet përditësimi"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Po sigurohemi që përditësimi është origjinal dhe i plotë…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Përditësim MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Ky përditësim s’mund të instalohet"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Përditësimi s’u lexua dot."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Përditësim nga {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} është i instaluar"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Version"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Hedhur në qarkullim"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Madhësi shkarkimi"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Hapësirë e nevojshme"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Origjinalitet"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "I verifikuar, nënshkruar nga “{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Ç’ka të re"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Vazhdo"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Ky përditësim s’është më i ri se {name} {version} i instaluar."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Përditësim"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Ju lutemi, lexoni kushtet e licencës së këtij përditësimi."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "I pranoj kushtet e licencës"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Ku të instalohet përditësimi?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Sistemi zëvendësohet; kartelat në dosjen tuaj të shtëpisë nuk preken."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Zgjidhni një instalim."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "po xhiron tani"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} në këtë kompjuter"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} në {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Nuk u gjet instalim MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Përditësimet instalohen nga një sistem MAN i instaluar dhe në punë, jo nga sesioni live."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Vendi i instalimit"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Përmbledhje"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Mbahet"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Kartelat tuaja"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Gjithçka në dosjen tuaj të shtëpisë"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Llogari dhe fjalëkalime"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Përdorues, grupe, emri i kompjuterit"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Lidhje dhe rregullime"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, zonë kohore, tastierë, pamje dhe fotografime"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Aplikacione Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Plus gjithçka në /usr/local dhe /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Zëvendësohet"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Software-i i instaluar me apt dhe ndryshime të tjera në kartelat e sistemit zëvendësohen nga sistemi i ri."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Sistemi operativ"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Zëvendësohet nga {name} {version}. Sistemi i tanishëm mund të rikthehet nga një fotografim."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Kompjuteri riniset për të instaluar përditësimin"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Pas përgatitjes, MAN-i riniset, e instalon përditësimin për pak sekonda dhe riniset sërish."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Instalo përditësimin"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Të krijohet së pari një fotografim?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Një fotografim ruan sistemin e tanishëm, që të mund të ktheheni te ai nëse diçka s’funksionon pas përditësimit. Rekomandohet."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Mos e krijo"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Krijo fotografim"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Po përgatitet {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Rinise për ta instaluar"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Kompjuteri do të riniset dy herë. Kartelat tuaja janë të sigurta."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Rinisje automatike pas {r} sekondash"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Rinisje automatike pas 30 sekondash"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Përditësimi do të instalohet në rinisjen e ardhshme."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Gati"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Përditësimi s’u përgatit dot"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Asgjë s’u ndryshua në sistemin tuaj."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Riprovo"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Regjistër përditësimi"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Dështoi"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Sistemi juaj u përditësua"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN-i u përditësua me versionin {version}.\n"
+"Më parë: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_U krye"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Hap një përditësim MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Përditësime MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Po kontrollohet plani i instalimit"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Po përgatitet disku"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Po kopjohet MAN-i në disk"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Po formësohet sistemi i ri"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Po instalohet ngarkuesi i nisjes"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Po krijohet fotografimi i parë"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Po përfundohet"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Po hiqen nënshkrime të vjetra ndarjesh"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Po krijohen ndarjet"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Po formatohet ndarja e sistemit EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Po fshehtëzohet ndarja e sistemit"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Po formatohet ndarja e nisjes"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Po krijohet sistemi i kartelave Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Po hiqen nënshkrime të vjetra sistemesh kartelash"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Po shkyçet instalimi i fshehtëzuar"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Po ruhet sistemi i tanishëm si fotografim"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Po hiqet sistemi i mëparshëm"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Po shkruhet tabela e sistemeve të kartelave"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Po caktohen emri dhe identiteti i kompjuterit"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Po hiqen llogaritë e sesionit live"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Po krijohet llogaria juaj"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Po përgatitet MAN Setup për nisjen e parë"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Po caktohen zona kohore dhe tastiera"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Po hiqet instaluesi nga sistemi i ri"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Po ndërtohet figura e nisjes (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Po formësohet GRUB-i"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Po instalohet GRUB-i në ndarjen e sistemit EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Po instalohet ngarkuesi rezervë i nisjes"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Po shkruhet menyja e nisjes"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disku gati"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Po krijohet një fotografim i sistemit të ri"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Po shtohet fotografimi te menyja e nisjes"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Po çmontohet"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Ndihmësi i instaluesit duhet të xhirojë si root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Ky kompjuter s’u nis në mënyrën UEFI. MAN-i kërkon UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Emri i përdoruesit s’është i vlefshëm."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Lypset një fjalëkalim."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Emri i kompjuterit s’është i vlefshëm."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Gjuhë e panjohur."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Frazëkalimi i fshehtëzimit duhet të ketë të paktën 8 shenja."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Disku ndryshoi pasi e ripohuat instalimin. S’u ndryshua gjë; shqyrtoni dhe ripohoni sërish."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Zgjidhni një ndarje sistemi."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Disku i ripohuar nuk përmban ndarjen e zgjedhur të sistemit."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Ndarja e nisjes duhet të jetë më vete nga ndarjet EFI dhe e sistemit."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Ndarja e nisjes duhet të jetë të paktën 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "S’është zgjedhur instalim."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Disku i ripohuar nuk përmban instalimin e zgjedhur."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Instalimi i fshehtëzuar s’ka ndarje MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "S’u gjet në /boot kernel me module që përputhen."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Gjuha duhet ndryshuar nga ndihmësi i sistemit."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Po aplikohen rregullimet tuaja"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Po përgatitet fshehtëzimi i diskut"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Po përfundohet"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup duhet përfunduar nga ndihmësi i sistemit."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup është kryer tashmë në këtë kompjuter."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Ngjyrë theksimi e panjohur."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Sfondi i zgjedhur s’ofrohet."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Ky sistem s’mund të fshehtëzohet."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Mungon kyçi i rregullimit, ndaj fshehtëzimi s’mund të vazhdojë në prapaskenë."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Sistemi s’është instaluar në Btrfs, ndaj fotografimet s’ofrohen."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Një rikthim fotografimi pret një rinisje. Rinisni së pari kompjuterin për ta përfunduar."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "ID fotografimi e pavlefshme."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Po kontrollohet përditësimi"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Po krijohet një fotografim"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Po përgatitet zona e përditësimit"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Po shpaketohet sistemi i ri"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Po kalohen llogaritë dhe rregullimet tuaja"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Po përgatitet rinisja"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "U shpaketua"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Llogari"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Po hiqet software-i vetëm për instaluesin"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Po ndërtohet figura e nisjes së përditësimit"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Po shtohet zëri njëpërdorimësh i nisjes"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Përditësimi është origjinal"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Fotografimi u krijua"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "U anashkalua"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Zona e përditësimit gati"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Po përgatitet sistemi i ri"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Kartela e përditësimit është e dëmtuar (shuma kontrolli s’përputhet). Shkarkojeni sërish."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Kartela e përditësimit s’u lexua dot plotësisht."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Përditësimi s’përmban kernel."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Përditësimet duhet t’i instalojë ndihmësi i sistemit."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Instalimi i zgjedhur s’u gjet."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Mund të përditësohet vetëm instalimi MAN në punë."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Kjo s’është kartelë përditësimi MAN (s’ka manifest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Përditësimi s’është i nënshkruar, ndaj s’mund t’i besohet."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Nënshkrimi i përditësimit është i dëmtuar."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Përditësimi s’është nënshkruar nga MAN. Mund të jetë ndryshuar ose të vijë nga një burim jo i besuar."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Manifesti i përditësimit s’është i vlefshëm."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Frazëkalimi s’është i saktë, ose ndarja e fshehtëzuar s’mund të hapet."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Blu"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Blu në të gjelbër"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "E gjelbër"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "E verdhë"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Portokalli"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "E kuqe"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Rozë"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Vjollcë"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Gri rrasë"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Instalues sistemi"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Instalo MAN-in në këtë kompjuter"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Rikthim sistemi"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Krijoni dhe riktheni fotografime të sistemit"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Instalues përditësimesh sistemi"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Instaloni një kartelë përditësimi sistemi MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Ofron instalimin e MAN-it kur niset sesioni live"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Njoftim përditësimi MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Ju tregon një herë pas hyrjes se MAN-i u përditësua"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Rregulloni kompjuterin tuaj të ri MAN"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Rregullimi i parë i MAN-it"

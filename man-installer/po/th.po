@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "ไม่สามารถเริ่มตัวช่วยระบบได้"
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "ไม่สามารถติดต่อกับตัวช่วยระบบได้"
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "การเชื่อมต่อกับตัวช่วยระบบขาดหาย"
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "ยกเลิกการอนุญาตแล้ว"
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "การกระทำนี้ต้องใช้สิทธิ์ผู้ดูแลระบบ"
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "ตัวช่วยระบบหยุดทำงานโดยไม่คาดคิด"
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "ไม่มีพาร์ทิชันระบบ EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "ว่างเพียง {free} แต่ MAN ต้องการ {need} โปรดเพิ่มพื้นที่ด้วย DUHACH! ใน Windows"
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "ไม่มีพื้นที่ว่าง เปิด DUHACH! ใน Windows เพื่อเตรียมพื้นที่ให้ MAN"
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN กำลังทำงานจากดิสก์นี้"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "กำลังใช้งาน: มีพาร์ทิชันที่เมานต์อยู่"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "เล็กเกินไป MAN ต้องการ {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "ติดตั้ง MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "กำลังติดตั้ง MAN โปรดรอจนกว่าจะเสร็จ"
+
+#: installer.rs:143
+msgid "Language"
+msgstr "ภาษา"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "เริ่มใหม่ด้วยภาษานี้(_R)"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "เซสชันไลฟ์จะเริ่มใหม่ด้วยภาษาที่เลือก และ MAN จะติดตั้งด้วยภาษานั้น"
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "ยินดีต้อนรับสู่ MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"ระบบ GNOME ที่รวดเร็ว เปิดกว้าง และปรับแต่งได้ทั้งหมด\n"
+"ติดตั้งลงในคอมพิวเตอร์เครื่องนี้ หรือสำรวจเซสชันไลฟ์ต่อไป"
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "ติดตั้ง MAN(_I)…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "ลองใช้ MAN ต่อ(_K)"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "กำลังค้นหาดิสก์…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "ยินดีต้อนรับ"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "คอมพิวเตอร์นี้เริ่มทำงานในโหมด BIOS แบบเก่า MAN ติดตั้งได้เฉพาะคอมพิวเตอร์ UEFI เท่านั้น: เริ่มใหม่แล้วเลือกตัวเลือกบูต UEFI"
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "ตัวช่วยระบบไม่ได้ส่งข้อมูลดิสก์กลับมา"
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "ถัดไป(_N)"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "ประเภทการติดตั้ง"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "ลบดิสก์และติดตั้ง MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "ทุกอย่างบนดิสก์ที่เลือกจะถูกลบ รวมถึง Windows"
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "แนะนำ ทุกอย่างบนดิสก์ที่เลือกจะถูกลบ"
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "ติดตั้งคู่กับ Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "แนะนำ MAN ใช้พื้นที่ว่างข้าง Windows โดย Windows และไฟล์ของมันยังอยู่ครบ เลือกระบบได้ทุกครั้งที่เปิดเครื่อง"
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "ติดตั้ง MAN ใหม่"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "แทนที่ระบบแต่เก็บไฟล์ส่วนตัวใน /home ไว้ ระบบปัจจุบันจะถูกบันทึกเป็นสแนปช็อต"
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "พาร์ทิชันกำหนดเอง"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "สำหรับผู้เชี่ยวชาญ: เลือกพาร์ทิชันเอง หรือสร้างด้วยแอปดิสก์"
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "ดิสก์"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "เลือกดิสก์ที่จะลบ ดิสก์ที่ใช้ไม่ได้จะแสดงพร้อมเหตุผล"
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "ไม่พบดิสก์"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "พื้นที่ว่างข้าง Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "จะไม่แตะต้องพาร์ทิชันของ Windows MAN ใช้พาร์ทิชันระบบ EFI ร่วมกันและเพิ่ม Windows ลงในเมนูบูต"
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "ว่าง {size}"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "ไม่มีพื้นที่ว่าง"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "การติดตั้งที่จะแทนที่"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "ไม่มีโฟลเดอร์บ้าน"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "โฟลเดอร์บ้าน: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "สแนปช็อต: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN บน {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "วลีรหัสผ่านสำหรับ {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "ปลดล็อก"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "ไม่สามารถตรวจสอบการติดตั้งได้"
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "พาร์ทิชัน"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "พาร์ทิชันระบบจะฟอร์แมตเป็น Btrfs และมี @system, @home และ @snapshots จะไม่แสดงพาร์ทิชันบนดิสก์ที่ MAN กำลังทำงานอยู่"
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "เปิดแอปดิสก์เพื่อสร้างหรือปรับขนาดพาร์ทิชัน"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "รีเฟรชรายการพาร์ทิชัน"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "เลือกพาร์ทิชัน"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "พาร์ทิชันระบบ EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "ฟอร์แมตพาร์ทิชันระบบ EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "ปิดไว้เพื่อเก็บบูตโหลดเดอร์ของระบบอื่น"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "พาร์ทิชันระบบ (ฟอร์แมตเป็น Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "พาร์ทิชันบูต (จำเป็นเมื่อเข้ารหัส)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "รีเฟรชรายการพาร์ทิชันแล้ว"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "ความปลอดภัย"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "เข้ารหัสระบบ"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "ปกป้องข้อมูลของคุณหากคอมพิวเตอร์สูญหายหรือถูกขโมย จะถามวลีรหัสผ่านทุกครั้งที่เปิดเครื่อง"
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "วลีรหัสผ่าน"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "ยืนยันวลีรหัสผ่าน"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "เก็บวลีรหัสผ่านนี้ไว้ให้ปลอดภัย"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "หากทำหาย จะไม่มีใครกู้ข้อมูลได้ เคอร์เนลและไฟล์บูตจะอยู่บนพาร์ทิชันบูตเล็ก ๆ ที่ไม่เข้ารหัส"
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "วลีรหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "วลีรหัสผ่านไม่ตรงกัน"
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "เลือกดิสก์"
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "เลือกดิสก์ที่มี Windows"
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "เลือกการติดตั้งที่จะแทนที่"
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "ปลดล็อกการติดตั้งที่เข้ารหัสก่อน"
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "พาร์ทิชันนี้ไม่มีระบบ MAN"
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "เลือกพาร์ทิชันระบบ EFI"
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "เลือกพาร์ทิชันระบบ"
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "พาร์ทิชัน EFI และพาร์ทิชันระบบต้องแตกต่างกัน"
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "การเข้ารหัสต้องมีพาร์ทิชันบูตแยกต่างหาก"
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "พาร์ทิชันระบบต้องมีขนาดอย่างน้อย {size}"
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "พาร์ทิชัน EFI ไม่ได้ฟอร์แมตเป็น FAT โปรดเปิดการฟอร์แมต"
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "พาร์ทิชันระบบถูกเมานต์อยู่ โปรดถอดเมานต์ในแอปดิสก์ก่อน"
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "จะติดตั้ง MAN ที่ใด?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "เวลาและแป้นพิมพ์"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "เขตเวลา"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "ผังแป้นพิมพ์"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "ทดสอบแป้นพิมพ์"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "พิมพ์ที่นี่เพื่อตรวจสอบว่าแป้นพิมพ์ให้ตัวอักษรที่ถูกต้อง"
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "พิมพ์ที่นี่"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "เขตเวลาและแป้นพิมพ์"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "ยังไม่ได้เลือกดิสก์"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "ยังไม่ได้เลือกพาร์ทิชันระบบ"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "พาร์ทิชันระบบหายไป"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "ยังไม่ได้เลือกการติดตั้ง"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "ดิสก์หายไป"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "ตรวจทาน"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "ปลายทาง"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "ลบดิสก์และติดตั้ง"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "พาร์ทิชันกำหนดเอง"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "ติดตั้งใหม่ โดยเก็บ /home ไว้"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "คู่กับ Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (จะถูกฟอร์แมต)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (เก็บไว้)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "พาร์ทิชันระบบ"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (จะถูกฟอร์แมต)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "พาร์ทิชันบูต"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "การติดตั้ง"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "พื้นที่สำหรับ MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "พื้นที่ว่าง {free} (จะสร้างพาร์ทิชันบูตและพาร์ทิชันระบบ)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "ไม่เปลี่ยนแปลง จะปรากฏในเมนูบูตของ MAN พาร์ทิชันระบบ EFI ใช้ร่วมกัน"
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "การเข้ารหัส"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "เปิด (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "ปิด"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "ระบบไฟล์"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system สำหรับ MAN, @home สำหรับไฟล์ของคุณ, @snapshots สำหรับจุดคืนค่า ทั้งหมดใช้พื้นที่ว่างร่วมกัน"
+
+#: installer.rs:991
+msgid "System"
+msgstr "ระบบ"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "บัญชีของคุณ"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "สร้างใน MAN Setup เมื่อเปิดคอมพิวเตอร์ครั้งแรก พร้อมชื่อคอมพิวเตอร์ หน้าตา และการตั้งค่าความเป็นส่วนตัว"
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "แป้นพิมพ์"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "ข้อมูลทั้งหมดบน {model} ({path}) จะถูกลบ"
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "ลบและติดตั้ง(_E)"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "พาร์ทิชันที่เลือกจะถูกฟอร์แมต พาร์ทิชันอื่นไม่เปลี่ยนแปลง"
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "ฟอร์แมตและติดตั้ง(_F)"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "ระบบปัจจุบันจะถูกแทนที่ ไฟล์ของคุณใน /home จะยังอยู่ และระบบเก่าจะถูกบันทึกเป็นสแนปช็อต"
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "ติดตั้งใหม่(_R)"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN จะติดตั้งลงในพื้นที่ว่าง Windows และไฟล์ของมันไม่เปลี่ยนแปลง"
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "ติดตั้ง(_I)"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "พร้อมติดตั้ง"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "ลบ {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "ไฟล์และพาร์ทิชันทั้งหมดบน {path} ({size}) จะถูกลบถาวร ไม่สามารถย้อนกลับได้"
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "ลบและติดตั้ง"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "ฟอร์แมตพาร์ทิชันที่เลือก?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "ข้อมูลทั้งหมดบนพาร์ทิชันที่เลือกจะถูกลบถาวร พาร์ทิชันอื่นไม่เปลี่ยนแปลง"
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "ฟอร์แมตและติดตั้ง"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "ติดตั้ง MAN คู่กับ Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN จะติดตั้งลงในพื้นที่ว่าง {free} บน {model} ({path}) Windows และไฟล์ของมันไม่เปลี่ยนแปลง"
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "ติดตั้ง"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "ติดตั้ง MAN ใหม่?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "ระบบที่ติดตั้งไว้จะถูกแทนที่ด้วยสำเนาใหม่ ไฟล์ส่วนตัวใน /home จะยังอยู่ และระบบเก่ายังใช้ได้ในรูปสแนปช็อต"
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "ติดตั้งใหม่"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "ยกเลิก(_C)"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "กำลังติดตั้ง MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "กำลังเริ่ม…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "รายละเอียด"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "กำลังติดตั้ง"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "ขั้นตอน {index} จาก {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "บันทึก"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "ติดตั้ง MAN แล้ว"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "เริ่มคอมพิวเตอร์ใหม่เพื่อเริ่มใช้ MAN ทุกครั้งที่เปิดเครื่องจะมีเมนูให้เลือก MAN หรือ Windows และ MAN จะลบพาร์ทิชันตัวติดตั้งชั่วคราวเมื่อเปิดครั้งแรก"
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "เริ่มคอมพิวเตอร์ใหม่เพื่อเริ่มใช้ MAN คุณถอดสื่อติดตั้งออกได้ หากยังเสียบอยู่ MAN ก็ยังเริ่มจากดิสก์ใหม่"
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "เริ่มใหม่ทันที(_R)"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "เสร็จ"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "การติดตั้งล้มเหลว"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "ไม่มีดิสก์อื่นถูกเปลี่ยนแปลง และตัวติดตั้งได้ปล่อยดิสก์ปลายทางแล้ว คุณสามารถตรวจทานแผนและลองใหม่ได้"
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "ตรวจทานและลองใหม่(_R)"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "แสดงรายละเอียด(_S)"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "บันทึกการติดตั้ง"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "ค้นหาภาษา"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "ค้นหาประเทศ"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "ไม่พบดิสก์ระบบ"
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "การเข้ารหัสต้องใช้โครงสร้าง Btrfs ที่ตัวติดตั้ง MAN สร้าง"
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "การติดตั้งนี้ไม่มีพาร์ทิชันบูตแยกต่างหากที่การเข้ารหัสต้องใช้ หากต้องการเข้ารหัส ให้ติดตั้ง MAN ใหม่ด้วย “ลบดิสก์”"
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "คุณอยู่ที่ไหน?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "ประเทศหรือภูมิภาคของคุณกำหนดรูปแบบวันที่ เวลา และตัวเลข"
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "ประเทศ"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "สัญญาอนุญาตสาธารณะทั่วไปของกนู รุ่นที่ 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "เคอร์เนล Linux และเครื่องมือระบบอีกมาก"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "สัญญาอนุญาตสาธารณะทั่วไปของกนู รุ่นที่ 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "โปรแกรม GNU และ GNOME อีกมาก"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "สัญญาอนุญาตสาธารณะทั่วไปแบบผ่อนปรนของกนู รุ่นที่ 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib และไลบรารีอีกมาก"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "สัญญาอนุญาตสาธารณะทั่วไปแบบผ่อนปรนของกนู รุ่นที่ 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "ไลบรารี"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "สัญญาอนุญาตสาธารณะของ Mozilla 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "โปรแกรมและไลบรารีจาก Mozilla และอื่น ๆ"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "สัญญาอนุญาต Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "ไลบรารีและเครื่องมือ"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "ข้อตกลงสัญญาอนุญาต"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "โปรดอ่านและยอมรับเงื่อนไขที่ใช้ในการให้บริการ MAN"
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "สัญญาอนุญาต"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "ไม่มีข้อความสัญญาอนุญาต ({path})"
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "ข้าพเจ้าได้อ่านและยอมรับเงื่อนไขสัญญาอนุญาต"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "ใช้สาย"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "ไม่ได้เชื่อมต่อ"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "เชื่อมต่ออินเทอร์เน็ต"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "เมื่อเชื่อมต่อ MAN จะตั้งเวลาและอัปเดตซอฟต์แวร์ให้ทันสมัยได้ คุณทำภายหลังก็ได้"
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "กำลังตรวจสอบการเชื่อมต่อ…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "เครือข่าย Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "ค้นหาอีกครั้ง"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "ข้าม(_S)"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "คุณเชื่อมต่อภายหลังได้ในการตั้งค่า"
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "เชื่อมต่อแล้ว"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "ไม่ได้เชื่อมต่อ"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "ไม่พบเครือข่าย"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "อินเทอร์เน็ต"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "เชื่อมต่อกับ “{ssid}” แล้ว"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "ไม่สามารถเชื่อมต่อกับ “{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "เชื่อมต่อกับ “{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "ใส่รหัสผ่านเครือข่าย"
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "เชื่อมต่อ(_O)"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "สร้างบัญชีของคุณ"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "คุณจะเป็นผู้ดูแลคอมพิวเตอร์เครื่องนี้ พร้อมสิทธิ์ root เต็มผ่าน sudo"
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "ชื่อเต็ม"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "ชื่อผู้ใช้"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "ยืนยันรหัสผ่าน"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "เข้าสู่ระบบอัตโนมัติ"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "ข้ามหน้าจอเข้าสู่ระบบเมื่อเปิดคอมพิวเตอร์"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "โฟลเดอร์บ้านที่มีอยู่"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "ใช้ชื่อผู้ใช้เดิมเพื่อใช้โฟลเดอร์ที่เก็บไว้จากการติดตั้งก่อนหน้าต่อไป"
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "ใช้"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "ขั้นสูง"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "ชื่อคอมพิวเตอร์"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "ตั้งรหัสผ่าน root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "อนุญาตให้เข้าสู่ระบบในฐานะ root โดยตรง หากไม่ตั้ง ให้ใช้ sudo ด้วยรหัสผ่านของคุณเอง"
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "รหัสผ่าน root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "ยืนยันรหัสผ่าน root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "ใส่ชื่อของคุณ"
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "เลือกชื่อผู้ใช้"
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "ระบบใช้ชื่อผู้ใช้นี้อยู่แล้ว"
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "ชื่อผู้ใช้นี้สงวนไว้สำหรับระบบ"
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "ชื่อผู้ใช้ประกอบด้วยตัวอักษรอังกฤษพิมพ์เล็ก ตัวเลข - และ _ และต้องขึ้นต้นด้วยตัวอักษร"
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "เลือกรหัสผ่าน"
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "รหัสผ่านไม่ตรงกัน"
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "ชื่อคอมพิวเตอร์มีตัวอักษร ตัวเลข และขีดกลางได้"
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "ใส่รหัสผ่าน root สองครั้ง"
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "เคล็ดลับ: รหัสผ่าน 8 ตัวอักษรขึ้นไปปลอดภัยกว่ามาก"
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "บัญชี"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "มืด"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "สว่าง"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "ทำให้เป็นของคุณ"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "เลือกสไตล์ สีเน้น และภาพพื้นหลัง คุณจะเห็นทุกการเปลี่ยนแปลงทันที"
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "สไตล์"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "สีเน้น"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "ภาพพื้นหลัง"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "ปรับแต่ง"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "ความเป็นส่วนตัว"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "เลือกว่าคุณสมบัติใดใช้ข้อมูลเกี่ยวกับคุณได้ คุณเปลี่ยนได้ทุกเมื่อในการตั้งค่า"
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "บริการตำแหน่งที่ตั้ง"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "อนุญาตให้แอปอย่างแผนที่และสภาพอากาศหาตำแหน่งโดยประมาณของคุณจากเครือข่าย Wi-Fi ใกล้เคียง"
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "เขตเวลาอัตโนมัติ"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "ใช้ตำแหน่งของคุณเพื่อให้เขตเวลาถูกต้องเมื่อเดินทาง"
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "เสร็จสิ้นการตั้งค่า(_F)"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "ดิสก์ของคุณถูกเข้ารหัสแล้ว"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "ข้อมูลของคุณได้รับการปกป้อง จะถามวลีรหัสผ่านทุกครั้งที่เปิดคอมพิวเตอร์"
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "การเข้ารหัสดิสก์"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "การเข้ารหัสปกป้องข้อมูลของคุณหากคอมพิวเตอร์สูญหายหรือถูกขโมย"
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "ไม่มีในการติดตั้งนี้"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "การเข้ารหัสปกป้องไฟล์ของคุณหากคอมพิวเตอร์สูญหายหรือถูกขโมย หากไม่มีวลีรหัสผ่าน จะไม่มีใครอ่านดิสก์ได้"
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "เข้ารหัสดิสก์"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "จะถามวลีรหัสผ่านทุกครั้งที่เปิดคอมพิวเตอร์"
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "การเข้ารหัสจะเริ่มเมื่อเริ่มเครื่องใหม่ครั้งถัดไป"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "จากนั้นดิสก์จะถูกเข้ารหัสในเบื้องหลังขณะที่คุณใช้คอมพิวเตอร์ หากวลีรหัสผ่านหาย จะไม่มีใครกู้ข้อมูลได้"
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "กำลังเตรียม MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "กำลังเตรียมทุกอย่าง…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "เริ่มใหม่(_R)"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "ย้อนกลับ(_G)"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "กำลังเตรียม"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "บันทึกการตั้งค่า"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "เสร็จเรียบร้อย!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "เกิดข้อผิดพลาด"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "รายวัน"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "ก่อนอัปเดต"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "ก่อนคืนค่า"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "ก่อนติดตั้งใหม่"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "ด้วยตนเอง"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "ยังไม่มีสแนปช็อต"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "สร้างสแนปช็อตไว้ก่อนเปลี่ยนแปลงระบบครั้งใหญ่"
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "คืนค่า…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "ลบสแนปช็อต"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "ว่าง {free} จาก {size} ระบบ โฟลเดอร์บ้าน และสแนปช็อตใช้พื้นที่นี้ร่วมกัน สแนปช็อตใช้พื้นที่เฉพาะส่วนที่เปลี่ยนไปหลังจากสร้าง"
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "ตกลง(_O)"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "สร้างสแนปช็อต"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "บันทึกสถานะปัจจุบันของระบบ ไม่รวมไฟล์ส่วนตัวในโฟลเดอร์บ้าน"
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "คำอธิบาย เช่น “ก่อนติดตั้งไดรเวอร์”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "สร้าง(_C)"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "สแนปช็อตด้วยตนเอง"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "ลบสแนปช็อต?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "“{description}” เมื่อ {date} จะถูกลบถาวร"
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "ลบ(_D)"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "คืนค่าสแนปช็อตนี้?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"หลังเริ่มใหม่ ระบบจะกลับไปเป็น “{description}” เมื่อ {date} ไฟล์ส่วนตัวของคุณไม่เปลี่ยนแปลง\n"
+"\n"
+"ระบบปัจจุบันจะถูกบันทึกเป็นสแนปช็อตก่อน จึงย้อนกลับได้"
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "คืนค่า(_R)"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "เริ่มใหม่เพื่อคืนค่าให้เสร็จ"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "เริ่มใหม่ภายหลัง(_L)"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "เริ่มใหม่ทันที(_N)"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "สแนปช็อต"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "จุดคืนค่า"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "สแนปช็อตบันทึกสถานะของระบบปฏิบัติการ การคืนค่าจะพาระบบกลับไปยังช่วงเวลานั้น ซึ่งช่วยได้หลังอัปเดตหรือเปลี่ยนการตั้งค่าแล้วมีปัญหา ไฟล์ส่วนตัวของคุณจะไม่ถูกแตะต้องเลย"
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "สแนปช็อตอัตโนมัติ"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "สแนปช็อตรายวัน"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "วันละครั้งขณะที่คอมพิวเตอร์เปิดอยู่"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "จำนวนสแนปช็อตรายวันที่เก็บไว้"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "ก่อนอัปเดตซอฟต์แวร์"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "สร้างอัตโนมัติเมื่อติดตั้ง อัปเกรด หรือถอนแพ็กเกจ"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "จำนวนสแนปช็อตอัปเดตที่เก็บไว้"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "ที่เก็บข้อมูล"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "พื้นที่ดิสก์"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "หาก MAN เริ่มไม่ได้"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "เลือก “Restore a MAN snapshot” ในเมนูบูตเพื่อกลับไปยังระบบที่ใช้งานได้"
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "ไม่มีสแนปช็อต"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "สแนปช็อตใช้ได้กับ MAN ที่ติดตั้งด้วยโครงสร้าง Btrfs ของตัวติดตั้ง MAN ระบบนี้ (เช่น เซสชันไลฟ์) ไม่ได้ใช้โครงสร้างนั้น"
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "มีการคืนค่ารออยู่: เริ่มคอมพิวเตอร์ใหม่เพื่อให้เสร็จ"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "เริ่มใหม่ทันที"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "โปรดรอให้การทำงานปัจจุบันเสร็จก่อน"
+
+#: ui.rs:80
+msgid "Search"
+msgstr "ค้นหา"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "คัดลอกไปยังคลิปบอร์ด"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "เวลาสากลเชิงพิกัด"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "อังกฤษ (สหรัฐฯ)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "กำลังตรวจสอบอัปเดต"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "กำลังยืนยันว่าอัปเดตเป็นของแท้และครบถ้วน…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "อัปเดต MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "ไม่สามารถติดตั้งอัปเดตนี้"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "ไม่สามารถอ่านอัปเดตได้"
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "อัปเดตจาก {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "ติดตั้ง {name} {version} แล้ว"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "รุ่น"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "วันที่เผยแพร่"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "ขนาดดาวน์โหลด"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "พื้นที่ที่ต้องใช้"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "ความถูกต้อง"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "ตรวจสอบแล้ว ลงนามโดย “{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "มีอะไรใหม่"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "ดำเนินการต่อ(_C)"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "อัปเดตนี้ไม่ใหม่กว่า {name} {version} ที่ติดตั้งไว้"
+
+#: updater.rs:143
+msgid "Update"
+msgstr "อัปเดต"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "โปรดอ่านเงื่อนไขสัญญาอนุญาตของอัปเดตนี้"
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "ข้าพเจ้ายอมรับเงื่อนไขสัญญาอนุญาต"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "จะติดตั้งอัปเดตที่ใด?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "ระบบจะถูกแทนที่ ไฟล์ในโฟลเดอร์บ้านของคุณจะไม่ถูกแตะต้อง"
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "เลือกการติดตั้ง"
+
+#: updater.rs:199
+msgid "running now"
+msgstr "กำลังทำงาน"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} บนคอมพิวเตอร์นี้"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} บน {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "ไม่พบการติดตั้ง MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "อัปเดตจะติดตั้งจากระบบ MAN ที่ติดตั้งแล้วและกำลังทำงาน ไม่ใช่จากเซสชันไลฟ์"
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "ตำแหน่งการติดตั้ง"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "สรุป"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "เก็บไว้"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "ไฟล์ของคุณ"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "ทุกอย่างในโฟลเดอร์บ้านของคุณ"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "บัญชีและรหัสผ่าน"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "ผู้ใช้ กลุ่ม ชื่อคอมพิวเตอร์"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "การเชื่อมต่อและการตั้งค่า"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi เขตเวลา แป้นพิมพ์ หน้าตา และสแนปช็อต"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "แอป Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "รวมถึงทุกอย่างใน /usr/local และ /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "ถูกแทนที่"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "ซอฟต์แวร์ที่ติดตั้งด้วย apt และการเปลี่ยนแปลงอื่นในไฟล์ระบบจะถูกแทนที่ด้วยระบบใหม่"
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "ระบบปฏิบัติการ"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "ถูกแทนที่ด้วย {name} {version} ระบบปัจจุบันคืนค่าได้จากสแนปช็อต"
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "คอมพิวเตอร์จะเริ่มใหม่เพื่อติดตั้งอัปเดต"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "หลังเตรียมเสร็จ MAN จะเริ่มใหม่ ติดตั้งอัปเดตในไม่กี่วินาที แล้วเริ่มใหม่อีกครั้ง"
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "ติดตั้งอัปเดต(_I)"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "สร้างสแนปช็อตก่อน?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "สแนปช็อตบันทึกระบบปัจจุบัน คุณจึงกลับไปได้หากมีบางอย่างไม่ทำงานหลังอัปเดต แนะนำให้สร้าง"
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "ไม่สร้าง(_D)"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "สร้างสแนปช็อต(_C)"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "กำลังเตรียม {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "เริ่มใหม่เพื่อติดตั้ง"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "คอมพิวเตอร์จะเริ่มใหม่สองครั้ง ไฟล์ของคุณปลอดภัย"
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "เริ่มใหม่อัตโนมัติใน {r} วินาที"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "เริ่มใหม่อัตโนมัติใน 30 วินาที"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "อัปเดตจะติดตั้งเมื่อคุณเริ่มเครื่องใหม่ครั้งถัดไป"
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "พร้อม"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "ไม่สามารถเตรียมอัปเดตได้"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "ไม่มีสิ่งใดในระบบของคุณเปลี่ยนแปลง"
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "ลองใหม่(_T)"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "บันทึกการอัปเดต"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "ล้มเหลว"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "ระบบของคุณได้รับการอัปเดตแล้ว"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN ได้รับการอัปเดตเป็นรุ่น {version}\n"
+"ก่อนหน้า: MAN {previous}"
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "เสร็จ(_D)"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "เปิดอัปเดต MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "อัปเดต MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "กำลังตรวจสอบแผนการติดตั้ง"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "กำลังเตรียมดิสก์"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "กำลังคัดลอก MAN ไปยังดิสก์"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "กำลังกำหนดค่าระบบใหม่"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "กำลังติดตั้งบูตโหลดเดอร์"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "กำลังสร้างสแนปช็อตแรก"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "กำลังเสร็จสิ้น"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "กำลังลบลายเซ็นพาร์ทิชันเก่า"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "กำลังสร้างพาร์ทิชัน"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "กำลังฟอร์แมตพาร์ทิชันระบบ EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "กำลังเข้ารหัสพาร์ทิชันระบบ"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "กำลังฟอร์แมตพาร์ทิชันบูต"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "กำลังสร้างระบบไฟล์ Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "กำลังลบลายเซ็นระบบไฟล์เก่า"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "กำลังปลดล็อกการติดตั้งที่เข้ารหัส"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "กำลังบันทึกระบบปัจจุบันเป็นสแนปช็อต"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "กำลังลบระบบก่อนหน้า"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "กำลังเขียนตารางระบบไฟล์"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "กำลังตั้งชื่อและข้อมูลประจำตัวคอมพิวเตอร์"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "กำลังลบบัญชีของเซสชันไลฟ์"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "กำลังสร้างบัญชีของคุณ"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "กำลังเตรียม MAN Setup สำหรับการเปิดครั้งแรก"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "กำลังตั้งเขตเวลาและแป้นพิมพ์"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "กำลังลบตัวติดตั้งออกจากระบบใหม่"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "กำลังสร้างอิมเมจบูต (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "กำลังกำหนดค่า GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "กำลังติดตั้ง GRUB ลงในพาร์ทิชันระบบ EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "กำลังติดตั้งบูตโหลดเดอร์สำรอง"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "กำลังเขียนเมนูบูต"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "ดิสก์พร้อมแล้ว"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "กำลังสร้างสแนปช็อตของระบบใหม่"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "กำลังเพิ่มสแนปช็อตลงในเมนูบูต"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "กำลังถอดเมานต์"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "ตัวช่วยของตัวติดตั้งต้องทำงานในฐานะ root"
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "คอมพิวเตอร์นี้ไม่ได้เริ่มในโหมด UEFI MAN ต้องใช้ UEFI"
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "ชื่อผู้ใช้ไม่ถูกต้อง"
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "ต้องมีรหัสผ่าน"
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "ชื่อคอมพิวเตอร์ไม่ถูกต้อง"
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "ไม่รู้จักภาษานี้"
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "วลีรหัสผ่านสำหรับการเข้ารหัสต้องมีอย่างน้อย 8 ตัวอักษร"
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "ดิสก์เปลี่ยนไปหลังจากคุณยืนยันการติดตั้ง ยังไม่มีการแก้ไขใด ๆ โปรดตรวจทานและยืนยันอีกครั้ง"
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "เลือกพาร์ทิชันระบบ"
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "ดิสก์ที่ยืนยันไม่มีพาร์ทิชันระบบที่เลือก"
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "พาร์ทิชันบูตต้องแยกจากพาร์ทิชัน EFI และพาร์ทิชันระบบ"
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "พาร์ทิชันบูตต้องมีขนาดอย่างน้อย 512 MB"
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "ยังไม่ได้เลือกการติดตั้ง"
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "ดิสก์ที่ยืนยันไม่มีการติดตั้งที่เลือก"
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "การติดตั้งที่เข้ารหัสไม่มีพาร์ทิชัน MAN_BOOT"
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "ไม่พบเคอร์เนลที่มีโมดูลตรงกันใน /boot"
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "ต้องให้ตัวช่วยระบบเป็นผู้เปลี่ยนภาษา"
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "กำลังใช้การตั้งค่าของคุณ"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "กำลังเตรียมการเข้ารหัสดิสก์"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "กำลังเสร็จสิ้น"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup ต้องให้ตัวช่วยระบบเป็นผู้ทำให้เสร็จ"
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup ทำเสร็จแล้วบนคอมพิวเตอร์นี้"
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "ไม่รู้จักสีเน้นนี้"
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "ภาพพื้นหลังที่เลือกไม่มีให้ใช้"
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "ระบบนี้เข้ารหัสไม่ได้"
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "ไม่มีคีย์การตั้งค่า จึงเข้ารหัสต่อในเบื้องหลังไม่ได้"
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "ระบบไม่ได้ติดตั้งบน Btrfs จึงไม่มีสแนปช็อต"
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "การคืนค่าสแนปช็อตกำลังรอการเริ่มใหม่ โปรดเริ่มคอมพิวเตอร์ใหม่ก่อนเพื่อให้เสร็จ"
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "ID สแนปช็อตไม่ถูกต้อง"
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "กำลังตรวจสอบอัปเดต"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "กำลังสร้างสแนปช็อต"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "กำลังเตรียมพื้นที่อัปเดต"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "กำลังแตกไฟล์ระบบใหม่"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "กำลังย้ายบัญชีและการตั้งค่าของคุณ"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "กำลังเตรียมการเริ่มใหม่"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "แตกไฟล์แล้ว"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "บัญชี"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "กำลังลบซอฟต์แวร์ที่ใช้เฉพาะตัวติดตั้ง"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "กำลังสร้างอิมเมจบูตของอัปเดต"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "กำลังเพิ่มรายการบูตแบบครั้งเดียว"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "อัปเดตเป็นของแท้"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "สร้างสแนปช็อตแล้ว"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "ข้ามแล้ว"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "พื้นที่อัปเดตพร้อมแล้ว"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "กำลังเตรียมระบบใหม่"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "ไฟล์อัปเดตเสียหาย (checksum ไม่ตรงกัน) โปรดดาวน์โหลดใหม่"
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "ไม่สามารถอ่านไฟล์อัปเดตได้ครบ"
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "อัปเดตไม่มีเคอร์เนล"
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "ต้องให้ตัวช่วยระบบเป็นผู้ติดตั้งอัปเดต"
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "ไม่พบการติดตั้งที่เลือก"
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "อัปเดตได้เฉพาะการติดตั้ง MAN ที่กำลังทำงานอยู่"
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "นี่ไม่ใช่ไฟล์อัปเดต MAN (ไม่มี manifest)"
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "อัปเดตไม่ได้ลงนาม จึงเชื่อถือไม่ได้"
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "ลายเซ็นของอัปเดตเสียหาย"
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "อัปเดตไม่ได้ลงนามโดย MAN อาจถูกแก้ไขหรือมาจากแหล่งที่ไม่น่าเชื่อถือ"
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "manifest ของอัปเดตไม่ถูกต้อง"
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "วลีรหัสผ่านไม่ถูกต้อง หรือเปิดพาร์ทิชันที่เข้ารหัสไม่ได้"
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "น้ำเงิน"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "เขียวน้ำทะเล"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "เขียว"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "เหลือง"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "ส้ม"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "แดง"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "ชมพู"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "ม่วง"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "เทาหินชนวน"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "ตัวติดตั้งระบบ"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "ติดตั้ง MAN ลงในคอมพิวเตอร์นี้"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "การคืนค่าระบบ"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "สร้างและคืนค่าสแนปช็อตของระบบ"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "ตัวติดตั้งอัปเดตระบบ"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "ติดตั้งไฟล์อัปเดตระบบ MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "เสนอให้ติดตั้ง MAN เมื่อเซสชันไลฟ์เริ่มทำงาน"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "แจ้งเตือนอัปเดต MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "แจ้งหนึ่งครั้งหลังเข้าสู่ระบบว่า MAN ได้รับการอัปเดตแล้ว"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "ตั้งค่าคอมพิวเตอร์ MAN เครื่องใหม่ของคุณ"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "การตั้งค่า MAN ครั้งแรก"

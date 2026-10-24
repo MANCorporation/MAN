@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Methu cychwyn cynorthwyydd y system."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Methu cyfathrebu â chynorthwyydd y system."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Collwyd cysylltiad â chynorthwyydd y system."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Diddymwyd yr awdurdodi."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Mae angen hawliau gweinyddwr ar gyfer y weithred hon."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Daeth cynorthwyydd y system i ben yn annisgwyl."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Dim rhaniad system EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Dim ond {free} yn rhydd, mae MAN angen {need}. Gwnewch le gyda DUHACH! yn Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Dim lle rhydd. Dechreuwch DUHACH! yn Windows i wneud lle i MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "Mae MAN yn rhedeg o'r ddisg hon"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Yn cael ei ddefnyddio: mae rhaniad wedi'i osod"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Rhy fach, mae MAN angen {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Gosod MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "Mae MAN yn cael ei osod. Arhoswch nes iddo orffen."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Iaith"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Ailgychwyn yn yr iaith hon"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Mae'r sesiwn fyw yn ailgychwyn yn yr iaith a ddewiswyd, ac mae MAN yn cael ei osod ynddi."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Croeso i MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"System GNOME gyflym, agored a chwbl addasadwy.\n"
+"Gosodwch hi ar y cyfrifiadur hwn, neu daliwch ati i archwilio'r sesiwn fyw."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Gosod MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Dal ati i roi cynnig ar MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Yn chwilio am ddisgiau…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Croeso"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Cafodd y cyfrifiadur hwn ei gychwyn yn y modd BIOS hŷn. Dim ond ar gyfrifiaduron UEFI y gellir gosod MAN: ailgychwynnwch a dewis yr opsiwn cychwyn UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Ni ddychwelodd cynorthwyydd y system wybodaeth am ddisgiau."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Nesaf"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Math o osodiad"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Dileu'r ddisg a gosod MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Mae popeth ar y ddisg a ddewiswyd yn cael ei ddileu, gan gynnwys Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Argymhellir. Mae popeth ar y ddisg a ddewiswyd yn cael ei ddileu."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Gosod wrth ochr Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Argymhellir. Mae MAN yn defnyddio'r lle rhydd wrth ochr Windows; mae Windows a'i ffeiliau'n aros. Dewiswch y system bob tro y byddwch yn cychwyn."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Ailosod MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Yn disodli'r system ond yn cadw ffeiliau personol yn /home. Mae'r system bresennol yn cael ei chadw fel ciplun."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Rhaniadau personol"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "I arbenigwyr: dewiswch raniadau eich hun, neu eu creu gyda Disgiau."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disg"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Dewiswch y ddisg i'w dileu. Mae disgiau na ellir eu defnyddio yn cael eu dangos gyda'r rheswm."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Ni chafwyd hyd i ddisgiau"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Lle rhydd wrth ochr Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Nid yw rhaniadau Windows yn cael eu cyffwrdd. Mae MAN yn rhannu rhaniad system EFI ac yn ychwanegu Windows at ei ddewislen gychwyn."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} yn rhydd"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "dim lle rhydd"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Gosodiad i'w ddisodli"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "dim ffolderi cartref"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "ffolderi cartref: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "cipluniau: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN ar {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Cyfrinymadrodd ar gyfer {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Datgloi"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Methu archwilio'r gosodiad."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Rhaniadau"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Mae rhaniad y system yn cael ei fformatio gyda Btrfs ac yn dal @system, @home ac @snapshots. Nid yw rhaniadau ar y ddisg y mae MAN yn rhedeg ohoni yn cael eu rhestru."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Agor Disgiau i greu neu newid maint rhaniadau"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Adnewyddu'r rhestr rhaniadau"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Dewiswch raniad"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Rhaniad system EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Fformatio rhaniad system EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Gadewch i ffwrdd i gadw llwythwyr cychwyn systemau eraill"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Rhaniad system (fformatir fel Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Rhaniad cychwyn (angen gydag amgryptio)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Rhestr rhaniadau wedi'i hadnewyddu"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Diogelwch"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Amgryptio'r system"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Yn diogelu eich data os collir neu y dygir y cyfrifiadur. Gofynnir am gyfrinymadrodd bob tro y bydd yn cychwyn."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Cyfrinymadrodd"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Cadarnhau'r cyfrinymadrodd"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Cadwch y cyfrinymadrodd hwn yn ddiogel"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Os caiff ei golli, ni all neb adfer y data. Mae'r cnewyllyn a'r ffeiliau cychwyn yn aros ar raniad cychwyn bach heb ei amgryptio."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Rhaid i'r cyfrinymadrodd fod ag o leiaf 8 nod."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Nid yw'r cyfrinymadroddion yn cyfateb."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Dewiswch ddisg."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Dewiswch y ddisg sydd â Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Dewiswch y gosodiad i'w ddisodli."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Datglowch y gosodiad wedi'i amgryptio yn gyntaf."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Nid oes system MAN ar y rhaniad hwn."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Dewiswch raniad system EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Dewiswch raniad y system."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Rhaid i'r rhaniad EFI a rhaniad y system fod yn wahanol."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Mae amgryptio angen rhaniad cychwyn ar wahân."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Rhaid i raniad y system fod yn {size} o leiaf."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Nid yw'r rhaniad EFI wedi'i fformatio fel FAT; trowch fformatio ymlaen."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Mae rhaniad y system wedi'i osod; datgysylltwch ef yn Disgiau yn gyntaf."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Ble dylid gosod MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Amser a bysellfwrdd"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Cylchfa amser"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Cynllun bysellfwrdd"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Profi eich bysellfwrdd"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Teipiwch yma i wirio bod eich bysellau'n rhoi'r nodau cywir."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Teipiwch yma"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Cylchfa amser a bysellfwrdd"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Dim disg wedi'i dewis"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Dim rhaniad system wedi'i ddewis"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Diflannodd rhaniad y system"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Dim gosodiad wedi'i ddewis"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Diflannodd y ddisg"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Adolygu"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Cyrchfan"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Dileu'r ddisg a gosod"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Rhaniadau personol"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Ailosod, gan gadw /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Wrth ochr Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (bydd yn cael ei fformatio)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (yn cael ei gadw)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Rhaniad system"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (bydd yn cael ei fformatio)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Rhaniad cychwyn"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Gosodiad"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Lle i MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} o le rhydd (mae rhaniad cychwyn a rhaniad y system yn cael eu creu)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Heb newid. Mae'n ymddangos yn newislen gychwyn MAN; mae rhaniad system EFI yn cael ei rannu."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Amgryptio"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Ymlaen (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "I ffwrdd"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "System ffeiliau"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system i MAN, @home i'ch ffeiliau, @snapshots i bwyntiau adfer. Maen nhw i gyd yn rhannu'r lle rhydd."
+
+#: installer.rs:991
+msgid "System"
+msgstr "System"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Eich cyfrif"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Yn cael ei greu yn MAN Setup pan fydd y cyfrifiadur yn cychwyn am y tro cyntaf, ynghyd ag enw'r cyfrifiadur, golwg a gosodiadau preifatrwydd."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Bysellfwrdd"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Bydd yr holl ddata ar {model} ({path}) yn cael ei ddileu."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Dileu a gosod"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Bydd y rhaniadau a ddewiswyd yn cael eu fformatio. Nid yw rhaniadau eraill yn newid."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Fformatio a gosod"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Mae'r system bresennol yn cael ei disodli. Mae eich ffeiliau yn /home yn cael eu cadw, ac mae'r hen system yn cael ei chadw fel ciplun."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Ailosod"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "Mae MAN yn cael ei osod yn y lle rhydd. Nid yw Windows a'i ffeiliau'n newid."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Gosod"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Yn barod i osod"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Dileu {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Bydd pob ffeil a rhaniad ar {path} ({size}) yn cael eu dileu'n barhaol. Ni ellir dadwneud hyn."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Dileu a gosod"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Fformatio'r rhaniadau a ddewiswyd?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Bydd yr holl ddata ar y rhaniadau a ddewiswyd yn cael ei ddileu'n barhaol. Nid yw rhaniadau eraill yn newid."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Fformatio a gosod"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Gosod MAN wrth ochr Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "Mae MAN yn cael ei osod yn y {free} o le rhydd ar {model} ({path}). Nid yw Windows a'i ffeiliau'n newid."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Gosod"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Ailosod MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Bydd y system a osodwyd yn cael ei disodli gan gopi newydd. Mae ffeiliau personol yn /home yn cael eu cadw ac mae'r hen system ar gael fel ciplun."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Ailosod"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Diddymu"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Yn gosod MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Yn cychwyn…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Manylion"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Yn gosod"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Cam {index} o {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Log"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "Mae MAN wedi'i osod"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Ailgychwynnwch y cyfrifiadur i ddechrau defnyddio MAN. Mae dewislen bob tro y byddwch yn cychwyn yn gadael i chi ddewis MAN neu Windows; mae MAN yn tynnu rhaniad dros dro y gosodwr wrth gychwyn am y tro cyntaf."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Ailgychwynnwch y cyfrifiadur i ddechrau defnyddio MAN. Gallwch dynnu'r cyfrwng gosod; os yw'n aros wedi'i gysylltu, mae MAN yn dal i gychwyn o'r ddisg newydd."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Ailgychwyn nawr"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Wedi gorffen"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Methodd y gosod"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Ni newidiwyd unrhyw ddisg arall, ac mae'r gosodwr wedi rhyddhau'r ddisg darged. Gallwch adolygu'r cynllun a rhoi cynnig arall arni."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Adolygu a cheisio eto"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Dangos manylion"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Log gosod"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Chwilio ieithoedd"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Chwilio gwledydd"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Ni chafwyd hyd i ddisg y system."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Mae amgryptio angen y cynllun Btrfs a grëwyd gan osodwr MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Nid oes gan y gosodiad hwn raniad cychwyn ar wahân, sydd ei angen ar gyfer amgryptio. Ailosodwch MAN gyda “Dileu'r ddisg” i ddefnyddio amgryptio."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Ble ydych chi?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Mae eich gwlad neu ranbarth yn pennu fformat dyddiadau, amser a rhifau."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Gwlad"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "Trwydded Gyhoeddus Gyffredinol GNU, fersiwn 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Cnewyllyn Linux a llawer o offer system"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "Trwydded Gyhoeddus Gyffredinol GNU, fersiwn 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Llawer o raglenni GNU a GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "Trwydded Gyhoeddus Gyffredinol Lai GNU, fersiwn 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib a llawer o lyfrgelloedd"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "Trwydded Gyhoeddus Gyffredinol Lai GNU, fersiwn 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Llyfrgelloedd"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Trwydded Gyhoeddus Mozilla 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Rhaglenni a llyfrgelloedd gan Mozilla ac eraill"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Trwydded Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Llyfrgelloedd ac offer"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Cytundeb trwydded"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Darllenwch a derbyn yr amodau y darperir MAN odanynt."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Trwyddedau"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Nid yw testun y drwydded ar gael ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Rwyf wedi darllen ac yn derbyn amodau'r drwydded"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Gwifrog"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Heb gysylltu"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Cysylltu â'r rhyngrwyd"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Gyda chysylltiad, gall MAN osod yr amser a chadw eich meddalwedd yn gyfoes. Gallwch wneud hyn yn nes ymlaen hefyd."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Yn gwirio'r cysylltiad…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Rhwydweithiau Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Chwilio eto"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Hepgor"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Gallwch gysylltu yn nes ymlaen yn y Gosodiadau."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Wedi cysylltu"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Heb gysylltu"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Ni chafwyd hyd i rwydweithiau"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Rhyngrwyd"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Wedi cysylltu â “{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Methu cysylltu â “{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Cysylltu â “{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Rhowch gyfrinair y rhwydwaith."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "C_ysylltu"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Crëwch eich cyfrif"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Chi fydd gweinyddwr y cyfrifiadur hwn, gyda mynediad root llawn drwy sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Enw llawn"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Enw defnyddiwr"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Cyfrinair"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Cadarnhau'r cyfrinair"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Mewngofnodi'n awtomatig"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Hepgor y sgrin fewngofnodi pan fydd y cyfrifiadur yn cychwyn"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Ffolderi cartref sy'n bodoli"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Defnyddiwch yr un enw defnyddiwr i ddal ati i ddefnyddio ffolder o osodiad blaenorol."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Defnyddio"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Uwch"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Enw'r cyfrifiadur"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Gosod cyfrinair root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Yn caniatáu mewngofnodi'n uniongyrchol fel root. Hebddo, defnyddiwch sudo gyda'ch cyfrinair eich hun."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Cyfrinair root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Cadarnhau'r cyfrinair root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Rhowch eich enw."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Dewiswch enw defnyddiwr."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Mae'r system eisoes yn defnyddio'r enw defnyddiwr hwn."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Mae'r enw defnyddiwr hwn wedi'i gadw gan y system."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Mae enwau defnyddwyr yn defnyddio llythrennau bach, digidau, - a _, ac yn dechrau gyda llythyren."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Dewiswch gyfrinair."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Nid yw'r cyfrineiriau'n cyfateb."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Gall enw'r cyfrifiadur gynnwys llythrennau, digidau a chysylltnodau."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Rhowch y cyfrinair root ddwywaith."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Awgrym: mae cyfrinair ag 8 nod neu fwy yn llawer mwy diogel."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Cyfrif"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Tywyll"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Golau"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Gwnewch e'n eiddo i chi"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Dewiswch arddull, lliw acen a phapur wal. Rydych yn gweld pob newid ar unwaith."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Arddull"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Lliw acen"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Papur wal"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Addasu"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Preifatrwydd"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Dewiswch pa nodweddion gaiff ddefnyddio gwybodaeth amdanoch. Gallwch newid hyn unrhyw bryd yn y Gosodiadau."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Gwasanaethau lleoliad"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Yn gadael i apiau fel Mapiau a Thywydd ddod o hyd i'ch lleoliad bras drwy rwydweithiau Wi-Fi cyfagos."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Cylchfa amser awtomatig"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Yn defnyddio eich lleoliad i gadw'r gylchfa amser yn gywir wrth deithio."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Gorffen y gosod"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Mae eich disg wedi'i hamgryptio"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Mae eich data wedi'i ddiogelu. Gofynnir am y cyfrinymadrodd bob tro y bydd y cyfrifiadur yn cychwyn."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Amgryptio disg"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Mae amgryptio'n diogelu eich data os collir neu y dygir y cyfrifiadur."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Ddim ar gael ar y gosodiad hwn"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Mae amgryptio'n diogelu eich ffeiliau os collir neu y dygir y cyfrifiadur. Heb y cyfrinymadrodd, ni all neb ddarllen y ddisg."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Amgryptio'r ddisg"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Gofynnir am y cyfrinymadrodd bob tro y bydd y cyfrifiadur yn cychwyn."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Mae amgryptio'n dechrau wrth ailgychwyn nesaf"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Yna mae eich disg yn cael ei hamgryptio yn y cefndir tra byddwch yn defnyddio'r cyfrifiadur. Os collir y cyfrinymadrodd, ni all neb adfer y data."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Yn paratoi MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Yn paratoi popeth…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Ailgychwyn"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Nôl"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Yn paratoi"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Log gosod"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Popeth yn barod!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Aeth rhywbeth o'i le"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Dyddiol"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Cyn diweddaru"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Cyn adfer"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Cyn ailosod"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Â llaw"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Dim cipluniau eto"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Crëwch un cyn gwneud newidiadau mawr i'r system."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Adfer…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Dileu'r ciplun"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} yn rhydd o {size}. Mae'r system, ffolderi cartref a chipluniau'n rhannu'r lle hwn; mae cipluniau ond yn defnyddio lle ar gyfer yr hyn sydd wedi newid ers iddyn nhw gael eu cymryd."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_Iawn"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Creu ciplun"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Yn cadw cyflwr presennol y system. Nid yw eich ffeiliau personol yn y ffolder cartref wedi'u cynnwys."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Disgrifiad, er enghraifft “Cyn gosod gyrwyr”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Creu"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Ciplun â llaw"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Dileu'r ciplun?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "Bydd “{description}” o {date} yn cael ei ddileu'n barhaol."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Dileu"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Adfer y ciplun hwn?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Bydd y system yn dychwelyd i “{description}” o {date} ar ôl ailgychwyn. Nid yw eich ffeiliau personol yn newid.\n"
+"\n"
+"Mae'r system bresennol yn cael ei chadw fel ciplun yn gyntaf, felly gellir dadwneud hyn."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Adfer"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Ailgychwynnwch i orffen adfer"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Ailgychwyn _wedyn"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Ailgychwyn _nawr"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Cipluniau"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Pwyntiau adfer"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Mae cipluniau'n cadw cyflwr y system weithredu. Mae adfer un yn dod â'r system yn ôl i'r adeg honno, sy'n helpu ar ôl diweddariad neu newid gosodiadau gwael. Nid yw eich ffeiliau personol byth yn cael eu cyffwrdd."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Cipluniau awtomatig"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Cipluniau dyddiol"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Unwaith y dydd tra bydd y cyfrifiadur ymlaen"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Cipluniau dyddiol i'w cadw"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Cyn diweddariadau meddalwedd"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Yn cael eu cymryd yn awtomatig pan fydd pecynnau'n cael eu gosod, eu huwchraddio neu eu tynnu"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Cipluniau diweddaru i'w cadw"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Storfa"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Lle ar ddisg"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Os nad yw MAN yn cychwyn"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Dewiswch “Restore a MAN snapshot” yn y ddewislen gychwyn i gael system sy'n gweithio'n ôl."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Nid yw cipluniau ar gael"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Mae cipluniau'n gweithio ar MAN a osodwyd gyda chynllun Btrfs gosodwr MAN. Nid yw'r system hon (er enghraifft sesiwn fyw) yn ei ddefnyddio."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Mae adfer yn aros: ailgychwynnwch y cyfrifiadur i'w orffen"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Ailgychwyn nawr"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Arhoswch nes i'r weithred bresennol orffen."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Chwilio"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Copïo i'r clipfwrdd"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Amser Cyffredinol Cydlynol"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Saesneg (UDA)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Yn gwirio'r diweddariad"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Yn sicrhau bod y diweddariad yn ddilys ac yn gyflawn…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Diweddariad MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Ni ellir gosod y diweddariad hwn"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Methu darllen y diweddariad."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Diweddariad o {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "Mae {name} {version} wedi'i osod"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Fersiwn"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Rhyddhawyd"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Maint llwytho i lawr"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Lle sydd ei angen"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Dilysrwydd"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Wedi'i ddilysu, wedi'i lofnodi gan “{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Beth sy'n newydd"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Parhau"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Nid yw'r diweddariad hwn yn fwy newydd na {name} {version} sydd wedi'i osod."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Diweddariad"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Darllenwch amodau trwydded y diweddariad hwn."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Rwy'n derbyn amodau'r drwydded"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Ble dylid gosod y diweddariad?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Mae'r system yn cael ei disodli; nid yw ffeiliau yn eich ffolder cartref yn cael eu cyffwrdd."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Dewiswch osodiad."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "yn rhedeg nawr"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} ar y cyfrifiadur hwn"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} ar {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Ni chafwyd hyd i osodiad MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Mae diweddariadau'n cael eu gosod o system MAN sydd wedi'i gosod ac sy'n rhedeg, nid o'r sesiwn fyw."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Lleoliad y gosodiad"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Crynodeb"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Yn cael ei gadw"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Eich ffeiliau"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Popeth yn eich ffolder cartref"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Cyfrifon a chyfrineiriau"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Defnyddwyr, grwpiau, enw'r cyfrifiadur"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Cysylltiadau a gosodiadau"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, cylchfa amser, bysellfwrdd, golwg a chipluniau"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Apiau Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Yn ogystal â phopeth yn /usr/local a /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Yn cael ei ddisodli"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Mae meddalwedd a osodwyd gydag apt a newidiadau eraill i ffeiliau'r system yn cael eu disodli gan y system newydd."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Y system weithredu"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Yn cael ei disodli gan {name} {version}. Gellir adfer y system bresennol o giplun."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Mae'r cyfrifiadur yn ailgychwyn i osod y diweddariad"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Ar ôl paratoi, mae MAN yn ailgychwyn, yn gosod y diweddariad mewn ychydig eiliadau ac yn ailgychwyn eto."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Gosod y diweddariad"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Creu ciplun yn gyntaf?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Mae ciplun yn cadw'r system bresennol, fel y gallwch fynd yn ôl ati os nad yw rhywbeth yn gweithio ar ôl y diweddariad. Argymhellir hyn."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Peidio â chreu"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Creu ciplun"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Yn paratoi {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Ailgychwyn i osod"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Bydd y cyfrifiadur yn ailgychwyn ddwywaith. Mae eich ffeiliau'n ddiogel."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Yn ailgychwyn yn awtomatig ymhen {r} eiliad"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Yn ailgychwyn yn awtomatig ymhen 30 eiliad"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Bydd y diweddariad yn cael ei osod y tro nesaf y byddwch yn ailgychwyn."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Yn barod"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Methu paratoi'r diweddariad"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Ni newidiwyd dim ar eich system."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Ceisio eto"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Log diweddaru"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Wedi methu"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Mae eich system wedi'i diweddaru"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"Mae MAN wedi'i ddiweddaru i fersiwn {version}.\n"
+"Cynt: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Wedi gorffen"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Agor diweddariad MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Diweddariadau MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Yn gwirio'r cynllun gosod"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Yn paratoi'r ddisg"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Yn copïo MAN i'r ddisg"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Yn ffurfweddu'r system newydd"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Yn gosod y llwythwr cychwyn"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Yn creu'r ciplun cyntaf"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Yn gorffen"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Yn tynnu hen lofnodion rhaniadau"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Yn creu rhaniadau"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Yn fformatio rhaniad system EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Yn amgryptio rhaniad y system"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Yn fformatio'r rhaniad cychwyn"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Yn creu'r system ffeiliau Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Yn tynnu hen lofnodion systemau ffeiliau"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Yn datgloi'r gosodiad wedi'i amgryptio"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Yn cadw'r system bresennol fel ciplun"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Yn tynnu'r system flaenorol"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Yn ysgrifennu tabl y systemau ffeiliau"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Yn gosod enw a hunaniaeth y cyfrifiadur"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Yn tynnu cyfrifon y sesiwn fyw"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Yn creu eich cyfrif"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Yn paratoi MAN Setup ar gyfer y cychwyn cyntaf"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Yn gosod y gylchfa amser a'r bysellfwrdd"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Yn tynnu'r gosodwr o'r system newydd"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Yn adeiladu'r ddelwedd gychwyn (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Yn ffurfweddu GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Yn gosod GRUB ar raniad system EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Yn gosod y llwythwr cychwyn wrth gefn"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Yn ysgrifennu'r ddewislen gychwyn"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disg yn barod"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Yn creu ciplun o'r system newydd"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Yn ychwanegu'r ciplun at y ddewislen gychwyn"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Yn datgysylltu"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Rhaid i gynorthwyydd y gosodwr redeg fel root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Ni chafodd y cyfrifiadur hwn ei gychwyn yn y modd UEFI. Mae MAN angen UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Nid yw'r enw defnyddiwr yn ddilys."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Mae angen cyfrinair."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Nid yw enw'r cyfrifiadur yn ddilys."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Iaith anhysbys."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Rhaid i'r cyfrinymadrodd amgryptio fod ag o leiaf 8 nod."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Newidiodd y ddisg ar ôl i chi gadarnhau'r gosod. Ni addaswyd dim; adolygwch a chadarnhewch eto."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Dewiswch raniad system."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Nid yw'r ddisg a gadarnhawyd yn dal y rhaniad system a ddewiswyd."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Rhaid i'r rhaniad cychwyn fod ar wahân i'r rhaniadau EFI a system."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Rhaid i'r rhaniad cychwyn fod yn 512 MB o leiaf."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Dim gosodiad wedi'i ddewis."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Nid yw'r ddisg a gadarnhawyd yn dal y gosodiad a ddewiswyd."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Nid oes gan y gosodiad wedi'i amgryptio raniad MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "Ni chafwyd hyd i gnewyllyn gyda modiwlau cyfatebol yn /boot."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Rhaid i gynorthwyydd y system newid yr iaith."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Yn gweithredu eich gosodiadau"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Yn paratoi amgryptio disg"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Yn gorffen"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "Rhaid i gynorthwyydd y system orffen MAN Setup."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "Mae MAN Setup eisoes wedi'i gwblhau ar y cyfrifiadur hwn."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Lliw acen anhysbys."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Nid yw'r papur wal a ddewiswyd ar gael."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Ni ellir amgryptio'r system hon."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Mae'r allwedd gosod ar goll, felly ni all amgryptio barhau yn y cefndir."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Nid yw'r system wedi'i gosod ar Btrfs, felly nid yw cipluniau ar gael."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Mae adfer ciplun yn aros am ailgychwyn. Ailgychwynnwch y cyfrifiadur yn gyntaf i'w orffen."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "ID ciplun annilys."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Yn gwirio'r diweddariad"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Yn creu ciplun"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Yn paratoi'r ardal ddiweddaru"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Yn dadbacio'r system newydd"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Yn symud eich cyfrifon a'ch gosodiadau"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Yn paratoi'r ailgychwyn"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Wedi'i ddadbacio"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Cyfrifon"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Yn tynnu meddalwedd sydd ar gyfer y gosodwr yn unig"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Yn adeiladu delwedd gychwyn y diweddariad"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Yn ychwanegu'r cofnod cychwyn untro"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Mae'r diweddariad yn ddilys"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Ciplun wedi'i greu"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Wedi'i hepgor"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Ardal ddiweddaru'n barod"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Yn paratoi'r system newydd"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Mae'r ffeil ddiweddaru wedi'i difrodi (nid yw'r swm gwirio'n cyfateb). Llwythwch hi i lawr eto."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Methu darllen y ffeil ddiweddaru'n llwyr."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Nid yw'r diweddariad yn cynnwys cnewyllyn."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Rhaid i gynorthwyydd y system osod diweddariadau."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Ni chafwyd hyd i'r gosodiad a ddewiswyd."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Dim ond y gosodiad MAN sy'n rhedeg y gellir ei ddiweddaru."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Nid ffeil diweddaru MAN yw hon (dim maniffest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Nid yw'r diweddariad wedi'i lofnodi, felly ni ellir ymddiried ynddo."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Mae llofnod y diweddariad wedi'i ddifrodi."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Nid yw'r diweddariad wedi'i lofnodi gan MAN. Efallai ei fod wedi'i addasu neu'n dod o ffynhonnell annibynadwy."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Mae maniffest y diweddariad yn annilys."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Nid yw'r cyfrinymadrodd yn gywir, neu ni ellir agor y rhaniad wedi'i amgryptio."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Glas"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Gwyrddlas"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Gwyrdd"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Melyn"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Oren"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Coch"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Pinc"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Porffor"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Llechen"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Gosodwr y system"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Gosod MAN ar y cyfrifiadur hwn"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Adfer y system"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Creu ac adfer cipluniau o'r system"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Gosodwr diweddariadau system"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Gosod ffeil diweddaru system MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Yn cynnig gosod MAN pan fydd y sesiwn fyw yn cychwyn"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Hysbysiad diweddaru MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Yn dweud wrthych unwaith ar ôl mewngofnodi bod MAN wedi'i ddiweddaru"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Gosodwch eich cyfrifiadur MAN newydd"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Gosod MAN am y tro cyntaf"

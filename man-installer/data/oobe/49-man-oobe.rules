@@ -1,0 +1,13 @@
+// MAN Setup runs as the locked "man-oobe" account during the first start
+// only (the account is deleted when setup is finished). It may finish setup
+// through the MAN system helper, configure networking and restart.
+polkit.addRule(function (action, subject) {
+    if (subject.user != "man-oobe" || !subject.local || !subject.active)
+        return polkit.Result.NOT_HANDLED;
+    if (action.id == "com.man.system.manage" ||
+        action.id.indexOf("org.freedesktop.NetworkManager.") == 0 ||
+        action.id.indexOf("org.freedesktop.login1.reboot") == 0 ||
+        action.id.indexOf("org.freedesktop.login1.power-off") == 0)
+        return polkit.Result.YES;
+    return polkit.Result.NOT_HANDLED;
+});

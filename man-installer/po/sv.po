@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Systemhjälpen kunde inte startas."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Det gick inte att kommunicera med systemhjälpen."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Kontakten med systemhjälpen bröts."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Autentiseringen avbröts."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Den här åtgärden kräver administratörsbehörighet."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Systemhjälpen avslutades oväntat."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Ingen EFI-systempartition"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Bara {free} ledigt, MAN behöver {need}. Frigör utrymme med DUHACH! i Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Inget ledigt utrymme. Starta DUHACH! i Windows för att göra plats för MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN körs från den här disken"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Används: en partition är monterad"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "För liten, MAN behöver {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Installera MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN installeras. Vänta tills det är klart."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Språk"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Starta om på det här språket"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Live-sessionen startas om på det valda språket, och MAN installeras på det."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Välkommen till MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Ett snabbt, öppet och helt anpassningsbart GNOME-system.\n"
+"Installera det på den här datorn eller fortsätt utforska live-sessionen."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Installera MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Fortsätt prova MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Letar efter diskar…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Den här datorn startades i äldre BIOS-läge. MAN kan bara installeras på UEFI-datorer: starta om och välj UEFI-startalternativet."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Systemhjälpen returnerade ingen diskinformation."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Nästa"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Installationstyp"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Radera disken och installera MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Allt på den valda disken raderas, även Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Rekommenderas. Allt på den valda disken raderas."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Installera bredvid Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Rekommenderas. MAN använder det lediga utrymmet bredvid Windows; Windows och dess filer finns kvar. Välj system vid varje start."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Installera om MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Ersätter systemet men behåller personliga filer i /home. Det nuvarande systemet sparas som en ögonblicksbild."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Egna partitioner"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "För experter: välj partitioner själv eller skapa dem med Diskar."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disk"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Välj disken som ska raderas. Diskar som inte kan användas visas med orsaken."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Inga diskar hittades"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Ledigt utrymme bredvid Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Windows partitioner rörs inte. MAN delar EFI-systempartitionen och lägger till Windows i sin startmeny."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} ledigt"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "inget ledigt utrymme"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Installation som ska ersättas"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "inga hemmappar"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "hemmappar: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "ögonblicksbilder: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN på {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Lösenfras för {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Lås upp"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Installationen kunde inte undersökas."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Partitioner"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Systempartitionen formateras med Btrfs och innehåller @system, @home och @snapshots. Partitioner på disken som MAN körs från visas inte."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Öppna Diskar för att skapa partitioner eller ändra deras storlek"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Uppdatera partitionslistan"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Välj en partition"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI-systempartition"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Formatera EFI-systempartitionen"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Lämna av för att behålla starthanterare för andra system"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Systempartition (formateras som Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Startpartition (krävs med kryptering)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Partitionslistan uppdaterades"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Säkerhet"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Kryptera systemet"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Skyddar dina data om datorn tappas bort eller blir stulen. En lösenfras efterfrågas vid varje start."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Lösenfras"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Bekräfta lösenfras"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Förvara lösenfrasen säkert"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Om den förloras kan ingen återställa dina data. Kärnan och startfilerna ligger på en liten okrypterad startpartition."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Lösenfrasen måste ha minst 8 tecken."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Lösenfraserna stämmer inte överens."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Välj en disk."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Välj disken med Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Välj installationen som ska ersättas."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Lås först upp den krypterade installationen."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Den här partitionen innehåller inget MAN-system."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Välj en EFI-systempartition."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Välj systempartitionen."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "EFI-partitionen och systempartitionen måste vara olika."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Kryptering kräver en separat startpartition."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Systempartitionen måste vara minst {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "EFI-partitionen är inte FAT-formaterad; slå på formatering."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Systempartitionen är monterad; avmontera den först i Diskar."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Var ska MAN installeras?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Tid och tangentbord"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Tidszon"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Tangentbordslayout"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Testa tangentbordet"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Skriv här för att kontrollera att tangenterna ger rätt tecken."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Skriv här"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Tidszon och tangentbord"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Ingen disk vald"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Ingen systempartition vald"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Systempartitionen försvann"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Ingen installation vald"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Disken försvann"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Granska"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Mål"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Radera disken och installera"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Egna partitioner"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Installera om, behåll /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Bredvid Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (formateras)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (behålls)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Systempartition"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (formateras)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Startpartition"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Installation"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Utrymme för MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} ledigt utrymme (en startpartition och systempartitionen skapas)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Oförändrat. Det visas i MAN:s startmeny; EFI-systempartitionen delas."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Kryptering"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "På (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Av"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Filsystem"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system för MAN, @home för dina filer, @snapshots för återställningspunkter. Alla delar på det lediga utrymmet."
+
+#: installer.rs:991
+msgid "System"
+msgstr "System"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Ditt konto"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Skapas i MAN Setup när datorn startas första gången, tillsammans med datornamn, utseende och integritetsinställningar."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Tangentbord"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Alla data på {model} ({path}) raderas."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Radera och installera"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "De valda partitionerna formateras. Andra partitioner ändras inte."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Formatera och installera"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Det nuvarande systemet ersätts. Dina filer i /home behålls och det gamla systemet sparas som en ögonblicksbild."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Installera om"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN installeras i det lediga utrymmet. Windows och dess filer ändras inte."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Installera"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Klart att installera"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Radera {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Alla filer och partitioner på {path} ({size}) tas bort permanent. Detta kan inte ångras."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Radera och installera"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Formatera de valda partitionerna?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Alla data på de valda partitionerna tas bort permanent. Andra partitioner ändras inte."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Formatera och installera"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Installera MAN bredvid Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN installeras i de {free} lediga utrymmet på {model} ({path}). Windows och dess filer ändras inte."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Installera"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Installera om MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Det installerade systemet ersätts med en ny kopia. Personliga filer i /home behålls och det gamla systemet finns kvar som en ögonblicksbild."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Installera om"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Avbryt"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Installerar MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Startar…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Detaljer"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Installerar"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Steg {index} av {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Logg"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN är installerat"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Starta om datorn för att börja använda MAN. En meny vid varje start låter dig välja MAN eller Windows; den tillfälliga installationspartitionen tas bort av MAN vid första starten."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Starta om datorn för att börja använda MAN. Du kan ta bort installationsmediet; om det sitter kvar startar MAN ändå från den nya disken."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Starta om nu"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Klar"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Installationen misslyckades"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Ingen annan disk ändrades och installationsprogrammet har släppt måldisken. Du kan granska planen och försöka igen."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Granska och försök igen"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Visa detaljer"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Installationslogg"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Sök språk"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Sök länder"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Systemdisken hittades inte."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Kryptering kräver Btrfs-layouten som MAN:s installationsprogram skapar."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Den här installationen har ingen separat startpartition, vilket kryptering kräver. Installera om MAN med ”Radera disken” för att använda kryptering."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Var befinner du dig?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Ditt land eller din region bestämmer formatet för datum, tid och tal."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Land"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, version 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Linuxkärnan och många systemverktyg"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, version 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Många GNU- och GNOME-program"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, version 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib och många bibliotek"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, version 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Bibliotek"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Program och bibliotek från Mozilla och andra"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache-licensen 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Bibliotek och verktyg"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Licensavtal"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Läs och godkänn villkoren som MAN tillhandahålls under."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licenser"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Licenstexten är inte tillgänglig ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Jag har läst och godkänner licensvillkoren"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Trådbundet"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Inte ansluten"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Anslut till internet"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Med en anslutning kan MAN ställa klockan och hålla din programvara uppdaterad. Du kan också göra det senare."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Kontrollerar anslutningen…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi-nätverk"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Sök igen"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Hoppa över"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Du kan ansluta senare i Inställningar."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Ansluten"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Inte ansluten"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Inga nätverk hittades"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Ansluten till ”{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Kunde inte ansluta till ”{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Anslut till ”{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Ange nätverkets lösenord."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Anslut"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Skapa ditt konto"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Du blir administratör för den här datorn, med full root-åtkomst via sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Fullständigt namn"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Användarnamn"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Lösenord"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Bekräfta lösenord"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Logga in automatiskt"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Hoppa över inloggningsskärmen när datorn startar"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Befintliga hemmappar"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Använd samma användarnamn för att fortsätta använda en mapp från en tidigare installation."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Använd"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Avancerat"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Datornamn"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Ange ett root-lösenord"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Tillåter inloggning direkt som root. Utan det använder du sudo med ditt eget lösenord."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Root-lösenord"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Bekräfta root-lösenord"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Ange ditt namn."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Välj ett användarnamn."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Användarnamnet används redan av systemet."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Användarnamnet är reserverat av systemet."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Användarnamn består av gemener, siffror, - och _ och börjar med en bokstav."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Välj ett lösenord."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Lösenorden stämmer inte överens."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Datornamnet får innehålla bokstäver, siffror och bindestreck."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Ange root-lösenordet två gånger."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Tips: ett lösenord med 8 eller fler tecken är mycket säkrare."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Konto"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Mörkt"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Ljust"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Gör den till din"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Välj en stil, en accentfärg och en bakgrundsbild. Du ser varje ändring direkt."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Stil"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Accentfärg"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Bakgrundsbild"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Anpassa"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Integritet"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Välj vilka funktioner som får använda information om dig. Du kan ändra detta när som helst i Inställningar."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Platstjänster"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Låter program som Kartor och Väder hitta din ungefärliga plats med hjälp av närliggande Wi-Fi-nätverk."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Automatisk tidszon"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Använder din plats för att hålla tidszonen rätt när du reser."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Slutför konfigurationen"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Din disk är krypterad"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Dina data är skyddade. Lösenfrasen efterfrågas varje gång datorn startar."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Diskkryptering"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Kryptering skyddar dina data om datorn tappas bort eller blir stulen."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Inte tillgängligt i den här installationen"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Kryptering skyddar dina filer om datorn tappas bort eller blir stulen. Utan lösenfrasen kan ingen läsa disken."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Kryptera disken"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Lösenfrasen efterfrågas varje gång datorn startar."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Krypteringen börjar vid nästa omstart"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Disken krypteras sedan i bakgrunden medan du använder datorn. Om lösenfrasen förloras kan ingen återställa dina data."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Förbereder MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Gör allt klart…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Starta om"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Tillbaka"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Förbereder"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Konfigurationslogg"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Allt klart!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Något gick fel"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Daglig"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Före uppdatering"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Före återställning"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Före ominstallation"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Manuell"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Inga ögonblicksbilder än"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Skapa en innan du gör stora ändringar i systemet."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Återställ…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Ta bort ögonblicksbild"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} ledigt av {size}. System, hemmappar och ögonblicksbilder delar på utrymmet; ögonblicksbilder tar bara plats för det som ändrats sedan de skapades."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_OK"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Skapa ögonblicksbild"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Sparar systemets nuvarande tillstånd. Dina personliga filer i hemmappen ingår inte."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Beskrivning, till exempel ”Före installation av drivrutiner”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Skapa"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Manuell ögonblicksbild"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Ta bort ögonblicksbilden?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "”{description}” från {date} tas bort permanent."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Ta bort"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Återställ den här ögonblicksbilden?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Systemet återgår till ”{description}” från {date} efter en omstart. Dina personliga filer ändras inte.\n"
+"\n"
+"Det nuvarande systemet sparas först som en ögonblicksbild, så detta kan ångras."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Återställ"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Starta om för att slutföra återställningen"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Starta om _senare"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Starta om _nu"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Ögonblicksbilder"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Återställningspunkter"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Ögonblicksbilder sparar operativsystemets tillstånd. Att återställa en tar tillbaka systemet till det ögonblicket, vilket hjälper efter en misslyckad uppdatering eller konfigurationsändring. Dina personliga filer rörs aldrig."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Automatiska ögonblicksbilder"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Dagliga ögonblicksbilder"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "En gång om dagen när datorn är på"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Dagliga ögonblicksbilder att behålla"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Före programuppdateringar"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Tas automatiskt när paket installeras, uppgraderas eller tas bort"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Uppdateringsbilder att behålla"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Lagring"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Diskutrymme"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Om MAN inte startar"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Välj ”Restore a MAN snapshot” i startmenyn för att få tillbaka ett fungerande system."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Ögonblicksbilder är inte tillgängliga"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Ögonblicksbilder fungerar på MAN som installerats med Btrfs-layouten från MAN:s installationsprogram. Det här systemet (till exempel en live-session) använder den inte."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "En återställning väntar: starta om datorn för att slutföra den"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Starta om nu"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Vänta tills den pågående åtgärden är klar."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Sök"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Kopiera till urklipp"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Koordinerad universell tid"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Engelska (USA)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Kontrollerar uppdateringen"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Kontrollerar att uppdateringen är äkta och fullständig…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "MAN-uppdatering"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Den här uppdateringen kan inte installeras"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Uppdateringen kunde inte läsas."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Uppdatering från {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} är installerat"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Version"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Utgiven"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Nedladdningsstorlek"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Utrymme som behövs"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Äkthet"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Verifierad, signerad av ”{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Nyheter"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Fortsätt"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Den här uppdateringen är inte nyare än det installerade {name} {version}."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Uppdatering"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Läs licensvillkoren för den här uppdateringen."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Jag godkänner licensvillkoren"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Var ska uppdateringen installeras?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Systemet ersätts; filer i din hemmapp rörs inte."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Välj en installation."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "körs nu"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} på den här datorn"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} på {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Ingen MAN-installation hittades"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Uppdateringar installeras från ett körande, installerat MAN-system, inte från live-sessionen."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Installationsplats"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Sammanfattning"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Behålls"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Dina filer"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Allt i din hemmapp"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Konton och lösenord"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Användare, grupper, datornamnet"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Anslutningar och inställningar"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, tidszon, tangentbord, utseende och ögonblicksbilder"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak-program"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Plus allt i /usr/local och /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Ersätts"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Programvara som installerats med apt och andra ändringar i systemfiler ersätts av det nya systemet."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Operativsystemet"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Ersätts av {name} {version}. Det nuvarande systemet kan återställas från en ögonblicksbild."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Datorn startas om för att installera uppdateringen"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Efter förberedelserna startar MAN om, installerar uppdateringen på några sekunder och startar om igen."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Installera uppdatering"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Skapa en ögonblicksbild först?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "En ögonblicksbild sparar det nuvarande systemet, så att du kan gå tillbaka om något inte fungerar efter uppdateringen. Detta rekommenderas."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Skapa inte"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Skapa ögonblicksbild"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Förbereder {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Starta om för att installera"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Datorn startas om två gånger. Dina filer är säkra."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Startar om automatiskt om {r} sekunder"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Startar om automatiskt om 30 sekunder"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Uppdateringen installeras nästa gång du startar om."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Klar"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Uppdateringen kunde inte förberedas"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Inget ändrades i ditt system."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Försök igen"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Uppdateringslogg"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Misslyckades"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Ditt system har uppdaterats"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN har uppdaterats till version {version}.\n"
+"Tidigare: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Klar"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Öppna en MAN-uppdatering"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "MAN-uppdateringar"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Kontrollerar installationsplanen"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Förbereder disken"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Kopierar MAN till disken"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Konfigurerar det nya systemet"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Installerar starthanteraren"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Skapar den första ögonblicksbilden"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Avslutar"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Tar bort gamla partitionssignaturer"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Skapar partitioner"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Formaterar EFI-systempartitionen"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Krypterar systempartitionen"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Formaterar startpartitionen"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Skapar Btrfs-filsystemet"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Tar bort gamla filsystemssignaturer"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Låser upp den krypterade installationen"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Sparar det nuvarande systemet som en ögonblicksbild"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Tar bort det tidigare systemet"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Skriver filsystemstabellen"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Ställer in datornamn och identitet"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Tar bort live-sessionens konton"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Skapar ditt konto"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Förbereder MAN Setup för första starten"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Ställer in tidszon och tangentbord"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Tar bort installationsprogrammet från det nya systemet"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Bygger startavbilden (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Konfigurerar GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Installerar GRUB på EFI-systempartitionen"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Installerar reservstarthanteraren"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Skriver startmenyn"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disken är klar"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Skapar en ögonblicksbild av det nya systemet"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Lägger till ögonblicksbilden i startmenyn"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Avmonterar"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Installationshjälpen måste köras som root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Den här datorn startades inte i UEFI-läge. MAN kräver UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Användarnamnet är ogiltigt."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Ett lösenord krävs."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Datornamnet är ogiltigt."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Okänt språk."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Krypteringslösenfrasen måste ha minst 8 tecken."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Disken ändrades efter att du bekräftade installationen. Inget ändrades; granska och bekräfta igen."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Välj en systempartition."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Den bekräftade disken innehåller inte den valda systempartitionen."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Startpartitionen måste vara skild från EFI- och systempartitionerna."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Startpartitionen måste vara minst 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Ingen installation vald."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Den bekräftade disken innehåller inte den valda installationen."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Den krypterade installationen har ingen MAN_BOOT-partition."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "Ingen kärna med matchande moduler hittades i /boot."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Språket måste ändras av systemhjälpen."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Tillämpar dina inställningar"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Förbereder diskkryptering"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Avslutar"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup måste slutföras av systemhjälpen."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup har redan slutförts på den här datorn."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Okänd accentfärg."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Den valda bakgrundsbilden är inte tillgänglig."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Det här systemet kan inte krypteras."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Konfigurationsnyckeln saknas, så krypteringen kan inte fortsätta i bakgrunden."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Systemet är inte installerat på Btrfs, så ögonblicksbilder är inte tillgängliga."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "En återställning av en ögonblicksbild väntar på omstart. Starta om datorn först för att slutföra den."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Ogiltigt id för ögonblicksbild."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Kontrollerar uppdateringen"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Skapar en ögonblicksbild"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Förbereder uppdateringsområdet"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Packar upp det nya systemet"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Flyttar dina konton och inställningar"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Förbereder omstarten"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Uppackat"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Konton"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Tar bort programvara som bara installationsprogrammet använder"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Bygger uppdateringens startavbild"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Lägger till engångsstartposten"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Uppdateringen är äkta"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Ögonblicksbild skapad"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Hoppades över"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Uppdateringsområdet är klart"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Förbereder det nya systemet"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Uppdateringsfilen är skadad (kontrollsumman stämmer inte). Ladda ner den igen."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Uppdateringsfilen kunde inte läsas helt."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Uppdateringen innehåller ingen kärna."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Uppdateringar måste installeras av systemhjälpen."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Den valda installationen hittades inte."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Bara den körande MAN-installationen kan uppdateras."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Detta är ingen MAN-uppdateringsfil (inget manifest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Uppdateringen är inte signerad och kan därför inte betros."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Uppdateringens signatur är skadad."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Uppdateringen är inte signerad av MAN. Den kan ha ändrats eller komma från en opålitlig källa."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Uppdateringens manifest är ogiltigt."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Lösenfrasen är fel, eller så kan den krypterade partitionen inte öppnas."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Blå"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Blågrön"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Grön"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Gul"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Orange"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Röd"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Rosa"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Lila"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Skiffer"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Systeminstallation"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Installera MAN på den här datorn"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Systemåterställning"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Skapa och återställ ögonblicksbilder av systemet"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Installation av systemuppdateringar"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Installera en MAN-systemuppdateringsfil"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Erbjuder installation av MAN när live-sessionen startar"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "MAN-uppdateringsmeddelande"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Talar om en gång efter inloggning att MAN har uppdaterats"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Konfigurera din nya MAN-dator"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Förstagångskonfiguration av MAN"

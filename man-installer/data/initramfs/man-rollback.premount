@@ -1,0 +1,68 @@
+#!/bin/sh
+# MAN: restore the snapshot chosen in the boot menu ("man.rollback=<id>")
+# before the root file system is mounted. The current system is saved as a
+# snapshot first; if anything fails the current system boots unchanged.
+PREREQ=""
+prereqs() { echo "$PREREQ"; }
+case "$1" in prereqs) prereqs; exit 0 ;; esac
+
+id=""
+for arg in $(cat /proc/cmdline); do
+    case "$arg" in man.rollback=*) id="${arg#man.rollback=}" ;; esac
+done
+[ -n "$id" ] || exit 0
+case "$id" in
+    [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]) ;;
+    *) exit 0 ;;
+esac
+
+. /scripts/functions
+dev=$(resolve_device "$ROOT")
+if [ ! -b "$dev" ]; then
+    log_failure_msg "MAN restore: root device $ROOT not found"
+    exit 0
+fi
+top=/run/man-rollback
+mkdir -p "$top"
+if ! mount -t btrfs -o subvolid=5 "$dev" "$top"; then
+    log_failure_msg "MAN restore: cannot mount $dev"
+    exit 0
+fi
+snap="$top/@snapshots/$id/snapshot"
+if [ ! -d "$snap" ]; then
+    log_failure_msg "MAN restore: snapshot $id does not exist"
+    umount "$top"
+    exit 0
+fi
+if [ "$(cat "$top/@system/var/lib/man/rollback-done" 2>/dev/null)" = "$id" ]; then
+    # Already restored by a previous boot of this entry.
+    umount "$top"
+    exit 0
+fi
+log_begin_msg "MAN: restoring snapshot $id"
+now=$(date -u +%Y%m%d-%H%M%S)
+mkdir -p "$top/@snapshots/$now"
+if btrfs subvolume snapshot -r "$top/@system" "$top/@snapshots/$now/snapshot" >/dev/null 2>&1; then
+    printf '{"id":"%s","created":"%s","description":"Before restoring %s","kind":"pre-rollback"}\n' \
+        "$now" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$id" > "$top/@snapshots/$now/info.json"
+else
+    rmdir "$top/@snapshots/$now" 2>/dev/null
+fi
+if mv "$top/@system" "$top/@system.old-$now" &&
+   btrfs subvolume snapshot "$snap" "$top/@system" >/dev/null 2>&1; then
+    mkdir -p "$top/@system/var/lib/man"
+    echo "$id" > "$top/@system/var/lib/man/rollback-done"
+    # GRUB reads its menu from @system: never leave the restored system
+    # without one (it is regenerated once the system has started).
+    if [ ! -f "$top/@system/boot/grub/grub.cfg" ] && [ -f "$top/@system.old-$now/boot/grub/grub.cfg" ]; then
+        mkdir -p "$top/@system/boot/grub"
+        cp "$top/@system.old-$now/boot/grub/grub.cfg" "$top/@system/boot/grub/grub.cfg"
+    fi
+    log_end_msg 0
+else
+    [ -d "$top/@system" ] || mv "$top/@system.old-$now" "$top/@system"
+    log_end_msg 1
+    log_failure_msg "MAN restore failed; starting the current system"
+fi
+umount "$top"
+exit 0

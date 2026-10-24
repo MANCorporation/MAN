@@ -1,0 +1,41 @@
+#!/bin/sh
+# MAN: start encrypting the system partition, as requested in MAN Setup.
+# Only the start happens here (a few seconds): LUKS2 is initialized in place
+# and the disk is unlocked with the setup key; man-encrypt.service encrypts
+# the rest in the background while MAN runs. On any problem the system
+# starts unencrypted and nothing is changed.
+PREREQ="udev"
+prereqs() { echo "$PREREQ"; }
+case "$1" in prereqs) prereqs; exit 0 ;; esac
+
+[ -f /conf/man-encrypt ] || exit 0
+. /conf/man-encrypt
+. /scripts/functions
+
+wait_for_udev 10
+i=0
+while [ ! -b "$DEVICE" ] && [ $i -lt 300 ]; do sleep 0.1; i=$((i + 1)); done
+[ -b "$DEVICE" ] || { log_failure_msg "MAN: the disk to encrypt was not found"; exit 0; }
+dev=$(readlink -f "$DEVICE")
+# Already started: the usual passphrase prompt unlocks it.
+cryptsetup isLuks "$dev" && exit 0
+
+key=/run/man-encrypt.key
+mkdir -p /run/man-root
+if mount -t btrfs -o ro,subvol=@system "$dev" /run/man-root; then
+    [ -f /run/man-root/var/lib/man/encrypt.key ] && cat /run/man-root/var/lib/man/encrypt.key > "$key"
+    umount /run/man-root
+fi
+[ -s "$key" ] || { log_failure_msg "MAN: no encryption key found; starting without encryption"; exit 0; }
+
+log_begin_msg "MAN: starting disk encryption"
+if cryptsetup reencrypt --batch-mode --encrypt --init-only --type luks2 --reduce-device-size 32M \
+        --uuid "$LUKS_UUID" --label MAN_CRYPT --key-file "$key" "$dev" &&
+   cryptsetup open --allow-discards --key-file "$key" "$dev" man_root; then
+    log_end_msg 0
+else
+    log_end_msg 1
+    log_failure_msg "MAN: disk encryption could not be started"
+fi
+rm -f "$key"
+exit 0

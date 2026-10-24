@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.man.Snapshots</id>
+  <name>Snapshots</name>
+  <summary>Create and restore snapshots of the system</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <developer id="man.local"><name>MAN Developers</name></developer>
+  <description>
+    <p>Snapshots saves the state of the MAN operating system using Btrfs copy-on-write
+    snapshots and brings it back after a bad update or configuration change. Personal
+    files in Home are never touched.</p>
+  </description>
+  <launchable type="desktop-id">com.man.Snapshots.desktop</launchable>
+  <releases><release version="3.3.0" date="2026-10-18"/></releases>
+</component>

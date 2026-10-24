@@ -1,0 +1,1328 @@
+Description: MAN: GNOME Tweaks options in Settings (Appearance: fonts, themes, titlebars; Multitasking: windows; Keyboard: overview key, layout options; Mouse: middle-click paste, locate pointer; Power: lid; Apps: startup apps)
+Author: MAN
+---
+--- a/panels/applications/cc-applications-panel.blp
++++ b/panels/applications/cc-applications-panel.blp
+@@ -32,7 +32,7 @@
+         name: "apps-page";
+ 
+         child: Adw.PreferencesPage {
+-          Adw.PreferencesGroup {
++          Adw.PreferencesGroup default_apps_group {
+             $CcListRow {
+               title: _("_Default Apps");
+               subtitle: _("Set which apps open links, files, and media");
+--- a/panels/applications/cc-applications-panel.c
++++ b/panels/applications/cc-applications-panel.c
+@@ -46,6 +46,7 @@
+ #include "globs.h"
+ #include "search.h"
+ #include "utils.h"
++#include "../common/cc-man-tweaks.h"
+ 
+ #define MASTER_SCHEMA "org.gnome.desktop.notifications"
+ #define APP_SCHEMA MASTER_SCHEMA ".application"
+@@ -60,6 +61,7 @@
+ 
+ struct _CcApplicationsPanel {
+     CcPanel parent;
++    AdwPreferencesGroup *default_apps_group;
+ 
+     AdwNavigationPage *app_settings_page;
+     GtkStack *main_page_stack;
+@@ -1967,6 +1969,7 @@
+     gtk_widget_class_set_template_from_resource (widget_class,
+                                                  "/org/gnome/control-center/applications/cc-applications-panel.ui");
+ 
++    gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, default_apps_group);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, storage_page_app_row);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, app_icon_image);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, app_listbox);
+@@ -2060,6 +2063,7 @@
+     g_resources_register (cc_applications_get_resource ());
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
++    cc_man_tweaks_add_startup_apps (self->default_apps_group);
+ 
+     gtk_widget_set_visible (GTK_WIDGET (self->install_button), gnome_software_is_installed ());
+ 
+--- a/panels/background/cc-background-panel.blp
++++ b/panels/background/cc-background-panel.blp
+@@ -21,7 +21,7 @@
+       Adw.HeaderBar {}
+ 
+       content: Adw.ToastOverlay toast_overlay {
+-        child: Adw.PreferencesPage {
++        child: Adw.PreferencesPage appearance_page {
+           Adw.PreferencesGroup {
+             title: _("Style");
+ 
+--- a/panels/background/cc-background-panel.c
++++ b/panels/background/cc-background-panel.c
+@@ -33,6 +33,7 @@
+ #include "cc-background-item.h"
+ #include "cc-background-preview.h"
+ #include "cc-background-resources.h"
++#include "../common/cc-man-tweaks.h"
+ 
+ #define WP_PATH_ID "org.gnome.desktop.background"
+ #define WP_LOCK_PATH_ID "org.gnome.desktop.screensaver"
+@@ -49,6 +50,7 @@
+ 
+ struct _CcBackgroundPanel {
+     CcPanel parent_instance;
++    AdwPreferencesPage *appearance_page;
+ 
+     GDBusConnection *connection;
+ 
+@@ -458,6 +460,7 @@
+     gtk_widget_class_set_template_from_resource (widget_class,
+                                                  "/org/gnome/control-center/background/cc-background-panel.ui");
+ 
++    gtk_widget_class_bind_template_child (widget_class, CcBackgroundPanel, appearance_page);
+     gtk_widget_class_bind_template_child (widget_class, CcBackgroundPanel, accent_box);
+     gtk_widget_class_bind_template_child (widget_class, CcBackgroundPanel, background_chooser);
+     gtk_widget_class_bind_template_child (widget_class, CcBackgroundPanel, default_preview);
+@@ -483,6 +486,7 @@
+     g_resources_register (cc_background_get_resource ());
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
++    cc_man_tweaks_add_appearance (self->appearance_page);
+ 
+     self->connection = g_application_get_dbus_connection (g_application_get_default ());
+ 
+--- a/panels/common/meson.build
++++ b/panels/common/meson.build
+@@ -77,6 +77,7 @@
+   'cc-language-row.c',
+   'cc-list-row.c',
+   'cc-list-row-info-button.c',
++  'cc-man-tweaks.c',
+   'cc-mask-paintable.c',
+   'cc-time-editor.c',
+   'cc-timelike-editor.c',
+--- a/panels/keyboard/cc-keyboard-panel.blp
++++ b/panels/keyboard/cc-keyboard-panel.blp
+@@ -8,7 +8,7 @@
+     [top]
+     Adw.HeaderBar {}
+ 
+-    content: Adw.PreferencesPage {
++    content: Adw.PreferencesPage keyboard_page {
+       Adw.PreferencesGroup {
+         title: _("Input Sources");
+         description: _("Includes keyboard layouts and input methods");
+--- a/panels/keyboard/cc-keyboard-panel.c
++++ b/panels/keyboard/cc-keyboard-panel.c
+@@ -34,9 +34,11 @@
+ #include "cc-xkb-modifier-page.h"
+ 
+ #include "keyboard-shortcuts.h"
++#include "../common/cc-man-tweaks.h"
+ 
+ struct _CcKeyboardPanel {
+     CcPanel parent_instance;
++    AdwPreferencesPage *keyboard_page;
+ 
+     GtkCheckButton *per_window_source;
+     GtkCheckButton *same_source;
+@@ -174,6 +176,7 @@
+     gtk_widget_class_set_template_from_resource (widget_class,
+                                                  "/org/gnome/control-center/keyboard/cc-keyboard-panel.ui");
+ 
++    gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, keyboard_page);
+     gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, input_switch_group);
+     gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, per_window_source);
+     gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, same_source);
+@@ -215,6 +218,7 @@
+     g_resources_register (cc_keyboard_get_resource ());
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
++    cc_man_tweaks_add_keyboard (self->keyboard_page);
+ 
+     self->input_source_settings = g_settings_new ("org.gnome.desktop.input-sources");
+ 
+--- a/panels/mouse/cc-mouse-panel.blp
++++ b/panels/mouse/cc-mouse-panel.blp
+@@ -54,7 +54,7 @@
+           icon-name: "input-mouse-symbolic";
+ 
+           child: Adw.PreferencesPage {
+-            Adw.PreferencesGroup {
++            Adw.PreferencesGroup mouse_general_group {
+               title: _("General");
+ 
+               Adw.ActionRow primary_button_row {
+--- a/panels/mouse/cc-mouse-panel.c
++++ b/panels/mouse/cc-mouse-panel.c
+@@ -34,9 +34,11 @@
+ #include "cc-mouse-test.h"
+ #include "gsd-device-manager.h"
+ #include "gsd-input-helper.h"
++#include "../common/cc-man-tweaks.h"
+ 
+ struct _CcMousePanel {
+     CcPanel parent_instance;
++    AdwPreferencesGroup *mouse_general_group;
+ 
+     GtkSwitch *mouse_accel_switch;
+     AdwPreferencesGroup *mouse_group;
+@@ -402,6 +404,7 @@
+     g_resources_register (cc_mouse_get_resource ());
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
++    cc_man_tweaks_add_mouse (self->mouse_general_group);
+ 
+     self->mouse_settings = g_settings_new ("org.gnome.desktop.peripherals.mouse");
+     self->touchpad_settings = g_settings_new ("org.gnome.desktop.peripherals.touchpad");
+@@ -438,6 +441,7 @@
+ 
+     gtk_widget_class_set_template_from_resource (widget_class, "/org/gnome/control-center/mouse/cc-mouse-panel.ui");
+ 
++    gtk_widget_class_bind_template_child (widget_class, CcMousePanel, mouse_general_group);
+     gtk_widget_class_bind_template_child (widget_class, CcMousePanel, mouse_accel_switch);
+     gtk_widget_class_bind_template_child (widget_class, CcMousePanel, mouse_group);
+     gtk_widget_class_bind_template_child (widget_class, CcMousePanel, mouse_scroll_direction_row);
+--- a/panels/multitasking/cc-multitasking-panel.blp
++++ b/panels/multitasking/cc-multitasking-panel.blp
+@@ -6,7 +6,7 @@
+     [top]
+     Adw.HeaderBar {}
+ 
+-    content: Adw.PreferencesPage {
++    content: Adw.PreferencesPage multitasking_page {
+       Adw.PreferencesGroup {
+         title: _("Screen Edges");
+         separate-rows: true;
+--- a/panels/multitasking/cc-multitasking-panel.c
++++ b/panels/multitasking/cc-multitasking-panel.c
+@@ -22,9 +22,11 @@
+ 
+ #include "cc-illustrated-row.h"
+ #include "cc-multitasking-resources.h"
++#include "../common/cc-man-tweaks.h"
+ 
+ struct _CcMultitaskingPanel {
+     CcPanel parent_instance;
++    AdwPreferencesPage *multitasking_page;
+ 
+     GSettings *interface_settings;
+     GSettings *mutter_settings;
+@@ -124,6 +126,7 @@
+     gtk_widget_class_set_template_from_resource (widget_class,
+                                                  "/org/gnome/control-center/multitasking/cc-multitasking-panel.ui");
+ 
++    gtk_widget_class_bind_template_child (widget_class, CcMultitaskingPanel, multitasking_page);
+     gtk_widget_class_bind_template_child (widget_class, CcMultitaskingPanel, active_screen_edges_row);
+     gtk_widget_class_bind_template_child (widget_class, CcMultitaskingPanel, active_screen_edges_switch);
+     gtk_widget_class_bind_template_child (widget_class, CcMultitaskingPanel, all_workspaces_radio);
+@@ -148,6 +151,7 @@
+     g_resources_register (cc_multitasking_get_resource ());
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
++    cc_man_tweaks_add_multitasking (self->multitasking_page);
+ 
+     self->interface_settings = g_settings_new ("org.gnome.desktop.interface");
+     g_settings_bind (self->interface_settings, "enable-hot-corners", self->hot_corner_switch, "active",
+--- a/panels/power/cc-power-panel.c
++++ b/panels/power/cc-power-panel.c
+@@ -30,6 +30,7 @@
+ #include "cc-hostname.h"
+ #include "cc-number-row.h"
+ #include "cc-power-panel.h"
++#include "../common/cc-man-tweaks.h"
+ #include "cc-power-profile-info-row.h"
+ #include "cc-power-profile-row.h"
+ #include "cc-power-resources.h"
+@@ -1246,4 +1247,8 @@
+         g_signal_connect_object (G_OBJECT (device), "notify", G_CALLBACK (up_client_changed), self, G_CONNECT_SWAPPED);
+     }
+     up_client_changed (self);
++
++    /* MAN: lid setting on the page that is shown (no battery: one page). */
++    cc_man_tweaks_add_power (adw_view_stack_page_get_visible (self->power_saving_stack_page) ?
++                             self->power_saving_page : self->general_page);
+ }
+--- /dev/null
++++ b/panels/common/cc-man-tweaks.c
+@@ -0,0 +1,1043 @@
++/* cc-man-tweaks.c
++ *
++ * MAN: the GNOME Tweaks options, built into the Settings panels where they
++ * belong. Every row writes the same GSettings keys GNOME Tweaks writes.
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#define GNOME_DESKTOP_USE_UNSTABLE_API
++#include <config.h>
++#include <stdlib.h>
++#include <string.h>
++#include <glib/gi18n.h>
++#include <glib/gstdio.h>
++#include <gio/gdesktopappinfo.h>
++#include <libgnome-desktop/gnome-xkb-info.h>
++
++#include "cc-man-tweaks.h"
++
++#define INTERFACE_SCHEMA "org.gnome.desktop.interface"
++#define WM_SCHEMA "org.gnome.desktop.wm.preferences"
++#define MUTTER_SCHEMA "org.gnome.mutter"
++#define INPUT_SOURCES_SCHEMA "org.gnome.desktop.input-sources"
++#define SOUND_SCHEMA "org.gnome.desktop.sound"
++
++/* ───────────────────────────── helpers ───────────────────────────── */
++
++/* Keeps the GSettings object alive as long as the widget. */
++static GSettings *
++settings_for (GtkWidget *widget, const char *schema)
++{
++  GSettings *settings = g_settings_new (schema);
++  g_object_set_data_full (G_OBJECT (widget), schema, settings, g_object_unref);
++  return settings;
++}
++
++static gboolean
++schema_has_key (const char *schema, const char *key)
++{
++  GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
++  g_autoptr(GSettingsSchema) s = g_settings_schema_source_lookup (source, schema, TRUE);
++  return s != NULL && g_settings_schema_has_key (s, key);
++}
++
++static GtkWidget *
++switch_row (const char *title, const char *subtitle, const char *schema, const char *key)
++{
++  GtkWidget *row = adw_switch_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++  if (subtitle)
++    adw_action_row_set_subtitle (ADW_ACTION_ROW (row), subtitle);
++  g_settings_bind (settings_for (row, schema), key, row, "active", G_SETTINGS_BIND_DEFAULT);
++  return row;
++}
++
++/* A combo row choosing one string value (or enum nick) of a key. */
++typedef struct {
++  GSettings *settings;
++  char *key;
++  GStrv values;
++  gboolean updating;
++} ComboData;
++
++static void
++combo_data_free (ComboData *d)
++{
++  g_object_unref (d->settings);
++  g_free (d->key);
++  g_strfreev (d->values);
++  g_free (d);
++}
++
++static void
++combo_sync_from_settings (AdwComboRow *row, ComboData *d)
++{
++  g_autofree char *value = g_settings_get_string (d->settings, d->key);
++  guint i = g_strv_length (d->values);
++  if (value && g_strv_contains ((const char * const *) d->values, value))
++    for (i = 0; d->values[i] && g_strcmp0 (d->values[i], value) != 0; i++);
++  d->updating = TRUE;
++  adw_combo_row_set_selected (row, i < g_strv_length (d->values) ? i : GTK_INVALID_LIST_POSITION);
++  d->updating = FALSE;
++}
++
++static void
++combo_settings_changed_cb (GSettings *settings, const char *key, AdwComboRow *row)
++{
++  combo_sync_from_settings (row, g_object_get_data (G_OBJECT (row), "man-combo"));
++}
++
++static void
++combo_selected_cb (AdwComboRow *row, GParamSpec *pspec, ComboData *d)
++{
++  guint i = adw_combo_row_get_selected (row);
++  if (d->updating || i == GTK_INVALID_LIST_POSITION || i >= g_strv_length (d->values))
++    return;
++  g_settings_set_string (d->settings, d->key, d->values[i]);
++}
++
++static GtkWidget *
++combo_row (const char *title, const char *subtitle, const char *schema, const char *key,
++           const char * const *labels, const char * const *values)
++{
++  GtkWidget *row = adw_combo_row_new ();
++  ComboData *d = g_new0 (ComboData, 1);
++  g_autofree char *signal = g_strdup_printf ("changed::%s", key);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++  if (subtitle)
++    adw_action_row_set_subtitle (ADW_ACTION_ROW (row), subtitle);
++  d->settings = g_settings_new (schema);
++  d->key = g_strdup (key);
++  d->values = g_strdupv ((char **) values);
++  adw_combo_row_set_model (ADW_COMBO_ROW (row), G_LIST_MODEL (gtk_string_list_new (labels)));
++  g_object_set_data_full (G_OBJECT (row), "man-combo", d, (GDestroyNotify) combo_data_free);
++  combo_sync_from_settings (ADW_COMBO_ROW (row), d);
++  g_signal_connect_object (d->settings, signal, G_CALLBACK (combo_settings_changed_cb), row, 0);
++  g_signal_connect (row, "notify::selected", G_CALLBACK (combo_selected_cb), d);
++  return row;
++}
++
++/* ─────────────────────────────── fonts ─────────────────────────────── */
++
++typedef struct {
++  GSettings *settings;
++  char *key;
++  gboolean updating;
++} FontData;
++
++static void
++font_data_free (FontData *d)
++{
++  g_object_unref (d->settings);
++  g_free (d->key);
++  g_free (d);
++}
++
++static void
++font_sync (GtkFontDialogButton *button, FontData *d)
++{
++  g_autofree char *value = g_settings_get_string (d->settings, d->key);
++  PangoFontDescription *desc = pango_font_description_from_string (value);
++  d->updating = TRUE;
++  gtk_font_dialog_button_set_font_desc (button, desc);
++  d->updating = FALSE;
++  pango_font_description_free (desc);
++}
++
++static void
++font_settings_changed_cb (GSettings *settings, const char *key, GtkFontDialogButton *button)
++{
++  font_sync (button, g_object_get_data (G_OBJECT (button), "man-font"));
++}
++
++static void
++font_chosen_cb (GtkFontDialogButton *button, GParamSpec *pspec, FontData *d)
++{
++  PangoFontDescription *desc = gtk_font_dialog_button_get_font_desc (button);
++  g_autofree char *value = NULL;
++  if (d->updating || desc == NULL)
++    return;
++  value = pango_font_description_to_string (desc);
++  g_settings_set_string (d->settings, d->key, value);
++}
++
++static GtkWidget *
++font_row (const char *title, const char *schema, const char *key)
++{
++  GtkWidget *row = adw_action_row_new ();
++  GtkFontDialog *dialog = gtk_font_dialog_new ();
++  GtkWidget *button = gtk_font_dialog_button_new (dialog);
++  FontData *d = g_new0 (FontData, 1);
++  g_autofree char *signal = g_strdup_printf ("changed::%s", key);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++  gtk_font_dialog_set_title (dialog, title);
++  gtk_font_dialog_button_set_level (GTK_FONT_DIALOG_BUTTON (button), GTK_FONT_LEVEL_FONT);
++  gtk_font_dialog_button_set_use_font (GTK_FONT_DIALOG_BUTTON (button), TRUE);
++  gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
++  adw_action_row_add_suffix (ADW_ACTION_ROW (row), button);
++  adw_action_row_set_activatable_widget (ADW_ACTION_ROW (row), button);
++
++  d->settings = g_settings_new (schema);
++  d->key = g_strdup (key);
++  g_object_set_data_full (G_OBJECT (button), "man-font", d, (GDestroyNotify) font_data_free);
++  font_sync (GTK_FONT_DIALOG_BUTTON (button), d);
++  g_signal_connect_object (d->settings, signal, G_CALLBACK (font_settings_changed_cb), button, 0);
++  g_signal_connect (button, "notify::font-desc", G_CALLBACK (font_chosen_cb), d);
++  return row;
++}
++
++static void
++rendering_changed_cb (GSettings *settings, const char *key, GtkWidget **rows)
++{
++  g_autofree char *mode = g_settings_get_string (settings, "font-rendering");
++  gboolean manual = g_strcmp0 (mode, "manual") == 0;
++  for (guint i = 0; rows[i]; i++)
++    gtk_widget_set_sensitive (rows[i], manual);
++}
++
++static AdwPreferencesGroup *
++fonts_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *scaling;
++  GtkAdjustment *adj;
++  static const char *rendering_labels[] = { N_("Automatic"), N_("Manual"), NULL };
++  static const char *rendering_values[] = { "automatic", "manual", NULL };
++  static const char *hinting_labels[] = { N_("None"), N_("Slight"), N_("Medium"), N_("Full"), NULL };
++  static const char *hinting_values[] = { "none", "slight", "medium", "full", NULL };
++  static const char *aa_labels[] = { N_("None"), N_("Standard (Grayscale)"), N_("Subpixel (for LCD Screens)"), NULL };
++  static const char *aa_values[] = { "none", "grayscale", "rgba", NULL };
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("Fonts"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), font_row (_("Interface Text"), INTERFACE_SCHEMA, "font-name"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), font_row (_("Document Text"), INTERFACE_SCHEMA, "document-font-name"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), font_row (_("Monospace Text"), INTERFACE_SCHEMA, "monospace-font-name"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), font_row (_("Legacy Window Titles"), WM_SCHEMA, "titlebar-font"));
++
++  if (schema_has_key (INTERFACE_SCHEMA, "font-rendering"))
++    {
++      GtkWidget **manual_rows = g_new0 (GtkWidget *, 3);
++      GtkWidget *rendering = combo_row (_("Rendering"), _("Manual uses the hinting and antialiasing below"),
++                                        INTERFACE_SCHEMA, "font-rendering", rendering_labels, rendering_values);
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), rendering);
++      manual_rows[0] = combo_row (_("Hinting"), NULL, INTERFACE_SCHEMA, "font-hinting", hinting_labels, hinting_values);
++      manual_rows[1] = combo_row (_("Antialiasing"), NULL, INTERFACE_SCHEMA, "font-antialiasing", aa_labels, aa_values);
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), manual_rows[0]);
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), manual_rows[1]);
++      g_object_set_data_full (G_OBJECT (rendering), "man-manual-rows", manual_rows, g_free);
++      {
++        GSettings *s = settings_for (rendering, INTERFACE_SCHEMA);
++        g_signal_connect (s, "changed::font-rendering", G_CALLBACK (rendering_changed_cb), manual_rows);
++        rendering_changed_cb (s, "font-rendering", manual_rows);
++      }
++    }
++  else
++    {
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                                 combo_row (_("Hinting"), NULL, INTERFACE_SCHEMA, "font-hinting", hinting_labels, hinting_values));
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                                 combo_row (_("Antialiasing"), NULL, INTERFACE_SCHEMA, "font-antialiasing", aa_labels, aa_values));
++    }
++
++  adj = gtk_adjustment_new (1.0, 0.5, 3.0, 0.05, 0.25, 0);
++  scaling = adw_spin_row_new (adj, 0.05, 2);
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (scaling), _("Scaling Factor"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (scaling), _("Makes all text larger or smaller"));
++  g_settings_bind (settings_for (scaling, INTERFACE_SCHEMA), "text-scaling-factor", scaling, "value", G_SETTINGS_BIND_DEFAULT);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), scaling);
++  return ADW_PREFERENCES_GROUP (group);
++}
++
++/* ────────────────────────────── themes ────────────────────────────── */
++
++typedef gboolean (*ThemeFilter) (const char *path);
++
++static gboolean
++is_cursor_theme (const char *path)
++{
++  g_autofree char *cursors = g_build_filename (path, "cursors", NULL);
++  return g_file_test (cursors, G_FILE_TEST_IS_DIR);
++}
++
++static gboolean
++is_icon_theme (const char *path)
++{
++  g_autofree char *index = g_build_filename (path, "index.theme", NULL);
++  g_autofree char *text = NULL;
++  g_autofree char *base = g_path_get_basename (path);
++  if (g_str_equal (base, "default") || g_str_equal (base, "hicolor") || !g_file_get_contents (index, &text, NULL, NULL))
++    return FALSE;
++  /* Cursor-only themes have no icon directories. */
++  return strstr (text, "\nDirectories=") != NULL;
++}
++
++static gboolean
++is_gtk3_theme (const char *path)
++{
++  g_autofree char *gtk3 = g_build_filename (path, "gtk-3.0", NULL);
++  return g_file_test (gtk3, G_FILE_TEST_IS_DIR);
++}
++
++static gboolean
++is_sound_theme (const char *path)
++{
++  g_autofree char *index = g_build_filename (path, "index.theme", NULL);
++  return g_file_test (index, G_FILE_TEST_EXISTS);
++}
++
++static int
++compare_names (const void *a, const void *b)
++{
++  return g_utf8_collate (*(const char **) a, *(const char **) b);
++}
++
++/* Theme names found in ~/.<legacy>, the user and the system data dirs. */
++static GStrv
++collect_themes (const char *subdir, const char *legacy, ThemeFilter filter, const char * const *builtin)
++{
++  g_autoptr(GPtrArray) dirs = g_ptr_array_new_with_free_func (g_free);
++  g_autoptr(GHashTable) seen = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
++  g_autoptr(GStrvBuilder) builder = g_strv_builder_new ();
++  const char * const *sys = g_get_system_data_dirs ();
++  GStrv names;
++
++  if (legacy)
++    g_ptr_array_add (dirs, g_build_filename (g_get_home_dir (), legacy, NULL));
++  g_ptr_array_add (dirs, g_build_filename (g_get_user_data_dir (), subdir, NULL));
++  for (guint i = 0; sys[i]; i++)
++    g_ptr_array_add (dirs, g_build_filename (sys[i], subdir, NULL));
++
++  for (guint i = 0; builtin && builtin[i]; i++)
++    if (g_hash_table_add (seen, g_strdup (builtin[i])))
++      g_strv_builder_add (builder, builtin[i]);
++
++  for (guint i = 0; i < dirs->len; i++)
++    {
++      g_autoptr(GDir) dir = g_dir_open (dirs->pdata[i], 0, NULL);
++      const char *name;
++      while (dir && (name = g_dir_read_name (dir)))
++        {
++          g_autofree char *path = g_build_filename (dirs->pdata[i], name, NULL);
++          if (!g_hash_table_contains (seen, name) && filter (path))
++            {
++              g_hash_table_add (seen, g_strdup (name));
++              g_strv_builder_add (builder, name);
++            }
++        }
++    }
++  names = g_strv_builder_end (builder);
++  qsort (names, g_strv_length (names), sizeof (char *), compare_names);
++  return names;
++}
++
++static GtkWidget *
++theme_row (const char *title, const char *subtitle, const char *schema, const char *key, GStrv names)
++{
++  g_autoptr(GSettings) s = g_settings_new (schema);
++  g_autofree char *current = g_settings_get_string (s, key);
++  g_autoptr(GStrvBuilder) b = g_strv_builder_new ();
++  g_auto(GStrv) all = NULL;
++
++  g_strv_builder_addv (b, (const char **) names);
++  /* Keep a value set elsewhere selectable even if it is not installed. */
++  if (current && *current && !g_strv_contains ((const char * const *) names, current))
++    g_strv_builder_add (b, current);
++  all = g_strv_builder_end (b);
++  qsort (all, g_strv_length (all), sizeof (char *), compare_names);
++  return combo_row (title, subtitle, schema, key, (const char * const *) all, (const char * const *) all);
++}
++
++static AdwPreferencesGroup *
++themes_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  static const char *gtk_builtin[] = { "Adwaita", "Adwaita-dark", "HighContrast", "HighContrastInverse", NULL };
++  g_auto(GStrv) cursors = collect_themes ("icons", ".icons", is_cursor_theme, NULL);
++  g_auto(GStrv) icons = collect_themes ("icons", ".icons", is_icon_theme, NULL);
++  g_auto(GStrv) gtk3 = collect_themes ("themes", ".themes", is_gtk3_theme, gtk_builtin);
++  g_auto(GStrv) sounds = collect_themes ("sounds", NULL, is_sound_theme, NULL);
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("Themes"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             theme_row (_("Cursor"), NULL, INTERFACE_SCHEMA, "cursor-theme", cursors));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             theme_row (_("Icons"), NULL, INTERFACE_SCHEMA, "icon-theme", icons));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             theme_row (_("Legacy Applications"), _("Apps that still use GTK 3"), INTERFACE_SCHEMA, "gtk-theme", gtk3));
++  if (sounds[0])
++    adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                               theme_row (_("Sounds"), NULL, SOUND_SCHEMA, "theme-name", sounds));
++  return ADW_PREFERENCES_GROUP (group);
++}
++
++/* ───────────────────────────── titlebars ───────────────────────────── */
++
++typedef struct {
++  GSettings *settings;
++  GtkWidget *maximize, *minimize, *placement;
++  gboolean updating;
++} TitlebarData;
++
++static void
++titlebar_data_free (TitlebarData *d)
++{
++  g_object_unref (d->settings);
++  g_free (d);
++}
++
++static void
++titlebar_read (TitlebarData *d)
++{
++  g_autofree char *layout = g_settings_get_string (d->settings, "button-layout");
++  const char *colon = strchr (layout, ':');
++  const char *close = strstr (layout, "close");
++  gboolean left = colon && close && close < colon;
++  d->updating = TRUE;
++  adw_switch_row_set_active (ADW_SWITCH_ROW (d->maximize), strstr (layout, "maximize") != NULL);
++  adw_switch_row_set_active (ADW_SWITCH_ROW (d->minimize), strstr (layout, "minimize") != NULL);
++  adw_combo_row_set_selected (ADW_COMBO_ROW (d->placement), left ? 0 : 1);
++  d->updating = FALSE;
++}
++
++static void
++titlebar_write (TitlebarData *d)
++{
++  gboolean max = adw_switch_row_get_active (ADW_SWITCH_ROW (d->maximize));
++  gboolean min = adw_switch_row_get_active (ADW_SWITCH_ROW (d->minimize));
++  gboolean left = adw_combo_row_get_selected (ADW_COMBO_ROW (d->placement)) == 0;
++  g_autofree char *layout = NULL;
++  if (d->updating)
++    return;
++  if (left)
++    layout = g_strdup_printf ("close%s%s:appmenu", min ? ",minimize" : "", max ? ",maximize" : "");
++  else
++    layout = g_strdup_printf ("appmenu:%s%sclose", min ? "minimize," : "", max ? "maximize," : "");
++  g_settings_set_string (d->settings, "button-layout", layout);
++}
++
++static void
++titlebar_changed_cb (GObject *object, GParamSpec *pspec, TitlebarData *d)
++{
++  titlebar_write (d);
++}
++
++static void
++titlebar_settings_cb (GSettings *settings, const char *key, TitlebarData *d)
++{
++  titlebar_read (d);
++}
++
++static AdwPreferencesGroup *
++titlebars_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  TitlebarData *d = g_new0 (TitlebarData, 1);
++  static const char *placement_labels[] = { N_("Left"), N_("Right"), NULL };
++  static const char *action_labels[] = { N_("Toggle Maximize"), N_("Maximize Horizontally"), N_("Maximize Vertically"),
++                                         N_("Minimize"), N_("Lower"), N_("Menu"), N_("None"), NULL };
++  static const char *action_values[] = { "toggle-maximize", "toggle-maximize-horizontally", "toggle-maximize-vertically",
++                                         "minimize", "lower", "menu", "none", NULL };
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("Window Titlebars"));
++  d->settings = g_settings_new (WM_SCHEMA);
++  d->maximize = adw_switch_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (d->maximize), _("Maximize Button"));
++  d->minimize = adw_switch_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (d->minimize), _("Minimize Button"));
++  d->placement = adw_combo_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (d->placement), _("Button Placement"));
++  adw_combo_row_set_model (ADW_COMBO_ROW (d->placement), G_LIST_MODEL (gtk_string_list_new (placement_labels)));
++  g_object_set_data_full (G_OBJECT (group), "man-titlebar", d, (GDestroyNotify) titlebar_data_free);
++  titlebar_read (d);
++  g_signal_connect (d->maximize, "notify::active", G_CALLBACK (titlebar_changed_cb), d);
++  g_signal_connect (d->minimize, "notify::active", G_CALLBACK (titlebar_changed_cb), d);
++  g_signal_connect (d->placement, "notify::selected", G_CALLBACK (titlebar_changed_cb), d);
++  g_signal_connect_object (d->settings, "changed::button-layout", G_CALLBACK (titlebar_settings_cb), d, 0);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), d->maximize);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), d->minimize);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), d->placement);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             combo_row (_("Double-Click"), NULL, WM_SCHEMA, "action-double-click-titlebar", action_labels, action_values));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             combo_row (_("Middle-Click"), NULL, WM_SCHEMA, "action-middle-click-titlebar", action_labels, action_values));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             combo_row (_("Secondary-Click"), NULL, WM_SCHEMA, "action-right-click-titlebar", action_labels, action_values));
++  return ADW_PREFERENCES_GROUP (group);
++}
++
++void
++cc_man_tweaks_add_appearance (AdwPreferencesPage *page)
++{
++  adw_preferences_page_add (page, fonts_group ());
++  adw_preferences_page_add (page, themes_group ());
++  adw_preferences_page_add (page, titlebars_group ());
++}
++
++/* ───────────────────────────── multitasking ───────────────────────────── */
++
++void
++cc_man_tweaks_add_multitasking (AdwPreferencesPage *page)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  static const char *key_labels[] = { N_("Super"), N_("Alt"), N_("Disabled"), NULL };
++  static const char *key_values[] = { "<Super>", "<Alt>", "disabled", NULL };
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("Windows"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             switch_row (_("Attach Modal Dialogs"), _("Dialogs stay attached to the window that opened them"),
++                                         MUTTER_SCHEMA, "attach-modal-dialogs"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             switch_row (_("Center New Windows"), NULL, MUTTER_SCHEMA, "center-new-windows"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             switch_row (_("Resize with Secondary-Click"), _("Hold the window action key and drag with the secondary button"),
++                                         WM_SCHEMA, "resize-with-right-button"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             combo_row (_("Window Action Key"), _("Hold it to move or resize windows from anywhere inside them"),
++                                        WM_SCHEMA, "mouse-button-modifier", key_labels, key_values));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             switch_row (_("Raise Windows When Focused"), _("Useful with focus on hover"), WM_SCHEMA, "auto-raise"));
++  adw_preferences_page_add (page, ADW_PREFERENCES_GROUP (group));
++}
++
++/* ────────────────────────────── keyboard ────────────────────────────── */
++
++static gboolean
++emacs_get (GValue *value, GVariant *variant, gpointer user_data)
++{
++  g_value_set_boolean (value, g_strcmp0 (g_variant_get_string (variant, NULL), "Emacs") == 0);
++  return TRUE;
++}
++
++static GVariant *
++emacs_set (const GValue *value, const GVariantType *type, gpointer user_data)
++{
++  return g_variant_new_string (g_value_get_boolean (value) ? "Emacs" : "Default");
++}
++
++/* XKB option groups that allow several options at once (rules XML). */
++static GHashTable *
++xkb_multi_groups (void)
++{
++  GHashTable *set = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
++  g_autofree char *xml = NULL;
++  g_autoptr(GRegex) re = g_regex_new ("<group\\s+allowMultipleSelection=\"true\">\\s*<configItem>\\s*<name>([^<]+)</name>",
++                                      0, 0, NULL);
++  g_autoptr(GMatchInfo) m = NULL;
++  if (!g_file_get_contents ("/usr/share/X11/xkb/rules/evdev.xml", &xml, NULL, NULL))
++    return set;
++  g_regex_match (re, xml, 0, &m);
++  while (g_match_info_matches (m))
++    {
++      g_hash_table_add (set, g_match_info_fetch (m, 1));
++      g_match_info_next (m, NULL);
++    }
++  return set;
++}
++
++typedef struct {
++  GSettings *settings;
++  GnomeXkbInfo *info;
++  GHashTable *multi;
++  gboolean updating;
++} XkbData;
++
++static void
++xkb_data_free (XkbData *d)
++{
++  g_object_unref (d->settings);
++  g_object_unref (d->info);
++  g_hash_table_unref (d->multi);
++  g_free (d);
++}
++
++static void
++xkb_option_toggled_cb (GtkCheckButton *check, XkbData *d)
++{
++  const char *group = g_object_get_data (G_OBJECT (check), "xkb-group");
++  const char *option = g_object_get_data (G_OBJECT (check), "xkb-option");
++  gboolean active = gtk_check_button_get_active (check);
++  g_auto(GStrv) current = g_settings_get_strv (d->settings, "xkb-options");
++  g_autoptr(GStrvBuilder) b = g_strv_builder_new ();
++  g_autofree char *prefix = g_strconcat (group, ":", NULL);
++  gboolean single = !g_hash_table_contains (d->multi, group);
++  g_auto(GStrv) result = NULL;
++
++  if (d->updating)
++    return;
++  /* Radio buttons also report the one being switched off; only the newly
++   * chosen one counts (the order of the two signals is not defined). */
++  if (single && !active)
++    return;
++  for (guint i = 0; current[i]; i++)
++    {
++      if (option && g_str_equal (current[i], option))
++        continue;
++      if (single && g_str_has_prefix (current[i], prefix))
++        continue;
++      g_strv_builder_add (b, current[i]);
++    }
++  if (active && option)
++    g_strv_builder_add (b, option);
++  result = g_strv_builder_end (b);
++  g_settings_set_strv (d->settings, "xkb-options", (const char * const *) result);
++}
++
++static int
++compare_group_desc (gconstpointer a, gconstpointer b, gpointer info)
++{
++  return g_utf8_collate (gnome_xkb_info_description_for_group (info, a),
++                         gnome_xkb_info_description_for_group (info, b));
++}
++
++static void
++show_xkb_dialog (GtkWidget *parent)
++{
++  AdwDialog *dialog = adw_preferences_dialog_new ();
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *group = adw_preferences_group_new ();
++  XkbData *d = g_new0 (XkbData, 1);
++  g_autoptr(GList) groups = NULL;
++  g_auto(GStrv) current = NULL;
++
++  d->settings = g_settings_new (INPUT_SOURCES_SCHEMA);
++  d->info = gnome_xkb_info_new ();
++  d->multi = xkb_multi_groups ();
++  g_object_set_data_full (G_OBJECT (dialog), "man-xkb", d, (GDestroyNotify) xkb_data_free);
++  current = g_settings_get_strv (d->settings, "xkb-options");
++
++  adw_dialog_set_title (dialog, _("Additional Layout Options"));
++  adw_dialog_set_content_width (dialog, 640);
++  adw_dialog_set_content_height (dialog, 720);
++  adw_preferences_dialog_set_search_enabled (ADW_PREFERENCES_DIALOG (dialog), TRUE);
++  adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (group),
++                                         _("Extra behavior for keys on all keyboard layouts"));
++
++  groups = g_list_sort_with_data (gnome_xkb_info_get_all_option_groups (d->info), compare_group_desc, d->info);
++  for (GList *l = groups; l; l = l->next)
++    {
++      const char *gid = l->data;
++      GtkWidget *expander = adw_expander_row_new ();
++      g_autoptr(GList) options = gnome_xkb_info_get_options_for_group (d->info, gid);
++      gboolean single = !g_hash_table_contains (d->multi, gid);
++      GtkCheckButton *first = NULL;
++      guint selected = 0;
++
++      adw_preferences_row_set_title (ADW_PREFERENCES_ROW (expander), gnome_xkb_info_description_for_group (d->info, gid));
++      adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (expander), FALSE);
++
++      if (single)
++        {
++          /* "Default" clears the group. */
++          GtkWidget *row = adw_action_row_new ();
++          GtkWidget *check = gtk_check_button_new ();
++          adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), _("Default"));
++          adw_action_row_add_prefix (ADW_ACTION_ROW (row), check);
++          adw_action_row_set_activatable_widget (ADW_ACTION_ROW (row), check);
++          g_object_set_data_full (G_OBJECT (check), "xkb-group", g_strdup (gid), g_free);
++          first = GTK_CHECK_BUTTON (check);
++          g_signal_connect (check, "toggled", G_CALLBACK (xkb_option_toggled_cb), d);
++          adw_expander_row_add_row (ADW_EXPANDER_ROW (expander), row);
++        }
++
++      options = g_list_sort (options, (GCompareFunc) g_strcmp0);
++      for (GList *o = options; o; o = o->next)
++        {
++          const char *oid = o->data;
++          GtkWidget *row = adw_action_row_new ();
++          GtkWidget *check = gtk_check_button_new ();
++          gboolean on = g_strv_contains ((const char * const *) current, oid);
++
++          adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (row), FALSE);
++          adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), gnome_xkb_info_description_for_option (d->info, gid, oid));
++          adw_action_row_add_prefix (ADW_ACTION_ROW (row), check);
++          adw_action_row_set_activatable_widget (ADW_ACTION_ROW (row), check);
++          if (first)
++            gtk_check_button_set_group (GTK_CHECK_BUTTON (check), first);
++          gtk_check_button_set_active (GTK_CHECK_BUTTON (check), on);
++          if (on)
++            selected++;
++          g_object_set_data_full (G_OBJECT (check), "xkb-group", g_strdup (gid), g_free);
++          g_object_set_data_full (G_OBJECT (check), "xkb-option", g_strdup (oid), g_free);
++          g_signal_connect (check, "toggled", G_CALLBACK (xkb_option_toggled_cb), d);
++          adw_expander_row_add_row (ADW_EXPANDER_ROW (expander), row);
++        }
++      if (first && selected == 0)
++        gtk_check_button_set_active (first, TRUE);
++      if (selected > 0)
++        {
++          g_autofree char *sub = g_strdup_printf (ngettext ("%u option on", "%u options on", selected), selected);
++          adw_expander_row_set_subtitle (ADW_EXPANDER_ROW (expander), sub);
++        }
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), expander);
++    }
++
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (group));
++  adw_preferences_dialog_add (ADW_PREFERENCES_DIALOG (dialog), ADW_PREFERENCES_PAGE (page));
++  adw_dialog_present (dialog, parent);
++}
++
++static void
++xkb_row_activated_cb (AdwActionRow *row)
++{
++  show_xkb_dialog (GTK_WIDGET (row));
++}
++
++void
++cc_man_tweaks_add_keyboard (AdwPreferencesPage *page)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *emacs = adw_switch_row_new ();
++  GtkWidget *xkb = adw_action_row_new ();
++  static const char *overlay_labels[] = { N_("Left Super"), N_("Right Super"), NULL };
++  static const char *overlay_values[] = { "Super_L", "Super_R", NULL };
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("More Keyboard Options"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             combo_row (_("Overview Shortcut"), _("The key that opens the Activities overview"),
++                                        MUTTER_SCHEMA, "overlay-key", overlay_labels, overlay_values));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
++                             switch_row (_("Show Extended Input Sources"), _("Offer more layouts when adding an input source"),
++                                         INPUT_SOURCES_SCHEMA, "show-all-sources"));
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (emacs), _("Emacs Input"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (emacs), _("Emacs key bindings in text fields"));
++  g_settings_bind_with_mapping (settings_for (emacs, INTERFACE_SCHEMA), "gtk-key-theme", emacs, "active",
++                                G_SETTINGS_BIND_DEFAULT, emacs_get, emacs_set, NULL, NULL);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), emacs);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (xkb), _("Additional Layout Options"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (xkb), _("Caps Lock behavior, layout switching, key swaps and more"));
++  adw_action_row_add_suffix (ADW_ACTION_ROW (xkb), gtk_image_new_from_icon_name ("go-next-symbolic"));
++  gtk_list_box_row_set_activatable (GTK_LIST_BOX_ROW (xkb), TRUE);
++  g_signal_connect (xkb, "activated", G_CALLBACK (xkb_row_activated_cb), NULL);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), xkb);
++
++  adw_preferences_page_add (page, ADW_PREFERENCES_GROUP (group));
++}
++
++/* ─────────────────────────────── mouse ─────────────────────────────── */
++
++void
++cc_man_tweaks_add_mouse (AdwPreferencesGroup *group)
++{
++  adw_preferences_group_add (group,
++                             switch_row (_("Middle Click Paste"), _("Paste the selected text with the middle button"),
++                                         INTERFACE_SCHEMA, "gtk-enable-primary-paste"));
++  adw_preferences_group_add (group,
++                             switch_row (_("Locate Pointer"), _("Press Ctrl to show where the pointer is"),
++                                         INTERFACE_SCHEMA, "locate-pointer"));
++}
++
++/* ─────────────────────────────── power ─────────────────────────────── */
++
++#define LID_INHIBITOR "man-ignore-lid-switch"
++
++static char *
++lid_autostart_path (void)
++{
++  return g_build_filename (g_get_user_config_dir (), "autostart", LID_INHIBITOR ".desktop", NULL);
++}
++
++static gboolean
++has_lid (void)
++{
++  g_autoptr(GDir) dir = g_dir_open ("/proc/acpi/button/lid", 0, NULL);
++  if (g_getenv ("MAN_SETTINGS_FAKE_LID"))
++    return TRUE;
++  return dir != NULL && g_dir_read_name (dir) != NULL;
++}
++
++static void
++lid_switch_cb (AdwSwitchRow *row, GParamSpec *pspec)
++{
++  g_autofree char *path = lid_autostart_path ();
++  /* Like GNOME Tweaks: a logind inhibitor started at every login keeps the
++   * computer awake when the lid is closed. */
++  const char *command = "systemd-inhibit --what=handle-lid-switch --who=Settings --why=" LID_INHIBITOR
++                        " --mode=block sleep infinity";
++
++  if (adw_switch_row_get_active (row))
++    {
++      g_unlink (path);
++      g_spawn_command_line_async ("pkill -f -- --why=" LID_INHIBITOR, NULL);
++    }
++  else
++    {
++      g_autofree char *dir = g_path_get_dirname (path);
++      g_autofree char *text = g_strdup_printf ("[Desktop Entry]\nType=Application\nName=Keep Running With the Lid Closed\n"
++                                               "Exec=%s\nNoDisplay=true\nX-GNOME-Autostart-Phase=Initialization\n", command);
++      g_mkdir_with_parents (dir, 0755);
++      if (g_file_set_contents (path, text, -1, NULL))
++        g_spawn_command_line_async (command, NULL);
++    }
++}
++
++void
++cc_man_tweaks_add_power (AdwPreferencesPage *page)
++{
++  GtkWidget *group, *row;
++  g_autofree char *path = NULL;
++
++  if (!has_lid ())
++    return;
++  path = lid_autostart_path ();
++  group = adw_preferences_group_new ();
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("Laptop Lid"));
++  row = adw_switch_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), _("Suspend When Lid Is Closed"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (row), _("Turn off to keep the computer running, for example with an external screen"));
++  adw_switch_row_set_active (ADW_SWITCH_ROW (row), !g_file_test (path, G_FILE_TEST_EXISTS));
++  g_signal_connect (row, "notify::active", G_CALLBACK (lid_switch_cb), NULL);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), row);
++  adw_preferences_page_add (page, ADW_PREFERENCES_GROUP (group));
++}
++
++/* ──────────────────────────── startup apps ──────────────────────────── */
++
++static char *
++autostart_dir (void)
++{
++  return g_build_filename (g_get_user_config_dir (), "autostart", NULL);
++}
++
++static void fill_startup_list (GtkListBox *list);
++
++static void
++remove_startup_cb (GtkButton *button, GtkListBox *list)
++{
++  const char *path = g_object_get_data (G_OBJECT (button), "path");
++  g_unlink (path);
++  fill_startup_list (list);
++}
++
++static int
++compare_app_names (gconstpointer a, gconstpointer b)
++{
++  return g_utf8_collate (g_app_info_get_display_name (G_APP_INFO (*(gpointer *) a)),
++                         g_app_info_get_display_name (G_APP_INFO (*(gpointer *) b)));
++}
++
++/* User autostart entries that are enabled and not our own helpers. */
++static GPtrArray *
++startup_apps (void)
++{
++  GPtrArray *apps = g_ptr_array_new_with_free_func (g_object_unref);
++  g_autofree char *dir_path = autostart_dir ();
++  g_autoptr(GDir) dir = g_dir_open (dir_path, 0, NULL);
++  const char *name;
++
++  while (dir && (name = g_dir_read_name (dir)))
++    {
++      g_autofree char *path = NULL;
++      GDesktopAppInfo *info;
++      if (!g_str_has_suffix (name, ".desktop") || g_str_has_prefix (name, "man-"))
++        continue;
++      path = g_build_filename (dir_path, name, NULL);
++      info = g_desktop_app_info_new_from_filename (path);
++      if (info == NULL)
++        continue;
++      if (g_desktop_app_info_get_is_hidden (info) ||
++          (g_desktop_app_info_has_key (info, "X-GNOME-Autostart-enabled") &&
++           !g_desktop_app_info_get_boolean (info, "X-GNOME-Autostart-enabled")))
++        {
++          g_object_unref (info);
++          continue;
++        }
++      g_ptr_array_add (apps, info);
++    }
++  g_ptr_array_sort (apps, compare_app_names);
++  return apps;
++}
++
++static GtkWidget *
++app_row (GAppInfo *app)
++{
++  GtkWidget *row = adw_action_row_new ();
++  GIcon *gicon = g_app_info_get_icon (app);
++  GtkWidget *image = gicon ? gtk_image_new_from_gicon (gicon) : gtk_image_new_from_icon_name ("application-x-executable");
++  const char *desc = g_app_info_get_description (app);
++
++  gtk_image_set_icon_size (GTK_IMAGE (image), GTK_ICON_SIZE_LARGE);
++  adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (row), FALSE);
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), g_app_info_get_display_name (app));
++  if (desc)
++    adw_action_row_set_subtitle (ADW_ACTION_ROW (row), desc);
++  adw_action_row_set_subtitle_lines (ADW_ACTION_ROW (row), 1);
++  adw_action_row_add_prefix (ADW_ACTION_ROW (row), image);
++  return row;
++}
++
++static void
++fill_startup_list (GtkListBox *list)
++{
++  g_autoptr(GPtrArray) apps = startup_apps ();
++  gtk_list_box_remove_all (list);
++  if (apps->len == 0)
++    {
++      GtkWidget *row = adw_action_row_new ();
++      adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), _("No startup apps"));
++      gtk_widget_add_css_class (row, "dim-label");
++      gtk_list_box_append (list, row);
++      return;
++    }
++  for (guint i = 0; i < apps->len; i++)
++    {
++      GtkWidget *row = app_row (apps->pdata[i]);
++      GtkWidget *button = gtk_button_new_from_icon_name ("user-trash-symbolic");
++      gtk_widget_set_tooltip_text (button, _("Remove"));
++      gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
++      gtk_widget_add_css_class (button, "flat");
++      g_object_set_data_full (G_OBJECT (button), "path",
++                              g_strdup (g_desktop_app_info_get_filename (apps->pdata[i])), g_free);
++      g_signal_connect (button, "clicked", G_CALLBACK (remove_startup_cb), list);
++      adw_action_row_add_suffix (ADW_ACTION_ROW (row), button);
++      gtk_list_box_append (list, row);
++    }
++}
++
++static void
++add_app_activated_cb (GtkListBox *box, GtkListBoxRow *row, GtkListBox *startup_list)
++{
++  GDesktopAppInfo *app = g_object_get_data (G_OBJECT (row), "app");
++  const char *src = g_desktop_app_info_get_filename (app);
++  g_autofree char *dir = autostart_dir ();
++  g_autofree char *base = g_path_get_basename (src);
++  g_autofree char *dest = g_build_filename (dir, base, NULL);
++  g_autoptr(GKeyFile) kf = g_key_file_new ();
++
++  g_mkdir_with_parents (dir, 0755);
++  if (g_key_file_load_from_file (kf, src, G_KEY_FILE_KEEP_TRANSLATIONS, NULL))
++    {
++      g_key_file_remove_key (kf, G_KEY_FILE_DESKTOP_GROUP, "Hidden", NULL);
++      g_key_file_set_boolean (kf, G_KEY_FILE_DESKTOP_GROUP, "X-GNOME-Autostart-enabled", TRUE);
++      g_key_file_save_to_file (kf, dest, NULL);
++    }
++  fill_startup_list (startup_list);
++  adw_dialog_close (ADW_DIALOG (gtk_widget_get_ancestor (GTK_WIDGET (box), ADW_TYPE_DIALOG)));
++}
++
++static gboolean
++app_filter_cb (GtkListBoxRow *row, GtkSearchEntry *entry)
++{
++  const char *text = gtk_editable_get_text (GTK_EDITABLE (entry));
++  GAppInfo *app = g_object_get_data (G_OBJECT (row), "app");
++  g_autofree char *needle = g_utf8_casefold (text, -1);
++  g_autofree char *hay = g_utf8_casefold (g_app_info_get_display_name (app), -1);
++  return *needle == '\0' || strstr (hay, needle) != NULL;
++}
++
++static void
++search_changed_cb (GtkSearchEntry *entry, GtkListBox *list)
++{
++  gtk_list_box_invalidate_filter (list);
++}
++
++static void
++show_add_app_dialog (GtkWidget *parent, GtkListBox *startup_list)
++{
++  AdwDialog *dialog = adw_dialog_new ();
++  GtkWidget *view = adw_toolbar_view_new ();
++  GtkWidget *search = gtk_search_entry_new ();
++  GtkWidget *list = gtk_list_box_new ();
++  GtkWidget *clamp = adw_clamp_new ();
++  GtkWidget *scroll = gtk_scrolled_window_new ();
++  GtkWidget *search_bar = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
++  g_autolist(GAppInfo) all = g_app_info_get_all ();
++  g_autoptr(GPtrArray) apps = g_ptr_array_new ();
++
++  adw_dialog_set_title (dialog, _("Add Startup App"));
++  adw_dialog_set_content_width (dialog, 480);
++  adw_dialog_set_content_height (dialog, 600);
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (view), adw_header_bar_new ());
++  gtk_search_entry_set_placeholder_text (GTK_SEARCH_ENTRY (search), _("Search Apps"));
++  gtk_widget_set_hexpand (search, TRUE);
++  gtk_widget_set_margin_start (search_bar, 12);
++  gtk_widget_set_margin_end (search_bar, 12);
++  gtk_widget_set_margin_bottom (search_bar, 6);
++  gtk_box_append (GTK_BOX (search_bar), search);
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (view), search_bar);
++
++  gtk_list_box_set_selection_mode (GTK_LIST_BOX (list), GTK_SELECTION_NONE);
++  gtk_widget_add_css_class (list, "boxed-list");
++  gtk_widget_set_valign (list, GTK_ALIGN_START);
++  for (GList *l = all; l; l = l->next)
++    if (g_app_info_should_show (l->data) && G_IS_DESKTOP_APP_INFO (l->data))
++      g_ptr_array_add (apps, l->data);
++  g_ptr_array_sort (apps, compare_app_names);
++  for (guint i = 0; i < apps->len; i++)
++    {
++      GtkWidget *row = app_row (apps->pdata[i]);
++      gtk_list_box_row_set_activatable (GTK_LIST_BOX_ROW (row), TRUE);
++      g_object_set_data_full (G_OBJECT (row), "app", g_object_ref (apps->pdata[i]), g_object_unref);
++      gtk_list_box_append (GTK_LIST_BOX (list), row);
++    }
++  gtk_list_box_set_filter_func (GTK_LIST_BOX (list), (GtkListBoxFilterFunc) app_filter_cb, search, NULL);
++  g_signal_connect (search, "search-changed", G_CALLBACK (search_changed_cb), list);
++  g_signal_connect (list, "row-activated", G_CALLBACK (add_app_activated_cb), startup_list);
++
++  gtk_widget_set_margin_start (clamp, 12);
++  gtk_widget_set_margin_end (clamp, 12);
++  gtk_widget_set_margin_top (clamp, 6);
++  gtk_widget_set_margin_bottom (clamp, 12);
++  adw_clamp_set_child (ADW_CLAMP (clamp), list);
++  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroll), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
++  gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scroll), clamp);
++  gtk_widget_set_vexpand (scroll, TRUE);
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (view), scroll);
++  adw_dialog_set_child (dialog, view);
++  adw_dialog_present (dialog, parent);
++  gtk_widget_grab_focus (search);
++}
++
++static void
++add_button_clicked_cb (GtkButton *button, GtkListBox *list)
++{
++  show_add_app_dialog (GTK_WIDGET (button), list);
++}
++
++static void
++startup_row_activated_cb (AdwActionRow *row)
++{
++  AdwDialog *dialog = adw_dialog_new ();
++  GtkWidget *view = adw_toolbar_view_new ();
++  GtkWidget *header = adw_header_bar_new ();
++  GtkWidget *add = gtk_button_new_from_icon_name ("list-add-symbolic");
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *list = gtk_list_box_new ();
++
++  adw_dialog_set_title (dialog, _("Startup Apps"));
++  adw_dialog_set_content_width (dialog, 520);
++  adw_dialog_set_content_height (dialog, 560);
++  gtk_widget_set_tooltip_text (add, _("Add App"));
++  adw_header_bar_pack_start (ADW_HEADER_BAR (header), add);
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (view), header);
++
++  adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (group), _("These apps start automatically when you log in"));
++  gtk_list_box_set_selection_mode (GTK_LIST_BOX (list), GTK_SELECTION_NONE);
++  gtk_widget_add_css_class (list, "boxed-list");
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), list);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (group));
++  fill_startup_list (GTK_LIST_BOX (list));
++  g_signal_connect (add, "clicked", G_CALLBACK (add_button_clicked_cb), list);
++
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (view), page);
++  adw_dialog_set_child (dialog, view);
++  adw_dialog_present (dialog, GTK_WIDGET (row));
++}
++
++void
++cc_man_tweaks_add_startup_apps (AdwPreferencesGroup *group)
++{
++  GtkWidget *row = adw_action_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), _("_Startup Apps"));
++  adw_preferences_row_set_use_underline (ADW_PREFERENCES_ROW (row), TRUE);
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (row), _("Choose apps that start when you log in"));
++  adw_action_row_add_suffix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name ("go-next-symbolic"));
++  gtk_list_box_row_set_activatable (GTK_LIST_BOX_ROW (row), TRUE);
++  g_signal_connect (row, "activated", G_CALLBACK (startup_row_activated_cb), NULL);
++  adw_preferences_group_add (group, row);
++}
+--- /dev/null
++++ b/panels/common/cc-man-tweaks.h
+@@ -0,0 +1,34 @@
++/* cc-man-tweaks.h
++ *
++ * MAN: the GNOME Tweaks options, built into the Settings panels where they
++ * belong (Appearance, Multitasking, Keyboard, Mouse & Touchpad, Power, Apps).
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#pragma once
++
++#include <adwaita.h>
++
++G_BEGIN_DECLS
++
++/* Fonts, themes and window titlebars, appended to the Appearance page. */
++void cc_man_tweaks_add_appearance (AdwPreferencesPage *page);
++
++/* Window behavior, appended to the Multitasking page. */
++void cc_man_tweaks_add_multitasking (AdwPreferencesPage *page);
++
++/* Overview key, extended input sources, Emacs input and the additional
++ * XKB layout options, appended to the Keyboard page. */
++void cc_man_tweaks_add_keyboard (AdwPreferencesPage *page);
++
++/* Middle-click paste and locate pointer, added to the mouse "General" group. */
++void cc_man_tweaks_add_mouse (AdwPreferencesGroup *group);
++
++/* "Suspend When Lid Is Closed" (laptops only), appended to the Power page. */
++void cc_man_tweaks_add_power (AdwPreferencesPage *page);
++
++/* "Startup Apps" row, added to the group holding "Default Apps". */
++void cc_man_tweaks_add_startup_apps (AdwPreferencesGroup *group);
++
++G_END_DECLS

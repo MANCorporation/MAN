@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Neizdevās palaist sistēmas palīgu."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Neizdevās sazināties ar sistēmas palīgu."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Savienojums ar sistēmas palīgu tika zaudēts."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Autorizācija atcelta."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Šai darbībai vajadzīgas administratora tiesības."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Sistēmas palīgs negaidīti apstājās."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Nav EFI sistēmas nodalījuma"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Brīvs tikai {free}, MAN vajag {need}. Atbrīvojiet vietu ar DUHACH! sistēmā Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Nav brīvas vietas. Palaidiet DUHACH! sistēmā Windows, lai atbrīvotu vietu MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN darbojas no šī diska"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Tiek lietots: nodalījums ir piemontēts"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Pārāk mazs, MAN vajag {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Instalēt MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN tiek instalēts. Lūdzu, uzgaidiet, līdz tas beidzas."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Valoda"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Pārstartēt šajā valodā"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Tiešraides sesija tiek pārstartēta izvēlētajā valodā, un MAN tiek instalēts šajā valodā."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Laipni lūdzam MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Ātra, atvērta un pilnībā pielāgojama GNOME sistēma.\n"
+"Instalējiet to šajā datorā vai turpiniet izpētīt tiešraides sesiju."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Instalēt MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Turpināt izmēģināt MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Meklē diskus…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Laipni lūdzam"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Šis dators tika palaists vecajā BIOS režīmā. MAN var instalēt tikai UEFI datoros: pārstartējiet un izvēlieties UEFI palaišanas iespēju."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Sistēmas palīgs neatgrieza informāciju par diskiem."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Tālāk"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Instalēšanas veids"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Dzēst disku un instalēt MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Viss izvēlētajā diskā tiks izdzēsts, arī Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Ieteicams. Viss izvēlētajā diskā tiks izdzēsts."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Instalēt blakus Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Ieteicams. MAN izmanto brīvo vietu blakus Windows; Windows un tā faili paliek. Sistēmu izvēlaties katrā palaišanas reizē."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Pārinstalēt MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Aizstāj sistēmu, bet patur personiskos failus mapē /home. Pašreizējā sistēma tiek saglabāta kā momentuzņēmums."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Pielāgoti nodalījumi"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Ekspertiem: izvēlieties nodalījumus paši vai izveidojiet tos lietotnē Diski."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disks"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Izvēlieties dzēšamo disku. Diski, kurus nevar izmantot, tiek rādīti ar iemeslu."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Diski netika atrasti"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Brīvā vieta blakus Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Windows nodalījumi netiek aizskarti. MAN koplieto EFI sistēmas nodalījumu un pievieno Windows savai palaišanas izvēlnei."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} brīvs"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "nav brīvas vietas"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Aizstājamā instalācija"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "nav mājas mapju"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "mājas mapes: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "momentuzņēmumi: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN diskā {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Paroles frāze ierīcei {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Atslēgt"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Instalāciju neizdevās pārbaudīt."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Nodalījumi"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Sistēmas nodalījums tiek formatēts Btrfs un satur @system, @home un @snapshots. Diska, no kura darbojas MAN, nodalījumi netiek rādīti."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Atvērt Diskus, lai izveidotu nodalījumus vai mainītu to izmēru"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Atsvaidzināt nodalījumu sarakstu"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Izvēlieties nodalījumu"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI sistēmas nodalījums"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Formatēt EFI sistēmas nodalījumu"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Atstājiet izslēgtu, lai saglabātu citu sistēmu palaidējus"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Sistēmas nodalījums (formatēts kā Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Palaišanas nodalījums (vajadzīgs šifrēšanai)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Nodalījumu saraksts atsvaidzināts"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Drošība"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Šifrēt sistēmu"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Aizsargā jūsu datus, ja dators tiek pazaudēts vai nozagts. Paroles frāze tiek prasīta katrā palaišanas reizē."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Paroles frāze"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Apstiprināt paroles frāzi"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Glabājiet šo paroles frāzi drošā vietā"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Ja tā tiek pazaudēta, neviens nevar atgūt datus. Kodols un palaišanas faili paliek mazā nešifrētā palaišanas nodalījumā."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Paroles frāzei jābūt vismaz 8 rakstzīmēm."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Paroles frāzes nesakrīt."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Izvēlieties disku."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Izvēlieties disku ar Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Izvēlieties aizstājamo instalāciju."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Vispirms atslēdziet šifrēto instalāciju."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Šajā nodalījumā nav MAN sistēmas."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Izvēlieties EFI sistēmas nodalījumu."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Izvēlieties sistēmas nodalījumu."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "EFI un sistēmas nodalījumiem jābūt atšķirīgiem."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Šifrēšanai vajadzīgs atsevišķs palaišanas nodalījums."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Sistēmas nodalījumam jābūt vismaz {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "EFI nodalījums nav FAT formātā; ieslēdziet formatēšanu."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Sistēmas nodalījums ir piemontēts; vispirms atmontējiet to lietotnē Diski."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Kur instalēt MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Laiks un tastatūra"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Laika josla"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Tastatūras izkārtojums"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Pārbaudiet tastatūru"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Rakstiet šeit, lai pārbaudītu, vai taustiņi ievada pareizās rakstzīmes."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Rakstiet šeit"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Laika josla un tastatūra"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Disks nav izvēlēts"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Sistēmas nodalījums nav izvēlēts"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Sistēmas nodalījums pazuda"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Instalācija nav izvēlēta"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Disks pazuda"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Pārskats"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Mērķis"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Dzēst disku un instalēt"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Pielāgoti nodalījumi"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Pārinstalēt, paturot /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Blakus Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (tiks formatēts)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (tiek paturēts)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Sistēmas nodalījums"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (tiks formatēts)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Palaišanas nodalījums"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Instalācija"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Vieta MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} brīvas vietas (tiek izveidots palaišanas un sistēmas nodalījums)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Bez izmaiņām. Tas parādās MAN palaišanas izvēlnē; EFI sistēmas nodalījums ir kopīgs."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Šifrēšana"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Ieslēgta (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Izslēgta"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Datņu sistēma"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system priekš MAN, @home jūsu failiem, @snapshots atjaunošanas punktiem. Visi koplieto brīvo vietu."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Sistēma"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Jūsu konts"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Tiek izveidots MAN Setup, kad dators tiek palaists pirmo reizi, kopā ar datora nosaukumu, izskatu un privātuma iestatījumiem."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Tastatūra"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Visi dati diskā {model} ({path}) tiks izdzēsti."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Dzēst un instalēt"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Izvēlētie nodalījumi tiks formatēti. Citi nodalījumi nemainās."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Formatēt un instalēt"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Pašreizējā sistēma tiek aizstāta. Jūsu faili mapē /home paliek, un vecā sistēma tiek saglabāta kā momentuzņēmums."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Pārinstalēt"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN tiek instalēts brīvajā vietā. Windows un tā faili nemainās."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Instalēt"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Gatavs instalēšanai"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Dzēst {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Visi faili un nodalījumi ierīcē {path} ({size}) tiks neatgriezeniski izdzēsti. To nevar atsaukt."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Dzēst un instalēt"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Formatēt izvēlētos nodalījumus?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Visi dati izvēlētajos nodalījumos tiks neatgriezeniski izdzēsti. Citi nodalījumi nemainās."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Formatēt un instalēt"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Instalēt MAN blakus Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN tiek instalēts {free} brīvajā vietā diskā {model} ({path}). Windows un tā faili nemainās."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Instalēt"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Pārinstalēt MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Instalētā sistēma tiks aizstāta ar jaunu kopiju. Personiskie faili mapē /home paliek, un vecā sistēma paliek pieejama kā momentuzņēmums."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Pārinstalēt"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Atcelt"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Instalē MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Sāk…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Sīkāka informācija"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Instalē"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Solis {index} no {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Žurnāls"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN ir instalēts"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Pārstartējiet datoru, lai sāktu lietot MAN. Katrā palaišanas reizē izvēlnē var izvēlēties MAN vai Windows; pagaidu instalētāja nodalījumu MAN noņem pirmajā palaišanas reizē."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Pārstartējiet datoru, lai sāktu lietot MAN. Instalācijas datu nesēju varat atvienot; ja tas paliek pievienots, MAN tik un tā palaižas no jaunā diska."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Pārstartēt tagad"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Gatavs"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Instalēšana neizdevās"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Neviens cits disks netika mainīts, un instalētājs atbrīvoja mērķa disku. Varat pārskatīt plānu un mēģināt vēlreiz."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Pārskatīt un mēģināt vēlreiz"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Rādīt sīkāku informāciju"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Instalēšanas žurnāls"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Meklēt valodas"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Meklēt valstis"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Sistēmas disks netika atrasts."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Šifrēšanai vajadzīgs MAN instalētāja izveidotais Btrfs izkārtojums."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Šai instalācijai nav atsevišķa palaišanas nodalījuma, kas vajadzīgs šifrēšanai. Lai izmantotu šifrēšanu, pārinstalējiet MAN ar “Dzēst disku”."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Kur jūs atrodaties?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Jūsu valsts vai reģions nosaka datuma, laika un skaitļu formātu."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Valsts"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU Vispārējā publiskā licence, 2. versija"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Linux kodols un daudzi sistēmas rīki"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU Vispārējā publiskā licence, 3. versija"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Daudzas GNU un GNOME programmas"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Mazākā vispārējā publiskā licence, 2.1. versija"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib un daudzas bibliotēkas"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Mazākā vispārējā publiskā licence, 3. versija"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Bibliotēkas"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla publiskā licence 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla un citu programmas un bibliotēkas"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache licence 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Bibliotēkas un rīki"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Licences līgums"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Lūdzu, izlasiet un pieņemiet noteikumus, ar kādiem tiek nodrošināts MAN."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licences"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Licences teksts nav pieejams ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Esmu izlasījis(-usi) un pieņemu licences noteikumus"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Vadu"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Nav savienots"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Savienoties ar internetu"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Ar savienojumu MAN var iestatīt laiku un uzturēt programmatūru atjauninātu. To var izdarīt arī vēlāk."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Pārbauda savienojumu…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi tīkli"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Meklēt vēlreiz"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Izlaist"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Savienoties varat vēlāk Iestatījumos."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Savienots"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Nav savienots"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Tīkli netika atrasti"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internets"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Savienots ar “{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Neizdevās savienoties ar “{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Savienoties ar “{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Ievadiet tīkla paroli."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Savienoties"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Izveidojiet savu kontu"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Jūs būsiet šī datora administrators ar pilnu root piekļuvi caur sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Pilns vārds"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Lietotājvārds"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Parole"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Apstiprināt paroli"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Pieteikties automātiski"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Izlaist pieteikšanās ekrānu, kad dators tiek palaists"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Esošās mājas mapes"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Izmantojiet to pašu lietotājvārdu, lai turpinātu lietot mapi no iepriekšējās instalācijas."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Lietot"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Papildu"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Datora nosaukums"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Iestatīt root paroli"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Ļauj pieteikties tieši kā root. Bez tās izmantojiet sudo ar savu paroli."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Root parole"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Apstiprināt root paroli"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Ievadiet savu vārdu."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Izvēlieties lietotājvārdu."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Šo lietotājvārdu jau izmanto sistēma."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Šis lietotājvārds ir rezervēts sistēmai."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Lietotājvārdos ir mazie burti, cipari, - un _, un tie sākas ar burtu."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Izvēlieties paroli."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Paroles nesakrīt."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Datora nosaukumā var būt burti, cipari un defises."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Ievadiet root paroli divreiz."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Padoms: parole ar 8 vai vairāk rakstzīmēm ir daudz drošāka."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Konts"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Tumšs"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Gaišs"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Padariet to par savu"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Izvēlieties stilu, akcenta krāsu un fona attēlu. Katru izmaiņu redzat uzreiz."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Stils"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Akcenta krāsa"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Fona attēls"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Pielāgot"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Privātums"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Izvēlieties, kuras funkcijas drīkst izmantot informāciju par jums. To var mainīt jebkurā laikā Iestatījumos."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Atrašanās vietas pakalpojumi"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Ļauj lietotnēm, piemēram, Kartēm un Laikapstākļiem, noteikt jūsu aptuveno atrašanās vietu pēc tuvējiem Wi-Fi tīkliem."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Automātiska laika josla"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Izmanto jūsu atrašanās vietu, lai ceļojot laika josla būtu pareiza."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Pabeigt iestatīšanu"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Jūsu disks ir šifrēts"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Jūsu dati ir aizsargāti. Paroles frāze tiek prasīta katrā datora palaišanas reizē."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Diska šifrēšana"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Šifrēšana aizsargā jūsu datus, ja dators tiek pazaudēts vai nozagts."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Šajā instalācijā nav pieejams"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Šifrēšana aizsargā jūsu failus, ja dators tiek pazaudēts vai nozagts. Bez paroles frāzes neviens nevar nolasīt disku."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Šifrēt disku"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Paroles frāze tiek prasīta katrā datora palaišanas reizē."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Šifrēšana sākas nākamajā pārstartēšanā"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Pēc tam disks tiek šifrēts fonā, kamēr lietojat datoru. Ja paroles frāze tiek pazaudēta, neviens nevar atgūt datus."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Sagatavo MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Visu sagatavo…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Pārstartēt"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Atpakaļ"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Sagatavo"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Iestatīšanas žurnāls"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Viss gatavs!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Kaut kas nogāja greizi"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Ikdienas"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Pirms atjaunināšanas"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Pirms atjaunošanas"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Pirms pārinstalēšanas"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Manuāls"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Vēl nav momentuzņēmumu"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Izveidojiet vienu pirms lielām sistēmas izmaiņām."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Atjaunot…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Dzēst momentuzņēmumu"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} brīvs no {size}. Sistēma, mājas mapes un momentuzņēmumi koplieto šo vietu; momentuzņēmumi aizņem vietu tikai tam, kas mainījies kopš to izveides."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_Labi"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Izveidot momentuzņēmumu"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Saglabā pašreizējo sistēmas stāvokli. Jūsu personiskie faili mājas mapē netiek iekļauti."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Apraksts, piemēram, “Pirms draiveru instalēšanas”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Izveidot"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Manuāls momentuzņēmums"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Dzēst momentuzņēmumu?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "“{description}” no {date} tiks neatgriezeniski izdzēsts."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Dzēst"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Atjaunot šo momentuzņēmumu?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Pēc pārstartēšanas sistēma atgriezīsies stāvoklī “{description}” no {date}. Jūsu personiskie faili nemainās.\n"
+"\n"
+"Pašreizējā sistēma vispirms tiek saglabāta kā momentuzņēmums, tāpēc to var atsaukt."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Atjaunot"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Pārstartējiet, lai pabeigtu atjaunošanu"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Pārstartēt _vēlāk"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Pārstartēt _tagad"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Momentuzņēmumi"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Atjaunošanas punkti"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Momentuzņēmumi saglabā operētājsistēmas stāvokli. Atjaunojot vienu, sistēma atgriežas tajā brīdī, kas palīdz pēc neveiksmīga atjauninājuma vai iestatījumu maiņas. Jūsu personiskie faili netiek aizskarti nekad."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Automātiski momentuzņēmumi"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Ikdienas momentuzņēmumi"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Reizi dienā, kamēr dators ir ieslēgts"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Saglabājamie ikdienas uzņēmumi"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Pirms programmatūras atjauninājumiem"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Tiek veidoti automātiski, kad pakotnes tiek instalētas, uzlabotas vai noņemtas"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Saglabājamie atjauninājumu uzņēmumi"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Krātuve"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Diska vieta"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Ja MAN nepalaižas"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Palaišanas izvēlnē izvēlieties “Restore a MAN snapshot”, lai atgūtu strādājošu sistēmu."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Momentuzņēmumi nav pieejami"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Momentuzņēmumi darbojas MAN, kas instalēts ar MAN instalētāja Btrfs izkārtojumu. Šī sistēma (piemēram, tiešraides sesija) to neizmanto."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Gaida atjaunošana: pārstartējiet datoru, lai to pabeigtu"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Pārstartēt tagad"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Lūdzu, uzgaidiet, līdz pašreizējā darbība beidzas."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Meklēt"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Kopēt starpliktuvē"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Universālais koordinētais laiks"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Angļu (ASV)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Pārbauda atjauninājumu"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Pārliecinās, ka atjauninājums ir īsts un pilnīgs…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "MAN atjauninājums"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Šo atjauninājumu nevar instalēt"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Atjauninājumu neizdevās nolasīt."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Atjauninājums no {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} ir instalēts"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Versija"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Izlaists"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Lejupielādes izmērs"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Vajadzīgā vieta"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Autentiskums"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Pārbaudīts, parakstījis “{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Kas jauns"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Turpināt"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Šis atjauninājums nav jaunāks par instalēto {name} {version}."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Atjauninājums"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Lūdzu, izlasiet šī atjauninājuma licences noteikumus."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Es pieņemu licences noteikumus"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Kur instalēt atjauninājumu?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Sistēma tiek aizstāta; faili jūsu mājas mapē netiek aizskarti."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Izvēlieties instalāciju."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "darbojas tagad"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} šajā datorā"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} diskā {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "MAN instalācija netika atrasta"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Atjauninājumi tiek instalēti no darbojošās, instalētās MAN sistēmas, nevis no tiešraides sesijas."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Instalācijas vieta"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Kopsavilkums"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Tiek paturēts"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Jūsu faili"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Viss jūsu mājas mapē"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Konti un paroles"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Lietotāji, grupas, datora nosaukums"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Savienojumi un iestatījumi"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, laika josla, tastatūra, izskats un momentuzņēmumi"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak lietotnes"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Kā arī viss mapēs /usr/local un /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Tiek aizstāts"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Ar apt instalētā programmatūra un citas sistēmas failu izmaiņas tiek aizstātas ar jauno sistēmu."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Operētājsistēma"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Tiek aizstāta ar {name} {version}. Pašreizējo sistēmu var atjaunot no momentuzņēmuma."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Dators tiek pārstartēts, lai instalētu atjauninājumu"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Pēc sagatavošanas MAN pārstartējas, dažās sekundēs instalē atjauninājumu un atkal pārstartējas."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Instalēt atjauninājumu"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Vispirms izveidot momentuzņēmumu?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Momentuzņēmums saglabā pašreizējo sistēmu, lai jūs varētu tai atgriezties, ja pēc atjaunināšanas kaut kas nedarbojas. Tas ir ieteicams."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Neveidot"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Izveidot momentuzņēmumu"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Sagatavo {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Pārstartēt, lai instalētu"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Dators tiks pārstartēts divreiz. Jūsu faili ir drošībā."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Automātiska pārstartēšana pēc {r} s"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Automātiska pārstartēšana pēc 30 s"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Atjauninājums tiks instalēts nākamajā pārstartēšanā."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Gatavs"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Atjauninājumu neizdevās sagatavot"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Jūsu sistēmā nekas netika mainīts."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Mēģināt vēlreiz"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Atjaunināšanas žurnāls"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Neizdevās"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Jūsu sistēma ir atjaunināta"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN atjaunināts uz versiju {version}.\n"
+"Iepriekš: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Gatavs"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Atvērt MAN atjauninājumu"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "MAN atjauninājumi"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Pārbauda instalēšanas plānu"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Sagatavo disku"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Kopē MAN uz disku"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Konfigurē jauno sistēmu"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Instalē palaidēju"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Izveido pirmo momentuzņēmumu"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Pabeidz"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Noņem vecos nodalījumu parakstus"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Izveido nodalījumus"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Formatē EFI sistēmas nodalījumu"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Šifrē sistēmas nodalījumu"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Formatē palaišanas nodalījumu"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Izveido Btrfs datņu sistēmu"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Noņem vecos datņu sistēmu parakstus"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Atslēdz šifrēto instalāciju"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Saglabā pašreizējo sistēmu kā momentuzņēmumu"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Noņem iepriekšējo sistēmu"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Raksta datņu sistēmu tabulu"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Iestata datora nosaukumu un identitāti"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Noņem tiešraides sesijas kontus"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Izveido jūsu kontu"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Sagatavo MAN Setup pirmajai palaišanai"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Iestata laika joslu un tastatūru"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Noņem instalētāju no jaunās sistēmas"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Veido palaišanas attēlu (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Konfigurē GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Instalē GRUB EFI sistēmas nodalījumā"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Instalē rezerves palaidēju"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Raksta palaišanas izvēlni"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disks gatavs"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Izveido jaunās sistēmas momentuzņēmumu"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Pievieno momentuzņēmumu palaišanas izvēlnei"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Atmontē"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Instalētāja palīgam jādarbojas kā root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Šis dators netika palaists UEFI režīmā. MAN vajag UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Lietotājvārds nav derīgs."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Parole ir obligāta."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Datora nosaukums nav derīgs."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Nezināma valoda."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Šifrēšanas paroles frāzei jābūt vismaz 8 rakstzīmēm."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Disks mainījās pēc tam, kad apstiprinājāt instalēšanu. Nekas netika mainīts; pārskatiet un apstipriniet vēlreiz."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Izvēlieties sistēmas nodalījumu."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Apstiprinātajā diskā nav izvēlētā sistēmas nodalījuma."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Palaišanas nodalījumam jābūt atsevišķam no EFI un sistēmas nodalījumiem."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Palaišanas nodalījumam jābūt vismaz 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Instalācija nav izvēlēta."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Apstiprinātajā diskā nav izvēlētās instalācijas."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Šifrētajai instalācijai nav MAN_BOOT nodalījuma."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "Mapē /boot netika atrasts kodols ar atbilstošiem moduļiem."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Valodu jāmaina sistēmas palīgam."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Lieto jūsu iestatījumus"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Sagatavo diska šifrēšanu"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Pabeidz"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup jāpabeidz sistēmas palīgam."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup šajā datorā jau ir pabeigts."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Nezināma akcenta krāsa."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Izvēlētais fona attēls nav pieejams."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Šo sistēmu nevar šifrēt."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Trūkst iestatīšanas atslēgas, tāpēc šifrēšana nevar turpināties fonā."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Sistēma nav instalēta uz Btrfs, tāpēc momentuzņēmumi nav pieejami."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Momentuzņēmuma atjaunošana gaida pārstartēšanu. Vispirms pārstartējiet datoru, lai to pabeigtu."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Nederīgs momentuzņēmuma ID."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Pārbauda atjauninājumu"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Izveido momentuzņēmumu"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Sagatavo atjaunināšanas apgabalu"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Izpako jauno sistēmu"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Pārnes jūsu kontus un iestatījumus"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Sagatavo pārstartēšanu"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Izpakots"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Konti"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Noņem tikai instalētājam paredzēto programmatūru"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Veido atjauninājuma palaišanas attēlu"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Pievieno vienreizēju palaišanas ierakstu"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Atjauninājums ir īsts"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Momentuzņēmums izveidots"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Izlaists"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Atjaunināšanas apgabals gatavs"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Sagatavo jauno sistēmu"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Atjauninājuma fails ir bojāts (kontrolsumma nesakrīt). Lejupielādējiet to vēlreiz."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Atjauninājuma failu neizdevās nolasīt pilnībā."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Atjauninājumā nav kodola."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Atjauninājumi jāinstalē sistēmas palīgam."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Izvēlētā instalācija netika atrasta."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Atjaunināt var tikai darbojošos MAN instalāciju."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Tas nav MAN atjauninājuma fails (nav manifesta)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Atjauninājums nav parakstīts, tāpēc tam nevar uzticēties."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Atjauninājuma paraksts ir bojāts."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Atjauninājumu nav parakstījis MAN. Tas var būt mainīts vai nākt no neuzticama avota."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Atjauninājuma manifests nav derīgs."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Paroles frāze nav pareiza, vai šifrēto nodalījumu nevar atvērt."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Zila"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Zilganzaļa"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Zaļa"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Dzeltena"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Oranža"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Sarkana"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Rozā"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Violeta"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Šīfera"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Sistēmas instalētājs"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Instalēt MAN šajā datorā"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Sistēmas atjaunošana"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Izveidot un atjaunot sistēmas momentuzņēmumus"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Sistēmas atjauninājumu instalētājs"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Instalēt MAN sistēmas atjauninājuma failu"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Piedāvā instalēt MAN, kad sākas tiešraides sesija"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "MAN atjaunināšanas paziņojums"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Vienreiz pēc pieteikšanās paziņo, ka MAN ir atjaunināts"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Iestatiet savu jauno MAN datoru"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "MAN pirmā iestatīšana"

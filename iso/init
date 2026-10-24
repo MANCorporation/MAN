@@ -1,0 +1,105 @@
+#!/bin/sh
+# MAN live ISO initramfs: find the medium holding live/filesystem.squashfs,
+# mount it with a RAM overlay on top and start MAN from it.
+#
+# Kernel options:
+#   man.id=ID   only accept a medium whose live/man-id file contains ID
+#   toram       copy the system into RAM (the medium can be removed)
+export PATH=/bin
+mkdir -p /proc /sys /dev /run /root /tmp
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mount -t tmpfs -o mode=0755,nosuid,nodev tmpfs /run
+exec </dev/console >/dev/console 2>&1
+
+id= toram=
+for opt in $(cat /proc/cmdline); do
+    case $opt in
+        man.id=*) id=${opt#man.id=} ;;
+        toram) toram=1 ;;
+    esac
+done
+
+rescue() {
+    echo "MAN: $1"
+    echo "MAN: starting a rescue shell (type 'exit' to retry)."
+    setsid cttyhack sh
+}
+
+medium=/run/live/medium
+mkdir -p $medium /run/live/rootfs /run/live/overlay
+
+find_medium() {
+    for sys in /sys/class/block/*; do
+        dev=/dev/${sys##*/}
+        case ${sys##*/} in loop*|ram*|zram*|dm-*) continue ;; esac
+        [ -b "$dev" ] || continue
+        for fs in iso9660 vfat ext4; do
+            mount -t $fs -o ro "$dev" $medium 2>/dev/null || continue
+            if [ -f $medium/live/filesystem.squashfs ] &&
+               { [ -z "$id" ] || [ "$(cat $medium/live/man-id 2>/dev/null)" = "$id" ]; }; then
+                echo "MAN: found the live system on $dev"
+                return 0
+            fi
+            umount $medium
+        done
+    done
+    return 1
+}
+
+echo "MAN: looking for the live medium..."
+while :; do
+    # USB sticks and CD drives can take a few seconds to appear.
+    tries=0
+    until find_medium; do
+        tries=$((tries + 1))
+        [ $tries -ge 40 ] && break
+        sleep 0.5
+    done
+    [ $tries -lt 40 ] && break
+    # Say what was seen, so a missing disk driver is easy to tell apart
+    # from a medium that is there but not the right one.
+    echo "MAN: disks and partitions this computer showed:"
+    grep -v -E ' (loop|ram|zram)[0-9]' /proc/partitions | sed 's/^/MAN:   /'
+    if ! grep -q -E ' (sd|nvme|vd|mmcblk|hd)[a-z0-9]*$' /proc/partitions; then
+        echo "MAN: no disk at all: the disk controller has no driver. In the UEFI"
+        echo "MAN: settings, set the storage mode from RAID / Intel RST to AHCI and try again."
+    fi
+    rescue "the MAN live medium was not found."
+done
+
+squash=$medium/live/filesystem.squashfs
+if [ -n "$toram" ]; then
+    echo "MAN: copying the system into memory..."
+    mkdir -p /run/live/ram
+    mount -t tmpfs -o mode=0755 tmpfs /run/live/ram
+    if cp $squash /run/live/ram/filesystem.squashfs; then
+        squash=/run/live/ram/filesystem.squashfs
+    else
+        echo "MAN: not enough memory, running from the medium."
+        umount /run/live/ram
+    fi
+fi
+
+until mount -t squashfs -o ro,loop $squash /run/live/rootfs; do
+    rescue "the live system image could not be mounted."
+done
+[ "$squash" != "$medium/live/filesystem.squashfs" ] && umount $medium
+
+# Changes made in the live session live in RAM.
+mount -t tmpfs -o mode=0755 tmpfs /run/live/overlay
+mkdir -p /run/live/overlay/upper /run/live/overlay/work
+until mount -t overlay overlay -o lowerdir=/run/live/rootfs,upperdir=/run/live/overlay/upper,workdir=/run/live/overlay/work /root; do
+    rescue "the live file system could not be set up."
+done
+
+# The image's fstab describes a disk; the live root is the overlay.
+printf '# MAN live session\noverlay / overlay rw 0 0\n' > /root/etc/fstab
+
+# Hand the live mounts over to the system (systemd keeps an existing /run).
+mount --move /run /root/run
+mount --move /dev /root/dev
+mount --move /sys /root/sys
+mount --move /proc /root/proc
+exec switch_root /root /sbin/init

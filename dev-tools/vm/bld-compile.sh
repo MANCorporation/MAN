@@ -1,0 +1,5 @@
+#!/bin/bash
+S=$(cd "$(dirname "$0")" && pwd); cd $S
+python3 -I ser.py BLD.dbg "mkdir -p /mnt/src; mountpoint -q /mnt/src || mount -t 9p -o trans=virtio,msize=262144 src /mnt/src; rm -f /w/build.rc; if [ -d /w/build ]; then cp /mnt/src/gcc-51/panels/applications/cc-applications-panel.c /mnt/src/gcc-51/panels/applications/cc-applications-panel.blp /w/gcc/panels/applications/; else cp -a /mnt/src/gcc-51 /w/gcc; fi; setsid sh -c 'cd /w/gcc && { [ -d /w/build ] || meson setup /w/build --prefix=/usr --libdir=lib/x86_64-linux-gnu --buildtype=plain -Dlocation-services=enabled -Dprivileged_group=sudo -Ddocumentation=false -Dtests=false -Dmalcontent=true > /w/setup.log 2>&1; }; ninja -C /w/build > /w/build.log 2>&1; echo BUILD=\$? > /w/build.rc' < /dev/null > /dev/null 2>&1 &" 4 >/dev/null
+for i in $(seq 110); do sleep 5; python3 -I ser.py BLD.dbg "cat /w/build.rc 2>/dev/null" 2 | grep -q 'BUILD=' && break; done
+python3 -I ser.py BLD.dbg "cat /w/build.rc; grep -A5 'cc-applications-panel.c.*\(warning\|error\)' /w/build.log | head -12; cp /w/build/shell/gnome-control-center /mnt/src/out/ && md5sum /mnt/src/out/gnome-control-center" 5 | grep -v '^<'

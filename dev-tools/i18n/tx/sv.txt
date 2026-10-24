@@ -1,0 +1,490 @@
+0|Systemhjälpen kunde inte startas.
+1|Det gick inte att kommunicera med systemhjälpen.
+2|Kontakten med systemhjälpen bröts.
+3|Autentiseringen avbröts.
+4|Den här åtgärden kräver administratörsbehörighet.
+5|Systemhjälpen avslutades oväntat.
+6|Ingen EFI-systempartition
+7|Bara {free} ledigt, MAN behöver {need}. Frigör utrymme med DUHACH! i Windows.
+8|Inget ledigt utrymme. Starta DUHACH! i Windows för att göra plats för MAN.
+9|MAN körs från den här disken
+10|Används: en partition är monterad
+11|För liten, MAN behöver {need}
+12|Installera MAN
+13|MAN installeras. Vänta tills det är klart.
+14|Språk
+15|_Starta om på det här språket
+16|Live-sessionen startas om på det valda språket, och MAN installeras på det.
+17|Välkommen till MAN
+18|Ett snabbt, öppet och helt anpassningsbart GNOME-system.\nInstallera det på den här datorn eller fortsätt utforska live-sessionen.
+19|_Installera MAN…
+20|_Fortsätt prova MAN
+21|Letar efter diskar…
+22|Välkommen
+23|Den här datorn startades i äldre BIOS-läge. MAN kan bara installeras på UEFI-datorer: starta om och välj UEFI-startalternativet.
+24|Systemhjälpen returnerade ingen diskinformation.
+25|  ·  EFI
+26|_Nästa
+27|Installationstyp
+28|Radera disken och installera MAN
+29|Allt på den valda disken raderas, även Windows.
+30|Rekommenderas. Allt på den valda disken raderas.
+31|Installera bredvid Windows
+32|Rekommenderas. MAN använder det lediga utrymmet bredvid Windows; Windows och dess filer finns kvar. Välj system vid varje start.
+33|Installera om MAN
+34|Ersätter systemet men behåller personliga filer i /home. Det nuvarande systemet sparas som en ögonblicksbild.
+35|Egna partitioner
+36|För experter: välj partitioner själv eller skapa dem med Diskar.
+37|Disk
+38|Välj disken som ska raderas. Diskar som inte kan användas visas med orsaken.
+39|Inga diskar hittades
+40|Ledigt utrymme bredvid Windows
+41|Windows partitioner rörs inte. MAN delar EFI-systempartitionen och lägger till Windows i sin startmeny.
+42|{size} ledigt
+43|inget ledigt utrymme
+44|{model} (Windows)
+45|Installation som ska ersättas
+46|inga hemmappar
+47|hemmappar: {list}
+48|ögonblicksbilder: {n}
+49|MAN på {model}
+50|Lösenfras för {device}
+51|Lås upp
+52|Installationen kunde inte undersökas.
+53|Partitioner
+54|Systempartitionen formateras med Btrfs och innehåller @system, @home och @snapshots. Partitioner på disken som MAN körs från visas inte.
+55|Öppna Diskar för att skapa partitioner eller ändra deras storlek
+56|Uppdatera partitionslistan
+57|Välj en partition
+58|EFI-systempartition
+59|Formatera EFI-systempartitionen
+60|Lämna av för att behålla starthanterare för andra system
+61|Systempartition (formateras som Btrfs)
+62|Startpartition (krävs med kryptering)
+63|Partitionslistan uppdaterades
+64|Säkerhet
+65|Kryptera systemet
+66|Skyddar dina data om datorn tappas bort eller blir stulen. En lösenfras efterfrågas vid varje start.
+67|Lösenfras
+68|Bekräfta lösenfras
+69|Förvara lösenfrasen säkert
+70|Om den förloras kan ingen återställa dina data. Kärnan och startfilerna ligger på en liten okrypterad startpartition.
+71|Lösenfrasen måste ha minst 8 tecken.
+72|Lösenfraserna stämmer inte överens.
+73|Välj en disk.
+74|Välj disken med Windows.
+75|Välj installationen som ska ersättas.
+76|Lås först upp den krypterade installationen.
+77|Den här partitionen innehåller inget MAN-system.
+78|Välj en EFI-systempartition.
+79|Välj systempartitionen.
+80|EFI-partitionen och systempartitionen måste vara olika.
+81|Kryptering kräver en separat startpartition.
+82|Systempartitionen måste vara minst {size}.
+83|EFI-partitionen är inte FAT-formaterad; slå på formatering.
+84|Systempartitionen är monterad; avmontera den först i Diskar.
+85|Var ska MAN installeras?
+86|Tid och tangentbord
+87|Tidszon
+88|Tangentbordslayout
+89|Testa tangentbordet
+90|Skriv här för att kontrollera att tangenterna ger rätt tecken.
+91|Skriv här
+92|Tidszon och tangentbord
+93|Ingen disk vald
+94|Ingen systempartition vald
+95|Systempartitionen försvann
+96|Ingen installation vald
+97|Disken försvann
+98|Granska
+99|Mål
+100|Radera disken och installera
+101|Egna partitioner
+102|Installera om, behåll /home
+103|Bredvid Windows
+104| (formateras)
+105| (behålls)
+106|Systempartition
+107|{partition} (formateras)
+108|Startpartition
+109|Installation
+110|Utrymme för MAN
+111|{free} ledigt utrymme (en startpartition och systempartitionen skapas)
+112|Windows
+113|Oförändrat. Det visas i MAN:s startmeny; EFI-systempartitionen delas.
+114|Kryptering
+115|På (LUKS2)
+116|Av
+117|Filsystem
+118|Btrfs: @system för MAN, @home för dina filer, @snapshots för återställningspunkter. Alla delar på det lediga utrymmet.
+119|System
+120|Ditt konto
+121|Skapas i MAN Setup när datorn startas första gången, tillsammans med datornamn, utseende och integritetsinställningar.
+122|Tangentbord
+123|Alla data på {model} ({path}) raderas.
+124|_Radera och installera
+125|De valda partitionerna formateras. Andra partitioner ändras inte.
+126|_Formatera och installera
+127|Det nuvarande systemet ersätts. Dina filer i /home behålls och det gamla systemet sparas som en ögonblicksbild.
+128|_Installera om
+129|MAN installeras i det lediga utrymmet. Windows och dess filer ändras inte.
+130|_Installera
+131|Klart att installera
+132|Radera {model}?
+133|Alla filer och partitioner på {path} ({size}) tas bort permanent. Detta kan inte ångras.
+134|Radera och installera
+135|Formatera de valda partitionerna?
+136|Alla data på de valda partitionerna tas bort permanent. Andra partitioner ändras inte.
+137|Formatera och installera
+138|Installera MAN bredvid Windows?
+139|MAN installeras i de {free} lediga utrymmet på {model} ({path}). Windows och dess filer ändras inte.
+140|Installera
+141|Installera om MAN?
+142|Det installerade systemet ersätts med en ny kopia. Personliga filer i /home behålls och det gamla systemet finns kvar som en ögonblicksbild.
+143|Installera om
+144|_Avbryt
+145|Installerar MAN
+146|Startar…
+147|Detaljer
+148|Installerar
+149|Steg {index} av {n}  ·  {title}
+150|Logg
+151|MAN är installerat
+152|Starta om datorn för att börja använda MAN. En meny vid varje start låter dig välja MAN eller Windows; den tillfälliga installationspartitionen tas bort av MAN vid första starten.
+153|Starta om datorn för att börja använda MAN. Du kan ta bort installationsmediet; om det sitter kvar startar MAN ändå från den nya disken.
+154|_Starta om nu
+155|Klar
+156|Installationen misslyckades
+157|Ingen annan disk ändrades och installationsprogrammet har släppt måldisken. Du kan granska planen och försöka igen.
+158|_Granska och försök igen
+159|_Visa detaljer
+160|Installationslogg
+161|Sök språk
+162|Sök länder
+163|Systemdisken hittades inte.
+164|Kryptering kräver Btrfs-layouten som MAN:s installationsprogram skapar.
+165|Den här installationen har ingen separat startpartition, vilket kryptering kräver. Installera om MAN med ”Radera disken” för att använda kryptering.
+166|MAN Setup
+167|Var befinner du dig?
+168|Ditt land eller din region bestämmer formatet för datum, tid och tal.
+169|Land
+170|GNU General Public License, version 2
+171|Linuxkärnan och många systemverktyg
+172|GNU General Public License, version 3
+173|Många GNU- och GNOME-program
+174|GNU Lesser General Public License, version 2.1
+175|GTK, GLib och många bibliotek
+176|GNU Lesser General Public License, version 3
+177|Bibliotek
+178|Mozilla Public License 2.0
+179|Program och bibliotek från Mozilla och andra
+180|Apache-licensen 2.0
+181|Bibliotek och verktyg
+182|Licensavtal
+183|Läs och godkänn villkoren som MAN tillhandahålls under.
+184|Licenser
+185|Licenstexten är inte tillgänglig ({path}).
+186|Jag har läst och godkänner licensvillkoren
+187|Trådbundet
+188|Inte ansluten
+189|Anslut till internet
+190|Med en anslutning kan MAN ställa klockan och hålla din programvara uppdaterad. Du kan också göra det senare.
+191|Kontrollerar anslutningen…
+192|Wi-Fi-nätverk
+193|Sök igen
+194|_Hoppa över
+195|Du kan ansluta senare i Inställningar.
+196|Ansluten
+197|Inte ansluten
+198|Inga nätverk hittades
+199|Internet
+200|Ansluten till ”{ssid}”
+201|Kunde inte ansluta till ”{ssid}”
+202|Anslut till ”{ssid}”
+203|Ange nätverkets lösenord.
+204|_Anslut
+205|Skapa ditt konto
+206|Du blir administratör för den här datorn, med full root-åtkomst via sudo.
+207|Fullständigt namn
+208|Användarnamn
+209|Lösenord
+210|Bekräfta lösenord
+211|Logga in automatiskt
+212|Hoppa över inloggningsskärmen när datorn startar
+213|Befintliga hemmappar
+214|Använd samma användarnamn för att fortsätta använda en mapp från en tidigare installation.
+215|Använd
+216|Avancerat
+217|Datornamn
+218|Ange ett root-lösenord
+219|Tillåter inloggning direkt som root. Utan det använder du sudo med ditt eget lösenord.
+220|Root-lösenord
+221|Bekräfta root-lösenord
+222|Ange ditt namn.
+223|Välj ett användarnamn.
+224|Användarnamnet används redan av systemet.
+225|Användarnamnet är reserverat av systemet.
+226|Användarnamn består av gemener, siffror, - och _ och börjar med en bokstav.
+227|Välj ett lösenord.
+228|Lösenorden stämmer inte överens.
+229|Datornamnet får innehålla bokstäver, siffror och bindestreck.
+230|Ange root-lösenordet två gånger.
+231|Tips: ett lösenord med 8 eller fler tecken är mycket säkrare.
+232|Konto
+233|Mörkt
+234|Ljust
+235|Gör den till din
+236|Välj en stil, en accentfärg och en bakgrundsbild. Du ser varje ändring direkt.
+237|Stil
+238|Accentfärg
+239|Bakgrundsbild
+240|Anpassa
+241|Integritet
+242|Välj vilka funktioner som får använda information om dig. Du kan ändra detta när som helst i Inställningar.
+243|Platstjänster
+244|Låter program som Kartor och Väder hitta din ungefärliga plats med hjälp av närliggande Wi-Fi-nätverk.
+245|Automatisk tidszon
+246|Använder din plats för att hålla tidszonen rätt när du reser.
+247|_Slutför konfigurationen
+248|Din disk är krypterad
+249|Dina data är skyddade. Lösenfrasen efterfrågas varje gång datorn startar.
+250|Diskkryptering
+251|Kryptering skyddar dina data om datorn tappas bort eller blir stulen.
+252|Inte tillgängligt i den här installationen
+253|Kryptering skyddar dina filer om datorn tappas bort eller blir stulen. Utan lösenfrasen kan ingen läsa disken.
+254|Kryptera disken
+255|Lösenfrasen efterfrågas varje gång datorn startar.
+256|Krypteringen börjar vid nästa omstart
+257|Disken krypteras sedan i bakgrunden medan du använder datorn. Om lösenfrasen förloras kan ingen återställa dina data.
+258|Förbereder MAN
+259|Gör allt klart…
+260|_Starta om
+261|_Tillbaka
+262|Förbereder
+263|Konfigurationslogg
+264|Allt klart!
+265|Något gick fel
+266|Daglig
+267|Före uppdatering
+268|Före återställning
+269|Före ominstallation
+270|Manuell
+271|Inga ögonblicksbilder än
+272|Skapa en innan du gör stora ändringar i systemet.
+273|Återställ…
+274|Ta bort ögonblicksbild
+275|{free} ledigt av {size}. System, hemmappar och ögonblicksbilder delar på utrymmet; ögonblicksbilder tar bara plats för det som ändrats sedan de skapades.
+276|_OK
+277|Skapa ögonblicksbild
+278|Sparar systemets nuvarande tillstånd. Dina personliga filer i hemmappen ingår inte.
+279|Beskrivning, till exempel ”Före installation av drivrutiner”
+280|_Skapa
+281|Manuell ögonblicksbild
+282|Ta bort ögonblicksbilden?
+283|”{description}” från {date} tas bort permanent.
+284|_Ta bort
+285|Återställ den här ögonblicksbilden?
+286|Systemet återgår till ”{description}” från {date} efter en omstart. Dina personliga filer ändras inte.\n\nDet nuvarande systemet sparas först som en ögonblicksbild, så detta kan ångras.
+287|_Återställ
+288|Starta om för att slutföra återställningen
+289|Starta om _senare
+290|Starta om _nu
+291|Ögonblicksbilder
+292|Återställningspunkter
+293|Ögonblicksbilder sparar operativsystemets tillstånd. Att återställa en tar tillbaka systemet till det ögonblicket, vilket hjälper efter en misslyckad uppdatering eller konfigurationsändring. Dina personliga filer rörs aldrig.
+294|Automatiska ögonblicksbilder
+295|Dagliga ögonblicksbilder
+296|En gång om dagen när datorn är på
+297|Dagliga ögonblicksbilder att behålla
+298|Före programuppdateringar
+299|Tas automatiskt när paket installeras, uppgraderas eller tas bort
+300|Uppdateringsbilder att behålla
+301|Lagring
+302|Diskutrymme
+303|Om MAN inte startar
+304|Välj ”Restore a MAN snapshot” i startmenyn för att få tillbaka ett fungerande system.
+305|Ögonblicksbilder är inte tillgängliga
+306|Ögonblicksbilder fungerar på MAN som installerats med Btrfs-layouten från MAN:s installationsprogram. Det här systemet (till exempel en live-session) använder den inte.
+307|En återställning väntar: starta om datorn för att slutföra den
+308|Starta om nu
+309|Vänta tills den pågående åtgärden är klar.
+310|Sök
+311|Kopiera till urklipp
+312|Koordinerad universell tid
+313|Engelska (USA)
+314|Kontrollerar uppdateringen
+315|Kontrollerar att uppdateringen är äkta och fullständig…
+316|MAN-uppdatering
+317|Den här uppdateringen kan inte installeras
+318|Uppdateringen kunde inte läsas.
+319|Uppdatering från {name} {version}
+320|{name} {version} är installerat
+321|Version
+322|Utgiven
+323|Nedladdningsstorlek
+324|Utrymme som behövs
+325|Äkthet
+326|Verifierad, signerad av ”{signer}”
+327|Nyheter
+328|_Fortsätt
+329|Den här uppdateringen är inte nyare än det installerade {name} {version}.
+330|Uppdatering
+331|Läs licensvillkoren för den här uppdateringen.
+332|Jag godkänner licensvillkoren
+333|Var ska uppdateringen installeras?
+334|Systemet ersätts; filer i din hemmapp rörs inte.
+335|Välj en installation.
+336|körs nu
+337|{name} {version} på den här datorn
+338|{name} på {model}
+339|Ingen MAN-installation hittades
+340|Uppdateringar installeras från ett körande, installerat MAN-system, inte från live-sessionen.
+341|Installationsplats
+342|Sammanfattning
+343|Behålls
+344|Dina filer
+345|Allt i din hemmapp
+346|Konton och lösenord
+347|Användare, grupper, datornamnet
+348|Anslutningar och inställningar
+349|Wi-Fi, tidszon, tangentbord, utseende och ögonblicksbilder
+350|Flatpak-program
+351|Plus allt i /usr/local och /opt
+352|Ersätts
+353|Programvara som installerats med apt och andra ändringar i systemfiler ersätts av det nya systemet.
+354|Operativsystemet
+355|Ersätts av {name} {version}. Det nuvarande systemet kan återställas från en ögonblicksbild.
+356|Datorn startas om för att installera uppdateringen
+357|Efter förberedelserna startar MAN om, installerar uppdateringen på några sekunder och startar om igen.
+358|_Installera uppdatering
+359|Skapa en ögonblicksbild först?
+360|En ögonblicksbild sparar det nuvarande systemet, så att du kan gå tillbaka om något inte fungerar efter uppdateringen. Detta rekommenderas.
+361|_Skapa inte
+362|_Skapa ögonblicksbild
+363|Förbereder {name} {version}
+364|Starta om för att installera
+365|Datorn startas om två gånger. Dina filer är säkra.
+366|Startar om automatiskt om {r} sekunder
+367|Startar om automatiskt om 30 sekunder
+368|Uppdateringen installeras nästa gång du startar om.
+369|Klar
+370|Uppdateringen kunde inte förberedas
+371|Inget ändrades i ditt system.
+372|_Försök igen
+373|Uppdateringslogg
+374|Misslyckades
+375|Ditt system har uppdaterats
+376|MAN har uppdaterats till version {version}.\nTidigare: MAN {previous}.
+377|_Klar
+378|Öppna en MAN-uppdatering
+379|MAN-uppdateringar
+380|Kontrollerar installationsplanen
+381|Förbereder disken
+382|Kopierar MAN till disken
+383|Konfigurerar det nya systemet
+384|Installerar starthanteraren
+385|Skapar den första ögonblicksbilden
+386|Avslutar
+387|Tar bort gamla partitionssignaturer
+388|Skapar partitioner
+389|Formaterar EFI-systempartitionen
+390|Krypterar systempartitionen
+391|Formaterar startpartitionen
+392|Skapar Btrfs-filsystemet
+393|Tar bort gamla filsystemssignaturer
+394|Låser upp den krypterade installationen
+395|Sparar det nuvarande systemet som en ögonblicksbild
+396|Tar bort det tidigare systemet
+397|Skriver filsystemstabellen
+398|Ställer in datornamn och identitet
+399|Tar bort live-sessionens konton
+400|Skapar ditt konto
+401|Förbereder MAN Setup för första starten
+402|Ställer in tidszon och tangentbord
+403|Tar bort installationsprogrammet från det nya systemet
+404|Bygger startavbilden (initramfs)
+405|Konfigurerar GRUB
+406|Installerar GRUB på EFI-systempartitionen
+407|Installerar reservstarthanteraren
+408|Skriver startmenyn
+409|Disken är klar
+410|Skapar en ögonblicksbild av det nya systemet
+411|Lägger till ögonblicksbilden i startmenyn
+412|Avmonterar
+413|Installationshjälpen måste köras som root.
+414|Den här datorn startades inte i UEFI-läge. MAN kräver UEFI.
+415|Användarnamnet är ogiltigt.
+416|Ett lösenord krävs.
+417|Datornamnet är ogiltigt.
+418|Okänt språk.
+419|Krypteringslösenfrasen måste ha minst 8 tecken.
+420|Disken ändrades efter att du bekräftade installationen. Inget ändrades; granska och bekräfta igen.
+421|Välj en systempartition.
+422|Den bekräftade disken innehåller inte den valda systempartitionen.
+423|Startpartitionen måste vara skild från EFI- och systempartitionerna.
+424|Startpartitionen måste vara minst 512 MB.
+425|Ingen installation vald.
+426|Den bekräftade disken innehåller inte den valda installationen.
+427|Den krypterade installationen har ingen MAN_BOOT-partition.
+428|Ingen kärna med matchande moduler hittades i /boot.
+429|Språket måste ändras av systemhjälpen.
+430|Tillämpar dina inställningar
+431|Förbereder diskkryptering
+432|Avslutar
+433|MAN Setup måste slutföras av systemhjälpen.
+434|MAN Setup har redan slutförts på den här datorn.
+435|Okänd accentfärg.
+436|Den valda bakgrundsbilden är inte tillgänglig.
+437|Det här systemet kan inte krypteras.
+438|Konfigurationsnyckeln saknas, så krypteringen kan inte fortsätta i bakgrunden.
+439|Systemet är inte installerat på Btrfs, så ögonblicksbilder är inte tillgängliga.
+440|En återställning av en ögonblicksbild väntar på omstart. Starta om datorn först för att slutföra den.
+441|Ogiltigt id för ögonblicksbild.
+442|Kontrollerar uppdateringen
+443|Skapar en ögonblicksbild
+444|Förbereder uppdateringsområdet
+445|Packar upp det nya systemet
+446|Flyttar dina konton och inställningar
+447|Förbereder omstarten
+448|Uppackat
+449|Konton
+450|Tar bort programvara som bara installationsprogrammet använder
+451|Bygger uppdateringens startavbild
+452|Lägger till engångsstartposten
+453|Uppdateringen är äkta
+454|Ögonblicksbild skapad
+455|Hoppades över
+456|Uppdateringsområdet är klart
+457|Förbereder det nya systemet
+458|Uppdateringsfilen är skadad (kontrollsumman stämmer inte). Ladda ner den igen.
+459|Uppdateringsfilen kunde inte läsas helt.
+460|Uppdateringen innehåller ingen kärna.
+461|Uppdateringar måste installeras av systemhjälpen.
+462|Den valda installationen hittades inte.
+463|Bara den körande MAN-installationen kan uppdateras.
+464|Detta är ingen MAN-uppdateringsfil (inget manifest).
+465|Uppdateringen är inte signerad och kan därför inte betros.
+466|Uppdateringens signatur är skadad.
+467|Uppdateringen är inte signerad av MAN. Den kan ha ändrats eller komma från en opålitlig källa.
+468|Uppdateringens manifest är ogiltigt.
+469|Lösenfrasen är fel, eller så kan den krypterade partitionen inte öppnas.
+470|Blå
+471|Blågrön
+472|Grön
+473|Gul
+474|Orange
+475|Röd
+476|Rosa
+477|Lila
+478|Skiffer
+479|Systeminstallation
+480|Installera MAN på den här datorn
+481|Systemåterställning
+482|Skapa och återställ ögonblicksbilder av systemet
+483|Installation av systemuppdateringar
+484|Installera en MAN-systemuppdateringsfil
+485|Erbjuder installation av MAN när live-sessionen startar
+486|MAN-uppdateringsmeddelande
+487|Talar om en gång efter inloggning att MAN har uppdaterats
+488|Konfigurera din nya MAN-dator
+489|Förstagångskonfiguration av MAN

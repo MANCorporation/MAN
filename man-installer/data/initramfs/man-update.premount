@@ -1,0 +1,56 @@
+#!/bin/sh
+# MAN: install a staged system update ("man.update=<id>" from the one-time
+# boot entry). Swaps @update in as @system (the previous system is kept as
+# @system.old-*, removed after a healthy start) and restarts. On any problem
+# nothing is changed and the current system starts.
+PREREQ=""
+prereqs() { echo "$PREREQ"; }
+case "$1" in prereqs) prereqs; exit 0 ;; esac
+
+id=""
+for arg in $(cat /proc/cmdline); do
+    case "$arg" in man.update=*) id="${arg#man.update=}" ;; esac
+done
+[ -n "$id" ] || exit 0
+
+. /scripts/functions
+say() { printf '%s\n' "$*" > /dev/console; }
+dev=$(resolve_device "$ROOT")
+[ -b "$dev" ] || { log_failure_msg "MAN update: root device $ROOT not found"; exit 0; }
+top=/run/man-update
+mkdir -p "$top"
+mount -t btrfs -o subvolid=5 "$dev" "$top" || { log_failure_msg "MAN update: cannot mount $dev"; exit 0; }
+if [ ! -d "$top/@update" ] || [ "$(cat "$top/@update/var/lib/man/update-ready" 2>/dev/null)" != "$id" ]; then
+    log_failure_msg "MAN update: no matching update is staged"
+    umount "$top"
+    exit 0
+fi
+say ""
+say "  Installing the MAN update. The computer restarts in a moment."
+say ""
+now=$(date -u +%Y%m%d-%H%M%S)
+if mv "$top/@system" "$top/@system.old-$now"; then
+    if mv "$top/@update" "$top/@system"; then
+        rm -f "$top/@system/var/lib/man/update-ready"
+        echo "$id" > "$top/@system/var/lib/man/update-applied"
+        # Separate /boot: switch to the boot menu prepared for the new system.
+        if [ -e /dev/disk/by-label/MAN_BOOT ]; then
+            mkdir -p /run/man-boot
+            if mount -t ext4 /dev/disk/by-label/MAN_BOOT /run/man-boot; then
+                [ -f /run/man-boot/grub/grub.cfg.man-update ] &&
+                    mv /run/man-boot/grub/grub.cfg.man-update /run/man-boot/grub/grub.cfg
+                umount /run/man-boot
+            fi
+        fi
+        say "  Update installed."
+    else
+        mv "$top/@system.old-$now" "$top/@system"
+        log_failure_msg "MAN update failed; starting the current system"
+        umount "$top"
+        exit 0
+    fi
+fi
+sync
+umount "$top"
+sleep 2
+reboot -f

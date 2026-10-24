@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "시스템 도우미를 시작할 수 없습니다."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "시스템 도우미와 통신할 수 없습니다."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "시스템 도우미와의 연결이 끊어졌습니다."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "인증이 취소되었습니다."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "이 작업에는 관리자 권한이 필요합니다."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "시스템 도우미가 예기치 않게 중지되었습니다."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "EFI 시스템 파티션이 없음"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "여유 공간이 {free}뿐이며 MAN에는 {need}가 필요합니다. Windows에서 DUHACH!로 공간을 확보하세요."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "여유 공간이 없습니다. Windows에서 DUHACH!를 실행해 MAN을 위한 공간을 만드세요."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN이 이 디스크에서 실행 중"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "사용 중: 파티션이 마운트되어 있음"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "너무 작음, MAN에는 {need}가 필요함"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "MAN 설치"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN을 설치하는 중입니다. 끝날 때까지 기다려 주세요."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "언어"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "이 언어로 다시 시작(_R)"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "라이브 세션이 선택한 언어로 다시 시작되며, MAN도 이 언어로 설치됩니다."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "MAN에 오신 것을 환영합니다"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"빠르고 개방적이며 자유롭게 꾸밀 수 있는 GNOME 시스템입니다.\n"
+"이 컴퓨터에 설치하거나 라이브 세션을 계속 둘러보세요."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "MAN 설치(_I)…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "MAN 계속 체험(_K)"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "디스크를 찾는 중…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "환영합니다"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "이 컴퓨터는 레거시 BIOS 모드로 시작되었습니다. MAN은 UEFI 컴퓨터에만 설치할 수 있습니다. 다시 시작한 뒤 UEFI 부팅 옵션을 선택하세요."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "시스템 도우미가 디스크 정보를 반환하지 않았습니다."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "다음(_N)"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "설치 유형"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "디스크를 지우고 MAN 설치"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "선택한 디스크의 모든 내용이 삭제되며, Windows도 포함됩니다."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "권장. 선택한 디스크의 모든 내용이 삭제됩니다."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Windows와 함께 설치"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "권장. MAN은 Windows 옆의 여유 공간을 사용하며, Windows와 그 파일은 그대로 남습니다. 시작할 때마다 시스템을 고릅니다."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "MAN 다시 설치"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "시스템을 교체하지만 /home의 개인 파일은 유지합니다. 현재 시스템은 스냅샷으로 저장됩니다."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "사용자 지정 파티션"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "전문가용: 파티션을 직접 고르거나 디스크 앱으로 만드세요."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "디스크"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "지울 디스크를 선택하세요. 사용할 수 없는 디스크는 이유와 함께 표시됩니다."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "디스크를 찾을 수 없음"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Windows 옆의 여유 공간"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Windows 파티션은 건드리지 않습니다. MAN은 EFI 시스템 파티션을 공유하고 시작 메뉴에 Windows를 추가합니다."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "여유 {size}"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "여유 공간 없음"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "교체할 설치"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "홈 폴더 없음"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "홈 폴더: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "스냅샷: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "{model}의 MAN"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "{device}의 암호"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "잠금 해제"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "설치를 검사할 수 없습니다."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "파티션"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "시스템 파티션은 Btrfs로 포맷되며 @system, @home, @snapshots를 포함합니다. MAN이 실행 중인 디스크의 파티션은 표시되지 않습니다."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "디스크 앱을 열어 파티션 만들기 또는 크기 조정"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "파티션 목록 새로 고침"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "파티션 선택"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI 시스템 파티션"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "EFI 시스템 파티션 포맷"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "다른 시스템의 부트로더를 유지하려면 끈 상태로 두세요"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "시스템 파티션 (Btrfs로 포맷)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "부트 파티션 (암호화 시 필요)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "파티션 목록을 새로 고쳤습니다"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "보안"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "시스템 암호화"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "컴퓨터를 잃어버리거나 도난당해도 데이터를 보호합니다. 시작할 때마다 암호를 묻습니다."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "암호"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "암호 확인"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "이 암호를 안전하게 보관하세요"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "잃어버리면 누구도 데이터를 복구할 수 없습니다. 커널과 부팅 파일은 암호화되지 않은 작은 부트 파티션에 남습니다."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "암호는 8자 이상이어야 합니다."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "암호가 일치하지 않습니다."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "디스크를 선택하세요."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Windows가 있는 디스크를 선택하세요."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "교체할 설치를 선택하세요."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "먼저 암호화된 설치의 잠금을 해제하세요."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "이 파티션에는 MAN 시스템이 없습니다."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "EFI 시스템 파티션을 선택하세요."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "시스템 파티션을 선택하세요."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "EFI 파티션과 시스템 파티션은 서로 달라야 합니다."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "암호화에는 별도의 부트 파티션이 필요합니다."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "시스템 파티션은 {size} 이상이어야 합니다."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "EFI 파티션이 FAT로 포맷되어 있지 않습니다. 포맷을 켜세요."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "시스템 파티션이 마운트되어 있습니다. 먼저 디스크 앱에서 마운트를 해제하세요."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "MAN을 어디에 설치할까요?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "시간과 키보드"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "시간대"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "키보드 배치"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "키보드 테스트"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "여기에 입력해 키가 올바른 문자를 입력하는지 확인하세요."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "여기에 입력"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "시간대와 키보드"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "선택한 디스크 없음"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "선택한 시스템 파티션 없음"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "시스템 파티션이 사라졌습니다"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "선택한 설치 없음"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "디스크가 사라졌습니다"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "검토"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "대상"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "디스크를 지우고 설치"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "사용자 지정 파티션"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "/home을 유지하며 다시 설치"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Windows와 함께"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (포맷 예정)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (유지)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "시스템 파티션"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (포맷 예정)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "부트 파티션"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "설치"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "MAN용 공간"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "여유 공간 {free} (부트 파티션과 시스템 파티션을 만듦)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "변경 없음. MAN의 시작 메뉴에 나타나며, EFI 시스템 파티션을 공유합니다."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "암호화"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "켬 (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "끔"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "파일 시스템"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: MAN용 @system, 파일용 @home, 복원 지점용 @snapshots. 모두 여유 공간을 공유합니다."
+
+#: installer.rs:991
+msgid "System"
+msgstr "시스템"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "내 계정"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "컴퓨터를 처음 시작할 때 MAN Setup에서 컴퓨터 이름, 모양, 개인 정보 설정과 함께 만듭니다."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "키보드"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "{model}({path})의 모든 데이터가 지워집니다."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "지우고 설치(_E)"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "선택한 파티션이 포맷됩니다. 다른 파티션은 바뀌지 않습니다."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "포맷하고 설치(_F)"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "현재 시스템이 교체됩니다. /home의 파일은 유지되고 이전 시스템은 스냅샷으로 저장됩니다."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "다시 설치(_R)"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN이 여유 공간에 설치됩니다. Windows와 그 파일은 바뀌지 않습니다."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "설치(_I)"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "설치 준비 완료"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "{model}을(를) 지울까요?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "{path}({size})의 모든 파일과 파티션이 영구적으로 삭제됩니다. 되돌릴 수 없습니다."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "지우고 설치"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "선택한 파티션을 포맷할까요?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "선택한 파티션의 모든 데이터가 영구적으로 삭제됩니다. 다른 파티션은 바뀌지 않습니다."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "포맷하고 설치"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "MAN을 Windows와 함께 설치할까요?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN이 {model}({path})의 여유 공간 {free}에 설치됩니다. Windows와 그 파일은 바뀌지 않습니다."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "설치"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "MAN을 다시 설치할까요?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "설치된 시스템이 새 복사본으로 교체됩니다. /home의 개인 파일은 유지되고 이전 시스템은 스냅샷으로 남습니다."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "다시 설치"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "취소(_C)"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "MAN 설치 중"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "시작하는 중…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "자세히"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "설치 중"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "{n}단계 중 {index}단계  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "로그"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN이 설치되었습니다"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "컴퓨터를 다시 시작하면 MAN을 사용할 수 있습니다. 시작할 때마다 메뉴에서 MAN 또는 Windows를 고를 수 있으며, 임시 설치 프로그램 파티션은 MAN이 처음 시작할 때 제거합니다."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "컴퓨터를 다시 시작하면 MAN을 사용할 수 있습니다. 설치 미디어를 제거해도 되며, 연결된 채로 두어도 MAN은 새 디스크에서 시작합니다."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "지금 다시 시작(_R)"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "완료"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "설치 실패"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "다른 디스크는 변경되지 않았고, 설치 프로그램이 대상 디스크를 해제했습니다. 계획을 검토하고 다시 시도할 수 있습니다."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "검토 후 다시 시도(_R)"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "자세히 보기(_S)"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "설치 로그"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "언어 검색"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "국가 검색"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "시스템 디스크를 찾을 수 없습니다."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "암호화하려면 MAN 설치 프로그램이 만든 Btrfs 구성이 필요합니다."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "이 설치에는 암호화에 필요한 별도의 부트 파티션이 없습니다. 암호화를 사용하려면 '디스크 지우기'로 MAN을 다시 설치하세요."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "어디에 계신가요?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "국가나 지역에 따라 날짜, 시간, 숫자 형식이 정해집니다."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "국가"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU 일반 공중 사용 허가서 버전 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Linux 커널과 많은 시스템 도구"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU 일반 공중 사용 허가서 버전 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "많은 GNU 및 GNOME 프로그램"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU 약소 일반 공중 사용 허가서 버전 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib 및 많은 라이브러리"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU 약소 일반 공중 사용 허가서 버전 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "라이브러리"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla 공중 사용 허가서 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla 등의 프로그램과 라이브러리"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache 라이선스 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "라이브러리와 도구"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "사용권 계약"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "MAN이 제공되는 조건을 읽고 동의해 주세요."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "라이선스"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "라이선스 텍스트를 사용할 수 없습니다 ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "라이선스 조건을 읽었으며 동의합니다"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "유선"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "연결 안 됨"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "인터넷에 연결"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "연결하면 MAN이 시간을 맞추고 소프트웨어를 최신으로 유지할 수 있습니다. 나중에 해도 됩니다."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "연결을 확인하는 중…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi 네트워크"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "다시 검색"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "건너뛰기(_S)"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "나중에 설정에서 연결할 수 있습니다."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "연결됨"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "연결 안 됨"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "네트워크를 찾을 수 없음"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "인터넷"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "'{ssid}'에 연결됨"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "'{ssid}'에 연결할 수 없음"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "'{ssid}'에 연결"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "네트워크 암호를 입력하세요."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "연결(_O)"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "계정 만들기"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "이 컴퓨터의 관리자가 되며, sudo로 root 전체 권한을 사용할 수 있습니다."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "이름"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "사용자 이름"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "비밀번호"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "비밀번호 확인"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "자동 로그인"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "컴퓨터를 시작할 때 로그인 화면 건너뛰기"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "기존 홈 폴더"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "이전 설치에서 남은 폴더를 계속 쓰려면 같은 사용자 이름을 사용하세요."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "사용"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "고급"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "컴퓨터 이름"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "root 비밀번호 설정"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "root로 바로 로그인할 수 있게 합니다. 설정하지 않으면 자신의 비밀번호로 sudo를 사용하세요."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "root 비밀번호"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "root 비밀번호 확인"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "이름을 입력하세요."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "사용자 이름을 고르세요."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "이 사용자 이름은 이미 시스템에서 사용 중입니다."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "이 사용자 이름은 시스템에서 예약되어 있습니다."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "사용자 이름에는 영문 소문자, 숫자, -, _를 쓰며 영문자로 시작해야 합니다."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "비밀번호를 고르세요."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "비밀번호가 일치하지 않습니다."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "컴퓨터 이름에는 영문자, 숫자, 하이픈을 쓸 수 있습니다."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "root 비밀번호를 두 번 입력하세요."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "팁: 8자 이상의 비밀번호가 훨씬 안전합니다."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "계정"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "어둡게"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "밝게"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "나만의 스타일로"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "스타일, 강조 색상, 배경 화면을 고르세요. 변경 사항이 바로 보입니다."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "스타일"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "강조 색상"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "배경 화면"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "사용자 지정"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "개인 정보"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "나에 대한 정보를 사용할 수 있는 기능을 고르세요. 설정에서 언제든지 바꿀 수 있습니다."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "위치 서비스"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "지도, 날씨 같은 앱이 주변 Wi-Fi 네트워크로 대략적인 위치를 알아낼 수 있게 합니다."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "자동 시간대"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "여행할 때 위치를 이용해 시간대를 올바르게 유지합니다."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "설정 완료(_F)"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "디스크가 암호화되어 있습니다"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "데이터가 보호되고 있습니다. 컴퓨터를 시작할 때마다 암호를 묻습니다."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "디스크 암호화"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "암호화는 컴퓨터를 잃어버리거나 도난당해도 데이터를 보호합니다."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "이 설치에서는 사용할 수 없음"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "암호화는 컴퓨터를 잃어버리거나 도난당해도 파일을 보호합니다. 암호 없이는 누구도 디스크를 읽을 수 없습니다."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "디스크 암호화"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "컴퓨터를 시작할 때마다 암호를 묻습니다."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "다음에 다시 시작할 때 암호화가 시작됩니다"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "그 후 컴퓨터를 사용하는 동안 백그라운드에서 디스크가 암호화됩니다. 암호를 잃어버리면 누구도 데이터를 복구할 수 없습니다."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "MAN 준비 중"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "모든 것을 준비하는 중…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "다시 시작(_R)"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "뒤로(_G)"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "준비 중"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "설정 로그"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "모두 끝났습니다!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "문제가 발생했습니다"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "매일"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "업데이트 전"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "복원 전"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "다시 설치 전"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "수동"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "아직 스냅샷이 없습니다"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "시스템을 크게 바꾸기 전에 하나 만들어 두세요."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "복원…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "스냅샷 삭제"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{size} 중 {free} 여유. 시스템, 홈 폴더, 스냅샷이 이 공간을 공유하며, 스냅샷은 만든 뒤 바뀐 부분만큼만 공간을 씁니다."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "확인(_O)"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "스냅샷 만들기"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "시스템의 현재 상태를 저장합니다. 홈 폴더의 개인 파일은 포함되지 않습니다."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "설명, 예: '드라이버 설치 전'"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "만들기(_C)"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "수동 스냅샷"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "스냅샷을 삭제할까요?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "{date}의 '{description}'이(가) 영구적으로 삭제됩니다."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "삭제(_D)"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "이 스냅샷을 복원할까요?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"다시 시작하면 시스템이 {date}의 '{description}' 상태로 돌아갑니다. 개인 파일은 바뀌지 않습니다.\n"
+"\n"
+"현재 시스템이 먼저 스냅샷으로 저장되므로 되돌릴 수 있습니다."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "복원(_R)"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "다시 시작해 복원 완료"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "나중에 다시 시작(_L)"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "지금 다시 시작(_N)"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "스냅샷"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "복원 지점"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "스냅샷은 운영 체제의 상태를 저장합니다. 스냅샷을 복원하면 시스템이 그 시점으로 돌아가므로, 업데이트나 설정 변경이 잘못되었을 때 유용합니다. 개인 파일은 절대 건드리지 않습니다."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "자동 스냅샷"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "매일 스냅샷"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "컴퓨터가 켜져 있는 동안 하루에 한 번"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "보관할 매일 스냅샷 수"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "소프트웨어 업데이트 전"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "패키지를 설치, 업그레이드, 제거할 때 자동으로 만듦"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "보관할 업데이트 스냅샷 수"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "저장소"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "디스크 공간"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "MAN이 시작되지 않을 때"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "시작 메뉴에서 'Restore a MAN snapshot'을 선택하면 정상 작동하는 시스템으로 돌아갈 수 있습니다."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "스냅샷을 사용할 수 없음"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "스냅샷은 MAN 설치 프로그램의 Btrfs 구성으로 설치한 MAN에서 작동합니다. 이 시스템(예: 라이브 세션)은 그 구성을 사용하지 않습니다."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "복원이 대기 중입니다: 완료하려면 컴퓨터를 다시 시작하세요"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "지금 다시 시작"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "현재 작업이 끝날 때까지 기다려 주세요."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "검색"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "클립보드에 복사"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "협정 세계시"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "영어(미국)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "업데이트 확인 중"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "업데이트가 정품이고 완전한지 확인하는 중…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "MAN 업데이트"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "이 업데이트는 설치할 수 없습니다"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "업데이트를 읽을 수 없습니다."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "{name} {version}에서 업데이트"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} 설치됨"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "버전"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "출시일"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "다운로드 크기"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "필요한 공간"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "진위"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "확인됨, 서명자 '{signer}'"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "새로운 기능"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "계속(_C)"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "이 업데이트는 설치된 {name} {version}보다 새롭지 않습니다."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "업데이트"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "이 업데이트의 라이선스 조건을 읽어 주세요."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "라이선스 조건에 동의합니다"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "업데이트를 어디에 설치할까요?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "시스템이 교체되며, 홈 폴더의 파일은 건드리지 않습니다."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "설치를 선택하세요."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "실행 중"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "이 컴퓨터의 {name} {version}"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{model}의 {name}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "MAN 설치를 찾을 수 없음"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "업데이트는 라이브 세션이 아니라 실행 중인 설치된 MAN 시스템에서 설치합니다."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "설치 위치"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "요약"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "유지됨"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "내 파일"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "홈 폴더의 모든 것"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "계정과 비밀번호"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "사용자, 그룹, 컴퓨터 이름"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "연결과 설정"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, 시간대, 키보드, 모양, 스냅샷"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak 앱"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "/usr/local과 /opt의 모든 것도 포함"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "교체됨"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "apt로 설치한 소프트웨어와 시스템 파일의 기타 변경 사항은 새 시스템으로 교체됩니다."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "운영 체제"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "{name} {version}(으)로 교체됩니다. 현재 시스템은 스냅샷에서 복원할 수 있습니다."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "업데이트를 설치하기 위해 컴퓨터가 다시 시작됩니다"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "준비가 끝나면 MAN이 다시 시작해 몇 초 만에 업데이트를 설치하고 다시 한 번 시작합니다."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "업데이트 설치(_I)"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "먼저 스냅샷을 만들까요?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "스냅샷은 현재 시스템을 저장하므로, 업데이트 후 문제가 생기면 돌아갈 수 있습니다. 권장합니다."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "만들지 않음(_D)"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "스냅샷 만들기(_C)"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "{name} {version} 준비 중"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "다시 시작해 설치"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "컴퓨터가 두 번 다시 시작됩니다. 파일은 안전합니다."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "{r}초 후 자동으로 다시 시작"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "30초 후 자동으로 다시 시작"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "다음에 다시 시작할 때 업데이트가 설치됩니다."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "준비됨"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "업데이트를 준비할 수 없습니다"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "시스템에 아무것도 바뀌지 않았습니다."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "다시 시도(_T)"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "업데이트 로그"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "실패"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "시스템이 업데이트되었습니다"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN이 버전 {version}(으)로 업데이트되었습니다.\n"
+"이전: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "완료(_D)"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "MAN 업데이트 열기"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "MAN 업데이트"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "설치 계획 확인 중"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "디스크 준비 중"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "MAN을 디스크에 복사하는 중"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "새 시스템 구성 중"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "부트로더 설치 중"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "첫 스냅샷 만드는 중"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "마무리하는 중"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "이전 파티션 서명 제거 중"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "파티션 만드는 중"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "EFI 시스템 파티션 포맷 중"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "시스템 파티션 암호화 중"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "부트 파티션 포맷 중"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Btrfs 파일 시스템 만드는 중"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "이전 파일 시스템 서명 제거 중"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "암호화된 설치 잠금 해제 중"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "현재 시스템을 스냅샷으로 저장하는 중"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "이전 시스템 제거 중"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "파일 시스템 테이블 쓰는 중"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "컴퓨터 이름과 식별 정보 설정 중"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "라이브 세션 계정 제거 중"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "계정 만드는 중"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "처음 시작을 위해 MAN Setup 준비 중"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "시간대와 키보드 설정 중"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "새 시스템에서 설치 프로그램 제거 중"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "부팅 이미지(initramfs) 만드는 중"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "GRUB 구성 중"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "EFI 시스템 파티션에 GRUB 설치 중"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "예비 부트로더 설치 중"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "시작 메뉴 쓰는 중"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "디스크 준비 완료"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "새 시스템의 스냅샷 만드는 중"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "스냅샷을 시작 메뉴에 추가하는 중"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "마운트 해제 중"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "설치 프로그램 도우미는 root로 실행해야 합니다."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "이 컴퓨터는 UEFI 모드로 시작되지 않았습니다. MAN에는 UEFI가 필요합니다."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "사용자 이름이 올바르지 않습니다."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "비밀번호가 필요합니다."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "컴퓨터 이름이 올바르지 않습니다."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "알 수 없는 언어입니다."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "암호화 암호는 8자 이상이어야 합니다."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "설치를 확인한 뒤 디스크가 바뀌었습니다. 아무것도 수정하지 않았으니 검토 후 다시 확인해 주세요."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "시스템 파티션을 선택하세요."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "확인한 디스크에 선택한 시스템 파티션이 없습니다."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "부트 파티션은 EFI 파티션 및 시스템 파티션과 별도여야 합니다."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "부트 파티션은 512 MB 이상이어야 합니다."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "선택한 설치가 없습니다."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "확인한 디스크에 선택한 설치가 없습니다."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "암호화된 설치에 MAN_BOOT 파티션이 없습니다."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "/boot에서 일치하는 모듈이 있는 커널을 찾을 수 없습니다."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "언어는 시스템 도우미가 바꿔야 합니다."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "설정 적용 중"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "디스크 암호화 준비 중"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "마무리하는 중"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup은 시스템 도우미가 완료해야 합니다."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "이 컴퓨터에서는 MAN Setup을 이미 완료했습니다."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "알 수 없는 강조 색상입니다."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "선택한 배경 화면을 사용할 수 없습니다."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "이 시스템은 암호화할 수 없습니다."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "설정 키가 없어 백그라운드에서 암호화를 계속할 수 없습니다."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "시스템이 Btrfs에 설치되어 있지 않아 스냅샷을 사용할 수 없습니다."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "스냅샷 복원이 다시 시작을 기다리고 있습니다. 완료하려면 먼저 컴퓨터를 다시 시작하세요."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "잘못된 스냅샷 ID입니다."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "업데이트 확인 중"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "스냅샷 만드는 중"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "업데이트 영역 준비 중"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "새 시스템 압축 푸는 중"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "계정과 설정을 옮기는 중"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "다시 시작 준비 중"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "압축 풀기 완료"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "계정"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "설치 프로그램 전용 소프트웨어 제거 중"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "업데이트 부팅 이미지 만드는 중"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "일회용 시작 항목 추가 중"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "정품 업데이트입니다"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "스냅샷을 만들었습니다"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "건너뜀"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "업데이트 영역 준비 완료"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "새 시스템 준비 중"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "업데이트 파일이 손상되었습니다(체크섬 불일치). 다시 내려받으세요."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "업데이트 파일을 끝까지 읽을 수 없습니다."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "업데이트에 커널이 없습니다."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "업데이트는 시스템 도우미가 설치해야 합니다."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "선택한 설치를 찾을 수 없습니다."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "실행 중인 MAN 설치만 업데이트할 수 있습니다."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "MAN 업데이트 파일이 아닙니다(매니페스트 없음)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "서명되지 않은 업데이트라 신뢰할 수 없습니다."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "업데이트 서명이 손상되었습니다."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "MAN이 서명한 업데이트가 아닙니다. 변조되었거나 신뢰할 수 없는 출처에서 왔을 수 있습니다."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "업데이트 매니페스트가 올바르지 않습니다."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "암호가 틀렸거나 암호화된 파티션을 열 수 없습니다."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "파란색"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "청록색"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "초록색"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "노란색"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "주황색"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "빨간색"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "분홍색"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "보라색"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "슬레이트"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "시스템 설치 프로그램"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "이 컴퓨터에 MAN 설치"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "시스템 복원"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "시스템 스냅샷 만들기 및 복원"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "시스템 업데이트 설치 프로그램"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "MAN 시스템 업데이트 파일 설치"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "라이브 세션이 시작되면 MAN 설치를 제안"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "MAN 업데이트 알림"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "로그인 후 한 번 MAN이 업데이트되었음을 알림"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "새 MAN 컴퓨터 설정"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "MAN 처음 시작 설정"

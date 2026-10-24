@@ -1,0 +1,12 @@
+[Unit]
+Description=Remove the MAN Setup account after setup was finished
+ConditionPathExists=/var/lib/man/oobe-cleanup
+Before=display-manager.service
+After=systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-installer/man-installer-backend oobe-cleanup
+
+[Install]
+WantedBy=graphical.target

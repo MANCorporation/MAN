@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Systémového pomocníka nelze spustit."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Se systémovým pomocníkem nelze komunikovat."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Spojení se systémovým pomocníkem bylo ztraceno."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Ověření bylo zrušeno."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "K této akci jsou potřeba práva správce."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Systémový pomocník se neočekávaně ukončil."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Chybí systémový oddíl EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Volné je jen {free}, MAN potřebuje {need}. Uvolněte místo pomocí DUHACH! ve Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Žádné volné místo. Spusťte ve Windows DUHACH! a uvolněte místo pro MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "Z tohoto disku právě běží MAN"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Používá se: oddíl je připojen"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Příliš malý, MAN potřebuje {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Instalovat MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN se instaluje. Počkejte prosím na dokončení."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Jazyk"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Restartovat v tomto jazyce"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Živá relace se restartuje ve zvoleném jazyce a MAN se v něm také nainstaluje."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Vítejte v MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Rychlý, otevřený a plně přizpůsobitelný systém GNOME.\n"
+"Nainstalujte ho do tohoto počítače, nebo pokračujte ve zkoušení živé relace."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Instalovat MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Dál zkoušet MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Hledání disků…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Vítejte"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Tento počítač byl spuštěn v režimu legacy BIOS. MAN lze nainstalovat jen na počítače s UEFI: restartujte a zvolte možnost spuštění UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Systémový pomocník nevrátil žádné informace o discích."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Další"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Typ instalace"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Smazat disk a nainstalovat MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Vše na zvoleném disku bude smazáno, včetně Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Doporučeno. Vše na zvoleném disku bude smazáno."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Instalovat vedle Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Doporučeno. MAN využije volné místo vedle Windows; Windows i jeho soubory zůstanou. Systém si zvolíte při každém spuštění."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Přeinstalovat MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Nahradí systém, ale ponechá osobní soubory v /home. Současný systém se uloží jako snímek."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Vlastní oddíly"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Pro odborníky: zvolte oddíly sami, nebo je vytvořte v aplikaci Disky."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disk"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Zvolte disk, který se smaže. Disky, které nelze použít, jsou zobrazeny s důvodem."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Nebyly nalezeny žádné disky"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Volné místo vedle Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Oddíly Windows zůstanou nedotčeny. MAN sdílí systémový oddíl EFI a přidá Windows do své nabídky při spuštění."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} volno"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "žádné volné místo"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Instalace k nahrazení"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "žádné domovské složky"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "domovské složky: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "snímky: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN na {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Heslo pro {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Odemknout"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Instalaci se nepodařilo prozkoumat."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Oddíly"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Systémový oddíl se naformátuje na Btrfs a obsahuje @system, @home a @snapshots. Oddíly na disku, ze kterého MAN běží, nejsou uvedeny."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Otevřít Disky pro vytvoření nebo změnu velikosti oddílů"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Obnovit seznam oddílů"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Zvolte oddíl"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Systémový oddíl EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Naformátovat systémový oddíl EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Nechte vypnuté, aby zůstaly zavaděče jiných systémů"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Systémový oddíl (naformátuje se na Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Zaváděcí oddíl (potřebný pro šifrování)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Seznam oddílů byl obnoven"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Zabezpečení"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Šifrovat systém"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Chrání vaše data, pokud počítač ztratíte nebo vám ho ukradnou. Heslo se zadává při každém spuštění."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Heslo"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Potvrzení hesla"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Uschovejte si toto heslo"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Pokud ho ztratíte, data už nikdo neobnoví. Jádro a zaváděcí soubory zůstanou na malém nešifrovaném zaváděcím oddílu."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Heslo musí mít alespoň 8 znaků."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Hesla se neshodují."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Zvolte disk."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Zvolte disk s Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Zvolte instalaci, která se nahradí."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Nejprve odemkněte šifrovanou instalaci."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Tento oddíl neobsahuje systém MAN."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Zvolte systémový oddíl EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Zvolte systémový oddíl."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Oddíl EFI a systémový oddíl se musí lišit."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Šifrování potřebuje samostatný zaváděcí oddíl."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Systémový oddíl musí mít alespoň {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Oddíl EFI není ve formátu FAT; zapněte formátování."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Systémový oddíl je připojen; nejprve ho odpojte v aplikaci Disky."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Kam nainstalovat MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Čas a klávesnice"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Časové pásmo"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Rozložení klávesnice"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Vyzkoušejte klávesnici"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Pište sem a ověřte, že klávesy píšou správné znaky."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Pište sem"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Časové pásmo a klávesnice"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Není zvolen disk"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Není zvolen systémový oddíl"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Systémový oddíl zmizel"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Není zvolena instalace"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Disk zmizel"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Shrnutí"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Cíl"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Smazat disk a nainstalovat"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Vlastní oddíly"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Přeinstalovat, ponechat /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Vedle Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (naformátuje se)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (ponechá se)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Systémový oddíl"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (naformátuje se)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Zaváděcí oddíl"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Instalace"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Místo pro MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} volného místa (vytvoří se zaváděcí a systémový oddíl)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Beze změny. Objeví se v nabídce při spuštění MAN; systémový oddíl EFI je sdílený."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Šifrování"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Zapnuto (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Vypnuto"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Souborový systém"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system pro MAN, @home pro vaše soubory, @snapshots pro body obnovení. Všechny sdílí volné místo."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Systém"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Váš účet"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Vytvoří se v MAN Setup při prvním spuštění počítače, spolu s názvem počítače, vzhledem a nastavením soukromí."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Klávesnice"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Všechna data na {model} ({path}) budou smazána."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Smazat a nainstalovat"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Zvolené oddíly budou naformátovány. Ostatní oddíly se nezmění."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Naformátovat a nainstalovat"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Současný systém bude nahrazen. Vaše soubory v /home zůstanou a starý systém se uloží jako snímek."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Přeinstalovat"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN se nainstaluje do volného místa. Windows a jeho soubory se nezmění."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Instalovat"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Připraveno k instalaci"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Smazat {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Všechny soubory a oddíly na {path} ({size}) budou trvale smazány. Tuto akci nelze vrátit."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Smazat a nainstalovat"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Naformátovat zvolené oddíly?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Všechna data na zvolených oddílech budou trvale smazána. Ostatní oddíly se nezmění."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Naformátovat a nainstalovat"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Nainstalovat MAN vedle Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN se nainstaluje do {free} volného místa na {model} ({path}). Windows a jeho soubory se nezmění."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Instalovat"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Přeinstalovat MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Nainstalovaný systém bude nahrazen novou kopií. Osobní soubory v /home zůstanou a starý systém bude dostupný jako snímek."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Přeinstalovat"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Instalace MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Spouštění…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Instalace"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Krok {index} z {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Záznam"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN je nainstalován"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Restartujte počítač a začněte MAN používat. Při každém spuštění si v nabídce zvolíte MAN nebo Windows; dočasný oddíl instalátoru MAN odstraní při prvním spuštění."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Restartujte počítač a začněte MAN používat. Instalační médium můžete odpojit; pokud zůstane připojené, MAN se i tak spustí z nového disku."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Restartovat nyní"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Hotovo"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Instalace se nezdařila"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Žádný jiný disk nebyl změněn a instalátor uvolnil cílový disk. Můžete plán zkontrolovat a zkusit to znovu."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Zkontrolovat a zkusit znovu"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Zobrazit podrobnosti"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Záznam instalace"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Hledat jazyky"
+
+#: langui.rs:268
+msgid "Search countries"
+msgstr "Hledat země"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Systémový disk nebyl nalezen."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Šifrování vyžaduje rozložení Btrfs vytvořené instalátorem MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Tato instalace nemá samostatný zaváděcí oddíl, který šifrování potřebuje. Pro šifrování přeinstalujte MAN s volbou „Smazat disk“."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Kde se nacházíte?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Vaše země nebo oblast určuje formát data, času a čísel."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Země"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, verze 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Jádro Linux a mnoho systémových nástrojů"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, verze 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Mnoho programů GNU a GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, verze 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib a mnoho knihoven"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, verze 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Knihovny"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Programy a knihovny od Mozilly a dalších"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache License 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Knihovny a nástroje"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Licenční smlouva"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Přečtěte si a přijměte podmínky, za kterých je MAN poskytován."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licence"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Text licence není k dispozici ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Přečetl(a) jsem si licenční podmínky a přijímám je"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Kabelové"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Nepřipojeno"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Připojení k internetu"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Díky připojení může MAN nastavit čas a udržovat software aktuální. Můžete to udělat i později."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Kontrola připojení…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Sítě Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Hledat znovu"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Přeskočit"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Připojit se můžete později v Nastavení."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Připojeno"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Nepřipojeno"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Nebyly nalezeny žádné sítě"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Připojeno k „{ssid}“"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "K „{ssid}“ se nepodařilo připojit"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Připojit k „{ssid}“"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Zadejte heslo sítě."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Připojit"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Vytvořte si účet"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Budete správcem tohoto počítače s plným přístupem roota přes sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Celé jméno"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Heslo"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Potvrzení hesla"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Přihlašovat automaticky"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Při spuštění počítače přeskočit přihlašovací obrazovku"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Existující domovské složky"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Použijte stejné uživatelské jméno a dál používejte složku z předchozí instalace."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Použít"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Název počítače"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Nastavit heslo roota"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Umožní přihlásit se přímo jako root. Bez něj používejte sudo s vlastním heslem."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Heslo roota"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Potvrzení hesla roota"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Zadejte své jméno."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Zvolte uživatelské jméno."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Toto uživatelské jméno už systém používá."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Toto uživatelské jméno je vyhrazeno pro systém."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Uživatelská jména se skládají z malých písmen, číslic, - a _ a začínají písmenem."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Zvolte heslo."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Hesla se neshodují."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Název počítače smí obsahovat písmena, číslice a pomlčky."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Zadejte heslo roota dvakrát."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Tip: heslo s 8 a více znaky je mnohem bezpečnější."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Účet"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Tmavý"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Světlý"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Přizpůsobte si ho"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Vyberte styl, barvu zvýraznění a tapetu. Každou změnu uvidíte hned."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Styl"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Barva zvýraznění"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Tapeta"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Přizpůsobení"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Soukromí"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Zvolte, které funkce smí používat informace o vás. Kdykoli to můžete změnit v Nastavení."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Služby určování polohy"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Umožní aplikacím jako Mapy a Počasí zjistit vaši přibližnou polohu pomocí okolních sítí Wi-Fi."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Automatické časové pásmo"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Podle vaší polohy udržuje správné časové pásmo, když cestujete."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Dokončit nastavení"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Váš disk je šifrovaný"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Vaše data jsou chráněna. Heslo se zadává při každém spuštění počítače."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Šifrování disku"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Šifrování chrání vaše data, pokud počítač ztratíte nebo vám ho ukradnou."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "V této instalaci není k dispozici"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Šifrování chrání vaše soubory, pokud počítač ztratíte nebo vám ho ukradnou. Bez hesla disk nikdo nepřečte."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Šifrovat disk"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Heslo se zadává při každém spuštění počítače."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Šifrování začne při příštím restartu"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Disk se pak šifruje na pozadí, zatímco počítač používáte. Pokud heslo ztratíte, data už nikdo neobnoví."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Příprava MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Vše se připravuje…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Restartovat"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Zpět"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Příprava"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Záznam nastavení"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Hotovo!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Něco se pokazilo"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Denní"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Před aktualizací"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Před obnovením"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Před přeinstalací"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Ruční"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Zatím žádné snímky"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Vytvořte si ho před velkými změnami systému."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Obnovit…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Smazat snímek"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} volno z {size}. Systém, domovská složka a snímky sdílí toto místo; snímky zabírají místo jen pro to, co se od jejich vytvoření změnilo."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_OK"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Vytvořit snímek"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Uloží současný stav systému. Vaše osobní soubory v domovské složce nejsou zahrnuty."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Popis, například „Před instalací ovladačů“"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Vytvořit"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Ruční snímek"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Smazat snímek?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "„{description}“ z {date} bude trvale smazán."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Smazat"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Obnovit tento snímek?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Systém se po restartu vrátí do stavu „{description}“ z {date}. Vaše osobní soubory v domovské složce se nezmění.\n"
+"\n"
+"Současný systém se nejprve uloží jako snímek, takže to lze vrátit."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Obnovit"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Restartujte pro dokončení obnovy"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Restartovat _později"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Restartovat _nyní"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Snímky"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Body obnovení"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Snímky ukládají stav operačního systému. Obnovení vrátí systém do tohoto okamžiku, což pomůže po nepovedené aktualizaci nebo změně nastavení. Vašich osobních souborů v domovské složce se to nikdy nedotkne."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Automatické snímky"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Denní snímky"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Jednou denně, když je počítač zapnutý"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Počet denních snímků"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Před aktualizacemi softwaru"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Pořizují se automaticky při instalaci, aktualizaci nebo odebrání balíčků"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Počet snímků před aktualizací"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Úložiště"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Místo na disku"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Pokud se MAN nespustí"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "V zaváděcí nabídce zvolte „Restore a MAN snapshot“ a vraťte funkční systém."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Snímky nejsou k dispozici"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Snímky fungují na MAN nainstalovaném s rozložením Btrfs, které vytváří instalátor MAN. Tento systém (například živá relace) ho nepoužívá."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Obnova čeká: dokončete ji restartem počítače"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Restartovat nyní"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Počkejte prosím, než se dokončí současná operace."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Hledat"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Kopírovat do schránky"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Koordinovaný světový čas"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Angličtina (USA)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Kontrola aktualizace"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Ověřuje se, že je aktualizace pravá a úplná…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Aktualizace MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Tuto aktualizaci nelze nainstalovat"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Aktualizaci se nepodařilo přečíst."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Aktualizace z {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} je nainstalován"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Verze"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Vydáno"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Velikost"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Potřebné místo"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Pravost"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Ověřeno, podepsal „{signer}“"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Co je nového"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Pokračovat"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Tato aktualizace není novější než nainstalovaný {name} {version}."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Aktualizace"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Přečtěte si prosím licenční podmínky této aktualizace."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Přijímám licenční podmínky"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Kam nainstalovat aktualizaci?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Systém bude nahrazen; soubory v domovské složce zůstanou nedotčeny."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Zvolte instalaci."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "právě běží"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} na tomto počítači"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} na {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Nebyla nalezena žádná instalace MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Aktualizace se instalují z běžícího nainstalovaného systému MAN, ne z živé relace."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Umístění instalace"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Souhrn"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Zachová se"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Vaše soubory"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Vše v domovské složce"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Účty a hesla"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Uživatelé, skupiny, název počítače"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Připojení a nastavení"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, časové pásmo, klávesnice, vzhled a snímky"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Aplikace Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "A také vše v /usr/local a /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Nahradí se"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Software nainstalovaný přes apt a další změny systémových souborů nahradí nový systém."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Operační systém"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Nahradí ho {name} {version}. Současný systém lze obnovit ze snímku."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Pro instalaci aktualizace se počítač restartuje"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Po přípravě se MAN restartuje, během několika sekund aktualizaci nainstaluje a znovu se restartuje."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Instalovat aktualizaci"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Nejprve vytvořit snímek?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Snímek uloží současný systém, takže se k němu můžete vrátit, pokud po aktualizaci něco nebude fungovat. Doporučujeme."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Nevytvářet"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Vytvořit snímek"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Příprava {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Restartovat a instalovat"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Počítač se dvakrát restartuje. Vaše soubory jsou v bezpečí."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Automatický restart za {r} s"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Automatický restart za 30 s"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Aktualizace se nainstaluje při příštím restartu."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Připraveno"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Aktualizaci se nepodařilo připravit"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Ve vašem systému se nic nezměnilo."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Zkusit znovu"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Záznam aktualizace"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Selhalo"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Váš systém byl aktualizován"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN byl aktualizován na verzi {version}.\n"
+"Předtím: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Hotovo"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Otevřít aktualizaci MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Aktualizace MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Kontrola plánu instalace"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Příprava disku"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Kopírování MAN na disk"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Nastavení nového systému"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Instalace zavaděče"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Vytvoření prvního snímku"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Dokončování"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Odstraňování starých podpisů oddílů"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Vytváření oddílů"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Formátování systémového oddílu EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Šifrování systémového oddílu"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Formátování zaváděcího oddílu"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Vytváření souborového systému Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Odstraňování starých podpisů souborových systémů"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Odemykání šifrované instalace"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Ukládání současného systému jako snímku"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Odstraňování předchozího systému"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Zápis tabulky souborových systémů"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Nastavení názvu a identity počítače"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Odstraňování účtů živé relace"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Vytváření vašeho účtu"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Příprava MAN Setup na první spuštění"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Nastavení časového pásma a klávesnice"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Odstraňování instalátoru z nového systému"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Sestavení zaváděcího obrazu (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Nastavení GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Instalace GRUB do systémového oddílu EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Instalace záložního zavaděče"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Zápis zaváděcí nabídky"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disk je připraven"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Vytváření snímku nového systému"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Přidání snímku do zaváděcí nabídky"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Odpojování"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Pomocník instalátoru musí běžet jako root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Tento počítač nebyl spuštěn v režimu UEFI. MAN vyžaduje UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Uživatelské jméno není platné."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Je potřeba heslo."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Název počítače není platný."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Neznámý jazyk."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Heslo pro šifrování musí mít alespoň 8 znaků."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Disk se po potvrzení instalace změnil. Nic nebylo upraveno; zkontrolujte plán a potvrďte ho znovu."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Zvolte systémový oddíl."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Potvrzený disk neobsahuje zvolený systémový oddíl."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Zaváděcí oddíl musí být oddělený od oddílu EFI a systémového oddílu."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Zaváděcí oddíl musí mít alespoň 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Není zvolena instalace."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Potvrzený disk neobsahuje zvolenou instalaci."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Šifrovaná instalace nemá oddíl MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "V /boot nebylo nalezeno jádro s odpovídajícími moduly."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Jazyk musí změnit systémový pomocník."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Použití vašich nastavení"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Příprava šifrování disku"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Dokončování"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup musí dokončit systémový pomocník."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup už byl na tomto počítači dokončen."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Neznámá barva zvýraznění."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Zvolená tapeta není k dispozici."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Tento systém nelze zašifrovat."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Chybí instalační klíč, takže šifrování nemůže pokračovat na pozadí."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Systém není nainstalován na Btrfs, takže snímky nejsou k dispozici."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Obnova snímku čeká na restart. Nejprve ji dokončete restartem počítače."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Neplatné ID snímku."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Kontrola aktualizace"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Vytváření snímku"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Příprava oblasti pro aktualizaci"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Rozbalování nového systému"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Přenos vašich účtů a nastavení"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Příprava restartu"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Rozbaleno"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Účty"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Odstraňování softwaru pouze pro instalátor"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Sestavení zaváděcího obrazu aktualizace"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Přidání jednorázové položky spuštění"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Aktualizace je pravá"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Snímek byl vytvořen"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Přeskočeno"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Oblast pro aktualizaci je připravena"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Příprava nového systému"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Soubor aktualizace je poškozený (kontrolní součet nesouhlasí). Stáhněte ho znovu."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Soubor aktualizace se nepodařilo přečíst celý."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Aktualizace neobsahuje jádro."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Aktualizace musí instalovat systémový pomocník."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Zvolená instalace nebyla nalezena."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Aktualizovat lze jen běžící instalaci MAN."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Toto není soubor aktualizace MAN (chybí manifest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Aktualizace není podepsaná, proto jí nelze důvěřovat."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Podpis aktualizace je poškozený."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Aktualizace není podepsaná MAN. Mohla být upravena nebo pochází z nedůvěryhodného zdroje."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Manifest aktualizace je neplatný."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Heslo není správné, nebo šifrovaný oddíl nelze otevřít."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Modrá"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Modrozelená"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Zelená"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Žlutá"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Oranžová"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Červená"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Růžová"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Fialová"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Břidlicová"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Instalátor systému"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Nainstalovat MAN do tohoto počítače"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Obnova systému"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Vytváření a obnovování snímků systému"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Instalátor aktualizací systému"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Instalace souboru aktualizace systému MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Nabídne instalaci MAN při spuštění živé relace"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Upozornění na aktualizaci MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Jednou po přihlášení oznámí, že byl MAN aktualizován"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Nastavte si svůj nový počítač s MAN"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Nastavení MAN při prvním spuštění"

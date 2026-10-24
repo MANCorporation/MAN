@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Системскиот помошник не може да се стартува."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Не може да се комуницира со системскиот помошник."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Врската со системскиот помошник е прекината."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Овластувањето е откажано."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "За ова дејство се потребни администраторски права."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Системскиот помошник неочекувано запре."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Нема EFI системска партиција"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Слободни се само {free}, на MAN му требаат {need}. Ослободете простор со DUHACH! во Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Нема слободен простор. Стартувајте DUHACH! во Windows за да направите место за MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN работи од овој диск"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Во употреба: партицијата е монтирана"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Премал, на MAN му требаат {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Инсталирај MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN се инсталира. Почекајте да заврши."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Јазик"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Рестартирај на овој јазик"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Живата сесија се рестартира на избраниот јазик, и MAN се инсталира на него."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Добредојдовте во MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Брз, отворен и целосно прилагодлив GNOME систем.\n"
+"Инсталирајте го на овој компјутер или продолжете да ја истражувате живата сесија."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Инсталирај MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Продолжи со пробување на MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Барање дискови…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Добредојдовте"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Овој компјутер е стартуван во стар BIOS режим. MAN може да се инсталира само на UEFI компјутери: рестартирајте и изберете UEFI опција за стартување."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Системскиот помошник не врати податоци за дисковите."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Следно"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Вид на инсталација"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Избриши го дискот и инсталирај MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Сè на избраниот диск се брише, вклучително и Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Препорачано. Сè на избраниот диск се брише."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Инсталирај покрај Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Препорачано. MAN го користи слободниот простор покрај Windows; Windows и неговите датотеки остануваат. Системот го избирате при секое стартување."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Повторно инсталирај MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Го заменува системот, но ги задржува личните датотеки во /home. Тековниот систем се зачувува како снимка."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Сопствени партиции"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "За експерти: изберете ги партициите сами или создадете ги со Дискови."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Диск"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Изберете го дискот што ќе се избрише. Дисковите што не може да се користат се прикажани со причината."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Не се пронајдени дискови"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Слободен простор покрај Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Партициите на Windows не се допираат. MAN ја дели EFI системската партиција и го додава Windows во своето мени за стартување."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} слободно"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "нема слободен простор"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Инсталација за замена"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "нема домашни папки"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "домашни папки: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "снимки: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN на {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Лозинка за {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Отклучи"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Инсталацијата не можеше да се провери."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Партиции"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Системската партиција се форматира во Btrfs и содржи @system, @home и @snapshots. Партициите на дискот од кој работи MAN не се прикажани."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Отвори Дискови за создавање или менување на големината на партиции"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Освежи го списокот со партиции"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Изберете партиција"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI системска партиција"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Форматирај ја EFI системската партиција"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Оставете исклучено за да се зачуваат подигнувачите на други системи"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Системска партиција (се форматира во Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Партиција за подигнување (потребна за шифрирање)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Списокот со партиции е освежен"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Безбедност"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Шифрирај го системот"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Ги штити вашите податоци ако компјутерот се изгуби или украде. При секое стартување се бара лозинка."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Лозинка"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Потврди ја лозинката"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Чувајте ја оваа лозинка на безбедно место"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Ако ја изгубите, никој не може да ги врати податоците. Јадрото и датотеките за подигнување остануваат на мала нешифрирана партиција за подигнување."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Лозинката мора да има најмалку 8 знаци."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Лозинките не се совпаѓаат."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Изберете диск."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Изберете го дискот со Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Изберете ја инсталацијата за замена."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Прво отклучете ја шифрираната инсталација."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Оваа партиција не содржи MAN систем."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Изберете EFI системска партиција."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Изберете ја системската партиција."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "EFI партицијата и системската партиција мора да бидат различни."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Шифрирањето бара посебна партиција за подигнување."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Системската партиција мора да има најмалку {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "EFI партицијата не е форматирана како FAT; вклучете го форматирањето."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Системската партиција е монтирана; прво демонтирајте ја во Дискови."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Каде да се инсталира MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Време и тастатура"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Временска зона"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Распоред на тастатура"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Испробајте ја тастатурата"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Пишувајте тука за да проверите дали копчињата даваат точни знаци."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Пишувајте тука"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Временска зона и тастатура"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Не е избран диск"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Не е избрана системска партиција"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Системската партиција исчезна"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Не е избрана инсталација"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Дискот исчезна"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Преглед"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Одредиште"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Избриши го дискот и инсталирај"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Сопствени партиции"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Повторно инсталирај, задржи /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Покрај Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (ќе се форматира)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (се задржува)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Системска партиција"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (ќе се форматира)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Партиција за подигнување"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Инсталација"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Простор за MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} слободен простор (се создаваат партиција за подигнување и системска партиција)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Без промени. Се појавува во менито за стартување на MAN; EFI системската партиција е заедничка."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Шифрирање"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Вклучено (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Исклучено"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Датотечен систем"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system за MAN, @home за вашите датотеки, @snapshots за точки за враќање. Сите го делат слободниот простор."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Систем"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Вашата сметка"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Се создава во MAN Setup при првото стартување на компјутерот, заедно со името на компјутерот, изгледот и поставките за приватност."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Тастатура"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Сите податоци на {model} ({path}) ќе бидат избришани."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Избриши и инсталирај"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Избраните партиции ќе бидат форматирани. Другите партиции не се менуваат."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Форматирај и инсталирај"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Тековниот систем се заменува. Вашите датотеки во /home се задржуваат, а стариот систем се зачувува како снимка."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Повторно инсталирај"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN се инсталира во слободниот простор. Windows и неговите датотеки не се менуваат."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Инсталирај"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Подготвено за инсталација"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Да се избрише {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Сите датотеки и партиции на {path} ({size}) ќе бидат трајно избришани. Ова не може да се врати."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Избриши и инсталирај"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Да се форматираат избраните партиции?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Сите податоци на избраните партиции ќе бидат трајно избришани. Другите партиции не се менуваат."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Форматирај и инсталирај"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Да се инсталира MAN покрај Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN се инсталира во {free} слободен простор на {model} ({path}). Windows и неговите датотеки не се менуваат."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Инсталирај"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Повторно да се инсталира MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Инсталираниот систем ќе биде заменет со нова копија. Личните датотеки во /home се задржуваат, а стариот систем останува достапен како снимка."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Повторно инсталирај"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Откажи"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Инсталирање на MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Стартување…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Детали"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Инсталирање"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Чекор {index} од {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Дневник"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN е инсталиран"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Рестартирајте го компјутерот за да почнете да го користите MAN. Мени при секое стартување ви овозможува да изберете MAN или Windows; привремената партиција на инсталаторот MAN ја отстранува при првото стартување."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Рестартирајте го компјутерот за да почнете да го користите MAN. Може да го извадите инсталацискиот медиум; ако остане приклучен, MAN сепак се стартува од новиот диск."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Рестартирај сега"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Готово"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Инсталацијата не успеа"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Ниеден друг диск не е променет, а инсталаторот го ослободи целниот диск. Може да го прегледате планот и да се обидете повторно."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Прегледај и обиди се повторно"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Прикажи детали"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Дневник на инсталацијата"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Барај јазици"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Барај земји"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Системскиот диск не е пронајден."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Шифрирањето бара Btrfs распоред создаден од инсталаторот на MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Оваа инсталација нема посебна партиција за подигнување, која е потребна за шифрирање. Повторно инсталирајте го MAN со „Избриши го дискот“ за да користите шифрирање."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Каде се наоѓате?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Вашата земја или регион го одредува форматот на датумот, времето и броевите."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Земја"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, верзија 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Јадрото Linux и многу системски алатки"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, верзија 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Многу програми на GNU и GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, верзија 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib и многу библиотеки"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, верзија 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Библиотеки"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Програми и библиотеки од Mozilla и други"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Лиценца Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Библиотеки и алатки"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Договор за лиценца"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Прочитајте ги и прифатете ги условите под кои се обезбедува MAN."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Лиценци"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Текстот на лиценцата не е достапен ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Ги прочитав и ги прифаќам условите на лиценцата"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Жичана"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Не е поврзано"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Поврзете се на интернет"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Со врска MAN може да го постави времето и да го одржува вашиот софтвер ажуриран. Ова може да го направите и подоцна."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Проверка на врската…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi мрежи"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Барај повторно"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Прескокни"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Може да се поврзете подоцна во Поставки."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Поврзано"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Не е поврзано"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Не се пронајдени мрежи"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Интернет"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Поврзано со „{ssid}“"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Не може да се поврзе со „{ssid}“"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Поврзи се со „{ssid}“"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Внесете ја лозинката на мрежата."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Поврзи"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Создајте ја вашата сметка"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Ќе бидете администратор на овој компјутер, со целосен root пристап преку sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Целосно име"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Корисничко име"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Лозинка"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Потврди ја лозинката"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Автоматско најавување"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Прескокни го екранот за најава при стартување на компјутерот"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Постојни домашни папки"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Користете го истото корисничко име за да продолжите да користите папка од претходна инсталација."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Користи"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Напредно"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Име на компјутерот"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Постави root лозинка"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Овозможува директна најава како root. Без неа користете sudo со сопствената лозинка."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Root лозинка"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Потврди ја root лозинката"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Внесете го вашето име."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Изберете корисничко име."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Ова корисничко име веќе го користи системот."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Ова корисничко име е резервирано за системот."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Корисничките имиња содржат мали букви, цифри, - и _ и почнуваат со буква."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Изберете лозинка."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Лозинките не се совпаѓаат."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Името на компјутерот може да содржи букви, цифри и цртички."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Внесете ја root лозинката двапати."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Совет: лозинка со 8 или повеќе знаци е многу побезбедна."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Сметка"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Темно"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Светло"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Направете го свој"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Изберете стил, акцентна боја и позадина. Секоја промена ја гледате веднаш."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Стил"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Акцентна боја"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Позадина"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Прилагодување"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Приватност"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Изберете кои функции смеат да користат информации за вас. Ова може да го промените во секое време во Поставки."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Услуги за локација"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Им овозможува на апликации како Мапи и Време да ја одредат вашата приближна локација со помош на блиските Wi-Fi мрежи."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Автоматска временска зона"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Ја користи вашата локација за временската зона да биде точна кога патувате."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Заврши го поставувањето"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Вашиот диск е шифриран"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Вашите податоци се заштитени. Лозинката се бара при секое стартување на компјутерот."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Шифрирање на дискот"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Шифрирањето ги штити вашите податоци ако компјутерот се изгуби или украде."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Не е достапно во оваа инсталација"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Шифрирањето ги штити вашите датотеки ако компјутерот се изгуби или украде. Без лозинката никој не може да го чита дискот."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Шифрирај го дискот"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Лозинката се бара при секое стартување на компјутерот."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Шифрирањето започнува при следното рестартирање"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Дискот потоа се шифрира во позадина додека го користите компјутерот. Ако ја изгубите лозинката, никој не може да ги врати податоците."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Подготовка на MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Сè се подготвува…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Рестартирај"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Назад"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Подготовка"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Дневник на поставувањето"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Сè е готово!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Нешто тргна наопаку"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Дневна"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Пред ажурирање"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Пред враќање"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Пред повторна инсталација"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Рачна"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Сè уште нема снимки"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Создајте снимка пред големи промени во системот."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Врати…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Избриши ја снимката"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} слободно од {size}. Системот, домашните папки и снимките го делат овој простор; снимките заземаат простор само за тоа што се променило откако се создадени."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_Во ред"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Создај снимка"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Ја зачувува тековната состојба на системот. Личните датотеки во домашната папка не се вклучени."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Опис, на пример „Пред инсталирање двигатели“"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Создај"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Рачна снимка"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Да се избрише снимката?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "„{description}“ од {date} ќе биде трајно избришана."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Избриши"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Да се врати оваа снимка?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"По рестартирањето системот ќе се врати на „{description}“ од {date}. Вашите лични датотеки не се менуваат.\n"
+"\n"
+"Тековниот систем прво се зачувува како снимка, па ова може да се врати."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Врати"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Рестартирајте за да го завршите враќањето"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Рестартирај _подоцна"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Рестартирај _сега"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Снимки"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Точки за враќање"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Снимките ја зачувуваат состојбата на оперативниот систем. Враќањето снимка го враќа системот во тој момент, што помага по неуспешно ажурирање или промена на поставките. Вашите лични датотеки никогаш не се допираат."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Автоматски снимки"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Дневни снимки"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Еднаш дневно додека компјутерот е вклучен"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Број на дневни снимки"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Пред ажурирања на софтверот"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Се создаваат автоматски при инсталирање, надградба или отстранување пакети"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Број на снимки од ажурирања"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Складиште"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Простор на дискот"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Ако MAN не се стартува"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Изберете „Restore a MAN snapshot“ во менито за стартување за да вратите систем што работи."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Снимките не се достапни"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Снимките работат на MAN инсталиран со Btrfs распоредот од инсталаторот на MAN. Овој систем (на пример жива сесија) не го користи."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Чека враќање: рестартирајте го компјутерот за да го завршите"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Рестартирај сега"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Почекајте тековното дејство да заврши."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Барај"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Копирај во оставата"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Координирано универзално време"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Англиски (САД)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Проверка на ажурирањето"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Се проверува дали ажурирањето е автентично и целосно…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Ажурирање на MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Ова ажурирање не може да се инсталира"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Ажурирањето не може да се прочита."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Ажурирање од {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "Инсталиран е {name} {version}"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Верзија"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Објавено"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Големина за преземање"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Потребен простор"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Автентичност"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Проверено, потпишано од „{signer}“"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Што е ново"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Продолжи"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Ова ажурирање не е поново од инсталираниот {name} {version}."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Ажурирање"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Прочитајте ги условите на лиценцата на ова ажурирање."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Ги прифаќам условите на лиценцата"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Каде да се инсталира ажурирањето?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Системот се заменува; датотеките во домашната папка не се допираат."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Изберете инсталација."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "моментално работи"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} на овој компјутер"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} на {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Не е пронајдена инсталација на MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Ажурирањата се инсталираат од стартуван, инсталиран MAN систем, а не од живата сесија."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Место на инсталацијата"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Резиме"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Се задржува"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Вашите датотеки"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Сè во вашата домашна папка"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Сметки и лозинки"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Корисници, групи, името на компјутерот"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Врски и поставки"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, временска зона, тастатура, изглед и снимки"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak апликации"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Плус сè во /usr/local и /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Се заменува"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Софтверот инсталиран со apt и другите промени во системските датотеки ги заменува новиот систем."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Оперативниот систем"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Го заменува {name} {version}. Тековниот систем може да се врати од снимка."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Компјутерот се рестартира за да го инсталира ажурирањето"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "По подготовката MAN се рестартира, за неколку секунди го инсталира ажурирањето и повторно се рестартира."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Инсталирај го ажурирањето"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Прво да се создаде снимка?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Снимката го зачувува тековниот систем, за да може да се вратите ако нешто не работи по ажурирањето. Препорачано."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Не создавај"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Создај снимка"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Подготовка на {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Рестартирај за инсталирање"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Компјутерот ќе се рестартира двапати. Вашите датотеки се безбедни."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Автоматско рестартирање за {r} секунди"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Автоматско рестартирање за 30 секунди"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Ажурирањето ќе се инсталира при следното рестартирање."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Подготвено"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Ажурирањето не може да се подготви"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Ништо не е променето во вашиот систем."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Обиди се повторно"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Дневник на ажурирањето"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Неуспешно"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Вашиот систем е ажуриран"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN е ажуриран на верзија {version}.\n"
+"Претходно: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Готово"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Отвори ажурирање на MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Ажурирања на MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Проверка на планот за инсталација"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Подготовка на дискот"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Копирање на MAN на дискот"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Поставување на новиот систем"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Инсталирање на подигнувачот"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Создавање на првата снимка"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Завршување"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Отстранување стари потписи на партиции"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Создавање партиции"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Форматирање на EFI системската партиција"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Шифрирање на системската партиција"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Форматирање на партицијата за подигнување"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Создавање на Btrfs датотечниот систем"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Отстранување стари потписи на датотечни системи"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Отклучување на шифрираната инсталација"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Зачувување на тековниот систем како снимка"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Отстранување на претходниот систем"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Запишување на табелата на датотечни системи"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Поставување име и идентитет на компјутерот"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Отстранување на сметките на живата сесија"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Создавање на вашата сметка"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Подготовка на MAN Setup за првото стартување"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Поставување временска зона и тастатура"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Отстранување на инсталаторот од новиот систем"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Изработка на сликата за подигнување (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Поставување на GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Инсталирање на GRUB на EFI системската партиција"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Инсталирање на резервниот подигнувач"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Запишување на менито за стартување"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Дискот е подготвен"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Создавање снимка од новиот систем"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Додавање на снимката во менито за стартување"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Демонтирање"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Помошникот на инсталаторот мора да работи како root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Овој компјутер не е стартуван во UEFI режим. MAN бара UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Корисничкото име не е валидно."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Потребна е лозинка."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Името на компјутерот не е валидно."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Непознат јазик."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Лозинката за шифрирање мора да има најмалку 8 знаци."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Дискот се промени откако ја потврдивте инсталацијата. Ништо не е изменето; прегледајте и потврдете повторно."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Изберете системска партиција."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Потврдениот диск не ја содржи избраната системска партиција."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Партицијата за подигнување мора да биде одвоена од EFI и системската партиција."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Партицијата за подигнување мора да има најмалку 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Не е избрана инсталација."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Потврдениот диск не ја содржи избраната инсталација."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Шифрираната инсталација нема партиција MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "Во /boot не е пронајдено јадро со соодветни модули."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Јазикот мора да го смени системскиот помошник."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Примена на вашите поставки"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Подготовка на шифрирањето на дискот"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Завршување"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup мора да го заврши системскиот помошник."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup е веќе завршен на овој компјутер."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Непозната акцентна боја."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Избраната позадина не е достапна."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Овој систем не може да се шифрира."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Клучот за поставување недостасува, па шифрирањето не може да продолжи во позадина."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Системот не е инсталиран на Btrfs, па снимките не се достапни."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Враќање снимка чека рестартирање. Прво рестартирајте го компјутерот за да го завршите."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Невалиден ID на снимка."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Проверка на ажурирањето"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Создавање снимка"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Подготовка на областа за ажурирање"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Распакување на новиот систем"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Пренесување на вашите сметки и поставки"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Подготовка на рестартирањето"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Распакувано"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Сметки"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Отстранување софтвер што го користи само инсталаторот"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Изработка на сликата за подигнување на ажурирањето"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Додавање еднократна ставка за стартување"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Ажурирањето е автентично"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Снимката е создадена"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Прескокнато"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Областа за ажурирање е подготвена"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Подготовка на новиот систем"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Датотеката за ажурирање е оштетена (контролниот збир не се совпаѓа). Преземете ја повторно."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Датотеката за ажурирање не може целосно да се прочита."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Ажурирањето не содржи јадро."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Ажурирањата мора да ги инсталира системскиот помошник."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Избраната инсталација не е пронајдена."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Може да се ажурира само стартуваната инсталација на MAN."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Ова не е датотека за ажурирање на MAN (нема манифест)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Ажурирањето не е потпишано, па не може да му се верува."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Потписот на ажурирањето е оштетен."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Ажурирањето не е потпишано од MAN. Можеби е изменето или потекнува од недоверлив извор."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Манифестот на ажурирањето не е валиден."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Лозинката не е точна или шифрираната партиција не може да се отвори."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Сина"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Тиркизна"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Зелена"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Жолта"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Портокалова"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Црвена"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Розова"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Виолетова"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Шкрилец"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Инсталатор на системот"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Инсталирај MAN на овој компјутер"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Враќање на системот"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Создавање и враќање снимки на системот"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Инсталатор на системски ажурирања"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Инсталирај датотека за ажурирање на MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Нуди инсталирање на MAN при стартување на живата сесија"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Известување за ажурирање на MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Еднаш по најавата ве известува дека MAN е ажуриран"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Поставете го вашиот нов MAN компјутер"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Прво поставување на MAN"

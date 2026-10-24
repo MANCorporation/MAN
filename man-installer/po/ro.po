@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Asistentul de sistem nu a putut fi pornit."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Nu se poate comunica cu asistentul de sistem."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "S-a pierdut legătura cu asistentul de sistem."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Autorizarea a fost anulată."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Această acțiune necesită drepturi de administrator."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Asistentul de sistem s-a oprit neașteptat."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Nu există partiție de sistem EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Doar {free} liberi, MAN are nevoie de {need}. Faceți loc cu DUHACH! în Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Nu există spațiu liber. Porniți DUHACH! în Windows pentru a face loc pentru MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN rulează de pe acest disc"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "În uz: o partiție este montată"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Prea mic, MAN are nevoie de {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Instalează MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN se instalează. Așteptați până se termină."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Limbă"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Repornește în această limbă"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Sesiunea live repornește în limba aleasă, iar MAN se instalează în această limbă."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Bun venit în MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Un sistem GNOME rapid, deschis și complet personalizabil.\n"
+"Instalați-l pe acest calculator sau continuați să explorați sesiunea live."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Instalează MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Continuă să încerci MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Se caută discuri…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Bun venit"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Acest calculator a pornit în modul BIOS vechi. MAN se poate instala doar pe calculatoare UEFI: reporniți și alegeți opțiunea de pornire UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Asistentul de sistem nu a returnat informații despre discuri."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "Î_nainte"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Tipul instalării"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Șterge discul și instalează MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Tot ce se află pe discul ales este șters, inclusiv Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Recomandat. Tot ce se află pe discul ales este șters."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Instalează lângă Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Recomandat. MAN folosește spațiul liber de lângă Windows; Windows și fișierele sale rămân. Alegeți sistemul la fiecare pornire."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Reinstalează MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Înlocuiește sistemul, dar păstrează fișierele personale din /home. Sistemul actual este salvat ca instantaneu."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Partiții personalizate"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Pentru experți: alegeți singuri partițiile sau creați-le cu Discuri."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disc"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Alegeți discul care va fi șters. Discurile care nu pot fi folosite apar împreună cu motivul."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Nu s-au găsit discuri"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Spațiu liber lângă Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Partițiile Windows nu sunt atinse. MAN partajează partiția de sistem EFI și adaugă Windows în meniul său de pornire."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} liberi"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "fără spațiu liber"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Instalarea care va fi înlocuită"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "fără dosare personale"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "dosare personale: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "instantanee: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN pe {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Fraza de acces pentru {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Deblochează"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Instalarea nu a putut fi examinată."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Partiții"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Partiția de sistem este formatată cu Btrfs și conține @system, @home și @snapshots. Partițiile de pe discul de pe care rulează MAN nu sunt afișate."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Deschide Discuri pentru a crea sau redimensiona partiții"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Reîmprospătează lista de partiții"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Alegeți o partiție"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Partiție de sistem EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Formatează partiția de sistem EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Lăsați dezactivat pentru a păstra încărcătoarele de pornire ale altor sisteme"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Partiție de sistem (formatată ca Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Partiție de pornire (necesară pentru criptare)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Lista de partiții a fost reîmprospătată"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Securitate"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Criptează sistemul"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Vă protejează datele dacă pierdeți calculatorul sau vă este furat. La fiecare pornire se cere o frază de acces."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Frază de acces"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Confirmați fraza de acces"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Păstrați această frază de acces în siguranță"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Dacă o pierdeți, nimeni nu poate recupera datele. Nucleul și fișierele de pornire rămân pe o mică partiție de pornire necriptată."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Fraza de acces trebuie să aibă cel puțin 8 caractere."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Frazele de acces nu se potrivesc."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Alegeți un disc."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Alegeți discul cu Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Alegeți instalarea care va fi înlocuită."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Deblocați mai întâi instalarea criptată."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Această partiție nu conține un sistem MAN."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Alegeți o partiție de sistem EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Alegeți partiția de sistem."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Partiția EFI și partiția de sistem trebuie să fie diferite."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Criptarea necesită o partiție de pornire separată."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Partiția de sistem trebuie să aibă cel puțin {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Partiția EFI nu este formatată FAT; activați formatarea."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Partiția de sistem este montată; demontați-o mai întâi în Discuri."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Unde se instalează MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Oră și tastatură"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Fus orar"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Aranjament tastatură"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Testați tastatura"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Scrieți aici pentru a verifica dacă tastele produc caracterele corecte."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Scrieți aici"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Fus orar și tastatură"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Niciun disc ales"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Nicio partiție de sistem aleasă"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Partiția de sistem a dispărut"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Nicio instalare aleasă"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Discul a dispărut"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Verificare"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Destinație"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Șterge discul și instalează"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Partiții personalizate"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Reinstalează, păstrând /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Lângă Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (va fi formatată)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (păstrată)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Partiție de sistem"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (va fi formatată)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Partiție de pornire"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Instalare"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Spațiu pentru MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} spațiu liber (se creează o partiție de pornire și partiția de sistem)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Neschimbat. Apare în meniul de pornire MAN; partiția de sistem EFI este partajată."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Criptare"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Activată (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Dezactivată"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Sistem de fișiere"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system pentru MAN, @home pentru fișierele dvs., @snapshots pentru punctele de restaurare. Toate împart spațiul liber."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Sistem"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Contul dvs."
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Este creat în MAN Setup la prima pornire a calculatorului, împreună cu numele calculatorului, aspectul și setările de confidențialitate."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Tastatură"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Toate datele de pe {model} ({path}) vor fi șterse."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "Ș_terge și instalează"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Partițiile alese vor fi formatate. Celelalte partiții nu se schimbă."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Formatează și instalează"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Sistemul actual este înlocuit. Fișierele dvs. din /home sunt păstrate, iar sistemul vechi este salvat ca instantaneu."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Reinstalează"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN se instalează în spațiul liber. Windows și fișierele sale nu se schimbă."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Instalează"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Gata de instalare"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Ștergeți {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Toate fișierele și partițiile de pe {path} ({size}) vor fi șterse definitiv. Acțiunea nu poate fi anulată."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Șterge și instalează"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Formatați partițiile alese?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Toate datele de pe partițiile alese vor fi șterse definitiv. Celelalte partiții nu se schimbă."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Formatează și instalează"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Instalați MAN lângă Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN se instalează în cei {free} de spațiu liber de pe {model} ({path}). Windows și fișierele sale nu se schimbă."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Instalează"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Reinstalați MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Sistemul instalat va fi înlocuit cu o copie nouă. Fișierele personale din /home sunt păstrate, iar sistemul vechi rămâne disponibil ca instantaneu."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Reinstalează"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Anulează"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Se instalează MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Se pornește…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Detalii"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Se instalează"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Pasul {index} din {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Jurnal"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN este instalat"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Reporniți calculatorul pentru a începe să folosiți MAN. Un meniu la fiecare pornire vă permite să alegeți MAN sau Windows; partiția temporară a instalatorului este eliminată de MAN la prima pornire."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Reporniți calculatorul pentru a începe să folosiți MAN. Puteți scoate mediul de instalare; dacă rămâne conectat, MAN pornește oricum de pe discul nou."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Repornește acum"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Gata"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Instalarea a eșuat"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Niciun alt disc nu a fost modificat, iar instalatorul a eliberat discul țintă. Puteți verifica planul și încerca din nou."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Verifică și încearcă din nou"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Arată detaliile"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Jurnalul instalării"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Căutați limbi"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Căutați țări"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Discul de sistem nu a fost găsit."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Criptarea necesită structura Btrfs creată de instalatorul MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Această instalare nu are o partiție de pornire separată, necesară pentru criptare. Reinstalați MAN cu „Șterge discul” pentru a folosi criptarea."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Unde vă aflați?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Țara sau regiunea dvs. stabilește formatul datei, orei și numerelor."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Țară"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "Licența Publică Generală GNU, versiunea 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Nucleul Linux și multe unelte de sistem"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "Licența Publică Generală GNU, versiunea 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Multe programe GNU și GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "Licența Publică Generală Mică GNU, versiunea 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib și multe biblioteci"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "Licența Publică Generală Mică GNU, versiunea 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Biblioteci"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Programe și biblioteci de la Mozilla și alții"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Licența Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Biblioteci și unelte"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Acord de licență"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Citiți și acceptați termenii în care este oferit MAN."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licențe"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Textul licenței nu este disponibil ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Am citit și accept termenii licenței"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Prin cablu"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Neconectat"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Conectați-vă la internet"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Cu o conexiune, MAN poate potrivi ora și vă poate ține software-ul la zi. Puteți face asta și mai târziu."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Se verifică conexiunea…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Rețele Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Caută din nou"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Omite"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Vă puteți conecta mai târziu din Setări."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Conectat"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Neconectat"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Nu s-au găsit rețele"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Conectat la „{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Nu s-a putut conecta la „{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Conectare la „{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Introduceți parola rețelei."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Conectează"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Creați-vă contul"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Veți fi administratorul acestui calculator, cu acces root complet prin sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Nume complet"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Nume de utilizator"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Parolă"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Confirmați parola"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Autentificare automată"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Omite ecranul de autentificare la pornirea calculatorului"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Dosare personale existente"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Folosiți același nume de utilizator pentru a continua să folosiți un dosar păstrat de la o instalare anterioară."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Folosește"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Avansat"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Numele calculatorului"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Setează o parolă root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Permite autentificarea directă ca root. Fără ea, folosiți sudo cu parola dvs."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Parolă root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Confirmați parola root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Introduceți-vă numele."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Alegeți un nume de utilizator."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Acest nume de utilizator este deja folosit de sistem."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Acest nume de utilizator este rezervat de sistem."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Numele de utilizator folosesc litere mici, cifre, - și _ și încep cu o literă."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Alegeți o parolă."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Parolele nu se potrivesc."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Numele calculatorului poate conține litere, cifre și cratime."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Introduceți parola root de două ori."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Sfat: o parolă cu 8 sau mai multe caractere este mult mai sigură."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Cont"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Întunecat"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Luminos"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Fă-l al tău"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Alegeți un stil, o culoare de accent și un fundal. Vedeți fiecare schimbare imediat."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Stil"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Culoare de accent"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Fundal"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Personalizare"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Confidențialitate"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Alegeți ce funcții pot folosi informații despre dvs. Puteți schimba asta oricând din Setări."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Servicii de localizare"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Permite aplicațiilor precum Hărți și Vremea să afle locația dvs. aproximativă folosind rețelele Wi-Fi din apropiere."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Fus orar automat"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Folosește locația dvs. pentru a păstra fusul orar corect când călătoriți."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Finalizează configurarea"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Discul dvs. este criptat"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Datele dvs. sunt protejate. Fraza de acces este cerută la fiecare pornire a calculatorului."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Criptarea discului"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Criptarea vă protejează datele dacă pierdeți calculatorul sau vă este furat."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Nu este disponibilă pe această instalare"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Criptarea vă protejează fișierele dacă pierdeți calculatorul sau vă este furat. Fără fraza de acces, nimeni nu poate citi discul."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Criptează discul"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Fraza de acces este cerută la fiecare pornire a calculatorului."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Criptarea începe la următoarea repornire"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Discul este apoi criptat în fundal în timp ce folosiți calculatorul. Dacă pierdeți fraza de acces, nimeni nu poate recupera datele."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Se pregătește MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Se pregătește totul…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Repornește"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "Î_napoi"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Pregătire"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Jurnalul configurării"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Gata!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Ceva nu a mers bine"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Zilnic"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Înainte de actualizare"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Înainte de restaurare"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Înainte de reinstalare"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Manual"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Încă nu există instantanee"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Creați unul înainte de a face schimbări mari în sistem."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Restaurează…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Șterge instantaneul"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} liberi din {size}. Sistemul, dosarele personale și instantaneele împart acest spațiu; instantaneele ocupă loc doar pentru ce s-a schimbat de când au fost create."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_OK"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Creează instantaneu"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Salvează starea actuală a sistemului. Fișierele personale din dosarul personal nu sunt incluse."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Descriere, de exemplu „Înainte de instalarea driverelor”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Creează"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Instantaneu manual"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Ștergeți instantaneul?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "„{description}” din {date} va fi șters definitiv."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "Ș_terge"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Restaurați acest instantaneu?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"După repornire, sistemul revine la „{description}” din {date}. Fișierele dvs. personale nu se schimbă.\n"
+"\n"
+"Sistemul actual este salvat mai întâi ca instantaneu, deci acțiunea poate fi anulată."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Restaurează"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Reporniți pentru a finaliza restaurarea"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Repornește _mai târziu"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Repornește _acum"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Instantanee"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Puncte de restaurare"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Instantaneele salvează starea sistemului de operare. Restaurarea unuia readuce sistemul la acel moment, ceea ce ajută după o actualizare sau o schimbare de configurare nereușită. Fișierele dvs. personale nu sunt niciodată atinse."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Instantanee automate"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Instantanee zilnice"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "O dată pe zi cât timp calculatorul este pornit"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Instantanee zilnice păstrate"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Înainte de actualizările software"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Create automat când pachetele sunt instalate, actualizate sau eliminate"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Instantanee de actualizare păstrate"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Stocare"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Spațiu pe disc"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Dacă MAN nu pornește"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Alegeți „Restore a MAN snapshot” în meniul de pornire pentru a recupera un sistem funcțional."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Instantaneele nu sunt disponibile"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Instantaneele funcționează pe MAN instalat cu structura Btrfs creată de instalatorul MAN. Acest sistem (de exemplu o sesiune live) nu o folosește."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "O restaurare așteaptă: reporniți calculatorul pentru a o finaliza"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Repornește acum"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Așteptați să se termine operațiunea curentă."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Caută"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Copiază în clipboard"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Timpul universal coordonat"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Engleză (SUA)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Se verifică actualizarea"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Se verifică dacă actualizarea este autentică și completă…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Actualizare MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Această actualizare nu poate fi instalată"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Actualizarea nu a putut fi citită."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Actualizare de la {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} este instalat"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Versiune"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Lansată"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Dimensiunea descărcării"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Spațiu necesar"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Autenticitate"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Verificată, semnată de „{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Noutăți"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Continuă"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Această actualizare nu este mai nouă decât {name} {version} instalat."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Actualizare"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Citiți termenii licenței acestei actualizări."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Accept termenii licenței"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Unde se instalează actualizarea?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Sistemul este înlocuit; fișierele din dosarul personal nu sunt atinse."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Alegeți o instalare."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "rulează acum"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} pe acest calculator"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} pe {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Nu s-a găsit nicio instalare MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Actualizările se instalează dintr-un sistem MAN instalat și pornit, nu din sesiunea live."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Locul instalării"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Rezumat"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Păstrat"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Fișierele dvs."
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Tot ce se află în dosarul personal"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Conturi și parole"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Utilizatori, grupuri, numele calculatorului"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Conexiuni și setări"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, fus orar, tastatură, aspect și instantanee"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Aplicații Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Plus tot ce se află în /usr/local și /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Înlocuit"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Software-ul instalat cu apt și alte modificări ale fișierelor de sistem sunt înlocuite de noul sistem."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Sistemul de operare"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Înlocuit de {name} {version}. Sistemul actual poate fi restaurat dintr-un instantaneu."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Calculatorul repornește pentru a instala actualizarea"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "După pregătire, MAN repornește, instalează actualizarea în câteva secunde și repornește din nou."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Instalează actualizarea"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Creați mai întâi un instantaneu?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Un instantaneu salvează sistemul actual, ca să puteți reveni la el dacă ceva nu merge după actualizare. Este recomandat."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Nu crea"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Creează instantaneu"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Se pregătește {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Repornește pentru instalare"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Calculatorul repornește de două ori. Fișierele dvs. sunt în siguranță."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Repornire automată în {r} secunde"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Repornire automată în 30 de secunde"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Actualizarea va fi instalată la următoarea repornire."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Pregătit"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Actualizarea nu a putut fi pregătită"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Nu s-a schimbat nimic în sistemul dvs."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "Î_ncearcă din nou"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Jurnalul actualizării"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Eșuat"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Sistemul dvs. a fost actualizat"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN a fost actualizat la versiunea {version}.\n"
+"Anterior: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Gata"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Deschide o actualizare MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Actualizări MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Se verifică planul de instalare"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Se pregătește discul"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Se copiază MAN pe disc"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Se configurează noul sistem"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Se instalează încărcătorul de pornire"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Se creează primul instantaneu"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Se finalizează"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Se elimină semnăturile vechi ale partițiilor"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Se creează partițiile"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Se formatează partiția de sistem EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Se criptează partiția de sistem"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Se formatează partiția de pornire"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Se creează sistemul de fișiere Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Se elimină semnăturile vechi ale sistemelor de fișiere"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Se deblochează instalarea criptată"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Se salvează sistemul actual ca instantaneu"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Se elimină sistemul anterior"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Se scrie tabela sistemelor de fișiere"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Se setează numele și identitatea calculatorului"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Se elimină conturile sesiunii live"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Se creează contul dvs."
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Se pregătește MAN Setup pentru prima pornire"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Se setează fusul orar și tastatura"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Se elimină instalatorul din noul sistem"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Se construiește imaginea de pornire (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Se configurează GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Se instalează GRUB pe partiția de sistem EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Se instalează încărcătorul de pornire de rezervă"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Se scrie meniul de pornire"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disc pregătit"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Se creează un instantaneu al sistemului nou"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Se adaugă instantaneul în meniul de pornire"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Se demontează"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Asistentul instalatorului trebuie să ruleze ca root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Acest calculator nu a pornit în modul UEFI. MAN necesită UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Numele de utilizator nu este valid."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Este necesară o parolă."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Numele calculatorului nu este valid."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Limbă necunoscută."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Fraza de acces pentru criptare trebuie să aibă cel puțin 8 caractere."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Discul s-a schimbat după ce ați confirmat instalarea. Nu s-a modificat nimic; verificați și confirmați din nou."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Alegeți o partiție de sistem."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Discul confirmat nu conține partiția de sistem aleasă."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Partiția de pornire trebuie să fie separată de partițiile EFI și de sistem."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Partiția de pornire trebuie să aibă cel puțin 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Nicio instalare aleasă."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Discul confirmat nu conține instalarea aleasă."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Instalarea criptată nu are partiție MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "Nu s-a găsit în /boot niciun nucleu cu module potrivite."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Limba trebuie schimbată de asistentul de sistem."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Se aplică setările dvs."
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Se pregătește criptarea discului"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Se finalizează"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup trebuie finalizat de asistentul de sistem."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup a fost deja finalizat pe acest calculator."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Culoare de accent necunoscută."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Fundalul ales nu este disponibil."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Acest sistem nu poate fi criptat."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Lipsește cheia de configurare, așa că criptarea nu poate continua în fundal."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Sistemul nu este instalat pe Btrfs, așa că instantaneele nu sunt disponibile."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "O restaurare de instantaneu așteaptă o repornire. Reporniți mai întâi calculatorul pentru a o finaliza."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "ID de instantaneu nevalid."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Se verifică actualizarea"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Se creează un instantaneu"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Se pregătește zona de actualizare"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Se despachetează noul sistem"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Se mută conturile și setările dvs."
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Se pregătește repornirea"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Despachetat"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Conturi"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Se elimină software-ul folosit doar de instalator"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Se construiește imaginea de pornire a actualizării"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Se adaugă intrarea de pornire unică"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Actualizarea este autentică"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Instantaneu creat"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Omis"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Zona de actualizare este pregătită"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Se pregătește noul sistem"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Fișierul de actualizare este deteriorat (suma de control nu se potrivește). Descărcați-l din nou."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Fișierul de actualizare nu a putut fi citit complet."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Actualizarea nu conține niciun nucleu."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Actualizările trebuie instalate de asistentul de sistem."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Instalarea aleasă nu a fost găsită."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Doar instalarea MAN pornită poate fi actualizată."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Acesta nu este un fișier de actualizare MAN (nu are manifest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Actualizarea nu este semnată, deci nu este de încredere."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Semnătura actualizării este deteriorată."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Actualizarea nu este semnată de MAN. Este posibil să fi fost modificată sau să provină dintr-o sursă nesigură."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Manifestul actualizării nu este valid."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Fraza de acces nu este corectă sau partiția criptată nu poate fi deschisă."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Albastru"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Turcoaz"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Verde"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Galben"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Portocaliu"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Roșu"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Roz"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Mov"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Ardezie"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Instalator de sistem"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Instalează MAN pe acest calculator"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Restaurarea sistemului"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Creați și restaurați instantanee ale sistemului"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Instalator de actualizări de sistem"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Instalează un fișier de actualizare a sistemului MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Propune instalarea MAN la pornirea sesiunii live"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Notificare de actualizare MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Vă spune o dată, după autentificare, că MAN a fost actualizat"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Configurați noul calculator MAN"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Configurarea inițială a MAN"

@@ -1,0 +1,61 @@
+# ── Secrets: NEVER commit ───────────────────────────────────────────
+# The update signing key: whoever has it can make updates every MAN
+# computer trusts. Back it up offline. (keys/man.pub is public and fine.)
+keys/*
+!keys/man.pub
+*.key
+*.pem
+
+# ── Build output ────────────────────────────────────────────────────
+target/
+release/
+**/.duhach-stage/
+src/out/
+src/debs/
+src/epiphany/debs/
+
+# ── Disk images, VMs, root file systems (huge, rebuilt locally) ─────
+lfs/
+clean_root/
+mandroid_mount/
+mandroid.img
+*.img
+*.qcow2
+*.iso
+*.upd
+*.fd
+*.log
+
+# ── Downloaded third-party binaries and upstream sources ────────────
+# (licenses and source locations: THIRD-PARTY-NOTICES.md)
+*.deb
+*.zip
+*.tar.gz
+*.tar.xz
+*.tar.zst
+tools/
+glibc-2.42/
+glibc-build/
+rclone-*/
+dev-tools/repo/
+src/epiphany/ep/
+src/epiphany/ep.orig/
+# GNOME Settings: keep only MAN's patches from the unpacked source tree
+src/gcc-51/*
+!src/gcc-51/debian/
+src/gcc-51/debian/*
+!src/gcc-51/debian/patches/
+src/gcc-51/debian/patches/*
+!src/gcc-51/debian/patches/man-*.patch
+# the small Debian source descriptions stay (they name the exact upstream)
+!src/*.dsc
+!src/epiphany/*.dsc
+
+# ── Local tools and editor files ────────────────────────────────────
+.claude/
+__pycache__/
+*.pyc
+*.swp
+*~
+.vscode/
+.idea/

@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "No se pudo iniciar el asistente del sistema."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "No se pudo comunicar con el asistente del sistema."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Se perdió la conexión con el asistente del sistema."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Se canceló la autorización."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Se necesitan permisos de administrador para esta acción."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "El asistente del sistema se detuvo inesperadamente."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "No hay partición del sistema EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Solo hay {free} libres, MAN necesita {need}. Libere espacio con DUHACH! en Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "No hay espacio libre. Inicie DUHACH! en Windows para hacer sitio a MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN se está ejecutando desde este disco"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "En uso: hay una partición montada"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Demasiado pequeño, MAN necesita {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Instalar MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN se está instalando. Espere hasta que termine."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Idioma"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Reiniciar en este idioma"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "La sesión en vivo se reinicia en el idioma elegido, y MAN se instala en él."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Bienvenido a MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Un sistema GNOME rápido, abierto y totalmente personalizable.\n"
+"Instálelo en este equipo o siga explorando la sesión en vivo."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Instalar MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Seguir probando MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Buscando discos…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Este equipo se inició en modo BIOS heredado. MAN solo se puede instalar en equipos UEFI: reinicie y elija la opción de arranque UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "El asistente del sistema no devolvió información de los discos."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Siguiente"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Tipo de instalación"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Borrar el disco e instalar MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Se borra todo lo que hay en el disco elegido, incluido Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Recomendado. Se borra todo lo que hay en el disco elegido."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Instalar junto a Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Recomendado. MAN usa el espacio libre junto a Windows; Windows y sus archivos se conservan. Elija el sistema en cada arranque."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Reinstalar MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Sustituye el sistema pero conserva los archivos personales de /home. El sistema actual se guarda como instantánea."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Particiones personalizadas"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Para expertos: elija las particiones usted mismo o créelas con Discos."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disco"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Elija el disco que se borrará. Los discos que no se pueden usar se muestran con el motivo."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "No se encontraron discos"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Espacio libre junto a Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Las particiones de Windows no se tocan. MAN comparte la partición del sistema EFI y añade Windows a su menú de arranque."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} libres"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "sin espacio libre"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Instalación que se sustituirá"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "sin carpetas personales"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "carpetas personales: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "instantáneas: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN en {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Frase de contraseña de {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Desbloquear"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "No se pudo examinar la instalación."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Particiones"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "La partición del sistema se formatea con Btrfs y contiene @system, @home y @snapshots. No se muestran las particiones del disco desde el que se ejecuta MAN."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Abrir Discos para crear o redimensionar particiones"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Actualizar la lista de particiones"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Elija una partición"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Partición del sistema EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Formatear la partición del sistema EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Déjelo desactivado para conservar los cargadores de arranque de otros sistemas"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Partición del sistema (se formatea con Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Partición de arranque (necesaria para el cifrado)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Lista de particiones actualizada"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Seguridad"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Cifrar el sistema"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Protege sus datos si pierde el equipo o se lo roban. Se pide una frase de contraseña en cada arranque."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Frase de contraseña"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Confirmar la frase de contraseña"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Guarde bien esta frase de contraseña"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Si la pierde, nadie podrá recuperar los datos. El núcleo y los archivos de arranque quedan en una pequeña partición de arranque sin cifrar."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "La frase de contraseña debe tener al menos 8 caracteres."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Las frases de contraseña no coinciden."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Elija un disco."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Elija el disco con Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Elija la instalación que se sustituirá."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Desbloquee primero la instalación cifrada."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Esta partición no contiene ningún sistema MAN."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Elija una partición del sistema EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Elija la partición del sistema."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Las particiones EFI y del sistema deben ser distintas."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "El cifrado necesita una partición de arranque aparte."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "La partición del sistema debe tener al menos {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "La partición EFI no tiene formato FAT; active el formateo."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "La partición del sistema está montada; desmóntela primero en Discos."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "¿Dónde se instalará MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Hora y teclado"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Zona horaria"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Distribución del teclado"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Pruebe su teclado"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Escriba aquí para comprobar que sus teclas producen los caracteres correctos."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Escriba aquí"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Zona horaria y teclado"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "No se eligió ningún disco"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "No se eligió ninguna partición del sistema"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "La partición del sistema desapareció"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "No se eligió ninguna instalación"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "El disco desapareció"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Revisión"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Destino"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Borrar el disco e instalar"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Particiones personalizadas"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Reinstalar conservando /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Junto a Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (se formateará)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (se conserva)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Partición del sistema"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (se formateará)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Partición de arranque"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Instalación"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Espacio para MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} de espacio libre (se crean una partición de arranque y la partición del sistema)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Sin cambios. Aparece en el menú de arranque de MAN; la partición del sistema EFI se comparte."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Cifrado"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Activado (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Desactivado"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Sistema de archivos"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system para MAN, @home para sus archivos, @snapshots para los puntos de restauración. Todos comparten el espacio libre."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Sistema"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Su cuenta"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Se crea en MAN Setup la primera vez que se inicia el equipo, junto con el nombre del equipo, la apariencia y la configuración de privacidad."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Se borrarán todos los datos de {model} ({path})."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Borrar e instalar"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Las particiones elegidas se formatearán. Las demás particiones no cambian."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Formatear e instalar"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "El sistema actual se sustituye. Sus archivos de /home se conservan y el sistema anterior se guarda como instantánea."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Reinstalar"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN se instala en el espacio libre. Windows y sus archivos no cambian."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Instalar"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Listo para instalar"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "¿Borrar {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Todos los archivos y particiones de {path} ({size}) se borrarán de forma permanente. Esto no se puede deshacer."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Borrar e instalar"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "¿Formatear las particiones elegidas?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Todos los datos de las particiones elegidas se borrarán de forma permanente. Las demás particiones no cambian."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Formatear e instalar"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "¿Instalar MAN junto a Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN se instala en los {free} de espacio libre de {model} ({path}). Windows y sus archivos no cambian."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Instalar"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "¿Reinstalar MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "El sistema instalado se sustituirá por una copia nueva. Los archivos personales de /home se conservan y el sistema anterior sigue disponible como instantánea."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Reinstalar"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Instalando MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Iniciando…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Detalles"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Instalando"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Paso {index} de {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Registro"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN está instalado"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Reinicie el equipo para empezar a usar MAN. Un menú en cada arranque le permite elegir MAN o Windows; MAN elimina la partición temporal del instalador en su primer arranque."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Reinicie el equipo para empezar a usar MAN. Puede retirar el medio de instalación; si sigue conectado, MAN arranca igualmente desde el disco nuevo."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Reiniciar ahora"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Hecho"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "La instalación falló"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "No se modificó ningún otro disco y el instalador liberó el disco de destino. Puede revisar el plan e intentarlo de nuevo."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Revisar e intentar de nuevo"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Mostrar detalles"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Registro de instalación"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Buscar idiomas"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Buscar países"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "No se encontró el disco del sistema."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "El cifrado necesita la estructura Btrfs creada por el instalador de MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Esta instalación no tiene una partición de arranque aparte, que el cifrado necesita. Reinstale MAN con «Borrar el disco» para usar el cifrado."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "¿Dónde se encuentra?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Su país o región determina el formato de la fecha, la hora y los números."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "País"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "Licencia Pública General de GNU, versión 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "El núcleo Linux y muchas herramientas del sistema"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "Licencia Pública General de GNU, versión 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Muchos programas de GNU y GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "Licencia Pública General Reducida de GNU, versión 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib y muchas bibliotecas"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "Licencia Pública General Reducida de GNU, versión 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Bibliotecas"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Licencia Pública de Mozilla 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Programas y bibliotecas de Mozilla y otros"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Licencia Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Bibliotecas y herramientas"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Acuerdo de licencia"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Lea y acepte los términos con los que se proporciona MAN."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licencias"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "El texto de la licencia no está disponible ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "He leído y acepto los términos de la licencia"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Cableada"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Sin conexión"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Conectarse a Internet"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Con conexión, MAN puede ajustar la hora y mantener su software actualizado. También puede hacerlo más tarde."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Comprobando la conexión…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Redes Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Buscar de nuevo"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Omitir"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Puede conectarse más tarde en Configuración."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Conectado"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Sin conexión"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "No se encontraron redes"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Conectado a «{ssid}»"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "No se pudo conectar a «{ssid}»"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Conectar a «{ssid}»"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Introduzca la contraseña de la red."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Conectar"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Cree su cuenta"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Será el administrador de este equipo, con acceso root completo mediante sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Nombre completo"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Contraseña"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Confirmar la contraseña"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Iniciar sesión automáticamente"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Omitir la pantalla de inicio de sesión al arrancar el equipo"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Carpetas personales existentes"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Use el mismo nombre de usuario para seguir usando una carpeta conservada de una instalación anterior."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Usar"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Nombre del equipo"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Establecer una contraseña de root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Permite iniciar sesión directamente como root. Sin ella, use sudo con su propia contraseña."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Contraseña de root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Confirmar la contraseña de root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Introduzca su nombre."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Elija un nombre de usuario."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "El sistema ya usa este nombre de usuario."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Este nombre de usuario está reservado por el sistema."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Los nombres de usuario usan minúsculas, dígitos, - y _, y empiezan por una letra."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Elija una contraseña."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Las contraseñas no coinciden."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "El nombre del equipo puede contener letras, dígitos y guiones."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Introduzca la contraseña de root dos veces."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Consejo: una contraseña de 8 o más caracteres es mucho más segura."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Cuenta"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Oscuro"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Claro"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Hágalo suyo"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Elija un estilo, un color de acento y un fondo de pantalla. Verá cada cambio al instante."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Estilo"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Color de acento"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Fondo de pantalla"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Personalizar"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Privacidad"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Elija qué funciones pueden usar información sobre usted. Puede cambiarlo en cualquier momento en Configuración."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Servicios de ubicación"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Permite que aplicaciones como Mapas y Meteorología encuentren su ubicación aproximada usando las redes Wi-Fi cercanas."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Zona horaria automática"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Usa su ubicación para mantener la zona horaria correcta cuando viaja."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Finalizar la configuración"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Su disco está cifrado"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Sus datos están protegidos. La frase de contraseña se pide cada vez que se inicia el equipo."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Cifrado del disco"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "El cifrado protege sus datos si pierde el equipo o se lo roban."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "No disponible en esta instalación"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "El cifrado protege sus archivos si pierde el equipo o se lo roban. Sin la frase de contraseña, nadie puede leer el disco."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Cifrar el disco"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "La frase de contraseña se pide cada vez que se inicia el equipo."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "El cifrado comienza en el próximo reinicio"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Después, el disco se cifra en segundo plano mientras usa el equipo. Si pierde la frase de contraseña, nadie podrá recuperar los datos."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Preparando MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Preparándolo todo…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Reiniciar"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Volver"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Preparando"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Registro de configuración"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "¡Todo listo!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Algo salió mal"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Diaria"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Antes de actualizar"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Antes de restaurar"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Antes de reinstalar"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Manual"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Todavía no hay instantáneas"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Cree una antes de hacer cambios importantes en el sistema."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Restaurar…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Eliminar instantánea"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} libres de {size}. El sistema, las carpetas personales y las instantáneas comparten este espacio; las instantáneas solo ocupan espacio por lo que ha cambiado desde que se crearon."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_Aceptar"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Crear instantánea"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Guarda el estado actual del sistema. Sus archivos personales de la carpeta personal no se incluyen."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Descripción, por ejemplo «Antes de instalar controladores»"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Crear"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Instantánea manual"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "¿Eliminar la instantánea?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "«{description}» del {date} se eliminará de forma permanente."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Eliminar"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "¿Restaurar esta instantánea?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"El sistema volverá a «{description}» del {date} tras un reinicio. Sus archivos personales no cambian.\n"
+"\n"
+"El sistema actual se guarda primero como instantánea, así que se puede deshacer."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Restaurar"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Reinicie para terminar la restauración"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Reiniciar _más tarde"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Reiniciar _ahora"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Instantáneas"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Puntos de restauración"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Las instantáneas guardan el estado del sistema operativo. Restaurar una devuelve el sistema a ese momento, lo que ayuda tras una actualización o un cambio de configuración fallidos. Sus archivos personales nunca se tocan."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Instantáneas automáticas"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Instantáneas diarias"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Una vez al día mientras el equipo está encendido"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Instantáneas diarias que se conservan"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Antes de las actualizaciones de software"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Se toman automáticamente al instalar, actualizar o eliminar paquetes"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Instantáneas de actualización que se conservan"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Almacenamiento"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Espacio en disco"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Si MAN no arranca"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Elija «Restore a MAN snapshot» en el menú de arranque para recuperar un sistema que funcione."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Las instantáneas no están disponibles"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Las instantáneas funcionan en MAN instalado con la estructura Btrfs creada por el instalador de MAN. Este sistema (por ejemplo, una sesión en vivo) no la usa."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Hay una restauración pendiente: reinicie el equipo para terminarla"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Reiniciar ahora"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Espere a que termine la operación en curso."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Buscar"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Copiar al portapapeles"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Tiempo universal coordinado"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Inglés (EE. UU.)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Comprobando la actualización"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Comprobando que la actualización es auténtica y está completa…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Actualización de MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Esta actualización no se puede instalar"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "No se pudo leer la actualización."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Actualización desde {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} está instalado"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Versión"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Publicada"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Tamaño de la descarga"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Espacio necesario"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Autenticidad"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Verificada, firmada por «{signer}»"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Novedades"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Continuar"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Esta actualización no es más reciente que {name} {version} instalado."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Actualización"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Lea los términos de la licencia de esta actualización."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Acepto los términos de la licencia"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "¿Dónde se instalará la actualización?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "El sistema se sustituye; los archivos de su carpeta personal no se tocan."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Elija una instalación."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "en ejecución"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} en este equipo"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} en {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "No se encontró ninguna instalación de MAN"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Las actualizaciones se instalan desde un sistema MAN instalado y en ejecución, no desde la sesión en vivo."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Ubicación de la instalación"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Resumen"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Se conserva"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Sus archivos"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Todo lo que hay en su carpeta personal"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Cuentas y contraseñas"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Usuarios, grupos, el nombre del equipo"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Conexiones y configuración"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, zona horaria, teclado, apariencia e instantáneas"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Aplicaciones Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Además de todo lo que hay en /usr/local y /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Se sustituye"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "El software instalado con apt y otros cambios en los archivos del sistema se sustituyen por el nuevo sistema."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "El sistema operativo"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Sustituido por {name} {version}. El sistema actual se puede restaurar desde una instantánea."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "El equipo se reinicia para instalar la actualización"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Tras la preparación, MAN se reinicia, instala la actualización en unos segundos y vuelve a reiniciarse."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Instalar la actualización"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "¿Crear primero una instantánea?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Una instantánea guarda el sistema actual, para poder volver a él si algo no funciona después de la actualización. Se recomienda."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_No crear"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Crear instantánea"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Preparando {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Reiniciar para instalar"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "El equipo se reinicia dos veces. Sus archivos están a salvo."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Reinicio automático en {r} segundos"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Reinicio automático en 30 segundos"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "La actualización se instalará la próxima vez que reinicie."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Listo"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "No se pudo preparar la actualización"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "No se cambió nada en su sistema."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Intentar de nuevo"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Registro de la actualización"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Falló"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Su sistema se actualizó"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN se actualizó a la versión {version}.\n"
+"Antes: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Hecho"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Abrir una actualización de MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Actualizaciones de MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Comprobando el plan de instalación"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Preparando el disco"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Copiando MAN al disco"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Configurando el nuevo sistema"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Instalando el cargador de arranque"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Creando la primera instantánea"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Terminando"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Eliminando firmas de particiones antiguas"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Creando particiones"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Formateando la partición del sistema EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Cifrando la partición del sistema"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Formateando la partición de arranque"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Creando el sistema de archivos Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Eliminando firmas de sistemas de archivos antiguas"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Desbloqueando la instalación cifrada"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Guardando el sistema actual como instantánea"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Eliminando el sistema anterior"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Escribiendo la tabla de sistemas de archivos"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Estableciendo el nombre y la identidad del equipo"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Eliminando las cuentas de la sesión en vivo"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Creando su cuenta"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Preparando MAN Setup para el primer arranque"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Estableciendo la zona horaria y el teclado"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Eliminando el instalador del nuevo sistema"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Creando la imagen de arranque (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Configurando GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Instalando GRUB en la partición del sistema EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Instalando el cargador de arranque de respaldo"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Escribiendo el menú de arranque"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disco listo"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Creando una instantánea del sistema nuevo"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Añadiendo la instantánea al menú de arranque"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Desmontando"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "El asistente del instalador debe ejecutarse como root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Este equipo no se inició en modo UEFI. MAN necesita UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "El nombre de usuario no es válido."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Se necesita una contraseña."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "El nombre del equipo no es válido."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Idioma desconocido."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "La frase de contraseña de cifrado debe tener al menos 8 caracteres."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "El disco cambió después de que confirmara la instalación. No se modificó nada; revise y confirme de nuevo."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Elija una partición del sistema."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "El disco confirmado no contiene la partición del sistema elegida."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "La partición de arranque debe ser distinta de las particiones EFI y del sistema."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "La partición de arranque debe tener al menos 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "No se eligió ninguna instalación."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "El disco confirmado no contiene la instalación elegida."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "La instalación cifrada no tiene partición MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "No se encontró en /boot ningún núcleo con los módulos correspondientes."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "El idioma lo debe cambiar el asistente del sistema."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Aplicando su configuración"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Preparando el cifrado del disco"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Terminando"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup lo debe terminar el asistente del sistema."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup ya se completó en este equipo."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Color de acento desconocido."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "El fondo de pantalla elegido no está disponible."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Este sistema no se puede cifrar."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Falta la clave de configuración, así que el cifrado no puede continuar en segundo plano."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "El sistema no está instalado en Btrfs, así que las instantáneas no están disponibles."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Una restauración de instantánea espera un reinicio. Reinicie primero el equipo para terminarla."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Identificador de instantánea no válido."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Comprobando la actualización"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Creando una instantánea"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Preparando el área de actualización"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Descomprimiendo el nuevo sistema"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Trasladando sus cuentas y configuración"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Preparando el reinicio"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Descomprimido"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Cuentas"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Eliminando el software exclusivo del instalador"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Creando la imagen de arranque de la actualización"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Añadiendo la entrada de arranque de un solo uso"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "La actualización es auténtica"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Instantánea creada"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Omitido"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Área de actualización lista"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Preparando el nuevo sistema"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "El archivo de actualización está dañado (la suma de comprobación no coincide). Descárguelo de nuevo."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "No se pudo leer completo el archivo de actualización."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "La actualización no contiene ningún núcleo."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Las actualizaciones las debe instalar el asistente del sistema."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "No se encontró la instalación elegida."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Solo se puede actualizar la instalación de MAN en ejecución."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Este no es un archivo de actualización de MAN (no tiene manifiesto)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "La actualización no está firmada, así que no es de confianza."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "La firma de la actualización está dañada."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "La actualización no está firmada por MAN. Puede que se haya modificado o que proceda de una fuente no fiable."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "El manifiesto de la actualización no es válido."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "La frase de contraseña no es correcta o no se puede abrir la partición cifrada."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Azul"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Verde azulado"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Verde"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Amarillo"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Naranja"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Rojo"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Rosa"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Morado"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Pizarra"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Instalador del sistema"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Instalar MAN en este equipo"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Restauración del sistema"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Crear y restaurar instantáneas del sistema"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Instalador de actualizaciones del sistema"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Instalar un archivo de actualización del sistema MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Ofrece instalar MAN al iniciar la sesión en vivo"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Aviso de actualización de MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Le avisa una vez tras iniciar sesión de que MAN se actualizó"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Configure su nuevo equipo con MAN"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Configuración inicial de MAN"

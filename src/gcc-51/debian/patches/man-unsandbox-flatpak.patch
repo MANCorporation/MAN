@@ -1,0 +1,344 @@
+diff -ru panels/applications.orig/cc-applications-panel.blp panels/applications/cc-applications-panel.blp
+--- a/panels/applications/cc-applications-panel.blp	2026-09-11 13:48:25.000000000 +0200
++++ b/panels/applications/cc-applications-panel.blp	2026-10-19 18:39:47.851288019 +0200
+@@ -298,6 +298,41 @@
+             }
+           }
+ 
++          Adw.PreferencesGroup man_sandbox_group {
++            title: _("Sandbox");
++            description: _("Flatpak apps run isolated from the rest of the system.");
++            visible: false;
++
++            Adw.ActionRow man_sandbox_status_row {
++              title: _("Sandboxed");
++              subtitle: _("The app can only use the permissions it was given");
++
++              [prefix]
++              Image man_sandbox_status_icon {
++                icon-name: "security-high-symbolic";
++              }
++            }
++
++            Adw.ButtonRow man_unsandbox_row {
++              title: _("_Unsandbox App…");
++              use-underline: true;
++              start-icon-name: "channel-insecure-symbolic";
++              activated => $man_unsandbox_cb(template);
++
++              styles [
++                "destructive-action",
++              ]
++            }
++
++            Adw.ButtonRow man_restore_sandbox_row {
++              title: _("_Restore Sandbox");
++              use-underline: true;
++              start-icon-name: "security-high-symbolic";
++              visible: false;
++              activated => $man_restore_sandbox_cb(template);
++            }
++          }
++
+           Adw.PreferencesGroup required_permissions_group {
+             $CcListRow builtin_row {
+               title: _("Re_quired Permissions");
+diff -ru panels/applications.orig/cc-applications-panel.c panels/applications/cc-applications-panel.c
+--- a/panels/applications/cc-applications-panel.c	2026-09-11 13:48:25.000000000 +0200
++++ b/panels/applications/cc-applications-panel.c	2026-10-19 20:16:36.883789081 +0200
+@@ -90,6 +90,14 @@
+     GtkButton *launch_button;
+     GtkButton *view_details_button;
+     AdwBanner *sandbox_banner;
++    AdwPreferencesGroup *man_sandbox_group;
++    AdwActionRow *man_sandbox_status_row;
++    GtkImage *man_sandbox_status_icon;
++    AdwButtonRow *man_unsandbox_row;
++    AdwButtonRow *man_restore_sandbox_row;
++    gchar *man_flatpak_id;
++    /* MAN: parental controls are switched off for the whole system. */
++    gboolean app_filter_disabled;
+     GtkWidget *sandbox_info_button;
+ 
+     GDBusProxy *perm_store;
+@@ -1219,7 +1227,7 @@
+         gtk_widget_set_visible (GTK_WIDGET (self->app_search_entry), FALSE);
+     }
+ #ifdef HAVE_MALCONTENT
+-    else if (!self->app_filter) {
++    else if (!self->app_filter && !self->app_filter_disabled) {
+         gtk_stack_set_visible_child_name (self->main_page_stack, "malcontent-not-found-page");
+         gtk_widget_set_visible (GTK_WIDGET (self->app_search_entry), FALSE);
+     }
+@@ -1422,6 +1430,195 @@
+     update_storage_page (self, info);
+ }
+ 
++/* --- MAN: unsandbox Flatpak apps --- */
++
++#define MAN_SANDBOX_HELPER "/usr/libexec/man/man-flatpak-sandbox"
++#define MAN_UNSANDBOXED_DIR "/var/lib/man/unsandboxed"
++
++typedef struct {
++    CcApplicationsPanel *self;
++    gchar *op;
++    gchar *app_id;
++    gchar *app_name;
++} ManSandboxOp;
++
++static void
++man_sandbox_op_free (ManSandboxOp *op)
++{
++    g_object_unref (op->self);
++    g_free (op->op);
++    g_free (op->app_id);
++    g_free (op->app_name);
++    g_free (op);
++}
++
++static gboolean
++man_is_unsandboxed (const gchar *flatpak_id)
++{
++    g_autofree gchar *path = g_build_filename (MAN_UNSANDBOXED_DIR, flatpak_id, NULL);
++    return g_file_test (path, G_FILE_TEST_EXISTS);
++}
++
++static void
++man_update_sandbox_group (CcApplicationsPanel *self)
++{
++    gboolean flatpak = self->man_flatpak_id != NULL;
++    gboolean open = flatpak && man_is_unsandboxed (self->man_flatpak_id);
++
++    gtk_widget_set_visible (GTK_WIDGET (self->man_sandbox_group), flatpak);
++    if (!flatpak)
++        return;
++
++    adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->man_sandbox_status_row),
++                                   open ? _("Unsandboxed") : _("Sandboxed"));
++    adw_action_row_set_subtitle (self->man_sandbox_status_row,
++                                 open ? _("The app has full access to your files, devices and the system")
++                                      : _("The app can only use the permissions it was given"));
++    gtk_image_set_from_icon_name (self->man_sandbox_status_icon,
++                                  open ? "channel-insecure-symbolic" : "security-high-symbolic");
++    if (open)
++        gtk_widget_add_css_class (GTK_WIDGET (self->man_sandbox_status_icon), "warning");
++    else
++        gtk_widget_remove_css_class (GTK_WIDGET (self->man_sandbox_status_icon), "warning");
++    gtk_widget_set_visible (GTK_WIDGET (self->man_unsandbox_row), !open);
++    gtk_widget_set_visible (GTK_WIDGET (self->man_restore_sandbox_row), open);
++}
++
++static void
++man_toast (CcApplicationsPanel *self, const gchar *text)
++{
++    adw_toast_overlay_add_toast (self->toast_overlay, adw_toast_new (text));
++}
++
++static void man_run_helper (CcApplicationsPanel *self, const gchar *op, const gchar *app_id, const gchar *app_name);
++
++static void
++man_confirm_response_cb (AdwAlertDialog *dialog, GAsyncResult *result, ManSandboxOp *op)
++{
++    const gchar *response = adw_alert_dialog_choose_finish (dialog, result);
++
++    if (g_strcmp0 (response, "proceed") == 0)
++        man_run_helper (op->self, "unsandbox", op->app_id, op->app_name);
++    man_sandbox_op_free (op);
++}
++
++static void
++man_show_warning (ManSandboxOp *op)
++{
++    AdwDialog *dialog;
++    g_autofree gchar *heading = g_strdup_printf (_("Unsandbox “%s”?"), op->app_name);
++
++    dialog = adw_alert_dialog_new (heading,
++        _("The app will get full access to this computer: all your files and the system files, "
++          "every device, the network, and all system services. It can run commands outside its "
++          "container and read or change anything your account can.\n\n"
++          "Only do this for apps you completely trust. A harmful or buggy app could damage your "
++          "system or steal your data.\n\n"
++          "You can restore the sandbox here at any time. The app needs to be restarted for the "
++          "change to apply."));
++    adw_alert_dialog_add_responses (ADW_ALERT_DIALOG (dialog),
++                                    "cancel", _("_Cancel"),
++                                    "proceed", _("_Proceed"),
++                                    NULL);
++    adw_alert_dialog_set_response_appearance (ADW_ALERT_DIALOG (dialog), "proceed", ADW_RESPONSE_DESTRUCTIVE);
++    adw_alert_dialog_set_default_response (ADW_ALERT_DIALOG (dialog), "cancel");
++    adw_alert_dialog_set_close_response (ADW_ALERT_DIALOG (dialog), "cancel");
++    /* Take the parent before handing over op: argument order is unspecified. */
++    GtkWidget *parent = GTK_WIDGET (op->self);
++    adw_alert_dialog_choose (ADW_ALERT_DIALOG (dialog), parent, NULL,
++                             (GAsyncReadyCallback) man_confirm_response_cb, op);
++}
++
++static void
++man_helper_done_cb (GObject *source, GAsyncResult *result, gpointer user_data)
++{
++    ManSandboxOp *op = user_data;
++    GSubprocess *proc = G_SUBPROCESS (source);
++    g_autoptr(GError) error = NULL;
++    gint status;
++
++    g_subprocess_wait_finish (proc, result, &error);
++    status = g_subprocess_get_if_exited (proc) ? g_subprocess_get_exit_status (proc) : -1;
++
++    gtk_widget_set_sensitive (GTK_WIDGET (op->self->man_sandbox_group), TRUE);
++
++    if (error != NULL || status != 0) {
++        /* pkexec: 126 = dialog dismissed, 127 = not authorized */
++        if (status == 126 || status == 127)
++            man_toast (op->self, _("Authentication failed. Nothing was changed."));
++        else
++            man_toast (op->self, _("The sandbox could not be changed."));
++        man_sandbox_op_free (op);
++        return;
++    }
++
++    if (g_str_equal (op->op, "auth")) {
++        /* Password accepted: now ask for confirmation. */
++        man_show_warning (op);
++        return;
++    }
++
++    if (g_strcmp0 (op->app_id, op->self->man_flatpak_id) == 0)
++        man_update_sandbox_group (op->self);
++
++    if (g_str_equal (op->op, "unsandbox")) {
++        g_autofree gchar *text = g_strdup_printf (_("“%s” is unsandboxed. Restart it to apply."), op->app_name);
++        man_toast (op->self, text);
++    } else {
++        g_autofree gchar *text = g_strdup_printf (_("The sandbox of “%s” was restored."), op->app_name);
++        man_toast (op->self, text);
++    }
++    man_sandbox_op_free (op);
++}
++
++static void
++man_run_helper (CcApplicationsPanel *self, const gchar *op_name, const gchar *app_id, const gchar *app_name)
++{
++    g_autoptr(GError) error = NULL;
++    g_autoptr(GSubprocess) proc = NULL;
++    ManSandboxOp *op;
++
++    if (g_str_equal (op_name, "auth"))
++        proc = g_subprocess_new (G_SUBPROCESS_FLAGS_STDOUT_SILENCE | G_SUBPROCESS_FLAGS_STDERR_SILENCE, &error,
++                                 "pkexec", MAN_SANDBOX_HELPER, "auth", NULL);
++    else
++        proc = g_subprocess_new (G_SUBPROCESS_FLAGS_STDOUT_SILENCE | G_SUBPROCESS_FLAGS_STDERR_SILENCE, &error,
++                                 "pkexec", MAN_SANDBOX_HELPER, op_name, app_id, NULL);
++    if (proc == NULL) {
++        g_warning ("Failed to run %s: %s", MAN_SANDBOX_HELPER, error->message);
++        man_toast (self, _("The sandbox could not be changed."));
++        return;
++    }
++
++    op = g_new0 (ManSandboxOp, 1);
++    op->self = g_object_ref (self);
++    op->op = g_strdup (op_name);
++    op->app_id = g_strdup (app_id);
++    op->app_name = g_strdup (app_name);
++    gtk_widget_set_sensitive (GTK_WIDGET (self->man_sandbox_group), FALSE);
++    g_subprocess_wait_async (proc, NULL, man_helper_done_cb, op);
++}
++
++static const gchar *
++man_current_app_name (CcApplicationsPanel *self)
++{
++    return self->current_app_info ? g_app_info_get_display_name (self->current_app_info) : self->man_flatpak_id;
++}
++
++static void
++man_unsandbox_cb (CcApplicationsPanel *self)
++{
++    if (self->man_flatpak_id)
++        man_run_helper (self, "auth", self->man_flatpak_id, man_current_app_name (self));
++}
++
++static void
++man_restore_sandbox_cb (CcApplicationsPanel *self)
++{
++    if (self->man_flatpak_id)
++        man_run_helper (self, "restore", self->man_flatpak_id, man_current_app_name (self));
++}
++
+ /* --- panel setup --- */
+ 
+ static void
+@@ -1458,6 +1655,11 @@
+     self->current_app_id = get_app_id (info);
+     self->current_portal_app_id = get_portal_app_id (info);
+ 
++    g_clear_pointer (&self->man_flatpak_id, g_free);
++    if (G_IS_DESKTOP_APP_INFO (info))
++        self->man_flatpak_id = g_desktop_app_info_get_string (G_DESKTOP_APP_INFO (info), "X-Flatpak");
++    man_update_sandbox_group (self);
++
+     /* Don't show the "Open" button for Settings itself. */
+     gtk_widget_set_visible (GTK_WIDGET (self->launch_button), g_strcmp0 (self->current_app_id, APPLICATION_ID) != 0);
+ }
+@@ -1497,7 +1699,7 @@
+             continue;
+ 
+ #ifdef HAVE_MALCONTENT
+-        if (!mct_app_filter_is_appinfo_allowed (self->app_filter, info))
++        if (self->app_filter != NULL && !mct_app_filter_is_appinfo_allowed (self->app_filter, info))
+             continue;
+ #endif
+ 
+@@ -1538,7 +1740,8 @@
+     g_clear_pointer (&self->app_filter, mct_app_filter_unref);
+     self->app_filter = mct_manager_get_app_filter_finish (self->manager, res, &error);
+ 
+-    if (error) {
++    self->app_filter_disabled = g_error_matches (error, MCT_MANAGER_ERROR, MCT_MANAGER_ERROR_DISABLED);
++    if (error && !self->app_filter_disabled) {
+         g_debug ("Error retrieving app filter: %s", error->message);
+         on_items_changed_cb (self->filter_model, 0, 0, 0, self);
+         return;
+@@ -1698,6 +1901,7 @@
+     g_clear_object (&self->search_settings);
+ 
+     g_clear_object (&self->current_app_info);
++    g_clear_pointer (&self->man_flatpak_id, g_free);
+     g_clear_pointer (&self->current_app_id, g_free);
+     g_clear_pointer (&self->current_portal_app_id, g_free);
+     g_clear_pointer (&self->globs, g_hash_table_unref);
+@@ -1798,6 +2002,11 @@
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, background_row);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, wallpaper_row);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, sandbox_banner);
++    gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, man_sandbox_group);
++    gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, man_sandbox_status_row);
++    gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, man_sandbox_status_icon);
++    gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, man_unsandbox_row);
++    gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, man_restore_sandbox_row);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, sandbox_info_button);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, screenshots_row);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, shortcuts_row);
+@@ -1810,6 +2019,8 @@
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, view_details_button);
+     gtk_widget_class_bind_template_child (widget_class, CcApplicationsPanel, toast_overlay);
+ 
++    gtk_widget_class_bind_template_callback (widget_class, man_unsandbox_cb);
++    gtk_widget_class_bind_template_callback (widget_class, man_restore_sandbox_cb);
+     gtk_widget_class_bind_template_callback (widget_class, camera_cb);
+     gtk_widget_class_bind_template_callback (widget_class, location_cb);
+     gtk_widget_class_bind_template_callback (widget_class, microphone_cb);
+@@ -1882,10 +2093,14 @@
+     self->manager = mct_manager_new (system_bus);
+     self->app_filter = mct_manager_get_app_filter (self->manager, getuid (), MCT_MANAGER_GET_VALUE_FLAGS_NONE,
+                                                    self->cancellable, &error);
+-    if (error) {
++    /* MAN: "filtering is globally disabled" means every app is allowed;
++     * upstream gave up here and listed no apps at all. */
++    self->app_filter_disabled = g_error_matches (error, MCT_MANAGER_ERROR, MCT_MANAGER_ERROR_DISABLED);
++    if (error && !self->app_filter_disabled) {
+         g_warning ("Error retrieving app filter: %s", error->message);
+         return;
+     }
++    g_clear_error (&error);
+ 
+     self->app_filter_id =
+         g_signal_connect (self->manager, "app-filter-changed", G_CALLBACK (app_filter_changed_cb), self);

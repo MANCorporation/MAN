@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "A rendszersegéd nem indítható el."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Nem sikerült kommunikálni a rendszersegéddel."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Megszakadt a kapcsolat a rendszersegéddel."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "A hitelesítés megszakítva."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Ehhez a művelethez rendszergazdai jogosultság szükséges."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "A rendszersegéd váratlanul leállt."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Nincs EFI rendszerpartíció"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Csak {free} szabad, a MAN-nak {need} kell. Szabadítson fel helyet a DUHACH! segítségével Windowsban."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Nincs szabad hely. Indítsa el a DUHACH!-ot Windowsban, hogy helyet csináljon a MAN-nak."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "A MAN erről a lemezről fut"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Használatban: egy partíció csatolva van"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Túl kicsi, a MAN-nak {need} kell"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "MAN telepítése"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "A MAN telepítése folyamatban. Várjon, amíg befejeződik."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Nyelv"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "Ú_jraindítás ezen a nyelven"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Az élő munkamenet a választott nyelven indul újra, és a MAN is ezen a nyelven települ."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Üdvözli a MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Gyors, nyílt és teljesen testreszabható GNOME rendszer.\n"
+"Telepítse erre a számítógépre, vagy folytassa az élő munkamenet felfedezését."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "MAN _telepítése…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "A MAN _további kipróbálása"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Lemezek keresése…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Ez a számítógép hagyományos BIOS módban indult. A MAN csak UEFI-s számítógépekre telepíthető: indítsa újra, és válassza az UEFI indítási lehetőséget."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "A rendszersegéd nem adott vissza lemezinformációt."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Tovább"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Telepítés típusa"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Lemez törlése és a MAN telepítése"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "A választott lemezen minden törlődik, a Windows is."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Ajánlott. A választott lemezen minden törlődik."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Telepítés a Windows mellé"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Ajánlott. A MAN a Windows melletti szabad helyet használja; a Windows és a fájljai megmaradnak. Minden indításkor választhat rendszert."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "MAN újratelepítése"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Lecseréli a rendszert, de megtartja a személyes fájlokat a /home könyvtárban. A jelenlegi rendszer pillanatképként mentődik."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Egyéni partíciók"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Szakértőknek: válassza ki saját maga a partíciókat, vagy hozza létre őket a Lemezek alkalmazással."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Lemez"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Válassza ki a törlendő lemezt. A nem használható lemezek az okkal együtt jelennek meg."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Nem található lemez"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Szabad hely a Windows mellett"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "A Windows partícióihoz nem nyúl. A MAN megosztja az EFI rendszerpartíciót, és felveszi a Windowst az indítómenüjébe."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} szabad"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "nincs szabad hely"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Lecserélendő telepítés"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "nincsenek saját mappák"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "saját mappák: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "pillanatképek: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN ezen: {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Jelmondat ehhez: {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Feloldás"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "A telepítés nem vizsgálható meg."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Partíciók"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "A rendszerpartíció Btrfs fájlrendszerrel lesz formázva, és tartalmazza a @system, @home és @snapshots alköteteket. Annak a lemeznek a partíciói, amelyről a MAN fut, nem jelennek meg."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "A Lemezek megnyitása partíciók létrehozásához vagy átméretezéséhez"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "A partíciólista frissítése"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Válasszon partíciót"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI rendszerpartíció"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Az EFI rendszerpartíció formázása"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Hagyja kikapcsolva, hogy más rendszerek rendszerbetöltői megmaradjanak"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Rendszerpartíció (Btrfs-re formázva)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Rendszerindító partíció (titkosításhoz szükséges)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "A partíciólista frissítve"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Biztonság"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "A rendszer titkosítása"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Védi az adatait, ha a számítógép elveszik vagy ellopják. Minden indításkor jelmondatot kér."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Jelmondat"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Jelmondat megerősítése"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Őrizze meg biztonságban ezt a jelmondatot"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Ha elveszik, senki sem tudja visszaállítani az adatokat. A kernel és a rendszerindító fájlok egy kis, titkosítatlan rendszerindító partíción maradnak."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "A jelmondatnak legalább 8 karakterből kell állnia."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "A jelmondatok nem egyeznek."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Válasszon lemezt."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Válassza ki a Windowst tartalmazó lemezt."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Válassza ki a lecserélendő telepítést."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Először oldja fel a titkosított telepítést."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Ez a partíció nem tartalmaz MAN rendszert."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Válasszon EFI rendszerpartíciót."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Válassza ki a rendszerpartíciót."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Az EFI és a rendszerpartíciónak különbözőnek kell lennie."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "A titkosításhoz külön rendszerindító partíció szükséges."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "A rendszerpartíciónak legalább {size} méretűnek kell lennie."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Az EFI partíció nem FAT formátumú; kapcsolja be a formázást."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "A rendszerpartíció csatolva van; először válassza le a Lemezek alkalmazásban."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Hová települjön a MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Idő és billentyűzet"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Időzóna"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Billentyűzetkiosztás"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Próbálja ki a billentyűzetét"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Gépeljen ide, és ellenőrizze, hogy a billentyűk a megfelelő karaktereket adják-e."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Gépeljen ide"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Időzóna és billentyűzet"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Nincs lemez kiválasztva"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Nincs rendszerpartíció kiválasztva"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "A rendszerpartíció eltűnt"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Nincs telepítés kiválasztva"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "A lemez eltűnt"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Áttekintés"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Cél"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Lemez törlése és telepítés"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Egyéni partíciók"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Újratelepítés a /home megtartásával"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "A Windows mellé"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (formázva lesz)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (megmarad)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Rendszerpartíció"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (formázva lesz)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Rendszerindító partíció"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Telepítés"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Hely a MAN számára"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} szabad hely (létrejön egy rendszerindító és a rendszerpartíció)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Változatlan. Megjelenik a MAN indítómenüjében; az EFI rendszerpartíció közös."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Titkosítás"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Be (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Ki"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Fájlrendszer"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system a MAN-nak, @home a fájljainak, @snapshots a visszaállítási pontoknak. Mind a szabad helyen osztoznak."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Rendszer"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Az Ön fiókja"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "A MAN Setupban jön létre a számítógép első indításakor, a számítógép nevével, a megjelenéssel és az adatvédelmi beállításokkal együtt."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Billentyűzet"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "A(z) {model} ({path}) összes adata törlődik."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Törlés és telepítés"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "A kiválasztott partíciók formázva lesznek. A többi partíció nem változik."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Formázás és telepítés"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "A jelenlegi rendszer lecserélődik. A /home fájljai megmaradnak, a régi rendszer pillanatképként mentődik."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "Ú_jratelepítés"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "A MAN a szabad helyre települ. A Windows és a fájljai nem változnak."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Telepítés"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Kész a telepítésre"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Törli ezt: {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "A(z) {path} ({size}) összes fájlja és partíciója véglegesen törlődik. Ez nem vonható vissza."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Törlés és telepítés"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Formázza a kiválasztott partíciókat?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "A kiválasztott partíciók összes adata véglegesen törlődik. A többi partíció nem változik."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Formázás és telepítés"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Telepíti a MAN-t a Windows mellé?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "A MAN a(z) {model} ({path}) {free} szabad helyére települ. A Windows és a fájljai nem változnak."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Telepítés"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Újratelepíti a MAN-t?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "A telepített rendszert egy friss példány váltja fel. A /home személyes fájljai megmaradnak, a régi rendszer pillanatképként elérhető marad."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Újratelepítés"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Mégse"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "A MAN telepítése"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Indítás…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Részletek"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Telepítés"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "{index}/{n}. lépés  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Napló"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "A MAN telepítve"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Indítsa újra a számítógépet a MAN használatához. Minden indításkor egy menüben választhat a MAN és a Windows között; az ideiglenes telepítőpartíciót a MAN az első indításkor eltávolítja."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Indítsa újra a számítógépet a MAN használatához. A telepítő adathordozót eltávolíthatja; ha csatlakoztatva marad, a MAN akkor is az új lemezről indul."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "Új_raindítás most"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Kész"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "A telepítés sikertelen"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Más lemez nem változott, és a telepítő felszabadította a céllemezt. Áttekintheti a tervet, és újra megpróbálhatja."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "Á_ttekintés és újrapróbálás"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Részletek megjelenítése"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Telepítési napló"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Nyelvek keresése"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Országok keresése"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "A rendszerlemez nem található."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "A titkosításhoz a MAN telepítő által létrehozott Btrfs-elrendezés szükséges."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Ennek a telepítésnek nincs külön rendszerindító partíciója, amely a titkosításhoz kell. A titkosítás használatához telepítse újra a MAN-t a „Lemez törlése” lehetőséggel."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Hol tartózkodik?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Országa vagy régiója határozza meg a dátum, az idő és a számok formátumát."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Ország"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, 2. verzió"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "A Linux kernel és sok rendszereszköz"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, 3. verzió"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Sok GNU és GNOME program"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, 2.1-es verzió"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib és sok függvénykönyvtár"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, 3. verzió"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Függvénykönyvtárak"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "A Mozilla és mások programjai és könyvtárai"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache licenc 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Függvénykönyvtárak és eszközök"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Licencszerződés"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Olvassa el és fogadja el a feltételeket, amelyek mellett a MAN rendelkezésre áll."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Licencek"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "A licenc szövege nem érhető el ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Elolvastam és elfogadom a licencfeltételeket"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Vezetékes"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Nincs kapcsolódva"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Csatlakozás az internethez"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Kapcsolattal a MAN be tudja állítani az időt, és naprakészen tudja tartani a szoftvereit. Ezt később is megteheti."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "A kapcsolat ellenőrzése…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi hálózatok"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Újrakeresés"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Kihagyás"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Később is csatlakozhat a Beállításokban."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Kapcsolódva"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Nincs kapcsolódva"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Nem található hálózat"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Kapcsolódva ehhez: „{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Nem sikerült kapcsolódni ehhez: „{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Kapcsolódás ehhez: „{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Adja meg a hálózat jelszavát."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Kapcsolódás"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Hozza létre fiókját"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Ön lesz a számítógép rendszergazdája, teljes root hozzáféréssel a sudón keresztül."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Teljes név"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Felhasználónév"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Jelszó"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Jelszó megerősítése"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Automatikus bejelentkezés"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "A bejelentkezési képernyő kihagyása a számítógép indulásakor"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Meglévő saját mappák"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Ugyanazt a felhasználónevet használva tovább használhat egy korábbi telepítésből megmaradt mappát."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Használat"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Speciális"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Számítógép neve"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Root jelszó beállítása"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Lehetővé teszi a közvetlen bejelentkezést rootként. Nélküle használja a sudót a saját jelszavával."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Root jelszó"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Root jelszó megerősítése"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Adja meg a nevét."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Válasszon felhasználónevet."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Ezt a felhasználónevet a rendszer már használja."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Ez a felhasználónév a rendszer számára foglalt."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "A felhasználónevek kisbetűkből, számjegyekből, - és _ jelekből állnak, és betűvel kezdődnek."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Válasszon jelszót."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "A jelszavak nem egyeznek."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "A számítógép neve betűket, számjegyeket és kötőjeleket tartalmazhat."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Adja meg kétszer a root jelszót."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Tipp: egy legalább 8 karakteres jelszó sokkal biztonságosabb."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Fiók"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Sötét"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Világos"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Tegye a sajátjává"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Válasszon stílust, kiemelőszínt és háttérképet. Minden változást azonnal lát."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Stílus"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Kiemelőszín"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Háttérkép"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Testreszabás"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Adatvédelem"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Válassza ki, mely funkciók használhatnak információkat Önről. Ezt bármikor módosíthatja a Beállításokban."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Helymeghatározás"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Lehetővé teszi, hogy az olyan alkalmazások, mint a Térképek és az Időjárás, a közeli Wi-Fi hálózatok alapján megállapítsák a hozzávetőleges helyzetét."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Automatikus időzóna"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "A helyzete alapján utazás közben is helyesen tartja az időzónát."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "A beállítás _befejezése"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "A lemeze titkosítva van"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Adatai védve vannak. A jelmondatot a számítógép minden indításakor meg kell adni."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Lemeztitkosítás"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "A titkosítás védi az adatait, ha a számítógép elveszik vagy ellopják."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Ebben a telepítésben nem érhető el"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "A titkosítás védi a fájljait, ha a számítógép elveszik vagy ellopják. A jelmondat nélkül senki sem tudja olvasni a lemezt."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "A lemez titkosítása"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "A jelmondatot a számítógép minden indításakor meg kell adni."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "A titkosítás a következő újraindításkor kezdődik"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "A lemez ezután a háttérben titkosítódik, miközben a számítógépet használja. Ha a jelmondat elveszik, senki sem tudja visszaállítani az adatokat."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "A MAN előkészítése"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Minden előkészítése…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "Ú_jraindítás"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Vissza"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Előkészítés"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Beállítási napló"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Minden kész!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Valami hiba történt"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Napi"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Frissítés előtt"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Visszaállítás előtt"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Újratelepítés előtt"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Kézi"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Még nincsenek pillanatképek"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Készítsen egyet, mielőtt nagy változtatásokat végez a rendszeren."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Visszaállítás…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Pillanatkép törlése"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} szabad, összesen {size}. A rendszer, a saját mappák és a pillanatképek osztoznak ezen a helyen; a pillanatképek csak a létrehozásuk óta megváltozott adatoknak foglalnak helyet."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_OK"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Pillanatkép készítése"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Menti a rendszer jelenlegi állapotát. A saját mappában lévő személyes fájlok nem kerülnek bele."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Leírás, például „Illesztőprogramok telepítése előtt”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Létrehozás"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Kézi pillanatkép"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Törli a pillanatképet?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "A(z) „{description}” ({date}) véglegesen törlődik."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Törlés"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Visszaállítja ezt a pillanatképet?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Újraindítás után a rendszer visszatér ehhez: „{description}” ({date}). Személyes fájljai nem változnak.\n"
+"\n"
+"A jelenlegi rendszer előbb pillanatképként mentődik, így ez visszavonható."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Visszaállítás"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Újraindítás a visszaállítás befejezéséhez"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Újraindítás _később"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Újraindítás _most"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Pillanatképek"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Visszaállítási pontok"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "A pillanatképek az operációs rendszer állapotát mentik. Egy pillanatkép visszaállítása abba a pillanatba viszi vissza a rendszert, ami segít egy sikertelen frissítés vagy beállításmódosítás után. A személyes fájljaihoz sosem nyúl."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Automatikus pillanatképek"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Napi pillanatképek"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Naponta egyszer, amíg a számítógép be van kapcsolva"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Megtartott napi pillanatképek"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Szoftverfrissítések előtt"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Automatikusan készülnek csomagok telepítésekor, frissítésekor vagy eltávolításakor"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Megtartott frissítési pillanatképek"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Tárhely"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Lemezterület"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Ha a MAN nem indul el"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Válassza a „Restore a MAN snapshot” lehetőséget az indítómenüben, hogy visszakapjon egy működő rendszert."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "A pillanatképek nem érhetők el"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "A pillanatképek a MAN telepítő Btrfs-elrendezésével telepített MAN-on működnek. Ez a rendszer (például egy élő munkamenet) nem ezt használja."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Visszaállítás vár: indítsa újra a számítógépet a befejezéshez"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Újraindítás most"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Várjon, amíg a jelenlegi művelet befejeződik."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Keresés"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Másolás a vágólapra"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Egyezményes világidő"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Angol (USA)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "A frissítés ellenőrzése"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Annak ellenőrzése, hogy a frissítés eredeti és teljes…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "MAN frissítés"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Ez a frissítés nem telepíthető"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "A frissítés nem olvasható be."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Frissítés innen: {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} telepítve"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Verzió"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Kiadva"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Letöltési méret"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Szükséges hely"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Hitelesség"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Ellenőrizve, aláíró: „{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Újdonságok"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Folytatás"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Ez a frissítés nem újabb a telepített {name} {version} verziónál."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Frissítés"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Olvassa el a frissítés licencfeltételeit."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Elfogadom a licencfeltételeket"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Hová települjön a frissítés?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "A rendszer lecserélődik; a saját mappájában lévő fájlokhoz nem nyúl."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Válasszon telepítést."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "jelenleg fut"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} ezen a számítógépen"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} ezen: {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Nem található MAN telepítés"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "A frissítéseket egy futó, telepített MAN rendszerből lehet telepíteni, nem az élő munkamenetből."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Telepítés helye"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Összegzés"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Megmarad"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Az Ön fájljai"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Minden a saját mappájában"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Fiókok és jelszavak"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Felhasználók, csoportok, a számítógép neve"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Kapcsolatok és beállítások"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, időzóna, billentyűzet, megjelenés és pillanatképek"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak alkalmazások"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Valamint minden a /usr/local és /opt könyvtárakban"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Lecserélődik"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Az apttal telepített szoftvereket és a rendszerfájlok egyéb változásait az új rendszer váltja fel."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Az operációs rendszer"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Felváltja: {name} {version}. A jelenlegi rendszer pillanatképből visszaállítható."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "A számítógép újraindul a frissítés telepítéséhez"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Az előkészítés után a MAN újraindul, néhány másodperc alatt telepíti a frissítést, majd ismét újraindul."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "Frissítés _telepítése"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Előbb pillanatképet készít?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "A pillanatkép menti a jelenlegi rendszert, így visszatérhet hozzá, ha a frissítés után valami nem működik. Ajánlott."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Ne készítsen"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Pillanatkép készítése"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "{name} {version} előkészítése"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Újraindítás a telepítéshez"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "A számítógép kétszer indul újra. A fájljai biztonságban vannak."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Automatikus újraindítás {r} másodperc múlva"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Automatikus újraindítás 30 másodperc múlva"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "A frissítés a következő újraindításkor települ."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Kész"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "A frissítés nem készíthető elő"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Semmi sem változott a rendszerén."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "Ú_jra"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Frissítési napló"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Sikertelen"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "A rendszere frissült"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"A MAN frissült a(z) {version} verzióra.\n"
+"Korábban: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Kész"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "MAN frissítés megnyitása"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "MAN frissítések"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "A telepítési terv ellenőrzése"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "A lemez előkészítése"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "A MAN másolása a lemezre"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Az új rendszer beállítása"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "A rendszerbetöltő telepítése"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Az első pillanatkép készítése"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Befejezés"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Régi partíció-aláírások eltávolítása"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Partíciók létrehozása"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Az EFI rendszerpartíció formázása"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "A rendszerpartíció titkosítása"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "A rendszerindító partíció formázása"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "A Btrfs fájlrendszer létrehozása"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Régi fájlrendszer-aláírások eltávolítása"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "A titkosított telepítés feloldása"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "A jelenlegi rendszer mentése pillanatképként"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Az előző rendszer eltávolítása"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "A fájlrendszertábla írása"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "A számítógép nevének és azonosítójának beállítása"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Az élő munkamenet fiókjainak eltávolítása"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Az Ön fiókjának létrehozása"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "A MAN Setup előkészítése az első indításra"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Az időzóna és a billentyűzet beállítása"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "A telepítő eltávolítása az új rendszerből"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "A rendszerindító lemezkép (initramfs) összeállítása"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "A GRUB beállítása"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "A GRUB telepítése az EFI rendszerpartícióra"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "A tartalék rendszerbetöltő telepítése"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Az indítómenü írása"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "A lemez kész"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Pillanatkép készítése az új rendszerről"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "A pillanatkép felvétele az indítómenübe"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Leválasztás"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "A telepítő segédjének rootként kell futnia."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Ez a számítógép nem UEFI módban indult. A MAN-hoz UEFI szükséges."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "A felhasználónév érvénytelen."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Jelszó megadása kötelező."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "A számítógép neve érvénytelen."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Ismeretlen nyelv."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "A titkosítási jelmondatnak legalább 8 karakterből kell állnia."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "A lemez megváltozott, miután megerősítette a telepítést. Semmi sem módosult; tekintse át, és erősítse meg újra."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Válasszon rendszerpartíciót."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "A megerősített lemez nem tartalmazza a kiválasztott rendszerpartíciót."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "A rendszerindító partíciónak el kell különülnie az EFI és a rendszerpartíciótól."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "A rendszerindító partíciónak legalább 512 MB-osnak kell lennie."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Nincs telepítés kiválasztva."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "A megerősített lemez nem tartalmazza a kiválasztott telepítést."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "A titkosított telepítésnek nincs MAN_BOOT partíciója."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "A /boot könyvtárban nem található kernel a hozzá tartozó modulokkal."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "A nyelvet a rendszersegédnek kell módosítania."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "A beállításai alkalmazása"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "A lemeztitkosítás előkészítése"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Befejezés"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "A MAN Setupot a rendszersegédnek kell befejeznie."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "A MAN Setup már lefutott ezen a számítógépen."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Ismeretlen kiemelőszín."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "A választott háttérkép nem érhető el."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Ez a rendszer nem titkosítható."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Hiányzik a beállítási kulcs, ezért a titkosítás nem folytatódhat a háttérben."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "A rendszer nem Btrfs-re van telepítve, így a pillanatképek nem érhetők el."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Egy pillanatkép-visszaállítás újraindításra vár. Előbb indítsa újra a számítógépet a befejezéshez."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Érvénytelen pillanatkép-azonosító."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "A frissítés ellenőrzése"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Pillanatkép készítése"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "A frissítési terület előkészítése"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Az új rendszer kicsomagolása"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "A fiókjai és beállításai áthelyezése"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Az újraindítás előkészítése"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Kicsomagolva"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Fiókok"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "A csak a telepítőhöz tartozó szoftverek eltávolítása"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "A frissítés rendszerindító lemezképének összeállítása"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Az egyszeri indítási bejegyzés hozzáadása"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "A frissítés eredeti"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Pillanatkép elkészült"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Kihagyva"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "A frissítési terület kész"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Az új rendszer előkészítése"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "A frissítési fájl sérült (az ellenőrzőösszeg nem egyezik). Töltse le újra."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "A frissítési fájl nem olvasható be teljesen."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "A frissítés nem tartalmaz kernelt."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "A frissítéseket a rendszersegédnek kell telepítenie."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "A kiválasztott telepítés nem található."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Csak a futó MAN telepítés frissíthető."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Ez nem MAN frissítési fájl (nincs manifest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "A frissítés nincs aláírva, ezért nem megbízható."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "A frissítés aláírása sérült."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "A frissítést nem a MAN írta alá. Lehet, hogy módosították, vagy nem megbízható forrásból származik."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "A frissítés manifestje érvénytelen."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "A jelmondat helytelen, vagy a titkosított partíció nem nyitható meg."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Kék"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Kékeszöld"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Zöld"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Sárga"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Narancs"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Piros"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Rózsaszín"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Lila"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Palaszürke"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Rendszertelepítő"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "A MAN telepítése erre a számítógépre"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Rendszer-visszaállítás"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "A rendszer pillanatképeinek készítése és visszaállítása"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Rendszerfrissítés-telepítő"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "MAN rendszerfrissítési fájl telepítése"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Felajánlja a MAN telepítését az élő munkamenet indulásakor"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "MAN frissítési értesítés"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Bejelentkezés után egyszer jelzi, hogy a MAN frissült"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Állítsa be új MAN számítógépét"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "A MAN első beállítása"

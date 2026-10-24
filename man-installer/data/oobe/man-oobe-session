@@ -1,0 +1,5 @@
+#!/bin/sh
+# MAN Setup session: a minimal mutter compositor running only MAN Setup.
+export XDG_CURRENT_DESKTOP=GNOME
+export XDG_SESSION_DESKTOP=man-oobe
+exec mutter --wayland --display-server --no-x11 -- /usr/bin/man-oobe

@@ -1,0 +1,24 @@
+#include <winuser.h>
+1 ICON "duhach.ico"
+1 RT_MANIFEST "duhach.manifest"
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName", "MAN"
+      VALUE "FileDescription", "DUHACH! - install MAN from Windows"
+      VALUE "FileVersion", "1.0.0"
+      VALUE "ProductName", "DUHACH!"
+      VALUE "ProductVersion", "1.0.0"
+      VALUE "OriginalFilename", "DUHACH!.exe"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

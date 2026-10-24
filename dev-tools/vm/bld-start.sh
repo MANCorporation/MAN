@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /tmp/claude-1000/-home-kristihack-Documents-MANRUST/6669f544-3acf-4c2d-bf09-25e9e377451d/scratchpad
+EXTRAQ="-nic user,model=virtio-net-pci -virtfs local,path=/home/kristihack/Documents/MANRUST/src,mount_tag=src,security_model=none" DISKS="/home/kristihack/Documents/MANRUST/lfs/.vmtest/bsys.qcow2:qcow2 /home/kristihack/Documents/MANRUST/lfs/.vmtest/bwork.qcow2:qcow2" EXTRA="systemd.debug_shell=ttyS1 systemd.unit=multi-user.target" nohup setsid ./uefi.sh BLD /tmp/claude-1000/-home-kristihack-Documents-MANRUST/6669f544-3acf-4c2d-bf09-25e9e377451d/scratchpad/b-vars.fd /tmp/claude-1000/-home-kristihack-Documents-MANRUST/6669f544-3acf-4c2d-bf09-25e9e377451d/scratchpad/repo2/kernel/vmlinuz-7.3.0-rc7 >BLD.qemuerr 2>&1 &
+for i in $(seq 40); do sleep 3; python3 -I ser.py BLD.dbg "echo READY-\$((6*7))" 2 2>/dev/null | grep -q READY-42 && break; done

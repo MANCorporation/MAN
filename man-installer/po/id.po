@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Pembantu sistem tidak dapat dijalankan."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Tidak dapat berkomunikasi dengan pembantu sistem."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Koneksi dengan pembantu sistem terputus."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Otorisasi dibatalkan."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Tindakan ini memerlukan hak administrator."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Pembantu sistem berhenti secara tak terduga."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Tidak ada partisi sistem EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Hanya {free} yang kosong, MAN memerlukan {need}. Kosongkan ruang dengan DUHACH! di Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Tidak ada ruang kosong. Jalankan DUHACH! di Windows untuk memberi ruang bagi MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN berjalan dari disk ini"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Sedang dipakai: ada partisi yang terkait"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Terlalu kecil, MAN memerlukan {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Pasang MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN sedang dipasang. Harap tunggu sampai selesai."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Bahasa"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Mulai ulang dalam bahasa ini"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Sesi live akan dimulai ulang dalam bahasa yang dipilih, dan MAN dipasang dalam bahasa itu."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Selamat datang di MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Sistem GNOME yang cepat, terbuka, dan sepenuhnya dapat disesuaikan.\n"
+"Pasang di komputer ini, atau terus jelajahi sesi live."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Pasang MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Terus coba MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Mencari disk…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Selamat datang"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Komputer ini dimulai dalam mode BIOS lama. MAN hanya dapat dipasang di komputer UEFI: mulai ulang dan pilih opsi boot UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Pembantu sistem tidak mengembalikan informasi disk."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Berikutnya"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Jenis pemasangan"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Hapus disk dan pasang MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Semua isi disk yang dipilih akan dihapus, termasuk Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Disarankan. Semua isi disk yang dipilih akan dihapus."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Pasang berdampingan dengan Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Disarankan. MAN memakai ruang kosong di samping Windows; Windows dan berkasnya tetap ada. Pilih sistem setiap kali mulai."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Pasang ulang MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Mengganti sistem tetapi mempertahankan berkas pribadi di /home. Sistem saat ini disimpan sebagai snapshot."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Partisi khusus"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Untuk ahli: pilih partisi sendiri, atau buat dengan Disk."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Disk"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Pilih disk yang akan dihapus. Disk yang tidak dapat dipakai ditampilkan beserta alasannya."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Tidak ada disk yang ditemukan"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Ruang kosong di samping Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Partisi Windows tidak disentuh. MAN berbagi partisi sistem EFI dan menambahkan Windows ke menu boot-nya."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} kosong"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "tidak ada ruang kosong"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Pemasangan yang akan diganti"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "tidak ada folder rumah"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "folder rumah: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "snapshot: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN di {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Frasa sandi untuk {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Buka kunci"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Pemasangan tidak dapat diperiksa."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Partisi"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Partisi sistem diformat dengan Btrfs dan berisi @system, @home, dan @snapshots. Partisi pada disk tempat MAN berjalan tidak dicantumkan."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Buka Disk untuk membuat atau mengubah ukuran partisi"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Segarkan daftar partisi"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Pilih partisi"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Partisi sistem EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Format partisi sistem EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Biarkan mati untuk mempertahankan boot loader sistem lain"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Partisi sistem (diformat sebagai Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Partisi boot (diperlukan untuk enkripsi)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Daftar partisi disegarkan"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Keamanan"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Enkripsi sistem"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Melindungi data Anda jika komputer hilang atau dicuri. Frasa sandi diminta setiap kali mulai."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Frasa sandi"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Konfirmasi frasa sandi"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Simpan frasa sandi ini dengan aman"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Jika hilang, tidak ada yang dapat memulihkan data. Kernel dan berkas boot tetap berada di partisi boot kecil yang tidak dienkripsi."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Frasa sandi minimal 8 karakter."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Frasa sandi tidak cocok."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Pilih disk."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Pilih disk yang berisi Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Pilih pemasangan yang akan diganti."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Buka kunci pemasangan terenkripsi terlebih dahulu."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Partisi ini tidak berisi sistem MAN."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Pilih partisi sistem EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Pilih partisi sistem."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Partisi EFI dan partisi sistem harus berbeda."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Enkripsi memerlukan partisi boot terpisah."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Partisi sistem minimal {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Partisi EFI tidak berformat FAT; aktifkan pemformatan."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Partisi sistem sedang terkait; lepaskan dulu di Disk."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Di mana MAN akan dipasang?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Waktu dan papan ketik"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Zona waktu"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Tata letak papan ketik"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Uji papan ketik Anda"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Ketik di sini untuk memastikan tombol menghasilkan karakter yang benar."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Ketik di sini"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Zona waktu dan papan ketik"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Belum ada disk yang dipilih"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Belum ada partisi sistem yang dipilih"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Partisi sistem menghilang"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Belum ada pemasangan yang dipilih"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Disk menghilang"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Tinjau"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Tujuan"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Hapus disk dan pasang"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Partisi khusus"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Pasang ulang, pertahankan /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Berdampingan dengan Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (akan diformat)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (dipertahankan)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Partisi sistem"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (akan diformat)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Partisi boot"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Pemasangan"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Ruang untuk MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} ruang kosong (partisi boot dan partisi sistem akan dibuat)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Tidak berubah. Muncul di menu boot MAN; partisi sistem EFI dipakai bersama."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Enkripsi"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Aktif (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Mati"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Sistem berkas"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system untuk MAN, @home untuk berkas Anda, @snapshots untuk titik pemulihan. Semuanya berbagi ruang kosong."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Sistem"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Akun Anda"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Dibuat di MAN Setup saat komputer pertama kali dimulai, bersama nama komputer, tampilan, dan pengaturan privasi."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Papan ketik"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Semua data di {model} ({path}) akan dihapus."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Hapus dan pasang"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Partisi yang dipilih akan diformat. Partisi lain tidak berubah."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Format dan pasang"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Sistem saat ini diganti. Berkas Anda di /home dipertahankan, dan sistem lama disimpan sebagai snapshot."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "Pasang _ulang"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN dipasang di ruang kosong. Windows dan berkasnya tidak berubah."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Pasang"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Siap dipasang"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Hapus {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Semua berkas dan partisi di {path} ({size}) akan dihapus permanen. Ini tidak dapat dibatalkan."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Hapus dan pasang"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Format partisi yang dipilih?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Semua data di partisi yang dipilih akan dihapus permanen. Partisi lain tidak berubah."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Format dan pasang"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Pasang MAN berdampingan dengan Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN dipasang di {free} ruang kosong pada {model} ({path}). Windows dan berkasnya tidak berubah."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Pasang"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Pasang ulang MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Sistem terpasang akan diganti dengan salinan baru. Berkas pribadi di /home dipertahankan dan sistem lama tetap tersedia sebagai snapshot."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Pasang ulang"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Batal"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Memasang MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Memulai…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Rincian"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Memasang"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Langkah {index} dari {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Log"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN telah terpasang"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Mulai ulang komputer untuk mulai memakai MAN. Menu di setiap awal memungkinkan Anda memilih MAN atau Windows; partisi pemasang sementara dihapus oleh MAN saat pertama kali dimulai."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Mulai ulang komputer untuk mulai memakai MAN. Anda dapat melepas media pemasangan; jika tetap terpasang, MAN tetap dimulai dari disk baru."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Mulai ulang sekarang"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Selesai"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Pemasangan gagal"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Tidak ada disk lain yang berubah, dan pemasang telah melepaskan disk tujuan. Anda dapat meninjau rencana dan mencoba lagi."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Tinjau dan coba lagi"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Tampilkan rincian"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Log pemasangan"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Cari bahasa"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Cari negara"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Disk sistem tidak ditemukan."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Enkripsi memerlukan tata letak Btrfs yang dibuat oleh pemasang MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Pemasangan ini tidak memiliki partisi boot terpisah yang diperlukan enkripsi. Pasang ulang MAN dengan “Hapus disk” untuk memakai enkripsi."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Di mana Anda berada?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Negara atau wilayah Anda menentukan format tanggal, waktu, dan angka."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Negara"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, versi 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Kernel Linux dan banyak alat sistem"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, versi 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Banyak program GNU dan GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, versi 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib, dan banyak pustaka"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, versi 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Pustaka"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Program dan pustaka dari Mozilla dan lainnya"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Lisensi Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Pustaka dan alat"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Perjanjian lisensi"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Baca dan setujui ketentuan penyediaan MAN."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Lisensi"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Teks lisensi tidak tersedia ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Saya telah membaca dan menyetujui ketentuan lisensi"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Kabel"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Tidak terhubung"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Hubungkan ke internet"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Dengan koneksi, MAN dapat mengatur waktu dan menjaga perangkat lunak tetap terbaru. Anda juga bisa melakukannya nanti."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Memeriksa koneksi…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Jaringan Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Cari lagi"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Lewati"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Anda dapat terhubung nanti di Pengaturan."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Terhubung"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Tidak terhubung"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Tidak ada jaringan yang ditemukan"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Terhubung ke “{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Tidak dapat terhubung ke “{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Hubungkan ke “{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Masukkan kata sandi jaringan."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Hubungkan"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Buat akun Anda"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Anda akan menjadi administrator komputer ini, dengan akses root penuh melalui sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Nama lengkap"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Nama pengguna"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Kata sandi"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Konfirmasi kata sandi"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Masuk otomatis"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Lewati layar masuk saat komputer dimulai"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Folder rumah yang ada"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Pakai nama pengguna yang sama untuk terus memakai folder dari pemasangan sebelumnya."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Pakai"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Lanjutan"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Nama komputer"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Atur kata sandi root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Memungkinkan masuk langsung sebagai root. Tanpanya, gunakan sudo dengan kata sandi Anda sendiri."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Kata sandi root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Konfirmasi kata sandi root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Masukkan nama Anda."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Pilih nama pengguna."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Nama pengguna ini sudah dipakai sistem."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Nama pengguna ini dicadangkan oleh sistem."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Nama pengguna memakai huruf kecil, angka, - dan _, serta diawali huruf."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Pilih kata sandi."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Kata sandi tidak cocok."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Nama komputer boleh berisi huruf, angka, dan tanda hubung."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Masukkan kata sandi root dua kali."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Tips: kata sandi 8 karakter atau lebih jauh lebih aman."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Akun"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Gelap"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Terang"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Jadikan milik Anda"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Pilih gaya, warna aksen, dan wallpaper. Setiap perubahan langsung terlihat."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Gaya"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Warna aksen"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Wallpaper"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Sesuaikan"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Privasi"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Pilih fitur mana yang boleh memakai informasi tentang Anda. Anda dapat mengubahnya kapan saja di Pengaturan."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Layanan lokasi"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Memungkinkan aplikasi seperti Peta dan Cuaca menemukan perkiraan lokasi Anda melalui jaringan Wi-Fi terdekat."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Zona waktu otomatis"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Memakai lokasi Anda agar zona waktu tetap benar saat bepergian."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Selesaikan penyiapan"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Disk Anda terenkripsi"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Data Anda terlindungi. Frasa sandi diminta setiap kali komputer dimulai."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Enkripsi disk"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Enkripsi melindungi data Anda jika komputer hilang atau dicuri."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Tidak tersedia pada pemasangan ini"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Enkripsi melindungi berkas Anda jika komputer hilang atau dicuri. Tanpa frasa sandi, tidak ada yang dapat membaca disk."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Enkripsi disk"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Frasa sandi diminta setiap kali komputer dimulai."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Enkripsi dimulai saat mulai ulang berikutnya"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Disk lalu dienkripsi di latar belakang sementara Anda memakai komputer. Jika frasa sandi hilang, tidak ada yang dapat memulihkan data."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Menyiapkan MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Menyiapkan semuanya…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Mulai ulang"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Kembali"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Menyiapkan"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Log penyiapan"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Semua selesai!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Terjadi kesalahan"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Harian"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Sebelum pembaruan"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Sebelum pemulihan"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Sebelum pemasangan ulang"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Manual"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Belum ada snapshot"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Buat satu sebelum melakukan perubahan besar pada sistem."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Pulihkan…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Hapus snapshot"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{free} kosong dari {size}. Sistem, folder rumah, dan snapshot berbagi ruang ini; snapshot hanya memakai ruang untuk hal yang berubah sejak dibuat."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_OK"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Buat snapshot"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Menyimpan keadaan sistem saat ini. Berkas pribadi di folder rumah tidak disertakan."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Deskripsi, misalnya “Sebelum memasang driver”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Buat"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Snapshot manual"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Hapus snapshot?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "“{description}” dari {date} akan dihapus permanen."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Hapus"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Pulihkan snapshot ini?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Sistem akan kembali ke “{description}” dari {date} setelah dimulai ulang. Berkas pribadi Anda tidak berubah.\n"
+"\n"
+"Sistem saat ini disimpan dulu sebagai snapshot, jadi ini dapat dibatalkan."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Pulihkan"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Mulai ulang untuk menyelesaikan pemulihan"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Mulai ulang _nanti"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Mulai ulang _sekarang"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Snapshot"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Titik pemulihan"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Snapshot menyimpan keadaan sistem operasi. Memulihkannya mengembalikan sistem ke saat itu, yang berguna setelah pembaruan atau perubahan pengaturan yang gagal. Berkas pribadi Anda tidak pernah disentuh."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Snapshot otomatis"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Snapshot harian"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Sekali sehari saat komputer menyala"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Snapshot harian yang disimpan"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Sebelum pembaruan perangkat lunak"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Diambil otomatis saat paket dipasang, ditingkatkan, atau dihapus"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Snapshot pembaruan yang disimpan"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Penyimpanan"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Ruang disk"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Jika MAN tidak bisa dimulai"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Pilih “Restore a MAN snapshot” di menu boot untuk mendapatkan kembali sistem yang berfungsi."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Snapshot tidak tersedia"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Snapshot berfungsi pada MAN yang dipasang dengan tata letak Btrfs dari pemasang MAN. Sistem ini (misalnya sesi live) tidak memakainya."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Pemulihan menunggu: mulai ulang komputer untuk menyelesaikannya"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Mulai ulang sekarang"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Harap tunggu sampai operasi saat ini selesai."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Cari"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Salin ke papan klip"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Waktu Universal Terkoordinasi"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Inggris (AS)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Memeriksa pembaruan"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Memastikan pembaruan asli dan lengkap…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Pembaruan MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Pembaruan ini tidak dapat dipasang"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Pembaruan tidak dapat dibaca."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Pembaruan dari {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} terpasang"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Versi"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Dirilis"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Ukuran unduhan"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Ruang yang diperlukan"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Keaslian"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Terverifikasi, ditandatangani oleh “{signer}”"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Yang baru"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Lanjutkan"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Pembaruan ini tidak lebih baru dari {name} {version} yang terpasang."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Pembaruan"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Harap baca ketentuan lisensi pembaruan ini."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Saya menyetujui ketentuan lisensi"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Di mana pembaruan akan dipasang?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Sistem diganti; berkas di folder rumah Anda tidak disentuh."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Pilih pemasangan."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "sedang berjalan"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} di komputer ini"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} di {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Tidak ada pemasangan MAN yang ditemukan"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Pembaruan dipasang dari sistem MAN yang terpasang dan sedang berjalan, bukan dari sesi live."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Lokasi pemasangan"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Ringkasan"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Dipertahankan"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Berkas Anda"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Semua isi folder rumah Anda"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Akun dan kata sandi"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Pengguna, grup, nama komputer"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Koneksi dan pengaturan"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, zona waktu, papan ketik, tampilan, dan snapshot"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Aplikasi Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Ditambah semua isi /usr/local dan /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Diganti"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Perangkat lunak yang dipasang dengan apt dan perubahan lain pada berkas sistem diganti oleh sistem baru."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Sistem operasi"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Diganti oleh {name} {version}. Sistem saat ini dapat dipulihkan dari snapshot."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Komputer dimulai ulang untuk memasang pembaruan"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Setelah persiapan, MAN dimulai ulang, memasang pembaruan dalam beberapa detik, lalu dimulai ulang lagi."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Pasang pembaruan"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Buat snapshot dulu?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Snapshot menyimpan sistem saat ini, sehingga Anda dapat kembali jika ada yang tidak berfungsi setelah pembaruan. Ini disarankan."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Jangan buat"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Buat snapshot"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Menyiapkan {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Mulai ulang untuk memasang"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Komputer akan dimulai ulang dua kali. Berkas Anda aman."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Mulai ulang otomatis dalam {r} detik"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Mulai ulang otomatis dalam 30 detik"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Pembaruan dipasang saat Anda mulai ulang berikutnya."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Siap"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Pembaruan tidak dapat disiapkan"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Tidak ada yang berubah pada sistem Anda."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Coba lagi"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Log pembaruan"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Gagal"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Sistem Anda telah diperbarui"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN telah diperbarui ke versi {version}.\n"
+"Sebelumnya: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Selesai"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Buka pembaruan MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Pembaruan MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Memeriksa rencana pemasangan"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Menyiapkan disk"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Menyalin MAN ke disk"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Mengonfigurasi sistem baru"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Memasang boot loader"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Membuat snapshot pertama"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Menyelesaikan"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Menghapus tanda tangan partisi lama"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Membuat partisi"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Memformat partisi sistem EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Mengenkripsi partisi sistem"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Memformat partisi boot"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Membuat sistem berkas Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Menghapus tanda tangan sistem berkas lama"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Membuka kunci pemasangan terenkripsi"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Menyimpan sistem saat ini sebagai snapshot"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Menghapus sistem sebelumnya"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Menulis tabel sistem berkas"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Mengatur nama dan identitas komputer"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Menghapus akun sesi live"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Membuat akun Anda"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Menyiapkan MAN Setup untuk awal pertama"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Mengatur zona waktu dan papan ketik"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Menghapus pemasang dari sistem baru"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Membuat citra boot (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Mengonfigurasi GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Memasang GRUB ke partisi sistem EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Memasang boot loader cadangan"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Menulis menu boot"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Disk siap"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Membuat snapshot sistem baru"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Menambahkan snapshot ke menu boot"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Melepas"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Pembantu pemasang harus berjalan sebagai root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Komputer ini tidak dimulai dalam mode UEFI. MAN memerlukan UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Nama pengguna tidak valid."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Kata sandi diperlukan."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Nama komputer tidak valid."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Bahasa tidak dikenal."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Frasa sandi enkripsi minimal 8 karakter."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Disk berubah setelah Anda mengonfirmasi pemasangan. Tidak ada yang diubah; harap tinjau dan konfirmasi lagi."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Pilih partisi sistem."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Disk yang dikonfirmasi tidak berisi partisi sistem yang dipilih."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Partisi boot harus terpisah dari partisi EFI dan partisi sistem."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Partisi boot minimal 512 MB."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Belum ada pemasangan yang dipilih."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Disk yang dikonfirmasi tidak berisi pemasangan yang dipilih."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Pemasangan terenkripsi tidak memiliki partisi MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "Tidak ditemukan kernel dengan modul yang cocok di /boot."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Bahasa harus diubah oleh pembantu sistem."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Menerapkan pengaturan Anda"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Menyiapkan enkripsi disk"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Menyelesaikan"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup harus diselesaikan oleh pembantu sistem."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup sudah selesai di komputer ini."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Warna aksen tidak dikenal."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Wallpaper yang dipilih tidak tersedia."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Sistem ini tidak dapat dienkripsi."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Kunci penyiapan hilang, sehingga enkripsi tidak dapat dilanjutkan di latar belakang."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Sistem tidak dipasang di Btrfs, sehingga snapshot tidak tersedia."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Pemulihan snapshot menunggu mulai ulang. Mulai ulang komputer dulu untuk menyelesaikannya."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "ID snapshot tidak valid."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Memeriksa pembaruan"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Membuat snapshot"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Menyiapkan area pembaruan"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Membongkar sistem baru"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Memindahkan akun dan pengaturan Anda"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Menyiapkan mulai ulang"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Dibongkar"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Akun"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Menghapus perangkat lunak khusus pemasang"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Membuat citra boot pembaruan"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Menambahkan entri boot sekali pakai"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Pembaruan asli"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Snapshot dibuat"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Dilewati"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Area pembaruan siap"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Menyiapkan sistem baru"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Berkas pembaruan rusak (checksum tidak cocok). Unduh ulang."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Berkas pembaruan tidak dapat dibaca sepenuhnya."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Pembaruan tidak berisi kernel."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Pembaruan harus dipasang oleh pembantu sistem."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Pemasangan yang dipilih tidak ditemukan."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Hanya pemasangan MAN yang sedang berjalan yang dapat diperbarui."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Ini bukan berkas pembaruan MAN (tidak ada manifest)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Pembaruan tidak ditandatangani, sehingga tidak dapat dipercaya."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Tanda tangan pembaruan rusak."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Pembaruan tidak ditandatangani oleh MAN. Mungkin telah diubah atau berasal dari sumber yang tidak tepercaya."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Manifest pembaruan tidak valid."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Frasa sandi salah, atau partisi terenkripsi tidak dapat dibuka."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Biru"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Hijau kebiruan"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Hijau"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Kuning"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Jingga"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Merah"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Merah muda"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Ungu"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Abu-abu batu"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Pemasang sistem"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Pasang MAN di komputer ini"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Pemulihan sistem"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Buat dan pulihkan snapshot sistem"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Pemasang pembaruan sistem"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Pasang berkas pembaruan sistem MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Menawarkan pemasangan MAN saat sesi live dimulai"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Pemberitahuan pembaruan MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Memberi tahu sekali setelah masuk bahwa MAN telah diperbarui"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Siapkan komputer MAN baru Anda"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Penyiapan awal MAN"

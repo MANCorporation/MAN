@@ -1,0 +1,8 @@
+[Unit]
+Description=Finish MAN snapshot restore once the system has started successfully
+
+[Timer]
+OnBootSec=5min
+
+[Install]
+WantedBy=timers.target

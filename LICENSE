@@ -1,0 +1,57 @@
+MAN — Proprietary License
+
+Copyright (c) 2026 MAN Corporation. All rights reserved.
+
+1. What this license covers
+
+This license covers the original work of MAN Corporation in this repository
+("the MAN Software"): the source code, scripts, build and packaging files,
+artwork (MAN logos and icons), translations and documentation, including
+MAN Installer, MAN Setup, Snapshots, MAN Update, man-mkupd (man-installer/)
+and DUHACH! (duhach/).
+
+It does NOT cover third-party material. Third-party software keeps its own
+license, and nothing in this license limits the rights that its license
+gives you. See section 4 and THIRD-PARTY-NOTICES.md.
+
+2. Rights reserved
+
+The MAN Software is not open source. No license or other right is granted to
+you, by implication or otherwise, except as written here. Without prior
+written permission from MAN Corporation you may not copy, modify, merge,
+publish, distribute, sublicense, sell or create derivative works of the MAN
+Software, in whole or in part.
+
+You may:
+  - view the source code and, where this repository is hosted on GitHub,
+    fork it on GitHub, as allowed by the GitHub Terms of Service;
+  - install and use the MAN Software as part of a MAN system or a DUHACH!
+    package obtained from MAN Corporation.
+
+3. No warranty
+
+THE MAN SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL MAN
+CORPORATION BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE MAN SOFTWARE OR ITS USE.
+
+4. Exceptions: material under other licenses
+
+  - src/ — changes to GNOME Settings (gnome-control-center) and GNOME Web
+    (epiphany, shipped as "PCD"): each patch (*.patch, debian/patches/man-*)
+    is licensed under the same license as the program it changes
+    (gnome-control-center: GNU GPL version 2 or later; epiphany: GNU GPL
+    version 3 or later). Upstream source and Debian packaging in src/ keep
+    their original licenses.
+  - Rust libraries compiled into MAN's programs: see
+    man-installer/THIRD-PARTY-RUST.txt and duhach/THIRD-PARTY-RUST.txt.
+  - The MAN operating system (Linux kernel, GNU, GNOME, Debian packages,
+    GRUB, BusyBox, firmware, fonts…) and the libraries bundled with DUHACH!:
+    see THIRD-PARTY-NOTICES.md.
+
+"MAN", "DUHACH!" and the MAN logo are names and marks of MAN Corporation.
+Linux is a registered trademark of Linus Torvalds. GNOME, Debian and other
+names are trademarks of their respective owners; they are used here only to
+describe the software.

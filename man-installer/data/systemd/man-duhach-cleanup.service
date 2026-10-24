@@ -1,0 +1,13 @@
+[Unit]
+Description=Remove the DUHACH! installer partition after installing MAN from Windows
+ConditionPathExists=/etc/man/duhach-installer
+After=local-fs.target sys-firmware-efi-efivars.mount
+Wants=sys-firmware-efi-efivars.mount
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man/man-duhach-cleanup
+
+[Install]
+WantedBy=multi-user.target

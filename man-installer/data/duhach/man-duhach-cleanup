@@ -1,0 +1,67 @@
+#!/bin/sh
+# MAN was installed from Windows with DUHACH!: remove the temporary installer
+# partition (FAT, label MAN_LIVE) and its firmware boot entry, then give the
+# space to MAN's system partition when it lies right before it.
+# Runs once (man-duhach-cleanup.service, while /etc/man/duhach-installer exists).
+set -u
+marker=/etc/man/duhach-installer
+log() { echo "man-duhach-cleanup: $*"; }
+done_() { rm -f "$marker"; exit 0; }
+
+puuid=$(tr -d ' \n' < "$marker")
+part=$(blkid -t PARTUUID="$puuid" -o device 2>/dev/null | head -n1)
+[ -n "$part" ] || { log "installer partition already gone"; done_; }
+[ "$(blkid -s LABEL -o value "$part")" = MAN_LIVE ] || { log "$part is no longer the MAN installer, keeping it"; done_; }
+if findmnt -rn -S "$part" >/dev/null; then umount "$part" || { log "$part is in use"; exit 1; }; fi
+name=$(basename "$part")
+disk=/dev/$(lsblk -ndo PKNAME "$part")
+num=$(cat "/sys/class/block/$name/partition")
+del_start=$(cat "/sys/class/block/$name/start")
+
+# Firmware boot entries named "MAN Installer" (made by DUHACH!).
+efivars=/sys/firmware/efi/efivars
+[ -d $efivars ] && ! mountpoint -q $efivars && mount -t efivarfs efivarfs $efivars
+if command -v efibootmgr >/dev/null; then
+    efibootmgr 2>/dev/null | sed -n 's/^Boot\([0-9A-Fa-f]\{4\}\)\*\{0,1\} MAN Installer.*/\1/p' | while read -r n; do
+        efibootmgr -q -b "$n" -B && log "removed boot entry Boot$n"
+    done
+fi
+
+# The partition holding the system (below LUKS when encrypted).
+src=$(findmnt -nro SOURCE / | sed 's/\[.*//')
+crypt=
+rootpart=$src
+if [ "$(lsblk -ndo TYPE "$src")" = crypt ]; then
+    crypt=$(basename "$src")
+    rootpart=$(lsblk -nrspo NAME,TYPE "$src" | awk '$2 == "part" { print $1; exit }')
+fi
+rname=$(basename "$rootpart")
+rnum=$(cat "/sys/class/block/$rname/partition")
+rstart=$(cat "/sys/class/block/$rname/start")
+rsize=$(cat "/sys/class/block/$rname/size")
+
+sgdisk -d "$num" "$disk" >/dev/null && partx -d --nr "$num" "$disk" 2>/dev/null
+log "removed the installer partition $part"
+
+if [ "$(lsblk -ndo PKNAME "$rootpart")" = "$(basename "$disk")" ] && [ $((rstart + rsize)) -le "$del_start" ]; then
+    # Grow: recreate the system partition with the same start, type, name and
+    # GUID, ending at the end of the free space that follows it.
+    info=$(sgdisk -i "$rnum" "$disk")
+    type=$(echo "$info" | sed -n 's/^Partition GUID code: \([0-9A-F-]*\).*/\1/p')
+    guid=$(echo "$info" | sed -n 's/^Partition unique GUID: \([0-9A-F-]*\).*/\1/p')
+    pname=$(echo "$info" | sed -n "s/^Partition name: '\(.*\)'/\1/p")
+    end=$(sgdisk -p "$disk" | sed -n 's/.*last usable sector is \([0-9]*\).*/\1/p')
+    next=$(lsblk -nrbo NAME "$disk" | while read -r p; do
+        [ -f "/sys/class/block/$p/start" ] || continue
+        s=$(cat "/sys/class/block/$p/start"); [ "$s" -gt "$rstart" ] && echo "$s"; done | sort -n | head -n1)
+    [ -n "$next" ] && end=$((next - 1))
+    end=$(( (end + 1) / 2048 * 2048 - 1 ))
+    if [ "$end" -gt $((rstart + rsize - 1)) ]; then
+        sgdisk -d "$rnum" -n "$rnum:$rstart:$end" -t "$rnum:$type" -u "$rnum:$guid" -c "$rnum:$pname" "$disk" >/dev/null &&
+            partx -u --nr "$rnum" "$disk" &&
+            { [ -z "$crypt" ] || cryptsetup resize "$crypt"; } &&
+            btrfs filesystem resize max / >/dev/null &&
+            log "MAN's system partition grew to $(lsblk -ndo SIZE "$rootpart")"
+    fi
+fi
+done_

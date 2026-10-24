@@ -1,0 +1,8 @@
+// Live session only (shipped by man-installer, removed on installed systems):
+// the passwordless live user may run the installer backend without a prompt.
+polkit.addRule(function (action, subject) {
+    if (action.id == "com.man.system.manage" && subject.user == "MANInstaller" &&
+        subject.local && subject.active) {
+        return polkit.Result.YES;
+    }
+});

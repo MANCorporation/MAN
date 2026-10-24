@@ -1,0 +1,4 @@
+// Take a MAN system snapshot before dpkg changes packages (see /etc/man/snapshots.conf).
+DPkg::Pre-Invoke {
+  "if [ -x /usr/libexec/man-installer/man-installer-backend ]; then /usr/libexec/man-installer/man-installer-backend snapshot-auto pre-update || true; fi";
+};

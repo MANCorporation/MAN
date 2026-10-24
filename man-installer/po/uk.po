@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Не вдалося запустити системного помічника."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Не вдалося зв'язатися із системним помічником."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Зв'язок із системним помічником втрачено."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Авторизацію скасовано."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Для цієї дії потрібні права адміністратора."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Системний помічник несподівано завершив роботу."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "Немає системного розділу EFI"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Вільно лише {free}, MAN потрібно {need}. Звільніть місце за допомогою DUHACH! у Windows."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Немає вільного місця. Запустіть DUHACH! у Windows, щоб звільнити місце для MAN."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN працює з цього диска"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Використовується: розділ змонтовано"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Замалий, MAN потрібно {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "Встановити MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN встановлюється. Зачекайте на завершення."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Мова"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "_Перезапустити цією мовою"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Живий сеанс перезапуститься вибраною мовою, і MAN буде встановлено нею."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "Ласкаво просимо до MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Швидка, відкрита і повністю налаштовувана система GNOME.\n"
+"Встановіть її на цей комп'ютер або продовжуйте знайомство з живим сеансом."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "_Встановити MAN…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "_Далі пробувати MAN"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Пошук дисків…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Ласкаво просимо"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Цей комп'ютер запущено в режимі legacy BIOS. MAN можна встановити лише на комп'ютери з UEFI: перезапустіть і виберіть варіант завантаження UEFI."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Системний помічник не повернув відомостей про диски."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Далі"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Тип встановлення"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Стерти диск і встановити MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Усе на вибраному диску буде видалено, разом із Windows."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Рекомендовано. Усе на вибраному диску буде видалено."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Встановити поряд із Windows"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Рекомендовано. MAN використає вільне місце поряд із Windows; Windows і його файли залишаться. Систему ви вибираєте під час кожного запуску."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "Перевстановити MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Замінює систему, але зберігає особисті файли в /home. Поточну систему буде збережено як знімок."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Власні розділи"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Для досвідчених: виберіть розділи самостійно або створіть їх у «Дисках»."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Диск"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Виберіть диск для стирання. Непридатні диски показано з причиною."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Диски не знайдено"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Вільне місце поряд із Windows"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Розділи Windows не змінюються. MAN спільно використовує системний розділ EFI і додає Windows до свого меню запуску."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "вільно {size}"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "немає вільного місця"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Встановлення для заміни"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "немає домашніх тек"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "домашні теки: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "знімків: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "MAN на {model}"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "Парольна фраза для {device}"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Розблокувати"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Не вдалося перевірити встановлення."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Розділи"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Системний розділ форматується в Btrfs і містить @system, @home та @snapshots. Розділи диска, з якого працює MAN, не показано."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Відкрити «Диски», щоб створити розділи або змінити їхній розмір"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Оновити список розділів"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Виберіть розділ"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "Системний розділ EFI"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "Форматувати системний розділ EFI"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Залиште вимкненим, щоб зберегти завантажувачі інших систем"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Системний розділ (форматується в Btrfs)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Завантажувальний розділ (потрібен для шифрування)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Список розділів оновлено"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Безпека"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Зашифрувати систему"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Захищає ваші дані в разі втрати чи крадіжки комп'ютера. Парольну фразу запитують під час кожного запуску."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Парольна фраза"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Підтвердження парольної фрази"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Зберігайте цю парольну фразу в надійному місці"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Якщо її втратити, дані ніхто не зможе відновити. Ядро і файли завантаження залишаються на невеликому незашифрованому завантажувальному розділі."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Парольна фраза має містити щонайменше 8 символів."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Парольні фрази не збігаються."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Виберіть диск."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Виберіть диск із Windows."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Виберіть встановлення для заміни."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Спершу розблокуйте зашифроване встановлення."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Цей розділ не містить системи MAN."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "Виберіть системний розділ EFI."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Виберіть системний розділ."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "Розділ EFI і системний розділ мають бути різними."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Для шифрування потрібен окремий завантажувальний розділ."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Системний розділ має бути щонайменше {size}."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "Розділ EFI не відформатовано у FAT; увімкніть форматування."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Системний розділ змонтовано; спершу відмонтуйте його в «Дисках»."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "Куди встановити MAN?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Час і клавіатура"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Часовий пояс"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Розкладка клавіатури"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Перевірте клавіатуру"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Друкуйте тут, щоб перевірити, що клавіші вводять правильні символи."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Друкуйте тут"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Часовий пояс і клавіатура"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Диск не вибрано"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Системний розділ не вибрано"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Системний розділ зник"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Встановлення не вибрано"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Диск зник"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Перевірка"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Призначення"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Стерти диск і встановити"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Власні розділи"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "Перевстановити, зберігши /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Поряд із Windows"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (буде відформатовано)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (зберігається)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Системний розділ"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (буде відформатовано)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Завантажувальний розділ"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Встановлення"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "Місце для MAN"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} вільного місця (створюються завантажувальний і системний розділи)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Без змін. З'явиться в меню запуску MAN; системний розділ EFI спільний."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Шифрування"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Увімкнено (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Вимкнено"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Файлова система"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system для MAN, @home для ваших файлів, @snapshots для точок відновлення. Усі спільно використовують вільне місце."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Система"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Ваш обліковий запис"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Створюється в MAN Setup під час першого запуску комп'ютера разом з назвою комп'ютера, виглядом і налаштуваннями приватності."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Клавіатура"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "Усі дані на {model} ({path}) буде стерто."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Стерти і встановити"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Вибрані розділи буде відформатовано. Інші розділи не зміняться."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Форматувати і встановити"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Поточну систему буде замінено. Ваші файли в /home збережуться, а стару систему буде збережено як знімок."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Перевстановити"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN встановлюється у вільне місце. Windows і його файли не зміняться."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Встановити"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Усе готово до встановлення"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "Стерти {model}?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "Усі файли й розділи на {path} ({size}) буде остаточно видалено. Цю дію неможливо скасувати."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Стерти і встановити"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Відформатувати вибрані розділи?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Усі дані на вибраних розділах буде остаточно видалено. Інші розділи не зміняться."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Форматувати і встановити"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "Встановити MAN поряд із Windows?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN буде встановлено в {free} вільного місця на {model} ({path}). Windows і його файли не зміняться."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Встановити"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "Перевстановити MAN?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Встановлену систему буде замінено новою копією. Особисті файли в /home збережуться, а стара система лишиться доступною як знімок."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Перевстановити"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "Встановлення MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Запуск…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Подробиці"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Встановлення"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "Крок {index} з {n}  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Журнал"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN встановлено"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "Перезапустіть комп'ютер, щоб почати користуватися MAN. Під час кожного запуску меню дозволить вибрати MAN або Windows; тимчасовий розділ інсталятора MAN вилучить під час першого запуску."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "Перезапустіть комп'ютер, щоб почати користуватися MAN. Інсталяційний носій можна від'єднати; якщо він лишиться під'єднаним, MAN усе одно запуститься з нового диска."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "_Перезапустити зараз"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Готово"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Встановлення не вдалося"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Інші диски не змінено, а інсталятор звільнив цільовий диск. Можна перевірити план і спробувати знову."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Перевірити й повторити"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Показати подробиці"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Журнал встановлення"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Пошук мов"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Пошук країн"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Системний диск не знайдено."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Для шифрування потрібна структура Btrfs, створена інсталятором MAN."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "У цьому встановленні немає окремого завантажувального розділу, потрібного для шифрування. Перевстановіть MAN із варіантом «Стерти диск», щоб використати шифрування."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Де ви перебуваєте?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Ваша країна чи регіон визначає формат дати, часу і чисел."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Країна"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, версія 2"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Ядро Linux і багато системних інструментів"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, версія 3"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Багато програм GNU і GNOME"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, версія 2.1"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib і багато бібліотек"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, версія 3"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Бібліотеки"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Програми й бібліотеки від Mozilla та інших"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Ліцензія Apache 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Бібліотеки та інструменти"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Ліцензійна угода"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Прочитайте та прийміть умови, на яких надається MAN."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Ліцензії"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Текст ліцензії недоступний ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Я прочитав(ла) і приймаю умови ліцензії"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Дротове"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Не під'єднано"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Під'єднання до інтернету"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "З під'єднанням MAN зможе налаштувати час і оновлювати програми. Це можна зробити й пізніше."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Перевірка з'єднання…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Мережі Wi-Fi"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Шукати знову"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Пропустити"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Під'єднатися можна пізніше в Налаштуваннях."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Під'єднано"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Не під'єднано"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Мереж не знайдено"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Інтернет"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "Під'єднано до «{ssid}»"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "Не вдалося під'єднатися до «{ssid}»"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "Під'єднатися до «{ssid}»"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Введіть пароль мережі."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Під'єднатися"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Створіть обліковий запис"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Ви будете адміністратором цього комп'ютера з повним доступом root через sudo."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Повне ім'я"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Пароль"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Підтвердження пароля"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Входити автоматично"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Пропускати екран входу під час запуску комп'ютера"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Наявні домашні теки"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Використайте те саме ім'я користувача, щоб і далі користуватися текою з попереднього встановлення."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Використати"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Додатково"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Назва комп'ютера"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "Встановити пароль root"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "Дозволяє входити безпосередньо як root. Без нього користуйтеся sudo з власним паролем."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "Пароль root"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "Підтвердження пароля root"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Введіть своє ім'я."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Виберіть ім'я користувача."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Це ім'я користувача вже використовує система."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Це ім'я користувача зарезервоване системою."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Імена користувачів складаються з малих літер, цифр, - і _ та починаються з літери."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Виберіть пароль."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Паролі не збігаються."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Назва комп'ютера може містити літери, цифри та дефіси."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "Введіть пароль root двічі."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Порада: пароль із 8 і більше символів набагато надійніший."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Обліковий запис"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Темний"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Світлий"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Зробіть його своїм"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Виберіть стиль, колір акценту та шпалери. Кожну зміну видно одразу."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Стиль"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Колір акценту"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Шпалери"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Оформлення"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Приватність"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Виберіть, яким функціям дозволено використовувати відомості про вас. Це можна змінити будь-коли в Налаштуваннях."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Служби геолокації"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "Дозволяє програмам, як-от «Карти» та «Погода», визначати ваше приблизне розташування за найближчими мережами Wi-Fi."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Автоматичний часовий пояс"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Використовує ваше розташування, щоб часовий пояс був правильним у подорожах."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "_Завершити налаштування"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Ваш диск зашифровано"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Ваші дані захищено. Парольну фразу запитують під час кожного запуску комп'ютера."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Шифрування диска"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Шифрування захищає ваші дані в разі втрати чи крадіжки комп'ютера."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Недоступно в цьому встановленні"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Шифрування захищає ваші файли в разі втрати чи крадіжки комп'ютера. Без парольної фрази ніхто не зможе прочитати диск."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Зашифрувати диск"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Парольну фразу запитують під час кожного запуску комп'ютера."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Шифрування почнеться під час наступного перезапуску"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Потім диск шифрується у фоні, поки ви працюєте. Якщо втратити парольну фразу, дані ніхто не зможе відновити."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "Підготовка MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Усе готується…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "_Перезапустити"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Назад"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Підготовка"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Журнал налаштування"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Готово!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Щось пішло не так"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Щоденний"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Перед оновленням"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Перед відновленням"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Перед перевстановленням"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Ручний"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Знімків поки немає"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Створіть знімок перед великими змінами системи."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Відновити…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Видалити знімок"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "Вільно {free} з {size}. Система, домашні теки та знімки спільно використовують це місце; знімки займають місце лише під те, що змінилося після їх створення."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_Гаразд"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Створити знімок"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Зберігає поточний стан системи. Особисті файли в домашній теці не включаються."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Опис, наприклад «Перед встановленням драйверів»"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Створити"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Ручний знімок"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Видалити знімок?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "«{description}» від {date} буде остаточно видалено."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Видалити"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Відновити цей знімок?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Після перезапуску система повернеться до «{description}» від {date}. Ваші особисті файли не зміняться.\n"
+"\n"
+"Поточну систему спершу буде збережено як знімок, тож це можна скасувати."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Відновити"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Перезапустіть, щоб завершити відновлення"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Перезапустити _пізніше"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Перезапустити _зараз"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Знімки"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Точки відновлення"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Знімки зберігають стан операційної системи. Відновлення знімка повертає систему до того моменту, що допомагає після невдалого оновлення чи зміни налаштувань. Ваші особисті файли ніколи не змінюються."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Автоматичні знімки"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Щоденні знімки"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Раз на день, поки комп'ютер увімкнено"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Зберігати щоденних знімків"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Перед оновленнями програм"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Створюються автоматично під час встановлення, оновлення або вилучення пакунків"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Зберігати знімків оновлень"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Сховище"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Місце на диску"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "Якщо MAN не запускається"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Виберіть «Restore a MAN snapshot» у меню завантаження, щоб повернути робочу систему."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Знімки недоступні"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Знімки працюють у MAN, встановленому зі структурою Btrfs від інсталятора MAN. Ця система (наприклад, живий сеанс) її не використовує."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Очікується відновлення: перезапустіть комп'ютер, щоб його завершити"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Перезапустити зараз"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Зачекайте на завершення поточної операції."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Пошук"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Копіювати до буфера обміну"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Всесвітній координований час"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Англійська (США)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Перевірка оновлення"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Перевіряється справжність і повнота оновлення…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "Оновлення MAN"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Це оновлення неможливо встановити"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Не вдалося прочитати оновлення."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "Оновлення з {name} {version}"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "Встановлено {name} {version}"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Версія"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Випущено"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Розмір завантаження"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Потрібне місце"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Справжність"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Перевірено, підписано «{signer}»"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Що нового"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Продовжити"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Це оновлення не новіше за встановлений {name} {version}."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Оновлення"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Прочитайте умови ліцензії цього оновлення."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Я приймаю умови ліцензії"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Куди встановити оновлення?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Систему буде замінено; файли в домашній теці не змінюються."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Виберіть встановлення."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "працює зараз"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "{name} {version} на цьому комп'ютері"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{name} на {model}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "Встановлення MAN не знайдено"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Оновлення встановлюються з працюючої встановленої системи MAN, а не з живого сеансу."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Місце встановлення"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Підсумок"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Зберігається"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Ваші файли"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Усе у вашій домашній теці"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Облікові записи та паролі"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Користувачі, групи, назва комп'ютера"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "З'єднання та налаштування"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, часовий пояс, клавіатура, вигляд і знімки"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Програми Flatpak"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "А також усе в /usr/local і /opt"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Замінюється"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "Програми, встановлені через apt, та інші зміни системних файлів замінюються новою системою."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Операційна система"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "Замінюється на {name} {version}. Поточну систему можна відновити зі знімка."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Комп'ютер перезапуститься для встановлення оновлення"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Після підготовки MAN перезапуститься, за кілька секунд встановить оновлення і знову перезапуститься."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "_Встановити оновлення"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Спершу створити знімок?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Знімок зберігає поточну систему, щоб до неї можна було повернутися, якщо після оновлення щось не працюватиме. Рекомендовано."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Не створювати"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "_Створити знімок"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "Підготовка {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Перезапустити для встановлення"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Комп'ютер перезапуститься двічі. Ваші файли в безпеці."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "Автоматичний перезапуск через {r} с"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "Автоматичний перезапуск через 30 с"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Оновлення буде встановлено під час наступного перезапуску."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Готово"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Не вдалося підготувати оновлення"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "У вашій системі нічого не змінено."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Повторити"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Журнал оновлення"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Помилка"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Систему оновлено"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN оновлено до версії {version}.\n"
+"Раніше: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Готово"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "Відкрити оновлення MAN"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "Оновлення MAN"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Перевірка плану встановлення"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Підготовка диска"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "Копіювання MAN на диск"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Налаштування нової системи"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Встановлення завантажувача"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Створення першого знімка"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Завершення"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Вилучення старих підписів розділів"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Створення розділів"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "Форматування системного розділу EFI"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Шифрування системного розділу"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Форматування завантажувального розділу"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Створення файлової системи Btrfs"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Вилучення старих підписів файлових систем"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Розблокування зашифрованого встановлення"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Збереження поточної системи як знімка"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Вилучення попередньої системи"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Запис таблиці файлових систем"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Налаштування назви та ідентифікації комп'ютера"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Вилучення облікових записів живого сеансу"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Створення вашого облікового запису"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "Підготовка MAN Setup до першого запуску"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Налаштування часового поясу та клавіатури"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Вилучення інсталятора з нової системи"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Створення образу завантаження (initramfs)"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "Налаштування GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "Встановлення GRUB у системний розділ EFI"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Встановлення резервного завантажувача"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Запис меню завантаження"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Диск готовий"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Створення знімка нової системи"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Додавання знімка до меню завантаження"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Відмонтування"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Помічник інсталятора має працювати від root."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Цей комп'ютер запущено не в режимі UEFI. MAN потребує UEFI."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Недійсне ім'я користувача."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Потрібен пароль."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Недійсна назва комп'ютера."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Невідома мова."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Парольна фраза шифрування має містити щонайменше 8 символів."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Диск змінився після підтвердження встановлення. Нічого не змінено; перевірте і підтвердьте знову."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Виберіть системний розділ."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Підтверджений диск не містить вибраного системного розділу."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Завантажувальний розділ має бути окремим від розділу EFI і системного розділу."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Завантажувальний розділ має бути щонайменше 512 МБ."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Встановлення не вибрано."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Підтверджений диск не містить вибраного встановлення."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Зашифроване встановлення не має розділу MAN_BOOT."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "У /boot не знайдено ядра з відповідними модулями."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Мову має змінювати системний помічник."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Застосування ваших налаштувань"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Підготовка шифрування диска"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Завершення"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup має завершувати системний помічник."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "MAN Setup уже виконано на цьому комп'ютері."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Невідомий колір акценту."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Вибрані шпалери недоступні."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Цю систему неможливо зашифрувати."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Відсутній ключ налаштування, тому шифрування не може продовжитися у фоні."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Систему встановлено не на Btrfs, тому знімки недоступні."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Відновлення знімка очікує перезапуску. Спершу перезапустіть комп'ютер, щоб його завершити."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Недійсний ідентифікатор знімка."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Перевірка оновлення"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Створення знімка"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Підготовка області оновлення"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Розпакування нової системи"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Перенесення облікових записів і налаштувань"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Підготовка перезапуску"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Розпаковано"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Облікові записи"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Вилучення програм, потрібних лише інсталятору"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Створення образу завантаження оновлення"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Додавання одноразового пункту завантаження"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Оновлення справжнє"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Знімок створено"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Пропущено"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Область оновлення готова"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Підготовка нової системи"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Файл оновлення пошкоджено (контрольна сума не збігається). Завантажте його знову."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Не вдалося повністю прочитати файл оновлення."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Оновлення не містить ядра."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Оновлення має встановлювати системний помічник."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Вибране встановлення не знайдено."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Оновити можна лише працюючу систему MAN."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Це не файл оновлення MAN (немає маніфесту)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Оновлення не підписане, тому йому не можна довіряти."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Підпис оновлення пошкоджено."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Оновлення не підписане MAN. Можливо, його змінено або отримано з ненадійного джерела."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Маніфест оновлення недійсний."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Неправильна парольна фраза, або зашифрований розділ не вдається відкрити."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Синій"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Бірюзовий"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Зелений"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Жовтий"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Помаранчевий"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Червоний"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Рожевий"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Фіолетовий"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Сланцевий"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Інсталятор системи"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "Встановити MAN на цей комп'ютер"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Відновлення системи"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Створення та відновлення знімків системи"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Інсталятор оновлень системи"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "Встановити файл оновлення системи MAN"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Пропонує встановити MAN під час запуску живого сеансу"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "Сповіщення про оновлення MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Один раз після входу повідомляє, що MAN оновлено"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Налаштуйте свій новий комп'ютер з MAN"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "Початкове налаштування MAN"

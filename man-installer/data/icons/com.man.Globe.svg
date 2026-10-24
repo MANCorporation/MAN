@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- MAN: languages -->
+  <defs>
+    <radialGradient id="sea" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#99c1f1"/>
+      <stop offset="0.55" stop-color="#3584e4"/>
+      <stop offset="1" stop-color="#1a5fb4"/>
+    </radialGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8ff0a4"/>
+      <stop offset="1" stop-color="#2ec27e"/>
+    </linearGradient>
+    <clipPath id="ball"><circle cx="64" cy="62" r="50"/></clipPath>
+  </defs>
+  <ellipse cx="64" cy="118" rx="34" ry="6" fill="#000" opacity="0.18"/>
+  <circle cx="64" cy="62" r="50" fill="url(#sea)"/>
+  <g clip-path="url(#ball)" fill="url(#land)">
+    <path d="M30 30 c10 -8 26 -10 34 -4 c6 4 2 12 -6 14 c-8 2 -10 10 -4 16 c6 6 2 14 -8 14 c-10 0 -12 -10 -18 -16 c-6 -6 -6 -18 2 -24 z"/>
+    <path d="M74 48 c8 -6 22 -4 28 4 c6 8 4 22 -4 30 c-6 6 -14 6 -18 0 c-4 -6 2 -12 -2 -18 c-4 -6 -10 -10 -4 -16 z"/>
+    <path d="M52 92 c6 -4 16 -2 18 4 c2 6 -4 12 -12 12 c-8 0 -12 -10 -6 -16 z"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.5">
+    <circle cx="64" cy="62" r="50"/>
+    <ellipse cx="64" cy="62" rx="22" ry="50"/>
+    <path d="M14 62 h100 M22 36 h84 M22 88 h84"/>
+  </g>
+  <circle cx="64" cy="62" r="50" fill="none" stroke="#1a5fb4" stroke-width="2"/>
+  <ellipse cx="46" cy="36" rx="18" ry="9" fill="#fff" opacity="0.22" transform="rotate(-25 46 36)"/>
+</svg>

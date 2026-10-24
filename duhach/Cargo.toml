@@ -1,0 +1,25 @@
+[package]
+name = "duhach"
+version = "1.0.0"
+edition = "2021"
+license-file = "../LICENSE"
+publish = false
+authors = ["MAN Developers"]
+description = "DUHACH! installs MAN from Windows, without a USB stick"
+
+[[bin]]
+name = "duhach"
+path = "src/main.rs"
+
+[dependencies]
+gtk = { package = "gtk4", version = "0.11", features = ["v4_16"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_6"] }
+async-channel = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = true
+opt-level = "s"

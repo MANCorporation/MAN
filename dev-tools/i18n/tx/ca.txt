@@ -1,0 +1,490 @@
+0|No s'ha pogut iniciar l'assistent del sistema.
+1|No s'ha pogut comunicar amb l'assistent del sistema.
+2|S'ha perdut la connexió amb l'assistent del sistema.
+3|S'ha cancel·lat l'autorització.
+4|Aquesta acció necessita permisos d'administrador.
+5|L'assistent del sistema s'ha aturat inesperadament.
+6|No hi ha cap partició del sistema EFI
+7|Només hi ha {free} lliures, MAN necessita {need}. Allibereu espai amb DUHACH! al Windows.
+8|No hi ha espai lliure. Inicieu DUHACH! al Windows per fer lloc a MAN.
+9|MAN s'executa des d'aquest disc
+10|En ús: hi ha una partició muntada
+11|Massa petit, MAN necessita {need}
+12|Instal·la MAN
+13|S'està instal·lant MAN. Espereu fins que acabi.
+14|Llengua
+15|_Reinicia en aquesta llengua
+16|La sessió en viu es reinicia en la llengua triada, i MAN s'hi instal·la.
+17|Us donem la benvinguda a MAN
+18|Un sistema GNOME ràpid, obert i totalment personalitzable.\nInstal·leu-lo en aquest ordinador o continueu explorant la sessió en viu.
+19|_Instal·la MAN…
+20|_Continua provant MAN
+21|S'estan cercant discs…
+22|Benvinguts
+23|Aquest ordinador s'ha iniciat en mode BIOS antic. MAN només es pot instal·lar en ordinadors UEFI: reinicieu i trieu l'opció d'arrencada UEFI.
+24|L'assistent del sistema no ha retornat informació dels discs.
+25|  ·  EFI
+26|_Següent
+27|Tipus d'instal·lació
+28|Esborra el disc i instal·la MAN
+29|S'esborra tot el que hi ha al disc triat, inclòs el Windows.
+30|Recomanat. S'esborra tot el que hi ha al disc triat.
+31|Instal·la al costat del Windows
+32|Recomanat. MAN usa l'espai lliure al costat del Windows; el Windows i els seus fitxers es mantenen. Trieu el sistema a cada arrencada.
+33|Reinstal·la MAN
+34|Substitueix el sistema però conserva els fitxers personals de /home. El sistema actual es desa com a instantània.
+35|Particions personalitzades
+36|Per a experts: trieu les particions vosaltres mateixos o creeu-les amb Discs.
+37|Disc
+38|Trieu el disc que s'esborrarà. Els discs que no es poden usar es mostren amb el motiu.
+39|No s'ha trobat cap disc
+40|Espai lliure al costat del Windows
+41|Les particions del Windows no es toquen. MAN comparteix la partició del sistema EFI i afegeix el Windows al seu menú d'arrencada.
+42|{size} lliures
+43|sense espai lliure
+44|{model} (Windows)
+45|Instal·lació que es substituirà
+46|cap carpeta personal
+47|carpetes personals: {list}
+48|instantànies: {n}
+49|MAN a {model}
+50|Frase de pas de {device}
+51|Desbloqueja
+52|No s'ha pogut examinar la instal·lació.
+53|Particions
+54|La partició del sistema es formata amb Btrfs i conté @system, @home i @snapshots. No es mostren les particions del disc des del qual s'executa MAN.
+55|Obre Discs per crear o redimensionar particions
+56|Actualitza la llista de particions
+57|Trieu una partició
+58|Partició del sistema EFI
+59|Formata la partició del sistema EFI
+60|Deixeu-ho desactivat per conservar els carregadors d'arrencada d'altres sistemes
+61|Partició del sistema (formatada com a Btrfs)
+62|Partició d'arrencada (necessària amb xifratge)
+63|S'ha actualitzat la llista de particions
+64|Seguretat
+65|Xifra el sistema
+66|Protegeix les vostres dades si perdeu l'ordinador o us el roben. Es demana una frase de pas a cada arrencada.
+67|Frase de pas
+68|Confirmeu la frase de pas
+69|Guardeu bé aquesta frase de pas
+70|Si es perd, ningú no podrà recuperar les dades. El nucli i els fitxers d'arrencada es queden en una petita partició d'arrencada sense xifrar.
+71|La frase de pas ha de tenir com a mínim 8 caràcters.
+72|Les frases de pas no coincideixen.
+73|Trieu un disc.
+74|Trieu el disc amb el Windows.
+75|Trieu la instal·lació que es substituirà.
+76|Primer desbloquegeu la instal·lació xifrada.
+77|Aquesta partició no conté cap sistema MAN.
+78|Trieu una partició del sistema EFI.
+79|Trieu la partició del sistema.
+80|Les particions EFI i del sistema han de ser diferents.
+81|El xifratge necessita una partició d'arrencada separada.
+82|La partició del sistema ha de tenir com a mínim {size}.
+83|La partició EFI no té format FAT; activeu el formatatge.
+84|La partició del sistema està muntada; primer desmunteu-la a Discs.
+85|On s'ha d'instal·lar MAN?
+86|Hora i teclat
+87|Fus horari
+88|Disposició del teclat
+89|Proveu el teclat
+90|Escriviu aquí per comprovar que les tecles produeixen els caràcters correctes.
+91|Escriviu aquí
+92|Fus horari i teclat
+93|No s'ha triat cap disc
+94|No s'ha triat cap partició del sistema
+95|La partició del sistema ha desaparegut
+96|No s'ha triat cap instal·lació
+97|El disc ha desaparegut
+98|Revisió
+99|Destinació
+100|Esborra el disc i instal·la
+101|Particions personalitzades
+102|Reinstal·la conservant /home
+103|Al costat del Windows
+104| (es formatarà)
+105| (es conserva)
+106|Partició del sistema
+107|{partition} (es formatarà)
+108|Partició d'arrencada
+109|Instal·lació
+110|Espai per a MAN
+111|{free} d'espai lliure (es creen una partició d'arrencada i la partició del sistema)
+112|Windows
+113|Sense canvis. Apareix al menú d'arrencada de MAN; la partició del sistema EFI és compartida.
+114|Xifratge
+115|Activat (LUKS2)
+116|Desactivat
+117|Sistema de fitxers
+118|Btrfs: @system per a MAN, @home per als vostres fitxers, @snapshots per als punts de restauració. Tots comparteixen l'espai lliure.
+119|Sistema
+120|El vostre compte
+121|Es crea a MAN Setup la primera vegada que s'inicia l'ordinador, juntament amb el nom de l'ordinador, l'aparença i la configuració de privadesa.
+122|Teclat
+123|S'esborraran totes les dades de {model} ({path}).
+124|_Esborra i instal·la
+125|Es formataran les particions triades. Les altres particions no canvien.
+126|_Formata i instal·la
+127|Se substitueix el sistema actual. Es conserven els vostres fitxers de /home i el sistema antic es desa com a instantània.
+128|_Reinstal·la
+129|MAN s'instal·la a l'espai lliure. El Windows i els seus fitxers no canvien.
+130|_Instal·la
+131|A punt per instal·lar
+132|Voleu esborrar {model}?
+133|Tots els fitxers i particions de {path} ({size}) s'eliminaran definitivament. No es pot desfer.
+134|Esborra i instal·la
+135|Voleu formatar les particions triades?
+136|Totes les dades de les particions triades s'eliminaran definitivament. Les altres particions no canvien.
+137|Formata i instal·la
+138|Voleu instal·lar MAN al costat del Windows?
+139|MAN s'instal·la als {free} d'espai lliure de {model} ({path}). El Windows i els seus fitxers no canvien.
+140|Instal·la
+141|Voleu reinstal·lar MAN?
+142|El sistema instal·lat se substituirà per una còpia nova. Es conserven els fitxers personals de /home i el sistema antic continua disponible com a instantània.
+143|Reinstal·la
+144|_Cancel·la
+145|S'està instal·lant MAN
+146|S'està iniciant…
+147|Detalls
+148|S'està instal·lant
+149|Pas {index} de {n}  ·  {title}
+150|Registre
+151|MAN s'ha instal·lat
+152|Reinicieu l'ordinador per començar a usar MAN. Un menú a cada arrencada us permet triar MAN o el Windows; MAN elimina la partició temporal de l'instal·lador en la primera arrencada.
+153|Reinicieu l'ordinador per començar a usar MAN. Podeu treure el mitjà d'instal·lació; si es queda connectat, MAN igualment arrenca des del disc nou.
+154|_Reinicia ara
+155|Fet
+156|La instal·lació ha fallat
+157|No s'ha modificat cap altre disc i l'instal·lador ha alliberat el disc de destinació. Podeu revisar el pla i tornar-ho a provar.
+158|_Revisa i torna-ho a provar
+159|_Mostra els detalls
+160|Registre de la instal·lació
+161|Cerca llengües
+162|Cerca països
+163|No s'ha trobat el disc del sistema.
+164|El xifratge necessita l'estructura Btrfs creada per l'instal·lador de MAN.
+165|Aquesta instal·lació no té una partició d'arrencada separada, necessària per al xifratge. Reinstal·leu MAN amb «Esborra el disc» per usar el xifratge.
+166|MAN Setup
+167|On sou?
+168|El vostre país o regió determina el format de la data, l'hora i els nombres.
+169|País
+170|Llicència pública general de GNU, versió 2
+171|El nucli Linux i moltes eines del sistema
+172|Llicència pública general de GNU, versió 3
+173|Molts programes de GNU i GNOME
+174|Llicència pública general reduïda de GNU, versió 2.1
+175|GTK, GLib i moltes biblioteques
+176|Llicència pública general reduïda de GNU, versió 3
+177|Biblioteques
+178|Llicència pública de Mozilla 2.0
+179|Programes i biblioteques de Mozilla i altres
+180|Llicència Apache 2.0
+181|Biblioteques i eines
+182|Acord de llicència
+183|Llegiu i accepteu les condicions amb què es proporciona MAN.
+184|Llicències
+185|El text de la llicència no està disponible ({path}).
+186|He llegit i accepto les condicions de la llicència
+187|Amb cable
+188|Sense connexió
+189|Connecteu-vos a Internet
+190|Amb connexió, MAN pot posar l'hora i mantenir el programari actualitzat. També ho podeu fer més tard.
+191|S'està comprovant la connexió…
+192|Xarxes Wi-Fi
+193|Torna a cercar
+194|_Omet
+195|Podeu connectar-vos més tard a Paràmetres.
+196|Connectat
+197|Sense connexió
+198|No s'ha trobat cap xarxa
+199|Internet
+200|Connectat a «{ssid}»
+201|No s'ha pogut connectar a «{ssid}»
+202|Connecta't a «{ssid}»
+203|Introduïu la contrasenya de la xarxa.
+204|_Connecta
+205|Creeu el vostre compte
+206|Sereu l'administrador d'aquest ordinador, amb accés root complet mitjançant sudo.
+207|Nom complet
+208|Nom d'usuari
+209|Contrasenya
+210|Confirmeu la contrasenya
+211|Inicia la sessió automàticament
+212|Omet la pantalla d'inici de sessió quan s'iniciï l'ordinador
+213|Carpetes personals existents
+214|Useu el mateix nom d'usuari per continuar usant una carpeta conservada d'una instal·lació anterior.
+215|Usa
+216|Avançat
+217|Nom de l'ordinador
+218|Estableix una contrasenya de root
+219|Permet iniciar la sessió directament com a root. Sense ella, useu sudo amb la vostra contrasenya.
+220|Contrasenya de root
+221|Confirmeu la contrasenya de root
+222|Introduïu el vostre nom.
+223|Trieu un nom d'usuari.
+224|El sistema ja usa aquest nom d'usuari.
+225|Aquest nom d'usuari està reservat pel sistema.
+226|Els noms d'usuari usen minúscules, xifres, - i _, i comencen amb una lletra.
+227|Trieu una contrasenya.
+228|Les contrasenyes no coincideixen.
+229|El nom de l'ordinador pot contenir lletres, xifres i guionets.
+230|Introduïu la contrasenya de root dues vegades.
+231|Consell: una contrasenya de 8 caràcters o més és molt més segura.
+232|Compte
+233|Fosc
+234|Clar
+235|Feu-lo vostre
+236|Trieu un estil, un color d'èmfasi i un fons de pantalla. Veieu cada canvi a l'instant.
+237|Estil
+238|Color d'èmfasi
+239|Fons de pantalla
+240|Personalitza
+241|Privadesa
+242|Trieu quines funcions poden usar informació sobre vosaltres. Ho podeu canviar en qualsevol moment a Paràmetres.
+243|Serveis d'ubicació
+244|Permet que aplicacions com Mapes i Temps trobin la vostra ubicació aproximada amb les xarxes Wi-Fi properes.
+245|Fus horari automàtic
+246|Usa la vostra ubicació per mantenir el fus horari correcte quan viatgeu.
+247|_Acaba la configuració
+248|El vostre disc està xifrat
+249|Les vostres dades estan protegides. Es demana la frase de pas cada vegada que s'inicia l'ordinador.
+250|Xifratge del disc
+251|El xifratge protegeix les vostres dades si perdeu l'ordinador o us el roben.
+252|No disponible en aquesta instal·lació
+253|El xifratge protegeix els vostres fitxers si perdeu l'ordinador o us el roben. Sense la frase de pas, ningú no pot llegir el disc.
+254|Xifra el disc
+255|Es demana la frase de pas cada vegada que s'inicia l'ordinador.
+256|El xifratge comença en el proper reinici
+257|Després el disc es xifra en segon pla mentre useu l'ordinador. Si es perd la frase de pas, ningú no podrà recuperar les dades.
+258|S'està preparant MAN
+259|S'està preparant tot…
+260|_Reinicia
+261|_Enrere
+262|S'està preparant
+263|Registre de la configuració
+264|Tot a punt!
+265|Alguna cosa ha anat malament
+266|Diària
+267|Abans d'actualitzar
+268|Abans de restaurar
+269|Abans de reinstal·lar
+270|Manual
+271|Encara no hi ha instantànies
+272|Creeu-ne una abans de fer canvis grans al sistema.
+273|Restaura…
+274|Suprimeix la instantània
+275|{free} lliures de {size}. El sistema, les carpetes personals i les instantànies comparteixen aquest espai; les instantànies només ocupen espai pel que ha canviat des que es van fer.
+276|_D'acord
+277|Crea una instantània
+278|Desa l'estat actual del sistema. No inclou els fitxers personals de la carpeta personal.
+279|Descripció, per exemple «Abans d'instal·lar controladors»
+280|_Crea
+281|Instantània manual
+282|Voleu suprimir la instantània?
+283|«{description}» del {date} se suprimirà definitivament.
+284|_Suprimeix
+285|Voleu restaurar aquesta instantània?
+286|El sistema tornarà a «{description}» del {date} després de reiniciar. Els vostres fitxers personals no canvien.\n\nEl sistema actual es desa primer com a instantània, de manera que es pot desfer.
+287|_Restaura
+288|Reinicieu per acabar la restauració
+289|Reinicia _més tard
+290|Reinicia _ara
+291|Instantànies
+292|Punts de restauració
+293|Les instantànies desen l'estat del sistema operatiu. Restaurar-ne una torna el sistema a aquell moment, cosa que ajuda després d'una actualització o un canvi de configuració fallits. Els vostres fitxers personals no es toquen mai.
+294|Instantànies automàtiques
+295|Instantànies diàries
+296|Un cop al dia mentre l'ordinador està encès
+297|Instantànies diàries que es conserven
+298|Abans de les actualitzacions de programari
+299|Es fan automàticament quan s'instal·len, s'actualitzen o s'eliminen paquets
+300|Instantànies d'actualització que es conserven
+301|Emmagatzematge
+302|Espai al disc
+303|Si MAN no arrenca
+304|Trieu «Restore a MAN snapshot» al menú d'arrencada per recuperar un sistema que funcioni.
+305|Les instantànies no estan disponibles
+306|Les instantànies funcionen en MAN instal·lat amb l'estructura Btrfs de l'instal·lador de MAN. Aquest sistema (per exemple, una sessió en viu) no la usa.
+307|Hi ha una restauració pendent: reinicieu l'ordinador per acabar-la
+308|Reinicia ara
+309|Espereu que acabi l'operació en curs.
+310|Cerca
+311|Copia al porta-retalls
+312|Temps universal coordinat
+313|Anglès (EUA)
+314|S'està comprovant l'actualització
+315|S'està comprovant que l'actualització és autèntica i completa…
+316|Actualització de MAN
+317|Aquesta actualització no es pot instal·lar
+318|No s'ha pogut llegir l'actualització.
+319|Actualització des de {name} {version}
+320|{name} {version} està instal·lat
+321|Versió
+322|Publicada
+323|Mida de la baixada
+324|Espai necessari
+325|Autenticitat
+326|Verificada, signada per «{signer}»
+327|Novetats
+328|_Continua
+329|Aquesta actualització no és més nova que {name} {version} instal·lat.
+330|Actualització
+331|Llegiu les condicions de llicència d'aquesta actualització.
+332|Accepto les condicions de la llicència
+333|On s'ha d'instal·lar l'actualització?
+334|Se substitueix el sistema; els fitxers de la carpeta personal no es toquen.
+335|Trieu una instal·lació.
+336|en execució
+337|{name} {version} en aquest ordinador
+338|{name} a {model}
+339|No s'ha trobat cap instal·lació de MAN
+340|Les actualitzacions s'instal·len des d'un sistema MAN instal·lat i en execució, no des de la sessió en viu.
+341|Ubicació de la instal·lació
+342|Resum
+343|Es conserva
+344|Els vostres fitxers
+345|Tot el que hi ha a la carpeta personal
+346|Comptes i contrasenyes
+347|Usuaris, grups, el nom de l'ordinador
+348|Connexions i paràmetres
+349|Wi-Fi, fus horari, teclat, aparença i instantànies
+350|Aplicacions Flatpak
+351|A més de tot el que hi ha a /usr/local i /opt
+352|Se substitueix
+353|El programari instal·lat amb apt i altres canvis als fitxers del sistema se substitueixen pel sistema nou.
+354|El sistema operatiu
+355|Substituït per {name} {version}. El sistema actual es pot restaurar des d'una instantània.
+356|L'ordinador es reinicia per instal·lar l'actualització
+357|Després de la preparació, MAN es reinicia, instal·la l'actualització en pocs segons i es torna a reiniciar.
+358|_Instal·la l'actualització
+359|Voleu crear primer una instantània?
+360|Una instantània desa el sistema actual, de manera que hi podeu tornar si alguna cosa no funciona després de l'actualització. És recomanable.
+361|_No la creïs
+362|_Crea una instantània
+363|S'està preparant {name} {version}
+364|Reinicia per instal·lar
+365|L'ordinador es reiniciarà dues vegades. Els vostres fitxers estan segurs.
+366|Reinici automàtic d'aquí a {r} segons
+367|Reinici automàtic d'aquí a 30 segons
+368|L'actualització s'instal·larà en el proper reinici.
+369|A punt
+370|No s'ha pogut preparar l'actualització
+371|No s'ha canviat res del vostre sistema.
+372|_Torna-ho a provar
+373|Registre de l'actualització
+374|Ha fallat
+375|El vostre sistema s'ha actualitzat
+376|MAN s'ha actualitzat a la versió {version}.\nAbans: MAN {previous}.
+377|_Fet
+378|Obre una actualització de MAN
+379|Actualitzacions de MAN
+380|S'està comprovant el pla d'instal·lació
+381|S'està preparant el disc
+382|S'està copiant MAN al disc
+383|S'està configurant el sistema nou
+384|S'està instal·lant el carregador d'arrencada
+385|S'està creant la primera instantània
+386|S'està acabant
+387|S'estan eliminant signatures de particions antigues
+388|S'estan creant les particions
+389|S'està formatant la partició del sistema EFI
+390|S'està xifrant la partició del sistema
+391|S'està formatant la partició d'arrencada
+392|S'està creant el sistema de fitxers Btrfs
+393|S'estan eliminant signatures de sistemes de fitxers antics
+394|S'està desbloquejant la instal·lació xifrada
+395|S'està desant el sistema actual com a instantània
+396|S'està eliminant el sistema anterior
+397|S'està escrivint la taula de sistemes de fitxers
+398|S'estan establint el nom i la identitat de l'ordinador
+399|S'estan eliminant els comptes de la sessió en viu
+400|S'està creant el vostre compte
+401|S'està preparant MAN Setup per a la primera arrencada
+402|S'estan establint el fus horari i el teclat
+403|S'està eliminant l'instal·lador del sistema nou
+404|S'està creant la imatge d'arrencada (initramfs)
+405|S'està configurant GRUB
+406|S'està instal·lant GRUB a la partició del sistema EFI
+407|S'està instal·lant el carregador d'arrencada de reserva
+408|S'està escrivint el menú d'arrencada
+409|Disc a punt
+410|S'està creant una instantània del sistema nou
+411|S'està afegint la instantània al menú d'arrencada
+412|S'està desmuntant
+413|L'assistent de l'instal·lador s'ha d'executar com a root.
+414|Aquest ordinador no s'ha iniciat en mode UEFI. MAN necessita UEFI.
+415|El nom d'usuari no és vàlid.
+416|Cal una contrasenya.
+417|El nom de l'ordinador no és vàlid.
+418|Llengua desconeguda.
+419|La frase de pas de xifratge ha de tenir com a mínim 8 caràcters.
+420|El disc ha canviat després que confirméssiu la instal·lació. No s'ha modificat res; reviseu-ho i torneu a confirmar.
+421|Trieu una partició del sistema.
+422|El disc confirmat no conté la partició del sistema triada.
+423|La partició d'arrencada ha d'estar separada de les particions EFI i del sistema.
+424|La partició d'arrencada ha de tenir com a mínim 512 MB.
+425|No s'ha triat cap instal·lació.
+426|El disc confirmat no conté la instal·lació triada.
+427|La instal·lació xifrada no té cap partició MAN_BOOT.
+428|No s'ha trobat a /boot cap nucli amb els mòduls corresponents.
+429|La llengua l'ha de canviar l'assistent del sistema.
+430|S'està aplicant la vostra configuració
+431|S'està preparant el xifratge del disc
+432|S'està acabant
+433|MAN Setup l'ha d'acabar l'assistent del sistema.
+434|MAN Setup ja s'ha completat en aquest ordinador.
+435|Color d'èmfasi desconegut.
+436|El fons de pantalla triat no està disponible.
+437|Aquest sistema no es pot xifrar.
+438|Falta la clau de configuració, així que el xifratge no pot continuar en segon pla.
+439|El sistema no està instal·lat en Btrfs, així que les instantànies no estan disponibles.
+440|Una restauració d'instantània espera un reinici. Primer reinicieu l'ordinador per acabar-la.
+441|Identificador d'instantània no vàlid.
+442|S'està comprovant l'actualització
+443|S'està creant una instantània
+444|S'està preparant l'àrea d'actualització
+445|S'està desempaquetant el sistema nou
+446|S'estan traslladant els vostres comptes i paràmetres
+447|S'està preparant el reinici
+448|Desempaquetat
+449|Comptes
+450|S'està eliminant el programari exclusiu de l'instal·lador
+451|S'està creant la imatge d'arrencada de l'actualització
+452|S'està afegint l'entrada d'arrencada d'un sol ús
+453|L'actualització és autèntica
+454|S'ha creat la instantània
+455|S'ha omès
+456|Àrea d'actualització a punt
+457|S'està preparant el sistema nou
+458|El fitxer d'actualització està malmès (la suma de verificació no coincideix). Torneu-lo a baixar.
+459|No s'ha pogut llegir completament el fitxer d'actualització.
+460|L'actualització no conté cap nucli.
+461|Les actualitzacions les ha d'instal·lar l'assistent del sistema.
+462|No s'ha trobat la instal·lació triada.
+463|Només es pot actualitzar la instal·lació de MAN en execució.
+464|Aquest no és un fitxer d'actualització de MAN (no té manifest).
+465|L'actualització no està signada, així que no és de confiança.
+466|La signatura de l'actualització està malmesa.
+467|L'actualització no està signada per MAN. Pot haver estat modificada o provenir d'una font no fiable.
+468|El manifest de l'actualització no és vàlid.
+469|La frase de pas no és correcta o no es pot obrir la partició xifrada.
+470|Blau
+471|Verd blavós
+472|Verd
+473|Groc
+474|Taronja
+475|Vermell
+476|Rosa
+477|Porpra
+478|Pissarra
+479|Instal·lador del sistema
+480|Instal·la MAN en aquest ordinador
+481|Restauració del sistema
+482|Crea i restaura instantànies del sistema
+483|Instal·lador d'actualitzacions del sistema
+484|Instal·la un fitxer d'actualització del sistema MAN
+485|Ofereix instal·lar MAN quan s'inicia la sessió en viu
+486|Avís d'actualització de MAN
+487|Us avisa un cop després d'iniciar la sessió que MAN s'ha actualitzat
+488|Configureu el vostre ordinador MAN nou
+489|Configuració inicial de MAN

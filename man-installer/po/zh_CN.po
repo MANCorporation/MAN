@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "无法启动系统助手。"
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "无法与系统助手通信。"
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "与系统助手的连接已断开。"
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "授权已取消。"
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "此操作需要管理员权限。"
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "系统助手意外停止。"
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "没有 EFI 系统分区"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "仅剩 {free} 可用，MAN 需要 {need}。请在 Windows 中用 DUHACH! 腾出空间。"
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "没有可用空间。请在 Windows 中启动 DUHACH! 为 MAN 腾出空间。"
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN 正在从此磁盘运行"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "使用中：有分区已挂载"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "太小，MAN 需要 {need}"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "安装 MAN"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "正在安装 MAN。请等待完成。"
+
+#: installer.rs:143
+msgid "Language"
+msgstr "语言"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "以此语言重新启动(_R)"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Live 会话将以所选语言重新启动，MAN 也会以该语言安装。"
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "欢迎使用 MAN"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"快速、开放、可完全自定义的 GNOME 系统。\n"
+"将它安装到这台电脑上，或继续体验 Live 会话。"
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "安装 MAN(_I)…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "继续试用 MAN(_K)"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "正在查找磁盘…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "欢迎"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "这台电脑以传统 BIOS 模式启动。MAN 只能安装在 UEFI 电脑上：请重新启动并选择 UEFI 启动选项。"
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "系统助手没有返回磁盘信息。"
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "下一步(_N)"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "安装类型"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "清除磁盘并安装 MAN"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "所选磁盘上的所有内容都会被删除，包括 Windows。"
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "推荐。所选磁盘上的所有内容都会被删除。"
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "与 Windows 并存安装"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "推荐。MAN 使用 Windows 旁边的可用空间；Windows 及其文件保持不变。每次启动时选择系统。"
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "重新安装 MAN"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "替换系统，但保留 /home 中的个人文件。当前系统会保存为快照。"
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "自定义分区"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "面向专家：自行选择分区，或用“磁盘”创建分区。"
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "磁盘"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "选择要清除的磁盘。无法使用的磁盘会显示原因。"
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "未找到磁盘"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Windows 旁边的可用空间"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "不会改动 Windows 的分区。MAN 共用 EFI 系统分区，并把 Windows 加入其启动菜单。"
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} 可用"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "无可用空间"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model}（Windows）"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "要替换的安装"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "无主文件夹"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "主文件夹：{list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "快照：{n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "{model} 上的 MAN"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "{device} 的密码"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "解锁"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "无法检查该安装。"
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "分区"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "系统分区将格式化为 Btrfs，并包含 @system、@home 和 @snapshots。不会列出 MAN 正在运行的磁盘上的分区。"
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "打开“磁盘”以创建分区或调整分区大小"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "刷新分区列表"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "选择分区"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI 系统分区"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "格式化 EFI 系统分区"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "保持关闭以保留其他系统的引导程序"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "系统分区（格式化为 Btrfs）"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "启动分区（加密时需要）"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "分区列表已刷新"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "安全"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "加密系统"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "在电脑丢失或被盗时保护您的数据。每次启动都需要输入密码。"
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "密码"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "确认密码"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "请妥善保管此密码"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "如果丢失，任何人都无法恢复数据。内核和启动文件保存在一个未加密的小启动分区上。"
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "密码至少需要 8 个字符。"
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "两次输入的密码不一致。"
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "请选择磁盘。"
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "请选择装有 Windows 的磁盘。"
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "请选择要替换的安装。"
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "请先解锁加密的安装。"
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "此分区不包含 MAN 系统。"
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "请选择 EFI 系统分区。"
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "请选择系统分区。"
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "EFI 分区和系统分区必须不同。"
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "加密需要单独的启动分区。"
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "系统分区至少需要 {size}。"
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "EFI 分区不是 FAT 格式；请打开格式化。"
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "系统分区已挂载；请先在“磁盘”中卸载。"
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "要将 MAN 安装到哪里？"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "时间和键盘"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "时区"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "键盘布局"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "测试键盘"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "在此输入，检查按键是否输出正确的字符。"
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "在此输入"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "时区和键盘"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "未选择磁盘"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "未选择系统分区"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "系统分区已消失"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "未选择安装"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "磁盘已消失"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "检查"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "目标"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "清除磁盘并安装"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "自定义分区"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "重新安装，保留 /home"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "与 Windows 并存"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr "（将被格式化）"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr "（保留）"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "系统分区"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition}（将被格式化）"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "启动分区"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "安装"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "MAN 的空间"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} 可用空间（将创建启动分区和系统分区）"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "保持不变。它会出现在 MAN 的启动菜单中；EFI 系统分区为共用。"
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "加密"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "开启（LUKS2）"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "关闭"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "文件系统"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs：@system 用于 MAN，@home 用于您的文件，@snapshots 用于还原点。它们共用可用空间。"
+
+#: installer.rs:991
+msgid "System"
+msgstr "系统"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "您的帐户"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "在电脑首次启动时由 MAN Setup 创建，同时设置电脑名称、外观和隐私选项。"
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "键盘"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "{model}（{path}）上的所有数据都将被清除。"
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "清除并安装(_E)"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "所选分区将被格式化。其他分区不会改变。"
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "格式化并安装(_F)"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "当前系统将被替换。/home 中的文件会保留，旧系统会保存为快照。"
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "重新安装(_R)"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN 将安装到可用空间中。Windows 及其文件不会改变。"
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "安装(_I)"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "准备安装"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "清除 {model}？"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "{path}（{size}）上的所有文件和分区都将被永久删除。此操作无法撤消。"
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "清除并安装"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "格式化所选分区？"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "所选分区上的所有数据都将被永久删除。其他分区不会改变。"
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "格式化并安装"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "将 MAN 与 Windows 并存安装？"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN 将安装到 {model}（{path}）上 {free} 的可用空间中。Windows 及其文件不会改变。"
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "安装"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "重新安装 MAN？"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "已安装的系统将被全新副本替换。/home 中的个人文件会保留，旧系统仍可作为快照使用。"
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "重新安装"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "正在安装 MAN"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "正在开始…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "详细信息"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "正在安装"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "第 {index} 步，共 {n} 步  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "日志"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN 已安装"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "重新启动电脑即可开始使用 MAN。每次启动时可在菜单中选择 MAN 或 Windows；MAN 会在首次启动时删除临时安装程序分区。"
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "重新启动电脑即可开始使用 MAN。您可以移除安装介质；即使它仍然连接，MAN 也会从新磁盘启动。"
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "立即重新启动(_R)"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "完成"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "安装失败"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "没有更改其他磁盘，安装程序已释放目标磁盘。您可以检查计划后重试。"
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "检查并重试(_R)"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "显示详细信息(_S)"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "安装日志"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "搜索语言"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "搜索国家/地区"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "未找到系统磁盘。"
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "加密需要 MAN 安装程序创建的 Btrfs 布局。"
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "此安装没有加密所需的单独启动分区。要使用加密，请用“清除磁盘”重新安装 MAN。"
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "您在哪里？"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "您的国家或地区决定日期、时间和数字的格式。"
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "国家/地区"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU 通用公共许可证第 2 版"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Linux 内核和许多系统工具"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU 通用公共许可证第 3 版"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "许多 GNU 和 GNOME 程序"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU 宽通用公共许可证第 2.1 版"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK、GLib 和许多库"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU 宽通用公共许可证第 3 版"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "库"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla 公共许可证 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla 等提供的程序和库"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache 许可证 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "库和工具"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "许可协议"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "请阅读并接受提供 MAN 所依据的条款。"
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "许可证"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "许可证文本不可用（{path}）。"
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "我已阅读并接受许可条款"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "有线"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "未连接"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "连接到互联网"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "连接后，MAN 可以校准时间并保持软件最新。您也可以稍后再连接。"
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "正在检查连接…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi 网络"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "重新搜索"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "跳过(_S)"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "您可以稍后在“设置”中连接。"
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "已连接"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "未连接"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "未找到网络"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "互联网"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "已连接到“{ssid}”"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "无法连接到“{ssid}”"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "连接到“{ssid}”"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "请输入网络密码。"
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "连接(_O)"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "创建您的帐户"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "您将成为这台电脑的管理员，可通过 sudo 获得完整的 root 权限。"
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "全名"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "用户名"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "密码"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "确认密码"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "自动登录"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "电脑启动时跳过登录屏幕"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "现有主文件夹"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "使用相同的用户名即可继续使用以前安装中保留的文件夹。"
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "使用"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "高级"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "电脑名称"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "设置 root 密码"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "允许直接以 root 登录。不设置时，请用您自己的密码使用 sudo。"
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "root 密码"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "确认 root 密码"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "请输入您的姓名。"
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "请选择用户名。"
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "系统已在使用此用户名。"
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "此用户名为系统保留。"
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "用户名只能包含小写字母、数字、- 和 _，并以字母开头。"
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "请选择密码。"
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "两次输入的密码不一致。"
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "电脑名称可以包含字母、数字和连字符。"
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "请输入两次 root 密码。"
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "提示：8 个或更多字符的密码要安全得多。"
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "帐户"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "深色"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "浅色"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "打造专属于您的风格"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "选择样式、强调色和壁纸。每次更改都会立即显示。"
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "样式"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "强调色"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "壁纸"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "个性化"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "隐私"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "选择哪些功能可以使用您的信息。您随时可以在“设置”中更改。"
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "位置服务"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "允许“地图”和“天气”等应用通过附近的 Wi-Fi 网络获取您的大致位置。"
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "自动时区"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "旅行时根据您的位置自动保持正确时区。"
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "完成设置(_F)"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "您的磁盘已加密"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "您的数据受到保护。每次启动电脑都需要输入密码。"
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "磁盘加密"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "加密可在电脑丢失或被盗时保护您的数据。"
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "此安装不可用"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "加密可在电脑丢失或被盗时保护您的文件。没有密码，任何人都无法读取磁盘。"
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "加密磁盘"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "每次启动电脑都需要输入密码。"
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "加密将在下次重新启动时开始"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "之后，磁盘会在您使用电脑时在后台加密。如果丢失密码，任何人都无法恢复数据。"
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "正在准备 MAN"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "正在准备一切…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "重新启动(_R)"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "返回(_G)"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "正在准备"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "设置日志"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "全部完成！"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "出现了问题"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "每日"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "更新前"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "还原前"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "重新安装前"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "手动"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "还没有快照"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "在对系统进行重大更改前创建一个快照。"
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "还原…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "删除快照"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "共 {size}，可用 {free}。系统、主文件夹和快照共用此空间；快照只占用自创建以来发生变化的部分。"
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "确定(_O)"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "创建快照"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "保存系统的当前状态。不包括主文件夹中的个人文件。"
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "描述，例如“安装驱动程序前”"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "创建(_C)"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "手动快照"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "删除快照？"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "{date} 的“{description}”将被永久删除。"
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "删除(_D)"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "还原此快照？"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"重新启动后，系统将回到 {date} 的“{description}”。您的个人文件不会改变。\n"
+"\n"
+"当前系统会先保存为快照，因此可以撤消。"
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "还原(_R)"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "重新启动以完成还原"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "稍后重新启动(_L)"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "立即重新启动(_N)"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "快照"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "还原点"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "快照保存操作系统的状态。还原快照会使系统回到那一时刻，有助于在更新或配置更改出错后恢复。您的个人文件绝不会被改动。"
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "自动快照"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "每日快照"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "电脑开机时每天一次"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "保留的每日快照数"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "软件更新前"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "在安装、升级或删除软件包时自动创建"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "保留的更新快照数"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "存储"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "磁盘空间"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "如果 MAN 无法启动"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "在启动菜单中选择“Restore a MAN snapshot”即可恢复正常工作的系统。"
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "快照不可用"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "快照适用于以 MAN 安装程序的 Btrfs 布局安装的 MAN。此系统（例如 Live 会话）未使用该布局。"
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "有一个还原正在等待：请重新启动电脑以完成"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "立即重新启动"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "请等待当前操作完成。"
+
+#: ui.rs:80
+msgid "Search"
+msgstr "搜索"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "复制到剪贴板"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "协调世界时"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "英语（美国）"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "正在检查更新"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "正在确认更新是否正版且完整…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "MAN 更新"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "无法安装此更新"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "无法读取更新。"
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "从 {name} {version} 更新"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "已安装 {name} {version}"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "版本"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "发布日期"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "下载大小"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "所需空间"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "真实性"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "已验证，由“{signer}”签名"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "新功能"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "继续(_C)"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "此更新并不比已安装的 {name} {version} 新。"
+
+#: updater.rs:143
+msgid "Update"
+msgstr "更新"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "请阅读此更新的许可条款。"
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "我接受许可条款"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "要将更新安装到哪里？"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "系统将被替换；主文件夹中的文件不会被改动。"
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "请选择一个安装。"
+
+#: updater.rs:199
+msgid "running now"
+msgstr "正在运行"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "这台电脑上的 {name} {version}"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{model} 上的 {name}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "未找到 MAN 安装"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "更新需从正在运行的已安装 MAN 系统中安装，不能在 Live 会话中安装。"
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "安装位置"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "摘要"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "保留"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "您的文件"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "主文件夹中的所有内容"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "帐户和密码"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "用户、组、电脑名称"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "连接和设置"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi、时区、键盘、外观和快照"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak 应用"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "以及 /usr/local 和 /opt 中的所有内容"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "替换"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "用 apt 安装的软件及对系统文件的其他更改都会被新系统替换。"
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "操作系统"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "由 {name} {version} 替换。当前系统可从快照还原。"
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "电脑将重新启动以安装更新"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "准备完成后，MAN 会重新启动，在几秒内安装更新，然后再次重新启动。"
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "安装更新(_I)"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "先创建快照？"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "快照会保存当前系统，如果更新后出现问题，您可以回到它。建议创建。"
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "不创建(_D)"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "创建快照(_C)"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "正在准备 {name} {version}"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "重新启动以安装"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "电脑将重新启动两次。您的文件是安全的。"
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "{r} 秒后自动重新启动"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "30 秒后自动重新启动"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "更新将在下次重新启动时安装。"
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "就绪"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "无法准备更新"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "您的系统没有任何更改。"
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "重试(_T)"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "更新日志"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "失败"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "您的系统已更新"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN 已更新到版本 {version}。\n"
+"之前：MAN {previous}。"
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "完成(_D)"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "打开 MAN 更新"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "MAN 更新"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "正在检查安装计划"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "正在准备磁盘"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "正在将 MAN 复制到磁盘"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "正在配置新系统"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "正在安装引导程序"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "正在创建第一个快照"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "正在完成"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "正在删除旧的分区签名"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "正在创建分区"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "正在格式化 EFI 系统分区"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "正在加密系统分区"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "正在格式化启动分区"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "正在创建 Btrfs 文件系统"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "正在删除旧的文件系统签名"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "正在解锁加密的安装"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "正在将当前系统保存为快照"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "正在删除之前的系统"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "正在写入文件系统表"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "正在设置电脑名称和标识"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "正在删除 Live 会话的帐户"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "正在创建您的帐户"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "正在为首次启动准备 MAN Setup"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "正在设置时区和键盘"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "正在从新系统中删除安装程序"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "正在生成启动映像（initramfs）"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "正在配置 GRUB"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "正在将 GRUB 安装到 EFI 系统分区"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "正在安装备用引导程序"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "正在写入启动菜单"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "磁盘就绪"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "正在创建全新系统的快照"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "正在将快照加入启动菜单"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "正在卸载"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "安装程序助手必须以 root 身份运行。"
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "这台电脑没有以 UEFI 模式启动。MAN 需要 UEFI。"
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "用户名无效。"
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "需要密码。"
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "电脑名称无效。"
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "未知语言。"
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "加密密码至少需要 8 个字符。"
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "您确认安装后磁盘发生了变化。未做任何修改；请检查后重新确认。"
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "请选择系统分区。"
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "已确认的磁盘不包含所选的系统分区。"
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "启动分区必须与 EFI 分区和系统分区分开。"
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "启动分区至少需要 512 MB。"
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "未选择安装。"
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "已确认的磁盘不包含所选的安装。"
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "加密的安装没有 MAN_BOOT 分区。"
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "在 /boot 中找不到具有匹配模块的内核。"
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "语言必须由系统助手更改。"
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "正在应用您的设置"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "正在准备磁盘加密"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "正在完成"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup 必须由系统助手完成。"
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "这台电脑已经完成了 MAN Setup。"
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "未知的强调色。"
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "所选壁纸不可用。"
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "此系统无法加密。"
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "缺少设置密钥，因此无法在后台继续加密。"
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "系统未安装在 Btrfs 上，因此快照不可用。"
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "快照还原正在等待重新启动。请先重新启动电脑以完成还原。"
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "快照 ID 无效。"
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "正在检查更新"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "正在创建快照"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "正在准备更新区域"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "正在解包新系统"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "正在迁移您的帐户和设置"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "正在准备重新启动"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "已解包"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "帐户"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "正在删除仅供安装程序使用的软件"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "正在生成更新的启动映像"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "正在添加一次性启动项"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "更新为正版"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "已创建快照"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "已跳过"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "更新区域已就绪"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "正在准备新系统"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "更新文件已损坏（校验和不匹配）。请重新下载。"
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "无法完整读取更新文件。"
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "更新中不包含内核。"
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "更新必须由系统助手安装。"
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "未找到所选安装。"
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "只能更新正在运行的 MAN 安装。"
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "这不是 MAN 更新文件（没有清单）。"
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "更新未签名，因此不可信。"
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "更新的签名已损坏。"
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "更新未由 MAN 签名。它可能被修改过，或来自不可信的来源。"
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "更新清单无效。"
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "密码不正确，或无法打开加密分区。"
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "蓝色"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "青色"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "绿色"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "黄色"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "橙色"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "红色"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "粉色"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "紫色"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "石板灰"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "系统安装程序"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "在这台电脑上安装 MAN"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "系统还原"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "创建和还原系统快照"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "系统更新安装程序"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "安装 MAN 系统更新文件"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "在 Live 会话启动时提供安装 MAN"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "MAN 更新通知"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "登录后告知一次 MAN 已更新"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "设置您的新 MAN 电脑"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "MAN 首次启动设置"

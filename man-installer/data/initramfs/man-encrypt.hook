@@ -1,0 +1,12 @@
+#!/bin/sh
+# Include the pending MAN disk encryption (set up by MAN Setup) in the initramfs.
+PREREQ=""
+prereqs() { echo "$PREREQ"; }
+case "$1" in prereqs) prereqs; exit 0 ;; esac
+. /usr/share/initramfs-tools/hook-functions
+[ -f /etc/man/encrypt-pending ] || exit 0
+mkdir -p "$DESTDIR/conf"
+cp /etc/man/encrypt-pending "$DESTDIR/conf/man-encrypt"
+copy_exec /usr/sbin/cryptsetup /usr/sbin
+[ -x /lib/cryptsetup/askpass ] && copy_exec /lib/cryptsetup/askpass /lib/cryptsetup
+exit 0

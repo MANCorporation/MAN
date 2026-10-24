@@ -1,0 +1,1981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: man-installer\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backend.rs:46
+msgid "Could not start the system helper."
+msgstr "Жүйе көмекшісін іске қосу мүмкін болмады."
+
+#: backend.rs:51
+msgid "Could not talk to the system helper."
+msgstr "Жүйе көмекшісімен байланысу мүмкін болмады."
+
+#: backend.rs:71
+msgid "Lost contact with the system helper."
+msgstr "Жүйе көмекшісімен байланыс үзілді."
+
+#: backend.rs:81
+msgid "Authorization was cancelled."
+msgstr "Авторизациядан бас тартылды."
+
+#: backend.rs:81
+msgid "Administrator rights are needed for this action."
+msgstr "Бұл әрекетке әкімші құқықтары керек."
+
+#: backend.rs:83
+msgid "The system helper stopped unexpectedly."
+msgstr "Жүйе көмекшісі күтпеген жерден тоқтады."
+
+#: installer.rs:78
+msgid "No EFI system partition"
+msgstr "EFI жүйелік бөлімі жоқ"
+
+#: installer.rs:82
+msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
+msgstr "Тек {free} бос, MAN-ға {need} керек. Windows ішінде DUHACH! арқылы орын босатыңыз."
+
+#: installer.rs:83
+msgid "No free space. Start DUHACH! in Windows to make room for MAN."
+msgstr "Бос орын жоқ. MAN үшін орын босату үшін Windows ішінде DUHACH! іске қосыңыз."
+
+#: installer.rs:92
+msgid "MAN is running from this disk"
+msgstr "MAN осы дискіден жұмыс істеп тұр"
+
+#: installer.rs:96
+msgid "In use: a partition is mounted"
+msgstr "Қолданыста: бөлім тіркелген"
+
+#: installer.rs:98
+msgid "Too small, MAN needs {need}"
+msgstr "Тым кішкентай, MAN-ға {need} керек"
+
+#: installer.rs:108
+msgid "Install MAN"
+msgstr "MAN орнату"
+
+#: installer.rs:126
+msgid "MAN is being installed. Please wait until it finishes."
+msgstr "MAN орнатылуда. Аяқталғанша күтіңіз."
+
+#: installer.rs:143
+msgid "Language"
+msgstr "Тіл"
+
+#: installer.rs:155
+msgid "_Restart in This Language"
+msgstr "Осы тілде қайта _іске қосу"
+
+#: installer.rs:167
+msgid "The live session restarts in the chosen language, and MAN is installed in it."
+msgstr "Тірі сеанс таңдалған тілде қайта іске қосылады, MAN да сол тілде орнатылады."
+
+#: installer.rs:213
+msgid "Welcome to MAN"
+msgstr "MAN-ға қош келдіңіз"
+
+#: installer.rs:214
+msgid ""
+"A fast, open and fully customizable GNOME system.\n"
+"Install it on this computer, or keep exploring the live session."
+msgstr ""
+"Жылдам, ашық және толық баптауға болатын GNOME жүйесі.\n"
+"Оны осы компьютерге орнатыңыз немесе тірі сеансты зерттей беріңіз."
+
+#: installer.rs:218
+msgid "_Install MAN…"
+msgstr "MAN _орнату…"
+
+#: installer.rs:220
+msgid "_Keep Trying MAN"
+msgstr "MAN-ды _сынай беру"
+
+#: installer.rs:223
+msgid "Looking for disks…"
+msgstr "Дискілер ізделуде…"
+
+#: installer.rs:250
+msgid "Welcome"
+msgstr "Қош келдіңіз"
+
+#: installer.rs:265
+msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
+msgstr "Бұл компьютер ескі BIOS режимінде іске қосылған. MAN тек UEFI компьютерлеріне орнатылады: қайта іске қосып, UEFI жүктеу нұсқасын таңдаңыз."
+
+#: installer.rs:283
+msgid "The system helper returned no disk information."
+msgstr "Жүйе көмекшісі дискілер туралы ақпарат қайтармады."
+
+#: installer.rs:348
+msgid "  ·  EFI"
+msgstr "  ·  EFI"
+
+#: installer.rs:356
+msgid "_Next"
+msgstr "_Келесі"
+
+#: installer.rs:361
+msgid "Installation Type"
+msgstr "Орнату түрі"
+
+#: installer.rs:364
+msgid "Erase Disk and Install MAN"
+msgstr "Дискіні өшіріп, MAN орнату"
+
+#: installer.rs:365
+msgid "Everything on the chosen disk is deleted, Windows included."
+msgstr "Таңдалған дискідегі барлық деректер өшіріледі, Windows те."
+
+#: installer.rs:365
+msgid "Recommended. Everything on the chosen disk is deleted."
+msgstr "Ұсынылады. Таңдалған дискідегі барлық деректер өшіріледі."
+
+#: installer.rs:369
+msgid "Install Alongside Windows"
+msgstr "Windows қасына орнату"
+
+#: installer.rs:370
+msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
+msgstr "Ұсынылады. MAN Windows қасындағы бос орынды пайдаланады; Windows және оның файлдары сақталады. Жүйені әр іске қосқанда таңдайсыз."
+
+#: installer.rs:377
+msgid "Reinstall MAN"
+msgstr "MAN-ды қайта орнату"
+
+#: installer.rs:378
+msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
+msgstr "Жүйені ауыстырады, бірақ /home ішіндегі жеке файлдарды сақтайды. Ағымдағы жүйе снапшот ретінде сақталады."
+
+#: installer.rs:383
+msgid "Custom Partitions"
+msgstr "Таңдамалы бөлімдер"
+
+#: installer.rs:383
+msgid "For experts: choose partitions yourself, or create them with Disks."
+msgstr "Мамандарға: бөлімдерді өзіңіз таңдаңыз немесе «Дискілер» арқылы жасаңыз."
+
+#: installer.rs:392
+msgid "Disk"
+msgstr "Диск"
+
+#: installer.rs:392
+msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
+msgstr "Өшірілетін дискіні таңдаңыз. Қолдануға болмайтын дискілер себебімен көрсетіледі."
+
+#: installer.rs:418
+msgid "No disks were found"
+msgstr "Дискілер табылмады"
+
+#: installer.rs:425
+msgid "Free Space Next to Windows"
+msgstr "Windows қасындағы бос орын"
+
+#: installer.rs:426
+msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
+msgstr "Windows бөлімдеріне тиіспейді. MAN EFI жүйелік бөлімін ортақ пайдаланады және Windows-ты жүктеу мәзіріне қосады."
+
+#: installer.rs:432
+msgid "{size} free"
+msgstr "{size} бос"
+
+#: installer.rs:432
+msgid "no free space"
+msgstr "бос орын жоқ"
+
+#: installer.rs:437
+msgid "{model} (Windows)"
+msgstr "{model} (Windows)"
+
+#: installer.rs:456
+msgid "Installation to Replace"
+msgstr "Ауыстырылатын орнату"
+
+#: installer.rs:477
+msgid "no home folders"
+msgstr "үй бумалары жоқ"
+
+#: installer.rs:479
+msgid "home folders: {list}"
+msgstr "үй бумалары: {list}"
+
+#: installer.rs:481
+msgid "snapshots: {n}"
+msgstr "снапшоттар: {n}"
+
+#: installer.rs:485
+msgid "MAN on {model}"
+msgstr "{model} ішіндегі MAN"
+
+#: installer.rs:499
+msgid "Passphrase for {device}"
+msgstr "{device} үшін құпия фраза"
+
+#: installer.rs:500
+msgid "Unlock"
+msgstr "Құлпын ашу"
+
+#: installer.rs:537
+msgid "The installation could not be inspected."
+msgstr "Орнатуды тексеру мүмкін болмады."
+
+#: installer.rs:554
+msgid "Partitions"
+msgstr "Бөлімдер"
+
+#: installer.rs:555
+msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
+msgstr "Жүйелік бөлім Btrfs етіп пішімделеді және @system, @home және @snapshots қамтиды. MAN жұмыс істеп тұрған дискінің бөлімдері көрсетілмейді."
+
+#: installer.rs:557
+msgid "Open Disks to create or resize partitions"
+msgstr "Бөлім жасау не өлшемін өзгерту үшін «Дискілер» ашу"
+
+#: installer.rs:559
+msgid "Refresh the partition list"
+msgstr "Бөлімдер тізімін жаңарту"
+
+#: installer.rs:567
+msgid "Choose a partition"
+msgstr "Бөлімді таңдаңыз"
+
+#: installer.rs:579
+msgid "EFI System Partition"
+msgstr "EFI жүйелік бөлімі"
+
+#: installer.rs:580
+msgid "Format EFI System Partition"
+msgstr "EFI жүйелік бөлімін пішімдеу"
+
+#: installer.rs:580
+msgid "Leave off to keep boot loaders of other systems"
+msgstr "Басқа жүйелердің жүктегіштерін сақтау үшін сөндірулі қалдырыңыз"
+
+#: installer.rs:582
+msgid "System Partition (formatted as Btrfs)"
+msgstr "Жүйелік бөлім (Btrfs етіп пішімделеді)"
+
+#: installer.rs:583
+msgid "Boot Partition (needed with encryption)"
+msgstr "Жүктеу бөлімі (шифрлеу үшін керек)"
+
+#: installer.rs:642
+msgid "Partition list refreshed"
+msgstr "Бөлімдер тізімі жаңартылды"
+
+#: installer.rs:650
+msgid "Security"
+msgstr "Қауіпсіздік"
+
+#: installer.rs:652
+msgid "Encrypt the System"
+msgstr "Жүйені шифрлеу"
+
+#: installer.rs:653
+msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
+msgstr "Компьютер жоғалса не ұрланса, деректеріңізді қорғайды. Әр іске қосқанда құпия фраза сұралады."
+
+#: installer.rs:656
+msgid "Passphrase"
+msgstr "Құпия фраза"
+
+#: installer.rs:657
+msgid "Confirm Passphrase"
+msgstr "Құпия фразаны растау"
+
+#: installer.rs:659
+msgid "Keep this passphrase safe"
+msgstr "Бұл құпия фразаны қауіпсіз жерде сақтаңыз"
+
+#: installer.rs:660
+msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
+msgstr "Жоғалса, деректерді ешкім қалпына келтіре алмайды. Ядро мен жүктеу файлдары шифрленбеген шағын жүктеу бөлімінде қалады."
+
+#: installer.rs:732
+msgid "The passphrase needs at least 8 characters."
+msgstr "Құпия фраза кемінде 8 таңбадан тұруы керек."
+
+#: installer.rs:734
+msgid "The passphrases do not match."
+msgstr "Құпия фразалар сәйкес келмейді."
+
+#: installer.rs:748
+msgid "Choose a disk."
+msgstr "Дискіні таңдаңыз."
+
+#: installer.rs:758
+msgid "Choose the disk with Windows."
+msgstr "Windows бар дискіні таңдаңыз."
+
+#: installer.rs:767
+msgid "Choose the installation to replace."
+msgstr "Ауыстырылатын орнатуды таңдаңыз."
+
+#: installer.rs:768
+msgid "Unlock the encrypted installation first."
+msgstr "Алдымен шифрленген орнатудың құлпын ашыңыз."
+
+#: installer.rs:769
+msgid "This partition holds no MAN system."
+msgstr "Бұл бөлімде MAN жүйесі жоқ."
+
+#: installer.rs:776
+msgid "Choose an EFI system partition."
+msgstr "EFI жүйелік бөлімін таңдаңыз."
+
+#: installer.rs:778
+msgid "Choose the system partition."
+msgstr "Жүйелік бөлімді таңдаңыз."
+
+#: installer.rs:780
+msgid "The EFI and system partitions must be different."
+msgstr "EFI бөлімі мен жүйелік бөлім әртүрлі болуы керек."
+
+#: installer.rs:782
+msgid "Encryption needs a separate boot partition."
+msgstr "Шифрлеуге бөлек жүктеу бөлімі керек."
+
+#: installer.rs:791
+msgid "The system partition must be at least {size}."
+msgstr "Жүйелік бөлім кемінде {size} болуы керек."
+
+#: installer.rs:793
+msgid "The EFI partition is not FAT formatted; turn on formatting."
+msgstr "EFI бөлімі FAT етіп пішімделмеген; пішімдеуді қосыңыз."
+
+#: installer.rs:795
+msgid "The system partition is mounted; unmount it in Disks first."
+msgstr "Жүйелік бөлім тіркелген; алдымен оны «Дискілер» ішінде ажыратыңыз."
+
+#: installer.rs:817
+msgid "Where Should MAN Be Installed?"
+msgstr "MAN қайда орнатылсын?"
+
+#: installer.rs:824
+msgid "Time and Keyboard"
+msgstr "Уақыт және пернетақта"
+
+#: installer.rs:829
+msgid "Time Zone"
+msgstr "Уақыт белдеуі"
+
+#: installer.rs:833
+msgid "Keyboard Layout"
+msgstr "Пернетақта жаймасы"
+
+#: installer.rs:843
+msgid "Test Your Keyboard"
+msgstr "Пернетақтаны тексеріңіз"
+
+#: installer.rs:843
+msgid "Type here to check that your keys produce the right characters."
+msgstr "Пернелер дұрыс таңбаларды енгізетінін тексеру үшін осында теріңіз."
+
+#: installer.rs:844
+msgid "Type here"
+msgstr "Осында теріңіз"
+
+#: installer.rs:877
+msgid "Time Zone and Keyboard"
+msgstr "Уақыт белдеуі және пернетақта"
+
+#: installer.rs:920
+msgid "No disk chosen"
+msgstr "Диск таңдалмаған"
+
+#: installer.rs:926
+msgid "No system partition chosen"
+msgstr "Жүйелік бөлім таңдалмаған"
+
+#: installer.rs:928
+msgid "The system partition disappeared"
+msgstr "Жүйелік бөлім жоғалды"
+
+#: installer.rs:933
+msgid "No installation chosen"
+msgstr "Орнату таңдалмаған"
+
+#: installer.rs:944
+msgid "The disk disappeared"
+msgstr "Диск жоғалды"
+
+#: installer.rs:955
+msgid "Review"
+msgstr "Шолу"
+
+#: installer.rs:958
+msgid "Destination"
+msgstr "Мақсат"
+
+#: installer.rs:960
+msgid "Erase disk and install"
+msgstr "Дискіні өшіріп, орнату"
+
+#: installer.rs:961
+msgid "Custom partitions"
+msgstr "Таңдамалы бөлімдер"
+
+#: installer.rs:962
+msgid "Reinstall, keeping /home"
+msgstr "/home сақтап, қайта орнату"
+
+#: installer.rs:963
+msgid "Alongside Windows"
+msgstr "Windows қасына"
+
+#: installer.rs:969
+msgid " (will be formatted)"
+msgstr " (пішімделеді)"
+
+#: installer.rs:969
+msgid " (kept)"
+msgstr " (сақталады)"
+
+#: installer.rs:970
+msgid "System Partition"
+msgstr "Жүйелік бөлім"
+
+#: installer.rs:970
+msgid "{partition} (will be formatted)"
+msgstr "{partition} (пішімделеді)"
+
+#: installer.rs:972
+msgid "Boot Partition"
+msgstr "Жүктеу бөлімі"
+
+#: installer.rs:976
+msgid "Installation"
+msgstr "Орнату"
+
+#: installer.rs:980
+msgid "Space for MAN"
+msgstr "MAN үшін орын"
+
+#: installer.rs:980
+msgid "{free} of free space (a boot partition and the system partition are created)"
+msgstr "{free} бос орын (жүктеу бөлімі мен жүйелік бөлім жасалады)"
+
+#: installer.rs:981
+msgid "Windows"
+msgstr "Windows"
+
+#: installer.rs:981
+msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
+msgstr "Өзгермейді. Ол MAN жүктеу мәзірінде шығады; EFI жүйелік бөлімі ортақ."
+
+#: installer.rs:983
+msgid "Encryption"
+msgstr "Шифрлеу"
+
+#: installer.rs:983
+msgid "On (LUKS2)"
+msgstr "Қосулы (LUKS2)"
+
+#: installer.rs:983
+msgid "Off"
+msgstr "Сөндірулі"
+
+#: installer.rs:985
+msgid "File System"
+msgstr "Файлдық жүйе"
+
+#: installer.rs:986
+msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
+msgstr "Btrfs: @system — MAN үшін, @home — файлдарыңыз үшін, @snapshots — қалпына келтіру нүктелері үшін. Бәрі бос орынды ортақ пайдаланады."
+
+#: installer.rs:991
+msgid "System"
+msgstr "Жүйе"
+
+#: installer.rs:993
+msgid "Your Account"
+msgstr "Сіздің тіркелгіңіз"
+
+#: installer.rs:994
+msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
+msgstr "Компьютер алғаш іске қосылғанда MAN Setup ішінде компьютер атауымен, сыртқы түрімен және жекелік баптауларымен бірге жасалады."
+
+#: installer.rs:998
+msgid "Keyboard"
+msgstr "Пернетақта"
+
+#: installer.rs:1002
+msgid "All data on {model} ({path}) will be erased."
+msgstr "{model} ({path}) ішіндегі барлық деректер өшіріледі."
+
+#: installer.rs:1002
+msgid "_Erase and Install"
+msgstr "_Өшіріп, орнату"
+
+#: installer.rs:1003
+msgid "The chosen partitions will be formatted. Other partitions are not changed."
+msgstr "Таңдалған бөлімдер пішімделеді. Басқа бөлімдер өзгермейді."
+
+#: installer.rs:1003
+msgid "_Format and Install"
+msgstr "_Пішімдеп, орнату"
+
+#: installer.rs:1004
+msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
+msgstr "Ағымдағы жүйе ауыстырылады. /home ішіндегі файлдарыңыз сақталады, ескі жүйе снапшот ретінде сақталады."
+
+#: installer.rs:1004
+msgid "_Reinstall"
+msgstr "_Қайта орнату"
+
+#: installer.rs:1005
+msgid "MAN is installed into the free space. Windows and its files are not changed."
+msgstr "MAN бос орынға орнатылады. Windows және оның файлдары өзгермейді."
+
+#: installer.rs:1005
+msgid "_Install"
+msgstr "_Орнату"
+
+#: installer.rs:1019
+msgid "Ready to Install"
+msgstr "Орнатуға дайын"
+
+#: installer.rs:1029
+msgid "Erase {model}?"
+msgstr "{model} өшірілсін бе?"
+
+#: installer.rs:1030
+msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
+msgstr "{path} ({size}) ішіндегі барлық файлдар мен бөлімдер біржола өшіріледі. Мұны болдырмау мүмкін емес."
+
+#: installer.rs:1031
+msgid "Erase and Install"
+msgstr "Өшіріп, орнату"
+
+#: installer.rs:1035
+msgid "Format the Chosen Partitions?"
+msgstr "Таңдалған бөлімдер пішімделсін бе?"
+
+#: installer.rs:1036
+msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
+msgstr "Таңдалған бөлімдердегі барлық деректер біржола өшіріледі. Басқа бөлімдер өзгермейді."
+
+#: installer.rs:1037
+msgid "Format and Install"
+msgstr "Пішімдеп, орнату"
+
+#: installer.rs:1041
+msgid "Install MAN Alongside Windows?"
+msgstr "MAN Windows қасына орнатылсын ба?"
+
+#: installer.rs:1042
+msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
+msgstr "MAN {model} ({path}) ішіндегі {free} бос орынға орнатылады. Windows және оның файлдары өзгермейді."
+
+#: installer.rs:1046
+msgid "Install"
+msgstr "Орнату"
+
+#: installer.rs:1050
+msgid "Reinstall MAN?"
+msgstr "MAN қайта орнатылсын ба?"
+
+#: installer.rs:1051
+msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
+msgstr "Орнатылған жүйе жаңа көшірмемен ауыстырылады. /home ішіндегі жеке файлдар сақталады, ескі жүйе снапшот ретінде қолжетімді болады."
+
+#: installer.rs:1052
+msgid "Reinstall"
+msgstr "Қайта орнату"
+
+#: installer.rs:1057
+msgid "_Cancel"
+msgstr "_Бас тарту"
+
+#: installer.rs:1076
+msgid "Installing MAN"
+msgstr "MAN орнатылуда"
+
+#: installer.rs:1077
+msgid "Starting…"
+msgstr "Басталуда…"
+
+#: installer.rs:1085
+msgid "Details"
+msgstr "Толығырақ"
+
+#: installer.rs:1090
+msgid "Installing"
+msgstr "Орнатылуда"
+
+#: installer.rs:1103
+msgid "Step {index} of {n}  ·  {title}"
+msgstr "{n} қадамның {index}-қадамы  ·  {title}"
+
+#: installer.rs:1128
+msgid "Log"
+msgstr "Журнал"
+
+#: installer.rs:1138
+msgid "MAN Is Installed"
+msgstr "MAN орнатылды"
+
+#: installer.rs:1143
+msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
+msgstr "MAN қолдануды бастау үшін компьютерді қайта іске қосыңыз. Әр іске қосқанда мәзірден MAN не Windows таңдай аласыз; уақытша орнатқыш бөлімін MAN алғашқы іске қосылғанда өшіреді."
+
+#: installer.rs:1149
+msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
+msgstr "MAN қолдануды бастау үшін компьютерді қайта іске қосыңыз. Орнату тасымалдағышын алып тастай аласыз; қосулы қалса да, MAN жаңа дискіден іске қосылады."
+
+#: installer.rs:1156
+msgid "_Restart Now"
+msgstr "Қазір қайта _іске қосу"
+
+#: installer.rs:1171
+msgid "Done"
+msgstr "Дайын"
+
+#: installer.rs:1182
+msgid "Installation Failed"
+msgstr "Орнату сәтсіз аяқталды"
+
+#: installer.rs:1186
+msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
+msgstr "Басқа ешбір диск өзгертілмеді, орнатқыш мақсатты дискіні босатты. Жоспарды қарап шығып, қайталап көруге болады."
+
+#: installer.rs:1191
+msgid "_Review and Try Again"
+msgstr "_Қарап шығып, қайталау"
+
+#: installer.rs:1193
+msgid "_Show Details"
+msgstr "_Толығырақ көрсету"
+
+#: installer.rs:1208
+msgid "Installation Log"
+msgstr "Орнату журналы"
+
+#: langui.rs:229
+msgid "Search languages"
+msgstr "Тілдерді іздеу"
+
+#: langui.rs:269
+msgid "Search countries"
+msgstr "Елдерді іздеу"
+
+#: oobe.rs:165
+msgid "The system disk was not found."
+msgstr "Жүйелік диск табылмады."
+
+#: oobe.rs:173
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Шифрлеуге MAN орнатқышы жасаған Btrfs құрылымы керек."
+
+#: oobe.rs:177
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Бұл орнатуда шифрлеуге керек бөлек жүктеу бөлімі жоқ. Шифрлеуді қолдану үшін MAN-ды «Дискіні өшіру» арқылы қайта орнатыңыз."
+
+#: oobe.rs:501
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:554
+msgid "Where Are You?"
+msgstr "Қай жердесіз?"
+
+#: oobe.rs:554
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Еліңіз не аймағыңыз күн, уақыт және сандар пішімін анықтайды."
+
+#: oobe.rs:572
+msgid "Country"
+msgstr "Ел"
+
+#: oobe.rs:587
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, 2-нұсқа"
+
+#: oobe.rs:587
+msgid "The Linux kernel and many system tools"
+msgstr "Linux ядросы және көп жүйелік құралдар"
+
+#: oobe.rs:588
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, 3-нұсқа"
+
+#: oobe.rs:588
+msgid "Many GNU and GNOME programs"
+msgstr "Көп GNU және GNOME бағдарламалары"
+
+#: oobe.rs:589
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, 2.1-нұсқа"
+
+#: oobe.rs:589
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib және көп кітапханалар"
+
+#: oobe.rs:590
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, 3-нұсқа"
+
+#: oobe.rs:590
+msgid "Libraries"
+msgstr "Кітапханалар"
+
+#: oobe.rs:591
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:591
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla және басқалардың бағдарламалары мен кітапханалары"
+
+#: oobe.rs:592
+msgid "Apache License 2.0"
+msgstr "Apache лицензиясы 2.0"
+
+#: oobe.rs:592
+msgid "Libraries and tools"
+msgstr "Кітапханалар мен құралдар"
+
+#: oobe.rs:597
+msgid "License Agreement"
+msgstr "Лицензиялық келісім"
+
+#: oobe.rs:597
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "MAN ұсынылатын шарттарды оқып, қабылдаңыз."
+
+#: oobe.rs:608
+msgid "Licenses"
+msgstr "Лицензиялар"
+
+#: oobe.rs:616
+msgid "The license text is not available ({path})."
+msgstr "Лицензия мәтіні қолжетімсіз ({path})."
+
+#: oobe.rs:622
+msgid "I have read and accept the license terms"
+msgstr "Лицензия шарттарын оқыдым және қабылдаймын"
+
+#: oobe.rs:692
+msgid "Wired"
+msgstr "Сымды"
+
+#: oobe.rs:698
+msgid "Not connected"
+msgstr "Қосылмаған"
+
+#: oobe.rs:732
+msgid "Connect to the Internet"
+msgstr "Интернетке қосылу"
+
+#: oobe.rs:732
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Байланыс болса, MAN уақытты орнатып, бағдарламаларды жаңартып отыра алады. Мұны кейін де жасауға болады."
+
+#: oobe.rs:734
+msgid "Checking the connection…"
+msgstr "Байланыс тексерілуде…"
+
+#: oobe.rs:740
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi желілері"
+
+#: oobe.rs:742
+msgid "Search Again"
+msgstr "Қайта іздеу"
+
+#: oobe.rs:753
+msgid "_Skip"
+msgstr "_Өткізіп жіберу"
+
+#: oobe.rs:754
+msgid "You can connect later in Settings."
+msgstr "Кейін Баптаулар ішінде қосыла аласыз."
+
+#: oobe.rs:763
+msgid "Connected"
+msgstr "Қосылған"
+
+#: oobe.rs:763
+msgid "Not Connected"
+msgstr "Қосылмаған"
+
+#: oobe.rs:791
+msgid "No networks found"
+msgstr "Желілер табылмады"
+
+#: oobe.rs:817
+msgid "Internet"
+msgstr "Интернет"
+
+#: oobe.rs:864
+msgid "Connected to “{ssid}”"
+msgstr "«{ssid}» желісіне қосылды"
+
+#: oobe.rs:864
+msgid "Could not connect to “{ssid}”"
+msgstr "«{ssid}» желісіне қосылу мүмкін болмады"
+
+#: oobe.rs:874
+msgid "Connect to “{ssid}”"
+msgstr "«{ssid}» желісіне қосылу"
+
+#: oobe.rs:874
+msgid "Enter the network password."
+msgstr "Желі паролін енгізіңіз."
+
+#: oobe.rs:878
+msgid "C_onnect"
+msgstr "_Қосылу"
+
+#: oobe.rs:901
+msgid "Create Your Account"
+msgstr "Тіркелгіңізді жасаңыз"
+
+#: oobe.rs:901
+msgid "You will be the administrator of this computer, with full root access through sudo."
+msgstr "Сіз осы компьютердің әкімшісі боласыз, sudo арқылы толық root қатынасымен."
+
+#: oobe.rs:904
+msgid "Full Name"
+msgstr "Толық аты-жөні"
+
+#: oobe.rs:905
+msgid "Username"
+msgstr "Пайдаланушы аты"
+
+#: oobe.rs:906
+msgid "Password"
+msgstr "Пароль"
+
+#: oobe.rs:907
+msgid "Confirm Password"
+msgstr "Парольді растау"
+
+#: oobe.rs:908
+msgid "Log In Automatically"
+msgstr "Автоматты түрде кіру"
+
+#: oobe.rs:908
+msgid "Skip the login screen when the computer starts"
+msgstr "Компьютер іске қосылғанда кіру экранын өткізіп жіберу"
+
+#: oobe.rs:915
+msgid "Existing Home Folders"
+msgstr "Бар үй бумалары"
+
+#: oobe.rs:915
+msgid "Use the same username to keep using a folder kept from a previous installation."
+msgstr "Алдыңғы орнатудан қалған буманы пайдалана беру үшін сол пайдаланушы атын қолданыңыз."
+
+#: oobe.rs:919
+msgid "Use"
+msgstr "Пайдалану"
+
+#: oobe.rs:929
+msgid "Advanced"
+msgstr "Кеңейтілген"
+
+#: oobe.rs:930
+msgid "Computer Name"
+msgstr "Компьютер атауы"
+
+#: oobe.rs:932
+msgid "Set a Root Password"
+msgstr "root паролін орнату"
+
+#: oobe.rs:933
+msgid "Allows logging in as root directly. Without it, use sudo with your own password."
+msgstr "root ретінде тікелей кіруге мүмкіндік береді. Онсыз өз паролiңізбен sudo қолданыңыз."
+
+#: oobe.rs:937
+msgid "Root Password"
+msgstr "root паролі"
+
+#: oobe.rs:938
+msgid "Confirm Root Password"
+msgstr "root паролін растау"
+
+#: oobe.rs:962
+msgid "Enter your name."
+msgstr "Атыңызды енгізіңіз."
+
+#: oobe.rs:964
+msgid "Choose a username."
+msgstr "Пайдаланушы атын таңдаңыз."
+
+#: oobe.rs:966
+msgid "This username is already used by the system."
+msgstr "Бұл пайдаланушы атын жүйе қолданып тұр."
+
+#: oobe.rs:969
+msgid "This username is reserved by the system."
+msgstr "Бұл пайдаланушы аты жүйеге резервтелген."
+
+#: oobe.rs:971
+msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
+msgstr "Пайдаланушы аттары кіші латын әріптерінен, цифрлардан, - және _ таңбаларынан тұрады және әріптен басталады."
+
+#: oobe.rs:974
+msgid "Choose a password."
+msgstr "Пароль таңдаңыз."
+
+#: oobe.rs:976
+msgid "The passwords do not match."
+msgstr "Парольдер сәйкес келмейді."
+
+#: oobe.rs:978
+msgid "The computer name may contain letters, digits and dashes."
+msgstr "Компьютер атауында әріптер, цифрлар және дефистер болуы мүмкін."
+
+#: oobe.rs:980
+msgid "Enter the root password twice."
+msgstr "root паролін екі рет енгізіңіз."
+
+#: oobe.rs:986
+msgid "Tip: a password with 8 or more characters is much safer."
+msgstr "Кеңес: 8 немесе одан көп таңбалы пароль әлдеқайда қауіпсіз."
+
+#: oobe.rs:1066
+msgid "Account"
+msgstr "Тіркелгі"
+
+#: oobe.rs:1084
+msgid "Dark"
+msgstr "Қараңғы"
+
+#: oobe.rs:1084
+msgid "Light"
+msgstr "Ашық"
+
+#: oobe.rs:1092
+msgid "Make It Yours"
+msgstr "Өзіңізге бейімдеңіз"
+
+#: oobe.rs:1092
+msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
+msgstr "Стильді, акцент түсін және тұсқағазды таңдаңыз. Әр өзгерісті бірден көресіз."
+
+#: oobe.rs:1095
+msgid "Style"
+msgstr "Стиль"
+
+#: oobe.rs:1115
+msgid "Accent Color"
+msgstr "Акцент түсі"
+
+#: oobe.rs:1158
+msgid "Wallpaper"
+msgstr "Тұсқағаз"
+
+#: oobe.rs:1202
+msgid "Customize"
+msgstr "Баптау"
+
+#: oobe.rs:1209
+msgid "Privacy"
+msgstr "Жекелік"
+
+#: oobe.rs:1209
+msgid "Choose which features may use information about you. You can change this at any time in Settings."
+msgstr "Сіз туралы ақпаратты қай мүмкіндіктер қолдана алатынын таңдаңыз. Мұны кез келген уақытта Баптаулар ішінде өзгертуге болады."
+
+#: oobe.rs:1212
+msgid "Location Services"
+msgstr "Орналасу қызметтері"
+
+#: oobe.rs:1213
+msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
+msgstr "«Карталар» және «Ауа райы» сияқты қолданбаларға жақын Wi-Fi желілері арқылы шамамен орналасқан жеріңізді анықтауға мүмкіндік береді."
+
+#: oobe.rs:1217
+msgid "Automatic Time Zone"
+msgstr "Автоматты уақыт белдеуі"
+
+#: oobe.rs:1218
+msgid "Uses your location to keep the time zone right when you travel."
+msgstr "Саяхат кезінде уақыт белдеуін дұрыс ұстау үшін орналасқан жеріңізді пайдаланады."
+
+#: oobe.rs:1251
+msgid "_Finish Setup"
+msgstr "Баптауды _аяқтау"
+
+#: oobe.rs:1256
+msgid "Your Disk Is Encrypted"
+msgstr "Дискіңіз шифрленген"
+
+#: oobe.rs:1256
+msgid "Your data is protected. The passphrase is asked every time the computer starts."
+msgstr "Деректеріңіз қорғалған. Компьютер әр іске қосылғанда құпия фраза сұралады."
+
+#: oobe.rs:1259
+msgid "Disk Encryption"
+msgstr "Дискіні шифрлеу"
+
+#: oobe.rs:1259
+msgid "Encryption protects your data if the computer is lost or stolen."
+msgstr "Шифрлеу компьютер жоғалса не ұрланса, деректеріңізді қорғайды."
+
+#: oobe.rs:1261
+msgid "Not available on this installation"
+msgstr "Бұл орнатуда қолжетімсіз"
+
+#: oobe.rs:1267
+msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
+msgstr "Шифрлеу компьютер жоғалса не ұрланса, файлдарыңызды қорғайды. Құпия фразасыз дискіні ешкім оқи алмайды."
+
+#: oobe.rs:1270
+msgid "Encrypt the Disk"
+msgstr "Дискіні шифрлеу"
+
+#: oobe.rs:1271
+msgid "The passphrase is asked every time the computer starts."
+msgstr "Компьютер әр іске қосылғанда құпия фраза сұралады."
+
+#: oobe.rs:1279
+msgid "Encryption starts at the next restart"
+msgstr "Шифрлеу келесі қайта іске қосқанда басталады"
+
+#: oobe.rs:1280
+msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
+msgstr "Содан кейін компьютерді пайдаланып отырғанда диск фонда шифрленеді. Құпия фраза жоғалса, деректерді ешкім қалпына келтіре алмайды."
+
+#: oobe.rs:1377
+msgid "Preparing MAN"
+msgstr "MAN дайындалуда"
+
+#: oobe.rs:1378
+msgid "Getting everything ready…"
+msgstr "Бәрі дайындалуда…"
+
+#: oobe.rs:1383
+msgid "_Reboot"
+msgstr "Қайта _іске қосу"
+
+#: oobe.rs:1385
+msgid "_Go Back"
+msgstr "_Артқа"
+
+#: oobe.rs:1399
+msgid "Preparing"
+msgstr "Дайындалуда"
+
+#: oobe.rs:1412
+msgid "Setup Log"
+msgstr "Баптау журналы"
+
+#: oobe.rs:1444
+msgid "All Done!"
+msgstr "Бәрі дайын!"
+
+#: oobe.rs:1454
+msgid "Something Went Wrong"
+msgstr "Бірдеңе қате кетті"
+
+#: snapshots.rs:84
+msgid "Daily"
+msgstr "Күнделікті"
+
+#: snapshots.rs:85
+msgid "Before update"
+msgstr "Жаңартудан бұрын"
+
+#: snapshots.rs:86
+msgid "Before restore"
+msgstr "Қалпына келтіруден бұрын"
+
+#: snapshots.rs:87
+msgid "Before reinstall"
+msgstr "Қайта орнатудан бұрын"
+
+#: snapshots.rs:88
+msgid "Manual"
+msgstr "Қолмен"
+
+#: snapshots.rs:123
+msgid "No snapshots yet"
+msgstr "Әзірге снапшоттар жоқ"
+
+#: snapshots.rs:123
+msgid "Create one before making big changes to the system."
+msgstr "Жүйеге үлкен өзгерістер енгізбес бұрын біреуін жасаңыз."
+
+#: snapshots.rs:133
+msgid "Restore…"
+msgstr "Қалпына келтіру…"
+
+#: snapshots.rs:135
+msgid "Delete Snapshot"
+msgstr "Снапшотты өшіру"
+
+#: snapshots.rs:160
+msgid "{free} free of {size}. System, home and snapshots share this space; snapshots only use space for what changed since they were taken."
+msgstr "{size} ішінен {free} бос. Жүйе, үй бумалары және снапшоттар осы орынды ортақ пайдаланады; снапшоттар тек жасалғаннан бері өзгерген бөлікке орын алады."
+
+#: snapshots.rs:220
+msgid "_OK"
+msgstr "_Жарайды"
+
+#: snapshots.rs:229
+msgid "Create Snapshot"
+msgstr "Снапшот жасау"
+
+#: snapshots.rs:229
+msgid "Save the current state of the system. Your personal files in Home are not included."
+msgstr "Жүйенің ағымдағы күйін сақтайды. Үй бумасындағы жеке файлдар кірмейді."
+
+#: snapshots.rs:230
+msgid "Description, for example “Before installing drivers”"
+msgstr "Сипаттама, мысалы «Драйверлерді орнатудан бұрын»"
+
+#: snapshots.rs:233
+msgid "_Create"
+msgstr "_Жасау"
+
+#: snapshots.rs:245
+msgid "Manual snapshot"
+msgstr "Қолмен жасалған снапшот"
+
+#: snapshots.rs:253
+msgid "Delete Snapshot?"
+msgstr "Снапшот өшірілсін бе?"
+
+#: snapshots.rs:254
+msgid "“{description}” from {date} will be deleted permanently."
+msgstr "{date} күнгі «{description}» біржола өшіріледі."
+
+#: snapshots.rs:257
+msgid "_Delete"
+msgstr "_Өшіру"
+
+#: snapshots.rs:271
+msgid "Restore This Snapshot?"
+msgstr "Бұл снапшот қалпына келтірілсін бе?"
+
+#: snapshots.rs:272
+msgid ""
+"The system will return to “{description}” from {date} after a restart. Your personal files in Home are not changed.\n"
+"\n"
+"The current system is saved as a snapshot first, so this can be undone."
+msgstr ""
+"Қайта іске қосқаннан кейін жүйе {date} күнгі «{description}» күйіне оралады. Жеке файлдарыңыз өзгермейді.\n"
+"\n"
+"Ағымдағы жүйе алдымен снапшот ретінде сақталады, сондықтан мұны болдырмауға болады."
+
+#: snapshots.rs:278
+msgid "_Restore"
+msgstr "_Қалпына келтіру"
+
+#: snapshots.rs:291
+msgid "Restart to Finish Restoring"
+msgstr "Қалпына келтіруді аяқтау үшін қайта іске қосыңыз"
+
+#: snapshots.rs:292
+msgid "Restart _Later"
+msgstr "Кейінірек қайта _іске қосу"
+
+#: snapshots.rs:293
+msgid "Restart _Now"
+msgstr "Қазір қайта _іске қосу"
+
+#: snapshots.rs:306
+msgid "Snapshots"
+msgstr "Снапшоттар"
+
+#: snapshots.rs:317
+msgid "Restore Points"
+msgstr "Қалпына келтіру нүктелері"
+
+#: snapshots.rs:318
+msgid "Snapshots save the state of the operating system. Restoring one brings the system back to that moment, which helps after a bad update or configuration change. Your personal files in Home are never touched."
+msgstr "Снапшоттар операциялық жүйенің күйін сақтайды. Біреуін қалпына келтіру жүйені сол сәтке қайтарады, бұл сәтсіз жаңарту не баптау өзгерісінен кейін көмектеседі. Жеке файлдарыңызға ешқашан тиіспейді."
+
+#: snapshots.rs:325
+msgid "Automatic Snapshots"
+msgstr "Автоматты снапшоттар"
+
+#: snapshots.rs:326
+msgid "Daily Snapshots"
+msgstr "Күнделікті снапшоттар"
+
+#: snapshots.rs:326
+msgid "Once a day while the computer is on"
+msgstr "Компьютер қосулы тұрғанда күніне бір рет"
+
+#: snapshots.rs:328
+msgid "Daily Snapshots to Keep"
+msgstr "Сақталатын күнделікті снапшоттар"
+
+#: snapshots.rs:329
+msgid "Before Software Updates"
+msgstr "Бағдарлама жаңартуларынан бұрын"
+
+#: snapshots.rs:329
+msgid "Taken automatically when packages are installed, upgraded or removed"
+msgstr "Дестелер орнатылғанда, жаңартылғанда не өшірілгенде автоматты түрде жасалады"
+
+#: snapshots.rs:331
+msgid "Update Snapshots to Keep"
+msgstr "Сақталатын жаңарту снапшоттары"
+
+#: snapshots.rs:337
+msgid "Storage"
+msgstr "Сақтау орны"
+
+#: snapshots.rs:338
+msgid "Disk Space"
+msgstr "Дискідегі орын"
+
+#: snapshots.rs:342
+msgid "If MAN Does Not Start"
+msgstr "MAN іске қосылмаса"
+
+#: snapshots.rs:343
+msgid "Choose “Restore a MAN snapshot” in the boot menu to bring back a working system."
+msgstr "Жұмыс істейтін жүйені қайтару үшін жүктеу мәзірінен «Restore a MAN snapshot» таңдаңыз."
+
+#: snapshots.rs:351
+msgid "Snapshots Are Not Available"
+msgstr "Снапшоттар қолжетімсіз"
+
+#: snapshots.rs:352
+msgid "Snapshots work on MAN installed with the Btrfs layout created by the MAN installer. This system (for example a live session) does not use it."
+msgstr "Снапшоттар MAN орнатқышының Btrfs құрылымымен орнатылған MAN-да жұмыс істейді. Бұл жүйе (мысалы, тірі сеанс) оны қолданбайды."
+
+#: snapshots.rs:358
+msgid "A restore is waiting: restart the computer to finish it"
+msgstr "Қалпына келтіру күтуде: аяқтау үшін компьютерді қайта іске қосыңыз"
+
+#: snapshots.rs:359
+msgid "Restart Now"
+msgstr "Қазір қайта іске қосу"
+
+#: snapshots.rs:402
+msgid "Please wait until the current operation finishes."
+msgstr "Ағымдағы әрекет аяқталғанша күтіңіз."
+
+#: ui.rs:80
+msgid "Search"
+msgstr "Іздеу"
+
+#: ui.rs:149
+msgid "Copy to Clipboard"
+msgstr "Алмасу буферіне көшіру"
+
+#: ui.rs:175
+msgid "Coordinated Universal Time"
+msgstr "Үйлестірілген әлемдік уақыт"
+
+#: ui.rs:206
+msgid "English (US)"
+msgstr "Ағылшын (АҚШ)"
+
+#: updater.rs:57
+msgid "Checking the Update"
+msgstr "Жаңарту тексерілуде"
+
+#: updater.rs:57
+msgid "Making sure the update is genuine and complete…"
+msgstr "Жаңартудың түпнұсқа әрі толық екені тексерілуде…"
+
+#: updater.rs:60
+msgid "MAN Update"
+msgstr "MAN жаңартуы"
+
+#: updater.rs:75
+msgid "This Update Cannot Be Installed"
+msgstr "Бұл жаңартуды орнату мүмкін емес"
+
+#: updater.rs:76
+msgid "The update could not be read."
+msgstr "Жаңартуды оқу мүмкін болмады."
+
+#: updater.rs:101
+msgid "Update from {name} {version}"
+msgstr "{name} {version} нұсқасынан жаңарту"
+
+#: updater.rs:101
+msgid "{name} {version} is installed"
+msgstr "{name} {version} орнатылған"
+
+#: updater.rs:109
+msgid "Version"
+msgstr "Нұсқа"
+
+#: updater.rs:111
+msgid "Released"
+msgstr "Шыққан күні"
+
+#: updater.rs:113
+msgid "Download Size"
+msgstr "Жүктеп алу өлшемі"
+
+#: updater.rs:114
+msgid "Space Needed"
+msgstr "Қажет орын"
+
+#: updater.rs:115
+msgid "Authenticity"
+msgstr "Түпнұсқалық"
+
+#: updater.rs:115
+msgid "Verified, signed by “{signer}”"
+msgstr "Тексерілді, «{signer}» қол қойған"
+
+#: updater.rs:120
+msgid "What's New"
+msgstr "Не жаңа"
+
+#: updater.rs:129
+msgid "_Continue"
+msgstr "_Жалғастыру"
+
+#: updater.rs:134
+msgid "This update is not newer than the installed {name} {version}."
+msgstr "Бұл жаңарту орнатылған {name} {version} нұсқасынан жаңа емес."
+
+#: updater.rs:143
+msgid "Update"
+msgstr "Жаңарту"
+
+#: updater.rs:150
+msgid "Please read the license terms of this update."
+msgstr "Осы жаңартудың лицензия шарттарын оқыңыз."
+
+#: updater.rs:157
+msgid "I accept the license terms"
+msgstr "Лицензия шарттарын қабылдаймын"
+
+#: updater.rs:185
+msgid "Where Should the Update Be Installed?"
+msgstr "Жаңарту қайда орнатылсын?"
+
+#: updater.rs:186
+msgid "The system is replaced; files in your Home folder are not touched."
+msgstr "Жүйе ауыстырылады; үй бумаңыздағы файлдарға тиіспейді."
+
+#: updater.rs:192
+msgid "Choose an installation."
+msgstr "Орнатуды таңдаңыз."
+
+#: updater.rs:199
+msgid "running now"
+msgstr "қазір жұмыс істеп тұр"
+
+#: updater.rs:209
+msgid "{name} {version} on this computer"
+msgstr "Осы компьютердегі {name} {version}"
+
+#: updater.rs:209
+msgid "{name} on {model}"
+msgstr "{model} ішіндегі {name}"
+
+#: updater.rs:228
+msgid "No MAN installation found"
+msgstr "MAN орнатуы табылмады"
+
+#: updater.rs:228
+msgid "Updates are installed from a running, installed MAN system, not from the live session."
+msgstr "Жаңартулар тірі сеанстан емес, жұмыс істеп тұрған орнатылған MAN жүйесінен орнатылады."
+
+#: updater.rs:240
+msgid "Install Location"
+msgstr "Орнату орны"
+
+#: updater.rs:252
+msgid "Summary"
+msgstr "Қорытынды"
+
+#: updater.rs:257
+msgid "Kept"
+msgstr "Сақталады"
+
+#: updater.rs:259
+msgid "Your Files"
+msgstr "Файлдарыңыз"
+
+#: updater.rs:259
+msgid "Everything in your Home folder"
+msgstr "Үй бумаңыздағы барлығы"
+
+#: updater.rs:260
+msgid "Accounts and Passwords"
+msgstr "Тіркелгілер мен парольдер"
+
+#: updater.rs:260
+msgid "Users, groups, the computer name"
+msgstr "Пайдаланушылар, топтар, компьютер атауы"
+
+#: updater.rs:261
+msgid "Connections and Settings"
+msgstr "Байланыстар мен баптаулар"
+
+#: updater.rs:261
+msgid "Wi-Fi, time zone, keyboard, look and snapshots"
+msgstr "Wi-Fi, уақыт белдеуі, пернетақта, сыртқы түр және снапшоттар"
+
+#: updater.rs:262
+msgid "Flatpak Apps"
+msgstr "Flatpak қолданбалары"
+
+#: updater.rs:262
+msgid "Plus anything in /usr/local and /opt"
+msgstr "Сонымен қатар /usr/local және /opt ішіндегі барлығы"
+
+#: updater.rs:272
+msgid "Replaced"
+msgstr "Ауыстырылады"
+
+#: updater.rs:273
+msgid "Software installed with apt and other changes to system files are replaced by the new system."
+msgstr "apt арқылы орнатылған бағдарламалар мен жүйелік файлдардағы басқа өзгерістер жаңа жүйемен ауыстырылады."
+
+#: updater.rs:275
+msgid "The Operating System"
+msgstr "Операциялық жүйе"
+
+#: updater.rs:275
+msgid "Replaced by {name} {version}. The current system can be restored from a snapshot."
+msgstr "{name} {version} нұсқасымен ауыстырылады. Ағымдағы жүйені снапшоттан қалпына келтіруге болады."
+
+#: updater.rs:282
+msgid "The computer restarts to install the update"
+msgstr "Жаңартуды орнату үшін компьютер қайта іске қосылады"
+
+#: updater.rs:283
+msgid "After preparing, MAN restarts, installs the update in a few seconds and restarts again."
+msgstr "Дайындықтан кейін MAN қайта іске қосылып, жаңартуды бірнеше секундта орнатады да, тағы қайта іске қосылады."
+
+#: updater.rs:289
+msgid "_Install Update"
+msgstr "Жаңартуды _орнату"
+
+#: updater.rs:299
+msgid "Create a Snapshot First?"
+msgstr "Алдымен снапшот жасалсын ба?"
+
+#: updater.rs:300
+msgid "A snapshot saves the current system, so you can go back to it if something does not work after the update. This is recommended."
+msgstr "Снапшот ағымдағы жүйені сақтайды, жаңартудан кейін бірдеңе жұмыс істемесе, оған орала аласыз. Ұсынылады."
+
+#: updater.rs:303
+msgid "_Don't Create"
+msgstr "_Жасамау"
+
+#: updater.rs:304
+msgid "_Create Snapshot"
+msgstr "Снапшот _жасау"
+
+#: updater.rs:324
+msgid "Preparing {name} {version}"
+msgstr "{name} {version} дайындалуда"
+
+#: updater.rs:385
+msgid "Restart to Install"
+msgstr "Орнату үшін қайта іске қосу"
+
+#: updater.rs:386
+msgid "The computer restarts twice. Your files are safe."
+msgstr "Компьютер екі рет қайта іске қосылады. Файлдарыңыз қауіпсіз."
+
+#: updater.rs:409
+msgid "Restarting automatically in {r} seconds"
+msgstr "{r} секундтан кейін автоматты түрде қайта іске қосылады"
+
+#: updater.rs:419
+msgid "Restarting automatically in 30 seconds"
+msgstr "30 секундтан кейін автоматты түрде қайта іске қосылады"
+
+#: updater.rs:426
+msgid "The update is installed the next time you restart."
+msgstr "Жаңарту келесі қайта іске қосқанда орнатылады."
+
+#: updater.rs:430
+msgid "Ready"
+msgstr "Дайын"
+
+#: updater.rs:441
+msgid "The Update Could Not Be Prepared"
+msgstr "Жаңартуды дайындау мүмкін болмады"
+
+#: updater.rs:442
+msgid "Nothing was changed on your system."
+msgstr "Жүйеңізде ештеңе өзгерген жоқ."
+
+#: updater.rs:446
+msgid "_Try Again"
+msgstr "_Қайталау"
+
+#: updater.rs:461
+msgid "Update Log"
+msgstr "Жаңарту журналы"
+
+#: updater.rs:463
+msgid "Failed"
+msgstr "Сәтсіз"
+
+#: updater.rs:498
+msgid "Your System Was Updated"
+msgstr "Жүйеңіз жаңартылды"
+
+#: updater.rs:499
+msgid ""
+"MAN was updated to version {version}.\n"
+"Previously: MAN {previous}."
+msgstr ""
+"MAN {version} нұсқасына жаңартылды.\n"
+"Бұрын: MAN {previous}."
+
+#: updater.rs:502
+msgid "_Done"
+msgstr "_Дайын"
+
+#: updater.rs:547
+msgid "Open a MAN Update"
+msgstr "MAN жаңартуын ашу"
+
+#: updater.rs:549
+msgid "MAN updates"
+msgstr "MAN жаңартулары"
+
+#: install.rs:16
+msgid "Checking the installation plan"
+msgstr "Орнату жоспары тексерілуде"
+
+#: install.rs:16
+msgid "Preparing the disk"
+msgstr "Диск дайындалуда"
+
+#: install.rs:16
+msgid "Copying MAN to the disk"
+msgstr "MAN дискіге көшірілуде"
+
+#: install.rs:16
+msgid "Configuring the new system"
+msgstr "Жаңа жүйе бапталуда"
+
+#: install.rs:16
+msgid "Installing the bootloader"
+msgstr "Жүктегіш орнатылуда"
+
+#: install.rs:16
+msgid "Creating the first snapshot"
+msgstr "Алғашқы снапшот жасалуда"
+
+#: install.rs:16
+msgid "Finishing up"
+msgstr "Аяқталуда"
+
+#: install.rs:199
+msgid "Removing old partition signatures"
+msgstr "Ескі бөлім қолтаңбалары өшірілуде"
+
+#: install.rs:205
+msgid "Creating partitions"
+msgstr "Бөлімдер жасалуда"
+
+#: install.rs:226
+msgid "Formatting the EFI system partition"
+msgstr "EFI жүйелік бөлімі пішімделуде"
+
+#: install.rs:234
+msgid "Encrypting the system partition"
+msgstr "Жүйелік бөлім шифрленуде"
+
+#: install.rs:246
+msgid "Formatting the boot partition"
+msgstr "Жүктеу бөлімі пішімделуде"
+
+#: install.rs:249
+msgid "Creating the Btrfs file system"
+msgstr "Btrfs файлдық жүйесі жасалуда"
+
+#: install.rs:258
+msgid "Removing old file system signatures"
+msgstr "Ескі файлдық жүйе қолтаңбалары өшірілуде"
+
+#: install.rs:330
+msgid "Unlocking the encrypted installation"
+msgstr "Шифрленген орнатудың құлпы ашылуда"
+
+#: install.rs:356
+msgid "Saving the current system as a snapshot"
+msgstr "Ағымдағы жүйе снапшот ретінде сақталуда"
+
+#: install.rs:362
+msgid "Removing the previous system"
+msgstr "Алдыңғы жүйе өшірілуде"
+
+#: install.rs:571
+msgid "Writing file system table"
+msgstr "Файлдық жүйелер кестесі жазылуда"
+
+#: install.rs:593
+msgid "Setting computer name and identity"
+msgstr "Компьютер атауы мен идентификаторы орнатылуда"
+
+#: install.rs:608
+msgid "Removing the live session accounts"
+msgstr "Тірі сеанс тіркелгілері өшірілуде"
+
+#: install.rs:641
+msgid "Creating your account"
+msgstr "Тіркелгіңіз жасалуда"
+
+#: install.rs:649
+msgid "Preparing MAN Setup for the first start"
+msgstr "MAN Setup алғашқы іске қосуға дайындалуда"
+
+#: install.rs:655
+msgid "Setting time zone and keyboard"
+msgstr "Уақыт белдеуі мен пернетақта орнатылуда"
+
+#: install.rs:680
+msgid "Removing the installer from the new system"
+msgstr "Орнатқыш жаңа жүйеден өшірілуде"
+
+#: install.rs:687
+msgid "Building the boot image (initramfs)"
+msgstr "Жүктеу бейнесі (initramfs) жасалуда"
+
+#: install.rs:717
+msgid "Configuring GRUB"
+msgstr "GRUB бапталуда"
+
+#: install.rs:735
+msgid "Installing GRUB to the EFI system partition"
+msgstr "GRUB EFI жүйелік бөліміне орнатылуда"
+
+#: install.rs:750
+msgid "Installing the fallback boot loader"
+msgstr "Қосалқы жүктегіш орнатылуда"
+
+#: install.rs:757
+msgid "Writing the boot menu"
+msgstr "Жүктеу мәзірі жазылуда"
+
+#: install.rs:778
+msgid "Disk ready"
+msgstr "Диск дайын"
+
+#: install.rs:791
+msgid "Creating a snapshot of the fresh system"
+msgstr "Жаңа жүйенің снапшоты жасалуда"
+
+#: install.rs:797
+msgid "Adding the snapshot to the boot menu"
+msgstr "Снапшот жүктеу мәзіріне қосылуда"
+
+#: install.rs:801
+msgid "Unmounting"
+msgstr "Ажыратылуда"
+
+#: install.rs:85
+msgid "The installer backend must run as root."
+msgstr "Орнатқыш көмекшісі root ретінде жұмыс істеуі керек."
+
+#: install.rs:88
+msgid "This computer was not started in UEFI mode. MAN requires UEFI."
+msgstr "Бұл компьютер UEFI режимінде іске қосылмаған. MAN-ға UEFI керек."
+
+#: install.rs:92
+msgid "The username is not valid."
+msgstr "Пайдаланушы аты жарамсыз."
+
+#: install.rs:95
+msgid "A password is required."
+msgstr "Пароль керек."
+
+#: install.rs:99
+msgid "The computer name is not valid."
+msgstr "Компьютер атауы жарамсыз."
+
+#: install.rs:105
+msgid "Unknown language."
+msgstr "Белгісіз тіл."
+
+#: install.rs:111
+msgid "The encryption passphrase must have at least 8 characters."
+msgstr "Шифрлеу құпия фразасы кемінде 8 таңбадан тұруы керек."
+
+#: install.rs:122
+msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
+msgstr "Орнатуды растағаннан кейін диск өзгерді. Ештеңе өзгертілмеді; қарап шығып, қайта растаңыз."
+
+#: install.rs:138
+msgid "Choose a system partition."
+msgstr "Жүйелік бөлімді таңдаңыз."
+
+#: install.rs:145
+msgid "The confirmed disk does not hold the chosen system partition."
+msgstr "Расталған дискіде таңдалған жүйелік бөлім жоқ."
+
+#: install.rs:157
+msgid "The boot partition must be separate from the EFI and system partitions."
+msgstr "Жүктеу бөлімі EFI және жүйелік бөлімдерден бөлек болуы керек."
+
+#: install.rs:160
+msgid "The boot partition must be at least 512 MB."
+msgstr "Жүктеу бөлімі кемінде 512 МБ болуы керек."
+
+#: install.rs:175
+msgid "No installation chosen."
+msgstr "Орнату таңдалмаған."
+
+#: install.rs:179
+msgid "The confirmed disk does not hold the chosen installation."
+msgstr "Расталған дискіде таңдалған орнату жоқ."
+
+#: install.rs:337
+msgid "The encrypted installation has no MAN_BOOT partition."
+msgstr "Шифрленген орнатуда MAN_BOOT бөлімі жоқ."
+
+#: install.rs:695
+msgid "No kernel with matching modules was found in /boot."
+msgstr "/boot ішінде сәйкес модульдері бар ядро табылмады."
+
+#: locale.rs:180
+msgid "The language must be changed by the system helper."
+msgstr "Тілді жүйе көмекшісі өзгертуі керек."
+
+#: oobe.rs:204
+msgid "Applying your settings"
+msgstr "Баптауларыңыз қолданылуда"
+
+#: oobe.rs:212
+msgid "Preparing disk encryption"
+msgstr "Дискіні шифрлеу дайындалуда"
+
+#: oobe.rs:216
+msgid "Finishing"
+msgstr "Аяқталуда"
+
+#: oobe.rs:100
+msgid "MAN Setup must be finished by the system helper."
+msgstr "MAN Setup-ты жүйе көмекшісі аяқтауы керек."
+
+#: oobe.rs:103
+msgid "MAN Setup has already been completed on this computer."
+msgstr "Бұл компьютерде MAN Setup бұрыннан аяқталған."
+
+#: oobe.rs:124
+msgid "Unknown accent color."
+msgstr "Белгісіз акцент түсі."
+
+#: oobe.rs:128
+msgid "The chosen wallpaper is not available."
+msgstr "Таңдалған тұсқағаз қолжетімсіз."
+
+#: oobe.rs:146
+msgid "This system cannot be encrypted."
+msgstr "Бұл жүйені шифрлеу мүмкін емес."
+
+#: oobe.rs:257
+msgid "The setup key is missing, so encryption cannot continue in the background."
+msgstr "Баптау кілті жоқ, сондықтан шифрлеу фонда жалғаса алмайды."
+
+#: snapshots.rs:48
+msgid "The system is not installed on Btrfs, so snapshots are not available."
+msgstr "Жүйе Btrfs-ке орнатылмаған, сондықтан снапшоттар қолжетімсіз."
+
+#: snapshots.rs:50
+msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
+msgstr "Снапшотты қалпына келтіру қайта іске қосуды күтуде. Аяқтау үшін алдымен компьютерді қайта іске қосыңыз."
+
+#: snapshots.rs:99
+msgid "Invalid snapshot id."
+msgstr "Жарамсыз снапшот ID."
+
+#: update.rs:32
+msgid "Checking the update"
+msgstr "Жаңарту тексерілуде"
+
+#: update.rs:32
+msgid "Creating a snapshot"
+msgstr "Снапшот жасалуда"
+
+#: update.rs:32
+msgid "Preparing the update area"
+msgstr "Жаңарту аймағы дайындалуда"
+
+#: update.rs:32
+msgid "Unpacking the new system"
+msgstr "Жаңа жүйе тарқатылуда"
+
+#: update.rs:32
+msgid "Moving your accounts and settings"
+msgstr "Тіркелгілер мен баптауларыңыз көшірілуде"
+
+#: update.rs:32
+msgid "Preparing the restart"
+msgstr "Қайта іске қосу дайындалуда"
+
+#: update.rs:179
+msgid "Unpacked"
+msgstr "Тарқатылды"
+
+#: update.rs:261
+msgid "Accounts"
+msgstr "Тіркелгілер"
+
+#: update.rs:301
+msgid "Removing installer-only software"
+msgstr "Тек орнатқышқа арналған бағдарламалар өшірілуде"
+
+#: update.rs:340
+msgid "Building the update boot image"
+msgstr "Жаңартудың жүктеу бейнесі жасалуда"
+
+#: update.rs:343
+msgid "Adding the one-time boot entry"
+msgstr "Бір реттік жүктеу жазбасы қосылуда"
+
+#: update.rs:377
+msgid "The update is genuine"
+msgstr "Жаңарту түпнұсқа"
+
+#: update.rs:383
+msgid "Snapshot created"
+msgstr "Снапшот жасалды"
+
+#: update.rs:385
+msgid "Skipped"
+msgstr "Өткізіп жіберілді"
+
+#: update.rs:394
+msgid "Update area ready"
+msgstr "Жаңарту аймағы дайын"
+
+#: update.rs:410
+msgid "Preparing the new system"
+msgstr "Жаңа жүйе дайындалуда"
+
+#: update.rs:168
+msgid "The update file is damaged (checksum mismatch). Download it again."
+msgstr "Жаңарту файлы зақымдалған (бақылау сомасы сәйкес емес). Қайта жүктеп алыңыз."
+
+#: update.rs:171
+msgid "The update file could not be read completely."
+msgstr "Жаңарту файлын толық оқу мүмкін болмады."
+
+#: update.rs:312
+msgid "The update contains no kernel."
+msgstr "Жаңартуда ядро жоқ."
+
+#: update.rs:360
+msgid "Updates must be installed by the system helper."
+msgstr "Жаңартуларды жүйе көмекшісі орнатуы керек."
+
+#: update.rs:369
+msgid "The chosen installation was not found."
+msgstr "Таңдалған орнату табылмады."
+
+#: update.rs:371
+msgid "Only the running MAN installation can be updated."
+msgstr "Тек жұмыс істеп тұрған MAN орнатуын жаңартуға болады."
+
+#: updfile.rs:78
+msgid "This is not a MAN update file (no manifest)."
+msgstr "Бұл MAN жаңарту файлы емес (манифест жоқ)."
+
+#: updfile.rs:79
+msgid "The update is not signed, so it cannot be trusted."
+msgstr "Жаңартуға қол қойылмаған, сондықтан оған сенуге болмайды."
+
+#: updfile.rs:81
+msgid "The update signature is damaged."
+msgstr "Жаңартудың қолтаңбасы зақымдалған."
+
+#: updfile.rs:86
+msgid "The update is not signed by MAN. It may have been modified or come from an untrusted source."
+msgstr "Жаңартуға MAN қол қоймаған. Ол өзгертілген не сенімсіз көзден келген болуы мүмкін."
+
+#: updfile.rs:92
+msgid "The update manifest is invalid."
+msgstr "Жаңарту манифесі жарамсыз."
+
+#: util.rs:167
+msgid "The passphrase is not correct, or the encrypted partition cannot be opened."
+msgstr "Құпия фраза қате немесе шифрленген бөлімді ашу мүмкін емес."
+
+#: lib.rs:ACCENTS
+msgid "Blue"
+msgstr "Көк"
+
+#: lib.rs:ACCENTS
+msgid "Teal"
+msgstr "Көкшіл жасыл"
+
+#: lib.rs:ACCENTS
+msgid "Green"
+msgstr "Жасыл"
+
+#: lib.rs:ACCENTS
+msgid "Yellow"
+msgstr "Сары"
+
+#: lib.rs:ACCENTS
+msgid "Orange"
+msgstr "Қызғылт сары"
+
+#: lib.rs:ACCENTS
+msgid "Red"
+msgstr "Қызыл"
+
+#: lib.rs:ACCENTS
+msgid "Pink"
+msgstr "Қызғылт"
+
+#: lib.rs:ACCENTS
+msgid "Purple"
+msgstr "Күлгін"
+
+#: lib.rs:ACCENTS
+msgid "Slate"
+msgstr "Сұр тақта"
+
+#: com.man.Installer.desktop
+msgid "System Installer"
+msgstr "Жүйе орнатқышы"
+
+#: com.man.Installer.desktop
+msgid "Install MAN on this computer"
+msgstr "MAN-ды осы компьютерге орнату"
+
+#: com.man.Snapshots.desktop
+msgid "System Restore"
+msgstr "Жүйені қалпына келтіру"
+
+#: com.man.Snapshots.desktop
+msgid "Create and restore snapshots of the system"
+msgstr "Жүйе снапшоттарын жасау және қалпына келтіру"
+
+#: com.man.Updater.desktop
+msgid "System Update Installer"
+msgstr "Жүйе жаңартуларын орнатқыш"
+
+#: com.man.Updater.desktop
+msgid "Install a MAN system update file"
+msgstr "MAN жүйе жаңарту файлын орнату"
+
+#: com.man.Installer.desktop
+msgid "Offer to install MAN when the live session starts"
+msgstr "Тірі сеанс басталғанда MAN орнатуды ұсынады"
+
+#: com.man.UpdateNotice.desktop
+msgid "MAN Update Notice"
+msgstr "MAN жаңарту хабарламасы"
+
+#: com.man.UpdateNotice.desktop
+msgid "Tells you once after logging in that MAN was updated"
+msgstr "Кіргеннен кейін MAN жаңартылғанын бір рет хабарлайды"
+
+#: com.man.Oobe.desktop
+msgid "Set up your new MAN computer"
+msgstr "Жаңа MAN компьютеріңізді баптаңыз"
+
+#: man-oobe.desktop
+msgid "First-start setup of MAN"
+msgstr "MAN-ның алғашқы баптауы"

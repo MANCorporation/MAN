@@ -1,0 +1,12 @@
+[Unit]
+Description=Finish a MAN system update
+ConditionPathExists=/var/lib/man/update-applied
+After=local-fs.target
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-installer/man-installer-backend update-finish
+
+[Install]
+WantedBy=multi-user.target

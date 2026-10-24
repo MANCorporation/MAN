@@ -1,0 +1,490 @@
+0|Pembantu sistem tidak dapat dijalankan.
+1|Tidak dapat berkomunikasi dengan pembantu sistem.
+2|Koneksi dengan pembantu sistem terputus.
+3|Otorisasi dibatalkan.
+4|Tindakan ini memerlukan hak administrator.
+5|Pembantu sistem berhenti secara tak terduga.
+6|Tidak ada partisi sistem EFI
+7|Hanya {free} yang kosong, MAN memerlukan {need}. Kosongkan ruang dengan DUHACH! di Windows.
+8|Tidak ada ruang kosong. Jalankan DUHACH! di Windows untuk memberi ruang bagi MAN.
+9|MAN berjalan dari disk ini
+10|Sedang digunakan: ada partisi yang terkait
+11|Terlalu kecil, MAN memerlukan {need}
+12|Pasang MAN
+13|MAN sedang dipasang. Harap tunggu sampai selesai.
+14|Bahasa
+15|_Mulakan semula dalam bahasa ini
+16|Sesi live akan dimulakan semula dalam bahasa yang dipilih, dan MAN dipasang dalam bahasa itu.
+17|Selamat datang ke MAN
+18|Sistem GNOME yang cepat, terbuka, dan sepenuhnya dapat disesuaikan.\nPasang di komputer ini, atau terus jelajahi sesi live.
+19|_Pasang MAN…
+20|_Terus coba MAN
+21|Mencari disk…
+22|Selamat datang
+23|Komputer ini dimulakan dalam mode BIOS lama. MAN hanya dapat dipasang di komputer UEFI: mulakan semula dan pilih opsi boot UEFI.
+24|Pembantu sistem tidak mengembalikan informasi disk.
+25|  ·  EFI
+26|_Seterusnya
+27|Jenis pemasangan
+28|Padam disk dan pasang MAN
+29|Semua isi disk yang dipilih akan dipadam, termasuk Windows.
+30|Disyorkan. Semua isi disk yang dipilih akan dipadam.
+31|Pasang berdampingan dengan Windows
+32|Disyorkan. MAN menggunakan ruang kosong di samping Windows; Windows dan failnya tetap ada. Pilih sistem setiap kali mulai.
+33|Pasang ulang MAN
+34|Mengganti sistem tetapi mempertahankan fail pribadi di /home. Sistem saat ini disimpan sebagai snapshot.
+35|Partisi khusus
+36|Untuk ahli: pilih partisi sendiri, atau buat dengan Disk.
+37|Disk
+38|Pilih disk yang akan dipadam. Disk yang tidak dapat digunakan ditampilkan beserta alasannya.
+39|Tidak ada disk yang ditemukan
+40|Ruang kosong di samping Windows
+41|Partisi Windows tidak disentuh. MAN berbagi partisi sistem EFI dan menambahkan Windows ke menu boot-nya.
+42|{size} kosong
+43|tidak ada ruang kosong
+44|{model} (Windows)
+45|Pemasangan yang akan diganti
+46|tidak ada folder rumah
+47|folder rumah: {list}
+48|snapshot: {n}
+49|MAN di {model}
+50|Frasa laluan untuk {device}
+51|Buka kunci
+52|Pemasangan tidak dapat diperiksa.
+53|Partisi
+54|Partisi sistem diformat dengan Btrfs dan berisi @system, @home, dan @snapshots. Partisi pada disk tempat MAN berjalan tidak dicantumkan.
+55|Buka Disk untuk membuat atau mengubah ukuran partisi
+56|Segarkan daftar partisi
+57|Pilih partisi
+58|Partisi sistem EFI
+59|Format partisi sistem EFI
+60|Biarkan mati untuk mempertahankan boot loader sistem lain
+61|Partisi sistem (diformat sebagai Btrfs)
+62|Partisi boot (diperlukan untuk enkripsi)
+63|Daftar partisi disegarkan
+64|Keamanan
+65|Enkripsi sistem
+66|Melindungi data anda jika komputer hilang atau dicuri. Frasa laluan diminta setiap kali mulai.
+67|Frasa laluan
+68|Konfirmasi frasa laluan
+69|Simpan frasa laluan ini dengan aman
+70|Jika hilang, tidak ada yang dapat memulihkan data. Kernel dan fail boot tetap berada di partisi boot kecil yang tidak dienkripsi.
+71|Frasa laluan minimal 8 karakter.
+72|Frasa laluan tidak cocok.
+73|Pilih disk.
+74|Pilih disk yang berisi Windows.
+75|Pilih pemasangan yang akan diganti.
+76|Buka kunci pemasangan terenkripsi terlebih dahulu.
+77|Partisi ini tidak berisi sistem MAN.
+78|Pilih partisi sistem EFI.
+79|Pilih partisi sistem.
+80|Partisi EFI dan partisi sistem harus berbeda.
+81|Enkripsi memerlukan partisi boot terpisah.
+82|Partisi sistem minimal {size}.
+83|Partisi EFI tidak berformat FAT; aktifkan pemformatan.
+84|Partisi sistem sedang terkait; lepaskan dulu di Disk.
+85|Di mana MAN akan dipasang?
+86|Waktu dan papan kekunci
+87|Zona waktu
+88|Tata letak papan kekunci
+89|Uji papan kekunci anda
+90|Ketik di sini untuk memastikan tombol menghasilkan karakter yang benar.
+91|Ketik di sini
+92|Zona waktu dan papan kekunci
+93|Belum ada disk yang dipilih
+94|Belum ada partisi sistem yang dipilih
+95|Partisi sistem menghilang
+96|Belum ada pemasangan yang dipilih
+97|Disk menghilang
+98|Tinjau
+99|Tujuan
+100|Padam disk dan pasang
+101|Partisi khusus
+102|Pasang ulang, pertahankan /home
+103|Berdampingan dengan Windows
+104| (akan diformat)
+105| (dipertahankan)
+106|Partisi sistem
+107|{partition} (akan diformat)
+108|Partisi boot
+109|Pemasangan
+110|Ruang untuk MAN
+111|{free} ruang kosong (partisi boot dan partisi sistem akan dibuat)
+112|Windows
+113|Tidak berubah. Muncul di menu boot MAN; partisi sistem EFI digunakan bersama.
+114|Enkripsi
+115|Aktif (LUKS2)
+116|Mati
+117|Sistem fail
+118|Btrfs: @system untuk MAN, @home untuk fail anda, @snapshots untuk titik pemulihan. Semuanya berbagi ruang kosong.
+119|Sistem
+120|Akun anda
+121|Dibuat di MAN Setup saat komputer pertama kali dimulakan, bersama nama komputer, tampilan, dan tetapan privasi.
+122|Papan kekunci
+123|Semua data di {model} ({path}) akan dipadam.
+124|_Padam dan pasang
+125|Partisi yang dipilih akan diformat. Partisi lain tidak berubah.
+126|_Format dan pasang
+127|Sistem saat ini diganti. Fail anda di /home dipertahankan, dan sistem lama disimpan sebagai snapshot.
+128|Pasang _ulang
+129|MAN dipasang di ruang kosong. Windows dan failnya tidak berubah.
+130|_Pasang
+131|Sedia dipasang
+132|Padam {model}?
+133|Semua fail dan partisi di {path} ({size}) akan dipadam permanen. Ini tidak dapat dibatalkan.
+134|Padam dan pasang
+135|Format partisi yang dipilih?
+136|Semua data di partisi yang dipilih akan dipadam permanen. Partisi lain tidak berubah.
+137|Format dan pasang
+138|Pasang MAN berdampingan dengan Windows?
+139|MAN dipasang di {free} ruang kosong pada {model} ({path}). Windows dan failnya tidak berubah.
+140|Pasang
+141|Pasang ulang MAN?
+142|Sistem terpasang akan diganti dengan salinan baru. Fail pribadi di /home dipertahankan dan sistem lama tetap tersedia sebagai snapshot.
+143|Pasang ulang
+144|_Batal
+145|Memasang MAN
+146|Memulakan…
+147|Rincian
+148|Memasang
+149|Langkah {index} dari {n}  ·  {title}
+150|Log
+151|MAN telah terpasang
+152|Mulakan semula komputer untuk mulai menggunakan MAN. Menu di setiap awal memungkinkan anda memilih MAN atau Windows; partisi pemasang sementara dipadam oleh MAN saat pertama kali dimulakan.
+153|Mulakan semula komputer untuk mulai menggunakan MAN. Anda dapat melepas media pemasangan; jika tetap terpasang, MAN tetap dimulakan dari disk baru.
+154|_Mulakan semula sekarang
+155|Selesai
+156|Pemasangan gagal
+157|Tidak ada disk lain yang berubah, dan pemasang telah melepaskan disk tujuan. Anda dapat meninjau rencana dan mencoba lagi.
+158|_Tinjau dan coba lagi
+159|_Tampilkan rincian
+160|Log pemasangan
+161|Cari bahasa
+162|Cari negara
+163|Disk sistem tidak ditemukan.
+164|Enkripsi memerlukan tata letak Btrfs yang dibuat oleh pemasang MAN.
+165|Pemasangan ini tidak memiliki partisi boot terpisah yang diperlukan enkripsi. Pasang ulang MAN dengan “Padam disk” untuk menggunakan enkripsi.
+166|MAN Setup
+167|Di mana anda berada?
+168|Negara atau wilayah anda menentukan format tanggal, waktu, dan angka.
+169|Negara
+170|GNU General Public License, versi 2
+171|Kernel Linux dan banyak alat sistem
+172|GNU General Public License, versi 3
+173|Banyak program GNU dan GNOME
+174|GNU Lesser General Public License, versi 2.1
+175|GTK, GLib, dan banyak pustaka
+176|GNU Lesser General Public License, versi 3
+177|Pustaka
+178|Mozilla Public License 2.0
+179|Program dan pustaka dari Mozilla dan lainnya
+180|Lisensi Apache 2.0
+181|Pustaka dan alat
+182|Perjanjian lisensi
+183|Baca dan setujui ketentuan penyediaan MAN.
+184|Lisensi
+185|Teks lisensi tidak tersedia ({path}).
+186|Saya telah membaca dan menyetujui ketentuan lisensi
+187|Kabel
+188|Tidak terhubung
+189|Hubungkan ke internet
+190|Dengan koneksi, MAN dapat mengatur waktu dan menjaga perisian tetap terbaru. Anda juga bisa melakukannya nanti.
+191|Memeriksa koneksi…
+192|Rangkaian Wi-Fi
+193|Cari lagi
+194|_Lewati
+195|Anda dapat terhubung nanti di Tetapan.
+196|Terhubung
+197|Tidak terhubung
+198|Tidak ada rangkaian yang ditemukan
+199|Internet
+200|Terhubung ke “{ssid}”
+201|Tidak dapat terhubung ke “{ssid}”
+202|Hubungkan ke “{ssid}”
+203|Masukkan kata laluan rangkaian.
+204|_Hubungkan
+205|Buat akun anda
+206|Anda akan menjadi administrator komputer ini, dengan akses root penuh melalui sudo.
+207|Nama lengkap
+208|Nama pengguna
+209|Kata laluan
+210|Konfirmasi kata laluan
+211|Masuk otomatis
+212|Lewati layar masuk saat komputer dimulakan
+213|Folder rumah yang ada
+214|Guna nama pengguna yang sama untuk terus menggunakan folder dari pemasangan sebelumnya.
+215|Guna
+216|Lanjutan
+217|Nama komputer
+218|Atur kata laluan root
+219|Memungkinkan masuk langsung sebagai root. Tanpanya, gunakan sudo dengan kata laluan anda sendiri.
+220|Kata laluan root
+221|Konfirmasi kata laluan root
+222|Masukkan nama anda.
+223|Pilih nama pengguna.
+224|Nama pengguna ini sudah digunakan sistem.
+225|Nama pengguna ini dicadangkan oleh sistem.
+226|Nama pengguna menggunakan huruf kecil, angka, - dan _, serta diawali huruf.
+227|Pilih kata laluan.
+228|Kata laluan tidak cocok.
+229|Nama komputer boleh berisi huruf, angka, dan tanda hubung.
+230|Masukkan kata laluan root dua kali.
+231|Tips: kata laluan 8 karakter atau lebih jauh lebih aman.
+232|Akun
+233|Gelap
+234|Terang
+235|Jadikan milik anda
+236|Pilih gaya, warna aksen, dan wallpaper. Setiap perubahan langsung terlihat.
+237|Gaya
+238|Warna aksen
+239|Wallpaper
+240|Sesuaikan
+241|Privasi
+242|Pilih fitur mana yang boleh menggunakan informasi tentang anda. Anda dapat mengubahnya kapan saja di Tetapan.
+243|Layanan lokasi
+244|Memungkinkan aplikasi seperti Peta dan Cuaca menemukan perkiraan lokasi anda melalui rangkaian Wi-Fi terdekat.
+245|Zona waktu otomatis
+246|Memakai lokasi anda agar zona waktu tetap benar saat bepergian.
+247|_Selesaikan penyiapan
+248|Disk anda terenkripsi
+249|Data anda terlindungi. Frasa laluan diminta setiap kali komputer dimulakan.
+250|Enkripsi disk
+251|Enkripsi melindungi data anda jika komputer hilang atau dicuri.
+252|Tidak tersedia pada pemasangan ini
+253|Enkripsi melindungi fail anda jika komputer hilang atau dicuri. Tanpa frasa laluan, tidak ada yang dapat membaca disk.
+254|Enkripsi disk
+255|Frasa laluan diminta setiap kali komputer dimulakan.
+256|Enkripsi dimulakan saat mulakan semula seterusnya
+257|Disk lalu dienkripsi di latar belakang sementara anda menggunakan komputer. Jika frasa laluan hilang, tidak ada yang dapat memulihkan data.
+258|Menyiapkan MAN
+259|Menyiapkan semuanya…
+260|_Mulakan semula
+261|_Kembali
+262|Menyiapkan
+263|Log penyiapan
+264|Semua selesai!
+265|Terjadi kesalahan
+266|Harian
+267|Sebelum kemas kini
+268|Sebelum pemulihan
+269|Sebelum pemasangan ulang
+270|Manual
+271|Belum ada snapshot
+272|Buat satu sebelum melakukan perubahan besar pada sistem.
+273|Pulihkan…
+274|Padam snapshot
+275|{free} kosong dari {size}. Sistem, folder rumah, dan snapshot berbagi ruang ini; snapshot hanya menggunakan ruang untuk hal yang berubah sejak dibuat.
+276|_OK
+277|Buat snapshot
+278|Menyimpan keadaan sistem saat ini. Fail pribadi di folder rumah tidak disertakan.
+279|Deskripsi, misalnya “Sebelum memasang driver”
+280|_Buat
+281|Snapshot manual
+282|Padam snapshot?
+283|“{description}” dari {date} akan dipadam permanen.
+284|_Padam
+285|Pulihkan snapshot ini?
+286|Sistem akan kembali ke “{description}” dari {date} setelah dimulakan semula. Fail pribadi anda tidak berubah.\n\nSistem saat ini disimpan dulu sebagai snapshot, jadi ini dapat dibatalkan.
+287|_Pulihkan
+288|Mulakan semula untuk menyelesaikan pemulihan
+289|Mulakan semula _nanti
+290|Mulakan semula _sekarang
+291|Snapshot
+292|Titik pemulihan
+293|Snapshot menyimpan keadaan sistem operasi. Memulihkannya mengembalikan sistem ke saat itu, yang berguna setelah kemas kini atau perubahan tetapan yang gagal. Fail pribadi anda tidak pernah disentuh.
+294|Snapshot otomatis
+295|Snapshot harian
+296|Sekali sehari saat komputer menyala
+297|Snapshot harian yang disimpan
+298|Sebelum kemas kini perisian
+299|Diambil otomatis saat paket dipasang, ditingkatkan, atau dipadam
+300|Snapshot kemas kini yang disimpan
+301|Penyimpanan
+302|Ruang disk
+303|Jika MAN tidak bisa dimulakan
+304|Pilih “Restore a MAN snapshot” di menu boot untuk mendapatkan kembali sistem yang berfungsi.
+305|Snapshot tidak tersedia
+306|Snapshot berfungsi pada MAN yang dipasang dengan tata letak Btrfs dari pemasang MAN. Sistem ini (misalnya sesi live) tidak menggunakannya.
+307|Pemulihan menunggu: mulakan semula komputer untuk menyelesaikannya
+308|Mulakan semula sekarang
+309|Harap tunggu sampai operasi saat ini selesai.
+310|Cari
+311|Salin ke papan klip
+312|Waktu Universal Terkoordinasi
+313|Inggris (AS)
+314|Memeriksa kemas kini
+315|Memastikan kemas kini asli dan lengkap…
+316|Kemas kini MAN
+317|Kemas kini ini tidak dapat dipasang
+318|Kemas kini tidak dapat dibaca.
+319|Kemas kini dari {name} {version}
+320|{name} {version} terpasang
+321|Versi
+322|Dirilis
+323|Ukuran muat turun
+324|Ruang yang diperlukan
+325|Keaslian
+326|Terverifikasi, ditandatangani oleh “{signer}”
+327|Yang baru
+328|_Lanjutkan
+329|Kemas kini ini tidak lebih baru dari {name} {version} yang terpasang.
+330|Kemas kini
+331|Harap baca ketentuan lisensi kemas kini ini.
+332|Saya menyetujui ketentuan lisensi
+333|Di mana kemas kini akan dipasang?
+334|Sistem diganti; fail di folder rumah anda tidak disentuh.
+335|Pilih pemasangan.
+336|sedang berjalan
+337|{name} {version} di komputer ini
+338|{name} di {model}
+339|Tidak ada pemasangan MAN yang ditemukan
+340|Kemas kini dipasang dari sistem MAN yang terpasang dan sedang berjalan, bukan dari sesi live.
+341|Lokasi pemasangan
+342|Ringkasan
+343|Dipertahankan
+344|Fail anda
+345|Semua isi folder rumah anda
+346|Akun dan kata laluan
+347|Pengguna, grup, nama komputer
+348|Koneksi dan tetapan
+349|Wi-Fi, zona waktu, papan kekunci, tampilan, dan snapshot
+350|Aplikasi Flatpak
+351|Ditambah semua isi /usr/local dan /opt
+352|Diganti
+353|Perisian yang dipasang dengan apt dan perubahan lain pada fail sistem diganti oleh sistem baru.
+354|Sistem operasi
+355|Diganti oleh {name} {version}. Sistem saat ini dapat dipulihkan dari snapshot.
+356|Komputer dimulakan semula untuk memasang kemas kini
+357|Setelah persediaan, MAN dimulakan semula, memasang kemas kini dalam beberapa detik, lalu dimulakan semula lagi.
+358|_Pasang kemas kini
+359|Buat snapshot dulu?
+360|Snapshot menyimpan sistem saat ini, sehingga anda dapat kembali jika ada yang tidak berfungsi setelah kemas kini. Ini disyorkan.
+361|_Jangan buat
+362|_Buat snapshot
+363|Menyiapkan {name} {version}
+364|Mulakan semula untuk memasang
+365|Komputer akan dimulakan semula dua kali. Fail anda aman.
+366|Mulakan semula otomatis dalam {r} detik
+367|Mulakan semula otomatis dalam 30 detik
+368|Kemas kini dipasang saat anda mulakan semula seterusnya.
+369|Sedia
+370|Kemas kini tidak dapat disediakan
+371|Tidak ada yang berubah pada sistem anda.
+372|_Coba lagi
+373|Log kemas kini
+374|Gagal
+375|Sistem anda telah dikemas kini
+376|MAN telah dikemas kini ke versi {version}.\nSebelumnya: MAN {previous}.
+377|_Selesai
+378|Buka kemas kini MAN
+379|Kemas kini MAN
+380|Memeriksa rencana pemasangan
+381|Menyiapkan disk
+382|Menyalin MAN ke disk
+383|Mengonfigurasi sistem baru
+384|Memasang boot loader
+385|Membuat snapshot pertama
+386|Menyelesaikan
+387|Mengpadam tanda tangan partisi lama
+388|Membuat partisi
+389|Memformat partisi sistem EFI
+390|Mengenkripsi partisi sistem
+391|Memformat partisi boot
+392|Membuat sistem fail Btrfs
+393|Mengpadam tanda tangan sistem fail lama
+394|Membuka kunci pemasangan terenkripsi
+395|Menyimpan sistem saat ini sebagai snapshot
+396|Mengpadam sistem sebelumnya
+397|Menulis tabel sistem fail
+398|Mengatur nama dan identitas komputer
+399|Mengpadam akun sesi live
+400|Membuat akun anda
+401|Menyiapkan MAN Setup untuk awal pertama
+402|Mengatur zona waktu dan papan kekunci
+403|Mengpadam pemasang dari sistem baru
+404|Membuat citra boot (initramfs)
+405|Mengonfigurasi GRUB
+406|Memasang GRUB ke partisi sistem EFI
+407|Memasang boot loader cadangan
+408|Menulis menu boot
+409|Disk sedia
+410|Membuat snapshot sistem baru
+411|Menambahkan snapshot ke menu boot
+412|Melepas
+413|Pembantu pemasang harus berjalan sebagai root.
+414|Komputer ini tidak dimulakan dalam mode UEFI. MAN memerlukan UEFI.
+415|Nama pengguna tidak valid.
+416|Kata laluan diperlukan.
+417|Nama komputer tidak valid.
+418|Bahasa tidak dikenal.
+419|Frasa laluan enkripsi minimal 8 karakter.
+420|Disk berubah setelah anda mengonfirmasi pemasangan. Tidak ada yang diubah; harap tinjau dan konfirmasi lagi.
+421|Pilih partisi sistem.
+422|Disk yang dikonfirmasi tidak berisi partisi sistem yang dipilih.
+423|Partisi boot harus terpisah dari partisi EFI dan partisi sistem.
+424|Partisi boot minimal 512 MB.
+425|Belum ada pemasangan yang dipilih.
+426|Disk yang dikonfirmasi tidak berisi pemasangan yang dipilih.
+427|Pemasangan terenkripsi tidak memiliki partisi MAN_BOOT.
+428|Tidak ditemukan kernel dengan modul yang cocok di /boot.
+429|Bahasa harus diubah oleh pembantu sistem.
+430|Menerapkan tetapan anda
+431|Menyiapkan enkripsi disk
+432|Menyelesaikan
+433|MAN Setup harus diselesaikan oleh pembantu sistem.
+434|MAN Setup sudah selesai di komputer ini.
+435|Warna aksen tidak dikenal.
+436|Wallpaper yang dipilih tidak tersedia.
+437|Sistem ini tidak dapat dienkripsi.
+438|Kunci penyiapan hilang, sehingga enkripsi tidak dapat dilanjutkan di latar belakang.
+439|Sistem tidak dipasang di Btrfs, sehingga snapshot tidak tersedia.
+440|Pemulihan snapshot menunggu mulakan semula. Mulakan semula komputer dulu untuk menyelesaikannya.
+441|ID snapshot tidak valid.
+442|Memeriksa kemas kini
+443|Membuat snapshot
+444|Menyiapkan area kemas kini
+445|Membongkar sistem baru
+446|Memindahkan akun dan tetapan anda
+447|Menyiapkan mulakan semula
+448|Dibongkar
+449|Akun
+450|Mengpadam perisian khusus pemasang
+451|Membuat citra boot kemas kini
+452|Menambahkan entri boot sekali guna
+453|Kemas kini asli
+454|Snapshot dibuat
+455|Dilewati
+456|Area kemas kini sedia
+457|Menyiapkan sistem baru
+458|Fail kemas kini rusak (checksum tidak cocok). Muat turun ulang.
+459|Fail kemas kini tidak dapat dibaca sepenuhnya.
+460|Kemas kini tidak berisi kernel.
+461|Kemas kini harus dipasang oleh pembantu sistem.
+462|Pemasangan yang dipilih tidak ditemukan.
+463|Hanya pemasangan MAN yang sedang berjalan yang dapat dikemas kini.
+464|Ini bukan fail kemas kini MAN (tidak ada manifest).
+465|Kemas kini tidak ditandatangani, sehingga tidak dapat dipercaya.
+466|Tanda tangan kemas kini rusak.
+467|Kemas kini tidak ditandatangani oleh MAN. Mungkin telah diubah atau berasal dari sumber yang tidak tepercaya.
+468|Manifest kemas kini tidak valid.
+469|Frasa laluan salah, atau partisi terenkripsi tidak dapat dibuka.
+470|Biru
+471|Hijau kebiruan
+472|Hijau
+473|Kuning
+474|Jingga
+475|Merah
+476|Merah muda
+477|Ungu
+478|Abu-abu batu
+479|Pemasang sistem
+480|Pasang MAN di komputer ini
+481|Pemulihan sistem
+482|Buat dan pulihkan snapshot sistem
+483|Pemasang kemas kini sistem
+484|Pasang fail kemas kini sistem MAN
+485|Menawarkan pemasangan MAN saat sesi live dimulakan
+486|Pemberitahuan kemas kini MAN
+487|Memberi tahu sekali setelah masuk bahwa MAN telah dikemas kini
+488|Sediakan komputer MAN baru anda
+489|Penyiapan awal MAN

@@ -1,0 +1,490 @@
+0|Asistentul de sistem nu a putut fi pornit.
+1|Nu se poate comunica cu asistentul de sistem.
+2|S-a pierdut legătura cu asistentul de sistem.
+3|Autorizarea a fost anulată.
+4|Această acțiune necesită drepturi de administrator.
+5|Asistentul de sistem s-a oprit neașteptat.
+6|Nu există partiție de sistem EFI
+7|Doar {free} liberi, MAN are nevoie de {need}. Faceți loc cu DUHACH! în Windows.
+8|Nu există spațiu liber. Porniți DUHACH! în Windows pentru a face loc pentru MAN.
+9|MAN rulează de pe acest disc
+10|În uz: o partiție este montată
+11|Prea mic, MAN are nevoie de {need}
+12|Instalează MAN
+13|MAN se instalează. Așteptați până se termină.
+14|Limbă
+15|_Repornește în această limbă
+16|Sesiunea live repornește în limba aleasă, iar MAN se instalează în această limbă.
+17|Bun venit în MAN
+18|Un sistem GNOME rapid, deschis și complet personalizabil.\nInstalați-l pe acest calculator sau continuați să explorați sesiunea live.
+19|_Instalează MAN…
+20|_Continuă să încerci MAN
+21|Se caută discuri…
+22|Bun venit
+23|Acest calculator a pornit în modul BIOS vechi. MAN se poate instala doar pe calculatoare UEFI: reporniți și alegeți opțiunea de pornire UEFI.
+24|Asistentul de sistem nu a returnat informații despre discuri.
+25|  ·  EFI
+26|Î_nainte
+27|Tipul instalării
+28|Șterge discul și instalează MAN
+29|Tot ce se află pe discul ales este șters, inclusiv Windows.
+30|Recomandat. Tot ce se află pe discul ales este șters.
+31|Instalează lângă Windows
+32|Recomandat. MAN folosește spațiul liber de lângă Windows; Windows și fișierele sale rămân. Alegeți sistemul la fiecare pornire.
+33|Reinstalează MAN
+34|Înlocuiește sistemul, dar păstrează fișierele personale din /home. Sistemul actual este salvat ca instantaneu.
+35|Partiții personalizate
+36|Pentru experți: alegeți singuri partițiile sau creați-le cu Discuri.
+37|Disc
+38|Alegeți discul care va fi șters. Discurile care nu pot fi folosite apar împreună cu motivul.
+39|Nu s-au găsit discuri
+40|Spațiu liber lângă Windows
+41|Partițiile Windows nu sunt atinse. MAN partajează partiția de sistem EFI și adaugă Windows în meniul său de pornire.
+42|{size} liberi
+43|fără spațiu liber
+44|{model} (Windows)
+45|Instalarea care va fi înlocuită
+46|fără dosare personale
+47|dosare personale: {list}
+48|instantanee: {n}
+49|MAN pe {model}
+50|Fraza de acces pentru {device}
+51|Deblochează
+52|Instalarea nu a putut fi examinată.
+53|Partiții
+54|Partiția de sistem este formatată cu Btrfs și conține @system, @home și @snapshots. Partițiile de pe discul de pe care rulează MAN nu sunt afișate.
+55|Deschide Discuri pentru a crea sau redimensiona partiții
+56|Reîmprospătează lista de partiții
+57|Alegeți o partiție
+58|Partiție de sistem EFI
+59|Formatează partiția de sistem EFI
+60|Lăsați dezactivat pentru a păstra încărcătoarele de pornire ale altor sisteme
+61|Partiție de sistem (formatată ca Btrfs)
+62|Partiție de pornire (necesară pentru criptare)
+63|Lista de partiții a fost reîmprospătată
+64|Securitate
+65|Criptează sistemul
+66|Vă protejează datele dacă pierdeți calculatorul sau vă este furat. La fiecare pornire se cere o frază de acces.
+67|Frază de acces
+68|Confirmați fraza de acces
+69|Păstrați această frază de acces în siguranță
+70|Dacă o pierdeți, nimeni nu poate recupera datele. Nucleul și fișierele de pornire rămân pe o mică partiție de pornire necriptată.
+71|Fraza de acces trebuie să aibă cel puțin 8 caractere.
+72|Frazele de acces nu se potrivesc.
+73|Alegeți un disc.
+74|Alegeți discul cu Windows.
+75|Alegeți instalarea care va fi înlocuită.
+76|Deblocați mai întâi instalarea criptată.
+77|Această partiție nu conține un sistem MAN.
+78|Alegeți o partiție de sistem EFI.
+79|Alegeți partiția de sistem.
+80|Partiția EFI și partiția de sistem trebuie să fie diferite.
+81|Criptarea necesită o partiție de pornire separată.
+82|Partiția de sistem trebuie să aibă cel puțin {size}.
+83|Partiția EFI nu este formatată FAT; activați formatarea.
+84|Partiția de sistem este montată; demontați-o mai întâi în Discuri.
+85|Unde se instalează MAN?
+86|Oră și tastatură
+87|Fus orar
+88|Aranjament tastatură
+89|Testați tastatura
+90|Scrieți aici pentru a verifica dacă tastele produc caracterele corecte.
+91|Scrieți aici
+92|Fus orar și tastatură
+93|Niciun disc ales
+94|Nicio partiție de sistem aleasă
+95|Partiția de sistem a dispărut
+96|Nicio instalare aleasă
+97|Discul a dispărut
+98|Verificare
+99|Destinație
+100|Șterge discul și instalează
+101|Partiții personalizate
+102|Reinstalează, păstrând /home
+103|Lângă Windows
+104| (va fi formatată)
+105| (păstrată)
+106|Partiție de sistem
+107|{partition} (va fi formatată)
+108|Partiție de pornire
+109|Instalare
+110|Spațiu pentru MAN
+111|{free} spațiu liber (se creează o partiție de pornire și partiția de sistem)
+112|Windows
+113|Neschimbat. Apare în meniul de pornire MAN; partiția de sistem EFI este partajată.
+114|Criptare
+115|Activată (LUKS2)
+116|Dezactivată
+117|Sistem de fișiere
+118|Btrfs: @system pentru MAN, @home pentru fișierele dvs., @snapshots pentru punctele de restaurare. Toate împart spațiul liber.
+119|Sistem
+120|Contul dvs.
+121|Este creat în MAN Setup la prima pornire a calculatorului, împreună cu numele calculatorului, aspectul și setările de confidențialitate.
+122|Tastatură
+123|Toate datele de pe {model} ({path}) vor fi șterse.
+124|Ș_terge și instalează
+125|Partițiile alese vor fi formatate. Celelalte partiții nu se schimbă.
+126|_Formatează și instalează
+127|Sistemul actual este înlocuit. Fișierele dvs. din /home sunt păstrate, iar sistemul vechi este salvat ca instantaneu.
+128|_Reinstalează
+129|MAN se instalează în spațiul liber. Windows și fișierele sale nu se schimbă.
+130|_Instalează
+131|Gata de instalare
+132|Ștergeți {model}?
+133|Toate fișierele și partițiile de pe {path} ({size}) vor fi șterse definitiv. Acțiunea nu poate fi anulată.
+134|Șterge și instalează
+135|Formatați partițiile alese?
+136|Toate datele de pe partițiile alese vor fi șterse definitiv. Celelalte partiții nu se schimbă.
+137|Formatează și instalează
+138|Instalați MAN lângă Windows?
+139|MAN se instalează în cei {free} de spațiu liber de pe {model} ({path}). Windows și fișierele sale nu se schimbă.
+140|Instalează
+141|Reinstalați MAN?
+142|Sistemul instalat va fi înlocuit cu o copie nouă. Fișierele personale din /home sunt păstrate, iar sistemul vechi rămâne disponibil ca instantaneu.
+143|Reinstalează
+144|_Anulează
+145|Se instalează MAN
+146|Se pornește…
+147|Detalii
+148|Se instalează
+149|Pasul {index} din {n}  ·  {title}
+150|Jurnal
+151|MAN este instalat
+152|Reporniți calculatorul pentru a începe să folosiți MAN. Un meniu la fiecare pornire vă permite să alegeți MAN sau Windows; partiția temporară a instalatorului este eliminată de MAN la prima pornire.
+153|Reporniți calculatorul pentru a începe să folosiți MAN. Puteți scoate mediul de instalare; dacă rămâne conectat, MAN pornește oricum de pe discul nou.
+154|_Repornește acum
+155|Gata
+156|Instalarea a eșuat
+157|Niciun alt disc nu a fost modificat, iar instalatorul a eliberat discul țintă. Puteți verifica planul și încerca din nou.
+158|_Verifică și încearcă din nou
+159|_Arată detaliile
+160|Jurnalul instalării
+161|Căutați limbi
+162|Căutați țări
+163|Discul de sistem nu a fost găsit.
+164|Criptarea necesită structura Btrfs creată de instalatorul MAN.
+165|Această instalare nu are o partiție de pornire separată, necesară pentru criptare. Reinstalați MAN cu „Șterge discul” pentru a folosi criptarea.
+166|MAN Setup
+167|Unde vă aflați?
+168|Țara sau regiunea dvs. stabilește formatul datei, orei și numerelor.
+169|Țară
+170|Licența Publică Generală GNU, versiunea 2
+171|Nucleul Linux și multe unelte de sistem
+172|Licența Publică Generală GNU, versiunea 3
+173|Multe programe GNU și GNOME
+174|Licența Publică Generală Mică GNU, versiunea 2.1
+175|GTK, GLib și multe biblioteci
+176|Licența Publică Generală Mică GNU, versiunea 3
+177|Biblioteci
+178|Mozilla Public License 2.0
+179|Programe și biblioteci de la Mozilla și alții
+180|Licența Apache 2.0
+181|Biblioteci și unelte
+182|Acord de licență
+183|Citiți și acceptați termenii în care este oferit MAN.
+184|Licențe
+185|Textul licenței nu este disponibil ({path}).
+186|Am citit și accept termenii licenței
+187|Prin cablu
+188|Neconectat
+189|Conectați-vă la internet
+190|Cu o conexiune, MAN poate potrivi ora și vă poate ține software-ul la zi. Puteți face asta și mai târziu.
+191|Se verifică conexiunea…
+192|Rețele Wi-Fi
+193|Caută din nou
+194|_Omite
+195|Vă puteți conecta mai târziu din Setări.
+196|Conectat
+197|Neconectat
+198|Nu s-au găsit rețele
+199|Internet
+200|Conectat la „{ssid}”
+201|Nu s-a putut conecta la „{ssid}”
+202|Conectare la „{ssid}”
+203|Introduceți parola rețelei.
+204|_Conectează
+205|Creați-vă contul
+206|Veți fi administratorul acestui calculator, cu acces root complet prin sudo.
+207|Nume complet
+208|Nume de utilizator
+209|Parolă
+210|Confirmați parola
+211|Autentificare automată
+212|Omite ecranul de autentificare la pornirea calculatorului
+213|Dosare personale existente
+214|Folosiți același nume de utilizator pentru a continua să folosiți un dosar păstrat de la o instalare anterioară.
+215|Folosește
+216|Avansat
+217|Numele calculatorului
+218|Setează o parolă root
+219|Permite autentificarea directă ca root. Fără ea, folosiți sudo cu parola dvs.
+220|Parolă root
+221|Confirmați parola root
+222|Introduceți-vă numele.
+223|Alegeți un nume de utilizator.
+224|Acest nume de utilizator este deja folosit de sistem.
+225|Acest nume de utilizator este rezervat de sistem.
+226|Numele de utilizator folosesc litere mici, cifre, - și _ și încep cu o literă.
+227|Alegeți o parolă.
+228|Parolele nu se potrivesc.
+229|Numele calculatorului poate conține litere, cifre și cratime.
+230|Introduceți parola root de două ori.
+231|Sfat: o parolă cu 8 sau mai multe caractere este mult mai sigură.
+232|Cont
+233|Întunecat
+234|Luminos
+235|Fă-l al tău
+236|Alegeți un stil, o culoare de accent și un fundal. Vedeți fiecare schimbare imediat.
+237|Stil
+238|Culoare de accent
+239|Fundal
+240|Personalizare
+241|Confidențialitate
+242|Alegeți ce funcții pot folosi informații despre dvs. Puteți schimba asta oricând din Setări.
+243|Servicii de localizare
+244|Permite aplicațiilor precum Hărți și Vremea să afle locația dvs. aproximativă folosind rețelele Wi-Fi din apropiere.
+245|Fus orar automat
+246|Folosește locația dvs. pentru a păstra fusul orar corect când călătoriți.
+247|_Finalizează configurarea
+248|Discul dvs. este criptat
+249|Datele dvs. sunt protejate. Fraza de acces este cerută la fiecare pornire a calculatorului.
+250|Criptarea discului
+251|Criptarea vă protejează datele dacă pierdeți calculatorul sau vă este furat.
+252|Nu este disponibilă pe această instalare
+253|Criptarea vă protejează fișierele dacă pierdeți calculatorul sau vă este furat. Fără fraza de acces, nimeni nu poate citi discul.
+254|Criptează discul
+255|Fraza de acces este cerută la fiecare pornire a calculatorului.
+256|Criptarea începe la următoarea repornire
+257|Discul este apoi criptat în fundal în timp ce folosiți calculatorul. Dacă pierdeți fraza de acces, nimeni nu poate recupera datele.
+258|Se pregătește MAN
+259|Se pregătește totul…
+260|_Repornește
+261|Î_napoi
+262|Pregătire
+263|Jurnalul configurării
+264|Gata!
+265|Ceva nu a mers bine
+266|Zilnic
+267|Înainte de actualizare
+268|Înainte de restaurare
+269|Înainte de reinstalare
+270|Manual
+271|Încă nu există instantanee
+272|Creați unul înainte de a face schimbări mari în sistem.
+273|Restaurează…
+274|Șterge instantaneul
+275|{free} liberi din {size}. Sistemul, dosarele personale și instantaneele împart acest spațiu; instantaneele ocupă loc doar pentru ce s-a schimbat de când au fost create.
+276|_OK
+277|Creează instantaneu
+278|Salvează starea actuală a sistemului. Fișierele personale din dosarul personal nu sunt incluse.
+279|Descriere, de exemplu „Înainte de instalarea driverelor”
+280|_Creează
+281|Instantaneu manual
+282|Ștergeți instantaneul?
+283|„{description}” din {date} va fi șters definitiv.
+284|Ș_terge
+285|Restaurați acest instantaneu?
+286|După repornire, sistemul revine la „{description}” din {date}. Fișierele dvs. personale nu se schimbă.\n\nSistemul actual este salvat mai întâi ca instantaneu, deci acțiunea poate fi anulată.
+287|_Restaurează
+288|Reporniți pentru a finaliza restaurarea
+289|Repornește _mai târziu
+290|Repornește _acum
+291|Instantanee
+292|Puncte de restaurare
+293|Instantaneele salvează starea sistemului de operare. Restaurarea unuia readuce sistemul la acel moment, ceea ce ajută după o actualizare sau o schimbare de configurare nereușită. Fișierele dvs. personale nu sunt niciodată atinse.
+294|Instantanee automate
+295|Instantanee zilnice
+296|O dată pe zi cât timp calculatorul este pornit
+297|Instantanee zilnice păstrate
+298|Înainte de actualizările software
+299|Create automat când pachetele sunt instalate, actualizate sau eliminate
+300|Instantanee de actualizare păstrate
+301|Stocare
+302|Spațiu pe disc
+303|Dacă MAN nu pornește
+304|Alegeți „Restore a MAN snapshot” în meniul de pornire pentru a recupera un sistem funcțional.
+305|Instantaneele nu sunt disponibile
+306|Instantaneele funcționează pe MAN instalat cu structura Btrfs creată de instalatorul MAN. Acest sistem (de exemplu o sesiune live) nu o folosește.
+307|O restaurare așteaptă: reporniți calculatorul pentru a o finaliza
+308|Repornește acum
+309|Așteptați să se termine operațiunea curentă.
+310|Caută
+311|Copiază în clipboard
+312|Timpul universal coordonat
+313|Engleză (SUA)
+314|Se verifică actualizarea
+315|Se verifică dacă actualizarea este autentică și completă…
+316|Actualizare MAN
+317|Această actualizare nu poate fi instalată
+318|Actualizarea nu a putut fi citită.
+319|Actualizare de la {name} {version}
+320|{name} {version} este instalat
+321|Versiune
+322|Lansată
+323|Dimensiunea descărcării
+324|Spațiu necesar
+325|Autenticitate
+326|Verificată, semnată de „{signer}”
+327|Noutăți
+328|_Continuă
+329|Această actualizare nu este mai nouă decât {name} {version} instalat.
+330|Actualizare
+331|Citiți termenii licenței acestei actualizări.
+332|Accept termenii licenței
+333|Unde se instalează actualizarea?
+334|Sistemul este înlocuit; fișierele din dosarul personal nu sunt atinse.
+335|Alegeți o instalare.
+336|rulează acum
+337|{name} {version} pe acest calculator
+338|{name} pe {model}
+339|Nu s-a găsit nicio instalare MAN
+340|Actualizările se instalează dintr-un sistem MAN instalat și pornit, nu din sesiunea live.
+341|Locul instalării
+342|Rezumat
+343|Păstrat
+344|Fișierele dvs.
+345|Tot ce se află în dosarul personal
+346|Conturi și parole
+347|Utilizatori, grupuri, numele calculatorului
+348|Conexiuni și setări
+349|Wi-Fi, fus orar, tastatură, aspect și instantanee
+350|Aplicații Flatpak
+351|Plus tot ce se află în /usr/local și /opt
+352|Înlocuit
+353|Software-ul instalat cu apt și alte modificări ale fișierelor de sistem sunt înlocuite de noul sistem.
+354|Sistemul de operare
+355|Înlocuit de {name} {version}. Sistemul actual poate fi restaurat dintr-un instantaneu.
+356|Calculatorul repornește pentru a instala actualizarea
+357|După pregătire, MAN repornește, instalează actualizarea în câteva secunde și repornește din nou.
+358|_Instalează actualizarea
+359|Creați mai întâi un instantaneu?
+360|Un instantaneu salvează sistemul actual, ca să puteți reveni la el dacă ceva nu merge după actualizare. Este recomandat.
+361|_Nu crea
+362|_Creează instantaneu
+363|Se pregătește {name} {version}
+364|Repornește pentru instalare
+365|Calculatorul repornește de două ori. Fișierele dvs. sunt în siguranță.
+366|Repornire automată în {r} secunde
+367|Repornire automată în 30 de secunde
+368|Actualizarea va fi instalată la următoarea repornire.
+369|Pregătit
+370|Actualizarea nu a putut fi pregătită
+371|Nu s-a schimbat nimic în sistemul dvs.
+372|Î_ncearcă din nou
+373|Jurnalul actualizării
+374|Eșuat
+375|Sistemul dvs. a fost actualizat
+376|MAN a fost actualizat la versiunea {version}.\nAnterior: MAN {previous}.
+377|_Gata
+378|Deschide o actualizare MAN
+379|Actualizări MAN
+380|Se verifică planul de instalare
+381|Se pregătește discul
+382|Se copiază MAN pe disc
+383|Se configurează noul sistem
+384|Se instalează încărcătorul de pornire
+385|Se creează primul instantaneu
+386|Se finalizează
+387|Se elimină semnăturile vechi ale partițiilor
+388|Se creează partițiile
+389|Se formatează partiția de sistem EFI
+390|Se criptează partiția de sistem
+391|Se formatează partiția de pornire
+392|Se creează sistemul de fișiere Btrfs
+393|Se elimină semnăturile vechi ale sistemelor de fișiere
+394|Se deblochează instalarea criptată
+395|Se salvează sistemul actual ca instantaneu
+396|Se elimină sistemul anterior
+397|Se scrie tabela sistemelor de fișiere
+398|Se setează numele și identitatea calculatorului
+399|Se elimină conturile sesiunii live
+400|Se creează contul dvs.
+401|Se pregătește MAN Setup pentru prima pornire
+402|Se setează fusul orar și tastatura
+403|Se elimină instalatorul din noul sistem
+404|Se construiește imaginea de pornire (initramfs)
+405|Se configurează GRUB
+406|Se instalează GRUB pe partiția de sistem EFI
+407|Se instalează încărcătorul de pornire de rezervă
+408|Se scrie meniul de pornire
+409|Disc pregătit
+410|Se creează un instantaneu al sistemului nou
+411|Se adaugă instantaneul în meniul de pornire
+412|Se demontează
+413|Asistentul instalatorului trebuie să ruleze ca root.
+414|Acest calculator nu a pornit în modul UEFI. MAN necesită UEFI.
+415|Numele de utilizator nu este valid.
+416|Este necesară o parolă.
+417|Numele calculatorului nu este valid.
+418|Limbă necunoscută.
+419|Fraza de acces pentru criptare trebuie să aibă cel puțin 8 caractere.
+420|Discul s-a schimbat după ce ați confirmat instalarea. Nu s-a modificat nimic; verificați și confirmați din nou.
+421|Alegeți o partiție de sistem.
+422|Discul confirmat nu conține partiția de sistem aleasă.
+423|Partiția de pornire trebuie să fie separată de partițiile EFI și de sistem.
+424|Partiția de pornire trebuie să aibă cel puțin 512 MB.
+425|Nicio instalare aleasă.
+426|Discul confirmat nu conține instalarea aleasă.
+427|Instalarea criptată nu are partiție MAN_BOOT.
+428|Nu s-a găsit în /boot niciun nucleu cu module potrivite.
+429|Limba trebuie schimbată de asistentul de sistem.
+430|Se aplică setările dvs.
+431|Se pregătește criptarea discului
+432|Se finalizează
+433|MAN Setup trebuie finalizat de asistentul de sistem.
+434|MAN Setup a fost deja finalizat pe acest calculator.
+435|Culoare de accent necunoscută.
+436|Fundalul ales nu este disponibil.
+437|Acest sistem nu poate fi criptat.
+438|Lipsește cheia de configurare, așa că criptarea nu poate continua în fundal.
+439|Sistemul nu este instalat pe Btrfs, așa că instantaneele nu sunt disponibile.
+440|O restaurare de instantaneu așteaptă o repornire. Reporniți mai întâi calculatorul pentru a o finaliza.
+441|ID de instantaneu nevalid.
+442|Se verifică actualizarea
+443|Se creează un instantaneu
+444|Se pregătește zona de actualizare
+445|Se despachetează noul sistem
+446|Se mută conturile și setările dvs.
+447|Se pregătește repornirea
+448|Despachetat
+449|Conturi
+450|Se elimină software-ul folosit doar de instalator
+451|Se construiește imaginea de pornire a actualizării
+452|Se adaugă intrarea de pornire unică
+453|Actualizarea este autentică
+454|Instantaneu creat
+455|Omis
+456|Zona de actualizare este pregătită
+457|Se pregătește noul sistem
+458|Fișierul de actualizare este deteriorat (suma de control nu se potrivește). Descărcați-l din nou.
+459|Fișierul de actualizare nu a putut fi citit complet.
+460|Actualizarea nu conține niciun nucleu.
+461|Actualizările trebuie instalate de asistentul de sistem.
+462|Instalarea aleasă nu a fost găsită.
+463|Doar instalarea MAN pornită poate fi actualizată.
+464|Acesta nu este un fișier de actualizare MAN (nu are manifest).
+465|Actualizarea nu este semnată, deci nu este de încredere.
+466|Semnătura actualizării este deteriorată.
+467|Actualizarea nu este semnată de MAN. Este posibil să fi fost modificată sau să provină dintr-o sursă nesigură.
+468|Manifestul actualizării nu este valid.
+469|Fraza de acces nu este corectă sau partiția criptată nu poate fi deschisă.
+470|Albastru
+471|Turcoaz
+472|Verde
+473|Galben
+474|Portocaliu
+475|Roșu
+476|Roz
+477|Mov
+478|Ardezie
+479|Instalator de sistem
+480|Instalează MAN pe acest calculator
+481|Restaurarea sistemului
+482|Creați și restaurați instantanee ale sistemului
+483|Instalator de actualizări de sistem
+484|Instalează un fișier de actualizare a sistemului MAN
+485|Propune instalarea MAN la pornirea sesiunii live
+486|Notificare de actualizare MAN
+487|Vă spune o dată, după autentificare, că MAN a fost actualizat
+488|Configurați noul calculator MAN
+489|Configurarea inițială a MAN

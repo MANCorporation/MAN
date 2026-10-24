@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = ["crates/man-common", "crates/man-backend", "crates/man-gui"]
+
+[workspace.package]
+version = "3.7.0"
+edition = "2021"
+license = "LicenseRef-MAN-Proprietary"
+publish = false
+authors = ["MAN Developers"]
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = true

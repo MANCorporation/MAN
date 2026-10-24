@@ -1,0 +1,37 @@
+#!/bin/sh
+# MAN: a "Windows" entry in the boot menu when Windows Boot Manager is on an
+# EFI system partition of this computer (MAN installed alongside Windows).
+set -e
+esp_guid=c12a7328-f81f-11d2-ba4b-00a0c93ec93b
+for esp in $(lsblk -nrpo PATH,PARTTYPE 2>/dev/null | awk -v g="$esp_guid" 'tolower($2) == g { print $1 }'); do
+    mp=$(findmnt -nro TARGET -S "$esp" 2>/dev/null | head -n1)
+    tmp=
+    if [ -z "$mp" ]; then
+        tmp=$(mktemp -d)
+        if ! mount -o ro "$esp" "$tmp" 2>/dev/null; then
+            rmdir "$tmp"
+            continue
+        fi
+        mp=$tmp
+    fi
+    found=
+    [ -f "$mp/EFI/Microsoft/Boot/bootmgfw.efi" ] && found=1
+    if [ -n "$tmp" ]; then
+        umount "$tmp"
+        rmdir "$tmp"
+    fi
+    if [ -n "$found" ]; then
+        uuid=$(blkid -s UUID -o value "$esp")
+        echo "Found Windows Boot Manager on $esp" >&2
+        cat <<ENTRY
+menuentry 'Windows' --class windows --class os --id man-windows {
+	insmod part_gpt
+	insmod fat
+	insmod chain
+	search --no-floppy --fs-uuid --set=root $uuid
+	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+}
+ENTRY
+        break
+    fi
+done
