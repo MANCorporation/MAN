@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for MAN updates once a day
+ConditionPathExists=!/usr/bin/man-installer
+
+[Timer]
+OnStartupSec=10min
+OnUnitActiveSec=1d
+RandomizedDelaySec=10min
+
+[Install]
+WantedBy=timers.target

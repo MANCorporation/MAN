@@ -5,4 +5,5 @@ pub mod langui;
 pub mod oobe;
 pub mod snapshots;
 pub mod ui;
+pub mod updatecheck;
 pub mod updater;

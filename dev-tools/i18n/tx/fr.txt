@@ -312,179 +312,184 @@
 311|Copier dans le presse-papiers
 312|Temps universel coordonné
 313|Anglais (États-Unis)
-314|Vérification de la mise à jour
-315|Vérification que la mise à jour est authentique et complète…
-316|Mise à jour de MAN
-317|Cette mise à jour ne peut pas être installée
-318|La mise à jour n’a pas pu être lue.
-319|Mise à jour depuis {name} {version}
-320|{name} {version} est installé
-321|Version
-322|Publiée
-323|Taille du téléchargement
-324|Espace nécessaire
-325|Authenticité
-326|Vérifiée, signée par « {signer} »
-327|Nouveautés
-328|_Continuer
-329|Cette mise à jour n’est pas plus récente que {name} {version} installé.
-330|Mise à jour
-331|Veuillez lire les conditions de licence de cette mise à jour.
-332|J’accepte les conditions de licence
-333|Où installer la mise à jour ?
-334|Le système est remplacé ; les fichiers de votre dossier personnel ne sont pas touchés.
-335|Choisissez une installation.
-336|en cours d’exécution
-337|{name} {version} sur cet ordinateur
-338|{name} sur {model}
-339|Aucune installation de MAN trouvée
-340|Les mises à jour s’installent depuis un système MAN installé et en cours d’exécution, pas depuis la session live.
-341|Emplacement de l’installation
-342|Résumé
-343|Conservé
-344|Vos fichiers
-345|Tout le contenu de votre dossier personnel
-346|Comptes et mots de passe
-347|Utilisateurs, groupes, nom de l’ordinateur
-348|Connexions et paramètres
-349|Wi-Fi, fuseau horaire, clavier, apparence et instantanés
-350|Applications Flatpak
-351|Ainsi que tout le contenu de /usr/local et /opt
-352|Remplacé
-353|Les logiciels installés avec apt et les autres modifications des fichiers système sont remplacés par le nouveau système.
-354|Le système d’exploitation
-355|Remplacé par {name} {version}. Le système actuel peut être restauré depuis un instantané.
-356|L’ordinateur redémarre pour installer la mise à jour
-357|Après la préparation, MAN redémarre, installe la mise à jour en quelques secondes et redémarre à nouveau.
-358|_Installer la mise à jour
-359|Créer d’abord un instantané ?
-360|Un instantané enregistre le système actuel, pour pouvoir y revenir si quelque chose ne fonctionne pas après la mise à jour. C’est recommandé.
-361|_Ne pas créer
-362|_Créer un instantané
-363|Préparation de {name} {version}
-364|Redémarrer pour installer
-365|L’ordinateur redémarre deux fois. Vos fichiers sont en sécurité.
-366|Redémarrage automatique dans {r} secondes
-367|Redémarrage automatique dans 30 secondes
-368|La mise à jour sera installée au prochain redémarrage.
-369|Prêt
-370|La mise à jour n’a pas pu être préparée
-371|Rien n’a été modifié sur votre système.
-372|_Réessayer
-373|Journal de mise à jour
-374|Échec
-375|Votre système a été mis à jour
-376|MAN a été mis à jour vers la version {version}.\nAuparavant : MAN {previous}.
-377|_Terminé
-378|Ouvrir une mise à jour de MAN
-379|Mises à jour de MAN
-380|Vérification du plan d’installation
-381|Préparation du disque
-382|Copie de MAN sur le disque
-383|Configuration du nouveau système
-384|Installation du chargeur d’amorçage
-385|Création du premier instantané
-386|Finalisation
-387|Suppression des anciennes signatures de partition
-388|Création des partitions
-389|Formatage de la partition système EFI
-390|Chiffrement de la partition système
-391|Formatage de la partition de démarrage
-392|Création du système de fichiers Btrfs
-393|Suppression des anciennes signatures de système de fichiers
-394|Déverrouillage de l’installation chiffrée
-395|Enregistrement du système actuel en tant qu’instantané
-396|Suppression du système précédent
-397|Écriture de la table des systèmes de fichiers
-398|Définition du nom et de l’identité de l’ordinateur
-399|Suppression des comptes de la session live
-400|Création de votre compte
-401|Préparation de MAN Setup pour le premier démarrage
-402|Réglage du fuseau horaire et du clavier
-403|Suppression de l’installateur du nouveau système
-404|Création de l’image de démarrage (initramfs)
-405|Configuration de GRUB
-406|Installation de GRUB sur la partition système EFI
-407|Installation du chargeur d’amorçage de secours
-408|Écriture du menu de démarrage
-409|Disque prêt
-410|Création d’un instantané du système neuf
-411|Ajout de l’instantané au menu de démarrage
-412|Démontage
-413|L’assistant de l’installateur doit être exécuté en tant que root.
-414|Cet ordinateur n’a pas démarré en mode UEFI. MAN nécessite l’UEFI.
-415|Le nom d’utilisateur n’est pas valide.
-416|Un mot de passe est requis.
-417|Le nom de l’ordinateur n’est pas valide.
-418|Langue inconnue.
-419|La phrase de passe de chiffrement doit comporter au moins 8 caractères.
-420|Le disque a changé après votre confirmation de l’installation. Rien n’a été modifié ; veuillez vérifier et confirmer à nouveau.
-421|Choisissez une partition système.
-422|Le disque confirmé ne contient pas la partition système choisie.
-423|La partition de démarrage doit être distincte des partitions EFI et système.
-424|La partition de démarrage doit faire au moins 512 Mo.
-425|Aucune installation choisie.
-426|Le disque confirmé ne contient pas l’installation choisie.
-427|L’installation chiffrée n’a pas de partition MAN_BOOT.
-428|Aucun noyau avec les modules correspondants n’a été trouvé dans /boot.
-429|La langue doit être changée par l’assistant système.
-430|Application de vos paramètres
-431|Préparation du chiffrement du disque
-432|Finalisation
-433|MAN Setup doit être terminé par l’assistant système.
-434|MAN Setup a déjà été effectué sur cet ordinateur.
-435|Couleur d’accentuation inconnue.
-436|Le fond d’écran choisi n’est pas disponible.
-437|Ce système ne peut pas être chiffré.
-438|La clé de configuration est manquante, le chiffrement ne peut donc pas continuer en arrière-plan.
-439|Le système n’est pas installé sur Btrfs, les instantanés ne sont donc pas disponibles.
-440|Une restauration d’instantané attend un redémarrage. Redémarrez d’abord l’ordinateur pour la terminer.
-441|Identifiant d’instantané non valide.
-442|Vérification de la mise à jour
-443|Création d’un instantané
-444|Préparation de la zone de mise à jour
-445|Décompression du nouveau système
-446|Transfert de vos comptes et paramètres
-447|Préparation du redémarrage
-448|Décompressé
-449|Comptes
-450|Suppression des logiciels propres à l’installateur
-451|Création de l’image de démarrage de la mise à jour
-452|Ajout de l’entrée de démarrage unique
-453|La mise à jour est authentique
-454|Instantané créé
-455|Ignoré
-456|Zone de mise à jour prête
-457|Préparation du nouveau système
-458|Le fichier de mise à jour est endommagé (somme de contrôle incorrecte). Téléchargez-le à nouveau.
-459|Le fichier de mise à jour n’a pas pu être lu entièrement.
-460|La mise à jour ne contient pas de noyau.
-461|Les mises à jour doivent être installées par l’assistant système.
-462|L’installation choisie est introuvable.
-463|Seule l’installation de MAN en cours d’exécution peut être mise à jour.
-464|Ce n’est pas un fichier de mise à jour MAN (aucun manifeste).
-465|La mise à jour n’est pas signée, on ne peut donc pas lui faire confiance.
-466|La signature de la mise à jour est endommagée.
-467|La mise à jour n’est pas signée par MAN. Elle a peut-être été modifiée ou provient d’une source non fiable.
-468|Le manifeste de la mise à jour n’est pas valide.
-469|La phrase de passe est incorrecte, ou la partition chiffrée ne peut pas être ouverte.
-470|Bleu
-471|Bleu-vert
-472|Vert
-473|Jaune
-474|Orange
-475|Rouge
-476|Rose
-477|Violet
-478|Ardoise
-479|Installateur du système
-480|Installer MAN sur cet ordinateur
-481|Restauration du système
-482|Créer et restaurer des instantanés du système
-483|Installateur de mises à jour du système
-484|Installer un fichier de mise à jour du système MAN
-485|Propose d’installer MAN au démarrage de la session live
-486|Avis de mise à jour de MAN
-487|Vous informe une fois après la connexion que MAN a été mis à jour
-488|Configurez votre nouvel ordinateur MAN
-489|Configuration de MAN au premier démarrage
+317|Vérification de la mise à jour
+318|Vérification que la mise à jour est authentique et complète…
+319|Mise à jour de MAN
+320|Cette mise à jour ne peut pas être installée
+321|La mise à jour n’a pas pu être lue.
+322|Mise à jour depuis {name} {version}
+323|{name} {version} est installé
+324|Version
+325|Publiée
+326|Taille du téléchargement
+327|Espace nécessaire
+328|Authenticité
+329|Vérifiée, signée par « {signer} »
+330|Nouveautés
+331|_Continuer
+332|Cette mise à jour n’est pas plus récente que {name} {version} installé.
+333|Mise à jour
+334|Veuillez lire les conditions de licence de cette mise à jour.
+335|J’accepte les conditions de licence
+336|Où installer la mise à jour ?
+337|Le système est remplacé ; les fichiers de votre dossier personnel ne sont pas touchés.
+338|Choisissez une installation.
+339|en cours d’exécution
+340|{name} {version} sur cet ordinateur
+341|{name} sur {model}
+342|Aucune installation de MAN trouvée
+343|Les mises à jour s’installent depuis un système MAN installé et en cours d’exécution, pas depuis la session live.
+344|Emplacement de l’installation
+345|Résumé
+346|Conservé
+347|Vos fichiers
+348|Tout le contenu de votre dossier personnel
+349|Comptes et mots de passe
+350|Utilisateurs, groupes, nom de l’ordinateur
+351|Connexions et paramètres
+352|Wi-Fi, fuseau horaire, clavier, apparence et instantanés
+353|Applications Flatpak
+354|Ainsi que tout le contenu de /usr/local et /opt
+355|Remplacé
+356|Les logiciels installés avec apt et les autres modifications des fichiers système sont remplacés par le nouveau système.
+357|Le système d’exploitation
+358|Remplacé par {name} {version}. Le système actuel peut être restauré depuis un instantané.
+359|L’ordinateur redémarre pour installer la mise à jour
+360|Après la préparation, MAN redémarre, installe la mise à jour en quelques secondes et redémarre à nouveau.
+361|_Installer la mise à jour
+362|Créer d’abord un instantané ?
+363|Un instantané enregistre le système actuel, pour pouvoir y revenir si quelque chose ne fonctionne pas après la mise à jour. C’est recommandé.
+364|_Ne pas créer
+365|_Créer un instantané
+366|Préparation de {name} {version}
+367|Redémarrer pour installer
+368|L’ordinateur redémarre deux fois. Vos fichiers sont en sécurité.
+369|Redémarrage automatique dans {r} secondes
+370|Redémarrage automatique dans 30 secondes
+371|La mise à jour sera installée au prochain redémarrage.
+372|Prêt
+373|La mise à jour n’a pas pu être préparée
+374|Rien n’a été modifié sur votre système.
+375|_Réessayer
+376|Journal de mise à jour
+377|Échec
+378|Votre système a été mis à jour
+379|MAN a été mis à jour vers la version {version}.\nAuparavant : MAN {previous}.
+380|_Terminé
+381|Ouvrir une mise à jour de MAN
+382|Mises à jour de MAN
+383|Vérification du plan d’installation
+384|Préparation du disque
+385|Copie de MAN sur le disque
+386|Configuration du nouveau système
+387|Installation du chargeur d’amorçage
+388|Création du premier instantané
+389|Finalisation
+390|Suppression des anciennes signatures de partition
+391|Création des partitions
+392|Formatage de la partition système EFI
+393|Chiffrement de la partition système
+394|Formatage de la partition de démarrage
+395|Création du système de fichiers Btrfs
+396|Suppression des anciennes signatures de système de fichiers
+397|Déverrouillage de l’installation chiffrée
+398|Enregistrement du système actuel en tant qu’instantané
+399|Suppression du système précédent
+400|Écriture de la table des systèmes de fichiers
+401|Définition du nom et de l’identité de l’ordinateur
+402|Suppression des comptes de la session live
+403|Création de votre compte
+404|Préparation de MAN Setup pour le premier démarrage
+405|Réglage du fuseau horaire et du clavier
+406|Suppression de l’installateur du nouveau système
+407|Création de l’image de démarrage (initramfs)
+408|Configuration de GRUB
+409|Installation de GRUB sur la partition système EFI
+410|Installation du chargeur d’amorçage de secours
+411|Écriture du menu de démarrage
+412|Disque prêt
+413|Création d’un instantané du système neuf
+414|Ajout de l’instantané au menu de démarrage
+415|Démontage
+416|L’assistant de l’installateur doit être exécuté en tant que root.
+417|Cet ordinateur n’a pas démarré en mode UEFI. MAN nécessite l’UEFI.
+418|Le nom d’utilisateur n’est pas valide.
+419|Un mot de passe est requis.
+420|Le nom de l’ordinateur n’est pas valide.
+421|Langue inconnue.
+422|La phrase de passe de chiffrement doit comporter au moins 8 caractères.
+423|Le disque a changé après votre confirmation de l’installation. Rien n’a été modifié ; veuillez vérifier et confirmer à nouveau.
+424|Choisissez une partition système.
+425|Le disque confirmé ne contient pas la partition système choisie.
+426|La partition de démarrage doit être distincte des partitions EFI et système.
+427|La partition de démarrage doit faire au moins 512 Mo.
+428|Aucune installation choisie.
+429|Le disque confirmé ne contient pas l’installation choisie.
+430|L’installation chiffrée n’a pas de partition MAN_BOOT.
+431|Aucun noyau avec les modules correspondants n’a été trouvé dans /boot.
+432|La langue doit être changée par l’assistant système.
+433|Application de vos paramètres
+434|Préparation du chiffrement du disque
+435|Finalisation
+436|MAN Setup doit être terminé par l’assistant système.
+437|MAN Setup a déjà été effectué sur cet ordinateur.
+438|Couleur d’accentuation inconnue.
+439|Le fond d’écran choisi n’est pas disponible.
+440|Ce système ne peut pas être chiffré.
+441|La clé de configuration est manquante, le chiffrement ne peut donc pas continuer en arrière-plan.
+442|Le système n’est pas installé sur Btrfs, les instantanés ne sont donc pas disponibles.
+443|Une restauration d’instantané attend un redémarrage. Redémarrez d’abord l’ordinateur pour la terminer.
+444|Identifiant d’instantané non valide.
+445|Vérification de la mise à jour
+446|Création d’un instantané
+447|Préparation de la zone de mise à jour
+448|Décompression du nouveau système
+449|Transfert de vos comptes et paramètres
+450|Préparation du redémarrage
+451|Décompressé
+452|Comptes
+453|Suppression des logiciels propres à l’installateur
+454|Création de l’image de démarrage de la mise à jour
+455|Ajout de l’entrée de démarrage unique
+456|La mise à jour est authentique
+457|Instantané créé
+458|Ignoré
+459|Zone de mise à jour prête
+460|Préparation du nouveau système
+461|Le fichier de mise à jour est endommagé (somme de contrôle incorrecte). Téléchargez-le à nouveau.
+462|Le fichier de mise à jour n’a pas pu être lu entièrement.
+463|La mise à jour ne contient pas de noyau.
+464|Les mises à jour doivent être installées par l’assistant système.
+465|L’installation choisie est introuvable.
+466|Seule l’installation de MAN en cours d’exécution peut être mise à jour.
+467|Ce n’est pas un fichier de mise à jour MAN (aucun manifeste).
+468|La mise à jour n’est pas signée, on ne peut donc pas lui faire confiance.
+469|La signature de la mise à jour est endommagée.
+470|La mise à jour n’est pas signée par MAN. Elle a peut-être été modifiée ou provient d’une source non fiable.
+471|Le manifeste de la mise à jour n’est pas valide.
+472|La phrase de passe est incorrecte, ou la partition chiffrée ne peut pas être ouverte.
+473|Bleu
+474|Bleu-vert
+475|Vert
+476|Jaune
+477|Orange
+478|Rouge
+479|Rose
+480|Violet
+481|Ardoise
+482|Installateur du système
+483|Installer MAN sur cet ordinateur
+484|Restauration du système
+485|Créer et restaurer des instantanés du système
+486|Installateur de mises à jour du système
+487|Installer un fichier de mise à jour du système MAN
+488|Propose d’installer MAN au démarrage de la session live
+489|Avis de mise à jour de MAN
+490|Vous informe une fois après la connexion que MAN a été mis à jour
+491|Configurez votre nouvel ordinateur MAN
+492|Configuration de MAN au premier démarrage
+314|MAN {version} est disponible
+315|Ouvrez les Paramètres pour télécharger et installer la mise à jour.
+316|Ouvrir les mises à jour
+493|Mises à jour de MAN
+494|Vous prévient quand une nouvelle version de MAN est disponible

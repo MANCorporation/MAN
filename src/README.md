@@ -61,3 +61,23 @@ Startup Apps dialog (~/.config/autostart). Incremental rebuild in the build
 VM: `gcc-rebuild-in-vm.sh`. Tested in a VM: every row writes its key and the
 desktop follows live (titlebar buttons, text scaling, xkb-options, lid
 inhibitor appears/disappears, autostart file added/removed).
+
+### 1:51.0-1man4 (2026-10-24): Updates panel, translated MAN strings
+
+`man-updates-i18n.patch`:
+
+- **Settings → Updates** (`panels/man-updates/`, sidebar after System):
+  checks for a newer MAN as soon as it opens by running
+  `man-update-check` (man-system-tools 3.8.0, looks at the GitHub releases
+  of MANCorporation/MAN), shows the release notes, downloads the `.upd`
+  with progress and Cancel, then opens MAN Update (which verifies the
+  signature and installs). Switch "Check for Updates Automatically"
+  (GSettings `com.man.Updates auto-check`, used by the daily user timer
+  `man-update-check.timer`), "Last Checked", "Install an Update File…".
+- MAN's own strings (Tweaks options, Sandbox, Donate, Updates) use the
+  `man-settings` gettext domain (`panels/common/cc-man-i18n.h`, falls back
+  to Settings' catalog); the Tweaks choice labels (N_) were never
+  translated before and now are. Translations for 71 catalogs are in
+  `man-settings-po/` (`tool.py import LANG tx/LANG.txt`, machine-written,
+  native review welcome); `repack-gcc-deb.sh man4` builds the .deb with the
+  binary, the `man-settings.mo` files and the translated panel desktop file.

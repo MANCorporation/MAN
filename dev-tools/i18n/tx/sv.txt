@@ -312,179 +312,184 @@
 311|Kopiera till urklipp
 312|Koordinerad universell tid
 313|Engelska (USA)
-314|Kontrollerar uppdateringen
-315|Kontrollerar att uppdateringen är äkta och fullständig…
-316|MAN-uppdatering
-317|Den här uppdateringen kan inte installeras
-318|Uppdateringen kunde inte läsas.
-319|Uppdatering från {name} {version}
-320|{name} {version} är installerat
-321|Version
-322|Utgiven
-323|Nedladdningsstorlek
-324|Utrymme som behövs
-325|Äkthet
-326|Verifierad, signerad av ”{signer}”
-327|Nyheter
-328|_Fortsätt
-329|Den här uppdateringen är inte nyare än det installerade {name} {version}.
-330|Uppdatering
-331|Läs licensvillkoren för den här uppdateringen.
-332|Jag godkänner licensvillkoren
-333|Var ska uppdateringen installeras?
-334|Systemet ersätts; filer i din hemmapp rörs inte.
-335|Välj en installation.
-336|körs nu
-337|{name} {version} på den här datorn
-338|{name} på {model}
-339|Ingen MAN-installation hittades
-340|Uppdateringar installeras från ett körande, installerat MAN-system, inte från live-sessionen.
-341|Installationsplats
-342|Sammanfattning
-343|Behålls
-344|Dina filer
-345|Allt i din hemmapp
-346|Konton och lösenord
-347|Användare, grupper, datornamnet
-348|Anslutningar och inställningar
-349|Wi-Fi, tidszon, tangentbord, utseende och ögonblicksbilder
-350|Flatpak-program
-351|Plus allt i /usr/local och /opt
-352|Ersätts
-353|Programvara som installerats med apt och andra ändringar i systemfiler ersätts av det nya systemet.
-354|Operativsystemet
-355|Ersätts av {name} {version}. Det nuvarande systemet kan återställas från en ögonblicksbild.
-356|Datorn startas om för att installera uppdateringen
-357|Efter förberedelserna startar MAN om, installerar uppdateringen på några sekunder och startar om igen.
-358|_Installera uppdatering
-359|Skapa en ögonblicksbild först?
-360|En ögonblicksbild sparar det nuvarande systemet, så att du kan gå tillbaka om något inte fungerar efter uppdateringen. Detta rekommenderas.
-361|_Skapa inte
-362|_Skapa ögonblicksbild
-363|Förbereder {name} {version}
-364|Starta om för att installera
-365|Datorn startas om två gånger. Dina filer är säkra.
-366|Startar om automatiskt om {r} sekunder
-367|Startar om automatiskt om 30 sekunder
-368|Uppdateringen installeras nästa gång du startar om.
-369|Klar
-370|Uppdateringen kunde inte förberedas
-371|Inget ändrades i ditt system.
-372|_Försök igen
-373|Uppdateringslogg
-374|Misslyckades
-375|Ditt system har uppdaterats
-376|MAN har uppdaterats till version {version}.\nTidigare: MAN {previous}.
-377|_Klar
-378|Öppna en MAN-uppdatering
-379|MAN-uppdateringar
-380|Kontrollerar installationsplanen
-381|Förbereder disken
-382|Kopierar MAN till disken
-383|Konfigurerar det nya systemet
-384|Installerar starthanteraren
-385|Skapar den första ögonblicksbilden
-386|Avslutar
-387|Tar bort gamla partitionssignaturer
-388|Skapar partitioner
-389|Formaterar EFI-systempartitionen
-390|Krypterar systempartitionen
-391|Formaterar startpartitionen
-392|Skapar Btrfs-filsystemet
-393|Tar bort gamla filsystemssignaturer
-394|Låser upp den krypterade installationen
-395|Sparar det nuvarande systemet som en ögonblicksbild
-396|Tar bort det tidigare systemet
-397|Skriver filsystemstabellen
-398|Ställer in datornamn och identitet
-399|Tar bort live-sessionens konton
-400|Skapar ditt konto
-401|Förbereder MAN Setup för första starten
-402|Ställer in tidszon och tangentbord
-403|Tar bort installationsprogrammet från det nya systemet
-404|Bygger startavbilden (initramfs)
-405|Konfigurerar GRUB
-406|Installerar GRUB på EFI-systempartitionen
-407|Installerar reservstarthanteraren
-408|Skriver startmenyn
-409|Disken är klar
-410|Skapar en ögonblicksbild av det nya systemet
-411|Lägger till ögonblicksbilden i startmenyn
-412|Avmonterar
-413|Installationshjälpen måste köras som root.
-414|Den här datorn startades inte i UEFI-läge. MAN kräver UEFI.
-415|Användarnamnet är ogiltigt.
-416|Ett lösenord krävs.
-417|Datornamnet är ogiltigt.
-418|Okänt språk.
-419|Krypteringslösenfrasen måste ha minst 8 tecken.
-420|Disken ändrades efter att du bekräftade installationen. Inget ändrades; granska och bekräfta igen.
-421|Välj en systempartition.
-422|Den bekräftade disken innehåller inte den valda systempartitionen.
-423|Startpartitionen måste vara skild från EFI- och systempartitionerna.
-424|Startpartitionen måste vara minst 512 MB.
-425|Ingen installation vald.
-426|Den bekräftade disken innehåller inte den valda installationen.
-427|Den krypterade installationen har ingen MAN_BOOT-partition.
-428|Ingen kärna med matchande moduler hittades i /boot.
-429|Språket måste ändras av systemhjälpen.
-430|Tillämpar dina inställningar
-431|Förbereder diskkryptering
-432|Avslutar
-433|MAN Setup måste slutföras av systemhjälpen.
-434|MAN Setup har redan slutförts på den här datorn.
-435|Okänd accentfärg.
-436|Den valda bakgrundsbilden är inte tillgänglig.
-437|Det här systemet kan inte krypteras.
-438|Konfigurationsnyckeln saknas, så krypteringen kan inte fortsätta i bakgrunden.
-439|Systemet är inte installerat på Btrfs, så ögonblicksbilder är inte tillgängliga.
-440|En återställning av en ögonblicksbild väntar på omstart. Starta om datorn först för att slutföra den.
-441|Ogiltigt id för ögonblicksbild.
-442|Kontrollerar uppdateringen
-443|Skapar en ögonblicksbild
-444|Förbereder uppdateringsområdet
-445|Packar upp det nya systemet
-446|Flyttar dina konton och inställningar
-447|Förbereder omstarten
-448|Uppackat
-449|Konton
-450|Tar bort programvara som bara installationsprogrammet använder
-451|Bygger uppdateringens startavbild
-452|Lägger till engångsstartposten
-453|Uppdateringen är äkta
-454|Ögonblicksbild skapad
-455|Hoppades över
-456|Uppdateringsområdet är klart
-457|Förbereder det nya systemet
-458|Uppdateringsfilen är skadad (kontrollsumman stämmer inte). Ladda ner den igen.
-459|Uppdateringsfilen kunde inte läsas helt.
-460|Uppdateringen innehåller ingen kärna.
-461|Uppdateringar måste installeras av systemhjälpen.
-462|Den valda installationen hittades inte.
-463|Bara den körande MAN-installationen kan uppdateras.
-464|Detta är ingen MAN-uppdateringsfil (inget manifest).
-465|Uppdateringen är inte signerad och kan därför inte betros.
-466|Uppdateringens signatur är skadad.
-467|Uppdateringen är inte signerad av MAN. Den kan ha ändrats eller komma från en opålitlig källa.
-468|Uppdateringens manifest är ogiltigt.
-469|Lösenfrasen är fel, eller så kan den krypterade partitionen inte öppnas.
-470|Blå
-471|Blågrön
-472|Grön
-473|Gul
-474|Orange
-475|Röd
-476|Rosa
-477|Lila
-478|Skiffer
-479|Systeminstallation
-480|Installera MAN på den här datorn
-481|Systemåterställning
-482|Skapa och återställ ögonblicksbilder av systemet
-483|Installation av systemuppdateringar
-484|Installera en MAN-systemuppdateringsfil
-485|Erbjuder installation av MAN när live-sessionen startar
-486|MAN-uppdateringsmeddelande
-487|Talar om en gång efter inloggning att MAN har uppdaterats
-488|Konfigurera din nya MAN-dator
-489|Förstagångskonfiguration av MAN
+317|Kontrollerar uppdateringen
+318|Kontrollerar att uppdateringen är äkta och fullständig…
+319|MAN-uppdatering
+320|Den här uppdateringen kan inte installeras
+321|Uppdateringen kunde inte läsas.
+322|Uppdatering från {name} {version}
+323|{name} {version} är installerat
+324|Version
+325|Utgiven
+326|Nedladdningsstorlek
+327|Utrymme som behövs
+328|Äkthet
+329|Verifierad, signerad av ”{signer}”
+330|Nyheter
+331|_Fortsätt
+332|Den här uppdateringen är inte nyare än det installerade {name} {version}.
+333|Uppdatering
+334|Läs licensvillkoren för den här uppdateringen.
+335|Jag godkänner licensvillkoren
+336|Var ska uppdateringen installeras?
+337|Systemet ersätts; filer i din hemmapp rörs inte.
+338|Välj en installation.
+339|körs nu
+340|{name} {version} på den här datorn
+341|{name} på {model}
+342|Ingen MAN-installation hittades
+343|Uppdateringar installeras från ett körande, installerat MAN-system, inte från live-sessionen.
+344|Installationsplats
+345|Sammanfattning
+346|Behålls
+347|Dina filer
+348|Allt i din hemmapp
+349|Konton och lösenord
+350|Användare, grupper, datornamnet
+351|Anslutningar och inställningar
+352|Wi-Fi, tidszon, tangentbord, utseende och ögonblicksbilder
+353|Flatpak-program
+354|Plus allt i /usr/local och /opt
+355|Ersätts
+356|Programvara som installerats med apt och andra ändringar i systemfiler ersätts av det nya systemet.
+357|Operativsystemet
+358|Ersätts av {name} {version}. Det nuvarande systemet kan återställas från en ögonblicksbild.
+359|Datorn startas om för att installera uppdateringen
+360|Efter förberedelserna startar MAN om, installerar uppdateringen på några sekunder och startar om igen.
+361|_Installera uppdatering
+362|Skapa en ögonblicksbild först?
+363|En ögonblicksbild sparar det nuvarande systemet, så att du kan gå tillbaka om något inte fungerar efter uppdateringen. Detta rekommenderas.
+364|_Skapa inte
+365|_Skapa ögonblicksbild
+366|Förbereder {name} {version}
+367|Starta om för att installera
+368|Datorn startas om två gånger. Dina filer är säkra.
+369|Startar om automatiskt om {r} sekunder
+370|Startar om automatiskt om 30 sekunder
+371|Uppdateringen installeras nästa gång du startar om.
+372|Klar
+373|Uppdateringen kunde inte förberedas
+374|Inget ändrades i ditt system.
+375|_Försök igen
+376|Uppdateringslogg
+377|Misslyckades
+378|Ditt system har uppdaterats
+379|MAN har uppdaterats till version {version}.\nTidigare: MAN {previous}.
+380|_Klar
+381|Öppna en MAN-uppdatering
+382|MAN-uppdateringar
+383|Kontrollerar installationsplanen
+384|Förbereder disken
+385|Kopierar MAN till disken
+386|Konfigurerar det nya systemet
+387|Installerar starthanteraren
+388|Skapar den första ögonblicksbilden
+389|Avslutar
+390|Tar bort gamla partitionssignaturer
+391|Skapar partitioner
+392|Formaterar EFI-systempartitionen
+393|Krypterar systempartitionen
+394|Formaterar startpartitionen
+395|Skapar Btrfs-filsystemet
+396|Tar bort gamla filsystemssignaturer
+397|Låser upp den krypterade installationen
+398|Sparar det nuvarande systemet som en ögonblicksbild
+399|Tar bort det tidigare systemet
+400|Skriver filsystemstabellen
+401|Ställer in datornamn och identitet
+402|Tar bort live-sessionens konton
+403|Skapar ditt konto
+404|Förbereder MAN Setup för första starten
+405|Ställer in tidszon och tangentbord
+406|Tar bort installationsprogrammet från det nya systemet
+407|Bygger startavbilden (initramfs)
+408|Konfigurerar GRUB
+409|Installerar GRUB på EFI-systempartitionen
+410|Installerar reservstarthanteraren
+411|Skriver startmenyn
+412|Disken är klar
+413|Skapar en ögonblicksbild av det nya systemet
+414|Lägger till ögonblicksbilden i startmenyn
+415|Avmonterar
+416|Installationshjälpen måste köras som root.
+417|Den här datorn startades inte i UEFI-läge. MAN kräver UEFI.
+418|Användarnamnet är ogiltigt.
+419|Ett lösenord krävs.
+420|Datornamnet är ogiltigt.
+421|Okänt språk.
+422|Krypteringslösenfrasen måste ha minst 8 tecken.
+423|Disken ändrades efter att du bekräftade installationen. Inget ändrades; granska och bekräfta igen.
+424|Välj en systempartition.
+425|Den bekräftade disken innehåller inte den valda systempartitionen.
+426|Startpartitionen måste vara skild från EFI- och systempartitionerna.
+427|Startpartitionen måste vara minst 512 MB.
+428|Ingen installation vald.
+429|Den bekräftade disken innehåller inte den valda installationen.
+430|Den krypterade installationen har ingen MAN_BOOT-partition.
+431|Ingen kärna med matchande moduler hittades i /boot.
+432|Språket måste ändras av systemhjälpen.
+433|Tillämpar dina inställningar
+434|Förbereder diskkryptering
+435|Avslutar
+436|MAN Setup måste slutföras av systemhjälpen.
+437|MAN Setup har redan slutförts på den här datorn.
+438|Okänd accentfärg.
+439|Den valda bakgrundsbilden är inte tillgänglig.
+440|Det här systemet kan inte krypteras.
+441|Konfigurationsnyckeln saknas, så krypteringen kan inte fortsätta i bakgrunden.
+442|Systemet är inte installerat på Btrfs, så ögonblicksbilder är inte tillgängliga.
+443|En återställning av en ögonblicksbild väntar på omstart. Starta om datorn först för att slutföra den.
+444|Ogiltigt id för ögonblicksbild.
+445|Kontrollerar uppdateringen
+446|Skapar en ögonblicksbild
+447|Förbereder uppdateringsområdet
+448|Packar upp det nya systemet
+449|Flyttar dina konton och inställningar
+450|Förbereder omstarten
+451|Uppackat
+452|Konton
+453|Tar bort programvara som bara installationsprogrammet använder
+454|Bygger uppdateringens startavbild
+455|Lägger till engångsstartposten
+456|Uppdateringen är äkta
+457|Ögonblicksbild skapad
+458|Hoppades över
+459|Uppdateringsområdet är klart
+460|Förbereder det nya systemet
+461|Uppdateringsfilen är skadad (kontrollsumman stämmer inte). Ladda ner den igen.
+462|Uppdateringsfilen kunde inte läsas helt.
+463|Uppdateringen innehåller ingen kärna.
+464|Uppdateringar måste installeras av systemhjälpen.
+465|Den valda installationen hittades inte.
+466|Bara den körande MAN-installationen kan uppdateras.
+467|Detta är ingen MAN-uppdateringsfil (inget manifest).
+468|Uppdateringen är inte signerad och kan därför inte betros.
+469|Uppdateringens signatur är skadad.
+470|Uppdateringen är inte signerad av MAN. Den kan ha ändrats eller komma från en opålitlig källa.
+471|Uppdateringens manifest är ogiltigt.
+472|Lösenfrasen är fel, eller så kan den krypterade partitionen inte öppnas.
+473|Blå
+474|Blågrön
+475|Grön
+476|Gul
+477|Orange
+478|Röd
+479|Rosa
+480|Lila
+481|Skiffer
+482|Systeminstallation
+483|Installera MAN på den här datorn
+484|Systemåterställning
+485|Skapa och återställ ögonblicksbilder av systemet
+486|Installation av systemuppdateringar
+487|Installera en MAN-systemuppdateringsfil
+488|Erbjuder installation av MAN när live-sessionen startar
+489|MAN-uppdateringsmeddelande
+490|Talar om en gång efter inloggning att MAN har uppdaterats
+491|Konfigurera din nya MAN-dator
+492|Förstagångskonfiguration av MAN
+314|MAN {version} finns tillgängligt
+315|Öppna Inställningar för att hämta och installera uppdateringen.
+316|Öppna uppdateringar
+493|MAN-uppdateringar
+494|Meddelar dig när en ny version av MAN finns

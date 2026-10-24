@@ -312,179 +312,184 @@
 311|Copiar al portapapeles
 312|Tiempo universal coordinado
 313|Inglés (EE. UU.)
-314|Comprobando la actualización
-315|Comprobando que la actualización es auténtica y está completa…
-316|Actualización de MAN
-317|Esta actualización no se puede instalar
-318|No se pudo leer la actualización.
-319|Actualización desde {name} {version}
-320|{name} {version} está instalado
-321|Versión
-322|Publicada
-323|Tamaño de la descarga
-324|Espacio necesario
-325|Autenticidad
-326|Verificada, firmada por «{signer}»
-327|Novedades
-328|_Continuar
-329|Esta actualización no es más reciente que {name} {version} instalado.
-330|Actualización
-331|Lea los términos de la licencia de esta actualización.
-332|Acepto los términos de la licencia
-333|¿Dónde se instalará la actualización?
-334|El sistema se sustituye; los archivos de su carpeta personal no se tocan.
-335|Elija una instalación.
-336|en ejecución
-337|{name} {version} en este equipo
-338|{name} en {model}
-339|No se encontró ninguna instalación de MAN
-340|Las actualizaciones se instalan desde un sistema MAN instalado y en ejecución, no desde la sesión en vivo.
-341|Ubicación de la instalación
-342|Resumen
-343|Se conserva
-344|Sus archivos
-345|Todo lo que hay en su carpeta personal
-346|Cuentas y contraseñas
-347|Usuarios, grupos, el nombre del equipo
-348|Conexiones y configuración
-349|Wi-Fi, zona horaria, teclado, apariencia e instantáneas
-350|Aplicaciones Flatpak
-351|Además de todo lo que hay en /usr/local y /opt
-352|Se sustituye
-353|El software instalado con apt y otros cambios en los archivos del sistema se sustituyen por el nuevo sistema.
-354|El sistema operativo
-355|Sustituido por {name} {version}. El sistema actual se puede restaurar desde una instantánea.
-356|El equipo se reinicia para instalar la actualización
-357|Tras la preparación, MAN se reinicia, instala la actualización en unos segundos y vuelve a reiniciarse.
-358|_Instalar la actualización
-359|¿Crear primero una instantánea?
-360|Una instantánea guarda el sistema actual, para poder volver a él si algo no funciona después de la actualización. Se recomienda.
-361|_No crear
-362|_Crear instantánea
-363|Preparando {name} {version}
-364|Reiniciar para instalar
-365|El equipo se reinicia dos veces. Sus archivos están a salvo.
-366|Reinicio automático en {r} segundos
-367|Reinicio automático en 30 segundos
-368|La actualización se instalará la próxima vez que reinicie.
-369|Listo
-370|No se pudo preparar la actualización
-371|No se cambió nada en su sistema.
-372|_Intentar de nuevo
-373|Registro de la actualización
-374|Falló
-375|Su sistema se actualizó
-376|MAN se actualizó a la versión {version}.\nAntes: MAN {previous}.
-377|_Hecho
-378|Abrir una actualización de MAN
-379|Actualizaciones de MAN
-380|Comprobando el plan de instalación
-381|Preparando el disco
-382|Copiando MAN al disco
-383|Configurando el nuevo sistema
-384|Instalando el cargador de arranque
-385|Creando la primera instantánea
-386|Terminando
-387|Eliminando firmas de particiones antiguas
-388|Creando particiones
-389|Formateando la partición del sistema EFI
-390|Cifrando la partición del sistema
-391|Formateando la partición de arranque
-392|Creando el sistema de archivos Btrfs
-393|Eliminando firmas de sistemas de archivos antiguas
-394|Desbloqueando la instalación cifrada
-395|Guardando el sistema actual como instantánea
-396|Eliminando el sistema anterior
-397|Escribiendo la tabla de sistemas de archivos
-398|Estableciendo el nombre y la identidad del equipo
-399|Eliminando las cuentas de la sesión en vivo
-400|Creando su cuenta
-401|Preparando MAN Setup para el primer arranque
-402|Estableciendo la zona horaria y el teclado
-403|Eliminando el instalador del nuevo sistema
-404|Creando la imagen de arranque (initramfs)
-405|Configurando GRUB
-406|Instalando GRUB en la partición del sistema EFI
-407|Instalando el cargador de arranque de respaldo
-408|Escribiendo el menú de arranque
-409|Disco listo
-410|Creando una instantánea del sistema nuevo
-411|Añadiendo la instantánea al menú de arranque
-412|Desmontando
-413|El asistente del instalador debe ejecutarse como root.
-414|Este equipo no se inició en modo UEFI. MAN necesita UEFI.
-415|El nombre de usuario no es válido.
-416|Se necesita una contraseña.
-417|El nombre del equipo no es válido.
-418|Idioma desconocido.
-419|La frase de contraseña de cifrado debe tener al menos 8 caracteres.
-420|El disco cambió después de que confirmara la instalación. No se modificó nada; revise y confirme de nuevo.
-421|Elija una partición del sistema.
-422|El disco confirmado no contiene la partición del sistema elegida.
-423|La partición de arranque debe ser distinta de las particiones EFI y del sistema.
-424|La partición de arranque debe tener al menos 512 MB.
-425|No se eligió ninguna instalación.
-426|El disco confirmado no contiene la instalación elegida.
-427|La instalación cifrada no tiene partición MAN_BOOT.
-428|No se encontró en /boot ningún núcleo con los módulos correspondientes.
-429|El idioma lo debe cambiar el asistente del sistema.
-430|Aplicando su configuración
-431|Preparando el cifrado del disco
-432|Terminando
-433|MAN Setup lo debe terminar el asistente del sistema.
-434|MAN Setup ya se completó en este equipo.
-435|Color de acento desconocido.
-436|El fondo de pantalla elegido no está disponible.
-437|Este sistema no se puede cifrar.
-438|Falta la clave de configuración, así que el cifrado no puede continuar en segundo plano.
-439|El sistema no está instalado en Btrfs, así que las instantáneas no están disponibles.
-440|Una restauración de instantánea espera un reinicio. Reinicie primero el equipo para terminarla.
-441|Identificador de instantánea no válido.
-442|Comprobando la actualización
-443|Creando una instantánea
-444|Preparando el área de actualización
-445|Descomprimiendo el nuevo sistema
-446|Trasladando sus cuentas y configuración
-447|Preparando el reinicio
-448|Descomprimido
-449|Cuentas
-450|Eliminando el software exclusivo del instalador
-451|Creando la imagen de arranque de la actualización
-452|Añadiendo la entrada de arranque de un solo uso
-453|La actualización es auténtica
-454|Instantánea creada
-455|Omitido
-456|Área de actualización lista
-457|Preparando el nuevo sistema
-458|El archivo de actualización está dañado (la suma de comprobación no coincide). Descárguelo de nuevo.
-459|No se pudo leer completo el archivo de actualización.
-460|La actualización no contiene ningún núcleo.
-461|Las actualizaciones las debe instalar el asistente del sistema.
-462|No se encontró la instalación elegida.
-463|Solo se puede actualizar la instalación de MAN en ejecución.
-464|Este no es un archivo de actualización de MAN (no tiene manifiesto).
-465|La actualización no está firmada, así que no es de confianza.
-466|La firma de la actualización está dañada.
-467|La actualización no está firmada por MAN. Puede que se haya modificado o que proceda de una fuente no fiable.
-468|El manifiesto de la actualización no es válido.
-469|La frase de contraseña no es correcta o no se puede abrir la partición cifrada.
-470|Azul
-471|Verde azulado
-472|Verde
-473|Amarillo
-474|Naranja
-475|Rojo
-476|Rosa
-477|Morado
-478|Pizarra
-479|Instalador del sistema
-480|Instalar MAN en este equipo
-481|Restauración del sistema
-482|Crear y restaurar instantáneas del sistema
-483|Instalador de actualizaciones del sistema
-484|Instalar un archivo de actualización del sistema MAN
-485|Ofrece instalar MAN al iniciar la sesión en vivo
-486|Aviso de actualización de MAN
-487|Le avisa una vez tras iniciar sesión de que MAN se actualizó
-488|Configure su nuevo equipo con MAN
-489|Configuración inicial de MAN
+317|Comprobando la actualización
+318|Comprobando que la actualización es auténtica y está completa…
+319|Actualización de MAN
+320|Esta actualización no se puede instalar
+321|No se pudo leer la actualización.
+322|Actualización desde {name} {version}
+323|{name} {version} está instalado
+324|Versión
+325|Publicada
+326|Tamaño de la descarga
+327|Espacio necesario
+328|Autenticidad
+329|Verificada, firmada por «{signer}»
+330|Novedades
+331|_Continuar
+332|Esta actualización no es más reciente que {name} {version} instalado.
+333|Actualización
+334|Lea los términos de la licencia de esta actualización.
+335|Acepto los términos de la licencia
+336|¿Dónde se instalará la actualización?
+337|El sistema se sustituye; los archivos de su carpeta personal no se tocan.
+338|Elija una instalación.
+339|en ejecución
+340|{name} {version} en este equipo
+341|{name} en {model}
+342|No se encontró ninguna instalación de MAN
+343|Las actualizaciones se instalan desde un sistema MAN instalado y en ejecución, no desde la sesión en vivo.
+344|Ubicación de la instalación
+345|Resumen
+346|Se conserva
+347|Sus archivos
+348|Todo lo que hay en su carpeta personal
+349|Cuentas y contraseñas
+350|Usuarios, grupos, el nombre del equipo
+351|Conexiones y configuración
+352|Wi-Fi, zona horaria, teclado, apariencia e instantáneas
+353|Aplicaciones Flatpak
+354|Además de todo lo que hay en /usr/local y /opt
+355|Se sustituye
+356|El software instalado con apt y otros cambios en los archivos del sistema se sustituyen por el nuevo sistema.
+357|El sistema operativo
+358|Sustituido por {name} {version}. El sistema actual se puede restaurar desde una instantánea.
+359|El equipo se reinicia para instalar la actualización
+360|Tras la preparación, MAN se reinicia, instala la actualización en unos segundos y vuelve a reiniciarse.
+361|_Instalar la actualización
+362|¿Crear primero una instantánea?
+363|Una instantánea guarda el sistema actual, para poder volver a él si algo no funciona después de la actualización. Se recomienda.
+364|_No crear
+365|_Crear instantánea
+366|Preparando {name} {version}
+367|Reiniciar para instalar
+368|El equipo se reinicia dos veces. Sus archivos están a salvo.
+369|Reinicio automático en {r} segundos
+370|Reinicio automático en 30 segundos
+371|La actualización se instalará la próxima vez que reinicie.
+372|Listo
+373|No se pudo preparar la actualización
+374|No se cambió nada en su sistema.
+375|_Intentar de nuevo
+376|Registro de la actualización
+377|Falló
+378|Su sistema se actualizó
+379|MAN se actualizó a la versión {version}.\nAntes: MAN {previous}.
+380|_Hecho
+381|Abrir una actualización de MAN
+382|Actualizaciones de MAN
+383|Comprobando el plan de instalación
+384|Preparando el disco
+385|Copiando MAN al disco
+386|Configurando el nuevo sistema
+387|Instalando el cargador de arranque
+388|Creando la primera instantánea
+389|Terminando
+390|Eliminando firmas de particiones antiguas
+391|Creando particiones
+392|Formateando la partición del sistema EFI
+393|Cifrando la partición del sistema
+394|Formateando la partición de arranque
+395|Creando el sistema de archivos Btrfs
+396|Eliminando firmas de sistemas de archivos antiguas
+397|Desbloqueando la instalación cifrada
+398|Guardando el sistema actual como instantánea
+399|Eliminando el sistema anterior
+400|Escribiendo la tabla de sistemas de archivos
+401|Estableciendo el nombre y la identidad del equipo
+402|Eliminando las cuentas de la sesión en vivo
+403|Creando su cuenta
+404|Preparando MAN Setup para el primer arranque
+405|Estableciendo la zona horaria y el teclado
+406|Eliminando el instalador del nuevo sistema
+407|Creando la imagen de arranque (initramfs)
+408|Configurando GRUB
+409|Instalando GRUB en la partición del sistema EFI
+410|Instalando el cargador de arranque de respaldo
+411|Escribiendo el menú de arranque
+412|Disco listo
+413|Creando una instantánea del sistema nuevo
+414|Añadiendo la instantánea al menú de arranque
+415|Desmontando
+416|El asistente del instalador debe ejecutarse como root.
+417|Este equipo no se inició en modo UEFI. MAN necesita UEFI.
+418|El nombre de usuario no es válido.
+419|Se necesita una contraseña.
+420|El nombre del equipo no es válido.
+421|Idioma desconocido.
+422|La frase de contraseña de cifrado debe tener al menos 8 caracteres.
+423|El disco cambió después de que confirmara la instalación. No se modificó nada; revise y confirme de nuevo.
+424|Elija una partición del sistema.
+425|El disco confirmado no contiene la partición del sistema elegida.
+426|La partición de arranque debe ser distinta de las particiones EFI y del sistema.
+427|La partición de arranque debe tener al menos 512 MB.
+428|No se eligió ninguna instalación.
+429|El disco confirmado no contiene la instalación elegida.
+430|La instalación cifrada no tiene partición MAN_BOOT.
+431|No se encontró en /boot ningún núcleo con los módulos correspondientes.
+432|El idioma lo debe cambiar el asistente del sistema.
+433|Aplicando su configuración
+434|Preparando el cifrado del disco
+435|Terminando
+436|MAN Setup lo debe terminar el asistente del sistema.
+437|MAN Setup ya se completó en este equipo.
+438|Color de acento desconocido.
+439|El fondo de pantalla elegido no está disponible.
+440|Este sistema no se puede cifrar.
+441|Falta la clave de configuración, así que el cifrado no puede continuar en segundo plano.
+442|El sistema no está instalado en Btrfs, así que las instantáneas no están disponibles.
+443|Una restauración de instantánea espera un reinicio. Reinicie primero el equipo para terminarla.
+444|Identificador de instantánea no válido.
+445|Comprobando la actualización
+446|Creando una instantánea
+447|Preparando el área de actualización
+448|Descomprimiendo el nuevo sistema
+449|Trasladando sus cuentas y configuración
+450|Preparando el reinicio
+451|Descomprimido
+452|Cuentas
+453|Eliminando el software exclusivo del instalador
+454|Creando la imagen de arranque de la actualización
+455|Añadiendo la entrada de arranque de un solo uso
+456|La actualización es auténtica
+457|Instantánea creada
+458|Omitido
+459|Área de actualización lista
+460|Preparando el nuevo sistema
+461|El archivo de actualización está dañado (la suma de comprobación no coincide). Descárguelo de nuevo.
+462|No se pudo leer completo el archivo de actualización.
+463|La actualización no contiene ningún núcleo.
+464|Las actualizaciones las debe instalar el asistente del sistema.
+465|No se encontró la instalación elegida.
+466|Solo se puede actualizar la instalación de MAN en ejecución.
+467|Este no es un archivo de actualización de MAN (no tiene manifiesto).
+468|La actualización no está firmada, así que no es de confianza.
+469|La firma de la actualización está dañada.
+470|La actualización no está firmada por MAN. Puede que se haya modificado o que proceda de una fuente no fiable.
+471|El manifiesto de la actualización no es válido.
+472|La frase de contraseña no es correcta o no se puede abrir la partición cifrada.
+473|Azul
+474|Verde azulado
+475|Verde
+476|Amarillo
+477|Naranja
+478|Rojo
+479|Rosa
+480|Morado
+481|Pizarra
+482|Instalador del sistema
+483|Instalar MAN en este equipo
+484|Restauración del sistema
+485|Crear y restaurar instantáneas del sistema
+486|Instalador de actualizaciones del sistema
+487|Instalar un archivo de actualización del sistema MAN
+488|Ofrece instalar MAN al iniciar la sesión en vivo
+489|Aviso de actualización de MAN
+490|Le avisa una vez tras iniciar sesión de que MAN se actualizó
+491|Configure su nuevo equipo con MAN
+492|Configuración inicial de MAN
+314|MAN {version} está disponible
+315|Abra la Configuración para descargar e instalar la actualización.
+316|Abrir actualizaciones
+493|Actualizaciones de MAN
+494|Le avisa cuando hay una nueva versión de MAN

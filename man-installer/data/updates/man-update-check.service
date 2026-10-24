@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for MAN updates
+# Not in the live session or MAN Setup (they have the installer).
+ConditionPathExists=!/usr/bin/man-installer
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/man-update-check --notify

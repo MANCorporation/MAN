@@ -34,12 +34,19 @@ put "$bin/man-snapshots" "$r/usr/bin/man-snapshots" 0755
 put "$data/applications/com.man.Snapshots.desktop" "$r/usr/share/applications/com.man.Snapshots.desktop" 0644
 put "$bin/man-oobe" "$r/usr/bin/man-oobe" 0755
 put "$bin/man-update" "$r/usr/bin/man-update" 0755
+put "$bin/man-update-check" "$r/usr/bin/man-update-check" 0755
+put "$data/updates/man-update-check.service" "$r/usr/lib/systemd/user/man-update-check.service" 0644
+put "$data/updates/man-update-check.timer" "$r/usr/lib/systemd/user/man-update-check.timer" 0644
+put "$data/updates/com.man.UpdateCheck.service" "$r/usr/share/dbus-1/services/com.man.UpdateCheck.service" 0644
+put "$data/updates/com.man.UpdateCheck.desktop" "$r/usr/share/applications/com.man.UpdateCheck.desktop" 0644
+put "$data/schemas/com.man.Updates.gschema.xml" "$r/usr/share/glib-2.0/schemas/com.man.Updates.gschema.xml" 0644
 put "$data/flatpak/man-flatpak-sandbox" "$r/usr/libexec/man/man-flatpak-sandbox" 0755
 put "$data/polkit/com.man.flatpak.policy" "$r/usr/share/polkit-1/actions/com.man.flatpak.policy" 0644
 put "$bin/man-mkupd" "$r/usr/bin/man-mkupd" 0755
 put "$data/applications/com.man.Updater.desktop" "$r/usr/share/applications/com.man.Updater.desktop" 0644
 put "$data/autostart/com.man.UpdateNotice.desktop" "$r/etc/xdg/autostart/com.man.UpdateNotice.desktop" 0644
 put "$data/icons/com.man.Updater.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.Updater.svg" 0644
+put "$data/icons/com.man.Updates-symbolic.svg" "$r/usr/share/icons/hicolor/symbolic/apps/com.man.Updates-symbolic.svg" 0644
 put "$data/mime/man-update.xml" "$r/usr/share/mime/packages/man-update.xml" 0644
 put "$data/keys/man.pub" "$r/usr/share/man/update-keys/man.pub" 0644
 put "$data/grub/41_man_update" "$r/etc/grub.d/41_man_update" 0755
@@ -80,7 +87,7 @@ Architecture: amd64
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
-Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, grub-efi-amd64-bin, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata
+Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, grub-efi-amd64-bin, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl
 Description: MAN system backend, MAN Setup and snapshot manager
  Privileged backend used by the MAN installer, the Snapshots app for
  creating and restoring Btrfs system snapshots, MAN Setup (first-start
@@ -93,6 +100,7 @@ cat > "$r/DEBIAN/postinst" <<'EOF'
 set -e
 if [ "$1" = configure ]; then
     systemctl disable man-boot-cleanup.service >/dev/null 2>&1 || true
+    systemctl --global enable man-update-check.timer >/dev/null 2>&1 || true
     systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service >/dev/null 2>&1 || true
     if [ -d /run/systemd/system ]; then
         systemctl daemon-reload || true
@@ -130,6 +138,7 @@ cat > "$r/DEBIAN/prerm" <<'EOF'
 set -e
 if [ "$1" = remove ]; then
     systemctl disable --now man-snapshot-daily.timer man-boot-cleanup.timer >/dev/null 2>&1 || true
+    systemctl --global disable man-update-check.timer >/dev/null 2>&1 || true
     for h in kms live; do
         dpkg-divert --package man-system-tools --rename --quiet --remove /usr/share/initramfs-tools/hooks/$h || true
     done

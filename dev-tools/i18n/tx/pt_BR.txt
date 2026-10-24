@@ -312,179 +312,184 @@
 311|Copiar para a área de transferência
 312|Tempo Universal Coordenado
 313|Inglês (EUA)
-314|Verificando a atualização
-315|Verificando se a atualização é autêntica e está completa…
-316|Atualização do MAN
-317|Esta atualização não pode ser instalada
-318|Não foi possível ler a atualização.
-319|Atualização de {name} {version}
-320|{name} {version} está instalado
-321|Versão
-322|Lançamento
-323|Tamanho do download
-324|Espaço necessário
-325|Autenticidade
-326|Verificada, assinada por “{signer}”
-327|Novidades
-328|_Continuar
-329|Esta atualização não é mais recente que o {name} {version} instalado.
-330|Atualização
-331|Leia os termos de licença desta atualização.
-332|Aceito os termos da licença
-333|Onde a atualização deve ser instalada?
-334|O sistema é substituído; os arquivos da sua pasta pessoal não são alterados.
-335|Escolha uma instalação.
-336|em execução
-337|{name} {version} neste computador
-338|{name} em {model}
-339|Nenhuma instalação do MAN encontrada
-340|As atualizações são instaladas a partir de um sistema MAN instalado e em execução, não da sessão live.
-341|Local da instalação
-342|Resumo
-343|Mantido
-344|Seus arquivos
-345|Tudo na sua pasta pessoal
-346|Contas e senhas
-347|Usuários, grupos, o nome do computador
-348|Conexões e configurações
-349|Wi-Fi, fuso horário, teclado, aparência e snapshots
-350|Aplicativos Flatpak
-351|Além de tudo em /usr/local e /opt
-352|Substituído
-353|Programas instalados com o apt e outras alterações nos arquivos do sistema são substituídos pelo novo sistema.
-354|O sistema operacional
-355|Substituído por {name} {version}. O sistema atual pode ser restaurado a partir de um snapshot.
-356|O computador reinicia para instalar a atualização
-357|Depois da preparação, o MAN reinicia, instala a atualização em poucos segundos e reinicia de novo.
-358|_Instalar atualização
-359|Criar um snapshot antes?
-360|Um snapshot salva o sistema atual, para você poder voltar a ele se algo não funcionar após a atualização. É recomendado.
-361|_Não criar
-362|_Criar snapshot
-363|Preparando {name} {version}
-364|Reiniciar para instalar
-365|O computador reinicia duas vezes. Seus arquivos estão seguros.
-366|Reiniciando automaticamente em {r} segundos
-367|Reiniciando automaticamente em 30 segundos
-368|A atualização será instalada na próxima vez que você reiniciar.
-369|Pronto
-370|Não foi possível preparar a atualização
-371|Nada foi alterado no seu sistema.
-372|_Tentar novamente
-373|Registro da atualização
-374|Falhou
-375|Seu sistema foi atualizado
-376|O MAN foi atualizado para a versão {version}.\nAntes: MAN {previous}.
-377|_Concluído
-378|Abrir uma atualização do MAN
-379|Atualizações do MAN
-380|Verificando o plano de instalação
-381|Preparando o disco
-382|Copiando o MAN para o disco
-383|Configurando o novo sistema
-384|Instalando o carregador de inicialização
-385|Criando o primeiro snapshot
-386|Finalizando
-387|Removendo assinaturas antigas de partições
-388|Criando partições
-389|Formatando a partição de sistema EFI
-390|Criptografando a partição do sistema
-391|Formatando a partição de inicialização
-392|Criando o sistema de arquivos Btrfs
-393|Removendo assinaturas antigas de sistemas de arquivos
-394|Desbloqueando a instalação criptografada
-395|Salvando o sistema atual como snapshot
-396|Removendo o sistema anterior
-397|Gravando a tabela de sistemas de arquivos
-398|Definindo o nome e a identidade do computador
-399|Removendo as contas da sessão live
-400|Criando sua conta
-401|Preparando o MAN Setup para a primeira inicialização
-402|Definindo fuso horário e teclado
-403|Removendo o instalador do novo sistema
-404|Gerando a imagem de inicialização (initramfs)
-405|Configurando o GRUB
-406|Instalando o GRUB na partição de sistema EFI
-407|Instalando o carregador de inicialização reserva
-408|Gravando o menu de inicialização
-409|Disco pronto
-410|Criando um snapshot do sistema novo
-411|Adicionando o snapshot ao menu de inicialização
-412|Desmontando
-413|O assistente do instalador deve ser executado como root.
-414|Este computador não foi iniciado no modo UEFI. O MAN requer UEFI.
-415|O nome de usuário não é válido.
-416|É necessária uma senha.
-417|O nome do computador não é válido.
-418|Idioma desconhecido.
-419|A senha de criptografia precisa ter pelo menos 8 caracteres.
-420|O disco mudou depois que você confirmou a instalação. Nada foi alterado; revise e confirme novamente.
-421|Escolha uma partição do sistema.
-422|O disco confirmado não contém a partição do sistema escolhida.
-423|A partição de inicialização deve ser separada das partições EFI e do sistema.
-424|A partição de inicialização deve ter pelo menos 512 MB.
-425|Nenhuma instalação escolhida.
-426|O disco confirmado não contém a instalação escolhida.
-427|A instalação criptografada não tem partição MAN_BOOT.
-428|Nenhum kernel com módulos correspondentes foi encontrado em /boot.
-429|O idioma deve ser alterado pelo assistente do sistema.
-430|Aplicando suas configurações
-431|Preparando a criptografia do disco
-432|Finalizando
-433|O MAN Setup deve ser concluído pelo assistente do sistema.
-434|O MAN Setup já foi concluído neste computador.
-435|Cor de destaque desconhecida.
-436|O papel de parede escolhido não está disponível.
-437|Este sistema não pode ser criptografado.
-438|A chave de configuração está faltando, então a criptografia não pode continuar em segundo plano.
-439|O sistema não está instalado em Btrfs, então os snapshots não estão disponíveis.
-440|Uma restauração de snapshot está aguardando uma reinicialização. Reinicie o computador primeiro para concluí-la.
-441|ID de snapshot inválido.
-442|Verificando a atualização
-443|Criando um snapshot
-444|Preparando a área de atualização
-445|Descompactando o novo sistema
-446|Transferindo suas contas e configurações
-447|Preparando a reinicialização
-448|Descompactado
-449|Contas
-450|Removendo programas usados só pelo instalador
-451|Gerando a imagem de inicialização da atualização
-452|Adicionando a entrada de inicialização única
-453|A atualização é autêntica
-454|Snapshot criado
-455|Ignorado
-456|Área de atualização pronta
-457|Preparando o novo sistema
-458|O arquivo de atualização está danificado (soma de verificação não confere). Baixe-o novamente.
-459|Não foi possível ler o arquivo de atualização por completo.
-460|A atualização não contém nenhum kernel.
-461|As atualizações devem ser instaladas pelo assistente do sistema.
-462|A instalação escolhida não foi encontrada.
-463|Somente a instalação do MAN em execução pode ser atualizada.
-464|Este não é um arquivo de atualização do MAN (sem manifesto).
-465|A atualização não está assinada, então não é confiável.
-466|A assinatura da atualização está danificada.
-467|A atualização não está assinada pelo MAN. Ela pode ter sido modificada ou vir de uma fonte não confiável.
-468|O manifesto da atualização é inválido.
-469|A senha não está correta ou a partição criptografada não pode ser aberta.
-470|Azul
-471|Azul-petróleo
-472|Verde
-473|Amarelo
-474|Laranja
-475|Vermelho
-476|Rosa
-477|Roxo
-478|Ardósia
-479|Instalador do sistema
-480|Instalar o MAN neste computador
-481|Restauração do sistema
-482|Criar e restaurar snapshots do sistema
-483|Instalador de atualizações do sistema
-484|Instalar um arquivo de atualização do sistema MAN
-485|Oferece instalar o MAN quando a sessão live inicia
-486|Aviso de atualização do MAN
-487|Avisa uma vez, depois do login, que o MAN foi atualizado
-488|Configure seu novo computador com MAN
-489|Configuração inicial do MAN
+317|Verificando a atualização
+318|Verificando se a atualização é autêntica e está completa…
+319|Atualização do MAN
+320|Esta atualização não pode ser instalada
+321|Não foi possível ler a atualização.
+322|Atualização de {name} {version}
+323|{name} {version} está instalado
+324|Versão
+325|Lançamento
+326|Tamanho do download
+327|Espaço necessário
+328|Autenticidade
+329|Verificada, assinada por “{signer}”
+330|Novidades
+331|_Continuar
+332|Esta atualização não é mais recente que o {name} {version} instalado.
+333|Atualização
+334|Leia os termos de licença desta atualização.
+335|Aceito os termos da licença
+336|Onde a atualização deve ser instalada?
+337|O sistema é substituído; os arquivos da sua pasta pessoal não são alterados.
+338|Escolha uma instalação.
+339|em execução
+340|{name} {version} neste computador
+341|{name} em {model}
+342|Nenhuma instalação do MAN encontrada
+343|As atualizações são instaladas a partir de um sistema MAN instalado e em execução, não da sessão live.
+344|Local da instalação
+345|Resumo
+346|Mantido
+347|Seus arquivos
+348|Tudo na sua pasta pessoal
+349|Contas e senhas
+350|Usuários, grupos, o nome do computador
+351|Conexões e configurações
+352|Wi-Fi, fuso horário, teclado, aparência e snapshots
+353|Aplicativos Flatpak
+354|Além de tudo em /usr/local e /opt
+355|Substituído
+356|Programas instalados com o apt e outras alterações nos arquivos do sistema são substituídos pelo novo sistema.
+357|O sistema operacional
+358|Substituído por {name} {version}. O sistema atual pode ser restaurado a partir de um snapshot.
+359|O computador reinicia para instalar a atualização
+360|Depois da preparação, o MAN reinicia, instala a atualização em poucos segundos e reinicia de novo.
+361|_Instalar atualização
+362|Criar um snapshot antes?
+363|Um snapshot salva o sistema atual, para você poder voltar a ele se algo não funcionar após a atualização. É recomendado.
+364|_Não criar
+365|_Criar snapshot
+366|Preparando {name} {version}
+367|Reiniciar para instalar
+368|O computador reinicia duas vezes. Seus arquivos estão seguros.
+369|Reiniciando automaticamente em {r} segundos
+370|Reiniciando automaticamente em 30 segundos
+371|A atualização será instalada na próxima vez que você reiniciar.
+372|Pronto
+373|Não foi possível preparar a atualização
+374|Nada foi alterado no seu sistema.
+375|_Tentar novamente
+376|Registro da atualização
+377|Falhou
+378|Seu sistema foi atualizado
+379|O MAN foi atualizado para a versão {version}.\nAntes: MAN {previous}.
+380|_Concluído
+381|Abrir uma atualização do MAN
+382|Atualizações do MAN
+383|Verificando o plano de instalação
+384|Preparando o disco
+385|Copiando o MAN para o disco
+386|Configurando o novo sistema
+387|Instalando o carregador de inicialização
+388|Criando o primeiro snapshot
+389|Finalizando
+390|Removendo assinaturas antigas de partições
+391|Criando partições
+392|Formatando a partição de sistema EFI
+393|Criptografando a partição do sistema
+394|Formatando a partição de inicialização
+395|Criando o sistema de arquivos Btrfs
+396|Removendo assinaturas antigas de sistemas de arquivos
+397|Desbloqueando a instalação criptografada
+398|Salvando o sistema atual como snapshot
+399|Removendo o sistema anterior
+400|Gravando a tabela de sistemas de arquivos
+401|Definindo o nome e a identidade do computador
+402|Removendo as contas da sessão live
+403|Criando sua conta
+404|Preparando o MAN Setup para a primeira inicialização
+405|Definindo fuso horário e teclado
+406|Removendo o instalador do novo sistema
+407|Gerando a imagem de inicialização (initramfs)
+408|Configurando o GRUB
+409|Instalando o GRUB na partição de sistema EFI
+410|Instalando o carregador de inicialização reserva
+411|Gravando o menu de inicialização
+412|Disco pronto
+413|Criando um snapshot do sistema novo
+414|Adicionando o snapshot ao menu de inicialização
+415|Desmontando
+416|O assistente do instalador deve ser executado como root.
+417|Este computador não foi iniciado no modo UEFI. O MAN requer UEFI.
+418|O nome de usuário não é válido.
+419|É necessária uma senha.
+420|O nome do computador não é válido.
+421|Idioma desconhecido.
+422|A senha de criptografia precisa ter pelo menos 8 caracteres.
+423|O disco mudou depois que você confirmou a instalação. Nada foi alterado; revise e confirme novamente.
+424|Escolha uma partição do sistema.
+425|O disco confirmado não contém a partição do sistema escolhida.
+426|A partição de inicialização deve ser separada das partições EFI e do sistema.
+427|A partição de inicialização deve ter pelo menos 512 MB.
+428|Nenhuma instalação escolhida.
+429|O disco confirmado não contém a instalação escolhida.
+430|A instalação criptografada não tem partição MAN_BOOT.
+431|Nenhum kernel com módulos correspondentes foi encontrado em /boot.
+432|O idioma deve ser alterado pelo assistente do sistema.
+433|Aplicando suas configurações
+434|Preparando a criptografia do disco
+435|Finalizando
+436|O MAN Setup deve ser concluído pelo assistente do sistema.
+437|O MAN Setup já foi concluído neste computador.
+438|Cor de destaque desconhecida.
+439|O papel de parede escolhido não está disponível.
+440|Este sistema não pode ser criptografado.
+441|A chave de configuração está faltando, então a criptografia não pode continuar em segundo plano.
+442|O sistema não está instalado em Btrfs, então os snapshots não estão disponíveis.
+443|Uma restauração de snapshot está aguardando uma reinicialização. Reinicie o computador primeiro para concluí-la.
+444|ID de snapshot inválido.
+445|Verificando a atualização
+446|Criando um snapshot
+447|Preparando a área de atualização
+448|Descompactando o novo sistema
+449|Transferindo suas contas e configurações
+450|Preparando a reinicialização
+451|Descompactado
+452|Contas
+453|Removendo programas usados só pelo instalador
+454|Gerando a imagem de inicialização da atualização
+455|Adicionando a entrada de inicialização única
+456|A atualização é autêntica
+457|Snapshot criado
+458|Ignorado
+459|Área de atualização pronta
+460|Preparando o novo sistema
+461|O arquivo de atualização está danificado (soma de verificação não confere). Baixe-o novamente.
+462|Não foi possível ler o arquivo de atualização por completo.
+463|A atualização não contém nenhum kernel.
+464|As atualizações devem ser instaladas pelo assistente do sistema.
+465|A instalação escolhida não foi encontrada.
+466|Somente a instalação do MAN em execução pode ser atualizada.
+467|Este não é um arquivo de atualização do MAN (sem manifesto).
+468|A atualização não está assinada, então não é confiável.
+469|A assinatura da atualização está danificada.
+470|A atualização não está assinada pelo MAN. Ela pode ter sido modificada ou vir de uma fonte não confiável.
+471|O manifesto da atualização é inválido.
+472|A senha não está correta ou a partição criptografada não pode ser aberta.
+473|Azul
+474|Azul-petróleo
+475|Verde
+476|Amarelo
+477|Laranja
+478|Vermelho
+479|Rosa
+480|Roxo
+481|Ardósia
+482|Instalador do sistema
+483|Instalar o MAN neste computador
+484|Restauração do sistema
+485|Criar e restaurar snapshots do sistema
+486|Instalador de atualizações do sistema
+487|Instalar um arquivo de atualização do sistema MAN
+488|Oferece instalar o MAN quando a sessão live inicia
+489|Aviso de atualização do MAN
+490|Avisa uma vez, depois do login, que o MAN foi atualizado
+491|Configure seu novo computador com MAN
+492|Configuração inicial do MAN
+314|O MAN {version} está disponível
+315|Abra as Configurações para baixar e instalar a atualização.
+316|Abrir atualizações
+493|Atualizações do MAN
+494|Avisa quando há uma nova versão do MAN

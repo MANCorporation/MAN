@@ -43,8 +43,10 @@ CONNECTION WITH THE MAN SOFTWARE OR ITS USE.
     (epiphany, shipped as "PCD"): each patch (*.patch, debian/patches/man-*)
     is licensed under the same license as the program it changes
     (gnome-control-center: GNU GPL version 2 or later; epiphany: GNU GPL
-    version 3 or later). Upstream source and Debian packaging in src/ keep
-    their original licenses.
+    version 3 or later). The translations of those changes
+    (src/man-settings-po/) and the scripts that build the patched packages
+    are licensed the same way as the patch they belong to. Upstream source
+    and Debian packaging in src/ keep their original licenses.
   - Rust libraries compiled into MAN's programs: see
     man-installer/THIRD-PARTY-RUST.txt and duhach/THIRD-PARTY-RUST.txt.
   - The MAN operating system (Linux kernel, GNU, GNOME, Debian packages,

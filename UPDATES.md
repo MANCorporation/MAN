@@ -103,3 +103,38 @@ screen (`/usr/share/gdm/dconf/95-man-logo`). Signature verified in a VM.
 Note: the image's version lives in `/usr/lib/man/version` as well as
 os-release — bump both (the update writes the version file on apply).
 Old image kept as `lfs/man-gnome.before-10.6.img`.
+
+## Updates from GitHub (MAN 10.7, 2026-10-24)
+
+MAN finds updates in the **GitHub releases** of
+https://github.com/MANCorporation/MAN:
+
+- `man-update-check` (man-system-tools 3.8.0, uses `curl`) reads
+  `https://api.github.com/repos/MANCorporation/MAN/releases`, ignores drafts
+  and pre-releases, and offers the newest asset named `MAN-<version>.upd`
+  that is newer than `/usr/lib/man/version`. A `MAN-<version>.upd.sha256`
+  asset, if present, is checked after the download. The file is saved in
+  `~/Downloads` (a partial download resumes) and opened in MAN Update, which
+  verifies the ed25519 signature: an unsigned or altered file is refused.
+- **Settings → Updates** checks every time it is opened.
+- `man-update-check.timer` (user timer, enabled globally) runs
+  `man-update-check --notify` 10 minutes after login and then daily, and
+  shows one notification per new version ("Open Updates" opens Settings →
+  Updates). Off in the live session; switch in Settings
+  (`com.man.Updates auto-check`).
+- Testing: `MAN_UPDATE_API=http://host:port` points the checker at a fake
+  releases API (a JSON list like GitHub's).
+
+### Publishing a release
+
+```bash
+gh release create v10.7 --repo MANCorporation/MAN --title "MAN 10.7" \
+    --notes-file lfs/updates/MAN-10.7.NOTES.txt \
+    release/MAN-10.7.upd release/MAN-10.7.upd.sha256 \
+    release/MAN-10.7-amd64.iso release/MAN-10.7-amd64.iso.sha256
+```
+
+GitHub allows at most **2 GiB per file**: the .upd (1.96 GB) and the ISO
+(1.9 GB) fit, but a bigger system needs a smaller payload (or splitting,
+which man-update-check does not support yet). The release notes on GitHub
+are what Settings shows under "What's New".

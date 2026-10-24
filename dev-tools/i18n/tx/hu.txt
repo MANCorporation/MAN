@@ -312,179 +312,184 @@
 311|Másolás a vágólapra
 312|Egyezményes világidő
 313|Angol (USA)
-314|A frissítés ellenőrzése
-315|Annak ellenőrzése, hogy a frissítés eredeti és teljes…
-316|MAN frissítés
-317|Ez a frissítés nem telepíthető
-318|A frissítés nem olvasható be.
-319|Frissítés innen: {name} {version}
-320|{name} {version} telepítve
-321|Verzió
-322|Kiadva
-323|Letöltési méret
-324|Szükséges hely
-325|Hitelesség
-326|Ellenőrizve, aláíró: „{signer}”
-327|Újdonságok
-328|_Folytatás
-329|Ez a frissítés nem újabb a telepített {name} {version} verziónál.
-330|Frissítés
-331|Olvassa el a frissítés licencfeltételeit.
-332|Elfogadom a licencfeltételeket
-333|Hová települjön a frissítés?
-334|A rendszer lecserélődik; a saját mappájában lévő fájlokhoz nem nyúl.
-335|Válasszon telepítést.
-336|jelenleg fut
-337|{name} {version} ezen a számítógépen
-338|{name} ezen: {model}
-339|Nem található MAN telepítés
-340|A frissítéseket egy futó, telepített MAN rendszerből lehet telepíteni, nem az élő munkamenetből.
-341|Telepítés helye
-342|Összegzés
-343|Megmarad
-344|Az Ön fájljai
-345|Minden a saját mappájában
-346|Fiókok és jelszavak
-347|Felhasználók, csoportok, a számítógép neve
-348|Kapcsolatok és beállítások
-349|Wi-Fi, időzóna, billentyűzet, megjelenés és pillanatképek
-350|Flatpak alkalmazások
-351|Valamint minden a /usr/local és /opt könyvtárakban
-352|Lecserélődik
-353|Az apttal telepített szoftvereket és a rendszerfájlok egyéb változásait az új rendszer váltja fel.
-354|Az operációs rendszer
-355|Felváltja: {name} {version}. A jelenlegi rendszer pillanatképből visszaállítható.
-356|A számítógép újraindul a frissítés telepítéséhez
-357|Az előkészítés után a MAN újraindul, néhány másodperc alatt telepíti a frissítést, majd ismét újraindul.
-358|Frissítés _telepítése
-359|Előbb pillanatképet készít?
-360|A pillanatkép menti a jelenlegi rendszert, így visszatérhet hozzá, ha a frissítés után valami nem működik. Ajánlott.
-361|_Ne készítsen
-362|_Pillanatkép készítése
-363|{name} {version} előkészítése
-364|Újraindítás a telepítéshez
-365|A számítógép kétszer indul újra. A fájljai biztonságban vannak.
-366|Automatikus újraindítás {r} másodperc múlva
-367|Automatikus újraindítás 30 másodperc múlva
-368|A frissítés a következő újraindításkor települ.
-369|Kész
-370|A frissítés nem készíthető elő
-371|Semmi sem változott a rendszerén.
-372|Ú_jra
-373|Frissítési napló
-374|Sikertelen
-375|A rendszere frissült
-376|A MAN frissült a(z) {version} verzióra.\nKorábban: MAN {previous}.
-377|_Kész
-378|MAN frissítés megnyitása
-379|MAN frissítések
-380|A telepítési terv ellenőrzése
-381|A lemez előkészítése
-382|A MAN másolása a lemezre
-383|Az új rendszer beállítása
-384|A rendszerbetöltő telepítése
-385|Az első pillanatkép készítése
-386|Befejezés
-387|Régi partíció-aláírások eltávolítása
-388|Partíciók létrehozása
-389|Az EFI rendszerpartíció formázása
-390|A rendszerpartíció titkosítása
-391|A rendszerindító partíció formázása
-392|A Btrfs fájlrendszer létrehozása
-393|Régi fájlrendszer-aláírások eltávolítása
-394|A titkosított telepítés feloldása
-395|A jelenlegi rendszer mentése pillanatképként
-396|Az előző rendszer eltávolítása
-397|A fájlrendszertábla írása
-398|A számítógép nevének és azonosítójának beállítása
-399|Az élő munkamenet fiókjainak eltávolítása
-400|Az Ön fiókjának létrehozása
-401|A MAN Setup előkészítése az első indításra
-402|Az időzóna és a billentyűzet beállítása
-403|A telepítő eltávolítása az új rendszerből
-404|A rendszerindító lemezkép (initramfs) összeállítása
-405|A GRUB beállítása
-406|A GRUB telepítése az EFI rendszerpartícióra
-407|A tartalék rendszerbetöltő telepítése
-408|Az indítómenü írása
-409|A lemez kész
-410|Pillanatkép készítése az új rendszerről
-411|A pillanatkép felvétele az indítómenübe
-412|Leválasztás
-413|A telepítő segédjének rootként kell futnia.
-414|Ez a számítógép nem UEFI módban indult. A MAN-hoz UEFI szükséges.
-415|A felhasználónév érvénytelen.
-416|Jelszó megadása kötelező.
-417|A számítógép neve érvénytelen.
-418|Ismeretlen nyelv.
-419|A titkosítási jelmondatnak legalább 8 karakterből kell állnia.
-420|A lemez megváltozott, miután megerősítette a telepítést. Semmi sem módosult; tekintse át, és erősítse meg újra.
-421|Válasszon rendszerpartíciót.
-422|A megerősített lemez nem tartalmazza a kiválasztott rendszerpartíciót.
-423|A rendszerindító partíciónak el kell különülnie az EFI és a rendszerpartíciótól.
-424|A rendszerindító partíciónak legalább 512 MB-osnak kell lennie.
-425|Nincs telepítés kiválasztva.
-426|A megerősített lemez nem tartalmazza a kiválasztott telepítést.
-427|A titkosított telepítésnek nincs MAN_BOOT partíciója.
-428|A /boot könyvtárban nem található kernel a hozzá tartozó modulokkal.
-429|A nyelvet a rendszersegédnek kell módosítania.
-430|A beállításai alkalmazása
-431|A lemeztitkosítás előkészítése
-432|Befejezés
-433|A MAN Setupot a rendszersegédnek kell befejeznie.
-434|A MAN Setup már lefutott ezen a számítógépen.
-435|Ismeretlen kiemelőszín.
-436|A választott háttérkép nem érhető el.
-437|Ez a rendszer nem titkosítható.
-438|Hiányzik a beállítási kulcs, ezért a titkosítás nem folytatódhat a háttérben.
-439|A rendszer nem Btrfs-re van telepítve, így a pillanatképek nem érhetők el.
-440|Egy pillanatkép-visszaállítás újraindításra vár. Előbb indítsa újra a számítógépet a befejezéshez.
-441|Érvénytelen pillanatkép-azonosító.
-442|A frissítés ellenőrzése
-443|Pillanatkép készítése
-444|A frissítési terület előkészítése
-445|Az új rendszer kicsomagolása
-446|A fiókjai és beállításai áthelyezése
-447|Az újraindítás előkészítése
-448|Kicsomagolva
-449|Fiókok
-450|A csak a telepítőhöz tartozó szoftverek eltávolítása
-451|A frissítés rendszerindító lemezképének összeállítása
-452|Az egyszeri indítási bejegyzés hozzáadása
-453|A frissítés eredeti
-454|Pillanatkép elkészült
-455|Kihagyva
-456|A frissítési terület kész
-457|Az új rendszer előkészítése
-458|A frissítési fájl sérült (az ellenőrzőösszeg nem egyezik). Töltse le újra.
-459|A frissítési fájl nem olvasható be teljesen.
-460|A frissítés nem tartalmaz kernelt.
-461|A frissítéseket a rendszersegédnek kell telepítenie.
-462|A kiválasztott telepítés nem található.
-463|Csak a futó MAN telepítés frissíthető.
-464|Ez nem MAN frissítési fájl (nincs manifest).
-465|A frissítés nincs aláírva, ezért nem megbízható.
-466|A frissítés aláírása sérült.
-467|A frissítést nem a MAN írta alá. Lehet, hogy módosították, vagy nem megbízható forrásból származik.
-468|A frissítés manifestje érvénytelen.
-469|A jelmondat helytelen, vagy a titkosított partíció nem nyitható meg.
-470|Kék
-471|Kékeszöld
-472|Zöld
-473|Sárga
-474|Narancs
-475|Piros
-476|Rózsaszín
-477|Lila
-478|Palaszürke
-479|Rendszertelepítő
-480|A MAN telepítése erre a számítógépre
-481|Rendszer-visszaállítás
-482|A rendszer pillanatképeinek készítése és visszaállítása
-483|Rendszerfrissítés-telepítő
-484|MAN rendszerfrissítési fájl telepítése
-485|Felajánlja a MAN telepítését az élő munkamenet indulásakor
-486|MAN frissítési értesítés
-487|Bejelentkezés után egyszer jelzi, hogy a MAN frissült
-488|Állítsa be új MAN számítógépét
-489|A MAN első beállítása
+317|A frissítés ellenőrzése
+318|Annak ellenőrzése, hogy a frissítés eredeti és teljes…
+319|MAN frissítés
+320|Ez a frissítés nem telepíthető
+321|A frissítés nem olvasható be.
+322|Frissítés innen: {name} {version}
+323|{name} {version} telepítve
+324|Verzió
+325|Kiadva
+326|Letöltési méret
+327|Szükséges hely
+328|Hitelesség
+329|Ellenőrizve, aláíró: „{signer}”
+330|Újdonságok
+331|_Folytatás
+332|Ez a frissítés nem újabb a telepített {name} {version} verziónál.
+333|Frissítés
+334|Olvassa el a frissítés licencfeltételeit.
+335|Elfogadom a licencfeltételeket
+336|Hová települjön a frissítés?
+337|A rendszer lecserélődik; a saját mappájában lévő fájlokhoz nem nyúl.
+338|Válasszon telepítést.
+339|jelenleg fut
+340|{name} {version} ezen a számítógépen
+341|{name} ezen: {model}
+342|Nem található MAN telepítés
+343|A frissítéseket egy futó, telepített MAN rendszerből lehet telepíteni, nem az élő munkamenetből.
+344|Telepítés helye
+345|Összegzés
+346|Megmarad
+347|Az Ön fájljai
+348|Minden a saját mappájában
+349|Fiókok és jelszavak
+350|Felhasználók, csoportok, a számítógép neve
+351|Kapcsolatok és beállítások
+352|Wi-Fi, időzóna, billentyűzet, megjelenés és pillanatképek
+353|Flatpak alkalmazások
+354|Valamint minden a /usr/local és /opt könyvtárakban
+355|Lecserélődik
+356|Az apttal telepített szoftvereket és a rendszerfájlok egyéb változásait az új rendszer váltja fel.
+357|Az operációs rendszer
+358|Felváltja: {name} {version}. A jelenlegi rendszer pillanatképből visszaállítható.
+359|A számítógép újraindul a frissítés telepítéséhez
+360|Az előkészítés után a MAN újraindul, néhány másodperc alatt telepíti a frissítést, majd ismét újraindul.
+361|Frissítés _telepítése
+362|Előbb pillanatképet készít?
+363|A pillanatkép menti a jelenlegi rendszert, így visszatérhet hozzá, ha a frissítés után valami nem működik. Ajánlott.
+364|_Ne készítsen
+365|_Pillanatkép készítése
+366|{name} {version} előkészítése
+367|Újraindítás a telepítéshez
+368|A számítógép kétszer indul újra. A fájljai biztonságban vannak.
+369|Automatikus újraindítás {r} másodperc múlva
+370|Automatikus újraindítás 30 másodperc múlva
+371|A frissítés a következő újraindításkor települ.
+372|Kész
+373|A frissítés nem készíthető elő
+374|Semmi sem változott a rendszerén.
+375|Ú_jra
+376|Frissítési napló
+377|Sikertelen
+378|A rendszere frissült
+379|A MAN frissült a(z) {version} verzióra.\nKorábban: MAN {previous}.
+380|_Kész
+381|MAN frissítés megnyitása
+382|MAN frissítések
+383|A telepítési terv ellenőrzése
+384|A lemez előkészítése
+385|A MAN másolása a lemezre
+386|Az új rendszer beállítása
+387|A rendszerbetöltő telepítése
+388|Az első pillanatkép készítése
+389|Befejezés
+390|Régi partíció-aláírások eltávolítása
+391|Partíciók létrehozása
+392|Az EFI rendszerpartíció formázása
+393|A rendszerpartíció titkosítása
+394|A rendszerindító partíció formázása
+395|A Btrfs fájlrendszer létrehozása
+396|Régi fájlrendszer-aláírások eltávolítása
+397|A titkosított telepítés feloldása
+398|A jelenlegi rendszer mentése pillanatképként
+399|Az előző rendszer eltávolítása
+400|A fájlrendszertábla írása
+401|A számítógép nevének és azonosítójának beállítása
+402|Az élő munkamenet fiókjainak eltávolítása
+403|Az Ön fiókjának létrehozása
+404|A MAN Setup előkészítése az első indításra
+405|Az időzóna és a billentyűzet beállítása
+406|A telepítő eltávolítása az új rendszerből
+407|A rendszerindító lemezkép (initramfs) összeállítása
+408|A GRUB beállítása
+409|A GRUB telepítése az EFI rendszerpartícióra
+410|A tartalék rendszerbetöltő telepítése
+411|Az indítómenü írása
+412|A lemez kész
+413|Pillanatkép készítése az új rendszerről
+414|A pillanatkép felvétele az indítómenübe
+415|Leválasztás
+416|A telepítő segédjének rootként kell futnia.
+417|Ez a számítógép nem UEFI módban indult. A MAN-hoz UEFI szükséges.
+418|A felhasználónév érvénytelen.
+419|Jelszó megadása kötelező.
+420|A számítógép neve érvénytelen.
+421|Ismeretlen nyelv.
+422|A titkosítási jelmondatnak legalább 8 karakterből kell állnia.
+423|A lemez megváltozott, miután megerősítette a telepítést. Semmi sem módosult; tekintse át, és erősítse meg újra.
+424|Válasszon rendszerpartíciót.
+425|A megerősített lemez nem tartalmazza a kiválasztott rendszerpartíciót.
+426|A rendszerindító partíciónak el kell különülnie az EFI és a rendszerpartíciótól.
+427|A rendszerindító partíciónak legalább 512 MB-osnak kell lennie.
+428|Nincs telepítés kiválasztva.
+429|A megerősített lemez nem tartalmazza a kiválasztott telepítést.
+430|A titkosított telepítésnek nincs MAN_BOOT partíciója.
+431|A /boot könyvtárban nem található kernel a hozzá tartozó modulokkal.
+432|A nyelvet a rendszersegédnek kell módosítania.
+433|A beállításai alkalmazása
+434|A lemeztitkosítás előkészítése
+435|Befejezés
+436|A MAN Setupot a rendszersegédnek kell befejeznie.
+437|A MAN Setup már lefutott ezen a számítógépen.
+438|Ismeretlen kiemelőszín.
+439|A választott háttérkép nem érhető el.
+440|Ez a rendszer nem titkosítható.
+441|Hiányzik a beállítási kulcs, ezért a titkosítás nem folytatódhat a háttérben.
+442|A rendszer nem Btrfs-re van telepítve, így a pillanatképek nem érhetők el.
+443|Egy pillanatkép-visszaállítás újraindításra vár. Előbb indítsa újra a számítógépet a befejezéshez.
+444|Érvénytelen pillanatkép-azonosító.
+445|A frissítés ellenőrzése
+446|Pillanatkép készítése
+447|A frissítési terület előkészítése
+448|Az új rendszer kicsomagolása
+449|A fiókjai és beállításai áthelyezése
+450|Az újraindítás előkészítése
+451|Kicsomagolva
+452|Fiókok
+453|A csak a telepítőhöz tartozó szoftverek eltávolítása
+454|A frissítés rendszerindító lemezképének összeállítása
+455|Az egyszeri indítási bejegyzés hozzáadása
+456|A frissítés eredeti
+457|Pillanatkép elkészült
+458|Kihagyva
+459|A frissítési terület kész
+460|Az új rendszer előkészítése
+461|A frissítési fájl sérült (az ellenőrzőösszeg nem egyezik). Töltse le újra.
+462|A frissítési fájl nem olvasható be teljesen.
+463|A frissítés nem tartalmaz kernelt.
+464|A frissítéseket a rendszersegédnek kell telepítenie.
+465|A kiválasztott telepítés nem található.
+466|Csak a futó MAN telepítés frissíthető.
+467|Ez nem MAN frissítési fájl (nincs manifest).
+468|A frissítés nincs aláírva, ezért nem megbízható.
+469|A frissítés aláírása sérült.
+470|A frissítést nem a MAN írta alá. Lehet, hogy módosították, vagy nem megbízható forrásból származik.
+471|A frissítés manifestje érvénytelen.
+472|A jelmondat helytelen, vagy a titkosított partíció nem nyitható meg.
+473|Kék
+474|Kékeszöld
+475|Zöld
+476|Sárga
+477|Narancs
+478|Piros
+479|Rózsaszín
+480|Lila
+481|Palaszürke
+482|Rendszertelepítő
+483|A MAN telepítése erre a számítógépre
+484|Rendszer-visszaállítás
+485|A rendszer pillanatképeinek készítése és visszaállítása
+486|Rendszerfrissítés-telepítő
+487|MAN rendszerfrissítési fájl telepítése
+488|Felajánlja a MAN telepítését az élő munkamenet indulásakor
+489|MAN frissítési értesítés
+490|Bejelentkezés után egyszer jelzi, hogy a MAN frissült
+491|Állítsa be új MAN számítógépét
+492|A MAN első beállítása
+314|Elérhető a MAN {version}
+315|A frissítés letöltéséhez és telepítéséhez nyissa meg a Beállításokat.
+316|Frissítések megnyitása
+493|MAN-frissítések
+494|Szól, ha elérhető a MAN új verziója

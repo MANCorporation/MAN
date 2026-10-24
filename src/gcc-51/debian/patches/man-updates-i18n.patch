@@ -1,0 +1,879 @@
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/applications/cc-applications-panel.c b/panels/applications/cc-applications-panel.c
+--- a/panels/applications/cc-applications-panel.c	2026-10-23 17:33:39.687183943 +0200
++++ b/panels/applications/cc-applications-panel.c	2026-10-24 12:40:05.173007596 +0200
+@@ -31,6 +31,7 @@
+ 
+ #include "cc-application-shortcut-dialog.h"
+ #include "cc-applications-panel.h"
++#include "cc-man-i18n.h"
+ #include "cc-applications-resources.h"
+ #include "cc-applications-row.h"
+ #include "cc-default-apps-page.h"
+@@ -1472,10 +1473,10 @@
+         return;
+ 
+     adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->man_sandbox_status_row),
+-                                   open ? _("Unsandboxed") : _("Sandboxed"));
++                                   open ? cc_man_gettext ("Unsandboxed") : cc_man_gettext ("Sandboxed"));
+     adw_action_row_set_subtitle (self->man_sandbox_status_row,
+-                                 open ? _("The app has full access to your files, devices and the system")
+-                                      : _("The app can only use the permissions it was given"));
++                                 open ? cc_man_gettext ("The app has full access to your files, devices and the system")
++                                      : cc_man_gettext ("The app can only use the permissions it was given"));
+     gtk_image_set_from_icon_name (self->man_sandbox_status_icon,
+                                   open ? "channel-insecure-symbolic" : "security-high-symbolic");
+     if (open)
+@@ -1508,10 +1509,10 @@
+ man_show_warning (ManSandboxOp *op)
+ {
+     AdwDialog *dialog;
+-    g_autofree gchar *heading = g_strdup_printf (_("Unsandbox “%s”?"), op->app_name);
++    g_autofree gchar *heading = g_strdup_printf (cc_man_gettext ("Unsandbox “%s”?"), op->app_name);
+ 
+     dialog = adw_alert_dialog_new (heading,
+-        _("The app will get full access to this computer: all your files and the system files, "
++        cc_man_gettext ("The app will get full access to this computer: all your files and the system files, "
+           "every device, the network, and all system services. It can run commands outside its "
+           "container and read or change anything your account can.\n\n"
+           "Only do this for apps you completely trust. A harmful or buggy app could damage your "
+@@ -1520,7 +1521,7 @@
+           "change to apply."));
+     adw_alert_dialog_add_responses (ADW_ALERT_DIALOG (dialog),
+                                     "cancel", _("_Cancel"),
+-                                    "proceed", _("_Proceed"),
++                                    "proceed", cc_man_gettext ("_Proceed"),
+                                     NULL);
+     adw_alert_dialog_set_response_appearance (ADW_ALERT_DIALOG (dialog), "proceed", ADW_RESPONSE_DESTRUCTIVE);
+     adw_alert_dialog_set_default_response (ADW_ALERT_DIALOG (dialog), "cancel");
+@@ -1547,9 +1548,9 @@
+     if (error != NULL || status != 0) {
+         /* pkexec: 126 = dialog dismissed, 127 = not authorized */
+         if (status == 126 || status == 127)
+-            man_toast (op->self, _("Authentication failed. Nothing was changed."));
++            man_toast (op->self, cc_man_gettext ("Authentication failed. Nothing was changed."));
+         else
+-            man_toast (op->self, _("The sandbox could not be changed."));
++            man_toast (op->self, cc_man_gettext ("The sandbox could not be changed."));
+         man_sandbox_op_free (op);
+         return;
+     }
+@@ -1564,10 +1565,10 @@
+         man_update_sandbox_group (op->self);
+ 
+     if (g_str_equal (op->op, "unsandbox")) {
+-        g_autofree gchar *text = g_strdup_printf (_("“%s” is unsandboxed. Restart it to apply."), op->app_name);
++        g_autofree gchar *text = g_strdup_printf (cc_man_gettext ("“%s” is unsandboxed. Restart it to apply."), op->app_name);
+         man_toast (op->self, text);
+     } else {
+-        g_autofree gchar *text = g_strdup_printf (_("The sandbox of “%s” was restored."), op->app_name);
++        g_autofree gchar *text = g_strdup_printf (cc_man_gettext ("The sandbox of “%s” was restored."), op->app_name);
+         man_toast (op->self, text);
+     }
+     man_sandbox_op_free (op);
+@@ -1588,7 +1589,7 @@
+                                  "pkexec", MAN_SANDBOX_HELPER, op_name, app_id, NULL);
+     if (proc == NULL) {
+         g_warning ("Failed to run %s: %s", MAN_SANDBOX_HELPER, error->message);
+-        man_toast (self, _("The sandbox could not be changed."));
++        man_toast (self, cc_man_gettext ("The sandbox could not be changed."));
+         return;
+     }
+ 
+@@ -2063,6 +2064,12 @@
+     g_resources_register (cc_applications_get_resource ());
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
++
++    /* MAN's strings come from the man-settings catalog. */
++    adw_preferences_group_set_title (self->man_sandbox_group, cc_man_gettext ("Sandbox"));
++    adw_preferences_group_set_description (self->man_sandbox_group, cc_man_gettext ("Flatpak apps run isolated from the rest of the system."));
++    adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->man_unsandbox_row), cc_man_gettext ("_Unsandbox App…"));
++    adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->man_restore_sandbox_row), cc_man_gettext ("_Restore Sandbox"));
+     cc_man_tweaks_add_startup_apps (self->default_apps_group);
+ 
+     gtk_widget_set_visible (GTK_WIDGET (self->install_button), gnome_software_is_installed ());
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/common/cc-man-i18n.h b/panels/common/cc-man-i18n.h
+--- a/panels/common/cc-man-i18n.h	1970-01-01 01:00:00.000000000 +0100
++++ b/panels/common/cc-man-i18n.h	2026-10-24 12:52:46.168783049 +0200
+@@ -0,0 +1,47 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later
++ * MAN's own strings in Settings (the GNOME Tweaks options and the Updates
++ * panel) are translated in the "man-settings" gettext domain; anything not
++ * found there falls back to Settings' own catalog. */
++#pragma once
++
++#include <config.h>
++#include <glib/gi18n.h>
++
++#define MAN_GETTEXT_DOMAIN "man-settings"
++
++#ifndef GNOMELOCALEDIR
++#define GNOMELOCALEDIR "/usr/share/locale"
++#endif
++
++static inline void
++cc_man_i18n_init (void)
++{
++  static gsize done = 0;
++
++  if (g_once_init_enter (&done))
++    {
++      bindtextdomain (MAN_GETTEXT_DOMAIN, GNOMELOCALEDIR);
++      bind_textdomain_codeset (MAN_GETTEXT_DOMAIN, "UTF-8");
++      g_once_init_leave (&done, 1);
++    }
++}
++
++static inline const char *
++cc_man_gettext (const char *msgid)
++{
++  const char *t;
++
++  cc_man_i18n_init ();
++  t = g_dgettext (MAN_GETTEXT_DOMAIN, msgid);
++  return t != msgid ? t : g_dgettext (GETTEXT_PACKAGE, msgid);
++}
++
++static inline const char *
++cc_man_ngettext (const char *msgid, const char *msgid_plural, gulong n)
++{
++  const char *t;
++
++  cc_man_i18n_init ();
++  t = g_dngettext (MAN_GETTEXT_DOMAIN, msgid, msgid_plural, n);
++  return (t != msgid && t != msgid_plural) ? t : g_dngettext (GETTEXT_PACKAGE, msgid, msgid_plural, n);
++}
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/common/cc-man-tweaks.c b/panels/common/cc-man-tweaks.c
+--- a/panels/common/cc-man-tweaks.c	2026-10-23 17:40:28.195238912 +0200
++++ b/panels/common/cc-man-tweaks.c	2026-10-24 12:52:34.424169429 +0200
+@@ -16,6 +16,10 @@
+ #include <libgnome-desktop/gnome-xkb-info.h>
+ 
+ #include "cc-man-tweaks.h"
++#include "cc-man-i18n.h"
++
++#undef _
++#define _(s) cc_man_gettext (s)
+ 
+ #define INTERFACE_SCHEMA "org.gnome.desktop.interface"
+ #define WM_SCHEMA "org.gnome.desktop.wm.preferences"
+@@ -97,9 +101,20 @@
+   g_settings_set_string (d->settings, d->key, d->values[i]);
+ }
+ 
++/* Labels marked with N_(): translated copies for a list model. */
++static GStrv
++translate_labels (const char * const *labels)
++{
++  g_autoptr(GStrvBuilder) b = g_strv_builder_new ();
++
++  for (; *labels; labels++)
++    g_strv_builder_add (b, _(*labels));
++  return g_strv_builder_end (b);
++}
++
+ static GtkWidget *
+-combo_row (const char *title, const char *subtitle, const char *schema, const char *key,
+-           const char * const *labels, const char * const *values)
++combo_row_full (const char *title, const char *subtitle, const char *schema, const char *key,
++                const char * const *labels, const char * const *values, gboolean translate)
+ {
+   GtkWidget *row = adw_combo_row_new ();
+   ComboData *d = g_new0 (ComboData, 1);
+@@ -111,7 +126,13 @@
+   d->settings = g_settings_new (schema);
+   d->key = g_strdup (key);
+   d->values = g_strdupv ((char **) values);
+-  adw_combo_row_set_model (ADW_COMBO_ROW (row), G_LIST_MODEL (gtk_string_list_new (labels)));
++  if (translate)
++    {
++      g_auto(GStrv) shown = translate_labels (labels);
++      adw_combo_row_set_model (ADW_COMBO_ROW (row), G_LIST_MODEL (gtk_string_list_new ((const char * const *) shown)));
++    }
++  else
++    adw_combo_row_set_model (ADW_COMBO_ROW (row), G_LIST_MODEL (gtk_string_list_new (labels)));
+   g_object_set_data_full (G_OBJECT (row), "man-combo", d, (GDestroyNotify) combo_data_free);
+   combo_sync_from_settings (ADW_COMBO_ROW (row), d);
+   g_signal_connect_object (d->settings, signal, G_CALLBACK (combo_settings_changed_cb), row, 0);
+@@ -119,6 +140,14 @@
+   return row;
+ }
+ 
++/* A choice row with translated (N_) labels. */
++static GtkWidget *
++combo_row (const char *title, const char *subtitle, const char *schema, const char *key,
++           const char * const *labels, const char * const *values)
++{
++  return combo_row_full (title, subtitle, schema, key, labels, values, TRUE);
++}
++
+ /* ─────────────────────────────── fonts ─────────────────────────────── */
+ 
+ typedef struct {
+@@ -347,7 +376,7 @@
+     g_strv_builder_add (b, current);
+   all = g_strv_builder_end (b);
+   qsort (all, g_strv_length (all), sizeof (char *), compare_names);
+-  return combo_row (title, subtitle, schema, key, (const char * const *) all, (const char * const *) all);
++  return combo_row_full (title, subtitle, schema, key, (const char * const *) all, (const char * const *) all, FALSE);
+ }
+ 
+ static AdwPreferencesGroup *
+@@ -449,7 +478,10 @@
+   adw_preferences_row_set_title (ADW_PREFERENCES_ROW (d->minimize), _("Minimize Button"));
+   d->placement = adw_combo_row_new ();
+   adw_preferences_row_set_title (ADW_PREFERENCES_ROW (d->placement), _("Button Placement"));
+-  adw_combo_row_set_model (ADW_COMBO_ROW (d->placement), G_LIST_MODEL (gtk_string_list_new (placement_labels)));
++  {
++    g_auto(GStrv) shown = translate_labels (placement_labels);
++    adw_combo_row_set_model (ADW_COMBO_ROW (d->placement), G_LIST_MODEL (gtk_string_list_new ((const char * const *) shown)));
++  }
+   g_object_set_data_full (G_OBJECT (group), "man-titlebar", d, (GDestroyNotify) titlebar_data_free);
+   titlebar_read (d);
+   g_signal_connect (d->maximize, "notify::active", G_CALLBACK (titlebar_changed_cb), d);
+@@ -668,7 +700,7 @@
+         gtk_check_button_set_active (first, TRUE);
+       if (selected > 0)
+         {
+-          g_autofree char *sub = g_strdup_printf (ngettext ("%u option on", "%u options on", selected), selected);
++          g_autofree char *sub = g_strdup_printf (_("Options on: %u"), selected);
+           adw_expander_row_set_subtitle (ADW_EXPANDER_ROW (expander), sub);
+         }
+       adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), expander);
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/man-updates/cc-man-updates-panel.c b/panels/man-updates/cc-man-updates-panel.c
+--- a/panels/man-updates/cc-man-updates-panel.c	1970-01-01 01:00:00.000000000 +0100
++++ b/panels/man-updates/cc-man-updates-panel.c	2026-10-24 12:41:36.489783077 +0200
+@@ -0,0 +1,478 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*-
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ *
++ * MAN: Settings → Updates. Checks for a newer MAN as soon as the panel opens
++ * (man-update-check looks at the GitHub releases of MAN), downloads it and
++ * hands the file to MAN Update, which verifies the signature and installs it.
++ */
++
++#include <config.h>
++#include <signal.h>
++#include <stdlib.h>
++#include <unistd.h>
++
++#include "cc-man-updates-panel.h"
++#include "cc-man-i18n.h"
++
++#undef _
++#define _(s) cc_man_gettext (s)
++
++#define UPDATES_SCHEMA "com.man.Updates"
++
++typedef enum {
++  STATE_CHECKING,
++  STATE_CURRENT,
++  STATE_AVAILABLE,
++  STATE_DOWNLOADING,
++  STATE_READY,
++  STATE_CHECK_ERROR,
++  STATE_DOWNLOAD_ERROR,
++  STATE_LIVE,
++} UpdateState;
++
++struct _CcManUpdatesPanel
++{
++  CcPanel parent_instance;
++
++  GSettings      *settings;
++  GCancellable   *cancellable;
++  GSubprocess    *download;
++
++  AdwStatusPage  *status;
++  GtkWidget      *spinner;
++  GtkWidget      *progress;
++  GtkWidget      *button;
++  GtkWidget      *notes_group;
++  GtkWidget      *notes_label;
++  GtkWidget      *auto_row;
++  GtkWidget      *last_row;
++
++  UpdateState     state;
++  char           *current;
++  char           *version;
++  guint64         size;
++  char           *file;
++};
++
++CC_PANEL_REGISTER (CcManUpdatesPanel, cc_man_updates_panel)
++
++static void start_check (CcManUpdatesPanel *self);
++static void start_download (CcManUpdatesPanel *self);
++
++/* ───────────────────────────── display ───────────────────────────── */
++
++static void
++update_last_checked (CcManUpdatesPanel *self)
++{
++  gint64 t = self->settings ? g_settings_get_int64 (self->settings, "last-check") : 0;
++  g_autoptr(GDateTime) dt = t > 0 ? g_date_time_new_from_unix_local (t) : NULL;
++  g_autofree char *text = dt ? g_date_time_format (dt, "%x %R") : g_strdup (_("Never"));
++
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (self->last_row), text);
++}
++
++static void
++set_state (CcManUpdatesPanel *self, UpdateState state, const char *detail)
++{
++  g_autofree char *title = NULL;
++  g_autofree char *description = NULL;
++  const char *button = NULL;
++  gboolean suggested = FALSE;
++
++  self->state = state;
++
++  switch (state)
++    {
++    case STATE_CHECKING:
++      title = g_strdup (_("Checking for Updates…"));
++      break;
++    case STATE_CURRENT:
++      title = g_strdup (_("MAN Is Up to Date"));
++      description = g_strdup_printf (_("MAN %s is the newest version."), self->current);
++      button = _("_Check Again");
++      break;
++    case STATE_AVAILABLE:
++      {
++        g_autofree char *size = g_format_size (self->size);
++        title = g_strdup_printf (_("MAN %s Is Available"), self->version);
++        description = g_strdup_printf (_("You have MAN %s. Download size: %s."), self->current, size);
++        button = _("_Download and Install…");
++        suggested = TRUE;
++      }
++      break;
++    case STATE_DOWNLOADING:
++      title = g_strdup_printf (_("Downloading MAN %s…"), self->version);
++      description = g_strdup (_("You can keep using the computer. The update is installed after the download."));
++      button = _("_Cancel");
++      break;
++    case STATE_READY:
++      title = g_strdup_printf (_("MAN %s Is Ready to Install"), self->version);
++      description = g_strdup (_("MAN Update has opened. Follow its steps to install the update; your files are kept."));
++      button = _("_Open MAN Update");
++      suggested = TRUE;
++      break;
++    case STATE_CHECK_ERROR:
++      title = g_strdup (_("Could Not Check for Updates"));
++      description = g_strdup (_("Check your internet connection and try again."));
++      button = _("_Try Again");
++      break;
++    case STATE_DOWNLOAD_ERROR:
++      title = g_strdup (_("The Download Failed"));
++      description = g_strdup (_("Check your internet connection and try again. The download continues where it stopped."));
++      button = _("_Try Again");
++      break;
++    case STATE_LIVE:
++      title = g_strdup (_("Updates Are Not Available Here"));
++      description = g_strdup (_("Updates are installed from a running, installed MAN system, not from the live session."));
++      break;
++    }
++
++  adw_status_page_set_title (self->status, title);
++  adw_status_page_set_description (self->status, description);
++  gtk_widget_set_tooltip_text (GTK_WIDGET (self->status), detail);
++  gtk_widget_set_visible (self->spinner, state == STATE_CHECKING);
++  gtk_widget_set_visible (self->progress, state == STATE_DOWNLOADING);
++  gtk_widget_set_visible (self->button, button != NULL);
++  if (button)
++    gtk_button_set_label (GTK_BUTTON (self->button), button);
++  if (suggested)
++    gtk_widget_add_css_class (self->button, "suggested-action");
++  else
++    gtk_widget_remove_css_class (self->button, "suggested-action");
++  gtk_widget_set_visible (self->notes_group,
++                          (state == STATE_AVAILABLE || state == STATE_DOWNLOADING || state == STATE_DOWNLOAD_ERROR || state == STATE_READY) &&
++                          *gtk_label_get_text (GTK_LABEL (self->notes_label)) != '\0');
++  update_last_checked (self);
++}
++
++/* ───────────────────────────── checking ───────────────────────────── */
++
++static void
++check_done_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  CcManUpdatesPanel *self;
++  g_autoptr(GError) error = NULL;
++  g_autofree char *out = NULL;
++  g_autoptr(GKeyFile) kf = g_key_file_new ();
++  g_autofree char *status = NULL;
++  g_autofree char *notes = NULL;
++
++  if (!g_subprocess_communicate_utf8_finish (G_SUBPROCESS (source), res, &out, NULL, &error) &&
++      g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    return;
++  self = CC_MAN_UPDATES_PANEL (user_data);
++
++  if (error || !out || !g_key_file_load_from_data (kf, out, -1, G_KEY_FILE_NONE, NULL))
++    {
++      set_state (self, STATE_CHECK_ERROR, error ? error->message : NULL);
++      return;
++    }
++
++  status = g_key_file_get_string (kf, "update", "status", NULL);
++  g_free (self->current);
++  self->current = g_key_file_get_string (kf, "update", "current", NULL);
++  if (!self->current)
++    self->current = g_strdup ("?");
++
++  if (g_strcmp0 (status, "available") == 0)
++    {
++      g_free (self->version);
++      self->version = g_key_file_get_string (kf, "update", "version", NULL);
++      self->size = g_key_file_get_uint64 (kf, "update", "size", NULL);
++      notes = g_key_file_get_string (kf, "update", "notes", NULL);
++      gtk_label_set_text (GTK_LABEL (self->notes_label), notes ? notes : "");
++      set_state (self, STATE_AVAILABLE, NULL);
++    }
++  else if (g_strcmp0 (status, "current") == 0)
++    set_state (self, STATE_CURRENT, NULL);
++  else if (g_strcmp0 (status, "live") == 0)
++    set_state (self, STATE_LIVE, NULL);
++  else
++    {
++      g_autofree char *detail = g_key_file_get_string (kf, "update", "error", NULL);
++      set_state (self, STATE_CHECK_ERROR, detail);
++    }
++}
++
++static void
++start_check (CcManUpdatesPanel *self)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GSubprocess) proc = NULL;
++
++  set_state (self, STATE_CHECKING, NULL);
++  proc = g_subprocess_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE | G_SUBPROCESS_FLAGS_STDERR_SILENCE, &error,
++                           "man-update-check", NULL);
++  if (!proc)
++    {
++      set_state (self, STATE_CHECK_ERROR, error->message);
++      return;
++    }
++  g_subprocess_communicate_utf8_async (proc, NULL, self->cancellable, check_done_cb, self);
++}
++
++/* ───────────────────────────── downloading ───────────────────────────── */
++
++static void
++open_man_update (CcManUpdatesPanel *self)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GSubprocess) proc = g_subprocess_new (G_SUBPROCESS_FLAGS_NONE, &error, "man-update", self->file, NULL);
++
++  if (!proc)
++    g_warning ("Could not start MAN Update: %s", error->message);
++}
++
++static void
++read_line_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  GDataInputStream *in = G_DATA_INPUT_STREAM (source);
++  CcManUpdatesPanel *self;
++  g_autoptr(GError) error = NULL;
++  g_autofree char *line = g_data_input_stream_read_line_finish_utf8 (in, res, NULL, &error);
++
++  if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    return;
++  self = CC_MAN_UPDATES_PANEL (user_data);
++
++  if (!line)
++    {
++      /* End of output without "file": failed or cancelled. */
++      g_clear_object (&self->download);
++      if (self->state == STATE_DOWNLOADING)
++        set_state (self, STATE_DOWNLOAD_ERROR, error ? error->message : NULL);
++      return;
++    }
++
++  if (g_str_has_prefix (line, "progress "))
++    {
++      double f = g_ascii_strtod (line + 9, NULL);
++      g_autofree char *done = g_format_size ((guint64) (f * self->size));
++      g_autofree char *total = g_format_size (self->size);
++      g_autofree char *text = g_strdup_printf (_("%s of %s"), done, total);
++
++      gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (self->progress), CLAMP (f, 0.0, 1.0));
++      gtk_progress_bar_set_text (GTK_PROGRESS_BAR (self->progress), text);
++    }
++  else if (g_str_has_prefix (line, "file "))
++    {
++      g_free (self->file);
++      self->file = g_strdup (line + 5);
++      g_clear_object (&self->download);
++      set_state (self, STATE_READY, NULL);
++      open_man_update (self);
++      return;
++    }
++  else if (g_str_has_prefix (line, "error "))
++    {
++      g_clear_object (&self->download);
++      set_state (self, STATE_DOWNLOAD_ERROR, line + 6);
++      return;
++    }
++
++  g_data_input_stream_read_line_async (in, G_PRIORITY_DEFAULT, self->cancellable, read_line_cb, self);
++}
++
++/* The download runs curl as a child: give both a process group of their
++ * own so Cancel stops them together. */
++static void
++new_process_group (gpointer data)
++{
++  setpgid (0, 0);
++}
++
++static void
++stop_download (CcManUpdatesPanel *self)
++{
++  const char *id;
++
++  if (!self->download)
++    return;
++  id = g_subprocess_get_identifier (self->download);
++  if (id)
++    kill (-(pid_t) atoi (id), SIGTERM);
++  g_clear_object (&self->download);
++}
++
++static void
++start_download (CcManUpdatesPanel *self)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GSubprocessLauncher) launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE | G_SUBPROCESS_FLAGS_STDERR_SILENCE);
++  g_autoptr(GDataInputStream) in = NULL;
++
++  g_subprocess_launcher_set_child_setup (launcher, new_process_group, NULL, NULL);
++  self->download = g_subprocess_launcher_spawn (launcher, &error, "man-update-check", "--download", self->version, NULL);
++  if (!self->download)
++    {
++      set_state (self, STATE_DOWNLOAD_ERROR, error->message);
++      return;
++    }
++  gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (self->progress), 0.0);
++  gtk_progress_bar_set_text (GTK_PROGRESS_BAR (self->progress), NULL);
++  set_state (self, STATE_DOWNLOADING, NULL);
++  in = g_data_input_stream_new (g_subprocess_get_stdout_pipe (self->download));
++  g_data_input_stream_read_line_async (in, G_PRIORITY_DEFAULT, self->cancellable, read_line_cb, self);
++}
++
++static void
++button_clicked_cb (CcManUpdatesPanel *self)
++{
++  switch (self->state)
++    {
++    case STATE_AVAILABLE:
++    case STATE_DOWNLOAD_ERROR:
++      start_download (self);
++      break;
++    case STATE_DOWNLOADING:
++      stop_download (self);
++      set_state (self, STATE_AVAILABLE, NULL);
++      break;
++    case STATE_READY:
++      open_man_update (self);
++      break;
++    default:
++      start_check (self);
++      break;
++    }
++}
++
++static void
++install_file_cb (CcManUpdatesPanel *self)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GSubprocess) proc = g_subprocess_new (G_SUBPROCESS_FLAGS_NONE, &error, "man-update", NULL);
++
++  if (!proc)
++    g_warning ("Could not start MAN Update: %s", error->message);
++}
++
++/* ───────────────────────────── GObject ───────────────────────────── */
++
++static void
++cc_man_updates_panel_dispose (GObject *object)
++{
++  CcManUpdatesPanel *self = CC_MAN_UPDATES_PANEL (object);
++
++  g_cancellable_cancel (self->cancellable);
++  stop_download (self);
++  g_clear_object (&self->cancellable);
++  g_clear_object (&self->settings);
++  G_OBJECT_CLASS (cc_man_updates_panel_parent_class)->dispose (object);
++}
++
++static void
++cc_man_updates_panel_finalize (GObject *object)
++{
++  CcManUpdatesPanel *self = CC_MAN_UPDATES_PANEL (object);
++
++  g_free (self->current);
++  g_free (self->version);
++  g_free (self->file);
++  G_OBJECT_CLASS (cc_man_updates_panel_parent_class)->finalize (object);
++}
++
++static void
++cc_man_updates_panel_class_init (CcManUpdatesPanelClass *klass)
++{
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++
++  object_class->dispose = cc_man_updates_panel_dispose;
++  object_class->finalize = cc_man_updates_panel_finalize;
++}
++
++static void
++cc_man_updates_panel_init (CcManUpdatesPanel *self)
++{
++  GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
++  g_autoptr(GSettingsSchema) schema = source ? g_settings_schema_source_lookup (source, UPDATES_SCHEMA, TRUE) : NULL;
++  GtkWidget *toolbar = adw_toolbar_view_new ();
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *top = adw_preferences_group_new ();
++  GtkWidget *box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
++  GtkWidget *auto_group = adw_preferences_group_new ();
++  GtkWidget *file_group = adw_preferences_group_new ();
++  GtkWidget *file_row = adw_button_row_new ();
++
++  self->cancellable = g_cancellable_new ();
++  if (schema)
++    self->settings = g_settings_new (UPDATES_SCHEMA);
++
++  adw_navigation_page_set_title (ADW_NAVIGATION_PAGE (self), _("Updates"));
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar), adw_header_bar_new ());
++
++  /* Status: icon, title, description, spinner / progress, one button. */
++  self->status = ADW_STATUS_PAGE (adw_status_page_new ());
++  adw_status_page_set_icon_name (self->status, "com.man.Updater");
++  gtk_widget_add_css_class (GTK_WIDGET (self->status), "compact");
++  self->spinner = adw_spinner_new ();
++  gtk_widget_set_size_request (self->spinner, 32, 32);
++  self->progress = gtk_progress_bar_new ();
++  gtk_progress_bar_set_show_text (GTK_PROGRESS_BAR (self->progress), TRUE);
++  gtk_widget_set_size_request (self->progress, 320, -1);
++  gtk_widget_set_halign (self->progress, GTK_ALIGN_CENTER);
++  self->button = gtk_button_new_with_mnemonic ("");
++  gtk_widget_add_css_class (self->button, "pill");
++  gtk_widget_set_halign (self->button, GTK_ALIGN_CENTER);
++  g_signal_connect_swapped (self->button, "clicked", G_CALLBACK (button_clicked_cb), self);
++  gtk_box_append (GTK_BOX (box), self->spinner);
++  gtk_box_append (GTK_BOX (box), self->progress);
++  gtk_box_append (GTK_BOX (box), self->button);
++  adw_status_page_set_child (self->status, box);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (top), GTK_WIDGET (self->status));
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (top));
++
++  /* Release notes of the available version. */
++  self->notes_group = adw_preferences_group_new ();
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (self->notes_group), _("What’s New"));
++  self->notes_label = gtk_label_new (NULL);
++  gtk_label_set_wrap (GTK_LABEL (self->notes_label), TRUE);
++  gtk_label_set_xalign (GTK_LABEL (self->notes_label), 0.0);
++  gtk_label_set_selectable (GTK_LABEL (self->notes_label), TRUE);
++  {
++    GtkWidget *frame = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
++    gtk_widget_add_css_class (frame, "card");
++    gtk_widget_set_margin_start (self->notes_label, 12);
++    gtk_widget_set_margin_end (self->notes_label, 12);
++    gtk_widget_set_margin_top (self->notes_label, 12);
++    gtk_widget_set_margin_bottom (self->notes_label, 12);
++    gtk_box_append (GTK_BOX (frame), self->notes_label);
++    adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->notes_group), frame);
++  }
++  gtk_widget_set_visible (self->notes_group, FALSE);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (self->notes_group));
++
++  /* Automatic checks. */
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (auto_group), _("Automatic Updates"));
++  self->auto_row = adw_switch_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->auto_row), _("Check for Updates Automatically"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (self->auto_row), _("Once a day MAN looks for a new version and lets you know"));
++  self->last_row = adw_action_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->last_row), _("Last Checked"));
++  gtk_widget_add_css_class (self->last_row, "property");
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (auto_group), self->auto_row);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (auto_group), self->last_row);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (auto_group));
++  if (self->settings)
++    {
++      g_settings_bind (self->settings, "auto-check", self->auto_row, "active", G_SETTINGS_BIND_DEFAULT);
++      g_signal_connect_object (self->settings, "changed::last-check", G_CALLBACK (update_last_checked), self, G_CONNECT_SWAPPED);
++    }
++  else
++    gtk_widget_set_sensitive (auto_group, FALSE);
++
++  /* Installing a downloaded file by hand. */
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (file_row), _("_Install an Update File…"));
++  adw_preferences_row_set_use_underline (ADW_PREFERENCES_ROW (file_row), TRUE);
++  adw_button_row_set_start_icon_name (ADW_BUTTON_ROW (file_row), "document-open-symbolic");
++  g_signal_connect_swapped (file_row, "activated", G_CALLBACK (install_file_cb), self);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (file_group), file_row);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (file_group));
++
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar), page);
++  adw_navigation_page_set_child (ADW_NAVIGATION_PAGE (self), toolbar);
++
++  /* Opening the panel checks right away. */
++  start_check (self);
++}
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/man-updates/cc-man-updates-panel.h b/panels/man-updates/cc-man-updates-panel.h
+--- a/panels/man-updates/cc-man-updates-panel.h	1970-01-01 01:00:00.000000000 +0100
++++ b/panels/man-updates/cc-man-updates-panel.h	2026-10-24 12:41:36.493783286 +0200
+@@ -0,0 +1,11 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#pragma once
++
++#include <shell/cc-panel.h>
++
++G_BEGIN_DECLS
++
++#define CC_TYPE_MAN_UPDATES_PANEL (cc_man_updates_panel_get_type ())
++G_DECLARE_FINAL_TYPE (CcManUpdatesPanel, cc_man_updates_panel, CC, MAN_UPDATES_PANEL, CcPanel)
++
++G_END_DECLS
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/man-updates/gnome-man-updates-panel.desktop b/panels/man-updates/gnome-man-updates-panel.desktop
+--- a/panels/man-updates/gnome-man-updates-panel.desktop	1970-01-01 01:00:00.000000000 +0100
++++ b/panels/man-updates/gnome-man-updates-panel.desktop	2026-10-24 13:10:51.633484793 +0200
+@@ -0,0 +1,12 @@
++[Desktop Entry]
++Name=Updates
++Comment=Check for and install new versions of MAN
++Exec=gnome-control-center man-updates
++Icon=com.man.Updates-symbolic
++Terminal=false
++Type=Application
++NoDisplay=true
++StartupNotify=true
++Categories=GNOME;GTK;Settings;X-GNOME-Settings-Panel;X-GNOME-DetailsSettings;
++OnlyShowIn=GNOME;Unity;
++Keywords=Updates;Upgrade;Version;MAN;
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/man-updates/meson.build b/panels/man-updates/meson.build
+--- a/panels/man-updates/meson.build	1970-01-01 01:00:00.000000000 +0100
++++ b/panels/man-updates/meson.build	2026-10-24 12:41:51.602573313 +0200
+@@ -0,0 +1,19 @@
++# SPDX-License-Identifier: GPL-2.0-or-later
++# MAN: Settings → Updates.
++
++panels_list += cappletname
++
++# The desktop file carries its own translations (made from MAN's
++# man-settings catalogs), so it is installed as it is.
++install_data(
++  'gnome-man-updates-panel.desktop',
++  install_dir: control_center_desktopdir,
++)
++
++panels_libs += static_library(
++  cappletname,
++  sources: files('cc-man-updates-panel.c'),
++  include_directories: [ top_inc, common_inc ],
++  dependencies: common_deps,
++  c_args: cflags,
++)
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/meson.build b/panels/meson.build
+--- a/panels/meson.build	2026-09-11 13:48:25.000000000 +0200
++++ b/panels/meson.build	2026-10-24 12:41:51.618574150 +0200
+@@ -20,6 +20,7 @@
+   'sharing',
+   'sound',
+   'system',
++  'man-updates',
+   'universal-access',
+   'wellbeing',
+   'wwan',
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/system/about/cc-about-page.blp b/panels/system/about/cc-about-page.blp
+--- a/panels/system/about/cc-about-page.blp	2026-10-20 18:21:31.871759446 +0200
++++ b/panels/system/about/cc-about-page.blp	2026-10-24 12:39:44.799942021 +0200
+@@ -26,12 +26,12 @@
+         }
+ 
+         Adw.PreferencesGroup {
+-          Adw.ActionRow {
++          Adw.ActionRow man_donate_row {
+             title: _("Donate to MAN!");
+             subtitle: _("MAN is free, but it’s not free to maintain.");
+ 
+             [suffix]
+-            Button {
++            Button man_donate_button {
+               label: _("D_onate");
+               use-underline: true;
+               valign: center;
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/panels/system/about/cc-about-page.c b/panels/system/about/cc-about-page.c
+--- a/panels/system/about/cc-about-page.c	2026-10-20 18:21:31.875759603 +0200
++++ b/panels/system/about/cc-about-page.c	2026-10-24 12:39:59.028686235 +0200
+@@ -23,6 +23,7 @@
+ #include <config.h>
+ 
+ #include "cc-about-page.h"
++#include "cc-man-i18n.h"
+ #include "cc-hostname-entry.h"
+ #include "cc-hostname.h"
+ #include "info-cleanup.h"
+@@ -52,6 +53,9 @@
+ struct _CcAboutPage {
+     AdwNavigationPage parent_instance;
+ 
++    AdwActionRow *man_donate_row;
++    GtkButton    *man_donate_button;
++
+     AdwToastOverlay *toast_overlay;
+ 
+     GtkPicture *os_logo;
+@@ -968,6 +972,8 @@
+ 
+     gtk_widget_class_bind_template_callback (widget_class, on_copy_row_activated_cb);
+     gtk_widget_class_bind_template_callback (widget_class, on_donate_button_clicked_cb);
++    gtk_widget_class_bind_template_child (widget_class, CcAboutPage, man_donate_row);
++    gtk_widget_class_bind_template_child (widget_class, CcAboutPage, man_donate_button);
+     gtk_widget_class_bind_template_callback (widget_class, on_release_notes_button_clicked_cb);
+ }
+ 
+@@ -978,6 +984,11 @@
+ 
+     gtk_widget_init_template (GTK_WIDGET (self));
+ 
++    /* MAN's strings come from the man-settings catalog. */
++    adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->man_donate_row), cc_man_gettext ("Donate to MAN!"));
++    adw_action_row_set_subtitle (self->man_donate_row, cc_man_gettext ("MAN is free, but it’s not free to maintain."));
++    gtk_button_set_label (self->man_donate_button, cc_man_gettext ("D_onate"));
++
+     cc_about_page_setup_overview (self);
+     cc_about_page_setup_virt (self);
+ 
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/shell/cc-panel-list.c b/shell/cc-panel-list.c
+--- a/shell/cc-panel-list.c	2026-09-11 13:48:25.000000000 +0200
++++ b/shell/cc-panel-list.c	2026-10-24 12:41:51.618574150 +0200
+@@ -371,6 +371,7 @@
+     "universal-access",
+     "privacy",
+     "system",
++    "man-updates",
+     "reset-settings",
+ };
+ 
+diff -ruN '--exclude=.pc' '--exclude=*.orig' a/shell/cc-panel-loader.c b/shell/cc-panel-loader.c
+--- a/shell/cc-panel-loader.c	2026-09-11 13:48:25.000000000 +0200
++++ b/shell/cc-panel-loader.c	2026-10-24 12:41:51.618574150 +0200
+@@ -55,6 +55,7 @@
+ extern GType cc_sharing_panel_get_type (void);
+ extern GType cc_sound_panel_get_type (void);
+ extern GType cc_system_panel_get_type (void);
++extern GType cc_man_updates_panel_get_type (void);
+ extern GType cc_ua_panel_get_type (void);
+ #ifdef BUILD_WACOM
+ extern GType cc_wacom_panel_get_type (void);
+@@ -108,6 +109,7 @@
+     PANEL_TYPE ("sharing", cc_sharing_panel_get_type, cc_sharing_panel_static_init_func),
+     PANEL_TYPE ("sound", cc_sound_panel_get_type, NULL),
+     PANEL_TYPE ("system", cc_system_panel_get_type, NULL),
++    PANEL_TYPE ("man-updates", cc_man_updates_panel_get_type, NULL),
+     PANEL_TYPE ("universal-access", cc_ua_panel_get_type, NULL),
+ #ifdef BUILD_WACOM
+     PANEL_TYPE ("wacom", cc_wacom_panel_get_type, cc_wacom_panel_static_init_func),

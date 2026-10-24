@@ -312,179 +312,184 @@
 311|Kopiraj u međuspremnik
 312|Koordinirano svjetsko vrijeme
 313|Engleski (SAD)
-314|Provjera ažuriranja
-315|Provjerava se je li ažuriranje izvorno i potpuno…
-316|Ažuriranje MAN-a
-317|Ovo ažuriranje ne može se instalirati
-318|Ažuriranje se nije moglo pročitati.
-319|Ažuriranje s {name} {version}
-320|{name} {version} je instaliran
-321|Inačica
-322|Objavljeno
-323|Veličina preuzimanja
-324|Potreban prostor
-325|Izvornost
-326|Provjereno, potpisao „{signer}”
-327|Što je novo
-328|_Nastavi
-329|Ovo ažuriranje nije novije od instaliranog {name} {version}.
-330|Ažuriranje
-331|Pročitajte uvjete licence ovog ažuriranja.
-332|Prihvaćam uvjete licence
-333|Gdje instalirati ažuriranje?
-334|Sustav se zamjenjuje; datoteke u osobnoj mapi se ne diraju.
-335|Odaberite instalaciju.
-336|trenutno pokrenut
-337|{name} {version} na ovom računalu
-338|{name} na {model}
-339|Nije pronađena instalacija MAN-a
-340|Ažuriranja se instaliraju iz pokrenutog, instaliranog sustava MAN, a ne iz žive sesije.
-341|Mjesto instalacije
-342|Sažetak
-343|Zadržava se
-344|Vaše datoteke
-345|Sve u vašoj osobnoj mapi
-346|Računi i lozinke
-347|Korisnici, grupe, naziv računala
-348|Veze i postavke
-349|Wi-Fi, vremenska zona, tipkovnica, izgled i snimke
-350|Flatpak aplikacije
-351|Te sve u /usr/local i /opt
-352|Zamjenjuje se
-353|Softver instaliran pomoću apt i druge promjene sustavnih datoteka zamjenjuje novi sustav.
-354|Operacijski sustav
-355|Zamjenjuje ga {name} {version}. Trenutni sustav može se vratiti iz snimke.
-356|Računalo se ponovno pokreće radi instalacije ažuriranja
-357|Nakon pripreme MAN se ponovno pokreće, za nekoliko sekundi instalira ažuriranje i ponovno se pokreće.
-358|_Instaliraj ažuriranje
-359|Najprije stvoriti snimku?
-360|Snimka sprema trenutni sustav, pa mu se možete vratiti ako nakon ažuriranja nešto ne radi. Preporučuje se.
-361|_Ne stvaraj
-362|_Stvori snimku
-363|Priprema {name} {version}
-364|Ponovno pokreni za instalaciju
-365|Računalo se ponovno pokreće dvaput. Vaše datoteke su sigurne.
-366|Automatsko ponovno pokretanje za {r} s
-367|Automatsko ponovno pokretanje za 30 s
-368|Ažuriranje se instalira pri sljedećem ponovnom pokretanju.
-369|Spremno
-370|Ažuriranje se nije moglo pripremiti
-371|Na vašem sustavu ništa nije promijenjeno.
-372|_Pokušaj ponovno
-373|Zapis ažuriranja
-374|Neuspjelo
-375|Vaš sustav je ažuriran
-376|MAN je ažuriran na inačicu {version}.\nPrije: MAN {previous}.
-377|_Gotovo
-378|Otvori ažuriranje MAN-a
-379|Ažuriranja MAN-a
-380|Provjera plana instalacije
-381|Priprema diska
-382|Kopiranje MAN-a na disk
-383|Konfiguriranje novog sustava
-384|Instaliranje pokretača
-385|Stvaranje prve snimke
-386|Završavanje
-387|Uklanjanje starih potpisa particija
-388|Stvaranje particija
-389|Formatiranje EFI sustavne particije
-390|Šifriranje sustavne particije
-391|Formatiranje particije za pokretanje
-392|Stvaranje Btrfs datotečnog sustava
-393|Uklanjanje starih potpisa datotečnih sustava
-394|Otključavanje šifrirane instalacije
-395|Spremanje trenutnog sustava kao snimke
-396|Uklanjanje prethodnog sustava
-397|Zapisivanje tablice datotečnih sustava
-398|Postavljanje naziva i identiteta računala
-399|Uklanjanje računa žive sesije
-400|Stvaranje vašeg računa
-401|Priprema MAN Setupa za prvo pokretanje
-402|Postavljanje vremenske zone i tipkovnice
-403|Uklanjanje instalacijskog programa iz novog sustava
-404|Izrada slike za pokretanje (initramfs)
-405|Konfiguriranje GRUB-a
-406|Instaliranje GRUB-a na EFI sustavnu particiju
-407|Instaliranje pričuvnog pokretača
-408|Zapisivanje izbornika pokretanja
-409|Disk je spreman
-410|Stvaranje snimke novog sustava
-411|Dodavanje snimke u izbornik pokretanja
-412|Odmontiravanje
-413|Pomoćnik instalacijskog programa mora se pokretati kao root.
-414|Ovo računalo nije pokrenuto u UEFI načinu. MAN zahtijeva UEFI.
-415|Korisničko ime nije valjano.
-416|Lozinka je obavezna.
-417|Naziv računala nije valjan.
-418|Nepoznat jezik.
-419|Lozinka za šifriranje mora imati najmanje 8 znakova.
-420|Disk se promijenio nakon što ste potvrdili instalaciju. Ništa nije promijenjeno; pregledajte i ponovno potvrdite.
-421|Odaberite sustavnu particiju.
-422|Potvrđeni disk ne sadrži odabranu sustavnu particiju.
-423|Particija za pokretanje mora biti odvojena od EFI i sustavne particije.
-424|Particija za pokretanje mora imati najmanje 512 MB.
-425|Instalacija nije odabrana.
-426|Potvrđeni disk ne sadrži odabranu instalaciju.
-427|Šifrirana instalacija nema particiju MAN_BOOT.
-428|U /boot nije pronađena jezgra s odgovarajućim modulima.
-429|Jezik mora promijeniti sustavni pomoćnik.
-430|Primjena vaših postavki
-431|Priprema šifriranja diska
-432|Završavanje
-433|MAN Setup mora dovršiti sustavni pomoćnik.
-434|MAN Setup je već dovršen na ovom računalu.
-435|Nepoznata boja isticanja.
-436|Odabrana pozadina nije dostupna.
-437|Ovaj sustav se ne može šifrirati.
-438|Nedostaje ključ postavljanja, pa se šifriranje ne može nastaviti u pozadini.
-439|Sustav nije instaliran na Btrfs, pa snimke nisu dostupne.
-440|Vraćanje snimke čeka ponovno pokretanje. Najprije ponovno pokrenite računalo za dovršetak.
-441|Nevaljan ID snimke.
-442|Provjera ažuriranja
-443|Stvaranje snimke
-444|Priprema područja za ažuriranje
-445|Raspakiravanje novog sustava
-446|Prijenos vaših računa i postavki
-447|Priprema ponovnog pokretanja
-448|Raspakirano
-449|Računi
-450|Uklanjanje softvera koji koristi samo instalacijski program
-451|Izrada slike za pokretanje ažuriranja
-452|Dodavanje jednokratne stavke pokretanja
-453|Ažuriranje je izvorno
-454|Snimka je stvorena
-455|Preskočeno
-456|Područje za ažuriranje je spremno
-457|Priprema novog sustava
-458|Datoteka ažuriranja je oštećena (kontrolni zbroj se ne podudara). Ponovno je preuzmite.
-459|Datoteka ažuriranja nije se mogla u potpunosti pročitati.
-460|Ažuriranje ne sadrži jezgru.
-461|Ažuriranja mora instalirati sustavni pomoćnik.
-462|Odabrana instalacija nije pronađena.
-463|Može se ažurirati samo pokrenuta instalacija MAN-a.
-464|Ovo nije datoteka ažuriranja MAN-a (nema manifesta).
-465|Ažuriranje nije potpisano, pa mu se ne može vjerovati.
-466|Potpis ažuriranja je oštećen.
-467|Ažuriranje nije potpisao MAN. Možda je izmijenjeno ili dolazi iz nepouzdanog izvora.
-468|Manifest ažuriranja nije valjan.
-469|Lozinka nije ispravna ili se šifrirana particija ne može otvoriti.
-470|Plava
-471|Tirkizna
-472|Zelena
-473|Žuta
-474|Narančasta
-475|Crvena
-476|Ružičasta
-477|Ljubičasta
-478|Škriljevac
-479|Instalacija sustava
-480|Instaliraj MAN na ovo računalo
-481|Vraćanje sustava
-482|Stvaranje i vraćanje snimki sustava
-483|Instalacija ažuriranja sustava
-484|Instaliraj datoteku ažuriranja sustava MAN
-485|Nudi instalaciju MAN-a pri pokretanju žive sesije
-486|Obavijest o ažuriranju MAN-a
-487|Jednom nakon prijave javlja da je MAN ažuriran
-488|Postavite svoje novo MAN računalo
-489|Prvo postavljanje MAN-a
+317|Provjera ažuriranja
+318|Provjerava se je li ažuriranje izvorno i potpuno…
+319|Ažuriranje MAN-a
+320|Ovo ažuriranje ne može se instalirati
+321|Ažuriranje se nije moglo pročitati.
+322|Ažuriranje s {name} {version}
+323|{name} {version} je instaliran
+324|Inačica
+325|Objavljeno
+326|Veličina preuzimanja
+327|Potreban prostor
+328|Izvornost
+329|Provjereno, potpisao „{signer}”
+330|Što je novo
+331|_Nastavi
+332|Ovo ažuriranje nije novije od instaliranog {name} {version}.
+333|Ažuriranje
+334|Pročitajte uvjete licence ovog ažuriranja.
+335|Prihvaćam uvjete licence
+336|Gdje instalirati ažuriranje?
+337|Sustav se zamjenjuje; datoteke u osobnoj mapi se ne diraju.
+338|Odaberite instalaciju.
+339|trenutno pokrenut
+340|{name} {version} na ovom računalu
+341|{name} na {model}
+342|Nije pronađena instalacija MAN-a
+343|Ažuriranja se instaliraju iz pokrenutog, instaliranog sustava MAN, a ne iz žive sesije.
+344|Mjesto instalacije
+345|Sažetak
+346|Zadržava se
+347|Vaše datoteke
+348|Sve u vašoj osobnoj mapi
+349|Računi i lozinke
+350|Korisnici, grupe, naziv računala
+351|Veze i postavke
+352|Wi-Fi, vremenska zona, tipkovnica, izgled i snimke
+353|Flatpak aplikacije
+354|Te sve u /usr/local i /opt
+355|Zamjenjuje se
+356|Softver instaliran pomoću apt i druge promjene sustavnih datoteka zamjenjuje novi sustav.
+357|Operacijski sustav
+358|Zamjenjuje ga {name} {version}. Trenutni sustav može se vratiti iz snimke.
+359|Računalo se ponovno pokreće radi instalacije ažuriranja
+360|Nakon pripreme MAN se ponovno pokreće, za nekoliko sekundi instalira ažuriranje i ponovno se pokreće.
+361|_Instaliraj ažuriranje
+362|Najprije stvoriti snimku?
+363|Snimka sprema trenutni sustav, pa mu se možete vratiti ako nakon ažuriranja nešto ne radi. Preporučuje se.
+364|_Ne stvaraj
+365|_Stvori snimku
+366|Priprema {name} {version}
+367|Ponovno pokreni za instalaciju
+368|Računalo se ponovno pokreće dvaput. Vaše datoteke su sigurne.
+369|Automatsko ponovno pokretanje za {r} s
+370|Automatsko ponovno pokretanje za 30 s
+371|Ažuriranje se instalira pri sljedećem ponovnom pokretanju.
+372|Spremno
+373|Ažuriranje se nije moglo pripremiti
+374|Na vašem sustavu ništa nije promijenjeno.
+375|_Pokušaj ponovno
+376|Zapis ažuriranja
+377|Neuspjelo
+378|Vaš sustav je ažuriran
+379|MAN je ažuriran na inačicu {version}.\nPrije: MAN {previous}.
+380|_Gotovo
+381|Otvori ažuriranje MAN-a
+382|Ažuriranja MAN-a
+383|Provjera plana instalacije
+384|Priprema diska
+385|Kopiranje MAN-a na disk
+386|Konfiguriranje novog sustava
+387|Instaliranje pokretača
+388|Stvaranje prve snimke
+389|Završavanje
+390|Uklanjanje starih potpisa particija
+391|Stvaranje particija
+392|Formatiranje EFI sustavne particije
+393|Šifriranje sustavne particije
+394|Formatiranje particije za pokretanje
+395|Stvaranje Btrfs datotečnog sustava
+396|Uklanjanje starih potpisa datotečnih sustava
+397|Otključavanje šifrirane instalacije
+398|Spremanje trenutnog sustava kao snimke
+399|Uklanjanje prethodnog sustava
+400|Zapisivanje tablice datotečnih sustava
+401|Postavljanje naziva i identiteta računala
+402|Uklanjanje računa žive sesije
+403|Stvaranje vašeg računa
+404|Priprema MAN Setupa za prvo pokretanje
+405|Postavljanje vremenske zone i tipkovnice
+406|Uklanjanje instalacijskog programa iz novog sustava
+407|Izrada slike za pokretanje (initramfs)
+408|Konfiguriranje GRUB-a
+409|Instaliranje GRUB-a na EFI sustavnu particiju
+410|Instaliranje pričuvnog pokretača
+411|Zapisivanje izbornika pokretanja
+412|Disk je spreman
+413|Stvaranje snimke novog sustava
+414|Dodavanje snimke u izbornik pokretanja
+415|Odmontiravanje
+416|Pomoćnik instalacijskog programa mora se pokretati kao root.
+417|Ovo računalo nije pokrenuto u UEFI načinu. MAN zahtijeva UEFI.
+418|Korisničko ime nije valjano.
+419|Lozinka je obavezna.
+420|Naziv računala nije valjan.
+421|Nepoznat jezik.
+422|Lozinka za šifriranje mora imati najmanje 8 znakova.
+423|Disk se promijenio nakon što ste potvrdili instalaciju. Ništa nije promijenjeno; pregledajte i ponovno potvrdite.
+424|Odaberite sustavnu particiju.
+425|Potvrđeni disk ne sadrži odabranu sustavnu particiju.
+426|Particija za pokretanje mora biti odvojena od EFI i sustavne particije.
+427|Particija za pokretanje mora imati najmanje 512 MB.
+428|Instalacija nije odabrana.
+429|Potvrđeni disk ne sadrži odabranu instalaciju.
+430|Šifrirana instalacija nema particiju MAN_BOOT.
+431|U /boot nije pronađena jezgra s odgovarajućim modulima.
+432|Jezik mora promijeniti sustavni pomoćnik.
+433|Primjena vaših postavki
+434|Priprema šifriranja diska
+435|Završavanje
+436|MAN Setup mora dovršiti sustavni pomoćnik.
+437|MAN Setup je već dovršen na ovom računalu.
+438|Nepoznata boja isticanja.
+439|Odabrana pozadina nije dostupna.
+440|Ovaj sustav se ne može šifrirati.
+441|Nedostaje ključ postavljanja, pa se šifriranje ne može nastaviti u pozadini.
+442|Sustav nije instaliran na Btrfs, pa snimke nisu dostupne.
+443|Vraćanje snimke čeka ponovno pokretanje. Najprije ponovno pokrenite računalo za dovršetak.
+444|Nevaljan ID snimke.
+445|Provjera ažuriranja
+446|Stvaranje snimke
+447|Priprema područja za ažuriranje
+448|Raspakiravanje novog sustava
+449|Prijenos vaših računa i postavki
+450|Priprema ponovnog pokretanja
+451|Raspakirano
+452|Računi
+453|Uklanjanje softvera koji koristi samo instalacijski program
+454|Izrada slike za pokretanje ažuriranja
+455|Dodavanje jednokratne stavke pokretanja
+456|Ažuriranje je izvorno
+457|Snimka je stvorena
+458|Preskočeno
+459|Područje za ažuriranje je spremno
+460|Priprema novog sustava
+461|Datoteka ažuriranja je oštećena (kontrolni zbroj se ne podudara). Ponovno je preuzmite.
+462|Datoteka ažuriranja nije se mogla u potpunosti pročitati.
+463|Ažuriranje ne sadrži jezgru.
+464|Ažuriranja mora instalirati sustavni pomoćnik.
+465|Odabrana instalacija nije pronađena.
+466|Može se ažurirati samo pokrenuta instalacija MAN-a.
+467|Ovo nije datoteka ažuriranja MAN-a (nema manifesta).
+468|Ažuriranje nije potpisano, pa mu se ne može vjerovati.
+469|Potpis ažuriranja je oštećen.
+470|Ažuriranje nije potpisao MAN. Možda je izmijenjeno ili dolazi iz nepouzdanog izvora.
+471|Manifest ažuriranja nije valjan.
+472|Lozinka nije ispravna ili se šifrirana particija ne može otvoriti.
+473|Plava
+474|Tirkizna
+475|Zelena
+476|Žuta
+477|Narančasta
+478|Crvena
+479|Ružičasta
+480|Ljubičasta
+481|Škriljevac
+482|Instalacija sustava
+483|Instaliraj MAN na ovo računalo
+484|Vraćanje sustava
+485|Stvaranje i vraćanje snimki sustava
+486|Instalacija ažuriranja sustava
+487|Instaliraj datoteku ažuriranja sustava MAN
+488|Nudi instalaciju MAN-a pri pokretanju žive sesije
+489|Obavijest o ažuriranju MAN-a
+490|Jednom nakon prijave javlja da je MAN ažuriran
+491|Postavite svoje novo MAN računalo
+492|Prvo postavljanje MAN-a
+314|MAN {version} je dostupan
+315|Otvorite Postavke kako biste preuzeli i instalirali ažuriranje.
+316|Otvori ažuriranja
+493|MAN ažuriranja
+494|Javlja vam kada je dostupna nova inačica MAN-a

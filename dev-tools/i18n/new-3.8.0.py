@@ -1,0 +1,87 @@
+# Translations of the 5 strings added in man-installer 3.8.0 (update checker):
+# 314 "MAN {version} Is Available", 315 "Open Settings to download and install
+# the update.", 316 "Open Updates", 493 "MAN Updates", 494 "Tells you when a
+# new version of MAN is available". Appended to tx/LANG.txt by running this.
+T = {
+'af': ("MAN {version} is beskikbaar", "Maak Instellings oop om die bywerking af te laai en te installeer.", "Maak bywerkings oop", "MAN-bywerkings", "Laat jou weet wanneer 'n nuwe weergawe van MAN beskikbaar is"),
+'am': ("MAN {version} ይገኛል", "ዝማኔውን ለማውረድ እና ለመጫን ቅንብሮችን ይክፈቱ።", "ዝማኔዎችን ክፈት", "የMAN ዝማኔዎች", "አዲስ የMAN ስሪት ሲገኝ ያሳውቅዎታል"),
+'ar': ("‏MAN {version} متاح", "افتح الإعدادات لتنزيل التحديث وتثبيته.", "افتح التحديثات", "تحديثات MAN", "يُعلمك عند توفّر إصدار جديد من MAN"),
+'az': ("MAN {version} mövcuddur", "Yeniləməni endirib quraşdırmaq üçün Parametrləri açın.", "Yeniləmələri aç", "MAN yeniləmələri", "MAN-ın yeni versiyası çıxanda xəbər verir"),
+'be': ("Даступна MAN {version}", "Адкрыйце Налады, каб спампаваць і ўсталяваць абнаўленне.", "Адкрыць абнаўленні", "Абнаўленні MAN", "Паведамляе, калі выходзіць новая версія MAN"),
+'bg': ("Налична е MAN {version}", "Отворете Настройки, за да изтеглите и инсталирате обновлението.", "Отваряне на обновления", "Обновления на MAN", "Съобщава ви, когато излезе нова версия на MAN"),
+'bn': ("MAN {version} উপলব্ধ", "হালনাগাদ ডাউনলোড ও ইনস্টল করতে সেটিংস খুলুন।", "হালনাগাদ খুলুন", "MAN হালনাগাদ", "MAN-এর নতুন সংস্করণ এলে আপনাকে জানায়"),
+'bs': ("MAN {version} je dostupan", "Otvorite Postavke da preuzmete i instalirate ažuriranje.", "Otvori ažuriranja", "MAN ažuriranja", "Javlja vam kada je dostupna nova verzija MAN-a"),
+'ca': ("MAN {version} està disponible", "Obriu la Configuració per a baixar i instal·lar l'actualització.", "Obre les actualitzacions", "Actualitzacions de MAN", "Us avisa quan hi ha una versió nova de MAN"),
+'cs': ("Je k dispozici MAN {version}", "Otevřete Nastavení a stáhněte a nainstalujte aktualizaci.", "Otevřít aktualizace", "Aktualizace MAN", "Dá vám vědět, když vyjde nová verze MAN"),
+'cy': ("Mae MAN {version} ar gael", "Agorwch y Gosodiadau i lwytho i lawr a gosod y diweddariad.", "Agor Diweddariadau", "Diweddariadau MAN", "Yn rhoi gwybod i chi pan fydd fersiwn newydd o MAN ar gael"),
+'da': ("MAN {version} er tilgængelig", "Åbn Indstillinger for at hente og installere opdateringen.", "Åbn opdateringer", "MAN-opdateringer", "Giver dig besked, når en ny version af MAN er klar"),
+'de': ("MAN {version} ist verfügbar", "Öffnen Sie die Einstellungen, um die Aktualisierung herunterzuladen und zu installieren.", "Aktualisierungen öffnen", "MAN-Aktualisierungen", "Meldet sich, wenn eine neue Version von MAN verfügbar ist"),
+'el': ("Το MAN {version} είναι διαθέσιμο", "Ανοίξτε τις Ρυθμίσεις για να κατεβάσετε και να εγκαταστήσετε την ενημέρωση.", "Άνοιγμα ενημερώσεων", "Ενημερώσεις MAN", "Σας ειδοποιεί όταν κυκλοφορεί νέα έκδοση του MAN"),
+'eo': ("MAN {version} disponeblas", "Malfermu Agordojn por elŝuti kaj instali la ĝisdatigon.", "Malfermi ĝisdatigojn", "MAN-ĝisdatigoj", "Sciigas vin, kiam nova versio de MAN disponeblas"),
+'es': ("MAN {version} está disponible", "Abra la Configuración para descargar e instalar la actualización.", "Abrir actualizaciones", "Actualizaciones de MAN", "Le avisa cuando hay una nueva versión de MAN"),
+'et': ("MAN {version} on saadaval", "Uuenduse allalaadimiseks ja paigaldamiseks ava Sätted.", "Ava uuendused", "MAN-i uuendused", "Annab teada, kui MAN-i uus versioon on saadaval"),
+'eu': ("MAN {version} eskuragarri dago", "Ireki Ezarpenak eguneraketa deskargatu eta instalatzeko.", "Ireki eguneraketak", "MAN eguneraketak", "MANen bertsio berri bat dagoenean jakinarazten dizu"),
+'fa': ("‏MAN {version} در دسترس است", "برای بارگیری و نصب به‌روزرسانی، تنظیمات را باز کنید.", "باز کردن به‌روزرسانی‌ها", "به‌روزرسانی‌های MAN", "وقتی نسخهٔ تازه‌ای از MAN منتشر شود، به شما خبر می‌دهد"),
+'fil': ("Available na ang MAN {version}", "Buksan ang Settings para i-download at i-install ang update.", "Buksan ang Mga Update", "Mga Update ng MAN", "Sinasabihan ka kapag may bagong bersyon ng MAN"),
+'fi': ("MAN {version} on saatavilla", "Lataa ja asenna päivitys avaamalla Asetukset.", "Avaa päivitykset", "MAN-päivitykset", "Kertoo, kun MANista on saatavilla uusi versio"),
+'fr': ("MAN {version} est disponible", "Ouvrez les Paramètres pour télécharger et installer la mise à jour.", "Ouvrir les mises à jour", "Mises à jour de MAN", "Vous prévient quand une nouvelle version de MAN est disponible"),
+'ga': ("Tá MAN {version} ar fáil", "Oscail na Socruithe chun an nuashonrú a íoslódáil agus a shuiteáil.", "Oscail Nuashonruithe", "Nuashonruithe MAN", "Cuireann sé in iúl duit nuair a bhíonn leagan nua de MAN ar fáil"),
+'gl': ("MAN {version} está dispoñible", "Abra a Configuración para descargar e instalar a actualización.", "Abrir actualizacións", "Actualizacións de MAN", "Avísao cando hai unha nova versión de MAN"),
+'gu': ("MAN {version} ઉપલબ્ધ છે", "અપડેટ ડાઉનલોડ અને સ્થાપિત કરવા સેટિંગ્સ ખોલો.", "અપડેટ ખોલો", "MAN અપડેટ", "MAN ની નવી આવૃત્તિ ઉપલબ્ધ થાય ત્યારે જણાવે છે"),
+'he': ("‏MAN {version} זמינה", "יש לפתוח את ההגדרות כדי להוריד ולהתקין את העדכון.", "פתיחת העדכונים", "עדכוני MAN", "מודיעה לך כשגרסה חדשה של MAN זמינה"),
+'hi': ("MAN {version} उपलब्ध है", "अद्यतन डाउनलोड और इंस्टॉल करने के लिए सेटिंग्स खोलें।", "अद्यतन खोलें", "MAN अद्यतन", "MAN का नया संस्करण उपलब्ध होने पर आपको बताता है"),
+'hr': ("MAN {version} je dostupan", "Otvorite Postavke kako biste preuzeli i instalirali ažuriranje.", "Otvori ažuriranja", "MAN ažuriranja", "Javlja vam kada je dostupna nova inačica MAN-a"),
+'hu': ("Elérhető a MAN {version}", "A frissítés letöltéséhez és telepítéséhez nyissa meg a Beállításokat.", "Frissítések megnyitása", "MAN-frissítések", "Szól, ha elérhető a MAN új verziója"),
+'hy': ("MAN {version}-ը հասանելի է", "Բացեք Կարգավորումները՝ թարմացումը ներբեռնելու և տեղադրելու համար։", "Բացել թարմացումները", "MAN-ի թարմացումներ", "Տեղեկացնում է, երբ MAN-ի նոր տարբերակ է հասանելի"),
+'id': ("MAN {version} tersedia", "Buka Pengaturan untuk mengunduh dan memasang pembaruan.", "Buka Pembaruan", "Pembaruan MAN", "Memberi tahu Anda saat versi baru MAN tersedia"),
+'is': ("MAN {version} er tiltækt", "Opnaðu Stillingar til að sækja og setja upp uppfærsluna.", "Opna uppfærslur", "MAN-uppfærslur", "Lætur þig vita þegar ný útgáfa af MAN er komin"),
+'it': ("MAN {version} è disponibile", "Apri Impostazioni per scaricare e installare l'aggiornamento.", "Apri aggiornamenti", "Aggiornamenti di MAN", "Ti avvisa quando è disponibile una nuova versione di MAN"),
+'ja': ("MAN {version} が利用可能です", "設定を開いてアップデートをダウンロードし、インストールしてください。", "アップデートを開く", "MAN アップデート", "MAN の新しいバージョンが出たときにお知らせします"),
+'ka': ("ხელმისაწვდომია MAN {version}", "განახლების ჩამოსატვირთად და დასაყენებლად გახსენით პარამეტრები.", "განახლებების გახსნა", "MAN-ის განახლებები", "გატყობინებთ, როცა MAN-ის ახალი ვერსია გამოვა"),
+'kk': ("MAN {version} қолжетімді", "Жаңартуды жүктеп алып, орнату үшін Баптауларды ашыңыз.", "Жаңартуларды ашу", "MAN жаңартулары", "MAN-ның жаңа нұсқасы шыққанда хабарлайды"),
+'kn': ("MAN {version} ಲಭ್ಯವಿದೆ", "ನವೀಕರಣವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ಸ್ಥಾಪಿಸಲು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ.", "ನವೀಕರಣಗಳನ್ನು ತೆರೆಯಿರಿ", "MAN ನವೀಕರಣಗಳು", "MAN ನ ಹೊಸ ಆವೃತ್ತಿ ಲಭ್ಯವಾದಾಗ ತಿಳಿಸುತ್ತದೆ"),
+'ko': ("MAN {version}을(를) 사용할 수 있습니다", "설정을 열어 업데이트를 다운로드하고 설치하세요.", "업데이트 열기", "MAN 업데이트", "MAN의 새 버전이 나오면 알려 줍니다"),
+'lt': ("Išleista MAN {version}", "Atverkite Nustatymus, kad atsisiųstumėte ir įdiegtumėte atnaujinimą.", "Atverti atnaujinimus", "MAN atnaujinimai", "Praneša, kai išleidžiama nauja MAN versija"),
+'lv': ("Pieejama MAN {version}", "Atveriet Iestatījumus, lai lejupielādētu un instalētu atjauninājumu.", "Atvērt atjauninājumus", "MAN atjauninājumi", "Paziņo, kad ir pieejama jauna MAN versija"),
+'mk': ("Достапен е MAN {version}", "Отворете ги Поставките за да го преземете и инсталирате ажурирањето.", "Отвори ажурирања", "Ажурирања на MAN", "Ве известува кога ќе излезе нова верзија на MAN"),
+'ml': ("MAN {version} ലഭ്യമാണ്", "അപ്‌ഡേറ്റ് ഡൗൺലോഡ് ചെയ്ത് ഇൻസ്റ്റാൾ ചെയ്യാൻ ക്രമീകരണങ്ങൾ തുറക്കുക.", "അപ്‌ഡേറ്റുകൾ തുറക്കുക", "MAN അപ്‌ഡേറ്റുകൾ", "MAN-ന്റെ പുതിയ പതിപ്പ് ലഭ്യമാകുമ്പോൾ അറിയിക്കുന്നു"),
+'mn': ("MAN {version} гарлаа", "Шинэчлэлийг татаж суулгахын тулд Тохиргоог нээнэ үү.", "Шинэчлэлүүдийг нээх", "MAN-ийн шинэчлэлүүд", "MAN-ийн шинэ хувилбар гарахад танд мэдэгдэнэ"),
+'mr': ("MAN {version} उपलब्ध आहे", "अद्यतन डाउनलोड आणि स्थापित करण्यासाठी सेटिंग्ज उघडा.", "अद्यतने उघडा", "MAN अद्यतने", "MAN ची नवी आवृत्ती उपलब्ध झाल्यावर सांगतो"),
+'ms': ("MAN {version} kini tersedia", "Buka Tetapan untuk memuat turun dan memasang kemas kini.", "Buka Kemas Kini", "Kemas Kini MAN", "Memberitahu anda apabila versi baharu MAN tersedia"),
+'nb': ("MAN {version} er tilgjengelig", "Åpne Innstillinger for å laste ned og installere oppdateringen.", "Åpne oppdateringer", "MAN-oppdateringer", "Gir deg beskjed når en ny versjon av MAN er klar"),
+'ne': ("MAN {version} उपलब्ध छ", "अद्यावधिक डाउनलोड र स्थापना गर्न सेटिङ खोल्नुहोस्।", "अद्यावधिकहरू खोल्नुहोस्", "MAN अद्यावधिकहरू", "MAN को नयाँ संस्करण उपलब्ध हुँदा जानकारी दिन्छ"),
+'nl': ("MAN {version} is beschikbaar", "Open Instellingen om de update te downloaden en te installeren.", "Updates openen", "MAN-updates", "Laat je weten wanneer er een nieuwe versie van MAN is"),
+'pa': ("MAN {version} ਉਪਲਬਧ ਹੈ", "ਅੱਪਡੇਟ ਡਾਊਨਲੋਡ ਅਤੇ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ।", "ਅੱਪਡੇਟ ਖੋਲ੍ਹੋ", "MAN ਅੱਪਡੇਟ", "MAN ਦਾ ਨਵਾਂ ਵਰਜਨ ਆਉਣ ਉੱਤੇ ਦੱਸਦਾ ਹੈ"),
+'pl': ("Dostępny jest MAN {version}", "Otwórz Ustawienia, aby pobrać i zainstalować aktualizację.", "Otwórz aktualizacje", "Aktualizacje MAN", "Informuje, gdy pojawi się nowa wersja MAN"),
+'pt_BR': ("O MAN {version} está disponível", "Abra as Configurações para baixar e instalar a atualização.", "Abrir atualizações", "Atualizações do MAN", "Avisa quando há uma nova versão do MAN"),
+'pt': ("O MAN {version} está disponível", "Abra as Definições para transferir e instalar a atualização.", "Abrir atualizações", "Atualizações do MAN", "Avisa quando há uma nova versão do MAN"),
+'ro': ("MAN {version} este disponibil", "Deschideți Configurări pentru a descărca și instala actualizarea.", "Deschide actualizările", "Actualizări MAN", "Vă anunță când apare o versiune nouă de MAN"),
+'ru': ("Доступна MAN {version}", "Откройте Параметры, чтобы скачать и установить обновление.", "Открыть обновления", "Обновления MAN", "Сообщает о выходе новой версии MAN"),
+'si': ("MAN {version} ලබා ගත හැක", "යාවත්කාලීනය බාගා ස්ථාපනය කිරීමට සැකසුම් විවෘත කරන්න.", "යාවත්කාලීන විවෘත කරන්න", "MAN යාවත්කාලීන", "MAN හි නව අනුවාදයක් ලැබුණු විට දන්වයි"),
+'sk': ("Je k dispozícii MAN {version}", "Otvorte Nastavenia a stiahnite a nainštalujte aktualizáciu.", "Otvoriť aktualizácie", "Aktualizácie MAN", "Dá vám vedieť, keď vyjde nová verzia MAN"),
+'sl': ("Na voljo je MAN {version}", "Odprite Nastavitve, da prenesete in namestite posodobitev.", "Odpri posodobitve", "Posodobitve MAN", "Obvesti vas, ko je na voljo nova različica MAN"),
+'sq': ("MAN {version} është i disponueshëm", "Hapni Rregullimet për ta shkarkuar dhe instaluar përditësimin.", "Hap përditësimet", "Përditësimet e MAN", "Ju njofton kur del një version i ri i MAN"),
+'sr': ("Доступан је MAN {version}", "Отворите Подешавања да преузмете и инсталирате ажурирање.", "Отвори ажурирања", "MAN ажурирања", "Обавештава вас када изађе нова верзија MAN-а"),
+'sv': ("MAN {version} finns tillgängligt", "Öppna Inställningar för att hämta och installera uppdateringen.", "Öppna uppdateringar", "MAN-uppdateringar", "Meddelar dig när en ny version av MAN finns"),
+'sw': ("MAN {version} inapatikana", "Fungua Mipangilio ili kupakua na kusakinisha sasisho.", "Fungua Masasisho", "Masasisho ya MAN", "Hukujulisha toleo jipya la MAN linapopatikana"),
+'ta': ("MAN {version} கிடைக்கிறது", "புதுப்பிப்பைப் பதிவிறக்கி நிறுவ அமைப்புகளைத் திறக்கவும்.", "புதுப்பிப்புகளைத் திற", "MAN புதுப்பிப்புகள்", "MAN-இன் புதிய பதிப்பு வந்ததும் தெரிவிக்கிறது"),
+'te': ("MAN {version} అందుబాటులో ఉంది", "నవీకరణను డౌన్‌లోడ్ చేసి స్థాపించడానికి అమరికలను తెరవండి.", "నవీకరణలను తెరవండి", "MAN నవీకరణలు", "MAN కొత్త వెర్షన్ వచ్చినప్పుడు తెలియజేస్తుంది"),
+'th': ("MAN {version} พร้อมใช้งานแล้ว", "เปิดการตั้งค่าเพื่อดาวน์โหลดและติดตั้งการอัปเดต", "เปิดการอัปเดต", "การอัปเดต MAN", "แจ้งให้คุณทราบเมื่อมี MAN รุ่นใหม่"),
+'tr': ("MAN {version} kullanılabilir", "Güncellemeyi indirip kurmak için Ayarlar'ı açın.", "Güncellemeleri Aç", "MAN Güncellemeleri", "MAN'in yeni sürümü çıktığında size haber verir"),
+'uk': ("Доступна MAN {version}", "Відкрийте Параметри, щоб завантажити й установити оновлення.", "Відкрити оновлення", "Оновлення MAN", "Повідомляє про вихід нової версії MAN"),
+'ur': ("‏MAN {version} دستیاب ہے", "اپ ڈیٹ ڈاؤن لوڈ اور انسٹال کرنے کے لیے Settings کھولیں۔", "اپ ڈیٹس کھولیں", "MAN اپ ڈیٹس", "MAN کا نیا ورژن آنے پر آپ کو بتاتا ہے"),
+'uz': ("MAN {version} chiqdi", "Yangilanishni yuklab olish va o‘rnatish uchun Sozlamalarni oching.", "Yangilanishlarni ochish", "MAN yangilanishlari", "MAN ning yangi versiyasi chiqqanda xabar beradi"),
+'vi': ("Đã có MAN {version}", "Mở Cài đặt để tải về và cài đặt bản cập nhật.", "Mở Cập nhật", "Cập nhật MAN", "Báo cho bạn khi có phiên bản MAN mới"),
+'zh_CN': ("MAN {version} 已发布", "打开“设置”以下载并安装更新。", "打开更新", "MAN 更新", "有新版 MAN 时通知您"),
+'zh_TW': ("MAN {version} 已推出", "開啟「設定」以下載並安裝更新。", "開啟更新", "MAN 更新", "有新版 MAN 時通知您"),
+}
+
+if __name__ == '__main__':
+    import glob, os
+    here = os.path.dirname(os.path.abspath(__file__))
+    for f in sorted(glob.glob(os.path.join(here, 'tx', '*.txt'))):
+        lang = os.path.basename(f)[:-4]
+        a, b, c, d, e = T[lang]
+        with open(f, 'a', encoding='utf-8') as out:
+            out.write(f'314|{a}\n315|{b}\n316|{c}\n493|{d}\n494|{e}\n')
+    print(len(T), 'languages')

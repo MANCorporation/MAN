@@ -312,179 +312,184 @@
 311|In die Zwischenablage kopieren
 312|Koordinierte Weltzeit
 313|Englisch (USA)
-314|Aktualisierung wird geprüft
-315|Es wird sichergestellt, dass die Aktualisierung echt und vollständig ist …
-316|MAN-Aktualisierung
-317|Diese Aktualisierung kann nicht installiert werden
-318|Die Aktualisierung konnte nicht gelesen werden.
-319|Aktualisierung von {name} {version}
-320|{name} {version} ist installiert
-321|Version
-322|Veröffentlicht
-323|Downloadgröße
-324|Benötigter Platz
-325|Echtheit
-326|Geprüft, signiert von „{signer}“
-327|Neuigkeiten
-328|_Fortfahren
-329|Diese Aktualisierung ist nicht neuer als das installierte {name} {version}.
-330|Aktualisierung
-331|Bitte lesen Sie die Lizenzbedingungen dieser Aktualisierung.
-332|Ich akzeptiere die Lizenzbedingungen
-333|Wo soll die Aktualisierung installiert werden?
-334|Das System wird ersetzt; Dateien in Ihrem persönlichen Ordner bleiben unberührt.
-335|Wählen Sie eine Installation.
-336|läuft gerade
-337|{name} {version} auf diesem Computer
-338|{name} auf {model}
-339|Keine MAN-Installation gefunden
-340|Aktualisierungen werden von einem laufenden, installierten MAN-System aus installiert, nicht aus der Live-Sitzung.
-341|Installationsort
-342|Zusammenfassung
-343|Bleibt erhalten
-344|Ihre Dateien
-345|Alles in Ihrem persönlichen Ordner
-346|Konten und Passwörter
-347|Benutzer, Gruppen, der Computername
-348|Verbindungen und Einstellungen
-349|WLAN, Zeitzone, Tastatur, Aussehen und Schnappschüsse
-350|Flatpak-Apps
-351|Dazu alles in /usr/local und /opt
-352|Wird ersetzt
-353|Mit apt installierte Software und andere Änderungen an Systemdateien werden durch das neue System ersetzt.
-354|Das Betriebssystem
-355|Ersetzt durch {name} {version}. Das aktuelle System kann aus einem Schnappschuss wiederhergestellt werden.
-356|Der Computer startet neu, um die Aktualisierung zu installieren
-357|Nach der Vorbereitung startet MAN neu, installiert die Aktualisierung in wenigen Sekunden und startet erneut.
-358|Aktualisierung _installieren
-359|Zuerst einen Schnappschuss erstellen?
-360|Ein Schnappschuss sichert das aktuelle System, sodass Sie zurückkehren können, falls nach der Aktualisierung etwas nicht funktioniert. Empfohlen.
-361|_Nicht erstellen
-362|Schnappschuss _erstellen
-363|{name} {version} wird vorbereitet
-364|Neu starten zum Installieren
-365|Der Computer startet zweimal neu. Ihre Dateien sind sicher.
-366|Automatischer Neustart in {r} Sekunden
-367|Automatischer Neustart in 30 Sekunden
-368|Die Aktualisierung wird beim nächsten Neustart installiert.
-369|Bereit
-370|Die Aktualisierung konnte nicht vorbereitet werden
-371|An Ihrem System wurde nichts geändert.
-372|_Erneut versuchen
-373|Aktualisierungsprotokoll
-374|Fehlgeschlagen
-375|Ihr System wurde aktualisiert
-376|MAN wurde auf Version {version} aktualisiert.\nVorher: MAN {previous}.
-377|_Fertig
-378|MAN-Aktualisierung öffnen
-379|MAN-Aktualisierungen
-380|Installationsplan wird geprüft
-381|Datenträger wird vorbereitet
-382|MAN wird auf den Datenträger kopiert
-383|Neues System wird eingerichtet
-384|Bootloader wird installiert
-385|Erster Schnappschuss wird erstellt
-386|Abschluss
-387|Alte Partitionssignaturen werden entfernt
-388|Partitionen werden erstellt
-389|EFI-Systempartition wird formatiert
-390|Systempartition wird verschlüsselt
-391|Boot-Partition wird formatiert
-392|Btrfs-Dateisystem wird erstellt
-393|Alte Dateisystemsignaturen werden entfernt
-394|Verschlüsselte Installation wird entsperrt
-395|Aktuelles System wird als Schnappschuss gesichert
-396|Vorheriges System wird entfernt
-397|Dateisystemtabelle wird geschrieben
-398|Computername und Identität werden festgelegt
-399|Konten der Live-Sitzung werden entfernt
-400|Ihr Konto wird erstellt
-401|MAN Setup wird für den ersten Start vorbereitet
-402|Zeitzone und Tastatur werden festgelegt
-403|Installer wird aus dem neuen System entfernt
-404|Boot-Abbild (initramfs) wird erstellt
-405|GRUB wird eingerichtet
-406|GRUB wird auf der EFI-Systempartition installiert
-407|Ersatz-Bootloader wird installiert
-408|Startmenü wird geschrieben
-409|Datenträger bereit
-410|Schnappschuss des frischen Systems wird erstellt
-411|Schnappschuss wird ins Startmenü aufgenommen
-412|Wird ausgehängt
-413|Der Installer-Helfer muss als root laufen.
-414|Dieser Computer wurde nicht im UEFI-Modus gestartet. MAN benötigt UEFI.
-415|Der Benutzername ist ungültig.
-416|Ein Passwort ist erforderlich.
-417|Der Computername ist ungültig.
-418|Unbekannte Sprache.
-419|Die Verschlüsselungs-Passphrase muss mindestens 8 Zeichen haben.
-420|Der Datenträger hat sich nach Ihrer Bestätigung geändert. Nichts wurde verändert; bitte prüfen und bestätigen Sie erneut.
-421|Wählen Sie eine Systempartition.
-422|Der bestätigte Datenträger enthält die gewählte Systempartition nicht.
-423|Die Boot-Partition muss von EFI- und Systempartition getrennt sein.
-424|Die Boot-Partition muss mindestens 512 MB groß sein.
-425|Keine Installation gewählt.
-426|Der bestätigte Datenträger enthält die gewählte Installation nicht.
-427|Die verschlüsselte Installation hat keine MAN_BOOT-Partition.
-428|In /boot wurde kein Kernel mit passenden Modulen gefunden.
-429|Die Sprache muss vom Systemhelfer geändert werden.
-430|Ihre Einstellungen werden angewendet
-431|Datenträgerverschlüsselung wird vorbereitet
-432|Abschluss
-433|MAN Setup muss vom Systemhelfer abgeschlossen werden.
-434|MAN Setup wurde auf diesem Computer bereits abgeschlossen.
-435|Unbekannte Akzentfarbe.
-436|Das gewählte Hintergrundbild ist nicht verfügbar.
-437|Dieses System kann nicht verschlüsselt werden.
-438|Der Einrichtungsschlüssel fehlt, daher kann die Verschlüsselung nicht im Hintergrund fortgesetzt werden.
-439|Das System ist nicht auf Btrfs installiert, daher sind keine Schnappschüsse verfügbar.
-440|Eine Schnappschuss-Wiederherstellung wartet auf einen Neustart. Starten Sie den Computer zuerst neu, um sie abzuschließen.
-441|Ungültige Schnappschuss-ID.
-442|Aktualisierung wird geprüft
-443|Schnappschuss wird erstellt
-444|Aktualisierungsbereich wird vorbereitet
-445|Neues System wird entpackt
-446|Ihre Konten und Einstellungen werden übernommen
-447|Neustart wird vorbereitet
-448|Entpackt
-449|Konten
-450|Nur für den Installer benötigte Software wird entfernt
-451|Boot-Abbild der Aktualisierung wird erstellt
-452|Einmaliger Starteintrag wird hinzugefügt
-453|Die Aktualisierung ist echt
-454|Schnappschuss erstellt
-455|Übersprungen
-456|Aktualisierungsbereich bereit
-457|Neues System wird vorbereitet
-458|Die Aktualisierungsdatei ist beschädigt (Prüfsumme stimmt nicht). Laden Sie sie erneut herunter.
-459|Die Aktualisierungsdatei konnte nicht vollständig gelesen werden.
-460|Die Aktualisierung enthält keinen Kernel.
-461|Aktualisierungen müssen vom Systemhelfer installiert werden.
-462|Die gewählte Installation wurde nicht gefunden.
-463|Nur die laufende MAN-Installation kann aktualisiert werden.
-464|Dies ist keine MAN-Aktualisierungsdatei (kein Manifest).
-465|Die Aktualisierung ist nicht signiert und daher nicht vertrauenswürdig.
-466|Die Signatur der Aktualisierung ist beschädigt.
-467|Die Aktualisierung ist nicht von MAN signiert. Sie wurde möglicherweise verändert oder stammt aus einer nicht vertrauenswürdigen Quelle.
-468|Das Manifest der Aktualisierung ist ungültig.
-469|Die Passphrase ist falsch, oder die verschlüsselte Partition kann nicht geöffnet werden.
-470|Blau
-471|Blaugrün
-472|Grün
-473|Gelb
-474|Orange
-475|Rot
-476|Rosa
-477|Violett
-478|Schiefer
-479|Systeminstallation
-480|MAN auf diesem Computer installieren
-481|Systemwiederherstellung
-482|Schnappschüsse des Systems erstellen und wiederherstellen
-483|Installation von Systemaktualisierungen
-484|Eine MAN-Systemaktualisierung installieren
-485|Bietet beim Start der Live-Sitzung die Installation von MAN an
-486|MAN-Aktualisierungshinweis
-487|Teilt Ihnen nach der Anmeldung einmal mit, dass MAN aktualisiert wurde
-488|Richten Sie Ihren neuen MAN-Computer ein
-489|Ersteinrichtung von MAN
+317|Aktualisierung wird geprüft
+318|Es wird sichergestellt, dass die Aktualisierung echt und vollständig ist …
+319|MAN-Aktualisierung
+320|Diese Aktualisierung kann nicht installiert werden
+321|Die Aktualisierung konnte nicht gelesen werden.
+322|Aktualisierung von {name} {version}
+323|{name} {version} ist installiert
+324|Version
+325|Veröffentlicht
+326|Downloadgröße
+327|Benötigter Platz
+328|Echtheit
+329|Geprüft, signiert von „{signer}“
+330|Neuigkeiten
+331|_Fortfahren
+332|Diese Aktualisierung ist nicht neuer als das installierte {name} {version}.
+333|Aktualisierung
+334|Bitte lesen Sie die Lizenzbedingungen dieser Aktualisierung.
+335|Ich akzeptiere die Lizenzbedingungen
+336|Wo soll die Aktualisierung installiert werden?
+337|Das System wird ersetzt; Dateien in Ihrem persönlichen Ordner bleiben unberührt.
+338|Wählen Sie eine Installation.
+339|läuft gerade
+340|{name} {version} auf diesem Computer
+341|{name} auf {model}
+342|Keine MAN-Installation gefunden
+343|Aktualisierungen werden von einem laufenden, installierten MAN-System aus installiert, nicht aus der Live-Sitzung.
+344|Installationsort
+345|Zusammenfassung
+346|Bleibt erhalten
+347|Ihre Dateien
+348|Alles in Ihrem persönlichen Ordner
+349|Konten und Passwörter
+350|Benutzer, Gruppen, der Computername
+351|Verbindungen und Einstellungen
+352|WLAN, Zeitzone, Tastatur, Aussehen und Schnappschüsse
+353|Flatpak-Apps
+354|Dazu alles in /usr/local und /opt
+355|Wird ersetzt
+356|Mit apt installierte Software und andere Änderungen an Systemdateien werden durch das neue System ersetzt.
+357|Das Betriebssystem
+358|Ersetzt durch {name} {version}. Das aktuelle System kann aus einem Schnappschuss wiederhergestellt werden.
+359|Der Computer startet neu, um die Aktualisierung zu installieren
+360|Nach der Vorbereitung startet MAN neu, installiert die Aktualisierung in wenigen Sekunden und startet erneut.
+361|Aktualisierung _installieren
+362|Zuerst einen Schnappschuss erstellen?
+363|Ein Schnappschuss sichert das aktuelle System, sodass Sie zurückkehren können, falls nach der Aktualisierung etwas nicht funktioniert. Empfohlen.
+364|_Nicht erstellen
+365|Schnappschuss _erstellen
+366|{name} {version} wird vorbereitet
+367|Neu starten zum Installieren
+368|Der Computer startet zweimal neu. Ihre Dateien sind sicher.
+369|Automatischer Neustart in {r} Sekunden
+370|Automatischer Neustart in 30 Sekunden
+371|Die Aktualisierung wird beim nächsten Neustart installiert.
+372|Bereit
+373|Die Aktualisierung konnte nicht vorbereitet werden
+374|An Ihrem System wurde nichts geändert.
+375|_Erneut versuchen
+376|Aktualisierungsprotokoll
+377|Fehlgeschlagen
+378|Ihr System wurde aktualisiert
+379|MAN wurde auf Version {version} aktualisiert.\nVorher: MAN {previous}.
+380|_Fertig
+381|MAN-Aktualisierung öffnen
+382|MAN-Aktualisierungen
+383|Installationsplan wird geprüft
+384|Datenträger wird vorbereitet
+385|MAN wird auf den Datenträger kopiert
+386|Neues System wird eingerichtet
+387|Bootloader wird installiert
+388|Erster Schnappschuss wird erstellt
+389|Abschluss
+390|Alte Partitionssignaturen werden entfernt
+391|Partitionen werden erstellt
+392|EFI-Systempartition wird formatiert
+393|Systempartition wird verschlüsselt
+394|Boot-Partition wird formatiert
+395|Btrfs-Dateisystem wird erstellt
+396|Alte Dateisystemsignaturen werden entfernt
+397|Verschlüsselte Installation wird entsperrt
+398|Aktuelles System wird als Schnappschuss gesichert
+399|Vorheriges System wird entfernt
+400|Dateisystemtabelle wird geschrieben
+401|Computername und Identität werden festgelegt
+402|Konten der Live-Sitzung werden entfernt
+403|Ihr Konto wird erstellt
+404|MAN Setup wird für den ersten Start vorbereitet
+405|Zeitzone und Tastatur werden festgelegt
+406|Installer wird aus dem neuen System entfernt
+407|Boot-Abbild (initramfs) wird erstellt
+408|GRUB wird eingerichtet
+409|GRUB wird auf der EFI-Systempartition installiert
+410|Ersatz-Bootloader wird installiert
+411|Startmenü wird geschrieben
+412|Datenträger bereit
+413|Schnappschuss des frischen Systems wird erstellt
+414|Schnappschuss wird ins Startmenü aufgenommen
+415|Wird ausgehängt
+416|Der Installer-Helfer muss als root laufen.
+417|Dieser Computer wurde nicht im UEFI-Modus gestartet. MAN benötigt UEFI.
+418|Der Benutzername ist ungültig.
+419|Ein Passwort ist erforderlich.
+420|Der Computername ist ungültig.
+421|Unbekannte Sprache.
+422|Die Verschlüsselungs-Passphrase muss mindestens 8 Zeichen haben.
+423|Der Datenträger hat sich nach Ihrer Bestätigung geändert. Nichts wurde verändert; bitte prüfen und bestätigen Sie erneut.
+424|Wählen Sie eine Systempartition.
+425|Der bestätigte Datenträger enthält die gewählte Systempartition nicht.
+426|Die Boot-Partition muss von EFI- und Systempartition getrennt sein.
+427|Die Boot-Partition muss mindestens 512 MB groß sein.
+428|Keine Installation gewählt.
+429|Der bestätigte Datenträger enthält die gewählte Installation nicht.
+430|Die verschlüsselte Installation hat keine MAN_BOOT-Partition.
+431|In /boot wurde kein Kernel mit passenden Modulen gefunden.
+432|Die Sprache muss vom Systemhelfer geändert werden.
+433|Ihre Einstellungen werden angewendet
+434|Datenträgerverschlüsselung wird vorbereitet
+435|Abschluss
+436|MAN Setup muss vom Systemhelfer abgeschlossen werden.
+437|MAN Setup wurde auf diesem Computer bereits abgeschlossen.
+438|Unbekannte Akzentfarbe.
+439|Das gewählte Hintergrundbild ist nicht verfügbar.
+440|Dieses System kann nicht verschlüsselt werden.
+441|Der Einrichtungsschlüssel fehlt, daher kann die Verschlüsselung nicht im Hintergrund fortgesetzt werden.
+442|Das System ist nicht auf Btrfs installiert, daher sind keine Schnappschüsse verfügbar.
+443|Eine Schnappschuss-Wiederherstellung wartet auf einen Neustart. Starten Sie den Computer zuerst neu, um sie abzuschließen.
+444|Ungültige Schnappschuss-ID.
+445|Aktualisierung wird geprüft
+446|Schnappschuss wird erstellt
+447|Aktualisierungsbereich wird vorbereitet
+448|Neues System wird entpackt
+449|Ihre Konten und Einstellungen werden übernommen
+450|Neustart wird vorbereitet
+451|Entpackt
+452|Konten
+453|Nur für den Installer benötigte Software wird entfernt
+454|Boot-Abbild der Aktualisierung wird erstellt
+455|Einmaliger Starteintrag wird hinzugefügt
+456|Die Aktualisierung ist echt
+457|Schnappschuss erstellt
+458|Übersprungen
+459|Aktualisierungsbereich bereit
+460|Neues System wird vorbereitet
+461|Die Aktualisierungsdatei ist beschädigt (Prüfsumme stimmt nicht). Laden Sie sie erneut herunter.
+462|Die Aktualisierungsdatei konnte nicht vollständig gelesen werden.
+463|Die Aktualisierung enthält keinen Kernel.
+464|Aktualisierungen müssen vom Systemhelfer installiert werden.
+465|Die gewählte Installation wurde nicht gefunden.
+466|Nur die laufende MAN-Installation kann aktualisiert werden.
+467|Dies ist keine MAN-Aktualisierungsdatei (kein Manifest).
+468|Die Aktualisierung ist nicht signiert und daher nicht vertrauenswürdig.
+469|Die Signatur der Aktualisierung ist beschädigt.
+470|Die Aktualisierung ist nicht von MAN signiert. Sie wurde möglicherweise verändert oder stammt aus einer nicht vertrauenswürdigen Quelle.
+471|Das Manifest der Aktualisierung ist ungültig.
+472|Die Passphrase ist falsch, oder die verschlüsselte Partition kann nicht geöffnet werden.
+473|Blau
+474|Blaugrün
+475|Grün
+476|Gelb
+477|Orange
+478|Rot
+479|Rosa
+480|Violett
+481|Schiefer
+482|Systeminstallation
+483|MAN auf diesem Computer installieren
+484|Systemwiederherstellung
+485|Schnappschüsse des Systems erstellen und wiederherstellen
+486|Installation von Systemaktualisierungen
+487|Eine MAN-Systemaktualisierung installieren
+488|Bietet beim Start der Live-Sitzung die Installation von MAN an
+489|MAN-Aktualisierungshinweis
+490|Teilt Ihnen nach der Anmeldung einmal mit, dass MAN aktualisiert wurde
+491|Richten Sie Ihren neuen MAN-Computer ein
+492|Ersteinrichtung von MAN
+314|MAN {version} ist verfügbar
+315|Öffnen Sie die Einstellungen, um die Aktualisierung herunterzuladen und zu installieren.
+316|Aktualisierungen öffnen
+493|MAN-Aktualisierungen
+494|Meldet sich, wenn eine neue Version von MAN verfügbar ist

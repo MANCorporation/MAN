@@ -312,179 +312,184 @@
 311|Kopírovat do schránky
 312|Koordinovaný světový čas
 313|Angličtina (USA)
-314|Kontrola aktualizace
-315|Ověřuje se, že je aktualizace pravá a úplná…
-316|Aktualizace MAN
-317|Tuto aktualizaci nelze nainstalovat
-318|Aktualizaci se nepodařilo přečíst.
-319|Aktualizace z {name} {version}
-320|{name} {version} je nainstalován
-321|Verze
-322|Vydáno
-323|Velikost
-324|Potřebné místo
-325|Pravost
-326|Ověřeno, podepsal „{signer}“
-327|Co je nového
-328|_Pokračovat
-329|Tato aktualizace není novější než nainstalovaný {name} {version}.
-330|Aktualizace
-331|Přečtěte si prosím licenční podmínky této aktualizace.
-332|Přijímám licenční podmínky
-333|Kam nainstalovat aktualizaci?
-334|Systém bude nahrazen; soubory v domovské složce zůstanou nedotčeny.
-335|Zvolte instalaci.
-336|právě běží
-337|{name} {version} na tomto počítači
-338|{name} na {model}
-339|Nebyla nalezena žádná instalace MAN
-340|Aktualizace se instalují z běžícího nainstalovaného systému MAN, ne z živé relace.
-341|Umístění instalace
-342|Souhrn
-343|Zachová se
-344|Vaše soubory
-345|Vše v domovské složce
-346|Účty a hesla
-347|Uživatelé, skupiny, název počítače
-348|Připojení a nastavení
-349|Wi-Fi, časové pásmo, klávesnice, vzhled a snímky
-350|Aplikace Flatpak
-351|A také vše v /usr/local a /opt
-352|Nahradí se
-353|Software nainstalovaný přes apt a další změny systémových souborů nahradí nový systém.
-354|Operační systém
-355|Nahradí ho {name} {version}. Současný systém lze obnovit ze snímku.
-356|Pro instalaci aktualizace se počítač restartuje
-357|Po přípravě se MAN restartuje, během několika sekund aktualizaci nainstaluje a znovu se restartuje.
-358|_Instalovat aktualizaci
-359|Nejprve vytvořit snímek?
-360|Snímek uloží současný systém, takže se k němu můžete vrátit, pokud po aktualizaci něco nebude fungovat. Doporučujeme.
-361|_Nevytvářet
-362|_Vytvořit snímek
-363|Příprava {name} {version}
-364|Restartovat a instalovat
-365|Počítač se dvakrát restartuje. Vaše soubory jsou v bezpečí.
-366|Automatický restart za {r} s
-367|Automatický restart za 30 s
-368|Aktualizace se nainstaluje při příštím restartu.
-369|Připraveno
-370|Aktualizaci se nepodařilo připravit
-371|Ve vašem systému se nic nezměnilo.
-372|_Zkusit znovu
-373|Záznam aktualizace
-374|Selhalo
-375|Váš systém byl aktualizován
-376|MAN byl aktualizován na verzi {version}.\nPředtím: MAN {previous}.
-377|_Hotovo
-378|Otevřít aktualizaci MAN
-379|Aktualizace MAN
-380|Kontrola plánu instalace
-381|Příprava disku
-382|Kopírování MAN na disk
-383|Nastavení nového systému
-384|Instalace zavaděče
-385|Vytvoření prvního snímku
-386|Dokončování
-387|Odstraňování starých podpisů oddílů
-388|Vytváření oddílů
-389|Formátování systémového oddílu EFI
-390|Šifrování systémového oddílu
-391|Formátování zaváděcího oddílu
-392|Vytváření souborového systému Btrfs
-393|Odstraňování starých podpisů souborových systémů
-394|Odemykání šifrované instalace
-395|Ukládání současného systému jako snímku
-396|Odstraňování předchozího systému
-397|Zápis tabulky souborových systémů
-398|Nastavení názvu a identity počítače
-399|Odstraňování účtů živé relace
-400|Vytváření vašeho účtu
-401|Příprava MAN Setup na první spuštění
-402|Nastavení časového pásma a klávesnice
-403|Odstraňování instalátoru z nového systému
-404|Sestavení zaváděcího obrazu (initramfs)
-405|Nastavení GRUB
-406|Instalace GRUB do systémového oddílu EFI
-407|Instalace záložního zavaděče
-408|Zápis zaváděcí nabídky
-409|Disk je připraven
-410|Vytváření snímku nového systému
-411|Přidání snímku do zaváděcí nabídky
-412|Odpojování
-413|Pomocník instalátoru musí běžet jako root.
-414|Tento počítač nebyl spuštěn v režimu UEFI. MAN vyžaduje UEFI.
-415|Uživatelské jméno není platné.
-416|Je potřeba heslo.
-417|Název počítače není platný.
-418|Neznámý jazyk.
-419|Heslo pro šifrování musí mít alespoň 8 znaků.
-420|Disk se po potvrzení instalace změnil. Nic nebylo upraveno; zkontrolujte plán a potvrďte ho znovu.
-421|Zvolte systémový oddíl.
-422|Potvrzený disk neobsahuje zvolený systémový oddíl.
-423|Zaváděcí oddíl musí být oddělený od oddílu EFI a systémového oddílu.
-424|Zaváděcí oddíl musí mít alespoň 512 MB.
-425|Není zvolena instalace.
-426|Potvrzený disk neobsahuje zvolenou instalaci.
-427|Šifrovaná instalace nemá oddíl MAN_BOOT.
-428|V /boot nebylo nalezeno jádro s odpovídajícími moduly.
-429|Jazyk musí změnit systémový pomocník.
-430|Použití vašich nastavení
-431|Příprava šifrování disku
-432|Dokončování
-433|MAN Setup musí dokončit systémový pomocník.
-434|MAN Setup už byl na tomto počítači dokončen.
-435|Neznámá barva zvýraznění.
-436|Zvolená tapeta není k dispozici.
-437|Tento systém nelze zašifrovat.
-438|Chybí instalační klíč, takže šifrování nemůže pokračovat na pozadí.
-439|Systém není nainstalován na Btrfs, takže snímky nejsou k dispozici.
-440|Obnova snímku čeká na restart. Nejprve ji dokončete restartem počítače.
-441|Neplatné ID snímku.
-442|Kontrola aktualizace
-443|Vytváření snímku
-444|Příprava oblasti pro aktualizaci
-445|Rozbalování nového systému
-446|Přenos vašich účtů a nastavení
-447|Příprava restartu
-448|Rozbaleno
-449|Účty
-450|Odstraňování softwaru pouze pro instalátor
-451|Sestavení zaváděcího obrazu aktualizace
-452|Přidání jednorázové položky spuštění
-453|Aktualizace je pravá
-454|Snímek byl vytvořen
-455|Přeskočeno
-456|Oblast pro aktualizaci je připravena
-457|Příprava nového systému
-458|Soubor aktualizace je poškozený (kontrolní součet nesouhlasí). Stáhněte ho znovu.
-459|Soubor aktualizace se nepodařilo přečíst celý.
-460|Aktualizace neobsahuje jádro.
-461|Aktualizace musí instalovat systémový pomocník.
-462|Zvolená instalace nebyla nalezena.
-463|Aktualizovat lze jen běžící instalaci MAN.
-464|Toto není soubor aktualizace MAN (chybí manifest).
-465|Aktualizace není podepsaná, proto jí nelze důvěřovat.
-466|Podpis aktualizace je poškozený.
-467|Aktualizace není podepsaná MAN. Mohla být upravena nebo pochází z nedůvěryhodného zdroje.
-468|Manifest aktualizace je neplatný.
-469|Heslo není správné, nebo šifrovaný oddíl nelze otevřít.
-470|Modrá
-471|Modrozelená
-472|Zelená
-473|Žlutá
-474|Oranžová
-475|Červená
-476|Růžová
-477|Fialová
-478|Břidlicová
-479|Instalátor systému
-480|Nainstalovat MAN do tohoto počítače
-481|Obnova systému
-482|Vytváření a obnovování snímků systému
-483|Instalátor aktualizací systému
-484|Instalace souboru aktualizace systému MAN
-485|Nabídne instalaci MAN při spuštění živé relace
-486|Upozornění na aktualizaci MAN
-487|Jednou po přihlášení oznámí, že byl MAN aktualizován
-488|Nastavte si svůj nový počítač s MAN
-489|Nastavení MAN při prvním spuštění
+317|Kontrola aktualizace
+318|Ověřuje se, že je aktualizace pravá a úplná…
+319|Aktualizace MAN
+320|Tuto aktualizaci nelze nainstalovat
+321|Aktualizaci se nepodařilo přečíst.
+322|Aktualizace z {name} {version}
+323|{name} {version} je nainstalován
+324|Verze
+325|Vydáno
+326|Velikost
+327|Potřebné místo
+328|Pravost
+329|Ověřeno, podepsal „{signer}“
+330|Co je nového
+331|_Pokračovat
+332|Tato aktualizace není novější než nainstalovaný {name} {version}.
+333|Aktualizace
+334|Přečtěte si prosím licenční podmínky této aktualizace.
+335|Přijímám licenční podmínky
+336|Kam nainstalovat aktualizaci?
+337|Systém bude nahrazen; soubory v domovské složce zůstanou nedotčeny.
+338|Zvolte instalaci.
+339|právě běží
+340|{name} {version} na tomto počítači
+341|{name} na {model}
+342|Nebyla nalezena žádná instalace MAN
+343|Aktualizace se instalují z běžícího nainstalovaného systému MAN, ne z živé relace.
+344|Umístění instalace
+345|Souhrn
+346|Zachová se
+347|Vaše soubory
+348|Vše v domovské složce
+349|Účty a hesla
+350|Uživatelé, skupiny, název počítače
+351|Připojení a nastavení
+352|Wi-Fi, časové pásmo, klávesnice, vzhled a snímky
+353|Aplikace Flatpak
+354|A také vše v /usr/local a /opt
+355|Nahradí se
+356|Software nainstalovaný přes apt a další změny systémových souborů nahradí nový systém.
+357|Operační systém
+358|Nahradí ho {name} {version}. Současný systém lze obnovit ze snímku.
+359|Pro instalaci aktualizace se počítač restartuje
+360|Po přípravě se MAN restartuje, během několika sekund aktualizaci nainstaluje a znovu se restartuje.
+361|_Instalovat aktualizaci
+362|Nejprve vytvořit snímek?
+363|Snímek uloží současný systém, takže se k němu můžete vrátit, pokud po aktualizaci něco nebude fungovat. Doporučujeme.
+364|_Nevytvářet
+365|_Vytvořit snímek
+366|Příprava {name} {version}
+367|Restartovat a instalovat
+368|Počítač se dvakrát restartuje. Vaše soubory jsou v bezpečí.
+369|Automatický restart za {r} s
+370|Automatický restart za 30 s
+371|Aktualizace se nainstaluje při příštím restartu.
+372|Připraveno
+373|Aktualizaci se nepodařilo připravit
+374|Ve vašem systému se nic nezměnilo.
+375|_Zkusit znovu
+376|Záznam aktualizace
+377|Selhalo
+378|Váš systém byl aktualizován
+379|MAN byl aktualizován na verzi {version}.\nPředtím: MAN {previous}.
+380|_Hotovo
+381|Otevřít aktualizaci MAN
+382|Aktualizace MAN
+383|Kontrola plánu instalace
+384|Příprava disku
+385|Kopírování MAN na disk
+386|Nastavení nového systému
+387|Instalace zavaděče
+388|Vytvoření prvního snímku
+389|Dokončování
+390|Odstraňování starých podpisů oddílů
+391|Vytváření oddílů
+392|Formátování systémového oddílu EFI
+393|Šifrování systémového oddílu
+394|Formátování zaváděcího oddílu
+395|Vytváření souborového systému Btrfs
+396|Odstraňování starých podpisů souborových systémů
+397|Odemykání šifrované instalace
+398|Ukládání současného systému jako snímku
+399|Odstraňování předchozího systému
+400|Zápis tabulky souborových systémů
+401|Nastavení názvu a identity počítače
+402|Odstraňování účtů živé relace
+403|Vytváření vašeho účtu
+404|Příprava MAN Setup na první spuštění
+405|Nastavení časového pásma a klávesnice
+406|Odstraňování instalátoru z nového systému
+407|Sestavení zaváděcího obrazu (initramfs)
+408|Nastavení GRUB
+409|Instalace GRUB do systémového oddílu EFI
+410|Instalace záložního zavaděče
+411|Zápis zaváděcí nabídky
+412|Disk je připraven
+413|Vytváření snímku nového systému
+414|Přidání snímku do zaváděcí nabídky
+415|Odpojování
+416|Pomocník instalátoru musí běžet jako root.
+417|Tento počítač nebyl spuštěn v režimu UEFI. MAN vyžaduje UEFI.
+418|Uživatelské jméno není platné.
+419|Je potřeba heslo.
+420|Název počítače není platný.
+421|Neznámý jazyk.
+422|Heslo pro šifrování musí mít alespoň 8 znaků.
+423|Disk se po potvrzení instalace změnil. Nic nebylo upraveno; zkontrolujte plán a potvrďte ho znovu.
+424|Zvolte systémový oddíl.
+425|Potvrzený disk neobsahuje zvolený systémový oddíl.
+426|Zaváděcí oddíl musí být oddělený od oddílu EFI a systémového oddílu.
+427|Zaváděcí oddíl musí mít alespoň 512 MB.
+428|Není zvolena instalace.
+429|Potvrzený disk neobsahuje zvolenou instalaci.
+430|Šifrovaná instalace nemá oddíl MAN_BOOT.
+431|V /boot nebylo nalezeno jádro s odpovídajícími moduly.
+432|Jazyk musí změnit systémový pomocník.
+433|Použití vašich nastavení
+434|Příprava šifrování disku
+435|Dokončování
+436|MAN Setup musí dokončit systémový pomocník.
+437|MAN Setup už byl na tomto počítači dokončen.
+438|Neznámá barva zvýraznění.
+439|Zvolená tapeta není k dispozici.
+440|Tento systém nelze zašifrovat.
+441|Chybí instalační klíč, takže šifrování nemůže pokračovat na pozadí.
+442|Systém není nainstalován na Btrfs, takže snímky nejsou k dispozici.
+443|Obnova snímku čeká na restart. Nejprve ji dokončete restartem počítače.
+444|Neplatné ID snímku.
+445|Kontrola aktualizace
+446|Vytváření snímku
+447|Příprava oblasti pro aktualizaci
+448|Rozbalování nového systému
+449|Přenos vašich účtů a nastavení
+450|Příprava restartu
+451|Rozbaleno
+452|Účty
+453|Odstraňování softwaru pouze pro instalátor
+454|Sestavení zaváděcího obrazu aktualizace
+455|Přidání jednorázové položky spuštění
+456|Aktualizace je pravá
+457|Snímek byl vytvořen
+458|Přeskočeno
+459|Oblast pro aktualizaci je připravena
+460|Příprava nového systému
+461|Soubor aktualizace je poškozený (kontrolní součet nesouhlasí). Stáhněte ho znovu.
+462|Soubor aktualizace se nepodařilo přečíst celý.
+463|Aktualizace neobsahuje jádro.
+464|Aktualizace musí instalovat systémový pomocník.
+465|Zvolená instalace nebyla nalezena.
+466|Aktualizovat lze jen běžící instalaci MAN.
+467|Toto není soubor aktualizace MAN (chybí manifest).
+468|Aktualizace není podepsaná, proto jí nelze důvěřovat.
+469|Podpis aktualizace je poškozený.
+470|Aktualizace není podepsaná MAN. Mohla být upravena nebo pochází z nedůvěryhodného zdroje.
+471|Manifest aktualizace je neplatný.
+472|Heslo není správné, nebo šifrovaný oddíl nelze otevřít.
+473|Modrá
+474|Modrozelená
+475|Zelená
+476|Žlutá
+477|Oranžová
+478|Červená
+479|Růžová
+480|Fialová
+481|Břidlicová
+482|Instalátor systému
+483|Nainstalovat MAN do tohoto počítače
+484|Obnova systému
+485|Vytváření a obnovování snímků systému
+486|Instalátor aktualizací systému
+487|Instalace souboru aktualizace systému MAN
+488|Nabídne instalaci MAN při spuštění živé relace
+489|Upozornění na aktualizaci MAN
+490|Jednou po přihlášení oznámí, že byl MAN aktualizován
+491|Nastavte si svůj nový počítač s MAN
+492|Nastavení MAN při prvním spuštění
+314|Je k dispozici MAN {version}
+315|Otevřete Nastavení a stáhněte a nainstalujte aktualizaci.
+316|Otevřít aktualizace
+493|Aktualizace MAN
+494|Dá vám vědět, když vyjde nová verze MAN
