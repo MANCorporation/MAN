@@ -228,8 +228,8 @@ fn notify() {
     if app.register(gio::Cancellable::NONE).is_err() {
         return;
     }
-    let n = gio::Notification::new(&trf("MAN {version} Is Available", &[("version", &r.version)]));
-    n.set_body(Some(tr("Open Settings to download and install the update.")));
+    let n = gio::Notification::new(&trf("MAN {version} Released!", &[("version", &r.version)]));
+    n.set_body(Some(tr("You can update to it.")));
     n.set_icon(&gio::ThemedIcon::new("com.man.Updater"));
     n.set_default_action("app.open-updates");
     n.add_button(tr("Open Updates"), "app.open-updates");
