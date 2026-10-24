@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "இந்தக் கோப்பு இங்கே நிறுவக்கூடிய பயன்பாடு அல்ல (.deb, .flatpak, .flatpakref அல்லது AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "இந்தப் பயன்பாடு {arch} கணினிகளுக்காக உருவாக்கப்பட்டது; இந்தக் கணினியில் (x86-64) இயங்காது."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "கோப்பைப் படிக்க முடியவில்லை. அது சேதமடைந்திருக்கலாம்."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "இது AppImage அல்ல."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "அறிமுகம்"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "உரிமம்"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "இலக்குத் தேர்வு"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "நிறுவல் வகை"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "நிறுவல்"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "சுருக்கம்"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "தொடர்(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} நிறுவிக்கு வரவேற்கிறோம்"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "மென்பொருள் உரிம ஒப்பந்தம்"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "உரிமத்தை ஏற்கிறீர்களா?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "நிறுவலைத் தொடர, மென்பொருள் உரிம ஒப்பந்தத்தின் விதிமுறைகளை நீங்கள் ஏற்க வேண்டும்."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "உரிமத்தைப் படி(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "ஏற்கிறேன்(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "இலக்கைத் தேர்ந்தெடுக்கவும்"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "நிலையான நிறுவல்"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "நிறுவு(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "டெபியன் தொகுப்பு (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak பயன்பாடு"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} இலிருந்து Flatpak பயன்பாடு"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "இந்த மென்பொருளை நிறுவத் தேவையான படிகளில் உங்களுக்கு வழிகாட்டப்படும்."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "பதிப்பு"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "வெளியீட்டாளர்"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "வகை"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "அளவு"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "இணையதளம்"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "கோப்பு"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "இந்தப் பயன்பாடு ஏற்கனவே நிறுவப்பட்டுள்ளது. மீண்டும் நிறுவினால் அது மாற்றப்படும்."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb தொகுப்புகளின் பயன்பாடுகள் கணினியின் ஒரு பகுதியாகின்றன. MAN புதுப்பிக்கப்படும்போது அவை நீக்கப்படும், மீண்டும் நிறுவ வேண்டும். Flatpak பயன்பாடுகளும் AppImage-களும் வைக்கப்படும்."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "நம்பகமான மூலங்களிலிருந்து மட்டும் பயன்பாடுகளை நிறுவவும்."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} ஐ எங்கே நிறுவ விரும்புகிறீர்கள்?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "உங்கள் கணக்கு மட்டுமே இந்தப் பயன்பாட்டைப் பயன்படுத்த முடியும்."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "நிர்வாகி உரிமைகள் தேவை."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "எனக்கு மட்டும்"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "இந்தக் கணினியின் அனைத்துப் பயனர்களுக்கும்"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "இது உங்கள் கணினியில் {size} இடத்தை எடுக்கும்."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "பயன்பாடு {source} இலிருந்து பதிவிறக்கப்படும்."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "பயன்பாடு இந்தக் கணினியின் அனைத்துப் பயனர்களுக்கும் நிறுவப்படும்."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "பயன்பாடு உங்களுக்கு மட்டும் நிறுவப்படும்."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage {folder} க்கு நகர்த்தப்பட்டு உங்கள் பயன்பாடுகளில் சேர்க்கப்படும்."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} ஐ நிறுவ நிறுவு என்பதைக் கிளிக் செய்யவும்."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "பயன்பாட்டுக்கு வேறு என்ன தேவை என்று சரிபார்க்கிறது…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "அதற்குத் தேவையான தொகுப்புகளையும் நிறுவும்: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "பயன்பாட்டுக்குத் தேவையான சில தொகுப்புகள் இன்னும் கிடைக்கவில்லை. நிறுவல் முதலில் புதிய தொகுப்புப் பட்டியல்களைப் பெறும்; அப்போதும் இல்லையெனில் பயன்பாட்டை நிறுவ முடியாது."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} நிறுவப்படுகிறது…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "தயாராகிறது…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "விவரங்கள்"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "தொகுப்பு நிறுவப்படுகிறது…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "பயன்பாடு அதன் கோப்புறைக்கு நகர்த்தப்படுகிறது…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "பயன்பாட்டை நிறுவ முடியவில்லை."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpak மூலம் பயன்பாடு நிறுவப்படுகிறது…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "பதிவு"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "மூடு(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "நிறுவல் வெற்றி பெற்றது"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "பயன்பாடு நிறுவப்பட்டது."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "நிறுவல் தோல்வியடைந்தது"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "திற(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "விவரங்களைக் காட்டு(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "நிறுவல் பதிவு"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "பயன்பாட்டு நிறுவி"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "பின்செல்(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "பயன்பாடு படிக்கப்படுகிறது…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} ஐ நிறுவு"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "பயன்பாடுகள்"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "நிறுவ ஒரு பயன்பாட்டைத் தேர்ந்தெடுக்கவும்"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "கணினி உதவியைத் தொடங்க முடியவில்லை."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "கணினி உதவியுடன் தொடர்புகொள்ள முடியவில்லை."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "கணினி உதவியுடனான இணைப்பு துண்டிக்கப்பட்டது."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "அங்கீகாரம் ரத்துசெய்யப்பட்டது."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "இந்தச் செயலுக்கு நிர்வாகி உரிமைகள் தேவை."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "கணினி உதவி எதிர்பாராமல் நின்றுவிட்டது."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "அடுத்து(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "நிறுவல் வகை"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (வடிவமைக்கப்படும்)"
 msgid "Boot Partition"
 msgstr "துவக்கப் பகிர்வு"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "நிறுவல்"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN-க்கான இடம்"
@@ -530,10 +798,6 @@ msgstr "மீண்டும் நிறுவு(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN காலி இடத்தில் நிறுவப்படும். Windows-உம் அதன் கோப்புகளும் மாறாது."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "நிறுவு(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "நிறுவத் தயார்"
@@ -598,10 +862,6 @@ msgstr "MAN நிறுவப்படுகிறது"
 msgid "Starting…"
 msgstr "தொடங்குகிறது…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "விவரங்கள்"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "நிறுவப்படுகிறது"
@@ -609,10 +869,6 @@ msgstr "நிறுவப்படுகிறது"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "படி {index} / {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "பதிவு"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "வேறு எந்த வட்டும் மாற்றப்ப
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "மதிப்பாய்வு செய்து மீண்டும் முயல்(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "விவரங்களைக் காட்டு(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "நிறுவல் பதிவு"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "ஒருங்கிணைந்த உலக நேரம்"
 msgid "English (US)"
 msgstr "ஆங்கிலம் (அமெரிக்கா)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} வெளியானது!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "நீங்கள் இதற்குப் புதுப்பிக்கலாம்."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "புதுப்பிப்புகளைத் திற"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} இலிருந்து புதுப்பிப
 msgid "{name} {version} is installed"
 msgstr "{name} {version} நிறுவப்பட்டுள்ளது"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "பதிப்பு"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "வெளியீடு"
@@ -1339,10 +1583,6 @@ msgstr "சரிபார்க்கப்பட்டது, “{signer}” �
 #: updater.rs:120
 msgid "What's New"
 msgstr "புதியது என்ன"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "தொடர்(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "புதுப்பிப்புகள் இயங்கும், 
 #: updater.rs:240
 msgid "Install Location"
 msgstr "நிறுவல் இருப்பிடம்"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "சுருக்கம்"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN புதுப்பிப்பைத் திற"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN புதுப்பிப்புகள்"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "புதிய தொகுப்புப் பட்டியல்கள் பெறப்படுகின்றன…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "பயன்பாடு நகலெடுக்கப்படுகிறது"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "பயன்பாடு மெனுவில் சேர்க்கப்படுகிறது"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "கோப்பு கிடைக்கவில்லை."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "தொகுப்பை நிறுவ முடியவில்லை."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "பயன்பாட்டின் மெனு உள்ளீடு செல்லாது."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "உங்கள் கணக்குகளையும் அமைப�
 msgid "Preparing the restart"
 msgstr "மறுதொடக்கத்துக்குத் தயாராகிறது"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "பிரிக்கப்பட்டது"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "கணக்குகள்"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "நிறுவியின் மென்பொருளை மட்டும் நீக்குகிறது"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "புதுப்பிப்புத் துவக்கப் படிமத்தை உருவாக்குகிறது"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "ஒருமுறை துவக்கப் பதிவைச் சேர்க்கிறது"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "புதுப்பிப்பு உண்மையானது"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "ஸ்னாப்ஷாட் உருவாக்கப்பட்டது"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "தவிர்க்கப்பட்டது"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "புதுப்பிப்புப் பகுதி தயார்"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "புதிய அமைப்பைத் தயாரிக்கிறது"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "புதுப்பிப்புக் கோப்பு சேதமடைந்துள்ளது (சரிபார்ப்புத் தொகை பொருந்தவில்லை). மீண்டும் பதிவிறக்கவும்."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "புதுப்பிப்புக் கோப்பை முழுமையாகப் படிக்க முடியவில்லை."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "புதுப்பிப்பில் கர்னல் இல்லை."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "புதுப்பிப்புகளைக் கணினி உதவியே நிறுவ வேண்டும்."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "தேர்ந்தெடுத்த நிறுவல் கிடைக்கவில்லை."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "இயங்கும் MAN நிறுவலை மட்டுமே புதுப்பிக்க முடியும்."
 
@@ -1947,6 +2207,14 @@ msgstr "ஊதா"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "சாம்பல்"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "தொகுப்பு நிறுவி"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak, AppImage கோப்புகளிலிருந்து பயன்பாடுகளை நிறுவவும்"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

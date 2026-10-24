@@ -17,15 +17,11 @@ impl Failure {
     }
 }
 
-fn argv(privileged: bool) -> Vec<String> {
-    // MAN_BACKEND lets developers run an uninstalled backend; MAN_NO_PKEXEC
-    // is for running the GUI itself as root in test VMs.
-    let backend = std::env::var("MAN_BACKEND").unwrap_or_else(|_| BACKEND_PATH.to_string());
-    if !privileged || std::env::var_os("MAN_NO_PKEXEC").is_some() {
-        vec![backend, "request".into()]
-    } else {
-        vec!["pkexec".into(), backend, "request".into()]
-    }
+fn argv(program: String, args: &[&str], privileged: bool) -> Vec<String> {
+    // MAN_NO_PKEXEC is for running the GUI itself as root in test VMs.
+    let mut v = if !privileged || std::env::var_os("MAN_NO_PKEXEC").is_some() { vec![program] } else { vec!["pkexec".into(), program] };
+    v.extend(args.iter().map(|a| a.to_string()));
+    v
 }
 
 /// Send one request; `on_event` sees every event as it arrives. Resolves to
@@ -39,13 +35,23 @@ pub async fn call_unprivileged(req: &Request, on_event: impl FnMut(&Event)) -> R
     call_as(req, false, on_event).await
 }
 
-async fn call_as(req: &Request, privileged: bool, mut on_event: impl FnMut(&Event)) -> Result<String, Failure> {
-    let args = argv(privileged);
+async fn call_as(req: &Request, privileged: bool, on_event: impl FnMut(&Event)) -> Result<String, Failure> {
+    // MAN_BACKEND lets developers run an uninstalled backend.
+    let backend = std::env::var("MAN_BACKEND").unwrap_or_else(|_| BACKEND_PATH.to_string());
+    call_program(argv(backend, &["request"], privileged), serde_json::to_vec(req).expect("request serializes"), on_event).await
+}
+
+/// Run another root helper of MAN through pkexec: `input` (one JSON request)
+/// on stdin, events on stdout, as for the system helper.
+pub async fn call_helper(program: &str, input: Vec<u8>, on_event: impl FnMut(&Event)) -> Result<String, Failure> {
+    call_program(argv(program.to_string(), &[], true), input, on_event).await
+}
+
+async fn call_program(args: Vec<String>, input: Vec<u8>, mut on_event: impl FnMut(&Event)) -> Result<String, Failure> {
     let os: Vec<&OsStr> = args.iter().map(OsStr::new).collect();
     let flags = gio::SubprocessFlags::STDIN_PIPE | gio::SubprocessFlags::STDOUT_PIPE | gio::SubprocessFlags::STDERR_SILENCE;
     let proc = gio::Subprocess::newv(&os, flags).map_err(|e| Failure::new(tr("Could not start the system helper."), e.to_string()))?;
 
-    let input = serde_json::to_vec(req).expect("request serializes");
     let stdin = proc.stdin_pipe().expect("stdin pipe");
     if let Err((_, e)) = stdin.write_all_future(input, glib::Priority::DEFAULT).await {
         return Err(Failure::new(tr("Could not talk to the system helper."), e.to_string()));

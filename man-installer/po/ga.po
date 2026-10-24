@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Ní aip é an comhad seo is féidir a shuiteáil anseo (.deb, .flatpak, .flatpakref nó AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Rinneadh an aip seo do ríomhairí {arch} agus ní oibríonn sí ar an gceann seo (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Níorbh fhéidir an comhad a léamh. D'fhéadfadh sé a bheith damáistithe."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Ní AppImage é seo."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Réamhrá"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Ceadúnas"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Ceann Scríbe a Roghnú"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Cineál suiteála"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Suiteáil"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Achoimre"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Lean ar aghaidh"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Fáilte go suiteálaí {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Comhaontú Ceadúnais Bogearraí"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "An Aontaíonn Tú leis an gCeadúnas?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Chun leanúint ar aghaidh leis an tsuiteáil, caithfidh tú aontú le téarmaí an chomhaontaithe ceadúnais bogearraí."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Léigh an Ceadúnas"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Aontaím"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Roghnaigh Ceann Scríbe"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Suiteáil Chaighdeánach"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Suiteáil"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Pacáiste Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Aip Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Aip Flatpak ó {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Treorófar thú trí na céimeanna atá ag teastáil chun na bogearraí seo a shuiteáil."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Leagan"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Foilsitheoir"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Cineál"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Méid"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Suíomh Gréasáin"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Comhad"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Tá an aip seo suiteáilte cheana. Má shuiteálann tú arís í, cuirfear ina háit í."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Éiríonn aipeanna ó phacáistí .deb mar chuid den chóras. Nuair a nuashonraítear MAN, baintear iad agus caithfear iad a shuiteáil arís. Coinnítear aipeanna Flatpak agus AppImages."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Ná suiteáil aipeanna ach ó fhoinsí a bhfuil muinín agat astu."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Cá háit ar mhaith leat {name} a shuiteáil?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Ní féidir ach le do chuntas an aip a úsáid."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Tá cearta riarthóra ag teastáil."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Dom Féin Amháin"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Do Gach Úsáideoir ar an Ríomhaire Seo"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Tógfaidh sé seo {size} spáis ar do ríomhaire."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Íoslódáiltear an aip ó {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Suiteáiltear an aip do gach úsáideoir ar an ríomhaire seo."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Suiteáiltear an aip duit féin amháin."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "Bogtar an AppImage go {folder} agus cuirtear le d'aipeanna é."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Cliceáil Suiteáil chun {name} a shuiteáil."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Ag seiceáil cad eile atá ag teastáil ón aip…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Suiteálann sé na pacáistí atá ag teastáil uaidh freisin: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Níl roinnt pacáistí atá ag teastáil ón aip ar fáil fós. Faigheann an tsuiteáil na liostaí pacáistí is nuaí ar dtús; má tá siad fós ar iarraidh, ní féidir an aip a shuiteáil."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Ag suiteáil {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Ag ullmhú…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Sonraí"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Ag suiteáil an phacáiste…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Ag bogadh na haipe chuig a fillteán…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Níorbh fhéidir an aip a shuiteáil."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Ag suiteáil na haipe le Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Logchomhad"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Dún"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "D'Éirigh leis an tSuiteáil"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Suiteáladh an aip."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Theip ar an tSuiteáil"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Oscail"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Taispeáin sonraí"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Logchomhad suiteála"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Suiteálaí Aipeanna"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Siar"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Ag léamh na haipe…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Suiteáil {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Aipeanna"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Roghnaigh Aip le Suiteáil"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Níorbh fhéidir cúntóir an chórais a thosú."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Níorbh fhéidir cumarsáid a dhéanamh le cúntóir an chórais."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Cailleadh an ceangal le cúntóir an chórais."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Cealaíodh an t-údarú."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Teastaíonn cearta riarthóra don ghníomh seo."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Stop cúntóir an chórais gan choinne."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Ar aghaidh"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Cineál suiteála"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (formáidfear í)"
 msgid "Boot Partition"
 msgstr "Deighilt tosaithe"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Suiteáil"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Spás do MAN"
@@ -530,10 +798,6 @@ msgstr "_Athshuiteáil"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "Suiteáiltear MAN sa spás saor. Ní athraíonn Windows ná a chuid comhad."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Suiteáil"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Réidh le suiteáil"
@@ -598,10 +862,6 @@ msgstr "MAN á shuiteáil"
 msgid "Starting…"
 msgstr "Á thosú…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Sonraí"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Á shuiteáil"
@@ -609,10 +869,6 @@ msgstr "Á shuiteáil"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Céim {index} as {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Logchomhad"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Níor athraíodh aon diosca eile, agus scaoil an suiteálaí an sprioc-d
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Athbhreithnigh agus triail arís"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Taispeáin sonraí"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Logchomhad suiteála"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Am Uilíoch Comhordaithe"
 msgid "English (US)"
 msgstr "Béarla (SAM)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Tá MAN {version} eisithe!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Is féidir leat nuashonrú chuige."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Oscail Nuashonruithe"
 
@@ -1312,10 +1560,6 @@ msgstr "Nuashonrú ó {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Tá {name} {version} suiteáilte"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Leagan"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Eisithe"
@@ -1339,10 +1583,6 @@ msgstr "Fíoraithe, sínithe ag “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Cad atá nua"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Lean ar aghaidh"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Suiteáiltear nuashonruithe ó chóras MAN suiteáilte atá ag rith, ní
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Suíomh na suiteála"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Achoimre"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Oscail nuashonrú MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Nuashonruithe MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Ag fáil na liostaí pacáistí is nuaí…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Ag cóipeáil na haipe"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Ag cur na haipe leis an roghchlár"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Níor aimsíodh an comhad."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Níorbh fhéidir an pacáiste a shuiteáil."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Níl iontráil roghchláir na haipe bailí."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Do chuntais agus do shocruithe á n-aistriú"
 msgid "Preparing the restart"
 msgstr "An t-atosú á ullmhú"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Díphacáilte"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Cuntais"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Bogearraí an tsuiteálaí amháin á mbaint"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Íomhá tosaithe an nuashonraithe á tógáil"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "An iontráil tosaithe aon uaire á cur leis"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Tá an nuashonrú barántúil"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Cruthaíodh an léargas"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Scipeáilte"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Limistéar an nuashonraithe réidh"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "An córas nua á ullmhú"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Tá comhad an nuashonraithe damáistithe (ní mheaitseálann an tsuim seiceála). Íoslódáil arís é."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Níorbh fhéidir comhad an nuashonraithe a léamh go hiomlán."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Níl eithne sa nuashonrú."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Caithfidh cúntóir an chórais nuashonruithe a shuiteáil."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Níor aimsíodh an tsuiteáil roghnaithe."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Ní féidir ach an tsuiteáil MAN atá ag rith a nuashonrú."
 
@@ -1947,6 +2207,14 @@ msgstr "Corcra"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Sclátaí"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Suiteálaí Pacáistí"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Suiteáil aipeanna ó chomhaid .deb, Flatpak agus AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

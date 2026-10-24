@@ -1,3 +1,4 @@
+pub mod appinstaller;
 pub mod backend;
 pub mod i18n;
 pub mod installer;

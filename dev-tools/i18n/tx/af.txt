@@ -1,495 +1,562 @@
-0|Die stelselhelper kon nie begin word nie.
-1|Kan nie met die stelselhelper kommunikeer nie.
-2|Kontak met die stelselhelper is verloor.
-3|Magtiging is gekanselleer.
-4|Hierdie aksie vereis administrateursregte.
-5|Die stelselhelper het onverwags gestop.
-6|Geen EFI-stelselpartisie nie
-7|Slegs {free} vry, MAN benodig {need}. Maak meer plek met DUHACH! in Windows.
-8|Geen vrye spasie nie. Begin DUHACH! in Windows om plek vir MAN te maak.
-9|MAN loop van hierdie skyf af
-10|In gebruik: ’n partisie is gekoppel
-11|Te klein, MAN benodig {need}
-12|Installeer MAN
-13|MAN word geïnstalleer. Wag asseblief tot dit klaar is.
-14|Taal
-15|_Herbegin in hierdie taal
-16|Die lewendige sessie herbegin in die gekose taal, en MAN word daarin geïnstalleer.
-17|Welkom by MAN
-18|’n Vinnige, oop en volledig aanpasbare GNOME-stelsel.\nInstalleer dit op hierdie rekenaar, of hou aan om die lewendige sessie te verken.
-19|_Installeer MAN…
-20|_Hou aan om MAN te probeer
-21|Soek skywe…
-22|Welkom
-23|Hierdie rekenaar is in ou BIOS-modus begin. MAN kan net op UEFI-rekenaars geïnstalleer word: herbegin en kies die UEFI-opstartopsie.
-24|Die stelselhelper het geen skyfinligting teruggegee nie.
-25|  ·  EFI
-26|_Volgende
-27|Installasietipe
-28|Vee skyf uit en installeer MAN
-29|Alles op die gekose skyf word uitgevee, Windows ingesluit.
-30|Aanbeveel. Alles op die gekose skyf word uitgevee.
-31|Installeer langs Windows
-32|Aanbeveel. MAN gebruik die vrye spasie langs Windows; Windows en sy lêers bly. Kies die stelsel elke keer as jy begin.
-33|Herinstalleer MAN
-34|Vervang die stelsel maar hou persoonlike lêers in /home. Die huidige stelsel word as ’n momentopname gestoor.
-35|Pasgemaakte partisies
-36|Vir kundiges: kies self partisies, of skep hulle met Skywe.
-37|Skyf
-38|Kies die skyf wat uitgevee word. Skywe wat nie gebruik kan word nie, word met die rede gewys.
-39|Geen skywe gevind nie
-40|Vrye spasie langs Windows
-41|Windows se partisies word nie aangeraak nie. MAN deel die EFI-stelselpartisie en voeg Windows by sy opstartkieslys.
-42|{size} vry
-43|geen vrye spasie
-44|{model} (Windows)
-45|Installasie om te vervang
-46|geen tuisvouers
-47|tuisvouers: {list}
-48|momentopnames: {n}
-49|MAN op {model}
-50|Wagfrase vir {device}
-51|Ontsluit
-52|Die installasie kon nie ondersoek word nie.
-53|Partisies
-54|Die stelselpartisie word met Btrfs geformateer en bevat @system, @home en @snapshots. Partisies op die skyf waarvan MAN loop, word nie gelys nie.
-55|Maak Skywe oop om partisies te skep of hul grootte te verander
-56|Verfris die partisielys
-57|Kies ’n partisie
-58|EFI-stelselpartisie
-59|Formateer EFI-stelselpartisie
-60|Laat af om ander stelsels se opstartlaaiers te hou
-61|Stelselpartisie (geformateer as Btrfs)
-62|Opstartpartisie (nodig met enkripsie)
-63|Partisielys verfris
-64|Sekuriteit
-65|Enkripteer die stelsel
-66|Beskerm jou data as die rekenaar verlore raak of gesteel word. ’n Wagfrase word by elke begin gevra.
-67|Wagfrase
-68|Bevestig wagfrase
-69|Hou hierdie wagfrase veilig
-70|As dit verlore raak, kan niemand die data herstel nie. Die kern en opstartlêers bly op ’n klein ongeënkripteerde opstartpartisie.
-71|Die wagfrase moet minstens 8 karakters hê.
-72|Die wagfrases stem nie ooreen nie.
-73|Kies ’n skyf.
-74|Kies die skyf met Windows.
-75|Kies die installasie om te vervang.
-76|Ontsluit eers die geënkripteerde installasie.
-77|Hierdie partisie bevat geen MAN-stelsel nie.
-78|Kies ’n EFI-stelselpartisie.
-79|Kies die stelselpartisie.
-80|Die EFI- en stelselpartisies moet verskil.
-81|Enkripsie benodig ’n aparte opstartpartisie.
-82|Die stelselpartisie moet minstens {size} wees.
-83|Die EFI-partisie is nie FAT-geformateer nie; skakel formatering aan.
-84|Die stelselpartisie is gekoppel; ontkoppel dit eers in Skywe.
-85|Waar moet MAN geïnstalleer word?
-86|Tyd en sleutelbord
-87|Tydsone
-88|Sleutelborduitleg
-89|Toets jou sleutelbord
-90|Tik hier om seker te maak jou sleutels gee die regte karakters.
-91|Tik hier
-92|Tydsone en sleutelbord
-93|Geen skyf gekies nie
-94|Geen stelselpartisie gekies nie
-95|Die stelselpartisie het verdwyn
-96|Geen installasie gekies nie
-97|Die skyf het verdwyn
-98|Hersien
-99|Bestemming
-100|Vee skyf uit en installeer
-101|Pasgemaakte partisies
-102|Herinstalleer, hou /home
-103|Langs Windows
-104| (sal geformateer word)
-105| (behou)
-106|Stelselpartisie
-107|{partition} (sal geformateer word)
-108|Opstartpartisie
-109|Installasie
-110|Spasie vir MAN
-111|{free} vrye spasie (’n opstartpartisie en die stelselpartisie word geskep)
-112|Windows
-113|Onveranderd. Dit verskyn in MAN se opstartkieslys; die EFI-stelselpartisie word gedeel.
-114|Enkripsie
-115|Aan (LUKS2)
-116|Af
-117|Lêerstelsel
-118|Btrfs: @system vir MAN, @home vir jou lêers, @snapshots vir herstelpunte. Almal deel die vrye spasie.
-119|Stelsel
-120|Jou rekening
-121|Word in MAN Setup geskep wanneer die rekenaar die eerste keer begin, saam met die rekenaarnaam, voorkoms en privaatheidsinstellings.
-122|Sleutelbord
-123|Alle data op {model} ({path}) sal uitgevee word.
-124|_Vee uit en installeer
-125|Die gekose partisies sal geformateer word. Ander partisies verander nie.
-126|_Formateer en installeer
-127|Die huidige stelsel word vervang. Jou lêers in /home bly, en die ou stelsel word as ’n momentopname gestoor.
-128|_Herinstalleer
-129|MAN word in die vrye spasie geïnstalleer. Windows en sy lêers verander nie.
-130|_Installeer
-131|Gereed om te installeer
-132|Vee {model} uit?
-133|Elke lêer en partisie op {path} ({size}) sal permanent geskrap word. Dit kan nie ontdoen word nie.
-134|Vee uit en installeer
-135|Formateer die gekose partisies?
-136|Alle data op die gekose partisies sal permanent geskrap word. Ander partisies verander nie.
-137|Formateer en installeer
-138|Installeer MAN langs Windows?
-139|MAN word in die {free} vrye spasie op {model} ({path}) geïnstalleer. Windows en sy lêers verander nie.
-140|Installeer
-141|Herinstalleer MAN?
-142|Die geïnstalleerde stelsel sal met ’n vars kopie vervang word. Persoonlike lêers in /home bly, en die ou stelsel bly as ’n momentopname beskikbaar.
-143|Herinstalleer
-144|_Kanselleer
-145|MAN word geïnstalleer
-146|Begin…
-147|Besonderhede
-148|Installeer
-149|Stap {index} van {n}  ·  {title}
-150|Log
-151|MAN is geïnstalleer
-152|Herbegin die rekenaar om MAN te begin gebruik. ’n Kieslys by elke begin laat jou MAN of Windows kies; die tydelike installeerderpartisie word by die eerste begin deur MAN verwyder.
-153|Herbegin die rekenaar om MAN te begin gebruik. Jy kan die installasiemedium verwyder; as dit gekoppel bly, begin MAN steeds van die nuwe skyf.
-154|_Herbegin nou
-155|Klaar
-156|Installasie het misluk
-157|Geen ander skyf is verander nie, en die installeerder het die teikenskyf vrygestel. Jy kan die plan hersien en weer probeer.
-158|_Hersien en probeer weer
-159|_Wys besonderhede
-160|Installasielog
-161|Soek tale
-162|Soek lande
-163|Die stelselskyf is nie gevind nie.
-164|Enkripsie benodig die Btrfs-uitleg wat die MAN-installeerder skep.
-165|Hierdie installasie het geen aparte opstartpartisie nie, wat enkripsie benodig. Herinstalleer MAN met “Vee skyf uit” om enkripsie te gebruik.
-166|MAN Setup
-167|Waar is jy?
-168|Jou land of streek bepaal die formaat van datum, tyd en getalle.
-169|Land
-170|GNU General Public License, weergawe 2
-171|Die Linux-kern en baie stelselgereedskap
-172|GNU General Public License, weergawe 3
-173|Baie GNU- en GNOME-programme
-174|GNU Lesser General Public License, weergawe 2.1
-175|GTK, GLib en baie biblioteke
-176|GNU Lesser General Public License, weergawe 3
-177|Biblioteke
-178|Mozilla Public License 2.0
-179|Programme en biblioteke van Mozilla en ander
-180|Apache-lisensie 2.0
-181|Biblioteke en gereedskap
-182|Lisensieooreenkoms
-183|Lees en aanvaar asseblief die voorwaardes waaronder MAN verskaf word.
-184|Lisensies
-185|Die lisensieteks is nie beskikbaar nie ({path}).
-186|Ek het die lisensievoorwaardes gelees en aanvaar dit
-187|Bedraad
-188|Nie gekoppel nie
-189|Koppel aan die internet
-190|Met ’n verbinding kan MAN die tyd stel en jou sagteware bygewerk hou. Jy kan dit ook later doen.
-191|Gaan die verbinding na…
-192|Wi-Fi-netwerke
-193|Soek weer
-194|_Slaan oor
-195|Jy kan later in Instellings koppel.
-196|Gekoppel
-197|Nie gekoppel nie
-198|Geen netwerke gevind nie
-199|Internet
-200|Gekoppel aan “{ssid}”
-201|Kon nie aan “{ssid}” koppel nie
-202|Koppel aan “{ssid}”
-203|Voer die netwerkwagwoord in.
-204|_Koppel
-205|Skep jou rekening
-206|Jy sal die administrateur van hierdie rekenaar wees, met volle root-toegang deur sudo.
-207|Volle naam
-208|Gebruikersnaam
-209|Wagwoord
-210|Bevestig wagwoord
-211|Meld outomaties aan
-212|Slaan die aanmeldskerm oor wanneer die rekenaar begin
-213|Bestaande tuisvouers
-214|Gebruik dieselfde gebruikersnaam om aan te hou om ’n vouer van ’n vorige installasie te gebruik.
-215|Gebruik
-216|Gevorderd
-217|Rekenaarnaam
-218|Stel ’n root-wagwoord
-219|Laat direkte aanmelding as root toe. Gebruik andersins sudo met jou eie wagwoord.
-220|Root-wagwoord
-221|Bevestig root-wagwoord
-222|Voer jou naam in.
-223|Kies ’n gebruikersnaam.
-224|Hierdie gebruikersnaam word reeds deur die stelsel gebruik.
-225|Hierdie gebruikersnaam is deur die stelsel gereserveer.
-226|Gebruikersname gebruik kleinletters, syfers, - en _, en begin met ’n letter.
-227|Kies ’n wagwoord.
-228|Die wagwoorde stem nie ooreen nie.
-229|Die rekenaarnaam mag letters, syfers en koppeltekens bevat.
-230|Voer die root-wagwoord twee keer in.
-231|Wenk: ’n wagwoord met 8 of meer karakters is baie veiliger.
-232|Rekening
-233|Donker
-234|Lig
-235|Maak dit joune
-236|Kies ’n styl, ’n aksentkleur en ’n agtergrond. Jy sien elke verandering dadelik.
-237|Styl
-238|Aksentkleur
-239|Agtergrond
-240|Pas aan
-241|Privaatheid
-242|Kies watter funksies inligting oor jou mag gebruik. Jy kan dit enige tyd in Instellings verander.
-243|Liggingdienste
-244|Laat programme soos Kaarte en Weer jou benaderde ligging vind met nabygeleë Wi-Fi-netwerke.
-245|Outomatiese tydsone
-246|Gebruik jou ligging om die tydsone reg te hou wanneer jy reis.
-247|_Voltooi opstelling
-248|Jou skyf is geënkripteer
-249|Jou data is beskerm. Die wagfrase word elke keer gevra as die rekenaar begin.
-250|Skyfenkripsie
-251|Enkripsie beskerm jou data as die rekenaar verlore raak of gesteel word.
-252|Nie beskikbaar op hierdie installasie nie
-253|Enkripsie beskerm jou lêers as die rekenaar verlore raak of gesteel word. Sonder die wagfrase kan niemand die skyf lees nie.
-254|Enkripteer die skyf
-255|Die wagfrase word elke keer gevra as die rekenaar begin.
-256|Enkripsie begin by die volgende herbegin
-257|Jou skyf word dan in die agtergrond geënkripteer terwyl jy die rekenaar gebruik. As die wagfrase verlore raak, kan niemand die data herstel nie.
-258|MAN word voorberei
-259|Maak alles gereed…
-260|_Herbegin
-261|_Terug
-262|Berei voor
-263|Opstellinglog
-264|Alles klaar!
-265|Iets het verkeerd geloop
-266|Daagliks
-267|Voor bywerking
-268|Voor herstel
-269|Voor herinstallasie
-270|Handmatig
-271|Nog geen momentopnames nie
-272|Skep een voordat jy groot veranderinge aan die stelsel maak.
-273|Herstel…
-274|Skrap momentopname
-275|{free} vry van {size}. Stelsel, tuisvouers en momentopnames deel hierdie spasie; momentopnames gebruik net spasie vir wat verander het sedert hulle geneem is.
-276|_OK
-277|Skep momentopname
-278|Stoor die huidige toestand van die stelsel. Jou persoonlike lêers in die tuisvouer is nie ingesluit nie.
-279|Beskrywing, byvoorbeeld “Voor die installering van drywers”
-280|_Skep
-281|Handmatige momentopname
-282|Skrap momentopname?
-283|“{description}” van {date} sal permanent geskrap word.
-284|_Skrap
-285|Herstel hierdie momentopname?
-286|Die stelsel sal ná ’n herbegin terugkeer na “{description}” van {date}. Jou persoonlike lêers verander nie.\n\nDie huidige stelsel word eers as ’n momentopname gestoor, so dit kan ontdoen word.
-287|_Herstel
-288|Herbegin om die herstel te voltooi
-289|Herbegin _later
-290|Herbegin _nou
-291|Momentopnames
-292|Herstelpunte
-293|Momentopnames stoor die toestand van die bedryfstelsel. Om een te herstel, bring die stelsel terug na daardie oomblik, wat help ná ’n slegte bywerking of konfigurasieverandering. Jou persoonlike lêers word nooit aangeraak nie.
-294|Outomatiese momentopnames
-295|Daaglikse momentopnames
-296|Een keer per dag terwyl die rekenaar aan is
-297|Daaglikse momentopnames om te hou
-298|Voor sagtewarebywerkings
-299|Outomaties geneem wanneer pakkette geïnstalleer, opgegradeer of verwyder word
-300|Bywerkingsmomentopnames om te hou
-301|Berging
-302|Skyfspasie
-303|As MAN nie begin nie
-304|Kies “Restore a MAN snapshot” in die opstartkieslys om ’n werkende stelsel terug te kry.
-305|Momentopnames is nie beskikbaar nie
-306|Momentopnames werk op MAN wat met die Btrfs-uitleg van die MAN-installeerder geïnstalleer is. Hierdie stelsel (byvoorbeeld ’n lewendige sessie) gebruik dit nie.
-307|’n Herstel wag: herbegin die rekenaar om dit te voltooi
-308|Herbegin nou
-309|Wag asseblief tot die huidige bewerking klaar is.
-310|Soek
-311|Kopieer na knipbord
-312|Gekoördineerde Universele Tyd
-313|Engels (VSA)
-317|Gaan die bywerking na
-318|Maak seker die bywerking is eg en volledig…
-319|MAN-bywerking
-320|Hierdie bywerking kan nie geïnstalleer word nie
-321|Die bywerking kon nie gelees word nie.
-322|Bywerking vanaf {name} {version}
-323|{name} {version} is geïnstalleer
-324|Weergawe
-325|Vrygestel
-326|Aflaaigrootte
-327|Spasie benodig
-328|Egtheid
-329|Geverifieer, onderteken deur “{signer}”
-330|Wat’s nuut
-331|_Gaan voort
-332|Hierdie bywerking is nie nuwer as die geïnstalleerde {name} {version} nie.
-333|Bywerking
-334|Lees asseblief die lisensievoorwaardes van hierdie bywerking.
-335|Ek aanvaar die lisensievoorwaardes
-336|Waar moet die bywerking geïnstalleer word?
-337|Die stelsel word vervang; lêers in jou tuisvouer word nie aangeraak nie.
-338|Kies ’n installasie.
-339|loop nou
-340|{name} {version} op hierdie rekenaar
-341|{name} op {model}
-342|Geen MAN-installasie gevind nie
-343|Bywerkings word vanaf ’n lopende, geïnstalleerde MAN-stelsel geïnstalleer, nie vanaf die lewendige sessie nie.
-344|Installasieligging
-345|Opsomming
-346|Behou
-347|Jou lêers
-348|Alles in jou tuisvouer
-349|Rekeninge en wagwoorde
-350|Gebruikers, groepe, die rekenaarnaam
-351|Verbindings en instellings
-352|Wi-Fi, tydsone, sleutelbord, voorkoms en momentopnames
-353|Flatpak-programme
-354|Plus enigiets in /usr/local en /opt
-355|Vervang
-356|Sagteware wat met apt geïnstalleer is en ander veranderinge aan stelsellêers word deur die nuwe stelsel vervang.
-357|Die bedryfstelsel
-358|Vervang deur {name} {version}. Die huidige stelsel kan uit ’n momentopname herstel word.
-359|Die rekenaar herbegin om die bywerking te installeer
-360|Ná die voorbereiding herbegin MAN, installeer die bywerking in ’n paar sekondes en herbegin weer.
-361|_Installeer bywerking
-362|Skep eers ’n momentopname?
-363|’n Momentopname stoor die huidige stelsel, sodat jy daarheen kan terugkeer as iets ná die bywerking nie werk nie. Dit word aanbeveel.
-364|_Moenie skep nie
-365|_Skep momentopname
-366|Berei {name} {version} voor
-367|Herbegin om te installeer
-368|Die rekenaar herbegin twee keer. Jou lêers is veilig.
-369|Herbegin outomaties oor {r} sekondes
-370|Herbegin outomaties oor 30 sekondes
-371|Die bywerking word geïnstalleer die volgende keer dat jy herbegin.
-372|Gereed
-373|Die bywerking kon nie voorberei word nie
-374|Niks is op jou stelsel verander nie.
-375|_Probeer weer
-376|Bywerkingslog
-377|Misluk
-378|Jou stelsel is bygewerk
-379|MAN is bygewerk na weergawe {version}.\nVoorheen: MAN {previous}.
-380|_Klaar
-381|Maak ’n MAN-bywerking oop
-382|MAN-bywerkings
-383|Gaan die installasieplan na
-384|Berei die skyf voor
-385|Kopieer MAN na die skyf
-386|Stel die nuwe stelsel op
-387|Installeer die opstartlaaier
-388|Skep die eerste momentopname
-389|Rond af
-390|Verwyder ou partisiehandtekeninge
-391|Skep partisies
-392|Formateer die EFI-stelselpartisie
-393|Enkripteer die stelselpartisie
-394|Formateer die opstartpartisie
-395|Skep die Btrfs-lêerstelsel
-396|Verwyder ou lêerstelselhandtekeninge
-397|Ontsluit die geënkripteerde installasie
-398|Stoor die huidige stelsel as ’n momentopname
-399|Verwyder die vorige stelsel
-400|Skryf die lêerstelseltabel
-401|Stel rekenaarnaam en identiteit
-402|Verwyder die lewendige sessie se rekeninge
-403|Skep jou rekening
-404|Berei MAN Setup voor vir die eerste begin
-405|Stel tydsone en sleutelbord
-406|Verwyder die installeerder uit die nuwe stelsel
-407|Bou die opstartbeeld (initramfs)
-408|Stel GRUB op
-409|Installeer GRUB op die EFI-stelselpartisie
-410|Installeer die rugsteun-opstartlaaier
-411|Skryf die opstartkieslys
-412|Skyf gereed
-413|Skep ’n momentopname van die nuwe stelsel
-414|Voeg die momentopname by die opstartkieslys
-415|Ontkoppel
-416|Die installeerderhelper moet as root loop.
-417|Hierdie rekenaar is nie in UEFI-modus begin nie. MAN vereis UEFI.
-418|Die gebruikersnaam is ongeldig.
-419|’n Wagwoord word vereis.
-420|Die rekenaarnaam is ongeldig.
-421|Onbekende taal.
-422|Die enkripsiewagfrase moet minstens 8 karakters hê.
-423|Die skyf het verander nadat jy die installasie bevestig het. Niks is verander nie; hersien en bevestig asseblief weer.
-424|Kies ’n stelselpartisie.
-425|Die bevestigde skyf bevat nie die gekose stelselpartisie nie.
-426|Die opstartpartisie moet apart van die EFI- en stelselpartisies wees.
-427|Die opstartpartisie moet minstens 512 MB wees.
-428|Geen installasie gekies nie.
-429|Die bevestigde skyf bevat nie die gekose installasie nie.
-430|Die geënkripteerde installasie het geen MAN_BOOT-partisie nie.
-431|Geen kern met ooreenstemmende modules is in /boot gevind nie.
-432|Die taal moet deur die stelselhelper verander word.
-433|Pas jou instellings toe
-434|Berei skyfenkripsie voor
-435|Rond af
-436|MAN Setup moet deur die stelselhelper voltooi word.
-437|MAN Setup is reeds op hierdie rekenaar voltooi.
-438|Onbekende aksentkleur.
-439|Die gekose agtergrond is nie beskikbaar nie.
-440|Hierdie stelsel kan nie geënkripteer word nie.
-441|Die opstellingsleutel ontbreek, dus kan enkripsie nie in die agtergrond voortgaan nie.
-442|Die stelsel is nie op Btrfs geïnstalleer nie, dus is momentopnames nie beskikbaar nie.
-443|’n Momentopname-herstel wag vir ’n herbegin. Herbegin eers die rekenaar om dit te voltooi.
-444|Ongeldige momentopname-ID.
-445|Gaan die bywerking na
-446|Skep ’n momentopname
-447|Berei die bywerkingsarea voor
-448|Pak die nuwe stelsel uit
-449|Skuif jou rekeninge en instellings oor
-450|Berei die herbegin voor
-451|Uitgepak
-452|Rekeninge
-453|Verwyder sagteware wat net die installeerder gebruik
-454|Bou die bywerking se opstartbeeld
-455|Voeg die eenmalige opstartinskrywing by
-456|Die bywerking is eg
-457|Momentopname geskep
-458|Oorgeslaan
-459|Bywerkingsarea gereed
-460|Berei die nuwe stelsel voor
-461|Die bywerkingslêer is beskadig (kontrolesom pas nie). Laai dit weer af.
-462|Die bywerkingslêer kon nie heeltemal gelees word nie.
-463|Die bywerking bevat geen kern nie.
-464|Bywerkings moet deur die stelselhelper geïnstalleer word.
-465|Die gekose installasie is nie gevind nie.
-466|Slegs die lopende MAN-installasie kan bygewerk word.
-467|Dit is nie ’n MAN-bywerkingslêer nie (geen manifes nie).
-468|Die bywerking is nie onderteken nie, dus kan dit nie vertrou word nie.
-469|Die bywerking se handtekening is beskadig.
-470|Die bywerking is nie deur MAN onderteken nie. Dit kan verander wees of van ’n onbetroubare bron kom.
-471|Die bywerking se manifes is ongeldig.
-472|Die wagfrase is verkeerd, of die geënkripteerde partisie kan nie oopgemaak word nie.
-473|Blou
-474|Blougroen
-475|Groen
-476|Geel
-477|Oranje
-478|Rooi
-479|Pienk
-480|Pers
-481|Leiklip
-482|Stelselinstalleerder
-483|Installeer MAN op hierdie rekenaar
-484|Stelselherstel
-485|Skep en herstel momentopnames van die stelsel
-486|Stelselbywerkingsinstalleerder
-487|Installeer ’n MAN-stelselbywerkingslêer
-488|Bied aan om MAN te installeer wanneer die lewendige sessie begin
-489|MAN-bywerkingskennisgewing
-490|Sê een keer ná aanmelding dat MAN bygewerk is
-491|Stel jou nuwe MAN-rekenaar op
-492|Eerste opstelling van MAN
-314|MAN {version} is vrygestel!
-315|Jy kan daarna bywerk.
-316|Maak bywerkings oop
-493|MAN-bywerkings
-494|Laat jou weet wanneer 'n nuwe weergawe van MAN beskikbaar is
+0|Hierdie lêer is nie ’n toep wat hier geïnstalleer kan word nie (.deb, .flatpak, .flatpakref of AppImage).
+1|Hierdie toep is gemaak vir {arch}-rekenaars en werk nie op hierdie een nie (x86-64).
+2|Die lêer kon nie gelees word nie. Dit is dalk beskadig.
+3|Dit is nie ’n AppImage nie.
+4|Inleiding
+5|Lisensie
+6|Kies bestemming
+7|Installasietipe
+8|Installasie
+9|Opsomming
+10|_Gaan voort
+11|Welkom by die {name}-installeerder
+12|Sagtewarelisensie-ooreenkoms
+13|Stem jy in tot die lisensie?
+14|Om voort te gaan met die installering, moet jy instem tot die bepalings van die sagtewarelisensie-ooreenkoms.
+15|_Lees lisensie
+16|_Stem in
+17|Kies ’n bestemming
+18|Standaardinstallering
+19|_Installeer
+20|Debian-pakket (.deb)
+21|Flatpak-toep
+22|Flatpak-toep van {source}
+23|AppImage
+24|Jy sal gelei word deur die stappe wat nodig is om hierdie sagteware te installeer.
+25|Weergawe
+26|Uitgewer
+27|Tipe
+28|Grootte
+29|Webwerf
+30|Lêer
+31|Hierdie toep is reeds geïnstalleer. As jy dit weer installeer, word dit vervang.
+32|Toepe uit .deb-pakkette word deel van die stelsel. Wanneer MAN bygewerk word, word hulle verwyder en moet hulle weer geïnstalleer word. Flatpak-toepe en AppImages bly behoue.
+33|Installeer net toepe uit bronne wat jy vertrou.
+34|Waar wil jy {name} installeer?
+35|Net jou rekening kan die toep gebruik.
+36|Benodig administrateurregte.
+37|Net vir my
+38|Vir alle gebruikers van hierdie rekenaar
+39|Dit sal {size} spasie op jou rekenaar gebruik.
+40|Die toep word van {source} afgelaai.
+41|Die toep word vir alle gebruikers van hierdie rekenaar geïnstalleer.
+42|Die toep word net vir jou geïnstalleer.
+43|Die AppImage word na {folder} geskuif en by jou toepe gevoeg.
+44|Klik Installeer om {name} te installeer.
+45|Kyk wat die toep nog nodig het…
+46|Installeer ook die pakkette wat dit nodig het: {list}
+47|Sommige pakkette wat die toep nodig het, is nog nie beskikbaar nie. Die installering kry eers die nuutste pakketlyste; as hulle steeds ontbreek, kan die toep nie geïnstalleer word nie.
+48|Installeer tans {name}…
+49|Berei tans voor…
+50|Besonderhede
+51|Installeer tans die pakket…
+52|Skuif tans die toep na sy vouer…
+53|Die toep kon nie geïnstalleer word nie.
+54|Installeer tans die toep met Flatpak…
+55|Log
+56|_Maak toe
+57|Die installering was suksesvol
+58|Die toep is geïnstalleer.
+59|Die installering het misluk
+60|_Open
+61|_Wys besonderhede
+62|Installasielog
+63|Toepinstalleerder
+64|_Terug
+65|Lees tans die toep…
+66|Installeer {name}
+67|Toepe
+68|Kies ’n toep om te installeer
+69|Die stelselhelper kon nie begin word nie.
+70|Kan nie met die stelselhelper kommunikeer nie.
+71|Kontak met die stelselhelper is verloor.
+72|Magtiging is gekanselleer.
+73|Hierdie aksie vereis administrateursregte.
+74|Die stelselhelper het onverwags gestop.
+75|Geen EFI-stelselpartisie nie
+76|Slegs {free} vry, MAN benodig {need}. Maak meer plek met DUHACH! in Windows.
+77|Geen vrye spasie nie. Begin DUHACH! in Windows om plek vir MAN te maak.
+78|MAN loop van hierdie skyf af
+79|In gebruik: ’n partisie is gekoppel
+80|Te klein, MAN benodig {need}
+81|Installeer MAN
+82|MAN word geïnstalleer. Wag asseblief tot dit klaar is.
+83|Taal
+84|_Herbegin in hierdie taal
+85|Die lewendige sessie herbegin in die gekose taal, en MAN word daarin geïnstalleer.
+86|Welkom by MAN
+87|’n Vinnige, oop en volledig aanpasbare GNOME-stelsel.\nInstalleer dit op hierdie rekenaar, of hou aan om die lewendige sessie te verken.
+88|_Installeer MAN…
+89|_Hou aan om MAN te probeer
+90|Soek skywe…
+91|Welkom
+92|Hierdie rekenaar is in ou BIOS-modus begin. MAN kan net op UEFI-rekenaars geïnstalleer word: herbegin en kies die UEFI-opstartopsie.
+93|Die stelselhelper het geen skyfinligting teruggegee nie.
+94|  ·  EFI
+95|_Volgende
+96|Vee skyf uit en installeer MAN
+97|Alles op die gekose skyf word uitgevee, Windows ingesluit.
+98|Aanbeveel. Alles op die gekose skyf word uitgevee.
+99|Installeer langs Windows
+100|Aanbeveel. MAN gebruik die vrye spasie langs Windows; Windows en sy lêers bly. Kies die stelsel elke keer as jy begin.
+101|Herinstalleer MAN
+102|Vervang die stelsel maar hou persoonlike lêers in /home. Die huidige stelsel word as ’n momentopname gestoor.
+103|Pasgemaakte partisies
+104|Vir kundiges: kies self partisies, of skep hulle met Skywe.
+105|Skyf
+106|Kies die skyf wat uitgevee word. Skywe wat nie gebruik kan word nie, word met die rede gewys.
+107|Geen skywe gevind nie
+108|Vrye spasie langs Windows
+109|Windows se partisies word nie aangeraak nie. MAN deel die EFI-stelselpartisie en voeg Windows by sy opstartkieslys.
+110|{size} vry
+111|geen vrye spasie
+112|{model} (Windows)
+113|Installasie om te vervang
+114|geen tuisvouers
+115|tuisvouers: {list}
+116|momentopnames: {n}
+117|MAN op {model}
+118|Wagfrase vir {device}
+119|Ontsluit
+120|Die installasie kon nie ondersoek word nie.
+121|Partisies
+122|Die stelselpartisie word met Btrfs geformateer en bevat @system, @home en @snapshots. Partisies op die skyf waarvan MAN loop, word nie gelys nie.
+123|Maak Skywe oop om partisies te skep of hul grootte te verander
+124|Verfris die partisielys
+125|Kies ’n partisie
+126|EFI-stelselpartisie
+127|Formateer EFI-stelselpartisie
+128|Laat af om ander stelsels se opstartlaaiers te hou
+129|Stelselpartisie (geformateer as Btrfs)
+130|Opstartpartisie (nodig met enkripsie)
+131|Partisielys verfris
+132|Sekuriteit
+133|Enkripteer die stelsel
+134|Beskerm jou data as die rekenaar verlore raak of gesteel word. ’n Wagfrase word by elke begin gevra.
+135|Wagfrase
+136|Bevestig wagfrase
+137|Hou hierdie wagfrase veilig
+138|As dit verlore raak, kan niemand die data herstel nie. Die kern en opstartlêers bly op ’n klein ongeënkripteerde opstartpartisie.
+139|Die wagfrase moet minstens 8 karakters hê.
+140|Die wagfrases stem nie ooreen nie.
+141|Kies ’n skyf.
+142|Kies die skyf met Windows.
+143|Kies die installasie om te vervang.
+144|Ontsluit eers die geënkripteerde installasie.
+145|Hierdie partisie bevat geen MAN-stelsel nie.
+146|Kies ’n EFI-stelselpartisie.
+147|Kies die stelselpartisie.
+148|Die EFI- en stelselpartisies moet verskil.
+149|Enkripsie benodig ’n aparte opstartpartisie.
+150|Die stelselpartisie moet minstens {size} wees.
+151|Die EFI-partisie is nie FAT-geformateer nie; skakel formatering aan.
+152|Die stelselpartisie is gekoppel; ontkoppel dit eers in Skywe.
+153|Waar moet MAN geïnstalleer word?
+154|Tyd en sleutelbord
+155|Tydsone
+156|Sleutelborduitleg
+157|Toets jou sleutelbord
+158|Tik hier om seker te maak jou sleutels gee die regte karakters.
+159|Tik hier
+160|Tydsone en sleutelbord
+161|Geen skyf gekies nie
+162|Geen stelselpartisie gekies nie
+163|Die stelselpartisie het verdwyn
+164|Geen installasie gekies nie
+165|Die skyf het verdwyn
+166|Hersien
+167|Bestemming
+168|Vee skyf uit en installeer
+169|Pasgemaakte partisies
+170|Herinstalleer, hou /home
+171|Langs Windows
+172| (sal geformateer word)
+173| (behou)
+174|Stelselpartisie
+175|{partition} (sal geformateer word)
+176|Opstartpartisie
+177|Spasie vir MAN
+178|{free} vrye spasie (’n opstartpartisie en die stelselpartisie word geskep)
+179|Windows
+180|Onveranderd. Dit verskyn in MAN se opstartkieslys; die EFI-stelselpartisie word gedeel.
+181|Enkripsie
+182|Aan (LUKS2)
+183|Af
+184|Lêerstelsel
+185|Btrfs: @system vir MAN, @home vir jou lêers, @snapshots vir herstelpunte. Almal deel die vrye spasie.
+186|Stelsel
+187|Jou rekening
+188|Word in MAN Setup geskep wanneer die rekenaar die eerste keer begin, saam met die rekenaarnaam, voorkoms en privaatheidsinstellings.
+189|Sleutelbord
+190|Alle data op {model} ({path}) sal uitgevee word.
+191|_Vee uit en installeer
+192|Die gekose partisies sal geformateer word. Ander partisies verander nie.
+193|_Formateer en installeer
+194|Die huidige stelsel word vervang. Jou lêers in /home bly, en die ou stelsel word as ’n momentopname gestoor.
+195|_Herinstalleer
+196|MAN word in die vrye spasie geïnstalleer. Windows en sy lêers verander nie.
+197|Gereed om te installeer
+198|Vee {model} uit?
+199|Elke lêer en partisie op {path} ({size}) sal permanent geskrap word. Dit kan nie ontdoen word nie.
+200|Vee uit en installeer
+201|Formateer die gekose partisies?
+202|Alle data op die gekose partisies sal permanent geskrap word. Ander partisies verander nie.
+203|Formateer en installeer
+204|Installeer MAN langs Windows?
+205|MAN word in die {free} vrye spasie op {model} ({path}) geïnstalleer. Windows en sy lêers verander nie.
+206|Installeer
+207|Herinstalleer MAN?
+208|Die geïnstalleerde stelsel sal met ’n vars kopie vervang word. Persoonlike lêers in /home bly, en die ou stelsel bly as ’n momentopname beskikbaar.
+209|Herinstalleer
+210|_Kanselleer
+211|MAN word geïnstalleer
+212|Begin…
+213|Installeer
+214|Stap {index} van {n}  ·  {title}
+215|MAN is geïnstalleer
+216|Herbegin die rekenaar om MAN te begin gebruik. ’n Kieslys by elke begin laat jou MAN of Windows kies; die tydelike installeerderpartisie word by die eerste begin deur MAN verwyder.
+217|Herbegin die rekenaar om MAN te begin gebruik. Jy kan die installasiemedium verwyder; as dit gekoppel bly, begin MAN steeds van die nuwe skyf.
+218|_Herbegin nou
+219|Klaar
+220|Installasie het misluk
+221|Geen ander skyf is verander nie, en die installeerder het die teikenskyf vrygestel. Jy kan die plan hersien en weer probeer.
+222|_Hersien en probeer weer
+223|Soek tale
+224|Soek lande
+225|Die stelselskyf is nie gevind nie.
+226|Enkripsie benodig die Btrfs-uitleg wat die MAN-installeerder skep.
+227|Hierdie installasie het geen aparte opstartpartisie nie, wat enkripsie benodig. Herinstalleer MAN met “Vee skyf uit” om enkripsie te gebruik.
+228|MAN Setup
+229|Waar is jy?
+230|Jou land of streek bepaal die formaat van datum, tyd en getalle.
+231|Land
+232|GNU General Public License, weergawe 2
+233|Die Linux-kern en baie stelselgereedskap
+234|GNU General Public License, weergawe 3
+235|Baie GNU- en GNOME-programme
+236|GNU Lesser General Public License, weergawe 2.1
+237|GTK, GLib en baie biblioteke
+238|GNU Lesser General Public License, weergawe 3
+239|Biblioteke
+240|Mozilla Public License 2.0
+241|Programme en biblioteke van Mozilla en ander
+242|Apache-lisensie 2.0
+243|Biblioteke en gereedskap
+244|Lisensieooreenkoms
+245|Lees en aanvaar asseblief die voorwaardes waaronder MAN verskaf word.
+246|Lisensies
+247|Die lisensieteks is nie beskikbaar nie ({path}).
+248|Ek het die lisensievoorwaardes gelees en aanvaar dit
+249|Bedraad
+250|Nie gekoppel nie
+251|Koppel aan die internet
+252|Met ’n verbinding kan MAN die tyd stel en jou sagteware bygewerk hou. Jy kan dit ook later doen.
+253|Gaan die verbinding na…
+254|Wi-Fi-netwerke
+255|Soek weer
+256|_Slaan oor
+257|Jy kan later in Instellings koppel.
+258|Gekoppel
+259|Nie gekoppel nie
+260|Geen netwerke gevind nie
+261|Internet
+262|Gekoppel aan “{ssid}”
+263|Kon nie aan “{ssid}” koppel nie
+264|Koppel aan “{ssid}”
+265|Voer die netwerkwagwoord in.
+266|_Koppel
+267|Skep jou rekening
+268|Jy sal die administrateur van hierdie rekenaar wees, met volle root-toegang deur sudo.
+269|Volle naam
+270|Gebruikersnaam
+271|Wagwoord
+272|Bevestig wagwoord
+273|Meld outomaties aan
+274|Slaan die aanmeldskerm oor wanneer die rekenaar begin
+275|Bestaande tuisvouers
+276|Gebruik dieselfde gebruikersnaam om aan te hou om ’n vouer van ’n vorige installasie te gebruik.
+277|Gebruik
+278|Gevorderd
+279|Rekenaarnaam
+280|Stel ’n root-wagwoord
+281|Laat direkte aanmelding as root toe. Gebruik andersins sudo met jou eie wagwoord.
+282|Root-wagwoord
+283|Bevestig root-wagwoord
+284|Voer jou naam in.
+285|Kies ’n gebruikersnaam.
+286|Hierdie gebruikersnaam word reeds deur die stelsel gebruik.
+287|Hierdie gebruikersnaam is deur die stelsel gereserveer.
+288|Gebruikersname gebruik kleinletters, syfers, - en _, en begin met ’n letter.
+289|Kies ’n wagwoord.
+290|Die wagwoorde stem nie ooreen nie.
+291|Die rekenaarnaam mag letters, syfers en koppeltekens bevat.
+292|Voer die root-wagwoord twee keer in.
+293|Wenk: ’n wagwoord met 8 of meer karakters is baie veiliger.
+294|Rekening
+295|Donker
+296|Lig
+297|Maak dit joune
+298|Kies ’n styl, ’n aksentkleur en ’n agtergrond. Jy sien elke verandering dadelik.
+299|Styl
+300|Aksentkleur
+301|Agtergrond
+302|Pas aan
+303|Privaatheid
+304|Kies watter funksies inligting oor jou mag gebruik. Jy kan dit enige tyd in Instellings verander.
+305|Liggingdienste
+306|Laat programme soos Kaarte en Weer jou benaderde ligging vind met nabygeleë Wi-Fi-netwerke.
+307|Outomatiese tydsone
+308|Gebruik jou ligging om die tydsone reg te hou wanneer jy reis.
+309|_Voltooi opstelling
+310|Jou skyf is geënkripteer
+311|Jou data is beskerm. Die wagfrase word elke keer gevra as die rekenaar begin.
+312|Skyfenkripsie
+313|Enkripsie beskerm jou data as die rekenaar verlore raak of gesteel word.
+314|Nie beskikbaar op hierdie installasie nie
+315|Enkripsie beskerm jou lêers as die rekenaar verlore raak of gesteel word. Sonder die wagfrase kan niemand die skyf lees nie.
+316|Enkripteer die skyf
+317|Die wagfrase word elke keer gevra as die rekenaar begin.
+318|Enkripsie begin by die volgende herbegin
+319|Jou skyf word dan in die agtergrond geënkripteer terwyl jy die rekenaar gebruik. As die wagfrase verlore raak, kan niemand die data herstel nie.
+320|MAN word voorberei
+321|Maak alles gereed…
+322|_Herbegin
+323|_Terug
+324|Berei voor
+325|Opstellinglog
+326|Alles klaar!
+327|Iets het verkeerd geloop
+328|Daagliks
+329|Voor bywerking
+330|Voor herstel
+331|Voor herinstallasie
+332|Handmatig
+333|Nog geen momentopnames nie
+334|Skep een voordat jy groot veranderinge aan die stelsel maak.
+335|Herstel…
+336|Skrap momentopname
+337|{free} vry van {size}. Stelsel, tuisvouers en momentopnames deel hierdie spasie; momentopnames gebruik net spasie vir wat verander het sedert hulle geneem is.
+338|_OK
+339|Skep momentopname
+340|Stoor die huidige toestand van die stelsel. Jou persoonlike lêers in die tuisvouer is nie ingesluit nie.
+341|Beskrywing, byvoorbeeld “Voor die installering van drywers”
+342|_Skep
+343|Handmatige momentopname
+344|Skrap momentopname?
+345|“{description}” van {date} sal permanent geskrap word.
+346|_Skrap
+347|Herstel hierdie momentopname?
+348|Die stelsel sal ná ’n herbegin terugkeer na “{description}” van {date}. Jou persoonlike lêers verander nie.\n\nDie huidige stelsel word eers as ’n momentopname gestoor, so dit kan ontdoen word.
+349|_Herstel
+350|Herbegin om die herstel te voltooi
+351|Herbegin _later
+352|Herbegin _nou
+353|Momentopnames
+354|Herstelpunte
+355|Momentopnames stoor die toestand van die bedryfstelsel. Om een te herstel, bring die stelsel terug na daardie oomblik, wat help ná ’n slegte bywerking of konfigurasieverandering. Jou persoonlike lêers word nooit aangeraak nie.
+356|Outomatiese momentopnames
+357|Daaglikse momentopnames
+358|Een keer per dag terwyl die rekenaar aan is
+359|Daaglikse momentopnames om te hou
+360|Voor sagtewarebywerkings
+361|Outomaties geneem wanneer pakkette geïnstalleer, opgegradeer of verwyder word
+362|Bywerkingsmomentopnames om te hou
+363|Berging
+364|Skyfspasie
+365|As MAN nie begin nie
+366|Kies “Restore a MAN snapshot” in die opstartkieslys om ’n werkende stelsel terug te kry.
+367|Momentopnames is nie beskikbaar nie
+368|Momentopnames werk op MAN wat met die Btrfs-uitleg van die MAN-installeerder geïnstalleer is. Hierdie stelsel (byvoorbeeld ’n lewendige sessie) gebruik dit nie.
+369|’n Herstel wag: herbegin die rekenaar om dit te voltooi
+370|Herbegin nou
+371|Wag asseblief tot die huidige bewerking klaar is.
+372|Soek
+373|Kopieer na knipbord
+374|Gekoördineerde Universele Tyd
+375|Engels (VSA)
+376|MAN {version} is vrygestel!
+377|Jy kan daarna bywerk.
+378|Maak bywerkings oop
+379|Gaan die bywerking na
+380|Maak seker die bywerking is eg en volledig…
+381|MAN-bywerking
+382|Hierdie bywerking kan nie geïnstalleer word nie
+383|Die bywerking kon nie gelees word nie.
+384|Bywerking vanaf {name} {version}
+385|{name} {version} is geïnstalleer
+386|Vrygestel
+387|Aflaaigrootte
+388|Spasie benodig
+389|Egtheid
+390|Geverifieer, onderteken deur “{signer}”
+391|Wat’s nuut
+392|Hierdie bywerking is nie nuwer as die geïnstalleerde {name} {version} nie.
+393|Bywerking
+394|Lees asseblief die lisensievoorwaardes van hierdie bywerking.
+395|Ek aanvaar die lisensievoorwaardes
+396|Waar moet die bywerking geïnstalleer word?
+397|Die stelsel word vervang; lêers in jou tuisvouer word nie aangeraak nie.
+398|Kies ’n installasie.
+399|loop nou
+400|{name} {version} op hierdie rekenaar
+401|{name} op {model}
+402|Geen MAN-installasie gevind nie
+403|Bywerkings word vanaf ’n lopende, geïnstalleerde MAN-stelsel geïnstalleer, nie vanaf die lewendige sessie nie.
+404|Installasieligging
+405|Behou
+406|Jou lêers
+407|Alles in jou tuisvouer
+408|Rekeninge en wagwoorde
+409|Gebruikers, groepe, die rekenaarnaam
+410|Verbindings en instellings
+411|Wi-Fi, tydsone, sleutelbord, voorkoms en momentopnames
+412|Flatpak-programme
+413|Plus enigiets in /usr/local en /opt
+414|Vervang
+415|Sagteware wat met apt geïnstalleer is en ander veranderinge aan stelsellêers word deur die nuwe stelsel vervang.
+416|Die bedryfstelsel
+417|Vervang deur {name} {version}. Die huidige stelsel kan uit ’n momentopname herstel word.
+418|Die rekenaar herbegin om die bywerking te installeer
+419|Ná die voorbereiding herbegin MAN, installeer die bywerking in ’n paar sekondes en herbegin weer.
+420|_Installeer bywerking
+421|Skep eers ’n momentopname?
+422|’n Momentopname stoor die huidige stelsel, sodat jy daarheen kan terugkeer as iets ná die bywerking nie werk nie. Dit word aanbeveel.
+423|_Moenie skep nie
+424|_Skep momentopname
+425|Berei {name} {version} voor
+426|Herbegin om te installeer
+427|Die rekenaar herbegin twee keer. Jou lêers is veilig.
+428|Herbegin outomaties oor {r} sekondes
+429|Herbegin outomaties oor 30 sekondes
+430|Die bywerking word geïnstalleer die volgende keer dat jy herbegin.
+431|Gereed
+432|Die bywerking kon nie voorberei word nie
+433|Niks is op jou stelsel verander nie.
+434|_Probeer weer
+435|Bywerkingslog
+436|Misluk
+437|Jou stelsel is bygewerk
+438|MAN is bygewerk na weergawe {version}.\nVoorheen: MAN {previous}.
+439|_Klaar
+440|Maak ’n MAN-bywerking oop
+441|MAN-bywerkings
+442|Kry tans die nuutste pakketlyste…
+443|Kopieer tans die toep
+444|Voeg tans die toep by die kieslys
+445|Die lêer is nie gevind nie.
+446|Die pakket kon nie geïnstalleer word nie.
+447|Die toep se kieslysinskrywing is ongeldig.
+448|Gaan die installasieplan na
+449|Berei die skyf voor
+450|Kopieer MAN na die skyf
+451|Stel die nuwe stelsel op
+452|Installeer die opstartlaaier
+453|Skep die eerste momentopname
+454|Rond af
+455|Verwyder ou partisiehandtekeninge
+456|Skep partisies
+457|Formateer die EFI-stelselpartisie
+458|Enkripteer die stelselpartisie
+459|Formateer die opstartpartisie
+460|Skep die Btrfs-lêerstelsel
+461|Verwyder ou lêerstelselhandtekeninge
+462|Ontsluit die geënkripteerde installasie
+463|Stoor die huidige stelsel as ’n momentopname
+464|Verwyder die vorige stelsel
+465|Skryf die lêerstelseltabel
+466|Stel rekenaarnaam en identiteit
+467|Verwyder die lewendige sessie se rekeninge
+468|Skep jou rekening
+469|Berei MAN Setup voor vir die eerste begin
+470|Stel tydsone en sleutelbord
+471|Verwyder die installeerder uit die nuwe stelsel
+472|Bou die opstartbeeld (initramfs)
+473|Stel GRUB op
+474|Installeer GRUB op die EFI-stelselpartisie
+475|Installeer die rugsteun-opstartlaaier
+476|Skryf die opstartkieslys
+477|Skyf gereed
+478|Skep ’n momentopname van die nuwe stelsel
+479|Voeg die momentopname by die opstartkieslys
+480|Ontkoppel
+481|Die installeerderhelper moet as root loop.
+482|Hierdie rekenaar is nie in UEFI-modus begin nie. MAN vereis UEFI.
+483|Die gebruikersnaam is ongeldig.
+484|’n Wagwoord word vereis.
+485|Die rekenaarnaam is ongeldig.
+486|Onbekende taal.
+487|Die enkripsiewagfrase moet minstens 8 karakters hê.
+488|Die skyf het verander nadat jy die installasie bevestig het. Niks is verander nie; hersien en bevestig asseblief weer.
+489|Kies ’n stelselpartisie.
+490|Die bevestigde skyf bevat nie die gekose stelselpartisie nie.
+491|Die opstartpartisie moet apart van die EFI- en stelselpartisies wees.
+492|Die opstartpartisie moet minstens 512 MB wees.
+493|Geen installasie gekies nie.
+494|Die bevestigde skyf bevat nie die gekose installasie nie.
+495|Die geënkripteerde installasie het geen MAN_BOOT-partisie nie.
+496|Geen kern met ooreenstemmende modules is in /boot gevind nie.
+497|Die taal moet deur die stelselhelper verander word.
+498|Pas jou instellings toe
+499|Berei skyfenkripsie voor
+500|Rond af
+501|MAN Setup moet deur die stelselhelper voltooi word.
+502|MAN Setup is reeds op hierdie rekenaar voltooi.
+503|Onbekende aksentkleur.
+504|Die gekose agtergrond is nie beskikbaar nie.
+505|Hierdie stelsel kan nie geënkripteer word nie.
+506|Die opstellingsleutel ontbreek, dus kan enkripsie nie in die agtergrond voortgaan nie.
+507|Die stelsel is nie op Btrfs geïnstalleer nie, dus is momentopnames nie beskikbaar nie.
+508|’n Momentopname-herstel wag vir ’n herbegin. Herbegin eers die rekenaar om dit te voltooi.
+509|Ongeldige momentopname-ID.
+510|Gaan die bywerking na
+511|Skep ’n momentopname
+512|Berei die bywerkingsarea voor
+513|Pak die nuwe stelsel uit
+514|Skuif jou rekeninge en instellings oor
+515|Berei die herbegin voor
+516|Uitgepak
+517|Rekeninge
+518|Verwyder sagteware wat net die installeerder gebruik
+519|Bou die bywerking se opstartbeeld
+520|Voeg die eenmalige opstartinskrywing by
+521|Die bywerking is eg
+522|Momentopname geskep
+523|Oorgeslaan
+524|Bywerkingsarea gereed
+525|Berei die nuwe stelsel voor
+526|Die bywerkingslêer is beskadig (kontrolesom pas nie). Laai dit weer af.
+527|Die bywerkingslêer kon nie heeltemal gelees word nie.
+528|Die bywerking bevat geen kern nie.
+529|Bywerkings moet deur die stelselhelper geïnstalleer word.
+530|Die gekose installasie is nie gevind nie.
+531|Slegs die lopende MAN-installasie kan bygewerk word.
+532|Dit is nie ’n MAN-bywerkingslêer nie (geen manifes nie).
+533|Die bywerking is nie onderteken nie, dus kan dit nie vertrou word nie.
+534|Die bywerking se handtekening is beskadig.
+535|Die bywerking is nie deur MAN onderteken nie. Dit kan verander wees of van ’n onbetroubare bron kom.
+536|Die bywerking se manifes is ongeldig.
+537|Die wagfrase is verkeerd, of die geënkripteerde partisie kan nie oopgemaak word nie.
+538|Blou
+539|Blougroen
+540|Groen
+541|Geel
+542|Oranje
+543|Rooi
+544|Pienk
+545|Pers
+546|Leiklip
+547|Pakketinstalleerder
+548|Installeer toepe uit .deb-, Flatpak- en AppImage-lêers
+549|Stelselinstalleerder
+550|Installeer MAN op hierdie rekenaar
+551|Stelselherstel
+552|Skep en herstel momentopnames van die stelsel
+553|Stelselbywerkingsinstalleerder
+554|Installeer ’n MAN-stelselbywerkingslêer
+555|Bied aan om MAN te installeer wanneer die lewendige sessie begin
+556|MAN-bywerkingskennisgewing
+557|Sê een keer ná aanmelding dat MAN bygewerk is
+558|Stel jou nuwe MAN-rekenaar op
+559|Eerste opstelling van MAN
+560|MAN-bywerkings
+561|Laat jou weet wanneer 'n nuwe weergawe van MAN beskikbaar is

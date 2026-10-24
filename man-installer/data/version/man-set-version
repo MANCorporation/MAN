@@ -1,0 +1,40 @@
+#!/bin/sh
+# man-set-version: stamp the version of this MAN system (run as root inside
+# an image before building its .upd and ISO).
+#
+#   man-set-version 10.10                a release
+#   man-set-version "10 TEST 5" 10.10    a TEST build made after release 10.10
+#
+# Writes /usr/lib/man/version (+ version-base for TEST builds) and
+# os-release. TEST builds also turn Beta Updates on by default, so they keep
+# getting the next TEST builds; releases turn the default off again.
+set -eu
+version=${1:?usage: man-set-version VERSION [BASE]}
+base=${2:-}
+override=/usr/share/glib-2.0/schemas/90_man-test-build.gschema.override
+
+case $version in
+    *" TEST "*)
+        echo "$version" | grep -Eq '^[0-9]+ TEST [0-9]+$' || { echo "bad TEST version: $version" >&2; exit 2; }
+        echo "$base" | grep -Eq '^[0-9]+(\.[0-9]+)*$' || { echo "a TEST build needs the release it was made after: man-set-version \"$version\" 10.10" >&2; exit 2; }
+        id=$(echo "$version" | tr 'A-Z ' 'a-z-')
+        printf '%s\n' "$base" > /usr/lib/man/version-base
+        printf '[com.man.Updates]\nbeta-updates=true\n' > "$override"
+        ;;
+    *)
+        echo "$version" | grep -Eq '^[0-9]+(\.[0-9]+)*$' || { echo "bad version: $version" >&2; exit 2; }
+        id=$version
+        rm -f /usr/lib/man/version-base "$override"
+        ;;
+esac
+
+printf '%s\n' "$version" > /usr/lib/man/version
+sed -i -e "s/^VERSION_ID=.*/VERSION_ID=$id/" -e "s/^VERSION=.*/VERSION=\"$version\"/" \
+    -e 's|^HOME_URL=.*|HOME_URL="https://github.com/MANCorporation/MAN"|' \
+    -e 's|^SUPPORT_URL=.*|SUPPORT_URL="https://github.com/MANCorporation/MAN/issues"|' \
+    -e 's|^BUG_REPORT_URL=.*|BUG_REPORT_URL="https://github.com/MANCorporation/MAN/issues"|' \
+    /usr/lib/os-release
+grep -q '^VERSION=' /usr/lib/os-release || printf 'VERSION="%s"\n' "$version" >> /usr/lib/os-release
+grep -q '^VERSION_ID=' /usr/lib/os-release || printf 'VERSION_ID=%s\n' "$id" >> /usr/lib/os-release
+glib-compile-schemas /usr/share/glib-2.0/schemas
+echo "MAN $version${base:+ (made after $base)}"

@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Este arquivo não é um aplicativo que possa ser instalado aqui (.deb, .flatpak, .flatpakref ou AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Este aplicativo foi feito para computadores {arch} e não funciona neste (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Não foi possível ler o arquivo. Ele pode estar danificado."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Isto não é um AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Introdução"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Licença"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Seleção de destino"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Tipo de instalação"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Instalação"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Resumo"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Continuar"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Boas-vindas ao instalador do {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Contrato de licença do software"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Você aceita a licença?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Para continuar a instalação, você precisa aceitar os termos do contrato de licença do software."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Ler licença"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Aceitar"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Selecione um destino"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Instalação padrão"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Instalar"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Pacote Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Aplicativo Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Aplicativo Flatpak de {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Você será guiado pelas etapas necessárias para instalar este software."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versão"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Editor"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Tipo"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Tamanho"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Site"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Arquivo"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Este aplicativo já está instalado. Instalá-lo novamente o substitui."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Aplicativos de pacotes .deb passam a fazer parte do sistema. Quando o MAN é atualizado, eles são removidos e precisam ser instalados de novo. Aplicativos Flatpak e AppImages são mantidos."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Instale apenas aplicativos de fontes confiáveis."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Onde você quer instalar o {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Só a sua conta pode usar o aplicativo."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Requer privilégios de administrador."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Só para mim"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Para todos os usuários deste computador"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Isto vai ocupar {size} de espaço no computador."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "O aplicativo é baixado de {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "O aplicativo é instalado para todos os usuários deste computador."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "O aplicativo é instalado só para você."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "O AppImage é movido para {folder} e adicionado aos seus aplicativos."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Clique em Instalar para instalar o {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Verificando o que mais o aplicativo precisa…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Também instala os pacotes de que precisa: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Alguns pacotes de que o aplicativo precisa ainda não estão disponíveis. A instalação obtém primeiro as listas de pacotes mais recentes; se ainda faltarem, o aplicativo não pode ser instalado."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Instalando {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Preparando…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Detalhes"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Instalando o pacote…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Movendo o aplicativo para a pasta dele…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Não foi possível instalar o aplicativo."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Instalando o aplicativo com o Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Registro"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Fechar"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "A instalação foi concluída com sucesso"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "O aplicativo foi instalado."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "A instalação falhou"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Abrir"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Mostrar detalhes"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Registro da instalação"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Instalador de aplicativos"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Voltar"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Lendo o aplicativo…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Instalar {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Aplicativos"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Escolha um aplicativo para instalar"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Não foi possível iniciar o assistente do sistema."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Não foi possível se comunicar com o assistente do sistema."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "A conexão com o assistente do sistema foi perdida."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "A autorização foi cancelada."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Esta ação requer direitos de administrador."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "O assistente do sistema parou inesperadamente."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Próximo"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Tipo de instalação"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (será formatada)"
 msgid "Boot Partition"
 msgstr "Partição de inicialização"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Instalação"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Espaço para o MAN"
@@ -530,10 +798,6 @@ msgstr "_Reinstalar"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "O MAN é instalado no espaço livre. O Windows e seus arquivos não mudam."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Instalar"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Pronto para instalar"
@@ -598,10 +862,6 @@ msgstr "Instalando o MAN"
 msgid "Starting…"
 msgstr "Iniciando…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Detalhes"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Instalando"
@@ -609,10 +869,6 @@ msgstr "Instalando"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Etapa {index} de {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Registro"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Nenhum outro disco foi alterado, e o instalador liberou o disco de desti
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Revisar e tentar novamente"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Mostrar detalhes"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Registro da instalação"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Tempo Universal Coordenado"
 msgid "English (US)"
 msgstr "Inglês (EUA)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "O MAN {version} foi lançado!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Você pode atualizar para ele."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Abrir atualizações"
 
@@ -1312,10 +1560,6 @@ msgstr "Atualização de {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} está instalado"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versão"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Lançamento"
@@ -1339,10 +1583,6 @@ msgstr "Verificada, assinada por “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Novidades"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Continuar"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "As atualizações são instaladas a partir de um sistema MAN instalado e
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Local da instalação"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Resumo"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Abrir uma atualização do MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Atualizações do MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Obtendo as listas de pacotes mais recentes…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Copiando o aplicativo"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Adicionando o aplicativo ao menu"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "O arquivo não foi encontrado."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Não foi possível instalar o pacote."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "A entrada de menu do aplicativo não é válida."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Transferindo suas contas e configurações"
 msgid "Preparing the restart"
 msgstr "Preparando a reinicialização"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Descompactado"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Contas"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Removendo programas usados só pelo instalador"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Gerando a imagem de inicialização da atualização"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Adicionando a entrada de inicialização única"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "A atualização é autêntica"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Snapshot criado"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Ignorado"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Área de atualização pronta"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Preparando o novo sistema"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "O arquivo de atualização está danificado (soma de verificação não confere). Baixe-o novamente."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Não foi possível ler o arquivo de atualização por completo."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "A atualização não contém nenhum kernel."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "As atualizações devem ser instaladas pelo assistente do sistema."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "A instalação escolhida não foi encontrada."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Somente a instalação do MAN em execução pode ser atualizada."
 
@@ -1947,6 +2207,14 @@ msgstr "Roxo"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Ardósia"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Instalador de pacotes"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Instale aplicativos de arquivos .deb, Flatpak e AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

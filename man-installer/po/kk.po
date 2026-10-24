@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Бұл файл мұнда орнатуға болатын қолданба емес (.deb, .flatpak, .flatpakref немесе AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Бұл қолданба {arch} компьютерлеріне арналған және бұл компьютерде (x86-64) жұмыс істемейді."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Файлды оқу мүмкін болмады. Ол зақымдалған болуы мүмкін."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Бұл AppImage емес."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Кіріспе"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Лицензия"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Орынды таңдау"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Орнату түрі"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Орнату"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Қорытынды"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Жалғастыру"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} орнатушысына қош келдіңіз"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Бағдарламалық жасақтама лицензиялық келісімі"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Лицензияға келісесіз бе?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Орнатуды жалғастыру үшін бағдарламалық жасақтама лицензиялық келісімінің шарттарына келісуіңіз керек."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "Лицензияны _оқу"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Келісемін"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Орынды таңдаңыз"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Стандартты орнату"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Орнату"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian пакеті (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak қолданбасы"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} көзінен Flatpak қолданбасы"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Сізді бұл бағдарламаны орнатуға қажетті қадамдар арқылы бастаймыз."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Нұсқа"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Баспагер"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Түрі"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Өлшемі"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Файл"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Бұл қолданба әлдеқашан орнатылған. Қайта орнату оны ауыстырады."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb пакеттеріндегі қолданбалар жүйенің бөлігіне айналады. MAN жаңартылғанда олар өшіріледі және қайта орнату керек. Flatpak қолданбалары мен AppImage сақталады."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Қолданбаларды тек сенімді көздерден орнатыңыз."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} қайда орнатылсын?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Қолданбаны тек сіздің тіркелгіңіз пайдалана алады."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Әкімші құқықтары қажет."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Тек мен үшін"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Осы компьютердің барлық пайдаланушылары үшін"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Бұл компьютерде {size} орын алады."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Қолданба {source} көзінен жүктеледі."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Қолданба осы компьютердің барлық пайдаланушылары үшін орнатылады."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Қолданба тек сіз үшін орнатылады."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage {folder} қалтасына жылжытылып, қолданбаларыңызға қосылады."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} орнату үшін «Орнату» батырмасын басыңыз."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Қолданбаға тағы не керек екені тексерілуде…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Қажетті пакеттерді де орнатады: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Қолданбаға қажетті кейбір пакеттер әлі қолжетімсіз. Орнату алдымен ең жаңа пакеттер тізімін алады; олар әлі де жетіспесе, қолданбаны орнату мүмкін емес."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} орнатылуда…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Дайындалуда…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Толығырақ"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Пакет орнатылуда…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Қолданба өз қалтасына жылжытылуда…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Қолданбаны орнату мүмкін болмады."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Қолданба Flatpak арқылы орнатылуда…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Журнал"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Жабу"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Орнату сәтті аяқталды"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Қолданба орнатылды."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Орнату сәтсіз аяқталды"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Ашу"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Толығырақ көрсету"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Орнату журналы"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Қолданба орнатушысы"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Артқа"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Қолданба оқылуда…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} орнату"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Қолданбалар"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Орнататын қолданбаны таңдаңыз"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Жүйе көмекшісін іске қосу мүмкін болмады."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Жүйе көмекшісімен байланысу мүмкін болмады."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Жүйе көмекшісімен байланыс үзілді."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Авторизациядан бас тартылды."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Бұл әрекетке әкімші құқықтары керек."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Жүйе көмекшісі күтпеген жерден тоқтады."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Келесі"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Орнату түрі"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (пішімделеді)"
 msgid "Boot Partition"
 msgstr "Жүктеу бөлімі"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Орнату"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN үшін орын"
@@ -530,10 +798,6 @@ msgstr "_Қайта орнату"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN бос орынға орнатылады. Windows және оның файлдары өзгермейді."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Орнату"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Орнатуға дайын"
@@ -598,10 +862,6 @@ msgstr "MAN орнатылуда"
 msgid "Starting…"
 msgstr "Басталуда…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Толығырақ"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Орнатылуда"
@@ -609,10 +869,6 @@ msgstr "Орнатылуда"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "{n} қадамның {index}-қадамы  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Журнал"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Басқа ешбір диск өзгертілмеді, орнатқы�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Қарап шығып, қайталау"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Толығырақ көрсету"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Орнату журналы"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Үйлестірілген әлемдік уақыт"
 msgid "English (US)"
 msgstr "Ағылшын (АҚШ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} шықты!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Оған жаңарта аласыз."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Жаңартуларды ашу"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} нұсқасынан жаңарту"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} орнатылған"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Нұсқа"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Шыққан күні"
@@ -1339,10 +1583,6 @@ msgstr "Тексерілді, «{signer}» қол қойған"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Не жаңа"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Жалғастыру"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Жаңартулар тірі сеанстан емес, жұмыс іс
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Орнату орны"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Қорытынды"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN жаңартуын ашу"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN жаңартулары"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Ең жаңа пакеттер тізімі алынуда…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Қолданба көшірілуде"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Қолданба мәзірге қосылуда"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Файл табылмады."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Пакетті орнату мүмкін болмады."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Қолданбаның мәзір жазбасы жарамсыз."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Тіркелгілер мен баптауларыңыз көшіріл�
 msgid "Preparing the restart"
 msgstr "Қайта іске қосу дайындалуда"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Тарқатылды"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Тіркелгілер"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Тек орнатқышқа арналған бағдарламалар өшірілуде"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Жаңартудың жүктеу бейнесі жасалуда"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Бір реттік жүктеу жазбасы қосылуда"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Жаңарту түпнұсқа"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Снапшот жасалды"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Өткізіп жіберілді"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Жаңарту аймағы дайын"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Жаңа жүйе дайындалуда"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Жаңарту файлы зақымдалған (бақылау сомасы сәйкес емес). Қайта жүктеп алыңыз."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Жаңарту файлын толық оқу мүмкін болмады."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Жаңартуда ядро жоқ."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Жаңартуларды жүйе көмекшісі орнатуы керек."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Таңдалған орнату табылмады."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Тек жұмыс істеп тұрған MAN орнатуын жаңартуға болады."
 
@@ -1947,6 +2207,14 @@ msgstr "Күлгін"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Сұр тақта"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Пакет орнатушысы"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak және AppImage файлдарынан қолданбалар орнатыңыз"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

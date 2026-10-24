@@ -262,6 +262,8 @@ pub struct OobeConfig {
 pub const UPDATE_KEYS_DIR: &str = "/usr/share/man/update-keys";
 /// Version of the installed MAN system (written by the installer and updates).
 pub const VERSION_FILE: &str = "/usr/lib/man/version";
+/// On TEST builds: the release the build was made after (see `man_version_cmp`).
+pub const VERSION_BASE_FILE: &str = "/usr/lib/man/version-base";
 /// Details of the last installed update, read by the login pop-up.
 pub const LAST_UPDATE: &str = "/var/lib/man/last-update.json";
 pub const UPD_FORMAT: u32 = 1;
@@ -272,6 +274,9 @@ pub struct UpdateManifest {
     pub format: u32,
     pub name: String,
     pub version: String,
+    /// TEST builds ("10 TEST 5"): the release they were made after, e.g. "10.9".
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    pub base: String,
     /// Build date, YYYY-MM-DD.
     pub date: String,
     /// sha256 of `system.tar.zst`, lowercase hex.
@@ -300,6 +305,12 @@ pub struct UpdateInfo {
     pub notes: String,
     pub signed_by: String,
     pub current_version: String,
+    /// The installed system is a TEST build made after this release.
+    #[serde(default)]
+    pub current_base: String,
+    /// The update is newer than the installed system (see `man_version_cmp`).
+    #[serde(default)]
+    pub newer: bool,
     pub targets: Vec<UpdateTarget>,
 }
 
@@ -331,7 +342,43 @@ pub fn version_cmp(a: &str, b: &str) -> std::cmp::Ordering {
     std::cmp::Ordering::Equal
 }
 
+/// A TEST build's version, "10 TEST 5": (major, test number).
+pub fn test_build(v: &str) -> Option<(u64, u64)> {
+    let mut it = v.split(' ');
+    let (major, word, n) = (it.next()?, it.next()?, it.next()?);
+    if it.next().is_some() || word != "TEST" || major.starts_with('+') || n.starts_with('+') {
+        return None;
+    }
+    Some((major.parse().ok()?, n.parse().ok()?))
+}
+
+/// Version as used in file names and tags: "10 TEST 5" → "10-TEST-5".
+pub fn version_file_name(v: &str) -> String {
+    v.replace(' ', "-")
+}
+
+/// Back from a file name: "10-TEST-5" → "10 TEST 5"; releases are unchanged.
+pub fn version_from_file_name(s: &str) -> String {
+    let v = s.replace('-', " ");
+    if test_build(&v).is_some() { v } else { s.to_string() }
+}
+
+/// Order MAN versions. Releases compare as dotted numbers; a TEST build
+/// comes right after the release it was made after (its `base`), in test
+/// number order: 10.9 < 10 TEST 5 < 10 TEST 6 < 10.10.
+pub fn man_version_cmp(a: &str, a_base: &str, b: &str, b_base: &str) -> std::cmp::Ordering {
+    let key = |v: &str, base: &str| match test_build(v) {
+        Some((major, n)) => (if base.is_empty() { major.to_string() } else { base.to_string() }, 1u8, n),
+        None => (v.to_string(), 0, 0),
+    };
+    let (ka, kb) = (key(a, a_base), key(b, b_base));
+    version_cmp(&ka.0, &kb.0).then(ka.1.cmp(&kb.1)).then(ka.2.cmp(&kb.2))
+}
+
 pub fn valid_version(v: &str) -> bool {
+    if test_build(v).is_some() {
+        return v.len() <= 32;
+    }
     !v.is_empty() && v.len() <= 32 && v.chars().all(|c| c.is_ascii_alphanumeric() || ".-+~".contains(c))
 }
 
@@ -474,6 +521,14 @@ mod tests {
         assert_eq!(version_cmp("10.0", "10.0.1"), Less);
         assert!(valid_version("10.1-rc1"));
         assert!(!valid_version("1 0"));
+        assert!(valid_version("10 TEST 5"));
+        assert!(!valid_version("10 TEST"));
+        assert_eq!(man_version_cmp("10 TEST 5", "10.9", "10.9", ""), Greater);
+        assert_eq!(man_version_cmp("10 TEST 5", "10.9", "10.10", ""), Less);
+        assert_eq!(man_version_cmp("10 TEST 6", "10.9", "10 TEST 5", "10.9"), Greater);
+        assert_eq!(man_version_cmp("10 TEST 6", "10.10", "10 TEST 5", "10.9"), Greater);
+        assert_eq!(version_from_file_name("10-TEST-5"), "10 TEST 5");
+        assert_eq!(version_from_file_name("10.1-rc1"), "10.1-rc1");
     }
 
     #[test]

@@ -1,495 +1,562 @@
-0|Hindi masimulan ang system helper.
-1|Hindi makipag-ugnayan sa system helper.
-2|Naputol ang koneksyon sa system helper.
-3|Kinansela ang awtorisasyon.
-4|Kailangan ng karapatan ng administrator para sa aksyong ito.
-5|Biglang huminto ang system helper.
-6|Walang EFI system partition
-7|{free} lang ang bakante, kailangan ng MAN ang {need}. Magbakante ng espasyo gamit ang DUHACH! sa Windows.
-8|Walang bakanteng espasyo. Buksan ang DUHACH! sa Windows para magkaroon ng puwang ang MAN.
-9|Tumatakbo ang MAN mula sa disk na ito
-10|Ginagamit: may naka-mount na partition
-11|Masyadong maliit, kailangan ng MAN ang {need}
-12|I-install ang MAN
-13|Ini-install ang MAN. Pakihintay hanggang matapos.
-14|Wika
-15|I-_restart sa wikang ito
-16|Magre-restart ang live session sa napiling wika, at doon din ii-install ang MAN.
-17|Maligayang pagdating sa MAN
-18|Isang mabilis, bukas at ganap na nako-customize na GNOME system.\nI-install ito sa computer na ito, o ipagpatuloy ang paggalugad sa live session.
-19|_I-install ang MAN…
-20|_Patuloy na subukan ang MAN
-21|Naghahanap ng mga disk…
-22|Maligayang pagdating
-23|Nagsimula ang computer na ito sa lumang BIOS mode. Sa mga UEFI computer lang maii-install ang MAN: mag-restart at piliin ang UEFI boot option.
-24|Walang ibinalik na impormasyon ng disk ang system helper.
-25|  ·  EFI
-26|_Susunod
-27|Uri ng pag-install
-28|Burahin ang disk at i-install ang MAN
-29|Buburahin ang lahat sa napiling disk, pati ang Windows.
-30|Inirerekomenda. Buburahin ang lahat sa napiling disk.
-31|I-install katabi ng Windows
-32|Inirerekomenda. Ginagamit ng MAN ang bakanteng espasyo katabi ng Windows; mananatili ang Windows at mga file nito. Pipili ka ng system sa bawat pagbukas.
-33|I-install muli ang MAN
-34|Papalitan ang system pero itatabi ang mga personal na file sa /home. Ise-save bilang snapshot ang kasalukuyang system.
-35|Custom na mga partition
-36|Para sa mga eksperto: ikaw ang pumili ng mga partition, o gumawa gamit ang Disks.
-37|Disk
-38|Piliin ang disk na buburahin. Ipinapakita kasama ang dahilan ang mga disk na hindi magagamit.
-39|Walang nakitang disk
-40|Bakanteng espasyo katabi ng Windows
-41|Hindi gagalawin ang mga partition ng Windows. Kahati ng MAN ang EFI system partition at idinadagdag nito ang Windows sa boot menu nito.
-42|{size} bakante
-43|walang bakanteng espasyo
-44|{model} (Windows)
-45|Installation na papalitan
-46|walang home folder
-47|mga home folder: {list}
-48|mga snapshot: {n}
-49|MAN sa {model}
-50|Passphrase para sa {device}
-51|I-unlock
-52|Hindi masuri ang installation.
-53|Mga partition
-54|Ifo-format sa Btrfs ang system partition at maglalaman ito ng @system, @home at @snapshots. Hindi nakalista ang mga partition sa disk na pinagtatakbuhan ng MAN.
-55|Buksan ang Disks para gumawa o mag-resize ng mga partition
-56|I-refresh ang listahan ng partition
-57|Pumili ng partition
-58|EFI system partition
-59|I-format ang EFI system partition
-60|Iwanang naka-off para mapanatili ang mga boot loader ng ibang system
-61|System partition (ifo-format bilang Btrfs)
-62|Boot partition (kailangan kapag may encryption)
-63|Na-refresh ang listahan ng partition
-64|Seguridad
-65|I-encrypt ang system
-66|Pinoprotektahan ang iyong data kapag nawala o nanakaw ang computer. Hinihingi ang passphrase sa bawat pagbukas.
-67|Passphrase
-68|Kumpirmahin ang passphrase
-69|Itago nang ligtas ang passphrase na ito
-70|Kapag nawala ito, walang makakabawi sa data. Mananatili ang kernel at mga boot file sa isang maliit na hindi naka-encrypt na boot partition.
-71|Dapat may hindi bababa sa 8 character ang passphrase.
-72|Hindi magkatugma ang mga passphrase.
-73|Pumili ng disk.
-74|Piliin ang disk na may Windows.
-75|Piliin ang installation na papalitan.
-76|I-unlock muna ang naka-encrypt na installation.
-77|Walang MAN system sa partition na ito.
-78|Pumili ng EFI system partition.
-79|Piliin ang system partition.
-80|Dapat magkaiba ang EFI partition at system partition.
-81|Kailangan ng hiwalay na boot partition ang encryption.
-82|Dapat hindi bababa sa {size} ang system partition.
-83|Hindi naka-format sa FAT ang EFI partition; i-on ang pag-format.
-84|Naka-mount ang system partition; i-unmount muna ito sa Disks.
-85|Saan ii-install ang MAN?
-86|Oras at keyboard
-87|Time zone
-88|Layout ng keyboard
-89|Subukan ang keyboard
-90|Mag-type dito para tiyaking tama ang mga character na nalalabas ng mga key.
-91|Mag-type dito
-92|Time zone at keyboard
-93|Walang napiling disk
-94|Walang napiling system partition
-95|Nawala ang system partition
-96|Walang napiling installation
-97|Nawala ang disk
-98|Suriin
-99|Patutunguhan
-100|Burahin ang disk at i-install
-101|Custom na mga partition
-102|I-install muli, itabi ang /home
-103|Katabi ng Windows
-104| (ifo-format)
-105| (itatabi)
-106|System partition
-107|{partition} (ifo-format)
-108|Boot partition
-109|Installation
-110|Espasyo para sa MAN
-111|{free} na bakanteng espasyo (gagawa ng boot partition at system partition)
-112|Windows
-113|Walang pagbabago. Lilitaw ito sa boot menu ng MAN; magkahati ang EFI system partition.
-114|Encryption
-115|Naka-on (LUKS2)
-116|Naka-off
-117|File system
-118|Btrfs: @system para sa MAN, @home para sa iyong mga file, @snapshots para sa mga restore point. Magkakahati sila sa bakanteng espasyo.
-119|System
-120|Ang iyong account
-121|Gagawin sa MAN Setup sa unang pagbukas ng computer, kasama ang pangalan ng computer, itsura at mga setting ng privacy.
-122|Keyboard
-123|Buburahin ang lahat ng data sa {model} ({path}).
-124|_Burahin at i-install
-125|Ifo-format ang mga napiling partition. Hindi magbabago ang ibang partition.
-126|_I-format at i-install
-127|Papalitan ang kasalukuyang system. Itatabi ang iyong mga file sa /home, at ise-save bilang snapshot ang lumang system.
-128|I-install _muli
-129|Ii-install ang MAN sa bakanteng espasyo. Hindi magbabago ang Windows at mga file nito.
-130|_I-install
-131|Handa nang i-install
-132|Burahin ang {model}?
-133|Permanenteng buburahin ang lahat ng file at partition sa {path} ({size}). Hindi na ito maibabalik.
-134|Burahin at i-install
-135|I-format ang mga napiling partition?
-136|Permanenteng buburahin ang lahat ng data sa mga napiling partition. Hindi magbabago ang ibang partition.
-137|I-format at i-install
-138|I-install ang MAN katabi ng Windows?
-139|Ii-install ang MAN sa {free} na bakanteng espasyo sa {model} ({path}). Hindi magbabago ang Windows at mga file nito.
-140|I-install
-141|I-install muli ang MAN?
-142|Papalitan ng bagong kopya ang naka-install na system. Itatabi ang mga personal na file sa /home at mananatiling available bilang snapshot ang lumang system.
-143|I-install muli
-144|_Kanselahin
-145|Ini-install ang MAN
-146|Sinisimulan…
-147|Mga detalye
-148|Ini-install
-149|Hakbang {index} ng {n}  ·  {title}
-150|Log
-151|Naka-install na ang MAN
-152|I-restart ang computer para simulang gamitin ang MAN. May menu sa bawat pagbukas para pumili ng MAN o Windows; aalisin ng MAN ang pansamantalang installer partition sa unang pagbukas.
-153|I-restart ang computer para simulang gamitin ang MAN. Maaari mong alisin ang installation media; kung nakakabit pa rin, magsisimula pa rin ang MAN mula sa bagong disk.
-154|I-_restart ngayon
-155|Tapos na
-156|Nabigo ang pag-install
-157|Walang ibang disk na binago, at pinakawalan na ng installer ang target na disk. Maaari mong suriin ang plano at subukang muli.
-158|_Suriin at subukang muli
-159|_Ipakita ang mga detalye
-160|Log ng pag-install
-161|Maghanap ng wika
-162|Maghanap ng bansa
-163|Hindi nakita ang system disk.
-164|Kailangan ng encryption ang Btrfs layout na ginawa ng MAN installer.
-165|Walang hiwalay na boot partition ang installation na ito, na kailangan ng encryption. I-install muli ang MAN gamit ang “Burahin ang disk” para gumamit ng encryption.
-166|MAN Setup
-167|Nasaan ka?
-168|Ang iyong bansa o rehiyon ang nagtatakda ng format ng petsa, oras at mga numero.
-169|Bansa
-170|GNU General Public License, bersyon 2
-171|Ang Linux kernel at maraming system tool
-172|GNU General Public License, bersyon 3
-173|Maraming program ng GNU at GNOME
-174|GNU Lesser General Public License, bersyon 2.1
-175|GTK, GLib at maraming library
-176|GNU Lesser General Public License, bersyon 3
-177|Mga library
-178|Mozilla Public License 2.0
-179|Mga program at library mula sa Mozilla at iba pa
-180|Apache License 2.0
-181|Mga library at tool
-182|Kasunduan sa lisensya
-183|Pakibasa at tanggapin ang mga tuntunin kung saan ibinibigay ang MAN.
-184|Mga lisensya
-185|Hindi available ang teksto ng lisensya ({path}).
-186|Nabasa ko at tinatanggap ko ang mga tuntunin ng lisensya
-187|Wired
-188|Hindi nakakonekta
-189|Kumonekta sa internet
-190|Kapag may koneksyon, maitatakda ng MAN ang oras at mapapanatiling updated ang iyong software. Maaari mo rin itong gawin mamaya.
-191|Tinitingnan ang koneksyon…
-192|Mga Wi-Fi network
-193|Maghanap muli
-194|_Laktawan
-195|Maaari kang kumonekta mamaya sa Settings.
-196|Nakakonekta
-197|Hindi nakakonekta
-198|Walang nakitang network
-199|Internet
-200|Nakakonekta sa “{ssid}”
-201|Hindi makakonekta sa “{ssid}”
-202|Kumonekta sa “{ssid}”
-203|Ilagay ang password ng network.
-204|_Kumonekta
-205|Gawin ang iyong account
-206|Ikaw ang magiging administrator ng computer na ito, na may buong root access sa pamamagitan ng sudo.
-207|Buong pangalan
-208|Username
-209|Password
-210|Kumpirmahin ang password
-211|Awtomatikong mag-log in
-212|Laktawan ang login screen pagbukas ng computer
-213|Mga kasalukuyang home folder
-214|Gamitin ang parehong username para patuloy na magamit ang folder mula sa nakaraang installation.
-215|Gamitin
-216|Advanced
-217|Pangalan ng computer
-218|Magtakda ng root password
-219|Pinapayagang mag-log in nang direkta bilang root. Kung wala ito, gamitin ang sudo kasama ang sarili mong password.
-220|Root password
-221|Kumpirmahin ang root password
-222|Ilagay ang iyong pangalan.
-223|Pumili ng username.
-224|Ginagamit na ng system ang username na ito.
-225|Nakalaan sa system ang username na ito.
-226|Gumagamit ang mga username ng maliliit na titik, numero, - at _, at nagsisimula sa titik.
-227|Pumili ng password.
-228|Hindi magkatugma ang mga password.
-229|Maaaring may mga titik, numero at gitling ang pangalan ng computer.
-230|Ilagay nang dalawang beses ang root password.
-231|Tip: mas ligtas ang password na may 8 o higit pang character.
-232|Account
-233|Madilim
-234|Maliwanag
-235|Gawin itong sa iyo
-236|Pumili ng estilo, accent color at wallpaper. Makikita mo agad ang bawat pagbabago.
-237|Estilo
-238|Accent color
-239|Wallpaper
-240|I-customize
-241|Privacy
-242|Piliin kung aling mga feature ang maaaring gumamit ng impormasyon tungkol sa iyo. Mababago mo ito anumang oras sa Settings.
-243|Mga serbisyo ng lokasyon
-244|Pinapayagan ang mga app tulad ng Maps at Weather na alamin ang tinatayang lokasyon mo gamit ang mga kalapit na Wi-Fi network.
-245|Awtomatikong time zone
-246|Ginagamit ang lokasyon mo para manatiling tama ang time zone kapag naglalakbay.
-247|_Tapusin ang setup
-248|Naka-encrypt ang iyong disk
-249|Protektado ang iyong data. Hinihingi ang passphrase sa bawat pagbukas ng computer.
-250|Encryption ng disk
-251|Pinoprotektahan ng encryption ang iyong data kapag nawala o nanakaw ang computer.
-252|Hindi available sa installation na ito
-253|Pinoprotektahan ng encryption ang iyong mga file kapag nawala o nanakaw ang computer. Kung walang passphrase, walang makakabasa ng disk.
-254|I-encrypt ang disk
-255|Hinihingi ang passphrase sa bawat pagbukas ng computer.
-256|Magsisimula ang encryption sa susunod na restart
-257|Pagkatapos ay ie-encrypt ang disk sa background habang ginagamit mo ang computer. Kapag nawala ang passphrase, walang makakabawi sa data.
-258|Inihahanda ang MAN
-259|Inihahanda ang lahat…
-260|I-_restart
-261|_Bumalik
-262|Inihahanda
-263|Log ng setup
-264|Tapos na lahat!
-265|May nangyaring mali
-266|Araw-araw
-267|Bago mag-update
-268|Bago mag-restore
-269|Bago mag-install muli
-270|Manwal
-271|Wala pang snapshot
-272|Gumawa ng isa bago gumawa ng malalaking pagbabago sa system.
-273|I-restore…
-274|Burahin ang snapshot
-275|{free} bakante mula sa {size}. Magkakahati ang system, mga home folder at snapshot sa espasyong ito; espasyo lang para sa nagbago mula nang kunin ang ginagamit ng mga snapshot.
-276|_OK
-277|Gumawa ng snapshot
-278|Sine-save ang kasalukuyang kalagayan ng system. Hindi kasama ang iyong mga personal na file sa home folder.
-279|Paglalarawan, halimbawa “Bago mag-install ng mga driver”
-280|_Gumawa
-281|Manwal na snapshot
-282|Burahin ang snapshot?
-283|Permanenteng buburahin ang “{description}” mula {date}.
-284|_Burahin
-285|I-restore ang snapshot na ito?
-286|Babalik ang system sa “{description}” mula {date} pagkatapos mag-restart. Hindi magbabago ang iyong mga personal na file.\n\nIse-save muna bilang snapshot ang kasalukuyang system, kaya maaari itong bawiin.
-287|_I-restore
-288|Mag-restart para tapusin ang pag-restore
-289|I-restart _mamaya
-290|I-restart _ngayon
-291|Mga snapshot
-292|Mga restore point
-293|Sine-save ng mga snapshot ang kalagayan ng operating system. Ibinabalik ng pag-restore ng isa ang system sa sandaling iyon, na nakakatulong pagkatapos ng palpak na update o pagbabago ng setting. Hindi kailanman ginagalaw ang iyong mga personal na file.
-294|Mga awtomatikong snapshot
-295|Mga araw-araw na snapshot
-296|Isang beses sa isang araw habang naka-on ang computer
-297|Mga araw-araw na snapshot na itatabi
-298|Bago ang mga software update
-299|Awtomatikong kinukuha kapag may na-install, na-upgrade o inalis na package
-300|Mga snapshot ng update na itatabi
-301|Storage
-302|Espasyo sa disk
-303|Kung hindi magbukas ang MAN
-304|Piliin ang “Restore a MAN snapshot” sa boot menu para maibalik ang gumaganang system.
-305|Hindi available ang mga snapshot
-306|Gumagana ang mga snapshot sa MAN na naka-install gamit ang Btrfs layout ng MAN installer. Hindi ito ginagamit ng system na ito (halimbawa, isang live session).
-307|May naghihintay na restore: i-restart ang computer para matapos ito
-308|I-restart ngayon
-309|Pakihintay hanggang matapos ang kasalukuyang operasyon.
-310|Maghanap
-311|Kopyahin sa clipboard
-312|Coordinated Universal Time
-313|Ingles (US)
-317|Sinusuri ang update
-318|Tinitiyak na tunay at kumpleto ang update…
-319|MAN Update
-320|Hindi mai-install ang update na ito
-321|Hindi mabasa ang update.
-322|Update mula sa {name} {version}
-323|Naka-install ang {name} {version}
-324|Bersyon
-325|Inilabas
-326|Laki ng download
-327|Kailangang espasyo
-328|Pagiging tunay
-329|Na-verify, nilagdaan ni “{signer}”
-330|Ano'ng bago
-331|_Magpatuloy
-332|Hindi mas bago ang update na ito kaysa sa naka-install na {name} {version}.
-333|Update
-334|Pakibasa ang mga tuntunin ng lisensya ng update na ito.
-335|Tinatanggap ko ang mga tuntunin ng lisensya
-336|Saan ii-install ang update?
-337|Papalitan ang system; hindi gagalawin ang mga file sa iyong home folder.
-338|Pumili ng installation.
-339|tumatakbo ngayon
-340|{name} {version} sa computer na ito
-341|{name} sa {model}
-342|Walang nakitang MAN installation
-343|Ini-install ang mga update mula sa tumatakbo at naka-install na MAN system, hindi mula sa live session.
-344|Lokasyon ng installation
-345|Buod
-346|Itatabi
-347|Ang iyong mga file
-348|Lahat ng nasa iyong home folder
-349|Mga account at password
-350|Mga user, grupo, pangalan ng computer
-351|Mga koneksyon at setting
-352|Wi-Fi, time zone, keyboard, itsura at mga snapshot
-353|Mga Flatpak app
-354|Kasama ang lahat ng nasa /usr/local at /opt
-355|Papalitan
-356|Papalitan ng bagong system ang software na na-install gamit ang apt at iba pang pagbabago sa mga system file.
-357|Ang operating system
-358|Papalitan ng {name} {version}. Maibabalik mula sa snapshot ang kasalukuyang system.
-359|Magre-restart ang computer para i-install ang update
-360|Pagkatapos maghanda, magre-restart ang MAN, ii-install ang update sa loob ng ilang segundo at magre-restart muli.
-361|_I-install ang update
-362|Gumawa muna ng snapshot?
-363|Sine-save ng snapshot ang kasalukuyang system, para makabalik ka kung may hindi gumana pagkatapos ng update. Inirerekomenda ito.
-364|_Huwag gumawa
-365|_Gumawa ng snapshot
-366|Inihahanda ang {name} {version}
-367|Mag-restart para mag-install
-368|Magre-restart nang dalawang beses ang computer. Ligtas ang iyong mga file.
-369|Awtomatikong magre-restart sa loob ng {r} segundo
-370|Awtomatikong magre-restart sa loob ng 30 segundo
-371|Ii-install ang update sa susunod mong pag-restart.
-372|Handa na
-373|Hindi maihanda ang update
-374|Walang binago sa iyong system.
-375|_Subukang muli
-376|Log ng update
-377|Nabigo
-378|Na-update ang iyong system
-379|Na-update ang MAN sa bersyon {version}.\nDati: MAN {previous}.
-380|_Tapos na
-381|Magbukas ng MAN update
-382|Mga MAN update
-383|Sinusuri ang plano ng pag-install
-384|Inihahanda ang disk
-385|Kinokopya ang MAN sa disk
-386|Kino-configure ang bagong system
-387|Ini-install ang boot loader
-388|Ginagawa ang unang snapshot
-389|Tinatapos
-390|Inaalis ang mga lumang partition signature
-391|Gumagawa ng mga partition
-392|Fino-format ang EFI system partition
-393|Ine-encrypt ang system partition
-394|Fino-format ang boot partition
-395|Ginagawa ang Btrfs file system
-396|Inaalis ang mga lumang file system signature
-397|Ina-unlock ang naka-encrypt na installation
-398|Sine-save bilang snapshot ang kasalukuyang system
-399|Inaalis ang nakaraang system
-400|Isinusulat ang talaan ng file system
-401|Itinatakda ang pangalan at pagkakakilanlan ng computer
-402|Inaalis ang mga account ng live session
-403|Ginagawa ang iyong account
-404|Inihahanda ang MAN Setup para sa unang pagbukas
-405|Itinatakda ang time zone at keyboard
-406|Inaalis ang installer mula sa bagong system
-407|Binubuo ang boot image (initramfs)
-408|Kino-configure ang GRUB
-409|Ini-install ang GRUB sa EFI system partition
-410|Ini-install ang reserbang boot loader
-411|Isinusulat ang boot menu
-412|Handa na ang disk
-413|Gumagawa ng snapshot ng bagong system
-414|Idinadagdag ang snapshot sa boot menu
-415|Ina-unmount
-416|Dapat tumakbo bilang root ang installer helper.
-417|Hindi nagsimula ang computer na ito sa UEFI mode. Kailangan ng MAN ang UEFI.
-418|Hindi wasto ang username.
-419|Kailangan ng password.
-420|Hindi wasto ang pangalan ng computer.
-421|Hindi kilalang wika.
-422|Dapat may hindi bababa sa 8 character ang encryption passphrase.
-423|Nagbago ang disk pagkatapos mong kumpirmahin ang pag-install. Walang binago; pakisuri at kumpirmahin muli.
-424|Pumili ng system partition.
-425|Wala sa nakumpirmang disk ang napiling system partition.
-426|Dapat hiwalay ang boot partition sa EFI at system partition.
-427|Dapat hindi bababa sa 512 MB ang boot partition.
-428|Walang napiling installation.
-429|Wala sa nakumpirmang disk ang napiling installation.
-430|Walang MAN_BOOT partition ang naka-encrypt na installation.
-431|Walang nakitang kernel na may katugmang module sa /boot.
-432|Dapat ang system helper ang magpalit ng wika.
-433|Ina-apply ang iyong mga setting
-434|Inihahanda ang encryption ng disk
-435|Tinatapos
-436|Dapat tapusin ng system helper ang MAN Setup.
-437|Natapos na ang MAN Setup sa computer na ito.
-438|Hindi kilalang accent color.
-439|Hindi available ang napiling wallpaper.
-440|Hindi maaaring i-encrypt ang system na ito.
-441|Nawawala ang setup key, kaya hindi maipagpapatuloy ang encryption sa background.
-442|Hindi naka-install sa Btrfs ang system, kaya hindi available ang mga snapshot.
-443|May snapshot restore na naghihintay ng restart. I-restart muna ang computer para matapos ito.
-444|Hindi wastong snapshot ID.
-445|Sinusuri ang update
-446|Gumagawa ng snapshot
-447|Inihahanda ang update area
-448|Ina-unpack ang bagong system
-449|Inililipat ang iyong mga account at setting
-450|Inihahanda ang restart
-451|Na-unpack
-452|Mga account
-453|Inaalis ang software na pang-installer lang
-454|Binubuo ang boot image ng update
-455|Idinadagdag ang isang beses na boot entry
-456|Tunay ang update
-457|Nagawa ang snapshot
-458|Nilaktawan
-459|Handa na ang update area
-460|Inihahanda ang bagong system
-461|Sira ang update file (hindi tugma ang checksum). I-download itong muli.
-462|Hindi mabasa nang buo ang update file.
-463|Walang kernel ang update.
-464|Dapat ang system helper ang mag-install ng mga update.
-465|Hindi nakita ang napiling installation.
-466|Ang tumatakbong MAN installation lang ang maaaring i-update.
-467|Hindi ito MAN update file (walang manifest).
-468|Hindi nilagdaan ang update, kaya hindi ito mapagkakatiwalaan.
-469|Sira ang lagda ng update.
-470|Hindi nilagdaan ng MAN ang update. Maaaring binago ito o galing sa hindi mapagkakatiwalaang pinagmulan.
-471|Hindi wasto ang manifest ng update.
-472|Mali ang passphrase, o hindi mabuksan ang naka-encrypt na partition.
-473|Asul
-474|Teal
-475|Berde
-476|Dilaw
-477|Kahel
-478|Pula
-479|Rosas
-480|Lila
-481|Abo
-482|System Installer
-483|I-install ang MAN sa computer na ito
-484|Pag-restore ng system
-485|Gumawa at mag-restore ng mga snapshot ng system
-486|Installer ng system update
-487|Mag-install ng MAN system update file
-488|Nag-aalok na i-install ang MAN pagbukas ng live session
-489|Abiso ng MAN update
-490|Sinasabi sa iyo nang isang beses pagka-log in na na-update ang MAN
-491|I-set up ang iyong bagong MAN computer
-492|Unang setup ng MAN
-314|Inilabas na ang MAN {version}!
-315|Maaari kang mag-update dito.
-316|Buksan ang Mga Update
-493|Mga Update ng MAN
-494|Sinasabihan ka kapag may bagong bersyon ng MAN
+0|Hindi app ang file na ito na maaaring i-install dito (.deb, .flatpak, .flatpakref o AppImage).
+1|Ginawa ang app na ito para sa mga {arch} na computer at hindi ito gumagana sa computer na ito (x86-64).
+2|Hindi mabasa ang file. Maaaring sira ito.
+3|Hindi ito AppImage.
+4|Panimula
+5|Lisensya
+6|Pagpili ng Patutunguhan
+7|Uri ng pag-install
+8|Installation
+9|Buod
+10|_Magpatuloy
+11|Maligayang pagdating sa Installer ng {name}
+12|Kasunduan sa Lisensya ng Software
+13|Sumasang-ayon Ka ba sa Lisensya?
+14|Para magpatuloy sa pag-install, kailangan mong sumang-ayon sa mga tuntunin ng kasunduan sa lisensya ng software.
+15|_Basahin ang Lisensya
+16|_Sumasang-ayon
+17|Pumili ng Patutunguhan
+18|Karaniwang Pag-install
+19|_I-install
+20|Debian package (.deb)
+21|Flatpak app
+22|Flatpak app mula sa {source}
+23|AppImage
+24|Gagabayan ka sa mga hakbang na kailangan para i-install ang software na ito.
+25|Bersyon
+26|Publisher
+27|Uri
+28|Laki
+29|Website
+30|File
+31|Naka-install na ang app na ito. Papalitan ito kapag in-install ulit.
+32|Nagiging bahagi ng system ang mga app mula sa .deb package. Kapag na-update ang MAN, inaalis ang mga ito at kailangang i-install ulit. Pinapanatili ang mga Flatpak app at AppImage.
+33|Mag-install lang ng mga app mula sa mga pinagkukunang pinagkakatiwalaan mo.
+34|Saan mo gustong i-install ang {name}?
+35|Ang account mo lang ang makakagamit ng app.
+36|Kailangan ng mga karapatan ng administrator.
+37|Para sa Akin Lang
+38|Para sa Lahat ng User ng Computer na Ito
+39|Gagamit ito ng {size} na espasyo sa computer mo.
+40|Dina-download ang app mula sa {source}.
+41|Ini-install ang app para sa lahat ng user ng computer na ito.
+42|Ini-install ang app para sa iyo lang.
+43|Inililipat ang AppImage sa {folder} at idinadagdag sa mga app mo.
+44|I-click ang I-install para i-install ang {name}.
+45|Tinitingnan kung ano pa ang kailangan ng app…
+46|Ini-install din ang mga package na kailangan nito: {list}
+47|Hindi pa available ang ilang package na kailangan ng app. Kinukuha muna ng pag-install ang pinakabagong listahan ng package; kung kulang pa rin, hindi mai-install ang app.
+48|Ini-install ang {name}…
+49|Naghahanda…
+50|Mga detalye
+51|Ini-install ang package…
+52|Inililipat ang app sa folder nito…
+53|Hindi ma-install ang app.
+54|Ini-install ang app gamit ang Flatpak…
+55|Log
+56|_Isara
+57|Matagumpay ang Pag-install
+58|Na-install ang app.
+59|Nabigo ang Pag-install
+60|_Buksan
+61|_Ipakita ang mga detalye
+62|Log ng pag-install
+63|Installer ng App
+64|_Bumalik
+65|Binabasa ang app…
+66|I-install ang {name}
+67|Mga App
+68|Pumili ng App na I-install
+69|Hindi masimulan ang system helper.
+70|Hindi makipag-ugnayan sa system helper.
+71|Naputol ang koneksyon sa system helper.
+72|Kinansela ang awtorisasyon.
+73|Kailangan ng karapatan ng administrator para sa aksyong ito.
+74|Biglang huminto ang system helper.
+75|Walang EFI system partition
+76|{free} lang ang bakante, kailangan ng MAN ang {need}. Magbakante ng espasyo gamit ang DUHACH! sa Windows.
+77|Walang bakanteng espasyo. Buksan ang DUHACH! sa Windows para magkaroon ng puwang ang MAN.
+78|Tumatakbo ang MAN mula sa disk na ito
+79|Ginagamit: may naka-mount na partition
+80|Masyadong maliit, kailangan ng MAN ang {need}
+81|I-install ang MAN
+82|Ini-install ang MAN. Pakihintay hanggang matapos.
+83|Wika
+84|I-_restart sa wikang ito
+85|Magre-restart ang live session sa napiling wika, at doon din ii-install ang MAN.
+86|Maligayang pagdating sa MAN
+87|Isang mabilis, bukas at ganap na nako-customize na GNOME system.\nI-install ito sa computer na ito, o ipagpatuloy ang paggalugad sa live session.
+88|_I-install ang MAN…
+89|_Patuloy na subukan ang MAN
+90|Naghahanap ng mga disk…
+91|Maligayang pagdating
+92|Nagsimula ang computer na ito sa lumang BIOS mode. Sa mga UEFI computer lang maii-install ang MAN: mag-restart at piliin ang UEFI boot option.
+93|Walang ibinalik na impormasyon ng disk ang system helper.
+94|  ·  EFI
+95|_Susunod
+96|Burahin ang disk at i-install ang MAN
+97|Buburahin ang lahat sa napiling disk, pati ang Windows.
+98|Inirerekomenda. Buburahin ang lahat sa napiling disk.
+99|I-install katabi ng Windows
+100|Inirerekomenda. Ginagamit ng MAN ang bakanteng espasyo katabi ng Windows; mananatili ang Windows at mga file nito. Pipili ka ng system sa bawat pagbukas.
+101|I-install muli ang MAN
+102|Papalitan ang system pero itatabi ang mga personal na file sa /home. Ise-save bilang snapshot ang kasalukuyang system.
+103|Custom na mga partition
+104|Para sa mga eksperto: ikaw ang pumili ng mga partition, o gumawa gamit ang Disks.
+105|Disk
+106|Piliin ang disk na buburahin. Ipinapakita kasama ang dahilan ang mga disk na hindi magagamit.
+107|Walang nakitang disk
+108|Bakanteng espasyo katabi ng Windows
+109|Hindi gagalawin ang mga partition ng Windows. Kahati ng MAN ang EFI system partition at idinadagdag nito ang Windows sa boot menu nito.
+110|{size} bakante
+111|walang bakanteng espasyo
+112|{model} (Windows)
+113|Installation na papalitan
+114|walang home folder
+115|mga home folder: {list}
+116|mga snapshot: {n}
+117|MAN sa {model}
+118|Passphrase para sa {device}
+119|I-unlock
+120|Hindi masuri ang installation.
+121|Mga partition
+122|Ifo-format sa Btrfs ang system partition at maglalaman ito ng @system, @home at @snapshots. Hindi nakalista ang mga partition sa disk na pinagtatakbuhan ng MAN.
+123|Buksan ang Disks para gumawa o mag-resize ng mga partition
+124|I-refresh ang listahan ng partition
+125|Pumili ng partition
+126|EFI system partition
+127|I-format ang EFI system partition
+128|Iwanang naka-off para mapanatili ang mga boot loader ng ibang system
+129|System partition (ifo-format bilang Btrfs)
+130|Boot partition (kailangan kapag may encryption)
+131|Na-refresh ang listahan ng partition
+132|Seguridad
+133|I-encrypt ang system
+134|Pinoprotektahan ang iyong data kapag nawala o nanakaw ang computer. Hinihingi ang passphrase sa bawat pagbukas.
+135|Passphrase
+136|Kumpirmahin ang passphrase
+137|Itago nang ligtas ang passphrase na ito
+138|Kapag nawala ito, walang makakabawi sa data. Mananatili ang kernel at mga boot file sa isang maliit na hindi naka-encrypt na boot partition.
+139|Dapat may hindi bababa sa 8 character ang passphrase.
+140|Hindi magkatugma ang mga passphrase.
+141|Pumili ng disk.
+142|Piliin ang disk na may Windows.
+143|Piliin ang installation na papalitan.
+144|I-unlock muna ang naka-encrypt na installation.
+145|Walang MAN system sa partition na ito.
+146|Pumili ng EFI system partition.
+147|Piliin ang system partition.
+148|Dapat magkaiba ang EFI partition at system partition.
+149|Kailangan ng hiwalay na boot partition ang encryption.
+150|Dapat hindi bababa sa {size} ang system partition.
+151|Hindi naka-format sa FAT ang EFI partition; i-on ang pag-format.
+152|Naka-mount ang system partition; i-unmount muna ito sa Disks.
+153|Saan ii-install ang MAN?
+154|Oras at keyboard
+155|Time zone
+156|Layout ng keyboard
+157|Subukan ang keyboard
+158|Mag-type dito para tiyaking tama ang mga character na nalalabas ng mga key.
+159|Mag-type dito
+160|Time zone at keyboard
+161|Walang napiling disk
+162|Walang napiling system partition
+163|Nawala ang system partition
+164|Walang napiling installation
+165|Nawala ang disk
+166|Suriin
+167|Patutunguhan
+168|Burahin ang disk at i-install
+169|Custom na mga partition
+170|I-install muli, itabi ang /home
+171|Katabi ng Windows
+172| (ifo-format)
+173| (itatabi)
+174|System partition
+175|{partition} (ifo-format)
+176|Boot partition
+177|Espasyo para sa MAN
+178|{free} na bakanteng espasyo (gagawa ng boot partition at system partition)
+179|Windows
+180|Walang pagbabago. Lilitaw ito sa boot menu ng MAN; magkahati ang EFI system partition.
+181|Encryption
+182|Naka-on (LUKS2)
+183|Naka-off
+184|File system
+185|Btrfs: @system para sa MAN, @home para sa iyong mga file, @snapshots para sa mga restore point. Magkakahati sila sa bakanteng espasyo.
+186|System
+187|Ang iyong account
+188|Gagawin sa MAN Setup sa unang pagbukas ng computer, kasama ang pangalan ng computer, itsura at mga setting ng privacy.
+189|Keyboard
+190|Buburahin ang lahat ng data sa {model} ({path}).
+191|_Burahin at i-install
+192|Ifo-format ang mga napiling partition. Hindi magbabago ang ibang partition.
+193|_I-format at i-install
+194|Papalitan ang kasalukuyang system. Itatabi ang iyong mga file sa /home, at ise-save bilang snapshot ang lumang system.
+195|I-install _muli
+196|Ii-install ang MAN sa bakanteng espasyo. Hindi magbabago ang Windows at mga file nito.
+197|Handa nang i-install
+198|Burahin ang {model}?
+199|Permanenteng buburahin ang lahat ng file at partition sa {path} ({size}). Hindi na ito maibabalik.
+200|Burahin at i-install
+201|I-format ang mga napiling partition?
+202|Permanenteng buburahin ang lahat ng data sa mga napiling partition. Hindi magbabago ang ibang partition.
+203|I-format at i-install
+204|I-install ang MAN katabi ng Windows?
+205|Ii-install ang MAN sa {free} na bakanteng espasyo sa {model} ({path}). Hindi magbabago ang Windows at mga file nito.
+206|I-install
+207|I-install muli ang MAN?
+208|Papalitan ng bagong kopya ang naka-install na system. Itatabi ang mga personal na file sa /home at mananatiling available bilang snapshot ang lumang system.
+209|I-install muli
+210|_Kanselahin
+211|Ini-install ang MAN
+212|Sinisimulan…
+213|Ini-install
+214|Hakbang {index} ng {n}  ·  {title}
+215|Naka-install na ang MAN
+216|I-restart ang computer para simulang gamitin ang MAN. May menu sa bawat pagbukas para pumili ng MAN o Windows; aalisin ng MAN ang pansamantalang installer partition sa unang pagbukas.
+217|I-restart ang computer para simulang gamitin ang MAN. Maaari mong alisin ang installation media; kung nakakabit pa rin, magsisimula pa rin ang MAN mula sa bagong disk.
+218|I-_restart ngayon
+219|Tapos na
+220|Nabigo ang pag-install
+221|Walang ibang disk na binago, at pinakawalan na ng installer ang target na disk. Maaari mong suriin ang plano at subukang muli.
+222|_Suriin at subukang muli
+223|Maghanap ng wika
+224|Maghanap ng bansa
+225|Hindi nakita ang system disk.
+226|Kailangan ng encryption ang Btrfs layout na ginawa ng MAN installer.
+227|Walang hiwalay na boot partition ang installation na ito, na kailangan ng encryption. I-install muli ang MAN gamit ang “Burahin ang disk” para gumamit ng encryption.
+228|MAN Setup
+229|Nasaan ka?
+230|Ang iyong bansa o rehiyon ang nagtatakda ng format ng petsa, oras at mga numero.
+231|Bansa
+232|GNU General Public License, bersyon 2
+233|Ang Linux kernel at maraming system tool
+234|GNU General Public License, bersyon 3
+235|Maraming program ng GNU at GNOME
+236|GNU Lesser General Public License, bersyon 2.1
+237|GTK, GLib at maraming library
+238|GNU Lesser General Public License, bersyon 3
+239|Mga library
+240|Mozilla Public License 2.0
+241|Mga program at library mula sa Mozilla at iba pa
+242|Apache License 2.0
+243|Mga library at tool
+244|Kasunduan sa lisensya
+245|Pakibasa at tanggapin ang mga tuntunin kung saan ibinibigay ang MAN.
+246|Mga lisensya
+247|Hindi available ang teksto ng lisensya ({path}).
+248|Nabasa ko at tinatanggap ko ang mga tuntunin ng lisensya
+249|Wired
+250|Hindi nakakonekta
+251|Kumonekta sa internet
+252|Kapag may koneksyon, maitatakda ng MAN ang oras at mapapanatiling updated ang iyong software. Maaari mo rin itong gawin mamaya.
+253|Tinitingnan ang koneksyon…
+254|Mga Wi-Fi network
+255|Maghanap muli
+256|_Laktawan
+257|Maaari kang kumonekta mamaya sa Settings.
+258|Nakakonekta
+259|Hindi nakakonekta
+260|Walang nakitang network
+261|Internet
+262|Nakakonekta sa “{ssid}”
+263|Hindi makakonekta sa “{ssid}”
+264|Kumonekta sa “{ssid}”
+265|Ilagay ang password ng network.
+266|_Kumonekta
+267|Gawin ang iyong account
+268|Ikaw ang magiging administrator ng computer na ito, na may buong root access sa pamamagitan ng sudo.
+269|Buong pangalan
+270|Username
+271|Password
+272|Kumpirmahin ang password
+273|Awtomatikong mag-log in
+274|Laktawan ang login screen pagbukas ng computer
+275|Mga kasalukuyang home folder
+276|Gamitin ang parehong username para patuloy na magamit ang folder mula sa nakaraang installation.
+277|Gamitin
+278|Advanced
+279|Pangalan ng computer
+280|Magtakda ng root password
+281|Pinapayagang mag-log in nang direkta bilang root. Kung wala ito, gamitin ang sudo kasama ang sarili mong password.
+282|Root password
+283|Kumpirmahin ang root password
+284|Ilagay ang iyong pangalan.
+285|Pumili ng username.
+286|Ginagamit na ng system ang username na ito.
+287|Nakalaan sa system ang username na ito.
+288|Gumagamit ang mga username ng maliliit na titik, numero, - at _, at nagsisimula sa titik.
+289|Pumili ng password.
+290|Hindi magkatugma ang mga password.
+291|Maaaring may mga titik, numero at gitling ang pangalan ng computer.
+292|Ilagay nang dalawang beses ang root password.
+293|Tip: mas ligtas ang password na may 8 o higit pang character.
+294|Account
+295|Madilim
+296|Maliwanag
+297|Gawin itong sa iyo
+298|Pumili ng estilo, accent color at wallpaper. Makikita mo agad ang bawat pagbabago.
+299|Estilo
+300|Accent color
+301|Wallpaper
+302|I-customize
+303|Privacy
+304|Piliin kung aling mga feature ang maaaring gumamit ng impormasyon tungkol sa iyo. Mababago mo ito anumang oras sa Settings.
+305|Mga serbisyo ng lokasyon
+306|Pinapayagan ang mga app tulad ng Maps at Weather na alamin ang tinatayang lokasyon mo gamit ang mga kalapit na Wi-Fi network.
+307|Awtomatikong time zone
+308|Ginagamit ang lokasyon mo para manatiling tama ang time zone kapag naglalakbay.
+309|_Tapusin ang setup
+310|Naka-encrypt ang iyong disk
+311|Protektado ang iyong data. Hinihingi ang passphrase sa bawat pagbukas ng computer.
+312|Encryption ng disk
+313|Pinoprotektahan ng encryption ang iyong data kapag nawala o nanakaw ang computer.
+314|Hindi available sa installation na ito
+315|Pinoprotektahan ng encryption ang iyong mga file kapag nawala o nanakaw ang computer. Kung walang passphrase, walang makakabasa ng disk.
+316|I-encrypt ang disk
+317|Hinihingi ang passphrase sa bawat pagbukas ng computer.
+318|Magsisimula ang encryption sa susunod na restart
+319|Pagkatapos ay ie-encrypt ang disk sa background habang ginagamit mo ang computer. Kapag nawala ang passphrase, walang makakabawi sa data.
+320|Inihahanda ang MAN
+321|Inihahanda ang lahat…
+322|I-_restart
+323|_Bumalik
+324|Inihahanda
+325|Log ng setup
+326|Tapos na lahat!
+327|May nangyaring mali
+328|Araw-araw
+329|Bago mag-update
+330|Bago mag-restore
+331|Bago mag-install muli
+332|Manwal
+333|Wala pang snapshot
+334|Gumawa ng isa bago gumawa ng malalaking pagbabago sa system.
+335|I-restore…
+336|Burahin ang snapshot
+337|{free} bakante mula sa {size}. Magkakahati ang system, mga home folder at snapshot sa espasyong ito; espasyo lang para sa nagbago mula nang kunin ang ginagamit ng mga snapshot.
+338|_OK
+339|Gumawa ng snapshot
+340|Sine-save ang kasalukuyang kalagayan ng system. Hindi kasama ang iyong mga personal na file sa home folder.
+341|Paglalarawan, halimbawa “Bago mag-install ng mga driver”
+342|_Gumawa
+343|Manwal na snapshot
+344|Burahin ang snapshot?
+345|Permanenteng buburahin ang “{description}” mula {date}.
+346|_Burahin
+347|I-restore ang snapshot na ito?
+348|Babalik ang system sa “{description}” mula {date} pagkatapos mag-restart. Hindi magbabago ang iyong mga personal na file.\n\nIse-save muna bilang snapshot ang kasalukuyang system, kaya maaari itong bawiin.
+349|_I-restore
+350|Mag-restart para tapusin ang pag-restore
+351|I-restart _mamaya
+352|I-restart _ngayon
+353|Mga snapshot
+354|Mga restore point
+355|Sine-save ng mga snapshot ang kalagayan ng operating system. Ibinabalik ng pag-restore ng isa ang system sa sandaling iyon, na nakakatulong pagkatapos ng palpak na update o pagbabago ng setting. Hindi kailanman ginagalaw ang iyong mga personal na file.
+356|Mga awtomatikong snapshot
+357|Mga araw-araw na snapshot
+358|Isang beses sa isang araw habang naka-on ang computer
+359|Mga araw-araw na snapshot na itatabi
+360|Bago ang mga software update
+361|Awtomatikong kinukuha kapag may na-install, na-upgrade o inalis na package
+362|Mga snapshot ng update na itatabi
+363|Storage
+364|Espasyo sa disk
+365|Kung hindi magbukas ang MAN
+366|Piliin ang “Restore a MAN snapshot” sa boot menu para maibalik ang gumaganang system.
+367|Hindi available ang mga snapshot
+368|Gumagana ang mga snapshot sa MAN na naka-install gamit ang Btrfs layout ng MAN installer. Hindi ito ginagamit ng system na ito (halimbawa, isang live session).
+369|May naghihintay na restore: i-restart ang computer para matapos ito
+370|I-restart ngayon
+371|Pakihintay hanggang matapos ang kasalukuyang operasyon.
+372|Maghanap
+373|Kopyahin sa clipboard
+374|Coordinated Universal Time
+375|Ingles (US)
+376|Inilabas na ang MAN {version}!
+377|Maaari kang mag-update dito.
+378|Buksan ang Mga Update
+379|Sinusuri ang update
+380|Tinitiyak na tunay at kumpleto ang update…
+381|MAN Update
+382|Hindi mai-install ang update na ito
+383|Hindi mabasa ang update.
+384|Update mula sa {name} {version}
+385|Naka-install ang {name} {version}
+386|Inilabas
+387|Laki ng download
+388|Kailangang espasyo
+389|Pagiging tunay
+390|Na-verify, nilagdaan ni “{signer}”
+391|Ano'ng bago
+392|Hindi mas bago ang update na ito kaysa sa naka-install na {name} {version}.
+393|Update
+394|Pakibasa ang mga tuntunin ng lisensya ng update na ito.
+395|Tinatanggap ko ang mga tuntunin ng lisensya
+396|Saan ii-install ang update?
+397|Papalitan ang system; hindi gagalawin ang mga file sa iyong home folder.
+398|Pumili ng installation.
+399|tumatakbo ngayon
+400|{name} {version} sa computer na ito
+401|{name} sa {model}
+402|Walang nakitang MAN installation
+403|Ini-install ang mga update mula sa tumatakbo at naka-install na MAN system, hindi mula sa live session.
+404|Lokasyon ng installation
+405|Itatabi
+406|Ang iyong mga file
+407|Lahat ng nasa iyong home folder
+408|Mga account at password
+409|Mga user, grupo, pangalan ng computer
+410|Mga koneksyon at setting
+411|Wi-Fi, time zone, keyboard, itsura at mga snapshot
+412|Mga Flatpak app
+413|Kasama ang lahat ng nasa /usr/local at /opt
+414|Papalitan
+415|Papalitan ng bagong system ang software na na-install gamit ang apt at iba pang pagbabago sa mga system file.
+416|Ang operating system
+417|Papalitan ng {name} {version}. Maibabalik mula sa snapshot ang kasalukuyang system.
+418|Magre-restart ang computer para i-install ang update
+419|Pagkatapos maghanda, magre-restart ang MAN, ii-install ang update sa loob ng ilang segundo at magre-restart muli.
+420|_I-install ang update
+421|Gumawa muna ng snapshot?
+422|Sine-save ng snapshot ang kasalukuyang system, para makabalik ka kung may hindi gumana pagkatapos ng update. Inirerekomenda ito.
+423|_Huwag gumawa
+424|_Gumawa ng snapshot
+425|Inihahanda ang {name} {version}
+426|Mag-restart para mag-install
+427|Magre-restart nang dalawang beses ang computer. Ligtas ang iyong mga file.
+428|Awtomatikong magre-restart sa loob ng {r} segundo
+429|Awtomatikong magre-restart sa loob ng 30 segundo
+430|Ii-install ang update sa susunod mong pag-restart.
+431|Handa na
+432|Hindi maihanda ang update
+433|Walang binago sa iyong system.
+434|_Subukang muli
+435|Log ng update
+436|Nabigo
+437|Na-update ang iyong system
+438|Na-update ang MAN sa bersyon {version}.\nDati: MAN {previous}.
+439|_Tapos na
+440|Magbukas ng MAN update
+441|Mga MAN update
+442|Kinukuha ang pinakabagong listahan ng package…
+443|Kinokopya ang app
+444|Idinadagdag ang app sa menu
+445|Hindi nakita ang file.
+446|Hindi ma-install ang package.
+447|Hindi valid ang menu entry ng app.
+448|Sinusuri ang plano ng pag-install
+449|Inihahanda ang disk
+450|Kinokopya ang MAN sa disk
+451|Kino-configure ang bagong system
+452|Ini-install ang boot loader
+453|Ginagawa ang unang snapshot
+454|Tinatapos
+455|Inaalis ang mga lumang partition signature
+456|Gumagawa ng mga partition
+457|Fino-format ang EFI system partition
+458|Ine-encrypt ang system partition
+459|Fino-format ang boot partition
+460|Ginagawa ang Btrfs file system
+461|Inaalis ang mga lumang file system signature
+462|Ina-unlock ang naka-encrypt na installation
+463|Sine-save bilang snapshot ang kasalukuyang system
+464|Inaalis ang nakaraang system
+465|Isinusulat ang talaan ng file system
+466|Itinatakda ang pangalan at pagkakakilanlan ng computer
+467|Inaalis ang mga account ng live session
+468|Ginagawa ang iyong account
+469|Inihahanda ang MAN Setup para sa unang pagbukas
+470|Itinatakda ang time zone at keyboard
+471|Inaalis ang installer mula sa bagong system
+472|Binubuo ang boot image (initramfs)
+473|Kino-configure ang GRUB
+474|Ini-install ang GRUB sa EFI system partition
+475|Ini-install ang reserbang boot loader
+476|Isinusulat ang boot menu
+477|Handa na ang disk
+478|Gumagawa ng snapshot ng bagong system
+479|Idinadagdag ang snapshot sa boot menu
+480|Ina-unmount
+481|Dapat tumakbo bilang root ang installer helper.
+482|Hindi nagsimula ang computer na ito sa UEFI mode. Kailangan ng MAN ang UEFI.
+483|Hindi wasto ang username.
+484|Kailangan ng password.
+485|Hindi wasto ang pangalan ng computer.
+486|Hindi kilalang wika.
+487|Dapat may hindi bababa sa 8 character ang encryption passphrase.
+488|Nagbago ang disk pagkatapos mong kumpirmahin ang pag-install. Walang binago; pakisuri at kumpirmahin muli.
+489|Pumili ng system partition.
+490|Wala sa nakumpirmang disk ang napiling system partition.
+491|Dapat hiwalay ang boot partition sa EFI at system partition.
+492|Dapat hindi bababa sa 512 MB ang boot partition.
+493|Walang napiling installation.
+494|Wala sa nakumpirmang disk ang napiling installation.
+495|Walang MAN_BOOT partition ang naka-encrypt na installation.
+496|Walang nakitang kernel na may katugmang module sa /boot.
+497|Dapat ang system helper ang magpalit ng wika.
+498|Ina-apply ang iyong mga setting
+499|Inihahanda ang encryption ng disk
+500|Tinatapos
+501|Dapat tapusin ng system helper ang MAN Setup.
+502|Natapos na ang MAN Setup sa computer na ito.
+503|Hindi kilalang accent color.
+504|Hindi available ang napiling wallpaper.
+505|Hindi maaaring i-encrypt ang system na ito.
+506|Nawawala ang setup key, kaya hindi maipagpapatuloy ang encryption sa background.
+507|Hindi naka-install sa Btrfs ang system, kaya hindi available ang mga snapshot.
+508|May snapshot restore na naghihintay ng restart. I-restart muna ang computer para matapos ito.
+509|Hindi wastong snapshot ID.
+510|Sinusuri ang update
+511|Gumagawa ng snapshot
+512|Inihahanda ang update area
+513|Ina-unpack ang bagong system
+514|Inililipat ang iyong mga account at setting
+515|Inihahanda ang restart
+516|Na-unpack
+517|Mga account
+518|Inaalis ang software na pang-installer lang
+519|Binubuo ang boot image ng update
+520|Idinadagdag ang isang beses na boot entry
+521|Tunay ang update
+522|Nagawa ang snapshot
+523|Nilaktawan
+524|Handa na ang update area
+525|Inihahanda ang bagong system
+526|Sira ang update file (hindi tugma ang checksum). I-download itong muli.
+527|Hindi mabasa nang buo ang update file.
+528|Walang kernel ang update.
+529|Dapat ang system helper ang mag-install ng mga update.
+530|Hindi nakita ang napiling installation.
+531|Ang tumatakbong MAN installation lang ang maaaring i-update.
+532|Hindi ito MAN update file (walang manifest).
+533|Hindi nilagdaan ang update, kaya hindi ito mapagkakatiwalaan.
+534|Sira ang lagda ng update.
+535|Hindi nilagdaan ng MAN ang update. Maaaring binago ito o galing sa hindi mapagkakatiwalaang pinagmulan.
+536|Hindi wasto ang manifest ng update.
+537|Mali ang passphrase, o hindi mabuksan ang naka-encrypt na partition.
+538|Asul
+539|Teal
+540|Berde
+541|Dilaw
+542|Kahel
+543|Pula
+544|Rosas
+545|Lila
+546|Abo
+547|Installer ng Package
+548|Mag-install ng mga app mula sa .deb, Flatpak at AppImage na file
+549|System Installer
+550|I-install ang MAN sa computer na ito
+551|Pag-restore ng system
+552|Gumawa at mag-restore ng mga snapshot ng system
+553|Installer ng system update
+554|Mag-install ng MAN system update file
+555|Nag-aalok na i-install ang MAN pagbukas ng live session
+556|Abiso ng MAN update
+557|Sinasabi sa iyo nang isang beses pagka-log in na na-update ang MAN
+558|I-set up ang iyong bagong MAN computer
+559|Unang setup ng MAN
+560|Mga Update ng MAN
+561|Sinasabihan ka kapag may bagong bersyon ng MAN

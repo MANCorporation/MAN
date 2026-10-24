@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "یہ فائل ایسی ایپ نہیں جو یہاں انسٹال ہو سکے (‎.deb، ‎.flatpak، ‎.flatpakref یا AppImage)۔"
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "یہ ایپ {arch} کمپیوٹرز کے لیے بنی ہے اور اس کمپیوٹر (x86-64) پر کام نہیں کرتی۔"
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "فائل پڑھی نہیں جا سکی۔ شاید یہ خراب ہے۔"
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "یہ AppImage نہیں ہے۔"
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "تعارف"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "لائسنس"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "مقام کا انتخاب"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "انسٹالیشن کی قسم"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "انسٹالیشن"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "خلاصہ"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_جاری رکھیں"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} انسٹالر میں خوش آمدید"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "سافٹ ویئر لائسنس معاہدہ"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "کیا آپ لائسنس سے متفق ہیں؟"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "انسٹالیشن جاری رکھنے کے لیے آپ کو سافٹ ویئر لائسنس معاہدے کی شرائط سے متفق ہونا ہو گا۔"
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "لائسنس _پڑھیں"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_متفق ہوں"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "مقام منتخب کریں"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "معیاری انسٹالیشن"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_انسٹال کریں"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "ڈیبیئن پیکیج (‎.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak ایپ"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} سے Flatpak ایپ"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "اس سافٹ ویئر کو انسٹال کرنے کے لیے ضروری مراحل میں آپ کی رہنمائی کی جائے گی۔"
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "ورژن"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "ناشر"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "قسم"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "سائز"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "ویب سائٹ"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "فائل"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "یہ ایپ پہلے سے انسٹال ہے۔ دوبارہ انسٹال کرنے سے یہ بدل جائے گی۔"
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "‎.deb پیکیجوں کی ایپس سسٹم کا حصہ بن جاتی ہیں۔ MAN اپ ڈیٹ ہونے پر انہیں ہٹا دیا جاتا ہے اور دوبارہ انسٹال کرنا پڑتا ہے۔ Flatpak ایپس اور AppImage محفوظ رہتی ہیں۔"
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "صرف قابل اعتماد ذرائع سے ایپس انسٹال کریں۔"
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "آپ {name} کہاں انسٹال کرنا چاہتے ہیں؟"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "صرف آپ کا اکاؤنٹ یہ ایپ استعمال کر سکتا ہے۔"
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "منتظم کے حقوق درکار ہیں۔"
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "صرف میرے لیے"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "اس کمپیوٹر کے تمام صارفین کے لیے"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "اس سے آپ کے کمپیوٹر پر {size} جگہ لگے گی۔"
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "ایپ {source} سے ڈاؤن لوڈ ہوتی ہے۔"
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "ایپ اس کمپیوٹر کے تمام صارفین کے لیے انسٹال ہوتی ہے۔"
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "ایپ صرف آپ کے لیے انسٹال ہوتی ہے۔"
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage کو {folder} میں منتقل کر کے آپ کی ایپس میں شامل کیا جاتا ہے۔"
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} انسٹال کرنے کے لیے انسٹال پر کلک کریں۔"
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "جانچا جا رہا ہے کہ ایپ کو اور کیا چاہیے…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "ضروری پیکیج بھی انسٹال کرتا ہے: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "ایپ کو درکار کچھ پیکیج ابھی دستیاب نہیں۔ انسٹالیشن پہلے تازہ ترین پیکیج فہرستیں لیتی ہے؛ اگر پھر بھی غائب ہوں تو ایپ انسٹال نہیں ہو سکتی۔"
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} انسٹال ہو رہا ہے…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "تیاری ہو رہی ہے…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "تفصیلات"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "پیکیج انسٹال ہو رہا ہے…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "ایپ کو اس کے فولڈر میں منتقل کیا جا رہا ہے…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "ایپ انسٹال نہیں ہو سکی۔"
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "ایپ Flatpak کے ذریعے انسٹال ہو رہی ہے…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "لاگ"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_بند کریں"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "انسٹالیشن کامیاب رہی"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "ایپ انسٹال ہو گئی۔"
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "انسٹالیشن ناکام ہو گئی"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_کھولیں"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_تفصیلات دکھائیں"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "انسٹالیشن لاگ"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "ایپ انسٹالر"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_واپس"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "ایپ پڑھی جا رہی ہے…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} انسٹال کریں"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "ایپس"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "انسٹال کرنے کے لیے ایپ منتخب کریں"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "سسٹم معاون شروع نہیں ہو سکا۔"
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "سسٹم معاون سے رابطہ نہیں ہو سکا۔"
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "سسٹم معاون سے رابطہ ٹوٹ گیا۔"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "اجازت منسوخ کر دی گئی۔"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "اس کام کے لیے منتظم کے اختیارات درکار ہیں۔"
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "سسٹم معاون اچانک رک گیا۔"
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_اگلا"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "انسٹالیشن کی قسم"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (فارمیٹ ہوگا)"
 msgid "Boot Partition"
 msgstr "بوٹ پارٹیشن"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "انسٹالیشن"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN کے لیے جگہ"
@@ -530,10 +798,6 @@ msgstr "_دوبارہ انسٹال کریں"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN خالی جگہ میں انسٹال ہوگا۔ Windows اور اس کی فائلیں نہیں بدلیں گی۔"
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_انسٹال کریں"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "انسٹال کے لیے تیار"
@@ -598,10 +862,6 @@ msgstr "MAN انسٹال ہو رہا ہے"
 msgid "Starting…"
 msgstr "شروع ہو رہا ہے…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "تفصیلات"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "انسٹال ہو رہا ہے"
@@ -609,10 +869,6 @@ msgstr "انسٹال ہو رہا ہے"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "مرحلہ {index} از {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "لاگ"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "کوئی اور ڈسک نہیں بدلی گئی، اور انسٹالر 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_جائزہ لیں اور دوبارہ کوشش کریں"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_تفصیلات دکھائیں"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "انسٹالیشن لاگ"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "مربوط عالمی وقت"
 msgid "English (US)"
 msgstr "انگریزی (امریکا)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "‏MAN {version} جاری ہو گیا!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "آپ اس پر اپ ڈیٹ کر سکتے ہیں۔"
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "اپ ڈیٹس کھولیں"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} سے اپ ڈیٹ"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} انسٹال ہے"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "ورژن"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "جاری کردہ"
@@ -1339,10 +1583,6 @@ msgstr "تصدیق شدہ، «{signer}» کے دستخط"
 #: updater.rs:120
 msgid "What's New"
 msgstr "نیا کیا ہے"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_جاری رکھیں"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "اپ ڈیٹس چلتے ہوئے، انسٹال شدہ MAN سسٹم سے 
 #: updater.rs:240
 msgid "Install Location"
 msgstr "انسٹالیشن کا مقام"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "خلاصہ"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN اپ ڈیٹ کھولیں"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN اپ ڈیٹس"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "تازہ ترین پیکیج فہرستیں لی جا رہی ہیں…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "ایپ کاپی ہو رہی ہے"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "ایپ مینو میں شامل کی جا رہی ہے"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "فائل نہیں ملی۔"
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "پیکیج انسٹال نہیں ہو سکا۔"
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "ایپ کا مینو اندراج درست نہیں۔"
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "آپ کے اکاؤنٹس اور ترتیبات منتقل ہو رہی ہ
 msgid "Preparing the restart"
 msgstr "دوبارہ شروع کرنے کی تیاری"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "کھول دیا گیا"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "اکاؤنٹس"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "صرف انسٹالر کا سافٹ ویئر ہٹایا جا رہا ہے"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "اپ ڈیٹ کی بوٹ امیج بن رہی ہے"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "ایک بار کا بوٹ اندراج شامل ہو رہا ہے"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "اپ ڈیٹ اصلی ہے"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "اسنیپ شاٹ بن گیا"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "چھوڑ دیا گیا"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "اپ ڈیٹ ایریا تیار"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "نیا سسٹم تیار ہو رہا ہے"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "اپ ڈیٹ فائل خراب ہے (چیک سم نہیں ملتا)۔ اسے دوبارہ ڈاؤن لوڈ کریں۔"
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "اپ ڈیٹ فائل پوری نہیں پڑھی جا سکی۔"
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "اپ ڈیٹ میں کوئی کرنل نہیں۔"
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "اپ ڈیٹس سسٹم معاون ہی انسٹال کر سکتا ہے۔"
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "منتخب انسٹالیشن نہیں ملی۔"
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "صرف چلتی ہوئی MAN انسٹالیشن اپ ڈیٹ ہو سکتی ہے۔"
 
@@ -1947,6 +2207,14 @@ msgstr "جامنی"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "سلیٹی"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "پیکیج انسٹالر"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "‎.deb، Flatpak اور AppImage فائلوں سے ایپس انسٹال کریں"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

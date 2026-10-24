@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "此檔案不是可以在這裡安裝的應用程式（.deb、.flatpak、.flatpakref 或 AppImage）。"
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "此應用程式是為 {arch} 電腦製作的，無法在這台電腦（x86-64）上執行。"
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "無法讀取檔案。檔案可能已損毀。"
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "這不是 AppImage。"
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "簡介"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "授權條款"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "選擇位置"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "安裝類型"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "安裝"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "摘要"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "繼續(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "歡迎使用 {name} 安裝程式"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "軟體授權合約"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "您同意授權條款嗎？"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "若要繼續安裝，您必須同意軟體授權合約的條款。"
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "閱讀授權條款(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "同意(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "選擇位置"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "標準安裝"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "安裝(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian 套件（.deb）"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak 應用程式"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "來自 {source} 的 Flatpak 應用程式"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "我們將引導您完成安裝此軟體所需的步驟。"
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "版本"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "發行者"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "類型"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "大小"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "網站"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "檔案"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "此應用程式已經安裝。再次安裝會取代它。"
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb 套件中的應用程式會成為系統的一部分。MAN 更新時會移除它們，需要重新安裝。Flatpak 應用程式和 AppImage 會保留。"
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "請只安裝來自可信任來源的應用程式。"
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "您想將 {name} 安裝在哪裡？"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "只有您的帳號可以使用此應用程式。"
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "需要管理員權限。"
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "僅限我"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "這台電腦的所有使用者"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "將佔用電腦上 {size} 的空間。"
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "應用程式將從 {source} 下載。"
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "應用程式將為這台電腦的所有使用者安裝。"
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "應用程式將只為您安裝。"
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage 會移到 {folder} 並加入您的應用程式。"
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "按一下「安裝」以安裝 {name}。"
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "正在檢查應用程式還需要什麼…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "也會安裝它需要的套件：{list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "應用程式需要的某些套件暫時無法使用。安裝時會先取得最新的套件清單；如果仍然缺少，則無法安裝此應用程式。"
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "正在安裝 {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "正在準備…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "詳細資訊"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "正在安裝套件…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "正在將應用程式移到它的資料夾…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "無法安裝應用程式。"
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "正在使用 Flatpak 安裝應用程式…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "紀錄"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "關閉(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "安裝成功"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "應用程式已安裝。"
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "安裝失敗"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "開啟(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "顯示詳細資訊(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "安裝紀錄"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "應用程式安裝程式"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "返回(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "正在讀取應用程式…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "安裝 {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "應用程式"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "選擇要安裝的應用程式"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "無法啟動系統助手。"
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "無法與系統助手通訊。"
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "與系統助手的連線已中斷。"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "授權已取消。"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "此操作需要管理員權限。"
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "系統助手意外停止。"
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "下一步(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "安裝類型"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition}（將被格式化）"
 msgid "Boot Partition"
 msgstr "開機分割區"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "安裝"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN 的空間"
@@ -530,10 +798,6 @@ msgstr "重新安裝(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN 將安裝到可用空間中。Windows 及其檔案不會變更。"
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "安裝(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "準備安裝"
@@ -598,10 +862,6 @@ msgstr "正在安裝 MAN"
 msgid "Starting…"
 msgstr "正在開始…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "詳細資訊"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "正在安裝"
@@ -609,10 +869,6 @@ msgstr "正在安裝"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "第 {index} 步，共 {n} 步  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "紀錄"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "沒有變更其他磁碟，安裝程式已釋放目標磁碟。您可以
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "檢查並重試(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "顯示詳細資訊(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "安裝紀錄"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "世界協調時間"
 msgid "English (US)"
 msgstr "英文（美國）"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} 已發布！"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "您可以更新到此版本。"
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "開啟更新"
 
@@ -1312,10 +1560,6 @@ msgstr "從 {name} {version} 更新"
 msgid "{name} {version} is installed"
 msgstr "已安裝 {name} {version}"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "版本"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "發布日期"
@@ -1339,10 +1583,6 @@ msgstr "已驗證，由「{signer}」簽署"
 #: updater.rs:120
 msgid "What's New"
 msgstr "新功能"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "繼續(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "更新需從執行中的已安裝 MAN 系統安裝，不能在 Live 工�
 #: updater.rs:240
 msgid "Install Location"
 msgstr "安裝位置"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "摘要"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "開啟 MAN 更新"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN 更新"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "正在取得最新的套件清單…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "正在複製應用程式"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "正在將應用程式加入選單"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "找不到檔案。"
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "無法安裝套件。"
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "應用程式的選單項目無效。"
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "正在轉移您的帳號與設定"
 msgid "Preparing the restart"
 msgstr "正在準備重新啟動"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "已解開"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "帳號"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "正在移除僅供安裝程式使用的軟體"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "正在產生更新的開機映像檔"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "正在加入一次性開機項目"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "更新為正版"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "已建立快照"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "已略過"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "更新區域已就緒"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "正在準備新系統"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "更新檔案已損毀（總和檢查碼不符）。請重新下載。"
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "無法完整讀取更新檔案。"
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "更新中不包含核心。"
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "更新必須由系統助手安裝。"
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "找不到所選的安裝。"
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "只能更新執行中的 MAN 安裝。"
 
@@ -1947,6 +2207,14 @@ msgstr "紫色"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "石板灰"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "套件安裝程式"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "從 .deb、Flatpak 和 AppImage 檔案安裝應用程式"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

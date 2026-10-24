@@ -8,11 +8,17 @@
 //!   man-update-check --download V    download MAN-V.upd, print "progress F" lines, then "file PATH"
 //!   man-update-check --notify        timer: check and notify once per new version
 //!
+//! Releases are the published GitHub releases; with Beta Updates on
+//! (GSettings `beta-updates`), pre-releases count too. Those are TEST builds,
+//! "MAN 10 TEST 5", with assets MAN-10-TEST-5.upd(.sha256) and a line
+//! `<!-- man-base: 10.9 -->` in the release notes naming the release the
+//! build was made after (see man_common::man_version_cmp).
+//!
 //! MAN_UPDATE_API overrides the releases API base (for testing).
 use crate::i18n::{tr, trf};
 use gtk::gio::prelude::*;
 use gtk::{gio, glib};
-use man_common::{valid_version, version_cmp, VERSION_FILE};
+use man_common::{man_version_cmp, test_build, valid_version, version_file_name, version_from_file_name, VERSION_BASE_FILE, VERSION_FILE};
 use std::io::Write;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
@@ -23,6 +29,8 @@ const SCHEMA: &str = "com.man.Updates";
 
 struct Release {
     version: String,
+    /// TEST builds: the release they were made after.
+    base: String,
     url: String,
     size: u64,
     sha256_url: Option<String>,
@@ -45,6 +53,10 @@ fn current_version() -> String {
         .and_then(|t| t.lines().find_map(|l| l.strip_prefix("VERSION_ID=").map(|v| v.trim_matches('"').to_string())))
         .filter(|v| valid_version(v))
         .unwrap_or_else(|| "10.0".into())
+}
+
+fn current_base() -> String {
+    std::fs::read_to_string(VERSION_BASE_FILE).map(|s| s.trim().to_string()).ok().filter(|s| valid_version(s)).unwrap_or_default()
 }
 
 /// The live session (and MAN Setup) has the installer; installed systems do not.
@@ -78,28 +90,50 @@ fn releases() -> Result<Vec<serde_json::Value>, String> {
     Ok(v.as_array().cloned().unwrap_or_default())
 }
 
-/// The MAN-<version>.upd assets of the published (not draft, not pre-) releases.
-fn updates() -> Result<Vec<Release>, String> {
+fn beta() -> bool {
+    settings().is_some_and(|s| s.boolean("beta-updates"))
+}
+
+/// Release notes without HTML comments; the `man-base:` comment, if any.
+fn split_notes(body: &str) -> (String, String) {
+    let (mut notes, mut base, mut rest) = (String::new(), String::new(), body.replace('\r', ""));
+    while let Some(start) = rest.find("<!--") {
+        notes.push_str(&rest[..start]);
+        let Some(len) = rest[start..].find("-->") else { rest.clear(); break };
+        if let Some(b) = rest[start + 4..start + len].trim().strip_prefix("man-base:") {
+            base = b.trim().to_string();
+        }
+        rest = rest[start + len + 3..].to_string();
+    }
+    notes.push_str(&rest);
+    (notes.trim().to_string(), base)
+}
+
+/// The MAN-<version>.upd assets of the published releases (and of the
+/// pre-releases when `beta`).
+fn updates(beta: bool) -> Result<Vec<Release>, String> {
     let mut found = vec![];
     for rel in releases()? {
-        if rel["draft"].as_bool() == Some(true) || rel["prerelease"].as_bool() == Some(true) {
+        if rel["draft"].as_bool() == Some(true) || (!beta && rel["prerelease"].as_bool() == Some(true)) {
             continue;
         }
+        let (notes, base) = split_notes(rel["body"].as_str().unwrap_or(""));
         let assets = rel["assets"].as_array().cloned().unwrap_or_default();
         for a in &assets {
             let name = a["name"].as_str().unwrap_or("");
-            let Some(v) = name.strip_prefix("MAN-").and_then(|n| n.strip_suffix(".upd")) else { continue };
+            let Some(v) = name.strip_prefix("MAN-").and_then(|n| n.strip_suffix(".upd")).map(version_from_file_name) else { continue };
             let url = a["browser_download_url"].as_str().unwrap_or("");
-            if !valid_version(v) || url.is_empty() {
+            if !valid_version(&v) || url.is_empty() {
                 continue;
             }
             let sha_name = format!("{name}.sha256");
             found.push(Release {
-                version: v.to_string(),
+                base: if test_build(&v).is_some() { base.clone() } else { String::new() },
+                version: v,
                 url: url.to_string(),
                 size: a["size"].as_u64().unwrap_or(0),
                 sha256_url: assets.iter().find(|s| s["name"].as_str() == Some(&sha_name)).and_then(|s| s["browser_download_url"].as_str()).map(String::from),
-                notes: rel["body"].as_str().unwrap_or("").replace('\r', ""),
+                notes: notes.clone(),
                 published: rel["published_at"].as_str().unwrap_or("").chars().take(10).collect(),
             });
         }
@@ -107,16 +141,20 @@ fn updates() -> Result<Vec<Release>, String> {
     Ok(found)
 }
 
-/// The newest update that is newer than `current`.
-fn newest(current: &str) -> Result<Option<Release>, String> {
-    Ok(updates()?.into_iter().filter(|r| version_cmp(&r.version, current).is_gt()).max_by(|a, b| version_cmp(&a.version, &b.version)))
+/// The newest update that is newer than the installed system.
+fn newest() -> Result<Option<Release>, String> {
+    let (current, base) = (current_version(), current_base());
+    Ok(updates(beta())?
+        .into_iter()
+        .filter(|r| man_version_cmp(&r.version, &r.base, &current, &base).is_gt())
+        .max_by(|a, b| man_version_cmp(&a.version, &a.base, &b.version, &b.base)))
 }
 
 fn check() -> Result<Check, String> {
     if is_live() {
         return Ok(Check::Live);
     }
-    let result = newest(&current_version()).map(|r| r.map_or(Check::Current, Check::Available));
+    let result = newest().map(|r| r.map_or(Check::Current, Check::Available));
     if let Some(s) = settings() {
         let now = glib::DateTime::now_utc().map(|d| d.to_unix()).unwrap_or(0);
         let _ = s.set_int64("last-check", now);
@@ -138,6 +176,9 @@ fn print_check() {
         Ok(Check::Current) => out += "status=current\n",
         Ok(Check::Available(r)) => {
             out += &format!("status=available\nversion={}\nsize={}\npublished={}\nnotes={}\n", esc(&r.version), r.size, esc(&r.published), esc(r.notes.trim()));
+            if test_build(&r.version).is_some() {
+                out += "test=true\n";
+            }
         }
         Err(e) => out += &format!("status=error\nerror={}\n", esc(&e)),
     }
@@ -154,12 +195,13 @@ fn sha256(path: &Path) -> Option<String> {
 }
 
 fn download(version: &str) -> Result<PathBuf, String> {
-    let release = updates()?.into_iter().find(|r| r.version == version).ok_or_else(|| format!("MAN {version} was not found"))?;
+    // Any channel: Settings only asks for a version it was offered.
+    let release = updates(true)?.into_iter().find(|r| r.version == version).ok_or_else(|| format!("MAN {version} was not found"))?;
     let expected = match &release.sha256_url {
         Some(u) => Some(String::from_utf8_lossy(&curl(&[u])?).split_whitespace().next().unwrap_or("").to_lowercase()),
         None => None,
     };
-    let dest = download_dir().join(format!("MAN-{}.upd", release.version));
+    let dest = download_dir().join(format!("MAN-{}.upd", version_file_name(&release.version)));
     if dest.metadata().map(|m| m.len() == release.size).unwrap_or(false) && expected.as_deref().is_none_or(|e| sha256(&dest).as_deref() == Some(e)) {
         return Ok(dest);
     }

@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Ĉi tiu dosiero ne estas aplikaĵo instalebla ĉi tie (.deb, .flatpak, .flatpakref aŭ AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Ĉi tiu aplikaĵo estas farita por {arch}-komputiloj kaj ne funkcias ĉe ĉi tiu (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Ne eblis legi la dosieron. Ĝi eble estas difektita."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Ĉi tio ne estas AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Enkonduko"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Permesilo"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Elekto de celloko"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Speco de instalo"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Instalaĵo"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Resumo"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Daŭrigi"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Bonvenon al la instalilo de {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Permesila interkonsento de la programaro"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Ĉu vi konsentas pri la permesilo?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Por daŭrigi la instaladon, vi devas konsenti pri la kondiĉoj de la permesila interkonsento."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Legi permesilon"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Konsenti"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Elektu cellokon"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Norma instalado"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Instali"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian-pakaĵo (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak-aplikaĵo"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak-aplikaĵo el {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Vi estos gvidata tra la paŝoj necesaj por instali ĉi tiun programaron."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versio"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Eldonanto"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Tipo"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Grando"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Retejo"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Dosiero"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Ĉi tiu aplikaĵo jam estas instalita. Reinstali ĝin anstataŭigas ĝin."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Aplikaĵoj el .deb-pakaĵoj iĝas parto de la sistemo. Kiam MAN ĝisdatiĝas, ili estas forigitaj kaj devas esti reinstalitaj. Flatpak-aplikaĵoj kaj AppImage-oj restas."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Instalu nur aplikaĵojn el fontoj, kiujn vi fidas."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Kien vi volas instali {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Nur via konto povas uzi la aplikaĵon."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Bezonas administrantajn rajtojn."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Nur por mi"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Por ĉiuj uzantoj de ĉi tiu komputilo"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Ĉi tio okupos {size} da spaco en via komputilo."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "La aplikaĵo estas elŝutata el {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "La aplikaĵo estas instalata por ĉiuj uzantoj de ĉi tiu komputilo."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "La aplikaĵo estas instalata nur por vi."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "La AppImage estas movata al {folder} kaj aldonata al viaj aplikaĵoj."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Alklaku Instali por instali {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Kontrolante, kion alian la aplikaĵo bezonas…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Ankaŭ instalas la bezonatajn pakaĵojn: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Kelkaj pakaĵoj, kiujn la aplikaĵo bezonas, ankoraŭ ne disponeblas. La instalado unue akiras la plej novajn pakaĵlistojn; se ili ankoraŭ mankas, la aplikaĵo ne instaleblas."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Instalante {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Preparante…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Detaloj"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Instalante la pakaĵon…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Movante la aplikaĵon al ĝia dosierujo…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Ne eblis instali la aplikaĵon."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Instalante la aplikaĵon per Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Protokolo"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Fermi"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "La instalado sukcesis"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "La aplikaĵo estas instalita."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "La instalado malsukcesis"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Malfermi"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Montri detalojn"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Instala protokolo"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Aplikaĵa instalilo"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Reen"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Legante la aplikaĵon…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Instali {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Aplikaĵoj"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Elektu aplikaĵon por instali"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Ne eblis lanĉi la sisteman helpilon."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Ne eblis komuniki kun la sistema helpilo."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "La konekto al la sistema helpilo perdiĝis."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "La rajtigo estis nuligita."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Ĉi tiu ago bezonas administrantajn rajtojn."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "La sistema helpilo neatendite haltis."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Sekva"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Speco de instalo"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (estos formatita)"
 msgid "Boot Partition"
 msgstr "Starta subdisko"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Instalaĵo"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Spaco por MAN"
@@ -530,10 +798,6 @@ msgstr "_Reinstali"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN estas instalata en la liberan spacon. Windows kaj ĝiaj dosieroj ne ŝanĝiĝas."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Instali"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Preta por instali"
@@ -598,10 +862,6 @@ msgstr "Instalado de MAN"
 msgid "Starting…"
 msgstr "Startado…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Detaloj"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Instalado"
@@ -609,10 +869,6 @@ msgstr "Instalado"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Paŝo {index} el {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Protokolo"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Neniu alia disko estis ŝanĝita, kaj la instalilo liberigis la celan di
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Kontroli kaj reprovi"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Montri detalojn"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Instala protokolo"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Kunordigita Universala Tempo"
 msgid "English (US)"
 msgstr "Angla (Usono)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} eldoniĝis!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Vi povas ĝisdatigi al ĝi."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Malfermi ĝisdatigojn"
 
@@ -1312,10 +1560,6 @@ msgstr "Ĝisdatigo de {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} estas instalita"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versio"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Eldonita"
@@ -1339,10 +1583,6 @@ msgstr "Kontrolita, subskribita de «{signer}»"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Kio novas"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Daŭrigi"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Ĝisdatigoj estas instalataj el funkcianta, instalita MAN-sistemo, ne el
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Instala loko"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Resumo"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Malfermi MAN-ĝisdatigon"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN-ĝisdatigoj"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Akirante la plej novajn pakaĵlistojn…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Kopiante la aplikaĵon"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Aldonante la aplikaĵon al la menuo"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "La dosiero ne troviĝis."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Ne eblis instali la pakaĵon."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "La menuero de la aplikaĵo ne validas."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Transmetado de viaj kontoj kaj agordoj"
 msgid "Preparing the restart"
 msgstr "Preparado de la restartigo"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Malpakita"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Kontoj"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Forigado de programaro nur por la instalilo"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Konstruado de la starta bildo de la ĝisdatigo"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Aldonado de unufoja starta enigo"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "La ĝisdatigo estas aŭtentika"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Momentkopio kreita"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Preterlasita"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Ĝisdatiga areo preta"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Preparado de la nova sistemo"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "La ĝisdatiga dosiero estas difektita (kontrolsumo ne kongruas). Elŝutu ĝin denove."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Ne eblis tute legi la ĝisdatigan dosieron."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "La ĝisdatigo ne enhavas kernon."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Ĝisdatigojn devas instali la sistema helpilo."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "La elektita instalaĵo ne troviĝis."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Nur la funkcianta MAN-instalaĵo ĝisdatigeblas."
 
@@ -1947,6 +2207,14 @@ msgstr "Purpura"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Ardeza"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Pakaĵa instalilo"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Instali aplikaĵojn el .deb-, Flatpak- kaj AppImage-dosieroj"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

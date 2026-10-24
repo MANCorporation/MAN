@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Acest fișier nu este o aplicație care poate fi instalată aici (.deb, .flatpak, .flatpakref sau AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Această aplicație este făcută pentru calculatoare {arch} și nu funcționează pe acesta (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Fișierul nu a putut fi citit. Poate fi deteriorat."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Acesta nu este un AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Introducere"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Licență"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Alegerea destinației"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Tipul instalării"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Instalare"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Rezumat"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Continuă"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Bun venit la programul de instalare {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Contract de licență software"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Sunteți de acord cu licența?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Pentru a continua instalarea, trebuie să fiți de acord cu termenii contractului de licență software."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Citiți licența"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_De acord"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Alegeți o destinație"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Instalare standard"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Instalează"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Pachet Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Aplicație Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Aplicație Flatpak de la {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Veți fi ghidat prin pașii necesari pentru a instala acest software."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versiune"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Editor"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Tip"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Dimensiune"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Site web"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Fișier"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Această aplicație este deja instalată. Reinstalarea o înlocuiește."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Aplicațiile din pachete .deb devin parte a sistemului. Când MAN este actualizat, ele sunt eliminate și trebuie instalate din nou. Aplicațiile Flatpak și AppImage sunt păstrate."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Instalați doar aplicații din surse în care aveți încredere."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Unde doriți să instalați {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Doar contul dvs. poate folosi aplicația."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Necesită drepturi de administrator."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Doar pentru mine"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Pentru toți utilizatorii acestui calculator"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Va ocupa {size} pe calculator."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Aplicația este descărcată de la {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Aplicația este instalată pentru toți utilizatorii acestui calculator."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Aplicația este instalată doar pentru dvs."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage-ul este mutat în {folder} și adăugat la aplicațiile dvs."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Apăsați Instalează pentru a instala {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Se verifică de ce altceva are nevoie aplicația…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Instalează și pachetele de care are nevoie: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Unele pachete de care are nevoie aplicația nu sunt încă disponibile. Instalarea obține mai întâi cele mai noi liste de pachete; dacă tot lipsesc, aplicația nu poate fi instalată."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Se instalează {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Se pregătește…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Detalii"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Se instalează pachetul…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Se mută aplicația în dosarul ei…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Aplicația nu a putut fi instalată."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Se instalează aplicația cu Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Jurnal"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "Î_nchide"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Instalarea a reușit"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Aplicația a fost instalată."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Instalarea a eșuat"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Deschide"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Arată detaliile"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Jurnalul instalării"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Instalator de aplicații"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "Î_napoi"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Se citește aplicația…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Instalează {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Aplicații"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Alegeți o aplicație de instalat"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Asistentul de sistem nu a putut fi pornit."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Nu se poate comunica cu asistentul de sistem."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "S-a pierdut legătura cu asistentul de sistem."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Autorizarea a fost anulată."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Această acțiune necesită drepturi de administrator."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Asistentul de sistem s-a oprit neașteptat."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "Î_nainte"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Tipul instalării"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (va fi formatată)"
 msgid "Boot Partition"
 msgstr "Partiție de pornire"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Instalare"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Spațiu pentru MAN"
@@ -530,10 +798,6 @@ msgstr "_Reinstalează"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN se instalează în spațiul liber. Windows și fișierele sale nu se schimbă."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Instalează"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Gata de instalare"
@@ -598,10 +862,6 @@ msgstr "Se instalează MAN"
 msgid "Starting…"
 msgstr "Se pornește…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Detalii"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Se instalează"
@@ -609,10 +869,6 @@ msgstr "Se instalează"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Pasul {index} din {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Jurnal"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Niciun alt disc nu a fost modificat, iar instalatorul a eliberat discul 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Verifică și încearcă din nou"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Arată detaliile"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Jurnalul instalării"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Timpul universal coordonat"
 msgid "English (US)"
 msgstr "Engleză (SUA)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "A apărut MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Puteți actualiza la această versiune."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Deschide actualizările"
 
@@ -1312,10 +1560,6 @@ msgstr "Actualizare de la {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} este instalat"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versiune"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Lansată"
@@ -1339,10 +1583,6 @@ msgstr "Verificată, semnată de „{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Noutăți"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Continuă"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Actualizările se instalează dintr-un sistem MAN instalat și pornit, n
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Locul instalării"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Rezumat"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Deschide o actualizare MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Actualizări MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Se obțin cele mai noi liste de pachete…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Se copiază aplicația"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Se adaugă aplicația în meniu"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Fișierul nu a fost găsit."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Pachetul nu a putut fi instalat."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Intrarea de meniu a aplicației nu este validă."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Se mută conturile și setările dvs."
 msgid "Preparing the restart"
 msgstr "Se pregătește repornirea"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Despachetat"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Conturi"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Se elimină software-ul folosit doar de instalator"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Se construiește imaginea de pornire a actualizării"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Se adaugă intrarea de pornire unică"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Actualizarea este autentică"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Instantaneu creat"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Omis"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Zona de actualizare este pregătită"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Se pregătește noul sistem"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Fișierul de actualizare este deteriorat (suma de control nu se potrivește). Descărcați-l din nou."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Fișierul de actualizare nu a putut fi citit complet."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Actualizarea nu conține niciun nucleu."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Actualizările trebuie instalate de asistentul de sistem."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Instalarea aleasă nu a fost găsită."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Doar instalarea MAN pornită poate fi actualizată."
 
@@ -1947,6 +2207,14 @@ msgstr "Mov"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Ardezie"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Instalator de pachete"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Instalați aplicații din fișiere .deb, Flatpak și AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

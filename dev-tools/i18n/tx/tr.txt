@@ -1,495 +1,562 @@
-0|Sistem yardımcısı başlatılamadı.
-1|Sistem yardımcısıyla iletişim kurulamadı.
-2|Sistem yardımcısıyla bağlantı koptu.
-3|Yetkilendirme iptal edildi.
-4|Bu işlem için yönetici hakları gerekiyor.
-5|Sistem yardımcısı beklenmedik şekilde durdu.
-6|EFI sistem bölümü yok
-7|Yalnızca {free} boş, MAN {need} gerektiriyor. Windows'ta DUHACH! ile yer açın.
-8|Boş alan yok. MAN'a yer açmak için Windows'ta DUHACH!'ı başlatın.
-9|MAN bu diskten çalışıyor
-10|Kullanımda: bir bölüm bağlı
-11|Çok küçük, MAN {need} gerektiriyor
-12|MAN'ı Kur
-13|MAN kuruluyor. Lütfen bitene kadar bekleyin.
-14|Dil
-15|Bu dilde _yeniden başlat
-16|Canlı oturum seçilen dilde yeniden başlar ve MAN bu dilde kurulur.
-17|MAN'a hoş geldiniz
-18|Hızlı, açık ve tamamen özelleştirilebilir bir GNOME sistemi.\nBu bilgisayara kurun ya da canlı oturumu keşfetmeye devam edin.
-19|MAN'ı _kur…
-20|MAN'ı denemeye _devam et
-21|Diskler aranıyor…
-22|Hoş geldiniz
-23|Bu bilgisayar eski BIOS kipinde başlatıldı. MAN yalnızca UEFI bilgisayarlara kurulabilir: yeniden başlatın ve UEFI önyükleme seçeneğini seçin.
-24|Sistem yardımcısı disk bilgisi döndürmedi.
-25|  ·  EFI
-26|_İleri
-27|Kurulum türü
-28|Diski sil ve MAN'ı kur
-29|Seçilen diskteki her şey silinir, Windows dahil.
-30|Önerilen. Seçilen diskteki her şey silinir.
-31|Windows'un yanına kur
-32|Önerilen. MAN, Windows'un yanındaki boş alanı kullanır; Windows ve dosyaları kalır. Her açılışta sistemi seçersiniz.
-33|MAN'ı yeniden kur
-34|Sistemi değiştirir ama /home içindeki kişisel dosyaları korur. Geçerli sistem anlık görüntü olarak kaydedilir.
-35|Özel bölümler
-36|Uzmanlar için: bölümleri kendiniz seçin ya da Diskler ile oluşturun.
-37|Disk
-38|Silinecek diski seçin. Kullanılamayan diskler nedeniyle birlikte gösterilir.
-39|Disk bulunamadı
-40|Windows'un yanındaki boş alan
-41|Windows'un bölümlerine dokunulmaz. MAN, EFI sistem bölümünü paylaşır ve Windows'u açılış menüsüne ekler.
-42|{size} boş
-43|boş alan yok
-44|{model} (Windows)
-45|Değiştirilecek kurulum
-46|ev klasörü yok
-47|ev klasörleri: {list}
-48|anlık görüntüler: {n}
-49|{model} üzerinde MAN
-50|{device} için parola
-51|Kilidi aç
-52|Kurulum incelenemedi.
-53|Bölümler
-54|Sistem bölümü Btrfs olarak biçimlendirilir ve @system, @home ile @snapshots içerir. MAN'ın çalıştığı diskteki bölümler listelenmez.
-55|Bölüm oluşturmak veya yeniden boyutlandırmak için Diskler'i aç
-56|Bölüm listesini yenile
-57|Bir bölüm seçin
-58|EFI sistem bölümü
-59|EFI sistem bölümünü biçimlendir
-60|Diğer sistemlerin önyükleyicilerini korumak için kapalı bırakın
-61|Sistem bölümü (Btrfs olarak biçimlendirilir)
-62|Önyükleme bölümü (şifrelemede gerekli)
-63|Bölüm listesi yenilendi
-64|Güvenlik
-65|Sistemi şifrele
-66|Bilgisayar kaybolur ya da çalınırsa verilerinizi korur. Her açılışta bir parola sorulur.
-67|Parola
-68|Parolayı onayla
-69|Bu parolayı güvenli bir yerde saklayın
-70|Kaybederseniz verileri kimse kurtaramaz. Çekirdek ve önyükleme dosyaları küçük, şifrelenmemiş bir önyükleme bölümünde kalır.
-71|Parola en az 8 karakter olmalı.
-72|Parolalar eşleşmiyor.
-73|Bir disk seçin.
-74|Windows'un olduğu diski seçin.
-75|Değiştirilecek kurulumu seçin.
-76|Önce şifreli kurulumun kilidini açın.
-77|Bu bölüm bir MAN sistemi içermiyor.
-78|Bir EFI sistem bölümü seçin.
-79|Sistem bölümünü seçin.
-80|EFI ve sistem bölümleri farklı olmalı.
-81|Şifreleme ayrı bir önyükleme bölümü gerektirir.
-82|Sistem bölümü en az {size} olmalı.
-83|EFI bölümü FAT olarak biçimlendirilmemiş; biçimlendirmeyi açın.
-84|Sistem bölümü bağlı; önce Diskler'de ayırın.
-85|MAN nereye kurulsun?
-86|Saat ve klavye
-87|Saat dilimi
-88|Klavye düzeni
-89|Klavyenizi deneyin
-90|Tuşlarınızın doğru karakterleri yazdığını denetlemek için buraya yazın.
-91|Buraya yazın
-92|Saat dilimi ve klavye
-93|Disk seçilmedi
-94|Sistem bölümü seçilmedi
-95|Sistem bölümü kayboldu
-96|Kurulum seçilmedi
-97|Disk kayboldu
-98|Gözden geçir
-99|Hedef
-100|Diski sil ve kur
-101|Özel bölümler
-102|/home korunarak yeniden kur
-103|Windows'un yanına
-104| (biçimlendirilecek)
-105| (korunur)
-106|Sistem bölümü
-107|{partition} (biçimlendirilecek)
-108|Önyükleme bölümü
-109|Kurulum
-110|MAN için alan
-111|{free} boş alan (bir önyükleme bölümü ve sistem bölümü oluşturulur)
-112|Windows
-113|Değişmez. MAN'ın açılış menüsünde görünür; EFI sistem bölümü paylaşılır.
-114|Şifreleme
-115|Açık (LUKS2)
-116|Kapalı
-117|Dosya sistemi
-118|Btrfs: MAN için @system, dosyalarınız için @home, geri yükleme noktaları için @snapshots. Hepsi boş alanı paylaşır.
-119|Sistem
-120|Hesabınız
-121|Bilgisayar ilk kez açıldığında MAN Setup içinde, bilgisayar adı, görünüm ve gizlilik ayarlarıyla birlikte oluşturulur.
-122|Klavye
-123|{model} ({path}) üzerindeki tüm veriler silinecek.
-124|_Sil ve kur
-125|Seçilen bölümler biçimlendirilecek. Diğer bölümler değişmez.
-126|_Biçimlendir ve kur
-127|Geçerli sistem değiştirilir. /home içindeki dosyalarınız korunur ve eski sistem anlık görüntü olarak kaydedilir.
-128|_Yeniden kur
-129|MAN boş alana kurulur. Windows ve dosyaları değişmez.
-130|_Kur
-131|Kuruluma hazır
-132|{model} silinsin mi?
-133|{path} ({size}) üzerindeki tüm dosyalar ve bölümler kalıcı olarak silinecek. Bu geri alınamaz.
-134|Sil ve kur
-135|Seçilen bölümler biçimlendirilsin mi?
-136|Seçilen bölümlerdeki tüm veriler kalıcı olarak silinecek. Diğer bölümler değişmez.
-137|Biçimlendir ve kur
-138|MAN Windows'un yanına kurulsun mu?
-139|MAN, {model} ({path}) üzerindeki {free} boş alana kurulur. Windows ve dosyaları değişmez.
-140|Kur
-141|MAN yeniden kurulsun mu?
-142|Kurulu sistem yeni bir kopyayla değiştirilecek. /home içindeki kişisel dosyalar korunur ve eski sistem anlık görüntü olarak kullanılabilir kalır.
-143|Yeniden kur
-144|_İptal
-145|MAN kuruluyor
-146|Başlatılıyor…
-147|Ayrıntılar
-148|Kuruluyor
-149|Adım {index}/{n}  ·  {title}
-150|Günlük
-151|MAN kuruldu
-152|MAN'ı kullanmaya başlamak için bilgisayarı yeniden başlatın. Her açılışta bir menüden MAN veya Windows'u seçebilirsiniz; MAN, geçici kurucu bölümünü ilk açılışta kaldırır.
-153|MAN'ı kullanmaya başlamak için bilgisayarı yeniden başlatın. Kurulum ortamını çıkarabilirsiniz; takılı kalırsa da MAN yeni diskten başlar.
-154|Şimdi _yeniden başlat
-155|Tamam
-156|Kurulum başarısız oldu
-157|Başka hiçbir disk değiştirilmedi ve kurucu hedef diski serbest bıraktı. Planı gözden geçirip yeniden deneyebilirsiniz.
-158|_Gözden geçir ve yeniden dene
-159|_Ayrıntıları göster
-160|Kurulum günlüğü
-161|Dil ara
-162|Ülke ara
-163|Sistem diski bulunamadı.
-164|Şifreleme, MAN kurucusunun oluşturduğu Btrfs düzenini gerektirir.
-165|Bu kurulumda şifrelemenin gerektirdiği ayrı bir önyükleme bölümü yok. Şifreleme kullanmak için MAN'ı “Diski sil” seçeneğiyle yeniden kurun.
-166|MAN Setup
-167|Neredesiniz?
-168|Ülkeniz veya bölgeniz tarih, saat ve sayı biçimlerini belirler.
-169|Ülke
-170|GNU Genel Kamu Lisansı, sürüm 2
-171|Linux çekirdeği ve birçok sistem aracı
-172|GNU Genel Kamu Lisansı, sürüm 3
-173|Birçok GNU ve GNOME programı
-174|GNU Kısıtlı Genel Kamu Lisansı, sürüm 2.1
-175|GTK, GLib ve birçok kütüphane
-176|GNU Kısıtlı Genel Kamu Lisansı, sürüm 3
-177|Kütüphaneler
-178|Mozilla Kamu Lisansı 2.0
-179|Mozilla ve diğerlerinden programlar ve kütüphaneler
-180|Apache Lisansı 2.0
-181|Kütüphaneler ve araçlar
-182|Lisans sözleşmesi
-183|MAN'ın sunulduğu koşulları okuyup kabul edin.
-184|Lisanslar
-185|Lisans metni kullanılamıyor ({path}).
-186|Lisans koşullarını okudum ve kabul ediyorum
-187|Kablolu
-188|Bağlı değil
-189|İnternete bağlanın
-190|Bağlantıyla MAN saati ayarlayabilir ve yazılımlarınızı güncel tutabilir. Bunu daha sonra da yapabilirsiniz.
-191|Bağlantı denetleniyor…
-192|Wi-Fi ağları
-193|Yeniden ara
-194|_Atla
-195|Daha sonra Ayarlar'dan bağlanabilirsiniz.
-196|Bağlı
-197|Bağlı değil
-198|Ağ bulunamadı
-199|İnternet
-200|“{ssid}” ağına bağlanıldı
-201|“{ssid}” ağına bağlanılamadı
-202|“{ssid}” ağına bağlan
-203|Ağ parolasını girin.
-204|_Bağlan
-205|Hesabınızı oluşturun
-206|Bu bilgisayarın yöneticisi olacaksınız; sudo ile tam root erişiminiz olacak.
-207|Ad soyad
-208|Kullanıcı adı
-209|Parola
-210|Parolayı onayla
-211|Otomatik oturum aç
-212|Bilgisayar açılırken giriş ekranını atla
-213|Var olan ev klasörleri
-214|Önceki bir kurulumdan kalan klasörü kullanmaya devam etmek için aynı kullanıcı adını kullanın.
-215|Kullan
-216|Gelişmiş
-217|Bilgisayar adı
-218|Root parolası belirle
-219|Doğrudan root olarak oturum açmayı sağlar. Olmadan, kendi parolanızla sudo kullanın.
-220|Root parolası
-221|Root parolasını onayla
-222|Adınızı girin.
-223|Bir kullanıcı adı seçin.
-224|Bu kullanıcı adı sistem tarafından zaten kullanılıyor.
-225|Bu kullanıcı adı sisteme ayrılmış.
-226|Kullanıcı adları küçük harf, rakam, - ve _ içerir ve bir harfle başlar.
-227|Bir parola seçin.
-228|Parolalar eşleşmiyor.
-229|Bilgisayar adı harf, rakam ve tire içerebilir.
-230|Root parolasını iki kez girin.
-231|İpucu: 8 veya daha fazla karakterli bir parola çok daha güvenlidir.
-232|Hesap
-233|Koyu
-234|Açık
-235|Kendinize göre ayarlayın
-236|Bir stil, vurgu rengi ve duvar kâğıdı seçin. Her değişikliği hemen görürsünüz.
-237|Stil
-238|Vurgu rengi
-239|Duvar kâğıdı
-240|Özelleştir
-241|Gizlilik
-242|Hangi özelliklerin sizinle ilgili bilgileri kullanabileceğini seçin. Bunu istediğiniz zaman Ayarlar'dan değiştirebilirsiniz.
-243|Konum hizmetleri
-244|Haritalar ve Hava Durumu gibi uygulamaların yakındaki Wi-Fi ağlarıyla yaklaşık konumunuzu bulmasını sağlar.
-245|Otomatik saat dilimi
-246|Seyahat ederken saat dilimini doğru tutmak için konumunuzu kullanır.
-247|Kurulumu _bitir
-248|Diskiniz şifreli
-249|Verileriniz korunuyor. Parola bilgisayar her açıldığında sorulur.
-250|Disk şifreleme
-251|Şifreleme, bilgisayar kaybolur ya da çalınırsa verilerinizi korur.
-252|Bu kurulumda kullanılamaz
-253|Şifreleme, bilgisayar kaybolur ya da çalınırsa dosyalarınızı korur. Parola olmadan diski kimse okuyamaz.
-254|Diski şifrele
-255|Parola bilgisayar her açıldığında sorulur.
-256|Şifreleme bir sonraki yeniden başlatmada başlar
-257|Ardından disk, siz bilgisayarı kullanırken arka planda şifrelenir. Parolayı kaybederseniz verileri kimse kurtaramaz.
-258|MAN hazırlanıyor
-259|Her şey hazırlanıyor…
-260|_Yeniden başlat
-261|_Geri
-262|Hazırlanıyor
-263|Kurulum günlüğü
-264|Her şey hazır!
-265|Bir şeyler ters gitti
-266|Günlük
-267|Güncellemeden önce
-268|Geri yüklemeden önce
-269|Yeniden kurulumdan önce
-270|Elle
-271|Henüz anlık görüntü yok
-272|Sistemde büyük değişiklikler yapmadan önce bir tane oluşturun.
-273|Geri yükle…
-274|Anlık görüntüyü sil
-275|{size} alanın {free} kadarı boş. Sistem, ev klasörleri ve anlık görüntüler bu alanı paylaşır; anlık görüntüler yalnızca alındıklarından beri değişenler için yer kaplar.
-276|_Tamam
-277|Anlık görüntü oluştur
-278|Sistemin geçerli durumunu kaydeder. Ev klasöründeki kişisel dosyalarınız dahil değildir.
-279|Açıklama, örneğin “Sürücüleri kurmadan önce”
-280|_Oluştur
-281|Elle alınan anlık görüntü
-282|Anlık görüntü silinsin mi?
-283|{date} tarihli “{description}” kalıcı olarak silinecek.
-284|_Sil
-285|Bu anlık görüntü geri yüklensin mi?
-286|Yeniden başlattıktan sonra sistem {date} tarihli “{description}” durumuna döner. Kişisel dosyalarınız değişmez.\n\nGeçerli sistem önce anlık görüntü olarak kaydedilir, böylece bu geri alınabilir.
-287|_Geri yükle
-288|Geri yüklemeyi bitirmek için yeniden başlatın
-289|_Sonra yeniden başlat
-290|_Şimdi yeniden başlat
-291|Anlık görüntüler
-292|Geri yükleme noktaları
-293|Anlık görüntüler işletim sisteminin durumunu kaydeder. Birini geri yüklemek sistemi o ana döndürür; bu, kötü giden bir güncelleme veya ayar değişikliğinden sonra işe yarar. Kişisel dosyalarınıza asla dokunulmaz.
-294|Otomatik anlık görüntüler
-295|Günlük anlık görüntüler
-296|Bilgisayar açıkken günde bir kez
-297|Saklanacak günlük görüntüler
-298|Yazılım güncellemelerinden önce
-299|Paketler kurulurken, yükseltilirken veya kaldırılırken otomatik alınır
-300|Saklanacak güncelleme görüntüleri
-301|Depolama
-302|Disk alanı
-303|MAN açılmazsa
-304|Çalışan bir sisteme dönmek için açılış menüsünde “Restore a MAN snapshot” seçeneğini seçin.
-305|Anlık görüntüler kullanılamıyor
-306|Anlık görüntüler, MAN kurucusunun oluşturduğu Btrfs düzeniyle kurulmuş MAN'da çalışır. Bu sistem (örneğin canlı oturum) bu düzeni kullanmıyor.
-307|Bir geri yükleme bekliyor: bitirmek için bilgisayarı yeniden başlatın
-308|Şimdi yeniden başlat
-309|Lütfen geçerli işlem bitene kadar bekleyin.
-310|Ara
-311|Panoya kopyala
-312|Eşgüdümlü Evrensel Zaman
-313|İngilizce (ABD)
-317|Güncelleme denetleniyor
-318|Güncellemenin özgün ve eksiksiz olduğu doğrulanıyor…
-319|MAN güncellemesi
-320|Bu güncelleme kurulamaz
-321|Güncelleme okunamadı.
-322|{name} {version} sürümünden güncelleme
-323|{name} {version} kurulu
-324|Sürüm
-325|Yayın tarihi
-326|İndirme boyutu
-327|Gereken alan
-328|Özgünlük
-329|Doğrulandı, imzalayan: “{signer}”
-330|Yenilikler
-331|_Devam
-332|Bu güncelleme kurulu {name} {version} sürümünden yeni değil.
-333|Güncelleme
-334|Lütfen bu güncellemenin lisans koşullarını okuyun.
-335|Lisans koşullarını kabul ediyorum
-336|Güncelleme nereye kurulsun?
-337|Sistem değiştirilir; ev klasörünüzdeki dosyalara dokunulmaz.
-338|Bir kurulum seçin.
-339|şu anda çalışıyor
-340|Bu bilgisayardaki {name} {version}
-341|{model} üzerinde {name}
-342|MAN kurulumu bulunamadı
-343|Güncellemeler canlı oturumdan değil, çalışan ve kurulu bir MAN sisteminden kurulur.
-344|Kurulum konumu
-345|Özet
-346|Korunur
-347|Dosyalarınız
-348|Ev klasörünüzdeki her şey
-349|Hesaplar ve parolalar
-350|Kullanıcılar, gruplar, bilgisayar adı
-351|Bağlantılar ve ayarlar
-352|Wi-Fi, saat dilimi, klavye, görünüm ve anlık görüntüler
-353|Flatpak uygulamaları
-354|Ayrıca /usr/local ve /opt içindeki her şey
-355|Değiştirilir
-356|apt ile kurulan yazılımlar ve sistem dosyalarındaki diğer değişiklikler yeni sistemle değiştirilir.
-357|İşletim sistemi
-358|{name} {version} ile değiştirilir. Geçerli sistem bir anlık görüntüden geri yüklenebilir.
-359|Bilgisayar güncellemeyi kurmak için yeniden başlar
-360|Hazırlıktan sonra MAN yeniden başlar, güncellemeyi birkaç saniyede kurar ve yeniden başlar.
-361|Güncellemeyi _kur
-362|Önce anlık görüntü oluşturulsun mu?
-363|Anlık görüntü geçerli sistemi kaydeder; böylece güncellemeden sonra bir şey çalışmazsa ona dönebilirsiniz. Önerilir.
-364|_Oluşturma
-365|Anlık görüntü _oluştur
-366|{name} {version} hazırlanıyor
-367|Kurmak için yeniden başlat
-368|Bilgisayar iki kez yeniden başlar. Dosyalarınız güvende.
-369|{r} saniye içinde otomatik yeniden başlatılacak
-370|30 saniye içinde otomatik yeniden başlatılacak
-371|Güncelleme bir sonraki yeniden başlatmada kurulur.
-372|Hazır
-373|Güncelleme hazırlanamadı
-374|Sisteminizde hiçbir şey değişmedi.
-375|_Yeniden dene
-376|Güncelleme günlüğü
-377|Başarısız
-378|Sisteminiz güncellendi
-379|MAN {version} sürümüne güncellendi.\nÖnceki: MAN {previous}.
-380|_Tamam
-381|Bir MAN güncellemesi aç
-382|MAN güncellemeleri
-383|Kurulum planı denetleniyor
-384|Disk hazırlanıyor
-385|MAN diske kopyalanıyor
-386|Yeni sistem yapılandırılıyor
-387|Önyükleyici kuruluyor
-388|İlk anlık görüntü oluşturuluyor
-389|Bitiriliyor
-390|Eski bölüm imzaları kaldırılıyor
-391|Bölümler oluşturuluyor
-392|EFI sistem bölümü biçimlendiriliyor
-393|Sistem bölümü şifreleniyor
-394|Önyükleme bölümü biçimlendiriliyor
-395|Btrfs dosya sistemi oluşturuluyor
-396|Eski dosya sistemi imzaları kaldırılıyor
-397|Şifreli kurulumun kilidi açılıyor
-398|Geçerli sistem anlık görüntü olarak kaydediliyor
-399|Önceki sistem kaldırılıyor
-400|Dosya sistemi tablosu yazılıyor
-401|Bilgisayar adı ve kimliği ayarlanıyor
-402|Canlı oturum hesapları kaldırılıyor
-403|Hesabınız oluşturuluyor
-404|MAN Setup ilk açılış için hazırlanıyor
-405|Saat dilimi ve klavye ayarlanıyor
-406|Kurucu yeni sistemden kaldırılıyor
-407|Önyükleme görüntüsü (initramfs) oluşturuluyor
-408|GRUB yapılandırılıyor
-409|GRUB EFI sistem bölümüne kuruluyor
-410|Yedek önyükleyici kuruluyor
-411|Açılış menüsü yazılıyor
-412|Disk hazır
-413|Yeni sistemin anlık görüntüsü oluşturuluyor
-414|Anlık görüntü açılış menüsüne ekleniyor
-415|Ayrılıyor
-416|Kurucu yardımcısı root olarak çalışmalı.
-417|Bu bilgisayar UEFI kipinde başlatılmadı. MAN, UEFI gerektirir.
-418|Kullanıcı adı geçerli değil.
-419|Parola gerekli.
-420|Bilgisayar adı geçerli değil.
-421|Bilinmeyen dil.
-422|Şifreleme parolası en az 8 karakter olmalı.
-423|Kurulumu onayladıktan sonra disk değişti. Hiçbir şey değiştirilmedi; lütfen gözden geçirip yeniden onaylayın.
-424|Bir sistem bölümü seçin.
-425|Onaylanan disk seçilen sistem bölümünü içermiyor.
-426|Önyükleme bölümü EFI ve sistem bölümlerinden ayrı olmalı.
-427|Önyükleme bölümü en az 512 MB olmalı.
-428|Kurulum seçilmedi.
-429|Onaylanan disk seçilen kurulumu içermiyor.
-430|Şifreli kurulumda MAN_BOOT bölümü yok.
-431|/boot içinde eşleşen modüllere sahip çekirdek bulunamadı.
-432|Dil, sistem yardımcısı tarafından değiştirilmeli.
-433|Ayarlarınız uygulanıyor
-434|Disk şifreleme hazırlanıyor
-435|Bitiriliyor
-436|MAN Setup sistem yardımcısı tarafından bitirilmeli.
-437|MAN Setup bu bilgisayarda zaten tamamlandı.
-438|Bilinmeyen vurgu rengi.
-439|Seçilen duvar kâğıdı kullanılamıyor.
-440|Bu sistem şifrelenemez.
-441|Kurulum anahtarı eksik, bu yüzden şifreleme arka planda sürdürülemiyor.
-442|Sistem Btrfs üzerine kurulu değil, bu yüzden anlık görüntüler kullanılamıyor.
-443|Bir anlık görüntü geri yüklemesi yeniden başlatma bekliyor. Bitirmek için önce bilgisayarı yeniden başlatın.
-444|Geçersiz anlık görüntü kimliği.
-445|Güncelleme denetleniyor
-446|Anlık görüntü oluşturuluyor
-447|Güncelleme alanı hazırlanıyor
-448|Yeni sistem açılıyor
-449|Hesaplarınız ve ayarlarınız taşınıyor
-450|Yeniden başlatma hazırlanıyor
-451|Açıldı
-452|Hesaplar
-453|Yalnızca kurucuya ait yazılımlar kaldırılıyor
-454|Güncellemenin önyükleme görüntüsü oluşturuluyor
-455|Tek seferlik açılış girdisi ekleniyor
-456|Güncelleme özgün
-457|Anlık görüntü oluşturuldu
-458|Atlandı
-459|Güncelleme alanı hazır
-460|Yeni sistem hazırlanıyor
-461|Güncelleme dosyası bozuk (sağlama toplamı uyuşmuyor). Yeniden indirin.
-462|Güncelleme dosyası tamamen okunamadı.
-463|Güncelleme çekirdek içermiyor.
-464|Güncellemeler sistem yardımcısı tarafından kurulmalı.
-465|Seçilen kurulum bulunamadı.
-466|Yalnızca çalışan MAN kurulumu güncellenebilir.
-467|Bu bir MAN güncelleme dosyası değil (bildirim dosyası yok).
-468|Güncelleme imzalı değil, bu yüzden güvenilemez.
-469|Güncellemenin imzası bozuk.
-470|Güncelleme MAN tarafından imzalanmamış. Değiştirilmiş olabilir ya da güvenilmeyen bir kaynaktan geliyor olabilir.
-471|Güncellemenin bildirim dosyası geçersiz.
-472|Parola doğru değil ya da şifreli bölüm açılamıyor.
-473|Mavi
-474|Turkuaz
-475|Yeşil
-476|Sarı
-477|Turuncu
-478|Kırmızı
-479|Pembe
-480|Mor
-481|Arduvaz
-482|Sistem kurucusu
-483|MAN'ı bu bilgisayara kur
-484|Sistem geri yükleme
-485|Sistemin anlık görüntülerini oluşturun ve geri yükleyin
-486|Sistem güncelleme kurucusu
-487|Bir MAN sistem güncelleme dosyası kur
-488|Canlı oturum başladığında MAN'ı kurmayı önerir
-489|MAN güncelleme bildirimi
-490|Oturum açtıktan sonra bir kez MAN'ın güncellendiğini bildirir
-491|Yeni MAN bilgisayarınızı kurun
-492|MAN ilk açılış kurulumu
-314|MAN {version} Çıktı!
-315|Bu sürüme güncelleyebilirsiniz.
-316|Güncellemeleri Aç
-493|MAN Güncellemeleri
-494|MAN'in yeni sürümü çıktığında size haber verir
+0|Bu dosya burada kurulabilecek bir uygulama değil (.deb, .flatpak, .flatpakref veya AppImage).
+1|Bu uygulama {arch} bilgisayarlar için yapılmış ve bu bilgisayarda (x86-64) çalışmaz.
+2|Dosya okunamadı. Hasarlı olabilir.
+3|Bu bir AppImage değil.
+4|Giriş
+5|Lisans
+6|Hedef Seçimi
+7|Kurulum türü
+8|Kurulum
+9|Özet
+10|_Devam
+11|{name} Kurulum Programına Hoş Geldiniz
+12|Yazılım Lisans Sözleşmesi
+13|Lisansı Kabul Ediyor musunuz?
+14|Kuruluma devam etmek için yazılım lisans sözleşmesinin koşullarını kabul etmelisiniz.
+15|Lisansı _Oku
+16|_Kabul Et
+17|Bir Hedef Seçin
+18|Standart Kurulum
+19|_Kur
+20|Debian paketi (.deb)
+21|Flatpak uygulaması
+22|{source} kaynağından Flatpak uygulaması
+23|AppImage
+24|Bu yazılımı kurmak için gereken adımlarda size yol gösterilecek.
+25|Sürüm
+26|Yayıncı
+27|Tür
+28|Boyut
+29|Web sitesi
+30|Dosya
+31|Bu uygulama zaten kurulu. Yeniden kurmak onu değiştirir.
+32|.deb paketlerinden kurulan uygulamalar sistemin bir parçası olur. MAN güncellendiğinde kaldırılırlar ve yeniden kurulmaları gerekir. Flatpak uygulamaları ve AppImage dosyaları korunur.
+33|Yalnızca güvendiğiniz kaynaklardan uygulama kurun.
+34|{name} nereye kurulsun?
+35|Uygulamayı yalnızca sizin hesabınız kullanabilir.
+36|Yönetici yetkisi gerekir.
+37|Yalnızca Benim İçin
+38|Bu Bilgisayarın Tüm Kullanıcıları İçin
+39|Bilgisayarınızda {size} yer kaplayacak.
+40|Uygulama {source} kaynağından indirilir.
+41|Uygulama bu bilgisayarın tüm kullanıcıları için kurulur.
+42|Uygulama yalnızca sizin için kurulur.
+43|AppImage, {folder} klasörüne taşınır ve uygulamalarınıza eklenir.
+44|{name} uygulamasını kurmak için Kur'a tıklayın.
+45|Uygulamanın başka neye ihtiyacı olduğu denetleniyor…
+46|Gerektirdiği paketleri de kurar: {list}
+47|Uygulamanın gerektirdiği bazı paketler henüz mevcut değil. Kurulum önce en yeni paket listelerini alır; hâlâ eksiklerse uygulama kurulamaz.
+48|{name} kuruluyor…
+49|Hazırlanıyor…
+50|Ayrıntılar
+51|Paket kuruluyor…
+52|Uygulama kendi klasörüne taşınıyor…
+53|Uygulama kurulamadı.
+54|Uygulama Flatpak ile kuruluyor…
+55|Günlük
+56|_Kapat
+57|Kurulum Başarılı
+58|Uygulama kuruldu.
+59|Kurulum Başarısız
+60|_Aç
+61|_Ayrıntıları göster
+62|Kurulum günlüğü
+63|Uygulama Kurucu
+64|_Geri
+65|Uygulama okunuyor…
+66|{name} Kur
+67|Uygulamalar
+68|Kurulacak Bir Uygulama Seçin
+69|Sistem yardımcısı başlatılamadı.
+70|Sistem yardımcısıyla iletişim kurulamadı.
+71|Sistem yardımcısıyla bağlantı koptu.
+72|Yetkilendirme iptal edildi.
+73|Bu işlem için yönetici hakları gerekiyor.
+74|Sistem yardımcısı beklenmedik şekilde durdu.
+75|EFI sistem bölümü yok
+76|Yalnızca {free} boş, MAN {need} gerektiriyor. Windows'ta DUHACH! ile yer açın.
+77|Boş alan yok. MAN'a yer açmak için Windows'ta DUHACH!'ı başlatın.
+78|MAN bu diskten çalışıyor
+79|Kullanımda: bir bölüm bağlı
+80|Çok küçük, MAN {need} gerektiriyor
+81|MAN'ı Kur
+82|MAN kuruluyor. Lütfen bitene kadar bekleyin.
+83|Dil
+84|Bu dilde _yeniden başlat
+85|Canlı oturum seçilen dilde yeniden başlar ve MAN bu dilde kurulur.
+86|MAN'a hoş geldiniz
+87|Hızlı, açık ve tamamen özelleştirilebilir bir GNOME sistemi.\nBu bilgisayara kurun ya da canlı oturumu keşfetmeye devam edin.
+88|MAN'ı _kur…
+89|MAN'ı denemeye _devam et
+90|Diskler aranıyor…
+91|Hoş geldiniz
+92|Bu bilgisayar eski BIOS kipinde başlatıldı. MAN yalnızca UEFI bilgisayarlara kurulabilir: yeniden başlatın ve UEFI önyükleme seçeneğini seçin.
+93|Sistem yardımcısı disk bilgisi döndürmedi.
+94|  ·  EFI
+95|_İleri
+96|Diski sil ve MAN'ı kur
+97|Seçilen diskteki her şey silinir, Windows dahil.
+98|Önerilen. Seçilen diskteki her şey silinir.
+99|Windows'un yanına kur
+100|Önerilen. MAN, Windows'un yanındaki boş alanı kullanır; Windows ve dosyaları kalır. Her açılışta sistemi seçersiniz.
+101|MAN'ı yeniden kur
+102|Sistemi değiştirir ama /home içindeki kişisel dosyaları korur. Geçerli sistem anlık görüntü olarak kaydedilir.
+103|Özel bölümler
+104|Uzmanlar için: bölümleri kendiniz seçin ya da Diskler ile oluşturun.
+105|Disk
+106|Silinecek diski seçin. Kullanılamayan diskler nedeniyle birlikte gösterilir.
+107|Disk bulunamadı
+108|Windows'un yanındaki boş alan
+109|Windows'un bölümlerine dokunulmaz. MAN, EFI sistem bölümünü paylaşır ve Windows'u açılış menüsüne ekler.
+110|{size} boş
+111|boş alan yok
+112|{model} (Windows)
+113|Değiştirilecek kurulum
+114|ev klasörü yok
+115|ev klasörleri: {list}
+116|anlık görüntüler: {n}
+117|{model} üzerinde MAN
+118|{device} için parola
+119|Kilidi aç
+120|Kurulum incelenemedi.
+121|Bölümler
+122|Sistem bölümü Btrfs olarak biçimlendirilir ve @system, @home ile @snapshots içerir. MAN'ın çalıştığı diskteki bölümler listelenmez.
+123|Bölüm oluşturmak veya yeniden boyutlandırmak için Diskler'i aç
+124|Bölüm listesini yenile
+125|Bir bölüm seçin
+126|EFI sistem bölümü
+127|EFI sistem bölümünü biçimlendir
+128|Diğer sistemlerin önyükleyicilerini korumak için kapalı bırakın
+129|Sistem bölümü (Btrfs olarak biçimlendirilir)
+130|Önyükleme bölümü (şifrelemede gerekli)
+131|Bölüm listesi yenilendi
+132|Güvenlik
+133|Sistemi şifrele
+134|Bilgisayar kaybolur ya da çalınırsa verilerinizi korur. Her açılışta bir parola sorulur.
+135|Parola
+136|Parolayı onayla
+137|Bu parolayı güvenli bir yerde saklayın
+138|Kaybederseniz verileri kimse kurtaramaz. Çekirdek ve önyükleme dosyaları küçük, şifrelenmemiş bir önyükleme bölümünde kalır.
+139|Parola en az 8 karakter olmalı.
+140|Parolalar eşleşmiyor.
+141|Bir disk seçin.
+142|Windows'un olduğu diski seçin.
+143|Değiştirilecek kurulumu seçin.
+144|Önce şifreli kurulumun kilidini açın.
+145|Bu bölüm bir MAN sistemi içermiyor.
+146|Bir EFI sistem bölümü seçin.
+147|Sistem bölümünü seçin.
+148|EFI ve sistem bölümleri farklı olmalı.
+149|Şifreleme ayrı bir önyükleme bölümü gerektirir.
+150|Sistem bölümü en az {size} olmalı.
+151|EFI bölümü FAT olarak biçimlendirilmemiş; biçimlendirmeyi açın.
+152|Sistem bölümü bağlı; önce Diskler'de ayırın.
+153|MAN nereye kurulsun?
+154|Saat ve klavye
+155|Saat dilimi
+156|Klavye düzeni
+157|Klavyenizi deneyin
+158|Tuşlarınızın doğru karakterleri yazdığını denetlemek için buraya yazın.
+159|Buraya yazın
+160|Saat dilimi ve klavye
+161|Disk seçilmedi
+162|Sistem bölümü seçilmedi
+163|Sistem bölümü kayboldu
+164|Kurulum seçilmedi
+165|Disk kayboldu
+166|Gözden geçir
+167|Hedef
+168|Diski sil ve kur
+169|Özel bölümler
+170|/home korunarak yeniden kur
+171|Windows'un yanına
+172| (biçimlendirilecek)
+173| (korunur)
+174|Sistem bölümü
+175|{partition} (biçimlendirilecek)
+176|Önyükleme bölümü
+177|MAN için alan
+178|{free} boş alan (bir önyükleme bölümü ve sistem bölümü oluşturulur)
+179|Windows
+180|Değişmez. MAN'ın açılış menüsünde görünür; EFI sistem bölümü paylaşılır.
+181|Şifreleme
+182|Açık (LUKS2)
+183|Kapalı
+184|Dosya sistemi
+185|Btrfs: MAN için @system, dosyalarınız için @home, geri yükleme noktaları için @snapshots. Hepsi boş alanı paylaşır.
+186|Sistem
+187|Hesabınız
+188|Bilgisayar ilk kez açıldığında MAN Setup içinde, bilgisayar adı, görünüm ve gizlilik ayarlarıyla birlikte oluşturulur.
+189|Klavye
+190|{model} ({path}) üzerindeki tüm veriler silinecek.
+191|_Sil ve kur
+192|Seçilen bölümler biçimlendirilecek. Diğer bölümler değişmez.
+193|_Biçimlendir ve kur
+194|Geçerli sistem değiştirilir. /home içindeki dosyalarınız korunur ve eski sistem anlık görüntü olarak kaydedilir.
+195|_Yeniden kur
+196|MAN boş alana kurulur. Windows ve dosyaları değişmez.
+197|Kuruluma hazır
+198|{model} silinsin mi?
+199|{path} ({size}) üzerindeki tüm dosyalar ve bölümler kalıcı olarak silinecek. Bu geri alınamaz.
+200|Sil ve kur
+201|Seçilen bölümler biçimlendirilsin mi?
+202|Seçilen bölümlerdeki tüm veriler kalıcı olarak silinecek. Diğer bölümler değişmez.
+203|Biçimlendir ve kur
+204|MAN Windows'un yanına kurulsun mu?
+205|MAN, {model} ({path}) üzerindeki {free} boş alana kurulur. Windows ve dosyaları değişmez.
+206|Kur
+207|MAN yeniden kurulsun mu?
+208|Kurulu sistem yeni bir kopyayla değiştirilecek. /home içindeki kişisel dosyalar korunur ve eski sistem anlık görüntü olarak kullanılabilir kalır.
+209|Yeniden kur
+210|_İptal
+211|MAN kuruluyor
+212|Başlatılıyor…
+213|Kuruluyor
+214|Adım {index}/{n}  ·  {title}
+215|MAN kuruldu
+216|MAN'ı kullanmaya başlamak için bilgisayarı yeniden başlatın. Her açılışta bir menüden MAN veya Windows'u seçebilirsiniz; MAN, geçici kurucu bölümünü ilk açılışta kaldırır.
+217|MAN'ı kullanmaya başlamak için bilgisayarı yeniden başlatın. Kurulum ortamını çıkarabilirsiniz; takılı kalırsa da MAN yeni diskten başlar.
+218|Şimdi _yeniden başlat
+219|Tamam
+220|Kurulum başarısız oldu
+221|Başka hiçbir disk değiştirilmedi ve kurucu hedef diski serbest bıraktı. Planı gözden geçirip yeniden deneyebilirsiniz.
+222|_Gözden geçir ve yeniden dene
+223|Dil ara
+224|Ülke ara
+225|Sistem diski bulunamadı.
+226|Şifreleme, MAN kurucusunun oluşturduğu Btrfs düzenini gerektirir.
+227|Bu kurulumda şifrelemenin gerektirdiği ayrı bir önyükleme bölümü yok. Şifreleme kullanmak için MAN'ı “Diski sil” seçeneğiyle yeniden kurun.
+228|MAN Setup
+229|Neredesiniz?
+230|Ülkeniz veya bölgeniz tarih, saat ve sayı biçimlerini belirler.
+231|Ülke
+232|GNU Genel Kamu Lisansı, sürüm 2
+233|Linux çekirdeği ve birçok sistem aracı
+234|GNU Genel Kamu Lisansı, sürüm 3
+235|Birçok GNU ve GNOME programı
+236|GNU Kısıtlı Genel Kamu Lisansı, sürüm 2.1
+237|GTK, GLib ve birçok kütüphane
+238|GNU Kısıtlı Genel Kamu Lisansı, sürüm 3
+239|Kütüphaneler
+240|Mozilla Kamu Lisansı 2.0
+241|Mozilla ve diğerlerinden programlar ve kütüphaneler
+242|Apache Lisansı 2.0
+243|Kütüphaneler ve araçlar
+244|Lisans sözleşmesi
+245|MAN'ın sunulduğu koşulları okuyup kabul edin.
+246|Lisanslar
+247|Lisans metni kullanılamıyor ({path}).
+248|Lisans koşullarını okudum ve kabul ediyorum
+249|Kablolu
+250|Bağlı değil
+251|İnternete bağlanın
+252|Bağlantıyla MAN saati ayarlayabilir ve yazılımlarınızı güncel tutabilir. Bunu daha sonra da yapabilirsiniz.
+253|Bağlantı denetleniyor…
+254|Wi-Fi ağları
+255|Yeniden ara
+256|_Atla
+257|Daha sonra Ayarlar'dan bağlanabilirsiniz.
+258|Bağlı
+259|Bağlı değil
+260|Ağ bulunamadı
+261|İnternet
+262|“{ssid}” ağına bağlanıldı
+263|“{ssid}” ağına bağlanılamadı
+264|“{ssid}” ağına bağlan
+265|Ağ parolasını girin.
+266|_Bağlan
+267|Hesabınızı oluşturun
+268|Bu bilgisayarın yöneticisi olacaksınız; sudo ile tam root erişiminiz olacak.
+269|Ad soyad
+270|Kullanıcı adı
+271|Parola
+272|Parolayı onayla
+273|Otomatik oturum aç
+274|Bilgisayar açılırken giriş ekranını atla
+275|Var olan ev klasörleri
+276|Önceki bir kurulumdan kalan klasörü kullanmaya devam etmek için aynı kullanıcı adını kullanın.
+277|Kullan
+278|Gelişmiş
+279|Bilgisayar adı
+280|Root parolası belirle
+281|Doğrudan root olarak oturum açmayı sağlar. Olmadan, kendi parolanızla sudo kullanın.
+282|Root parolası
+283|Root parolasını onayla
+284|Adınızı girin.
+285|Bir kullanıcı adı seçin.
+286|Bu kullanıcı adı sistem tarafından zaten kullanılıyor.
+287|Bu kullanıcı adı sisteme ayrılmış.
+288|Kullanıcı adları küçük harf, rakam, - ve _ içerir ve bir harfle başlar.
+289|Bir parola seçin.
+290|Parolalar eşleşmiyor.
+291|Bilgisayar adı harf, rakam ve tire içerebilir.
+292|Root parolasını iki kez girin.
+293|İpucu: 8 veya daha fazla karakterli bir parola çok daha güvenlidir.
+294|Hesap
+295|Koyu
+296|Açık
+297|Kendinize göre ayarlayın
+298|Bir stil, vurgu rengi ve duvar kâğıdı seçin. Her değişikliği hemen görürsünüz.
+299|Stil
+300|Vurgu rengi
+301|Duvar kâğıdı
+302|Özelleştir
+303|Gizlilik
+304|Hangi özelliklerin sizinle ilgili bilgileri kullanabileceğini seçin. Bunu istediğiniz zaman Ayarlar'dan değiştirebilirsiniz.
+305|Konum hizmetleri
+306|Haritalar ve Hava Durumu gibi uygulamaların yakındaki Wi-Fi ağlarıyla yaklaşık konumunuzu bulmasını sağlar.
+307|Otomatik saat dilimi
+308|Seyahat ederken saat dilimini doğru tutmak için konumunuzu kullanır.
+309|Kurulumu _bitir
+310|Diskiniz şifreli
+311|Verileriniz korunuyor. Parola bilgisayar her açıldığında sorulur.
+312|Disk şifreleme
+313|Şifreleme, bilgisayar kaybolur ya da çalınırsa verilerinizi korur.
+314|Bu kurulumda kullanılamaz
+315|Şifreleme, bilgisayar kaybolur ya da çalınırsa dosyalarınızı korur. Parola olmadan diski kimse okuyamaz.
+316|Diski şifrele
+317|Parola bilgisayar her açıldığında sorulur.
+318|Şifreleme bir sonraki yeniden başlatmada başlar
+319|Ardından disk, siz bilgisayarı kullanırken arka planda şifrelenir. Parolayı kaybederseniz verileri kimse kurtaramaz.
+320|MAN hazırlanıyor
+321|Her şey hazırlanıyor…
+322|_Yeniden başlat
+323|_Geri
+324|Hazırlanıyor
+325|Kurulum günlüğü
+326|Her şey hazır!
+327|Bir şeyler ters gitti
+328|Günlük
+329|Güncellemeden önce
+330|Geri yüklemeden önce
+331|Yeniden kurulumdan önce
+332|Elle
+333|Henüz anlık görüntü yok
+334|Sistemde büyük değişiklikler yapmadan önce bir tane oluşturun.
+335|Geri yükle…
+336|Anlık görüntüyü sil
+337|{size} alanın {free} kadarı boş. Sistem, ev klasörleri ve anlık görüntüler bu alanı paylaşır; anlık görüntüler yalnızca alındıklarından beri değişenler için yer kaplar.
+338|_Tamam
+339|Anlık görüntü oluştur
+340|Sistemin geçerli durumunu kaydeder. Ev klasöründeki kişisel dosyalarınız dahil değildir.
+341|Açıklama, örneğin “Sürücüleri kurmadan önce”
+342|_Oluştur
+343|Elle alınan anlık görüntü
+344|Anlık görüntü silinsin mi?
+345|{date} tarihli “{description}” kalıcı olarak silinecek.
+346|_Sil
+347|Bu anlık görüntü geri yüklensin mi?
+348|Yeniden başlattıktan sonra sistem {date} tarihli “{description}” durumuna döner. Kişisel dosyalarınız değişmez.\n\nGeçerli sistem önce anlık görüntü olarak kaydedilir, böylece bu geri alınabilir.
+349|_Geri yükle
+350|Geri yüklemeyi bitirmek için yeniden başlatın
+351|_Sonra yeniden başlat
+352|_Şimdi yeniden başlat
+353|Anlık görüntüler
+354|Geri yükleme noktaları
+355|Anlık görüntüler işletim sisteminin durumunu kaydeder. Birini geri yüklemek sistemi o ana döndürür; bu, kötü giden bir güncelleme veya ayar değişikliğinden sonra işe yarar. Kişisel dosyalarınıza asla dokunulmaz.
+356|Otomatik anlık görüntüler
+357|Günlük anlık görüntüler
+358|Bilgisayar açıkken günde bir kez
+359|Saklanacak günlük görüntüler
+360|Yazılım güncellemelerinden önce
+361|Paketler kurulurken, yükseltilirken veya kaldırılırken otomatik alınır
+362|Saklanacak güncelleme görüntüleri
+363|Depolama
+364|Disk alanı
+365|MAN açılmazsa
+366|Çalışan bir sisteme dönmek için açılış menüsünde “Restore a MAN snapshot” seçeneğini seçin.
+367|Anlık görüntüler kullanılamıyor
+368|Anlık görüntüler, MAN kurucusunun oluşturduğu Btrfs düzeniyle kurulmuş MAN'da çalışır. Bu sistem (örneğin canlı oturum) bu düzeni kullanmıyor.
+369|Bir geri yükleme bekliyor: bitirmek için bilgisayarı yeniden başlatın
+370|Şimdi yeniden başlat
+371|Lütfen geçerli işlem bitene kadar bekleyin.
+372|Ara
+373|Panoya kopyala
+374|Eşgüdümlü Evrensel Zaman
+375|İngilizce (ABD)
+376|MAN {version} Çıktı!
+377|Bu sürüme güncelleyebilirsiniz.
+378|Güncellemeleri Aç
+379|Güncelleme denetleniyor
+380|Güncellemenin özgün ve eksiksiz olduğu doğrulanıyor…
+381|MAN güncellemesi
+382|Bu güncelleme kurulamaz
+383|Güncelleme okunamadı.
+384|{name} {version} sürümünden güncelleme
+385|{name} {version} kurulu
+386|Yayın tarihi
+387|İndirme boyutu
+388|Gereken alan
+389|Özgünlük
+390|Doğrulandı, imzalayan: “{signer}”
+391|Yenilikler
+392|Bu güncelleme kurulu {name} {version} sürümünden yeni değil.
+393|Güncelleme
+394|Lütfen bu güncellemenin lisans koşullarını okuyun.
+395|Lisans koşullarını kabul ediyorum
+396|Güncelleme nereye kurulsun?
+397|Sistem değiştirilir; ev klasörünüzdeki dosyalara dokunulmaz.
+398|Bir kurulum seçin.
+399|şu anda çalışıyor
+400|Bu bilgisayardaki {name} {version}
+401|{model} üzerinde {name}
+402|MAN kurulumu bulunamadı
+403|Güncellemeler canlı oturumdan değil, çalışan ve kurulu bir MAN sisteminden kurulur.
+404|Kurulum konumu
+405|Korunur
+406|Dosyalarınız
+407|Ev klasörünüzdeki her şey
+408|Hesaplar ve parolalar
+409|Kullanıcılar, gruplar, bilgisayar adı
+410|Bağlantılar ve ayarlar
+411|Wi-Fi, saat dilimi, klavye, görünüm ve anlık görüntüler
+412|Flatpak uygulamaları
+413|Ayrıca /usr/local ve /opt içindeki her şey
+414|Değiştirilir
+415|apt ile kurulan yazılımlar ve sistem dosyalarındaki diğer değişiklikler yeni sistemle değiştirilir.
+416|İşletim sistemi
+417|{name} {version} ile değiştirilir. Geçerli sistem bir anlık görüntüden geri yüklenebilir.
+418|Bilgisayar güncellemeyi kurmak için yeniden başlar
+419|Hazırlıktan sonra MAN yeniden başlar, güncellemeyi birkaç saniyede kurar ve yeniden başlar.
+420|Güncellemeyi _kur
+421|Önce anlık görüntü oluşturulsun mu?
+422|Anlık görüntü geçerli sistemi kaydeder; böylece güncellemeden sonra bir şey çalışmazsa ona dönebilirsiniz. Önerilir.
+423|_Oluşturma
+424|Anlık görüntü _oluştur
+425|{name} {version} hazırlanıyor
+426|Kurmak için yeniden başlat
+427|Bilgisayar iki kez yeniden başlar. Dosyalarınız güvende.
+428|{r} saniye içinde otomatik yeniden başlatılacak
+429|30 saniye içinde otomatik yeniden başlatılacak
+430|Güncelleme bir sonraki yeniden başlatmada kurulur.
+431|Hazır
+432|Güncelleme hazırlanamadı
+433|Sisteminizde hiçbir şey değişmedi.
+434|_Yeniden dene
+435|Güncelleme günlüğü
+436|Başarısız
+437|Sisteminiz güncellendi
+438|MAN {version} sürümüne güncellendi.\nÖnceki: MAN {previous}.
+439|_Tamam
+440|Bir MAN güncellemesi aç
+441|MAN güncellemeleri
+442|En yeni paket listeleri alınıyor…
+443|Uygulama kopyalanıyor
+444|Uygulama menüye ekleniyor
+445|Dosya bulunamadı.
+446|Paket kurulamadı.
+447|Uygulamanın menü girdisi geçersiz.
+448|Kurulum planı denetleniyor
+449|Disk hazırlanıyor
+450|MAN diske kopyalanıyor
+451|Yeni sistem yapılandırılıyor
+452|Önyükleyici kuruluyor
+453|İlk anlık görüntü oluşturuluyor
+454|Bitiriliyor
+455|Eski bölüm imzaları kaldırılıyor
+456|Bölümler oluşturuluyor
+457|EFI sistem bölümü biçimlendiriliyor
+458|Sistem bölümü şifreleniyor
+459|Önyükleme bölümü biçimlendiriliyor
+460|Btrfs dosya sistemi oluşturuluyor
+461|Eski dosya sistemi imzaları kaldırılıyor
+462|Şifreli kurulumun kilidi açılıyor
+463|Geçerli sistem anlık görüntü olarak kaydediliyor
+464|Önceki sistem kaldırılıyor
+465|Dosya sistemi tablosu yazılıyor
+466|Bilgisayar adı ve kimliği ayarlanıyor
+467|Canlı oturum hesapları kaldırılıyor
+468|Hesabınız oluşturuluyor
+469|MAN Setup ilk açılış için hazırlanıyor
+470|Saat dilimi ve klavye ayarlanıyor
+471|Kurucu yeni sistemden kaldırılıyor
+472|Önyükleme görüntüsü (initramfs) oluşturuluyor
+473|GRUB yapılandırılıyor
+474|GRUB EFI sistem bölümüne kuruluyor
+475|Yedek önyükleyici kuruluyor
+476|Açılış menüsü yazılıyor
+477|Disk hazır
+478|Yeni sistemin anlık görüntüsü oluşturuluyor
+479|Anlık görüntü açılış menüsüne ekleniyor
+480|Ayrılıyor
+481|Kurucu yardımcısı root olarak çalışmalı.
+482|Bu bilgisayar UEFI kipinde başlatılmadı. MAN, UEFI gerektirir.
+483|Kullanıcı adı geçerli değil.
+484|Parola gerekli.
+485|Bilgisayar adı geçerli değil.
+486|Bilinmeyen dil.
+487|Şifreleme parolası en az 8 karakter olmalı.
+488|Kurulumu onayladıktan sonra disk değişti. Hiçbir şey değiştirilmedi; lütfen gözden geçirip yeniden onaylayın.
+489|Bir sistem bölümü seçin.
+490|Onaylanan disk seçilen sistem bölümünü içermiyor.
+491|Önyükleme bölümü EFI ve sistem bölümlerinden ayrı olmalı.
+492|Önyükleme bölümü en az 512 MB olmalı.
+493|Kurulum seçilmedi.
+494|Onaylanan disk seçilen kurulumu içermiyor.
+495|Şifreli kurulumda MAN_BOOT bölümü yok.
+496|/boot içinde eşleşen modüllere sahip çekirdek bulunamadı.
+497|Dil, sistem yardımcısı tarafından değiştirilmeli.
+498|Ayarlarınız uygulanıyor
+499|Disk şifreleme hazırlanıyor
+500|Bitiriliyor
+501|MAN Setup sistem yardımcısı tarafından bitirilmeli.
+502|MAN Setup bu bilgisayarda zaten tamamlandı.
+503|Bilinmeyen vurgu rengi.
+504|Seçilen duvar kâğıdı kullanılamıyor.
+505|Bu sistem şifrelenemez.
+506|Kurulum anahtarı eksik, bu yüzden şifreleme arka planda sürdürülemiyor.
+507|Sistem Btrfs üzerine kurulu değil, bu yüzden anlık görüntüler kullanılamıyor.
+508|Bir anlık görüntü geri yüklemesi yeniden başlatma bekliyor. Bitirmek için önce bilgisayarı yeniden başlatın.
+509|Geçersiz anlık görüntü kimliği.
+510|Güncelleme denetleniyor
+511|Anlık görüntü oluşturuluyor
+512|Güncelleme alanı hazırlanıyor
+513|Yeni sistem açılıyor
+514|Hesaplarınız ve ayarlarınız taşınıyor
+515|Yeniden başlatma hazırlanıyor
+516|Açıldı
+517|Hesaplar
+518|Yalnızca kurucuya ait yazılımlar kaldırılıyor
+519|Güncellemenin önyükleme görüntüsü oluşturuluyor
+520|Tek seferlik açılış girdisi ekleniyor
+521|Güncelleme özgün
+522|Anlık görüntü oluşturuldu
+523|Atlandı
+524|Güncelleme alanı hazır
+525|Yeni sistem hazırlanıyor
+526|Güncelleme dosyası bozuk (sağlama toplamı uyuşmuyor). Yeniden indirin.
+527|Güncelleme dosyası tamamen okunamadı.
+528|Güncelleme çekirdek içermiyor.
+529|Güncellemeler sistem yardımcısı tarafından kurulmalı.
+530|Seçilen kurulum bulunamadı.
+531|Yalnızca çalışan MAN kurulumu güncellenebilir.
+532|Bu bir MAN güncelleme dosyası değil (bildirim dosyası yok).
+533|Güncelleme imzalı değil, bu yüzden güvenilemez.
+534|Güncellemenin imzası bozuk.
+535|Güncelleme MAN tarafından imzalanmamış. Değiştirilmiş olabilir ya da güvenilmeyen bir kaynaktan geliyor olabilir.
+536|Güncellemenin bildirim dosyası geçersiz.
+537|Parola doğru değil ya da şifreli bölüm açılamıyor.
+538|Mavi
+539|Turkuaz
+540|Yeşil
+541|Sarı
+542|Turuncu
+543|Kırmızı
+544|Pembe
+545|Mor
+546|Arduvaz
+547|Paket Kurucu
+548|.deb, Flatpak ve AppImage dosyalarından uygulama kurun
+549|Sistem kurucusu
+550|MAN'ı bu bilgisayara kur
+551|Sistem geri yükleme
+552|Sistemin anlık görüntülerini oluşturun ve geri yükleyin
+553|Sistem güncelleme kurucusu
+554|Bir MAN sistem güncelleme dosyası kur
+555|Canlı oturum başladığında MAN'ı kurmayı önerir
+556|MAN güncelleme bildirimi
+557|Oturum açtıktan sonra bir kez MAN'ın güncellendiğini bildirir
+558|Yeni MAN bilgisayarınızı kurun
+559|MAN ilk açılış kurulumu
+560|MAN Güncellemeleri
+561|MAN'in yeni sürümü çıktığında size haber verir

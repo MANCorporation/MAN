@@ -6,7 +6,8 @@
 //!   man-mkupd payload ROOTDIR OUTDIR          (as root)
 //!       Pack an installed-system tree into OUTDIR/system.tar.zst and
 //!       OUTDIR/payload.json (checksum and sizes).
-//!   man-mkupd pack --version V --payload OUTDIR --key PRIVATE [--license F] [--notes F] [--name N] -o FILE.upd
+//!   man-mkupd pack --version V [--base RELEASE] --payload OUTDIR --key PRIVATE [--license F] [--notes F] [--name N] -o FILE.upd
+//!       V is a release ("10.10") or a TEST build ("10 TEST 5", needs --base).
 //!       Write and sign the manifest, assemble the .upd.
 #[path = "updfile.rs"]
 mod updfile;
@@ -93,6 +94,9 @@ fn pack(args: &[String]) -> Result<()> {
     if !valid_version(&version) {
         bail!("invalid version {version}");
     }
+    if test_build(&version).is_some() && arg(args, "--base").is_none_or(|b| !valid_version(&b) || test_build(&b).is_some()) {
+        bail!("--base RELEASE is needed: a TEST build names the release it was made after");
+    }
     let pdir = arg(args, "--payload").ok_or_else(|| anyhow!("--payload is required"))?;
     let key_path = arg(args, "--key").ok_or_else(|| anyhow!("--key is required"))?;
     let out = arg(args, "-o").ok_or_else(|| anyhow!("-o is required"))?;
@@ -103,6 +107,7 @@ fn pack(args: &[String]) -> Result<()> {
     let manifest = UpdateManifest {
         format: UPD_FORMAT,
         name: arg(args, "--name").unwrap_or_else(|| "MAN".into()),
+        base: arg(args, "--base").unwrap_or_default(),
         version,
         date: today,
         payload_sha256: p["payload_sha256"].as_str().unwrap_or_default().into(),
@@ -142,7 +147,7 @@ fn main() {
         Some("pack") => pack(&args[1..]),
         Some("verify") if args.len() == 2 => updfile::verify(&args[1]).map(|v| println!("OK: {} {} signed by {} (license {} bytes, notes {} bytes)", v.manifest.name, v.manifest.version, v.signer, v.license.len(), v.notes.len())),
         _ => {
-            eprintln!("usage: man-mkupd keygen PRIV PUB | payload ROOT OUTDIR | pack --version V --payload DIR --key PRIV [--license F] [--notes F] -o FILE.upd | verify FILE.upd");
+            eprintln!("usage: man-mkupd keygen PRIV PUB | payload ROOT OUTDIR | pack --version V [--base R] --payload DIR --key PRIV [--license F] [--notes F] -o FILE.upd | verify FILE.upd");
             std::process::exit(2);
         }
     };

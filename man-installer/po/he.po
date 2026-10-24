@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "קובץ זה אינו יישום שאפשר להתקין כאן (‎.deb, ‏.flatpak, ‏.flatpakref או AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "יישום זה נועד למחשבי {arch} ואינו פועל במחשב זה (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "לא ניתן לקרוא את הקובץ. ייתכן שהוא פגום."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "זה אינו AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "מבוא"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "רישיון"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "בחירת יעד"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "סוג ההתקנה"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "התקנה"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "סיכום"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_המשך"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "ברוכים הבאים לתוכנית ההתקנה של {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "הסכם רישיון תוכנה"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "האם את/ה מסכים/ה לרישיון?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "כדי להמשיך בהתקנה, יש להסכים לתנאי הסכם רישיון התוכנה."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_קריאת הרישיון"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_מסכים/ה"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "בחירת יעד"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "התקנה רגילה"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "ה_תקנה"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "חבילת Debian‏ (‎.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "יישום Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "יישום Flatpak מ־{source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "נדריך אותך בשלבים הדרושים להתקנת תוכנה זו."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "גרסה"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "מפרסם"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "סוג"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "גודל"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "אתר אינטרנט"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "קובץ"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "יישום זה כבר מותקן. התקנה מחדש תחליף אותו."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "יישומים מחבילות ‎.deb הופכים לחלק מהמערכת. בעדכון MAN הם מוסרים ויש להתקין אותם שוב. יישומי Flatpak ו־AppImage נשמרים."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "יש להתקין יישומים רק ממקורות מהימנים."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "היכן להתקין את {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "רק החשבון שלך יכול להשתמש ביישום."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "נדרשות הרשאות מנהל."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "רק עבורי"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "עבור כל המשתמשים במחשב זה"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "הדבר יתפוס {size} במחשב שלך."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "היישום מוּרד מ־{source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "היישום מותקן עבור כל המשתמשים במחשב זה."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "היישום מותקן רק עבורך."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "ה־AppImage מועבר אל {folder} ומתווסף ליישומים שלך."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "יש ללחוץ על התקנה כדי להתקין את {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "בודק מה עוד היישום צריך…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "מתקין גם את החבילות הדרושות לו: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "חלק מהחבילות שהיישום צריך עדיין אינן זמינות. ההתקנה מורידה תחילה את רשימות החבילות העדכניות; אם הן עדיין חסרות, לא ניתן להתקין את היישום."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "מתקין את {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "בהכנה…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "פרטים"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "מתקין את החבילה…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "מעביר את היישום לתיקייה שלו…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "לא ניתן היה להתקין את היישום."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "מתקין את היישום עם Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "יומן"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_סגירה"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "ההתקנה הצליחה"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "היישום הותקן."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "ההתקנה נכשלה"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_פתיחה"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_הצגת פרטים"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "יומן ההתקנה"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "מתקין היישומים"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_חזרה"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "קורא את היישום…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "התקנת {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "יישומים"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "בחירת יישום להתקנה"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "לא ניתן להפעיל את מסייע המערכת."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "לא ניתן לתקשר עם מסייע המערכת."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "החיבור למסייע המערכת אבד."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "האימות בוטל."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "פעולה זו דורשת הרשאות מנהל."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "מסייע המערכת נעצר באופן בלתי צפוי."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "ה_בא"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "סוג ההתקנה"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (תפורמט)"
 msgid "Boot Partition"
 msgstr "מחיצת אתחול"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "התקנה"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "מקום ל־MAN"
@@ -530,10 +798,6 @@ msgstr "התקנה _מחדש"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN מותקנת במקום הפנוי. Windows וקבציה לא משתנים."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "ה_תקנה"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "מוכן להתקנה"
@@ -598,10 +862,6 @@ msgstr "MAN מותקנת"
 msgid "Starting…"
 msgstr "מתחיל…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "פרטים"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "מתקין"
@@ -609,10 +869,6 @@ msgstr "מתקין"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "שלב {index} מתוך {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "יומן"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "שום כונן אחר לא שונה, והמתקין שחרר את כו�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_סקירה וניסיון חוזר"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_הצגת פרטים"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "יומן ההתקנה"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "זמן אוניברסלי מתואם"
 msgid "English (US)"
 msgstr "אנגלית (ארה״ב)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "‏MAN {version} יצאה!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "אפשר לעדכן אליה."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "פתיחת העדכונים"
 
@@ -1312,10 +1560,6 @@ msgstr "עדכון מ־{name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} מותקנת"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "גרסה"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "תאריך שחרור"
@@ -1339,10 +1583,6 @@ msgstr "מאומת, נחתם על ידי „{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "מה חדש"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_המשך"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "עדכונים מותקנים ממערכת MAN מותקנת ופועלת
 #: updater.rs:240
 msgid "Install Location"
 msgstr "מיקום ההתקנה"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "סיכום"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "פתיחת עדכון MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "עדכוני MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "מוריד את רשימות החבילות העדכניות…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "מעתיק את היישום"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "מוסיף את היישום לתפריט"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "הקובץ לא נמצא."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "לא ניתן היה להתקין את החבילה."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "רשומת התפריט של היישום אינה תקינה."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "מעביר את החשבונות וההגדרות שלך"
 msgid "Preparing the restart"
 msgstr "מכין את ההפעלה מחדש"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "נפרס"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "חשבונות"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "מסיר תוכנה ששימשה רק את המתקין"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "בונה את תמונת האתחול של העדכון"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "מוסיף רשומת אתחול חד־פעמית"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "העדכון מקורי"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "תמונת המצב נוצרה"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "דולג"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "אזור העדכון מוכן"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "מכין את המערכת החדשה"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "קובץ העדכון פגום (סכום הביקורת אינו תואם). יש להוריד אותו שוב."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "לא ניתן לקרוא את קובץ העדכון במלואו."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "העדכון אינו מכיל ליבה."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "את העדכונים חייב להתקין מסייע המערכת."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "ההתקנה שנבחרה לא נמצאה."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "אפשר לעדכן רק את התקנת MAN הפועלת."
 
@@ -1947,6 +2207,14 @@ msgstr "סגול"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "צפחה"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "מתקין החבילות"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "התקנת יישומים מקובצי ‎.deb,‏ Flatpak ו־AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

@@ -43,6 +43,13 @@ put "$data/schemas/com.man.Updates.gschema.xml" "$r/usr/share/glib-2.0/schemas/c
 put "$data/flatpak/man-flatpak-sandbox" "$r/usr/libexec/man/man-flatpak-sandbox" 0755
 put "$data/polkit/com.man.flatpak.policy" "$r/usr/share/polkit-1/actions/com.man.flatpak.policy" 0644
 put "$bin/man-mkupd" "$r/usr/bin/man-mkupd" 0755
+put "$data/version/man-set-version" "$r/usr/bin/man-set-version" 0755
+put "$bin/man-app-installer" "$r/usr/bin/man-app-installer" 0755
+put "$bin/man-app-installer-helper" "$r/usr/libexec/man-installer/man-app-installer-helper" 0755
+put "$data/applications/com.man.AppInstaller.desktop" "$r/usr/share/applications/com.man.AppInstaller.desktop" 0644
+put "$data/applications/gnome-mimeapps.list" "$r/etc/xdg/gnome-mimeapps.list" 0644
+put "$data/icons/com.man.AppInstaller.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.AppInstaller.svg" 0644
+put "$data/polkit/com.man.apps.policy" "$r/usr/share/polkit-1/actions/com.man.apps.policy" 0644
 put "$data/applications/com.man.Updater.desktop" "$r/usr/share/applications/com.man.Updater.desktop" 0644
 put "$data/autostart/com.man.UpdateNotice.desktop" "$r/etc/xdg/autostart/com.man.UpdateNotice.desktop" 0644
 put "$data/icons/com.man.Updater.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.Updater.svg" 0644
@@ -71,6 +78,8 @@ for u in man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.se
     put "$data/systemd/$u" "$r/usr/lib/systemd/system/$u" 0644
 done
 put "$data/apt/80man-snapshot" "$r/etc/apt/apt.conf.d/80man-snapshot" 0644
+put "$data/apt/man-debian.sources" "$r/etc/apt/sources.list.d/man-debian.sources" 0644
+put "$data/apt/man-debian.pref" "$r/etc/apt/preferences.d/man-debian" 0644
 put "$data/config/snapshots.conf" "$r/etc/man/snapshots.conf" 0644
 for l in man-logo man-logo-text man-logo-text-dark; do
     put "$data/logo/$l.svg" "$r/usr/share/icons/hicolor/scalable/apps/$l.svg" 0644
@@ -87,14 +96,15 @@ Architecture: amd64
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
-Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, grub-efi-amd64-bin, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl
+Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, grub-efi-amd64-bin, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64
 Description: MAN system backend, MAN Setup and snapshot manager
  Privileged backend used by the MAN installer, the Snapshots app for
  creating and restoring Btrfs system snapshots, MAN Setup (first-start
  setup with optional disk encryption), daily and pre-update
- automatic snapshots, and boot-menu snapshot restore.
+ automatic snapshots, boot-menu snapshot restore, MAN Update and App
+ Installer (.deb, Flatpak and AppImage files).
 EOF
-printf '%s\n' /etc/grub.d/41_man_update /etc/grub.d/42_man_snapshots /etc/grub.d/43_man_windows /etc/apt/apt.conf.d/80man-snapshot /etc/man/snapshots.conf > "$r/DEBIAN/conffiles"
+printf '%s\n' /etc/grub.d/41_man_update /etc/grub.d/42_man_snapshots /etc/grub.d/43_man_windows /etc/apt/apt.conf.d/80man-snapshot /etc/man/snapshots.conf /etc/xdg/gnome-mimeapps.list /etc/apt/sources.list.d/man-debian.sources /etc/apt/preferences.d/man-debian > "$r/DEBIAN/conffiles"
 cat > "$r/DEBIAN/postinst" <<'EOF'
 #!/bin/sh
 set -e
@@ -105,6 +115,11 @@ if [ "$1" = configure ]; then
     if [ -d /run/systemd/system ]; then
         systemctl daemon-reload || true
         systemctl start man-snapshot-daily.timer man-boot-cleanup.timer || true
+    fi
+    # The image was built with a local package folder as apt source; it does
+    # not exist on MAN systems (Debian comes from man-debian.sources).
+    if [ -f /etc/apt/sources.list ]; then
+        sed -i 's|^deb \[trusted=yes\] copy:///.*|# &|' /etc/apt/sources.list
     fi
     update-mime-database /usr/share/mime 2>/dev/null || true
     update-desktop-database -q /usr/share/applications 2>/dev/null || true

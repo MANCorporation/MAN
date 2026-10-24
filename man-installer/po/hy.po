@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Այս ֆայլը հավելված չէ, որը կարելի է տեղադրել այստեղ (.deb, .flatpak, .flatpakref կամ AppImage)։"
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Այս հավելվածը նախատեսված է {arch} համակարգիչների համար և չի աշխատում այս մեկում (x86-64)։"
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Ֆայլը հնարավոր չեղավ կարդալ։ Այն կարող է վնասված լինել։"
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Սա AppImage չէ։"
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Ներածություն"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Արտոնագիր"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Վայրի ընտրություն"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Տեղադրման տեսակ"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Տեղադրում"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Ամփոփում"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Շարունակել"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Բարի գալուստ {name}-ի տեղադրիչ"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Ծրագրի արտոնագրային համաձայնագիր"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Համաձա՞յն եք արտոնագրին"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Տեղադրումը շարունակելու համար պետք է համաձայնեք ծրագրի արտոնագրային համաձայնագրի պայմաններին։"
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Կարդալ արտոնագիրը"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Համաձայն եմ"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Ընտրեք վայրը"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Ստանդարտ տեղադրում"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Տեղադրել"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian փաթեթ (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak հավելված"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak հավելված {source}-ից"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Ձեզ կուղեկցենք այս ծրագիրը տեղադրելու համար անհրաժեշտ քայլերով։"
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Տարբերակ"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Հրատարակիչ"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Տեսակ"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Չափ"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Կայք"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Ֆայլ"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Այս հավելվածն արդեն տեղադրված է։ Կրկին տեղադրելը կփոխարինի այն։"
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb փաթեթներից հավելվածները դառնում են համակարգի մաս։ MAN-ը թարմացնելիս դրանք հեռացվում են, և պետք է կրկին տեղադրել։ Flatpak հավելվածներն ու AppImage-ները պահպանվում են։"
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Տեղադրեք հավելվածներ միայն վստահելի աղբյուրներից։"
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Որտե՞ղ եք ուզում տեղադրել {name}-ը"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Հավելվածից կարող է օգտվել միայն ձեր հաշիվը։"
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Պահանջվում են ադմինիստրատորի իրավունքներ։"
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Միայն ինձ համար"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Այս համակարգչի բոլոր օգտատերերի համար"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Սա կզբաղեցնի {size} տեղ ձեր համակարգչում։"
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Հավելվածը ներբեռնվում է {source}-ից։"
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Հավելվածը տեղադրվում է այս համակարգչի բոլոր օգտատերերի համար։"
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Հավելվածը տեղադրվում է միայն ձեզ համար։"
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage-ը տեղափոխվում է {folder} և ավելացվում ձեր հավելվածներին։"
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Սեղմեք «Տեղադրել»՝ {name}-ը տեղադրելու համար։"
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Ստուգվում է, թե էլ ինչ է պետք հավելվածին…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Տեղադրում է նաև անհրաժեշտ փաթեթները՝ {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Հավելվածին անհրաժեշտ որոշ փաթեթներ դեռ հասանելի չեն։ Տեղադրումը նախ ստանում է փաթեթների նորագույն ցանկերը. եթե դրանք դեռ բացակայեն, հավելվածը հնարավոր չէ տեղադրել։"
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name}-ի տեղադրում…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Նախապատրաստում…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Մանրամասներ"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Փաթեթի տեղադրում…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Հավելվածի տեղափոխում իր թղթապանակ…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Հավելվածը հնարավոր չեղավ տեղադրել։"
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Հավելվածի տեղադրում Flatpak-ով…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Մատյան"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Փակել"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Տեղադրումը հաջողվեց"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Հավելվածը տեղադրվեց։"
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Տեղադրումը ձախողվեց"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Բացել"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Ցույց տալ մանրամասները"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Տեղադրման մատյան"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Հավելվածների տեղադրիչ"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Հետ"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Հավելվածի ընթերցում…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Տեղադրել {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Հավելվածներ"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Ընտրեք տեղադրելու հավելված"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Չհաջողվեց գործարկել համակարգի օգնականը։"
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Չհաջողվեց կապ հաստատել համակարգի օգնականի հետ։"
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Կապը համակարգի օգնականի հետ կորավ։"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Թույլտվությունը չեղարկվեց։"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Այս գործողության համար անհրաժեշտ են ադմինիստրատորի իրավունքներ։"
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Համակարգի օգնականն անսպասելիորեն կանգ առավ։"
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Հաջորդը"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Տեղադրման տեսակ"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (կձևաչափվի)"
 msgid "Boot Partition"
 msgstr "Բեռնման բաժին"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Տեղադրում"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Տեղ MAN-ի համար"
@@ -530,10 +798,6 @@ msgstr "_Վերատեղադրել"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN-ը տեղադրվում է ազատ տեղում։ Windows-ը և նրա ֆայլերը չեն փոխվում։"
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Տեղադրել"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Պատրաստ է տեղադրման"
@@ -598,10 +862,6 @@ msgstr "MAN-ը տեղադրվում է"
 msgid "Starting…"
 msgstr "Մեկնարկ…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Մանրամասներ"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Տեղադրվում է"
@@ -609,10 +869,6 @@ msgstr "Տեղադրվում է"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Քայլ {index}՝ {n}-ից  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Մատյան"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Ոչ մի այլ սկավառակ չի փոխվել, և տեղադրիչ
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Ստուգել և նորից փորձել"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Ցույց տալ մանրամասները"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Տեղադրման մատյան"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Համաձայնեցված համընդհանուր ժամանակ"
 msgid "English (US)"
 msgstr "Անգլերեն (ԱՄՆ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Թողարկվել է MAN {version}-ը!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Կարող եք թարմացնել դրան։"
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Բացել թարմացումները"
 
@@ -1312,10 +1560,6 @@ msgstr "Թարմացում {name} {version}-ից"
 msgid "{name} {version} is installed"
 msgstr "{name} {version}-ը տեղադրված է"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Տարբերակ"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Թողարկված"
@@ -1339,10 +1583,6 @@ msgstr "Ստուգված է, ստորագրել է «{signer}»-ը"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Ինչն է նոր"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Շարունակել"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Թարմացումները տեղադրվում են աշխատող, տ�
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Տեղադրման վայր"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Ամփոփում"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Բացել MAN թարմացում"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN թարմացումներ"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Փաթեթների նորագույն ցանկերի ստացում…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Հավելվածի պատճենում"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Հավելվածի ավելացում ընտրացանկին"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Ֆայլը չի գտնվել։"
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Փաթեթը հնարավոր չեղավ տեղադրել։"
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Հավելվածի ընտրացանկի գրառումն անվավեր է։"
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Ձեր հաշիվների և կարգավորումների տեղափո
 msgid "Preparing the restart"
 msgstr "Վերագործարկման նախապատրաստում"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Ապափաթեթավորված է"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Հաշիվներ"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Միայն տեղադրիչի ծրագրերի հեռացում"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Թարմացման բեռնման պատկերի կառուցում"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Միանգամյա բեռնման գրառման ավելացում"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Թարմացումն իսկական է"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Պատկերահանը ստեղծվեց"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Բաց թողնված"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Թարմացման տարածքը պատրաստ է"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Նոր համակարգի նախապատրաստում"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Թարմացման ֆայլը վնասված է (ստուգիչ գումարը չի համընկնում)։ Ներբեռնեք այն նորից։"
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Չհաջողվեց ամբողջությամբ կարդալ թարմացման ֆայլը։"
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Թարմացումը միջուկ չի պարունակում։"
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Թարմացումները պետք է տեղադրի համակարգի օգնականը։"
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Ընտրված տեղադրումը չգտնվեց։"
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Կարելի է թարմացնել միայն աշխատող MAN տեղադրումը։"
 
@@ -1947,6 +2207,14 @@ msgstr "Մանուշակագույն"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Թերթաքարային"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Փաթեթների տեղադրիչ"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Տեղադրեք հավելվածներ .deb, Flatpak և AppImage ֆայլերից"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

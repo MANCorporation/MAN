@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Nid yw'r ffeil hon yn ap y mae modd ei osod yma (.deb, .flatpak, .flatpakref neu AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Mae'r ap hwn wedi'i wneud ar gyfer cyfrifiaduron {arch} ac nid yw'n gweithio ar hwn (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Methu darllen y ffeil. Efallai ei bod wedi'i difrodi."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Nid AppImage yw hwn."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Cyflwyniad"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Trwydded"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Dewis Cyrchfan"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Math o osodiad"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Gosodiad"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Crynodeb"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Parhau"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Croeso i osodwr {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Cytundeb Trwydded Meddalwedd"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Ydych chi'n Cytuno i'r Drwydded?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "I barhau i osod, rhaid i chi gytuno i delerau'r cytundeb trwydded meddalwedd."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Darllen y Drwydded"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Cytuno"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Dewis Cyrchfan"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Gosodiad Safonol"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Gosod"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Pecyn Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Ap Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Ap Flatpak o {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Byddwch yn cael eich arwain drwy'r camau sydd eu hangen i osod y feddalwedd hon."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Fersiwn"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Cyhoeddwr"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Math"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Maint"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Gwefan"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Ffeil"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Mae'r ap hwn wedi'i osod yn barod. Bydd ei osod eto yn ei ddisodli."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Mae apiau o becynnau .deb yn dod yn rhan o'r system. Pan fydd MAN yn cael ei ddiweddaru maen nhw'n cael eu tynnu ac mae angen eu gosod eto. Mae apiau Flatpak ac AppImages yn cael eu cadw."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Gosodwch apiau o ffynonellau rydych chi'n ymddiried ynddyn nhw yn unig."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Ble ydych chi am osod {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Dim ond eich cyfrif chi all ddefnyddio'r ap."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Angen hawliau gweinyddwr."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "I Mi'n Unig"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "I Holl Ddefnyddwyr y Cyfrifiadur Hwn"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Bydd hyn yn cymryd {size} o le ar eich cyfrifiadur."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Mae'r ap yn cael ei lwytho i lawr o {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Mae'r ap yn cael ei osod ar gyfer holl ddefnyddwyr y cyfrifiadur hwn."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Mae'r ap yn cael ei osod i chi'n unig."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "Mae'r AppImage yn cael ei symud i {folder} a'i ychwanegu at eich apiau."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Cliciwch Gosod i osod {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Yn gwirio beth arall sydd ei angen ar yr ap…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Mae hefyd yn gosod y pecynnau sydd eu hangen arno: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Nid yw rhai pecynnau sydd eu hangen ar yr ap ar gael eto. Mae'r gosod yn nôl y rhestrau pecynnau diweddaraf yn gyntaf; os ydyn nhw'n dal ar goll, nid oes modd gosod yr ap."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Yn gosod {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Yn paratoi…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Manylion"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Yn gosod y pecyn…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Yn symud yr ap i'w ffolder…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Methu gosod yr ap."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Yn gosod yr ap gyda Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Log"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Cau"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Roedd y Gosod yn Llwyddiannus"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Mae'r ap wedi'i osod."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Methodd y Gosod"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Agor"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Dangos manylion"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Log gosod"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Gosodwr Apiau"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "Yn Ô_l"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Yn darllen yr ap…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Gosod {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Apiau"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Dewis Ap i'w Osod"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Methu cychwyn cynorthwyydd y system."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Methu cyfathrebu â chynorthwyydd y system."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Collwyd cysylltiad â chynorthwyydd y system."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Diddymwyd yr awdurdodi."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Mae angen hawliau gweinyddwr ar gyfer y weithred hon."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Daeth cynorthwyydd y system i ben yn annisgwyl."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Nesaf"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Math o osodiad"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (bydd yn cael ei fformatio)"
 msgid "Boot Partition"
 msgstr "Rhaniad cychwyn"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Gosodiad"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Lle i MAN"
@@ -530,10 +798,6 @@ msgstr "_Ailosod"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "Mae MAN yn cael ei osod yn y lle rhydd. Nid yw Windows a'i ffeiliau'n newid."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Gosod"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Yn barod i osod"
@@ -598,10 +862,6 @@ msgstr "Yn gosod MAN"
 msgid "Starting…"
 msgstr "Yn cychwyn…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Manylion"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Yn gosod"
@@ -609,10 +869,6 @@ msgstr "Yn gosod"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Cam {index} o {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Log"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Ni newidiwyd unrhyw ddisg arall, ac mae'r gosodwr wedi rhyddhau'r ddisg 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Adolygu a cheisio eto"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Dangos manylion"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Log gosod"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Amser Cyffredinol Cydlynol"
 msgid "English (US)"
 msgstr "Saesneg (UDA)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Mae MAN {version} wedi'i ryddhau!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Gallwch ddiweddaru iddo."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Agor Diweddariadau"
 
@@ -1312,10 +1560,6 @@ msgstr "Diweddariad o {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Mae {name} {version} wedi'i osod"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Fersiwn"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Rhyddhawyd"
@@ -1339,10 +1583,6 @@ msgstr "Wedi'i ddilysu, wedi'i lofnodi gan “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Beth sy'n newydd"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Parhau"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Mae diweddariadau'n cael eu gosod o system MAN sydd wedi'i gosod ac sy'n
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Lleoliad y gosodiad"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Crynodeb"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Agor diweddariad MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Diweddariadau MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Yn nôl y rhestrau pecynnau diweddaraf…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Yn copïo'r ap"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Yn ychwanegu'r ap at y ddewislen"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Heb ganfod y ffeil."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Methu gosod y pecyn."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Nid yw cofnod dewislen yr ap yn ddilys."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Yn symud eich cyfrifon a'ch gosodiadau"
 msgid "Preparing the restart"
 msgstr "Yn paratoi'r ailgychwyn"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Wedi'i ddadbacio"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Cyfrifon"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Yn tynnu meddalwedd sydd ar gyfer y gosodwr yn unig"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Yn adeiladu delwedd gychwyn y diweddariad"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Yn ychwanegu'r cofnod cychwyn untro"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Mae'r diweddariad yn ddilys"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Ciplun wedi'i greu"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Wedi'i hepgor"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Ardal ddiweddaru'n barod"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Yn paratoi'r system newydd"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Mae'r ffeil ddiweddaru wedi'i difrodi (nid yw'r swm gwirio'n cyfateb). Llwythwch hi i lawr eto."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Methu darllen y ffeil ddiweddaru'n llwyr."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Nid yw'r diweddariad yn cynnwys cnewyllyn."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Rhaid i gynorthwyydd y system osod diweddariadau."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Ni chafwyd hyd i'r gosodiad a ddewiswyd."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Dim ond y gosodiad MAN sy'n rhedeg y gellir ei ddiweddaru."
 
@@ -1947,6 +2207,14 @@ msgstr "Porffor"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Llechen"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Gosodwr Pecynnau"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Gosod apiau o ffeiliau .deb, Flatpak ac AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=App Installer
+GenericName=Package Installer
+Comment=Install apps from .deb, Flatpak and AppImage files
+Keywords=install;deb;package;flatpak;appimage;app;
+Exec=man-app-installer %F
+Icon=com.man.AppInstaller
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;System;PackageManager;
+MimeType=application/vnd.debian.binary-package;application/x-deb;application/vnd.flatpak;application/vnd.flatpak.ref;application/vnd.appimage;application/x-iso9660-appimage;application/x-appimage;
+StartupNotify=true

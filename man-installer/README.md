@@ -96,6 +96,32 @@ fonts for every script, and all 74 locales pre-generated; any other locale
 - MAN's own apps (installer, MAN Setup, Snapshots, Updates) are still English
   only; GNOME and its apps are translated.
 
+## App Installer (3.10.0, MAN 10.10)
+
+`man-app-installer` (com.man.AppInstaller, the default app for these files)
+installs an app from a downloaded file, with the steps of a classic
+installer on the left (Introduction, License, Destination Select,
+Installation Type, Installation, Summary) and the app's icon below them:
+
+- **.deb**: name, icon, description and license (`/usr/share/doc/PKG/copyright`)
+  are read from the package (`dpkg-deb`); `apt-get -s` shows what else it
+  needs; installing runs `man-app-installer-helper` through pkexec (polkit
+  `com.man.apps.install`): `apt-get update`, then `apt-get install ./file.deb`.
+  Missing dependencies come from Debian sid (`/etc/apt/sources.list.d/man-debian.sources`)
+  with **Pin-Priority 50** (`/etc/apt/preferences.d/man-debian`): apt only adds
+  packages that are not installed and never upgrades MAN's own. Apps from
+  .deb files are part of the system, so a MAN update removes them (the
+  installer says so).
+- **.flatpak** bundles (metadata, AppStream and icon read straight from the
+  bundle's GVariant header) and **.flatpakref** files: `flatpak install
+  --user` ("Only for Me") or `--system` ("For All Users").
+- **AppImages**: the icon and menu entry are taken from the AppImage
+  (`unsquashfs` at the offset after the ELF runtime; nothing is run). Only
+  for me: moved to `~/AppImages`, entry `~/.local/share/applications/appimage-ID.desktop`;
+  for all users (through the helper): `/opt/AppImages` and
+  `/usr/local/share/applications` (both kept by MAN updates). libfuse2t64
+  is installed so older AppImages run.
+
 ## Layout of this directory
 
 ```

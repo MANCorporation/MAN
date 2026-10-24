@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Оваа датотека не е апликација што може да се инсталира овде (.deb, .flatpak, .flatpakref или AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Оваа апликација е направена за компјутери {arch} и не работи на овој (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Датотеката не може да се прочита. Можеби е оштетена."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Ова не е AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Вовед"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Лиценца"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Избор на одредиште"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Вид на инсталација"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Инсталација"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Резиме"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Продолжи"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Добредојдовте во инсталаторот на {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Договор за лиценца на софтверот"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Дали се согласувате со лиценцата?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "За да продолжите со инсталацијата, мора да се согласите со условите на договорот за лиценца на софтверот."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Прочитај ја лиценцата"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Се согласувам"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Изберете одредиште"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Стандардна инсталација"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Инсталирај"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian пакет (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak апликација"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak апликација од {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Ќе ве водиме низ чекорите потребни за инсталирање на овој софтвер."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Верзија"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Издавач"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Тип"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Големина"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Веб-страница"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Датотека"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Оваа апликација е веќе инсталирана. Повторното инсталирање ја заменува."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Апликациите од .deb пакети стануваат дел од системот. Кога MAN ќе се ажурира, тие се отстрануваат и треба повторно да се инсталираат. Flatpak апликациите и AppImage се задржуваат."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Инсталирајте апликации само од извори на кои им верувате."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Каде сакате да го инсталирате {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Само вашата сметка може да ја користи апликацијата."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Потребни се администраторски права."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Само за мене"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "За сите корисници на овој компјутер"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Ова ќе зафати {size} простор на компјутерот."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Апликацијата се презема од {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Апликацијата се инсталира за сите корисници на овој компјутер."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Апликацијата се инсталира само за вас."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage се преместува во {folder} и се додава во вашите апликации."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Кликнете Инсталирај за да го инсталирате {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Се проверува што уште ѝ треба на апликацијата…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Ги инсталира и потребните пакети: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Некои пакети потребни за апликацијата сè уште не се достапни. Инсталацијата прво ги презема најновите списоци на пакети; ако и понатаму недостасуваат, апликацијата не може да се инсталира."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Се инсталира {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Се подготвува…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Детали"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Се инсталира пакетот…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Апликацијата се преместува во својата папка…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Апликацијата не може да се инсталира."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Апликацијата се инсталира со Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Дневник"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Затвори"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Инсталацијата успеа"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Апликацијата е инсталирана."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Инсталацијата не успеа"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Отвори"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Прикажи детали"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Дневник на инсталацијата"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Инсталатор на апликации"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Назад"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Се чита апликацијата…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Инсталирај {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Апликации"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Изберете апликација за инсталирање"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Системскиот помошник не може да се стартува."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Не може да се комуницира со системскиот помошник."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Врската со системскиот помошник е прекината."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Овластувањето е откажано."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "За ова дејство се потребни администраторски права."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Системскиот помошник неочекувано запре."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Следно"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Вид на инсталација"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (ќе се форматира)"
 msgid "Boot Partition"
 msgstr "Партиција за подигнување"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Инсталација"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Простор за MAN"
@@ -530,10 +798,6 @@ msgstr "_Повторно инсталирај"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN се инсталира во слободниот простор. Windows и неговите датотеки не се менуваат."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Инсталирај"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Подготвено за инсталација"
@@ -598,10 +862,6 @@ msgstr "Инсталирање на MAN"
 msgid "Starting…"
 msgstr "Стартување…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Детали"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Инсталирање"
@@ -609,10 +869,6 @@ msgstr "Инсталирање"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Чекор {index} од {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Дневник"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Ниеден друг диск не е променет, а инстал
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Прегледај и обиди се повторно"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Прикажи детали"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Дневник на инсталацијата"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Координирано универзално време"
 msgid "English (US)"
 msgstr "Англиски (САД)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Излезе MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Можете да ажурирате на него."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Отвори ажурирања"
 
@@ -1312,10 +1560,6 @@ msgstr "Ажурирање од {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Инсталиран е {name} {version}"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Верзија"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Објавено"
@@ -1339,10 +1583,6 @@ msgstr "Проверено, потпишано од „{signer}“"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Што е ново"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Продолжи"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Ажурирањата се инсталираат од стартува
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Место на инсталацијата"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Резиме"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Отвори ажурирање на MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Ажурирања на MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Се преземаат најновите списоци на пакети…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Се копира апликацијата"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Апликацијата се додава во менито"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Датотеката не е пронајдена."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Пакетот не може да се инсталира."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Ставката во менито на апликацијата не е валидна."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Пренесување на вашите сметки и поставк�
 msgid "Preparing the restart"
 msgstr "Подготовка на рестартирањето"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Распакувано"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Сметки"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Отстранување софтвер што го користи само инсталаторот"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Изработка на сликата за подигнување на ажурирањето"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Додавање еднократна ставка за стартување"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Ажурирањето е автентично"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Снимката е создадена"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Прескокнато"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Областа за ажурирање е подготвена"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Подготовка на новиот систем"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Датотеката за ажурирање е оштетена (контролниот збир не се совпаѓа). Преземете ја повторно."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Датотеката за ажурирање не може целосно да се прочита."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Ажурирањето не содржи јадро."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Ажурирањата мора да ги инсталира системскиот помошник."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Избраната инсталација не е пронајдена."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Може да се ажурира само стартуваната инсталација на MAN."
 
@@ -1947,6 +2207,14 @@ msgstr "Виолетова"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Шкрилец"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Инсталатор на пакети"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Инсталирајте апликации од датотеки .deb, Flatpak и AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

@@ -147,3 +147,43 @@ QEMU on installed systems: 10.7 → 10.8 from the (fake) GitHub release with a
 snapshot, including a cancelled password prompt + Try Again and leaving and
 reopening the panel while preparing; 10.8 → 10.9 in Czech from a file in
 Downloads without a snapshot. Both ended with "Your System Was Updated".
+
+## TEST builds and Beta Updates (MAN 10.10, 2026-10-24)
+
+Versions are either **releases** ("10.10") or **TEST builds** ("MAN 10 TEST 5":
+major version and test number). A TEST build also records the release it was
+made after (its *base*), so the order is
+
+    10.9 < 10 TEST 4 (made after 10.9) < 10 TEST 5 < 10.10 < 10 TEST 6 (made after 10.10)
+
+(`man_common::man_version_cmp`; the backend, `man-update-check` and MAN
+Update all use it).
+
+- On a system: `/usr/lib/man/version` = `10 TEST 5`, `/usr/lib/man/version-base`
+  = `10.9` (only on TEST builds). Set both, os-release and the Beta Updates
+  default with **`man-set-version`** (man-system-tools) inside the image:
+  `man-set-version 10.10` or `man-set-version "10 TEST 5" 10.9`. TEST images
+  get `/usr/share/glib-2.0/schemas/90_man-test-build.gschema.override`
+  (`beta-updates=true`), releases have it removed.
+- The signed manifest has `"base"` for TEST builds:
+  `man-mkupd pack --version "10 TEST 5" --base 10.9 …` (refused without it).
+  An update also writes version-base into the new system (or removes it).
+- File names use dashes: `MAN-10-TEST-5.upd`, `MAN-10-TEST-5-amd64.iso`.
+- **Settings → Updates → Beta Updates** (`com.man.Updates beta-updates`):
+  off = only GitHub releases; on = pre-releases too; the newest of both that
+  is newer than the system is offered (a TEST build shows "This is a TEST
+  version"). Changing the switch checks again.
+- Systems older than 10.10 do not know TEST versions: release 10.10 first.
+
+### Publishing a TEST build (pre-release)
+
+The release notes must name the base in an HTML comment (hidden on GitHub,
+removed from "What's New"):
+
+```bash
+{ cat lfs/updates/MAN-10-TEST-1.NOTES.txt; echo; echo '<!-- man-base: 10.10 -->'; } > /tmp/notes.md
+gh release create v10-test1 --repo MANCorporation/MAN --prerelease --title "MAN 10 TEST 1" \
+    --target <full sha> --notes-file /tmp/notes.md \
+    release/MAN-10-TEST-1.upd release/MAN-10-TEST-1.upd.sha256 \
+    release/MAN-10-TEST-1-amd64.iso release/MAN-10-TEST-1-amd64.iso.sha256
+```

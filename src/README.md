@@ -97,3 +97,12 @@ Update come from the `man-installer` catalog (`M_()`), one new string in
 `man-settings` (`man-settings-po/new-man5.py`). Needs json-glib.
 Pitfall: AdwStatusPage inside a preferences page lost its title after a state
 change (own scroller), so the panel uses a plain box.
+
+## 1:51.0-1man6 (MAN 10.10)
+
+`debian/patches/man-updates-beta.patch`: "Beta Updates" switch in Settings →
+Updates (GSettings `com.man.Updates beta-updates`, checks again when changed
+after `g_settings_sync()` so `man-update-check` reads the new value) and a
+"This is a TEST version" line when the offered version is a TEST build
+(`test=true` from man-update-check). Three new strings
+(`man-settings-po/new-man6.py`).

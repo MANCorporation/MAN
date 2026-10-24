@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Энэ файл энд суулгаж болох апп биш (.deb, .flatpak, .flatpakref эсвэл AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Энэ апп {arch} компьютерт зориулагдсан бөгөөд энэ компьютер (x86-64) дээр ажиллахгүй."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Файлыг уншиж чадсангүй. Гэмтсэн байж магадгүй."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Энэ AppImage биш."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Танилцуулга"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Лиценз"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Байршил сонгох"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Суулгах төрөл"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Суулгац"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Хураангуй"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Үргэлжлүүлэх"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} суулгагчид тавтай морил"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Програм хангамжийн лицензийн гэрээ"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Лицензийг зөвшөөрч байна уу?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Суулгалтыг үргэлжлүүлэхийн тулд програм хангамжийн лицензийн гэрээний нөхцөлийг зөвшөөрөх хэрэгтэй."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "Лицензийг _унших"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Зөвшөөрөх"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Байршил сонгоно уу"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Стандарт суулгалт"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Суулгах"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian багц (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak апп"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source}-оос Flatpak апп"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Энэ програмыг суулгахад шаардлагатай алхмуудаар таныг удирдана."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Хувилбар"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Нийтлэгч"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Төрөл"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Хэмжээ"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Вэб сайт"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Файл"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Энэ апп аль хэдийн суусан байна. Дахин суулгавал түүнийг солино."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb багцын аппууд системийн нэг хэсэг болдог. MAN шинэчлэгдэхэд тэдгээрийг устгадаг тул дахин суулгах шаардлагатай. Flatpak апп болон AppImage хадгалагдана."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Зөвхөн итгэлтэй эх сурвалжаас апп суулгаарай."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name}-г хаана суулгах вэ?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Аппыг зөвхөн таны бүртгэл ашиглах боломжтой."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Админы эрх шаардлагатай."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Зөвхөн надад"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Энэ компьютерийн бүх хэрэглэгчид"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Энэ нь компьютер дээр {size} зай эзэлнэ."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Апп {source}-оос татагдана."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Апп энэ компьютерийн бүх хэрэглэгчид суулгагдана."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Апп зөвхөн танд суулгагдана."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage-г {folder} руу зөөж, таны аппуудад нэмнэ."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name}-г суулгахын тулд Суулгах дээр дарна уу."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Аппад өөр юу хэрэгтэйг шалгаж байна…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Шаардлагатай багцуудыг мөн суулгана: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Аппад шаардлагатай зарим багц хараахан байхгүй байна. Суулгалт эхлээд хамгийн сүүлийн багцын жагсаалтыг авна; тэд байсаар байхгүй бол аппыг суулгах боломжгүй."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name}-г суулгаж байна…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Бэлтгэж байна…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Дэлгэрэнгүй"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Багцыг суулгаж байна…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Аппыг хавтас руу нь зөөж байна…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Аппыг суулгаж чадсангүй."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Аппыг Flatpak-аар суулгаж байна…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Бүртгэл"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Хаах"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Суулгалт амжилттай боллоо"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Апп суулгагдлаа."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Суулгалт амжилтгүй боллоо"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Нээх"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "Дэлгэрэнгүйг _харуулах"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Суулгалтын бүртгэл"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Апп суулгагч"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Буцах"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Аппыг уншиж байна…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} суулгах"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Аппууд"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Суулгах аппаа сонгоно уу"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Системийн туслахыг эхлүүлж чадсангүй."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Системийн туслахтай холбогдож чадсангүй."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Системийн туслахтай холболт тасарлаа."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Зөвшөөрлийг цуцаллаа."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Энэ үйлдэлд администраторын эрх хэрэгтэй."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Системийн туслах гэнэт зогслоо."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Дараах"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Суулгах төрөл"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (форматлагдана)"
 msgid "Boot Partition"
 msgstr "Ачаалах хуваалт"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Суулгац"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN-д зориулсан зай"
@@ -530,10 +798,6 @@ msgstr "_Дахин суулгах"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN сул зайд суулгагдана. Windows болон түүний файлууд өөрчлөгдөхгүй."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Суулгах"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Суулгахад бэлэн"
@@ -598,10 +862,6 @@ msgstr "MAN суулгаж байна"
 msgid "Starting…"
 msgstr "Эхлүүлж байна…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Дэлгэрэнгүй"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Суулгаж байна"
@@ -609,10 +869,6 @@ msgstr "Суулгаж байна"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "{n} алхмын {index}-р алхам  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Бүртгэл"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Өөр ямар ч диск өөрчлөгдөөгүй бөгөөд су
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Хянаад дахин оролдох"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "Дэлгэрэнгүйг _харуулах"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Суулгалтын бүртгэл"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Олон улсын зохицуулалттай цаг"
 msgid "English (US)"
 msgstr "Англи (АНУ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} гарлаа!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Та үүн рүү шинэчилж болно."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Шинэчлэлүүдийг нээх"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version}-ээс шинэчлэх"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} суусан байна"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Хувилбар"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Гарсан огноо"
@@ -1339,10 +1583,6 @@ msgstr "Баталгаажсан, «{signer}» гарын үсэг зурсан"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Шинэ зүйлс"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Үргэлжлүүлэх"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Шинэчлэлийг шууд сессээс биш, ажиллаж б
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Суулгацын байршил"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Хураангуй"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN шинэчлэлийг нээх"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN шинэчлэлүүд"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Хамгийн сүүлийн багцын жагсаалтыг авч байна…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Аппыг хуулж байна"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Аппыг цэсэнд нэмж байна"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Файл олдсонгүй."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Багцыг суулгаж чадсангүй."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Аппын цэсний бичлэг буруу байна."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Таны бүртгэл, тохиргоог шилжүүлж байна"
 msgid "Preparing the restart"
 msgstr "Дахин эхлүүлэхийг бэлтгэж байна"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Задалсан"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Бүртгэлүүд"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Зөвхөн суулгагчид зориулсан програмыг устгаж байна"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Шинэчлэлийн ачаалах дүрсийг бүтээж байна"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Нэг удаагийн ачаалах бичлэг нэмж байна"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Шинэчлэл жинхэнэ байна"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Агшин зураг үүслээ"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Алгассан"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Шинэчлэлийн хэсэг бэлэн"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Шинэ системийг бэлтгэж байна"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Шинэчлэлийн файл гэмтсэн (шалгах нийлбэр таарахгүй). Дахин татаж авна уу."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Шинэчлэлийн файлыг бүрэн уншиж чадсангүй."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Шинэчлэлд цөм алга."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Шинэчлэлийг системийн туслах суулгах ёстой."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Сонгосон суулгац олдсонгүй."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Зөвхөн ажиллаж буй MAN суулгацыг шинэчлэх боломжтой."
 
@@ -1947,6 +2207,14 @@ msgstr "Нил ягаан"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Шифер саарал"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Багц суулгагч"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak, AppImage файлуудаас апп суулгах"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

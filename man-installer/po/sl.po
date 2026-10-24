@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Ta datoteka ni program, ki bi ga bilo mogoče namestiti tukaj (.deb, .flatpak, .flatpakref ali AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Ta program je narejen za računalnike {arch} in na tem (x86-64) ne deluje."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Datoteke ni bilo mogoče prebrati. Morda je poškodovana."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "To ni AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Uvod"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Licenca"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Izbira cilja"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Vrsta namestitve"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Namestitev"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Povzetek"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Nadaljuj"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Dobrodošli v namestitvenem programu za {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Licenčna pogodba za programsko opremo"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Ali se strinjate z licenco?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Za nadaljevanje namestitve se morate strinjati s pogoji licenčne pogodbe za programsko opremo."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Preberi licenco"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Strinjam se"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Izberite cilj"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Običajna namestitev"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Namesti"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Paket Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Program Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Program Flatpak iz {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Vodili vas bomo skozi korake, potrebne za namestitev te programske opreme."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Različica"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Izdajatelj"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Vrsta"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Velikost"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Spletna stran"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Datoteka"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Ta program je že nameščen. Vnovična namestitev ga zamenja."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Programi iz paketov .deb postanejo del sistema. Ko se MAN posodobi, se odstranijo in jih je treba znova namestiti. Programi Flatpak in AppImage ostanejo."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Nameščajte le programe iz virov, ki jim zaupate."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Kam želite namestiti {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Program lahko uporablja samo vaš račun."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Potrebne so skrbniške pravice."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Samo zame"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Za vse uporabnike tega računalnika"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "To bo zasedlo {size} prostora na računalniku."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Program se prenese iz {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Program se namesti za vse uporabnike tega računalnika."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Program se namesti samo za vas."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage se premakne v {folder} in doda med vaše programe."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Kliknite Namesti, da namestite {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Preverjanje, kaj še program potrebuje …"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Namesti tudi pakete, ki jih potrebuje: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Nekateri paketi, ki jih program potrebuje, še niso na voljo. Namestitev najprej pridobi najnovejše sezname paketov; če še vedno manjkajo, programa ni mogoče namestiti."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Nameščanje {name} …"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Pripravljanje …"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Nameščanje paketa …"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Premikanje programa v njegovo mapo …"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Programa ni bilo mogoče namestiti."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Nameščanje programa s Flatpakom …"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Dnevnik"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Zapri"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Namestitev je uspela"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Program je nameščen."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Namestitev ni uspela"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Odpri"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Pokaži podrobnosti"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Dnevnik namestitve"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Nameščanje programov"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Nazaj"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Branje programa …"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Namesti {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Programi"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Izberite program za namestitev"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Sistemskega pomočnika ni mogoče zagnati."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "S sistemskim pomočnikom ni mogoče komunicirati."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Povezava s sistemskim pomočnikom je bila prekinjena."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Overitev je bila preklicana."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Za to dejanje so potrebne skrbniške pravice."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Sistemski pomočnik se je nepričakovano ustavil."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Naprej"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Vrsta namestitve"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (bo formatiran)"
 msgid "Boot Partition"
 msgstr "Zagonski razdelek"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Namestitev"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Prostor za MAN"
@@ -530,10 +798,6 @@ msgstr "_Znova namesti"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN se namesti v prosti prostor. Windows in njegove datoteke se ne spremenijo."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Namesti"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Pripravljeno za namestitev"
@@ -598,10 +862,6 @@ msgstr "Nameščanje MAN"
 msgid "Starting…"
 msgstr "Zaganjanje …"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Podrobnosti"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Nameščanje"
@@ -609,10 +869,6 @@ msgstr "Nameščanje"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Korak {index} od {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Dnevnik"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Noben drug disk ni bil spremenjen in namestitveni program je sprostil ci
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Preglej in poskusi znova"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Pokaži podrobnosti"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Dnevnik namestitve"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Usklajeni univerzalni čas"
 msgid "English (US)"
 msgstr "Angleščina (ZDA)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Izšel je MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Nanj lahko posodobite."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Odpri posodobitve"
 
@@ -1312,10 +1560,6 @@ msgstr "Posodobitev z {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} je nameščen"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Različica"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Izdano"
@@ -1339,10 +1583,6 @@ msgstr "Preverjeno, podpisal »{signer}«"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Kaj je novega"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Nadaljuj"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Posodobitve se nameščajo iz zagnanega, nameščenega sistema MAN, ne i
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Mesto namestitve"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Povzetek"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Odpri posodobitev MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Posodobitve MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Pridobivanje najnovejših seznamov paketov …"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Kopiranje programa"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Dodajanje programa v meni"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Datoteke ni bilo mogoče najti."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Paketa ni bilo mogoče namestiti."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Vnos programa v meniju ni veljaven."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Prenašanje vaših računov in nastavitev"
 msgid "Preparing the restart"
 msgstr "Pripravljanje ponovnega zagona"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Razširjeno"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Računi"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Odstranjevanje programske opreme samo za namestitveni program"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Izdelava zagonske slike posodobitve"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Dodajanje enkratnega zagonskega vnosa"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Posodobitev je pristna"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Posnetek je ustvarjen"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Preskočeno"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Območje za posodobitev je pripravljeno"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Pripravljanje novega sistema"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Datoteka posodobitve je poškodovana (nadzorna vsota se ne ujema). Znova jo prenesite."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Datoteke posodobitve ni bilo mogoče prebrati v celoti."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Posodobitev ne vsebuje jedra."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Posodobitve mora namestiti sistemski pomočnik."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Izbrane namestitve ni bilo mogoče najti."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Posodobiti je mogoče le zagnano namestitev MAN."
 
@@ -1947,6 +2207,14 @@ msgstr "Vijolična"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Skrilasta"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Nameščanje paketov"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Nameščajte programe iz datotek .deb, Flatpak in AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

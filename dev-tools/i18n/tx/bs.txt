@@ -1,495 +1,562 @@
-0|Sistemski pomoćnik ne može se pokrenuti.
-1|Nije moguće komunicirati sa sistemskim pomoćnikom.
-2|Veza sa sistemskim pomoćnikom je prekinuta.
-3|Ovjera je otkazana.
-4|Za ovu radnju potrebna su administratorska prava.
-5|Sistemski pomoćnik neočekivano se zaustavio.
-6|Nema EFI sistemske particije
-7|Slobodno je samo {free}, MAN treba {need}. Oslobodite prostor pomoću DUHACH! u Windowsima.
-8|Nema slobodnog prostora. Pokrenite DUHACH! u Windowsima i oslobodite prostor za MAN.
-9|MAN se pokreće s ovog diska
-10|U upotrebi: particija je montirana
-11|Premalen, MAN treba {need}
-12|Instaliraj MAN
-13|MAN se instalira. Sačekajte da završi.
-14|Jezik
-15|_Ponovo pokreni na ovom jeziku
-16|Živa sesija ponovo se pokreće na odabranom jeziku, a MAN se instalira na njemu.
-17|Dobro došli u MAN
-18|Brz, otvoren i potpuno prilagodljiv GNOME sistem.\nInstalirajte ga na ovaj računar ili nastavite istraživati živu sesiju.
-19|_Instaliraj MAN…
-20|_Nastavi isprobavati MAN
-21|Traženje diskova…
-22|Dobro došli
-23|Ovaj računar je pokrenut u starom BIOS načinu. MAN se može instalirati samo na UEFI računare: ponovo pokrenite i odaberite UEFI mogućnost pokretanja.
-24|Sistemski pomoćnik nije vratio podatke o diskovima.
-25|  ·  EFI
-26|_Dalje
-27|Vrsta instalacije
-28|Obriši disk i instaliraj MAN
-29|Sve na odabranom disku bit će obrisano, uključujući Windows.
-30|Preporučeno. Sve na odabranom disku bit će obrisano.
-31|Instaliraj uz Windows
-32|Preporučeno. MAN koristi slobodan prostor uz Windows; Windows i njegove datoteke ostaju. Sistem birate pri svakom pokretanju.
-33|Ponovo instaliraj MAN
-34|Zamjenjuje sistem, ali zadržava osobne datoteke u /home. Trenutni sistem čuva se kao snimka.
-35|Prilagođene particije
-36|Za stručnjake: sami odaberite particije ili ih stvorite pomoću Diskova.
-37|Disk
-38|Odaberite disk koji će se obrisati. Diskovi koji se ne mogu koristiti prikazani su s razlogom.
-39|Nisu pronađeni diskovi
-40|Slobodan prostor uz Windows
-41|Particije Windowsa ostaju netaknute. MAN dijeli EFI sistemsku particiju i dodaje Windows u svoj izbornik pokretanja.
-42|{size} slobodno
-43|nema slobodnog prostora
-44|{model} (Windows)
-45|Instalacija za zamjenu
-46|nema osobnih mapa
-47|osobne mape: {list}
-48|snimke: {n}
-49|MAN na {model}
-50|Lozinka za {device}
-51|Otključaj
-52|Instalacija se nije mogla pregledati.
-53|Particije
-54|Sistemska particija formatira se u Btrfs i sadrži @system, @home i @snapshots. Particije na disku s kojeg se MAN pokreće nisu prikazane.
-55|Otvori Diskove za stvaranje ili promjenu veličine particija
-56|Osvježi popis particija
-57|Odaberite particiju
-58|EFI sistemska particija
-59|Formatiraj EFI sistemsku particiju
-60|Ostavite isključeno da biste zadržali pokretače drugih sistema
-61|Sistemska particija (formatira se u Btrfs)
-62|Particija za pokretanje (potrebna za šifriranje)
-63|Popis particija je osvježen
-64|Sigurnost
-65|Šifriraj sistem
-66|Štiti vaše podatke ako se računar izgubi ili ukrade. Lozinka se traži pri svakom pokretanju.
-67|Lozinka
-68|Potvrdi lozinku
-69|Čuvajte ovu lozinku na sigurnom
-70|Ako je izgubite, niko neće moći vratiti podatke. Jezgra i datoteke za pokretanje ostaju na maloj nešifriranoj particiji za pokretanje.
-71|Lozinka mora imati najmanje 8 znakova.
-72|Lozinke se ne podudaraju.
-73|Odaberite disk.
-74|Odaberite disk s Windowsima.
-75|Odaberite instalaciju za zamjenu.
-76|Najprije otključajte šifriranu instalaciju.
-77|Ova particija ne sadrži sistem MAN.
-78|Odaberite EFI sistemsku particiju.
-79|Odaberite sistemsku particiju.
-80|EFI i sistemska particija moraju biti različite.
-81|Šifriranje zahtijeva zasebnu particiju za pokretanje.
-82|Sistemska particija mora imati najmanje {size}.
-83|EFI particija nije formatirana u FAT; uključite formatiranje.
-84|Sistemska particija je montirana; najprije je odmontirajte u Diskovima.
-85|Gdje instalirati MAN?
-86|Vrijeme i tastatura
-87|Vremenska zona
-88|Raspored tastature
-89|Isprobajte tastaturu
-90|Pišite ovdje kako biste provjerili daju li tipke ispravne znakove.
-91|Pišite ovdje
-92|Vremenska zona i tastatura
-93|Disk nije odabran
-94|Sistemska particija nije odabrana
-95|Sistemska particija je nestala
-96|Instalacija nije odabrana
-97|Disk je nestao
-98|Pregled
-99|Odredište
-100|Obriši disk i instaliraj
-101|Prilagođene particije
-102|Ponovo instaliraj, zadrži /home
-103|Uz Windows
-104| (bit će formatirana)
-105| (zadržava se)
-106|Sistemska particija
-107|{partition} (bit će formatirana)
-108|Particija za pokretanje
-109|Instalacija
-110|Prostor za MAN
-111|{free} slobodnog prostora (stvaraju se particija za pokretanje i sistemska particija)
-112|Windows
-113|Bez promjena. Pojavljuje se u izborniku pokretanja MAN-a; EFI sistemska particija je zajednička.
-114|Šifriranje
-115|Uključeno (LUKS2)
-116|Isključeno
-117|Fajl sistem
-118|Btrfs: @system za MAN, @home za vaše datoteke, @snapshots za tačke vraćanja. Svi dijele slobodan prostor.
-119|Sistem
-120|Vaš račun
-121|Stvara se u MAN Setupu pri prvom pokretanju računara, zajedno s nazivom računara, izgledom i postavkama privatnosti.
-122|Tastatura
-123|Svi podaci na {model} ({path}) bit će obrisani.
-124|_Obriši i instaliraj
-125|Odabrane particije bit će formatirane. Ostale particije se ne mijenjaju.
-126|_Formatiraj i instaliraj
-127|Trenutni sistem se zamjenjuje. Vaše datoteke u /home se zadržavaju, a stari sistem čuva se kao snimka.
-128|_Ponovo instaliraj
-129|MAN se instalira u slobodan prostor. Windows i njegove datoteke se ne mijenjaju.
-130|_Instaliraj
-131|Spremno za instalaciju
-132|Obrisati {model}?
-133|Sve datoteke i particije na {path} ({size}) bit će trajno obrisane. Ovo se ne može poništiti.
-134|Obriši i instaliraj
-135|Formatirati odabrane particije?
-136|Svi podaci na odabranim particijama bit će trajno obrisani. Ostale particije se ne mijenjaju.
-137|Formatiraj i instaliraj
-138|Instalirati MAN uz Windows?
-139|MAN se instalira u {free} slobodnog prostora na {model} ({path}). Windows i njegove datoteke se ne mijenjaju.
-140|Instaliraj
-141|Ponovo instalirati MAN?
-142|Instalirani sistem bit će zamijenjen novom kopijom. Osobne datoteke u /home se zadržavaju, a stari sistem ostaje dostupan kao snimka.
-143|Ponovo instaliraj
-144|_Otkaži
-145|Instaliranje MAN-a
-146|Pokretanje…
-147|Pojedinosti
-148|Instaliranje
-149|Korak {index} od {n}  ·  {title}
-150|Zapis
-151|MAN je instaliran
-152|Ponovo pokrenite računar i počnite koristiti MAN. Izbornik pri svakom pokretanju omogućuje odabir MAN-a ili Windowsa; privremenu particiju instalacijskog programa MAN uklanja pri prvom pokretanju.
-153|Ponovo pokrenite računar i počnite koristiti MAN. Instalacijski medij možete ukloniti; ako ostane priključen, MAN se svejedno pokreće s novog diska.
-154|_Ponovo pokreni sada
-155|Gotovo
-156|Instalacija nije uspjela
-157|Nijedan drugi disk nije promijenjen, a instalacijski program oslobodio je ciljni disk. Možete pregledati plan i pokušati ponovo.
-158|_Pregledaj i pokušaj ponovo
-159|_Prikaži pojedinosti
-160|Zapis instalacije
-161|Traži jezike
-162|Traži zemlje
-163|Sistemski disk nije pronađen.
-164|Šifriranje zahtijeva Btrfs raspored koji stvara instalacijski program MAN-a.
-165|Ova instalacija nema zasebnu particiju za pokretanje koja je potrebna za šifriranje. Ponovo instalirajte MAN s mogućnošću „Obriši disk” za šifriranje.
-166|MAN Setup
-167|Gdje se nalazite?
-168|Vaša zemlja ili regija određuje oblik datuma, vremena i brojeva.
-169|Zemlja
-170|GNU General Public License, verzija 2
-171|Linux jezgra i mnogi alati sistema
-172|GNU General Public License, verzija 3
-173|Mnogi GNU i GNOME programi
-174|GNU Lesser General Public License, verzija 2.1
-175|GTK, GLib i mnoge biblioteke
-176|GNU Lesser General Public License, verzija 3
-177|Biblioteke
-178|Mozilla Public License 2.0
-179|Programi i biblioteke Mozille i drugih
-180|Apache licenca 2.0
-181|Biblioteke i alati
-182|Licencni ugovor
-183|Pročitajte i prihvatite uvjete pod kojima se MAN pruža.
-184|Licence
-185|Tekst licence nije dostupan ({path}).
-186|Pročitao/la sam i prihvaćam uvjete licence
-187|Žičano
-188|Nije povezano
-189|Povezivanje s internetom
-190|Uz vezu MAN može postaviti vrijeme i održavati softver ažurnim. To možete učiniti i kasnije.
-191|Provjera veze…
-192|Wi-Fi mreže
-193|Traži ponovo
-194|_Preskoči
-195|Možete se povezati kasnije u Postavkama.
-196|Povezano
-197|Nije povezano
-198|Nisu pronađene mreže
-199|Internet
-200|Povezano s „{ssid}”
-201|Povezivanje s „{ssid}” nije uspjelo
-202|Poveži se s „{ssid}”
-203|Upišite lozinku mreže.
-204|_Poveži
-205|Stvorite svoj račun
-206|Bit ćete administrator ovog računara s punim root pristupom putem sudo.
-207|Puno ime
-208|Korisničko ime
-209|Lozinka
-210|Potvrdi lozinku
-211|Automatska prijava
-212|Preskoči zaslon za prijavu pri pokretanju računara
-213|Postojeće osobne mape
-214|Upotrijebite isto korisničko ime kako biste nastavili koristiti mapu iz prethodne instalacije.
-215|Koristi
-216|Napredno
-217|Naziv računara
-218|Postavi root lozinku
-219|Omogućuje izravnu prijavu kao root. Bez nje koristite sudo s vlastitom lozinkom.
-220|Root lozinka
-221|Potvrdi root lozinku
-222|Upišite svoje ime.
-223|Odaberite korisničko ime.
-224|Ovo korisničko ime sistem već koristi.
-225|Ovo korisničko ime rezervirano je za sistem.
-226|Korisnička imena sadrže mala slova, znamenke, - i _ te počinju slovom.
-227|Odaberite lozinku.
-228|Lozinke se ne podudaraju.
-229|Naziv računara smije sadržavati slova, znamenke i crtice.
-230|Upišite root lozinku dvaput.
-231|Savjet: lozinka s 8 ili više znakova mnogo je sigurnija.
-232|Račun
-233|Tamno
-234|Svijetlo
-235|Prilagodite ga sebi
-236|Odaberite stil, boju isticanja i pozadinu. Svaku promjenu vidite odmah.
-237|Stil
-238|Boja isticanja
-239|Pozadina
-240|Prilagodba
-241|Privatnost
-242|Odaberite koje značajke smiju koristiti podatke o vama. To možete promijeniti bilo kada u Postavkama.
-243|Usluge lokacije
-244|Omogućuje aplikacijama poput Karata i Vremenske prognoze da odrede vašu približnu lokaciju pomoću obližnjih Wi-Fi mreža.
-245|Automatska vremenska zona
-246|Koristi vašu lokaciju kako bi vremenska zona bila tačna kad putujete.
-247|_Završi postavljanje
-248|Vaš disk je šifriran
-249|Vaši podaci su zaštićeni. Lozinka se traži pri svakom pokretanju računara.
-250|Šifriranje diska
-251|Šifriranje štiti vaše podatke ako se računar izgubi ili ukrade.
-252|Nije dostupno u ovoj instalaciji
-253|Šifriranje štiti vaše datoteke ako se računar izgubi ili ukrade. Bez lozinke niko ne može čitati disk.
-254|Šifriraj disk
-255|Lozinka se traži pri svakom pokretanju računara.
-256|Šifriranje počinje pri sljedećem ponovom pokretanju
-257|Disk se zatim šifrira u pozadini dok koristite računar. Ako izgubite lozinku, niko neće moći vratiti podatke.
-258|Priprema MAN-a
-259|Sve se priprema…
-260|_Ponovo pokreni
-261|_Natrag
-262|Priprema
-263|Zapis postavljanja
-264|Sve je spremno!
-265|Nešto je pošlo po zlu
-266|Dnevna
-267|Prije ažuriranja
-268|Prije vraćanja
-269|Prije ponovne instalacije
-270|Ručna
-271|Još nema snimki
-272|Stvorite snimku prije većih promjena sistema.
-273|Vrati…
-274|Obriši snimku
-275|{free} slobodno od {size}. Sistem, osobne mape i snimke dijele ovaj prostor; snimke zauzimaju prostor samo za ono što se promijenilo otkad su stvorene.
-276|_U redu
-277|Stvori snimku
-278|Čuva trenutno stanje sistema. Osobne datoteke u osobnoj mapi nisu uključene.
-279|Opis, na primjer „Prije instalacije upravljačkih programa”
-280|_Stvori
-281|Ručna snimka
-282|Obrisati snimku?
-283|„{description}” od {date} bit će trajno obrisana.
-284|_Obriši
-285|Vratiti ovu snimku?
-286|Nakon ponovog pokretanja sistem će se vratiti na „{description}” od {date}. Vaše osobne datoteke se ne mijenjaju.\n\nTrenutni sistem najprije se sprema kao snimka, pa se ovo može poništiti.
-287|_Vrati
-288|Ponovo pokrenite za dovršetak vraćanja
-289|Ponovo pokreni _kasnije
-290|Ponovo pokreni _sada
-291|Snimke
-292|Tačke vraćanja
-293|Snimke spremaju stanje operacijskog sistema. Vraćanje snimke vraća sistem u taj trenutak, što pomaže nakon neuspjelog ažuriranja ili promjene postavki. Vaše osobne datoteke nikad se ne diraju.
-294|Automatske snimke
-295|Dnevne snimke
-296|Jednom dnevno dok je računar uključeno
-297|Broj dnevnih snimki
-298|Prije ažuriranja softvera
-299|Stvaraju se automatski pri instaliranju, nadogradnji ili uklanjanju paketa
-300|Broj snimki ažuriranja
-301|Pohrana
-302|Prostor na disku
-303|Ako se MAN ne pokrene
-304|U izborniku pokretanja odaberite „Restore a MAN snapshot” kako biste vratili ispravan sistem.
-305|Snimke nisu dostupne
-306|Snimke rade na MAN-u instaliranom s Btrfs rasporedom koji stvara instalacijski program MAN-a. Ovaj sistem (na primjer živa sesija) ga ne koristi.
-307|Vraćanje čeka: ponovo pokrenite računar za dovršetak
-308|Ponovo pokreni sada
-309|Sačekajte da trenutna radnja završi.
-310|Traži
-311|Kopiraj u međuspremnik
-312|Koordinirano svjetsko vrijeme
-313|Engleski (SAD)
-317|Provjera ažuriranja
-318|Provjerava se je li ažuriranje izvorno i potpuno…
-319|Ažuriranje MAN-a
-320|Ovo ažuriranje ne može se instalirati
-321|Ažuriranje se nije moglo pročitati.
-322|Ažuriranje s {name} {version}
-323|{name} {version} je instaliran
-324|Verzija
-325|Objavljeno
-326|Veličina preuzimanja
-327|Potreban prostor
-328|Izvornost
-329|Provjereno, potpisao „{signer}”
-330|Što je novo
-331|_Nastavi
-332|Ovo ažuriranje nije novije od instaliranog {name} {version}.
-333|Ažuriranje
-334|Pročitajte uvjete licence ovog ažuriranja.
-335|Prihvaćam uvjete licence
-336|Gdje instalirati ažuriranje?
-337|Sistem se zamjenjuje; datoteke u osobnoj mapi se ne diraju.
-338|Odaberite instalaciju.
-339|trenutno pokrenut
-340|{name} {version} na ovom računaru
-341|{name} na {model}
-342|Nije pronađena instalacija MAN-a
-343|Ažuriranja se instaliraju iz pokrenutog, instaliranog sistema MAN, a ne iz žive sesije.
-344|Mjesto instalacije
-345|Sažetak
-346|Zadržava se
-347|Vaše datoteke
-348|Sve u vašoj osobnoj mapi
-349|Računi i lozinke
-350|Korisnici, grupe, naziv računara
-351|Veze i postavke
-352|Wi-Fi, vremenska zona, tastatura, izgled i snimke
-353|Flatpak aplikacije
-354|Te sve u /usr/local i /opt
-355|Zamjenjuje se
-356|Softver instaliran pomoću apt i druge promjene sistemskih datoteka zamjenjuje novi sistem.
-357|Operacijski sistem
-358|Zamjenjuje ga {name} {version}. Trenutni sistem može se vratiti iz snimke.
-359|Računaro se ponovo pokreće radi instalacije ažuriranja
-360|Nakon pripreme MAN se ponovo pokreće, za nekoliko sekundi instalira ažuriranje i ponovo se pokreće.
-361|_Instaliraj ažuriranje
-362|Najprije stvoriti snimku?
-363|Snimka sprema trenutni sistem, pa mu se možete vratiti ako nakon ažuriranja nešto ne radi. Preporučuje se.
-364|_Ne stvaraj
-365|_Stvori snimku
-366|Priprema {name} {version}
-367|Ponovo pokreni za instalaciju
-368|Računaro se ponovo pokreće dvaput. Vaše datoteke su sigurne.
-369|Automatsko ponovo pokretanje za {r} s
-370|Automatsko ponovo pokretanje za 30 s
-371|Ažuriranje se instalira pri sljedećem ponovom pokretanju.
-372|Spremno
-373|Ažuriranje se nije moglo pripremiti
-374|Na vašem sistemu ništa nije promijenjeno.
-375|_Pokušaj ponovo
-376|Zapis ažuriranja
-377|Neuspjelo
-378|Vaš sistem je ažuriran
-379|MAN je ažuriran na verziju {version}.\nPrije: MAN {previous}.
-380|_Gotovo
-381|Otvori ažuriranje MAN-a
-382|Ažuriranja MAN-a
-383|Provjera plana instalacije
-384|Priprema diska
-385|Kopiranje MAN-a na disk
-386|Konfiguriranje novog sistema
-387|Instaliranje pokretača
-388|Stvaranje prve snimke
-389|Završavanje
-390|Uklanjanje starih potpisa particija
-391|Stvaranje particija
-392|Formatiranje EFI sistemske particije
-393|Šifriranje sistemske particije
-394|Formatiranje particije za pokretanje
-395|Stvaranje Btrfs fajlog sistema
-396|Uklanjanje starih potpisa fajlih sistema
-397|Otključavanje šifrirane instalacije
-398|Čuvanje trenutnog sistema kao snimke
-399|Uklanjanje prethodnog sistema
-400|Zapisivanje tablice fajlih sistema
-401|Postavljanje naziva i identiteta računara
-402|Uklanjanje računa žive sesije
-403|Stvaranje vašeg računa
-404|Priprema MAN Setupa za prvo pokretanje
-405|Postavljanje vremenske zone i tastature
-406|Uklanjanje instalacijskog programa iz novog sistema
-407|Izrada slike za pokretanje (initramfs)
-408|Konfiguriranje GRUB-a
-409|Instaliranje GRUB-a na EFI sistemsku particiju
-410|Instaliranje rezervnog pokretača
-411|Zapisivanje izbornika pokretanja
-412|Disk je spreman
-413|Stvaranje snimke novog sistema
-414|Dodavanje snimke u izbornik pokretanja
-415|Odmontiravanje
-416|Pomoćnik instalacijskog programa mora se pokretati kao root.
-417|Ovaj računar nije pokrenut u UEFI načinu. MAN zahtijeva UEFI.
-418|Korisničko ime nije valjano.
-419|Lozinka je obavezna.
-420|Naziv računara nije valjan.
-421|Nepoznat jezik.
-422|Lozinka za šifriranje mora imati najmanje 8 znakova.
-423|Disk se promijenio nakon što ste potvrdili instalaciju. Ništa nije promijenjeno; pregledajte i ponovo potvrdite.
-424|Odaberite sistemsku particiju.
-425|Potvrđeni disk ne sadrži odabranu sistemsku particiju.
-426|Particija za pokretanje mora biti odvojena od EFI i sistemske particije.
-427|Particija za pokretanje mora imati najmanje 512 MB.
-428|Instalacija nije odabrana.
-429|Potvrđeni disk ne sadrži odabranu instalaciju.
-430|Šifrirana instalacija nema particiju MAN_BOOT.
-431|U /boot nije pronađena jezgra s odgovarajućim modulima.
-432|Jezik mora promijeniti sistemski pomoćnik.
-433|Primjena vaših postavki
-434|Priprema šifriranja diska
-435|Završavanje
-436|MAN Setup mora dovršiti sistemski pomoćnik.
-437|MAN Setup je već dovršen na ovom računaru.
-438|Nepoznata boja isticanja.
-439|Odabrana pozadina nije dostupna.
-440|Ovaj sistem se ne može šifrirati.
-441|Nedostaje ključ postavljanja, pa se šifriranje ne može nastaviti u pozadini.
-442|Sistem nije instaliran na Btrfs, pa snimke nisu dostupne.
-443|Vraćanje snimke čeka ponovo pokretanje. Najprije ponovo pokrenite računar za dovršetak.
-444|Nevaljan ID snimke.
-445|Provjera ažuriranja
-446|Stvaranje snimke
-447|Priprema područja za ažuriranje
-448|Raspakiravanje novog sistema
-449|Prijenos vaših računa i postavki
-450|Priprema ponovog pokretanja
-451|Raspakirano
-452|Računi
-453|Uklanjanje softvera koji koristi samo instalacijski program
-454|Izrada slike za pokretanje ažuriranja
-455|Dodavanje jednokratne stavke pokretanja
-456|Ažuriranje je izvorno
-457|Snimka je stvorena
-458|Preskočeno
-459|Područje za ažuriranje je spremno
-460|Priprema novog sistema
-461|Datoteka ažuriranja je oštećena (kontrolni zbroj se ne podudara). Ponovo je preuzmite.
-462|Datoteka ažuriranja nije se mogla u potpunosti pročitati.
-463|Ažuriranje ne sadrži jezgru.
-464|Ažuriranja mora instalirati sistemski pomoćnik.
-465|Odabrana instalacija nije pronađena.
-466|Može se ažurirati samo pokrenuta instalacija MAN-a.
-467|Ovo nije datoteka ažuriranja MAN-a (nema manifesta).
-468|Ažuriranje nije potpisano, pa mu se ne može vjerovati.
-469|Potpis ažuriranja je oštećen.
-470|Ažuriranje nije potpisao MAN. Možda je izmijenjeno ili dolazi iz nepouzdanog izvora.
-471|Manifest ažuriranja nije valjan.
-472|Lozinka nije ispravna ili se šifrirana particija ne može otvoriti.
-473|Plava
-474|Tirkizna
-475|Zelena
-476|Žuta
-477|Narančasta
-478|Crvena
-479|Ružičasta
-480|Ljubičasta
-481|Škriljevac
-482|Instalacija sistema
-483|Instaliraj MAN na ovaj računar
-484|Vraćanje sistema
-485|Stvaranje i vraćanje snimki sistema
-486|Instalacija ažuriranja sistema
-487|Instaliraj datoteku ažuriranja sistema MAN
-488|Nudi instalaciju MAN-a pri pokretanju žive sesije
-489|Obavijest o ažuriranju MAN-a
-490|Jednom nakon prijave javlja da je MAN ažuriran
-491|Postavite svoje novi MAN računar
-492|Prvo postavljanje MAN-a
-314|Izašao je MAN {version}!
-315|Možete ažurirati na njega.
-316|Otvori ažuriranja
-493|MAN ažuriranja
-494|Javlja vam kada je dostupna nova verzija MAN-a
+0|Ova datoteka nije aplikacija koja se ovdje može instalirati (.deb, .flatpak, .flatpakref ili AppImage).
+1|Ova aplikacija je napravljena za {arch} računare i ne radi na ovom (x86-64).
+2|Datoteka se ne može pročitati. Možda je oštećena.
+3|Ovo nije AppImage.
+4|Uvod
+5|Licenca
+6|Odabir odredišta
+7|Vrsta instalacije
+8|Instalacija
+9|Sažetak
+10|_Nastavi
+11|Dobro došli u instalater aplikacije {name}
+12|Ugovor o licenci za softver
+13|Prihvatate li licencu?
+14|Da biste nastavili instalaciju, morate prihvatiti uslove ugovora o licenci za softver.
+15|_Pročitaj licencu
+16|_Prihvatam
+17|Odaberite odredište
+18|Standardna instalacija
+19|_Instaliraj
+20|Debian paket (.deb)
+21|Flatpak aplikacija
+22|Flatpak aplikacija sa {source}
+23|AppImage
+24|Bit ćete vođeni kroz korake potrebne za instalaciju ovog softvera.
+25|Verzija
+26|Izdavač
+27|Vrsta
+28|Veličina
+29|Web stranica
+30|Datoteka
+31|Ova aplikacija je već instalirana. Ponovna instalacija je zamjenjuje.
+32|Aplikacije iz .deb paketa postaju dio sistema. Kada se MAN ažurira, one se uklanjaju i moraju se ponovo instalirati. Flatpak aplikacije i AppImage datoteke ostaju.
+33|Instalirajte samo aplikacije iz izvora kojima vjerujete.
+34|Gdje želite instalirati {name}?
+35|Samo vaš račun može koristiti aplikaciju.
+36|Potrebna su administratorska prava.
+37|Samo za mene
+38|Za sve korisnike ovog računara
+39|Ovo će zauzeti {size} prostora na računaru.
+40|Aplikacija se preuzima sa {source}.
+41|Aplikacija se instalira za sve korisnike ovog računara.
+42|Aplikacija se instalira samo za vas.
+43|AppImage se premješta u {folder} i dodaje među vaše aplikacije.
+44|Kliknite Instaliraj da biste instalirali {name}.
+45|Provjera šta još aplikacija treba…
+46|Instalira i potrebne pakete: {list}
+47|Neki paketi potrebni aplikaciji još nisu dostupni. Instalacija prvo preuzima najnovije liste paketa; ako i dalje nedostaju, aplikacija se ne može instalirati.
+48|Instaliranje aplikacije {name}…
+49|Priprema…
+50|Pojedinosti
+51|Instaliranje paketa…
+52|Premještanje aplikacije u njenu fasciklu…
+53|Aplikacija se ne može instalirati.
+54|Instaliranje aplikacije pomoću Flatpaka…
+55|Zapis
+56|_Zatvori
+57|Instalacija je uspjela
+58|Aplikacija je instalirana.
+59|Instalacija nije uspjela
+60|_Otvori
+61|_Prikaži pojedinosti
+62|Zapis instalacije
+63|Instalater aplikacija
+64|_Nazad
+65|Čitanje aplikacije…
+66|Instaliraj {name}
+67|Aplikacije
+68|Odaberite aplikaciju za instalaciju
+69|Sistemski pomoćnik ne može se pokrenuti.
+70|Nije moguće komunicirati sa sistemskim pomoćnikom.
+71|Veza sa sistemskim pomoćnikom je prekinuta.
+72|Ovjera je otkazana.
+73|Za ovu radnju potrebna su administratorska prava.
+74|Sistemski pomoćnik neočekivano se zaustavio.
+75|Nema EFI sistemske particije
+76|Slobodno je samo {free}, MAN treba {need}. Oslobodite prostor pomoću DUHACH! u Windowsima.
+77|Nema slobodnog prostora. Pokrenite DUHACH! u Windowsima i oslobodite prostor za MAN.
+78|MAN se pokreće s ovog diska
+79|U upotrebi: particija je montirana
+80|Premalen, MAN treba {need}
+81|Instaliraj MAN
+82|MAN se instalira. Sačekajte da završi.
+83|Jezik
+84|_Ponovo pokreni na ovom jeziku
+85|Živa sesija ponovo se pokreće na odabranom jeziku, a MAN se instalira na njemu.
+86|Dobro došli u MAN
+87|Brz, otvoren i potpuno prilagodljiv GNOME sistem.\nInstalirajte ga na ovaj računar ili nastavite istraživati živu sesiju.
+88|_Instaliraj MAN…
+89|_Nastavi isprobavati MAN
+90|Traženje diskova…
+91|Dobro došli
+92|Ovaj računar je pokrenut u starom BIOS načinu. MAN se može instalirati samo na UEFI računare: ponovo pokrenite i odaberite UEFI mogućnost pokretanja.
+93|Sistemski pomoćnik nije vratio podatke o diskovima.
+94|  ·  EFI
+95|_Dalje
+96|Obriši disk i instaliraj MAN
+97|Sve na odabranom disku bit će obrisano, uključujući Windows.
+98|Preporučeno. Sve na odabranom disku bit će obrisano.
+99|Instaliraj uz Windows
+100|Preporučeno. MAN koristi slobodan prostor uz Windows; Windows i njegove datoteke ostaju. Sistem birate pri svakom pokretanju.
+101|Ponovo instaliraj MAN
+102|Zamjenjuje sistem, ali zadržava osobne datoteke u /home. Trenutni sistem čuva se kao snimka.
+103|Prilagođene particije
+104|Za stručnjake: sami odaberite particije ili ih stvorite pomoću Diskova.
+105|Disk
+106|Odaberite disk koji će se obrisati. Diskovi koji se ne mogu koristiti prikazani su s razlogom.
+107|Nisu pronađeni diskovi
+108|Slobodan prostor uz Windows
+109|Particije Windowsa ostaju netaknute. MAN dijeli EFI sistemsku particiju i dodaje Windows u svoj izbornik pokretanja.
+110|{size} slobodno
+111|nema slobodnog prostora
+112|{model} (Windows)
+113|Instalacija za zamjenu
+114|nema osobnih mapa
+115|osobne mape: {list}
+116|snimke: {n}
+117|MAN na {model}
+118|Lozinka za {device}
+119|Otključaj
+120|Instalacija se nije mogla pregledati.
+121|Particije
+122|Sistemska particija formatira se u Btrfs i sadrži @system, @home i @snapshots. Particije na disku s kojeg se MAN pokreće nisu prikazane.
+123|Otvori Diskove za stvaranje ili promjenu veličine particija
+124|Osvježi popis particija
+125|Odaberite particiju
+126|EFI sistemska particija
+127|Formatiraj EFI sistemsku particiju
+128|Ostavite isključeno da biste zadržali pokretače drugih sistema
+129|Sistemska particija (formatira se u Btrfs)
+130|Particija za pokretanje (potrebna za šifriranje)
+131|Popis particija je osvježen
+132|Sigurnost
+133|Šifriraj sistem
+134|Štiti vaše podatke ako se računar izgubi ili ukrade. Lozinka se traži pri svakom pokretanju.
+135|Lozinka
+136|Potvrdi lozinku
+137|Čuvajte ovu lozinku na sigurnom
+138|Ako je izgubite, niko neće moći vratiti podatke. Jezgra i datoteke za pokretanje ostaju na maloj nešifriranoj particiji za pokretanje.
+139|Lozinka mora imati najmanje 8 znakova.
+140|Lozinke se ne podudaraju.
+141|Odaberite disk.
+142|Odaberite disk s Windowsima.
+143|Odaberite instalaciju za zamjenu.
+144|Najprije otključajte šifriranu instalaciju.
+145|Ova particija ne sadrži sistem MAN.
+146|Odaberite EFI sistemsku particiju.
+147|Odaberite sistemsku particiju.
+148|EFI i sistemska particija moraju biti različite.
+149|Šifriranje zahtijeva zasebnu particiju za pokretanje.
+150|Sistemska particija mora imati najmanje {size}.
+151|EFI particija nije formatirana u FAT; uključite formatiranje.
+152|Sistemska particija je montirana; najprije je odmontirajte u Diskovima.
+153|Gdje instalirati MAN?
+154|Vrijeme i tastatura
+155|Vremenska zona
+156|Raspored tastature
+157|Isprobajte tastaturu
+158|Pišite ovdje kako biste provjerili daju li tipke ispravne znakove.
+159|Pišite ovdje
+160|Vremenska zona i tastatura
+161|Disk nije odabran
+162|Sistemska particija nije odabrana
+163|Sistemska particija je nestala
+164|Instalacija nije odabrana
+165|Disk je nestao
+166|Pregled
+167|Odredište
+168|Obriši disk i instaliraj
+169|Prilagođene particije
+170|Ponovo instaliraj, zadrži /home
+171|Uz Windows
+172| (bit će formatirana)
+173| (zadržava se)
+174|Sistemska particija
+175|{partition} (bit će formatirana)
+176|Particija za pokretanje
+177|Prostor za MAN
+178|{free} slobodnog prostora (stvaraju se particija za pokretanje i sistemska particija)
+179|Windows
+180|Bez promjena. Pojavljuje se u izborniku pokretanja MAN-a; EFI sistemska particija je zajednička.
+181|Šifriranje
+182|Uključeno (LUKS2)
+183|Isključeno
+184|Fajl sistem
+185|Btrfs: @system za MAN, @home za vaše datoteke, @snapshots za tačke vraćanja. Svi dijele slobodan prostor.
+186|Sistem
+187|Vaš račun
+188|Stvara se u MAN Setupu pri prvom pokretanju računara, zajedno s nazivom računara, izgledom i postavkama privatnosti.
+189|Tastatura
+190|Svi podaci na {model} ({path}) bit će obrisani.
+191|_Obriši i instaliraj
+192|Odabrane particije bit će formatirane. Ostale particije se ne mijenjaju.
+193|_Formatiraj i instaliraj
+194|Trenutni sistem se zamjenjuje. Vaše datoteke u /home se zadržavaju, a stari sistem čuva se kao snimka.
+195|_Ponovo instaliraj
+196|MAN se instalira u slobodan prostor. Windows i njegove datoteke se ne mijenjaju.
+197|Spremno za instalaciju
+198|Obrisati {model}?
+199|Sve datoteke i particije na {path} ({size}) bit će trajno obrisane. Ovo se ne može poništiti.
+200|Obriši i instaliraj
+201|Formatirati odabrane particije?
+202|Svi podaci na odabranim particijama bit će trajno obrisani. Ostale particije se ne mijenjaju.
+203|Formatiraj i instaliraj
+204|Instalirati MAN uz Windows?
+205|MAN se instalira u {free} slobodnog prostora na {model} ({path}). Windows i njegove datoteke se ne mijenjaju.
+206|Instaliraj
+207|Ponovo instalirati MAN?
+208|Instalirani sistem bit će zamijenjen novom kopijom. Osobne datoteke u /home se zadržavaju, a stari sistem ostaje dostupan kao snimka.
+209|Ponovo instaliraj
+210|_Otkaži
+211|Instaliranje MAN-a
+212|Pokretanje…
+213|Instaliranje
+214|Korak {index} od {n}  ·  {title}
+215|MAN je instaliran
+216|Ponovo pokrenite računar i počnite koristiti MAN. Izbornik pri svakom pokretanju omogućuje odabir MAN-a ili Windowsa; privremenu particiju instalacijskog programa MAN uklanja pri prvom pokretanju.
+217|Ponovo pokrenite računar i počnite koristiti MAN. Instalacijski medij možete ukloniti; ako ostane priključen, MAN se svejedno pokreće s novog diska.
+218|_Ponovo pokreni sada
+219|Gotovo
+220|Instalacija nije uspjela
+221|Nijedan drugi disk nije promijenjen, a instalacijski program oslobodio je ciljni disk. Možete pregledati plan i pokušati ponovo.
+222|_Pregledaj i pokušaj ponovo
+223|Traži jezike
+224|Traži zemlje
+225|Sistemski disk nije pronađen.
+226|Šifriranje zahtijeva Btrfs raspored koji stvara instalacijski program MAN-a.
+227|Ova instalacija nema zasebnu particiju za pokretanje koja je potrebna za šifriranje. Ponovo instalirajte MAN s mogućnošću „Obriši disk” za šifriranje.
+228|MAN Setup
+229|Gdje se nalazite?
+230|Vaša zemlja ili regija određuje oblik datuma, vremena i brojeva.
+231|Zemlja
+232|GNU General Public License, verzija 2
+233|Linux jezgra i mnogi alati sistema
+234|GNU General Public License, verzija 3
+235|Mnogi GNU i GNOME programi
+236|GNU Lesser General Public License, verzija 2.1
+237|GTK, GLib i mnoge biblioteke
+238|GNU Lesser General Public License, verzija 3
+239|Biblioteke
+240|Mozilla Public License 2.0
+241|Programi i biblioteke Mozille i drugih
+242|Apache licenca 2.0
+243|Biblioteke i alati
+244|Licencni ugovor
+245|Pročitajte i prihvatite uvjete pod kojima se MAN pruža.
+246|Licence
+247|Tekst licence nije dostupan ({path}).
+248|Pročitao/la sam i prihvaćam uvjete licence
+249|Žičano
+250|Nije povezano
+251|Povezivanje s internetom
+252|Uz vezu MAN može postaviti vrijeme i održavati softver ažurnim. To možete učiniti i kasnije.
+253|Provjera veze…
+254|Wi-Fi mreže
+255|Traži ponovo
+256|_Preskoči
+257|Možete se povezati kasnije u Postavkama.
+258|Povezano
+259|Nije povezano
+260|Nisu pronađene mreže
+261|Internet
+262|Povezano s „{ssid}”
+263|Povezivanje s „{ssid}” nije uspjelo
+264|Poveži se s „{ssid}”
+265|Upišite lozinku mreže.
+266|_Poveži
+267|Stvorite svoj račun
+268|Bit ćete administrator ovog računara s punim root pristupom putem sudo.
+269|Puno ime
+270|Korisničko ime
+271|Lozinka
+272|Potvrdi lozinku
+273|Automatska prijava
+274|Preskoči zaslon za prijavu pri pokretanju računara
+275|Postojeće osobne mape
+276|Upotrijebite isto korisničko ime kako biste nastavili koristiti mapu iz prethodne instalacije.
+277|Koristi
+278|Napredno
+279|Naziv računara
+280|Postavi root lozinku
+281|Omogućuje izravnu prijavu kao root. Bez nje koristite sudo s vlastitom lozinkom.
+282|Root lozinka
+283|Potvrdi root lozinku
+284|Upišite svoje ime.
+285|Odaberite korisničko ime.
+286|Ovo korisničko ime sistem već koristi.
+287|Ovo korisničko ime rezervirano je za sistem.
+288|Korisnička imena sadrže mala slova, znamenke, - i _ te počinju slovom.
+289|Odaberite lozinku.
+290|Lozinke se ne podudaraju.
+291|Naziv računara smije sadržavati slova, znamenke i crtice.
+292|Upišite root lozinku dvaput.
+293|Savjet: lozinka s 8 ili više znakova mnogo je sigurnija.
+294|Račun
+295|Tamno
+296|Svijetlo
+297|Prilagodite ga sebi
+298|Odaberite stil, boju isticanja i pozadinu. Svaku promjenu vidite odmah.
+299|Stil
+300|Boja isticanja
+301|Pozadina
+302|Prilagodba
+303|Privatnost
+304|Odaberite koje značajke smiju koristiti podatke o vama. To možete promijeniti bilo kada u Postavkama.
+305|Usluge lokacije
+306|Omogućuje aplikacijama poput Karata i Vremenske prognoze da odrede vašu približnu lokaciju pomoću obližnjih Wi-Fi mreža.
+307|Automatska vremenska zona
+308|Koristi vašu lokaciju kako bi vremenska zona bila tačna kad putujete.
+309|_Završi postavljanje
+310|Vaš disk je šifriran
+311|Vaši podaci su zaštićeni. Lozinka se traži pri svakom pokretanju računara.
+312|Šifriranje diska
+313|Šifriranje štiti vaše podatke ako se računar izgubi ili ukrade.
+314|Nije dostupno u ovoj instalaciji
+315|Šifriranje štiti vaše datoteke ako se računar izgubi ili ukrade. Bez lozinke niko ne može čitati disk.
+316|Šifriraj disk
+317|Lozinka se traži pri svakom pokretanju računara.
+318|Šifriranje počinje pri sljedećem ponovom pokretanju
+319|Disk se zatim šifrira u pozadini dok koristite računar. Ako izgubite lozinku, niko neće moći vratiti podatke.
+320|Priprema MAN-a
+321|Sve se priprema…
+322|_Ponovo pokreni
+323|_Natrag
+324|Priprema
+325|Zapis postavljanja
+326|Sve je spremno!
+327|Nešto je pošlo po zlu
+328|Dnevna
+329|Prije ažuriranja
+330|Prije vraćanja
+331|Prije ponovne instalacije
+332|Ručna
+333|Još nema snimki
+334|Stvorite snimku prije većih promjena sistema.
+335|Vrati…
+336|Obriši snimku
+337|{free} slobodno od {size}. Sistem, osobne mape i snimke dijele ovaj prostor; snimke zauzimaju prostor samo za ono što se promijenilo otkad su stvorene.
+338|_U redu
+339|Stvori snimku
+340|Čuva trenutno stanje sistema. Osobne datoteke u osobnoj mapi nisu uključene.
+341|Opis, na primjer „Prije instalacije upravljačkih programa”
+342|_Stvori
+343|Ručna snimka
+344|Obrisati snimku?
+345|„{description}” od {date} bit će trajno obrisana.
+346|_Obriši
+347|Vratiti ovu snimku?
+348|Nakon ponovog pokretanja sistem će se vratiti na „{description}” od {date}. Vaše osobne datoteke se ne mijenjaju.\n\nTrenutni sistem najprije se sprema kao snimka, pa se ovo može poništiti.
+349|_Vrati
+350|Ponovo pokrenite za dovršetak vraćanja
+351|Ponovo pokreni _kasnije
+352|Ponovo pokreni _sada
+353|Snimke
+354|Tačke vraćanja
+355|Snimke spremaju stanje operacijskog sistema. Vraćanje snimke vraća sistem u taj trenutak, što pomaže nakon neuspjelog ažuriranja ili promjene postavki. Vaše osobne datoteke nikad se ne diraju.
+356|Automatske snimke
+357|Dnevne snimke
+358|Jednom dnevno dok je računar uključeno
+359|Broj dnevnih snimki
+360|Prije ažuriranja softvera
+361|Stvaraju se automatski pri instaliranju, nadogradnji ili uklanjanju paketa
+362|Broj snimki ažuriranja
+363|Pohrana
+364|Prostor na disku
+365|Ako se MAN ne pokrene
+366|U izborniku pokretanja odaberite „Restore a MAN snapshot” kako biste vratili ispravan sistem.
+367|Snimke nisu dostupne
+368|Snimke rade na MAN-u instaliranom s Btrfs rasporedom koji stvara instalacijski program MAN-a. Ovaj sistem (na primjer živa sesija) ga ne koristi.
+369|Vraćanje čeka: ponovo pokrenite računar za dovršetak
+370|Ponovo pokreni sada
+371|Sačekajte da trenutna radnja završi.
+372|Traži
+373|Kopiraj u međuspremnik
+374|Koordinirano svjetsko vrijeme
+375|Engleski (SAD)
+376|Izašao je MAN {version}!
+377|Možete ažurirati na njega.
+378|Otvori ažuriranja
+379|Provjera ažuriranja
+380|Provjerava se je li ažuriranje izvorno i potpuno…
+381|Ažuriranje MAN-a
+382|Ovo ažuriranje ne može se instalirati
+383|Ažuriranje se nije moglo pročitati.
+384|Ažuriranje s {name} {version}
+385|{name} {version} je instaliran
+386|Objavljeno
+387|Veličina preuzimanja
+388|Potreban prostor
+389|Izvornost
+390|Provjereno, potpisao „{signer}”
+391|Što je novo
+392|Ovo ažuriranje nije novije od instaliranog {name} {version}.
+393|Ažuriranje
+394|Pročitajte uvjete licence ovog ažuriranja.
+395|Prihvaćam uvjete licence
+396|Gdje instalirati ažuriranje?
+397|Sistem se zamjenjuje; datoteke u osobnoj mapi se ne diraju.
+398|Odaberite instalaciju.
+399|trenutno pokrenut
+400|{name} {version} na ovom računaru
+401|{name} na {model}
+402|Nije pronađena instalacija MAN-a
+403|Ažuriranja se instaliraju iz pokrenutog, instaliranog sistema MAN, a ne iz žive sesije.
+404|Mjesto instalacije
+405|Zadržava se
+406|Vaše datoteke
+407|Sve u vašoj osobnoj mapi
+408|Računi i lozinke
+409|Korisnici, grupe, naziv računara
+410|Veze i postavke
+411|Wi-Fi, vremenska zona, tastatura, izgled i snimke
+412|Flatpak aplikacije
+413|Te sve u /usr/local i /opt
+414|Zamjenjuje se
+415|Softver instaliran pomoću apt i druge promjene sistemskih datoteka zamjenjuje novi sistem.
+416|Operacijski sistem
+417|Zamjenjuje ga {name} {version}. Trenutni sistem može se vratiti iz snimke.
+418|Računaro se ponovo pokreće radi instalacije ažuriranja
+419|Nakon pripreme MAN se ponovo pokreće, za nekoliko sekundi instalira ažuriranje i ponovo se pokreće.
+420|_Instaliraj ažuriranje
+421|Najprije stvoriti snimku?
+422|Snimka sprema trenutni sistem, pa mu se možete vratiti ako nakon ažuriranja nešto ne radi. Preporučuje se.
+423|_Ne stvaraj
+424|_Stvori snimku
+425|Priprema {name} {version}
+426|Ponovo pokreni za instalaciju
+427|Računaro se ponovo pokreće dvaput. Vaše datoteke su sigurne.
+428|Automatsko ponovo pokretanje za {r} s
+429|Automatsko ponovo pokretanje za 30 s
+430|Ažuriranje se instalira pri sljedećem ponovom pokretanju.
+431|Spremno
+432|Ažuriranje se nije moglo pripremiti
+433|Na vašem sistemu ništa nije promijenjeno.
+434|_Pokušaj ponovo
+435|Zapis ažuriranja
+436|Neuspjelo
+437|Vaš sistem je ažuriran
+438|MAN je ažuriran na verziju {version}.\nPrije: MAN {previous}.
+439|_Gotovo
+440|Otvori ažuriranje MAN-a
+441|Ažuriranja MAN-a
+442|Preuzimanje najnovijih lista paketa…
+443|Kopiranje aplikacije
+444|Dodavanje aplikacije u meni
+445|Datoteka nije pronađena.
+446|Paket se ne može instalirati.
+447|Stavka menija aplikacije nije ispravna.
+448|Provjera plana instalacije
+449|Priprema diska
+450|Kopiranje MAN-a na disk
+451|Konfiguriranje novog sistema
+452|Instaliranje pokretača
+453|Stvaranje prve snimke
+454|Završavanje
+455|Uklanjanje starih potpisa particija
+456|Stvaranje particija
+457|Formatiranje EFI sistemske particije
+458|Šifriranje sistemske particije
+459|Formatiranje particije za pokretanje
+460|Stvaranje Btrfs fajlog sistema
+461|Uklanjanje starih potpisa fajlih sistema
+462|Otključavanje šifrirane instalacije
+463|Čuvanje trenutnog sistema kao snimke
+464|Uklanjanje prethodnog sistema
+465|Zapisivanje tablice fajlih sistema
+466|Postavljanje naziva i identiteta računara
+467|Uklanjanje računa žive sesije
+468|Stvaranje vašeg računa
+469|Priprema MAN Setupa za prvo pokretanje
+470|Postavljanje vremenske zone i tastature
+471|Uklanjanje instalacijskog programa iz novog sistema
+472|Izrada slike za pokretanje (initramfs)
+473|Konfiguriranje GRUB-a
+474|Instaliranje GRUB-a na EFI sistemsku particiju
+475|Instaliranje rezervnog pokretača
+476|Zapisivanje izbornika pokretanja
+477|Disk je spreman
+478|Stvaranje snimke novog sistema
+479|Dodavanje snimke u izbornik pokretanja
+480|Odmontiravanje
+481|Pomoćnik instalacijskog programa mora se pokretati kao root.
+482|Ovaj računar nije pokrenut u UEFI načinu. MAN zahtijeva UEFI.
+483|Korisničko ime nije valjano.
+484|Lozinka je obavezna.
+485|Naziv računara nije valjan.
+486|Nepoznat jezik.
+487|Lozinka za šifriranje mora imati najmanje 8 znakova.
+488|Disk se promijenio nakon što ste potvrdili instalaciju. Ništa nije promijenjeno; pregledajte i ponovo potvrdite.
+489|Odaberite sistemsku particiju.
+490|Potvrđeni disk ne sadrži odabranu sistemsku particiju.
+491|Particija za pokretanje mora biti odvojena od EFI i sistemske particije.
+492|Particija za pokretanje mora imati najmanje 512 MB.
+493|Instalacija nije odabrana.
+494|Potvrđeni disk ne sadrži odabranu instalaciju.
+495|Šifrirana instalacija nema particiju MAN_BOOT.
+496|U /boot nije pronađena jezgra s odgovarajućim modulima.
+497|Jezik mora promijeniti sistemski pomoćnik.
+498|Primjena vaših postavki
+499|Priprema šifriranja diska
+500|Završavanje
+501|MAN Setup mora dovršiti sistemski pomoćnik.
+502|MAN Setup je već dovršen na ovom računaru.
+503|Nepoznata boja isticanja.
+504|Odabrana pozadina nije dostupna.
+505|Ovaj sistem se ne može šifrirati.
+506|Nedostaje ključ postavljanja, pa se šifriranje ne može nastaviti u pozadini.
+507|Sistem nije instaliran na Btrfs, pa snimke nisu dostupne.
+508|Vraćanje snimke čeka ponovo pokretanje. Najprije ponovo pokrenite računar za dovršetak.
+509|Nevaljan ID snimke.
+510|Provjera ažuriranja
+511|Stvaranje snimke
+512|Priprema područja za ažuriranje
+513|Raspakiravanje novog sistema
+514|Prijenos vaših računa i postavki
+515|Priprema ponovog pokretanja
+516|Raspakirano
+517|Računi
+518|Uklanjanje softvera koji koristi samo instalacijski program
+519|Izrada slike za pokretanje ažuriranja
+520|Dodavanje jednokratne stavke pokretanja
+521|Ažuriranje je izvorno
+522|Snimka je stvorena
+523|Preskočeno
+524|Područje za ažuriranje je spremno
+525|Priprema novog sistema
+526|Datoteka ažuriranja je oštećena (kontrolni zbroj se ne podudara). Ponovo je preuzmite.
+527|Datoteka ažuriranja nije se mogla u potpunosti pročitati.
+528|Ažuriranje ne sadrži jezgru.
+529|Ažuriranja mora instalirati sistemski pomoćnik.
+530|Odabrana instalacija nije pronađena.
+531|Može se ažurirati samo pokrenuta instalacija MAN-a.
+532|Ovo nije datoteka ažuriranja MAN-a (nema manifesta).
+533|Ažuriranje nije potpisano, pa mu se ne može vjerovati.
+534|Potpis ažuriranja je oštećen.
+535|Ažuriranje nije potpisao MAN. Možda je izmijenjeno ili dolazi iz nepouzdanog izvora.
+536|Manifest ažuriranja nije valjan.
+537|Lozinka nije ispravna ili se šifrirana particija ne može otvoriti.
+538|Plava
+539|Tirkizna
+540|Zelena
+541|Žuta
+542|Narančasta
+543|Crvena
+544|Ružičasta
+545|Ljubičasta
+546|Škriljevac
+547|Instalater paketa
+548|Instalirajte aplikacije iz .deb, Flatpak i AppImage datoteka
+549|Instalacija sistema
+550|Instaliraj MAN na ovaj računar
+551|Vraćanje sistema
+552|Stvaranje i vraćanje snimki sistema
+553|Instalacija ažuriranja sistema
+554|Instaliraj datoteku ažuriranja sistema MAN
+555|Nudi instalaciju MAN-a pri pokretanju žive sesije
+556|Obavijest o ažuriranju MAN-a
+557|Jednom nakon prijave javlja da je MAN ažuriran
+558|Postavite svoje novi MAN računar
+559|Prvo postavljanje MAN-a
+560|MAN ažuriranja
+561|Javlja vam kada je dostupna nova verzija MAN-a

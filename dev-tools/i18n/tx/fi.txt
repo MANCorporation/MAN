@@ -1,495 +1,562 @@
-0|Järjestelmäavustajaa ei voitu käynnistää.
-1|Järjestelmäavustajaan ei saatu yhteyttä.
-2|Yhteys järjestelmäavustajaan katkesi.
-3|Valtuutus peruttiin.
-4|Tähän toimintoon tarvitaan ylläpitäjän oikeudet.
-5|Järjestelmäavustaja pysähtyi odottamatta.
-6|Ei EFI-järjestelmäosiota
-7|Vapaana vain {free}, MAN tarvitsee {need}. Vapauta tilaa DUHACH!-sovelluksella Windowsissa.
-8|Ei vapaata tilaa. Käynnistä DUHACH! Windowsissa ja tee tilaa MANille.
-9|MAN on käynnissä tältä levyltä
-10|Käytössä: osio on liitetty
-11|Liian pieni, MAN tarvitsee {need}
-12|Asenna MAN
-13|MANia asennetaan. Odota, kunnes asennus valmistuu.
-14|Kieli
-15|_Käynnistä uudelleen tällä kielellä
-16|Live-istunto käynnistyy uudelleen valitulla kielellä, ja MAN asennetaan sillä kielellä.
-17|Tervetuloa MANiin
-18|Nopea, avoin ja täysin muokattava GNOME-järjestelmä.\nAsenna se tähän tietokoneeseen tai jatka live-istunnon tutkimista.
-19|_Asenna MAN…
-20|_Jatka MANin kokeilua
-21|Etsitään levyjä…
-22|Tervetuloa
-23|Tämä tietokone käynnistettiin vanhassa BIOS-tilassa. MAN voidaan asentaa vain UEFI-tietokoneisiin: käynnistä uudelleen ja valitse UEFI-käynnistysvaihtoehto.
-24|Järjestelmäavustaja ei palauttanut levytietoja.
-25|  ·  EFI
-26|_Seuraava
-27|Asennustapa
-28|Tyhjennä levy ja asenna MAN
-29|Kaikki valitun levyn tiedot poistetaan, myös Windows.
-30|Suositeltu. Kaikki valitun levyn tiedot poistetaan.
-31|Asenna Windowsin rinnalle
-32|Suositeltu. MAN käyttää Windowsin vieressä olevaa vapaata tilaa; Windows ja sen tiedostot säilyvät. Valitse järjestelmä jokaisella käynnistyskerralla.
-33|Asenna MAN uudelleen
-34|Korvaa järjestelmän mutta säilyttää henkilökohtaiset tiedostot hakemistossa /home. Nykyinen järjestelmä tallennetaan tilannevedokseksi.
-35|Mukautetut osiot
-36|Asiantuntijoille: valitse osiot itse tai luo ne Levyt-sovelluksella.
-37|Levy
-38|Valitse tyhjennettävä levy. Levyt, joita ei voi käyttää, näytetään syineen.
-39|Levyjä ei löytynyt
-40|Vapaa tila Windowsin vieressä
-41|Windowsin osioihin ei kosketa. MAN jakaa EFI-järjestelmäosion ja lisää Windowsin käynnistysvalikkoonsa.
-42|{size} vapaana
-43|ei vapaata tilaa
-44|{model} (Windows)
-45|Korvattava asennus
-46|ei kotikansioita
-47|kotikansiot: {list}
-48|tilannevedoksia: {n}
-49|MAN laitteella {model}
-50|Salalause laitteelle {device}
-51|Avaa lukitus
-52|Asennusta ei voitu tutkia.
-53|Osiot
-54|Järjestelmäosio alustetaan Btrfs-muotoon, ja se sisältää alitaltiot @system, @home ja @snapshots. Levyn, jolta MAN on käynnissä, osioita ei näytetä.
-55|Avaa Levyt osioiden luomista tai koon muuttamista varten
-56|Päivitä osioluettelo
-57|Valitse osio
-58|EFI-järjestelmäosio
-59|Alusta EFI-järjestelmäosio
-60|Jätä pois päältä, jotta muiden järjestelmien käynnistyslataimet säilyvät
-61|Järjestelmäosio (alustetaan Btrfs-muotoon)
-62|Käynnistysosio (tarvitaan salauksen kanssa)
-63|Osioluettelo päivitetty
-64|Turvallisuus
-65|Salaa järjestelmä
-66|Suojaa tietosi, jos tietokone katoaa tai varastetaan. Salalause kysytään jokaisella käynnistyskerralla.
-67|Salalause
-68|Vahvista salalause
-69|Säilytä tämä salalause turvassa
-70|Jos se katoaa, kukaan ei voi palauttaa tietoja. Ydin ja käynnistystiedostot ovat pienellä salaamattomalla käynnistysosiolla.
-71|Salalauseessa on oltava vähintään 8 merkkiä.
-72|Salalauseet eivät täsmää.
-73|Valitse levy.
-74|Valitse levy, jolla Windows on.
-75|Valitse korvattava asennus.
-76|Avaa ensin salatun asennuksen lukitus.
-77|Tällä osiolla ei ole MAN-järjestelmää.
-78|Valitse EFI-järjestelmäosio.
-79|Valitse järjestelmäosio.
-80|EFI-osion ja järjestelmäosion on oltava eri osioita.
-81|Salaus tarvitsee erillisen käynnistysosion.
-82|Järjestelmäosion on oltava vähintään {size}.
-83|EFI-osio ei ole FAT-muodossa; ota alustus käyttöön.
-84|Järjestelmäosio on liitetty; irrota se ensin Levyt-sovelluksessa.
-85|Mihin MAN asennetaan?
-86|Aika ja näppäimistö
-87|Aikavyöhyke
-88|Näppäimistöasettelu
-89|Testaa näppäimistöä
-90|Kirjoita tähän ja tarkista, että näppäimet tuottavat oikeat merkit.
-91|Kirjoita tähän
-92|Aikavyöhyke ja näppäimistö
-93|Levyä ei ole valittu
-94|Järjestelmäosiota ei ole valittu
-95|Järjestelmäosio katosi
-96|Asennusta ei ole valittu
-97|Levy katosi
-98|Tarkistus
-99|Kohde
-100|Tyhjennä levy ja asenna
-101|Mukautetut osiot
-102|Asenna uudelleen, säilytä /home
-103|Windowsin rinnalle
-104| (alustetaan)
-105| (säilytetään)
-106|Järjestelmäosio
-107|{partition} (alustetaan)
-108|Käynnistysosio
-109|Asennus
-110|Tila MANille
-111|{free} vapaata tilaa (luodaan käynnistysosio ja järjestelmäosio)
-112|Windows
-113|Ei muutoksia. Se näkyy MANin käynnistysvalikossa; EFI-järjestelmäosio on yhteinen.
-114|Salaus
-115|Käytössä (LUKS2)
-116|Ei käytössä
-117|Tiedostojärjestelmä
-118|Btrfs: @system MANille, @home tiedostoillesi, @snapshots palautuspisteille. Kaikki jakavat vapaan tilan.
-119|Järjestelmä
-120|Tilisi
-121|Luodaan MAN Setupissa, kun tietokone käynnistetään ensimmäisen kerran, yhdessä tietokoneen nimen, ulkoasun ja yksityisyysasetusten kanssa.
-122|Näppäimistö
-123|Kaikki tiedot laitteelta {model} ({path}) poistetaan.
-124|_Tyhjennä ja asenna
-125|Valitut osiot alustetaan. Muut osiot eivät muutu.
-126|_Alusta ja asenna
-127|Nykyinen järjestelmä korvataan. Tiedostosi hakemistossa /home säilyvät, ja vanha järjestelmä tallennetaan tilannevedokseksi.
-128|_Asenna uudelleen
-129|MAN asennetaan vapaaseen tilaan. Windows ja sen tiedostot eivät muutu.
-130|_Asenna
-131|Valmis asennettavaksi
-132|Tyhjennetäänkö {model}?
-133|Kaikki tiedostot ja osiot laitteelta {path} ({size}) poistetaan pysyvästi. Tätä ei voi perua.
-134|Tyhjennä ja asenna
-135|Alustetaanko valitut osiot?
-136|Kaikki valittujen osioiden tiedot poistetaan pysyvästi. Muut osiot eivät muutu.
-137|Alusta ja asenna
-138|Asennetaanko MAN Windowsin rinnalle?
-139|MAN asennetaan laitteen {model} ({path}) vapaaseen tilaan ({free}). Windows ja sen tiedostot eivät muutu.
-140|Asenna
-141|Asennetaanko MAN uudelleen?
-142|Asennettu järjestelmä korvataan uudella kopiolla. Henkilökohtaiset tiedostot hakemistossa /home säilyvät, ja vanha järjestelmä on saatavilla tilannevedoksena.
-143|Asenna uudelleen
-144|_Peru
-145|Asennetaan MANia
-146|Käynnistetään…
-147|Tiedot
-148|Asennetaan
-149|Vaihe {index}/{n}  ·  {title}
-150|Loki
-151|MAN on asennettu
-152|Käynnistä tietokone uudelleen ja ala käyttää MANia. Valikosta voit valita jokaisella käynnistyskerralla MANin tai Windowsin; MAN poistaa asentimen väliaikaisen osion ensimmäisellä käynnistyskerralla.
-153|Käynnistä tietokone uudelleen ja ala käyttää MANia. Voit irrottaa asennusmedian; jos se jää kiinni, MAN käynnistyy silti uudelta levyltä.
-154|_Käynnistä uudelleen nyt
-155|Valmis
-156|Asennus epäonnistui
-157|Muita levyjä ei muutettu, ja asennin on vapauttanut kohdelevyn. Voit tarkistaa suunnitelman ja yrittää uudelleen.
-158|_Tarkista ja yritä uudelleen
-159|_Näytä tiedot
-160|Asennusloki
-161|Hae kieliä
-162|Hae maita
-163|Järjestelmälevyä ei löytynyt.
-164|Salaus vaatii MAN-asentimen luoman Btrfs-rakenteen.
-165|Tässä asennuksessa ei ole erillistä käynnistysosiota, jota salaus tarvitsee. Asenna MAN uudelleen valinnalla ”Tyhjennä levy” käyttääksesi salausta.
-166|MAN Setup
-167|Missä olet?
-168|Maasi tai alueesi määrää päivämäärien, kellonaikojen ja lukujen muodon.
-169|Maa
-170|GNU General Public License, versio 2
-171|Linux-ydin ja monet järjestelmätyökalut
-172|GNU General Public License, versio 3
-173|Monet GNU- ja GNOME-ohjelmat
-174|GNU Lesser General Public License, versio 2.1
-175|GTK, GLib ja monet kirjastot
-176|GNU Lesser General Public License, versio 3
-177|Kirjastot
-178|Mozilla Public License 2.0
-179|Mozillan ja muiden ohjelmat ja kirjastot
-180|Apache-lisenssi 2.0
-181|Kirjastot ja työkalut
-182|Käyttöoikeussopimus
-183|Lue ja hyväksy ehdot, joilla MAN tarjotaan.
-184|Lisenssit
-185|Lisenssin teksti ei ole saatavilla ({path}).
-186|Olen lukenut lisenssiehdot ja hyväksyn ne
-187|Langallinen
-188|Ei yhdistetty
-189|Yhdistä internetiin
-190|Yhteyden avulla MAN voi asettaa kellonajan ja pitää ohjelmistosi ajan tasalla. Voit tehdä tämän myös myöhemmin.
-191|Tarkistetaan yhteyttä…
-192|Wi-Fi-verkot
-193|Hae uudelleen
-194|_Ohita
-195|Voit yhdistää myöhemmin Asetuksissa.
-196|Yhdistetty
-197|Ei yhdistetty
-198|Verkkoja ei löytynyt
-199|Internet
-200|Yhdistetty verkkoon ”{ssid}”
-201|Verkkoon ”{ssid}” ei voitu yhdistää
-202|Yhdistä verkkoon ”{ssid}”
-203|Anna verkon salasana.
-204|_Yhdistä
-205|Luo tilisi
-206|Sinusta tulee tämän tietokoneen ylläpitäjä, jolla on täydet root-oikeudet sudon kautta.
-207|Koko nimi
-208|Käyttäjätunnus
-209|Salasana
-210|Vahvista salasana
-211|Kirjaudu automaattisesti
-212|Ohita kirjautumisnäkymä tietokoneen käynnistyessä
-213|Olemassa olevat kotikansiot
-214|Käytä samaa käyttäjätunnusta jatkaaksesi aiemmasta asennuksesta säilytetyn kansion käyttöä.
-215|Käytä
-216|Lisäasetukset
-217|Tietokoneen nimi
-218|Aseta root-salasana
-219|Sallii kirjautumisen suoraan root-käyttäjänä. Ilman sitä käytä sudoa omalla salasanallasi.
-220|Root-salasana
-221|Vahvista root-salasana
-222|Anna nimesi.
-223|Valitse käyttäjätunnus.
-224|Järjestelmä käyttää jo tätä käyttäjätunnusta.
-225|Tämä käyttäjätunnus on varattu järjestelmälle.
-226|Käyttäjätunnuksissa käytetään pieniä kirjaimia, numeroita, - ja _, ja ne alkavat kirjaimella.
-227|Valitse salasana.
-228|Salasanat eivät täsmää.
-229|Tietokoneen nimessä saa olla kirjaimia, numeroita ja yhdysmerkkejä.
-230|Anna root-salasana kahdesti.
-231|Vinkki: vähintään 8 merkin salasana on paljon turvallisempi.
-232|Tili
-233|Tumma
-234|Vaalea
-235|Tee siitä omasi
-236|Valitse tyyli, korostusväri ja taustakuva. Näet jokaisen muutoksen heti.
-237|Tyyli
-238|Korostusväri
-239|Taustakuva
-240|Mukauta
-241|Yksityisyys
-242|Valitse, mitkä toiminnot saavat käyttää tietoja sinusta. Voit muuttaa tätä milloin tahansa Asetuksissa.
-243|Sijaintipalvelut
-244|Sallii Karttojen ja Sään kaltaisten sovellusten selvittää likimääräisen sijaintisi lähellä olevien Wi-Fi-verkkojen avulla.
-245|Automaattinen aikavyöhyke
-246|Pitää aikavyöhykkeen oikeana sijaintisi perusteella, kun matkustat.
-247|_Viimeistele käyttöönotto
-248|Levysi on salattu
-249|Tietosi on suojattu. Salalause kysytään joka kerta, kun tietokone käynnistyy.
-250|Levyn salaus
-251|Salaus suojaa tietosi, jos tietokone katoaa tai varastetaan.
-252|Ei saatavilla tässä asennuksessa
-253|Salaus suojaa tiedostosi, jos tietokone katoaa tai varastetaan. Ilman salalausetta kukaan ei voi lukea levyä.
-254|Salaa levy
-255|Salalause kysytään joka kerta, kun tietokone käynnistyy.
-256|Salaus alkaa seuraavalla uudelleenkäynnistyksellä
-257|Levy salataan sen jälkeen taustalla, kun käytät tietokonetta. Jos salalause katoaa, kukaan ei voi palauttaa tietoja.
-258|Valmistellaan MANia
-259|Valmistellaan kaikkea…
-260|_Käynnistä uudelleen
-261|_Takaisin
-262|Valmistellaan
-263|Käyttöönottoloki
-264|Kaikki valmista!
-265|Jokin meni pieleen
-266|Päivittäinen
-267|Ennen päivitystä
-268|Ennen palautusta
-269|Ennen uudelleenasennusta
-270|Manuaalinen
-271|Ei vielä tilannevedoksia
-272|Luo sellainen ennen suuria muutoksia järjestelmään.
-273|Palauta…
-274|Poista tilannevedos
-275|{free} vapaana / {size}. Järjestelmä, kotikansiot ja tilannevedokset jakavat tämän tilan; tilannevedokset vievät tilaa vain siitä, mikä on muuttunut niiden ottamisen jälkeen.
-276|_OK
-277|Luo tilannevedos
-278|Tallentaa järjestelmän nykyisen tilan. Kotikansion henkilökohtaiset tiedostot eivät sisälly.
-279|Kuvaus, esimerkiksi ”Ennen ajurien asennusta”
-280|_Luo
-281|Manuaalinen tilannevedos
-282|Poistetaanko tilannevedos?
-283|”{description}” ({date}) poistetaan pysyvästi.
-284|_Poista
-285|Palautetaanko tämä tilannevedos?
-286|Järjestelmä palaa uudelleenkäynnistyksen jälkeen tilaan ”{description}” ({date}). Henkilökohtaiset tiedostosi eivät muutu.\n\nNykyinen järjestelmä tallennetaan ensin tilannevedokseksi, joten tämän voi perua.
-287|_Palauta
-288|Käynnistä uudelleen viimeistelläksesi palautuksen
-289|Käynnistä uudelleen _myöhemmin
-290|Käynnistä uudelleen _nyt
-291|Tilannevedokset
-292|Palautuspisteet
-293|Tilannevedokset tallentavat käyttöjärjestelmän tilan. Vedoksen palauttaminen vie järjestelmän takaisin siihen hetkeen, mikä auttaa epäonnistuneen päivityksen tai asetusmuutoksen jälkeen. Henkilökohtaisiin tiedostoihisi ei koskaan kosketa.
-294|Automaattiset tilannevedokset
-295|Päivittäiset tilannevedokset
-296|Kerran päivässä, kun tietokone on päällä
-297|Säilytettävät päivittäiset vedokset
-298|Ennen ohjelmistopäivityksiä
-299|Otetaan automaattisesti, kun paketteja asennetaan, päivitetään tai poistetaan
-300|Säilytettävät päivitysvedokset
-301|Tallennustila
-302|Levytila
-303|Jos MAN ei käynnisty
-304|Valitse käynnistysvalikosta ”Restore a MAN snapshot” saadaksesi toimivan järjestelmän takaisin.
-305|Tilannevedokset eivät ole käytettävissä
-306|Tilannevedokset toimivat MANissa, joka on asennettu MAN-asentimen luomalla Btrfs-rakenteella. Tämä järjestelmä (esimerkiksi live-istunto) ei käytä sitä.
-307|Palautus odottaa: käynnistä tietokone uudelleen viimeistelläksesi sen
-308|Käynnistä uudelleen nyt
-309|Odota, kunnes nykyinen toiminto valmistuu.
-310|Hae
-311|Kopioi leikepöydälle
-312|Koordinoitu yleisaika
-313|Englanti (USA)
-317|Tarkistetaan päivitystä
-318|Varmistetaan, että päivitys on aito ja täydellinen…
-319|MAN-päivitys
-320|Tätä päivitystä ei voi asentaa
-321|Päivitystä ei voitu lukea.
-322|Päivitys versiosta {name} {version}
-323|{name} {version} on asennettu
-324|Versio
-325|Julkaistu
-326|Latauksen koko
-327|Tarvittava tila
-328|Aitous
-329|Vahvistettu, allekirjoittaja ”{signer}”
-330|Uutta
-331|_Jatka
-332|Tämä päivitys ei ole uudempi kuin asennettu {name} {version}.
-333|Päivitys
-334|Lue tämän päivityksen lisenssiehdot.
-335|Hyväksyn lisenssiehdot
-336|Mihin päivitys asennetaan?
-337|Järjestelmä korvataan; kotikansiosi tiedostoihin ei kosketa.
-338|Valitse asennus.
-339|käynnissä nyt
-340|{name} {version} tässä tietokoneessa
-341|{name} laitteella {model}
-342|MAN-asennusta ei löytynyt
-343|Päivitykset asennetaan käynnissä olevasta asennetusta MAN-järjestelmästä, ei live-istunnosta.
-344|Asennuksen sijainti
-345|Yhteenveto
-346|Säilytetään
-347|Tiedostosi
-348|Kaikki kotikansiossasi
-349|Tilit ja salasanat
-350|Käyttäjät, ryhmät, tietokoneen nimi
-351|Yhteydet ja asetukset
-352|Wi-Fi, aikavyöhyke, näppäimistö, ulkoasu ja tilannevedokset
-353|Flatpak-sovellukset
-354|Sekä kaikki hakemistoissa /usr/local ja /opt
-355|Korvataan
-356|Aptilla asennetut ohjelmistot ja muut järjestelmätiedostojen muutokset korvataan uudella järjestelmällä.
-357|Käyttöjärjestelmä
-358|Korvataan versiolla {name} {version}. Nykyisen järjestelmän voi palauttaa tilannevedoksesta.
-359|Tietokone käynnistyy uudelleen päivityksen asentamiseksi
-360|Valmistelun jälkeen MAN käynnistyy uudelleen, asentaa päivityksen muutamassa sekunnissa ja käynnistyy taas uudelleen.
-361|_Asenna päivitys
-362|Luodaanko ensin tilannevedos?
-363|Tilannevedos tallentaa nykyisen järjestelmän, joten voit palata siihen, jos jokin ei toimi päivityksen jälkeen. Tätä suositellaan.
-364|_Älä luo
-365|_Luo tilannevedos
-366|Valmistellaan: {name} {version}
-367|Käynnistä uudelleen ja asenna
-368|Tietokone käynnistyy uudelleen kahdesti. Tiedostosi ovat turvassa.
-369|Uudelleenkäynnistys automaattisesti {r} sekunnin kuluttua
-370|Uudelleenkäynnistys automaattisesti 30 sekunnin kuluttua
-371|Päivitys asennetaan, kun seuraavan kerran käynnistät uudelleen.
-372|Valmis
-373|Päivitystä ei voitu valmistella
-374|Järjestelmääsi ei muutettu.
-375|_Yritä uudelleen
-376|Päivitysloki
-377|Epäonnistui
-378|Järjestelmäsi päivitettiin
-379|MAN päivitettiin versioon {version}.\nAiemmin: MAN {previous}.
-380|_Valmis
-381|Avaa MAN-päivitys
-382|MAN-päivitykset
-383|Tarkistetaan asennussuunnitelmaa
-384|Valmistellaan levyä
-385|Kopioidaan MAN levylle
-386|Määritetään uutta järjestelmää
-387|Asennetaan käynnistyslatainta
-388|Luodaan ensimmäistä tilannevedosta
-389|Viimeistellään
-390|Poistetaan vanhoja osioallekirjoituksia
-391|Luodaan osioita
-392|Alustetaan EFI-järjestelmäosiota
-393|Salataan järjestelmäosiota
-394|Alustetaan käynnistysosiota
-395|Luodaan Btrfs-tiedostojärjestelmää
-396|Poistetaan vanhoja tiedostojärjestelmäallekirjoituksia
-397|Avataan salatun asennuksen lukitusta
-398|Tallennetaan nykyistä järjestelmää tilannevedokseksi
-399|Poistetaan edellistä järjestelmää
-400|Kirjoitetaan tiedostojärjestelmätaulua
-401|Asetetaan tietokoneen nimeä ja tunnistetta
-402|Poistetaan live-istunnon tilejä
-403|Luodaan tiliäsi
-404|Valmistellaan MAN Setupia ensimmäistä käynnistystä varten
-405|Asetetaan aikavyöhykettä ja näppäimistöä
-406|Poistetaan asenninta uudesta järjestelmästä
-407|Rakennetaan käynnistyskuvaa (initramfs)
-408|Määritetään GRUBia
-409|Asennetaan GRUB EFI-järjestelmäosioon
-410|Asennetaan varakäynnistyslatainta
-411|Kirjoitetaan käynnistysvalikkoa
-412|Levy valmis
-413|Luodaan tilannevedosta uudesta järjestelmästä
-414|Lisätään tilannevedos käynnistysvalikkoon
-415|Irrotetaan
-416|Asentimen avustajan on oltava käynnissä root-käyttäjänä.
-417|Tätä tietokonetta ei käynnistetty UEFI-tilassa. MAN vaatii UEFI:n.
-418|Käyttäjätunnus ei kelpaa.
-419|Salasana vaaditaan.
-420|Tietokoneen nimi ei kelpaa.
-421|Tuntematon kieli.
-422|Salauksen salalauseessa on oltava vähintään 8 merkkiä.
-423|Levy muuttui asennuksen vahvistamisen jälkeen. Mitään ei muutettu; tarkista ja vahvista uudelleen.
-424|Valitse järjestelmäosio.
-425|Vahvistetulla levyllä ei ole valittua järjestelmäosiota.
-426|Käynnistysosion on oltava erillään EFI- ja järjestelmäosioista.
-427|Käynnistysosion on oltava vähintään 512 Mt.
-428|Asennusta ei ole valittu.
-429|Vahvistetulla levyllä ei ole valittua asennusta.
-430|Salatussa asennuksessa ei ole MAN_BOOT-osiota.
-431|Hakemistosta /boot ei löytynyt ydintä, jolle on vastaavat moduulit.
-432|Kielen vaihtaa järjestelmäavustaja.
-433|Otetaan asetuksiasi käyttöön
-434|Valmistellaan levyn salausta
-435|Viimeistellään
-436|MAN Setupin viimeistelee järjestelmäavustaja.
-437|MAN Setup on jo tehty tässä tietokoneessa.
-438|Tuntematon korostusväri.
-439|Valittu taustakuva ei ole saatavilla.
-440|Tätä järjestelmää ei voi salata.
-441|Käyttöönottoavain puuttuu, joten salaus ei voi jatkua taustalla.
-442|Järjestelmää ei ole asennettu Btrfs:lle, joten tilannevedokset eivät ole käytettävissä.
-443|Tilannevedoksen palautus odottaa uudelleenkäynnistystä. Käynnistä tietokone ensin uudelleen viimeistelläksesi sen.
-444|Virheellinen tilannevedoksen tunniste.
-445|Tarkistetaan päivitystä
-446|Luodaan tilannevedosta
-447|Valmistellaan päivitysaluetta
-448|Puretaan uutta järjestelmää
-449|Siirretään tilejäsi ja asetuksiasi
-450|Valmistellaan uudelleenkäynnistystä
-451|Purettu
-452|Tilit
-453|Poistetaan vain asentimen käyttämiä ohjelmistoja
-454|Rakennetaan päivityksen käynnistyskuvaa
-455|Lisätään kertakäyttöistä käynnistysmerkintää
-456|Päivitys on aito
-457|Tilannevedos luotu
-458|Ohitettu
-459|Päivitysalue valmis
-460|Valmistellaan uutta järjestelmää
-461|Päivitystiedosto on vioittunut (tarkistussumma ei täsmää). Lataa se uudelleen.
-462|Päivitystiedostoa ei voitu lukea kokonaan.
-463|Päivitys ei sisällä ydintä.
-464|Päivitykset asentaa järjestelmäavustaja.
-465|Valittua asennusta ei löytynyt.
-466|Vain käynnissä olevan MAN-asennuksen voi päivittää.
-467|Tämä ei ole MAN-päivitystiedosto (ei manifestia).
-468|Päivitystä ei ole allekirjoitettu, joten siihen ei voi luottaa.
-469|Päivityksen allekirjoitus on vioittunut.
-470|Päivitys ei ole MANin allekirjoittama. Sitä on voitu muuttaa tai se on peräisin epäluotettavasta lähteestä.
-471|Päivityksen manifesti on virheellinen.
-472|Salalause on väärä, tai salattua osiota ei voi avata.
-473|Sininen
-474|Sinivihreä
-475|Vihreä
-476|Keltainen
-477|Oranssi
-478|Punainen
-479|Vaaleanpunainen
-480|Violetti
-481|Liuskeenharmaa
-482|Järjestelmän asennus
-483|Asenna MAN tähän tietokoneeseen
-484|Järjestelmän palautus
-485|Luo ja palauta järjestelmän tilannevedoksia
-486|Järjestelmäpäivitysten asennus
-487|Asenna MAN-järjestelmäpäivitystiedosto
-488|Tarjoaa MANin asennusta, kun live-istunto käynnistyy
-489|MAN-päivityksen ilmoitus
-490|Kertoo kerran kirjautumisen jälkeen, että MAN on päivitetty
-491|Ota uusi MAN-tietokoneesi käyttöön
-492|MANin ensimmäinen käyttöönotto
-314|MAN {version} on julkaistu!
-315|Voit päivittää siihen.
-316|Avaa päivitykset
-493|MAN-päivitykset
-494|Kertoo, kun MANista on saatavilla uusi versio
+0|Tämä tiedosto ei ole sovellus, jonka voi asentaa tähän (.deb, .flatpak, .flatpakref tai AppImage).
+1|Tämä sovellus on tehty {arch}-tietokoneille eikä toimi tällä tietokoneella (x86-64).
+2|Tiedostoa ei voitu lukea. Se voi olla vioittunut.
+3|Tämä ei ole AppImage.
+4|Johdanto
+5|Lisenssi
+6|Kohteen valinta
+7|Asennustapa
+8|Asennus
+9|Yhteenveto
+10|_Jatka
+11|Tervetuloa sovelluksen {name} asennusohjelmaan
+12|Ohjelmiston käyttöoikeussopimus
+13|Hyväksytkö lisenssin?
+14|Jatkaaksesi asennusta sinun on hyväksyttävä ohjelmiston käyttöoikeussopimuksen ehdot.
+15|_Lue lisenssi
+16|_Hyväksy
+17|Valitse kohde
+18|Vakioasennus
+19|_Asenna
+20|Debian-paketti (.deb)
+21|Flatpak-sovellus
+22|Flatpak-sovellus lähteestä {source}
+23|AppImage
+24|Sinut opastetaan tämän ohjelmiston asentamiseen tarvittavien vaiheiden läpi.
+25|Versio
+26|Julkaisija
+27|Tyyppi
+28|Koko
+29|Verkkosivusto
+30|Tiedosto
+31|Tämä sovellus on jo asennettu. Uusi asennus korvaa sen.
+32|.deb-pakettien sovelluksista tulee osa järjestelmää. Kun MAN päivitetään, ne poistetaan ja ne on asennettava uudelleen. Flatpak-sovellukset ja AppImaget säilyvät.
+33|Asenna sovelluksia vain luotettavista lähteistä.
+34|Mihin haluat asentaa sovelluksen {name}?
+35|Vain sinun tilisi voi käyttää sovellusta.
+36|Vaatii ylläpitäjän oikeudet.
+37|Vain minulle
+38|Kaikille tämän tietokoneen käyttäjille
+39|Tämä vie {size} tilaa tietokoneelta.
+40|Sovellus ladataan lähteestä {source}.
+41|Sovellus asennetaan kaikille tämän tietokoneen käyttäjille.
+42|Sovellus asennetaan vain sinulle.
+43|AppImage siirretään kansioon {folder} ja lisätään sovelluksiisi.
+44|Asenna {name} napsauttamalla Asenna.
+45|Tarkistetaan, mitä muuta sovellus tarvitsee…
+46|Asentaa myös tarvittavat paketit: {list}
+47|Kaikki sovelluksen tarvitsemat paketit eivät ole vielä saatavilla. Asennus hakee ensin uusimmat pakettiluettelot; jos ne puuttuvat yhä, sovellusta ei voi asentaa.
+48|Asennetaan {name}…
+49|Valmistellaan…
+50|Tiedot
+51|Asennetaan pakettia…
+52|Siirretään sovellusta kansioonsa…
+53|Sovellusta ei voitu asentaa.
+54|Asennetaan sovellusta Flatpakilla…
+55|Loki
+56|_Sulje
+57|Asennus onnistui
+58|Sovellus asennettiin.
+59|Asennus epäonnistui
+60|_Avaa
+61|_Näytä tiedot
+62|Asennusloki
+63|Sovellusten asennus
+64|_Takaisin
+65|Luetaan sovellusta…
+66|Asenna {name}
+67|Sovellukset
+68|Valitse asennettava sovellus
+69|Järjestelmäavustajaa ei voitu käynnistää.
+70|Järjestelmäavustajaan ei saatu yhteyttä.
+71|Yhteys järjestelmäavustajaan katkesi.
+72|Valtuutus peruttiin.
+73|Tähän toimintoon tarvitaan ylläpitäjän oikeudet.
+74|Järjestelmäavustaja pysähtyi odottamatta.
+75|Ei EFI-järjestelmäosiota
+76|Vapaana vain {free}, MAN tarvitsee {need}. Vapauta tilaa DUHACH!-sovelluksella Windowsissa.
+77|Ei vapaata tilaa. Käynnistä DUHACH! Windowsissa ja tee tilaa MANille.
+78|MAN on käynnissä tältä levyltä
+79|Käytössä: osio on liitetty
+80|Liian pieni, MAN tarvitsee {need}
+81|Asenna MAN
+82|MANia asennetaan. Odota, kunnes asennus valmistuu.
+83|Kieli
+84|_Käynnistä uudelleen tällä kielellä
+85|Live-istunto käynnistyy uudelleen valitulla kielellä, ja MAN asennetaan sillä kielellä.
+86|Tervetuloa MANiin
+87|Nopea, avoin ja täysin muokattava GNOME-järjestelmä.\nAsenna se tähän tietokoneeseen tai jatka live-istunnon tutkimista.
+88|_Asenna MAN…
+89|_Jatka MANin kokeilua
+90|Etsitään levyjä…
+91|Tervetuloa
+92|Tämä tietokone käynnistettiin vanhassa BIOS-tilassa. MAN voidaan asentaa vain UEFI-tietokoneisiin: käynnistä uudelleen ja valitse UEFI-käynnistysvaihtoehto.
+93|Järjestelmäavustaja ei palauttanut levytietoja.
+94|  ·  EFI
+95|_Seuraava
+96|Tyhjennä levy ja asenna MAN
+97|Kaikki valitun levyn tiedot poistetaan, myös Windows.
+98|Suositeltu. Kaikki valitun levyn tiedot poistetaan.
+99|Asenna Windowsin rinnalle
+100|Suositeltu. MAN käyttää Windowsin vieressä olevaa vapaata tilaa; Windows ja sen tiedostot säilyvät. Valitse järjestelmä jokaisella käynnistyskerralla.
+101|Asenna MAN uudelleen
+102|Korvaa järjestelmän mutta säilyttää henkilökohtaiset tiedostot hakemistossa /home. Nykyinen järjestelmä tallennetaan tilannevedokseksi.
+103|Mukautetut osiot
+104|Asiantuntijoille: valitse osiot itse tai luo ne Levyt-sovelluksella.
+105|Levy
+106|Valitse tyhjennettävä levy. Levyt, joita ei voi käyttää, näytetään syineen.
+107|Levyjä ei löytynyt
+108|Vapaa tila Windowsin vieressä
+109|Windowsin osioihin ei kosketa. MAN jakaa EFI-järjestelmäosion ja lisää Windowsin käynnistysvalikkoonsa.
+110|{size} vapaana
+111|ei vapaata tilaa
+112|{model} (Windows)
+113|Korvattava asennus
+114|ei kotikansioita
+115|kotikansiot: {list}
+116|tilannevedoksia: {n}
+117|MAN laitteella {model}
+118|Salalause laitteelle {device}
+119|Avaa lukitus
+120|Asennusta ei voitu tutkia.
+121|Osiot
+122|Järjestelmäosio alustetaan Btrfs-muotoon, ja se sisältää alitaltiot @system, @home ja @snapshots. Levyn, jolta MAN on käynnissä, osioita ei näytetä.
+123|Avaa Levyt osioiden luomista tai koon muuttamista varten
+124|Päivitä osioluettelo
+125|Valitse osio
+126|EFI-järjestelmäosio
+127|Alusta EFI-järjestelmäosio
+128|Jätä pois päältä, jotta muiden järjestelmien käynnistyslataimet säilyvät
+129|Järjestelmäosio (alustetaan Btrfs-muotoon)
+130|Käynnistysosio (tarvitaan salauksen kanssa)
+131|Osioluettelo päivitetty
+132|Turvallisuus
+133|Salaa järjestelmä
+134|Suojaa tietosi, jos tietokone katoaa tai varastetaan. Salalause kysytään jokaisella käynnistyskerralla.
+135|Salalause
+136|Vahvista salalause
+137|Säilytä tämä salalause turvassa
+138|Jos se katoaa, kukaan ei voi palauttaa tietoja. Ydin ja käynnistystiedostot ovat pienellä salaamattomalla käynnistysosiolla.
+139|Salalauseessa on oltava vähintään 8 merkkiä.
+140|Salalauseet eivät täsmää.
+141|Valitse levy.
+142|Valitse levy, jolla Windows on.
+143|Valitse korvattava asennus.
+144|Avaa ensin salatun asennuksen lukitus.
+145|Tällä osiolla ei ole MAN-järjestelmää.
+146|Valitse EFI-järjestelmäosio.
+147|Valitse järjestelmäosio.
+148|EFI-osion ja järjestelmäosion on oltava eri osioita.
+149|Salaus tarvitsee erillisen käynnistysosion.
+150|Järjestelmäosion on oltava vähintään {size}.
+151|EFI-osio ei ole FAT-muodossa; ota alustus käyttöön.
+152|Järjestelmäosio on liitetty; irrota se ensin Levyt-sovelluksessa.
+153|Mihin MAN asennetaan?
+154|Aika ja näppäimistö
+155|Aikavyöhyke
+156|Näppäimistöasettelu
+157|Testaa näppäimistöä
+158|Kirjoita tähän ja tarkista, että näppäimet tuottavat oikeat merkit.
+159|Kirjoita tähän
+160|Aikavyöhyke ja näppäimistö
+161|Levyä ei ole valittu
+162|Järjestelmäosiota ei ole valittu
+163|Järjestelmäosio katosi
+164|Asennusta ei ole valittu
+165|Levy katosi
+166|Tarkistus
+167|Kohde
+168|Tyhjennä levy ja asenna
+169|Mukautetut osiot
+170|Asenna uudelleen, säilytä /home
+171|Windowsin rinnalle
+172| (alustetaan)
+173| (säilytetään)
+174|Järjestelmäosio
+175|{partition} (alustetaan)
+176|Käynnistysosio
+177|Tila MANille
+178|{free} vapaata tilaa (luodaan käynnistysosio ja järjestelmäosio)
+179|Windows
+180|Ei muutoksia. Se näkyy MANin käynnistysvalikossa; EFI-järjestelmäosio on yhteinen.
+181|Salaus
+182|Käytössä (LUKS2)
+183|Ei käytössä
+184|Tiedostojärjestelmä
+185|Btrfs: @system MANille, @home tiedostoillesi, @snapshots palautuspisteille. Kaikki jakavat vapaan tilan.
+186|Järjestelmä
+187|Tilisi
+188|Luodaan MAN Setupissa, kun tietokone käynnistetään ensimmäisen kerran, yhdessä tietokoneen nimen, ulkoasun ja yksityisyysasetusten kanssa.
+189|Näppäimistö
+190|Kaikki tiedot laitteelta {model} ({path}) poistetaan.
+191|_Tyhjennä ja asenna
+192|Valitut osiot alustetaan. Muut osiot eivät muutu.
+193|_Alusta ja asenna
+194|Nykyinen järjestelmä korvataan. Tiedostosi hakemistossa /home säilyvät, ja vanha järjestelmä tallennetaan tilannevedokseksi.
+195|_Asenna uudelleen
+196|MAN asennetaan vapaaseen tilaan. Windows ja sen tiedostot eivät muutu.
+197|Valmis asennettavaksi
+198|Tyhjennetäänkö {model}?
+199|Kaikki tiedostot ja osiot laitteelta {path} ({size}) poistetaan pysyvästi. Tätä ei voi perua.
+200|Tyhjennä ja asenna
+201|Alustetaanko valitut osiot?
+202|Kaikki valittujen osioiden tiedot poistetaan pysyvästi. Muut osiot eivät muutu.
+203|Alusta ja asenna
+204|Asennetaanko MAN Windowsin rinnalle?
+205|MAN asennetaan laitteen {model} ({path}) vapaaseen tilaan ({free}). Windows ja sen tiedostot eivät muutu.
+206|Asenna
+207|Asennetaanko MAN uudelleen?
+208|Asennettu järjestelmä korvataan uudella kopiolla. Henkilökohtaiset tiedostot hakemistossa /home säilyvät, ja vanha järjestelmä on saatavilla tilannevedoksena.
+209|Asenna uudelleen
+210|_Peru
+211|Asennetaan MANia
+212|Käynnistetään…
+213|Asennetaan
+214|Vaihe {index}/{n}  ·  {title}
+215|MAN on asennettu
+216|Käynnistä tietokone uudelleen ja ala käyttää MANia. Valikosta voit valita jokaisella käynnistyskerralla MANin tai Windowsin; MAN poistaa asentimen väliaikaisen osion ensimmäisellä käynnistyskerralla.
+217|Käynnistä tietokone uudelleen ja ala käyttää MANia. Voit irrottaa asennusmedian; jos se jää kiinni, MAN käynnistyy silti uudelta levyltä.
+218|_Käynnistä uudelleen nyt
+219|Valmis
+220|Asennus epäonnistui
+221|Muita levyjä ei muutettu, ja asennin on vapauttanut kohdelevyn. Voit tarkistaa suunnitelman ja yrittää uudelleen.
+222|_Tarkista ja yritä uudelleen
+223|Hae kieliä
+224|Hae maita
+225|Järjestelmälevyä ei löytynyt.
+226|Salaus vaatii MAN-asentimen luoman Btrfs-rakenteen.
+227|Tässä asennuksessa ei ole erillistä käynnistysosiota, jota salaus tarvitsee. Asenna MAN uudelleen valinnalla ”Tyhjennä levy” käyttääksesi salausta.
+228|MAN Setup
+229|Missä olet?
+230|Maasi tai alueesi määrää päivämäärien, kellonaikojen ja lukujen muodon.
+231|Maa
+232|GNU General Public License, versio 2
+233|Linux-ydin ja monet järjestelmätyökalut
+234|GNU General Public License, versio 3
+235|Monet GNU- ja GNOME-ohjelmat
+236|GNU Lesser General Public License, versio 2.1
+237|GTK, GLib ja monet kirjastot
+238|GNU Lesser General Public License, versio 3
+239|Kirjastot
+240|Mozilla Public License 2.0
+241|Mozillan ja muiden ohjelmat ja kirjastot
+242|Apache-lisenssi 2.0
+243|Kirjastot ja työkalut
+244|Käyttöoikeussopimus
+245|Lue ja hyväksy ehdot, joilla MAN tarjotaan.
+246|Lisenssit
+247|Lisenssin teksti ei ole saatavilla ({path}).
+248|Olen lukenut lisenssiehdot ja hyväksyn ne
+249|Langallinen
+250|Ei yhdistetty
+251|Yhdistä internetiin
+252|Yhteyden avulla MAN voi asettaa kellonajan ja pitää ohjelmistosi ajan tasalla. Voit tehdä tämän myös myöhemmin.
+253|Tarkistetaan yhteyttä…
+254|Wi-Fi-verkot
+255|Hae uudelleen
+256|_Ohita
+257|Voit yhdistää myöhemmin Asetuksissa.
+258|Yhdistetty
+259|Ei yhdistetty
+260|Verkkoja ei löytynyt
+261|Internet
+262|Yhdistetty verkkoon ”{ssid}”
+263|Verkkoon ”{ssid}” ei voitu yhdistää
+264|Yhdistä verkkoon ”{ssid}”
+265|Anna verkon salasana.
+266|_Yhdistä
+267|Luo tilisi
+268|Sinusta tulee tämän tietokoneen ylläpitäjä, jolla on täydet root-oikeudet sudon kautta.
+269|Koko nimi
+270|Käyttäjätunnus
+271|Salasana
+272|Vahvista salasana
+273|Kirjaudu automaattisesti
+274|Ohita kirjautumisnäkymä tietokoneen käynnistyessä
+275|Olemassa olevat kotikansiot
+276|Käytä samaa käyttäjätunnusta jatkaaksesi aiemmasta asennuksesta säilytetyn kansion käyttöä.
+277|Käytä
+278|Lisäasetukset
+279|Tietokoneen nimi
+280|Aseta root-salasana
+281|Sallii kirjautumisen suoraan root-käyttäjänä. Ilman sitä käytä sudoa omalla salasanallasi.
+282|Root-salasana
+283|Vahvista root-salasana
+284|Anna nimesi.
+285|Valitse käyttäjätunnus.
+286|Järjestelmä käyttää jo tätä käyttäjätunnusta.
+287|Tämä käyttäjätunnus on varattu järjestelmälle.
+288|Käyttäjätunnuksissa käytetään pieniä kirjaimia, numeroita, - ja _, ja ne alkavat kirjaimella.
+289|Valitse salasana.
+290|Salasanat eivät täsmää.
+291|Tietokoneen nimessä saa olla kirjaimia, numeroita ja yhdysmerkkejä.
+292|Anna root-salasana kahdesti.
+293|Vinkki: vähintään 8 merkin salasana on paljon turvallisempi.
+294|Tili
+295|Tumma
+296|Vaalea
+297|Tee siitä omasi
+298|Valitse tyyli, korostusväri ja taustakuva. Näet jokaisen muutoksen heti.
+299|Tyyli
+300|Korostusväri
+301|Taustakuva
+302|Mukauta
+303|Yksityisyys
+304|Valitse, mitkä toiminnot saavat käyttää tietoja sinusta. Voit muuttaa tätä milloin tahansa Asetuksissa.
+305|Sijaintipalvelut
+306|Sallii Karttojen ja Sään kaltaisten sovellusten selvittää likimääräisen sijaintisi lähellä olevien Wi-Fi-verkkojen avulla.
+307|Automaattinen aikavyöhyke
+308|Pitää aikavyöhykkeen oikeana sijaintisi perusteella, kun matkustat.
+309|_Viimeistele käyttöönotto
+310|Levysi on salattu
+311|Tietosi on suojattu. Salalause kysytään joka kerta, kun tietokone käynnistyy.
+312|Levyn salaus
+313|Salaus suojaa tietosi, jos tietokone katoaa tai varastetaan.
+314|Ei saatavilla tässä asennuksessa
+315|Salaus suojaa tiedostosi, jos tietokone katoaa tai varastetaan. Ilman salalausetta kukaan ei voi lukea levyä.
+316|Salaa levy
+317|Salalause kysytään joka kerta, kun tietokone käynnistyy.
+318|Salaus alkaa seuraavalla uudelleenkäynnistyksellä
+319|Levy salataan sen jälkeen taustalla, kun käytät tietokonetta. Jos salalause katoaa, kukaan ei voi palauttaa tietoja.
+320|Valmistellaan MANia
+321|Valmistellaan kaikkea…
+322|_Käynnistä uudelleen
+323|_Takaisin
+324|Valmistellaan
+325|Käyttöönottoloki
+326|Kaikki valmista!
+327|Jokin meni pieleen
+328|Päivittäinen
+329|Ennen päivitystä
+330|Ennen palautusta
+331|Ennen uudelleenasennusta
+332|Manuaalinen
+333|Ei vielä tilannevedoksia
+334|Luo sellainen ennen suuria muutoksia järjestelmään.
+335|Palauta…
+336|Poista tilannevedos
+337|{free} vapaana / {size}. Järjestelmä, kotikansiot ja tilannevedokset jakavat tämän tilan; tilannevedokset vievät tilaa vain siitä, mikä on muuttunut niiden ottamisen jälkeen.
+338|_OK
+339|Luo tilannevedos
+340|Tallentaa järjestelmän nykyisen tilan. Kotikansion henkilökohtaiset tiedostot eivät sisälly.
+341|Kuvaus, esimerkiksi ”Ennen ajurien asennusta”
+342|_Luo
+343|Manuaalinen tilannevedos
+344|Poistetaanko tilannevedos?
+345|”{description}” ({date}) poistetaan pysyvästi.
+346|_Poista
+347|Palautetaanko tämä tilannevedos?
+348|Järjestelmä palaa uudelleenkäynnistyksen jälkeen tilaan ”{description}” ({date}). Henkilökohtaiset tiedostosi eivät muutu.\n\nNykyinen järjestelmä tallennetaan ensin tilannevedokseksi, joten tämän voi perua.
+349|_Palauta
+350|Käynnistä uudelleen viimeistelläksesi palautuksen
+351|Käynnistä uudelleen _myöhemmin
+352|Käynnistä uudelleen _nyt
+353|Tilannevedokset
+354|Palautuspisteet
+355|Tilannevedokset tallentavat käyttöjärjestelmän tilan. Vedoksen palauttaminen vie järjestelmän takaisin siihen hetkeen, mikä auttaa epäonnistuneen päivityksen tai asetusmuutoksen jälkeen. Henkilökohtaisiin tiedostoihisi ei koskaan kosketa.
+356|Automaattiset tilannevedokset
+357|Päivittäiset tilannevedokset
+358|Kerran päivässä, kun tietokone on päällä
+359|Säilytettävät päivittäiset vedokset
+360|Ennen ohjelmistopäivityksiä
+361|Otetaan automaattisesti, kun paketteja asennetaan, päivitetään tai poistetaan
+362|Säilytettävät päivitysvedokset
+363|Tallennustila
+364|Levytila
+365|Jos MAN ei käynnisty
+366|Valitse käynnistysvalikosta ”Restore a MAN snapshot” saadaksesi toimivan järjestelmän takaisin.
+367|Tilannevedokset eivät ole käytettävissä
+368|Tilannevedokset toimivat MANissa, joka on asennettu MAN-asentimen luomalla Btrfs-rakenteella. Tämä järjestelmä (esimerkiksi live-istunto) ei käytä sitä.
+369|Palautus odottaa: käynnistä tietokone uudelleen viimeistelläksesi sen
+370|Käynnistä uudelleen nyt
+371|Odota, kunnes nykyinen toiminto valmistuu.
+372|Hae
+373|Kopioi leikepöydälle
+374|Koordinoitu yleisaika
+375|Englanti (USA)
+376|MAN {version} on julkaistu!
+377|Voit päivittää siihen.
+378|Avaa päivitykset
+379|Tarkistetaan päivitystä
+380|Varmistetaan, että päivitys on aito ja täydellinen…
+381|MAN-päivitys
+382|Tätä päivitystä ei voi asentaa
+383|Päivitystä ei voitu lukea.
+384|Päivitys versiosta {name} {version}
+385|{name} {version} on asennettu
+386|Julkaistu
+387|Latauksen koko
+388|Tarvittava tila
+389|Aitous
+390|Vahvistettu, allekirjoittaja ”{signer}”
+391|Uutta
+392|Tämä päivitys ei ole uudempi kuin asennettu {name} {version}.
+393|Päivitys
+394|Lue tämän päivityksen lisenssiehdot.
+395|Hyväksyn lisenssiehdot
+396|Mihin päivitys asennetaan?
+397|Järjestelmä korvataan; kotikansiosi tiedostoihin ei kosketa.
+398|Valitse asennus.
+399|käynnissä nyt
+400|{name} {version} tässä tietokoneessa
+401|{name} laitteella {model}
+402|MAN-asennusta ei löytynyt
+403|Päivitykset asennetaan käynnissä olevasta asennetusta MAN-järjestelmästä, ei live-istunnosta.
+404|Asennuksen sijainti
+405|Säilytetään
+406|Tiedostosi
+407|Kaikki kotikansiossasi
+408|Tilit ja salasanat
+409|Käyttäjät, ryhmät, tietokoneen nimi
+410|Yhteydet ja asetukset
+411|Wi-Fi, aikavyöhyke, näppäimistö, ulkoasu ja tilannevedokset
+412|Flatpak-sovellukset
+413|Sekä kaikki hakemistoissa /usr/local ja /opt
+414|Korvataan
+415|Aptilla asennetut ohjelmistot ja muut järjestelmätiedostojen muutokset korvataan uudella järjestelmällä.
+416|Käyttöjärjestelmä
+417|Korvataan versiolla {name} {version}. Nykyisen järjestelmän voi palauttaa tilannevedoksesta.
+418|Tietokone käynnistyy uudelleen päivityksen asentamiseksi
+419|Valmistelun jälkeen MAN käynnistyy uudelleen, asentaa päivityksen muutamassa sekunnissa ja käynnistyy taas uudelleen.
+420|_Asenna päivitys
+421|Luodaanko ensin tilannevedos?
+422|Tilannevedos tallentaa nykyisen järjestelmän, joten voit palata siihen, jos jokin ei toimi päivityksen jälkeen. Tätä suositellaan.
+423|_Älä luo
+424|_Luo tilannevedos
+425|Valmistellaan: {name} {version}
+426|Käynnistä uudelleen ja asenna
+427|Tietokone käynnistyy uudelleen kahdesti. Tiedostosi ovat turvassa.
+428|Uudelleenkäynnistys automaattisesti {r} sekunnin kuluttua
+429|Uudelleenkäynnistys automaattisesti 30 sekunnin kuluttua
+430|Päivitys asennetaan, kun seuraavan kerran käynnistät uudelleen.
+431|Valmis
+432|Päivitystä ei voitu valmistella
+433|Järjestelmääsi ei muutettu.
+434|_Yritä uudelleen
+435|Päivitysloki
+436|Epäonnistui
+437|Järjestelmäsi päivitettiin
+438|MAN päivitettiin versioon {version}.\nAiemmin: MAN {previous}.
+439|_Valmis
+440|Avaa MAN-päivitys
+441|MAN-päivitykset
+442|Haetaan uusimpia pakettiluetteloita…
+443|Kopioidaan sovellusta
+444|Lisätään sovellus valikkoon
+445|Tiedostoa ei löytynyt.
+446|Pakettia ei voitu asentaa.
+447|Sovelluksen valikkokohta ei kelpaa.
+448|Tarkistetaan asennussuunnitelmaa
+449|Valmistellaan levyä
+450|Kopioidaan MAN levylle
+451|Määritetään uutta järjestelmää
+452|Asennetaan käynnistyslatainta
+453|Luodaan ensimmäistä tilannevedosta
+454|Viimeistellään
+455|Poistetaan vanhoja osioallekirjoituksia
+456|Luodaan osioita
+457|Alustetaan EFI-järjestelmäosiota
+458|Salataan järjestelmäosiota
+459|Alustetaan käynnistysosiota
+460|Luodaan Btrfs-tiedostojärjestelmää
+461|Poistetaan vanhoja tiedostojärjestelmäallekirjoituksia
+462|Avataan salatun asennuksen lukitusta
+463|Tallennetaan nykyistä järjestelmää tilannevedokseksi
+464|Poistetaan edellistä järjestelmää
+465|Kirjoitetaan tiedostojärjestelmätaulua
+466|Asetetaan tietokoneen nimeä ja tunnistetta
+467|Poistetaan live-istunnon tilejä
+468|Luodaan tiliäsi
+469|Valmistellaan MAN Setupia ensimmäistä käynnistystä varten
+470|Asetetaan aikavyöhykettä ja näppäimistöä
+471|Poistetaan asenninta uudesta järjestelmästä
+472|Rakennetaan käynnistyskuvaa (initramfs)
+473|Määritetään GRUBia
+474|Asennetaan GRUB EFI-järjestelmäosioon
+475|Asennetaan varakäynnistyslatainta
+476|Kirjoitetaan käynnistysvalikkoa
+477|Levy valmis
+478|Luodaan tilannevedosta uudesta järjestelmästä
+479|Lisätään tilannevedos käynnistysvalikkoon
+480|Irrotetaan
+481|Asentimen avustajan on oltava käynnissä root-käyttäjänä.
+482|Tätä tietokonetta ei käynnistetty UEFI-tilassa. MAN vaatii UEFI:n.
+483|Käyttäjätunnus ei kelpaa.
+484|Salasana vaaditaan.
+485|Tietokoneen nimi ei kelpaa.
+486|Tuntematon kieli.
+487|Salauksen salalauseessa on oltava vähintään 8 merkkiä.
+488|Levy muuttui asennuksen vahvistamisen jälkeen. Mitään ei muutettu; tarkista ja vahvista uudelleen.
+489|Valitse järjestelmäosio.
+490|Vahvistetulla levyllä ei ole valittua järjestelmäosiota.
+491|Käynnistysosion on oltava erillään EFI- ja järjestelmäosioista.
+492|Käynnistysosion on oltava vähintään 512 Mt.
+493|Asennusta ei ole valittu.
+494|Vahvistetulla levyllä ei ole valittua asennusta.
+495|Salatussa asennuksessa ei ole MAN_BOOT-osiota.
+496|Hakemistosta /boot ei löytynyt ydintä, jolle on vastaavat moduulit.
+497|Kielen vaihtaa järjestelmäavustaja.
+498|Otetaan asetuksiasi käyttöön
+499|Valmistellaan levyn salausta
+500|Viimeistellään
+501|MAN Setupin viimeistelee järjestelmäavustaja.
+502|MAN Setup on jo tehty tässä tietokoneessa.
+503|Tuntematon korostusväri.
+504|Valittu taustakuva ei ole saatavilla.
+505|Tätä järjestelmää ei voi salata.
+506|Käyttöönottoavain puuttuu, joten salaus ei voi jatkua taustalla.
+507|Järjestelmää ei ole asennettu Btrfs:lle, joten tilannevedokset eivät ole käytettävissä.
+508|Tilannevedoksen palautus odottaa uudelleenkäynnistystä. Käynnistä tietokone ensin uudelleen viimeistelläksesi sen.
+509|Virheellinen tilannevedoksen tunniste.
+510|Tarkistetaan päivitystä
+511|Luodaan tilannevedosta
+512|Valmistellaan päivitysaluetta
+513|Puretaan uutta järjestelmää
+514|Siirretään tilejäsi ja asetuksiasi
+515|Valmistellaan uudelleenkäynnistystä
+516|Purettu
+517|Tilit
+518|Poistetaan vain asentimen käyttämiä ohjelmistoja
+519|Rakennetaan päivityksen käynnistyskuvaa
+520|Lisätään kertakäyttöistä käynnistysmerkintää
+521|Päivitys on aito
+522|Tilannevedos luotu
+523|Ohitettu
+524|Päivitysalue valmis
+525|Valmistellaan uutta järjestelmää
+526|Päivitystiedosto on vioittunut (tarkistussumma ei täsmää). Lataa se uudelleen.
+527|Päivitystiedostoa ei voitu lukea kokonaan.
+528|Päivitys ei sisällä ydintä.
+529|Päivitykset asentaa järjestelmäavustaja.
+530|Valittua asennusta ei löytynyt.
+531|Vain käynnissä olevan MAN-asennuksen voi päivittää.
+532|Tämä ei ole MAN-päivitystiedosto (ei manifestia).
+533|Päivitystä ei ole allekirjoitettu, joten siihen ei voi luottaa.
+534|Päivityksen allekirjoitus on vioittunut.
+535|Päivitys ei ole MANin allekirjoittama. Sitä on voitu muuttaa tai se on peräisin epäluotettavasta lähteestä.
+536|Päivityksen manifesti on virheellinen.
+537|Salalause on väärä, tai salattua osiota ei voi avata.
+538|Sininen
+539|Sinivihreä
+540|Vihreä
+541|Keltainen
+542|Oranssi
+543|Punainen
+544|Vaaleanpunainen
+545|Violetti
+546|Liuskeenharmaa
+547|Pakettien asennus
+548|Asenna sovelluksia .deb-, Flatpak- ja AppImage-tiedostoista
+549|Järjestelmän asennus
+550|Asenna MAN tähän tietokoneeseen
+551|Järjestelmän palautus
+552|Luo ja palauta järjestelmän tilannevedoksia
+553|Järjestelmäpäivitysten asennus
+554|Asenna MAN-järjestelmäpäivitystiedosto
+555|Tarjoaa MANin asennusta, kun live-istunto käynnistyy
+556|MAN-päivityksen ilmoitus
+557|Kertoo kerran kirjautumisen jälkeen, että MAN on päivitetty
+558|Ota uusi MAN-tietokoneesi käyttöön
+559|MANin ensimmäinen käyttöönotto
+560|MAN-päivitykset
+561|Kertoo, kun MANista on saatavilla uusi versio

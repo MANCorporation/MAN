@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "هذا الملف ليس تطبيقًا يمكن تثبيته هنا (‎.deb أو ‎.flatpak أو ‎.flatpakref أو AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "هذا التطبيق مصنوع لحواسيب {arch} ولا يعمل على هذا الحاسوب (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "تعذرت قراءة الملف. ربما يكون تالفًا."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "هذا ليس ملف AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "مقدمة"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "الترخيص"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "اختيار الوجهة"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "نوع التثبيت"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "التثبيت"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "الملخص"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_تابع"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "مرحبًا بك في مثبّت {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "اتفاقية ترخيص البرنامج"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "هل توافق على الترخيص؟"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "لمتابعة التثبيت، يجب أن توافق على شروط اتفاقية ترخيص البرنامج."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_اقرأ الترخيص"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_أوافق"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "اختر وجهة"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "تثبيت قياسي"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_ثبّت"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "حزمة دبيان (‎.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "تطبيق Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "تطبيق Flatpak من {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "سنرشدك خلال الخطوات اللازمة لتثبيت هذا البرنامج."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "الإصدار"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "الناشر"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "النوع"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "الحجم"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "الموقع"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "الملف"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "هذا التطبيق مثبّت بالفعل. تثبيته مرة أخرى يستبدله."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "تصبح التطبيقات من حزم ‎.deb جزءًا من النظام. عند تحديث MAN تُزال ويجب تثبيتها من جديد. تُحفظ تطبيقات Flatpak وملفات AppImage."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "ثبّت التطبيقات من مصادر تثق بها فقط."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "أين تريد تثبيت {name}؟"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "يمكن لحسابك فقط استخدام التطبيق."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "يحتاج إلى صلاحيات المدير."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "لي فقط"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "لكل مستخدمي هذا الحاسوب"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "سيشغل هذا {size} من المساحة على حاسوبك."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "يُنزَّل التطبيق من {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "يُثبَّت التطبيق لكل مستخدمي هذا الحاسوب."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "يُثبَّت التطبيق لك فقط."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "يُنقل ملف AppImage إلى {folder} ويُضاف إلى تطبيقاتك."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "انقر «ثبّت» لتثبيت {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "جارٍ التحقق مما يحتاجه التطبيق أيضًا…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "يثبّت أيضًا الحزم التي يحتاجها: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "بعض الحزم التي يحتاجها التطبيق غير متاحة بعد. يجلب التثبيت أولًا أحدث قوائم الحزم؛ وإن بقيت مفقودة فلا يمكن تثبيت التطبيق."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "جارٍ تثبيت {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "جارٍ التحضير…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "التفاصيل"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "جارٍ تثبيت الحزمة…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "جارٍ نقل التطبيق إلى مجلده…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "تعذر تثبيت التطبيق."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "جارٍ تثبيت التطبيق باستخدام Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "السجل"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_أغلق"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "نجح التثبيت"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "ثُبّت التطبيق."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "فشل التثبيت"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_افتح"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_اعرض التفاصيل"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "سجل التثبيت"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "مثبّت التطبيقات"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_رجوع"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "جارٍ قراءة التطبيق…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "ثبّت {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "التطبيقات"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "اختر تطبيقًا لتثبيته"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "تعذّر تشغيل مساعد النظام."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "تعذّر التواصل مع مساعد النظام."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "انقطع الاتصال بمساعد النظام."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "أُلغي التخويل."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "يتطلب هذا الإجراء صلاحيات المدير."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "توقف مساعد النظام بشكل غير متوقع."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_التالي"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "نوع التثبيت"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (سيُهيّأ)"
 msgid "Boot Partition"
 msgstr "قسم الإقلاع"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "التثبيت"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "مساحة لـ MAN"
@@ -530,10 +798,6 @@ msgstr "_أعد التثبيت"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "يُثبَّت MAN في المساحة الحرة. لا يتغير Windows ولا ملفاته."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_ثبّت"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "جاهز للتثبيت"
@@ -598,10 +862,6 @@ msgstr "جارٍ تثبيت MAN"
 msgid "Starting…"
 msgstr "جارٍ البدء…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "التفاصيل"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "جارٍ التثبيت"
@@ -609,10 +869,6 @@ msgstr "جارٍ التثبيت"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "الخطوة {index} من {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "السجل"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "لم يتغير أي قرص آخر، وحرّر المثبّت القر�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_راجع وأعد المحاولة"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_اعرض التفاصيل"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "سجل التثبيت"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "التوقيت العالمي المنسّق"
 msgid "English (US)"
 msgstr "الإنجليزية (الولايات المتحدة)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "‏صدر MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "يمكنك التحديث إليه."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "افتح التحديثات"
 
@@ -1312,10 +1560,6 @@ msgstr "تحديث من {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} مثبّت"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "الإصدار"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "تاريخ الإصدار"
@@ -1339,10 +1583,6 @@ msgstr "موثّق، موقّع من «{signer}»"
 #: updater.rs:120
 msgid "What's New"
 msgstr "ما الجديد"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_تابع"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "تُثبَّت التحديثات من نظام MAN مثبّت وقيد 
 #: updater.rs:240
 msgid "Install Location"
 msgstr "موقع التثبيت"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "الملخص"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "افتح تحديث MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "تحديثات MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "جارٍ جلب أحدث قوائم الحزم…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "جارٍ نسخ التطبيق"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "جارٍ إضافة التطبيق إلى القائمة"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "لم يُعثر على الملف."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "تعذر تثبيت الحزمة."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "مدخل القائمة الخاص بالتطبيق غير صالح."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "جارٍ نقل حساباتك وإعداداتك"
 msgid "Preparing the restart"
 msgstr "جارٍ تجهيز إعادة التشغيل"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "فُكّ الضغط"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "الحسابات"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "جارٍ إزالة البرامج الخاصة بالمثبّت فقط"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "جارٍ بناء صورة إقلاع التحديث"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "جارٍ إضافة مدخل إقلاع لمرة واحدة"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "التحديث أصلي"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "أُنشئت اللقطة"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "تُخطّي"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "منطقة التحديث جاهزة"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "جارٍ تجهيز النظام الجديد"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "ملف التحديث تالف (المجموع الاختباري غير مطابق). نزّله مجددًا."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "تعذّرت قراءة ملف التحديث بالكامل."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "لا يحتوي التحديث على نواة."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "يجب أن يثبّت مساعد النظام التحديثات."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "لم يُعثر على التثبيت المختار."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "يمكن تحديث تثبيت MAN قيد التشغيل فقط."
 
@@ -1947,6 +2207,14 @@ msgstr "بنفسجي"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "رمادي أردوازي"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "مثبّت الحزم"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "ثبّت التطبيقات من ملفات ‎.deb وFlatpak وAppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

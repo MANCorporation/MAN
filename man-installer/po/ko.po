@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "이 파일은 여기서 설치할 수 있는 앱(.deb, .flatpak, .flatpakref 또는 AppImage)이 아닙니다."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "이 앱은 {arch} 컴퓨터용이며 이 컴퓨터(x86-64)에서는 작동하지 않습니다."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "파일을 읽을 수 없습니다. 손상되었을 수 있습니다."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "AppImage가 아닙니다."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "소개"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "사용권"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "설치 위치 선택"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "설치 유형"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "설치"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "요약"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "계속(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} 설치 프로그램에 오신 것을 환영합니다"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "소프트웨어 사용권 계약"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "사용권에 동의하십니까?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "설치를 계속하려면 소프트웨어 사용권 계약 조건에 동의해야 합니다."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "사용권 읽기(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "동의(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "설치 위치 선택"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "표준 설치"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "설치(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "데비안 패키지(.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak 앱"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source}의 Flatpak 앱"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "이 소프트웨어를 설치하는 데 필요한 단계를 안내합니다."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "버전"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "게시자"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "종류"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "크기"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "웹사이트"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "파일"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "이 앱은 이미 설치되어 있습니다. 다시 설치하면 교체됩니다."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb 패키지의 앱은 시스템의 일부가 됩니다. MAN을 업데이트하면 제거되므로 다시 설치해야 합니다. Flatpak 앱과 AppImage는 유지됩니다."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "신뢰할 수 있는 출처의 앱만 설치하십시오."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name}을(를) 어디에 설치하시겠습니까?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "내 계정만 이 앱을 사용할 수 있습니다."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "관리자 권한이 필요합니다."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "나만 사용"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "이 컴퓨터의 모든 사용자"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "컴퓨터에서 {size}의 공간을 사용합니다."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "앱을 {source}에서 다운로드합니다."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "이 컴퓨터의 모든 사용자를 위해 앱을 설치합니다."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "나만을 위해 앱을 설치합니다."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage를 {folder}(으)로 옮기고 앱 목록에 추가합니다."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name}을(를) 설치하려면 설치를 누르십시오."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "앱에 더 필요한 것을 확인하는 중…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "필요한 패키지도 함께 설치합니다: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "앱에 필요한 일부 패키지를 아직 사용할 수 없습니다. 설치할 때 먼저 최신 패키지 목록을 가져오며, 그래도 없으면 앱을 설치할 수 없습니다."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} 설치 중…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "준비 중…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "자세히"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "패키지 설치 중…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "앱을 해당 폴더로 옮기는 중…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "앱을 설치할 수 없습니다."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpak으로 앱 설치 중…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "로그"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "닫기(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "설치에 성공했습니다"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "앱을 설치했습니다."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "설치에 실패했습니다"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "열기(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "자세히 보기(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "설치 로그"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "앱 설치 프로그램"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "뒤로(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "앱을 읽는 중…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} 설치"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "앱"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "설치할 앱 선택"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "시스템 도우미를 시작할 수 없습니다."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "시스템 도우미와 통신할 수 없습니다."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "시스템 도우미와의 연결이 끊어졌습니다."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "인증이 취소되었습니다."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "이 작업에는 관리자 권한이 필요합니다."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "시스템 도우미가 예기치 않게 중지되었습니다."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "다음(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "설치 유형"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (포맷 예정)"
 msgid "Boot Partition"
 msgstr "부트 파티션"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "설치"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN용 공간"
@@ -530,10 +798,6 @@ msgstr "다시 설치(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN이 여유 공간에 설치됩니다. Windows와 그 파일은 바뀌지 않습니다."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "설치(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "설치 준비 완료"
@@ -598,10 +862,6 @@ msgstr "MAN 설치 중"
 msgid "Starting…"
 msgstr "시작하는 중…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "자세히"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "설치 중"
@@ -609,10 +869,6 @@ msgstr "설치 중"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "{n}단계 중 {index}단계  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "로그"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "다른 디스크는 변경되지 않았고, 설치 프로그램이 대�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "검토 후 다시 시도(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "자세히 보기(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "설치 로그"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "협정 세계시"
 msgid "English (US)"
 msgstr "영어(미국)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} 출시!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "이 버전으로 업데이트할 수 있습니다."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "업데이트 열기"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version}에서 업데이트"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} 설치됨"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "버전"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "출시일"
@@ -1339,10 +1583,6 @@ msgstr "확인됨, 서명자 '{signer}'"
 #: updater.rs:120
 msgid "What's New"
 msgstr "새로운 기능"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "계속(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "업데이트는 라이브 세션이 아니라 실행 중인 설치된 MA
 #: updater.rs:240
 msgid "Install Location"
 msgstr "설치 위치"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "요약"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN 업데이트 열기"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN 업데이트"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "최신 패키지 목록을 가져오는 중…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "앱 복사 중"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "메뉴에 앱 추가 중"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "파일을 찾을 수 없습니다."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "패키지를 설치할 수 없습니다."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "앱의 메뉴 항목이 올바르지 않습니다."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "계정과 설정을 옮기는 중"
 msgid "Preparing the restart"
 msgstr "다시 시작 준비 중"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "압축 풀기 완료"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "계정"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "설치 프로그램 전용 소프트웨어 제거 중"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "업데이트 부팅 이미지 만드는 중"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "일회용 시작 항목 추가 중"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "정품 업데이트입니다"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "스냅샷을 만들었습니다"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "건너뜀"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "업데이트 영역 준비 완료"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "새 시스템 준비 중"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "업데이트 파일이 손상되었습니다(체크섬 불일치). 다시 내려받으세요."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "업데이트 파일을 끝까지 읽을 수 없습니다."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "업데이트에 커널이 없습니다."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "업데이트는 시스템 도우미가 설치해야 합니다."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "선택한 설치를 찾을 수 없습니다."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "실행 중인 MAN 설치만 업데이트할 수 있습니다."
 
@@ -1947,6 +2207,14 @@ msgstr "보라색"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "슬레이트"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "패키지 설치 프로그램"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak, AppImage 파일에서 앱을 설치합니다"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "ეს ფაილი არ არის აპი, რომლის დაყენებაც აქ შეიძლება (.deb, .flatpak, .flatpakref ან AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "ეს აპი შექმნილია {arch} კომპიუტერებისთვის და ამ კომპიუტერზე (x86-64) არ მუშაობს."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "ფაილის წაკითხვა ვერ მოხერხდა. შეიძლება დაზიანებულია."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "ეს არ არის AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "შესავალი"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "ლიცენზია"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "დანიშნულების არჩევა"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "დაყენების ტიპი"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "დაყენება"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "შეჯამება"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_გაგრძელება"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "მოგესალმებათ {name}-ის დამყენებელი"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "პროგრამის სალიცენზიო შეთანხმება"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "ეთანხმებით ლიცენზიას?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "დაყენების გასაგრძელებლად უნდა დაეთანხმოთ პროგრამის სალიცენზიო შეთანხმების პირობებს."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "ლიცენზიის _წაკითხვა"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_ვეთანხმები"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "აირჩიეთ დანიშნულება"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "სტანდარტული დაყენება"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_დაყენება"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian-ის პაკეტი (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak აპი"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak აპი {source}-დან"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "გაგიძღვებით ამ პროგრამის დასაყენებლად საჭირო ნაბიჯებში."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "ვერსია"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "გამომცემელი"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "ტიპი"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "ზომა"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "ვებგვერდი"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "ფაილი"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "ეს აპი უკვე დაყენებულია. ხელახლა დაყენება მას ჩაანაცვლებს."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb პაკეტების აპები სისტემის ნაწილი ხდება. MAN-ის განახლებისას ისინი იშლება და ხელახლა დაყენება სჭირდება. Flatpak აპები და AppImage-ები რჩება."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "დააყენეთ აპები მხოლოდ სანდო წყაროებიდან."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "სად გსურთ {name}-ის დაყენება?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "აპით სარგებლობა მხოლოდ თქვენს ანგარიშს შეუძლია."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "საჭიროა ადმინისტრატორის უფლებები."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "მხოლოდ ჩემთვის"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "ამ კომპიუტერის ყველა მომხმარებლისთვის"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "ეს დაიკავებს {size} ადგილს თქვენს კომპიუტერზე."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "აპი ჩამოიტვირთება {source}-დან."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "აპი დაყენდება ამ კომპიუტერის ყველა მომხმარებლისთვის."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "აპი დაყენდება მხოლოდ თქვენთვის."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage გადაიტანება {folder}-ში და დაემატება თქვენს აპებს."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "დააწკაპუნეთ „დაყენებაზე“, რომ დააყენოთ {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "მოწმდება, კიდევ რა სჭირდება აპს…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "ასევე დააყენებს საჭირო პაკეტებს: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "აპისთვის საჭირო ზოგიერთი პაკეტი ჯერ ხელმისაწვდომი არ არის. დაყენება ჯერ უახლეს პაკეტების სიებს მიიღებს; თუ ისინი მაინც აკლია, აპის დაყენება ვერ მოხერხდება."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name}-ის დაყენება…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "მომზადება…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "დეტალები"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "პაკეტის დაყენება…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "აპის გადატანა თავის საქაღალდეში…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "აპის დაყენება ვერ მოხერხდა."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "აპის დაყენება Flatpak-ით…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "ჟურნალი"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_დახურვა"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "დაყენება წარმატებულია"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "აპი დაყენდა."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "დაყენება ვერ მოხერხდა"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_გახსნა"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "დეტალების _ჩვენება"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "დაყენების ჟურნალი"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "აპების დამყენებელი"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_უკან"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "აპის წაკითხვა…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name}-ის დაყენება"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "აპები"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "აირჩიეთ დასაყენებელი აპი"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "სისტემის დამხმარის გაშვება ვერ მოხერხდა."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "სისტემის დამხმარესთან დაკავშირება ვერ მოხერხდა."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "სისტემის დამხმარესთან კავშირი დაიკარგა."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "ავტორიზაცია გაუქმდა."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "ამ მოქმედებისთვის საჭიროა ადმინისტრატორის უფლებები."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "სისტემის დამხმარე მოულოდნელად გაჩერდა."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_შემდეგი"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "დაყენების ტიპი"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (დაფორმატდება)"
 msgid "Boot Partition"
 msgstr "ჩატვირთვის დანაყოფი"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "დაყენება"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "ადგილი MAN-ისთვის"
@@ -530,10 +798,6 @@ msgstr "_ხელახლა დაყენება"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN თავისუფალ ადგილზე დაყენდება. Windows და მისი ფაილები არ იცვლება."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_დაყენება"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "მზადაა დასაყენებლად"
@@ -598,10 +862,6 @@ msgstr "MAN ყენდება"
 msgid "Starting…"
 msgstr "იწყება…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "დეტალები"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "ყენდება"
@@ -609,10 +869,6 @@ msgstr "ყენდება"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "ნაბიჯი {index} / {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "ჟურნალი"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "სხვა დისკი არ შეცვლილა და ი�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_გადახედვა და ხელახლა ცდა"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "დეტალების _ჩვენება"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "დაყენების ჟურნალი"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "კოორდინირებული მსოფლიო დრ�
 msgid "English (US)"
 msgstr "ინგლისური (აშშ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "გამოვიდა MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "შეგიძლიათ მასზე განახლება."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "განახლებების გახსნა"
 
@@ -1312,10 +1560,6 @@ msgstr "განახლება {name} {version}-დან"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} დაყენებულია"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "ვერსია"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "გამოშვებულია"
@@ -1339,10 +1583,6 @@ msgstr "დადასტურებულია, ხელმოწერი�
 #: updater.rs:120
 msgid "What's New"
 msgstr "რა არის ახალი"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_გაგრძელება"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "განახლებები ყენდება მუშა, �
 #: updater.rs:240
 msgid "Install Location"
 msgstr "დაყენების მდებარეობა"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "შეჯამება"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN-ის განახლების გახსნა"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN-ის განახლებები"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "უახლესი პაკეტების სიების მიღება…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "აპის კოპირება"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "აპის დამატება მენიუში"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "ფაილი ვერ მოიძებნა."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "პაკეტის დაყენება ვერ მოხერხდა."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "აპის მენიუს ჩანაწერი არასწორია."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "თქვენი ანგარიშებისა და პარ
 msgid "Preparing the restart"
 msgstr "გადატვირთვის მომზადება"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "გაშლილია"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "ანგარიშები"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "მხოლოდ ინსტალერის პროგრამების წაშლა"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "განახლების ჩატვირთვის ანაბეჭდის აგება"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "ერთჯერადი ჩატვირთვის ჩანაწერის დამატება"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "განახლება ნამდვილია"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "სნეპშოტი შეიქმნა"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "გამოტოვებულია"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "განახლების არე მზადაა"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "ახალი სისტემის მომზადება"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "განახლების ფაილი დაზიანებულია (საკონტროლო ჯამი არ ემთხვევა). ჩამოტვირთეთ ხელახლა."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "განახლების ფაილის სრულად წაკითხვა ვერ მოხერხდა."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "განახლება ბირთვს არ შეიცავს."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "განახლებები სისტემის დამხმარემ უნდა დააყენოს."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "არჩეული დაყენება ვერ მოიძებნა."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "განახლება შესაძლებელია მხოლოდ მუშა MAN-ის დაყენებისა."
 
@@ -1947,6 +2207,14 @@ msgstr "იისფერი"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "ფიქლისფერი"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "პაკეტების დამყენებელი"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "დააყენეთ აპები .deb, Flatpak და AppImage ფაილებიდან"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

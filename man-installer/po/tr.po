@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Bu dosya burada kurulabilecek bir uygulama değil (.deb, .flatpak, .flatpakref veya AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Bu uygulama {arch} bilgisayarlar için yapılmış ve bu bilgisayarda (x86-64) çalışmaz."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Dosya okunamadı. Hasarlı olabilir."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Bu bir AppImage değil."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Giriş"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Lisans"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Hedef Seçimi"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Kurulum türü"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Kurulum"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Özet"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Devam"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} Kurulum Programına Hoş Geldiniz"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Yazılım Lisans Sözleşmesi"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Lisansı Kabul Ediyor musunuz?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Kuruluma devam etmek için yazılım lisans sözleşmesinin koşullarını kabul etmelisiniz."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "Lisansı _Oku"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Kabul Et"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Bir Hedef Seçin"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Standart Kurulum"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Kur"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian paketi (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak uygulaması"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} kaynağından Flatpak uygulaması"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Bu yazılımı kurmak için gereken adımlarda size yol gösterilecek."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Sürüm"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Yayıncı"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Tür"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Boyut"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Web sitesi"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Dosya"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Bu uygulama zaten kurulu. Yeniden kurmak onu değiştirir."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb paketlerinden kurulan uygulamalar sistemin bir parçası olur. MAN güncellendiğinde kaldırılırlar ve yeniden kurulmaları gerekir. Flatpak uygulamaları ve AppImage dosyaları korunur."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Yalnızca güvendiğiniz kaynaklardan uygulama kurun."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} nereye kurulsun?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Uygulamayı yalnızca sizin hesabınız kullanabilir."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Yönetici yetkisi gerekir."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Yalnızca Benim İçin"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Bu Bilgisayarın Tüm Kullanıcıları İçin"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Bilgisayarınızda {size} yer kaplayacak."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Uygulama {source} kaynağından indirilir."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Uygulama bu bilgisayarın tüm kullanıcıları için kurulur."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Uygulama yalnızca sizin için kurulur."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage, {folder} klasörüne taşınır ve uygulamalarınıza eklenir."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} uygulamasını kurmak için Kur'a tıklayın."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Uygulamanın başka neye ihtiyacı olduğu denetleniyor…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Gerektirdiği paketleri de kurar: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Uygulamanın gerektirdiği bazı paketler henüz mevcut değil. Kurulum önce en yeni paket listelerini alır; hâlâ eksiklerse uygulama kurulamaz."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} kuruluyor…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Hazırlanıyor…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Paket kuruluyor…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Uygulama kendi klasörüne taşınıyor…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Uygulama kurulamadı."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Uygulama Flatpak ile kuruluyor…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Günlük"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Kapat"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Kurulum Başarılı"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Uygulama kuruldu."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Kurulum Başarısız"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Aç"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Ayrıntıları göster"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Kurulum günlüğü"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Uygulama Kurucu"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Geri"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Uygulama okunuyor…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} Kur"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Uygulamalar"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Kurulacak Bir Uygulama Seçin"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Sistem yardımcısı başlatılamadı."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Sistem yardımcısıyla iletişim kurulamadı."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Sistem yardımcısıyla bağlantı koptu."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Yetkilendirme iptal edildi."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Bu işlem için yönetici hakları gerekiyor."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Sistem yardımcısı beklenmedik şekilde durdu."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_İleri"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Kurulum türü"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (biçimlendirilecek)"
 msgid "Boot Partition"
 msgstr "Önyükleme bölümü"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Kurulum"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN için alan"
@@ -530,10 +798,6 @@ msgstr "_Yeniden kur"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN boş alana kurulur. Windows ve dosyaları değişmez."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Kur"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Kuruluma hazır"
@@ -598,10 +862,6 @@ msgstr "MAN kuruluyor"
 msgid "Starting…"
 msgstr "Başlatılıyor…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Ayrıntılar"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Kuruluyor"
@@ -609,10 +869,6 @@ msgstr "Kuruluyor"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Adım {index}/{n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Günlük"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Başka hiçbir disk değiştirilmedi ve kurucu hedef diski serbest bıra
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Gözden geçir ve yeniden dene"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Ayrıntıları göster"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Kurulum günlüğü"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Eşgüdümlü Evrensel Zaman"
 msgid "English (US)"
 msgstr "İngilizce (ABD)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} Çıktı!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Bu sürüme güncelleyebilirsiniz."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Güncellemeleri Aç"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} sürümünden güncelleme"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} kurulu"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Sürüm"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Yayın tarihi"
@@ -1339,10 +1583,6 @@ msgstr "Doğrulandı, imzalayan: “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Yenilikler"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Devam"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Güncellemeler canlı oturumdan değil, çalışan ve kurulu bir MAN sis
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Kurulum konumu"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Özet"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Bir MAN güncellemesi aç"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN güncellemeleri"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "En yeni paket listeleri alınıyor…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Uygulama kopyalanıyor"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Uygulama menüye ekleniyor"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Dosya bulunamadı."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Paket kurulamadı."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Uygulamanın menü girdisi geçersiz."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Hesaplarınız ve ayarlarınız taşınıyor"
 msgid "Preparing the restart"
 msgstr "Yeniden başlatma hazırlanıyor"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Açıldı"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Hesaplar"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Yalnızca kurucuya ait yazılımlar kaldırılıyor"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Güncellemenin önyükleme görüntüsü oluşturuluyor"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Tek seferlik açılış girdisi ekleniyor"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Güncelleme özgün"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Anlık görüntü oluşturuldu"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Atlandı"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Güncelleme alanı hazır"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Yeni sistem hazırlanıyor"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Güncelleme dosyası bozuk (sağlama toplamı uyuşmuyor). Yeniden indirin."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Güncelleme dosyası tamamen okunamadı."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Güncelleme çekirdek içermiyor."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Güncellemeler sistem yardımcısı tarafından kurulmalı."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Seçilen kurulum bulunamadı."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Yalnızca çalışan MAN kurulumu güncellenebilir."
 
@@ -1947,6 +2207,14 @@ msgstr "Mor"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Arduvaz"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Paket Kurucu"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak ve AppImage dosyalarından uygulama kurun"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

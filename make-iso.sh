@@ -40,7 +40,9 @@ echo "==> Opening $image (read-only)"
 "$fuse2fs" "$image" "$mnt" -o ro,fakeroot >/dev/null ||
     { echo "Cannot open the image (was the VM shut down cleanly?)" >&2; exit 1; }
 
-version=$(sed -n 's/^VERSION_ID="\{0,1\}\([^"]*\)"\{0,1\}$/\1/p' "$mnt/etc/os-release")
+# /usr/lib/man/version: "10.9", or "10 TEST 5" for TEST builds (file name MAN-10-TEST-5-amd64.iso).
+version=$(head -n1 "$mnt/usr/lib/man/version" 2>/dev/null | tr ' ' '-')
+[[ -n $version ]] || version=$(sed -n 's/^VERSION_ID="\{0,1\}\([^"]*\)"\{0,1\}$/\1/p' "$mnt/etc/os-release")
 version=${version:-10.0}
 iso="$out_dir/MAN-$version-amd64.iso"
 id="MAN-$version-$(date +%Y%m%d%H%M)-$(od -An -N3 -tx1 /dev/urandom | tr -d ' \n')"

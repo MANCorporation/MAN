@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Šis failas nėra programa, kurią galima čia įdiegti (.deb, .flatpak, .flatpakref arba AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Ši programa skirta {arch} kompiuteriams ir šiame kompiuteryje (x86-64) neveikia."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Nepavyko perskaityti failo. Jis gali būti sugadintas."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Tai nėra AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Įžanga"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Licencija"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Vietos pasirinkimas"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Diegimo tipas"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Įdiegtis"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Santrauka"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Tęsti"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Sveiki, tai {name} diegimo programa"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Programinės įrangos licencijos sutartis"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Ar sutinkate su licencija?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Norėdami tęsti diegimą, turite sutikti su programinės įrangos licencijos sutarties sąlygomis."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Skaityti licenciją"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Sutinku"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Pasirinkite vietą"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Standartinis diegimas"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "Į_diegti"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian paketas (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak programa"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak programa iš {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Būsite vedami per veiksmus, reikalingus šiai programinei įrangai įdiegti."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versija"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Leidėjas"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Tipas"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Dydis"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Svetainė"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Failas"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Ši programa jau įdiegta. Įdiegus iš naujo, ji bus pakeista."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Programos iš .deb paketų tampa sistemos dalimi. Atnaujinus MAN, jos pašalinamos ir jas reikia įdiegti iš naujo. Flatpak programos ir AppImage failai išlieka."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Diekite programas tik iš patikimų šaltinių."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Kur norite įdiegti {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Programa gali naudotis tik jūsų paskyra."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Reikia administratoriaus teisių."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Tik man"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Visiems šio kompiuterio naudotojams"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Tai užims {size} vietos kompiuteryje."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Programa atsiunčiama iš {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Programa įdiegiama visiems šio kompiuterio naudotojams."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Programa įdiegiama tik jums."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage perkeliamas į {folder} ir pridedamas prie jūsų programų."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Spustelėkite Įdiegti, kad įdiegtumėte {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Tikrinama, ko dar reikia programai…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Taip pat įdiegia reikalingus paketus: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Kai kurių programai reikalingų paketų dar nėra. Diegimas pirmiausia gauna naujausius paketų sąrašus; jei jų vis tiek trūksta, programos įdiegti negalima."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Diegiama {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Ruošiama…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Išsamiau"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Diegiamas paketas…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Programa perkeliama į jos aplanką…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Nepavyko įdiegti programos."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Programa diegiama su Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Žurnalas"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Užverti"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Diegimas pavyko"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Programa įdiegta."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Diegimas nepavyko"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Atverti"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Rodyti išsamiau"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Diegimo žurnalas"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Programų diegimas"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Atgal"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Skaitoma programa…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Įdiegti {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Programos"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Pasirinkite programą diegti"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Nepavyko paleisti sistemos pagelbiklio."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Nepavyko susisiekti su sistemos pagelbikliu."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Ryšys su sistemos pagelbikliu nutrūko."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Įgaliojimas atšauktas."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Šiam veiksmui reikia administratoriaus teisių."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Sistemos pagelbiklis netikėtai sustojo."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Toliau"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Diegimo tipas"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (bus suformatuotas)"
 msgid "Boot Partition"
 msgstr "Paleidimo skaidinys"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Įdiegtis"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Vieta MAN"
@@ -530,10 +798,6 @@ msgstr "Įdiegti _iš naujo"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN įdiegiama laisvoje vietoje. Windows ir jos failai nesikeičia."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "Į_diegti"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Paruošta diegti"
@@ -598,10 +862,6 @@ msgstr "Diegiama MAN"
 msgid "Starting…"
 msgstr "Pradedama…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Išsamiau"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Diegiama"
@@ -609,10 +869,6 @@ msgstr "Diegiama"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Žingsnis {index} iš {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Žurnalas"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Joks kitas diskas nepakeistas, o diegimo programa atlaisvino paskirties 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Peržiūrėti ir bandyti dar kartą"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Rodyti išsamiau"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Diegimo žurnalas"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Suderintasis pasaulinis laikas"
 msgid "English (US)"
 msgstr "Anglų (JAV)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Išleista MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Galite į ją atnaujinti."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Atverti atnaujinimus"
 
@@ -1312,10 +1560,6 @@ msgstr "Atnaujinimas iš {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Įdiegta {name} {version}"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versija"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Išleista"
@@ -1339,10 +1583,6 @@ msgstr "Patikrinta, pasirašė „{signer}“"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Kas naujo"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Tęsti"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Atnaujinimai diegiami iš veikiančios, įdiegtos MAN sistemos, ne iš g
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Įdiegties vieta"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Santrauka"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Atverti MAN atnaujinimą"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN atnaujinimai"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Gaunami naujausi paketų sąrašai…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Kopijuojama programa"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Programa pridedama prie meniu"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Failas nerastas."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Nepavyko įdiegti paketo."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Programos meniu įrašas netinkamas."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Perkeliamos jūsų paskyros ir nustatymai"
 msgid "Preparing the restart"
 msgstr "Ruošiamas paleidimas iš naujo"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Išpakuota"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Paskyros"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Šalinama tik diegimo programai skirta programinė įranga"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Kuriamas atnaujinimo paleidimo atvaizdas"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Pridedamas vienkartinis paleidimo įrašas"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Atnaujinimas tikras"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Momentinė kopija sukurta"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Praleista"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Atnaujinimo sritis paruošta"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Ruošiama naujoji sistema"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Atnaujinimo failas sugadintas (kontrolinė suma nesutampa). Atsisiųskite jį dar kartą."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Nepavyko perskaityti viso atnaujinimo failo."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Atnaujinime nėra branduolio."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Atnaujinimus turi diegti sistemos pagelbiklis."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Pasirinkta įdiegtis nerasta."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Atnaujinti galima tik veikiančią MAN įdiegtį."
 
@@ -1947,6 +2207,14 @@ msgstr "Violetinė"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Skalūno"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Paketų diegimas"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Diekite programas iš .deb, Flatpak ir AppImage failų"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

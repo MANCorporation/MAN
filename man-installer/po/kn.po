@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "ಈ ಫೈಲ್ ಇಲ್ಲಿ ಸ್ಥಾಪಿಸಬಹುದಾದ ಆ್ಯಪ್ ಅಲ್ಲ (.deb, .flatpak, .flatpakref ಅಥವಾ AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "ಈ ಆ್ಯಪ್ {arch} ಕಂಪ್ಯೂಟರ್‌ಗಳಿಗಾಗಿ ತಯಾರಿಸಲಾಗಿದೆ ಮತ್ತು ಈ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ (x86-64) ಕೆಲಸ ಮಾಡುವುದಿಲ್ಲ."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "ಫೈಲ್ ಓದಲಾಗಲಿಲ್ಲ. ಅದು ಹಾನಿಗೊಳಗಾಗಿರಬಹುದು."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "ಇದು AppImage ಅಲ್ಲ."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "ಪರಿಚಯ"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "ಪರವಾನಗಿ"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "ಗಮ್ಯಸ್ಥಾನ ಆಯ್ಕೆ"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "ಸ್ಥಾಪನೆಯ ಪ್ರಕಾರ"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "ಸ್ಥಾಪನೆ"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "ಸಾರಾಂಶ"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "ಮುಂದುವರಿಸಿ(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} ಸ್ಥಾಪಕಕ್ಕೆ ಸ್ವಾಗತ"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "ತಂತ್ರಾಂಶ ಪರವಾನಗಿ ಒಪ್ಪಂದ"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "ನೀವು ಪರವಾನಗಿಗೆ ಒಪ್ಪುತ್ತೀರಾ?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "ಸ್ಥಾಪನೆಯನ್ನು ಮುಂದುವರಿಸಲು ನೀವು ತಂತ್ರಾಂಶ ಪರವಾನಗಿ ಒಪ್ಪಂದದ ನಿಯಮಗಳಿಗೆ ಒಪ್ಪಬೇಕು."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "ಪರವಾನಗಿ ಓದಿ(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "ಒಪ್ಪುತ್ತೇನೆ(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "ಗಮ್ಯಸ್ಥಾನ ಆಯ್ಕೆಮಾಡಿ"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "ಸಾಮಾನ್ಯ ಸ್ಥಾಪನೆ"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "ಸ್ಥಾಪಿಸಿ(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "ಡೆಬಿಯನ್ ಪ್ಯಾಕೇಜ್ (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak ಆ್ಯಪ್"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} ನಿಂದ Flatpak ಆ್ಯಪ್"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "ಈ ತಂತ್ರಾಂಶವನ್ನು ಸ್ಥಾಪಿಸಲು ಬೇಕಾದ ಹಂತಗಳ ಮೂಲಕ ನಿಮಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಲಾಗುತ್ತದೆ."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "ಆವೃತ್ತಿ"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "ಪ್ರಕಾಶಕರು"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "ಬಗೆ"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "ಗಾತ್ರ"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "ಜಾಲತಾಣ"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "ಫೈಲ್"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "ಈ ಆ್ಯಪ್ ಈಗಾಗಲೇ ಸ್ಥಾಪಿತವಾಗಿದೆ. ಮತ್ತೆ ಸ್ಥಾಪಿಸಿದರೆ ಅದನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb ಪ್ಯಾಕೇಜ್‌ಗಳ ಆ್ಯಪ್‌ಗಳು ಸಿಸ್ಟಮ್‌ನ ಭಾಗವಾಗುತ್ತವೆ. MAN ನವೀಕರಿಸಿದಾಗ ಅವುಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ ಮತ್ತು ಮತ್ತೆ ಸ್ಥಾಪಿಸಬೇಕಾಗುತ್ತದೆ. Flatpak ಆ್ಯಪ್‌ಗಳು ಮತ್ತು AppImage ಉಳಿಯುತ್ತವೆ."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "ನೀವು ನಂಬುವ ಮೂಲಗಳಿಂದ ಮಾತ್ರ ಆ್ಯಪ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸಿ."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} ಅನ್ನು ಎಲ್ಲಿ ಸ್ಥಾಪಿಸಲು ಬಯಸುತ್ತೀರಿ?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "ನಿಮ್ಮ ಖಾತೆ ಮಾತ್ರ ಈ ಆ್ಯಪ್ ಬಳಸಬಹುದು."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "ನಿರ್ವಾಹಕ ಹಕ್ಕುಗಳು ಬೇಕು."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "ನನಗೆ ಮಾತ್ರ"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "ಈ ಕಂಪ್ಯೂಟರ್‌ನ ಎಲ್ಲಾ ಬಳಕೆದಾರರಿಗೆ"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "ಇದು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ {size} ಜಾಗ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "ಆ್ಯಪ್ ಅನ್ನು {source} ನಿಂದ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತದೆ."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "ಆ್ಯಪ್ ಅನ್ನು ಈ ಕಂಪ್ಯೂಟರ್‌ನ ಎಲ್ಲಾ ಬಳಕೆದಾರರಿಗೆ ಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "ಆ್ಯಪ್ ಅನ್ನು ನಿಮಗೆ ಮಾತ್ರ ಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage ಅನ್ನು {folder} ಗೆ ಸರಿಸಿ ನಿಮ್ಮ ಆ್ಯಪ್‌ಗಳಿಗೆ ಸೇರಿಸಲಾಗುತ್ತದೆ."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} ಸ್ಥಾಪಿಸಲು ಸ್ಥಾಪಿಸು ಕ್ಲಿಕ್ ಮಾಡಿ."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "ಆ್ಯಪ್‌ಗೆ ಇನ್ನೇನು ಬೇಕು ಎಂದು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "ಅದಕ್ಕೆ ಬೇಕಾದ ಪ್ಯಾಕೇಜ್‌ಗಳನ್ನೂ ಸ್ಥಾಪಿಸುತ್ತದೆ: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "ಆ್ಯಪ್‌ಗೆ ಬೇಕಾದ ಕೆಲವು ಪ್ಯಾಕೇಜ್‌ಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ. ಸ್ಥಾಪನೆ ಮೊದಲು ಹೊಸ ಪ್ಯಾಕೇಜ್ ಪಟ್ಟಿಗಳನ್ನು ಪಡೆಯುತ್ತದೆ; ಆಗಲೂ ಇಲ್ಲದಿದ್ದರೆ ಆ್ಯಪ್ ಸ್ಥಾಪಿಸಲಾಗುವುದಿಲ್ಲ."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} ಸ್ಥಾಪಿಸಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "ವಿವರಗಳು"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "ಪ್ಯಾಕೇಜ್ ಸ್ಥಾಪಿಸಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "ಆ್ಯಪ್ ಅನ್ನು ಅದರ ಫೋಲ್ಡರ್‌ಗೆ ಸರಿಸಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "ಆ್ಯಪ್ ಸ್ಥಾಪಿಸಲಾಗಲಿಲ್ಲ."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpak ಮೂಲಕ ಆ್ಯಪ್ ಸ್ಥಾಪಿಸಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "ಲಾಗ್"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "ಮುಚ್ಚಿ(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "ಸ್ಥಾಪನೆ ಯಶಸ್ವಿಯಾಗಿದೆ"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "ಆ್ಯಪ್ ಸ್ಥಾಪಿಸಲಾಗಿದೆ."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "ಸ್ಥಾಪನೆ ವಿಫಲವಾಗಿದೆ"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "ತೆರೆ(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "ವಿವರಗಳನ್ನು ತೋರಿಸಿ(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "ಸ್ಥಾಪನಾ ಲಾಗ್"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "ಆ್ಯಪ್ ಸ್ಥಾಪಕ"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "ಹಿಂದೆ(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "ಆ್ಯಪ್ ಓದಲಾಗುತ್ತಿದೆ…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} ಸ್ಥಾಪಿಸಿ"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "ಆ್ಯಪ್‌ಗಳು"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "ಸ್ಥಾಪಿಸಲು ಆ್ಯಪ್ ಆಯ್ಕೆಮಾಡಿ"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "ಸಿಸ್ಟಮ್ ಸಹಾಯಕವನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗಲಿಲ್ಲ."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "ಸಿಸ್ಟಮ್ ಸಹಾಯಕದೊಂದಿಗೆ ಸಂವಹನ ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "ಸಿಸ್ಟಮ್ ಸಹಾಯಕದೊಂದಿಗಿನ ಸಂಪರ್ಕ ಕಡಿದುಹೋಯಿತು."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "ಅಧಿಕಾರವನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "ಈ ಕ್ರಿಯೆಗೆ ನಿರ್ವಾಹಕ ಹಕ್ಕುಗಳು ಬೇಕು."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "ಸಿಸ್ಟಮ್ ಸಹಾಯಕ ಅನಿರೀಕ್ಷಿತವಾಗಿ ನಿಂತುಹೋಯಿತು."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "ಮುಂದೆ(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "ಸ್ಥಾಪನೆಯ ಪ್ರಕಾರ"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (ಫಾರ್ಮ್ಯಾಟ್ ಆಗುತ್ತದೆ)"
 msgid "Boot Partition"
 msgstr "ಬೂಟ್ ವಿಭಾಗ"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "ಸ್ಥಾಪನೆ"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN ಗಾಗಿ ಜಾಗ"
@@ -530,10 +798,6 @@ msgstr "ಮತ್ತೆ ಸ್ಥಾಪಿಸಿ(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN ಖಾಲಿ ಜಾಗದಲ್ಲಿ ಸ್ಥಾಪನೆಯಾಗುತ್ತದೆ. Windows ಮತ್ತು ಅದರ ಫೈಲ್‌ಗಳು ಬದಲಾಗುವುದಿಲ್ಲ."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "ಸ್ಥಾಪಿಸಿ(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "ಸ್ಥಾಪನೆಗೆ ಸಿದ್ಧ"
@@ -598,10 +862,6 @@ msgstr "MAN ಸ್ಥಾಪನೆಯಾಗುತ್ತಿದೆ"
 msgid "Starting…"
 msgstr "ಪ್ರಾರಂಭವಾಗುತ್ತಿದೆ…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "ವಿವರಗಳು"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "ಸ್ಥಾಪನೆಯಾಗುತ್ತಿದೆ"
@@ -609,10 +869,6 @@ msgstr "ಸ್ಥಾಪನೆಯಾಗುತ್ತಿದೆ"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "ಹಂತ {index} / {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "ಲಾಗ್"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "ಬೇರೆ ಯಾವುದೇ ಡಿಸ್ಕ್ ಬದಲಾಗಿಲ
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "ವಿವರಗಳನ್ನು ತೋರಿಸಿ(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "ಸ್ಥಾಪನಾ ಲಾಗ್"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "ಸಮನ್ವಯ ಸಾರ್ವತ್ರಿಕ ಸಮಯ"
 msgid "English (US)"
 msgstr "ಇಂಗ್ಲಿಷ್ (ಅಮೆರಿಕ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} ಬಿಡುಗಡೆಯಾಗಿದೆ!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "ನೀವು ಅದಕ್ಕೆ ನವೀಕರಿಸಬಹುದು."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "ನವೀಕರಣಗಳನ್ನು ತೆರೆಯಿರಿ"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} ನಿಂದ ನವೀಕರಣ"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} ಸ್ಥಾಪಿತವಾಗಿದೆ"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "ಆವೃತ್ತಿ"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "ಬಿಡುಗಡೆ"
@@ -1339,10 +1583,6 @@ msgstr "ಪರಿಶೀಲಿಸಲಾಗಿದೆ, “{signer}” ಸಹಿ ಮ
 #: updater.rs:120
 msgid "What's New"
 msgstr "ಹೊಸತೇನು"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "ಮುಂದುವರಿಸಿ(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "ನವೀಕರಣಗಳು ಚಾಲನೆಯಲ್ಲಿರುವ, ಸ
 #: updater.rs:240
 msgid "Install Location"
 msgstr "ಸ್ಥಾಪನಾ ಸ್ಥಳ"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "ಸಾರಾಂಶ"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN ನವೀಕರಣ ತೆರೆಯಿರಿ"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN ನವೀಕರಣಗಳು"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "ಹೊಸ ಪ್ಯಾಕೇಜ್ ಪಟ್ಟಿಗಳನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "ಆ್ಯಪ್ ನಕಲಿಸಲಾಗುತ್ತಿದೆ"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "ಆ್ಯಪ್ ಅನ್ನು ಮೆನುವಿಗೆ ಸೇರಿಸಲಾಗುತ್ತಿದೆ"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "ಫೈಲ್ ಸಿಗಲಿಲ್ಲ."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "ಪ್ಯಾಕೇಜ್ ಸ್ಥಾಪಿಸಲಾಗಲಿಲ್ಲ."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "ಆ್ಯಪ್‌ನ ಮೆನು ನಮೂದು ಮಾನ್ಯವಾಗಿಲ್ಲ."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "ನಿಮ್ಮ ಖಾತೆಗಳು ಮತ್ತು ಸೆಟ್ಟಿ
 msgid "Preparing the restart"
 msgstr "ಮರುಪ್ರಾರಂಭಕ್ಕೆ ಸಿದ್ಧವಾಗುತ್ತಿದೆ"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "ಬಿಚ್ಚಲಾಗಿದೆ"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "ಖಾತೆಗಳು"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "ಸ್ಥಾಪಕದ ತಂತ್ರಾಂಶವನ್ನು ಮಾತ್ರ ತೆಗೆಯುತ್ತಿದೆ"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "ನವೀಕರಣ ಬೂಟ್ ಚಿತ್ರ ನಿರ್ಮಿಸುತ್ತಿದೆ"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "ಒಂದು ಬಾರಿಯ ಬೂಟ್ ನಮೂದನ್ನು ಸೇರಿಸುತ್ತಿದೆ"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "ನವೀಕರಣ ನಿಜವಾದುದು"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ರಚಿಸಲಾಗಿದೆ"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "ಬಿಟ್ಟುಬಿಡಲಾಗಿದೆ"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "ನವೀಕರಣ ಪ್ರದೇಶ ಸಿದ್ಧ"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "ಹೊಸ ವ್ಯವಸ್ಥೆಯನ್ನು ಸಿದ್ಧಪಡಿಸುತ್ತಿದೆ"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "ನವೀಕರಣ ಫೈಲ್ ಹಾನಿಗೊಳಗಾಗಿದೆ (ಚೆಕ್‌ಸಮ್ ಹೊಂದುತ್ತಿಲ್ಲ). ಅದನ್ನು ಮತ್ತೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "ನವೀಕರಣ ಫೈಲ್ ಅನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಓದಲಾಗಲಿಲ್ಲ."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "ನವೀಕರಣದಲ್ಲಿ ಕರ್ನಲ್ ಇಲ್ಲ."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "ನವೀಕರಣಗಳನ್ನು ಸಿಸ್ಟಮ್ ಸಹಾಯಕವೇ ಸ್ಥಾಪಿಸಬೇಕು."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "ಆಯ್ಕೆ ಮಾಡಿದ ಸ್ಥಾಪನೆ ಕಂಡುಬಂದಿಲ್ಲ."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "ಚಾಲನೆಯಲ್ಲಿರುವ MAN ಸ್ಥಾಪನೆಯನ್ನು ಮಾತ್ರ ನವೀಕರಿಸಬಹುದು."
 
@@ -1947,6 +2207,14 @@ msgstr "ನೇರಳೆ"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "ಸ್ಲೇಟ್"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "ಪ್ಯಾಕೇಜ್ ಸ್ಥಾಪಕ"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak ಮತ್ತು AppImage ಫೈಲ್‌ಗಳಿಂದ ಆ್ಯಪ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸಿ"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

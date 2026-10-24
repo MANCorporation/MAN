@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Bu fayl bu yerda o‘rnatib bo‘ladigan ilova emas (.deb, .flatpak, .flatpakref yoki AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Bu ilova {arch} kompyuterlari uchun yaratilgan va bu kompyuterda (x86-64) ishlamaydi."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Faylni o‘qib bo‘lmadi. U shikastlangan bo‘lishi mumkin."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Bu AppImage emas."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Kirish"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Litsenziya"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Joyni tanlash"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Oʻrnatish turi"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Oʻrnatma"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Xulosa"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Davom etish"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} o‘rnatuvchisiga xush kelibsiz"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Dasturiy ta’minot litsenziya shartnomasi"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Litsenziyaga rozimisiz?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "O‘rnatishni davom ettirish uchun dasturiy ta’minot litsenziya shartnomasi shartlariga rozi bo‘lishingiz kerak."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "Litsenziyani _o‘qish"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Roziman"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Joyni tanlang"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Standart o‘rnatish"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Oʻrnatish"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian paketi (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak ilovasi"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} manbasidan Flatpak ilovasi"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Bu dasturni o‘rnatish uchun kerakli qadamlar bo‘yicha sizga yo‘l ko‘rsatiladi."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versiya"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Nashriyotchi"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Turi"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Hajmi"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Veb-sayt"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Fayl"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Bu ilova allaqachon o‘rnatilgan. Qayta o‘rnatish uni almashtiradi."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb paketlaridagi ilovalar tizimning bir qismiga aylanadi. MAN yangilanganda ular o‘chiriladi va qayta o‘rnatish kerak bo‘ladi. Flatpak ilovalari va AppImage saqlanib qoladi."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Ilovalarni faqat ishonchli manbalardan o‘rnating."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} qayerga o‘rnatilsin?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Ilovadan faqat sizning hisobingiz foydalana oladi."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Administrator huquqlari kerak."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Faqat men uchun"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Bu kompyuterning barcha foydalanuvchilari uchun"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Bu kompyuteringizda {size} joy egallaydi."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Ilova {source} manbasidan yuklab olinadi."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Ilova bu kompyuterning barcha foydalanuvchilari uchun o‘rnatiladi."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Ilova faqat siz uchun o‘rnatiladi."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage {folder} jildiga ko‘chiriladi va ilovalaringizga qo‘shiladi."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} o‘rnatish uchun “O‘rnatish” tugmasini bosing."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Ilovaga yana nima kerakligi tekshirilmoqda…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Kerakli paketlarni ham o‘rnatadi: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Ilovaga kerakli ba’zi paketlar hali mavjud emas. O‘rnatish avval eng yangi paketlar ro‘yxatini oladi; agar ular hali ham yetishmasa, ilovani o‘rnatib bo‘lmaydi."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} o‘rnatilmoqda…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Tayyorlanmoqda…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Tafsilotlar"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Paket o‘rnatilmoqda…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Ilova o‘z jildiga ko‘chirilmoqda…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Ilovani o‘rnatib bo‘lmadi."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Ilova Flatpak orqali o‘rnatilmoqda…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Jurnal"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Yopish"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "O‘rnatish muvaffaqiyatli bo‘ldi"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Ilova o‘rnatildi."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "O‘rnatish amalga oshmadi"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Ochish"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "Tafsilotlarni _koʻrsatish"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Oʻrnatish jurnali"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Ilova o‘rnatuvchisi"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Orqaga"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Ilova o‘qilmoqda…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} o‘rnatish"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Ilovalar"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "O‘rnatish uchun ilova tanlang"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Tizim yordamchisini ishga tushirib boʻlmadi."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Tizim yordamchisi bilan aloqa oʻrnatib boʻlmadi."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Tizim yordamchisi bilan aloqa uzildi."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Avtorizatsiya bekor qilindi."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Bu amal uchun administrator huquqlari kerak."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Tizim yordamchisi kutilmaganda toʻxtadi."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Keyingi"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Oʻrnatish turi"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (formatlanadi)"
 msgid "Boot Partition"
 msgstr "Yuklash boʻlimi"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Oʻrnatma"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN uchun joy"
@@ -530,10 +798,6 @@ msgstr "_Qayta oʻrnatish"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN boʻsh joyga oʻrnatiladi. Windows va uning fayllari oʻzgarmaydi."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Oʻrnatish"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Oʻrnatishga tayyor"
@@ -598,10 +862,6 @@ msgstr "MAN oʻrnatilmoqda"
 msgid "Starting…"
 msgstr "Boshlanmoqda…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Tafsilotlar"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Oʻrnatilmoqda"
@@ -609,10 +869,6 @@ msgstr "Oʻrnatilmoqda"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "{n} qadamdan {index}-qadam  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Jurnal"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Boshqa hech qaysi disk oʻzgartirilmadi va oʻrnatuvchi maqsadli diskni 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Koʻrib chiqish va qayta urinish"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "Tafsilotlarni _koʻrsatish"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Oʻrnatish jurnali"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Muvofiqlashtirilgan umumjahon vaqti"
 msgid "English (US)"
 msgstr "Ingliz (AQSh)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} chiqdi!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Unga yangilashingiz mumkin."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Yangilanishlarni ochish"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} dan yangilanish"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} oʻrnatilgan"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versiya"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Chiqarilgan sana"
@@ -1339,10 +1583,6 @@ msgstr "Tekshirildi, “{signer}” imzolagan"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Yangiliklar"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Davom etish"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Yangilanishlar jonli seansdan emas, ishlab turgan oʻrnatilgan MAN tizim
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Oʻrnatma joyi"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Xulosa"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN yangilanishini ochish"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN yangilanishlari"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Eng yangi paketlar ro‘yxati olinmoqda…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Ilova nusxalanmoqda"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Ilova menyuga qo‘shilmoqda"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Fayl topilmadi."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Paketni o‘rnatib bo‘lmadi."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Ilovaning menyu yozuvi yaroqsiz."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Hisoblaringiz va sozlamalaringiz koʻchirilmoqda"
 msgid "Preparing the restart"
 msgstr "Qayta ishga tushirish tayyorlanmoqda"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Ochildi"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Hisoblar"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Faqat oʻrnatuvchiga tegishli dasturlar oʻchirilmoqda"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Yangilanishning yuklash tasviri yaratilmoqda"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Bir martalik yuklash yozuvi qoʻshilmoqda"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Yangilanish haqiqiy"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Snapshot yaratildi"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Oʻtkazib yuborildi"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Yangilash maydoni tayyor"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Yangi tizim tayyorlanmoqda"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Yangilanish fayli shikastlangan (nazorat yigʻindisi mos emas). Uni qayta yuklab oling."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Yangilanish faylini toʻliq oʻqib boʻlmadi."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Yangilanishda yadro yoʻq."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Yangilanishlarni tizim yordamchisi oʻrnatishi kerak."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Tanlangan oʻrnatma topilmadi."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Faqat ishlab turgan MAN oʻrnatmasini yangilash mumkin."
 
@@ -1947,6 +2207,14 @@ msgstr "Binafsha"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Shifer"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Paket o‘rnatuvchisi"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak va AppImage fayllaridan ilovalar o‘rnating"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

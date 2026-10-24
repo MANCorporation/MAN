@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "මෙම ගොනුව මෙහි ස්ථාපනය කළ හැකි යෙදුමක් නොවේ (.deb, .flatpak, .flatpakref හෝ AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "මෙම යෙදුම {arch} පරිගණක සඳහා සාදා ඇති අතර මෙම පරිගණකයේ (x86-64) ක්‍රියා නොකරයි."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "ගොනුව කියවිය නොහැකි විය. එය හානි වී තිබිය හැක."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "මෙය AppImage එකක් නොවේ."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "හැඳින්වීම"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "බලපත්‍රය"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "ගමනාන්තය තේරීම"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "ස්ථාපන වර්ගය"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "ස්ථාපනය"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "සාරාංශය"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "ඉදිරියට(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} ස්ථාපකයට සාදරයෙන් පිළිගනිමු"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "මෘදුකාංග බලපත්‍ර ගිවිසුම"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "ඔබ බලපත්‍රයට එකඟද?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "ස්ථාපනය දිගටම කිරීමට ඔබ මෘදුකාංග බලපත්‍ර ගිවිසුමේ කොන්දේසිවලට එකඟ විය යුතුය."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "බලපත්‍රය කියවන්න(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "එකඟයි(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "ගමනාන්තයක් තෝරන්න"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "සම්මත ස්ථාපනය"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "ස්ථාපනය කරන්න(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian පැකේජය (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak යෙදුම"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} වෙතින් Flatpak යෙදුම"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "මෙම මෘදුකාංගය ස්ථාපනය කිරීමට අවශ්‍ය පියවර හරහා ඔබට මඟ පෙන්වනු ඇත."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "අනුවාදය"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "ප්‍රකාශක"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "වර්ගය"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "ප්‍රමාණය"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "වෙබ් අඩවිය"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "ගොනුව"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "මෙම යෙදුම දැනටමත් ස්ථාපනය කර ඇත. නැවත ස්ථාපනය කිරීමෙන් එය ප්‍රතිස්ථාපනය වේ."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb පැකේජවල යෙදුම් පද්ධතියේ කොටසක් බවට පත් වේ. MAN යාවත්කාලීන කරන විට ඒවා ඉවත් කෙරෙන අතර නැවත ස්ථාපනය කළ යුතුය. Flatpak යෙදුම් සහ AppImage රැඳේ."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "ඔබ විශ්වාස කරන මූලාශ්‍රවලින් පමණක් යෙදුම් ස්ථාපනය කරන්න."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "ඔබට {name} ස්ථාපනය කිරීමට අවශ්‍ය කොතැනද?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "ඔබේ ගිණුමට පමණක් මෙම යෙදුම භාවිත කළ හැක."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "පරිපාලක හිමිකම් අවශ්‍යයි."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "මට පමණක්"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "මෙම පරිගණකයේ සියලු පරිශීලකයින්ට"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "මෙය ඔබේ පරිගණකයේ {size} ඉඩ ගනී."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "යෙදුම {source} වෙතින් බාගනු ලැබේ."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "යෙදුම මෙම පරිගණකයේ සියලු පරිශීලකයින් සඳහා ස්ථාපනය වේ."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "යෙදුම ඔබ සඳහා පමණක් ස්ථාපනය වේ."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage {folder} වෙත ගෙන ගොස් ඔබේ යෙදුම්වලට එක් කෙරේ."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} ස්ථාපනය කිරීමට ස්ථාපනය කරන්න ක්ලික් කරන්න."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "යෙදුමට තවත් අවශ්‍ය දේ පරීක්ෂා කරමින්…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "එයට අවශ්‍ය පැකේජද ස්ථාපනය කරයි: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "යෙදුමට අවශ්‍ය සමහර පැකේජ තවම ලබා ගත නොහැක. ස්ථාපනය මුලින්ම නවතම පැකේජ ලැයිස්තු ලබා ගනී; එවිටත් නැතිනම් යෙදුම ස්ථාපනය කළ නොහැක."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} ස්ථාපනය කරමින්…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "සූදානම් කරමින්…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "විස්තර"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "පැකේජය ස්ථාපනය කරමින්…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "යෙදුම එහි ෆෝල්ඩරයට ගෙන යමින්…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "යෙදුම ස්ථාපනය කළ නොහැකි විය."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpak සමඟ යෙදුම ස්ථාපනය කරමින්…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "ලොගය"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "වසන්න(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "ස්ථාපනය සාර්ථකයි"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "යෙදුම ස්ථාපනය කරන ලදී."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "ස්ථාපනය අසාර්ථකයි"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "විවෘත කරන්න(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "විස්තර පෙන්වන්න(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "ස්ථාපන ලොගය"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "යෙදුම් ස්ථාපකය"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "ආපසු(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "යෙදුම කියවමින්…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} ස්ථාපනය කරන්න"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "යෙදුම්"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "ස්ථාපනය කිරීමට යෙදුමක් තෝරන්න"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "පද්ධති සහායකය ආරම්භ කළ නොහැකි විය."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "පද්ධති සහායකය සමඟ සන්නිවේදනය කළ නොහැකි විය."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "පද්ධති සහායකය සමඟ සම්බන්ධතාවය බිඳී ගියේය."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "අවසරය අවලංගු කරන ලදී."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "මෙම ක්‍රියාවට පරිපාලක අයිතිවාසිකම් අවශ්‍යයි."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "පද්ධති සහායකය අනපේක්ෂිතව නතර විය."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "ඊළඟ(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "ස්ථාපන වර්ගය"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (හැඩසවයි)"
 msgid "Boot Partition"
 msgstr "ඇරඹුම් කොටස"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "ස්ථාපනය"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN සඳහා ඉඩ"
@@ -530,10 +798,6 @@ msgstr "යළි ස්ථාපනය කරන්න(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN හිස් ඉඩෙහි ස්ථාපනය වේ. Windows සහ එහි ගොනු වෙනස් නොවේ."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "ස්ථාපනය කරන්න(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "ස්ථාපනයට සූදානම්"
@@ -598,10 +862,6 @@ msgstr "MAN ස්ථාපනය වෙමින්"
 msgid "Starting…"
 msgstr "ආරම්භ වෙමින්…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "විස්තර"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "ස්ථාපනය වෙමින්"
@@ -609,10 +869,6 @@ msgstr "ස්ථාපනය වෙමින්"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "පියවර {index} / {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "ලොගය"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "වෙනත් තැටියක් වෙනස් නොවූ අ�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "සමාලෝචනය කර නැවත උත්සාහ කරන්න(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "විස්තර පෙන්වන්න(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "ස්ථාපන ලොගය"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "සම්බන්ධීකෘත විශ්ව වේලාව"
 msgid "English (US)"
 msgstr "ඉංග්‍රීසි (එක්සත් ජනපදය)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} නිකුත් විය!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "ඔබට එයට යාවත්කාලීන කළ හැක."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "යාවත්කාලීන විවෘත කරන්න"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} සිට යාවත්කාලීනය"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} ස්ථාපිතයි"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "අනුවාදය"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "නිකුත් කළේ"
@@ -1339,10 +1583,6 @@ msgstr "තහවුරුයි, “{signer}” විසින් අත්ස
 #: updater.rs:120
 msgid "What's New"
 msgstr "අලුත් මොනවාද"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "ඉදිරියට(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "යාවත්කාලීන ස්ථාපනය වන්නේ ධ
 #: updater.rs:240
 msgid "Install Location"
 msgstr "ස්ථාපන ස්ථානය"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "සාරාංශය"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN යාවත්කාලීනයක් විවෘත කරන්
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN යාවත්කාලීන"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "නවතම පැකේජ ලැයිස්තු ලබා ගනිමින්…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "යෙදුම පිටපත් කරමින්"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "යෙදුම මෙනුවට එක් කරමින්"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "ගොනුව හමු නොවීය."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "පැකේජය ස්ථාපනය කළ නොහැකි විය."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "යෙදුමේ මෙනු ඇතුළත් කිරීම වලංගු නොවේ."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "ඔබේ ගිණුම් සහ සැකසුම් ගෙන ය�
 msgid "Preparing the restart"
 msgstr "යළි ආරම්භයට සූදානම් වෙමින්"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "ලිහා ඇත"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "ගිණුම්"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "ස්ථාපකයේ මෘදුකාංග පමණක් ඉවත් කරමින්"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "යාවත්කාලීන ඇරඹුම් රූපය ගොඩනඟමින්"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "එක් වරක ඇරඹුම් ඇතුළත් කිරීමක් එක් කරමින්"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "යාවත්කාලීනය සත්‍යයි"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "ස්නැප්ෂොට් එක සෑදුණා"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "මඟ හැරියා"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "යාවත්කාලීන ප්‍රදේශය සූදානම්"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "නව පද්ධතිය සූදානම් කරමින්"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "යාවත්කාලීන ගොනුව හානි වී ඇත (චෙක්සම් නොගැළපේ). නැවත බාගන්න."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "යාවත්කාලීන ගොනුව සම්පූර්ණයෙන් කියවිය නොහැකි විය."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "යාවත්කාලීනයේ කර්නලයක් නැත."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "යාවත්කාලීන පද්ධති සහායකය විසින්ම ස්ථාපනය කළ යුතුය."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "තෝරාගත් ස්ථාපනය හමු නොවීය."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "යාවත්කාලීන කළ හැක්කේ ධාවනය වන MAN ස්ථාපනයක් පමණි."
 
@@ -1947,6 +2207,14 @@ msgstr "දම්"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "ස්ලේට්"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "පැකේජ ස්ථාපකය"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak සහ AppImage ගොනුවලින් යෙදුම් ස්ථාපනය කරන්න"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

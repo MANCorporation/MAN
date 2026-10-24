@@ -10,7 +10,7 @@ STAGED=/var/lib/man/update-staged
 [ -f "$STAGED" ] && [ -f /boot/man-update/vmlinuz ] && [ -f /boot/man-update/initrd.img ] || exit 0
 [ -n "${GRUB_DEVICE_UUID}" ] || exit 0
 id=$(sed -n 's/^ID=//p' "$STAGED" | tr -cd 'A-Za-z0-9.+~-')
-version=$(sed -n 's/^VERSION=//p' "$STAGED" | tr -cd 'A-Za-z0-9.+~-')
+version=$(sed -n 's/^VERSION=//p' "$STAGED" | tr -cd 'A-Za-z0-9.+~ -')
 [ -n "$id" ] || exit 0
 echo "Found staged MAN update $version" >&2
 rel_kernel=$(make_system_path_relative_to_its_root /boot/man-update/vmlinuz)

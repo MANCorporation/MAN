@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "ఈ ఫైల్ ఇక్కడ స్థాపించగల యాప్ కాదు (.deb, .flatpak, .flatpakref లేదా AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "ఈ యాప్ {arch} కంప్యూటర్ల కోసం తయారైంది, ఈ కంప్యూటర్‌లో (x86-64) పనిచేయదు."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "ఫైల్‌ను చదవలేకపోయాము. అది పాడై ఉండవచ్చు."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "ఇది AppImage కాదు."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "పరిచయం"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "లైసెన్సు"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "గమ్యస్థానం ఎంపిక"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "స్థాపన రకం"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "స్థాపన"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "సారాంశం"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "కొనసాగించు(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} స్థాపకానికి స్వాగతం"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "సాఫ్ట్‌వేర్ లైసెన్సు ఒప్పందం"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "మీరు లైసెన్సుకు అంగీకరిస్తారా?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "స్థాపనను కొనసాగించడానికి మీరు సాఫ్ట్‌వేర్ లైసెన్సు ఒప్పందంలోని నిబంధనలకు అంగీకరించాలి."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "లైసెన్సు చదువు(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "అంగీకరిస్తున్నాను(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "గమ్యస్థానాన్ని ఎంచుకోండి"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "ప్రామాణిక స్థాపన"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "స్థాపించండి(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "డెబియన్ ప్యాకేజీ (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak యాప్"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} నుండి Flatpak యాప్"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "ఈ సాఫ్ట్‌వేర్‌ను స్థాపించడానికి అవసరమైన దశల ద్వారా మిమ్మల్ని నడిపిస్తాము."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "వెర్షన్"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "ప్రచురణకర్త"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "రకం"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "పరిమాణం"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "వెబ్‌సైట్"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "ఫైల్"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "ఈ యాప్ ఇప్పటికే స్థాపించబడింది. మళ్లీ స్థాపిస్తే అది భర్తీ అవుతుంది."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb ప్యాకేజీల యాప్‌లు సిస్టమ్‌లో భాగమవుతాయి. MAN నవీకరించినప్పుడు అవి తొలగించబడతాయి, మళ్లీ స్థాపించాలి. Flatpak యాప్‌లు మరియు AppImageలు ఉంటాయి."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "మీరు నమ్మే మూలాల నుండి మాత్రమే యాప్‌లను స్థాపించండి."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name}ను ఎక్కడ స్థాపించాలనుకుంటున్నారు?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "మీ ఖాతా మాత్రమే ఈ యాప్‌ను ఉపయోగించగలదు."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "నిర్వాహక హక్కులు అవసరం."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "నాకు మాత్రమే"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "ఈ కంప్యూటర్‌లోని వినియోగదారులందరికీ"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "ఇది మీ కంప్యూటర్‌లో {size} స్థలాన్ని తీసుకుంటుంది."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "యాప్ {source} నుండి డౌన్‌లోడ్ అవుతుంది."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "యాప్ ఈ కంప్యూటర్‌లోని వినియోగదారులందరి కోసం స్థాపించబడుతుంది."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "యాప్ మీ కోసం మాత్రమే స్థాపించబడుతుంది."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImageను {folder}కి తరలించి మీ యాప్‌లకు జోడిస్తాము."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name}ను స్థాపించడానికి స్థాపించు నొక్కండి."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "యాప్‌కు ఇంకా ఏమి కావాలో తనిఖీ చేస్తోంది…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "దానికి అవసరమైన ప్యాకేజీలను కూడా స్థాపిస్తుంది: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "యాప్‌కు అవసరమైన కొన్ని ప్యాకేజీలు ఇంకా అందుబాటులో లేవు. స్థాపన మొదట తాజా ప్యాకేజీ జాబితాలను తెస్తుంది; అప్పటికీ లేకపోతే యాప్‌ను స్థాపించలేము."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} స్థాపిస్తోంది…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "సిద్ధం చేస్తోంది…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "వివరాలు"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "ప్యాకేజీని స్థాపిస్తోంది…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "యాప్‌ను దాని ఫోల్డర్‌కి తరలిస్తోంది…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "యాప్‌ను స్థాపించలేకపోయాము."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpakతో యాప్‌ను స్థాపిస్తోంది…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "లాగ్"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "మూసివేయి(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "స్థాపన విజయవంతమైంది"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "యాప్ స్థాపించబడింది."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "స్థాపన విఫలమైంది"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "తెరువు(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "వివరాలు చూపించు(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "స్థాపన లాగ్"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "యాప్ స్థాపకం"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "వెనుకకు(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "యాప్‌ను చదువుతోంది…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name}ను స్థాపించు"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "యాప్‌లు"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "స్థాపించడానికి యాప్‌ను ఎంచుకోండి"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "సిస్టమ్ సహాయకాన్ని ప్రారంభించలేకపోయాం."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "సిస్టమ్ సహాయకంతో సంభాషించలేకపోయాం."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "సిస్టమ్ సహాయకంతో కనెక్షన్ తెగిపోయింది."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "అధికారం రద్దు చేయబడింది."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "ఈ చర్యకు నిర్వాహక హక్కులు అవసరం."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "సిస్టమ్ సహాయకం అనుకోకుండా ఆగిపోయింది."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "తదుపరి(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "స్థాపన రకం"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (ఫార్మాట్ అవుతుంది)"
 msgid "Boot Partition"
 msgstr "బూట్ విభజన"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "స్థాపన"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN కోసం స్థలం"
@@ -530,10 +798,6 @@ msgstr "మళ్లీ స్థాపించండి(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN ఖాళీ స్థలంలో స్థాపించబడుతుంది. Windows మరియు దాని ఫైళ్లు మారవు."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "స్థాపించండి(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "స్థాపనకు సిద్ధం"
@@ -598,10 +862,6 @@ msgstr "MAN స్థాపించబడుతోంది"
 msgid "Starting…"
 msgstr "ప్రారంభమవుతోంది…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "వివరాలు"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "స్థాపించబడుతోంది"
@@ -609,10 +869,6 @@ msgstr "స్థాపించబడుతోంది"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "దశ {index} / {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "లాగ్"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "ఇతర డిస్క్ ఏదీ మారలేదు, స్థ�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "సమీక్షించి మళ్లీ ప్రయత్నించండి(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "వివరాలు చూపించు(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "స్థాపన లాగ్"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "సమన్వయ సార్వత్రిక సమయం"
 msgid "English (US)"
 msgstr "ఆంగ్లం (అమెరికా)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} విడుదలైంది!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "మీరు దీనికి నవీకరించవచ్చు."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "నవీకరణలను తెరవండి"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} నుండి నవీకరణ"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} స్థాపించబడి ఉంది"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "వెర్షన్"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "విడుదల"
@@ -1339,10 +1583,6 @@ msgstr "ధృవీకరించబడింది, “{signer}” సంత�
 #: updater.rs:120
 msgid "What's New"
 msgstr "కొత్తవి ఏమిటి"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "కొనసాగించు(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "నవీకరణలు నడుస్తున్న, స్థాప
 #: updater.rs:240
 msgid "Install Location"
 msgstr "స్థాపన స్థానం"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "సారాంశం"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN నవీకరణను తెరవండి"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN నవీకరణలు"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "తాజా ప్యాకేజీ జాబితాలను తెస్తోంది…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "యాప్‌ను కాపీ చేస్తోంది"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "యాప్‌ను మెనూకి జోడిస్తోంది"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "ఫైల్ కనుగొనబడలేదు."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "ప్యాకేజీని స్థాపించలేకపోయాము."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "యాప్ మెనూ నమోదు చెల్లదు."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "మీ ఖాతాలు, అమరికలను తరలిస్�
 msgid "Preparing the restart"
 msgstr "పునఃప్రారంభానికి సిద్ధమవుతోంది"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "విప్పబడింది"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "ఖాతాలు"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "స్థాపకి సాఫ్ట్‌వేర్‌ను మాత్రమే తొలగిస్తోంది"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "నవీకరణ బూట్ ఇమేజ్‌ను నిర్మిస్తోంది"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "ఒకసారి బూట్ ఎంట్రీని జోడిస్తోంది"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "నవీకరణ నిజమైనది"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "స్నాప్‌షాట్ సృష్టించబడింది"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "దాటవేయబడింది"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "నవీకరణ ప్రాంతం సిద్ధం"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "కొత్త వ్యవస్థను సిద్ధం చేస్తోంది"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "నవీకరణ ఫైల్ పాడైంది (చెక్‌సమ్ సరిపోలలేదు). దాన్ని మళ్లీ డౌన్‌లోడ్ చేయండి."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "నవీకరణ ఫైల్‌ను పూర్తిగా చదవలేకపోయాం."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "నవీకరణలో కెర్నల్ లేదు."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "నవీకరణలను సిస్టమ్ సహాయకమే స్థాపించాలి."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "ఎంచుకున్న స్థాపన కనబడలేదు."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "నడుస్తున్న MAN స్థాపనను మాత్రమే నవీకరించగలం."
 
@@ -1947,6 +2207,14 @@ msgstr "ఊదా"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "స్లేట్"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "ప్యాకేజీ స్థాపకం"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak మరియు AppImage ఫైళ్ల నుండి యాప్‌లను స్థాపించండి"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "این پرونده برنامه‌ای نیست که بتوان آن را اینجا نصب کرد (‎.deb، ‎.flatpak، ‎.flatpakref یا AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "این برنامه برای رایانه‌های {arch} ساخته شده و روی این رایانه (x86-64) کار نمی‌کند."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "پرونده خوانده نشد. ممکن است آسیب دیده باشد."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "این یک AppImage نیست."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "مقدمه"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "پروانه"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "انتخاب مقصد"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "نوع نصب"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "نصب"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "خلاصه"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_ادامه"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "به نصب‌کنندهٔ {name} خوش آمدید"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "توافق‌نامهٔ پروانهٔ نرم‌افزار"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "آیا با پروانه موافقید؟"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "برای ادامهٔ نصب باید با شرایط توافق‌نامهٔ پروانهٔ نرم‌افزار موافقت کنید."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_خواندن پروانه"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_موافقم"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "یک مقصد انتخاب کنید"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "نصب استاندارد"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_نصب"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "بستهٔ دبیان (‎.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "برنامهٔ Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "برنامهٔ Flatpak از {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "در گام‌های لازم برای نصب این نرم‌افزار راهنمایی می‌شوید."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "نسخه"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "ناشر"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "نوع"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "اندازه"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "وب‌سایت"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "پرونده"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "این برنامه از قبل نصب است. نصب دوباره آن را جایگزین می‌کند."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "برنامه‌های بسته‌های ‎.deb بخشی از سامانه می‌شوند. با به‌روزرسانی MAN حذف می‌شوند و باید دوباره نصب شوند. برنامه‌های Flatpak و AppImage حفظ می‌شوند."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "فقط برنامه‌هایی را از منابع مورد اعتماد نصب کنید."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "می‌خواهید {name} را کجا نصب کنید؟"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "فقط حساب شما می‌تواند از برنامه استفاده کند."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "به دسترسی مدیر نیاز دارد."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "فقط برای من"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "برای همهٔ کاربران این رایانه"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "این کار {size} از فضای رایانهٔ شما را می‌گیرد."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "برنامه از {source} بارگیری می‌شود."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "برنامه برای همهٔ کاربران این رایانه نصب می‌شود."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "برنامه فقط برای شما نصب می‌شود."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage به {folder} منتقل و به برنامه‌های شما افزوده می‌شود."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "برای نصب {name} روی «نصب» بزنید."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "در حال بررسی نیازهای دیگر برنامه…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "بسته‌های مورد نیاز آن را هم نصب می‌کند: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "برخی بسته‌هایی که برنامه نیاز دارد هنوز در دسترس نیستند. نصب ابتدا تازه‌ترین فهرست‌های بسته را می‌گیرد؛ اگر باز هم موجود نباشند، برنامه نصب نمی‌شود."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "در حال نصب {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "در حال آماده‌سازی…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "جزئیات"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "در حال نصب بسته…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "در حال انتقال برنامه به پوشه‌اش…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "برنامه نصب نشد."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "در حال نصب برنامه با Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "گزارش"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_بستن"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "نصب با موفقیت انجام شد"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "برنامه نصب شد."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "نصب شکست خورد"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_باز کردن"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_نمایش جزئیات"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "گزارش نصب"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "نصب‌کنندهٔ برنامه"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_بازگشت"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "در حال خواندن برنامه…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "نصب {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "برنامه‌ها"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "برنامه‌ای برای نصب انتخاب کنید"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "دستیار سیستم اجرا نشد."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "ارتباط با دستیار سیستم ممکن نشد."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "ارتباط با دستیار سیستم قطع شد."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "مجوزدهی لغو شد."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "این کار به دسترسی مدیر نیاز دارد."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "دستیار سیستم به‌طور غیرمنتظره متوقف شد."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_بعدی"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "نوع نصب"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (قالب‌بندی می‌شود)"
 msgid "Boot Partition"
 msgstr "پارتیشن راه‌اندازی"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "نصب"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "فضا برای MAN"
@@ -530,10 +798,6 @@ msgstr "_نصب دوباره"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN در فضای خالی نصب می‌شود. Windows و پرونده‌هایش تغییر نمی‌کنند."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_نصب"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "آمادهٔ نصب"
@@ -598,10 +862,6 @@ msgstr "در حال نصب MAN"
 msgid "Starting…"
 msgstr "در حال آغاز…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "جزئیات"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "در حال نصب"
@@ -609,10 +869,6 @@ msgstr "در حال نصب"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "گام {index} از {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "گزارش"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "هیچ دیسک دیگری تغییر نکرد و نصب‌کننده د
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_بازبینی و تلاش دوباره"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_نمایش جزئیات"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "گزارش نصب"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "زمان هماهنگ جهانی"
 msgid "English (US)"
 msgstr "انگلیسی (آمریکا)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "‏MAN {version} منتشر شد!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "می‌توانید به آن به‌روزرسانی کنید."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "باز کردن به‌روزرسانی‌ها"
 
@@ -1312,10 +1560,6 @@ msgstr "به‌روزرسانی از {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} نصب است"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "نسخه"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "تاریخ انتشار"
@@ -1339,10 +1583,6 @@ msgstr "تأییدشده، امضاشده توسط «{signer}»"
 #: updater.rs:120
 msgid "What's New"
 msgstr "تازه‌ها"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_ادامه"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "به‌روزرسانی‌ها از یک سیستم MAN نصب‌شده 
 #: updater.rs:240
 msgid "Install Location"
 msgstr "محل نصب"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "خلاصه"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "باز کردن به‌روزرسانی MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "به‌روزرسانی‌های MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "در حال گرفتن تازه‌ترین فهرست‌های بسته…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "در حال رونوشت برنامه"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "در حال افزودن برنامه به فهرست"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "پرونده پیدا نشد."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "بسته نصب نشد."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "مدخل فهرست برنامه معتبر نیست."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "در حال انتقال حساب‌ها و تنظیمات شما"
 msgid "Preparing the restart"
 msgstr "در حال آماده‌سازی راه‌اندازی دوباره"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "باز شد"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "حساب‌ها"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "در حال حذف نرم‌افزارهای ویژهٔ نصب‌کننده"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "در حال ساخت تصویر راه‌اندازی به‌روزرسانی"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "در حال افزودن مدخل راه‌اندازی یک‌باره"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "به‌روزرسانی اصل است"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "تصویر لحظه‌ای ساخته شد"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "رد شد"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "ناحیهٔ به‌روزرسانی آماده است"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "در حال آماده‌سازی سیستم جدید"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "پروندهٔ به‌روزرسانی آسیب دیده است (جمع آزما مطابقت ندارد). دوباره بارگیری کنید."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "پروندهٔ به‌روزرسانی کامل خوانده نشد."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "به‌روزرسانی هسته ندارد."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "به‌روزرسانی‌ها باید توسط دستیار سیستم نصب شوند."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "نصب انتخاب‌شده پیدا نشد."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "فقط نصب MAN در حال اجرا به‌روز می‌شود."
 
@@ -1947,6 +2207,14 @@ msgstr "بنفش"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "سنگی"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "نصب‌کنندهٔ بسته"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "نصب برنامه‌ها از پرونده‌های ‎.deb، Flatpak و AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

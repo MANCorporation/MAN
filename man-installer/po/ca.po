@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Aquest fitxer no és una aplicació que es pugui instal·lar aquí (.deb, .flatpak, .flatpakref o AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Aquesta aplicació està feta per a ordinadors {arch} i no funciona en aquest (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "No s'ha pogut llegir el fitxer. Pot estar malmès."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Això no és un AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Introducció"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Llicència"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Selecció de la destinació"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Tipus d'instal·lació"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Instal·lació"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Resum"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Continua"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Us donem la benvinguda a l'instal·lador de {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Acord de llicència del programari"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Accepteu la llicència?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Per continuar la instal·lació, heu d'acceptar els termes de l'acord de llicència del programari."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Llegeix la llicència"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Accepto"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Seleccioneu una destinació"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Instal·lació estàndard"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Instal·la"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Paquet Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Aplicació Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Aplicació Flatpak de {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Us guiarem pels passos necessaris per instal·lar aquest programari."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versió"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Editor"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Tipus"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Mida"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Lloc web"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Fitxer"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Aquesta aplicació ja està instal·lada. Tornar-la a instal·lar la substitueix."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Les aplicacions de paquets .deb passen a formar part del sistema. Quan s'actualitza MAN se suprimeixen i cal tornar-les a instal·lar. Les aplicacions Flatpak i els AppImage es conserven."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Instal·leu només aplicacions de fonts de confiança."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "On voleu instal·lar {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Només el vostre compte pot fer servir l'aplicació."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Cal tenir drets d'administrador."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Només per a mi"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Per a tots els usuaris d'aquest ordinador"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Ocuparà {size} d'espai a l'ordinador."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "L'aplicació es baixa de {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "L'aplicació s'instal·la per a tots els usuaris d'aquest ordinador."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "L'aplicació s'instal·la només per a vós."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "L'AppImage es mou a {folder} i s'afegeix a les vostres aplicacions."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Feu clic a Instal·la per instal·lar {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "S'està comprovant què més necessita l'aplicació…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "També instal·la els paquets que necessita: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Alguns paquets que necessita l'aplicació encara no estan disponibles. La instal·lació obté primer les llistes de paquets més noves; si encara falten, l'aplicació no es pot instal·lar."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "S'està instal·lant {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "S'està preparant…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Detalls"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "S'està instal·lant el paquet…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "S'està movent l'aplicació a la seva carpeta…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "No s'ha pogut instal·lar l'aplicació."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "S'està instal·lant l'aplicació amb Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Registre"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Tanca"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "La instal·lació s'ha completat correctament"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "S'ha instal·lat l'aplicació."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "La instal·lació ha fallat"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Obre"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Mostra els detalls"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Registre de la instal·lació"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Instal·lador d'aplicacions"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Enrere"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "S'està llegint l'aplicació…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Instal·la {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Aplicacions"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Trieu una aplicació per instal·lar"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "No s'ha pogut iniciar l'assistent del sistema."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "No s'ha pogut comunicar amb l'assistent del sistema."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "S'ha perdut la connexió amb l'assistent del sistema."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "S'ha cancel·lat l'autorització."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Aquesta acció necessita permisos d'administrador."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "L'assistent del sistema s'ha aturat inesperadament."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Següent"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Tipus d'instal·lació"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (es formatarà)"
 msgid "Boot Partition"
 msgstr "Partició d'arrencada"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Instal·lació"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Espai per a MAN"
@@ -530,10 +798,6 @@ msgstr "_Reinstal·la"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN s'instal·la a l'espai lliure. El Windows i els seus fitxers no canvien."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Instal·la"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "A punt per instal·lar"
@@ -598,10 +862,6 @@ msgstr "S'està instal·lant MAN"
 msgid "Starting…"
 msgstr "S'està iniciant…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Detalls"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "S'està instal·lant"
@@ -609,10 +869,6 @@ msgstr "S'està instal·lant"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Pas {index} de {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Registre"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "No s'ha modificat cap altre disc i l'instal·lador ha alliberat el disc 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Revisa i torna-ho a provar"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Mostra els detalls"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Registre de la instal·lació"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Temps universal coordinat"
 msgid "English (US)"
 msgstr "Anglès (EUA)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "S'ha publicat MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Podeu actualitzar-vos-hi."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Obre les actualitzacions"
 
@@ -1312,10 +1560,6 @@ msgstr "Actualització des de {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} està instal·lat"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versió"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Publicada"
@@ -1339,10 +1583,6 @@ msgstr "Verificada, signada per «{signer}»"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Novetats"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Continua"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Les actualitzacions s'instal·len des d'un sistema MAN instal·lat i en 
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Ubicació de la instal·lació"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Resum"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Obre una actualització de MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Actualitzacions de MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "S'estan obtenint les llistes de paquets més noves…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "S'està copiant l'aplicació"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "S'està afegint l'aplicació al menú"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "No s'ha trobat el fitxer."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "No s'ha pogut instal·lar el paquet."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "L'entrada de menú de l'aplicació no és vàlida."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "S'estan traslladant els vostres comptes i paràmetres"
 msgid "Preparing the restart"
 msgstr "S'està preparant el reinici"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Desempaquetat"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Comptes"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "S'està eliminant el programari exclusiu de l'instal·lador"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "S'està creant la imatge d'arrencada de l'actualització"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "S'està afegint l'entrada d'arrencada d'un sol ús"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "L'actualització és autèntica"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "S'ha creat la instantània"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "S'ha omès"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Àrea d'actualització a punt"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "S'està preparant el sistema nou"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "El fitxer d'actualització està malmès (la suma de verificació no coincideix). Torneu-lo a baixar."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "No s'ha pogut llegir completament el fitxer d'actualització."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "L'actualització no conté cap nucli."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Les actualitzacions les ha d'instal·lar l'assistent del sistema."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "No s'ha trobat la instal·lació triada."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Només es pot actualitzar la instal·lació de MAN en execució."
 
@@ -1947,6 +2207,14 @@ msgstr "Porpra"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Pissarra"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Instal·lador de paquets"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Instal·leu aplicacions des de fitxers .deb, Flatpak i AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

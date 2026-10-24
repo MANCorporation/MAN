@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Tệp này không phải là ứng dụng có thể cài đặt ở đây (.deb, .flatpak, .flatpakref hoặc AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Ứng dụng này được làm cho máy tính {arch} và không chạy trên máy này (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Không thể đọc tệp. Tệp có thể đã bị hỏng."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Đây không phải là AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Giới thiệu"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Giấy phép"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Chọn vị trí"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Kiểu cài đặt"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Bản cài đặt"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Tóm tắt"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Tiếp tục"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Chào mừng đến với trình cài đặt {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Thỏa thuận giấy phép phần mềm"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Bạn có đồng ý với giấy phép không?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Để tiếp tục cài đặt, bạn phải đồng ý với các điều khoản của thỏa thuận giấy phép phần mềm."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Đọc giấy phép"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "Đồng _ý"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Chọn vị trí"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Cài đặt tiêu chuẩn"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Cài đặt"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Gói Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Ứng dụng Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Ứng dụng Flatpak từ {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Bạn sẽ được hướng dẫn qua các bước cần thiết để cài đặt phần mềm này."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Phiên bản"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Nhà phát hành"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Loại"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Kích thước"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Trang web"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Tệp"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Ứng dụng này đã được cài đặt. Cài đặt lại sẽ thay thế nó."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Ứng dụng từ gói .deb trở thành một phần của hệ thống. Khi MAN được cập nhật, chúng bị gỡ bỏ và cần cài đặt lại. Ứng dụng Flatpak và AppImage được giữ lại."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Chỉ cài đặt ứng dụng từ nguồn bạn tin tưởng."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Bạn muốn cài đặt {name} ở đâu?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Chỉ tài khoản của bạn có thể dùng ứng dụng."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Cần quyền quản trị viên."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Chỉ cho tôi"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Cho tất cả người dùng máy tính này"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Việc này sẽ chiếm {size} dung lượng trên máy tính của bạn."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Ứng dụng được tải xuống từ {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Ứng dụng được cài đặt cho tất cả người dùng máy tính này."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Ứng dụng chỉ được cài đặt cho bạn."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage được chuyển đến {folder} và thêm vào các ứng dụng của bạn."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Nhấn Cài đặt để cài đặt {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Đang kiểm tra ứng dụng còn cần gì…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Cũng cài đặt các gói mà nó cần: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Một số gói mà ứng dụng cần chưa có sẵn. Quá trình cài đặt sẽ lấy danh sách gói mới nhất trước; nếu vẫn thiếu, ứng dụng không thể được cài đặt."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Đang cài đặt {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Đang chuẩn bị…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Chi tiết"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Đang cài đặt gói…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Đang chuyển ứng dụng vào thư mục của nó…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Không thể cài đặt ứng dụng."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Đang cài đặt ứng dụng bằng Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Nhật ký"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "Đón_g"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Cài đặt thành công"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Ứng dụng đã được cài đặt."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Cài đặt thất bại"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Mở"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Hiện chi tiết"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Nhật ký cài đặt"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Trình cài đặt ứng dụng"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Quay lại"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Đang đọc ứng dụng…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Cài đặt {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Ứng dụng"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Chọn ứng dụng để cài đặt"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Không thể khởi động trình trợ giúp hệ thống."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Không thể giao tiếp với trình trợ giúp hệ thống."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Mất kết nối với trình trợ giúp hệ thống."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Đã hủy xác thực."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Thao tác này cần quyền quản trị."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Trình trợ giúp hệ thống dừng đột ngột."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Tiếp"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Kiểu cài đặt"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (sẽ được định dạng)"
 msgid "Boot Partition"
 msgstr "Phân vùng khởi động"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Bản cài đặt"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Chỗ cho MAN"
@@ -530,10 +798,6 @@ msgstr "Cài _lại"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN được cài vào dung lượng trống. Windows và tệp của nó không thay đổi."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Cài đặt"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Sẵn sàng cài đặt"
@@ -598,10 +862,6 @@ msgstr "Đang cài MAN"
 msgid "Starting…"
 msgstr "Đang bắt đầu…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Chi tiết"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Đang cài đặt"
@@ -609,10 +869,6 @@ msgstr "Đang cài đặt"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Bước {index}/{n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Nhật ký"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Không ổ đĩa nào khác bị thay đổi, và trình cài đặt đ�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Xem lại và thử lại"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Hiện chi tiết"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Nhật ký cài đặt"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Giờ Phối hợp Quốc tế"
 msgid "English (US)"
 msgstr "Tiếng Anh (Mỹ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} đã phát hành!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Bạn có thể cập nhật lên phiên bản này."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Mở Cập nhật"
 
@@ -1312,10 +1560,6 @@ msgstr "Cập nhật từ {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Đã cài {name} {version}"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Phiên bản"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Ngày phát hành"
@@ -1339,10 +1583,6 @@ msgstr "Đã xác minh, ký bởi “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Có gì mới"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Tiếp tục"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Bản cập nhật được cài từ một hệ thống MAN đã cài v
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Vị trí cài đặt"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Tóm tắt"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Mở bản cập nhật MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Bản cập nhật MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Đang lấy danh sách gói mới nhất…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Đang sao chép ứng dụng"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Đang thêm ứng dụng vào trình đơn"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Không tìm thấy tệp."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Không thể cài đặt gói."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Mục trình đơn của ứng dụng không hợp lệ."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Đang chuyển tài khoản và cài đặt của bạn"
 msgid "Preparing the restart"
 msgstr "Đang chuẩn bị khởi động lại"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Đã giải nén"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Tài khoản"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Đang gỡ phần mềm chỉ dành cho trình cài đặt"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Đang tạo ảnh khởi động của bản cập nhật"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Đang thêm mục khởi động dùng một lần"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Bản cập nhật là chính thức"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Đã tạo ảnh chụp"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Đã bỏ qua"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Vùng cập nhật đã sẵn sàng"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Đang chuẩn bị hệ thống mới"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Tệp cập nhật bị hỏng (tổng kiểm không khớp). Hãy tải lại."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Không thể đọc hết tệp cập nhật."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Bản cập nhật không chứa nhân."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Bản cập nhật phải do trình trợ giúp hệ thống cài."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Không tìm thấy bản cài đặt đã chọn."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Chỉ cập nhật được bản cài MAN đang chạy."
 
@@ -1947,6 +2207,14 @@ msgstr "Tím"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Xám đá"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Trình cài đặt gói"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Cài đặt ứng dụng từ tệp .deb, Flatpak và AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

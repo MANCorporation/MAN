@@ -56,6 +56,11 @@ pub fn current_version() -> String {
         .unwrap_or_else(|| "10.0".into())
 }
 
+/// The release a TEST build was made after ("" on releases).
+pub fn current_base() -> String {
+    read_to_string(VERSION_BASE_FILE).map(|s| s.trim().to_string()).filter(|s| valid_version(s)).unwrap_or_default()
+}
+
 fn free_bytes(path: &str) -> u64 {
     query("df", &["--output=avail", "-B1", path]).and_then(|o| o.lines().nth(1).and_then(|l| l.trim().parse().ok())).unwrap_or(0)
 }
@@ -110,7 +115,9 @@ fn targets(manifest: &UpdateManifest) -> Vec<UpdateTarget> {
 pub fn inspect(path: &str) -> Result<UpdateInfo> {
     let v = updfile::verify(path)?;
     let targets = targets(&v.manifest);
-    Ok(UpdateInfo { targets, license: v.license, notes: v.notes, signed_by: v.signer, current_version: current_version(), manifest: v.manifest })
+    let (current, base) = (current_version(), current_base());
+    let newer = man_version_cmp(&v.manifest.version, &v.manifest.base, &current, &base).is_gt();
+    Ok(UpdateInfo { targets, license: v.license, notes: v.notes, signed_by: v.signer, current_version: current, current_base: base, newer, manifest: v.manifest })
 }
 
 /// Stream the payload out of the .upd, hash it and unpack it into `dest`.
@@ -363,7 +370,7 @@ pub fn stage(path: &str, device: &str, take_snapshot: bool) -> Result<String> {
     let m = v.manifest;
     info(format!("Update {} {} (signed by {}), payload {}", m.name, m.version, v.signer, m.payload_sha256));
     let current = current_version();
-    if version_cmp(&m.version, &current) != std::cmp::Ordering::Greater {
+    if man_version_cmp(&m.version, &m.base, &current, &current_base()) != std::cmp::Ordering::Greater {
         bail!("MAN {} is not newer than the installed MAN {}.", m.version, current);
     }
     let target = targets(&m).into_iter().find(|t| t.device == device).ok_or_else(|| anyhow!("The chosen installation was not found."))?;
@@ -402,8 +409,15 @@ pub fn stage(path: &str, device: &str, take_snapshot: bool) -> Result<String> {
         let mut inner = Mounts::default();
         inner.mount(&dev, &new, &["-o", "subvol=@update"])?;
         migrate(&new)?;
-        let id = format!("{}-{}", m.version, snapshot_id(now()));
+        // Boot parameter and file names: no spaces ("10-TEST-5-20261024-…").
+        let id = format!("{}-{}", version_file_name(&m.version), snapshot_id(now()));
         write_file(new.join(VERSION_FILE.trim_start_matches('/')), &format!("{}\n", m.version), 0o644)?;
+        let base_file = new.join(VERSION_BASE_FILE.trim_start_matches('/'));
+        if m.base.is_empty() {
+            let _ = std::fs::remove_file(&base_file);
+        } else {
+            write_file(base_file, &format!("{}\n", m.base), 0o644)?;
+        }
         let info_json = serde_json::to_string(&LastUpdate { version: m.version.clone(), previous: current.clone(), date: rfc3339(now()) })?;
         write_file(new.join(INFO.trim_start_matches('/')), &info_json, 0o644)?;
         write_file(new.join("var/lib/man/update-ready"), &format!("{id}\n"), 0o644)?;

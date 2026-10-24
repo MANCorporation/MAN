@@ -89,7 +89,7 @@ fn problem_page(title: &str, message: &str, icon_name: &str) -> adw::NavigationP
 fn overview_page(ctx: &C) -> adw::NavigationPage {
     let info = ctx.info();
     let m = &info.manifest;
-    let newer = version_cmp(&m.version, &info.current_version) == std::cmp::Ordering::Greater;
+    let newer = info.newer;
     let prefs = adw::PreferencesPage::new();
 
     let head = gtk::Box::builder().orientation(gtk::Orientation::Vertical).spacing(6).margin_top(12).build();

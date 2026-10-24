@@ -30,7 +30,7 @@ def messages():
             for s in re.finditer(LIT, m.group(1)):
                 add(unescape(s.group(1)), line(m.start()))
         pats = [r'\bstep\([^,]*,[^,]*,\s*' + LIT, r'\bprogress\([^,]*,\s*' + LIT,
-                r'\b(?:bail|anyhow)!\(\s*' + LIT + r'\s*\)']
+                r'\b(?:bail|anyhow)!\(\s*' + LIT + r'\s*\)', r'\bfail\(\s*' + LIT]
         for p in pats:
             for m in re.finditer(p, src):
                 msg = unescape(m.group(1))

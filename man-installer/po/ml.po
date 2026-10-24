@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "ഈ ഫയൽ ഇവിടെ ഇൻസ്റ്റാൾ ചെയ്യാവുന്ന ആപ്പല്ല (.deb, .flatpak, .flatpakref അല്ലെങ്കിൽ AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "ഈ ആപ്പ് {arch} കമ്പ്യൂട്ടറുകൾക്കായി നിർമ്മിച്ചതാണ്, ഈ കമ്പ്യൂട്ടറിൽ (x86-64) പ്രവർത്തിക്കില്ല."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "ഫയൽ വായിക്കാനായില്ല. അത് കേടായതാകാം."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "ഇത് AppImage അല്ല."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "ആമുഖം"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "ലൈസൻസ്"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "ലക്ഷ്യസ്ഥാനം തിരഞ്ഞെടുക്കൽ"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "ഇൻസ്റ്റലേഷൻ തരം"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "ഇൻസ്റ്റലേഷൻ"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "സംഗ്രഹം"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "തുടരുക(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} ഇൻസ്റ്റാളറിലേക്ക് സ്വാഗതം"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "സോഫ്റ്റ്‌വെയർ ലൈസൻസ് കരാർ"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "ലൈസൻസിനോട് നിങ്ങൾ യോജിക്കുന്നുണ്ടോ?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "ഇൻസ്റ്റാളേഷൻ തുടരാൻ സോഫ്റ്റ്‌വെയർ ലൈസൻസ് കരാറിലെ നിബന്ധനകളോട് നിങ്ങൾ യോജിക്കണം."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "ലൈസൻസ് വായിക്കുക(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "യോജിക്കുന്നു(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "ലക്ഷ്യസ്ഥാനം തിരഞ്ഞെടുക്കുക"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "സാധാരണ ഇൻസ്റ്റാളേഷൻ"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "ഇൻസ്റ്റാൾ ചെയ്യുക(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "ഡെബിയൻ പാക്കേജ് (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak ആപ്പ്"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source}-ൽ നിന്നുള്ള Flatpak ആപ്പ്"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "ഈ സോഫ്റ്റ്‌വെയർ ഇൻസ്റ്റാൾ ചെയ്യാൻ ആവശ്യമായ ഘട്ടങ്ങളിലൂടെ നിങ്ങളെ നയിക്കും."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "പതിപ്പ്"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "പ്രസാധകർ"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "തരം"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "വലുപ്പം"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "വെബ്സൈറ്റ്"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "ഫയൽ"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "ഈ ആപ്പ് ഇതിനകം ഇൻസ്റ്റാൾ ചെയ്തിട്ടുണ്ട്. വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്താൽ അത് മാറ്റിസ്ഥാപിക്കും."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb പാക്കേജുകളിലെ ആപ്പുകൾ സിസ്റ്റത്തിന്റെ ഭാഗമാകുന്നു. MAN അപ്‌ഡേറ്റ് ചെയ്യുമ്പോൾ അവ നീക്കം ചെയ്യപ്പെടും, വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യേണ്ടി വരും. Flatpak ആപ്പുകളും AppImage-ഉം നിലനിൽക്കും."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "നിങ്ങൾ വിശ്വസിക്കുന്ന ഉറവിടങ്ങളിൽ നിന്ന് മാത്രം ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} എവിടെ ഇൻസ്റ്റാൾ ചെയ്യണം?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "നിങ്ങളുടെ അക്കൗണ്ടിന് മാത്രമേ ഈ ആപ്പ് ഉപയോഗിക്കാനാകൂ."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "അഡ്മിനിസ്ട്രേറ്റർ അവകാശങ്ങൾ ആവശ്യമാണ്."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "എനിക്ക് മാത്രം"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "ഈ കമ്പ്യൂട്ടറിലെ എല്ലാ ഉപയോക്താക്കൾക്കും"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "ഇത് നിങ്ങളുടെ കമ്പ്യൂട്ടറിൽ {size} സ്ഥലം എടുക്കും."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "ആപ്പ് {source}-ൽ നിന്ന് ഡൗൺലോഡ് ചെയ്യുന്നു."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "ആപ്പ് ഈ കമ്പ്യൂട്ടറിലെ എല്ലാ ഉപയോക്താക്കൾക്കുമായി ഇൻസ്റ്റാൾ ചെയ്യുന്നു."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "ആപ്പ് നിങ്ങൾക്ക് മാത്രമായി ഇൻസ്റ്റാൾ ചെയ്യുന്നു."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage {folder}-ലേക്ക് നീക്കി നിങ്ങളുടെ ആപ്പുകളിൽ ചേർക്കുന്നു."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} ഇൻസ്റ്റാൾ ചെയ്യാൻ ഇൻസ്റ്റാൾ ക്ലിക്ക് ചെയ്യുക."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "ആപ്പിന് മറ്റെന്താണ് വേണ്ടതെന്ന് പരിശോധിക്കുന്നു…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "അതിന് ആവശ്യമായ പാക്കേജുകളും ഇൻസ്റ്റാൾ ചെയ്യുന്നു: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "ആപ്പിന് ആവശ്യമായ ചില പാക്കേജുകൾ ഇതുവരെ ലഭ്യമല്ല. ഇൻസ്റ്റാളേഷൻ ആദ്യം ഏറ്റവും പുതിയ പാക്കേജ് പട്ടികകൾ നേടുന്നു; അപ്പോഴും ഇല്ലെങ്കിൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യാനാകില്ല."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} ഇൻസ്റ്റാൾ ചെയ്യുന്നു…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "തയ്യാറെടുക്കുന്നു…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "വിശദാംശങ്ങൾ"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "പാക്കേജ് ഇൻസ്റ്റാൾ ചെയ്യുന്നു…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "ആപ്പ് അതിന്റെ ഫോൾഡറിലേക്ക് നീക്കുന്നു…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യാനായില്ല."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpak ഉപയോഗിച്ച് ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുന്നു…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "ലോഗ്"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "അടയ്ക്കുക(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "ഇൻസ്റ്റാളേഷൻ വിജയിച്ചു"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തു."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "ഇൻസ്റ്റാളേഷൻ പരാജയപ്പെട്ടു"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "തുറക്കുക(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "വിശദാംശങ്ങൾ കാണിക്കുക(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "ഇൻസ്റ്റലേഷൻ ലോഗ്"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "ആപ്പ് ഇൻസ്റ്റാളർ"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "പിന്നോട്ട്(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "ആപ്പ് വായിക്കുന്നു…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} ഇൻസ്റ്റാൾ ചെയ്യുക"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "ആപ്പുകൾ"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "ഇൻസ്റ്റാൾ ചെയ്യാൻ ഒരു ആപ്പ് തിരഞ്ഞെടുക്കുക"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "സിസ്റ്റം സഹായി ആരംഭിക്കാനായില്ല."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "സിസ്റ്റം സഹായിയുമായി ആശയവിനിമയം നടത്താനായില്ല."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "സിസ്റ്റം സഹായിയുമായുള്ള ബന്ധം നഷ്ടപ്പെട്ടു."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "അംഗീകാരം റദ്ദാക്കി."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "ഈ പ്രവർത്തനത്തിന് അഡ്മിനിസ്ട്രേറ്റർ അവകാശങ്ങൾ ആവശ്യമാണ്."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "സിസ്റ്റം സഹായി അപ്രതീക്ഷിതമായി നിലച്ചു."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "അടുത്തത്(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "ഇൻസ്റ്റലേഷൻ തരം"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (ഫോർമാറ്റ് ചെയ്യപ്പെട�
 msgid "Boot Partition"
 msgstr "ബൂട്ട് പാർട്ടീഷൻ"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "ഇൻസ്റ്റലേഷൻ"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN-നുള്ള ഇടം"
@@ -530,10 +798,6 @@ msgstr "വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യുക(
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN ഒഴിവുള്ള ഇടത്ത് ഇൻസ്റ്റാൾ ചെയ്യപ്പെടും. Windows-ഉം അതിന്റെ ഫയലുകളും മാറില്ല."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "ഇൻസ്റ്റാൾ ചെയ്യുക(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "ഇൻസ്റ്റാൾ ചെയ്യാൻ തയ്യാർ"
@@ -598,10 +862,6 @@ msgstr "MAN ഇൻസ്റ്റാൾ ചെയ്യുന്നു"
 msgid "Starting…"
 msgstr "ആരംഭിക്കുന്നു…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "വിശദാംശങ്ങൾ"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "ഇൻസ്റ്റാൾ ചെയ്യുന്നു"
@@ -609,10 +869,6 @@ msgstr "ഇൻസ്റ്റാൾ ചെയ്യുന്നു"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "ഘട്ടം {index} / {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "ലോഗ്"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "മറ്റൊരു ഡിസ്കും മാറ്റിയിട�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "അവലോകനം ചെയ്ത് വീണ്ടും ശ്രമിക്കുക(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "വിശദാംശങ്ങൾ കാണിക്കുക(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "ഇൻസ്റ്റലേഷൻ ലോഗ്"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "ഏകോപിത സാർവത്രിക സമയം"
 msgid "English (US)"
 msgstr "ഇംഗ്ലീഷ് (യുഎസ്)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} പുറത്തിറങ്ങി!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "നിങ്ങൾക്ക് അതിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യാം."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "അപ്‌ഡേറ്റുകൾ തുറക്കുക"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version}-ൽ നിന്നുള്ള അപ്‌ഡേറ�
 msgid "{name} {version} is installed"
 msgstr "{name} {version} ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "പതിപ്പ്"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "പുറത്തിറക്കിയത്"
@@ -1339,10 +1583,6 @@ msgstr "സ്ഥിരീകരിച്ചു, “{signer}” ഒപ്പി�
 #: updater.rs:120
 msgid "What's New"
 msgstr "പുതിയതെന്ത്"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "തുടരുക(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "അപ്‌ഡേറ്റുകൾ പ്രവർത്തിക്�
 #: updater.rs:240
 msgid "Install Location"
 msgstr "ഇൻസ്റ്റലേഷൻ സ്ഥാനം"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "സംഗ്രഹം"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN അപ്‌ഡേറ്റ് തുറക്കുക"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN അപ്‌ഡേറ്റുകൾ"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "ഏറ്റവും പുതിയ പാക്കേജ് പട്ടികകൾ നേടുന്നു…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "ആപ്പ് പകർത്തുന്നു"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "ആപ്പ് മെനുവിൽ ചേർക്കുന്നു"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "ഫയൽ കണ്ടെത്തിയില്ല."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "പാക്കേജ് ഇൻസ്റ്റാൾ ചെയ്യാനായില്ല."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "ആപ്പിന്റെ മെനു എൻട്രി സാധുവല്ല."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "നിങ്ങളുടെ അക്കൗണ്ടുകളും ക�
 msgid "Preparing the restart"
 msgstr "പുനരാരംഭത്തിനായി തയ്യാറെടുക്കുന്നു"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "അൺപാക്ക് ചെയ്തു"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "അക്കൗണ്ടുകൾ"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "ഇൻസ്റ്റാളറിന്റെ സോഫ്റ്റ്‌വെയർ മാത്രം നീക്കം ചെയ്യുന്നു"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "അപ്‌ഡേറ്റ് ബൂട്ട് ഇമേജ് നിർമ്മിക്കുന്നു"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "ഒറ്റത്തവണ ബൂട്ട് എൻട്രി ചേർക്കുന്നു"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "അപ്‌ഡേറ്റ് യഥാർത്ഥമാണ്"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "സ്നാപ്‌ഷോട്ട് സൃഷ്ടിച്ചു"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "ഒഴിവാക്കി"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "അപ്‌ഡേറ്റ് മേഖല തയ്യാർ"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "പുതിയ സിസ്റ്റം തയ്യാറാക്കുന്നു"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "അപ്‌ഡേറ്റ് ഫയൽ കേടായി (ചെക്ക്സം പൊരുത്തപ്പെടുന്നില്ല). വീണ്ടും ഡൗൺലോഡ് ചെയ്യുക."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "അപ്‌ഡേറ്റ് ഫയൽ പൂർണ്ണമായി വായിക്കാനായില്ല."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "അപ്‌ഡേറ്റിൽ കേർണൽ ഇല്ല."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "അപ്‌ഡേറ്റുകൾ സിസ്റ്റം സഹായി തന്നെ ഇൻസ്റ്റാൾ ചെയ്യണം."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "തിരഞ്ഞെടുത്ത ഇൻസ്റ്റലേഷൻ കണ്ടെത്തിയില്ല."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "പ്രവർത്തിക്കുന്ന MAN ഇൻസ്റ്റലേഷൻ മാത്രമേ അപ്‌ഡേറ്റ് ചെയ്യാനാകൂ."
 
@@ -1947,6 +2207,14 @@ msgstr "പർപ്പിൾ"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "സ്ലേറ്റ്"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "പാക്കേജ് ഇൻസ്റ്റാളർ"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak, AppImage ഫയലുകളിൽ നിന്ന് ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

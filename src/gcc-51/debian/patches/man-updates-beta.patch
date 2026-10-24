@@ -1,0 +1,106 @@
+Description: MAN: Beta Updates switch in Settings → Updates (TEST builds from
+ GitHub pre-releases); a note when the offered version is a TEST build;
+ "newer" decided by MAN's system helper (knows TEST versions).
+Author: MAN Corporation
+Forwarded: not-needed
+
+diff -ruN a/panels/man-updates/cc-man-updates-panel.c b/panels/man-updates/cc-man-updates-panel.c
+--- a/panels/man-updates/cc-man-updates-panel.c	2026-10-24 16:04:04.467051872 +0200
++++ b/panels/man-updates/cc-man-updates-panel.c	2026-10-24 20:02:18.345529164 +0200
+@@ -75,6 +75,7 @@
+   GtkWidget      *notes_group;
+   GtkWidget      *notes_label;
+   GtkWidget      *auto_row;
++  GtkWidget      *beta_row;
+   GtkWidget      *last_row;
+   GtkWidget      *progress;
+   GtkWidget      *button;
+@@ -84,6 +85,7 @@
+   char           *current;
+   char           *version;
+   guint64         size;
++  gboolean        test;      /* the offered version is a TEST build */
+ 
+   /* The update being installed */
+   char           *file;
+@@ -1037,7 +1039,9 @@
+         return;
+       }
+     /* Not newer than what is installed: the helper's own check says so. */
+-    if (strverscmp (version, current) <= 0)
++    /* MAN's helper knows how releases and TEST builds are ordered
++     * ("newer"); older helpers did not say, so compare as before. */
++    if (json_object_has_member (o, "newer") ? !obj_bool (o, "newer") : strverscmp (version, current) <= 0)
+       {
+         g_autofree char *msg = fill (M_("This update is not newer than the installed {name} {version}."), "name", obj_str (manifest (self), "name"), "version", current, NULL);
+         show_invalid (self, msg);
+@@ -1124,6 +1128,11 @@
+         g_autofree char *size = g_format_size (self->size);
+         title = g_strdup_printf (_("MAN %s Is Available"), self->version);
+         description = self->size ? g_strdup_printf (_("You have MAN %s. Download size: %s."), self->current, size) : NULL;
++        if (self->test)
++          {
++            g_autofree char *line = description;
++            description = g_strconcat (line ? line : "", line ? "\n" : "", _("This is a TEST version. It can have bugs."), NULL);
++          }
+         button = _("_Download and Install…");
+         suggested = TRUE;
+       }
+@@ -1230,6 +1239,7 @@
+       g_free (self->version);
+       self->version = g_key_file_get_string (kf, "update", "version", NULL);
+       self->size = g_key_file_get_uint64 (kf, "update", "size", NULL);
++      self->test = g_key_file_get_boolean (kf, "update", "test", NULL);
+       notes = g_key_file_get_string (kf, "update", "notes", NULL);
+       gtk_label_set_text (GTK_LABEL (self->notes_label), notes ? notes : "");
+       set_state (self, STATE_AVAILABLE, NULL);
+@@ -1262,6 +1272,31 @@
+   g_subprocess_communicate_utf8_async (proc, NULL, self->cancellable, check_done_cb, self);
+ }
+ 
++/* Switching the channel changes what is offered: look again (unless an
++ * update is already on its way). */
++static void
++beta_changed_cb (CcManUpdatesPanel *self)
++{
++  switch (self->state)
++    {
++    case STATE_CHECKING:
++    case STATE_CURRENT:
++    case STATE_AVAILABLE:
++    case STATE_CHECK_ERROR:
++    case STATE_DOWNLOAD_ERROR:
++    case STATE_INVALID:
++      /* The checker reads the setting itself: write it out first. */
++      g_settings_sync ();
++      g_cancellable_cancel (self->cancellable);
++      g_clear_object (&self->cancellable);
++      self->cancellable = g_cancellable_new ();
++      start_check (self);
++      break;
++    default:
++      break;
++    }
++}
++
+ /* ─────────────────────────── downloading ─────────────────────────── */
+ 
+ static void
+@@ -1527,11 +1562,17 @@
+   adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->last_row), _("Last Checked"));
+   gtk_widget_add_css_class (self->last_row, "property");
+   adw_preferences_group_add (ADW_PREFERENCES_GROUP (auto_group), self->auto_row);
++  self->beta_row = adw_switch_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->beta_row), _("Beta Updates"));
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (self->beta_row), _("Get TEST versions of MAN before they are released. They can have bugs."));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (auto_group), self->beta_row);
+   adw_preferences_group_add (ADW_PREFERENCES_GROUP (auto_group), self->last_row);
+   adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (auto_group));
+   if (self->settings)
+     {
+       g_settings_bind (self->settings, "auto-check", self->auto_row, "active", G_SETTINGS_BIND_DEFAULT);
++      g_settings_bind (self->settings, "beta-updates", self->beta_row, "active", G_SETTINGS_BIND_DEFAULT);
++      g_signal_connect_object (self->settings, "changed::beta-updates", G_CALLBACK (beta_changed_cb), self, G_CONNECT_SWAPPED);
+       g_signal_connect_object (self->settings, "changed::last-check", G_CALLBACK (update_last_checked), self, G_CONNECT_SWAPPED);
+     }
+   else

@@ -1,495 +1,562 @@
-0|Neizdevās palaist sistēmas palīgu.
-1|Neizdevās sazināties ar sistēmas palīgu.
-2|Savienojums ar sistēmas palīgu tika zaudēts.
-3|Autorizācija atcelta.
-4|Šai darbībai vajadzīgas administratora tiesības.
-5|Sistēmas palīgs negaidīti apstājās.
-6|Nav EFI sistēmas nodalījuma
-7|Brīvs tikai {free}, MAN vajag {need}. Atbrīvojiet vietu ar DUHACH! sistēmā Windows.
-8|Nav brīvas vietas. Palaidiet DUHACH! sistēmā Windows, lai atbrīvotu vietu MAN.
-9|MAN darbojas no šī diska
-10|Tiek lietots: nodalījums ir piemontēts
-11|Pārāk mazs, MAN vajag {need}
-12|Instalēt MAN
-13|MAN tiek instalēts. Lūdzu, uzgaidiet, līdz tas beidzas.
-14|Valoda
-15|_Pārstartēt šajā valodā
-16|Tiešraides sesija tiek pārstartēta izvēlētajā valodā, un MAN tiek instalēts šajā valodā.
-17|Laipni lūdzam MAN
-18|Ātra, atvērta un pilnībā pielāgojama GNOME sistēma.\nInstalējiet to šajā datorā vai turpiniet izpētīt tiešraides sesiju.
-19|_Instalēt MAN…
-20|_Turpināt izmēģināt MAN
-21|Meklē diskus…
-22|Laipni lūdzam
-23|Šis dators tika palaists vecajā BIOS režīmā. MAN var instalēt tikai UEFI datoros: pārstartējiet un izvēlieties UEFI palaišanas iespēju.
-24|Sistēmas palīgs neatgrieza informāciju par diskiem.
-25|  ·  EFI
-26|_Tālāk
-27|Instalēšanas veids
-28|Dzēst disku un instalēt MAN
-29|Viss izvēlētajā diskā tiks izdzēsts, arī Windows.
-30|Ieteicams. Viss izvēlētajā diskā tiks izdzēsts.
-31|Instalēt blakus Windows
-32|Ieteicams. MAN izmanto brīvo vietu blakus Windows; Windows un tā faili paliek. Sistēmu izvēlaties katrā palaišanas reizē.
-33|Pārinstalēt MAN
-34|Aizstāj sistēmu, bet patur personiskos failus mapē /home. Pašreizējā sistēma tiek saglabāta kā momentuzņēmums.
-35|Pielāgoti nodalījumi
-36|Ekspertiem: izvēlieties nodalījumus paši vai izveidojiet tos lietotnē Diski.
-37|Disks
-38|Izvēlieties dzēšamo disku. Diski, kurus nevar izmantot, tiek rādīti ar iemeslu.
-39|Diski netika atrasti
-40|Brīvā vieta blakus Windows
-41|Windows nodalījumi netiek aizskarti. MAN koplieto EFI sistēmas nodalījumu un pievieno Windows savai palaišanas izvēlnei.
-42|{size} brīvs
-43|nav brīvas vietas
-44|{model} (Windows)
-45|Aizstājamā instalācija
-46|nav mājas mapju
-47|mājas mapes: {list}
-48|momentuzņēmumi: {n}
-49|MAN diskā {model}
-50|Paroles frāze ierīcei {device}
-51|Atslēgt
-52|Instalāciju neizdevās pārbaudīt.
-53|Nodalījumi
-54|Sistēmas nodalījums tiek formatēts Btrfs un satur @system, @home un @snapshots. Diska, no kura darbojas MAN, nodalījumi netiek rādīti.
-55|Atvērt Diskus, lai izveidotu nodalījumus vai mainītu to izmēru
-56|Atsvaidzināt nodalījumu sarakstu
-57|Izvēlieties nodalījumu
-58|EFI sistēmas nodalījums
-59|Formatēt EFI sistēmas nodalījumu
-60|Atstājiet izslēgtu, lai saglabātu citu sistēmu palaidējus
-61|Sistēmas nodalījums (formatēts kā Btrfs)
-62|Palaišanas nodalījums (vajadzīgs šifrēšanai)
-63|Nodalījumu saraksts atsvaidzināts
-64|Drošība
-65|Šifrēt sistēmu
-66|Aizsargā jūsu datus, ja dators tiek pazaudēts vai nozagts. Paroles frāze tiek prasīta katrā palaišanas reizē.
-67|Paroles frāze
-68|Apstiprināt paroles frāzi
-69|Glabājiet šo paroles frāzi drošā vietā
-70|Ja tā tiek pazaudēta, neviens nevar atgūt datus. Kodols un palaišanas faili paliek mazā nešifrētā palaišanas nodalījumā.
-71|Paroles frāzei jābūt vismaz 8 rakstzīmēm.
-72|Paroles frāzes nesakrīt.
-73|Izvēlieties disku.
-74|Izvēlieties disku ar Windows.
-75|Izvēlieties aizstājamo instalāciju.
-76|Vispirms atslēdziet šifrēto instalāciju.
-77|Šajā nodalījumā nav MAN sistēmas.
-78|Izvēlieties EFI sistēmas nodalījumu.
-79|Izvēlieties sistēmas nodalījumu.
-80|EFI un sistēmas nodalījumiem jābūt atšķirīgiem.
-81|Šifrēšanai vajadzīgs atsevišķs palaišanas nodalījums.
-82|Sistēmas nodalījumam jābūt vismaz {size}.
-83|EFI nodalījums nav FAT formātā; ieslēdziet formatēšanu.
-84|Sistēmas nodalījums ir piemontēts; vispirms atmontējiet to lietotnē Diski.
-85|Kur instalēt MAN?
-86|Laiks un tastatūra
-87|Laika josla
-88|Tastatūras izkārtojums
-89|Pārbaudiet tastatūru
-90|Rakstiet šeit, lai pārbaudītu, vai taustiņi ievada pareizās rakstzīmes.
-91|Rakstiet šeit
-92|Laika josla un tastatūra
-93|Disks nav izvēlēts
-94|Sistēmas nodalījums nav izvēlēts
-95|Sistēmas nodalījums pazuda
-96|Instalācija nav izvēlēta
-97|Disks pazuda
-98|Pārskats
-99|Mērķis
-100|Dzēst disku un instalēt
-101|Pielāgoti nodalījumi
-102|Pārinstalēt, paturot /home
-103|Blakus Windows
-104| (tiks formatēts)
-105| (tiek paturēts)
-106|Sistēmas nodalījums
-107|{partition} (tiks formatēts)
-108|Palaišanas nodalījums
-109|Instalācija
-110|Vieta MAN
-111|{free} brīvas vietas (tiek izveidots palaišanas un sistēmas nodalījums)
-112|Windows
-113|Bez izmaiņām. Tas parādās MAN palaišanas izvēlnē; EFI sistēmas nodalījums ir kopīgs.
-114|Šifrēšana
-115|Ieslēgta (LUKS2)
-116|Izslēgta
-117|Datņu sistēma
-118|Btrfs: @system priekš MAN, @home jūsu failiem, @snapshots atjaunošanas punktiem. Visi koplieto brīvo vietu.
-119|Sistēma
-120|Jūsu konts
-121|Tiek izveidots MAN Setup, kad dators tiek palaists pirmo reizi, kopā ar datora nosaukumu, izskatu un privātuma iestatījumiem.
-122|Tastatūra
-123|Visi dati diskā {model} ({path}) tiks izdzēsti.
-124|_Dzēst un instalēt
-125|Izvēlētie nodalījumi tiks formatēti. Citi nodalījumi nemainās.
-126|_Formatēt un instalēt
-127|Pašreizējā sistēma tiek aizstāta. Jūsu faili mapē /home paliek, un vecā sistēma tiek saglabāta kā momentuzņēmums.
-128|_Pārinstalēt
-129|MAN tiek instalēts brīvajā vietā. Windows un tā faili nemainās.
-130|_Instalēt
-131|Gatavs instalēšanai
-132|Dzēst {model}?
-133|Visi faili un nodalījumi ierīcē {path} ({size}) tiks neatgriezeniski izdzēsti. To nevar atsaukt.
-134|Dzēst un instalēt
-135|Formatēt izvēlētos nodalījumus?
-136|Visi dati izvēlētajos nodalījumos tiks neatgriezeniski izdzēsti. Citi nodalījumi nemainās.
-137|Formatēt un instalēt
-138|Instalēt MAN blakus Windows?
-139|MAN tiek instalēts {free} brīvajā vietā diskā {model} ({path}). Windows un tā faili nemainās.
-140|Instalēt
-141|Pārinstalēt MAN?
-142|Instalētā sistēma tiks aizstāta ar jaunu kopiju. Personiskie faili mapē /home paliek, un vecā sistēma paliek pieejama kā momentuzņēmums.
-143|Pārinstalēt
-144|_Atcelt
-145|Instalē MAN
-146|Sāk…
-147|Sīkāka informācija
-148|Instalē
-149|Solis {index} no {n}  ·  {title}
-150|Žurnāls
-151|MAN ir instalēts
-152|Pārstartējiet datoru, lai sāktu lietot MAN. Katrā palaišanas reizē izvēlnē var izvēlēties MAN vai Windows; pagaidu instalētāja nodalījumu MAN noņem pirmajā palaišanas reizē.
-153|Pārstartējiet datoru, lai sāktu lietot MAN. Instalācijas datu nesēju varat atvienot; ja tas paliek pievienots, MAN tik un tā palaižas no jaunā diska.
-154|_Pārstartēt tagad
-155|Gatavs
-156|Instalēšana neizdevās
-157|Neviens cits disks netika mainīts, un instalētājs atbrīvoja mērķa disku. Varat pārskatīt plānu un mēģināt vēlreiz.
-158|_Pārskatīt un mēģināt vēlreiz
-159|_Rādīt sīkāku informāciju
-160|Instalēšanas žurnāls
-161|Meklēt valodas
-162|Meklēt valstis
-163|Sistēmas disks netika atrasts.
-164|Šifrēšanai vajadzīgs MAN instalētāja izveidotais Btrfs izkārtojums.
-165|Šai instalācijai nav atsevišķa palaišanas nodalījuma, kas vajadzīgs šifrēšanai. Lai izmantotu šifrēšanu, pārinstalējiet MAN ar “Dzēst disku”.
-166|MAN Setup
-167|Kur jūs atrodaties?
-168|Jūsu valsts vai reģions nosaka datuma, laika un skaitļu formātu.
-169|Valsts
-170|GNU Vispārējā publiskā licence, 2. versija
-171|Linux kodols un daudzi sistēmas rīki
-172|GNU Vispārējā publiskā licence, 3. versija
-173|Daudzas GNU un GNOME programmas
-174|GNU Mazākā vispārējā publiskā licence, 2.1. versija
-175|GTK, GLib un daudzas bibliotēkas
-176|GNU Mazākā vispārējā publiskā licence, 3. versija
-177|Bibliotēkas
-178|Mozilla publiskā licence 2.0
-179|Mozilla un citu programmas un bibliotēkas
-180|Apache licence 2.0
-181|Bibliotēkas un rīki
-182|Licences līgums
-183|Lūdzu, izlasiet un pieņemiet noteikumus, ar kādiem tiek nodrošināts MAN.
-184|Licences
-185|Licences teksts nav pieejams ({path}).
-186|Esmu izlasījis(-usi) un pieņemu licences noteikumus
-187|Vadu
-188|Nav savienots
-189|Savienoties ar internetu
-190|Ar savienojumu MAN var iestatīt laiku un uzturēt programmatūru atjauninātu. To var izdarīt arī vēlāk.
-191|Pārbauda savienojumu…
-192|Wi-Fi tīkli
-193|Meklēt vēlreiz
-194|_Izlaist
-195|Savienoties varat vēlāk Iestatījumos.
-196|Savienots
-197|Nav savienots
-198|Tīkli netika atrasti
-199|Internets
-200|Savienots ar “{ssid}”
-201|Neizdevās savienoties ar “{ssid}”
-202|Savienoties ar “{ssid}”
-203|Ievadiet tīkla paroli.
-204|_Savienoties
-205|Izveidojiet savu kontu
-206|Jūs būsiet šī datora administrators ar pilnu root piekļuvi caur sudo.
-207|Pilns vārds
-208|Lietotājvārds
-209|Parole
-210|Apstiprināt paroli
-211|Pieteikties automātiski
-212|Izlaist pieteikšanās ekrānu, kad dators tiek palaists
-213|Esošās mājas mapes
-214|Izmantojiet to pašu lietotājvārdu, lai turpinātu lietot mapi no iepriekšējās instalācijas.
-215|Lietot
-216|Papildu
-217|Datora nosaukums
-218|Iestatīt root paroli
-219|Ļauj pieteikties tieši kā root. Bez tās izmantojiet sudo ar savu paroli.
-220|Root parole
-221|Apstiprināt root paroli
-222|Ievadiet savu vārdu.
-223|Izvēlieties lietotājvārdu.
-224|Šo lietotājvārdu jau izmanto sistēma.
-225|Šis lietotājvārds ir rezervēts sistēmai.
-226|Lietotājvārdos ir mazie burti, cipari, - un _, un tie sākas ar burtu.
-227|Izvēlieties paroli.
-228|Paroles nesakrīt.
-229|Datora nosaukumā var būt burti, cipari un defises.
-230|Ievadiet root paroli divreiz.
-231|Padoms: parole ar 8 vai vairāk rakstzīmēm ir daudz drošāka.
-232|Konts
-233|Tumšs
-234|Gaišs
-235|Padariet to par savu
-236|Izvēlieties stilu, akcenta krāsu un fona attēlu. Katru izmaiņu redzat uzreiz.
-237|Stils
-238|Akcenta krāsa
-239|Fona attēls
-240|Pielāgot
-241|Privātums
-242|Izvēlieties, kuras funkcijas drīkst izmantot informāciju par jums. To var mainīt jebkurā laikā Iestatījumos.
-243|Atrašanās vietas pakalpojumi
-244|Ļauj lietotnēm, piemēram, Kartēm un Laikapstākļiem, noteikt jūsu aptuveno atrašanās vietu pēc tuvējiem Wi-Fi tīkliem.
-245|Automātiska laika josla
-246|Izmanto jūsu atrašanās vietu, lai ceļojot laika josla būtu pareiza.
-247|_Pabeigt iestatīšanu
-248|Jūsu disks ir šifrēts
-249|Jūsu dati ir aizsargāti. Paroles frāze tiek prasīta katrā datora palaišanas reizē.
-250|Diska šifrēšana
-251|Šifrēšana aizsargā jūsu datus, ja dators tiek pazaudēts vai nozagts.
-252|Šajā instalācijā nav pieejams
-253|Šifrēšana aizsargā jūsu failus, ja dators tiek pazaudēts vai nozagts. Bez paroles frāzes neviens nevar nolasīt disku.
-254|Šifrēt disku
-255|Paroles frāze tiek prasīta katrā datora palaišanas reizē.
-256|Šifrēšana sākas nākamajā pārstartēšanā
-257|Pēc tam disks tiek šifrēts fonā, kamēr lietojat datoru. Ja paroles frāze tiek pazaudēta, neviens nevar atgūt datus.
-258|Sagatavo MAN
-259|Visu sagatavo…
-260|_Pārstartēt
-261|_Atpakaļ
-262|Sagatavo
-263|Iestatīšanas žurnāls
-264|Viss gatavs!
-265|Kaut kas nogāja greizi
-266|Ikdienas
-267|Pirms atjaunināšanas
-268|Pirms atjaunošanas
-269|Pirms pārinstalēšanas
-270|Manuāls
-271|Vēl nav momentuzņēmumu
-272|Izveidojiet vienu pirms lielām sistēmas izmaiņām.
-273|Atjaunot…
-274|Dzēst momentuzņēmumu
-275|{free} brīvs no {size}. Sistēma, mājas mapes un momentuzņēmumi koplieto šo vietu; momentuzņēmumi aizņem vietu tikai tam, kas mainījies kopš to izveides.
-276|_Labi
-277|Izveidot momentuzņēmumu
-278|Saglabā pašreizējo sistēmas stāvokli. Jūsu personiskie faili mājas mapē netiek iekļauti.
-279|Apraksts, piemēram, “Pirms draiveru instalēšanas”
-280|_Izveidot
-281|Manuāls momentuzņēmums
-282|Dzēst momentuzņēmumu?
-283|“{description}” no {date} tiks neatgriezeniski izdzēsts.
-284|_Dzēst
-285|Atjaunot šo momentuzņēmumu?
-286|Pēc pārstartēšanas sistēma atgriezīsies stāvoklī “{description}” no {date}. Jūsu personiskie faili nemainās.\n\nPašreizējā sistēma vispirms tiek saglabāta kā momentuzņēmums, tāpēc to var atsaukt.
-287|_Atjaunot
-288|Pārstartējiet, lai pabeigtu atjaunošanu
-289|Pārstartēt _vēlāk
-290|Pārstartēt _tagad
-291|Momentuzņēmumi
-292|Atjaunošanas punkti
-293|Momentuzņēmumi saglabā operētājsistēmas stāvokli. Atjaunojot vienu, sistēma atgriežas tajā brīdī, kas palīdz pēc neveiksmīga atjauninājuma vai iestatījumu maiņas. Jūsu personiskie faili netiek aizskarti nekad.
-294|Automātiski momentuzņēmumi
-295|Ikdienas momentuzņēmumi
-296|Reizi dienā, kamēr dators ir ieslēgts
-297|Saglabājamie ikdienas uzņēmumi
-298|Pirms programmatūras atjauninājumiem
-299|Tiek veidoti automātiski, kad pakotnes tiek instalētas, uzlabotas vai noņemtas
-300|Saglabājamie atjauninājumu uzņēmumi
-301|Krātuve
-302|Diska vieta
-303|Ja MAN nepalaižas
-304|Palaišanas izvēlnē izvēlieties “Restore a MAN snapshot”, lai atgūtu strādājošu sistēmu.
-305|Momentuzņēmumi nav pieejami
-306|Momentuzņēmumi darbojas MAN, kas instalēts ar MAN instalētāja Btrfs izkārtojumu. Šī sistēma (piemēram, tiešraides sesija) to neizmanto.
-307|Gaida atjaunošana: pārstartējiet datoru, lai to pabeigtu
-308|Pārstartēt tagad
-309|Lūdzu, uzgaidiet, līdz pašreizējā darbība beidzas.
-310|Meklēt
-311|Kopēt starpliktuvē
-312|Universālais koordinētais laiks
-313|Angļu (ASV)
-317|Pārbauda atjauninājumu
-318|Pārliecinās, ka atjauninājums ir īsts un pilnīgs…
-319|MAN atjauninājums
-320|Šo atjauninājumu nevar instalēt
-321|Atjauninājumu neizdevās nolasīt.
-322|Atjauninājums no {name} {version}
-323|{name} {version} ir instalēts
-324|Versija
-325|Izlaists
-326|Lejupielādes izmērs
-327|Vajadzīgā vieta
-328|Autentiskums
-329|Pārbaudīts, parakstījis “{signer}”
-330|Kas jauns
-331|_Turpināt
-332|Šis atjauninājums nav jaunāks par instalēto {name} {version}.
-333|Atjauninājums
-334|Lūdzu, izlasiet šī atjauninājuma licences noteikumus.
-335|Es pieņemu licences noteikumus
-336|Kur instalēt atjauninājumu?
-337|Sistēma tiek aizstāta; faili jūsu mājas mapē netiek aizskarti.
-338|Izvēlieties instalāciju.
-339|darbojas tagad
-340|{name} {version} šajā datorā
-341|{name} diskā {model}
-342|MAN instalācija netika atrasta
-343|Atjauninājumi tiek instalēti no darbojošās, instalētās MAN sistēmas, nevis no tiešraides sesijas.
-344|Instalācijas vieta
-345|Kopsavilkums
-346|Tiek paturēts
-347|Jūsu faili
-348|Viss jūsu mājas mapē
-349|Konti un paroles
-350|Lietotāji, grupas, datora nosaukums
-351|Savienojumi un iestatījumi
-352|Wi-Fi, laika josla, tastatūra, izskats un momentuzņēmumi
-353|Flatpak lietotnes
-354|Kā arī viss mapēs /usr/local un /opt
-355|Tiek aizstāts
-356|Ar apt instalētā programmatūra un citas sistēmas failu izmaiņas tiek aizstātas ar jauno sistēmu.
-357|Operētājsistēma
-358|Tiek aizstāta ar {name} {version}. Pašreizējo sistēmu var atjaunot no momentuzņēmuma.
-359|Dators tiek pārstartēts, lai instalētu atjauninājumu
-360|Pēc sagatavošanas MAN pārstartējas, dažās sekundēs instalē atjauninājumu un atkal pārstartējas.
-361|_Instalēt atjauninājumu
-362|Vispirms izveidot momentuzņēmumu?
-363|Momentuzņēmums saglabā pašreizējo sistēmu, lai jūs varētu tai atgriezties, ja pēc atjaunināšanas kaut kas nedarbojas. Tas ir ieteicams.
-364|_Neveidot
-365|_Izveidot momentuzņēmumu
-366|Sagatavo {name} {version}
-367|Pārstartēt, lai instalētu
-368|Dators tiks pārstartēts divreiz. Jūsu faili ir drošībā.
-369|Automātiska pārstartēšana pēc {r} s
-370|Automātiska pārstartēšana pēc 30 s
-371|Atjauninājums tiks instalēts nākamajā pārstartēšanā.
-372|Gatavs
-373|Atjauninājumu neizdevās sagatavot
-374|Jūsu sistēmā nekas netika mainīts.
-375|_Mēģināt vēlreiz
-376|Atjaunināšanas žurnāls
-377|Neizdevās
-378|Jūsu sistēma ir atjaunināta
-379|MAN atjaunināts uz versiju {version}.\nIepriekš: MAN {previous}.
-380|_Gatavs
-381|Atvērt MAN atjauninājumu
-382|MAN atjauninājumi
-383|Pārbauda instalēšanas plānu
-384|Sagatavo disku
-385|Kopē MAN uz disku
-386|Konfigurē jauno sistēmu
-387|Instalē palaidēju
-388|Izveido pirmo momentuzņēmumu
-389|Pabeidz
-390|Noņem vecos nodalījumu parakstus
-391|Izveido nodalījumus
-392|Formatē EFI sistēmas nodalījumu
-393|Šifrē sistēmas nodalījumu
-394|Formatē palaišanas nodalījumu
-395|Izveido Btrfs datņu sistēmu
-396|Noņem vecos datņu sistēmu parakstus
-397|Atslēdz šifrēto instalāciju
-398|Saglabā pašreizējo sistēmu kā momentuzņēmumu
-399|Noņem iepriekšējo sistēmu
-400|Raksta datņu sistēmu tabulu
-401|Iestata datora nosaukumu un identitāti
-402|Noņem tiešraides sesijas kontus
-403|Izveido jūsu kontu
-404|Sagatavo MAN Setup pirmajai palaišanai
-405|Iestata laika joslu un tastatūru
-406|Noņem instalētāju no jaunās sistēmas
-407|Veido palaišanas attēlu (initramfs)
-408|Konfigurē GRUB
-409|Instalē GRUB EFI sistēmas nodalījumā
-410|Instalē rezerves palaidēju
-411|Raksta palaišanas izvēlni
-412|Disks gatavs
-413|Izveido jaunās sistēmas momentuzņēmumu
-414|Pievieno momentuzņēmumu palaišanas izvēlnei
-415|Atmontē
-416|Instalētāja palīgam jādarbojas kā root.
-417|Šis dators netika palaists UEFI režīmā. MAN vajag UEFI.
-418|Lietotājvārds nav derīgs.
-419|Parole ir obligāta.
-420|Datora nosaukums nav derīgs.
-421|Nezināma valoda.
-422|Šifrēšanas paroles frāzei jābūt vismaz 8 rakstzīmēm.
-423|Disks mainījās pēc tam, kad apstiprinājāt instalēšanu. Nekas netika mainīts; pārskatiet un apstipriniet vēlreiz.
-424|Izvēlieties sistēmas nodalījumu.
-425|Apstiprinātajā diskā nav izvēlētā sistēmas nodalījuma.
-426|Palaišanas nodalījumam jābūt atsevišķam no EFI un sistēmas nodalījumiem.
-427|Palaišanas nodalījumam jābūt vismaz 512 MB.
-428|Instalācija nav izvēlēta.
-429|Apstiprinātajā diskā nav izvēlētās instalācijas.
-430|Šifrētajai instalācijai nav MAN_BOOT nodalījuma.
-431|Mapē /boot netika atrasts kodols ar atbilstošiem moduļiem.
-432|Valodu jāmaina sistēmas palīgam.
-433|Lieto jūsu iestatījumus
-434|Sagatavo diska šifrēšanu
-435|Pabeidz
-436|MAN Setup jāpabeidz sistēmas palīgam.
-437|MAN Setup šajā datorā jau ir pabeigts.
-438|Nezināma akcenta krāsa.
-439|Izvēlētais fona attēls nav pieejams.
-440|Šo sistēmu nevar šifrēt.
-441|Trūkst iestatīšanas atslēgas, tāpēc šifrēšana nevar turpināties fonā.
-442|Sistēma nav instalēta uz Btrfs, tāpēc momentuzņēmumi nav pieejami.
-443|Momentuzņēmuma atjaunošana gaida pārstartēšanu. Vispirms pārstartējiet datoru, lai to pabeigtu.
-444|Nederīgs momentuzņēmuma ID.
-445|Pārbauda atjauninājumu
-446|Izveido momentuzņēmumu
-447|Sagatavo atjaunināšanas apgabalu
-448|Izpako jauno sistēmu
-449|Pārnes jūsu kontus un iestatījumus
-450|Sagatavo pārstartēšanu
-451|Izpakots
-452|Konti
-453|Noņem tikai instalētājam paredzēto programmatūru
-454|Veido atjauninājuma palaišanas attēlu
-455|Pievieno vienreizēju palaišanas ierakstu
-456|Atjauninājums ir īsts
-457|Momentuzņēmums izveidots
-458|Izlaists
-459|Atjaunināšanas apgabals gatavs
-460|Sagatavo jauno sistēmu
-461|Atjauninājuma fails ir bojāts (kontrolsumma nesakrīt). Lejupielādējiet to vēlreiz.
-462|Atjauninājuma failu neizdevās nolasīt pilnībā.
-463|Atjauninājumā nav kodola.
-464|Atjauninājumi jāinstalē sistēmas palīgam.
-465|Izvēlētā instalācija netika atrasta.
-466|Atjaunināt var tikai darbojošos MAN instalāciju.
-467|Tas nav MAN atjauninājuma fails (nav manifesta).
-468|Atjauninājums nav parakstīts, tāpēc tam nevar uzticēties.
-469|Atjauninājuma paraksts ir bojāts.
-470|Atjauninājumu nav parakstījis MAN. Tas var būt mainīts vai nākt no neuzticama avota.
-471|Atjauninājuma manifests nav derīgs.
-472|Paroles frāze nav pareiza, vai šifrēto nodalījumu nevar atvērt.
-473|Zila
-474|Zilganzaļa
-475|Zaļa
-476|Dzeltena
-477|Oranža
-478|Sarkana
-479|Rozā
-480|Violeta
-481|Šīfera
-482|Sistēmas instalētājs
-483|Instalēt MAN šajā datorā
-484|Sistēmas atjaunošana
-485|Izveidot un atjaunot sistēmas momentuzņēmumus
-486|Sistēmas atjauninājumu instalētājs
-487|Instalēt MAN sistēmas atjauninājuma failu
-488|Piedāvā instalēt MAN, kad sākas tiešraides sesija
-489|MAN atjaunināšanas paziņojums
-490|Vienreiz pēc pieteikšanās paziņo, ka MAN ir atjaunināts
-491|Iestatiet savu jauno MAN datoru
-492|MAN pirmā iestatīšana
-314|Izlaista MAN {version}!
-315|Varat to atjaunināt.
-316|Atvērt atjauninājumus
-493|MAN atjauninājumi
-494|Paziņo, kad ir pieejama jauna MAN versija
+0|Šis fails nav lietotne, ko var instalēt šeit (.deb, .flatpak, .flatpakref vai AppImage).
+1|Šī lietotne ir paredzēta {arch} datoriem un šajā datorā (x86-64) nedarbojas.
+2|Failu neizdevās nolasīt. Tas var būt bojāts.
+3|Tas nav AppImage.
+4|Ievads
+5|Licence
+6|Vietas izvēle
+7|Instalēšanas veids
+8|Instalācija
+9|Kopsavilkums
+10|_Turpināt
+11|Laipni lūdzam {name} instalētājā
+12|Programmatūras licences līgums
+13|Vai piekrītat licencei?
+14|Lai turpinātu instalēšanu, jums jāpiekrīt programmatūras licences līguma noteikumiem.
+15|_Lasīt licenci
+16|_Piekrītu
+17|Izvēlieties vietu
+18|Standarta instalēšana
+19|_Instalēt
+20|Debian pakotne (.deb)
+21|Flatpak lietotne
+22|Flatpak lietotne no {source}
+23|AppImage
+24|Jūs tiksiet vadīts cauri soļiem, kas vajadzīgi šīs programmatūras instalēšanai.
+25|Versija
+26|Izdevējs
+27|Veids
+28|Izmērs
+29|Tīmekļa vietne
+30|Fails
+31|Šī lietotne jau ir instalēta. Atkārtota instalēšana to aizstāj.
+32|Lietotnes no .deb pakotnēm kļūst par sistēmas daļu. Atjauninot MAN, tās tiek noņemtas, un tās jāinstalē no jauna. Flatpak lietotnes un AppImage faili tiek saglabāti.
+33|Instalējiet lietotnes tikai no uzticamiem avotiem.
+34|Kur vēlaties instalēt {name}?
+35|Lietotni var izmantot tikai jūsu konts.
+36|Vajadzīgas administratora tiesības.
+37|Tikai man
+38|Visiem šī datora lietotājiem
+39|Tas aizņems {size} vietas datorā.
+40|Lietotne tiek lejupielādēta no {source}.
+41|Lietotne tiek instalēta visiem šī datora lietotājiem.
+42|Lietotne tiek instalēta tikai jums.
+43|AppImage tiek pārvietots uz {folder} un pievienots jūsu lietotnēm.
+44|Noklikšķiniet uz Instalēt, lai instalētu {name}.
+45|Pārbauda, kas vēl lietotnei vajadzīgs…
+46|Instalē arī vajadzīgās pakotnes: {list}
+47|Dažas lietotnei vajadzīgās pakotnes vēl nav pieejamas. Instalēšana vispirms iegūst jaunākos pakotņu sarakstus; ja tās joprojām trūkst, lietotni nevar instalēt.
+48|Instalē {name}…
+49|Sagatavo…
+50|Sīkāka informācija
+51|Instalē pakotni…
+52|Pārvieto lietotni uz tās mapi…
+53|Lietotni neizdevās instalēt.
+54|Instalē lietotni ar Flatpak…
+55|Žurnāls
+56|_Aizvērt
+57|Instalēšana izdevās
+58|Lietotne tika instalēta.
+59|Instalēšana neizdevās
+60|_Atvērt
+61|_Rādīt sīkāku informāciju
+62|Instalēšanas žurnāls
+63|Lietotņu instalētājs
+64|_Atpakaļ
+65|Nolasa lietotni…
+66|Instalēt {name}
+67|Lietotnes
+68|Izvēlieties instalējamo lietotni
+69|Neizdevās palaist sistēmas palīgu.
+70|Neizdevās sazināties ar sistēmas palīgu.
+71|Savienojums ar sistēmas palīgu tika zaudēts.
+72|Autorizācija atcelta.
+73|Šai darbībai vajadzīgas administratora tiesības.
+74|Sistēmas palīgs negaidīti apstājās.
+75|Nav EFI sistēmas nodalījuma
+76|Brīvs tikai {free}, MAN vajag {need}. Atbrīvojiet vietu ar DUHACH! sistēmā Windows.
+77|Nav brīvas vietas. Palaidiet DUHACH! sistēmā Windows, lai atbrīvotu vietu MAN.
+78|MAN darbojas no šī diska
+79|Tiek lietots: nodalījums ir piemontēts
+80|Pārāk mazs, MAN vajag {need}
+81|Instalēt MAN
+82|MAN tiek instalēts. Lūdzu, uzgaidiet, līdz tas beidzas.
+83|Valoda
+84|_Pārstartēt šajā valodā
+85|Tiešraides sesija tiek pārstartēta izvēlētajā valodā, un MAN tiek instalēts šajā valodā.
+86|Laipni lūdzam MAN
+87|Ātra, atvērta un pilnībā pielāgojama GNOME sistēma.\nInstalējiet to šajā datorā vai turpiniet izpētīt tiešraides sesiju.
+88|_Instalēt MAN…
+89|_Turpināt izmēģināt MAN
+90|Meklē diskus…
+91|Laipni lūdzam
+92|Šis dators tika palaists vecajā BIOS režīmā. MAN var instalēt tikai UEFI datoros: pārstartējiet un izvēlieties UEFI palaišanas iespēju.
+93|Sistēmas palīgs neatgrieza informāciju par diskiem.
+94|  ·  EFI
+95|_Tālāk
+96|Dzēst disku un instalēt MAN
+97|Viss izvēlētajā diskā tiks izdzēsts, arī Windows.
+98|Ieteicams. Viss izvēlētajā diskā tiks izdzēsts.
+99|Instalēt blakus Windows
+100|Ieteicams. MAN izmanto brīvo vietu blakus Windows; Windows un tā faili paliek. Sistēmu izvēlaties katrā palaišanas reizē.
+101|Pārinstalēt MAN
+102|Aizstāj sistēmu, bet patur personiskos failus mapē /home. Pašreizējā sistēma tiek saglabāta kā momentuzņēmums.
+103|Pielāgoti nodalījumi
+104|Ekspertiem: izvēlieties nodalījumus paši vai izveidojiet tos lietotnē Diski.
+105|Disks
+106|Izvēlieties dzēšamo disku. Diski, kurus nevar izmantot, tiek rādīti ar iemeslu.
+107|Diski netika atrasti
+108|Brīvā vieta blakus Windows
+109|Windows nodalījumi netiek aizskarti. MAN koplieto EFI sistēmas nodalījumu un pievieno Windows savai palaišanas izvēlnei.
+110|{size} brīvs
+111|nav brīvas vietas
+112|{model} (Windows)
+113|Aizstājamā instalācija
+114|nav mājas mapju
+115|mājas mapes: {list}
+116|momentuzņēmumi: {n}
+117|MAN diskā {model}
+118|Paroles frāze ierīcei {device}
+119|Atslēgt
+120|Instalāciju neizdevās pārbaudīt.
+121|Nodalījumi
+122|Sistēmas nodalījums tiek formatēts Btrfs un satur @system, @home un @snapshots. Diska, no kura darbojas MAN, nodalījumi netiek rādīti.
+123|Atvērt Diskus, lai izveidotu nodalījumus vai mainītu to izmēru
+124|Atsvaidzināt nodalījumu sarakstu
+125|Izvēlieties nodalījumu
+126|EFI sistēmas nodalījums
+127|Formatēt EFI sistēmas nodalījumu
+128|Atstājiet izslēgtu, lai saglabātu citu sistēmu palaidējus
+129|Sistēmas nodalījums (formatēts kā Btrfs)
+130|Palaišanas nodalījums (vajadzīgs šifrēšanai)
+131|Nodalījumu saraksts atsvaidzināts
+132|Drošība
+133|Šifrēt sistēmu
+134|Aizsargā jūsu datus, ja dators tiek pazaudēts vai nozagts. Paroles frāze tiek prasīta katrā palaišanas reizē.
+135|Paroles frāze
+136|Apstiprināt paroles frāzi
+137|Glabājiet šo paroles frāzi drošā vietā
+138|Ja tā tiek pazaudēta, neviens nevar atgūt datus. Kodols un palaišanas faili paliek mazā nešifrētā palaišanas nodalījumā.
+139|Paroles frāzei jābūt vismaz 8 rakstzīmēm.
+140|Paroles frāzes nesakrīt.
+141|Izvēlieties disku.
+142|Izvēlieties disku ar Windows.
+143|Izvēlieties aizstājamo instalāciju.
+144|Vispirms atslēdziet šifrēto instalāciju.
+145|Šajā nodalījumā nav MAN sistēmas.
+146|Izvēlieties EFI sistēmas nodalījumu.
+147|Izvēlieties sistēmas nodalījumu.
+148|EFI un sistēmas nodalījumiem jābūt atšķirīgiem.
+149|Šifrēšanai vajadzīgs atsevišķs palaišanas nodalījums.
+150|Sistēmas nodalījumam jābūt vismaz {size}.
+151|EFI nodalījums nav FAT formātā; ieslēdziet formatēšanu.
+152|Sistēmas nodalījums ir piemontēts; vispirms atmontējiet to lietotnē Diski.
+153|Kur instalēt MAN?
+154|Laiks un tastatūra
+155|Laika josla
+156|Tastatūras izkārtojums
+157|Pārbaudiet tastatūru
+158|Rakstiet šeit, lai pārbaudītu, vai taustiņi ievada pareizās rakstzīmes.
+159|Rakstiet šeit
+160|Laika josla un tastatūra
+161|Disks nav izvēlēts
+162|Sistēmas nodalījums nav izvēlēts
+163|Sistēmas nodalījums pazuda
+164|Instalācija nav izvēlēta
+165|Disks pazuda
+166|Pārskats
+167|Mērķis
+168|Dzēst disku un instalēt
+169|Pielāgoti nodalījumi
+170|Pārinstalēt, paturot /home
+171|Blakus Windows
+172| (tiks formatēts)
+173| (tiek paturēts)
+174|Sistēmas nodalījums
+175|{partition} (tiks formatēts)
+176|Palaišanas nodalījums
+177|Vieta MAN
+178|{free} brīvas vietas (tiek izveidots palaišanas un sistēmas nodalījums)
+179|Windows
+180|Bez izmaiņām. Tas parādās MAN palaišanas izvēlnē; EFI sistēmas nodalījums ir kopīgs.
+181|Šifrēšana
+182|Ieslēgta (LUKS2)
+183|Izslēgta
+184|Datņu sistēma
+185|Btrfs: @system priekš MAN, @home jūsu failiem, @snapshots atjaunošanas punktiem. Visi koplieto brīvo vietu.
+186|Sistēma
+187|Jūsu konts
+188|Tiek izveidots MAN Setup, kad dators tiek palaists pirmo reizi, kopā ar datora nosaukumu, izskatu un privātuma iestatījumiem.
+189|Tastatūra
+190|Visi dati diskā {model} ({path}) tiks izdzēsti.
+191|_Dzēst un instalēt
+192|Izvēlētie nodalījumi tiks formatēti. Citi nodalījumi nemainās.
+193|_Formatēt un instalēt
+194|Pašreizējā sistēma tiek aizstāta. Jūsu faili mapē /home paliek, un vecā sistēma tiek saglabāta kā momentuzņēmums.
+195|_Pārinstalēt
+196|MAN tiek instalēts brīvajā vietā. Windows un tā faili nemainās.
+197|Gatavs instalēšanai
+198|Dzēst {model}?
+199|Visi faili un nodalījumi ierīcē {path} ({size}) tiks neatgriezeniski izdzēsti. To nevar atsaukt.
+200|Dzēst un instalēt
+201|Formatēt izvēlētos nodalījumus?
+202|Visi dati izvēlētajos nodalījumos tiks neatgriezeniski izdzēsti. Citi nodalījumi nemainās.
+203|Formatēt un instalēt
+204|Instalēt MAN blakus Windows?
+205|MAN tiek instalēts {free} brīvajā vietā diskā {model} ({path}). Windows un tā faili nemainās.
+206|Instalēt
+207|Pārinstalēt MAN?
+208|Instalētā sistēma tiks aizstāta ar jaunu kopiju. Personiskie faili mapē /home paliek, un vecā sistēma paliek pieejama kā momentuzņēmums.
+209|Pārinstalēt
+210|_Atcelt
+211|Instalē MAN
+212|Sāk…
+213|Instalē
+214|Solis {index} no {n}  ·  {title}
+215|MAN ir instalēts
+216|Pārstartējiet datoru, lai sāktu lietot MAN. Katrā palaišanas reizē izvēlnē var izvēlēties MAN vai Windows; pagaidu instalētāja nodalījumu MAN noņem pirmajā palaišanas reizē.
+217|Pārstartējiet datoru, lai sāktu lietot MAN. Instalācijas datu nesēju varat atvienot; ja tas paliek pievienots, MAN tik un tā palaižas no jaunā diska.
+218|_Pārstartēt tagad
+219|Gatavs
+220|Instalēšana neizdevās
+221|Neviens cits disks netika mainīts, un instalētājs atbrīvoja mērķa disku. Varat pārskatīt plānu un mēģināt vēlreiz.
+222|_Pārskatīt un mēģināt vēlreiz
+223|Meklēt valodas
+224|Meklēt valstis
+225|Sistēmas disks netika atrasts.
+226|Šifrēšanai vajadzīgs MAN instalētāja izveidotais Btrfs izkārtojums.
+227|Šai instalācijai nav atsevišķa palaišanas nodalījuma, kas vajadzīgs šifrēšanai. Lai izmantotu šifrēšanu, pārinstalējiet MAN ar “Dzēst disku”.
+228|MAN Setup
+229|Kur jūs atrodaties?
+230|Jūsu valsts vai reģions nosaka datuma, laika un skaitļu formātu.
+231|Valsts
+232|GNU Vispārējā publiskā licence, 2. versija
+233|Linux kodols un daudzi sistēmas rīki
+234|GNU Vispārējā publiskā licence, 3. versija
+235|Daudzas GNU un GNOME programmas
+236|GNU Mazākā vispārējā publiskā licence, 2.1. versija
+237|GTK, GLib un daudzas bibliotēkas
+238|GNU Mazākā vispārējā publiskā licence, 3. versija
+239|Bibliotēkas
+240|Mozilla publiskā licence 2.0
+241|Mozilla un citu programmas un bibliotēkas
+242|Apache licence 2.0
+243|Bibliotēkas un rīki
+244|Licences līgums
+245|Lūdzu, izlasiet un pieņemiet noteikumus, ar kādiem tiek nodrošināts MAN.
+246|Licences
+247|Licences teksts nav pieejams ({path}).
+248|Esmu izlasījis(-usi) un pieņemu licences noteikumus
+249|Vadu
+250|Nav savienots
+251|Savienoties ar internetu
+252|Ar savienojumu MAN var iestatīt laiku un uzturēt programmatūru atjauninātu. To var izdarīt arī vēlāk.
+253|Pārbauda savienojumu…
+254|Wi-Fi tīkli
+255|Meklēt vēlreiz
+256|_Izlaist
+257|Savienoties varat vēlāk Iestatījumos.
+258|Savienots
+259|Nav savienots
+260|Tīkli netika atrasti
+261|Internets
+262|Savienots ar “{ssid}”
+263|Neizdevās savienoties ar “{ssid}”
+264|Savienoties ar “{ssid}”
+265|Ievadiet tīkla paroli.
+266|_Savienoties
+267|Izveidojiet savu kontu
+268|Jūs būsiet šī datora administrators ar pilnu root piekļuvi caur sudo.
+269|Pilns vārds
+270|Lietotājvārds
+271|Parole
+272|Apstiprināt paroli
+273|Pieteikties automātiski
+274|Izlaist pieteikšanās ekrānu, kad dators tiek palaists
+275|Esošās mājas mapes
+276|Izmantojiet to pašu lietotājvārdu, lai turpinātu lietot mapi no iepriekšējās instalācijas.
+277|Lietot
+278|Papildu
+279|Datora nosaukums
+280|Iestatīt root paroli
+281|Ļauj pieteikties tieši kā root. Bez tās izmantojiet sudo ar savu paroli.
+282|Root parole
+283|Apstiprināt root paroli
+284|Ievadiet savu vārdu.
+285|Izvēlieties lietotājvārdu.
+286|Šo lietotājvārdu jau izmanto sistēma.
+287|Šis lietotājvārds ir rezervēts sistēmai.
+288|Lietotājvārdos ir mazie burti, cipari, - un _, un tie sākas ar burtu.
+289|Izvēlieties paroli.
+290|Paroles nesakrīt.
+291|Datora nosaukumā var būt burti, cipari un defises.
+292|Ievadiet root paroli divreiz.
+293|Padoms: parole ar 8 vai vairāk rakstzīmēm ir daudz drošāka.
+294|Konts
+295|Tumšs
+296|Gaišs
+297|Padariet to par savu
+298|Izvēlieties stilu, akcenta krāsu un fona attēlu. Katru izmaiņu redzat uzreiz.
+299|Stils
+300|Akcenta krāsa
+301|Fona attēls
+302|Pielāgot
+303|Privātums
+304|Izvēlieties, kuras funkcijas drīkst izmantot informāciju par jums. To var mainīt jebkurā laikā Iestatījumos.
+305|Atrašanās vietas pakalpojumi
+306|Ļauj lietotnēm, piemēram, Kartēm un Laikapstākļiem, noteikt jūsu aptuveno atrašanās vietu pēc tuvējiem Wi-Fi tīkliem.
+307|Automātiska laika josla
+308|Izmanto jūsu atrašanās vietu, lai ceļojot laika josla būtu pareiza.
+309|_Pabeigt iestatīšanu
+310|Jūsu disks ir šifrēts
+311|Jūsu dati ir aizsargāti. Paroles frāze tiek prasīta katrā datora palaišanas reizē.
+312|Diska šifrēšana
+313|Šifrēšana aizsargā jūsu datus, ja dators tiek pazaudēts vai nozagts.
+314|Šajā instalācijā nav pieejams
+315|Šifrēšana aizsargā jūsu failus, ja dators tiek pazaudēts vai nozagts. Bez paroles frāzes neviens nevar nolasīt disku.
+316|Šifrēt disku
+317|Paroles frāze tiek prasīta katrā datora palaišanas reizē.
+318|Šifrēšana sākas nākamajā pārstartēšanā
+319|Pēc tam disks tiek šifrēts fonā, kamēr lietojat datoru. Ja paroles frāze tiek pazaudēta, neviens nevar atgūt datus.
+320|Sagatavo MAN
+321|Visu sagatavo…
+322|_Pārstartēt
+323|_Atpakaļ
+324|Sagatavo
+325|Iestatīšanas žurnāls
+326|Viss gatavs!
+327|Kaut kas nogāja greizi
+328|Ikdienas
+329|Pirms atjaunināšanas
+330|Pirms atjaunošanas
+331|Pirms pārinstalēšanas
+332|Manuāls
+333|Vēl nav momentuzņēmumu
+334|Izveidojiet vienu pirms lielām sistēmas izmaiņām.
+335|Atjaunot…
+336|Dzēst momentuzņēmumu
+337|{free} brīvs no {size}. Sistēma, mājas mapes un momentuzņēmumi koplieto šo vietu; momentuzņēmumi aizņem vietu tikai tam, kas mainījies kopš to izveides.
+338|_Labi
+339|Izveidot momentuzņēmumu
+340|Saglabā pašreizējo sistēmas stāvokli. Jūsu personiskie faili mājas mapē netiek iekļauti.
+341|Apraksts, piemēram, “Pirms draiveru instalēšanas”
+342|_Izveidot
+343|Manuāls momentuzņēmums
+344|Dzēst momentuzņēmumu?
+345|“{description}” no {date} tiks neatgriezeniski izdzēsts.
+346|_Dzēst
+347|Atjaunot šo momentuzņēmumu?
+348|Pēc pārstartēšanas sistēma atgriezīsies stāvoklī “{description}” no {date}. Jūsu personiskie faili nemainās.\n\nPašreizējā sistēma vispirms tiek saglabāta kā momentuzņēmums, tāpēc to var atsaukt.
+349|_Atjaunot
+350|Pārstartējiet, lai pabeigtu atjaunošanu
+351|Pārstartēt _vēlāk
+352|Pārstartēt _tagad
+353|Momentuzņēmumi
+354|Atjaunošanas punkti
+355|Momentuzņēmumi saglabā operētājsistēmas stāvokli. Atjaunojot vienu, sistēma atgriežas tajā brīdī, kas palīdz pēc neveiksmīga atjauninājuma vai iestatījumu maiņas. Jūsu personiskie faili netiek aizskarti nekad.
+356|Automātiski momentuzņēmumi
+357|Ikdienas momentuzņēmumi
+358|Reizi dienā, kamēr dators ir ieslēgts
+359|Saglabājamie ikdienas uzņēmumi
+360|Pirms programmatūras atjauninājumiem
+361|Tiek veidoti automātiski, kad pakotnes tiek instalētas, uzlabotas vai noņemtas
+362|Saglabājamie atjauninājumu uzņēmumi
+363|Krātuve
+364|Diska vieta
+365|Ja MAN nepalaižas
+366|Palaišanas izvēlnē izvēlieties “Restore a MAN snapshot”, lai atgūtu strādājošu sistēmu.
+367|Momentuzņēmumi nav pieejami
+368|Momentuzņēmumi darbojas MAN, kas instalēts ar MAN instalētāja Btrfs izkārtojumu. Šī sistēma (piemēram, tiešraides sesija) to neizmanto.
+369|Gaida atjaunošana: pārstartējiet datoru, lai to pabeigtu
+370|Pārstartēt tagad
+371|Lūdzu, uzgaidiet, līdz pašreizējā darbība beidzas.
+372|Meklēt
+373|Kopēt starpliktuvē
+374|Universālais koordinētais laiks
+375|Angļu (ASV)
+376|Izlaista MAN {version}!
+377|Varat to atjaunināt.
+378|Atvērt atjauninājumus
+379|Pārbauda atjauninājumu
+380|Pārliecinās, ka atjauninājums ir īsts un pilnīgs…
+381|MAN atjauninājums
+382|Šo atjauninājumu nevar instalēt
+383|Atjauninājumu neizdevās nolasīt.
+384|Atjauninājums no {name} {version}
+385|{name} {version} ir instalēts
+386|Izlaists
+387|Lejupielādes izmērs
+388|Vajadzīgā vieta
+389|Autentiskums
+390|Pārbaudīts, parakstījis “{signer}”
+391|Kas jauns
+392|Šis atjauninājums nav jaunāks par instalēto {name} {version}.
+393|Atjauninājums
+394|Lūdzu, izlasiet šī atjauninājuma licences noteikumus.
+395|Es pieņemu licences noteikumus
+396|Kur instalēt atjauninājumu?
+397|Sistēma tiek aizstāta; faili jūsu mājas mapē netiek aizskarti.
+398|Izvēlieties instalāciju.
+399|darbojas tagad
+400|{name} {version} šajā datorā
+401|{name} diskā {model}
+402|MAN instalācija netika atrasta
+403|Atjauninājumi tiek instalēti no darbojošās, instalētās MAN sistēmas, nevis no tiešraides sesijas.
+404|Instalācijas vieta
+405|Tiek paturēts
+406|Jūsu faili
+407|Viss jūsu mājas mapē
+408|Konti un paroles
+409|Lietotāji, grupas, datora nosaukums
+410|Savienojumi un iestatījumi
+411|Wi-Fi, laika josla, tastatūra, izskats un momentuzņēmumi
+412|Flatpak lietotnes
+413|Kā arī viss mapēs /usr/local un /opt
+414|Tiek aizstāts
+415|Ar apt instalētā programmatūra un citas sistēmas failu izmaiņas tiek aizstātas ar jauno sistēmu.
+416|Operētājsistēma
+417|Tiek aizstāta ar {name} {version}. Pašreizējo sistēmu var atjaunot no momentuzņēmuma.
+418|Dators tiek pārstartēts, lai instalētu atjauninājumu
+419|Pēc sagatavošanas MAN pārstartējas, dažās sekundēs instalē atjauninājumu un atkal pārstartējas.
+420|_Instalēt atjauninājumu
+421|Vispirms izveidot momentuzņēmumu?
+422|Momentuzņēmums saglabā pašreizējo sistēmu, lai jūs varētu tai atgriezties, ja pēc atjaunināšanas kaut kas nedarbojas. Tas ir ieteicams.
+423|_Neveidot
+424|_Izveidot momentuzņēmumu
+425|Sagatavo {name} {version}
+426|Pārstartēt, lai instalētu
+427|Dators tiks pārstartēts divreiz. Jūsu faili ir drošībā.
+428|Automātiska pārstartēšana pēc {r} s
+429|Automātiska pārstartēšana pēc 30 s
+430|Atjauninājums tiks instalēts nākamajā pārstartēšanā.
+431|Gatavs
+432|Atjauninājumu neizdevās sagatavot
+433|Jūsu sistēmā nekas netika mainīts.
+434|_Mēģināt vēlreiz
+435|Atjaunināšanas žurnāls
+436|Neizdevās
+437|Jūsu sistēma ir atjaunināta
+438|MAN atjaunināts uz versiju {version}.\nIepriekš: MAN {previous}.
+439|_Gatavs
+440|Atvērt MAN atjauninājumu
+441|MAN atjauninājumi
+442|Iegūst jaunākos pakotņu sarakstus…
+443|Kopē lietotni
+444|Pievieno lietotni izvēlnei
+445|Fails netika atrasts.
+446|Pakotni neizdevās instalēt.
+447|Lietotnes izvēlnes ieraksts nav derīgs.
+448|Pārbauda instalēšanas plānu
+449|Sagatavo disku
+450|Kopē MAN uz disku
+451|Konfigurē jauno sistēmu
+452|Instalē palaidēju
+453|Izveido pirmo momentuzņēmumu
+454|Pabeidz
+455|Noņem vecos nodalījumu parakstus
+456|Izveido nodalījumus
+457|Formatē EFI sistēmas nodalījumu
+458|Šifrē sistēmas nodalījumu
+459|Formatē palaišanas nodalījumu
+460|Izveido Btrfs datņu sistēmu
+461|Noņem vecos datņu sistēmu parakstus
+462|Atslēdz šifrēto instalāciju
+463|Saglabā pašreizējo sistēmu kā momentuzņēmumu
+464|Noņem iepriekšējo sistēmu
+465|Raksta datņu sistēmu tabulu
+466|Iestata datora nosaukumu un identitāti
+467|Noņem tiešraides sesijas kontus
+468|Izveido jūsu kontu
+469|Sagatavo MAN Setup pirmajai palaišanai
+470|Iestata laika joslu un tastatūru
+471|Noņem instalētāju no jaunās sistēmas
+472|Veido palaišanas attēlu (initramfs)
+473|Konfigurē GRUB
+474|Instalē GRUB EFI sistēmas nodalījumā
+475|Instalē rezerves palaidēju
+476|Raksta palaišanas izvēlni
+477|Disks gatavs
+478|Izveido jaunās sistēmas momentuzņēmumu
+479|Pievieno momentuzņēmumu palaišanas izvēlnei
+480|Atmontē
+481|Instalētāja palīgam jādarbojas kā root.
+482|Šis dators netika palaists UEFI režīmā. MAN vajag UEFI.
+483|Lietotājvārds nav derīgs.
+484|Parole ir obligāta.
+485|Datora nosaukums nav derīgs.
+486|Nezināma valoda.
+487|Šifrēšanas paroles frāzei jābūt vismaz 8 rakstzīmēm.
+488|Disks mainījās pēc tam, kad apstiprinājāt instalēšanu. Nekas netika mainīts; pārskatiet un apstipriniet vēlreiz.
+489|Izvēlieties sistēmas nodalījumu.
+490|Apstiprinātajā diskā nav izvēlētā sistēmas nodalījuma.
+491|Palaišanas nodalījumam jābūt atsevišķam no EFI un sistēmas nodalījumiem.
+492|Palaišanas nodalījumam jābūt vismaz 512 MB.
+493|Instalācija nav izvēlēta.
+494|Apstiprinātajā diskā nav izvēlētās instalācijas.
+495|Šifrētajai instalācijai nav MAN_BOOT nodalījuma.
+496|Mapē /boot netika atrasts kodols ar atbilstošiem moduļiem.
+497|Valodu jāmaina sistēmas palīgam.
+498|Lieto jūsu iestatījumus
+499|Sagatavo diska šifrēšanu
+500|Pabeidz
+501|MAN Setup jāpabeidz sistēmas palīgam.
+502|MAN Setup šajā datorā jau ir pabeigts.
+503|Nezināma akcenta krāsa.
+504|Izvēlētais fona attēls nav pieejams.
+505|Šo sistēmu nevar šifrēt.
+506|Trūkst iestatīšanas atslēgas, tāpēc šifrēšana nevar turpināties fonā.
+507|Sistēma nav instalēta uz Btrfs, tāpēc momentuzņēmumi nav pieejami.
+508|Momentuzņēmuma atjaunošana gaida pārstartēšanu. Vispirms pārstartējiet datoru, lai to pabeigtu.
+509|Nederīgs momentuzņēmuma ID.
+510|Pārbauda atjauninājumu
+511|Izveido momentuzņēmumu
+512|Sagatavo atjaunināšanas apgabalu
+513|Izpako jauno sistēmu
+514|Pārnes jūsu kontus un iestatījumus
+515|Sagatavo pārstartēšanu
+516|Izpakots
+517|Konti
+518|Noņem tikai instalētājam paredzēto programmatūru
+519|Veido atjauninājuma palaišanas attēlu
+520|Pievieno vienreizēju palaišanas ierakstu
+521|Atjauninājums ir īsts
+522|Momentuzņēmums izveidots
+523|Izlaists
+524|Atjaunināšanas apgabals gatavs
+525|Sagatavo jauno sistēmu
+526|Atjauninājuma fails ir bojāts (kontrolsumma nesakrīt). Lejupielādējiet to vēlreiz.
+527|Atjauninājuma failu neizdevās nolasīt pilnībā.
+528|Atjauninājumā nav kodola.
+529|Atjauninājumi jāinstalē sistēmas palīgam.
+530|Izvēlētā instalācija netika atrasta.
+531|Atjaunināt var tikai darbojošos MAN instalāciju.
+532|Tas nav MAN atjauninājuma fails (nav manifesta).
+533|Atjauninājums nav parakstīts, tāpēc tam nevar uzticēties.
+534|Atjauninājuma paraksts ir bojāts.
+535|Atjauninājumu nav parakstījis MAN. Tas var būt mainīts vai nākt no neuzticama avota.
+536|Atjauninājuma manifests nav derīgs.
+537|Paroles frāze nav pareiza, vai šifrēto nodalījumu nevar atvērt.
+538|Zila
+539|Zilganzaļa
+540|Zaļa
+541|Dzeltena
+542|Oranža
+543|Sarkana
+544|Rozā
+545|Violeta
+546|Šīfera
+547|Pakotņu instalētājs
+548|Instalējiet lietotnes no .deb, Flatpak un AppImage failiem
+549|Sistēmas instalētājs
+550|Instalēt MAN šajā datorā
+551|Sistēmas atjaunošana
+552|Izveidot un atjaunot sistēmas momentuzņēmumus
+553|Sistēmas atjauninājumu instalētājs
+554|Instalēt MAN sistēmas atjauninājuma failu
+555|Piedāvā instalēt MAN, kad sākas tiešraides sesija
+556|MAN atjaunināšanas paziņojums
+557|Vienreiz pēc pieteikšanās paziņo, ka MAN ir atjaunināts
+558|Iestatiet savu jauno MAN datoru
+559|MAN pirmā iestatīšana
+560|MAN atjauninājumi
+561|Paziņo, kad ir pieejama jauna MAN versija

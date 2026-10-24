@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Šis fails nav lietotne, ko var instalēt šeit (.deb, .flatpak, .flatpakref vai AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Šī lietotne ir paredzēta {arch} datoriem un šajā datorā (x86-64) nedarbojas."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Failu neizdevās nolasīt. Tas var būt bojāts."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Tas nav AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Ievads"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Licence"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Vietas izvēle"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Instalēšanas veids"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Instalācija"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Kopsavilkums"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Turpināt"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Laipni lūdzam {name} instalētājā"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Programmatūras licences līgums"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Vai piekrītat licencei?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Lai turpinātu instalēšanu, jums jāpiekrīt programmatūras licences līguma noteikumiem."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Lasīt licenci"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Piekrītu"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Izvēlieties vietu"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Standarta instalēšana"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Instalēt"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian pakotne (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak lietotne"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak lietotne no {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Jūs tiksiet vadīts cauri soļiem, kas vajadzīgi šīs programmatūras instalēšanai."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Versija"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Izdevējs"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Veids"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Izmērs"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Tīmekļa vietne"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Fails"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Šī lietotne jau ir instalēta. Atkārtota instalēšana to aizstāj."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Lietotnes no .deb pakotnēm kļūst par sistēmas daļu. Atjauninot MAN, tās tiek noņemtas, un tās jāinstalē no jauna. Flatpak lietotnes un AppImage faili tiek saglabāti."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Instalējiet lietotnes tikai no uzticamiem avotiem."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Kur vēlaties instalēt {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Lietotni var izmantot tikai jūsu konts."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Vajadzīgas administratora tiesības."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Tikai man"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Visiem šī datora lietotājiem"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Tas aizņems {size} vietas datorā."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Lietotne tiek lejupielādēta no {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Lietotne tiek instalēta visiem šī datora lietotājiem."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Lietotne tiek instalēta tikai jums."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage tiek pārvietots uz {folder} un pievienots jūsu lietotnēm."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Noklikšķiniet uz Instalēt, lai instalētu {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Pārbauda, kas vēl lietotnei vajadzīgs…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Instalē arī vajadzīgās pakotnes: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Dažas lietotnei vajadzīgās pakotnes vēl nav pieejamas. Instalēšana vispirms iegūst jaunākos pakotņu sarakstus; ja tās joprojām trūkst, lietotni nevar instalēt."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Instalē {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Sagatavo…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Sīkāka informācija"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Instalē pakotni…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Pārvieto lietotni uz tās mapi…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Lietotni neizdevās instalēt."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Instalē lietotni ar Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Žurnāls"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Aizvērt"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Instalēšana izdevās"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Lietotne tika instalēta."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Instalēšana neizdevās"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Atvērt"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Rādīt sīkāku informāciju"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Instalēšanas žurnāls"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Lietotņu instalētājs"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Atpakaļ"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Nolasa lietotni…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Instalēt {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Lietotnes"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Izvēlieties instalējamo lietotni"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Neizdevās palaist sistēmas palīgu."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Neizdevās sazināties ar sistēmas palīgu."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Savienojums ar sistēmas palīgu tika zaudēts."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Autorizācija atcelta."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Šai darbībai vajadzīgas administratora tiesības."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Sistēmas palīgs negaidīti apstājās."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Tālāk"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Instalēšanas veids"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (tiks formatēts)"
 msgid "Boot Partition"
 msgstr "Palaišanas nodalījums"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Instalācija"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Vieta MAN"
@@ -530,10 +798,6 @@ msgstr "_Pārinstalēt"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN tiek instalēts brīvajā vietā. Windows un tā faili nemainās."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Instalēt"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Gatavs instalēšanai"
@@ -598,10 +862,6 @@ msgstr "Instalē MAN"
 msgid "Starting…"
 msgstr "Sāk…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Sīkāka informācija"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Instalē"
@@ -609,10 +869,6 @@ msgstr "Instalē"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Solis {index} no {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Žurnāls"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Neviens cits disks netika mainīts, un instalētājs atbrīvoja mērķa 
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Pārskatīt un mēģināt vēlreiz"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Rādīt sīkāku informāciju"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Instalēšanas žurnāls"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Universālais koordinētais laiks"
 msgid "English (US)"
 msgstr "Angļu (ASV)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Izlaista MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Varat to atjaunināt."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Atvērt atjauninājumus"
 
@@ -1312,10 +1560,6 @@ msgstr "Atjauninājums no {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} ir instalēts"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Versija"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Izlaists"
@@ -1339,10 +1583,6 @@ msgstr "Pārbaudīts, parakstījis “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Kas jauns"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Turpināt"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Atjauninājumi tiek instalēti no darbojošās, instalētās MAN sistēm
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Instalācijas vieta"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Kopsavilkums"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Atvērt MAN atjauninājumu"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN atjauninājumi"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Iegūst jaunākos pakotņu sarakstus…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Kopē lietotni"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Pievieno lietotni izvēlnei"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Fails netika atrasts."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Pakotni neizdevās instalēt."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Lietotnes izvēlnes ieraksts nav derīgs."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Pārnes jūsu kontus un iestatījumus"
 msgid "Preparing the restart"
 msgstr "Sagatavo pārstartēšanu"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Izpakots"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Konti"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Noņem tikai instalētājam paredzēto programmatūru"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Veido atjauninājuma palaišanas attēlu"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Pievieno vienreizēju palaišanas ierakstu"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Atjauninājums ir īsts"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Momentuzņēmums izveidots"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Izlaists"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Atjaunināšanas apgabals gatavs"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Sagatavo jauno sistēmu"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Atjauninājuma fails ir bojāts (kontrolsumma nesakrīt). Lejupielādējiet to vēlreiz."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Atjauninājuma failu neizdevās nolasīt pilnībā."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Atjauninājumā nav kodola."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Atjauninājumi jāinstalē sistēmas palīgam."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Izvēlētā instalācija netika atrasta."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Atjaunināt var tikai darbojošos MAN instalāciju."
 
@@ -1947,6 +2207,14 @@ msgstr "Violeta"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Šīfera"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Pakotņu instalētājs"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Instalējiet lietotnes no .deb, Flatpak un AppImage failiem"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

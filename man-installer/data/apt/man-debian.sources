@@ -1,0 +1,8 @@
+# MAN: Debian, so App Installer (and apt) can get what .deb apps need.
+# The pin in /etc/apt/preferences.d/man-debian keeps MAN's own packages as
+# they are: from here apt only installs packages that are not installed yet.
+Types: deb
+URIs: https://deb.debian.org/debian
+Suites: sid
+Components: main
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg

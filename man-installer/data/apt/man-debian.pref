@@ -1,0 +1,5 @@
+# MAN: never upgrade or replace installed packages with Debian's versions
+# (MAN updates come as signed .upd files); only add missing packages.
+Package: *
+Pin: origin deb.debian.org
+Pin-Priority: 50

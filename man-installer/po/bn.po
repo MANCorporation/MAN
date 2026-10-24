@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "এই ফাইলটি এমন অ্যাপ নয় যা এখানে ইনস্টল করা যায় (.deb, .flatpak, .flatpakref বা AppImage)।"
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "এই অ্যাপটি {arch} কম্পিউটারের জন্য তৈরি এবং এই কম্পিউটারে (x86-64) চলে না।"
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "ফাইলটি পড়া যায়নি। এটি ক্ষতিগ্রস্ত হতে পারে।"
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "এটি AppImage নয়।"
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "ভূমিকা"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "লাইসেন্স"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "গন্তব্য নির্বাচন"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "ইনস্টলেশনের ধরন"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "ইনস্টলেশন"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "সারসংক্ষেপ"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "চালিয়ে যান(_C)"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "{name} ইনস্টলারে স্বাগতম"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "সফটওয়্যার লাইসেন্স চুক্তি"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "আপনি কি লাইসেন্সে সম্মত?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "ইনস্টল চালিয়ে যেতে আপনাকে সফটওয়্যার লাইসেন্স চুক্তির শর্তাবলিতে সম্মত হতে হবে।"
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "লাইসেন্স পড়ুন(_R)"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "সম্মত(_A)"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "গন্তব্য নির্বাচন করুন"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "সাধারণ ইনস্টল"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "ইনস্টল করুন(_I)"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "ডেবিয়ান প্যাকেজ (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak অ্যাপ"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "{source} থেকে Flatpak অ্যাপ"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "এই সফটওয়্যার ইনস্টল করতে প্রয়োজনীয় ধাপগুলো আপনাকে দেখিয়ে দেওয়া হবে।"
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "সংস্করণ"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "প্রকাশক"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "ধরন"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "আকার"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "ওয়েবসাইট"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "ফাইল"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "এই অ্যাপটি আগে থেকেই ইনস্টল করা আছে। আবার ইনস্টল করলে এটি প্রতিস্থাপিত হবে।"
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr ".deb প্যাকেজের অ্যাপ সিস্টেমের অংশ হয়ে যায়। MAN হালনাগাদ হলে এগুলো সরিয়ে ফেলা হয় এবং আবার ইনস্টল করতে হয়। Flatpak অ্যাপ ও AppImage রাখা হয়।"
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "শুধু বিশ্বস্ত উৎস থেকে অ্যাপ ইনস্টল করুন।"
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "{name} কোথায় ইনস্টল করতে চান?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "শুধু আপনার অ্যাকাউন্ট অ্যাপটি ব্যবহার করতে পারবে।"
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "প্রশাসকের অধিকার প্রয়োজন।"
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "শুধু আমার জন্য"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "এই কম্পিউটারের সব ব্যবহারকারীর জন্য"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "এটি আপনার কম্পিউটারে {size} জায়গা নেবে।"
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "অ্যাপটি {source} থেকে ডাউনলোড হয়।"
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "অ্যাপটি এই কম্পিউটারের সব ব্যবহারকারীর জন্য ইনস্টল হয়।"
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "অ্যাপটি শুধু আপনার জন্য ইনস্টল হয়।"
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "AppImage-টি {folder}-এ সরানো হয় এবং আপনার অ্যাপে যোগ করা হয়।"
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "{name} ইনস্টল করতে ইনস্টল ক্লিক করুন।"
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "অ্যাপের আর কী প্রয়োজন তা পরীক্ষা করা হচ্ছে…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "এর প্রয়োজনীয় প্যাকেজগুলোও ইনস্টল করে: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "অ্যাপের প্রয়োজনীয় কিছু প্যাকেজ এখনও পাওয়া যাচ্ছে না। ইনস্টল প্রথমে সর্বশেষ প্যাকেজ তালিকা আনে; তারপরও না পাওয়া গেলে অ্যাপটি ইনস্টল করা যাবে না।"
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} ইনস্টল হচ্ছে…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "প্রস্তুত হচ্ছে…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "বিস্তারিত"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "প্যাকেজ ইনস্টল হচ্ছে…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "অ্যাপটি তার ফোল্ডারে সরানো হচ্ছে…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "অ্যাপটি ইনস্টল করা যায়নি।"
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Flatpak দিয়ে অ্যাপ ইনস্টল হচ্ছে…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "লগ"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "বন্ধ করুন(_C)"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "ইনস্টল সফল হয়েছে"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "অ্যাপটি ইনস্টল হয়েছে।"
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "ইনস্টল ব্যর্থ হয়েছে"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "খুলুন(_O)"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "বিস্তারিত দেখান(_S)"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "ইনস্টলেশন লগ"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "অ্যাপ ইনস্টলার"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "পিছনে(_B)"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "অ্যাপটি পড়া হচ্ছে…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} ইনস্টল করুন"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "অ্যাপ"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "ইনস্টল করার জন্য একটি অ্যাপ বেছে নিন"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "সিস্টেম সহায়ক চালু করা যায়নি।"
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "সিস্টেম সহায়কের সাথে যোগাযোগ করা যায়নি।"
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "সিস্টেম সহায়কের সাথে সংযোগ বিচ্ছিন্ন হয়েছে।"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "অনুমোদন বাতিল করা হয়েছে।"
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "এই কাজের জন্য প্রশাসকের অধিকার প্রয়োজন।"
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "সিস্টেম সহায়ক অপ্রত্যাশিতভাবে থেমে গেছে।"
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "পরবর্তী(_N)"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "ইনস্টলেশনের ধরন"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (ফরম্যাট হবে)"
 msgid "Boot Partition"
 msgstr "বুট পার্টিশন"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "ইনস্টলেশন"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "MAN-এর জন্য জায়গা"
@@ -530,10 +798,6 @@ msgstr "পুনরায় ইনস্টল করুন(_R)"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN খালি জায়গায় ইনস্টল হবে। Windows ও এর ফাইল বদলাবে না।"
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "ইনস্টল করুন(_I)"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "ইনস্টলের জন্য প্রস্তুত"
@@ -598,10 +862,6 @@ msgstr "MAN ইনস্টল হচ্ছে"
 msgid "Starting…"
 msgstr "শুরু হচ্ছে…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "বিস্তারিত"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "ইনস্টল হচ্ছে"
@@ -609,10 +869,6 @@ msgstr "ইনস্টল হচ্ছে"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "ধাপ {index}/{n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "লগ"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "অন্য কোনো ডিস্ক বদলানো হয়�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "পর্যালোচনা করে আবার চেষ্টা করুন(_R)"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "বিস্তারিত দেখান(_S)"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "ইনস্টলেশন লগ"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "সমন্বিত সার্বজনীন সময়"
 msgid "English (US)"
 msgstr "ইংরেজি (যুক্তরাষ্ট্র)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "MAN {version} প্রকাশিত হয়েছে!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "আপনি এতে হালনাগাদ করতে পারেন।"
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "হালনাগাদ খুলুন"
 
@@ -1312,10 +1560,6 @@ msgstr "{name} {version} থেকে হালনাগাদ"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} ইনস্টল করা আছে"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "সংস্করণ"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "প্রকাশিত"
@@ -1339,10 +1583,6 @@ msgstr "যাচাইকৃত, “{signer}”-এর স্বাক্ষর
 #: updater.rs:120
 msgid "What's New"
 msgstr "নতুন কী আছে"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "চালিয়ে যান(_C)"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "হালনাগাদ চলমান, ইনস্টল করা M
 #: updater.rs:240
 msgid "Install Location"
 msgstr "ইনস্টলেশনের অবস্থান"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "সারসংক্ষেপ"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "একটি MAN হালনাগাদ খুলুন"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN হালনাগাদ"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "সর্বশেষ প্যাকেজ তালিকা আনা হচ্ছে…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "অ্যাপটি কপি করা হচ্ছে"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "অ্যাপটি মেনুতে যোগ করা হচ্ছে"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "ফাইলটি পাওয়া যায়নি।"
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "প্যাকেজটি ইনস্টল করা যায়নি।"
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "অ্যাপের মেনু এন্ট্রি বৈধ নয়।"
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "আপনার অ্যাকাউন্ট ও সেটিংস �
 msgid "Preparing the restart"
 msgstr "পুনরায় চালুর প্রস্তুতি"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "আনপ্যাক হয়েছে"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "অ্যাকাউন্ট"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "কেবল ইনস্টলারের সফটওয়্যার সরানো হচ্ছে"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "হালনাগাদের বুট ইমেজ তৈরি হচ্ছে"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "একবারের বুট এন্ট্রি যোগ হচ্ছে"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "হালনাগাদটি আসল"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "স্ন্যাপশট তৈরি হয়েছে"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "এড়িয়ে যাওয়া হয়েছে"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "হালনাগাদ এলাকা প্রস্তুত"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "নতুন সিস্টেম প্রস্তুত হচ্ছে"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "হালনাগাদ ফাইল ক্ষতিগ্রস্ত (চেকসাম মিলছে না)। আবার ডাউনলোড করুন।"
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "হালনাগাদ ফাইল সম্পূর্ণ পড়া যায়নি।"
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "হালনাগাদে কোনো কার্নেল নেই।"
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "হালনাগাদ সিস্টেম সহায়ককেই ইনস্টল করতে হবে।"
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "বেছে নেওয়া ইনস্টলেশন পাওয়া যায়নি।"
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "কেবল চলমান MAN ইনস্টলেশন হালনাগাদ করা যায়।"
 
@@ -1947,6 +2207,14 @@ msgstr "বেগুনি"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "স্লেট"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "প্যাকেজ ইনস্টলার"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr ".deb, Flatpak ও AppImage ফাইল থেকে অ্যাপ ইনস্টল করুন"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

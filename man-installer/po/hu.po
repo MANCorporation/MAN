@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Ez a fájl nem olyan alkalmazás, amely itt telepíthető (.deb, .flatpak, .flatpakref vagy AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Ez az alkalmazás {arch} számítógépekhez készült, és ezen a gépen (x86-64) nem működik."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "A fájl nem olvasható. Lehet, hogy sérült."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Ez nem AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Bevezetés"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Licenc"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Célhely kiválasztása"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Telepítés típusa"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Telepítés"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Összegzés"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Folytatás"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Üdvözli a(z) {name} telepítője"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Szoftver-licencszerződés"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Elfogadja a licencet?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "A telepítés folytatásához el kell fogadnia a szoftver-licencszerződés feltételeit."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "Licenc _elolvasása"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Elfogadom"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Válasszon célhelyet"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Normál telepítés"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Telepítés"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian-csomag (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak alkalmazás"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak alkalmazás innen: {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Végigvezetjük a szoftver telepítéséhez szükséges lépéseken."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Verzió"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Kiadó"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Típus"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Méret"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Weboldal"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Fájl"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Ez az alkalmazás már telepítve van. Az újratelepítés lecseréli."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "A .deb csomagokból telepített alkalmazások a rendszer részévé válnak. A MAN frissítésekor eltávolításra kerülnek, és újra kell telepíteni őket. A Flatpak alkalmazások és az AppImage-ek megmaradnak."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Csak megbízható forrásból telepítsen alkalmazásokat."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Hová szeretné telepíteni ezt: {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Csak az Ön fiókja használhatja az alkalmazást."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Rendszergazdai jogok szükségesek."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Csak nekem"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "A számítógép összes felhasználójának"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Ez {size} helyet foglal a számítógépen."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Az alkalmazás innen töltődik le: {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Az alkalmazás a számítógép összes felhasználója számára települ."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Az alkalmazás csak az Ön számára települ."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "Az AppImage a(z) {folder} mappába kerül, és megjelenik az alkalmazásai között."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Kattintson a Telepítés gombra a(z) {name} telepítéséhez."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Annak ellenőrzése, mire van még szüksége az alkalmazásnak…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "A szükséges csomagokat is telepíti: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Az alkalmazáshoz szükséges egyes csomagok még nem érhetők el. A telepítés először letölti a legújabb csomaglistákat; ha még mindig hiányoznak, az alkalmazás nem telepíthető."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "{name} telepítése…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Előkészítés…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Részletek"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "A csomag telepítése…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Az alkalmazás áthelyezése a mappájába…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Az alkalmazást nem sikerült telepíteni."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Az alkalmazás telepítése Flatpakkal…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Napló"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Bezárás"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "A telepítés sikeres volt"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Az alkalmazás telepítve lett."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "A telepítés sikertelen"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Megnyitás"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Részletek megjelenítése"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Telepítési napló"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Alkalmazástelepítő"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Vissza"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Az alkalmazás beolvasása…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "{name} telepítése"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Alkalmazások"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Válassza ki a telepítendő alkalmazást"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "A rendszersegéd nem indítható el."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Nem sikerült kommunikálni a rendszersegéddel."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Megszakadt a kapcsolat a rendszersegéddel."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "A hitelesítés megszakítva."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Ehhez a művelethez rendszergazdai jogosultság szükséges."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "A rendszersegéd váratlanul leállt."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Tovább"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Telepítés típusa"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (formázva lesz)"
 msgid "Boot Partition"
 msgstr "Rendszerindító partíció"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Telepítés"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Hely a MAN számára"
@@ -530,10 +798,6 @@ msgstr "Ú_jratelepítés"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "A MAN a szabad helyre települ. A Windows és a fájljai nem változnak."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Telepítés"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Kész a telepítésre"
@@ -598,10 +862,6 @@ msgstr "A MAN telepítése"
 msgid "Starting…"
 msgstr "Indítás…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Részletek"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Telepítés"
@@ -609,10 +869,6 @@ msgstr "Telepítés"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "{index}/{n}. lépés  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Napló"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Más lemez nem változott, és a telepítő felszabadította a céllemez
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "Á_ttekintés és újrapróbálás"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Részletek megjelenítése"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Telepítési napló"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Egyezményes világidő"
 msgid "English (US)"
 msgstr "Angol (USA)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Megjelent a MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Frissíthet rá."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Frissítések megnyitása"
 
@@ -1312,10 +1560,6 @@ msgstr "Frissítés innen: {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "{name} {version} telepítve"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Verzió"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Kiadva"
@@ -1339,10 +1583,6 @@ msgstr "Ellenőrizve, aláíró: „{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Újdonságok"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Folytatás"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "A frissítéseket egy futó, telepített MAN rendszerből lehet telepít
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Telepítés helye"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Összegzés"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "MAN frissítés megnyitása"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "MAN frissítések"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "A legújabb csomaglisták letöltése…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Az alkalmazás másolása"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Az alkalmazás hozzáadása a menühöz"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "A fájl nem található."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "A csomagot nem sikerült telepíteni."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Az alkalmazás menübejegyzése érvénytelen."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "A fiókjai és beállításai áthelyezése"
 msgid "Preparing the restart"
 msgstr "Az újraindítás előkészítése"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Kicsomagolva"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Fiókok"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "A csak a telepítőhöz tartozó szoftverek eltávolítása"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "A frissítés rendszerindító lemezképének összeállítása"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Az egyszeri indítási bejegyzés hozzáadása"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "A frissítés eredeti"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Pillanatkép elkészült"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Kihagyva"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "A frissítési terület kész"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Az új rendszer előkészítése"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "A frissítési fájl sérült (az ellenőrzőösszeg nem egyezik). Töltse le újra."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "A frissítési fájl nem olvasható be teljesen."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "A frissítés nem tartalmaz kernelt."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "A frissítéseket a rendszersegédnek kell telepítenie."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "A kiválasztott telepítés nem található."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Csak a futó MAN telepítés frissíthető."
 
@@ -1947,6 +2207,14 @@ msgstr "Lila"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Palaszürke"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Csomagtelepítő"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Alkalmazások telepítése .deb, Flatpak és AppImage fájlokból"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

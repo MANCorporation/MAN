@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Αυτό το αρχείο δεν είναι εφαρμογή που μπορεί να εγκατασταθεί εδώ (.deb, .flatpak, .flatpakref ή AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Αυτή η εφαρμογή είναι φτιαγμένη για υπολογιστές {arch} και δεν λειτουργεί σε αυτόν (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Δεν ήταν δυνατή η ανάγνωση του αρχείου. Ίσως είναι κατεστραμμένο."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Αυτό δεν είναι AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Εισαγωγή"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Άδεια χρήσης"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Επιλογή προορισμού"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Τύπος εγκατάστασης"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Εγκατάσταση"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Σύνοψη"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Συνέχεια"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Καλώς ήρθατε στο πρόγραμμα εγκατάστασης του {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Άδεια χρήσης λογισμικού"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Συμφωνείτε με την άδεια χρήσης;"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Για να συνεχίσετε την εγκατάσταση, πρέπει να συμφωνήσετε με τους όρους της άδειας χρήσης λογισμικού."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Ανάγνωση άδειας"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Συμφωνώ"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Επιλέξτε προορισμό"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Τυπική εγκατάσταση"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_Εγκατάσταση"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Πακέτο Debian (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Εφαρμογή Flatpak"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Εφαρμογή Flatpak από {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Θα σας καθοδηγήσουμε στα βήματα που χρειάζονται για να εγκαταστήσετε αυτό το λογισμικό."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Έκδοση"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Εκδότης"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Τύπος"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Ιστότοπος"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "Αρχείο"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Αυτή η εφαρμογή είναι ήδη εγκατεστημένη. Η επανεγκατάσταση την αντικαθιστά."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Οι εφαρμογές από πακέτα .deb γίνονται μέρος του συστήματος. Όταν ενημερώνεται το MAN αφαιρούνται και πρέπει να εγκατασταθούν ξανά. Οι εφαρμογές Flatpak και τα AppImage διατηρούνται."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Εγκαθιστάτε εφαρμογές μόνο από πηγές που εμπιστεύεστε."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Πού θέλετε να εγκαταστήσετε το {name};"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Μόνο ο λογαριασμός σας μπορεί να χρησιμοποιεί την εφαρμογή."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Απαιτούνται δικαιώματα διαχειριστή."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Μόνο για μένα"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Για όλους τους χρήστες αυτού του υπολογιστή"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Θα καταλάβει {size} χώρο στον υπολογιστή σας."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Η εφαρμογή λαμβάνεται από {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Η εφαρμογή εγκαθίσταται για όλους τους χρήστες αυτού του υπολογιστή."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Η εφαρμογή εγκαθίσταται μόνο για εσάς."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "Το AppImage μετακινείται στο {folder} και προστίθεται στις εφαρμογές σας."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "Πατήστε Εγκατάσταση για να εγκαταστήσετε το {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Έλεγχος του τι άλλο χρειάζεται η εφαρμογή…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Εγκαθιστά επίσης τα πακέτα που χρειάζεται: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Κάποια πακέτα που χρειάζεται η εφαρμογή δεν είναι ακόμη διαθέσιμα. Η εγκατάσταση λαμβάνει πρώτα τις νεότερες λίστες πακέτων· αν λείπουν ακόμη, η εφαρμογή δεν μπορεί να εγκατασταθεί."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Εγκατάσταση του {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Προετοιμασία…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Εγκατάσταση του πακέτου…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Μετακίνηση της εφαρμογής στον φάκελό της…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Δεν ήταν δυνατή η εγκατάσταση της εφαρμογής."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Εγκατάσταση της εφαρμογής με Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Αρχείο καταγραφής"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Κλείσιμο"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Η εγκατάσταση ολοκληρώθηκε με επιτυχία"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Η εφαρμογή εγκαταστάθηκε."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Η εγκατάσταση απέτυχε"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "Ά_νοιγμα"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Εμφάνιση λεπτομερειών"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Αρχείο καταγραφής εγκατάστασης"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Εγκατάσταση εφαρμογών"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Πίσω"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Ανάγνωση της εφαρμογής…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "Εγκατάσταση {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Εφαρμογές"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Επιλέξτε εφαρμογή για εγκατάσταση"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Δεν ήταν δυνατή η εκκίνηση του βοηθού συστήματος."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Δεν ήταν δυνατή η επικοινωνία με τον βοηθό συστήματος."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Χάθηκε η σύνδεση με τον βοηθό συστήματος."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Η εξουσιοδότηση ακυρώθηκε."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Για αυτή την ενέργεια χρειάζονται δικαιώματα διαχειριστή."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Ο βοηθός συστήματος σταμάτησε απροσδόκητα."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Επόμενο"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Τύπος εγκατάστασης"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (θα διαμορφωθεί)"
 msgid "Boot Partition"
 msgstr "Διαμέρισμα εκκίνησης"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Εγκατάσταση"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Χώρος για το MAN"
@@ -530,10 +798,6 @@ msgstr "_Επανεγκατάσταση"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "Το MAN εγκαθίσταται στον ελεύθερο χώρο. Τα Windows και τα αρχεία τους δεν αλλάζουν."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_Εγκατάσταση"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Έτοιμο για εγκατάσταση"
@@ -598,10 +862,6 @@ msgstr "Εγκατάσταση του MAN"
 msgid "Starting…"
 msgstr "Εκκίνηση…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Λεπτομέρειες"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Εγκατάσταση"
@@ -609,10 +869,6 @@ msgstr "Εγκατάσταση"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Βήμα {index} από {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Αρχείο καταγραφής"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Κανένας άλλος δίσκος δεν άλλαξε και ο ε�
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Έλεγχος και νέα προσπάθεια"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Εμφάνιση λεπτομερειών"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Αρχείο καταγραφής εγκατάστασης"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Συντονισμένη Παγκόσμια Ώρα"
 msgid "English (US)"
 msgstr "Αγγλικά (ΗΠΑ)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Κυκλοφόρησε το MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Μπορείτε να κάνετε ενημέρωση σε αυτό."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Άνοιγμα ενημερώσεων"
 
@@ -1312,10 +1560,6 @@ msgstr "Ενημέρωση από {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Είναι εγκατεστημένο το {name} {version}"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Έκδοση"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Κυκλοφορία"
@@ -1339,10 +1583,6 @@ msgstr "Επαληθευμένη, υπογραφή από «{signer}»"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Τι νέο υπάρχει"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Συνέχεια"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Οι ενημερώσεις εγκαθίστανται από ένα ε�
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Θέση εγκατάστασης"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Σύνοψη"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Άνοιγμα ενημέρωσης MAN"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Ενημερώσεις MAN"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Λήψη των νεότερων λιστών πακέτων…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Αντιγραφή της εφαρμογής"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Προσθήκη της εφαρμογής στο μενού"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Το αρχείο δεν βρέθηκε."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Δεν ήταν δυνατή η εγκατάσταση του πακέτου."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Η καταχώριση μενού της εφαρμογής δεν είναι έγκυρη."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Μεταφορά των λογαριασμών και των ρυθμί�
 msgid "Preparing the restart"
 msgstr "Προετοιμασία της επανεκκίνησης"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Αποσυμπιέστηκε"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Λογαριασμοί"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Αφαίρεση λογισμικού που χρησιμοποιεί μόνο ο εγκαταστάτης"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Δημιουργία της εικόνας εκκίνησης της ενημέρωσης"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Προσθήκη καταχώρισης εκκίνησης μίας χρήσης"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Η ενημέρωση είναι γνήσια"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Το στιγμιότυπο δημιουργήθηκε"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Παραλείφθηκε"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Η περιοχή ενημέρωσης είναι έτοιμη"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Προετοιμασία του νέου συστήματος"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Το αρχείο ενημέρωσης είναι κατεστραμμένο (το άθροισμα ελέγχου δεν ταιριάζει). Κατεβάστε το ξανά."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Δεν ήταν δυνατή η πλήρης ανάγνωση του αρχείου ενημέρωσης."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Η ενημέρωση δεν περιέχει πυρήνα."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Οι ενημερώσεις πρέπει να εγκαθίστανται από τον βοηθό συστήματος."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Η επιλεγμένη εγκατάσταση δεν βρέθηκε."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Μόνο η εγκατάσταση MAN που εκτελείται μπορεί να ενημερωθεί."
 
@@ -1947,6 +2207,14 @@ msgstr "Μωβ"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Σχιστόλιθος"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Εγκατάσταση πακέτων"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Εγκατάσταση εφαρμογών από αρχεία .deb, Flatpak και AppImage"
 
 #: com.man.Installer.desktop
 msgid "System Installer"

@@ -6,27 +6,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backend.rs:46
+#: appinstaller.rs:119
+msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
+msgstr "Hindi app ang file na ito na maaaring i-install dito (.deb, .flatpak, .flatpakref o AppImage)."
+
+#: appinstaller.rs:128
+msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
+msgstr "Ginawa ang app na ito para sa mga {arch} na computer at hindi ito gumagana sa computer na ito (x86-64)."
+
+#: appinstaller.rs:313
+msgid "The file could not be read. It may be damaged."
+msgstr "Hindi mabasa ang file. Maaaring sira ito."
+
+#: appinstaller.rs:485
+msgid "This is not an AppImage."
+msgstr "Hindi ito AppImage."
+
+#: appinstaller.rs:679
+msgid "Introduction"
+msgstr "Panimula"
+
+#: appinstaller.rs:680
+msgid "License"
+msgstr "Lisensya"
+
+#: appinstaller.rs:681
+msgid "Destination Select"
+msgstr "Pagpili ng Patutunguhan"
+
+#: appinstaller.rs:682
+msgid "Installation Type"
+msgstr "Uri ng pag-install"
+
+#: appinstaller.rs:683
+msgid "Installation"
+msgstr "Installation"
+
+#: appinstaller.rs:684
+msgid "Summary"
+msgstr "Buod"
+
+#: appinstaller.rs:788
+msgid "_Continue"
+msgstr "_Magpatuloy"
+
+#: appinstaller.rs:797
+msgid "Welcome to the {name} Installer"
+msgstr "Maligayang pagdating sa Installer ng {name}"
+
+#: appinstaller.rs:801
+msgid "Software License Agreement"
+msgstr "Kasunduan sa Lisensya ng Software"
+
+#: appinstaller.rs:811
+msgid "Do You Agree to the License?"
+msgstr "Sumasang-ayon Ka ba sa Lisensya?"
+
+#: appinstaller.rs:812
+msgid "To continue installing, you must agree to the terms of the software license agreement."
+msgstr "Para magpatuloy sa pag-install, kailangan mong sumang-ayon sa mga tuntunin ng kasunduan sa lisensya ng software."
+
+#: appinstaller.rs:814
+msgid "_Read License"
+msgstr "_Basahin ang Lisensya"
+
+#: appinstaller.rs:815
+msgid "_Agree"
+msgstr "_Sumasang-ayon"
+
+#: appinstaller.rs:828
+msgid "Select a Destination"
+msgstr "Pumili ng Patutunguhan"
+
+#: appinstaller.rs:832
+msgid "Standard Install"
+msgstr "Karaniwang Pag-install"
+
+#: appinstaller.rs:833
+msgid "_Install"
+msgstr "_I-install"
+
+#: appinstaller.rs:846
+msgid "Debian package (.deb)"
+msgstr "Debian package (.deb)"
+
+#: appinstaller.rs:847
+msgid "Flatpak app"
+msgstr "Flatpak app"
+
+#: appinstaller.rs:848
+msgid "Flatpak app from {source}"
+msgstr "Flatpak app mula sa {source}"
+
+#: appinstaller.rs:849
+msgid "AppImage"
+msgstr "AppImage"
+
+#: appinstaller.rs:867
+msgid "You will be guided through the steps necessary to install this software."
+msgstr "Gagabayan ka sa mga hakbang na kailangan para i-install ang software na ito."
+
+#: appinstaller.rs:878
+msgid "Version"
+msgstr "Bersyon"
+
+#: appinstaller.rs:881
+msgid "Publisher"
+msgstr "Publisher"
+
+#: appinstaller.rs:883
+msgid "Type"
+msgstr "Uri"
+
+#: appinstaller.rs:885
+msgid "Size"
+msgstr "Laki"
+
+#: appinstaller.rs:891
+msgid "Website"
+msgstr "Website"
+
+#: appinstaller.rs:893
+msgid "File"
+msgstr "File"
+
+#: appinstaller.rs:903
+msgid "This app is installed already. Installing it again replaces it."
+msgstr "Naka-install na ang app na ito. Papalitan ito kapag in-install ulit."
+
+#: appinstaller.rs:906
+msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+msgstr "Nagiging bahagi ng system ang mga app mula sa .deb package. Kapag na-update ang MAN, inaalis ang mga ito at kailangang i-install ulit. Pinapanatili ang mga Flatpak app at AppImage."
+
+#: appinstaller.rs:909
+msgid "Only install apps from sources you trust."
+msgstr "Mag-install lang ng mga app mula sa mga pinagkukunang pinagkakatiwalaan mo."
+
+#: appinstaller.rs:915
+msgid "Where do you want to install {name}?"
+msgstr "Saan mo gustong i-install ang {name}?"
+
+#: appinstaller.rs:920
+msgid "Only your account can use the app."
+msgstr "Ang account mo lang ang makakagamit ng app."
+
+#: appinstaller.rs:921
+msgid "Needs administrator rights."
+msgstr "Kailangan ng mga karapatan ng administrator."
+
+#: appinstaller.rs:928
+msgid "Only for Me"
+msgstr "Para sa Akin Lang"
+
+#: appinstaller.rs:928
+msgid "For All Users of This Computer"
+msgstr "Para sa Lahat ng User ng Computer na Ito"
+
+#: appinstaller.rs:943
+msgid "This will take {size} of space on your computer."
+msgstr "Gagamit ito ng {size} na espasyo sa computer mo."
+
+#: appinstaller.rs:945
+msgid "The app is downloaded from {source}."
+msgstr "Dina-download ang app mula sa {source}."
+
+#: appinstaller.rs:947
+msgid "The app is installed for all users of this computer."
+msgstr "Ini-install ang app para sa lahat ng user ng computer na ito."
+
+#: appinstaller.rs:947
+msgid "The app is installed only for you."
+msgstr "Ini-install ang app para sa iyo lang."
+
+#: appinstaller.rs:950
+msgid "The AppImage is moved to {folder} and added to your apps."
+msgstr "Inililipat ang AppImage sa {folder} at idinadagdag sa mga app mo."
+
+#: appinstaller.rs:952
+msgid "Click Install to install {name}."
+msgstr "I-click ang I-install para i-install ang {name}."
+
+#: appinstaller.rs:958
+msgid "Checking what else the app needs…"
+msgstr "Tinitingnan kung ano pa ang kailangan ng app…"
+
+#: appinstaller.rs:968
+msgid "Also installs the packages it needs: {list}"
+msgstr "Ini-install din ang mga package na kailangan nito: {list}"
+
+#: appinstaller.rs:974
+msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
+msgstr "Hindi pa available ang ilang package na kailangan ng app. Kinukuha muna ng pag-install ang pinakabagong listahan ng package; kung kulang pa rin, hindi mai-install ang app."
+
+#: appinstaller.rs:1035
+msgid "Installing {name}…"
+msgstr "Ini-install ang {name}…"
+
+#: appinstaller.rs:1041
+msgid "Preparing…"
+msgstr "Naghahanda…"
+
+#: appinstaller.rs:1048
+msgid "Details"
+msgstr "Mga detalye"
+
+#: appinstaller.rs:1088
+msgid "Installing the package…"
+msgstr "Ini-install ang package…"
+
+#: appinstaller.rs:1107
+msgid "Moving the app to its folder…"
+msgstr "Inililipat ang app sa folder nito…"
+
+#: appinstaller.rs:1116
+msgid "The app could not be installed."
+msgstr "Hindi ma-install ang app."
+
+#: appinstaller.rs:1120
+msgid "Installing the app with Flatpak…"
+msgstr "Ini-install ang app gamit ang Flatpak…"
+
+#: appinstaller.rs:1139
+msgid "Log"
+msgstr "Log"
+
+#: appinstaller.rs:1169
+msgid "_Close"
+msgstr "_Isara"
+
+#: appinstaller.rs:1179
+msgid "The Installation Was Successful"
+msgstr "Matagumpay ang Pag-install"
+
+#: appinstaller.rs:1179
+msgid "The app was installed."
+msgstr "Na-install ang app."
+
+#: appinstaller.rs:1184
+msgid "The Installation Failed"
+msgstr "Nabigo ang Pag-install"
+
+#: appinstaller.rs:1195
+msgid "_Open"
+msgstr "_Buksan"
+
+#: appinstaller.rs:1205
+msgid "_Show Details"
+msgstr "_Ipakita ang mga detalye"
+
+#: appinstaller.rs:1208
+msgid "Installation Log"
+msgstr "Log ng pag-install"
+
+#: appinstaller.rs:1235
+msgid "App Installer"
+msgstr "Installer ng App"
+
+#: appinstaller.rs:1256
+msgid "Go _Back"
+msgstr "_Bumalik"
+
+#: appinstaller.rs:1328
+msgid "Reading the app…"
+msgstr "Binabasa ang app…"
+
+#: appinstaller.rs:1337
+msgid "Install {name}"
+msgstr "I-install ang {name}"
+
+#: appinstaller.rs:1356
+msgid "Apps"
+msgstr "Mga App"
+
+#: appinstaller.rs:1362
+msgid "Choose an App to Install"
+msgstr "Pumili ng App na I-install"
+
+#: backend.rs:53
 msgid "Could not start the system helper."
 msgstr "Hindi masimulan ang system helper."
 
-#: backend.rs:51
+#: backend.rs:57
 msgid "Could not talk to the system helper."
 msgstr "Hindi makipag-ugnayan sa system helper."
 
-#: backend.rs:71
+#: backend.rs:77
 msgid "Lost contact with the system helper."
 msgstr "Naputol ang koneksyon sa system helper."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Authorization was cancelled."
 msgstr "Kinansela ang awtorisasyon."
 
-#: backend.rs:81
+#: backend.rs:87
 msgid "Administrator rights are needed for this action."
 msgstr "Kailangan ng karapatan ng administrator para sa aksyong ito."
 
-#: backend.rs:83
+#: backend.rs:89
 msgid "The system helper stopped unexpectedly."
 msgstr "Biglang huminto ang system helper."
 
@@ -117,10 +393,6 @@ msgstr "  ·  EFI"
 #: installer.rs:356
 msgid "_Next"
 msgstr "_Susunod"
-
-#: installer.rs:361
-msgid "Installation Type"
-msgstr "Uri ng pag-install"
 
 #: installer.rs:364
 msgid "Erase Disk and Install MAN"
@@ -446,10 +718,6 @@ msgstr "{partition} (ifo-format)"
 msgid "Boot Partition"
 msgstr "Boot partition"
 
-#: installer.rs:976
-msgid "Installation"
-msgstr "Installation"
-
 #: installer.rs:980
 msgid "Space for MAN"
 msgstr "Espasyo para sa MAN"
@@ -530,10 +798,6 @@ msgstr "I-install _muli"
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "Ii-install ang MAN sa bakanteng espasyo. Hindi magbabago ang Windows at mga file nito."
 
-#: installer.rs:1005
-msgid "_Install"
-msgstr "_I-install"
-
 #: installer.rs:1019
 msgid "Ready to Install"
 msgstr "Handa nang i-install"
@@ -598,10 +862,6 @@ msgstr "Ini-install ang MAN"
 msgid "Starting…"
 msgstr "Sinisimulan…"
 
-#: installer.rs:1085
-msgid "Details"
-msgstr "Mga detalye"
-
 #: installer.rs:1090
 msgid "Installing"
 msgstr "Ini-install"
@@ -609,10 +869,6 @@ msgstr "Ini-install"
 #: installer.rs:1103
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Hakbang {index} ng {n}  ·  {title}"
-
-#: installer.rs:1128
-msgid "Log"
-msgstr "Log"
 
 #: installer.rs:1138
 msgid "MAN Is Installed"
@@ -645,14 +901,6 @@ msgstr "Walang ibang disk na binago, at pinakawalan na ng installer ang target n
 #: installer.rs:1191
 msgid "_Review and Try Again"
 msgstr "_Suriin at subukang muli"
-
-#: installer.rs:1193
-msgid "_Show Details"
-msgstr "_Ipakita ang mga detalye"
-
-#: installer.rs:1208
-msgid "Installation Log"
-msgstr "Log ng pag-install"
 
 #: langui.rs:229
 msgid "Search languages"
@@ -1272,15 +1520,15 @@ msgstr "Coordinated Universal Time"
 msgid "English (US)"
 msgstr "Ingles (US)"
 
-#: updatecheck.rs:231
+#: updatecheck.rs:273
 msgid "MAN {version} Released!"
 msgstr "Inilabas na ang MAN {version}!"
 
-#: updatecheck.rs:232
+#: updatecheck.rs:274
 msgid "You can update to it."
 msgstr "Maaari kang mag-update dito."
 
-#: updatecheck.rs:235
+#: updatecheck.rs:277
 msgid "Open Updates"
 msgstr "Buksan ang Mga Update"
 
@@ -1312,10 +1560,6 @@ msgstr "Update mula sa {name} {version}"
 msgid "{name} {version} is installed"
 msgstr "Naka-install ang {name} {version}"
 
-#: updater.rs:109
-msgid "Version"
-msgstr "Bersyon"
-
 #: updater.rs:111
 msgid "Released"
 msgstr "Inilabas"
@@ -1339,10 +1583,6 @@ msgstr "Na-verify, nilagdaan ni “{signer}”"
 #: updater.rs:120
 msgid "What's New"
 msgstr "Ano'ng bago"
-
-#: updater.rs:129
-msgid "_Continue"
-msgstr "_Magpatuloy"
 
 #: updater.rs:134
 msgid "This update is not newer than the installed {name} {version}."
@@ -1395,10 +1635,6 @@ msgstr "Ini-install ang mga update mula sa tumatakbo at naka-install na MAN syst
 #: updater.rs:240
 msgid "Install Location"
 msgstr "Lokasyon ng installation"
-
-#: updater.rs:252
-msgid "Summary"
-msgstr "Buod"
 
 #: updater.rs:257
 msgid "Kept"
@@ -1551,6 +1787,30 @@ msgstr "Magbukas ng MAN update"
 #: updater.rs:549
 msgid "MAN updates"
 msgstr "Mga MAN update"
+
+#: apphelper.rs:59
+msgid "Getting the newest package lists…"
+msgstr "Kinukuha ang pinakabagong listahan ng package…"
+
+#: apphelper.rs:146
+msgid "Copying the app"
+msgstr "Kinokopya ang app"
+
+#: apphelper.rs:150
+msgid "Adding the app to the menu"
+msgstr "Idinadagdag ang app sa menu"
+
+#: apphelper.rs:56
+msgid "The file was not found."
+msgstr "Hindi nakita ang file."
+
+#: apphelper.rs:77
+msgid "The package could not be installed."
+msgstr "Hindi ma-install ang package."
+
+#: apphelper.rs:136
+msgid "The app's menu entry is not valid."
+msgstr "Hindi valid ang menu entry ng app."
 
 #: install.rs:16
 msgid "Checking the installation plan"
@@ -1824,67 +2084,67 @@ msgstr "Inililipat ang iyong mga account at setting"
 msgid "Preparing the restart"
 msgstr "Inihahanda ang restart"
 
-#: update.rs:179
+#: update.rs:186
 msgid "Unpacked"
 msgstr "Na-unpack"
 
-#: update.rs:261
+#: update.rs:268
 msgid "Accounts"
 msgstr "Mga account"
 
-#: update.rs:301
+#: update.rs:308
 msgid "Removing installer-only software"
 msgstr "Inaalis ang software na pang-installer lang"
 
-#: update.rs:340
+#: update.rs:347
 msgid "Building the update boot image"
 msgstr "Binubuo ang boot image ng update"
 
-#: update.rs:343
+#: update.rs:350
 msgid "Adding the one-time boot entry"
 msgstr "Idinadagdag ang isang beses na boot entry"
 
-#: update.rs:377
+#: update.rs:384
 msgid "The update is genuine"
 msgstr "Tunay ang update"
 
-#: update.rs:383
+#: update.rs:390
 msgid "Snapshot created"
 msgstr "Nagawa ang snapshot"
 
-#: update.rs:385
+#: update.rs:392
 msgid "Skipped"
 msgstr "Nilaktawan"
 
-#: update.rs:394
+#: update.rs:401
 msgid "Update area ready"
 msgstr "Handa na ang update area"
 
-#: update.rs:410
+#: update.rs:423
 msgid "Preparing the new system"
 msgstr "Inihahanda ang bagong system"
 
-#: update.rs:168
+#: update.rs:175
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr "Sira ang update file (hindi tugma ang checksum). I-download itong muli."
 
-#: update.rs:171
+#: update.rs:178
 msgid "The update file could not be read completely."
 msgstr "Hindi mabasa nang buo ang update file."
 
-#: update.rs:312
+#: update.rs:319
 msgid "The update contains no kernel."
 msgstr "Walang kernel ang update."
 
-#: update.rs:360
+#: update.rs:367
 msgid "Updates must be installed by the system helper."
 msgstr "Dapat ang system helper ang mag-install ng mga update."
 
-#: update.rs:369
+#: update.rs:376
 msgid "The chosen installation was not found."
 msgstr "Hindi nakita ang napiling installation."
 
-#: update.rs:371
+#: update.rs:378
 msgid "Only the running MAN installation can be updated."
 msgstr "Ang tumatakbong MAN installation lang ang maaaring i-update."
 
@@ -1947,6 +2207,14 @@ msgstr "Lila"
 #: lib.rs:ACCENTS
 msgid "Slate"
 msgstr "Abo"
+
+#: com.man.AppInstaller.desktop
+msgid "Package Installer"
+msgstr "Installer ng Package"
+
+#: com.man.AppInstaller.desktop
+msgid "Install apps from .deb, Flatpak and AppImage files"
+msgstr "Mag-install ng mga app mula sa .deb, Flatpak at AppImage na file"
 
 #: com.man.Installer.desktop
 msgid "System Installer"
