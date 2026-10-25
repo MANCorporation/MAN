@@ -198,8 +198,12 @@ edit vX --draft=false` publishes one again). Consequences:
 - Machines see TEST builds only with Settings → Updates → Beta Updates on
   (default on TEST builds; a 10.10 install must switch it on once).
 - 10.9 and older do not understand TEST versions.
-- The final MAN 10 release must sort after 10.10 (e.g. "10.11" or "11"), or
-  TEST installs would not be offered it.
+- Release names (from MAN 10 on): **MAN 10**, small updates **10a, 10b … 10z,
+  10aa**, medium **11**, big **20**. Order (man_version_cmp, man-installer
+  3.10.2): 10.9 < 10.10 < 10 TEST n < 10 < 10a < 10b < 11 TEST n < 11 < 20.
+  Systems before that code (10.10, TEST 1, TEST 2) use the old base rule and
+  would see "10" as older than their TEST build, so the **next TEST build must
+  contain 3.10.2** before "MAN 10" is published.
 
 ## MAN 10 TEST 2 (2026-10-25)
 

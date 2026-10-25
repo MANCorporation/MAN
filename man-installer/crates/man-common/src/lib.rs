@@ -367,16 +367,38 @@ pub fn version_from_file_name(s: &str) -> String {
     if test_build(&v).is_some() { v } else { s.to_string() }
 }
 
-/// Order MAN versions. Releases compare as dotted numbers; a TEST build
-/// comes right after the release it was made after (its `base`), in test
-/// number order: 10.9 < 10 TEST 5 < 10 TEST 6 < 10.10.
-pub fn man_version_cmp(a: &str, a_base: &str, b: &str, b_base: &str) -> std::cmp::Ordering {
-    let key = |v: &str, base: &str| match test_build(v) {
-        Some((major, n)) => (if base.is_empty() { major.to_string() } else { base.to_string() }, 1u8, n),
-        None => (v.to_string(), 0, 0),
-    };
-    let (ka, kb) = (key(a, a_base), key(b, b_base));
-    version_cmp(&ka.0, &kb.0).then(ka.1.cmp(&kb.1)).then(ka.2.cmp(&kb.2))
+/// Where a version sits: (major, stage, position).
+/// Stages: 0 = early numbered versions ("10.9", "10.10"), 1 = TEST builds
+/// ("10 TEST 2"), 2 = releases ("10", "10a", "10b", … "10z", "10aa").
+fn version_key(v: &str) -> Option<(u64, u8, Vec<u64>)> {
+    if let Some((major, n)) = test_build(v) {
+        return Some((major, 1, vec![n]));
+    }
+    let digits = v.find(|c: char| !c.is_ascii_digit()).unwrap_or(v.len());
+    let major: u64 = v[..digits].parse().ok()?;
+    let rest = &v[digits..];
+    if let Some(dotted) = rest.strip_prefix('.') {
+        let parts: Option<Vec<u64>> = dotted.split('.').map(|p| p.parse().ok()).collect();
+        return parts.map(|p| (major, 0, p));
+    }
+    if rest.chars().all(|c| c.is_ascii_lowercase()) {
+        // "" = 0, "a" = 1 … "z" = 26, "aa" = 27 (like spreadsheet columns).
+        let letters = rest.chars().fold(0u64, |n, c| n * 26 + (c as u64 - 'a' as u64 + 1));
+        return Some((major, 2, vec![letters]));
+    }
+    None
+}
+
+/// Order MAN versions: within a major version, the early numbered versions
+/// come first, then the TEST builds, then the release and its small updates:
+/// 10.9 < 10.10 < 10 TEST 1 < 10 TEST 2 < 10 < 10a < 10b < 11 TEST 1 < 11 < 20.
+/// The bases are no longer needed for this (systems before MAN 10 TEST 3
+/// used them; TEST builds still record theirs for those systems).
+pub fn man_version_cmp(a: &str, _a_base: &str, b: &str, _b_base: &str) -> std::cmp::Ordering {
+    match (version_key(a), version_key(b)) {
+        (Some(ka), Some(kb)) => ka.cmp(&kb),
+        _ => version_cmp(a, b),
+    }
 }
 
 pub fn valid_version(v: &str) -> bool {
@@ -527,8 +549,16 @@ mod tests {
         assert!(!valid_version("1 0"));
         assert!(valid_version("10 TEST 5"));
         assert!(!valid_version("10 TEST"));
+        assert_eq!(man_version_cmp("10", "", "10 TEST 9", "10.10"), Greater);
+        assert_eq!(man_version_cmp("10a", "", "10", ""), Greater);
+        assert_eq!(man_version_cmp("10z", "", "10b", ""), Greater);
+        assert_eq!(man_version_cmp("10aa", "", "10z", ""), Greater);
+        assert_eq!(man_version_cmp("11 TEST 1", "10c", "10c", ""), Greater);
+        assert_eq!(man_version_cmp("11", "", "11 TEST 4", "10c"), Greater);
+        assert_eq!(man_version_cmp("20", "", "11z", ""), Greater);
+        assert_eq!(man_version_cmp("10 TEST 1", "10.10", "10.10", ""), Greater);
         assert_eq!(man_version_cmp("10 TEST 5", "10.9", "10.9", ""), Greater);
-        assert_eq!(man_version_cmp("10 TEST 5", "10.9", "10.10", ""), Less);
+        assert_eq!(man_version_cmp("10 TEST 5", "10.9", "10.10", ""), Greater);
         assert_eq!(man_version_cmp("10 TEST 6", "10.9", "10 TEST 5", "10.9"), Greater);
         assert_eq!(man_version_cmp("10 TEST 6", "10.10", "10 TEST 5", "10.9"), Greater);
         assert_eq!(version_from_file_name("10-TEST-5"), "10 TEST 5");
