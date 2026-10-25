@@ -213,3 +213,10 @@ with "Keep After MAN Updates" are reinstalled inside every update
 (`reinstall_kept` in update.rs, from `/var/lib/man/kept-debs`). Tested:
 xterm (+ 2 dependencies from Debian) kept through 10.10 → 10 TEST 1 with
 "Need to get 0 B", i.e. offline.
+
+## MAN 10 TEST 3 (2026-10-25)
+
+MAN Sample Music (MANSampleMusic/, 3 MP3s + Artwork.jpg as cover.jpg) in
+`/etc/skel/Music/MAN Sample Music` (new users) and the live user's Music.
+man-installer 3.10.2 (release names 10, 10a, 11, 20). Payload 1.99 GB — only
+~157 MB left under GitHub's 2 GiB asset limit.
