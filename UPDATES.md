@@ -188,7 +188,20 @@ gh release create v10-test1 --repo MANCorporation/MAN --prerelease --title "MAN 
     release/MAN-10-TEST-1-amd64.iso release/MAN-10-TEST-1-amd64.iso.sha256
 ```
 
-## MAN 10.11 (2026-10-24)
+## MAN 10 is in testing (2026-10-25)
+
+MAN 10 ships as TEST builds only: GitHub pre-releases "MAN 10 TEST n", made
+after 10.10 (`man-set-version "10 TEST n" 10.10`, `man-mkupd pack --base 10.10`).
+The releases 10.6–10.10 were set back to **drafts** (hidden, kept; `gh release
+edit vX --draft=false` publishes one again). Consequences:
+
+- Machines see TEST builds only with Settings → Updates → Beta Updates on
+  (default on TEST builds; a 10.10 install must switch it on once).
+- 10.9 and older do not understand TEST versions.
+- The final MAN 10 release must sort after 10.10 (e.g. "10.11" or "11"), or
+  TEST installs would not be offered it.
+
+## MAN 10 TEST 2 (2026-10-25)
 
 App Installer fixes: Flatpak for all users installs as root through
 man-app-installer-helper; Flatpak export folders exist at login; `.deb` apps
