@@ -8,7 +8,7 @@
 #       s.move(900, 500, 0.8); s.click(); s.type("sudoku"); s.wait(2)
 import json, math, os, socket, threading, time
 
-KEYS = {' ': 'spc', '-': 'minus', '.': 'dot', '/': 'slash', '\n': 'ret'}
+KEYS = {"\n": "ret", ' ': 'spc', '-': 'minus', '.': 'dot', '/': 'slash', '\n': 'ret'}
 
 
 class Qmp:
@@ -121,6 +121,14 @@ class Scene:
             else:
                 self.key(name)
             time.sleep(1 / cps)
+
+    def scroll(self, n, pause=0.06):
+        b = "wheel-down" if n > 0 else "wheel-up"
+        for _ in range(abs(n)):
+            self.q.cmd("input-send-event", {"events": [{"type": "btn", "data": {"down": True, "button": b}}]})
+            self.q.cmd("input-send-event", {"events": [{"type": "btn", "data": {"down": False, "button": b}}]})
+            self._mark("pos")
+            time.sleep(pause)
 
     def wait(self, s):
         end = time.time() + s
