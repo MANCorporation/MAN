@@ -109,6 +109,16 @@ class Scene:
             self.q.cmd("input-send-event", {"events": [{"type": "btn", "data": {"down": False, "button": "left"}}]})
             time.sleep(0.08)
 
+    def drag(self, x, y, dur=1.0):
+        """Press, move along the eased path, release (e.g. a window to a workspace)."""
+        self._mark("click")
+        self.q.cmd("input-send-event", {"events": [{"type": "btn", "data": {"down": True, "button": "left"}}]})
+        time.sleep(0.15)
+        self.move(x, y, dur)
+        time.sleep(0.25)
+        self.q.cmd("input-send-event", {"events": [{"type": "btn", "data": {"down": False, "button": "left"}}]})
+        self._mark("click")
+
     def key(self, *names):
         self.q.cmd("send-key", {"keys": [{"type": "qcode", "data": n} for n in names]})
         time.sleep(0.05)
