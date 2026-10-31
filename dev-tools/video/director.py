@@ -41,7 +41,7 @@ def ease(t):  # smooth in-out
 
 class Scene:
     def __init__(self, sock, out, w=1920, h=1080, fps=15, start=(960, 600)):
-        self.sock, self.out, self.w, self.h, self.fps = sock, out, w, h, fps
+        self.sock, self.out, self.w, self.h, self.fps = sock, os.path.abspath(out), w, h, fps
         self.x, self.y = start
         self.log = []
         os.makedirs(out, exist_ok=True)
@@ -125,6 +125,12 @@ class Scene:
 
     def type(self, text, cps=9):
         for ch in text:
+            if ch == ':':
+                self.key('shift', 'semicolon'); time.sleep(1 / cps); continue
+            if ch == '\\':
+                self.key('backslash'); time.sleep(1 / cps); continue
+            if ch == '!':
+                self.key('shift', '1'); time.sleep(1 / cps); continue
             name = KEYS.get(ch, ch.lower())
             if ch.isupper():
                 self.key('shift', name)
