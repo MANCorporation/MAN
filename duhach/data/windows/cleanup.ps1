@@ -8,6 +8,10 @@ if (@(Get-Volume | Where-Object FileSystemLabel -eq 'MAN_LIVE').Count -gt 0) { e
 if (Test-Path -LiteralPath $state) {
     $s = Get-Content -LiteralPath $state -Raw | ConvertFrom-Json
     if ($s.boot_entry) { bcdedit /delete $s.boot_entry | Out-Null }
+    # DUHACH!'s loader on the EFI system partition.
+    $l = [char[]](90..68) | ? { -not (Test-Path "$($_):\") } | select -First 1
+    mountvol "$($l):" /S 2>&1 | Out-Null
+    if ($LASTEXITCODE -eq 0) { Remove-Item -Recurse -Force -LiteralPath "$($l):\EFI\MAN-Installer" -EA SilentlyContinue; mountvol "$($l):" /D | Out-Null }
     Remove-Item -LiteralPath $state -Force
 }
 Unregister-ScheduledTask -TaskName 'DUHACH! cleanup' -Confirm:$false -ErrorAction SilentlyContinue

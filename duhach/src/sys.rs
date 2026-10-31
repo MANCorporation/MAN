@@ -260,6 +260,10 @@ mod imp {
 
     const STATE: &str = r"$state = Join-Path $env:ProgramData 'DUHACH!\state.json'";
     const CLEANUP_PS1: &str = include_str!("../data/windows/cleanup.ps1");
+    /// Removes DUHACH!'s loader from the EFI system partition (see step 3).
+    const ESP_REMOVE: &str = r#"$l = [char[]](90..68) | ? { -not (Test-Path "$($_):\") } | select -First 1
+mountvol "$($l):" /S 2>&1 | Out-Null
+if ($LASTEXITCODE -eq 0) { Remove-Item -Recurse -Force -LiteralPath "$($l):\EFI\MAN-Installer" -EA SilentlyContinue; mountvol "$($l):" /D | Out-Null }"#;
 
     pub fn system_info() -> Result<SysInfo, String> {
         json(&format!(
@@ -317,9 +321,11 @@ foreach ($p in $parts) {{
 if (-not $r.prepared -and (Test-Path -LiteralPath $state)) {{
     $s = Get-Content -LiteralPath $state -Raw | ConvertFrom-Json
     if ($s.boot_entry) {{ bcdedit /delete $s.boot_entry 2>&1 | Out-Null }}
+    {esp_remove}
     Remove-Item -LiteralPath $state -ErrorAction SilentlyContinue
 }}
-$r | ConvertTo-Json -Compress -Depth 4"#
+$r | ConvertTo-Json -Compress -Depth 4"#,
+            esp_remove = ESP_REMOVE
         ))
     }
 
@@ -413,12 +419,25 @@ if (Test-Path -LiteralPath $state) {{
 $out = (bcdedit /copy '{{bootmgr}}' /d '{BOOT_ENTRY}' 2>&1 | Out-String)
 if ($out -notmatch '\{{[0-9a-fA-F-]{{36}}\}}') {{ throw "bcdedit could not create the boot entry: $out" }}
 $g = $Matches[0]
-$steps = @(@('/set', $g, 'device', 'partition={letter}:'), @('/set', $g, 'path', '{EFI_LOADER}'),
+# The loader goes onto the EFI system partition: Windows writes the firmware
+# entry with its own partition number, which for a partition made in this
+# session can differ from the GPT slot the firmware uses (then the firmware
+# says "Not Found"). The ESP's number never changes; the loader finds the
+# installer partition by its live/man-id file.
+$esp = [char[]](90..68) | ? {{ -not (Test-Path "$($_):\") }} | select -First 1
+mountvol "$($esp):" /S | Out-Null
+if ($LASTEXITCODE -ne 0) {{ bcdedit /delete $g 2>&1 | Out-Null; throw 'The EFI system partition could not be opened.' }}
+try {{
+    New-Item -ItemType Directory -Force -Path "$($esp):\EFI\MAN-Installer" | Out-Null
+    Copy-Item -Force -LiteralPath '{letter}:{EFI_LOADER}' -Destination "$($esp):{EFI_LOADER}"
+}} catch {{ mountvol "$($esp):" /D | Out-Null; bcdedit /delete $g 2>&1 | Out-Null; throw }}
+$steps = @(@('/set', $g, 'device', "partition=$($esp):"), @('/set', $g, 'path', '{EFI_LOADER}'),
            @('/set', '{{fwbootmgr}}', 'displayorder', $g, '/addlast'), @('/set', '{{fwbootmgr}}', 'bootsequence', $g))
 foreach ($a in $steps) {{
     $o = (& bcdedit @a 2>&1 | Out-String)
-    if ($LASTEXITCODE -ne 0) {{ bcdedit /delete $g 2>&1 | Out-Null; throw "bcdedit $($a -join ' '): $o" }}
+    if ($LASTEXITCODE -ne 0) {{ mountvol "$($esp):" /D | Out-Null; bcdedit /delete $g 2>&1 | Out-Null; throw "bcdedit $($a -join ' '): $o" }}
 }}
+mountvol "$($esp):" /D | Out-Null
 New-Item -ItemType Directory -Force -Path (Split-Path $state) | Out-Null
 [ordered]@{{ boot_entry = $g; version = {ver}; partition = {part}; created = (Get-Date).ToString('o') }} | ConvertTo-Json | Set-Content -LiteralPath $state -Encoding UTF8
 # Windows restores BCD boot entries into the firmware menu at every start:
@@ -449,6 +468,7 @@ $g"#,
         })();
         if result.is_err() {
             // Put Windows back the way it was, as far as possible.
+            let _ = ps(ESP_REMOVE);
             if let Some(n) = created {
                 let _ = ps(&format!("Remove-Partition -DiskNumber {} -PartitionNumber {n} -Confirm:$false", s.disk_number));
             }
@@ -470,6 +490,7 @@ $g"#,
         ps(&format!(
             r#"{STATE}
 if ('{entry}') {{ bcdedit /delete '{entry}' 2>&1 | Out-Null }}
+{esp_remove}
 Remove-Partition -DiskNumber {d} -PartitionNumber {n} -Confirm:$false
 if (-not ${installed}) {{
     $max = (Get-PartitionSupportedSize -DiskNumber {d} -PartitionNumber {c}).SizeMax
@@ -478,6 +499,7 @@ if (-not ${installed}) {{
 Remove-Item -LiteralPath $state -ErrorAction SilentlyContinue
 Unregister-ScheduledTask -TaskName 'DUHACH! cleanup' -Confirm:$false -ErrorAction SilentlyContinue"#,
             entry = prep.boot_entry.replace('\'', ""),
+            esp_remove = ESP_REMOVE,
             d = s.disk_number,
             n = prep.partition,
             c = s.c_partition,

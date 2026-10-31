@@ -27,6 +27,11 @@ if command -v efibootmgr >/dev/null; then
     done
 fi
 
+# DUHACH! (1.0.1+) starts the installer from a loader on the EFI system partition.
+for esp in /boot/efi /efi; do
+    [ -d "$esp/EFI/MAN-Installer" ] && rm -rf "$esp/EFI/MAN-Installer" && log "removed $esp/EFI/MAN-Installer"
+done
+
 # The partition holding the system (below LUKS when encrypted).
 src=$(findmnt -nro SOURCE / | sed 's/\[.*//')
 crypt=
