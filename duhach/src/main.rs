@@ -340,27 +340,200 @@ fn secure_boot_dialog(ctx: &C) {
 // ──────────────────────────── Choose ISO ────────────────────────────
 
 fn iso_page(ctx: &C) -> adw::NavigationPage {
+    let arch = sys::native_arch();
     let content = vbox(18);
     let hero = icon("media-optical-symbolic");
     hero.set_pixel_size(96);
     hero.add_css_class("dim-label");
     content.append(&hero);
     content.append(&label("Choose MAN", &["step-title"]));
-    content.append(&label("Select the MAN ISO file you downloaded. DUHACH! checks that it is a complete MAN system.", &["dim-label"]));
+    content.append(&label("DUHACH! downloads the MAN made for this PC, or uses a MAN ISO file you already have.", &["dim-label"]));
 
-    let list = boxed_list();
+    // Download
+    let dl_group = adw::PreferencesGroup::builder().title("Download MAN").description(format!("This PC has an {} processor.", arch.title())).build();
+    let offer_row = adw::ActionRow::builder().title("Looking for the newest MAN…").build();
+    offer_row.add_prefix(&icon("folder-download-symbolic"));
+    let spinner = adw::Spinner::new();
+    offer_row.add_suffix(&spinner);
+    let download = gtk::Button::builder().label("_Download").use_underline(true).valign(gtk::Align::Center).visible(false).build();
+    download.add_css_class("suggested-action");
+    offer_row.add_suffix(&download);
+    dl_group.add(&offer_row);
+    let test = adw::SwitchRow::builder()
+        .title("Install TEST Version of MAN")
+        .subtitle("The newest version, still in testing: the system can break or stop working and need a reinstall. Use at your own risk!")
+        .sensitive(false)
+        .build();
+    dl_group.add(&test);
+    content.append(&dl_group);
+    let progress = gtk::ProgressBar::builder().visible(false).build();
+    progress.add_css_class("big-progress");
+    let progress_text = label("", &["dim-label", "caption"]);
+    progress_text.set_visible(false);
+    content.append(&progress);
+    content.append(&progress_text);
+
+    // A file the user has
+    let file_group = adw::PreferencesGroup::builder().title("Or Use a File You Have").build();
     let row = adw::ActionRow::builder().title("MAN ISO File").subtitle("No file chosen").activatable(true).build();
     row.add_prefix(&icon("folder-open-symbolic"));
     let choose = gtk::Button::builder().label("_Choose…").use_underline(true).valign(gtk::Align::Center).build();
     row.add_suffix(&choose);
     row.set_activatable_widget(Some(&choose));
-    list.append(&row);
-    content.append(&list);
+    file_group.add(&row);
+    content.append(&file_group);
 
     let next = pill("_Next", Some("suggested-action"));
     next.set_sensitive(ctx.state.borrow().iso.is_some());
     if let Some(iso) = &ctx.state.borrow().iso {
         show_iso(&row, iso);
+    }
+
+    let releases: Rc<RefCell<Option<sys::Releases>>> = Rc::default();
+    let offer: Rc<RefCell<Option<sys::Offer>>> = Rc::default();
+    let cancel: Rc<RefCell<Option<std::sync::Arc<std::sync::atomic::AtomicBool>>>> = Rc::default();
+
+    // Show what the switch selects.
+    let show_offer = {
+        let (releases, offer, offer_row, download, test) = (releases.clone(), offer.clone(), offer_row.clone(), download.clone(), test.clone());
+        move || {
+            let Some(rel) = releases.borrow().clone() else { return };
+            match rel.pick(test.is_active(), arch) {
+                Ok(o) => {
+                    offer_row.set_title(&glib::markup_escape_text(&o.title));
+                    offer_row.set_subtitle(&glib::markup_escape_text(&format!(
+                        "{}  ·  {}  ·  for {}{}",
+                        o.file,
+                        human(o.bytes),
+                        arch.title(),
+                        if o.test { "  ·  TEST version" } else { "" }
+                    )));
+                    download.set_label("_Download");
+                    download.set_visible(true);
+                    *offer.borrow_mut() = Some(o);
+                }
+                Err(e) => {
+                    offer_row.set_title("No Download Available");
+                    offer_row.set_subtitle(&glib::markup_escape_text(&e));
+                    download.set_visible(false);
+                    *offer.borrow_mut() = None;
+                }
+            }
+        }
+    };
+    let show_offer = Rc::new(show_offer);
+    // Ask GitHub which versions exist.
+    let refresh = {
+        let (releases, offer_row, spinner, download, test, show_offer) = (releases.clone(), offer_row.clone(), spinner.clone(), download.clone(), test.clone(), show_offer.clone());
+        Rc::new(move || {
+            offer_row.set_title("Looking for the newest MAN…");
+            offer_row.set_subtitle("");
+            spinner.set_visible(true);
+            download.set_visible(false);
+            let (releases, offer_row, spinner, download, test, show_offer) =
+                (releases.clone(), offer_row.clone(), spinner.clone(), download.clone(), test.clone(), show_offer.clone());
+            glib::spawn_future_local(async move {
+                let r = gio::spawn_blocking(sys::fetch_releases).await.unwrap_or_else(|_| Err("The search crashed.".into()));
+                spinner.set_visible(false);
+                match r {
+                    Ok(rel) => {
+                        // While MAN has no finished version, only TEST versions exist.
+                        let test_default = !rel.has_release();
+                        *releases.borrow_mut() = Some(rel);
+                        test.set_sensitive(true);
+                        if test.is_active() != test_default {
+                            test.set_active(test_default);
+                        } else {
+                            show_offer();
+                        }
+                    }
+                    Err(e) => {
+                        offer_row.set_title("MAN Could Not Be Found Online");
+                        offer_row.set_subtitle(&glib::markup_escape_text(&e));
+                        download.set_label("_Try Again");
+                        download.set_visible(true);
+                    }
+                }
+            });
+        })
+    };
+    {
+        let show_offer = show_offer.clone();
+        test.connect_active_notify(move |_| show_offer());
+    }
+    refresh();
+
+    {
+        let ctx = ctx.clone();
+        let (row, next, choose, test, progress, progress_text, offer, cancel, refresh, releases) =
+            (row.clone(), next.clone(), choose.clone(), test.clone(), progress.clone(), progress_text.clone(), offer.clone(), cancel.clone(), refresh.clone(), releases.clone());
+        download.connect_clicked(move |btn| {
+            if let Some(c) = cancel.borrow().as_ref() {
+                c.store(true, std::sync::atomic::Ordering::Relaxed);
+                return;
+            }
+            if releases.borrow().is_none() {
+                return refresh();
+            }
+            let Some(o) = offer.borrow().clone() else { return };
+            let flag = std::sync::Arc::new(std::sync::atomic::AtomicBool::new(false));
+            *cancel.borrow_mut() = Some(flag.clone());
+            btn.set_label("_Cancel");
+            btn.remove_css_class("suggested-action");
+            for w in [choose.upcast_ref::<gtk::Widget>(), test.upcast_ref(), next.upcast_ref()] {
+                w.set_sensitive(false);
+            }
+            progress.set_fraction(0.0);
+            progress.set_visible(true);
+            progress_text.set_label("Starting the download…");
+            progress_text.set_visible(true);
+            let (tx, rx) = async_channel::unbounded::<Result<(f64, String), Result<String, String>>>();
+            std::thread::spawn(move || {
+                let tx2 = tx.clone();
+                let r = sys::download(&o, &move |f, t| { let _ = tx2.send_blocking(Ok((f, t))); }, &flag);
+                let _ = tx.send_blocking(Err(r));
+            });
+            let ctx = ctx.clone();
+            let (btn, row, next, choose, test, progress, progress_text, cancel) =
+                (btn.clone(), row.clone(), next.clone(), choose.clone(), test.clone(), progress.clone(), progress_text.clone(), cancel.clone());
+            ctx.busy.set(true);
+            glib::spawn_future_local(async move {
+                let mut result = Err("The download crashed.".to_string());
+                while let Ok(msg) = rx.recv().await {
+                    match msg {
+                        Ok((f, t)) => {
+                            progress.set_fraction(f.clamp(0.0, 1.0));
+                            progress_text.set_label(&t);
+                        }
+                        Err(r) => {
+                            result = r;
+                            break;
+                        }
+                    }
+                }
+                ctx.busy.set(false);
+                *cancel.borrow_mut() = None;
+                btn.set_label("_Download");
+                btn.add_css_class("suggested-action");
+                choose.set_sensitive(true);
+                test.set_sensitive(true);
+                progress.set_visible(false);
+                match result {
+                    Ok(path) => {
+                        progress_text.set_visible(false);
+                        use_iso(&ctx, path, &row, &next, &choose).await;
+                    }
+                    Err(e) if e == sys::CANCELLED => {
+                        progress_text.set_label("Download stopped. Press Download to continue it.");
+                        next.set_sensitive(ctx.state.borrow().iso.is_some());
+                    }
+                    Err(e) => {
+                        progress_text.set_label(&e);
+                        next.set_sensitive(ctx.state.borrow().iso.is_some());
+                    }
+                }
+            });
+        });
     }
     {
         let ctx = ctx.clone();
@@ -378,29 +551,7 @@ fn iso_page(ctx: &C) -> adw::NavigationPage {
             glib::spawn_future_local(async move {
                 let Ok(file) = dialog.open_future(Some(&ctx.window)).await else { return };
                 let Some(path) = file.path() else { return ctx.toast("Choose a file on this PC.") };
-                let path = path.to_string_lossy().into_owned();
-                row.set_subtitle("Checking…");
-                let spinner = adw::Spinner::new();
-                row.add_suffix(&spinner);
-                btn.set_sensitive(false);
-                next.set_sensitive(false);
-                let p2 = path.clone();
-                let r = gio::spawn_blocking(move || sys::inspect_iso(&p2)).await.unwrap_or_else(|_| Err("The check crashed.".into()));
-                row.remove(&spinner);
-                btn.set_sensitive(true);
-                match r {
-                    Ok(iso) => {
-                        show_iso(&row, &iso);
-                        ctx.state.borrow_mut().iso = Some(iso);
-                        next.set_sensitive(true);
-                        next.grab_focus();
-                    }
-                    Err(e) => {
-                        ctx.state.borrow_mut().iso = None;
-                        row.set_title("MAN ISO File");
-                        row.set_subtitle(&glib::markup_escape_text(&format!("{}\n{e}", file_name(&path))));
-                    }
-                }
+                use_iso(&ctx, path.to_string_lossy().into_owned(), &row, &next, &btn).await;
             });
         });
     }
@@ -409,6 +560,40 @@ fn iso_page(ctx: &C) -> adw::NavigationPage {
         next.connect_clicked(move |_| ctx.nav.push(&space_page(&ctx)));
     }
     page("Choose MAN", "iso", &scrolled(&content), Some(next.upcast_ref()), true)
+}
+
+/// Check an ISO (downloaded or chosen) and make it the one to install.
+async fn use_iso(ctx: &C, path: String, row: &adw::ActionRow, next: &gtk::Button, btn: &gtk::Button) {
+    row.set_title("MAN ISO File");
+    row.set_subtitle("Checking…");
+    let spinner = adw::Spinner::new();
+    row.add_suffix(&spinner);
+    btn.set_sensitive(false);
+    next.set_sensitive(false);
+    let p2 = path.clone();
+    let r = gio::spawn_blocking(move || sys::inspect_iso(&p2)).await.unwrap_or_else(|_| Err("The check crashed.".into()));
+    row.remove(&spinner);
+    btn.set_sensitive(true);
+    let arch = sys::native_arch();
+    let r = r.and_then(|iso| {
+        if iso.arch == arch {
+            Ok(iso)
+        } else {
+            Err(format!("This MAN is made for {} PCs, but this PC has an {} processor. Use the download above.", iso.arch.title(), arch.title()))
+        }
+    });
+    match r {
+        Ok(iso) => {
+            show_iso(row, &iso);
+            ctx.state.borrow_mut().iso = Some(iso);
+            next.set_sensitive(true);
+            next.grab_focus();
+        }
+        Err(e) => {
+            ctx.state.borrow_mut().iso = None;
+            row.set_subtitle(&glib::markup_escape_text(&format!("{}\n{e}", file_name(&path))));
+        }
+    }
 }
 
 fn file_name(path: &str) -> String {

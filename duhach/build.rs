@@ -4,12 +4,16 @@ fn main() {
     println!("cargo:rerun-if-changed=data/duhach.rc");
     println!("cargo:rerun-if-changed=data/duhach.manifest");
     println!("cargo:rerun-if-changed=data/duhach.ico");
+    println!("cargo:rerun-if-env-changed=WINDRES");
     if std::env::var("CARGO_CFG_TARGET_OS").as_deref() != Ok("windows") {
         return;
     }
     let out = std::path::PathBuf::from(std::env::var("OUT_DIR").unwrap()).join("duhach-res.o");
+    // WINDRES may carry arguments ("llvm-windres --target=…" for ARM64).
     let windres = std::env::var("WINDRES").unwrap_or_else(|_| "x86_64-w64-mingw32-windres".into());
-    let st = std::process::Command::new(&windres)
+    let mut words = windres.split_whitespace();
+    let st = std::process::Command::new(words.next().expect("WINDRES is empty"))
+        .args(words)
         .current_dir("data")
         .args(["duhach.rc", "-O", "coff", "-o"])
         .arg(&out)

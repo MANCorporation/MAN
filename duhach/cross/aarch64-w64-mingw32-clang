@@ -1,0 +1,7 @@
+#!/bin/sh
+# Debian's clang as a cross compiler for Windows on ARM: target, MSYS2
+# clangarm64 as sysroot (its CRT, libunwind, libc++ and compiler-rt), lld.
+tools=$(cd -- "$(dirname -- "$(readlink -f "$0")")/../../tools" && pwd)
+sysroot="$tools/gtk-win/root/clangarm64"
+exec "$tools/llvm/root/usr/lib/llvm-19/bin/clang" --target=aarch64-w64-mingw32 --sysroot="$sysroot" \
+    -resource-dir="$sysroot/lib/clang/23" -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind "$@"

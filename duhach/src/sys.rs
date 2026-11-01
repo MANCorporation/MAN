@@ -16,8 +16,11 @@ pub const WINDOWS_RESERVE: u64 = 10 * GIB;
 pub const LIVE_LABEL: &str = "MAN_LIVE";
 /// Name of the one-time firmware boot entry.
 pub const BOOT_ENTRY: &str = "MAN Installer";
-/// GRUB built for starting the MAN ISO's contents from a partition.
-pub const EFI_LOADER: &str = r"\EFI\MAN-Installer\grubx64.efi";
+/// Folder of the GRUB built for starting the MAN ISO's contents from a
+/// partition (grubx64.efi or grubaa64.efi, see [`Arch::loader`]).
+pub const EFI_LOADER_DIR: &str = r"\EFI\MAN-Installer";
+/// Where DUHACH! finds MAN versions to download.
+pub const RELEASES_API: &str = "https://api.github.com/repos/MANCorporation/MAN/releases";
 
 /// The computer as DUHACH! sees it.
 #[derive(Deserialize, Debug, Clone, Default)]
@@ -69,12 +72,23 @@ pub struct IsoInfo {
     pub id: String,
     pub bytes: u64,
     pub files: u64,
+    #[serde(skip)]
+    pub arch: Arch,
 }
 
 impl IsoInfo {
-    /// "MAN-10.0-202610201930-5afa23" -> "10.0"
+    /// "MAN-10.0-202610201930-5afa23" -> "10.0",
+    /// "MAN-10-TEST-3-202610251200-a1b2c3" -> "10 TEST 3"
     pub fn version(&self) -> String {
-        self.id.split('-').nth(1).unwrap_or("?").to_string()
+        let parts: Vec<&str> = self.id.split('-').collect();
+        if parts.len() < 4 {
+            return parts.get(1).unwrap_or(&"?").to_string();
+        }
+        parts[1..parts.len() - 2].join(" ")
+    }
+    /// The loader on the EFI system partition, e.g. \EFI\MAN-Installer\grubaa64.efi
+    pub fn loader(&self) -> String {
+        format!(r"{EFI_LOADER_DIR}\{}", self.arch.loader())
     }
     /// Size of the installer partition: the ISO's files plus room, in 256 MiB steps.
     pub fn partition_bytes(&self) -> u64 {
@@ -88,6 +102,70 @@ impl SysInfo {
     pub fn max_man(&self, installer: u64) -> u64 {
         let keep = self.c_min.max(self.c_size - self.c_free) + WINDOWS_RESERVE;
         self.c_size.saturating_sub(keep).saturating_sub(installer) / GIB * GIB
+    }
+}
+
+/// The processor family of a PC or of a MAN ISO.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub enum Arch {
+    #[default]
+    X86_64,
+    Arm64,
+    Other,
+}
+
+impl Arch {
+    /// As in MAN's file names: MAN-10-TEST-3-amd64.iso
+    pub fn iso_name(self) -> &'static str {
+        match self {
+            Arch::X86_64 => "amd64",
+            Arch::Arm64 => "arm64",
+            Arch::Other => "other",
+        }
+    }
+    pub fn title(self) -> &'static str {
+        match self {
+            Arch::X86_64 => "x86-64 (Intel or AMD)",
+            Arch::Arm64 => "ARM64",
+            Arch::Other => "unsupported",
+        }
+    }
+    /// GRUB's name for its UEFI program on this processor.
+    pub fn loader(self) -> &'static str {
+        match self {
+            Arch::Arm64 => "grubaa64.efi",
+            _ => "grubx64.efi",
+        }
+    }
+}
+
+/// The processor of this PC. Asks Windows for the native machine, so an x64
+/// DUHACH! running emulated on an ARM PC still answers ARM64.
+#[cfg(windows)]
+pub fn native_arch() -> Arch {
+    #[link(name = "kernel32")]
+    extern "system" {
+        fn GetCurrentProcess() -> isize;
+        fn IsWow64Process2(process: isize, process_machine: *mut u16, native_machine: *mut u16) -> i32;
+    }
+    let (mut process, mut native) = (0u16, 0u16);
+    // SAFETY: plain Win32 call with valid out pointers (Windows 10 1709+).
+    let ok = unsafe { IsWow64Process2(GetCurrentProcess(), &mut process, &mut native) } != 0;
+    let machine = if ok { native } else if cfg!(target_arch = "aarch64") { 0xAA64 } else { 0x8664 };
+    match machine {
+        0x8664 => Arch::X86_64,
+        0xAA64 => Arch::Arm64,
+        _ => Arch::Other,
+    }
+}
+
+#[cfg(not(windows))]
+pub fn native_arch() -> Arch {
+    let a = std::env::var("DUHACH_DEMO_ARCH").unwrap_or_else(|_| std::env::consts::ARCH.into());
+    match a.as_str() {
+        "x86_64" | "amd64" => Arch::X86_64,
+        "aarch64" | "arm64" => Arch::Arm64,
+        _ => Arch::Other,
     }
 }
 
@@ -105,6 +183,14 @@ pub fn checks(s: &SysInfo, min_installer: u64) -> Vec<Check> {
         v.push(Check { title: title.into(), detail: if ok { good.into() } else { bad.into() }, ok, blocking: blocking && !ok });
     };
     add(s.admin, true, "Administrator rights", "DUHACH! can change partitions and the boot menu.", "Start DUHACH! with “Run as administrator”.");
+    let arch = native_arch();
+    add(
+        arch != Arch::Other,
+        true,
+        "Processor",
+        &format!("This PC has an {} processor; DUHACH! gets the matching MAN.", arch.title()),
+        "MAN runs on PCs with x86-64 (Intel or AMD) or ARM64 processors.",
+    );
     add(s.uefi, true, "UEFI firmware", "Windows was started in UEFI mode, like MAN needs.", "This PC starts Windows in legacy BIOS mode. MAN needs UEFI.");
     add(s.gpt, true, "GPT disk", &format!("{} uses GPT partitions.", s.disk_model), "The Windows disk uses the old MBR partition style. MAN needs GPT.");
     add(
@@ -428,10 +514,10 @@ $esp = [char[]](90..68) | ? {{ -not (Test-Path "$($_):\") }} | select -First 1
 mountvol "$($esp):" /S | Out-Null
 if ($LASTEXITCODE -ne 0) {{ bcdedit /delete $g 2>&1 | Out-Null; throw 'The EFI system partition could not be opened.' }}
 try {{
-    New-Item -ItemType Directory -Force -Path "$($esp):\EFI\MAN-Installer" | Out-Null
-    Copy-Item -Force -LiteralPath '{letter}:{EFI_LOADER}' -Destination "$($esp):{EFI_LOADER}"
+    New-Item -ItemType Directory -Force -Path "$($esp):{EFI_LOADER_DIR}" | Out-Null
+    Copy-Item -Force -LiteralPath '{letter}:{loader}' -Destination "$($esp):{loader}"
 }} catch {{ mountvol "$($esp):" /D | Out-Null; bcdedit /delete $g 2>&1 | Out-Null; throw }}
-$steps = @(@('/set', $g, 'device', "partition=$($esp):"), @('/set', $g, 'path', '{EFI_LOADER}'),
+$steps = @(@('/set', $g, 'device', "partition=$($esp):"), @('/set', $g, 'path', '{loader}'),
            @('/set', '{{fwbootmgr}}', 'displayorder', $g, '/addlast'), @('/set', '{{fwbootmgr}}', 'bootsequence', $g))
 foreach ($a in $steps) {{
     $o = (& bcdedit @a 2>&1 | Out-String)
@@ -448,6 +534,7 @@ $a = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -No
 Register-ScheduledTask -TaskName 'DUHACH! cleanup' -Action $a -Trigger (New-ScheduledTaskTrigger -AtStartup) -User 'SYSTEM' -RunLevel Highest -Force | Out-Null
 $g"#,
                 letter = p.letter,
+                loader = plan.iso.loader(),
                 cleanup = q(CLEANUP_PS1),
                 ver = q(&plan.iso.version()),
                 part = p.partition
@@ -595,7 +682,8 @@ mod imp {
         let mut info = if dir.is_dir() {
             super::inspect_tree(&dir)?
         } else if path.to_lowercase().ends_with(".iso") && Path::new(path).file_name().map(|n| n.to_string_lossy().starts_with("MAN")).unwrap_or(false) {
-            IsoInfo { id: "MAN-10.0-202610201930-5afa23".into(), bytes: 1_330_000_000, files: 612, ..Default::default() }
+            let arch = if path.contains("arm64") { Arch::Arm64 } else { Arch::X86_64 };
+            IsoInfo { id: "MAN-10-TEST-3-202610251200-5afa23".into(), bytes: 1_930_000_000, files: 612, arch, ..Default::default() }
         } else {
             return Err("This is not a MAN ISO: it has no MAN live system.".into());
         };
@@ -647,10 +735,15 @@ pub use imp::*;
 
 /// Check an unpacked or mounted MAN ISO and count its files.
 pub fn inspect_tree(root: &Path) -> Result<IsoInfo, String> {
-    let need = ["live/man-id", "live/filesystem.squashfs", "live/vmlinuz", "live/initrd.img", "EFI/MAN-Installer/grubx64.efi"];
+    let need = ["live/man-id", "live/filesystem.squashfs", "live/vmlinuz", "live/initrd.img"];
     if !root.join(need[0]).is_file() || !root.join(need[1]).is_file() {
         return Err("This is not a MAN ISO: it has no MAN live system.".into());
     }
+    // The ISO's processor family, by the loader it carries for DUHACH!.
+    let arch = [Arch::X86_64, Arch::Arm64].into_iter().find(|a| root.join("EFI/MAN-Installer").join(a.loader()).is_file());
+    let Some(arch) = arch else {
+        return Err("This MAN ISO is too old or damaged for DUHACH! (EFI/MAN-Installer is missing). Download a newer one.".into());
+    };
     if let Some(m) = need.iter().find(|n| !root.join(n).is_file()) {
         return Err(format!("This MAN ISO is too old or damaged for DUHACH! ({m} is missing). Download a newer one."));
     }
@@ -668,7 +761,7 @@ pub fn inspect_tree(root: &Path) -> Result<IsoInfo, String> {
         files += 1;
         Ok(())
     })?;
-    Ok(IsoInfo { path: String::new(), id, bytes, files })
+    Ok(IsoInfo { path: String::new(), id, bytes, files, arch })
 }
 
 fn walk(dir: &Path, f: &mut dyn FnMut(&Path, &std::fs::Metadata) -> Result<(), String>) -> Result<(), String> {
@@ -737,4 +830,212 @@ pub fn copy_tree(src: &Path, dst: &Path, total: u64, report: &dyn Fn(Progress)) 
     })?;
     report(Progress::Detail(1.0, format!("{} copied", human(done))));
     Ok(())
+}
+
+// ───────────────────────────── Download ────────────────────────────
+
+/// Shown when the user stops a download; not an error to report.
+pub const CANCELLED: &str = "cancelled";
+
+#[derive(Deserialize, Debug, Clone)]
+struct GhRelease {
+    #[serde(default)]
+    name: Option<String>,
+    tag_name: String,
+    #[serde(default)]
+    draft: bool,
+    #[serde(default)]
+    prerelease: bool,
+    #[serde(default)]
+    assets: Vec<GhAsset>,
+}
+
+#[derive(Deserialize, Debug, Clone)]
+struct GhAsset {
+    name: String,
+    size: u64,
+    browser_download_url: String,
+}
+
+/// The MAN versions published on GitHub, newest first.
+#[derive(Debug, Clone, Default)]
+pub struct Releases(Vec<GhRelease>);
+
+/// A MAN ISO that can be downloaded.
+#[derive(Debug, Clone)]
+pub struct Offer {
+    /// "MAN 10 TEST 3"
+    pub title: String,
+    pub test: bool,
+    /// "MAN-10-TEST-3-arm64.iso"
+    pub file: String,
+    pub url: String,
+    pub bytes: u64,
+    pub sha256_url: Option<String>,
+}
+
+/// curl ships with Windows 10 (1803) and 11, on x64 and ARM.
+fn curl() -> std::process::Command {
+    let mut c = std::process::Command::new(if cfg!(windows) { "curl.exe" } else { "curl" });
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        c.creation_flags(0x0800_0000);
+    }
+    c.args(["-L", "--fail", "-sS", "--connect-timeout", "20"]).stdin(std::process::Stdio::null());
+    c
+}
+
+fn curl_text(url: &str) -> Result<String, String> {
+    let out = curl().args(["-H", "Accept: application/vnd.github+json", url]).output().map_err(|e| format!("Cannot start curl: {e}"))?;
+    if !out.status.success() {
+        let err = String::from_utf8_lossy(&out.stderr).trim().trim_start_matches("curl: ").to_string();
+        return Err(format!("MAN could not be reached on the internet ({err}). Check the connection and try again."));
+    }
+    Ok(String::from_utf8_lossy(&out.stdout).into_owned())
+}
+
+pub fn fetch_releases() -> Result<Releases, String> {
+    let api = std::env::var("DUHACH_RELEASES_API").unwrap_or_else(|_| RELEASES_API.into());
+    let text = curl_text(&api)?;
+    let list: Vec<GhRelease> = serde_json::from_str(&text).map_err(|e| format!("Unexpected answer from GitHub ({e})."))?;
+    Ok(Releases(list.into_iter().filter(|r| !r.draft).collect()))
+}
+
+impl Releases {
+    /// A finished (non-TEST) MAN exists.
+    pub fn has_release(&self) -> bool {
+        self.0.iter().any(|r| !r.prerelease)
+    }
+
+    /// The newest MAN for `arch`: releases only, or with `test` the TEST
+    /// versions too (a release newer than every TEST version still wins).
+    pub fn pick(&self, test: bool, arch: Arch) -> Result<Offer, String> {
+        let suffix = format!("-{}.iso", arch.iso_name());
+        let mut skipped = false;
+        for r in self.0.iter().filter(|r| test || !r.prerelease) {
+            let Some(iso) = r.assets.iter().find(|a| a.name.starts_with("MAN-") && a.name.ends_with(&suffix)) else {
+                skipped |= r.assets.iter().any(|a| a.name.ends_with(".iso"));
+                continue;
+            };
+            let sha = format!("{}.sha256", iso.name);
+            return Ok(Offer {
+                title: r.name.clone().filter(|n| !n.is_empty()).unwrap_or_else(|| r.tag_name.clone()),
+                test: r.prerelease,
+                file: iso.name.clone(),
+                url: iso.browser_download_url.clone(),
+                bytes: iso.size,
+                sha256_url: r.assets.iter().find(|a| a.name == sha).map(|a| a.browser_download_url.clone()),
+            });
+        }
+        Err(if !test && !self.has_release() {
+            "There is no finished MAN version yet. Turn on “Install TEST Version of MAN” to get the newest TEST version.".into()
+        } else if skipped || arch == Arch::Arm64 {
+            format!("MAN is not available for {} PCs yet{}.", arch.title(), if test { "" } else { " (try the TEST version)" })
+        } else {
+            "No MAN download was found.".into()
+        })
+    }
+}
+
+fn downloads_dir() -> std::path::PathBuf {
+    let home = std::env::var_os(if cfg!(windows) { "USERPROFILE" } else { "HOME" }).map(std::path::PathBuf::from).unwrap_or_else(std::env::temp_dir);
+    home.join("Downloads")
+}
+
+/// SHA-256 of a file as lowercase hex, reporting progress.
+fn sha256_file(path: &Path, report: &dyn Fn(f64, String), cancel: &std::sync::atomic::AtomicBool) -> Result<String, String> {
+    use sha2::{Digest, Sha256};
+    use std::io::Read;
+    let total = std::fs::metadata(path).map(|m| m.len()).unwrap_or(1).max(1);
+    let mut f = std::fs::File::open(path).map_err(|e| format!("{}: {e}", path.display()))?;
+    let mut h = Sha256::new();
+    let mut buf = vec![0u8; 4 << 20];
+    let mut done = 0u64;
+    loop {
+        if cancel.load(std::sync::atomic::Ordering::Relaxed) {
+            return Err(CANCELLED.into());
+        }
+        let n = f.read(&mut buf).map_err(|e| format!("{}: {e}", path.display()))?;
+        if n == 0 {
+            break;
+        }
+        h.update(&buf[..n]);
+        done += n as u64;
+        report(done as f64 / total as f64, format!("Checking the download  ·  {} of {}", human(done), human(total)));
+    }
+    Ok(h.finalize().iter().map(|b| format!("{b:02x}")).collect())
+}
+
+/// Download `offer` into Downloads (continuing a stopped download) and check
+/// its SHA-256 checksum. Returns the ISO's path.
+pub fn download(offer: &Offer, report: &dyn Fn(f64, String), cancel: &std::sync::atomic::AtomicBool) -> Result<String, String> {
+    use std::sync::atomic::Ordering;
+    let dir = downloads_dir();
+    std::fs::create_dir_all(&dir).map_err(|e| format!("{}: {e}", dir.display()))?;
+    let path = dir.join(&offer.file);
+    let part = dir.join(format!("{}.part", offer.file));
+    let size = |p: &Path| std::fs::metadata(p).map(|m| m.len()).unwrap_or(0);
+    let expected = match &offer.sha256_url {
+        Some(url) => Some(curl_text(url)?.split_whitespace().next().unwrap_or("").to_lowercase()),
+        None => None,
+    };
+    // Downloaded before: use it if it is still intact.
+    if size(&path) == offer.bytes {
+        match &expected {
+            None => return Ok(path.to_string_lossy().into_owned()),
+            Some(want) if &sha256_file(&path, report, cancel)? == want => return Ok(path.to_string_lossy().into_owned()),
+            Some(_) => {
+                let _ = std::fs::remove_file(&path);
+            }
+        }
+    }
+    if size(&part) > offer.bytes {
+        let _ = std::fs::remove_file(&part);
+    }
+    if size(&part) < offer.bytes {
+        let mut child = curl()
+            .args(["--retry", "3", "-C", "-", "-o"])
+            .arg(&part)
+            .arg(&offer.url)
+            .stderr(std::process::Stdio::piped())
+            .spawn()
+            .map_err(|e| format!("Cannot start curl: {e}"))?;
+        let started = std::time::Instant::now();
+        let first = size(&part);
+        let status = loop {
+            if cancel.load(Ordering::Relaxed) {
+                let _ = child.kill();
+                let _ = child.wait();
+                return Err(CANCELLED.into());
+            }
+            if let Some(st) = child.try_wait().map_err(|e| e.to_string())? {
+                break st;
+            }
+            let now = size(&part);
+            let speed = (now - first.min(now)) as f64 / started.elapsed().as_secs_f64().max(0.001);
+            report(now as f64 / offer.bytes.max(1) as f64, format!("{} of {}  ·  {}/s", human(now), human(offer.bytes), human(speed as u64)));
+            std::thread::sleep(std::time::Duration::from_millis(300));
+        };
+        if !status.success() {
+            let mut err = String::new();
+            if let Some(mut e) = child.stderr.take() {
+                let _ = std::io::Read::read_to_string(&mut e, &mut err);
+            }
+            let err = err.trim().trim_start_matches("curl: ").to_string();
+            return Err(format!("The download stopped ({err}). Check the internet connection and try again: DUHACH! continues where it stopped."));
+        }
+    }
+    if size(&part) != offer.bytes {
+        let _ = std::fs::remove_file(&part);
+        return Err("The download is incomplete. Try again.".into());
+    }
+    if let Some(want) = &expected {
+        if &sha256_file(&part, report, cancel)? != want {
+            let _ = std::fs::remove_file(&part);
+            return Err("The downloaded file is damaged (its SHA-256 checksum does not match). Try again.".into());
+        }
+    }
+    std::fs::rename(&part, &path).map_err(|e| format!("{}: {e}", path.display()))?;
+    Ok(path.to_string_lossy().into_owned())
 }

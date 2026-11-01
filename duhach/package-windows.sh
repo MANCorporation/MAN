@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# package-windows.sh EXE VERSION: make the DUHACH! folder and zip for Windows.
+# package-windows.sh EXE VERSION [x64|arm64]: make the DUHACH! folder and zip for Windows.
 # The folder holds DUHACH!.exe, the GTK/libadwaita DLLs it needs (found by
 # following imports) and share/ (icons, settings schemas), so it runs on a
 # plain Windows 10/11 PC without installing anything.
@@ -7,8 +7,17 @@ set -euo pipefail
 here=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 exe=$1
 version=$2
-gtk="$here/../tools/gtk-win/root/ucrt64"
-objdump="$here/../tools/mingw/root/usr/bin/x86_64-w64-mingw32-objdump"
+arch=${3:-x64}
+if [[ $arch == arm64 ]]; then
+    gtk="$here/../tools/gtk-win/root/clangarm64"
+    prefix=mingw-w64-clang-aarch64-
+    . "$here/cross/env.sh"
+    objdump=llvm-objdump
+else
+    gtk="$here/../tools/gtk-win/root/ucrt64"
+    prefix=mingw-w64-ucrt-x86_64-
+    objdump="$here/../tools/mingw/root/usr/bin/x86_64-w64-mingw32-objdump"
+fi
 out_dir="$here/../release"
 stage="$out_dir/.duhach-stage"
 name="DUHACH!"
@@ -78,12 +87,12 @@ cp -r "$gtk/share/licenses" "$dest/licenses"
     echo "and MAN Corporation will provide a copy on request for three years after"
     echo "this release (see https://github.com/MANCorporation/MAN/issues)."
     echo
-    ls "$here/../tools/gtk-win/pkgs" | sed -n 's/^mingw-w64-ucrt-x86_64-\(.*\)-any\.pkg\.tar\.zst$/  \1/p'
+    ls "$here/../tools/gtk-win/pkgs" | sed -n "s/^$prefix\\(.*\\)-any\\.pkg\\.tar\\.zst\$/  \\1/p"
 } > "$dest/THIRD-PARTY-NOTICES.txt"
 cp "$here/COPYING" "$dest/COPYING.txt"
 
 mkdir -p "$out_dir"
-zip_path="$out_dir/$name-$version-windows-x64.zip"
+zip_path="$out_dir/$name-$version-windows-$arch.zip"
 rm -f "$zip_path"
 (cd "$stage" && 7z a -tzip -mx=9 -bd -bso0 "$zip_path" "$name")
 rm -rf "$stage"
