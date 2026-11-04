@@ -220,3 +220,21 @@ MAN Sample Music (MANSampleMusic/, 3 MP3s + Artwork.jpg as cover.jpg) in
 `/etc/skel/Music/MAN Sample Music` (new users) and the live user's Music.
 man-installer 3.10.2 (release names 10, 10a, 11, 20). Payload 1.99 GB — only
 ~157 MB left under GitHub's 2 GiB asset limit.
+
+## ARM64 (man-installer 3.11.0, 2026-11-01)
+
+MAN also exists for ARM64 PCs (built in `lfs/arm64/`, see ISO.md). Updates
+are per processor:
+
+- File names: `MAN-<version>.upd` stays x86-64 (what every existing MAN
+  looks for); ARM64 uses `MAN-<version>-arm64.upd` (and `-arm64.iso`).
+  `man-update-check` only offers files for its own processor
+  (`man_common::upd_file_version`).
+- The signed manifest of an ARM64 update has `"arch": "arm64"`
+  (`man-mkupd pack --arch arm64`); no `arch` means x86-64, as in all older
+  updates. MAN Update and the backend refuse an update for the other
+  processor.
+- A GitHub release for both carries both sets of assets, e.g.
+  `MAN-10-TEST-4.upd`, `MAN-10-TEST-4-arm64.upd`, `MAN-10-TEST-4-amd64.iso`,
+  `MAN-10-TEST-4-arm64.iso` (+ `.sha256` each). DUHACH! picks the ISO for the
+  PC's processor.

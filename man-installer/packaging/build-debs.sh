@@ -1,6 +1,9 @@
 #!/bin/bash
 # Build man-system-tools and man-installer .deb packages.
 #   packaging/build-debs.sh [output-dir]
+#   DEB_ARCH=arm64 packaging/build-debs.sh   # ARM64: cross-compiled (Rust target
+#       aarch64-unknown-linux-gnu; set the linker and an arm64 sysroot, see
+#       dev-tools/arm64/cross-env.sh)
 # Needs a Rust toolchain and pkg-config files for GTK 4 >= 4.16 and
 # libadwaita >= 1.6 (set PKG_CONFIG_PATH / PKG_CONFIG_SYSROOT_DIR if they are
 # not installed system-wide).
@@ -10,8 +13,16 @@ out=${1:-$here/target/debs}
 version=$(sed -n 's/^version = "\(.*\)"/\1/p' "$here/Cargo.toml" | head -n1)
 data=$here/data
 
-cargo build --release --manifest-path "$here/Cargo.toml" --workspace
-bin=$here/target/release
+arch=${DEB_ARCH:-amd64}
+case $arch in
+    amd64) grub_efi=grub-efi-amd64-bin
+           cargo build --release --manifest-path "$here/Cargo.toml" --workspace
+           bin=$here/target/release ;;
+    arm64) grub_efi=grub-efi-arm64-bin
+           cargo build --release --manifest-path "$here/Cargo.toml" --workspace --target aarch64-unknown-linux-gnu
+           bin=$here/target/aarch64-unknown-linux-gnu/release ;;
+    *) echo "DEB_ARCH must be amd64 or arm64" >&2; exit 2 ;;
+esac
 stage=$(mktemp -d)
 trap 'rm -rf "$stage"' EXIT
 mkdir -p "$out"
@@ -94,11 +105,11 @@ mkdir -p "$r/DEBIAN"
 cat > "$r/DEBIAN/control" <<EOF
 Package: man-system-tools
 Version: $version
-Architecture: amd64
+Architecture: $arch
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
-Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, grub-efi-amd64-bin, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64
+Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64
 Description: MAN system backend, MAN Setup and snapshot manager
  Privileged backend used by the MAN installer, the Snapshots app for
  creating and restoring Btrfs system snapshots, MAN Setup (first-start
@@ -179,7 +190,7 @@ mkdir -p "$r/DEBIAN"
 cat > "$r/DEBIAN/control" <<EOF
 Package: man-installer
 Version: $version
-Architecture: amd64
+Architecture: $arch
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
@@ -205,6 +216,6 @@ chmod 0755 "$r/DEBIAN/postinst"
 python3 "$here/po/build-mo.py" "$stage/man-system-tools/usr/share/locale" $(find "$stage" -name '*.desktop')
 
 for p in man-system-tools man-installer; do
-    dpkg-deb --root-owner-group -Zxz -b "$stage/$p" "$out/${p}_${version}_amd64.deb" >/dev/null
-    echo "built $out/${p}_${version}_amd64.deb"
+    dpkg-deb --root-owner-group -Zxz -b "$stage/$p" "$out/${p}_${version}_$arch.deb" >/dev/null
+    echo "built $out/${p}_${version}_$arch.deb"
 done

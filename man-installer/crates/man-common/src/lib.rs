@@ -271,6 +271,34 @@ pub const VERSION_BASE_FILE: &str = "/usr/lib/man/version-base";
 /// Details of the last installed update, read by the login pop-up.
 pub const LAST_UPDATE: &str = "/var/lib/man/last-update.json";
 pub const UPD_FORMAT: u32 = 1;
+/// The processor this MAN runs on, as Debian names it.
+pub const SYSTEM_ARCH: &str = if cfg!(target_arch = "aarch64") { "arm64" } else { "amd64" };
+
+impl UpdateManifest {
+    pub fn arch(&self) -> &str {
+        if self.arch.is_empty() { "amd64" } else { &self.arch }
+    }
+}
+
+/// Update file names: "MAN-10a.upd" for x86-64 (the first MAN computers
+/// look for exactly that), "MAN-10a-arm64.upd" for ARM64.
+pub fn upd_file_name(version: &str, arch: &str) -> String {
+    match arch {
+        "amd64" | "" => format!("MAN-{}.upd", version_file_name(version)),
+        a => format!("MAN-{}-{a}.upd", version_file_name(version)),
+    }
+}
+
+/// The version in an update file name made for `arch`, or None for a file
+/// meant for another processor.
+pub fn upd_file_version(name: &str, arch: &str) -> Option<String> {
+    let stem = name.strip_prefix("MAN-")?.strip_suffix(".upd")?;
+    let (stem, file_arch) = match stem.rsplit_once('-') {
+        Some((v, a)) if a == "arm64" || a == "amd64" => (v, a),
+        _ => (stem, "amd64"),
+    };
+    (file_arch == arch).then(|| version_from_file_name(stem))
+}
 
 /// `manifest.json` inside a `.upd` file. Signed as a whole (`manifest.sig`).
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -281,6 +309,10 @@ pub struct UpdateManifest {
     /// TEST builds ("10 TEST 5"): the release they were made after, e.g. "10.9".
     #[serde(default, skip_serializing_if = "String::is_empty")]
     pub base: String,
+    /// Processor the system is for (Debian name); empty means "amd64", as in
+    /// the updates made before ARM64 existed.
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    pub arch: String,
     /// Build date, YYYY-MM-DD.
     pub date: String,
     /// sha256 of `system.tar.zst`, lowercase hex.
@@ -569,5 +601,19 @@ mod tests {
     fn request_json() {
         let r: Request = serde_json::from_str(r#"{"op":"rollback","id":"20261018-153012"}"#).unwrap();
         assert!(matches!(r, Request::Rollback { .. }));
+    }
+
+    #[test]
+    fn update_file_names() {
+        assert_eq!(upd_file_name("10 TEST 4", "amd64"), "MAN-10-TEST-4.upd");
+        assert_eq!(upd_file_name("10 TEST 4", "arm64"), "MAN-10-TEST-4-arm64.upd");
+        assert_eq!(upd_file_version("MAN-10-TEST-4.upd", "amd64").as_deref(), Some("10 TEST 4"));
+        assert_eq!(upd_file_version("MAN-10-TEST-4.upd", "arm64"), None);
+        assert_eq!(upd_file_version("MAN-10-TEST-4-arm64.upd", "arm64").as_deref(), Some("10 TEST 4"));
+        assert_eq!(upd_file_version("MAN-10-TEST-4-arm64.upd", "amd64"), None);
+        assert_eq!(upd_file_version("MAN-10a.upd", "amd64").as_deref(), Some("10a"));
+        assert_eq!(upd_file_version("MAN-10.10.upd", "amd64").as_deref(), Some("10.10"));
+        let old: UpdateManifest = serde_json::from_str(r#"{"format":1,"name":"MAN","version":"10.10","date":"2026-10-24","payload_sha256":"","payload_size":0,"installed_size":0}"#).unwrap();
+        assert_eq!(old.arch(), "amd64");
     }
 }

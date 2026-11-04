@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+if command -v dconf >/dev/null 2>&1; then
+    dconf update
+fi
+
+# MAN keeps GNOME's upstream backgrounds but does not ship Debian-branded
+# desktop-base wallpapers in its live image.
+find /usr/share/gnome-background-properties -maxdepth 1 -type f -name 'debian-*.xml' -delete
+for directory in /usr/share/desktop-base/*-theme/wallpaper \
+                 /usr/share/desktop-base/*-theme/wallpaper-withlogo \
+                 /usr/share/desktop-base/*-theme/lockscreen; do
+    [ -d "$directory" ] || continue
+    find "$directory" -depth -delete
+done

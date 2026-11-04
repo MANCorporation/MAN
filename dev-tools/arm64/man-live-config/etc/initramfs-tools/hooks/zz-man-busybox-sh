@@ -1,0 +1,62 @@
+#!/bin/sh
+# A merged-/usr root can make initramfs-tools install BusyBox without its
+# dynamic loader.  Use the static BusyBox binary staged by build-rootfs.sh for
+# the first initramfs interpreter, before any userspace is available.
+set -eu
+
+case "${1:-}" in
+    prereqs) exit 0 ;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+static_shell=/usr/lib/man-initramfs/busybox
+
+if [ ! -x "$static_shell" ]; then
+    echo "MAN: missing static initramfs shell: $static_shell" >&2
+    exit 1
+fi
+
+# BusyBox selects an applet from argv[0].  Preserve its canonical basename so
+# the kernel shebang can request the `sh` applet directly.
+install -D -m 0755 "$static_shell" "$DESTDIR/usr/bin/busybox"
+# initramfs-tools normally installs BusyBox applets as hard links.  Replacing
+# the BusyBox executable above does not replace those links, leaving them tied
+# to the dynamically linked original.  Make each available applet a direct
+# link to the static executable instead.
+"$static_shell" --list | while IFS= read -r applet; do
+    [ "$applet" = busybox ] && continue
+    ln -sfn busybox "$DESTDIR/usr/bin/$applet"
+done
+# init's PATH prefers /usr/sbin, where initramfs-tools installed a dynamic
+# klibc run-init.  Ensure the final handoff uses the static implementation.
+ln -sfn ../bin/busybox "$DESTDIR/usr/sbin/run-init"
+# `ldd` is not present while the rootless bootstrap generates the initramfs,
+# so copy the systemd-udevd closure explicitly.  Its daemon path is a symlink
+# to /usr/bin/udevadm in Debian 13.
+copy_file binary /usr/bin/udevadm || true
+# Library folder and loader of this processor (x86_64-linux-gnu,
+# aarch64-linux-gnu); the same names on every MAN.
+for library in \
+    /lib/*-linux-gnu/libacl.so.1 \
+    /lib/*-linux-gnu/libaudit.so.1 \
+    /lib/*-linux-gnu/libblkid.so.1 \
+    /lib/*-linux-gnu/libc.so.6 \
+    /lib/*-linux-gnu/libcap-ng.so.0 \
+    /lib/*-linux-gnu/libcap.so.2 \
+    /lib/*-linux-gnu/libcrypt.so.1 \
+    /lib/*-linux-gnu/libcrypto.so.3 \
+    /lib/*-linux-gnu/libm.so.6 \
+    /lib/*-linux-gnu/libmount.so.1 \
+    /lib/*-linux-gnu/libpam.so.0 \
+    /lib/*-linux-gnu/libpcre2-8.so.0 \
+    /lib/*-linux-gnu/libseccomp.so.2 \
+    /lib/*-linux-gnu/libselinux.so.1 \
+    /lib/*-linux-gnu/libz.so.1 \
+    /lib/*-linux-gnu/libzstd.so.1 \
+    /lib64/ld-linux-x86-64.so.2 /lib/ld-linux-aarch64.so.1 \
+    /usr/lib/*-linux-gnu/systemd/libsystemd-shared-*.so; do
+    [ -e "$library" ] || continue
+    copy_file binary "$library" || true
+done
+sed -i '1s|^#!/bin/sh$|#!/usr/bin/busybox sh|' "$DESTDIR/init"

@@ -112,8 +112,17 @@ fn targets(manifest: &UpdateManifest) -> Vec<UpdateTarget> {
     out
 }
 
+/// An update for another processor would leave a system that cannot start.
+fn check_arch(m: &UpdateManifest) -> Result<()> {
+    if m.arch() != SYSTEM_ARCH {
+        bail!("This update is for {} computers, but this MAN runs on {}. Download the update for {}.", m.arch(), SYSTEM_ARCH, SYSTEM_ARCH);
+    }
+    Ok(())
+}
+
 pub fn inspect(path: &str) -> Result<UpdateInfo> {
     let v = updfile::verify(path)?;
+    check_arch(&v.manifest)?;
     let targets = targets(&v.manifest);
     let (current, base) = (current_version(), current_base());
     let newer = man_version_cmp(&v.manifest.version, &v.manifest.base, &current, &base).is_gt();
@@ -437,6 +446,7 @@ pub fn stage(path: &str, device: &str, take_snapshot: bool) -> Result<String> {
     }
     let v = updfile::verify(path)?;
     let m = v.manifest;
+    check_arch(&m)?;
     info(format!("Update {} {} (signed by {}), payload {}", m.name, m.version, v.signer, m.payload_sha256));
     let current = current_version();
     if man_version_cmp(&m.version, &m.base, &current, &current_base()) != std::cmp::Ordering::Greater {

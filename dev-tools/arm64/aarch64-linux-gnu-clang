@@ -1,0 +1,5 @@
+#!/bin/sh
+# Debian's clang (tools/llvm) as a cross compiler/linker for Linux on ARM64,
+# with the Debian sid arm64 sysroot in lfs/arm64/sysroot (see cross-env.sh).
+p=$(cd -- "$(dirname -- "$(readlink -f "$0")")/../.." && pwd)
+exec "$p/tools/llvm/root/usr/lib/llvm-19/bin/clang" --target=aarch64-linux-gnu --sysroot="$p/lfs/arm64/sysroot" -fuse-ld=lld "$@"

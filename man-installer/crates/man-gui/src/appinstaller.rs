@@ -124,8 +124,15 @@ fn read_package(path: PathBuf, temp: PathBuf) -> Package {
     p
 }
 
+/// This computer's processor in the names .deb packages, Flatpak and ELF use.
+const DEB_ARCH: &str = if cfg!(target_arch = "aarch64") { "arm64" } else { "amd64" };
+const FLATPAK_ARCH: &str = if cfg!(target_arch = "aarch64") { "aarch64" } else { "x86_64" };
+const ELF_MACHINE: u16 = if cfg!(target_arch = "aarch64") { 0xb7 } else { 0x3e };
+
 fn arch_problem(arch: &str) -> String {
-    trf("This app is made for {arch} computers and does not work on this one (x86-64).", &[("arch", &arch)])
+    // The translations name x86-64; on ARM the same sentence names ARM64.
+    let text = trf("This app is made for {arch} computers and does not work on this one (x86-64).", &[("arch", &arch)]);
+    if cfg!(target_arch = "aarch64") { text.replace("x86-64", "ARM64") } else { text }
 }
 
 // ── Desktop entries ──
@@ -326,7 +333,7 @@ fn read_deb(p: &mut Package) {
     p.summary = lines.next().unwrap_or("").trim().to_string();
     p.description = reflow(&lines.map(|l| if l.trim() == "." { "" } else { l.strip_prefix(' ').unwrap_or(l) }).collect::<Vec<_>>().join("\n"));
     let arch = get("Architecture");
-    if arch != "amd64" && arch != "all" {
+    if arch != DEB_ARCH && arch != "all" {
         p.problem = Some(arch_problem(&arch));
     }
 
@@ -400,7 +407,7 @@ fn apply_ref(p: &mut Package, flatpak_ref: &str) {
     if parts.len() == 4 {
         p.id = parts[1].to_string();
         p.name = p.id.rsplit('.').next().unwrap_or(&p.id).to_string();
-        if parts[2] != "x86_64" {
+        if parts[2] != FLATPAK_ARCH {
             p.problem = Some(arch_problem(parts[2]));
         }
     }
@@ -486,8 +493,8 @@ fn read_appimage(p: &mut Package) {
         return;
     }
     let machine = u16::from_le_bytes([head[0x12], head[0x13]]);
-    if machine != 0x3e {
-        let arch = match machine { 0xb7 => "ARM64", 0x28 => "ARM", 0x03 => "x86 (32-bit)", _ => "?" };
+    if machine != ELF_MACHINE {
+        let arch = match machine { 0x3e => "x86-64", 0xb7 => "ARM64", 0x28 => "ARM", 0x03 => "x86 (32-bit)", _ => "?" };
         p.problem = Some(arch_problem(arch));
     }
     // Version from the file name ("App-1.2.3-x86_64.AppImage") until the app says better.

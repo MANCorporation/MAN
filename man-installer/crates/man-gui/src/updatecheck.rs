@@ -5,7 +5,7 @@
 //! so a download from GitHub is only trusted once MAN Update accepts it.
 //!
 //!   man-update-check                 check, print a key file ([update] status=…)
-//!   man-update-check --download V    download MAN-V.upd, print "progress F" lines, then "file PATH"
+//!   man-update-check --download V    download MAN-V.upd (-arm64.upd on ARM), print "progress F" lines, then "file PATH"
 //!   man-update-check --notify        timer: check and notify once per new version
 //!
 //! Releases are the published GitHub releases; with Beta Updates on
@@ -18,7 +18,7 @@
 use crate::i18n::{tr, trf};
 use gtk::gio::prelude::*;
 use gtk::{gio, glib};
-use man_common::{man_version_cmp, test_build, valid_version, version_file_name, version_from_file_name, VERSION_BASE_FILE, VERSION_FILE};
+use man_common::{man_version_cmp, test_build, upd_file_name, upd_file_version, valid_version, VERSION_BASE_FILE, VERSION_FILE, SYSTEM_ARCH};
 use std::io::Write;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
@@ -109,7 +109,7 @@ fn split_notes(body: &str) -> (String, String) {
     (notes.trim().to_string(), base)
 }
 
-/// The MAN-<version>.upd assets of the published releases (and of the
+/// The MAN-<version>.upd (ARM64: MAN-<version>-arm64.upd) assets of the published releases (and of the
 /// pre-releases when `beta`).
 fn updates(beta: bool) -> Result<Vec<Release>, String> {
     let mut found = vec![];
@@ -121,7 +121,8 @@ fn updates(beta: bool) -> Result<Vec<Release>, String> {
         let assets = rel["assets"].as_array().cloned().unwrap_or_default();
         for a in &assets {
             let name = a["name"].as_str().unwrap_or("");
-            let Some(v) = name.strip_prefix("MAN-").and_then(|n| n.strip_suffix(".upd")).map(version_from_file_name) else { continue };
+            // Only the files for this processor (MAN-10a.upd or MAN-10a-arm64.upd).
+            let Some(v) = upd_file_version(name, SYSTEM_ARCH) else { continue };
             let url = a["browser_download_url"].as_str().unwrap_or("");
             if !valid_version(&v) || url.is_empty() {
                 continue;
@@ -201,7 +202,7 @@ fn download(version: &str) -> Result<PathBuf, String> {
         Some(u) => Some(String::from_utf8_lossy(&curl(&[u])?).split_whitespace().next().unwrap_or("").to_lowercase()),
         None => None,
     };
-    let dest = download_dir().join(format!("MAN-{}.upd", version_file_name(&release.version)));
+    let dest = download_dir().join(upd_file_name(&release.version, SYSTEM_ARCH));
     if dest.metadata().map(|m| m.len() == release.size).unwrap_or(false) && expected.as_deref().is_none_or(|e| sha256(&dest).as_deref() == Some(e)) {
         return Ok(dest);
     }

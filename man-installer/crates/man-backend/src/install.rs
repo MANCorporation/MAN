@@ -733,7 +733,9 @@ fn configure(plan: &Plan, layout: &Layout, t: &Path) -> Result<()> {
 
 fn install_bootloader(t: &Path) -> Result<()> {
     progress(0.1, "Installing GRUB to the EFI system partition");
-    let base = ["grub-install", "--target=x86_64-efi", "--efi-directory=/boot/efi", "--bootloader-id=MAN", "--no-uefi-secure-boot"];
+    // GRUB's UEFI target for the processor MAN was built for.
+    let target = if cfg!(target_arch = "aarch64") { "--target=arm64-efi" } else { "--target=x86_64-efi" };
+    let base = ["grub-install", target, "--efi-directory=/boot/efi", "--bootloader-id=MAN", "--no-uefi-secure-boot"];
     if let Err(e) = chroot(t, &base) {
         // Some firmware refuses new boot entries; the fallback path below
         // still boots, so this is a warning rather than a failure.
@@ -742,7 +744,7 @@ fn install_bootloader(t: &Path) -> Result<()> {
         no_nvram.push("--no-nvram");
         chroot(t, &no_nvram)?;
     }
-    // The fallback path (EFI/BOOT/BOOTX64.EFI) belongs to Windows when the
+    // The fallback path (EFI/BOOT/BOOTX64.EFI, BOOTAA64.EFI) belongs to Windows when the
     // EFI partition is shared with it; MAN's own boot entry is enough then.
     if t.join("boot/efi/EFI/Microsoft").is_dir() {
         info("Windows uses this EFI partition: its fallback boot loader is kept.");
