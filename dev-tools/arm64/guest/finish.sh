@@ -44,6 +44,8 @@ tar -C $T --numeric-owner -xpf $S/home.tar
 echo man > $T/etc/hostname
 
 echo "== version and caches"
+# MAN's name instead of Debian's (Settings > About, login text, anything reading it).
+cat $S/os-release > $T/usr/lib/os-release
 inroot man-set-version "$VERSION" "$BASE"
 inroot glib-compile-schemas /usr/share/glib-2.0/schemas
 inroot dconf update || true
@@ -54,6 +56,7 @@ inroot update-mime-database /usr/share/mime || true
 inroot locale-gen >/dev/null 2>&1 || true
 inroot update-initramfs -c -k $k
 inroot apt-get clean
-rm -f $T/etc/resolv.conf; ln -s ../run/systemd/resolve/stub-resolv.conf $T/etc/resolv.conf 2>/dev/null || true
+# A plain file that NetworkManager fills in (MAN has no systemd-resolved).
+rm -f $T/etc/resolv.conf; : > $T/etc/resolv.conf
 : > $T/etc/machine-id
 echo "FINISH DONE: MAN $VERSION arm64"; df -h $T | tail -1
