@@ -3,6 +3,9 @@
 # screen via QMP screendump (sockets in $RUN: B.qmp, B.mon, B.serial).
 #   run.sh image   the system image directly (kernel + initrd from lfs/arm64/boot)
 #   run.sh iso     the ARM64 ISO (release/MAN-*-arm64.iso) with an empty disk
+#   run.sh disk    what was installed on that disk, through its own GRUB (no ISO)
+#   run.sh debug   like iso, but its kernel and initrd are started directly with a
+#                  root shell on the serial port (lfs/arm64/boot/iso-initrd.img)
 set -euo pipefail
 p=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)
 d="$p/lfs/arm64"; q="$p/tools/qemu-arm/root"
@@ -20,11 +23,15 @@ case $mode in
     qemu-img create -q -f qcow2 -b man-gnome-arm64.img -F raw "$d/test.qcow2"
     args+=(-drive if=pflash,format=raw,file="$d/test-vars.fd" -drive if=virtio,file="$d/test.qcow2",format=qcow2
       -kernel "$d/boot/vmlinuz" -initrd "$d/boot/initrd.img" -append "root=/dev/vda rw console=ttyAMA0 console=tty0 systemd.debug_shell=ttyAMA0") ;;
-  iso)
+  disk)
+    args+=(-drive if=pflash,format=raw,file="$d/iso-vars.fd" -drive if=virtio,file="$d/iso-disk.qcow2",format=qcow2) ;;
+  iso|debug)
     iso=$(ls -t "$p"/release/MAN-*-arm64.iso | head -n1)
     cp "$q/usr/share/AAVMF/AAVMF_VARS.fd" "$d/iso-vars.fd"
     rm -f "$d/iso-disk.qcow2"; qemu-img create -q -f qcow2 "$d/iso-disk.qcow2" 64G
     args+=(-drive if=pflash,format=raw,file="$d/iso-vars.fd" -drive if=virtio,file="$d/iso-disk.qcow2",format=qcow2
-      -drive if=none,id=cd,media=cdrom,readonly=on,file="$iso" -device usb-storage,drive=cd,removable=on) ;;
+      -drive if=none,id=cd,media=cdrom,readonly=on,file="$iso" -device usb-storage,drive=cd,removable=on)
+    [[ $mode == debug ]] && args+=(-kernel "$d/boot/vmlinuz" -initrd "$d/boot/iso-initrd.img" -append "console=ttyAMA0 console=tty0 systemd.debug_shell=ttyAMA0")
+    ;;
 esac
 exec setsid "$q/usr/bin/qemu-system-aarch64" "${args[@]}"

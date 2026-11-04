@@ -28,6 +28,8 @@ inroot depmod $k
 echo "== MAN packages"
 rm -rf $T/tmp/man-debs; mkdir -p $T/tmp/man-debs; cp $S/debs-man/*.deb $T/tmp/man-debs/
 inroot apt-get -q -o Acquire::ForceIPv4=true update >/dev/null
+# Programs the x86-64 image got outside of its package list.
+inroot apt-get install -y -q -o Acquire::ForceIPv4=true --no-install-recommends sudo squashfs-tools util-linux-extra libmtp-runtime
 inroot bash -c "apt-get install -y -q -o Acquire::ForceIPv4=true -o Dpkg::Options::=--force-confold --allow-downgrades /tmp/man-debs/*.deb"
 rm -rf $T/tmp/man-debs
 

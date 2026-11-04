@@ -94,3 +94,19 @@ built into the kernel, HFS+/HFS, UDF, XFS, F2FS, CIFS and all code pages are
 modules (`gnome51-fix/09-kernel-filesystems.sh`; previous kernel
 `lfs/boot/*.before-fs-20261022`), and the image has exfatprogs and ntfs-3g
 (formatting in Disks). Tested: exFAT and NTFS images mount, read and write.
+
+## ARM64
+
+`./make-iso.sh lfs/arm64/man-gnome-arm64.img` → `release/MAN-<version>-arm64.iso`
+(run the script alone: its "in use" check matches any shell command line that
+contains both the image name and "qemu"). UEFI only: GRUB `arm64-efi` from
+`tools/arm64` (Debian's grub-efi-arm64-bin, busybox-static), loader for DUHACH!
+`EFI/MAN-Installer/grubaa64.efi`. How the image is made: `dev-tools/arm64/README.md`.
+
+Tested in emulated ARM64 (QEMU virt, AAVMF): GRUB → live desktop → installer
+("Erase Disk") → firmware entry `\EFI\MAN\grubaa64.efi` + fallback `BOOTAA64.EFI`
+→ start from disk → MAN Setup. In emulation GNOME Shell needs longer than its
+start timeout (the session falls back to the login screen); the tests add
+`TimeoutStartSec=1200` to `org.gnome.Shell@.service`. Real hardware has not been
+tested. ARM PCs with UEFI + ACPI should start; Windows-on-ARM laptops (Snapdragon)
+need a device tree for their model, which GRUB does not load yet.
