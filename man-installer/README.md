@@ -229,8 +229,10 @@ The malware database (about 113 MB) is not in the ISO or update files: `clamav-f
 downloads it and keeps it current, started as soon as there is a network by
 `/etc/NetworkManager/dispatcher.d/90-man-freshclam`, and updates keep it (`var/lib/clamav`).
 
-First run prepares the prefix without Wine's .NET/HTML download prompts and turns off
-`FileOpenAssociations`, so installers cannot take over opening the user's files. Installers' Start Menu
+First run prepares the prefix without Wine's .NET/HTML download prompts, turns off
+`FileOpenAssociations`, so installers cannot take over opening the user's files, and sets
+`Decorated=N`: Wine's own title bar, because with GNOME's, Wine 10 tests mouse clicks about 38 pixels
+off and buttons do not react (keyboard hides this: test with the mouse). Installers' Start Menu
 shortcuts become menu entries through Wine's winemenubuilder (`~/.local/share/applications/wine`).
 File and folder dialogs are GNOME's picker: `src/wine/`, package `man-wine-dialogs` (x86-64 only; on
 ARM64 Wine keeps its own dialogs, and Debian's Wine there only runs ARM64 programs).

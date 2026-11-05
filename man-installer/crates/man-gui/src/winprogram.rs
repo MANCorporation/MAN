@@ -127,7 +127,10 @@ fn prepare_wine() -> Result<(), String> {
         return Err(tr("Windows support could not be started.").to_string());
     }
     run(&["wine", "reg", "add", r"HKCU\Software\Wine\FileOpenAssociations", "/v", "Enable", "/t", "REG_SZ", "/d", "N", "/f"]);
-    run(&["wineserver", "-w"]);
+    // Wine 10 ignores the position GNOME gives a window when it adds its title
+    // bar, and then tests mouse clicks about 38 pixels off: buttons do not react.
+    // With Wine's own title bar the positions agree.
+    run(&["wine", "reg", "add", r"HKCU\Software\Wine\X11 Driver", "/v", "Decorated", "/t", "REG_SZ", "/d", "N", "/f"]);
     std::fs::write(marker, "").map_err(|e| e.to_string())
 }
 
