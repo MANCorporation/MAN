@@ -1,6 +1,8 @@
 #!/bin/bash
 # run.sh MODE: start MAN ARM64 in QEMU (emulated, slow) without a window;
 # screen via QMP screendump (sockets in $RUN: B.qmp, B.mon, B.serial).
+# CPU=cortex-a76 for a CPU like real ARM PCs have: -cpu max has SVE/SME, and Wine
+# dies there on an illegal instruction. EXTRA= more kernel options (debug mode).
 #   run.sh image   the system image directly (kernel + initrd from lfs/arm64/boot)
 #   run.sh iso     the ARM64 ISO (release/MAN-*-arm64.iso) with an empty disk
 #   run.sh disk    what was installed on that disk, through its own GRUB (no ISO)
@@ -11,7 +13,7 @@ p=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)
 d="$p/lfs/arm64"; q="$p/tools/qemu-arm/root"
 RUN=${RUN:-/tmp/claude-1000/arm64}; mkdir -p "$RUN"
 mode=${1:-image}
-args=(-machine virt,gic-version=3 -cpu max,pauth-impdef=on -smp ${SMP:-8} -m ${MEM:-8192}
+args=(-machine virt,gic-version=3 -cpu ${CPU:-max,pauth-impdef=on} -smp ${SMP:-8} -m ${MEM:-8192}
   -accel tcg,thread=multi,tb-size=1024
   -drive if=pflash,format=raw,readonly=on,file="$q/usr/share/AAVMF/AAVMF_CODE.no-secboot.fd"
   -device virtio-gpu-pci,xres=1280,yres=800 -device qemu-xhci -device usb-kbd -device usb-tablet
@@ -31,7 +33,7 @@ case $mode in
     rm -f "$d/iso-disk.qcow2"; qemu-img create -q -f qcow2 "$d/iso-disk.qcow2" 64G
     args+=(-drive if=pflash,format=raw,file="$d/iso-vars.fd" -drive if=virtio,file="$d/iso-disk.qcow2",format=qcow2
       -drive if=none,id=cd,media=cdrom,readonly=on,file="$iso" -device usb-storage,drive=cd,removable=on)
-    [[ $mode == debug ]] && args+=(-kernel "$d/boot/vmlinuz" -initrd "$d/boot/iso-initrd.img" -append "console=ttyAMA0 console=tty0 systemd.debug_shell=ttyAMA0")
+    [[ $mode == debug ]] && args+=(-kernel "$d/boot/vmlinuz" -initrd "$d/boot/iso-initrd.img" -append "console=ttyAMA0 console=tty0 systemd.debug_shell=ttyAMA0 ${EXTRA:-}")
     ;;
 esac
 exec setsid "$q/usr/bin/qemu-system-aarch64" "${args[@]}"

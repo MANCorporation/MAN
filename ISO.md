@@ -110,3 +110,7 @@ start timeout (the session falls back to the login screen); the tests add
 `TimeoutStartSec=1200` to `org.gnome.Shell@.service`. Real hardware has not been
 tested. ARM PCs with UEFI + ACPI should start; Windows-on-ARM laptops (Snapdragon)
 need a device tree for their model, which GRUB does not load yet.
+
+Test ARM64 Wine on `CPU=cortex-a76` (`dev-tools/arm64/run.sh`): with QEMU's default `-cpu max`
+(SVE, SME, pointer authentication) Wine's setup loops on an illegal instruction until its stack
+overflows; on Cortex-A76 it runs. Real machines other than a76-like laptops are not tested.
