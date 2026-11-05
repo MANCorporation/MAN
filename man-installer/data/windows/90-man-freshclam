@@ -8,5 +8,10 @@ esac
 for db in /var/lib/clamav/main.cvd /var/lib/clamav/main.cld; do
     [ -s "$db" ] && exit 0
 done
+# A network coming up sends several events, and a restart would throw away a
+# download in progress: at most once in 10 minutes.
+stamp=/run/man-freshclam-restarted
+[ -n "$(find "$stamp" -mmin -10 2>/dev/null)" ] && exit 0
+touch "$stamp"
 systemctl restart --no-block clamav-freshclam.service 2>/dev/null || true
 exit 0
