@@ -24,7 +24,8 @@ apt-get install -y -q --no-install-recommends wine wine64 clamav clamav-freshcla
 dialogs=""
 [ "$arch" = amd64 ] && dialogs=$(ls "$D"/man-wine-dialogs_*_amd64.deb)
 apt-get install -y -q --no-install-recommends -o Dpkg::Options::=--force-confold \
-    $dialogs "$D"/man-system-tools_*_"$arch".deb "$D"/man-installer_*_"$arch".deb
+    $dialogs "$D"/man-system-tools_*_"$arch".deb "$D"/man-installer_*_"$arch".deb \
+    "$D"/man-desktop-shell_*_all.deb "$D"/gnome-control-center_*man*_"$arch".deb
 systemctl enable clamav-freshclam.service
 # Popups like macOS for the live user too (new users get it from /etc/skel).
 if [ -d /home/MANInstaller ]; then
@@ -38,5 +39,5 @@ rm -rf /var/lib/clamav/* /var/log/clamav/*
 apt-get clean
 rm -f /etc/apt/apt.conf.d/99ipv4-build
 ls -la /var/lib/clamav
-dpkg -l wine libwine clamav man-system-tools man-installer man-live-config | tail -6 | cut -c1-60
+dpkg -l wine libwine clamav man-system-tools man-installer man-live-config man-desktop-shell gnome-control-center | tail -8 | cut -c1-60
 df -BM --output=used / | tail -1

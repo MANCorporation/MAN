@@ -35,6 +35,8 @@ python3 "$here/man-settings-po/tool.py" build "$work/pkg/usr/share/locale" \
 chmod 0644 "$work/pkg/usr/share/applications/gnome-man-updates-panel.desktop"
 find "$work/pkg/usr/share/locale" -type d -exec chmod 0755 {} + -o -type f -exec chmod 0644 {} +
 sed -i "s/^Version: .*/Version: 1:${upstream}${suffix}/" "$work/pkg/DEBIAN/control"
+# Built against sid's current AccountsService library.
+sed -i -E 's/libaccountsservice0 \([^)]*\)/libaccountsservice1/' "$work/pkg/DEBIAN/control"
 (cd "$work/pkg" && find usr -type f -print0 | sort -z | xargs -0 md5sum > DEBIAN/md5sums)
 dpkg-deb --root-owner-group -Zxz -b "$work/pkg" "$out" >/dev/null
 echo "built $out"

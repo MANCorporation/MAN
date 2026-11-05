@@ -1,0 +1,167 @@
+--- a/panels/common/cc-man-tweaks.c
++++ b/panels/common/cc-man-tweaks.c
+@@ -500,9 +500,153 @@
+   return ADW_PREFERENCES_GROUP (group);
+ }
+ 
++/* ─────────────────────────── MAN's desktop ─────────────────────────── */
++
++#define SHELL_SCHEMA "org.gnome.shell"
++#define DOCK_SCHEMA "com.man.desktop.dock"
++#define BLUR_SCHEMA "com.man.desktop.blur"
++#define TILING_SCHEMA "com.man.desktop.tiling"
++#define DOCK_ID "man-dock@man.invalid"
++#define BLUR_ID "man-blur@man.invalid"
++#define TILING_ID "man-tiling@man.invalid"
++
++/* A switch for a part of the desktop: its entry in the shell's enabled list. */
++static gboolean
++component_enabled (GSettings *shell, const char *id)
++{
++  g_auto(GStrv) enabled = g_settings_get_strv (shell, "enabled-extensions");
++  return g_strv_contains ((const char * const *) enabled, id);
++}
++
++static void
++component_sync (GSettings *shell, const char *key, AdwSwitchRow *row)
++{
++  const char *id = g_object_get_data (G_OBJECT (row), "man-component");
++  adw_switch_row_set_active (row, component_enabled (shell, id));
++}
++
++static void
++component_toggled (AdwSwitchRow *row, GParamSpec *pspec, GSettings *shell)
++{
++  const char *id = g_object_get_data (G_OBJECT (row), "man-component");
++  gboolean active = adw_switch_row_get_active (row);
++  g_auto(GStrv) enabled = NULL;
++  g_autoptr(GStrvBuilder) b = NULL;
++  g_auto(GStrv) next = NULL;
++
++  if (active == component_enabled (shell, id))
++    return;
++  enabled = g_settings_get_strv (shell, "enabled-extensions");
++  b = g_strv_builder_new ();
++  for (char **e = enabled; *e; e++)
++    if (g_strcmp0 (*e, id) != 0)
++      g_strv_builder_add (b, *e);
++  if (active)
++    g_strv_builder_add (b, id);
++  next = g_strv_builder_end (b);
++  g_settings_set_strv (shell, "enabled-extensions", (const char * const *) next);
++}
++
++static GtkWidget *
++component_row (const char *title, const char *subtitle, const char *id)
++{
++  GtkWidget *row = adw_switch_row_new ();
++  GSettings *shell = settings_for (row, SHELL_SCHEMA);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++  if (subtitle)
++    adw_action_row_set_subtitle (ADW_ACTION_ROW (row), subtitle);
++  g_object_set_data_full (G_OBJECT (row), "man-component", g_strdup (id), g_free);
++  adw_switch_row_set_active (ADW_SWITCH_ROW (row), component_enabled (shell, id));
++  g_signal_connect_object (shell, "changed::enabled-extensions", G_CALLBACK (component_sync), row, 0);
++  g_signal_connect_object (row, "notify::active", G_CALLBACK (component_toggled), shell, 0);
++  return row;
++}
++
++/* The other rows of a group only matter while its switch is on. */
++static GtkWidget *
++depends_on (GtkWidget *row, GtkWidget *component)
++{
++  g_object_bind_property (component, "active", row, "sensitive", G_BINDING_SYNC_CREATE);
++  return row;
++}
++
++static GtkWidget *
++number_row (const char *title, const char *subtitle, const char *schema, const char *key,
++            double min, double max, double step)
++{
++  GtkWidget *row = adw_spin_row_new_with_range (min, max, step);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++  if (subtitle)
++    adw_action_row_set_subtitle (ADW_ACTION_ROW (row), subtitle);
++  g_settings_bind (settings_for (row, schema), key, row, "value", G_SETTINGS_BIND_DEFAULT);
++  return row;
++}
++
++static AdwPreferencesGroup *
++dock_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *on = component_row (_("Show Dock"), NULL, DOCK_ID);
++  GtkWidget *hide = switch_row (_("Hide Automatically"), _("The dock makes room when a window needs the space"), DOCK_SCHEMA, "dock-fixed");
++  static const char *pos_labels[] = { N_("Bottom"), N_("Left"), N_("Right"), NULL };
++  static const char *pos_values[] = { "BOTTOM", "LEFT", "RIGHT", NULL };
++  AdwPreferencesGroup *g = ADW_PREFERENCES_GROUP (group);
++
++  g_settings_unbind (hide, "active");
++  g_settings_bind (settings_for (hide, DOCK_SCHEMA), "dock-fixed", hide, "active", G_SETTINGS_BIND_INVERT_BOOLEAN);
++  adw_preferences_group_set_title (g, _("Dock"));
++  adw_preferences_group_add (g, on);
++  adw_preferences_group_add (g, depends_on (combo_row (_("Position"), NULL, DOCK_SCHEMA, "dock-position", pos_labels, pos_values), on));
++  adw_preferences_group_add (g, depends_on (number_row (_("Icon Size"), NULL, DOCK_SCHEMA, "dash-max-icon-size", 24, 96, 4), on));
++  adw_preferences_group_add (g, depends_on (hide, on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Show on All Displays"), NULL, DOCK_SCHEMA, "multi-monitor"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Show Trash"), NULL, DOCK_SCHEMA, "show-trash"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Show Drives"), NULL, DOCK_SCHEMA, "show-mounts"), on));
++  return g;
++}
++
++static AdwPreferencesGroup *
++blur_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *on = component_row (_("Blur Effects"), _("Turn this off on slow computers"), BLUR_ID);
++  AdwPreferencesGroup *g = ADW_PREFERENCES_GROUP (group);
++
++  adw_preferences_group_set_title (g, _("Blur"));
++  adw_preferences_group_add (g, on);
++  adw_preferences_group_add (g, depends_on (switch_row (_("Top Bar"), NULL, BLUR_SCHEMA ".panel", "blur"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Activities Overview"), NULL, BLUR_SCHEMA ".overview", "blur"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Dock"), NULL, BLUR_SCHEMA ".man-dock", "blur"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Menus"), NULL, BLUR_SCHEMA ".popup", "blur"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Lock Screen"), NULL, BLUR_SCHEMA ".lockscreen", "blur"), on));
++  return g;
++}
++
++static AdwPreferencesGroup *
++tiling_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *on = component_row (_("Window Tiling"), _("Arrange windows in layouts. Choose and edit layouts with the button in the top bar."), TILING_ID);
++  AdwPreferencesGroup *g = ADW_PREFERENCES_GROUP (group);
++
++  adw_preferences_group_set_title (g, _("Window Tiling"));
++  adw_preferences_group_add (g, on);
++  adw_preferences_group_add (g, depends_on (switch_row (_("Snap Assistant"), _("Drag a window to the top of the screen to choose its place"), TILING_SCHEMA, "enable-snap-assist"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Snap at Screen Edges"), NULL, TILING_SCHEMA, "active-screen-edges"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Automatic Tiling"), _("New windows fill the layout by themselves"), TILING_SCHEMA, "enable-autotiling"), on));
++  adw_preferences_group_add (g, depends_on (switch_row (_("Show Tiling Button"), NULL, TILING_SCHEMA, "show-indicator"), on));
++  adw_preferences_group_add (g, depends_on (number_row (_("Space Between Windows"), NULL, TILING_SCHEMA, "inner-gaps", 0, 64, 2), on));
++  adw_preferences_group_add (g, depends_on (number_row (_("Space at Screen Edges"), NULL, TILING_SCHEMA, "outer-gaps", 0, 64, 2), on));
++  return g;
++}
++
+ void
+ cc_man_tweaks_add_appearance (AdwPreferencesPage *page)
+ {
++  if (schema_has_key (BLUR_SCHEMA ".panel", "blur"))
++    adw_preferences_page_add (page, blur_group ());
+   adw_preferences_page_add (page, fonts_group ());
+   adw_preferences_page_add (page, themes_group ());
+   adw_preferences_page_add (page, titlebars_group ());
+@@ -532,6 +676,10 @@
+   adw_preferences_group_add (ADW_PREFERENCES_GROUP (group),
+                              switch_row (_("Raise Windows When Focused"), _("Useful with focus on hover"), WM_SCHEMA, "auto-raise"));
+   adw_preferences_page_add (page, ADW_PREFERENCES_GROUP (group));
++  if (schema_has_key (DOCK_SCHEMA, "dock-position"))
++    adw_preferences_page_add (page, dock_group ());
++  if (schema_has_key (TILING_SCHEMA, "enable-snap-assist"))
++    adw_preferences_page_add (page, tiling_group ());
+ }
+ 
+ /* ────────────────────────────── keyboard ────────────────────────────── */
