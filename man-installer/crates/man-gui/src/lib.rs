@@ -8,3 +8,4 @@ pub mod snapshots;
 pub mod ui;
 pub mod updatecheck;
 pub mod updater;
+pub mod winprogram;

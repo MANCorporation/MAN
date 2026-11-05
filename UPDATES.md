@@ -238,3 +238,9 @@ are per processor:
   `MAN-10-TEST-4.upd`, `MAN-10-TEST-4-arm64.upd`, `MAN-10-TEST-4-amd64.iso`,
   `MAN-10-TEST-4-arm64.iso` (+ `.sha256` each). DUHACH! picks the ISO for the
   PC's processor.
+
+## Size (man-installer 3.12.0)
+
+Wine and ClamAV add about 1.3 GB unpacked. `man-mkupd payload` now uses zstd level 19 (was 6), and the
+image dropped two unused kernels and test files (`dev-tools/wine/install-in-image.sh`): check that the
+.upd and ISO stay under GitHub's 2 GiB per file. Level 19 takes much longer to pack, not to unpack.

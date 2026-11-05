@@ -208,6 +208,7 @@ const KEEP: &[&str] = &[
     "etc/ssh/ssh_host_rsa_key", "etc/ssh/ssh_host_rsa_key.pub", "etc/ssh/ssh_host_ecdsa_key", "etc/ssh/ssh_host_ecdsa_key.pub",
     "etc/ssh/ssh_host_ed25519_key", "etc/ssh/ssh_host_ed25519_key.pub",
     "var/lib/AccountsService", "var/lib/bluetooth", "var/lib/NetworkManager", "var/lib/flatpak", "var/lib/dbus/machine-id",
+    "var/lib/clamav",
     "usr/local", "opt",
 ];
 

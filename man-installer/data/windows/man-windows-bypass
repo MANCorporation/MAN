@@ -1,0 +1,6 @@
+#!/bin/sh
+# Run through pkexec: polkit has asked for an administrator's password by now.
+# Nothing runs as root; the flagged program is then started as the user, after
+# one more confirmation in the "Windows Program" window.
+logger -t man-windows-program "Malware warning bypassed by user ${PKEXEC_UID:-?}" 2>/dev/null || true
+exit 0

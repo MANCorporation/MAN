@@ -213,3 +213,24 @@ only that partition is protected, not the whole disk, and the install writes
 `/etc/man/duhach-installer`: on MAN's first start `man-duhach-cleanup`
 deletes the partition, the "MAN Installer" firmware entry and grows the
 system partition into the space. See ../duhach/README.md.
+
+## Windows programs (man-windows-program, 3.12.0)
+
+Opening an `.exe` or `.msi` starts **Windows Program** (`/etc/xdg/gnome-mimeapps.list`), which
+scans it with ClamAV (`clamscan`, database kept current by `clamav-freshclam.service`, kept across
+updates) before Wine (`wine`, prefix `~/.wine`) can run it:
+
+- nothing found: warning, **Run It** / **Cancel** (default). If the database is not ready it says so.
+- found: **Move to Trash** (default) / **Cancel** / **Bypass and Run**. Bypassing asks for an
+  administrator's password (polkit `com.man.windows.bypass`, never remembered; the live user, who has
+  no password, is allowed by `49-man-live.rules`), logs it, and asks once more. Nothing runs as root.
+- wrong processor (x86 program on ARM64 and the other way round), or not a Windows program: refused.
+
+First run prepares the prefix without Wine's .NET/HTML download prompts and turns off
+`FileOpenAssociations`, so installers cannot take over opening the user's files. Installers' Start Menu
+shortcuts become menu entries through Wine's winemenubuilder (`~/.local/share/applications/wine`).
+File and folder dialogs are GNOME's picker: `src/wine/`, package `man-wine-dialogs` (x86-64 only).
+
+Limits: ClamAV only knows known malware, so a clean result is not proof of safety; the check runs only
+when a file is opened this way (not for `wine` in a terminal or programs a program starts); and Wine is
+not a sandbox: a program can reach everything the user can.

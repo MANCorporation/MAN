@@ -59,7 +59,7 @@ fn payload(root: &str, outdir: &str) -> Result<()> {
     args.extend(EXCLUDES.iter().map(|e| format!("--exclude={e}")));
     args.extend(["-C".into(), root.into(), ".".into()]);
     eprintln!("packing {root} ...");
-    let mut child = Command::new("tar").args(&args).env("ZSTD_CLEVEL", "6").env("ZSTD_NBTHREADS", "0").stdout(Stdio::piped()).spawn().context("cannot run tar")?;
+    let mut child = Command::new("tar").args(&args).env("ZSTD_CLEVEL", "19").env("ZSTD_NBTHREADS", "0").stdout(Stdio::piped()).spawn().context("cannot run tar")?;
     let mut src = child.stdout.take().unwrap();
     let mut file = std::fs::File::create(&out)?;
     let mut hasher = Sha256::new();

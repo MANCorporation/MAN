@@ -67,3 +67,10 @@ the GNOME Foundation, Debian of Software in the Public Interest, Inc.,
 Windows of Microsoft Corporation. These names are used only to describe
 compatibility and origin; MAN is not endorsed by these organisations. The
 Debian logo is not used in MAN (the login screen shows the MAN logo).
+
+## Wine and ClamAV
+
+Wine (GNU LGPL 2.1+) and ClamAV (GNU GPL 2) are Debian's packages. MAN changes two Wine libraries
+(comdlg32, shell32): the patch and how to rebuild them are in `src/wine/`, and installed in
+`/usr/share/doc/man-wine-dialogs/`. Sources: https://sources.debian.org/src/wine/ and
+https://sources.debian.org/src/clamav/.

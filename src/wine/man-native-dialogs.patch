@@ -1,0 +1,641 @@
+--- a/dlls/comdlg32/filedlg.c
++++ b/dlls/comdlg32/filedlg.c
+@@ -66,6 +66,7 @@
+ #include "shellapi.h"
+ #include "shlobj.h"
+ #include "filedlgbrowser.h"
++#include "man_picker.h"
+ #include "shlwapi.h"
+ 
+ #include "wine/debug.h"
+@@ -529,6 +530,125 @@
+ }
+ 
+ /***********************************************************************
++ *      man_ofn_pick
++ *
++ * MAN: the desktop's file picker instead of the dialog below. Programs that
++ * customize the dialog (hooks, templates) or use the pre-Explorer list format
++ * keep Wine's dialog.
++ */
++static int man_ofn_pick(FileOpenDlgInfos *info, UINT dlg_type)
++{
++    OPENFILENAMEW *ofn = info->ofnInfos;
++    UINT flags = dlg_type == SAVE_DIALOG ? MAN_PICK_SAVE : 0;
++    struct man_buf b = {0};
++    WCHAR *paths = NULL, *p, *leaf;
++    UINT count = 0, offset = 0, ext = 0, needed;
++    int res;
++
++    if (ofn->Flags & (OFN_ENABLEHOOK | OFN_ENABLETEMPLATE | OFN_ENABLETEMPLATEHANDLE))
++        return MAN_PICK_UNAVAILABLE;
++    if (!ofn->lpstrFile) return MAN_PICK_UNAVAILABLE;
++    if (ofn->Flags & OFN_ALLOWMULTISELECT)
++    {
++        if (!(ofn->Flags & OFN_EXPLORER)) return MAN_PICK_UNAVAILABLE;
++        if (dlg_type == OPEN_DIALOG) flags |= MAN_PICK_MULTI;
++    }
++
++    res = man_pick(ofn->hwndOwner, info->title, info->filter, ofn->nFilterIndex, info->initdir,
++                   info->filename, flags, &paths);
++    if (res != MAN_PICK_OK) return res;
++
++    for (p = paths; *p; p += lstrlenW(p) + 1) count++;
++    leaf = wcsrchr(paths, '\\');
++    leaf = leaf ? leaf + 1 : paths;
++    offset = leaf - paths;
++    if (count > 1)
++    {
++        /* "folder\0name\0name\0\0" */
++        man_add(&b, paths, offset - 1);
++        man_add(&b, L"", 1);
++        for (p = paths; *p; p += lstrlenW(p) + 1)
++        {
++            leaf = wcsrchr(p, '\\');
++            leaf = leaf ? leaf + 1 : p;
++            man_add(&b, leaf, lstrlenW(leaf) + 1);
++        }
++    }
++    else
++    {
++        WCHAR *dot;
++
++        man_adds(&b, paths);
++        dot = wcsrchr(b.s + offset, '.');
++        if (!dot && dlg_type == SAVE_DIALOG && info->defext && *info->defext)
++        {
++            man_adds(&b, L".");
++            man_adds(&b, info->defext);
++            dot = wcsrchr(b.s + offset, '.');
++        }
++        if (dot) ext = dot - b.s + 1;
++        man_add(&b, L"", 0);
++    }
++
++    /* The folder, for the program's next file operations. */
++    {
++        WCHAR saved = b.s[offset ? offset - 1 : 0];
++        if (offset)
++        {
++            b.s[offset - 1] = 0;
++            SetCurrentDirectoryW(b.s);
++            b.s[offset - 1] = saved;
++        }
++    }
++
++    needed = b.len + 1;
++    if (info->unicode)
++    {
++        if (needed > ofn->nMaxFile)
++        {
++            if (ofn->nMaxFile >= 2) *(WORD *)ofn->lpstrFile = needed;
++            COMDLG32_SetCommDlgExtendedError(FNERR_BUFFERTOOSMALL);
++            HeapFree(GetProcessHeap(), 0, b.s);
++            HeapFree(GetProcessHeap(), 0, paths);
++            return MAN_PICK_CANCEL;
++        }
++        memcpy(ofn->lpstrFile, b.s, needed * sizeof(WCHAR));
++        if (ofn->lpstrFileTitle && ofn->nMaxFileTitle)
++            lstrcpynW(ofn->lpstrFileTitle, b.s + offset, ofn->nMaxFileTitle);
++    }
++    else
++    {
++        OPENFILENAMEA *ofna = (OPENFILENAMEA *)ofn;
++        int len = WideCharToMultiByte(CP_ACP, 0, b.s, needed, NULL, 0, NULL, NULL);
++
++        if ((DWORD)len > ofna->nMaxFile)
++        {
++            if (ofna->nMaxFile >= 2) *(WORD *)ofna->lpstrFile = len;
++            COMDLG32_SetCommDlgExtendedError(FNERR_BUFFERTOOSMALL);
++            HeapFree(GetProcessHeap(), 0, b.s);
++            HeapFree(GetProcessHeap(), 0, paths);
++            return MAN_PICK_CANCEL;
++        }
++        WideCharToMultiByte(CP_ACP, 0, b.s, needed, ofna->lpstrFile, len, NULL, NULL);
++        if (ofna->lpstrFileTitle && ofna->nMaxFileTitle)
++        {
++            if (!WideCharToMultiByte(CP_ACP, 0, b.s + offset, -1, ofna->lpstrFileTitle, ofna->nMaxFileTitle, NULL, NULL))
++                ofna->lpstrFileTitle[ofna->nMaxFileTitle - 1] = 0;
++        }
++        if (ext) ext = WideCharToMultiByte(CP_ACP, 0, b.s, ext, NULL, 0, NULL, NULL);
++        offset = WideCharToMultiByte(CP_ACP, 0, b.s, offset, NULL, 0, NULL, NULL);
++    }
++    ofn->nFileOffset = offset;
++    ofn->nFileExtension = ext;
++    ofn->Flags &= ~OFN_READONLY;
++    COMDLG32_SetCommDlgExtendedError(0);
++
++    HeapFree(GetProcessHeap(), 0, b.s);
++    HeapFree(GetProcessHeap(), 0, paths);
++    return MAN_PICK_OK;
++}
++
++/***********************************************************************
+  *      GetFileDialog95
+  *
+  * Call GetFileName95 with this structure and clean the memory.
+@@ -537,6 +657,7 @@
+ {
+     WCHAR *current_dir = NULL;
+     unsigned int i;
++    int picked;
+     BOOL ret;
+ 
+     /* save current directory */
+@@ -546,7 +667,10 @@
+         GetCurrentDirectoryW(MAX_PATH, current_dir);
+     }
+ 
+-    switch (dlg_type)
++    picked = man_ofn_pick(info, dlg_type);
++    if (picked != MAN_PICK_UNAVAILABLE)
++        ret = picked == MAN_PICK_OK;
++    else switch (dlg_type)
+     {
+     case OPEN_DIALOG:
+         ret = GetFileName95(info);
+--- a/dlls/comdlg32/itemdlg.c
++++ b/dlls/comdlg32/itemdlg.c
+@@ -30,6 +30,7 @@
+ 
+ #include "commdlg.h"
+ #include "cdlg.h"
++#include "man_picker.h"
+ #include "filedlgbrowser.h"
+ 
+ #include "wine/debug.h"
+@@ -2364,6 +2365,92 @@
+     return FALSE;
+ }
+ 
++/* MAN: the desktop's file picker instead of the dialog below. Programs that add
++ * their own controls to the dialog keep Wine's. TRUE: handled, the result in *ret. */
++static BOOL man_itemdlg_show(FileDialogImpl *This, HWND parent, HRESULT *ret)
++{
++    UINT flags = 0, i;
++    struct man_buf filters = {0};
++    WCHAR *dir = NULL;
++    IShellItem *folder = This->psi_setfolder ? This->psi_setfolder : This->psi_defaultfolder;
++    BOOL handled = TRUE;
++
++    if (!list_empty(&This->cctrls))
++        return FALSE;
++    if (This->dlg_type == ITEMDLG_TYPE_SAVE) flags |= MAN_PICK_SAVE;
++    if (This->options & FOS_PICKFOLDERS) flags |= MAN_PICK_FOLDER;
++    if (This->options & FOS_ALLOWMULTISELECT) flags |= MAN_PICK_MULTI;
++    for (i = 0; i < This->filterspec_count; i++)
++    {
++        man_add(&filters, This->filterspecs[i].pszName, lstrlenW(This->filterspecs[i].pszName) + 1);
++        man_add(&filters, This->filterspecs[i].pszSpec, lstrlenW(This->filterspecs[i].pszSpec) + 1);
++    }
++    if (folder) IShellItem_GetDisplayName(folder, SIGDN_FILESYSPATH, &dir);
++
++    for (;;)
++    {
++        WCHAR *paths = NULL, *p;
++        LPITEMIDLIST *pidls;
++        IShellItemArray *array = NULL;
++        UINT count = 0;
++        HRESULT hr;
++        int res = man_pick(parent, This->custom_title, filters.s, This->filetypeindex + 1, dir,
++                           This->set_filename, flags, &paths);
++
++        if (res == MAN_PICK_UNAVAILABLE)
++        {
++            handled = FALSE;
++            break;
++        }
++        if (res == MAN_PICK_CANCEL)
++        {
++            *ret = HRESULT_FROM_WIN32(ERROR_CANCELLED);
++            break;
++        }
++
++        for (p = paths; *p; p += lstrlenW(p) + 1) count++;
++        pidls = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, count * sizeof(*pidls));
++        for (i = 0, p = paths; *p; p += lstrlenW(p) + 1, i++)
++        {
++            struct man_buf name = {0};
++            WCHAR *leaf = wcsrchr(p, '\\');
++
++            man_adds(&name, p);
++            if (flags & MAN_PICK_SAVE && This->default_ext && *This->default_ext &&
++                !wcschr(leaf ? leaf : p, '.'))
++            {
++                man_adds(&name, L".");
++                man_adds(&name, This->default_ext);
++            }
++            /* A file to save may not exist yet. */
++            if (FAILED(SHParseDisplayName(name.s, NULL, &pidls[i], 0, NULL)))
++                pidls[i] = SHSimpleIDListFromPath(name.s);
++            HeapFree(GetProcessHeap(), 0, name.s);
++        }
++        hr = SHCreateShellItemArrayFromIDLists(count, (PCIDLIST_ABSOLUTE_ARRAY)pidls, &array);
++        for (i = 0; i < count; i++) ILFree(pidls[i]);
++        HeapFree(GetProcessHeap(), 0, pidls);
++        HeapFree(GetProcessHeap(), 0, paths);
++        if (FAILED(hr))
++        {
++            *ret = hr;
++            break;
++        }
++
++        if (This->psia_results) IShellItemArray_Release(This->psia_results);
++        This->psia_results = array;
++        if (events_OnFileOk(This) == S_OK)
++        {
++            *ret = S_OK;
++            break;
++        }
++        /* The program refused this choice: ask again. */
++    }
++    CoTaskMemFree(dir);
++    HeapFree(GetProcessHeap(), 0, filters.s);
++    return handled;
++}
++
+ static HRESULT create_dialog(FileDialogImpl *This, HWND parent)
+ {
+     ULONG_PTR ctx_cookie = 0;
+@@ -2521,10 +2608,14 @@
+ static HRESULT WINAPI IFileDialog2_fnShow(IFileDialog2 *iface, HWND hwndOwner)
+ {
+     FileDialogImpl *This = impl_from_IFileDialog2(iface);
++    HRESULT hr;
+     TRACE("%p (%p)\n", iface, hwndOwner);
+ 
+     This->opendropdown_has_selection = FALSE;
+ 
++    if (man_itemdlg_show(This, hwndOwner, &hr))
++        return hr;
++
+     return create_dialog(This, hwndOwner);
+ }
+ 
+--- a/dlls/shell32/brsfolder.c
++++ b/dlls/shell32/brsfolder.c
+@@ -28,6 +28,7 @@
+ #include "wine/debug.h"
+ #include "pidl.h"
+ #include "shell32_main.h"
++#include "../comdlg32/man_picker.h"
+ #include "commoncontrols.h"
+ #include "shellapi.h"
+ #include "shresdef.h"
+@@ -1204,6 +1205,34 @@
+ }
+ 
+ 
++/* MAN: the desktop's folder picker instead of the dialog below. A callback only
++ * gets to preselect a folder there, so it is not needed here. TRUE: handled. */
++static BOOL man_browse_folder(LPBROWSEINFOW lpbi, LPITEMIDLIST *ret)
++{
++    WCHAR root[MAX_PATH], *dir = NULL, *paths = NULL;
++    int res;
++
++    if (lpbi->ulFlags & (BIF_BROWSEFORCOMPUTER | BIF_BROWSEFORPRINTER | BIF_BROWSEINCLUDEFILES))
++        return FALSE;
++    if (lpbi->pidlRoot && SHGetPathFromIDListW(lpbi->pidlRoot, root)) dir = root;
++    res = man_pick(lpbi->hwndOwner, lpbi->lpszTitle, NULL, 0, dir, NULL, MAN_PICK_FOLDER, &paths);
++    if (res == MAN_PICK_UNAVAILABLE) return FALSE;
++
++    *ret = NULL;
++    if (res == MAN_PICK_OK)
++    {
++        if (FAILED(SHParseDisplayName(paths, NULL, ret, 0, NULL)))
++            *ret = NULL;
++        if (*ret && lpbi->pszDisplayName)
++        {
++            WCHAR *leaf = wcsrchr(paths, '\\');
++            lstrcpynW(lpbi->pszDisplayName, leaf ? leaf + 1 : paths, MAX_PATH);
++        }
++        HeapFree(GetProcessHeap(), 0, paths);
++    }
++    return TRUE;
++}
++
+ /*************************************************************************
+  * SHBrowseForFolderW [SHELL32.@]
+  *
+@@ -1218,6 +1247,9 @@
+     const WCHAR * templateName;
+     INITCOMMONCONTROLSEX icex;
+ 
++    if (man_browse_folder(lpbi, &info.pidlRet))
++        return info.pidlRet;
++
+     info.hWnd = 0;
+     info.pidlRet = NULL;
+     info.lpBrowseInfo = lpbi;
+--- /dev/null
++++ b/dlls/comdlg32/man_picker.h
+@@ -0,0 +1,309 @@
++/*
++ * MAN: show the desktop's own file picker (GNOME, through zenity) for Windows
++ * programs. Shared by comdlg32 (GetOpenFileName, GetSaveFileName, IFileDialog)
++ * and shell32 (SHBrowseForFolder). When zenity is missing, or with the
++ * environment variable MAN_WINE_DIALOGS=wine, Wine's own dialogs are used.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ */
++#ifndef MAN_PICKER_H
++#define MAN_PICKER_H
++
++#define MAN_PICK_SAVE   1
++#define MAN_PICK_MULTI  2
++#define MAN_PICK_FOLDER 4
++
++#define MAN_PICK_UNAVAILABLE (-1)
++#define MAN_PICK_CANCEL      0
++#define MAN_PICK_OK          1
++
++struct man_buf { WCHAR *s; size_t len, cap; };
++
++static void man_add(struct man_buf *b, const WCHAR *s, size_t n)
++{
++    if (b->len + n + 1 > b->cap)
++    {
++        size_t cap = (b->len + n + 1) * 2;
++        WCHAR *p = HeapAlloc(GetProcessHeap(), 0, cap * sizeof(WCHAR));
++        if (b->len) memcpy(p, b->s, b->len * sizeof(WCHAR));
++        HeapFree(GetProcessHeap(), 0, b->s);
++        b->s = p;
++        b->cap = cap;
++    }
++    if (n) memcpy(b->s + b->len, s, n * sizeof(WCHAR));
++    b->len += n;
++    b->s[b->len] = 0;
++}
++
++static void man_adds(struct man_buf *b, const WCHAR *s)
++{
++    man_add(b, s, lstrlenW(s));
++}
++
++/* One argument of the command line, quoted the way the process start parses it. */
++static void man_arg(struct man_buf *cmd, const WCHAR *a)
++{
++    man_add(cmd, L" \"", 2);
++    for (; *a; a++)
++    {
++        size_t slashes = 0;
++        while (a[slashes] == '\\') slashes++;
++        if (slashes)
++        {
++            size_t i, n = slashes * ((!a[slashes] || a[slashes] == '"') ? 2 : 1);
++            for (i = 0; i < n; i++) man_add(cmd, L"\\", 1);
++            a += slashes - 1;
++            continue;
++        }
++        if (*a == '"') man_add(cmd, L"\\", 1);
++        man_add(cmd, a, 1);
++    }
++    man_add(cmd, L"\"", 1);
++}
++
++/* zenity's "Name | *.txt *.doc" from a Windows "Name" and "*.txt;*.doc". */
++static void man_filter_arg(struct man_buf *cmd, const WCHAR *name, const WCHAR *spec)
++{
++    struct man_buf b = {0};
++    const WCHAR *p;
++
++    man_adds(&b, L"--file-filter=");
++    for (p = name; *p; p++) man_add(&b, *p == '|' ? L" " : p, 1);
++    man_adds(&b, L" | ");
++    for (p = spec; *p; p++)
++    {
++        if (p[0] == '*' && p[1] == '.' && p[2] == '*' && (!p[3] || p[3] == ';'))
++        {
++            man_add(&b, L"*", 1);
++            p += 2;
++        }
++        else man_add(&b, *p == ';' ? L" " : p, 1);
++    }
++    man_arg(cmd, b.s);
++    HeapFree(GetProcessHeap(), 0, b.s);
++}
++
++/*
++ * Ask the user. filters: "name\0spec\0...\0" or NULL; filter_index: 1-based, 0 for
++ * the first. dir and name may be NULL; name may also be a whole path.
++ * On MAN_PICK_OK *out is a list of Windows paths, each ended by \0, the list by
++ * another \0 (free with HeapFree).
++ */
++static int man_pick(HWND owner, const WCHAR *title, const WCHAR *filters, UINT filter_index,
++                    const WCHAR *dir, const WCHAR *name, UINT flags, WCHAR **out)
++{
++    char *(CDECL *to_unix)(const WCHAR *);
++    WCHAR *(CDECL *to_dos)(const char *);
++    HMODULE kernel32 = GetModuleHandleW(L"kernel32.dll");
++    struct man_buf cmd = {0}, list = {0};
++    STARTUPINFOW si = { sizeof(si) };
++    PROCESS_INFORMATION pi = {0};
++    WCHAR env[16], tmp_dir[MAX_PATH], result[MAX_PATH], *zenity, *shell, *unix_result_w = NULL;
++    char *unix_result, *data = NULL, *p, *next;
++    BOOL enabled = FALSE, quit = FALSE;
++    int quit_code = 0, ret = MAN_PICK_CANCEL, n;
++
++    if (GetEnvironmentVariableW(L"MAN_WINE_DIALOGS", env, ARRAY_SIZE(env)) && !lstrcmpiW(env, L"wine"))
++        return MAN_PICK_UNAVAILABLE;
++    to_unix = (void *)GetProcAddress(kernel32, "wine_get_unix_file_name");
++    to_dos = (void *)GetProcAddress(kernel32, "wine_get_dos_file_name");
++    if (!to_unix || !to_dos) return MAN_PICK_UNAVAILABLE;
++    zenity = to_dos("/usr/bin/zenity");
++    shell = to_dos("/bin/sh");
++    if (!zenity || !shell || GetFileAttributesW(zenity) == INVALID_FILE_ATTRIBUTES ||
++        GetFileAttributesW(shell) == INVALID_FILE_ATTRIBUTES)
++        goto unavailable;
++
++    /* A Linux program cannot write to Wine's pipes and gives Wine no handle to
++     * wait on: the shell puts zenity's answer into a file, whole, when it ends. */
++    if (!GetTempPathW(ARRAY_SIZE(tmp_dir), tmp_dir) || !GetTempFileNameW(tmp_dir, L"man", 0, result))
++        goto unavailable;
++    DeleteFileW(result);
++    if (!(unix_result = to_unix(result))) goto unavailable;
++    n = MultiByteToWideChar(CP_UTF8, 0, unix_result, -1, NULL, 0);
++    unix_result_w = HeapAlloc(GetProcessHeap(), 0, n * sizeof(WCHAR));
++    MultiByteToWideChar(CP_UTF8, 0, unix_result, -1, unix_result_w, n);
++    HeapFree(GetProcessHeap(), 0, unix_result);
++    man_adds(&cmd, L"sh");
++    man_arg(&cmd, L"-c");
++    man_arg(&cmd, L"out=\"$0\"; \"$@\" > \"$out.tmp\" 2>/dev/null; mv \"$out.tmp\" \"$out\"");
++    man_arg(&cmd, unix_result_w);
++    man_adds(&cmd, L" /usr/bin/zenity --file-selection");
++    if (flags & MAN_PICK_SAVE) man_adds(&cmd, L" --save");
++    if (flags & MAN_PICK_FOLDER) man_adds(&cmd, L" --directory");
++    if (flags & MAN_PICK_MULTI)
++    {
++        man_adds(&cmd, L" --multiple");
++        man_arg(&cmd, L"--separator=\n");
++    }
++    if (title && *title)
++    {
++        struct man_buf b = {0};
++        man_adds(&b, L"--title=");
++        man_adds(&b, title);
++        man_arg(&cmd, b.s);
++        HeapFree(GetProcessHeap(), 0, b.s);
++    }
++
++    /* The start location: what the program asked for, else the user's Documents. */
++    {
++        struct man_buf b = {0};
++        char *unix_name = NULL;
++        WCHAR *whole = NULL, *wide;
++        const WCHAR *leaf = NULL;
++
++        if (name && *name && !wcspbrk(name, L"*?"))
++        {
++            if (wcschr(name, '\\') || wcschr(name, '/')) whole = (WCHAR *)name;
++            else leaf = name;
++        }
++        if (whole) unix_name = to_unix(whole);
++        else if (dir && *dir) unix_name = to_unix(dir);
++        if (unix_name)
++        {
++            n = MultiByteToWideChar(CP_UTF8, 0, unix_name, -1, NULL, 0);
++            wide = HeapAlloc(GetProcessHeap(), 0, n * sizeof(WCHAR));
++            MultiByteToWideChar(CP_UTF8, 0, unix_name, -1, wide, n);
++            HeapFree(GetProcessHeap(), 0, unix_name);
++            man_adds(&b, wide);
++            HeapFree(GetProcessHeap(), 0, wide);
++        }
++        else
++        {
++            WCHAR home[MAX_PATH];
++            if (GetEnvironmentVariableW(L"HOME", home, ARRAY_SIZE(home)))
++            {
++                man_adds(&b, home);
++                man_adds(&b, L"/Documents");
++            }
++        }
++        if (b.len)
++        {
++            struct man_buf a = {0};
++            man_adds(&a, L"--filename=");
++            man_adds(&a, b.s);
++            if (!whole)
++            {
++                man_adds(&a, L"/");
++                if (leaf) man_adds(&a, leaf);
++            }
++            man_arg(&cmd, a.s);
++            HeapFree(GetProcessHeap(), 0, a.s);
++        }
++        else if (leaf)
++        {
++            struct man_buf a = {0};
++            man_adds(&a, L"--filename=");
++            man_adds(&a, leaf);
++            man_arg(&cmd, a.s);
++            HeapFree(GetProcessHeap(), 0, a.s);
++        }
++        HeapFree(GetProcessHeap(), 0, b.s);
++    }
++
++    /* zenity starts on its first filter: the program's chosen one goes first. */
++    if (filters && *filters && !(flags & MAN_PICK_FOLDER))
++    {
++        const WCHAR *f = filters;
++        UINT i = 1;
++        for (; *f; i++)
++        {
++            const WCHAR *spec = f + lstrlenW(f) + 1;
++            if (!*spec) break;
++            if (i == filter_index) man_filter_arg(&cmd, f, spec);
++            f = spec + lstrlenW(spec) + 1;
++        }
++        f = filters;
++        for (i = 1; *f; i++)
++        {
++            const WCHAR *spec = f + lstrlenW(f) + 1;
++            if (!*spec) break;
++            if (i != filter_index) man_filter_arg(&cmd, f, spec);
++            f = spec + lstrlenW(spec) + 1;
++        }
++    }
++
++    if (!CreateProcessW(shell, cmd.s, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
++        goto unavailable;
++    if (pi.hThread) CloseHandle(pi.hThread);
++    if (pi.hProcess) CloseHandle(pi.hProcess);
++
++    /* Modal, like any dialog: the owner waits, but keeps redrawing. */
++    if (owner) enabled = !EnableWindow(owner, FALSE);
++    while (GetFileAttributesW(result) == INVALID_FILE_ATTRIBUTES)
++    {
++        MSG msg;
++
++        MsgWaitForMultipleObjects(0, NULL, FALSE, 100, QS_ALLINPUT);
++        while (PeekMessageW(&msg, NULL, 0, 0, PM_REMOVE))
++        {
++            if (msg.message == WM_QUIT)
++            {
++                quit = TRUE;
++                quit_code = (int)msg.wParam;
++                continue;
++            }
++            TranslateMessage(&msg);
++            DispatchMessageW(&msg);
++        }
++    }
++    if (owner)
++    {
++        if (enabled) EnableWindow(owner, TRUE);
++        SetForegroundWindow(owner);
++    }
++    if (quit) PostQuitMessage(quit_code);
++
++    {
++        HANDLE file = CreateFileW(result, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
++        DWORD size = 0, got = 0;
++
++        if (file != INVALID_HANDLE_VALUE)
++        {
++            size = GetFileSize(file, NULL);
++            data = HeapAlloc(GetProcessHeap(), 0, size + 1);
++            if (!ReadFile(file, data, size, &got, NULL)) got = 0;
++            data[got] = 0;
++            CloseHandle(file);
++        }
++        DeleteFileW(result);
++    }
++
++    for (p = data; p && *p; p = next)
++    {
++        WCHAR *path;
++        next = strchr(p, '\n');
++        if (next) *next++ = 0;
++        else next = p + strlen(p);
++        if (!*p) continue;
++        if ((path = to_dos(p)))
++        {
++            man_add(&list, path, lstrlenW(path) + 1);
++            HeapFree(GetProcessHeap(), 0, path);
++        }
++    }
++    HeapFree(GetProcessHeap(), 0, data);
++    if (list.len)
++    {
++        /* man_add always keeps one more \0 behind the end: the list's last one. */
++        *out = list.s;
++        ret = MAN_PICK_OK;
++    }
++    HeapFree(GetProcessHeap(), 0, unix_result_w);
++    HeapFree(GetProcessHeap(), 0, cmd.s);
++    HeapFree(GetProcessHeap(), 0, shell);
++    HeapFree(GetProcessHeap(), 0, zenity);
++    return ret;
++
++unavailable:
++    HeapFree(GetProcessHeap(), 0, unix_result_w);
++    HeapFree(GetProcessHeap(), 0, cmd.s);
++    HeapFree(GetProcessHeap(), 0, shell);
++    HeapFree(GetProcessHeap(), 0, zenity);
++    return MAN_PICK_UNAVAILABLE;
++}
++
++#endif

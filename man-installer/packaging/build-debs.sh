@@ -56,6 +56,11 @@ put "$data/polkit/com.man.flatpak.policy" "$r/usr/share/polkit-1/actions/com.man
 put "$bin/man-mkupd" "$r/usr/bin/man-mkupd" 0755
 put "$data/version/man-set-version" "$r/usr/bin/man-set-version" 0755
 put "$bin/man-app-installer" "$r/usr/bin/man-app-installer" 0755
+put "$bin/man-windows-program" "$r/usr/bin/man-windows-program" 0755
+put "$data/windows/man-windows-bypass" "$r/usr/libexec/man-installer/man-windows-bypass" 0755
+put "$data/polkit/com.man.windows.policy" "$r/usr/share/polkit-1/actions/com.man.windows.policy" 0644
+put "$data/applications/com.man.WindowsProgram.desktop" "$r/usr/share/applications/com.man.WindowsProgram.desktop" 0644
+put "$data/icons/com.man.WindowsProgram.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.WindowsProgram.svg" 0644
 put "$bin/man-app-installer-helper" "$r/usr/libexec/man-installer/man-app-installer-helper" 0755
 put "$data/applications/com.man.AppInstaller.desktop" "$r/usr/share/applications/com.man.AppInstaller.desktop" 0644
 put "$data/applications/gnome-mimeapps.list" "$r/etc/xdg/gnome-mimeapps.list" 0644
@@ -109,13 +114,14 @@ Architecture: $arch
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
-Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64
+Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64, wine, clamav, clamav-freshclam, zenity
 Description: MAN system backend, MAN Setup and snapshot manager
  Privileged backend used by the MAN installer, the Snapshots app for
  creating and restoring Btrfs system snapshots, MAN Setup (first-start
  setup with optional disk encryption), daily and pre-update
- automatic snapshots, boot-menu snapshot restore, MAN Update and App
- Installer (.deb, Flatpak and AppImage files).
+ automatic snapshots, boot-menu snapshot restore, MAN Update, App
+ Installer (.deb, Flatpak and AppImage files) and the malware check and
+ warnings for Windows programs.
 EOF
 printf '%s\n' /etc/grub.d/41_man_update /etc/grub.d/42_man_snapshots /etc/grub.d/43_man_windows /etc/apt/apt.conf.d/80man-snapshot /etc/man/snapshots.conf /etc/xdg/gnome-mimeapps.list /etc/apt/sources.list.d/man-debian.sources /etc/apt/preferences.d/man-debian > "$r/DEBIAN/conffiles"
 cat > "$r/DEBIAN/postinst" <<'EOF'
@@ -127,6 +133,8 @@ if [ "$1" = configure ]; then
     # Per-user tmpfiles (Flatpak export folders exist before GNOME starts).
     systemctl --global enable systemd-tmpfiles-setup.service >/dev/null 2>&1 || true
     systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service >/dev/null 2>&1 || true
+    # The malware database for Windows programs stays up to date by itself.
+    systemctl enable clamav-freshclam.service >/dev/null 2>&1 || true
     if [ -d /run/systemd/system ]; then
         systemctl daemon-reload || true
         systemctl start man-snapshot-daily.timer man-boot-cleanup.timer || true
