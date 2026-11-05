@@ -1,14 +1,16 @@
 //! "Windows Program": what opens when a Windows program (.exe, .msi) is
-//! double-clicked. It checks the file with ClamAV and always warns before Wine
-//! runs it:
+//! double-clicked. It takes the malware check's verdict (`malscan`, usually
+//! ready since the download) and always warns before Wine runs it, in a small
+//! popup laid out like macOS alerts:
 //!
 //! - nothing found (or the check was not possible): a warning, Run It / Cancel;
 //! - malware found: Move to Trash / Cancel / Bypass and Run, and bypassing needs
 //!   an administrator's password and one more confirmation.
 //!
 //! Wine does not contain a program: once running, it can reach everything the
-//! user can. ClamAV only knows known malware, so the warning stays either way.
+//! user can. Scanners only know known malware, so the warning stays either way.
 use crate::i18n::{tr, trf};
+use crate::malscan::{self, Scan};
 use adw::prelude::*;
 use gtk::{gio, glib};
 use std::io::{Read, Seek, SeekFrom};
@@ -20,14 +22,6 @@ const APP_ID: &str = "com.man.WindowsProgram";
 const BYPASS_HELPER: &str = "/usr/libexec/man-installer/man-windows-bypass";
 
 // ─────────────────────────── The check ─────────────────────────────
-
-#[derive(Debug, PartialEq)]
-enum Scan {
-    Clean,
-    Flagged(String),
-    /// ClamAV could not check the file (e.g. its database is not downloaded yet).
-    Failed,
-}
 
 #[derive(Debug, PartialEq)]
 enum Format {
@@ -68,32 +62,6 @@ fn format_of(machine: Option<u16>) -> Format {
 
 fn is_msi(path: &Path) -> bool {
     path.extension().is_some_and(|e| e.eq_ignore_ascii_case("msi"))
-}
-
-/// What clamscan's exit code and output mean: 0 clean, 1 found, else error.
-fn parse_scan(code: Option<i32>, stdout: &str) -> Scan {
-    match code {
-        Some(0) => Scan::Clean,
-        Some(1) => {
-            let name = stdout.lines().find_map(|l| l.strip_suffix(" FOUND")).and_then(|l| l.rsplit(": ").next()).unwrap_or("").trim();
-            Scan::Flagged(name.to_string())
-        }
-        _ => Scan::Failed,
-    }
-}
-
-fn scan(path: &Path) -> Scan {
-    // Installers are large archives: look inside them, not just at their start.
-    let out = Command::new("clamscan")
-        .args(["--no-summary", "--infected", "--stdout", "--max-filesize=2000M", "--max-scansize=4000M", "--"])
-        .arg(path)
-        .stdin(Stdio::null())
-        .stderr(Stdio::null())
-        .output();
-    match out {
-        Ok(o) => parse_scan(o.status.code(), &String::from_utf8_lossy(&o.stdout)),
-        Err(_) => Scan::Failed,
-    }
 }
 
 // ─────────────────────────── Running it ────────────────────────────
@@ -147,195 +115,235 @@ fn start_program(path: &Path) -> Result<(), String> {
     cmd.spawn().map(|_| ()).map_err(|e| e.to_string())
 }
 
-// ─────────────────────────── The window ────────────────────────────
+// ─────────────────────────── The popup ─────────────────────────────
 
-fn status(icon: &str, title: &str, description: &str) -> adw::StatusPage {
-    let page = adw::StatusPage::builder().icon_name(icon).title(title).description(glib::markup_escape_text(description).as_str()).build();
-    page.add_css_class("compact");
-    page
-}
+const CSS: &str = r#"
+.man-alert { background-color: var(--dialog-bg-color); }
+.man-alert-title { font-size: 13pt; font-weight: 700; }
+.man-alert-name { font-size: 9pt; opacity: 0.65; }
+.man-alert-body { font-size: 10.5pt; }
+.man-alert-button { min-height: 30px; border-radius: 8px; font-weight: 500; background: alpha(currentColor, 0.12); }
+.man-alert-button:hover { background: alpha(currentColor, 0.18); }
+.man-alert-button.default { background: var(--accent-bg-color); color: var(--accent-fg-color); }
+.man-alert-button.default:hover { background: color-mix(in srgb, var(--accent-bg-color) 88%, white); }
+.man-alert-button.danger { color: var(--destructive-color); }
+"#;
 
-fn pill(label: &str, class: Option<&str>) -> gtk::Button {
-    let b = gtk::Button::builder().label(label).use_underline(true).halign(gtk::Align::Center).width_request(240).build();
-    b.add_css_class("pill");
-    if let Some(c) = class {
-        b.add_css_class(c);
+const WIDTH: i32 = 300;
+
+type Btn = (&'static str, &'static str, Box<dyn Fn(&gtk::Window, &gtk::Button)>);
+
+/// The popup's content: icon, bold title, file name, text, then the buttons,
+/// side by side when there are two and stacked when there are more. The first
+/// button is the default one (blue, answers Enter). Two buttons show it on the right.
+fn show(window: &gtk::Window, icon: &str, title: &str, body: &str, buttons: Vec<Btn>, spinner: bool) {
+    let page = gtk::Box::builder().orientation(gtk::Orientation::Vertical).spacing(10).margin_top(22).margin_bottom(18).margin_start(20).margin_end(20).width_request(WIDTH).build();
+    let image = gtk::Image::from_icon_name(icon);
+    image.set_pixel_size(72);
+    page.append(&image);
+    let heading = gtk::Label::builder().label(title).wrap(true).justify(gtk::Justification::Center).max_width_chars(30).margin_top(4).build();
+    heading.add_css_class("man-alert-title");
+    page.append(&heading);
+    if let Some(name) = window.widget_name().strip_prefix("file:").filter(|n| !n.is_empty()) {
+        let label = gtk::Label::builder().label(name).ellipsize(gtk::pango::EllipsizeMode::Middle).max_width_chars(34).build();
+        label.add_css_class("man-alert-name");
+        page.append(&label);
     }
-    b
-}
-
-fn buttons(page: &adw::StatusPage, list: &[&gtk::Button]) {
-    let b = gtk::Box::builder().orientation(gtk::Orientation::Vertical).spacing(10).halign(gtk::Align::Center).build();
-    for button in list {
-        b.append(*button);
+    if !body.is_empty() {
+        let text = gtk::Label::builder().label(body).wrap(true).wrap_mode(gtk::pango::WrapMode::WordChar).justify(gtk::Justification::Center).max_width_chars(36).build();
+        text.add_css_class("man-alert-body");
+        page.append(&text);
     }
-    page.set_child(Some(&b));
-}
-
-fn show(toast: &adw::ToastOverlay, page: &impl IsA<gtk::Widget>) {
-    toast.set_child(Some(page));
-}
-
-fn window_of(toast: &adw::ToastOverlay) -> Option<gtk::Window> {
-    toast.root().and_downcast::<gtk::Window>()
-}
-
-fn close(toast: &adw::ToastOverlay) {
-    if let Some(w) = window_of(toast) {
-        w.close();
+    if spinner {
+        page.append(&adw::Spinner::builder().width_request(24).height_request(24).halign(gtk::Align::Center).margin_top(6).build());
     }
+    let side_by_side = buttons.len() == 2;
+    let row = gtk::Box::builder().orientation(if side_by_side { gtk::Orientation::Horizontal } else { gtk::Orientation::Vertical }).spacing(10).homogeneous(side_by_side).margin_top(10).build();
+    let mut default = None;
+    let mut made = vec![];
+    for (i, (label, class, action)) in buttons.into_iter().enumerate() {
+        let b = gtk::Button::builder().label(label).use_underline(true).hexpand(true).build();
+        b.add_css_class("flat");
+        b.add_css_class("man-alert-button");
+        if !class.is_empty() {
+            b.add_css_class(class);
+        }
+        if i == 0 {
+            b.add_css_class("default");
+            default = Some(b.clone());
+        }
+        let w = window.clone();
+        b.connect_clicked(move |b| action(&w, b));
+        made.push(b);
+    }
+    if side_by_side {
+        made.reverse();
+    }
+    let has_buttons = !made.is_empty();
+    for b in &made {
+        row.append(b);
+    }
+    if has_buttons {
+        page.append(&row);
+    }
+    let handle = gtk::WindowHandle::builder().child(&page).build();
+    if let Some(w) = window.downcast_ref::<adw::Window>() {
+        w.set_content(Some(&handle));
+    }
+    window.set_default_widget(default.as_ref());
+    if let Some(b) = default {
+        b.grab_focus();
+    }
+}
+
+fn cancel_button(label: &'static str) -> Btn {
+    (label, "", Box::new(|w, _| w.close()))
+}
+
+fn show_error(window: &gtk::Window, title: &str, text: &str) {
+    show(window, "man-alert-danger", title, text, vec![cancel_button(tr("_Close"))], false);
 }
 
 /// Run the program in Wine, preparing Wine the first time, then close.
-fn run_program(toast: &adw::ToastOverlay, path: PathBuf) {
-    let page = status("emblem-system-symbolic", tr("Starting the Windows Program"), tr("The first start takes a moment."));
-    page.set_child(Some(&adw::Spinner::builder().width_request(32).height_request(32).halign(gtk::Align::Center).build()));
-    show(toast, &page);
-    let toast = toast.clone();
+fn run_program(window: &gtk::Window, path: PathBuf) {
+    show(window, "man-alert-warning", tr("Starting the Windows Program"), tr("The first start takes a moment."), vec![], true);
+    let window = window.clone();
     glib::spawn_future_local(async move {
         let result = gio::spawn_blocking(move || prepare_wine().and_then(|_| start_program(&path))).await.unwrap_or_else(|_| Err("crashed".into()));
         match result {
-            Ok(()) => close(&toast),
-            Err(e) => {
-                let page = status("dialog-error-symbolic", tr("The Windows Program Could Not Start"), &e);
-                let done = pill(tr("_Close"), None);
-                let t = toast.clone();
-                done.connect_clicked(move |_| close(&t));
-                buttons(&page, &[&done]);
-                show(&toast, &page);
-            }
+            Ok(()) => window.close(),
+            Err(e) => show_error(&window, tr("The Windows Program Could Not Start"), &e),
         }
     });
 }
 
 /// The normal case: nothing known was found, which does not make it safe.
-fn warn_page(toast: &adw::ToastOverlay, path: PathBuf, checked: bool) {
+fn warn_page(window: &gtk::Window, path: PathBuf, checked: bool) {
     let mut text = tr("Running Windows programs (.exe) is not recommended, as they can likely contain malware or things that can harm your privacy.").to_string();
     if !checked {
         text.push_str("\n\n");
         text.push_str(tr("MAN could not check this program for malware: the malware database is not ready yet. Connect to the internet and try again in a few minutes."));
     }
-    let page = status("dialog-warning-symbolic", tr("Run This Windows Program?"), &text);
-    page.set_tooltip_text(path.file_name().and_then(|n| n.to_str()));
-    let run = pill(tr("_Run It"), None);
-    let cancel = pill(tr("_Cancel"), Some("suggested-action"));
-    {
-        let (t, p) = (toast.clone(), path);
-        run.connect_clicked(move |_| run_program(&t, p.clone()));
-    }
-    {
-        let t = toast.clone();
-        cancel.connect_clicked(move |_| close(&t));
-    }
-    buttons(&page, &[&cancel, &run]);
-    show(toast, &page);
-    cancel.grab_focus();
+    let buttons: Vec<Btn> = vec![cancel_button(tr("_Cancel")), (tr("_Run It"), "", Box::new(move |w, _| run_program(w, path.clone())))];
+    show(window, "man-alert-warning", tr("Run This Windows Program?"), &text, buttons, false);
 }
 
 /// The last question after the password: Cancel stays the default.
-fn confirm_bypass(toast: &adw::ToastOverlay, path: PathBuf) {
-    let dialog = adw::AlertDialog::new(
-        Some(tr("Run a Program Flagged as Malware?")),
-        Some(tr("This is your last chance to stop. MAN found malware in this program, and Windows programs are not isolated from your files. It could:\n\n• steal your passwords, documents and photos\n• delete your files or hold them for ransom\n• spy on what you do and keep running in the background\n\nMAN cannot undo what the program does. Only continue if you know exactly why this program was flagged.")),
+fn confirm_bypass(window: &gtk::Window, path: PathBuf) {
+    let buttons: Vec<Btn> = vec![cancel_button(tr("_Cancel")), (tr("Run _Anyway"), "danger", Box::new(move |w, _| run_program(w, path.clone())))];
+    show(
+        window,
+        "man-alert-danger",
+        tr("Run a Program Flagged as Malware?"),
+        tr("This is your last chance to stop. MAN found malware in this program, and Windows programs are not isolated from your files. It could:\n\n• steal your passwords, documents and photos\n• delete your files or hold them for ransom\n• spy on what you do and keep running in the background\n\nMAN cannot undo what the program does. Only continue if you know exactly why this program was flagged."),
+        buttons,
+        false,
     );
-    dialog.add_response("cancel", tr("_Cancel"));
-    dialog.add_response("run", tr("Run _Anyway"));
-    dialog.set_response_appearance("run", adw::ResponseAppearance::Destructive);
-    dialog.set_default_response(Some("cancel"));
-    dialog.set_close_response("cancel");
-    let toast = toast.clone();
-    glib::spawn_future_local(async move {
-        if dialog.choose_future(window_of(&toast).as_ref()).await == "run" {
-            run_program(&toast, path);
-        }
-    });
 }
 
-fn flagged_page(toast: &adw::ToastOverlay, path: PathBuf, name: &str) {
+fn flagged_page(window: &gtk::Window, path: PathBuf, name: &str) {
     let mut text = tr("MAN flagged this Windows program (.exe) as malware, which can harm your data or privacy. It should not be run and should be moved to the trash.").to_string();
     if !name.is_empty() {
         text.push_str("\n\n");
         text.push_str(&trf("Detected as: {name}", &[("name", &name)]));
     }
-    let page = status("dialog-error-symbolic", tr("MAN Flagged This Program as Malware"), &text);
-    let trash = pill(tr("_Move to Trash"), Some("suggested-action"));
-    let cancel = pill(tr("_Cancel"), None);
-    let bypass = pill(tr("_Bypass and Run"), Some("destructive-action"));
-    {
-        let (t, p) = (toast.clone(), path.clone());
-        trash.connect_clicked(move |_| match gio::File::for_path(&p).trash(gio::Cancellable::NONE) {
-            Ok(()) => close(&t),
-            Err(e) => t.add_toast(adw::Toast::new(&e.to_string())),
-        });
-    }
-    {
-        let t = toast.clone();
-        cancel.connect_clicked(move |_| close(&t));
-    }
-    {
-        let (t, p) = (toast.clone(), path);
-        bypass.connect_clicked(move |b| {
-            let (t, p, b) = (t.clone(), p.clone(), b.clone());
-            b.set_sensitive(false);
-            glib::spawn_future_local(async move {
-                let allowed = gio::spawn_blocking(|| Command::new("pkexec").arg(BYPASS_HELPER).stdin(Stdio::null()).status().map(|s| s.success()).unwrap_or(false)).await.unwrap_or(false);
-                b.set_sensitive(true);
-                if allowed {
-                    confirm_bypass(&t, p);
-                }
-            });
-        });
-    }
-    buttons(&page, &[&trash, &cancel, &bypass]);
-    show(toast, &page);
-    trash.grab_focus();
+    let trash_path = path.clone();
+    let buttons: Vec<Btn> = vec![
+        (
+            tr("_Move to Trash"),
+            "",
+            Box::new(move |w, _| match gio::File::for_path(&trash_path).trash(gio::Cancellable::NONE) {
+                Ok(()) => w.close(),
+                Err(e) => show_error(w, tr("MAN Flagged This Program as Malware"), &e.to_string()),
+            }),
+        ),
+        cancel_button(tr("_Cancel")),
+        (
+            tr("_Bypass and Run"),
+            "danger",
+            Box::new(move |w, b| {
+                let (w, p, b) = (w.clone(), path.clone(), b.clone());
+                b.set_sensitive(false);
+                glib::spawn_future_local(async move {
+                    let allowed = gio::spawn_blocking(|| Command::new("pkexec").arg(BYPASS_HELPER).stdin(Stdio::null()).status().map(|s| s.success()).unwrap_or(false)).await.unwrap_or(false);
+                    b.set_sensitive(true);
+                    if allowed {
+                        confirm_bypass(&w, p);
+                    }
+                });
+            }),
+        ),
+    ];
+    show(window, "man-alert-danger", tr("MAN Flagged This Program as Malware"), &text, buttons, false);
 }
 
 fn open_file(app: &adw::Application, path: PathBuf) {
     let name = path.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
-    let title = adw::WindowTitle::new(tr("Windows Program"), &name);
-    let header = adw::HeaderBar::builder().title_widget(&title).build();
-    let toast = adw::ToastOverlay::new();
-    let tv = adw::ToolbarView::new();
-    tv.add_top_bar(&header);
-    tv.set_content(Some(&toast));
-    let window = adw::ApplicationWindow::builder().application(app).default_width(560).default_height(640).content(&tv).icon_name(APP_ID).title(tr("Windows Program")).build();
+    let window: gtk::Window = adw::Window::builder().application(app).resizable(false).icon_name(APP_ID).title(tr("Windows Program")).build().upcast();
+    window.set_widget_name(&format!("file:{name}"));
+    window.add_css_class("man-alert");
+    let keys = gtk::EventControllerKey::new();
+    {
+        let w = window.clone();
+        keys.connect_key_pressed(move |_, key, _, _| {
+            if key == gtk::gdk::Key::Escape {
+                w.close();
+                return glib::Propagation::Stop;
+            }
+            glib::Propagation::Proceed
+        });
+    }
+    window.add_controller(keys);
 
     let msi = is_msi(&path);
     let format = if msi { Format::Runs } else { format_of(pe_machine(&path)) };
-    let refuse = |heading: &str, text: String| {
-        let page = status("dialog-error-symbolic", heading, &text);
-        let done = pill(tr("_Close"), Some("suggested-action"));
-        let t = toast.clone();
-        done.connect_clicked(move |_| close(&t));
-        buttons(&page, &[&done]);
-        show(&toast, &page);
-    };
     match format {
-        Format::NotWindows => refuse(tr("This Is Not a Windows Program"), tr("This file cannot be run.").to_string()),
-        Format::OtherProcessor(arch) => refuse(tr("This Program Cannot Run on This Computer"), trf("It was made for {arch} processors.", &[("arch", &arch)])),
+        Format::NotWindows => {
+            show_error(&window, tr("This Is Not a Windows Program"), tr("This file cannot be run."));
+            window.present();
+        }
+        Format::OtherProcessor(arch) => {
+            show_error(&window, tr("This Program Cannot Run on This Computer"), &trf("It was made for {arch} processors.", &[("arch", &arch)]));
+            window.present();
+        }
         Format::Runs => {
-            let page = status("system-search-symbolic", tr("Checking This Program for Malware"), &name);
-            page.set_child(Some(&adw::Spinner::builder().width_request(32).height_request(32).halign(gtk::Align::Center).build()));
-            show(&toast, &page);
-            let t = toast.clone();
+            // Usually known since the download: the popup then opens with the
+            // answer. Only a real wait shows the waiting state.
+            show(&window, "man-alert-warning", tr("Checking This Program for Malware"), "", vec![cancel_button(tr("_Cancel"))], true);
+            let w = window.clone();
+            let shown = glib::timeout_add_local_once(std::time::Duration::from_millis(400), move || w.present());
+            let window = window.clone();
             glib::spawn_future_local(async move {
                 let p = path.clone();
-                let result = gio::spawn_blocking(move || scan(&p)).await.unwrap_or(Scan::Failed);
+                let result = gio::spawn_blocking(move || malscan::check(&p)).await.unwrap_or(Scan::Failed);
+                shown.remove();
                 match result {
-                    Scan::Clean => warn_page(&t, path, true),
-                    Scan::Failed => warn_page(&t, path, false),
-                    Scan::Flagged(name) => flagged_page(&t, path, &name),
+                    Scan::Clean => warn_page(&window, path, true),
+                    Scan::Failed => warn_page(&window, path, false),
+                    Scan::Flagged(name) => flagged_page(&window, path, &name),
                 }
+                window.present();
             });
         }
     }
-    window.present();
 }
 
 pub fn main() -> glib::ExitCode {
     crate::i18n::init();
     let app = adw::Application::builder().application_id(APP_ID).flags(gio::ApplicationFlags::HANDLES_OPEN | gio::ApplicationFlags::NON_UNIQUE).build();
+    app.connect_startup(|_| {
+        let provider = gtk::CssProvider::new();
+        provider.load_from_string(include_str!("../../../data/gtk/man-alerts.css"));
+        let own = gtk::CssProvider::new();
+        own.load_from_string(CSS);
+        if let Some(display) = gtk::gdk::Display::default() {
+            #[allow(deprecated)]
+            {
+                gtk::style_context_add_provider_for_display(&display, &provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+                gtk::style_context_add_provider_for_display(&display, &own, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+        }
+    });
     app.connect_open(|app, files, _| {
         for file in files {
             if let Some(path) = file.path() {
@@ -350,15 +358,6 @@ pub fn main() -> glib::ExitCode {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn clamscan_results() {
-        assert_eq!(parse_scan(Some(0), ""), Scan::Clean);
-        assert_eq!(parse_scan(Some(1), "/home/a/x.exe: Win.Test.EICAR_HDB-1 FOUND\n"), Scan::Flagged("Win.Test.EICAR_HDB-1".into()));
-        assert_eq!(parse_scan(Some(1), "/home/a: b/x y.exe: Win.Trojan.Agent-1 FOUND\n"), Scan::Flagged("Win.Trojan.Agent-1".into()));
-        assert_eq!(parse_scan(Some(2), ""), Scan::Failed);
-        assert_eq!(parse_scan(None, ""), Scan::Failed);
-    }
 
     #[test]
     fn processors() {

@@ -26,6 +26,11 @@ dialogs=""
 apt-get install -y -q --no-install-recommends -o Dpkg::Options::=--force-confold \
     $dialogs "$D"/man-system-tools_*_"$arch".deb "$D"/man-installer_*_"$arch".deb
 systemctl enable clamav-freshclam.service
+# Popups like macOS for the live user too (new users get it from /etc/skel).
+if [ -d /home/MANInstaller ]; then
+    install -d -o 1001 -g 1001 /home/MANInstaller/.config/gtk-4.0
+    install -o 1001 -g 1001 -m 0644 /etc/skel/.config/gtk-4.0/gtk.css /home/MANInstaller/.config/gtk-4.0/gtk.css
+fi
 # No malware database in the image: it downloads when the computer has a network
 # (90-man-freshclam), and would not fit in the ISO.
 systemctl stop clamav-freshclam.service 2>/dev/null || true

@@ -1,0 +1,9 @@
+/* MAN: alert dialogs laid out like macOS: small, centered, equal rounded buttons. */
+dialog.alert .message-area { padding: 22px 20px 10px 20px; }
+dialog.alert .message-area label.title-2, dialog.alert .message-area .title { font-size: 13pt; font-weight: 700; }
+dialog.alert .message-area label.body { font-size: 11pt; }
+dialog.alert .response-area { padding: 8px 16px 16px 16px; border-spacing: 10px; }
+dialog.alert .response-area separator { min-width: 0; min-height: 0; background: none; opacity: 0; }
+dialog.alert .response-area button { min-height: 30px; border-radius: 8px; font-weight: 500; }
+dialog.alert .response-area button:not(.suggested-action):not(.destructive-action) { background: alpha(currentColor, 0.12); }
+dialog.alert .response-area button:not(.suggested-action):not(.destructive-action):hover { background: alpha(currentColor, 0.18); }

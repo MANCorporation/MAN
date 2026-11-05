@@ -57,6 +57,14 @@ put "$bin/man-mkupd" "$r/usr/bin/man-mkupd" 0755
 put "$data/version/man-set-version" "$r/usr/bin/man-set-version" 0755
 put "$bin/man-app-installer" "$r/usr/bin/man-app-installer" 0755
 put "$bin/man-windows-program" "$r/usr/bin/man-windows-program" 0755
+put "$bin/man-download-scan" "$r/usr/bin/man-download-scan" 0755
+put "$data/windows/man-download-scan.service" "$r/usr/lib/systemd/user/man-download-scan.service" 0644
+put "$data/windows/clamav/man-rules.ldb" "$r/usr/share/man/clamav/man-rules.ldb" 0644
+put "$data/windows/clamav/man-known.hsb" "$r/usr/share/man/clamav/man-known.hsb" 0644
+put "$data/applications/com.man.DownloadScan.desktop" "$r/usr/share/applications/com.man.DownloadScan.desktop" 0644
+put "$data/icons/man-alert-warning.svg" "$r/usr/share/icons/hicolor/scalable/apps/man-alert-warning.svg" 0644
+put "$data/icons/man-alert-danger.svg" "$r/usr/share/icons/hicolor/scalable/apps/man-alert-danger.svg" 0644
+put "$data/gtk/man-alerts.css" "$r/etc/skel/.config/gtk-4.0/gtk.css" 0644
 put "$data/windows/man-windows-bypass" "$r/usr/libexec/man-installer/man-windows-bypass" 0755
 put "$data/windows/90-man-freshclam" "$r/etc/NetworkManager/dispatcher.d/90-man-freshclam" 0755
 put "$data/polkit/com.man.windows.policy" "$r/usr/share/polkit-1/actions/com.man.windows.policy" 0644
@@ -131,6 +139,7 @@ set -e
 if [ "$1" = configure ]; then
     systemctl disable man-boot-cleanup.service >/dev/null 2>&1 || true
     systemctl --global enable man-update-check.timer >/dev/null 2>&1 || true
+    systemctl --global enable man-download-scan.service >/dev/null 2>&1 || true
     # Per-user tmpfiles (Flatpak export folders exist before GNOME starts).
     systemctl --global enable systemd-tmpfiles-setup.service >/dev/null 2>&1 || true
     systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service >/dev/null 2>&1 || true
@@ -178,7 +187,7 @@ cat > "$r/DEBIAN/prerm" <<'EOF'
 set -e
 if [ "$1" = remove ]; then
     systemctl disable --now man-snapshot-daily.timer man-boot-cleanup.timer >/dev/null 2>&1 || true
-    systemctl --global disable man-update-check.timer >/dev/null 2>&1 || true
+    systemctl --global disable man-update-check.timer man-download-scan.service >/dev/null 2>&1 || true
     for h in kms live; do
         dpkg-divert --package man-system-tools --rename --quiet --remove /usr/share/initramfs-tools/hooks/$h || true
     done

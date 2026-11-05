@@ -237,6 +237,19 @@ shortcuts become menu entries through Wine's winemenubuilder (`~/.local/share/ap
 File and folder dialogs are GNOME's picker: `src/wine/`, package `man-wine-dialogs` (x86-64 only; on
 ARM64 Wine keeps its own dialogs, and Debian's Wine there only runs ARM64 programs).
 
-Limits: ClamAV only knows known malware, so a clean result is not proof of safety; the check runs only
+The check starts at the download: the user service `man-download-scan` watches `~/Downloads` (also
+unpacked folders; .exe, .msi, .scr, .com, .bat, .cmd and archives), keeps verdicts by SHA-256 in
+`~/.cache/man/malware-scan` (clean ones for 7 days) and notifies about flagged files, so opening one is
+instant. Besides ClamAV's database it uses MAN's own rules in `/usr/share/man/clamav`, which also work
+before the database has arrived: `man-known.hsb` (known files, like MEMZ, which ClamAV's database did not
+detect) and `man-rules.ldb` (programs that open `\\.\PhysicalDrive0` and write, as boot sector killers do).
+A folder of harmless disk tools can match that rule: it is a warning, and Bypass and Run stays possible.
+
+Popups: small, centered, big icon, bold title, equal rounded buttons side by side with the default on the
+right, like macOS. The Windows Program window is its own layout; `data/gtk/man-alerts.css` (installed as
+`/etc/skel/.config/gtk-4.0/gtk.css`) restyles every libadwaita alert dialog. GNOME Shell's own dialogs
+(password prompt, Power Off) and apps' other windows are not changed.
+
+Limits: scanners only know known malware, so a clean result is not proof of safety; the check runs only
 when a file is opened this way (not for `wine` in a terminal or programs a program starts); and Wine is
 not a sandbox: a program can reach everything the user can.

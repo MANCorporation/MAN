@@ -1,0 +1,14 @@
+[Unit]
+Description=Check downloaded Windows programs for malware
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/man-download-scan
+Restart=on-failure
+RestartSec=10
+Nice=10
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=graphical-session.target

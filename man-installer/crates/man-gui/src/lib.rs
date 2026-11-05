@@ -3,6 +3,7 @@ pub mod backend;
 pub mod i18n;
 pub mod installer;
 pub mod langui;
+pub mod malscan;
 pub mod oobe;
 pub mod snapshots;
 pub mod ui;
