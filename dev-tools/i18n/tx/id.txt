@@ -442,124 +442,147 @@
 441|_Selesai
 442|Buka pembaruan MAN
 443|Pembaruan MAN
-444|Mengambil daftar paket terbaru…
-445|Menyalin aplikasi
-446|Menambahkan aplikasi ke menu
-447|Berkas tidak ditemukan.
-448|Paket tidak dapat dipasang.
-449|Entri menu aplikasi tidak valid.
-450|Memeriksa rencana pemasangan
-451|Menyiapkan disk
-452|Menyalin MAN ke disk
-453|Mengonfigurasi sistem baru
-454|Memasang boot loader
-455|Membuat snapshot pertama
-456|Menyelesaikan
-457|Menghapus tanda tangan partisi lama
-458|Membuat partisi
-459|Memformat partisi sistem EFI
-460|Mengenkripsi partisi sistem
-461|Memformat partisi boot
-462|Membuat sistem berkas Btrfs
-463|Menghapus tanda tangan sistem berkas lama
-464|Membuka kunci pemasangan terenkripsi
-465|Menyimpan sistem saat ini sebagai snapshot
-466|Menghapus sistem sebelumnya
-467|Menulis tabel sistem berkas
-468|Mengatur nama dan identitas komputer
-469|Menghapus akun sesi live
-470|Membuat akun Anda
-471|Menyiapkan MAN Setup untuk awal pertama
-472|Mengatur zona waktu dan papan ketik
-473|Menghapus pemasang dari sistem baru
-474|Membuat citra boot (initramfs)
-475|Mengonfigurasi GRUB
-476|Memasang GRUB ke partisi sistem EFI
-477|Memasang boot loader cadangan
-478|Menulis menu boot
-479|Disk siap
-480|Membuat snapshot sistem baru
-481|Menambahkan snapshot ke menu boot
-482|Melepas
-483|Pembantu pemasang harus berjalan sebagai root.
-484|Komputer ini tidak dimulai dalam mode UEFI. MAN memerlukan UEFI.
-485|Nama pengguna tidak valid.
-486|Kata sandi diperlukan.
-487|Nama komputer tidak valid.
-488|Bahasa tidak dikenal.
-489|Frasa sandi enkripsi minimal 8 karakter.
-490|Disk berubah setelah Anda mengonfirmasi pemasangan. Tidak ada yang diubah; harap tinjau dan konfirmasi lagi.
-491|Pilih partisi sistem.
-492|Disk yang dikonfirmasi tidak berisi partisi sistem yang dipilih.
-493|Partisi boot harus terpisah dari partisi EFI dan partisi sistem.
-494|Partisi boot minimal 512 MB.
-495|Belum ada pemasangan yang dipilih.
-496|Disk yang dikonfirmasi tidak berisi pemasangan yang dipilih.
-497|Pemasangan terenkripsi tidak memiliki partisi MAN_BOOT.
-498|Tidak ditemukan kernel dengan modul yang cocok di /boot.
-499|Bahasa harus diubah oleh pembantu sistem.
-500|Menerapkan pengaturan Anda
-501|Menyiapkan enkripsi disk
-502|Menyelesaikan
-503|MAN Setup harus diselesaikan oleh pembantu sistem.
-504|MAN Setup sudah selesai di komputer ini.
-505|Warna aksen tidak dikenal.
-506|Wallpaper yang dipilih tidak tersedia.
-507|Sistem ini tidak dapat dienkripsi.
-508|Kunci penyiapan hilang, sehingga enkripsi tidak dapat dilanjutkan di latar belakang.
-509|Sistem tidak dipasang di Btrfs, sehingga snapshot tidak tersedia.
-510|Pemulihan snapshot menunggu mulai ulang. Mulai ulang komputer dulu untuk menyelesaikannya.
-511|ID snapshot tidak valid.
-512|Memeriksa pembaruan
-513|Membuat snapshot
-514|Menyiapkan area pembaruan
-515|Membongkar sistem baru
-516|Memindahkan akun dan pengaturan Anda
-517|Menyiapkan mulai ulang
-518|Dibongkar
-519|Akun
-520|Memasang ulang aplikasi yang disimpan
-521|Menghapus perangkat lunak khusus pemasang
-522|Membuat citra boot pembaruan
-523|Menambahkan entri boot sekali pakai
-524|Pembaruan asli
-525|Snapshot dibuat
-526|Dilewati
-527|Area pembaruan siap
-528|Menyiapkan sistem baru
-529|Berkas pembaruan rusak (checksum tidak cocok). Unduh ulang.
-530|Berkas pembaruan tidak dapat dibaca sepenuhnya.
-531|Pembaruan tidak berisi kernel.
-532|Pembaruan harus dipasang oleh pembantu sistem.
-533|Pemasangan yang dipilih tidak ditemukan.
-534|Hanya pemasangan MAN yang sedang berjalan yang dapat diperbarui.
-535|Ini bukan berkas pembaruan MAN (tidak ada manifest).
-536|Pembaruan tidak ditandatangani, sehingga tidak dapat dipercaya.
-537|Tanda tangan pembaruan rusak.
-538|Pembaruan tidak ditandatangani oleh MAN. Mungkin telah diubah atau berasal dari sumber yang tidak tepercaya.
-539|Manifest pembaruan tidak valid.
-540|Frasa sandi salah, atau partisi terenkripsi tidak dapat dibuka.
-541|Biru
-542|Hijau kebiruan
-543|Hijau
-544|Kuning
-545|Jingga
-546|Merah
-547|Merah muda
-548|Ungu
-549|Abu-abu batu
-550|Pemasang Paket
-551|Pasang aplikasi dari berkas .deb, Flatpak, dan AppImage
-552|Pemasang sistem
-553|Pasang MAN di komputer ini
-554|Pemulihan sistem
-555|Buat dan pulihkan snapshot sistem
-556|Pemasang pembaruan sistem
-557|Pasang berkas pembaruan sistem MAN
-558|Menawarkan pemasangan MAN saat sesi live dimulai
-559|Pemberitahuan pembaruan MAN
-560|Memberi tahu sekali setelah masuk bahwa MAN telah diperbarui
-561|Siapkan komputer MAN baru Anda
-562|Penyiapan awal MAN
-563|Pembaruan MAN
-564|Memberi tahu Anda saat versi baru MAN tersedia
+444|Dukungan Windows tidak dapat dimulai.
+445|Memulai program Windows
+446|Permulaan pertama memerlukan waktu sebentar.
+447|Program Windows tidak dapat dimulai
+448|Menjalankan program Windows (.exe) tidak disarankan, karena program tersebut kemungkinan dapat berisi malware atau hal-hal yang dapat membahayakan privasi Anda.
+449|MAN tidak dapat memeriksa program ini dari malware: basis data belum siap. Sambungkan ke internet dan coba lagi dalam beberapa menit.
+450|Jalankan program Windows ini?
+451|_Jalankan
+452|Jalankan program yang ditandai sebagai malware?
+453|Ini kesempatan terakhir Anda untuk berhenti. MAN menemukan malware dalam program ini, dan program Windows tidak terisolasi dari berkas Anda. Program ini dapat:\n\n• mencuri kata sandi, dokumen, dan foto Anda\n• menghapus berkas Anda atau menahannya untuk meminta tebusan\n• memata-matai aktivitas Anda dan terus berjalan di latar belakang\n\nMAN tidak dapat membatalkan apa yang dilakukan program. Lanjutkan hanya jika Anda tahu persis mengapa program ini ditandai.
+454|Tetap _jalankan
+455|MAN menandai program Windows ini (.exe) sebagai malware, yang dapat membahayakan data atau privasi Anda. Program ini tidak boleh dijalankan dan harus dipindahkan ke tempat sampah.
+456|Terdeteksi sebagai: {name}
+457|MAN menandai program ini sebagai malware
+458|_Pindahkan ke tempat sampah
+459|_Lewati dan jalankan
+460|Program Windows
+461|Ini bukan program Windows
+462|Berkas ini tidak dapat dijalankan.
+463|Program ini tidak dapat berjalan di komputer ini
+464|Program ini dibuat untuk prosesor {arch}.
+465|Memeriksa program ini dari malware
+466|Mengambil daftar paket terbaru…
+467|Menyalin aplikasi
+468|Menambahkan aplikasi ke menu
+469|Berkas tidak ditemukan.
+470|Paket tidak dapat dipasang.
+471|Entri menu aplikasi tidak valid.
+472|Memeriksa rencana pemasangan
+473|Menyiapkan disk
+474|Menyalin MAN ke disk
+475|Mengonfigurasi sistem baru
+476|Memasang boot loader
+477|Membuat snapshot pertama
+478|Menyelesaikan
+479|Menghapus tanda tangan partisi lama
+480|Membuat partisi
+481|Memformat partisi sistem EFI
+482|Mengenkripsi partisi sistem
+483|Memformat partisi boot
+484|Membuat sistem berkas Btrfs
+485|Menghapus tanda tangan sistem berkas lama
+486|Membuka kunci pemasangan terenkripsi
+487|Menyimpan sistem saat ini sebagai snapshot
+488|Menghapus sistem sebelumnya
+489|Menulis tabel sistem berkas
+490|Mengatur nama dan identitas komputer
+491|Menghapus akun sesi live
+492|Membuat akun Anda
+493|Menyiapkan MAN Setup untuk awal pertama
+494|Mengatur zona waktu dan papan ketik
+495|Menghapus pemasang dari sistem baru
+496|Membuat citra boot (initramfs)
+497|Mengonfigurasi GRUB
+498|Memasang GRUB ke partisi sistem EFI
+499|Memasang boot loader cadangan
+500|Menulis menu boot
+501|Disk siap
+502|Membuat snapshot sistem baru
+503|Menambahkan snapshot ke menu boot
+504|Melepas
+505|Pembantu pemasang harus berjalan sebagai root.
+506|Komputer ini tidak dimulai dalam mode UEFI. MAN memerlukan UEFI.
+507|Nama pengguna tidak valid.
+508|Kata sandi diperlukan.
+509|Nama komputer tidak valid.
+510|Bahasa tidak dikenal.
+511|Frasa sandi enkripsi minimal 8 karakter.
+512|Disk berubah setelah Anda mengonfirmasi pemasangan. Tidak ada yang diubah; harap tinjau dan konfirmasi lagi.
+513|Pilih partisi sistem.
+514|Disk yang dikonfirmasi tidak berisi partisi sistem yang dipilih.
+515|Partisi boot harus terpisah dari partisi EFI dan partisi sistem.
+516|Partisi boot minimal 512 MB.
+517|Belum ada pemasangan yang dipilih.
+518|Disk yang dikonfirmasi tidak berisi pemasangan yang dipilih.
+519|Pemasangan terenkripsi tidak memiliki partisi MAN_BOOT.
+520|Tidak ditemukan kernel dengan modul yang cocok di /boot.
+521|Bahasa harus diubah oleh pembantu sistem.
+522|Menerapkan pengaturan Anda
+523|Menyiapkan enkripsi disk
+524|Menyelesaikan
+525|MAN Setup harus diselesaikan oleh pembantu sistem.
+526|MAN Setup sudah selesai di komputer ini.
+527|Warna aksen tidak dikenal.
+528|Wallpaper yang dipilih tidak tersedia.
+529|Sistem ini tidak dapat dienkripsi.
+530|Kunci penyiapan hilang, sehingga enkripsi tidak dapat dilanjutkan di latar belakang.
+531|Sistem tidak dipasang di Btrfs, sehingga snapshot tidak tersedia.
+532|Pemulihan snapshot menunggu mulai ulang. Mulai ulang komputer dulu untuk menyelesaikannya.
+533|ID snapshot tidak valid.
+534|Memeriksa pembaruan
+535|Membuat snapshot
+536|Menyiapkan area pembaruan
+537|Membongkar sistem baru
+538|Memindahkan akun dan pengaturan Anda
+539|Menyiapkan mulai ulang
+540|Dibongkar
+541|Akun
+542|Memasang ulang aplikasi yang disimpan
+543|Menghapus perangkat lunak khusus pemasang
+544|Membuat citra boot pembaruan
+545|Menambahkan entri boot sekali pakai
+546|Pembaruan asli
+547|Snapshot dibuat
+548|Dilewati
+549|Area pembaruan siap
+550|Menyiapkan sistem baru
+551|Berkas pembaruan rusak (checksum tidak cocok). Unduh ulang.
+552|Berkas pembaruan tidak dapat dibaca sepenuhnya.
+553|Pembaruan tidak berisi kernel.
+554|Pembaruan harus dipasang oleh pembantu sistem.
+555|Pemasangan yang dipilih tidak ditemukan.
+556|Hanya pemasangan MAN yang sedang berjalan yang dapat diperbarui.
+557|Ini bukan berkas pembaruan MAN (tidak ada manifest).
+558|Pembaruan tidak ditandatangani, sehingga tidak dapat dipercaya.
+559|Tanda tangan pembaruan rusak.
+560|Pembaruan tidak ditandatangani oleh MAN. Mungkin telah diubah atau berasal dari sumber yang tidak tepercaya.
+561|Manifest pembaruan tidak valid.
+562|Frasa sandi salah, atau partisi terenkripsi tidak dapat dibuka.
+563|Biru
+564|Hijau kebiruan
+565|Hijau
+566|Kuning
+567|Jingga
+568|Merah
+569|Merah muda
+570|Ungu
+571|Abu-abu batu
+572|Pemasang Paket
+573|Pasang aplikasi dari berkas .deb, Flatpak, dan AppImage
+574|Pemasang sistem
+575|Pasang MAN di komputer ini
+576|Pemulihan sistem
+577|Buat dan pulihkan snapshot sistem
+578|Pemasang pembaruan sistem
+579|Pasang berkas pembaruan sistem MAN
+580|Periksa program Windows dari malware dan jalankan
+581|Menawarkan pemasangan MAN saat sesi live dimulai
+582|Pemberitahuan pembaruan MAN
+583|Memberi tahu sekali setelah masuk bahwa MAN telah diperbarui
+584|Siapkan komputer MAN baru Anda
+585|Penyiapan awal MAN
+586|Pembaruan MAN
+587|Memberi tahu Anda saat versi baru MAN tersedia

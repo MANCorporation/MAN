@@ -442,124 +442,147 @@
 441|_Gotowe
 442|Otwórz aktualizację MAN
 443|Aktualizacje MAN
-444|Pobieranie najnowszych list pakietów…
-445|Kopiowanie aplikacji
-446|Dodawanie aplikacji do menu
-447|Nie znaleziono pliku.
-448|Nie można zainstalować pakietu.
-449|Wpis menu aplikacji jest nieprawidłowy.
-450|Sprawdzanie planu instalacji
-451|Przygotowywanie dysku
-452|Kopiowanie MAN na dysk
-453|Konfigurowanie nowego systemu
-454|Instalowanie programu rozruchowego
-455|Tworzenie pierwszej migawki
-456|Kończenie
-457|Usuwanie starych sygnatur partycji
-458|Tworzenie partycji
-459|Formatowanie partycji systemowej EFI
-460|Szyfrowanie partycji systemowej
-461|Formatowanie partycji rozruchowej
-462|Tworzenie systemu plików Btrfs
-463|Usuwanie starych sygnatur systemów plików
-464|Odblokowywanie zaszyfrowanej instalacji
-465|Zapisywanie obecnego systemu jako migawki
-466|Usuwanie poprzedniego systemu
-467|Zapisywanie tablicy systemów plików
-468|Ustawianie nazwy i tożsamości komputera
-469|Usuwanie kont sesji live
-470|Tworzenie twojego konta
-471|Przygotowywanie MAN Setup do pierwszego uruchomienia
-472|Ustawianie strefy czasowej i klawiatury
-473|Usuwanie instalatora z nowego systemu
-474|Tworzenie obrazu rozruchowego (initramfs)
-475|Konfigurowanie GRUB
-476|Instalowanie GRUB na partycji systemowej EFI
-477|Instalowanie zapasowego programu rozruchowego
-478|Zapisywanie menu startowego
-479|Dysk gotowy
-480|Tworzenie migawki nowego systemu
-481|Dodawanie migawki do menu startowego
-482|Odmontowywanie
-483|Pomocnik instalatora musi działać jako root.
-484|Ten komputer nie został uruchomiony w trybie UEFI. MAN wymaga UEFI.
-485|Nazwa użytkownika jest nieprawidłowa.
-486|Hasło jest wymagane.
-487|Nazwa komputera jest nieprawidłowa.
-488|Nieznany język.
-489|Hasło szyfrowania musi mieć co najmniej 8 znaków.
-490|Dysk zmienił się po potwierdzeniu instalacji. Nic nie zostało zmienione; przejrzyj plan i potwierdź ponownie.
-491|Wybierz partycję systemową.
-492|Potwierdzony dysk nie zawiera wybranej partycji systemowej.
-493|Partycja rozruchowa musi być oddzielna od partycji EFI i systemowej.
-494|Partycja rozruchowa musi mieć co najmniej 512 MB.
-495|Nie wybrano instalacji.
-496|Potwierdzony dysk nie zawiera wybranej instalacji.
-497|Zaszyfrowana instalacja nie ma partycji MAN_BOOT.
-498|W /boot nie znaleziono jądra z pasującymi modułami.
-499|Język musi zmienić pomocnik systemowy.
-500|Stosowanie twoich ustawień
-501|Przygotowywanie szyfrowania dysku
-502|Kończenie
-503|MAN Setup musi zakończyć pomocnik systemowy.
-504|MAN Setup został już ukończony na tym komputerze.
-505|Nieznany kolor akcentu.
-506|Wybrana tapeta jest niedostępna.
-507|Tego systemu nie można zaszyfrować.
-508|Brak klucza konfiguracji, więc szyfrowanie nie może być kontynuowane w tle.
-509|System nie jest zainstalowany na Btrfs, więc migawki są niedostępne.
-510|Przywracanie migawki czeka na ponowne uruchomienie. Najpierw uruchom ponownie komputer, aby je dokończyć.
-511|Nieprawidłowy identyfikator migawki.
-512|Sprawdzanie aktualizacji
-513|Tworzenie migawki
-514|Przygotowywanie obszaru aktualizacji
-515|Rozpakowywanie nowego systemu
-516|Przenoszenie kont i ustawień
-517|Przygotowywanie ponownego uruchomienia
-518|Rozpakowano
-519|Konta
-520|Ponowne instalowanie zachowanych aplikacji
-521|Usuwanie oprogramowania używanego tylko przez instalator
-522|Tworzenie obrazu rozruchowego aktualizacji
-523|Dodawanie jednorazowego wpisu rozruchowego
-524|Aktualizacja jest autentyczna
-525|Utworzono migawkę
-526|Pominięto
-527|Obszar aktualizacji gotowy
-528|Przygotowywanie nowego systemu
-529|Plik aktualizacji jest uszkodzony (niezgodna suma kontrolna). Pobierz go ponownie.
-530|Nie można odczytać całego pliku aktualizacji.
-531|Aktualizacja nie zawiera jądra.
-532|Aktualizacje musi instalować pomocnik systemowy.
-533|Nie znaleziono wybranej instalacji.
-534|Można zaktualizować tylko uruchomioną instalację MAN.
-535|To nie jest plik aktualizacji MAN (brak manifestu).
-536|Aktualizacja nie jest podpisana, więc nie można jej ufać.
-537|Podpis aktualizacji jest uszkodzony.
-538|Aktualizacja nie jest podpisana przez MAN. Mogła zostać zmieniona lub pochodzi z niezaufanego źródła.
-539|Manifest aktualizacji jest nieprawidłowy.
-540|Hasło jest nieprawidłowe lub nie można otworzyć zaszyfrowanej partycji.
-541|Niebieski
-542|Morski
-543|Zielony
-544|Żółty
-545|Pomarańczowy
-546|Czerwony
-547|Różowy
-548|Fioletowy
-549|Łupkowy
-550|Instalator pakietów
-551|Instalowanie aplikacji z plików .deb, Flatpak i AppImage
-552|Instalator systemu
-553|Zainstaluj MAN na tym komputerze
-554|Przywracanie systemu
-555|Twórz i przywracaj migawki systemu
-556|Instalator aktualizacji systemu
-557|Zainstaluj plik aktualizacji systemu MAN
-558|Proponuje instalację MAN po uruchomieniu sesji live
-559|Powiadomienie o aktualizacji MAN
-560|Informuje jednorazowo po zalogowaniu, że MAN został zaktualizowany
-561|Skonfiguruj swój nowy komputer z MAN
-562|Konfiguracja MAN przy pierwszym uruchomieniu
-563|Aktualizacje MAN
-564|Informuje, gdy pojawi się nowa wersja MAN
+444|Nie udało się uruchomić obsługi systemu Windows.
+445|Uruchamianie programu dla systemu Windows
+446|Pierwsze uruchomienie zajmuje chwilę.
+447|Nie udało się uruchomić programu dla systemu Windows
+448|Uruchamianie programów dla systemu Windows (.exe) nie jest zalecane, ponieważ prawdopodobnie mogą zawierać złośliwe oprogramowanie lub elementy szkodzące Twojej prywatności.
+449|MAN nie mógł sprawdzić tego programu pod kątem złośliwego oprogramowania: baza danych nie jest jeszcze gotowa. Połącz się z internetem i spróbuj ponownie za kilka minut.
+450|Uruchomić ten program dla systemu Windows?
+451|_Uruchom
+452|Uruchomić program oznaczony jako złośliwy?
+453|To Twoja ostatnia szansa, aby się zatrzymać. MAN znalazł złośliwe oprogramowanie w tym programie, a programy dla systemu Windows nie są odizolowane od Twoich plików. Może on:\n\n• ukraść Twoje hasła, dokumenty i zdjęcia\n• usunąć Twoje pliki lub żądać za nie okupu\n• szpiegować Twoje działania i dalej działać w tle\n\nMAN nie może cofnąć tego, co zrobi program. Kontynuuj tylko wtedy, gdy dokładnie wiesz, dlaczego ten program został oznaczony.
+454|Uruchom _mimo to
+455|MAN oznaczył ten program dla systemu Windows (.exe) jako złośliwe oprogramowanie, które może zaszkodzić Twoim danym lub prywatności. Nie należy go uruchamiać i należy przenieść go do kosza.
+456|Wykryto jako: {name}
+457|MAN oznaczył ten program jako złośliwy
+458|_Przenieś do kosza
+459|_Omiń i uruchom
+460|Program dla systemu Windows
+461|To nie jest program dla systemu Windows
+462|Tego pliku nie można uruchomić.
+463|Ten program nie może działać na tym komputerze
+464|Został stworzony dla procesorów {arch}.
+465|Sprawdzanie tego programu pod kątem złośliwego oprogramowania
+466|Pobieranie najnowszych list pakietów…
+467|Kopiowanie aplikacji
+468|Dodawanie aplikacji do menu
+469|Nie znaleziono pliku.
+470|Nie można zainstalować pakietu.
+471|Wpis menu aplikacji jest nieprawidłowy.
+472|Sprawdzanie planu instalacji
+473|Przygotowywanie dysku
+474|Kopiowanie MAN na dysk
+475|Konfigurowanie nowego systemu
+476|Instalowanie programu rozruchowego
+477|Tworzenie pierwszej migawki
+478|Kończenie
+479|Usuwanie starych sygnatur partycji
+480|Tworzenie partycji
+481|Formatowanie partycji systemowej EFI
+482|Szyfrowanie partycji systemowej
+483|Formatowanie partycji rozruchowej
+484|Tworzenie systemu plików Btrfs
+485|Usuwanie starych sygnatur systemów plików
+486|Odblokowywanie zaszyfrowanej instalacji
+487|Zapisywanie obecnego systemu jako migawki
+488|Usuwanie poprzedniego systemu
+489|Zapisywanie tablicy systemów plików
+490|Ustawianie nazwy i tożsamości komputera
+491|Usuwanie kont sesji live
+492|Tworzenie twojego konta
+493|Przygotowywanie MAN Setup do pierwszego uruchomienia
+494|Ustawianie strefy czasowej i klawiatury
+495|Usuwanie instalatora z nowego systemu
+496|Tworzenie obrazu rozruchowego (initramfs)
+497|Konfigurowanie GRUB
+498|Instalowanie GRUB na partycji systemowej EFI
+499|Instalowanie zapasowego programu rozruchowego
+500|Zapisywanie menu startowego
+501|Dysk gotowy
+502|Tworzenie migawki nowego systemu
+503|Dodawanie migawki do menu startowego
+504|Odmontowywanie
+505|Pomocnik instalatora musi działać jako root.
+506|Ten komputer nie został uruchomiony w trybie UEFI. MAN wymaga UEFI.
+507|Nazwa użytkownika jest nieprawidłowa.
+508|Hasło jest wymagane.
+509|Nazwa komputera jest nieprawidłowa.
+510|Nieznany język.
+511|Hasło szyfrowania musi mieć co najmniej 8 znaków.
+512|Dysk zmienił się po potwierdzeniu instalacji. Nic nie zostało zmienione; przejrzyj plan i potwierdź ponownie.
+513|Wybierz partycję systemową.
+514|Potwierdzony dysk nie zawiera wybranej partycji systemowej.
+515|Partycja rozruchowa musi być oddzielna od partycji EFI i systemowej.
+516|Partycja rozruchowa musi mieć co najmniej 512 MB.
+517|Nie wybrano instalacji.
+518|Potwierdzony dysk nie zawiera wybranej instalacji.
+519|Zaszyfrowana instalacja nie ma partycji MAN_BOOT.
+520|W /boot nie znaleziono jądra z pasującymi modułami.
+521|Język musi zmienić pomocnik systemowy.
+522|Stosowanie twoich ustawień
+523|Przygotowywanie szyfrowania dysku
+524|Kończenie
+525|MAN Setup musi zakończyć pomocnik systemowy.
+526|MAN Setup został już ukończony na tym komputerze.
+527|Nieznany kolor akcentu.
+528|Wybrana tapeta jest niedostępna.
+529|Tego systemu nie można zaszyfrować.
+530|Brak klucza konfiguracji, więc szyfrowanie nie może być kontynuowane w tle.
+531|System nie jest zainstalowany na Btrfs, więc migawki są niedostępne.
+532|Przywracanie migawki czeka na ponowne uruchomienie. Najpierw uruchom ponownie komputer, aby je dokończyć.
+533|Nieprawidłowy identyfikator migawki.
+534|Sprawdzanie aktualizacji
+535|Tworzenie migawki
+536|Przygotowywanie obszaru aktualizacji
+537|Rozpakowywanie nowego systemu
+538|Przenoszenie kont i ustawień
+539|Przygotowywanie ponownego uruchomienia
+540|Rozpakowano
+541|Konta
+542|Ponowne instalowanie zachowanych aplikacji
+543|Usuwanie oprogramowania używanego tylko przez instalator
+544|Tworzenie obrazu rozruchowego aktualizacji
+545|Dodawanie jednorazowego wpisu rozruchowego
+546|Aktualizacja jest autentyczna
+547|Utworzono migawkę
+548|Pominięto
+549|Obszar aktualizacji gotowy
+550|Przygotowywanie nowego systemu
+551|Plik aktualizacji jest uszkodzony (niezgodna suma kontrolna). Pobierz go ponownie.
+552|Nie można odczytać całego pliku aktualizacji.
+553|Aktualizacja nie zawiera jądra.
+554|Aktualizacje musi instalować pomocnik systemowy.
+555|Nie znaleziono wybranej instalacji.
+556|Można zaktualizować tylko uruchomioną instalację MAN.
+557|To nie jest plik aktualizacji MAN (brak manifestu).
+558|Aktualizacja nie jest podpisana, więc nie można jej ufać.
+559|Podpis aktualizacji jest uszkodzony.
+560|Aktualizacja nie jest podpisana przez MAN. Mogła zostać zmieniona lub pochodzi z niezaufanego źródła.
+561|Manifest aktualizacji jest nieprawidłowy.
+562|Hasło jest nieprawidłowe lub nie można otworzyć zaszyfrowanej partycji.
+563|Niebieski
+564|Morski
+565|Zielony
+566|Żółty
+567|Pomarańczowy
+568|Czerwony
+569|Różowy
+570|Fioletowy
+571|Łupkowy
+572|Instalator pakietów
+573|Instalowanie aplikacji z plików .deb, Flatpak i AppImage
+574|Instalator systemu
+575|Zainstaluj MAN na tym komputerze
+576|Przywracanie systemu
+577|Twórz i przywracaj migawki systemu
+578|Instalator aktualizacji systemu
+579|Zainstaluj plik aktualizacji systemu MAN
+580|Sprawdź program dla systemu Windows pod kątem złośliwego oprogramowania i uruchom go
+581|Proponuje instalację MAN po uruchomieniu sesji live
+582|Powiadomienie o aktualizacji MAN
+583|Informuje jednorazowo po zalogowaniu, że MAN został zaktualizowany
+584|Skonfiguruj swój nowy komputer z MAN
+585|Konfiguracja MAN przy pierwszym uruchomieniu
+586|Aktualizacje MAN
+587|Informuje, gdy pojawi się nowa wersja MAN

@@ -442,124 +442,147 @@
 441|_Terminé
 442|Ouvrir une mise à jour de MAN
 443|Mises à jour de MAN
-444|Récupération des listes de paquets les plus récentes…
-445|Copie de l’application
-446|Ajout de l’application au menu
-447|Le fichier est introuvable.
-448|Le paquet n’a pas pu être installé.
-449|L’entrée de menu de l’application n’est pas valide.
-450|Vérification du plan d’installation
-451|Préparation du disque
-452|Copie de MAN sur le disque
-453|Configuration du nouveau système
-454|Installation du chargeur d’amorçage
-455|Création du premier instantané
-456|Finalisation
-457|Suppression des anciennes signatures de partition
-458|Création des partitions
-459|Formatage de la partition système EFI
-460|Chiffrement de la partition système
-461|Formatage de la partition de démarrage
-462|Création du système de fichiers Btrfs
-463|Suppression des anciennes signatures de système de fichiers
-464|Déverrouillage de l’installation chiffrée
-465|Enregistrement du système actuel en tant qu’instantané
-466|Suppression du système précédent
-467|Écriture de la table des systèmes de fichiers
-468|Définition du nom et de l’identité de l’ordinateur
-469|Suppression des comptes de la session live
-470|Création de votre compte
-471|Préparation de MAN Setup pour le premier démarrage
-472|Réglage du fuseau horaire et du clavier
-473|Suppression de l’installateur du nouveau système
-474|Création de l’image de démarrage (initramfs)
-475|Configuration de GRUB
-476|Installation de GRUB sur la partition système EFI
-477|Installation du chargeur d’amorçage de secours
-478|Écriture du menu de démarrage
-479|Disque prêt
-480|Création d’un instantané du système neuf
-481|Ajout de l’instantané au menu de démarrage
-482|Démontage
-483|L’assistant de l’installateur doit être exécuté en tant que root.
-484|Cet ordinateur n’a pas démarré en mode UEFI. MAN nécessite l’UEFI.
-485|Le nom d’utilisateur n’est pas valide.
-486|Un mot de passe est requis.
-487|Le nom de l’ordinateur n’est pas valide.
-488|Langue inconnue.
-489|La phrase de passe de chiffrement doit comporter au moins 8 caractères.
-490|Le disque a changé après votre confirmation de l’installation. Rien n’a été modifié ; veuillez vérifier et confirmer à nouveau.
-491|Choisissez une partition système.
-492|Le disque confirmé ne contient pas la partition système choisie.
-493|La partition de démarrage doit être distincte des partitions EFI et système.
-494|La partition de démarrage doit faire au moins 512 Mo.
-495|Aucune installation choisie.
-496|Le disque confirmé ne contient pas l’installation choisie.
-497|L’installation chiffrée n’a pas de partition MAN_BOOT.
-498|Aucun noyau avec les modules correspondants n’a été trouvé dans /boot.
-499|La langue doit être changée par l’assistant système.
-500|Application de vos paramètres
-501|Préparation du chiffrement du disque
-502|Finalisation
-503|MAN Setup doit être terminé par l’assistant système.
-504|MAN Setup a déjà été effectué sur cet ordinateur.
-505|Couleur d’accentuation inconnue.
-506|Le fond d’écran choisi n’est pas disponible.
-507|Ce système ne peut pas être chiffré.
-508|La clé de configuration est manquante, le chiffrement ne peut donc pas continuer en arrière-plan.
-509|Le système n’est pas installé sur Btrfs, les instantanés ne sont donc pas disponibles.
-510|Une restauration d’instantané attend un redémarrage. Redémarrez d’abord l’ordinateur pour la terminer.
-511|Identifiant d’instantané non valide.
-512|Vérification de la mise à jour
-513|Création d’un instantané
-514|Préparation de la zone de mise à jour
-515|Décompression du nouveau système
-516|Transfert de vos comptes et paramètres
-517|Préparation du redémarrage
-518|Décompressé
-519|Comptes
-520|Réinstallation des applications conservées
-521|Suppression des logiciels propres à l’installateur
-522|Création de l’image de démarrage de la mise à jour
-523|Ajout de l’entrée de démarrage unique
-524|La mise à jour est authentique
-525|Instantané créé
-526|Ignoré
-527|Zone de mise à jour prête
-528|Préparation du nouveau système
-529|Le fichier de mise à jour est endommagé (somme de contrôle incorrecte). Téléchargez-le à nouveau.
-530|Le fichier de mise à jour n’a pas pu être lu entièrement.
-531|La mise à jour ne contient pas de noyau.
-532|Les mises à jour doivent être installées par l’assistant système.
-533|L’installation choisie est introuvable.
-534|Seule l’installation de MAN en cours d’exécution peut être mise à jour.
-535|Ce n’est pas un fichier de mise à jour MAN (aucun manifeste).
-536|La mise à jour n’est pas signée, on ne peut donc pas lui faire confiance.
-537|La signature de la mise à jour est endommagée.
-538|La mise à jour n’est pas signée par MAN. Elle a peut-être été modifiée ou provient d’une source non fiable.
-539|Le manifeste de la mise à jour n’est pas valide.
-540|La phrase de passe est incorrecte, ou la partition chiffrée ne peut pas être ouverte.
-541|Bleu
-542|Bleu-vert
-543|Vert
-544|Jaune
-545|Orange
-546|Rouge
-547|Rose
-548|Violet
-549|Ardoise
-550|Installateur de paquets
-551|Installer des applications à partir de fichiers .deb, Flatpak et AppImage
-552|Installateur du système
-553|Installer MAN sur cet ordinateur
-554|Restauration du système
-555|Créer et restaurer des instantanés du système
-556|Installateur de mises à jour du système
-557|Installer un fichier de mise à jour du système MAN
-558|Propose d’installer MAN au démarrage de la session live
-559|Avis de mise à jour de MAN
-560|Vous informe une fois après la connexion que MAN a été mis à jour
-561|Configurez votre nouvel ordinateur MAN
-562|Configuration de MAN au premier démarrage
-563|Mises à jour de MAN
-564|Vous prévient quand une nouvelle version de MAN est disponible
+444|Impossible de démarrer la prise en charge de Windows.
+445|Démarrage du programme Windows
+446|Le premier démarrage prend un moment.
+447|Le programme Windows n'a pas pu démarrer
+448|Il n'est pas recommandé d'exécuter des programmes Windows (.exe), car ils peuvent probablement contenir des logiciels malveillants ou des éléments qui nuisent à votre vie privée.
+449|MAN n'a pas pu vérifier si ce programme contient un logiciel malveillant : la base de données n'est pas encore prête. Connectez-vous à Internet et réessayez dans quelques minutes.
+450|Exécuter ce programme Windows ?
+451|_L'exécuter
+452|Exécuter un programme signalé comme malveillant ?
+453|C'est votre dernière chance de vous arrêter. MAN a trouvé un logiciel malveillant dans ce programme, et les programmes Windows ne sont pas isolés de vos fichiers. Il pourrait :\n\n• voler vos mots de passe, documents et photos\n• supprimer vos fichiers ou exiger une rançon pour les récupérer\n• espionner ce que vous faites et continuer à fonctionner en arrière-plan\n\nMAN ne peut pas annuler ce que fait le programme. Ne continuez que si vous savez exactement pourquoi ce programme a été signalé.
+454|Exécuter _quand même
+455|MAN a signalé ce programme Windows (.exe) comme un logiciel malveillant, qui peut nuire à vos données ou à votre vie privée. Il ne doit pas être exécuté et doit être mis à la corbeille.
+456|Détecté comme : {name}
+457|MAN a signalé ce programme comme malveillant
+458|_Mettre à la corbeille
+459|_Contourner et exécuter
+460|Programme Windows
+461|Ce n'est pas un programme Windows
+462|Ce fichier ne peut pas être exécuté.
+463|Ce programme ne peut pas fonctionner sur cet ordinateur
+464|Il a été conçu pour les processeurs {arch}.
+465|Recherche de logiciels malveillants dans ce programme
+466|Récupération des listes de paquets les plus récentes…
+467|Copie de l’application
+468|Ajout de l’application au menu
+469|Le fichier est introuvable.
+470|Le paquet n’a pas pu être installé.
+471|L’entrée de menu de l’application n’est pas valide.
+472|Vérification du plan d’installation
+473|Préparation du disque
+474|Copie de MAN sur le disque
+475|Configuration du nouveau système
+476|Installation du chargeur d’amorçage
+477|Création du premier instantané
+478|Finalisation
+479|Suppression des anciennes signatures de partition
+480|Création des partitions
+481|Formatage de la partition système EFI
+482|Chiffrement de la partition système
+483|Formatage de la partition de démarrage
+484|Création du système de fichiers Btrfs
+485|Suppression des anciennes signatures de système de fichiers
+486|Déverrouillage de l’installation chiffrée
+487|Enregistrement du système actuel en tant qu’instantané
+488|Suppression du système précédent
+489|Écriture de la table des systèmes de fichiers
+490|Définition du nom et de l’identité de l’ordinateur
+491|Suppression des comptes de la session live
+492|Création de votre compte
+493|Préparation de MAN Setup pour le premier démarrage
+494|Réglage du fuseau horaire et du clavier
+495|Suppression de l’installateur du nouveau système
+496|Création de l’image de démarrage (initramfs)
+497|Configuration de GRUB
+498|Installation de GRUB sur la partition système EFI
+499|Installation du chargeur d’amorçage de secours
+500|Écriture du menu de démarrage
+501|Disque prêt
+502|Création d’un instantané du système neuf
+503|Ajout de l’instantané au menu de démarrage
+504|Démontage
+505|L’assistant de l’installateur doit être exécuté en tant que root.
+506|Cet ordinateur n’a pas démarré en mode UEFI. MAN nécessite l’UEFI.
+507|Le nom d’utilisateur n’est pas valide.
+508|Un mot de passe est requis.
+509|Le nom de l’ordinateur n’est pas valide.
+510|Langue inconnue.
+511|La phrase de passe de chiffrement doit comporter au moins 8 caractères.
+512|Le disque a changé après votre confirmation de l’installation. Rien n’a été modifié ; veuillez vérifier et confirmer à nouveau.
+513|Choisissez une partition système.
+514|Le disque confirmé ne contient pas la partition système choisie.
+515|La partition de démarrage doit être distincte des partitions EFI et système.
+516|La partition de démarrage doit faire au moins 512 Mo.
+517|Aucune installation choisie.
+518|Le disque confirmé ne contient pas l’installation choisie.
+519|L’installation chiffrée n’a pas de partition MAN_BOOT.
+520|Aucun noyau avec les modules correspondants n’a été trouvé dans /boot.
+521|La langue doit être changée par l’assistant système.
+522|Application de vos paramètres
+523|Préparation du chiffrement du disque
+524|Finalisation
+525|MAN Setup doit être terminé par l’assistant système.
+526|MAN Setup a déjà été effectué sur cet ordinateur.
+527|Couleur d’accentuation inconnue.
+528|Le fond d’écran choisi n’est pas disponible.
+529|Ce système ne peut pas être chiffré.
+530|La clé de configuration est manquante, le chiffrement ne peut donc pas continuer en arrière-plan.
+531|Le système n’est pas installé sur Btrfs, les instantanés ne sont donc pas disponibles.
+532|Une restauration d’instantané attend un redémarrage. Redémarrez d’abord l’ordinateur pour la terminer.
+533|Identifiant d’instantané non valide.
+534|Vérification de la mise à jour
+535|Création d’un instantané
+536|Préparation de la zone de mise à jour
+537|Décompression du nouveau système
+538|Transfert de vos comptes et paramètres
+539|Préparation du redémarrage
+540|Décompressé
+541|Comptes
+542|Réinstallation des applications conservées
+543|Suppression des logiciels propres à l’installateur
+544|Création de l’image de démarrage de la mise à jour
+545|Ajout de l’entrée de démarrage unique
+546|La mise à jour est authentique
+547|Instantané créé
+548|Ignoré
+549|Zone de mise à jour prête
+550|Préparation du nouveau système
+551|Le fichier de mise à jour est endommagé (somme de contrôle incorrecte). Téléchargez-le à nouveau.
+552|Le fichier de mise à jour n’a pas pu être lu entièrement.
+553|La mise à jour ne contient pas de noyau.
+554|Les mises à jour doivent être installées par l’assistant système.
+555|L’installation choisie est introuvable.
+556|Seule l’installation de MAN en cours d’exécution peut être mise à jour.
+557|Ce n’est pas un fichier de mise à jour MAN (aucun manifeste).
+558|La mise à jour n’est pas signée, on ne peut donc pas lui faire confiance.
+559|La signature de la mise à jour est endommagée.
+560|La mise à jour n’est pas signée par MAN. Elle a peut-être été modifiée ou provient d’une source non fiable.
+561|Le manifeste de la mise à jour n’est pas valide.
+562|La phrase de passe est incorrecte, ou la partition chiffrée ne peut pas être ouverte.
+563|Bleu
+564|Bleu-vert
+565|Vert
+566|Jaune
+567|Orange
+568|Rouge
+569|Rose
+570|Violet
+571|Ardoise
+572|Installateur de paquets
+573|Installer des applications à partir de fichiers .deb, Flatpak et AppImage
+574|Installateur du système
+575|Installer MAN sur cet ordinateur
+576|Restauration du système
+577|Créer et restaurer des instantanés du système
+578|Installateur de mises à jour du système
+579|Installer un fichier de mise à jour du système MAN
+580|Rechercher des logiciels malveillants dans un programme Windows et l'exécuter
+581|Propose d’installer MAN au démarrage de la session live
+582|Avis de mise à jour de MAN
+583|Vous informe une fois après la connexion que MAN a été mis à jour
+584|Configurez votre nouvel ordinateur MAN
+585|Configuration de MAN au premier démarrage
+586|Mises à jour de MAN
+587|Vous prévient quand une nouvelle version de MAN est disponible

@@ -442,124 +442,147 @@
 441|_Fet
 442|Obre una actualització de MAN
 443|Actualitzacions de MAN
-444|S'estan obtenint les llistes de paquets més noves…
-445|S'està copiant l'aplicació
-446|S'està afegint l'aplicació al menú
-447|No s'ha trobat el fitxer.
-448|No s'ha pogut instal·lar el paquet.
-449|L'entrada de menú de l'aplicació no és vàlida.
-450|S'està comprovant el pla d'instal·lació
-451|S'està preparant el disc
-452|S'està copiant MAN al disc
-453|S'està configurant el sistema nou
-454|S'està instal·lant el carregador d'arrencada
-455|S'està creant la primera instantània
-456|S'està acabant
-457|S'estan eliminant signatures de particions antigues
-458|S'estan creant les particions
-459|S'està formatant la partició del sistema EFI
-460|S'està xifrant la partició del sistema
-461|S'està formatant la partició d'arrencada
-462|S'està creant el sistema de fitxers Btrfs
-463|S'estan eliminant signatures de sistemes de fitxers antics
-464|S'està desbloquejant la instal·lació xifrada
-465|S'està desant el sistema actual com a instantània
-466|S'està eliminant el sistema anterior
-467|S'està escrivint la taula de sistemes de fitxers
-468|S'estan establint el nom i la identitat de l'ordinador
-469|S'estan eliminant els comptes de la sessió en viu
-470|S'està creant el vostre compte
-471|S'està preparant MAN Setup per a la primera arrencada
-472|S'estan establint el fus horari i el teclat
-473|S'està eliminant l'instal·lador del sistema nou
-474|S'està creant la imatge d'arrencada (initramfs)
-475|S'està configurant GRUB
-476|S'està instal·lant GRUB a la partició del sistema EFI
-477|S'està instal·lant el carregador d'arrencada de reserva
-478|S'està escrivint el menú d'arrencada
-479|Disc a punt
-480|S'està creant una instantània del sistema nou
-481|S'està afegint la instantània al menú d'arrencada
-482|S'està desmuntant
-483|L'assistent de l'instal·lador s'ha d'executar com a root.
-484|Aquest ordinador no s'ha iniciat en mode UEFI. MAN necessita UEFI.
-485|El nom d'usuari no és vàlid.
-486|Cal una contrasenya.
-487|El nom de l'ordinador no és vàlid.
-488|Llengua desconeguda.
-489|La frase de pas de xifratge ha de tenir com a mínim 8 caràcters.
-490|El disc ha canviat després que confirméssiu la instal·lació. No s'ha modificat res; reviseu-ho i torneu a confirmar.
-491|Trieu una partició del sistema.
-492|El disc confirmat no conté la partició del sistema triada.
-493|La partició d'arrencada ha d'estar separada de les particions EFI i del sistema.
-494|La partició d'arrencada ha de tenir com a mínim 512 MB.
-495|No s'ha triat cap instal·lació.
-496|El disc confirmat no conté la instal·lació triada.
-497|La instal·lació xifrada no té cap partició MAN_BOOT.
-498|No s'ha trobat a /boot cap nucli amb els mòduls corresponents.
-499|La llengua l'ha de canviar l'assistent del sistema.
-500|S'està aplicant la vostra configuració
-501|S'està preparant el xifratge del disc
-502|S'està acabant
-503|MAN Setup l'ha d'acabar l'assistent del sistema.
-504|MAN Setup ja s'ha completat en aquest ordinador.
-505|Color d'èmfasi desconegut.
-506|El fons de pantalla triat no està disponible.
-507|Aquest sistema no es pot xifrar.
-508|Falta la clau de configuració, així que el xifratge no pot continuar en segon pla.
-509|El sistema no està instal·lat en Btrfs, així que les instantànies no estan disponibles.
-510|Una restauració d'instantània espera un reinici. Primer reinicieu l'ordinador per acabar-la.
-511|Identificador d'instantània no vàlid.
-512|S'està comprovant l'actualització
-513|S'està creant una instantània
-514|S'està preparant l'àrea d'actualització
-515|S'està desempaquetant el sistema nou
-516|S'estan traslladant els vostres comptes i paràmetres
-517|S'està preparant el reinici
-518|Desempaquetat
-519|Comptes
-520|S'estan tornant a instal·lar les aplicacions conservades
-521|S'està eliminant el programari exclusiu de l'instal·lador
-522|S'està creant la imatge d'arrencada de l'actualització
-523|S'està afegint l'entrada d'arrencada d'un sol ús
-524|L'actualització és autèntica
-525|S'ha creat la instantània
-526|S'ha omès
-527|Àrea d'actualització a punt
-528|S'està preparant el sistema nou
-529|El fitxer d'actualització està malmès (la suma de verificació no coincideix). Torneu-lo a baixar.
-530|No s'ha pogut llegir completament el fitxer d'actualització.
-531|L'actualització no conté cap nucli.
-532|Les actualitzacions les ha d'instal·lar l'assistent del sistema.
-533|No s'ha trobat la instal·lació triada.
-534|Només es pot actualitzar la instal·lació de MAN en execució.
-535|Aquest no és un fitxer d'actualització de MAN (no té manifest).
-536|L'actualització no està signada, així que no és de confiança.
-537|La signatura de l'actualització està malmesa.
-538|L'actualització no està signada per MAN. Pot haver estat modificada o provenir d'una font no fiable.
-539|El manifest de l'actualització no és vàlid.
-540|La frase de pas no és correcta o no es pot obrir la partició xifrada.
-541|Blau
-542|Verd blavós
-543|Verd
-544|Groc
-545|Taronja
-546|Vermell
-547|Rosa
-548|Porpra
-549|Pissarra
-550|Instal·lador de paquets
-551|Instal·leu aplicacions des de fitxers .deb, Flatpak i AppImage
-552|Instal·lador del sistema
-553|Instal·la MAN en aquest ordinador
-554|Restauració del sistema
-555|Crea i restaura instantànies del sistema
-556|Instal·lador d'actualitzacions del sistema
-557|Instal·la un fitxer d'actualització del sistema MAN
-558|Ofereix instal·lar MAN quan s'inicia la sessió en viu
-559|Avís d'actualització de MAN
-560|Us avisa un cop després d'iniciar la sessió que MAN s'ha actualitzat
-561|Configureu el vostre ordinador MAN nou
-562|Configuració inicial de MAN
-563|Actualitzacions de MAN
-564|Us avisa quan hi ha una versió nova de MAN
+444|No s'ha pogut iniciar el suport de Windows.
+445|S'està iniciant el programa de Windows
+446|El primer inici triga una mica.
+447|No s'ha pogut iniciar el programa de Windows
+448|No es recomana executar programes de Windows (.exe), ja que és probable que continguin programari maliciós o coses que poden perjudicar la vostra privadesa.
+449|MAN no ha pogut comprovar si aquest programa té programari maliciós: la base de dades encara no està a punt. Connecteu-vos a Internet i torneu-ho a provar d'aquí a uns minuts.
+450|Voleu executar aquest programa de Windows?
+451|_Executa'l
+452|Voleu executar un programa marcat com a maliciós?
+453|Aquesta és la vostra última oportunitat per aturar-vos. MAN ha trobat programari maliciós en aquest programa, i els programes de Windows no estan aïllats dels vostres fitxers. Podria:\n\n• robar les vostres contrasenyes, documents i fotos\n• suprimir els vostres fitxers o segrestar-los per un rescat\n• espiar el que feu i continuar funcionant en segon pla\n\nMAN no pot desfer el que faci el programa. Continueu només si sabeu exactament per què s'ha marcat aquest programa.
+454|Executa'l _igualment
+455|MAN ha marcat aquest programa de Windows (.exe) com a programari maliciós, que pot perjudicar les vostres dades o la vostra privadesa. No s'hauria d'executar i s'hauria de moure a la paperera.
+456|Detectat com a: {name}
+457|MAN ha marcat aquest programa com a maliciós
+458|_Mou a la paperera
+459|_Omet i executa
+460|Programa de Windows
+461|Això no és un programa de Windows
+462|Aquest fitxer no es pot executar.
+463|Aquest programa no pot funcionar en aquest ordinador
+464|Es va fer per a processadors {arch}.
+465|S'està comprovant si aquest programa té programari maliciós
+466|S'estan obtenint les llistes de paquets més noves…
+467|S'està copiant l'aplicació
+468|S'està afegint l'aplicació al menú
+469|No s'ha trobat el fitxer.
+470|No s'ha pogut instal·lar el paquet.
+471|L'entrada de menú de l'aplicació no és vàlida.
+472|S'està comprovant el pla d'instal·lació
+473|S'està preparant el disc
+474|S'està copiant MAN al disc
+475|S'està configurant el sistema nou
+476|S'està instal·lant el carregador d'arrencada
+477|S'està creant la primera instantània
+478|S'està acabant
+479|S'estan eliminant signatures de particions antigues
+480|S'estan creant les particions
+481|S'està formatant la partició del sistema EFI
+482|S'està xifrant la partició del sistema
+483|S'està formatant la partició d'arrencada
+484|S'està creant el sistema de fitxers Btrfs
+485|S'estan eliminant signatures de sistemes de fitxers antics
+486|S'està desbloquejant la instal·lació xifrada
+487|S'està desant el sistema actual com a instantània
+488|S'està eliminant el sistema anterior
+489|S'està escrivint la taula de sistemes de fitxers
+490|S'estan establint el nom i la identitat de l'ordinador
+491|S'estan eliminant els comptes de la sessió en viu
+492|S'està creant el vostre compte
+493|S'està preparant MAN Setup per a la primera arrencada
+494|S'estan establint el fus horari i el teclat
+495|S'està eliminant l'instal·lador del sistema nou
+496|S'està creant la imatge d'arrencada (initramfs)
+497|S'està configurant GRUB
+498|S'està instal·lant GRUB a la partició del sistema EFI
+499|S'està instal·lant el carregador d'arrencada de reserva
+500|S'està escrivint el menú d'arrencada
+501|Disc a punt
+502|S'està creant una instantània del sistema nou
+503|S'està afegint la instantània al menú d'arrencada
+504|S'està desmuntant
+505|L'assistent de l'instal·lador s'ha d'executar com a root.
+506|Aquest ordinador no s'ha iniciat en mode UEFI. MAN necessita UEFI.
+507|El nom d'usuari no és vàlid.
+508|Cal una contrasenya.
+509|El nom de l'ordinador no és vàlid.
+510|Llengua desconeguda.
+511|La frase de pas de xifratge ha de tenir com a mínim 8 caràcters.
+512|El disc ha canviat després que confirméssiu la instal·lació. No s'ha modificat res; reviseu-ho i torneu a confirmar.
+513|Trieu una partició del sistema.
+514|El disc confirmat no conté la partició del sistema triada.
+515|La partició d'arrencada ha d'estar separada de les particions EFI i del sistema.
+516|La partició d'arrencada ha de tenir com a mínim 512 MB.
+517|No s'ha triat cap instal·lació.
+518|El disc confirmat no conté la instal·lació triada.
+519|La instal·lació xifrada no té cap partició MAN_BOOT.
+520|No s'ha trobat a /boot cap nucli amb els mòduls corresponents.
+521|La llengua l'ha de canviar l'assistent del sistema.
+522|S'està aplicant la vostra configuració
+523|S'està preparant el xifratge del disc
+524|S'està acabant
+525|MAN Setup l'ha d'acabar l'assistent del sistema.
+526|MAN Setup ja s'ha completat en aquest ordinador.
+527|Color d'èmfasi desconegut.
+528|El fons de pantalla triat no està disponible.
+529|Aquest sistema no es pot xifrar.
+530|Falta la clau de configuració, així que el xifratge no pot continuar en segon pla.
+531|El sistema no està instal·lat en Btrfs, així que les instantànies no estan disponibles.
+532|Una restauració d'instantània espera un reinici. Primer reinicieu l'ordinador per acabar-la.
+533|Identificador d'instantània no vàlid.
+534|S'està comprovant l'actualització
+535|S'està creant una instantània
+536|S'està preparant l'àrea d'actualització
+537|S'està desempaquetant el sistema nou
+538|S'estan traslladant els vostres comptes i paràmetres
+539|S'està preparant el reinici
+540|Desempaquetat
+541|Comptes
+542|S'estan tornant a instal·lar les aplicacions conservades
+543|S'està eliminant el programari exclusiu de l'instal·lador
+544|S'està creant la imatge d'arrencada de l'actualització
+545|S'està afegint l'entrada d'arrencada d'un sol ús
+546|L'actualització és autèntica
+547|S'ha creat la instantània
+548|S'ha omès
+549|Àrea d'actualització a punt
+550|S'està preparant el sistema nou
+551|El fitxer d'actualització està malmès (la suma de verificació no coincideix). Torneu-lo a baixar.
+552|No s'ha pogut llegir completament el fitxer d'actualització.
+553|L'actualització no conté cap nucli.
+554|Les actualitzacions les ha d'instal·lar l'assistent del sistema.
+555|No s'ha trobat la instal·lació triada.
+556|Només es pot actualitzar la instal·lació de MAN en execució.
+557|Aquest no és un fitxer d'actualització de MAN (no té manifest).
+558|L'actualització no està signada, així que no és de confiança.
+559|La signatura de l'actualització està malmesa.
+560|L'actualització no està signada per MAN. Pot haver estat modificada o provenir d'una font no fiable.
+561|El manifest de l'actualització no és vàlid.
+562|La frase de pas no és correcta o no es pot obrir la partició xifrada.
+563|Blau
+564|Verd blavós
+565|Verd
+566|Groc
+567|Taronja
+568|Vermell
+569|Rosa
+570|Porpra
+571|Pissarra
+572|Instal·lador de paquets
+573|Instal·leu aplicacions des de fitxers .deb, Flatpak i AppImage
+574|Instal·lador del sistema
+575|Instal·la MAN en aquest ordinador
+576|Restauració del sistema
+577|Crea i restaura instantànies del sistema
+578|Instal·lador d'actualitzacions del sistema
+579|Instal·la un fitxer d'actualització del sistema MAN
+580|Comprova si un programa de Windows té programari maliciós i executa'l
+581|Ofereix instal·lar MAN quan s'inicia la sessió en viu
+582|Avís d'actualització de MAN
+583|Us avisa un cop després d'iniciar la sessió que MAN s'ha actualitzat
+584|Configureu el vostre ordinador MAN nou
+585|Configuració inicial de MAN
+586|Actualitzacions de MAN
+587|Us avisa quan hi ha una versió nova de MAN

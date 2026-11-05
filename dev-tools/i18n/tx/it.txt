@@ -442,124 +442,147 @@
 441|_Fatto
 442|Apri un aggiornamento di MAN
 443|Aggiornamenti di MAN
-444|Scaricamento degli elenchi dei pacchetti più recenti…
-445|Copia dell'applicazione
-446|Aggiunta dell'applicazione al menu
-447|File non trovato.
-448|Impossibile installare il pacchetto.
-449|La voce di menu dell'applicazione non è valida.
-450|Verifica del piano di installazione
-451|Preparazione del disco
-452|Copia di MAN sul disco
-453|Configurazione del nuovo sistema
-454|Installazione del boot loader
-455|Creazione della prima istantanea
-456|Completamento
-457|Rimozione delle vecchie firme delle partizioni
-458|Creazione delle partizioni
-459|Formattazione della partizione di sistema EFI
-460|Cifratura della partizione di sistema
-461|Formattazione della partizione di avvio
-462|Creazione del file system Btrfs
-463|Rimozione delle vecchie firme dei file system
-464|Sblocco dell'installazione cifrata
-465|Salvataggio del sistema attuale come istantanea
-466|Rimozione del sistema precedente
-467|Scrittura della tabella dei file system
-468|Impostazione del nome e dell'identità del computer
-469|Rimozione degli account della sessione live
-470|Creazione del tuo account
-471|Preparazione di MAN Setup per il primo avvio
-472|Impostazione di fuso orario e tastiera
-473|Rimozione dell'installatore dal nuovo sistema
-474|Creazione dell'immagine di avvio (initramfs)
-475|Configurazione di GRUB
-476|Installazione di GRUB nella partizione di sistema EFI
-477|Installazione del boot loader di riserva
-478|Scrittura del menu di avvio
-479|Disco pronto
-480|Creazione di un'istantanea del sistema appena installato
-481|Aggiunta dell'istantanea al menu di avvio
-482|Smontaggio
-483|L'assistente dell'installatore deve essere eseguito come root.
-484|Questo computer non è stato avviato in modalità UEFI. MAN richiede UEFI.
-485|Il nome utente non è valido.
-486|È necessaria una password.
-487|Il nome del computer non è valido.
-488|Lingua sconosciuta.
-489|La passphrase di cifratura deve avere almeno 8 caratteri.
-490|Il disco è cambiato dopo la conferma dell'installazione. Non è stato modificato nulla; rivedi e conferma di nuovo.
-491|Scegli una partizione di sistema.
-492|Il disco confermato non contiene la partizione di sistema scelta.
-493|La partizione di avvio deve essere separata dalle partizioni EFI e di sistema.
-494|La partizione di avvio deve essere di almeno 512 MB.
-495|Nessuna installazione scelta.
-496|Il disco confermato non contiene l'installazione scelta.
-497|L'installazione cifrata non ha una partizione MAN_BOOT.
-498|In /boot non è stato trovato alcun kernel con i moduli corrispondenti.
-499|La lingua deve essere cambiata dall'assistente di sistema.
-500|Applicazione delle tue impostazioni
-501|Preparazione della cifratura del disco
-502|Completamento
-503|MAN Setup deve essere completato dall'assistente di sistema.
-504|MAN Setup è già stato completato su questo computer.
-505|Colore d'accento sconosciuto.
-506|Lo sfondo scelto non è disponibile.
-507|Questo sistema non può essere cifrato.
-508|Manca la chiave di configurazione, quindi la cifratura non può proseguire in background.
-509|Il sistema non è installato su Btrfs, quindi le istantanee non sono disponibili.
-510|Un ripristino di istantanea attende un riavvio. Riavvia prima il computer per completarlo.
-511|ID istantanea non valido.
-512|Verifica dell'aggiornamento
-513|Creazione di un'istantanea
-514|Preparazione dell'area di aggiornamento
-515|Estrazione del nuovo sistema
-516|Trasferimento di account e impostazioni
-517|Preparazione del riavvio
-518|Estratto
-519|Account
-520|Reinstallazione delle applicazioni mantenute
-521|Rimozione del software usato solo dall'installatore
-522|Creazione dell'immagine di avvio dell'aggiornamento
-523|Aggiunta della voce di avvio una tantum
-524|L'aggiornamento è autentico
-525|Istantanea creata
-526|Saltato
-527|Area di aggiornamento pronta
-528|Preparazione del nuovo sistema
-529|Il file di aggiornamento è danneggiato (checksum non corrispondente). Scaricalo di nuovo.
-530|Impossibile leggere completamente il file di aggiornamento.
-531|L'aggiornamento non contiene alcun kernel.
-532|Gli aggiornamenti devono essere installati dall'assistente di sistema.
-533|L'installazione scelta non è stata trovata.
-534|Solo l'installazione di MAN in esecuzione può essere aggiornata.
-535|Questo non è un file di aggiornamento di MAN (manca il manifest).
-536|L'aggiornamento non è firmato, quindi non è attendibile.
-537|La firma dell'aggiornamento è danneggiata.
-538|L'aggiornamento non è firmato da MAN. Potrebbe essere stato modificato o provenire da una fonte non attendibile.
-539|Il manifest dell'aggiornamento non è valido.
-540|La passphrase non è corretta oppure non è possibile aprire la partizione cifrata.
-541|Blu
-542|Verde acqua
-543|Verde
-544|Giallo
-545|Arancione
-546|Rosso
-547|Rosa
-548|Viola
-549|Ardesia
-550|Installazione pacchetti
-551|Installa applicazioni da file .deb, Flatpak e AppImage
-552|Installatore di sistema
-553|Installa MAN su questo computer
-554|Ripristino del sistema
-555|Crea e ripristina istantanee del sistema
-556|Installatore di aggiornamenti di sistema
-557|Installa un file di aggiornamento di sistema MAN
-558|Propone di installare MAN all'avvio della sessione live
-559|Avviso di aggiornamento di MAN
-560|Ti informa una volta dopo l'accesso che MAN è stato aggiornato
-561|Configura il tuo nuovo computer MAN
-562|Configurazione di MAN al primo avvio
-563|Aggiornamenti di MAN
-564|Ti avvisa quando è disponibile una nuova versione di MAN
+444|Impossibile avviare il supporto per Windows.
+445|Avvio del programma Windows
+446|Il primo avvio richiede un momento.
+447|Impossibile avviare il programma Windows
+448|L'esecuzione di programmi Windows (.exe) non è consigliata, poiché probabilmente possono contenere malware o elementi che possono danneggiare la tua privacy.
+449|MAN non ha potuto controllare se questo programma contiene malware: il database non è ancora pronto. Connettiti a Internet e riprova tra qualche minuto.
+450|Eseguire questo programma Windows?
+451|_Eseguilo
+452|Eseguire un programma segnalato come malware?
+453|Questa è la tua ultima occasione per fermarti. MAN ha trovato malware in questo programma, e i programmi Windows non sono isolati dai tuoi file. Potrebbe:\n\n• rubare password, documenti e foto\n• eliminare i tuoi file o chiedere un riscatto per restituirli\n• spiare ciò che fai e continuare a funzionare in background\n\nMAN non può annullare ciò che fa il programma. Continua solo se sai esattamente perché questo programma è stato segnalato.
+454|Esegui _comunque
+455|MAN ha segnalato questo programma Windows (.exe) come malware, che può danneggiare i tuoi dati o la tua privacy. Non dovrebbe essere eseguito e dovrebbe essere spostato nel cestino.
+456|Rilevato come: {name}
+457|MAN ha segnalato questo programma come malware
+458|_Sposta nel cestino
+459|_Ignora ed esegui
+460|Programma Windows
+461|Questo non è un programma Windows
+462|Questo file non può essere eseguito.
+463|Questo programma non può funzionare su questo computer
+464|È stato creato per processori {arch}.
+465|Controllo della presenza di malware in questo programma
+466|Scaricamento degli elenchi dei pacchetti più recenti…
+467|Copia dell'applicazione
+468|Aggiunta dell'applicazione al menu
+469|File non trovato.
+470|Impossibile installare il pacchetto.
+471|La voce di menu dell'applicazione non è valida.
+472|Verifica del piano di installazione
+473|Preparazione del disco
+474|Copia di MAN sul disco
+475|Configurazione del nuovo sistema
+476|Installazione del boot loader
+477|Creazione della prima istantanea
+478|Completamento
+479|Rimozione delle vecchie firme delle partizioni
+480|Creazione delle partizioni
+481|Formattazione della partizione di sistema EFI
+482|Cifratura della partizione di sistema
+483|Formattazione della partizione di avvio
+484|Creazione del file system Btrfs
+485|Rimozione delle vecchie firme dei file system
+486|Sblocco dell'installazione cifrata
+487|Salvataggio del sistema attuale come istantanea
+488|Rimozione del sistema precedente
+489|Scrittura della tabella dei file system
+490|Impostazione del nome e dell'identità del computer
+491|Rimozione degli account della sessione live
+492|Creazione del tuo account
+493|Preparazione di MAN Setup per il primo avvio
+494|Impostazione di fuso orario e tastiera
+495|Rimozione dell'installatore dal nuovo sistema
+496|Creazione dell'immagine di avvio (initramfs)
+497|Configurazione di GRUB
+498|Installazione di GRUB nella partizione di sistema EFI
+499|Installazione del boot loader di riserva
+500|Scrittura del menu di avvio
+501|Disco pronto
+502|Creazione di un'istantanea del sistema appena installato
+503|Aggiunta dell'istantanea al menu di avvio
+504|Smontaggio
+505|L'assistente dell'installatore deve essere eseguito come root.
+506|Questo computer non è stato avviato in modalità UEFI. MAN richiede UEFI.
+507|Il nome utente non è valido.
+508|È necessaria una password.
+509|Il nome del computer non è valido.
+510|Lingua sconosciuta.
+511|La passphrase di cifratura deve avere almeno 8 caratteri.
+512|Il disco è cambiato dopo la conferma dell'installazione. Non è stato modificato nulla; rivedi e conferma di nuovo.
+513|Scegli una partizione di sistema.
+514|Il disco confermato non contiene la partizione di sistema scelta.
+515|La partizione di avvio deve essere separata dalle partizioni EFI e di sistema.
+516|La partizione di avvio deve essere di almeno 512 MB.
+517|Nessuna installazione scelta.
+518|Il disco confermato non contiene l'installazione scelta.
+519|L'installazione cifrata non ha una partizione MAN_BOOT.
+520|In /boot non è stato trovato alcun kernel con i moduli corrispondenti.
+521|La lingua deve essere cambiata dall'assistente di sistema.
+522|Applicazione delle tue impostazioni
+523|Preparazione della cifratura del disco
+524|Completamento
+525|MAN Setup deve essere completato dall'assistente di sistema.
+526|MAN Setup è già stato completato su questo computer.
+527|Colore d'accento sconosciuto.
+528|Lo sfondo scelto non è disponibile.
+529|Questo sistema non può essere cifrato.
+530|Manca la chiave di configurazione, quindi la cifratura non può proseguire in background.
+531|Il sistema non è installato su Btrfs, quindi le istantanee non sono disponibili.
+532|Un ripristino di istantanea attende un riavvio. Riavvia prima il computer per completarlo.
+533|ID istantanea non valido.
+534|Verifica dell'aggiornamento
+535|Creazione di un'istantanea
+536|Preparazione dell'area di aggiornamento
+537|Estrazione del nuovo sistema
+538|Trasferimento di account e impostazioni
+539|Preparazione del riavvio
+540|Estratto
+541|Account
+542|Reinstallazione delle applicazioni mantenute
+543|Rimozione del software usato solo dall'installatore
+544|Creazione dell'immagine di avvio dell'aggiornamento
+545|Aggiunta della voce di avvio una tantum
+546|L'aggiornamento è autentico
+547|Istantanea creata
+548|Saltato
+549|Area di aggiornamento pronta
+550|Preparazione del nuovo sistema
+551|Il file di aggiornamento è danneggiato (checksum non corrispondente). Scaricalo di nuovo.
+552|Impossibile leggere completamente il file di aggiornamento.
+553|L'aggiornamento non contiene alcun kernel.
+554|Gli aggiornamenti devono essere installati dall'assistente di sistema.
+555|L'installazione scelta non è stata trovata.
+556|Solo l'installazione di MAN in esecuzione può essere aggiornata.
+557|Questo non è un file di aggiornamento di MAN (manca il manifest).
+558|L'aggiornamento non è firmato, quindi non è attendibile.
+559|La firma dell'aggiornamento è danneggiata.
+560|L'aggiornamento non è firmato da MAN. Potrebbe essere stato modificato o provenire da una fonte non attendibile.
+561|Il manifest dell'aggiornamento non è valido.
+562|La passphrase non è corretta oppure non è possibile aprire la partizione cifrata.
+563|Blu
+564|Verde acqua
+565|Verde
+566|Giallo
+567|Arancione
+568|Rosso
+569|Rosa
+570|Viola
+571|Ardesia
+572|Installazione pacchetti
+573|Installa applicazioni da file .deb, Flatpak e AppImage
+574|Installatore di sistema
+575|Installa MAN su questo computer
+576|Ripristino del sistema
+577|Crea e ripristina istantanee del sistema
+578|Installatore di aggiornamenti di sistema
+579|Installa un file di aggiornamento di sistema MAN
+580|Controlla se un programma Windows contiene malware ed eseguilo
+581|Propone di installare MAN all'avvio della sessione live
+582|Avviso di aggiornamento di MAN
+583|Ti informa una volta dopo l'accesso che MAN è stato aggiornato
+584|Configura il tuo nuovo computer MAN
+585|Configurazione di MAN al primo avvio
+586|Aggiornamenti di MAN
+587|Ti avvisa quando è disponibile una nuova versione di MAN

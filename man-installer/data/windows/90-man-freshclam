@@ -1,0 +1,12 @@
+#!/bin/sh
+# NetworkManager dispatcher: MAN ships without the malware database (it would not
+# fit), so get it as soon as there is a network, not at freshclam's next hourly try.
+case "$2" in
+    up|connectivity-change) ;;
+    *) exit 0 ;;
+esac
+for db in /var/lib/clamav/main.cvd /var/lib/clamav/main.cld; do
+    [ -s "$db" ] && exit 0
+done
+systemctl restart --no-block clamav-freshclam.service 2>/dev/null || true
+exit 0

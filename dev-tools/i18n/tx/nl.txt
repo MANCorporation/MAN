@@ -442,124 +442,147 @@
 441|_Klaar
 442|Een MAN-update openen
 443|MAN-updates
-444|Nieuwste pakketlijsten ophalen…
-445|App kopiëren
-446|App toevoegen aan het menu
-447|Het bestand is niet gevonden.
-448|Het pakket kon niet worden geïnstalleerd.
-449|Het menu-item van de app is ongeldig.
-450|Installatieplan controleren
-451|Schijf voorbereiden
-452|MAN naar de schijf kopiëren
-453|Nieuw systeem configureren
-454|Opstartlader installeren
-455|Eerste momentopname maken
-456|Afronden
-457|Oude partitiehandtekeningen verwijderen
-458|Partities maken
-459|EFI-systeempartitie formatteren
-460|Systeempartitie versleutelen
-461|Opstartpartitie formatteren
-462|Btrfs-bestandssysteem maken
-463|Oude bestandssysteemhandtekeningen verwijderen
-464|Versleutelde installatie ontgrendelen
-465|Huidig systeem als momentopname bewaren
-466|Vorig systeem verwijderen
-467|Bestandssysteemtabel schrijven
-468|Computernaam en identiteit instellen
-469|Accounts van de live-sessie verwijderen
-470|Uw account maken
-471|MAN Setup voorbereiden op de eerste start
-472|Tijdzone en toetsenbord instellen
-473|Installatieprogramma uit het nieuwe systeem verwijderen
-474|Opstartimage maken (initramfs)
-475|GRUB configureren
-476|GRUB op de EFI-systeempartitie installeren
-477|Reserve-opstartlader installeren
-478|Opstartmenu schrijven
-479|Schijf klaar
-480|Momentopname van het nieuwe systeem maken
-481|Momentopname aan het opstartmenu toevoegen
-482|Ontkoppelen
-483|De installatiehulp moet als root draaien.
-484|Deze computer is niet in UEFI-modus gestart. MAN vereist UEFI.
-485|De gebruikersnaam is ongeldig.
-486|Een wachtwoord is vereist.
-487|De computernaam is ongeldig.
-488|Onbekende taal.
-489|De versleutelingswachtwoordzin moet minstens 8 tekens hebben.
-490|De schijf is veranderd nadat u de installatie bevestigde. Er is niets gewijzigd; controleer en bevestig opnieuw.
-491|Kies een systeempartitie.
-492|De bevestigde schijf bevat de gekozen systeempartitie niet.
-493|De opstartpartitie moet los staan van de EFI- en systeempartitie.
-494|De opstartpartitie moet minstens 512 MB zijn.
-495|Geen installatie gekozen.
-496|De bevestigde schijf bevat de gekozen installatie niet.
-497|De versleutelde installatie heeft geen MAN_BOOT-partitie.
-498|Geen kernel met bijbehorende modules gevonden in /boot.
-499|De taal moet door de systeemhulp worden gewijzigd.
-500|Uw instellingen toepassen
-501|Schijfversleuteling voorbereiden
-502|Afronden
-503|MAN Setup moet door de systeemhulp worden voltooid.
-504|MAN Setup is op deze computer al voltooid.
-505|Onbekende accentkleur.
-506|De gekozen achtergrond is niet beschikbaar.
-507|Dit systeem kan niet worden versleuteld.
-508|De installatiesleutel ontbreekt, dus de versleuteling kan niet op de achtergrond doorgaan.
-509|Het systeem is niet op Btrfs geïnstalleerd, dus momentopnamen zijn niet beschikbaar.
-510|Een herstel van een momentopname wacht op een herstart. Herstart eerst de computer om het te voltooien.
-511|Ongeldige momentopname-ID.
-512|Update controleren
-513|Momentopname maken
-514|Updategebied voorbereiden
-515|Nieuw systeem uitpakken
-516|Uw accounts en instellingen overzetten
-517|Herstart voorbereiden
-518|Uitgepakt
-519|Accounts
-520|Behouden apps opnieuw installeren
-521|Software voor alleen het installatieprogramma verwijderen
-522|Opstartimage van de update maken
-523|Eenmalige opstartvermelding toevoegen
-524|De update is echt
-525|Momentopname gemaakt
-526|Overgeslagen
-527|Updategebied klaar
-528|Nieuw systeem voorbereiden
-529|Het updatebestand is beschadigd (controlesom klopt niet). Download het opnieuw.
-530|Het updatebestand kon niet volledig worden gelezen.
-531|De update bevat geen kernel.
-532|Updates moeten door de systeemhulp worden geïnstalleerd.
-533|De gekozen installatie is niet gevonden.
-534|Alleen de draaiende MAN-installatie kan worden bijgewerkt.
-535|Dit is geen MAN-updatebestand (geen manifest).
-536|De update is niet ondertekend en daarom niet te vertrouwen.
-537|De handtekening van de update is beschadigd.
-538|De update is niet ondertekend door MAN. Hij kan zijn gewijzigd of uit een onbetrouwbare bron komen.
-539|Het manifest van de update is ongeldig.
-540|De wachtwoordzin is onjuist, of de versleutelde partitie kan niet worden geopend.
-541|Blauw
-542|Blauwgroen
-543|Groen
-544|Geel
-545|Oranje
-546|Rood
-547|Roze
-548|Paars
-549|Leisteen
-550|Pakketinstallatie
-551|Apps installeren uit .deb-, Flatpak- en AppImage-bestanden
-552|Systeeminstallatie
-553|MAN op deze computer installeren
-554|Systeemherstel
-555|Momentopnamen van het systeem maken en herstellen
-556|Installatie van systeemupdates
-557|Een MAN-systeemupdatebestand installeren
-558|Biedt aan MAN te installeren als de live-sessie start
-559|MAN-updatemelding
-560|Meldt na het aanmelden één keer dat MAN is bijgewerkt
-561|Stel uw nieuwe MAN-computer in
-562|Eerste instelling van MAN
-563|MAN-updates
-564|Laat je weten wanneer er een nieuwe versie van MAN is
+444|Windows-ondersteuning kon niet worden gestart.
+445|Windows-programma wordt gestart
+446|De eerste start duurt even.
+447|Het Windows-programma kon niet worden gestart
+448|Het uitvoeren van Windows-programma's (.exe) wordt niet aanbevolen, omdat ze waarschijnlijk malware kunnen bevatten of dingen die je privacy kunnen schaden.
+449|MAN kon dit programma niet op malware controleren: de database is nog niet klaar. Maak verbinding met internet en probeer het over een paar minuten opnieuw.
+450|Dit Windows-programma uitvoeren?
+451|_Uitvoeren
+452|Een als malware gemarkeerd programma uitvoeren?
+453|Dit is je laatste kans om te stoppen. MAN heeft malware in dit programma gevonden en Windows-programma's zijn niet afgeschermd van je bestanden. Het kan:\n\n• je wachtwoorden, documenten en foto's stelen\n• je bestanden verwijderen of er losgeld voor eisen\n• je bespioneren en op de achtergrond blijven draaien\n\nMAN kan niet ongedaan maken wat het programma doet. Ga alleen verder als je precies weet waarom dit programma is gemarkeerd.
+454|_Toch uitvoeren
+455|MAN heeft dit Windows-programma (.exe) gemarkeerd als malware, die je gegevens of privacy kan schaden. Het moet niet worden uitgevoerd en moet naar de prullenbak worden verplaatst.
+456|Gedetecteerd als: {name}
+457|MAN heeft dit programma als malware gemarkeerd
+458|Naar _prullenbak verplaatsen
+459|_Omzeilen en uitvoeren
+460|Windows-programma
+461|Dit is geen Windows-programma
+462|Dit bestand kan niet worden uitgevoerd.
+463|Dit programma kan niet op deze computer draaien
+464|Het is gemaakt voor {arch}-processors.
+465|Dit programma wordt op malware gecontroleerd
+466|Nieuwste pakketlijsten ophalen…
+467|App kopiëren
+468|App toevoegen aan het menu
+469|Het bestand is niet gevonden.
+470|Het pakket kon niet worden geïnstalleerd.
+471|Het menu-item van de app is ongeldig.
+472|Installatieplan controleren
+473|Schijf voorbereiden
+474|MAN naar de schijf kopiëren
+475|Nieuw systeem configureren
+476|Opstartlader installeren
+477|Eerste momentopname maken
+478|Afronden
+479|Oude partitiehandtekeningen verwijderen
+480|Partities maken
+481|EFI-systeempartitie formatteren
+482|Systeempartitie versleutelen
+483|Opstartpartitie formatteren
+484|Btrfs-bestandssysteem maken
+485|Oude bestandssysteemhandtekeningen verwijderen
+486|Versleutelde installatie ontgrendelen
+487|Huidig systeem als momentopname bewaren
+488|Vorig systeem verwijderen
+489|Bestandssysteemtabel schrijven
+490|Computernaam en identiteit instellen
+491|Accounts van de live-sessie verwijderen
+492|Uw account maken
+493|MAN Setup voorbereiden op de eerste start
+494|Tijdzone en toetsenbord instellen
+495|Installatieprogramma uit het nieuwe systeem verwijderen
+496|Opstartimage maken (initramfs)
+497|GRUB configureren
+498|GRUB op de EFI-systeempartitie installeren
+499|Reserve-opstartlader installeren
+500|Opstartmenu schrijven
+501|Schijf klaar
+502|Momentopname van het nieuwe systeem maken
+503|Momentopname aan het opstartmenu toevoegen
+504|Ontkoppelen
+505|De installatiehulp moet als root draaien.
+506|Deze computer is niet in UEFI-modus gestart. MAN vereist UEFI.
+507|De gebruikersnaam is ongeldig.
+508|Een wachtwoord is vereist.
+509|De computernaam is ongeldig.
+510|Onbekende taal.
+511|De versleutelingswachtwoordzin moet minstens 8 tekens hebben.
+512|De schijf is veranderd nadat u de installatie bevestigde. Er is niets gewijzigd; controleer en bevestig opnieuw.
+513|Kies een systeempartitie.
+514|De bevestigde schijf bevat de gekozen systeempartitie niet.
+515|De opstartpartitie moet los staan van de EFI- en systeempartitie.
+516|De opstartpartitie moet minstens 512 MB zijn.
+517|Geen installatie gekozen.
+518|De bevestigde schijf bevat de gekozen installatie niet.
+519|De versleutelde installatie heeft geen MAN_BOOT-partitie.
+520|Geen kernel met bijbehorende modules gevonden in /boot.
+521|De taal moet door de systeemhulp worden gewijzigd.
+522|Uw instellingen toepassen
+523|Schijfversleuteling voorbereiden
+524|Afronden
+525|MAN Setup moet door de systeemhulp worden voltooid.
+526|MAN Setup is op deze computer al voltooid.
+527|Onbekende accentkleur.
+528|De gekozen achtergrond is niet beschikbaar.
+529|Dit systeem kan niet worden versleuteld.
+530|De installatiesleutel ontbreekt, dus de versleuteling kan niet op de achtergrond doorgaan.
+531|Het systeem is niet op Btrfs geïnstalleerd, dus momentopnamen zijn niet beschikbaar.
+532|Een herstel van een momentopname wacht op een herstart. Herstart eerst de computer om het te voltooien.
+533|Ongeldige momentopname-ID.
+534|Update controleren
+535|Momentopname maken
+536|Updategebied voorbereiden
+537|Nieuw systeem uitpakken
+538|Uw accounts en instellingen overzetten
+539|Herstart voorbereiden
+540|Uitgepakt
+541|Accounts
+542|Behouden apps opnieuw installeren
+543|Software voor alleen het installatieprogramma verwijderen
+544|Opstartimage van de update maken
+545|Eenmalige opstartvermelding toevoegen
+546|De update is echt
+547|Momentopname gemaakt
+548|Overgeslagen
+549|Updategebied klaar
+550|Nieuw systeem voorbereiden
+551|Het updatebestand is beschadigd (controlesom klopt niet). Download het opnieuw.
+552|Het updatebestand kon niet volledig worden gelezen.
+553|De update bevat geen kernel.
+554|Updates moeten door de systeemhulp worden geïnstalleerd.
+555|De gekozen installatie is niet gevonden.
+556|Alleen de draaiende MAN-installatie kan worden bijgewerkt.
+557|Dit is geen MAN-updatebestand (geen manifest).
+558|De update is niet ondertekend en daarom niet te vertrouwen.
+559|De handtekening van de update is beschadigd.
+560|De update is niet ondertekend door MAN. Hij kan zijn gewijzigd of uit een onbetrouwbare bron komen.
+561|Het manifest van de update is ongeldig.
+562|De wachtwoordzin is onjuist, of de versleutelde partitie kan niet worden geopend.
+563|Blauw
+564|Blauwgroen
+565|Groen
+566|Geel
+567|Oranje
+568|Rood
+569|Roze
+570|Paars
+571|Leisteen
+572|Pakketinstallatie
+573|Apps installeren uit .deb-, Flatpak- en AppImage-bestanden
+574|Systeeminstallatie
+575|MAN op deze computer installeren
+576|Systeemherstel
+577|Momentopnamen van het systeem maken en herstellen
+578|Installatie van systeemupdates
+579|Een MAN-systeemupdatebestand installeren
+580|Een Windows-programma op malware controleren en uitvoeren
+581|Biedt aan MAN te installeren als de live-sessie start
+582|MAN-updatemelding
+583|Meldt na het aanmelden één keer dat MAN is bijgewerkt
+584|Stel uw nieuwe MAN-computer in
+585|Eerste instelling van MAN
+586|MAN-updates
+587|Laat je weten wanneer er een nieuwe versie van MAN is

@@ -442,124 +442,147 @@
 441|_Gatavs
 442|Atvērt MAN atjauninājumu
 443|MAN atjauninājumi
-444|Iegūst jaunākos pakotņu sarakstus…
-445|Kopē lietotni
-446|Pievieno lietotni izvēlnei
-447|Fails netika atrasts.
-448|Pakotni neizdevās instalēt.
-449|Lietotnes izvēlnes ieraksts nav derīgs.
-450|Pārbauda instalēšanas plānu
-451|Sagatavo disku
-452|Kopē MAN uz disku
-453|Konfigurē jauno sistēmu
-454|Instalē palaidēju
-455|Izveido pirmo momentuzņēmumu
-456|Pabeidz
-457|Noņem vecos nodalījumu parakstus
-458|Izveido nodalījumus
-459|Formatē EFI sistēmas nodalījumu
-460|Šifrē sistēmas nodalījumu
-461|Formatē palaišanas nodalījumu
-462|Izveido Btrfs datņu sistēmu
-463|Noņem vecos datņu sistēmu parakstus
-464|Atslēdz šifrēto instalāciju
-465|Saglabā pašreizējo sistēmu kā momentuzņēmumu
-466|Noņem iepriekšējo sistēmu
-467|Raksta datņu sistēmu tabulu
-468|Iestata datora nosaukumu un identitāti
-469|Noņem tiešraides sesijas kontus
-470|Izveido jūsu kontu
-471|Sagatavo MAN Setup pirmajai palaišanai
-472|Iestata laika joslu un tastatūru
-473|Noņem instalētāju no jaunās sistēmas
-474|Veido palaišanas attēlu (initramfs)
-475|Konfigurē GRUB
-476|Instalē GRUB EFI sistēmas nodalījumā
-477|Instalē rezerves palaidēju
-478|Raksta palaišanas izvēlni
-479|Disks gatavs
-480|Izveido jaunās sistēmas momentuzņēmumu
-481|Pievieno momentuzņēmumu palaišanas izvēlnei
-482|Atmontē
-483|Instalētāja palīgam jādarbojas kā root.
-484|Šis dators netika palaists UEFI režīmā. MAN vajag UEFI.
-485|Lietotājvārds nav derīgs.
-486|Parole ir obligāta.
-487|Datora nosaukums nav derīgs.
-488|Nezināma valoda.
-489|Šifrēšanas paroles frāzei jābūt vismaz 8 rakstzīmēm.
-490|Disks mainījās pēc tam, kad apstiprinājāt instalēšanu. Nekas netika mainīts; pārskatiet un apstipriniet vēlreiz.
-491|Izvēlieties sistēmas nodalījumu.
-492|Apstiprinātajā diskā nav izvēlētā sistēmas nodalījuma.
-493|Palaišanas nodalījumam jābūt atsevišķam no EFI un sistēmas nodalījumiem.
-494|Palaišanas nodalījumam jābūt vismaz 512 MB.
-495|Instalācija nav izvēlēta.
-496|Apstiprinātajā diskā nav izvēlētās instalācijas.
-497|Šifrētajai instalācijai nav MAN_BOOT nodalījuma.
-498|Mapē /boot netika atrasts kodols ar atbilstošiem moduļiem.
-499|Valodu jāmaina sistēmas palīgam.
-500|Lieto jūsu iestatījumus
-501|Sagatavo diska šifrēšanu
-502|Pabeidz
-503|MAN Setup jāpabeidz sistēmas palīgam.
-504|MAN Setup šajā datorā jau ir pabeigts.
-505|Nezināma akcenta krāsa.
-506|Izvēlētais fona attēls nav pieejams.
-507|Šo sistēmu nevar šifrēt.
-508|Trūkst iestatīšanas atslēgas, tāpēc šifrēšana nevar turpināties fonā.
-509|Sistēma nav instalēta uz Btrfs, tāpēc momentuzņēmumi nav pieejami.
-510|Momentuzņēmuma atjaunošana gaida pārstartēšanu. Vispirms pārstartējiet datoru, lai to pabeigtu.
-511|Nederīgs momentuzņēmuma ID.
-512|Pārbauda atjauninājumu
-513|Izveido momentuzņēmumu
-514|Sagatavo atjaunināšanas apgabalu
-515|Izpako jauno sistēmu
-516|Pārnes jūsu kontus un iestatījumus
-517|Sagatavo pārstartēšanu
-518|Izpakots
-519|Konti
-520|Atkārtoti instalē saglabātās lietotnes
-521|Noņem tikai instalētājam paredzēto programmatūru
-522|Veido atjauninājuma palaišanas attēlu
-523|Pievieno vienreizēju palaišanas ierakstu
-524|Atjauninājums ir īsts
-525|Momentuzņēmums izveidots
-526|Izlaists
-527|Atjaunināšanas apgabals gatavs
-528|Sagatavo jauno sistēmu
-529|Atjauninājuma fails ir bojāts (kontrolsumma nesakrīt). Lejupielādējiet to vēlreiz.
-530|Atjauninājuma failu neizdevās nolasīt pilnībā.
-531|Atjauninājumā nav kodola.
-532|Atjauninājumi jāinstalē sistēmas palīgam.
-533|Izvēlētā instalācija netika atrasta.
-534|Atjaunināt var tikai darbojošos MAN instalāciju.
-535|Tas nav MAN atjauninājuma fails (nav manifesta).
-536|Atjauninājums nav parakstīts, tāpēc tam nevar uzticēties.
-537|Atjauninājuma paraksts ir bojāts.
-538|Atjauninājumu nav parakstījis MAN. Tas var būt mainīts vai nākt no neuzticama avota.
-539|Atjauninājuma manifests nav derīgs.
-540|Paroles frāze nav pareiza, vai šifrēto nodalījumu nevar atvērt.
-541|Zila
-542|Zilganzaļa
-543|Zaļa
-544|Dzeltena
-545|Oranža
-546|Sarkana
-547|Rozā
-548|Violeta
-549|Šīfera
-550|Pakotņu instalētājs
-551|Instalējiet lietotnes no .deb, Flatpak un AppImage failiem
-552|Sistēmas instalētājs
-553|Instalēt MAN šajā datorā
-554|Sistēmas atjaunošana
-555|Izveidot un atjaunot sistēmas momentuzņēmumus
-556|Sistēmas atjauninājumu instalētājs
-557|Instalēt MAN sistēmas atjauninājuma failu
-558|Piedāvā instalēt MAN, kad sākas tiešraides sesija
-559|MAN atjaunināšanas paziņojums
-560|Vienreiz pēc pieteikšanās paziņo, ka MAN ir atjaunināts
-561|Iestatiet savu jauno MAN datoru
-562|MAN pirmā iestatīšana
-563|MAN atjauninājumi
-564|Paziņo, kad ir pieejama jauna MAN versija
+444|Neizdevās startēt Windows atbalstu.
+445|Tiek startēta Windows programma
+446|Pirmā startēšana aizņem brīdi.
+447|Neizdevās startēt Windows programmu
+448|Windows programmu (.exe) palaišana nav ieteicama, jo tajās, visticamāk, var būt ļaunprogrammatūra vai lietas, kas var kaitēt jūsu privātumam.
+449|MAN nevarēja pārbaudīt šo programmu, vai tajā nav ļaunprogrammatūras: datubāze vēl nav gatava. Izveidojiet savienojumu ar internetu un pēc dažām minūtēm mēģiniet vēlreiz.
+450|Vai palaist šo Windows programmu?
+451|_Palaist
+452|Vai palaist programmu, kas atzīmēta kā ļaunprogrammatūra?
+453|Šī ir jūsu pēdējā iespēja apstāties. MAN šajā programmā atrada ļaunprogrammatūru, un Windows programmas nav izolētas no jūsu failiem. Tā varētu:\n\n• nozagt jūsu paroles, dokumentus un fotoattēlus\n• izdzēst jūsu failus vai pieprasīt par tiem izpirkuma maksu\n• izspiegot, ko jūs darāt, un turpināt darboties fonā\n\nMAN nevar atsaukt to, ko programma izdara. Turpiniet tikai tad, ja precīzi zināt, kāpēc šī programma tika atzīmēta.
+454|Tomēr _palaist
+455|MAN atzīmēja šo Windows programmu (.exe) kā ļaunprogrammatūru, kas var kaitēt jūsu datiem vai privātumam. To nevajadzētu palaist, un tā jāpārvieto uz atkritni.
+456|Atklāts kā: {name}
+457|MAN atzīmēja šo programmu kā ļaunprogrammatūru
+458|_Pārvietot uz atkritni
+459|_Apiet un palaist
+460|Windows programma
+461|Šī nav Windows programma
+462|Šo failu nevar palaist.
+463|Šī programma nevar darboties šajā datorā
+464|Tā ir izveidota {arch} procesoriem.
+465|Tiek pārbaudīts, vai šajā programmā nav ļaunprogrammatūras
+466|Iegūst jaunākos pakotņu sarakstus…
+467|Kopē lietotni
+468|Pievieno lietotni izvēlnei
+469|Fails netika atrasts.
+470|Pakotni neizdevās instalēt.
+471|Lietotnes izvēlnes ieraksts nav derīgs.
+472|Pārbauda instalēšanas plānu
+473|Sagatavo disku
+474|Kopē MAN uz disku
+475|Konfigurē jauno sistēmu
+476|Instalē palaidēju
+477|Izveido pirmo momentuzņēmumu
+478|Pabeidz
+479|Noņem vecos nodalījumu parakstus
+480|Izveido nodalījumus
+481|Formatē EFI sistēmas nodalījumu
+482|Šifrē sistēmas nodalījumu
+483|Formatē palaišanas nodalījumu
+484|Izveido Btrfs datņu sistēmu
+485|Noņem vecos datņu sistēmu parakstus
+486|Atslēdz šifrēto instalāciju
+487|Saglabā pašreizējo sistēmu kā momentuzņēmumu
+488|Noņem iepriekšējo sistēmu
+489|Raksta datņu sistēmu tabulu
+490|Iestata datora nosaukumu un identitāti
+491|Noņem tiešraides sesijas kontus
+492|Izveido jūsu kontu
+493|Sagatavo MAN Setup pirmajai palaišanai
+494|Iestata laika joslu un tastatūru
+495|Noņem instalētāju no jaunās sistēmas
+496|Veido palaišanas attēlu (initramfs)
+497|Konfigurē GRUB
+498|Instalē GRUB EFI sistēmas nodalījumā
+499|Instalē rezerves palaidēju
+500|Raksta palaišanas izvēlni
+501|Disks gatavs
+502|Izveido jaunās sistēmas momentuzņēmumu
+503|Pievieno momentuzņēmumu palaišanas izvēlnei
+504|Atmontē
+505|Instalētāja palīgam jādarbojas kā root.
+506|Šis dators netika palaists UEFI režīmā. MAN vajag UEFI.
+507|Lietotājvārds nav derīgs.
+508|Parole ir obligāta.
+509|Datora nosaukums nav derīgs.
+510|Nezināma valoda.
+511|Šifrēšanas paroles frāzei jābūt vismaz 8 rakstzīmēm.
+512|Disks mainījās pēc tam, kad apstiprinājāt instalēšanu. Nekas netika mainīts; pārskatiet un apstipriniet vēlreiz.
+513|Izvēlieties sistēmas nodalījumu.
+514|Apstiprinātajā diskā nav izvēlētā sistēmas nodalījuma.
+515|Palaišanas nodalījumam jābūt atsevišķam no EFI un sistēmas nodalījumiem.
+516|Palaišanas nodalījumam jābūt vismaz 512 MB.
+517|Instalācija nav izvēlēta.
+518|Apstiprinātajā diskā nav izvēlētās instalācijas.
+519|Šifrētajai instalācijai nav MAN_BOOT nodalījuma.
+520|Mapē /boot netika atrasts kodols ar atbilstošiem moduļiem.
+521|Valodu jāmaina sistēmas palīgam.
+522|Lieto jūsu iestatījumus
+523|Sagatavo diska šifrēšanu
+524|Pabeidz
+525|MAN Setup jāpabeidz sistēmas palīgam.
+526|MAN Setup šajā datorā jau ir pabeigts.
+527|Nezināma akcenta krāsa.
+528|Izvēlētais fona attēls nav pieejams.
+529|Šo sistēmu nevar šifrēt.
+530|Trūkst iestatīšanas atslēgas, tāpēc šifrēšana nevar turpināties fonā.
+531|Sistēma nav instalēta uz Btrfs, tāpēc momentuzņēmumi nav pieejami.
+532|Momentuzņēmuma atjaunošana gaida pārstartēšanu. Vispirms pārstartējiet datoru, lai to pabeigtu.
+533|Nederīgs momentuzņēmuma ID.
+534|Pārbauda atjauninājumu
+535|Izveido momentuzņēmumu
+536|Sagatavo atjaunināšanas apgabalu
+537|Izpako jauno sistēmu
+538|Pārnes jūsu kontus un iestatījumus
+539|Sagatavo pārstartēšanu
+540|Izpakots
+541|Konti
+542|Atkārtoti instalē saglabātās lietotnes
+543|Noņem tikai instalētājam paredzēto programmatūru
+544|Veido atjauninājuma palaišanas attēlu
+545|Pievieno vienreizēju palaišanas ierakstu
+546|Atjauninājums ir īsts
+547|Momentuzņēmums izveidots
+548|Izlaists
+549|Atjaunināšanas apgabals gatavs
+550|Sagatavo jauno sistēmu
+551|Atjauninājuma fails ir bojāts (kontrolsumma nesakrīt). Lejupielādējiet to vēlreiz.
+552|Atjauninājuma failu neizdevās nolasīt pilnībā.
+553|Atjauninājumā nav kodola.
+554|Atjauninājumi jāinstalē sistēmas palīgam.
+555|Izvēlētā instalācija netika atrasta.
+556|Atjaunināt var tikai darbojošos MAN instalāciju.
+557|Tas nav MAN atjauninājuma fails (nav manifesta).
+558|Atjauninājums nav parakstīts, tāpēc tam nevar uzticēties.
+559|Atjauninājuma paraksts ir bojāts.
+560|Atjauninājumu nav parakstījis MAN. Tas var būt mainīts vai nākt no neuzticama avota.
+561|Atjauninājuma manifests nav derīgs.
+562|Paroles frāze nav pareiza, vai šifrēto nodalījumu nevar atvērt.
+563|Zila
+564|Zilganzaļa
+565|Zaļa
+566|Dzeltena
+567|Oranža
+568|Sarkana
+569|Rozā
+570|Violeta
+571|Šīfera
+572|Pakotņu instalētājs
+573|Instalējiet lietotnes no .deb, Flatpak un AppImage failiem
+574|Sistēmas instalētājs
+575|Instalēt MAN šajā datorā
+576|Sistēmas atjaunošana
+577|Izveidot un atjaunot sistēmas momentuzņēmumus
+578|Sistēmas atjauninājumu instalētājs
+579|Instalēt MAN sistēmas atjauninājuma failu
+580|Pārbaudīt Windows programmu, vai tajā nav ļaunprogrammatūras, un palaist to
+581|Piedāvā instalēt MAN, kad sākas tiešraides sesija
+582|MAN atjaunināšanas paziņojums
+583|Vienreiz pēc pieteikšanās paziņo, ka MAN ir atjaunināts
+584|Iestatiet savu jauno MAN datoru
+585|MAN pirmā iestatīšana
+586|MAN atjauninājumi
+587|Paziņo, kad ir pieejama jauna MAN versija

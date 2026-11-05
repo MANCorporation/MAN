@@ -442,124 +442,147 @@
 441|_Feito
 442|Abrir unha actualización de MAN
 443|Actualizacións de MAN
-444|Obtendo as listas de paquetes máis novas…
-445|Copiando a aplicación
-446|Engadindo a aplicación ao menú
-447|Non se atopou o ficheiro.
-448|Non foi posíbel instalar o paquete.
-449|A entrada de menú da aplicación non é válida.
-450|Comprobando o plan de instalación
-451|Preparando o disco
-452|Copiando MAN ao disco
-453|Configurando o novo sistema
-454|Instalando o cargador de arranque
-455|Creando a primeira instantánea
-456|Rematando
-457|Eliminando sinaturas de particións antigas
-458|Creando particións
-459|Formatando a partición do sistema EFI
-460|Cifrando a partición do sistema
-461|Formatando a partición de arranque
-462|Creando o sistema de ficheiros Btrfs
-463|Eliminando sinaturas de sistemas de ficheiros antigos
-464|Desbloqueando a instalación cifrada
-465|Gardando o sistema actual como instantánea
-466|Eliminando o sistema anterior
-467|Escribindo a táboa de sistemas de ficheiros
-468|Establecendo o nome e a identidade do computador
-469|Eliminando as contas da sesión en vivo
-470|Creando a súa conta
-471|Preparando MAN Setup para o primeiro arranque
-472|Establecendo o fuso horario e o teclado
-473|Eliminando o instalador do novo sistema
-474|Creando a imaxe de arranque (initramfs)
-475|Configurando GRUB
-476|Instalando GRUB na partición do sistema EFI
-477|Instalando o cargador de arranque de reserva
-478|Escribindo o menú de arranque
-479|Disco listo
-480|Creando unha instantánea do sistema novo
-481|Engadindo a instantánea ao menú de arranque
-482|Desmontando
-483|O asistente do instalador debe executarse como root.
-484|Este computador non se iniciou en modo UEFI. MAN precisa UEFI.
-485|O nome de usuario non é válido.
-486|Cómpre un contrasinal.
-487|O nome do computador non é válido.
-488|Idioma descoñecido.
-489|A frase de paso de cifrado debe ter polo menos 8 caracteres.
-490|O disco cambiou despois de que confirmase a instalación. Non se modificou nada; revise e confirme de novo.
-491|Escolla unha partición do sistema.
-492|O disco confirmado non contén a partición do sistema escollida.
-493|A partición de arranque debe estar separada das particións EFI e do sistema.
-494|A partición de arranque debe ter polo menos 512 MB.
-495|Non se escolleu ningunha instalación.
-496|O disco confirmado non contén a instalación escollida.
-497|A instalación cifrada non ten partición MAN_BOOT.
-498|Non se atopou en /boot ningún núcleo cos módulos correspondentes.
-499|O idioma debe cambialo o asistente do sistema.
-500|Aplicando a súa configuración
-501|Preparando o cifrado do disco
-502|Rematando
-503|MAN Setup debe rematalo o asistente do sistema.
-504|MAN Setup xa se completou neste computador.
-505|Cor de realce descoñecida.
-506|O fondo escollido non está dispoñible.
-507|Este sistema non se pode cifrar.
-508|Falta a chave de configuración, así que o cifrado non pode continuar en segundo plano.
-509|O sistema non está instalado en Btrfs, así que as instantáneas non están dispoñibles.
-510|Unha restauración de instantánea agarda un reinicio. Reinicie primeiro o computador para rematala.
-511|Identificador de instantánea non válido.
-512|Comprobando a actualización
-513|Creando unha instantánea
-514|Preparando a área de actualización
-515|Desempaquetando o novo sistema
-516|Trasladando as súas contas e configuración
-517|Preparando o reinicio
-518|Desempaquetado
-519|Contas
-520|Reinstalando as aplicacións conservadas
-521|Eliminando o software exclusivo do instalador
-522|Creando a imaxe de arranque da actualización
-523|Engadindo a entrada de arranque dun só uso
-524|A actualización é auténtica
-525|Creouse a instantánea
-526|Omitido
-527|Área de actualización lista
-528|Preparando o novo sistema
-529|O ficheiro de actualización está danado (a suma de comprobación non coincide). Descárgueo de novo.
-530|Non foi posible ler completamente o ficheiro de actualización.
-531|A actualización non contén ningún núcleo.
-532|As actualizacións debe instalalas o asistente do sistema.
-533|Non se atopou a instalación escollida.
-534|Só se pode actualizar a instalación de MAN en execución.
-535|Este non é un ficheiro de actualización de MAN (non ten manifesto).
-536|A actualización non está asinada, así que non é de confianza.
-537|A sinatura da actualización está danada.
-538|A actualización non está asinada por MAN. Pode estar modificada ou vir dunha orixe non fiable.
-539|O manifesto da actualización non é válido.
-540|A frase de paso non é correcta ou non se pode abrir a partición cifrada.
-541|Azul
-542|Verde azulado
-543|Verde
-544|Amarelo
-545|Laranxa
-546|Vermello
-547|Rosa
-548|Morado
-549|Lousa
-550|Instalador de paquetes
-551|Instale aplicacións desde ficheiros .deb, Flatpak e AppImage
-552|Instalador do sistema
-553|Instalar MAN neste computador
-554|Restauración do sistema
-555|Crear e restaurar instantáneas do sistema
-556|Instalador de actualizacións do sistema
-557|Instalar un ficheiro de actualización do sistema MAN
-558|Ofrece instalar MAN cando se inicia a sesión en vivo
-559|Aviso de actualización de MAN
-560|Avisa unha vez despois de iniciar sesión de que MAN se actualizou
-561|Configure o seu novo computador MAN
-562|Configuración inicial de MAN
-563|Actualizacións de MAN
-564|Avísao cando hai unha nova versión de MAN
+444|Non se puido iniciar a compatibilidade con Windows.
+445|Iniciando o programa de Windows
+446|O primeiro inicio leva un momento.
+447|Non se puido iniciar o programa de Windows
+448|Non se recomenda executar programas de Windows (.exe), xa que é probable que conteñan software malicioso ou cousas que poden danar a túa privacidade.
+449|MAN non puido comprobar se este programa ten software malicioso: a base de datos aínda non está lista. Conéctate a Internet e téntao de novo nuns minutos.
+450|Executar este programa de Windows?
+451|_Executalo
+452|Executar un programa marcado como malicioso?
+453|Esta é a túa última oportunidade para parar. MAN atopou software malicioso neste programa, e os programas de Windows non están illados dos teus ficheiros. Podería:\n\n• roubar os teus contrasinais, documentos e fotos\n• eliminar os teus ficheiros ou pedir un rescate por eles\n• espiar o que fas e seguir funcionando en segundo plano\n\nMAN non pode desfacer o que faga o programa. Continúa só se sabes exactamente por que se marcou este programa.
+454|Executar _igualmente
+455|MAN marcou este programa de Windows (.exe) como software malicioso, que pode danar os teus datos ou a túa privacidade. Non debería executarse e debería moverse ao lixo.
+456|Detectado como: {name}
+457|MAN marcou este programa como malicioso
+458|_Mover ao lixo
+459|_Omitir e executar
+460|Programa de Windows
+461|Isto non é un programa de Windows
+462|Este ficheiro non se pode executar.
+463|Este programa non pode funcionar neste computador
+464|Fíxose para procesadores {arch}.
+465|Comprobando se este programa ten software malicioso
+466|Obtendo as listas de paquetes máis novas…
+467|Copiando a aplicación
+468|Engadindo a aplicación ao menú
+469|Non se atopou o ficheiro.
+470|Non foi posíbel instalar o paquete.
+471|A entrada de menú da aplicación non é válida.
+472|Comprobando o plan de instalación
+473|Preparando o disco
+474|Copiando MAN ao disco
+475|Configurando o novo sistema
+476|Instalando o cargador de arranque
+477|Creando a primeira instantánea
+478|Rematando
+479|Eliminando sinaturas de particións antigas
+480|Creando particións
+481|Formatando a partición do sistema EFI
+482|Cifrando a partición do sistema
+483|Formatando a partición de arranque
+484|Creando o sistema de ficheiros Btrfs
+485|Eliminando sinaturas de sistemas de ficheiros antigos
+486|Desbloqueando a instalación cifrada
+487|Gardando o sistema actual como instantánea
+488|Eliminando o sistema anterior
+489|Escribindo a táboa de sistemas de ficheiros
+490|Establecendo o nome e a identidade do computador
+491|Eliminando as contas da sesión en vivo
+492|Creando a súa conta
+493|Preparando MAN Setup para o primeiro arranque
+494|Establecendo o fuso horario e o teclado
+495|Eliminando o instalador do novo sistema
+496|Creando a imaxe de arranque (initramfs)
+497|Configurando GRUB
+498|Instalando GRUB na partición do sistema EFI
+499|Instalando o cargador de arranque de reserva
+500|Escribindo o menú de arranque
+501|Disco listo
+502|Creando unha instantánea do sistema novo
+503|Engadindo a instantánea ao menú de arranque
+504|Desmontando
+505|O asistente do instalador debe executarse como root.
+506|Este computador non se iniciou en modo UEFI. MAN precisa UEFI.
+507|O nome de usuario non é válido.
+508|Cómpre un contrasinal.
+509|O nome do computador non é válido.
+510|Idioma descoñecido.
+511|A frase de paso de cifrado debe ter polo menos 8 caracteres.
+512|O disco cambiou despois de que confirmase a instalación. Non se modificou nada; revise e confirme de novo.
+513|Escolla unha partición do sistema.
+514|O disco confirmado non contén a partición do sistema escollida.
+515|A partición de arranque debe estar separada das particións EFI e do sistema.
+516|A partición de arranque debe ter polo menos 512 MB.
+517|Non se escolleu ningunha instalación.
+518|O disco confirmado non contén a instalación escollida.
+519|A instalación cifrada non ten partición MAN_BOOT.
+520|Non se atopou en /boot ningún núcleo cos módulos correspondentes.
+521|O idioma debe cambialo o asistente do sistema.
+522|Aplicando a súa configuración
+523|Preparando o cifrado do disco
+524|Rematando
+525|MAN Setup debe rematalo o asistente do sistema.
+526|MAN Setup xa se completou neste computador.
+527|Cor de realce descoñecida.
+528|O fondo escollido non está dispoñible.
+529|Este sistema non se pode cifrar.
+530|Falta a chave de configuración, así que o cifrado non pode continuar en segundo plano.
+531|O sistema non está instalado en Btrfs, así que as instantáneas non están dispoñibles.
+532|Unha restauración de instantánea agarda un reinicio. Reinicie primeiro o computador para rematala.
+533|Identificador de instantánea non válido.
+534|Comprobando a actualización
+535|Creando unha instantánea
+536|Preparando a área de actualización
+537|Desempaquetando o novo sistema
+538|Trasladando as súas contas e configuración
+539|Preparando o reinicio
+540|Desempaquetado
+541|Contas
+542|Reinstalando as aplicacións conservadas
+543|Eliminando o software exclusivo do instalador
+544|Creando a imaxe de arranque da actualización
+545|Engadindo a entrada de arranque dun só uso
+546|A actualización é auténtica
+547|Creouse a instantánea
+548|Omitido
+549|Área de actualización lista
+550|Preparando o novo sistema
+551|O ficheiro de actualización está danado (a suma de comprobación non coincide). Descárgueo de novo.
+552|Non foi posible ler completamente o ficheiro de actualización.
+553|A actualización non contén ningún núcleo.
+554|As actualizacións debe instalalas o asistente do sistema.
+555|Non se atopou a instalación escollida.
+556|Só se pode actualizar a instalación de MAN en execución.
+557|Este non é un ficheiro de actualización de MAN (non ten manifesto).
+558|A actualización non está asinada, así que non é de confianza.
+559|A sinatura da actualización está danada.
+560|A actualización non está asinada por MAN. Pode estar modificada ou vir dunha orixe non fiable.
+561|O manifesto da actualización non é válido.
+562|A frase de paso non é correcta ou non se pode abrir a partición cifrada.
+563|Azul
+564|Verde azulado
+565|Verde
+566|Amarelo
+567|Laranxa
+568|Vermello
+569|Rosa
+570|Morado
+571|Lousa
+572|Instalador de paquetes
+573|Instale aplicacións desde ficheiros .deb, Flatpak e AppImage
+574|Instalador do sistema
+575|Instalar MAN neste computador
+576|Restauración do sistema
+577|Crear e restaurar instantáneas do sistema
+578|Instalador de actualizacións do sistema
+579|Instalar un ficheiro de actualización do sistema MAN
+580|Comprobar se un programa de Windows ten software malicioso e executalo
+581|Ofrece instalar MAN cando se inicia a sesión en vivo
+582|Aviso de actualización de MAN
+583|Avisa unha vez despois de iniciar sesión de que MAN se actualizou
+584|Configure o seu novo computador MAN
+585|Configuración inicial de MAN
+586|Actualizacións de MAN
+587|Avísao cando hai unha nova versión de MAN

@@ -442,124 +442,147 @@
 441|_Færdig
 442|Åbn en MAN-opdatering
 443|MAN-opdateringer
-444|Henter de nyeste pakkelister…
-445|Kopierer appen
-446|Føjer appen til menuen
-447|Filen blev ikke fundet.
-448|Pakken kunne ikke installeres.
-449|Appens menupunkt er ugyldigt.
-450|Kontrollerer installationsplanen
-451|Forbereder disken
-452|Kopierer MAN til disken
-453|Konfigurerer det nye system
-454|Installerer opstartsindlæseren
-455|Opretter det første øjebliksbillede
-456|Afslutter
-457|Fjerner gamle partitionssignaturer
-458|Opretter partitioner
-459|Formaterer EFI-systempartitionen
-460|Krypterer systempartitionen
-461|Formaterer opstartspartitionen
-462|Opretter Btrfs-filsystemet
-463|Fjerner gamle filsystemsignaturer
-464|Låser den krypterede installation op
-465|Gemmer det nuværende system som et øjebliksbillede
-466|Fjerner det tidligere system
-467|Skriver filsystemtabellen
-468|Angiver computernavn og identitet
-469|Fjerner live-sessionens konti
-470|Opretter din konto
-471|Forbereder MAN Setup til første start
-472|Angiver tidszone og tastatur
-473|Fjerner installationsprogrammet fra det nye system
-474|Bygger opstartsaftrykket (initramfs)
-475|Konfigurerer GRUB
-476|Installerer GRUB på EFI-systempartitionen
-477|Installerer reserveopstartsindlæseren
-478|Skriver startmenuen
-479|Disken er klar
-480|Opretter et øjebliksbillede af det nye system
-481|Føjer øjebliksbilledet til startmenuen
-482|Afmonterer
-483|Installationshjælperen skal køre som root.
-484|Denne computer blev ikke startet i UEFI-tilstand. MAN kræver UEFI.
-485|Brugernavnet er ugyldigt.
-486|Der kræves en adgangskode.
-487|Computernavnet er ugyldigt.
-488|Ukendt sprog.
-489|Krypteringsadgangsfrasen skal have mindst 8 tegn.
-490|Disken ændrede sig, efter du bekræftede installationen. Intet blev ændret; gennemse og bekræft igen.
-491|Vælg en systempartition.
-492|Den bekræftede disk indeholder ikke den valgte systempartition.
-493|Opstartspartitionen skal være adskilt fra EFI- og systempartitionerne.
-494|Opstartspartitionen skal være mindst 512 MB.
-495|Ingen installation valgt.
-496|Den bekræftede disk indeholder ikke den valgte installation.
-497|Den krypterede installation har ingen MAN_BOOT-partition.
-498|Der blev ikke fundet nogen kerne med tilhørende moduler i /boot.
-499|Sproget skal ændres af systemhjælperen.
-500|Anvender dine indstillinger
-501|Forbereder diskkryptering
-502|Afslutter
-503|MAN Setup skal fuldføres af systemhjælperen.
-504|MAN Setup er allerede fuldført på denne computer.
-505|Ukendt accentfarve.
-506|Det valgte baggrundsbillede er ikke tilgængeligt.
-507|Dette system kan ikke krypteres.
-508|Opsætningsnøglen mangler, så krypteringen kan ikke fortsætte i baggrunden.
-509|Systemet er ikke installeret på Btrfs, så øjebliksbilleder er ikke tilgængelige.
-510|En gendannelse af et øjebliksbillede venter på en genstart. Genstart først computeren for at fuldføre den.
-511|Ugyldigt id for øjebliksbillede.
-512|Kontrollerer opdateringen
-513|Opretter et øjebliksbillede
-514|Forbereder opdateringsområdet
-515|Pakker det nye system ud
-516|Flytter dine konti og indstillinger
-517|Forbereder genstarten
-518|Pakket ud
-519|Konti
-520|Geninstallerer beholdte apps
-521|Fjerner software, der kun bruges af installationsprogrammet
-522|Bygger opdateringens opstartsaftryk
-523|Tilføjer engangsstartpunktet
-524|Opdateringen er ægte
-525|Øjebliksbillede oprettet
-526|Sprunget over
-527|Opdateringsområdet er klar
-528|Forbereder det nye system
-529|Opdateringsfilen er beskadiget (kontrolsummen passer ikke). Download den igen.
-530|Opdateringsfilen kunne ikke læses helt.
-531|Opdateringen indeholder ingen kerne.
-532|Opdateringer skal installeres af systemhjælperen.
-533|Den valgte installation blev ikke fundet.
-534|Kun den kørende MAN-installation kan opdateres.
-535|Dette er ikke en MAN-opdateringsfil (intet manifest).
-536|Opdateringen er ikke signeret og kan derfor ikke stoles på.
-537|Opdateringens signatur er beskadiget.
-538|Opdateringen er ikke signeret af MAN. Den kan være ændret eller komme fra en upålidelig kilde.
-539|Opdateringens manifest er ugyldigt.
-540|Adgangsfrasen er forkert, eller den krypterede partition kan ikke åbnes.
-541|Blå
-542|Blågrøn
-543|Grøn
-544|Gul
-545|Orange
-546|Rød
-547|Lyserød
-548|Lilla
-549|Skifer
-550|Pakkeinstallation
-551|Installér apps fra .deb-, Flatpak- og AppImage-filer
-552|Systeminstallation
-553|Installér MAN på denne computer
-554|Systemgendannelse
-555|Opret og gendan øjebliksbilleder af systemet
-556|Installation af systemopdateringer
-557|Installér en MAN-systemopdateringsfil
-558|Tilbyder at installere MAN, når live-sessionen starter
-559|Besked om MAN-opdatering
-560|Fortæller dig én gang efter login, at MAN er blevet opdateret
-561|Sæt din nye MAN-computer op
-562|Førstegangsopsætning af MAN
-563|MAN-opdateringer
-564|Giver dig besked, når en ny version af MAN er klar
+444|Windows-understøttelse kunne ikke startes.
+445|Starter Windows-programmet
+446|Første start tager et øjeblik.
+447|Windows-programmet kunne ikke starte
+448|Det anbefales ikke at køre Windows-programmer (.exe), da de sandsynligvis kan indeholde malware eller ting, der kan skade dit privatliv.
+449|MAN kunne ikke tjekke dette program for malware: malwaredatabasen er ikke klar endnu. Opret forbindelse til internettet, og prøv igen om et par minutter.
+450|Kør dette Windows-program?
+451|_Kør det
+452|Kør et program, der er markeret som malware?
+453|Dette er din sidste chance for at stoppe. MAN fandt malware i dette program, og Windows-programmer er ikke isoleret fra dine filer. Det kan:\n\n• stjæle dine adgangskoder, dokumenter og billeder\n• slette dine filer eller holde dem som gidsler for løsepenge\n• udspionere, hvad du gør, og blive ved med at køre i baggrunden\n\nMAN kan ikke fortryde, hvad programmet gør. Fortsæt kun, hvis du ved præcis, hvorfor dette program blev markeret.
+454|Kør _alligevel
+455|MAN har markeret dette Windows-program (.exe) som malware, der kan skade dine data eller dit privatliv. Det bør ikke køres og bør flyttes til papirkurven.
+456|Registreret som: {name}
+457|MAN har markeret dette program som malware
+458|_Flyt til papirkurven
+459|_Omgå og kør
+460|Windows-program
+461|Dette er ikke et Windows-program
+462|Denne fil kan ikke køres.
+463|Dette program kan ikke køre på denne computer
+464|Det er lavet til {arch}-processorer.
+465|Tjekker dette program for malware
+466|Henter de nyeste pakkelister…
+467|Kopierer appen
+468|Føjer appen til menuen
+469|Filen blev ikke fundet.
+470|Pakken kunne ikke installeres.
+471|Appens menupunkt er ugyldigt.
+472|Kontrollerer installationsplanen
+473|Forbereder disken
+474|Kopierer MAN til disken
+475|Konfigurerer det nye system
+476|Installerer opstartsindlæseren
+477|Opretter det første øjebliksbillede
+478|Afslutter
+479|Fjerner gamle partitionssignaturer
+480|Opretter partitioner
+481|Formaterer EFI-systempartitionen
+482|Krypterer systempartitionen
+483|Formaterer opstartspartitionen
+484|Opretter Btrfs-filsystemet
+485|Fjerner gamle filsystemsignaturer
+486|Låser den krypterede installation op
+487|Gemmer det nuværende system som et øjebliksbillede
+488|Fjerner det tidligere system
+489|Skriver filsystemtabellen
+490|Angiver computernavn og identitet
+491|Fjerner live-sessionens konti
+492|Opretter din konto
+493|Forbereder MAN Setup til første start
+494|Angiver tidszone og tastatur
+495|Fjerner installationsprogrammet fra det nye system
+496|Bygger opstartsaftrykket (initramfs)
+497|Konfigurerer GRUB
+498|Installerer GRUB på EFI-systempartitionen
+499|Installerer reserveopstartsindlæseren
+500|Skriver startmenuen
+501|Disken er klar
+502|Opretter et øjebliksbillede af det nye system
+503|Føjer øjebliksbilledet til startmenuen
+504|Afmonterer
+505|Installationshjælperen skal køre som root.
+506|Denne computer blev ikke startet i UEFI-tilstand. MAN kræver UEFI.
+507|Brugernavnet er ugyldigt.
+508|Der kræves en adgangskode.
+509|Computernavnet er ugyldigt.
+510|Ukendt sprog.
+511|Krypteringsadgangsfrasen skal have mindst 8 tegn.
+512|Disken ændrede sig, efter du bekræftede installationen. Intet blev ændret; gennemse og bekræft igen.
+513|Vælg en systempartition.
+514|Den bekræftede disk indeholder ikke den valgte systempartition.
+515|Opstartspartitionen skal være adskilt fra EFI- og systempartitionerne.
+516|Opstartspartitionen skal være mindst 512 MB.
+517|Ingen installation valgt.
+518|Den bekræftede disk indeholder ikke den valgte installation.
+519|Den krypterede installation har ingen MAN_BOOT-partition.
+520|Der blev ikke fundet nogen kerne med tilhørende moduler i /boot.
+521|Sproget skal ændres af systemhjælperen.
+522|Anvender dine indstillinger
+523|Forbereder diskkryptering
+524|Afslutter
+525|MAN Setup skal fuldføres af systemhjælperen.
+526|MAN Setup er allerede fuldført på denne computer.
+527|Ukendt accentfarve.
+528|Det valgte baggrundsbillede er ikke tilgængeligt.
+529|Dette system kan ikke krypteres.
+530|Opsætningsnøglen mangler, så krypteringen kan ikke fortsætte i baggrunden.
+531|Systemet er ikke installeret på Btrfs, så øjebliksbilleder er ikke tilgængelige.
+532|En gendannelse af et øjebliksbillede venter på en genstart. Genstart først computeren for at fuldføre den.
+533|Ugyldigt id for øjebliksbillede.
+534|Kontrollerer opdateringen
+535|Opretter et øjebliksbillede
+536|Forbereder opdateringsområdet
+537|Pakker det nye system ud
+538|Flytter dine konti og indstillinger
+539|Forbereder genstarten
+540|Pakket ud
+541|Konti
+542|Geninstallerer beholdte apps
+543|Fjerner software, der kun bruges af installationsprogrammet
+544|Bygger opdateringens opstartsaftryk
+545|Tilføjer engangsstartpunktet
+546|Opdateringen er ægte
+547|Øjebliksbillede oprettet
+548|Sprunget over
+549|Opdateringsområdet er klar
+550|Forbereder det nye system
+551|Opdateringsfilen er beskadiget (kontrolsummen passer ikke). Download den igen.
+552|Opdateringsfilen kunne ikke læses helt.
+553|Opdateringen indeholder ingen kerne.
+554|Opdateringer skal installeres af systemhjælperen.
+555|Den valgte installation blev ikke fundet.
+556|Kun den kørende MAN-installation kan opdateres.
+557|Dette er ikke en MAN-opdateringsfil (intet manifest).
+558|Opdateringen er ikke signeret og kan derfor ikke stoles på.
+559|Opdateringens signatur er beskadiget.
+560|Opdateringen er ikke signeret af MAN. Den kan være ændret eller komme fra en upålidelig kilde.
+561|Opdateringens manifest er ugyldigt.
+562|Adgangsfrasen er forkert, eller den krypterede partition kan ikke åbnes.
+563|Blå
+564|Blågrøn
+565|Grøn
+566|Gul
+567|Orange
+568|Rød
+569|Lyserød
+570|Lilla
+571|Skifer
+572|Pakkeinstallation
+573|Installér apps fra .deb-, Flatpak- og AppImage-filer
+574|Systeminstallation
+575|Installér MAN på denne computer
+576|Systemgendannelse
+577|Opret og gendan øjebliksbilleder af systemet
+578|Installation af systemopdateringer
+579|Installér en MAN-systemopdateringsfil
+580|Tjek et Windows-program for malware, og kør det
+581|Tilbyder at installere MAN, når live-sessionen starter
+582|Besked om MAN-opdatering
+583|Fortæller dig én gang efter login, at MAN er blevet opdateret
+584|Sæt din nye MAN-computer op
+585|Førstegangsopsætning af MAN
+586|MAN-opdateringer
+587|Giver dig besked, når en ny version af MAN er klar

@@ -442,124 +442,147 @@
 441|_Gata
 442|Deschide o actualizare MAN
 443|Actualizări MAN
-444|Se obțin cele mai noi liste de pachete…
-445|Se copiază aplicația
-446|Se adaugă aplicația în meniu
-447|Fișierul nu a fost găsit.
-448|Pachetul nu a putut fi instalat.
-449|Intrarea de meniu a aplicației nu este validă.
-450|Se verifică planul de instalare
-451|Se pregătește discul
-452|Se copiază MAN pe disc
-453|Se configurează noul sistem
-454|Se instalează încărcătorul de pornire
-455|Se creează primul instantaneu
-456|Se finalizează
-457|Se elimină semnăturile vechi ale partițiilor
-458|Se creează partițiile
-459|Se formatează partiția de sistem EFI
-460|Se criptează partiția de sistem
-461|Se formatează partiția de pornire
-462|Se creează sistemul de fișiere Btrfs
-463|Se elimină semnăturile vechi ale sistemelor de fișiere
-464|Se deblochează instalarea criptată
-465|Se salvează sistemul actual ca instantaneu
-466|Se elimină sistemul anterior
-467|Se scrie tabela sistemelor de fișiere
-468|Se setează numele și identitatea calculatorului
-469|Se elimină conturile sesiunii live
-470|Se creează contul dvs.
-471|Se pregătește MAN Setup pentru prima pornire
-472|Se setează fusul orar și tastatura
-473|Se elimină instalatorul din noul sistem
-474|Se construiește imaginea de pornire (initramfs)
-475|Se configurează GRUB
-476|Se instalează GRUB pe partiția de sistem EFI
-477|Se instalează încărcătorul de pornire de rezervă
-478|Se scrie meniul de pornire
-479|Disc pregătit
-480|Se creează un instantaneu al sistemului nou
-481|Se adaugă instantaneul în meniul de pornire
-482|Se demontează
-483|Asistentul instalatorului trebuie să ruleze ca root.
-484|Acest calculator nu a pornit în modul UEFI. MAN necesită UEFI.
-485|Numele de utilizator nu este valid.
-486|Este necesară o parolă.
-487|Numele calculatorului nu este valid.
-488|Limbă necunoscută.
-489|Fraza de acces pentru criptare trebuie să aibă cel puțin 8 caractere.
-490|Discul s-a schimbat după ce ați confirmat instalarea. Nu s-a modificat nimic; verificați și confirmați din nou.
-491|Alegeți o partiție de sistem.
-492|Discul confirmat nu conține partiția de sistem aleasă.
-493|Partiția de pornire trebuie să fie separată de partițiile EFI și de sistem.
-494|Partiția de pornire trebuie să aibă cel puțin 512 MB.
-495|Nicio instalare aleasă.
-496|Discul confirmat nu conține instalarea aleasă.
-497|Instalarea criptată nu are partiție MAN_BOOT.
-498|Nu s-a găsit în /boot niciun nucleu cu module potrivite.
-499|Limba trebuie schimbată de asistentul de sistem.
-500|Se aplică setările dvs.
-501|Se pregătește criptarea discului
-502|Se finalizează
-503|MAN Setup trebuie finalizat de asistentul de sistem.
-504|MAN Setup a fost deja finalizat pe acest calculator.
-505|Culoare de accent necunoscută.
-506|Fundalul ales nu este disponibil.
-507|Acest sistem nu poate fi criptat.
-508|Lipsește cheia de configurare, așa că criptarea nu poate continua în fundal.
-509|Sistemul nu este instalat pe Btrfs, așa că instantaneele nu sunt disponibile.
-510|O restaurare de instantaneu așteaptă o repornire. Reporniți mai întâi calculatorul pentru a o finaliza.
-511|ID de instantaneu nevalid.
-512|Se verifică actualizarea
-513|Se creează un instantaneu
-514|Se pregătește zona de actualizare
-515|Se despachetează noul sistem
-516|Se mută conturile și setările dvs.
-517|Se pregătește repornirea
-518|Despachetat
-519|Conturi
-520|Se reinstalează aplicațiile păstrate
-521|Se elimină software-ul folosit doar de instalator
-522|Se construiește imaginea de pornire a actualizării
-523|Se adaugă intrarea de pornire unică
-524|Actualizarea este autentică
-525|Instantaneu creat
-526|Omis
-527|Zona de actualizare este pregătită
-528|Se pregătește noul sistem
-529|Fișierul de actualizare este deteriorat (suma de control nu se potrivește). Descărcați-l din nou.
-530|Fișierul de actualizare nu a putut fi citit complet.
-531|Actualizarea nu conține niciun nucleu.
-532|Actualizările trebuie instalate de asistentul de sistem.
-533|Instalarea aleasă nu a fost găsită.
-534|Doar instalarea MAN pornită poate fi actualizată.
-535|Acesta nu este un fișier de actualizare MAN (nu are manifest).
-536|Actualizarea nu este semnată, deci nu este de încredere.
-537|Semnătura actualizării este deteriorată.
-538|Actualizarea nu este semnată de MAN. Este posibil să fi fost modificată sau să provină dintr-o sursă nesigură.
-539|Manifestul actualizării nu este valid.
-540|Fraza de acces nu este corectă sau partiția criptată nu poate fi deschisă.
-541|Albastru
-542|Turcoaz
-543|Verde
-544|Galben
-545|Portocaliu
-546|Roșu
-547|Roz
-548|Mov
-549|Ardezie
-550|Instalator de pachete
-551|Instalați aplicații din fișiere .deb, Flatpak și AppImage
-552|Instalator de sistem
-553|Instalează MAN pe acest calculator
-554|Restaurarea sistemului
-555|Creați și restaurați instantanee ale sistemului
-556|Instalator de actualizări de sistem
-557|Instalează un fișier de actualizare a sistemului MAN
-558|Propune instalarea MAN la pornirea sesiunii live
-559|Notificare de actualizare MAN
-560|Vă spune o dată, după autentificare, că MAN a fost actualizat
-561|Configurați noul calculator MAN
-562|Configurarea inițială a MAN
-563|Actualizări MAN
-564|Vă anunță când apare o versiune nouă de MAN
+444|Suportul pentru Windows nu a putut fi pornit.
+445|Se pornește programul Windows
+446|Prima pornire durează puțin.
+447|Programul Windows nu a putut porni
+448|Rularea programelor Windows (.exe) nu este recomandată, deoarece este probabil să conțină programe malware sau lucruri care îți pot afecta confidențialitatea.
+449|MAN nu a putut verifica acest program pentru malware: baza de date nu este încă pregătită. Conectează-te la internet și încearcă din nou în câteva minute.
+450|Rulezi acest program Windows?
+451|_Rulează
+452|Rulezi un program marcat ca malware?
+453|Aceasta este ultima ta șansă de a te opri. MAN a găsit malware în acest program, iar programele Windows nu sunt izolate de fișierele tale. Ar putea:\n\n• să îți fure parolele, documentele și fotografiile\n• să îți șteargă fișierele sau să ceară răscumpărare pentru ele\n• să te spioneze și să ruleze în continuare în fundal\n\nMAN nu poate anula ce face programul. Continuă doar dacă știi exact de ce a fost marcat acest program.
+454|Rulează _oricum
+455|MAN a marcat acest program Windows (.exe) ca malware, care îți poate afecta datele sau confidențialitatea. Nu ar trebui rulat și ar trebui mutat la gunoi.
+456|Detectat ca: {name}
+457|MAN a marcat acest program ca malware
+458|_Mută la gunoi
+459|_Ocolește și rulează
+460|Program Windows
+461|Acesta nu este un program Windows
+462|Acest fișier nu poate fi rulat.
+463|Acest program nu poate rula pe acest calculator
+464|A fost creat pentru procesoare {arch}.
+465|Se verifică acest program pentru malware
+466|Se obțin cele mai noi liste de pachete…
+467|Se copiază aplicația
+468|Se adaugă aplicația în meniu
+469|Fișierul nu a fost găsit.
+470|Pachetul nu a putut fi instalat.
+471|Intrarea de meniu a aplicației nu este validă.
+472|Se verifică planul de instalare
+473|Se pregătește discul
+474|Se copiază MAN pe disc
+475|Se configurează noul sistem
+476|Se instalează încărcătorul de pornire
+477|Se creează primul instantaneu
+478|Se finalizează
+479|Se elimină semnăturile vechi ale partițiilor
+480|Se creează partițiile
+481|Se formatează partiția de sistem EFI
+482|Se criptează partiția de sistem
+483|Se formatează partiția de pornire
+484|Se creează sistemul de fișiere Btrfs
+485|Se elimină semnăturile vechi ale sistemelor de fișiere
+486|Se deblochează instalarea criptată
+487|Se salvează sistemul actual ca instantaneu
+488|Se elimină sistemul anterior
+489|Se scrie tabela sistemelor de fișiere
+490|Se setează numele și identitatea calculatorului
+491|Se elimină conturile sesiunii live
+492|Se creează contul dvs.
+493|Se pregătește MAN Setup pentru prima pornire
+494|Se setează fusul orar și tastatura
+495|Se elimină instalatorul din noul sistem
+496|Se construiește imaginea de pornire (initramfs)
+497|Se configurează GRUB
+498|Se instalează GRUB pe partiția de sistem EFI
+499|Se instalează încărcătorul de pornire de rezervă
+500|Se scrie meniul de pornire
+501|Disc pregătit
+502|Se creează un instantaneu al sistemului nou
+503|Se adaugă instantaneul în meniul de pornire
+504|Se demontează
+505|Asistentul instalatorului trebuie să ruleze ca root.
+506|Acest calculator nu a pornit în modul UEFI. MAN necesită UEFI.
+507|Numele de utilizator nu este valid.
+508|Este necesară o parolă.
+509|Numele calculatorului nu este valid.
+510|Limbă necunoscută.
+511|Fraza de acces pentru criptare trebuie să aibă cel puțin 8 caractere.
+512|Discul s-a schimbat după ce ați confirmat instalarea. Nu s-a modificat nimic; verificați și confirmați din nou.
+513|Alegeți o partiție de sistem.
+514|Discul confirmat nu conține partiția de sistem aleasă.
+515|Partiția de pornire trebuie să fie separată de partițiile EFI și de sistem.
+516|Partiția de pornire trebuie să aibă cel puțin 512 MB.
+517|Nicio instalare aleasă.
+518|Discul confirmat nu conține instalarea aleasă.
+519|Instalarea criptată nu are partiție MAN_BOOT.
+520|Nu s-a găsit în /boot niciun nucleu cu module potrivite.
+521|Limba trebuie schimbată de asistentul de sistem.
+522|Se aplică setările dvs.
+523|Se pregătește criptarea discului
+524|Se finalizează
+525|MAN Setup trebuie finalizat de asistentul de sistem.
+526|MAN Setup a fost deja finalizat pe acest calculator.
+527|Culoare de accent necunoscută.
+528|Fundalul ales nu este disponibil.
+529|Acest sistem nu poate fi criptat.
+530|Lipsește cheia de configurare, așa că criptarea nu poate continua în fundal.
+531|Sistemul nu este instalat pe Btrfs, așa că instantaneele nu sunt disponibile.
+532|O restaurare de instantaneu așteaptă o repornire. Reporniți mai întâi calculatorul pentru a o finaliza.
+533|ID de instantaneu nevalid.
+534|Se verifică actualizarea
+535|Se creează un instantaneu
+536|Se pregătește zona de actualizare
+537|Se despachetează noul sistem
+538|Se mută conturile și setările dvs.
+539|Se pregătește repornirea
+540|Despachetat
+541|Conturi
+542|Se reinstalează aplicațiile păstrate
+543|Se elimină software-ul folosit doar de instalator
+544|Se construiește imaginea de pornire a actualizării
+545|Se adaugă intrarea de pornire unică
+546|Actualizarea este autentică
+547|Instantaneu creat
+548|Omis
+549|Zona de actualizare este pregătită
+550|Se pregătește noul sistem
+551|Fișierul de actualizare este deteriorat (suma de control nu se potrivește). Descărcați-l din nou.
+552|Fișierul de actualizare nu a putut fi citit complet.
+553|Actualizarea nu conține niciun nucleu.
+554|Actualizările trebuie instalate de asistentul de sistem.
+555|Instalarea aleasă nu a fost găsită.
+556|Doar instalarea MAN pornită poate fi actualizată.
+557|Acesta nu este un fișier de actualizare MAN (nu are manifest).
+558|Actualizarea nu este semnată, deci nu este de încredere.
+559|Semnătura actualizării este deteriorată.
+560|Actualizarea nu este semnată de MAN. Este posibil să fi fost modificată sau să provină dintr-o sursă nesigură.
+561|Manifestul actualizării nu este valid.
+562|Fraza de acces nu este corectă sau partiția criptată nu poate fi deschisă.
+563|Albastru
+564|Turcoaz
+565|Verde
+566|Galben
+567|Portocaliu
+568|Roșu
+569|Roz
+570|Mov
+571|Ardezie
+572|Instalator de pachete
+573|Instalați aplicații din fișiere .deb, Flatpak și AppImage
+574|Instalator de sistem
+575|Instalează MAN pe acest calculator
+576|Restaurarea sistemului
+577|Creați și restaurați instantanee ale sistemului
+578|Instalator de actualizări de sistem
+579|Instalează un fișier de actualizare a sistemului MAN
+580|Verifică un program Windows pentru malware și rulează-l
+581|Propune instalarea MAN la pornirea sesiunii live
+582|Notificare de actualizare MAN
+583|Vă spune o dată, după autentificare, că MAN a fost actualizat
+584|Configurați noul calculator MAN
+585|Configurarea inițială a MAN
+586|Actualizări MAN
+587|Vă anunță când apare o versiune nouă de MAN

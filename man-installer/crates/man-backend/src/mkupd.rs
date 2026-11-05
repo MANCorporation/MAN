@@ -27,6 +27,8 @@ const EXCLUDES: &[&str] = &[
     "./var/log/journal/*", "./var/lib/systemd/random-seed", "./var/lib/AccountsService/users/MANInstaller",
     "./var/lib/gdm3/.cache/*", "./var/log/man-installer.log", "./boot/grub/*", "./boot/man-update",
     "./etc/machine-id", "./var/lib/dbus/machine-id",
+    // Each computer downloads and keeps its own malware database.
+    "./var/lib/clamav/*",
 ];
 
 fn keygen(private: &str, public: &str) -> Result<()> {

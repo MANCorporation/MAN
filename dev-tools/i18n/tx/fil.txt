@@ -442,124 +442,147 @@
 441|_Tapos na
 442|Magbukas ng MAN update
 443|Mga MAN update
-444|Kinukuha ang pinakabagong listahan ng package…
-445|Kinokopya ang app
-446|Idinadagdag ang app sa menu
-447|Hindi nakita ang file.
-448|Hindi ma-install ang package.
-449|Hindi valid ang menu entry ng app.
-450|Sinusuri ang plano ng pag-install
-451|Inihahanda ang disk
-452|Kinokopya ang MAN sa disk
-453|Kino-configure ang bagong system
-454|Ini-install ang boot loader
-455|Ginagawa ang unang snapshot
-456|Tinatapos
-457|Inaalis ang mga lumang partition signature
-458|Gumagawa ng mga partition
-459|Fino-format ang EFI system partition
-460|Ine-encrypt ang system partition
-461|Fino-format ang boot partition
-462|Ginagawa ang Btrfs file system
-463|Inaalis ang mga lumang file system signature
-464|Ina-unlock ang naka-encrypt na installation
-465|Sine-save bilang snapshot ang kasalukuyang system
-466|Inaalis ang nakaraang system
-467|Isinusulat ang talaan ng file system
-468|Itinatakda ang pangalan at pagkakakilanlan ng computer
-469|Inaalis ang mga account ng live session
-470|Ginagawa ang iyong account
-471|Inihahanda ang MAN Setup para sa unang pagbukas
-472|Itinatakda ang time zone at keyboard
-473|Inaalis ang installer mula sa bagong system
-474|Binubuo ang boot image (initramfs)
-475|Kino-configure ang GRUB
-476|Ini-install ang GRUB sa EFI system partition
-477|Ini-install ang reserbang boot loader
-478|Isinusulat ang boot menu
-479|Handa na ang disk
-480|Gumagawa ng snapshot ng bagong system
-481|Idinadagdag ang snapshot sa boot menu
-482|Ina-unmount
-483|Dapat tumakbo bilang root ang installer helper.
-484|Hindi nagsimula ang computer na ito sa UEFI mode. Kailangan ng MAN ang UEFI.
-485|Hindi wasto ang username.
-486|Kailangan ng password.
-487|Hindi wasto ang pangalan ng computer.
-488|Hindi kilalang wika.
-489|Dapat may hindi bababa sa 8 character ang encryption passphrase.
-490|Nagbago ang disk pagkatapos mong kumpirmahin ang pag-install. Walang binago; pakisuri at kumpirmahin muli.
-491|Pumili ng system partition.
-492|Wala sa nakumpirmang disk ang napiling system partition.
-493|Dapat hiwalay ang boot partition sa EFI at system partition.
-494|Dapat hindi bababa sa 512 MB ang boot partition.
-495|Walang napiling installation.
-496|Wala sa nakumpirmang disk ang napiling installation.
-497|Walang MAN_BOOT partition ang naka-encrypt na installation.
-498|Walang nakitang kernel na may katugmang module sa /boot.
-499|Dapat ang system helper ang magpalit ng wika.
-500|Ina-apply ang iyong mga setting
-501|Inihahanda ang encryption ng disk
-502|Tinatapos
-503|Dapat tapusin ng system helper ang MAN Setup.
-504|Natapos na ang MAN Setup sa computer na ito.
-505|Hindi kilalang accent color.
-506|Hindi available ang napiling wallpaper.
-507|Hindi maaaring i-encrypt ang system na ito.
-508|Nawawala ang setup key, kaya hindi maipagpapatuloy ang encryption sa background.
-509|Hindi naka-install sa Btrfs ang system, kaya hindi available ang mga snapshot.
-510|May snapshot restore na naghihintay ng restart. I-restart muna ang computer para matapos ito.
-511|Hindi wastong snapshot ID.
-512|Sinusuri ang update
-513|Gumagawa ng snapshot
-514|Inihahanda ang update area
-515|Ina-unpack ang bagong system
-516|Inililipat ang iyong mga account at setting
-517|Inihahanda ang restart
-518|Na-unpack
-519|Mga account
-520|Ini-install ulit ang mga pinanatiling app
-521|Inaalis ang software na pang-installer lang
-522|Binubuo ang boot image ng update
-523|Idinadagdag ang isang beses na boot entry
-524|Tunay ang update
-525|Nagawa ang snapshot
-526|Nilaktawan
-527|Handa na ang update area
-528|Inihahanda ang bagong system
-529|Sira ang update file (hindi tugma ang checksum). I-download itong muli.
-530|Hindi mabasa nang buo ang update file.
-531|Walang kernel ang update.
-532|Dapat ang system helper ang mag-install ng mga update.
-533|Hindi nakita ang napiling installation.
-534|Ang tumatakbong MAN installation lang ang maaaring i-update.
-535|Hindi ito MAN update file (walang manifest).
-536|Hindi nilagdaan ang update, kaya hindi ito mapagkakatiwalaan.
-537|Sira ang lagda ng update.
-538|Hindi nilagdaan ng MAN ang update. Maaaring binago ito o galing sa hindi mapagkakatiwalaang pinagmulan.
-539|Hindi wasto ang manifest ng update.
-540|Mali ang passphrase, o hindi mabuksan ang naka-encrypt na partition.
-541|Asul
-542|Teal
-543|Berde
-544|Dilaw
-545|Kahel
-546|Pula
-547|Rosas
-548|Lila
-549|Abo
-550|Installer ng Package
-551|Mag-install ng mga app mula sa .deb, Flatpak at AppImage na file
-552|System Installer
-553|I-install ang MAN sa computer na ito
-554|Pag-restore ng system
-555|Gumawa at mag-restore ng mga snapshot ng system
-556|Installer ng system update
-557|Mag-install ng MAN system update file
-558|Nag-aalok na i-install ang MAN pagbukas ng live session
-559|Abiso ng MAN update
-560|Sinasabi sa iyo nang isang beses pagka-log in na na-update ang MAN
-561|I-set up ang iyong bagong MAN computer
-562|Unang setup ng MAN
-563|Mga Update ng MAN
-564|Sinasabihan ka kapag may bagong bersyon ng MAN
+444|Hindi masimulan ang suporta para sa Windows.
+445|Sinisimulan ang Windows program
+446|Medyo matagal ang unang pagsisimula.
+447|Hindi masimulan ang Windows program
+448|Hindi inirerekomenda ang pagpapatakbo ng mga Windows program (.exe), dahil malamang na may malware ang mga ito o mga bagay na makakasama sa iyong privacy.
+449|Hindi masuri ng MAN ang program na ito para sa malware: hindi pa handa ang database. Kumonekta sa internet at subukang muli pagkalipas ng ilang minuto.
+450|Patakbuhin ang Windows program na ito?
+451|_Patakbuhin
+452|Patakbuhin ang program na minarkahang malware?
+453|Ito na ang huling pagkakataon mong huminto. Nakakita ang MAN ng malware sa program na ito, at hindi hiwalay ang mga Windows program sa iyong mga file. Maaari nitong:\n\n• nakawin ang iyong mga password, dokumento at larawan\n• burahin ang iyong mga file o hingan ka ng ransom para sa mga ito\n• manmanan ang ginagawa mo at patuloy na tumakbo sa background\n\nHindi mababawi ng MAN ang ginagawa ng program. Magpatuloy lamang kung alam mo kung bakit eksaktong minarkahan ang program na ito.
+454|Patakbuhin _pa rin
+455|Minarkahan ng MAN ang Windows program na ito (.exe) bilang malware, na makakasama sa iyong data o privacy. Hindi ito dapat patakbuhin at dapat ilipat sa basurahan.
+456|Natukoy bilang: {name}
+457|Minarkahan ng MAN ang program na ito bilang malware
+458|_Ilipat sa basurahan
+459|_Lampasan at patakbuhin
+460|Windows program
+461|Hindi ito Windows program
+462|Hindi mapapatakbo ang file na ito.
+463|Hindi tatakbo ang program na ito sa computer na ito
+464|Ginawa ito para sa mga {arch} processor.
+465|Sinusuri ang program na ito para sa malware
+466|Kinukuha ang pinakabagong listahan ng package…
+467|Kinokopya ang app
+468|Idinadagdag ang app sa menu
+469|Hindi nakita ang file.
+470|Hindi ma-install ang package.
+471|Hindi valid ang menu entry ng app.
+472|Sinusuri ang plano ng pag-install
+473|Inihahanda ang disk
+474|Kinokopya ang MAN sa disk
+475|Kino-configure ang bagong system
+476|Ini-install ang boot loader
+477|Ginagawa ang unang snapshot
+478|Tinatapos
+479|Inaalis ang mga lumang partition signature
+480|Gumagawa ng mga partition
+481|Fino-format ang EFI system partition
+482|Ine-encrypt ang system partition
+483|Fino-format ang boot partition
+484|Ginagawa ang Btrfs file system
+485|Inaalis ang mga lumang file system signature
+486|Ina-unlock ang naka-encrypt na installation
+487|Sine-save bilang snapshot ang kasalukuyang system
+488|Inaalis ang nakaraang system
+489|Isinusulat ang talaan ng file system
+490|Itinatakda ang pangalan at pagkakakilanlan ng computer
+491|Inaalis ang mga account ng live session
+492|Ginagawa ang iyong account
+493|Inihahanda ang MAN Setup para sa unang pagbukas
+494|Itinatakda ang time zone at keyboard
+495|Inaalis ang installer mula sa bagong system
+496|Binubuo ang boot image (initramfs)
+497|Kino-configure ang GRUB
+498|Ini-install ang GRUB sa EFI system partition
+499|Ini-install ang reserbang boot loader
+500|Isinusulat ang boot menu
+501|Handa na ang disk
+502|Gumagawa ng snapshot ng bagong system
+503|Idinadagdag ang snapshot sa boot menu
+504|Ina-unmount
+505|Dapat tumakbo bilang root ang installer helper.
+506|Hindi nagsimula ang computer na ito sa UEFI mode. Kailangan ng MAN ang UEFI.
+507|Hindi wasto ang username.
+508|Kailangan ng password.
+509|Hindi wasto ang pangalan ng computer.
+510|Hindi kilalang wika.
+511|Dapat may hindi bababa sa 8 character ang encryption passphrase.
+512|Nagbago ang disk pagkatapos mong kumpirmahin ang pag-install. Walang binago; pakisuri at kumpirmahin muli.
+513|Pumili ng system partition.
+514|Wala sa nakumpirmang disk ang napiling system partition.
+515|Dapat hiwalay ang boot partition sa EFI at system partition.
+516|Dapat hindi bababa sa 512 MB ang boot partition.
+517|Walang napiling installation.
+518|Wala sa nakumpirmang disk ang napiling installation.
+519|Walang MAN_BOOT partition ang naka-encrypt na installation.
+520|Walang nakitang kernel na may katugmang module sa /boot.
+521|Dapat ang system helper ang magpalit ng wika.
+522|Ina-apply ang iyong mga setting
+523|Inihahanda ang encryption ng disk
+524|Tinatapos
+525|Dapat tapusin ng system helper ang MAN Setup.
+526|Natapos na ang MAN Setup sa computer na ito.
+527|Hindi kilalang accent color.
+528|Hindi available ang napiling wallpaper.
+529|Hindi maaaring i-encrypt ang system na ito.
+530|Nawawala ang setup key, kaya hindi maipagpapatuloy ang encryption sa background.
+531|Hindi naka-install sa Btrfs ang system, kaya hindi available ang mga snapshot.
+532|May snapshot restore na naghihintay ng restart. I-restart muna ang computer para matapos ito.
+533|Hindi wastong snapshot ID.
+534|Sinusuri ang update
+535|Gumagawa ng snapshot
+536|Inihahanda ang update area
+537|Ina-unpack ang bagong system
+538|Inililipat ang iyong mga account at setting
+539|Inihahanda ang restart
+540|Na-unpack
+541|Mga account
+542|Ini-install ulit ang mga pinanatiling app
+543|Inaalis ang software na pang-installer lang
+544|Binubuo ang boot image ng update
+545|Idinadagdag ang isang beses na boot entry
+546|Tunay ang update
+547|Nagawa ang snapshot
+548|Nilaktawan
+549|Handa na ang update area
+550|Inihahanda ang bagong system
+551|Sira ang update file (hindi tugma ang checksum). I-download itong muli.
+552|Hindi mabasa nang buo ang update file.
+553|Walang kernel ang update.
+554|Dapat ang system helper ang mag-install ng mga update.
+555|Hindi nakita ang napiling installation.
+556|Ang tumatakbong MAN installation lang ang maaaring i-update.
+557|Hindi ito MAN update file (walang manifest).
+558|Hindi nilagdaan ang update, kaya hindi ito mapagkakatiwalaan.
+559|Sira ang lagda ng update.
+560|Hindi nilagdaan ng MAN ang update. Maaaring binago ito o galing sa hindi mapagkakatiwalaang pinagmulan.
+561|Hindi wasto ang manifest ng update.
+562|Mali ang passphrase, o hindi mabuksan ang naka-encrypt na partition.
+563|Asul
+564|Teal
+565|Berde
+566|Dilaw
+567|Kahel
+568|Pula
+569|Rosas
+570|Lila
+571|Abo
+572|Installer ng Package
+573|Mag-install ng mga app mula sa .deb, Flatpak at AppImage na file
+574|System Installer
+575|I-install ang MAN sa computer na ito
+576|Pag-restore ng system
+577|Gumawa at mag-restore ng mga snapshot ng system
+578|Installer ng system update
+579|Mag-install ng MAN system update file
+580|Suriin ang Windows program para sa malware at patakbuhin ito
+581|Nag-aalok na i-install ang MAN pagbukas ng live session
+582|Abiso ng MAN update
+583|Sinasabi sa iyo nang isang beses pagka-log in na na-update ang MAN
+584|I-set up ang iyong bagong MAN computer
+585|Unang setup ng MAN
+586|Mga Update ng MAN
+587|Sinasabihan ka kapag may bagong bersyon ng MAN

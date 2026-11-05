@@ -442,124 +442,147 @@
 441|_Hotovo
 442|Otevřít aktualizaci MAN
 443|Aktualizace MAN
-444|Získávání nejnovějších seznamů balíčků…
-445|Kopírování aplikace
-446|Přidávání aplikace do nabídky
-447|Soubor nebyl nalezen.
-448|Balíček nelze nainstalovat.
-449|Položka nabídky aplikace není platná.
-450|Kontrola plánu instalace
-451|Příprava disku
-452|Kopírování MAN na disk
-453|Nastavení nového systému
-454|Instalace zavaděče
-455|Vytvoření prvního snímku
-456|Dokončování
-457|Odstraňování starých podpisů oddílů
-458|Vytváření oddílů
-459|Formátování systémového oddílu EFI
-460|Šifrování systémového oddílu
-461|Formátování zaváděcího oddílu
-462|Vytváření souborového systému Btrfs
-463|Odstraňování starých podpisů souborových systémů
-464|Odemykání šifrované instalace
-465|Ukládání současného systému jako snímku
-466|Odstraňování předchozího systému
-467|Zápis tabulky souborových systémů
-468|Nastavení názvu a identity počítače
-469|Odstraňování účtů živé relace
-470|Vytváření vašeho účtu
-471|Příprava MAN Setup na první spuštění
-472|Nastavení časového pásma a klávesnice
-473|Odstraňování instalátoru z nového systému
-474|Sestavení zaváděcího obrazu (initramfs)
-475|Nastavení GRUB
-476|Instalace GRUB do systémového oddílu EFI
-477|Instalace záložního zavaděče
-478|Zápis zaváděcí nabídky
-479|Disk je připraven
-480|Vytváření snímku nového systému
-481|Přidání snímku do zaváděcí nabídky
-482|Odpojování
-483|Pomocník instalátoru musí běžet jako root.
-484|Tento počítač nebyl spuštěn v režimu UEFI. MAN vyžaduje UEFI.
-485|Uživatelské jméno není platné.
-486|Je potřeba heslo.
-487|Název počítače není platný.
-488|Neznámý jazyk.
-489|Heslo pro šifrování musí mít alespoň 8 znaků.
-490|Disk se po potvrzení instalace změnil. Nic nebylo upraveno; zkontrolujte plán a potvrďte ho znovu.
-491|Zvolte systémový oddíl.
-492|Potvrzený disk neobsahuje zvolený systémový oddíl.
-493|Zaváděcí oddíl musí být oddělený od oddílu EFI a systémového oddílu.
-494|Zaváděcí oddíl musí mít alespoň 512 MB.
-495|Není zvolena instalace.
-496|Potvrzený disk neobsahuje zvolenou instalaci.
-497|Šifrovaná instalace nemá oddíl MAN_BOOT.
-498|V /boot nebylo nalezeno jádro s odpovídajícími moduly.
-499|Jazyk musí změnit systémový pomocník.
-500|Použití vašich nastavení
-501|Příprava šifrování disku
-502|Dokončování
-503|MAN Setup musí dokončit systémový pomocník.
-504|MAN Setup už byl na tomto počítači dokončen.
-505|Neznámá barva zvýraznění.
-506|Zvolená tapeta není k dispozici.
-507|Tento systém nelze zašifrovat.
-508|Chybí instalační klíč, takže šifrování nemůže pokračovat na pozadí.
-509|Systém není nainstalován na Btrfs, takže snímky nejsou k dispozici.
-510|Obnova snímku čeká na restart. Nejprve ji dokončete restartem počítače.
-511|Neplatné ID snímku.
-512|Kontrola aktualizace
-513|Vytváření snímku
-514|Příprava oblasti pro aktualizaci
-515|Rozbalování nového systému
-516|Přenos vašich účtů a nastavení
-517|Příprava restartu
-518|Rozbaleno
-519|Účty
-520|Opětovná instalace zachovaných aplikací
-521|Odstraňování softwaru pouze pro instalátor
-522|Sestavení zaváděcího obrazu aktualizace
-523|Přidání jednorázové položky spuštění
-524|Aktualizace je pravá
-525|Snímek byl vytvořen
-526|Přeskočeno
-527|Oblast pro aktualizaci je připravena
-528|Příprava nového systému
-529|Soubor aktualizace je poškozený (kontrolní součet nesouhlasí). Stáhněte ho znovu.
-530|Soubor aktualizace se nepodařilo přečíst celý.
-531|Aktualizace neobsahuje jádro.
-532|Aktualizace musí instalovat systémový pomocník.
-533|Zvolená instalace nebyla nalezena.
-534|Aktualizovat lze jen běžící instalaci MAN.
-535|Toto není soubor aktualizace MAN (chybí manifest).
-536|Aktualizace není podepsaná, proto jí nelze důvěřovat.
-537|Podpis aktualizace je poškozený.
-538|Aktualizace není podepsaná MAN. Mohla být upravena nebo pochází z nedůvěryhodného zdroje.
-539|Manifest aktualizace je neplatný.
-540|Heslo není správné, nebo šifrovaný oddíl nelze otevřít.
-541|Modrá
-542|Modrozelená
-543|Zelená
-544|Žlutá
-545|Oranžová
-546|Červená
-547|Růžová
-548|Fialová
-549|Břidlicová
-550|Instalátor balíčků
-551|Instalace aplikací ze souborů .deb, Flatpak a AppImage
-552|Instalátor systému
-553|Nainstalovat MAN do tohoto počítače
-554|Obnova systému
-555|Vytváření a obnovování snímků systému
-556|Instalátor aktualizací systému
-557|Instalace souboru aktualizace systému MAN
-558|Nabídne instalaci MAN při spuštění živé relace
-559|Upozornění na aktualizaci MAN
-560|Jednou po přihlášení oznámí, že byl MAN aktualizován
-561|Nastavte si svůj nový počítač s MAN
-562|Nastavení MAN při prvním spuštění
-563|Aktualizace MAN
-564|Dá vám vědět, když vyjde nová verze MAN
+444|Podporu Windows se nepodařilo spustit.
+445|Spouštění programu pro Windows
+446|První spuštění chvíli trvá.
+447|Program pro Windows se nepodařilo spustit
+448|Spouštění programů pro Windows (.exe) se nedoporučuje, protože mohou pravděpodobně obsahovat malware nebo věci, které mohou poškodit vaše soukromí.
+449|MAN nemohl tento program zkontrolovat na malware: databáze malwaru ještě není připravena. Připojte se k internetu a za pár minut to zkuste znovu.
+450|Spustit tento program pro Windows?
+451|_Spustit
+452|Spustit program označený jako malware?
+453|Toto je vaše poslední šance přestat. MAN v tomto programu našel malware a programy pro Windows nejsou od vašich souborů oddělené. Program by mohl:\n\n• ukrást vaše hesla, dokumenty a fotografie\n• smazat vaše soubory nebo za ně požadovat výkupné\n• sledovat, co děláte, a dál běžet na pozadí\n\nMAN nemůže vrátit zpět to, co program udělá. Pokračujte, jen pokud přesně víte, proč byl tento program označen.
+454|Přesto _spustit
+455|MAN označil tento program pro Windows (.exe) jako malware, který může poškodit vaše data nebo soukromí. Neměl by se spouštět a měl by být přesunut do koše.
+456|Rozpoznáno jako: {name}
+457|MAN označil tento program jako malware
+458|Přesunout do _koše
+459|_Obejít a spustit
+460|Program pro Windows
+461|Toto není program pro Windows
+462|Tento soubor nelze spustit.
+463|Tento program na tomto počítači nemůže běžet
+464|Byl vytvořen pro procesory {arch}.
+465|Kontrola tohoto programu na malware
+466|Získávání nejnovějších seznamů balíčků…
+467|Kopírování aplikace
+468|Přidávání aplikace do nabídky
+469|Soubor nebyl nalezen.
+470|Balíček nelze nainstalovat.
+471|Položka nabídky aplikace není platná.
+472|Kontrola plánu instalace
+473|Příprava disku
+474|Kopírování MAN na disk
+475|Nastavení nového systému
+476|Instalace zavaděče
+477|Vytvoření prvního snímku
+478|Dokončování
+479|Odstraňování starých podpisů oddílů
+480|Vytváření oddílů
+481|Formátování systémového oddílu EFI
+482|Šifrování systémového oddílu
+483|Formátování zaváděcího oddílu
+484|Vytváření souborového systému Btrfs
+485|Odstraňování starých podpisů souborových systémů
+486|Odemykání šifrované instalace
+487|Ukládání současného systému jako snímku
+488|Odstraňování předchozího systému
+489|Zápis tabulky souborových systémů
+490|Nastavení názvu a identity počítače
+491|Odstraňování účtů živé relace
+492|Vytváření vašeho účtu
+493|Příprava MAN Setup na první spuštění
+494|Nastavení časového pásma a klávesnice
+495|Odstraňování instalátoru z nového systému
+496|Sestavení zaváděcího obrazu (initramfs)
+497|Nastavení GRUB
+498|Instalace GRUB do systémového oddílu EFI
+499|Instalace záložního zavaděče
+500|Zápis zaváděcí nabídky
+501|Disk je připraven
+502|Vytváření snímku nového systému
+503|Přidání snímku do zaváděcí nabídky
+504|Odpojování
+505|Pomocník instalátoru musí běžet jako root.
+506|Tento počítač nebyl spuštěn v režimu UEFI. MAN vyžaduje UEFI.
+507|Uživatelské jméno není platné.
+508|Je potřeba heslo.
+509|Název počítače není platný.
+510|Neznámý jazyk.
+511|Heslo pro šifrování musí mít alespoň 8 znaků.
+512|Disk se po potvrzení instalace změnil. Nic nebylo upraveno; zkontrolujte plán a potvrďte ho znovu.
+513|Zvolte systémový oddíl.
+514|Potvrzený disk neobsahuje zvolený systémový oddíl.
+515|Zaváděcí oddíl musí být oddělený od oddílu EFI a systémového oddílu.
+516|Zaváděcí oddíl musí mít alespoň 512 MB.
+517|Není zvolena instalace.
+518|Potvrzený disk neobsahuje zvolenou instalaci.
+519|Šifrovaná instalace nemá oddíl MAN_BOOT.
+520|V /boot nebylo nalezeno jádro s odpovídajícími moduly.
+521|Jazyk musí změnit systémový pomocník.
+522|Použití vašich nastavení
+523|Příprava šifrování disku
+524|Dokončování
+525|MAN Setup musí dokončit systémový pomocník.
+526|MAN Setup už byl na tomto počítači dokončen.
+527|Neznámá barva zvýraznění.
+528|Zvolená tapeta není k dispozici.
+529|Tento systém nelze zašifrovat.
+530|Chybí instalační klíč, takže šifrování nemůže pokračovat na pozadí.
+531|Systém není nainstalován na Btrfs, takže snímky nejsou k dispozici.
+532|Obnova snímku čeká na restart. Nejprve ji dokončete restartem počítače.
+533|Neplatné ID snímku.
+534|Kontrola aktualizace
+535|Vytváření snímku
+536|Příprava oblasti pro aktualizaci
+537|Rozbalování nového systému
+538|Přenos vašich účtů a nastavení
+539|Příprava restartu
+540|Rozbaleno
+541|Účty
+542|Opětovná instalace zachovaných aplikací
+543|Odstraňování softwaru pouze pro instalátor
+544|Sestavení zaváděcího obrazu aktualizace
+545|Přidání jednorázové položky spuštění
+546|Aktualizace je pravá
+547|Snímek byl vytvořen
+548|Přeskočeno
+549|Oblast pro aktualizaci je připravena
+550|Příprava nového systému
+551|Soubor aktualizace je poškozený (kontrolní součet nesouhlasí). Stáhněte ho znovu.
+552|Soubor aktualizace se nepodařilo přečíst celý.
+553|Aktualizace neobsahuje jádro.
+554|Aktualizace musí instalovat systémový pomocník.
+555|Zvolená instalace nebyla nalezena.
+556|Aktualizovat lze jen běžící instalaci MAN.
+557|Toto není soubor aktualizace MAN (chybí manifest).
+558|Aktualizace není podepsaná, proto jí nelze důvěřovat.
+559|Podpis aktualizace je poškozený.
+560|Aktualizace není podepsaná MAN. Mohla být upravena nebo pochází z nedůvěryhodného zdroje.
+561|Manifest aktualizace je neplatný.
+562|Heslo není správné, nebo šifrovaný oddíl nelze otevřít.
+563|Modrá
+564|Modrozelená
+565|Zelená
+566|Žlutá
+567|Oranžová
+568|Červená
+569|Růžová
+570|Fialová
+571|Břidlicová
+572|Instalátor balíčků
+573|Instalace aplikací ze souborů .deb, Flatpak a AppImage
+574|Instalátor systému
+575|Nainstalovat MAN do tohoto počítače
+576|Obnova systému
+577|Vytváření a obnovování snímků systému
+578|Instalátor aktualizací systému
+579|Instalace souboru aktualizace systému MAN
+580|Zkontrolovat program pro Windows na malware a spustit ho
+581|Nabídne instalaci MAN při spuštění živé relace
+582|Upozornění na aktualizaci MAN
+583|Jednou po přihlášení oznámí, že byl MAN aktualizován
+584|Nastavte si svůj nový počítač s MAN
+585|Nastavení MAN při prvním spuštění
+586|Aktualizace MAN
+587|Dá vám vědět, když vyjde nová verze MAN

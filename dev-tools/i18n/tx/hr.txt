@@ -442,124 +442,147 @@
 441|_Gotovo
 442|Otvori ažuriranje MAN-a
 443|Ažuriranja MAN-a
-444|Preuzimanje najnovijih popisa paketa…
-445|Kopiranje aplikacije
-446|Dodavanje aplikacije u izbornik
-447|Datoteka nije pronađena.
-448|Paket nije moguće instalirati.
-449|Stavka izbornika aplikacije nije valjana.
-450|Provjera plana instalacije
-451|Priprema diska
-452|Kopiranje MAN-a na disk
-453|Konfiguriranje novog sustava
-454|Instaliranje pokretača
-455|Stvaranje prve snimke
-456|Završavanje
-457|Uklanjanje starih potpisa particija
-458|Stvaranje particija
-459|Formatiranje EFI sustavne particije
-460|Šifriranje sustavne particije
-461|Formatiranje particije za pokretanje
-462|Stvaranje Btrfs datotečnog sustava
-463|Uklanjanje starih potpisa datotečnih sustava
-464|Otključavanje šifrirane instalacije
-465|Spremanje trenutnog sustava kao snimke
-466|Uklanjanje prethodnog sustava
-467|Zapisivanje tablice datotečnih sustava
-468|Postavljanje naziva i identiteta računala
-469|Uklanjanje računa žive sesije
-470|Stvaranje vašeg računa
-471|Priprema MAN Setupa za prvo pokretanje
-472|Postavljanje vremenske zone i tipkovnice
-473|Uklanjanje instalacijskog programa iz novog sustava
-474|Izrada slike za pokretanje (initramfs)
-475|Konfiguriranje GRUB-a
-476|Instaliranje GRUB-a na EFI sustavnu particiju
-477|Instaliranje pričuvnog pokretača
-478|Zapisivanje izbornika pokretanja
-479|Disk je spreman
-480|Stvaranje snimke novog sustava
-481|Dodavanje snimke u izbornik pokretanja
-482|Odmontiravanje
-483|Pomoćnik instalacijskog programa mora se pokretati kao root.
-484|Ovo računalo nije pokrenuto u UEFI načinu. MAN zahtijeva UEFI.
-485|Korisničko ime nije valjano.
-486|Lozinka je obavezna.
-487|Naziv računala nije valjan.
-488|Nepoznat jezik.
-489|Lozinka za šifriranje mora imati najmanje 8 znakova.
-490|Disk se promijenio nakon što ste potvrdili instalaciju. Ništa nije promijenjeno; pregledajte i ponovno potvrdite.
-491|Odaberite sustavnu particiju.
-492|Potvrđeni disk ne sadrži odabranu sustavnu particiju.
-493|Particija za pokretanje mora biti odvojena od EFI i sustavne particije.
-494|Particija za pokretanje mora imati najmanje 512 MB.
-495|Instalacija nije odabrana.
-496|Potvrđeni disk ne sadrži odabranu instalaciju.
-497|Šifrirana instalacija nema particiju MAN_BOOT.
-498|U /boot nije pronađena jezgra s odgovarajućim modulima.
-499|Jezik mora promijeniti sustavni pomoćnik.
-500|Primjena vaših postavki
-501|Priprema šifriranja diska
-502|Završavanje
-503|MAN Setup mora dovršiti sustavni pomoćnik.
-504|MAN Setup je već dovršen na ovom računalu.
-505|Nepoznata boja isticanja.
-506|Odabrana pozadina nije dostupna.
-507|Ovaj sustav se ne može šifrirati.
-508|Nedostaje ključ postavljanja, pa se šifriranje ne može nastaviti u pozadini.
-509|Sustav nije instaliran na Btrfs, pa snimke nisu dostupne.
-510|Vraćanje snimke čeka ponovno pokretanje. Najprije ponovno pokrenite računalo za dovršetak.
-511|Nevaljan ID snimke.
-512|Provjera ažuriranja
-513|Stvaranje snimke
-514|Priprema područja za ažuriranje
-515|Raspakiravanje novog sustava
-516|Prijenos vaših računa i postavki
-517|Priprema ponovnog pokretanja
-518|Raspakirano
-519|Računi
-520|Ponovno instaliranje zadržanih aplikacija
-521|Uklanjanje softvera koji koristi samo instalacijski program
-522|Izrada slike za pokretanje ažuriranja
-523|Dodavanje jednokratne stavke pokretanja
-524|Ažuriranje je izvorno
-525|Snimka je stvorena
-526|Preskočeno
-527|Područje za ažuriranje je spremno
-528|Priprema novog sustava
-529|Datoteka ažuriranja je oštećena (kontrolni zbroj se ne podudara). Ponovno je preuzmite.
-530|Datoteka ažuriranja nije se mogla u potpunosti pročitati.
-531|Ažuriranje ne sadrži jezgru.
-532|Ažuriranja mora instalirati sustavni pomoćnik.
-533|Odabrana instalacija nije pronađena.
-534|Može se ažurirati samo pokrenuta instalacija MAN-a.
-535|Ovo nije datoteka ažuriranja MAN-a (nema manifesta).
-536|Ažuriranje nije potpisano, pa mu se ne može vjerovati.
-537|Potpis ažuriranja je oštećen.
-538|Ažuriranje nije potpisao MAN. Možda je izmijenjeno ili dolazi iz nepouzdanog izvora.
-539|Manifest ažuriranja nije valjan.
-540|Lozinka nije ispravna ili se šifrirana particija ne može otvoriti.
-541|Plava
-542|Tirkizna
-543|Zelena
-544|Žuta
-545|Narančasta
-546|Crvena
-547|Ružičasta
-548|Ljubičasta
-549|Škriljevac
-550|Instalacija paketa
-551|Instalirajte aplikacije iz datoteka .deb, Flatpak i AppImage
-552|Instalacija sustava
-553|Instaliraj MAN na ovo računalo
-554|Vraćanje sustava
-555|Stvaranje i vraćanje snimki sustava
-556|Instalacija ažuriranja sustava
-557|Instaliraj datoteku ažuriranja sustava MAN
-558|Nudi instalaciju MAN-a pri pokretanju žive sesije
-559|Obavijest o ažuriranju MAN-a
-560|Jednom nakon prijave javlja da je MAN ažuriran
-561|Postavite svoje novo MAN računalo
-562|Prvo postavljanje MAN-a
-563|MAN ažuriranja
-564|Javlja vam kada je dostupna nova inačica MAN-a
+444|Podrška za Windows nije se mogla pokrenuti.
+445|Pokretanje Windows programa
+446|Prvo pokretanje traje malo dulje.
+447|Windows program nije se mogao pokrenuti
+448|Pokretanje Windows programa (.exe) ne preporučuje se jer vjerojatno mogu sadržavati zlonamjerni softver ili nešto što može naštetiti vašoj privatnosti.
+449|MAN nije mogao provjeriti ovaj program na zlonamjerni softver: baza podataka još nije spremna. Povežite se s internetom i pokušajte ponovno za nekoliko minuta.
+450|Pokrenuti ovaj Windows program?
+451|_Pokreni
+452|Pokrenuti program označen kao zlonamjeran?
+453|Ovo vam je posljednja prilika da stanete. MAN je pronašao zlonamjerni softver u ovom programu, a Windows programi nisu izolirani od vaših datoteka. Mogao bi:\n\n• ukrasti vaše lozinke, dokumente i fotografije\n• izbrisati vaše datoteke ili tražiti otkupninu za njih\n• špijunirati što radite i nastaviti raditi u pozadini\n\nMAN ne može poništiti ono što program učini. Nastavite samo ako točno znate zašto je ovaj program označen.
+454|Ipak _pokreni
+455|MAN je označio ovaj Windows program (.exe) kao zlonamjerni softver koji može naštetiti vašim podacima ili privatnosti. Ne bi ga trebalo pokretati i treba ga premjestiti u smeće.
+456|Otkriveno kao: {name}
+457|MAN je označio ovaj program kao zlonamjeran
+458|_Premjesti u smeće
+459|_Zaobiđi i pokreni
+460|Windows program
+461|Ovo nije Windows program
+462|Ova se datoteka ne može pokrenuti.
+463|Ovaj program ne može raditi na ovom računalu
+464|Napravljen je za {arch} procesore.
+465|Provjera ovog programa na zlonamjerni softver
+466|Preuzimanje najnovijih popisa paketa…
+467|Kopiranje aplikacije
+468|Dodavanje aplikacije u izbornik
+469|Datoteka nije pronađena.
+470|Paket nije moguće instalirati.
+471|Stavka izbornika aplikacije nije valjana.
+472|Provjera plana instalacije
+473|Priprema diska
+474|Kopiranje MAN-a na disk
+475|Konfiguriranje novog sustava
+476|Instaliranje pokretača
+477|Stvaranje prve snimke
+478|Završavanje
+479|Uklanjanje starih potpisa particija
+480|Stvaranje particija
+481|Formatiranje EFI sustavne particije
+482|Šifriranje sustavne particije
+483|Formatiranje particije za pokretanje
+484|Stvaranje Btrfs datotečnog sustava
+485|Uklanjanje starih potpisa datotečnih sustava
+486|Otključavanje šifrirane instalacije
+487|Spremanje trenutnog sustava kao snimke
+488|Uklanjanje prethodnog sustava
+489|Zapisivanje tablice datotečnih sustava
+490|Postavljanje naziva i identiteta računala
+491|Uklanjanje računa žive sesije
+492|Stvaranje vašeg računa
+493|Priprema MAN Setupa za prvo pokretanje
+494|Postavljanje vremenske zone i tipkovnice
+495|Uklanjanje instalacijskog programa iz novog sustava
+496|Izrada slike za pokretanje (initramfs)
+497|Konfiguriranje GRUB-a
+498|Instaliranje GRUB-a na EFI sustavnu particiju
+499|Instaliranje pričuvnog pokretača
+500|Zapisivanje izbornika pokretanja
+501|Disk je spreman
+502|Stvaranje snimke novog sustava
+503|Dodavanje snimke u izbornik pokretanja
+504|Odmontiravanje
+505|Pomoćnik instalacijskog programa mora se pokretati kao root.
+506|Ovo računalo nije pokrenuto u UEFI načinu. MAN zahtijeva UEFI.
+507|Korisničko ime nije valjano.
+508|Lozinka je obavezna.
+509|Naziv računala nije valjan.
+510|Nepoznat jezik.
+511|Lozinka za šifriranje mora imati najmanje 8 znakova.
+512|Disk se promijenio nakon što ste potvrdili instalaciju. Ništa nije promijenjeno; pregledajte i ponovno potvrdite.
+513|Odaberite sustavnu particiju.
+514|Potvrđeni disk ne sadrži odabranu sustavnu particiju.
+515|Particija za pokretanje mora biti odvojena od EFI i sustavne particije.
+516|Particija za pokretanje mora imati najmanje 512 MB.
+517|Instalacija nije odabrana.
+518|Potvrđeni disk ne sadrži odabranu instalaciju.
+519|Šifrirana instalacija nema particiju MAN_BOOT.
+520|U /boot nije pronađena jezgra s odgovarajućim modulima.
+521|Jezik mora promijeniti sustavni pomoćnik.
+522|Primjena vaših postavki
+523|Priprema šifriranja diska
+524|Završavanje
+525|MAN Setup mora dovršiti sustavni pomoćnik.
+526|MAN Setup je već dovršen na ovom računalu.
+527|Nepoznata boja isticanja.
+528|Odabrana pozadina nije dostupna.
+529|Ovaj sustav se ne može šifrirati.
+530|Nedostaje ključ postavljanja, pa se šifriranje ne može nastaviti u pozadini.
+531|Sustav nije instaliran na Btrfs, pa snimke nisu dostupne.
+532|Vraćanje snimke čeka ponovno pokretanje. Najprije ponovno pokrenite računalo za dovršetak.
+533|Nevaljan ID snimke.
+534|Provjera ažuriranja
+535|Stvaranje snimke
+536|Priprema područja za ažuriranje
+537|Raspakiravanje novog sustava
+538|Prijenos vaših računa i postavki
+539|Priprema ponovnog pokretanja
+540|Raspakirano
+541|Računi
+542|Ponovno instaliranje zadržanih aplikacija
+543|Uklanjanje softvera koji koristi samo instalacijski program
+544|Izrada slike za pokretanje ažuriranja
+545|Dodavanje jednokratne stavke pokretanja
+546|Ažuriranje je izvorno
+547|Snimka je stvorena
+548|Preskočeno
+549|Područje za ažuriranje je spremno
+550|Priprema novog sustava
+551|Datoteka ažuriranja je oštećena (kontrolni zbroj se ne podudara). Ponovno je preuzmite.
+552|Datoteka ažuriranja nije se mogla u potpunosti pročitati.
+553|Ažuriranje ne sadrži jezgru.
+554|Ažuriranja mora instalirati sustavni pomoćnik.
+555|Odabrana instalacija nije pronađena.
+556|Može se ažurirati samo pokrenuta instalacija MAN-a.
+557|Ovo nije datoteka ažuriranja MAN-a (nema manifesta).
+558|Ažuriranje nije potpisano, pa mu se ne može vjerovati.
+559|Potpis ažuriranja je oštećen.
+560|Ažuriranje nije potpisao MAN. Možda je izmijenjeno ili dolazi iz nepouzdanog izvora.
+561|Manifest ažuriranja nije valjan.
+562|Lozinka nije ispravna ili se šifrirana particija ne može otvoriti.
+563|Plava
+564|Tirkizna
+565|Zelena
+566|Žuta
+567|Narančasta
+568|Crvena
+569|Ružičasta
+570|Ljubičasta
+571|Škriljevac
+572|Instalacija paketa
+573|Instalirajte aplikacije iz datoteka .deb, Flatpak i AppImage
+574|Instalacija sustava
+575|Instaliraj MAN na ovo računalo
+576|Vraćanje sustava
+577|Stvaranje i vraćanje snimki sustava
+578|Instalacija ažuriranja sustava
+579|Instaliraj datoteku ažuriranja sustava MAN
+580|Provjeri Windows program na zlonamjerni softver i pokreni ga
+581|Nudi instalaciju MAN-a pri pokretanju žive sesije
+582|Obavijest o ažuriranju MAN-a
+583|Jednom nakon prijave javlja da je MAN ažuriran
+584|Postavite svoje novo MAN računalo
+585|Prvo postavljanje MAN-a
+586|MAN ažuriranja
+587|Javlja vam kada je dostupna nova inačica MAN-a

@@ -58,6 +58,7 @@ put "$data/version/man-set-version" "$r/usr/bin/man-set-version" 0755
 put "$bin/man-app-installer" "$r/usr/bin/man-app-installer" 0755
 put "$bin/man-windows-program" "$r/usr/bin/man-windows-program" 0755
 put "$data/windows/man-windows-bypass" "$r/usr/libexec/man-installer/man-windows-bypass" 0755
+put "$data/windows/90-man-freshclam" "$r/etc/NetworkManager/dispatcher.d/90-man-freshclam" 0755
 put "$data/polkit/com.man.windows.policy" "$r/usr/share/polkit-1/actions/com.man.windows.policy" 0644
 put "$data/applications/com.man.WindowsProgram.desktop" "$r/usr/share/applications/com.man.WindowsProgram.desktop" 0644
 put "$data/icons/com.man.WindowsProgram.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.WindowsProgram.svg" 0644

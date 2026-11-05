@@ -442,124 +442,147 @@
 441|_Fertig
 442|MAN-Aktualisierung öffnen
 443|MAN-Aktualisierungen
-444|Die neuesten Paketlisten werden geholt …
-445|App wird kopiert
-446|App wird zum Menü hinzugefügt
-447|Die Datei wurde nicht gefunden.
-448|Das Paket konnte nicht installiert werden.
-449|Der Menüeintrag der App ist ungültig.
-450|Installationsplan wird geprüft
-451|Datenträger wird vorbereitet
-452|MAN wird auf den Datenträger kopiert
-453|Neues System wird eingerichtet
-454|Bootloader wird installiert
-455|Erster Schnappschuss wird erstellt
-456|Abschluss
-457|Alte Partitionssignaturen werden entfernt
-458|Partitionen werden erstellt
-459|EFI-Systempartition wird formatiert
-460|Systempartition wird verschlüsselt
-461|Boot-Partition wird formatiert
-462|Btrfs-Dateisystem wird erstellt
-463|Alte Dateisystemsignaturen werden entfernt
-464|Verschlüsselte Installation wird entsperrt
-465|Aktuelles System wird als Schnappschuss gesichert
-466|Vorheriges System wird entfernt
-467|Dateisystemtabelle wird geschrieben
-468|Computername und Identität werden festgelegt
-469|Konten der Live-Sitzung werden entfernt
-470|Ihr Konto wird erstellt
-471|MAN Setup wird für den ersten Start vorbereitet
-472|Zeitzone und Tastatur werden festgelegt
-473|Installer wird aus dem neuen System entfernt
-474|Boot-Abbild (initramfs) wird erstellt
-475|GRUB wird eingerichtet
-476|GRUB wird auf der EFI-Systempartition installiert
-477|Ersatz-Bootloader wird installiert
-478|Startmenü wird geschrieben
-479|Datenträger bereit
-480|Schnappschuss des frischen Systems wird erstellt
-481|Schnappschuss wird ins Startmenü aufgenommen
-482|Wird ausgehängt
-483|Der Installer-Helfer muss als root laufen.
-484|Dieser Computer wurde nicht im UEFI-Modus gestartet. MAN benötigt UEFI.
-485|Der Benutzername ist ungültig.
-486|Ein Passwort ist erforderlich.
-487|Der Computername ist ungültig.
-488|Unbekannte Sprache.
-489|Die Verschlüsselungs-Passphrase muss mindestens 8 Zeichen haben.
-490|Der Datenträger hat sich nach Ihrer Bestätigung geändert. Nichts wurde verändert; bitte prüfen und bestätigen Sie erneut.
-491|Wählen Sie eine Systempartition.
-492|Der bestätigte Datenträger enthält die gewählte Systempartition nicht.
-493|Die Boot-Partition muss von EFI- und Systempartition getrennt sein.
-494|Die Boot-Partition muss mindestens 512 MB groß sein.
-495|Keine Installation gewählt.
-496|Der bestätigte Datenträger enthält die gewählte Installation nicht.
-497|Die verschlüsselte Installation hat keine MAN_BOOT-Partition.
-498|In /boot wurde kein Kernel mit passenden Modulen gefunden.
-499|Die Sprache muss vom Systemhelfer geändert werden.
-500|Ihre Einstellungen werden angewendet
-501|Datenträgerverschlüsselung wird vorbereitet
-502|Abschluss
-503|MAN Setup muss vom Systemhelfer abgeschlossen werden.
-504|MAN Setup wurde auf diesem Computer bereits abgeschlossen.
-505|Unbekannte Akzentfarbe.
-506|Das gewählte Hintergrundbild ist nicht verfügbar.
-507|Dieses System kann nicht verschlüsselt werden.
-508|Der Einrichtungsschlüssel fehlt, daher kann die Verschlüsselung nicht im Hintergrund fortgesetzt werden.
-509|Das System ist nicht auf Btrfs installiert, daher sind keine Schnappschüsse verfügbar.
-510|Eine Schnappschuss-Wiederherstellung wartet auf einen Neustart. Starten Sie den Computer zuerst neu, um sie abzuschließen.
-511|Ungültige Schnappschuss-ID.
-512|Aktualisierung wird geprüft
-513|Schnappschuss wird erstellt
-514|Aktualisierungsbereich wird vorbereitet
-515|Neues System wird entpackt
-516|Ihre Konten und Einstellungen werden übernommen
-517|Neustart wird vorbereitet
-518|Entpackt
-519|Konten
-520|Behaltene Apps werden neu installiert
-521|Nur für den Installer benötigte Software wird entfernt
-522|Boot-Abbild der Aktualisierung wird erstellt
-523|Einmaliger Starteintrag wird hinzugefügt
-524|Die Aktualisierung ist echt
-525|Schnappschuss erstellt
-526|Übersprungen
-527|Aktualisierungsbereich bereit
-528|Neues System wird vorbereitet
-529|Die Aktualisierungsdatei ist beschädigt (Prüfsumme stimmt nicht). Laden Sie sie erneut herunter.
-530|Die Aktualisierungsdatei konnte nicht vollständig gelesen werden.
-531|Die Aktualisierung enthält keinen Kernel.
-532|Aktualisierungen müssen vom Systemhelfer installiert werden.
-533|Die gewählte Installation wurde nicht gefunden.
-534|Nur die laufende MAN-Installation kann aktualisiert werden.
-535|Dies ist keine MAN-Aktualisierungsdatei (kein Manifest).
-536|Die Aktualisierung ist nicht signiert und daher nicht vertrauenswürdig.
-537|Die Signatur der Aktualisierung ist beschädigt.
-538|Die Aktualisierung ist nicht von MAN signiert. Sie wurde möglicherweise verändert oder stammt aus einer nicht vertrauenswürdigen Quelle.
-539|Das Manifest der Aktualisierung ist ungültig.
-540|Die Passphrase ist falsch, oder die verschlüsselte Partition kann nicht geöffnet werden.
-541|Blau
-542|Blaugrün
-543|Grün
-544|Gelb
-545|Orange
-546|Rot
-547|Rosa
-548|Violett
-549|Schiefer
-550|Paketinstallation
-551|Apps aus .deb-, Flatpak- und AppImage-Dateien installieren
-552|Systeminstallation
-553|MAN auf diesem Computer installieren
-554|Systemwiederherstellung
-555|Schnappschüsse des Systems erstellen und wiederherstellen
-556|Installation von Systemaktualisierungen
-557|Eine MAN-Systemaktualisierung installieren
-558|Bietet beim Start der Live-Sitzung die Installation von MAN an
-559|MAN-Aktualisierungshinweis
-560|Teilt Ihnen nach der Anmeldung einmal mit, dass MAN aktualisiert wurde
-561|Richten Sie Ihren neuen MAN-Computer ein
-562|Ersteinrichtung von MAN
-563|MAN-Aktualisierungen
-564|Meldet sich, wenn eine neue Version von MAN verfügbar ist
+444|Die Windows-Unterstützung konnte nicht gestartet werden.
+445|Windows-Programm wird gestartet
+446|Der erste Start dauert einen Moment.
+447|Das Windows-Programm konnte nicht gestartet werden
+448|Das Ausführen von Windows-Programmen (.exe) wird nicht empfohlen, da sie wahrscheinlich Schadsoftware oder Dinge enthalten können, die deine Privatsphäre gefährden.
+449|MAN konnte dieses Programm nicht auf Schadsoftware prüfen: Die Datenbank ist noch nicht bereit. Verbinde dich mit dem Internet und versuche es in ein paar Minuten erneut.
+450|Dieses Windows-Programm ausführen?
+451|_Ausführen
+452|Als Schadsoftware erkanntes Programm ausführen?
+453|Dies ist deine letzte Gelegenheit aufzuhören. MAN hat in diesem Programm Schadsoftware gefunden, und Windows-Programme sind nicht von deinen Dateien getrennt. Es könnte:\n\n• deine Passwörter, Dokumente und Fotos stehlen\n• deine Dateien löschen oder Lösegeld dafür fordern\n• dich ausspionieren und im Hintergrund weiterlaufen\n\nMAN kann nicht rückgängig machen, was das Programm tut. Fahre nur fort, wenn du genau weißt, warum dieses Programm erkannt wurde.
+454|_Trotzdem ausführen
+455|MAN hat dieses Windows-Programm (.exe) als Schadsoftware erkannt, die deine Daten oder Privatsphäre gefährden kann. Es sollte nicht ausgeführt und in den Papierkorb verschoben werden.
+456|Erkannt als: {name}
+457|MAN hat dieses Programm als Schadsoftware erkannt
+458|In den _Papierkorb verschieben
+459|_Umgehen und ausführen
+460|Windows-Programm
+461|Dies ist kein Windows-Programm
+462|Diese Datei kann nicht ausgeführt werden.
+463|Dieses Programm kann auf diesem Computer nicht laufen
+464|Es wurde für {arch}-Prozessoren entwickelt.
+465|Dieses Programm wird auf Schadsoftware geprüft
+466|Die neuesten Paketlisten werden geholt …
+467|App wird kopiert
+468|App wird zum Menü hinzugefügt
+469|Die Datei wurde nicht gefunden.
+470|Das Paket konnte nicht installiert werden.
+471|Der Menüeintrag der App ist ungültig.
+472|Installationsplan wird geprüft
+473|Datenträger wird vorbereitet
+474|MAN wird auf den Datenträger kopiert
+475|Neues System wird eingerichtet
+476|Bootloader wird installiert
+477|Erster Schnappschuss wird erstellt
+478|Abschluss
+479|Alte Partitionssignaturen werden entfernt
+480|Partitionen werden erstellt
+481|EFI-Systempartition wird formatiert
+482|Systempartition wird verschlüsselt
+483|Boot-Partition wird formatiert
+484|Btrfs-Dateisystem wird erstellt
+485|Alte Dateisystemsignaturen werden entfernt
+486|Verschlüsselte Installation wird entsperrt
+487|Aktuelles System wird als Schnappschuss gesichert
+488|Vorheriges System wird entfernt
+489|Dateisystemtabelle wird geschrieben
+490|Computername und Identität werden festgelegt
+491|Konten der Live-Sitzung werden entfernt
+492|Ihr Konto wird erstellt
+493|MAN Setup wird für den ersten Start vorbereitet
+494|Zeitzone und Tastatur werden festgelegt
+495|Installer wird aus dem neuen System entfernt
+496|Boot-Abbild (initramfs) wird erstellt
+497|GRUB wird eingerichtet
+498|GRUB wird auf der EFI-Systempartition installiert
+499|Ersatz-Bootloader wird installiert
+500|Startmenü wird geschrieben
+501|Datenträger bereit
+502|Schnappschuss des frischen Systems wird erstellt
+503|Schnappschuss wird ins Startmenü aufgenommen
+504|Wird ausgehängt
+505|Der Installer-Helfer muss als root laufen.
+506|Dieser Computer wurde nicht im UEFI-Modus gestartet. MAN benötigt UEFI.
+507|Der Benutzername ist ungültig.
+508|Ein Passwort ist erforderlich.
+509|Der Computername ist ungültig.
+510|Unbekannte Sprache.
+511|Die Verschlüsselungs-Passphrase muss mindestens 8 Zeichen haben.
+512|Der Datenträger hat sich nach Ihrer Bestätigung geändert. Nichts wurde verändert; bitte prüfen und bestätigen Sie erneut.
+513|Wählen Sie eine Systempartition.
+514|Der bestätigte Datenträger enthält die gewählte Systempartition nicht.
+515|Die Boot-Partition muss von EFI- und Systempartition getrennt sein.
+516|Die Boot-Partition muss mindestens 512 MB groß sein.
+517|Keine Installation gewählt.
+518|Der bestätigte Datenträger enthält die gewählte Installation nicht.
+519|Die verschlüsselte Installation hat keine MAN_BOOT-Partition.
+520|In /boot wurde kein Kernel mit passenden Modulen gefunden.
+521|Die Sprache muss vom Systemhelfer geändert werden.
+522|Ihre Einstellungen werden angewendet
+523|Datenträgerverschlüsselung wird vorbereitet
+524|Abschluss
+525|MAN Setup muss vom Systemhelfer abgeschlossen werden.
+526|MAN Setup wurde auf diesem Computer bereits abgeschlossen.
+527|Unbekannte Akzentfarbe.
+528|Das gewählte Hintergrundbild ist nicht verfügbar.
+529|Dieses System kann nicht verschlüsselt werden.
+530|Der Einrichtungsschlüssel fehlt, daher kann die Verschlüsselung nicht im Hintergrund fortgesetzt werden.
+531|Das System ist nicht auf Btrfs installiert, daher sind keine Schnappschüsse verfügbar.
+532|Eine Schnappschuss-Wiederherstellung wartet auf einen Neustart. Starten Sie den Computer zuerst neu, um sie abzuschließen.
+533|Ungültige Schnappschuss-ID.
+534|Aktualisierung wird geprüft
+535|Schnappschuss wird erstellt
+536|Aktualisierungsbereich wird vorbereitet
+537|Neues System wird entpackt
+538|Ihre Konten und Einstellungen werden übernommen
+539|Neustart wird vorbereitet
+540|Entpackt
+541|Konten
+542|Behaltene Apps werden neu installiert
+543|Nur für den Installer benötigte Software wird entfernt
+544|Boot-Abbild der Aktualisierung wird erstellt
+545|Einmaliger Starteintrag wird hinzugefügt
+546|Die Aktualisierung ist echt
+547|Schnappschuss erstellt
+548|Übersprungen
+549|Aktualisierungsbereich bereit
+550|Neues System wird vorbereitet
+551|Die Aktualisierungsdatei ist beschädigt (Prüfsumme stimmt nicht). Laden Sie sie erneut herunter.
+552|Die Aktualisierungsdatei konnte nicht vollständig gelesen werden.
+553|Die Aktualisierung enthält keinen Kernel.
+554|Aktualisierungen müssen vom Systemhelfer installiert werden.
+555|Die gewählte Installation wurde nicht gefunden.
+556|Nur die laufende MAN-Installation kann aktualisiert werden.
+557|Dies ist keine MAN-Aktualisierungsdatei (kein Manifest).
+558|Die Aktualisierung ist nicht signiert und daher nicht vertrauenswürdig.
+559|Die Signatur der Aktualisierung ist beschädigt.
+560|Die Aktualisierung ist nicht von MAN signiert. Sie wurde möglicherweise verändert oder stammt aus einer nicht vertrauenswürdigen Quelle.
+561|Das Manifest der Aktualisierung ist ungültig.
+562|Die Passphrase ist falsch, oder die verschlüsselte Partition kann nicht geöffnet werden.
+563|Blau
+564|Blaugrün
+565|Grün
+566|Gelb
+567|Orange
+568|Rot
+569|Rosa
+570|Violett
+571|Schiefer
+572|Paketinstallation
+573|Apps aus .deb-, Flatpak- und AppImage-Dateien installieren
+574|Systeminstallation
+575|MAN auf diesem Computer installieren
+576|Systemwiederherstellung
+577|Schnappschüsse des Systems erstellen und wiederherstellen
+578|Installation von Systemaktualisierungen
+579|Eine MAN-Systemaktualisierung installieren
+580|Ein Windows-Programm auf Schadsoftware prüfen und ausführen
+581|Bietet beim Start der Live-Sitzung die Installation von MAN an
+582|MAN-Aktualisierungshinweis
+583|Teilt Ihnen nach der Anmeldung einmal mit, dass MAN aktualisiert wurde
+584|Richten Sie Ihren neuen MAN-Computer ein
+585|Ersteinrichtung von MAN
+586|MAN-Aktualisierungen
+587|Meldet sich, wenn eine neue Version von MAN verfügbar ist

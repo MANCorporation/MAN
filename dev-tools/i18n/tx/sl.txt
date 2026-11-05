@@ -442,124 +442,147 @@
 441|_Končano
 442|Odpri posodobitev MAN
 443|Posodobitve MAN
-444|Pridobivanje najnovejših seznamov paketov …
-445|Kopiranje programa
-446|Dodajanje programa v meni
-447|Datoteke ni bilo mogoče najti.
-448|Paketa ni bilo mogoče namestiti.
-449|Vnos programa v meniju ni veljaven.
-450|Preverjanje načrta namestitve
-451|Pripravljanje diska
-452|Kopiranje MAN na disk
-453|Nastavljanje novega sistema
-454|Nameščanje zagonskega nalagalnika
-455|Ustvarjanje prvega posnetka
-456|Dokončevanje
-457|Odstranjevanje starih podpisov razdelkov
-458|Ustvarjanje razdelkov
-459|Formatiranje sistemskega razdelka EFI
-460|Šifriranje sistemskega razdelka
-461|Formatiranje zagonskega razdelka
-462|Ustvarjanje datotečnega sistema Btrfs
-463|Odstranjevanje starih podpisov datotečnih sistemov
-464|Odklepanje šifrirane namestitve
-465|Shranjevanje trenutnega sistema kot posnetka
-466|Odstranjevanje prejšnjega sistema
-467|Zapisovanje tabele datotečnih sistemov
-468|Nastavljanje imena in identitete računalnika
-469|Odstranjevanje računov žive seje
-470|Ustvarjanje vašega računa
-471|Pripravljanje MAN Setup za prvi zagon
-472|Nastavljanje časovnega pasu in tipkovnice
-473|Odstranjevanje namestitvenega programa iz novega sistema
-474|Izdelava zagonske slike (initramfs)
-475|Nastavljanje GRUB
-476|Nameščanje GRUB na sistemski razdelek EFI
-477|Nameščanje rezervnega zagonskega nalagalnika
-478|Zapisovanje zagonskega menija
-479|Disk je pripravljen
-480|Ustvarjanje posnetka novega sistema
-481|Dodajanje posnetka v zagonski meni
-482|Odklapljanje
-483|Pomočnik namestitvenega programa mora teči kot root.
-484|Ta računalnik ni bil zagnan v načinu UEFI. MAN zahteva UEFI.
-485|Uporabniško ime ni veljavno.
-486|Geslo je obvezno.
-487|Ime računalnika ni veljavno.
-488|Neznan jezik.
-489|Šifrirno geslo mora imeti vsaj 8 znakov.
-490|Disk se je spremenil po tem, ko ste potrdili namestitev. Nič ni bilo spremenjeno; preglejte in znova potrdite.
-491|Izberite sistemski razdelek.
-492|Potrjeni disk ne vsebuje izbranega sistemskega razdelka.
-493|Zagonski razdelek mora biti ločen od razdelka EFI in sistemskega razdelka.
-494|Zagonski razdelek mora imeti vsaj 512 MB.
-495|Namestitev ni izbrana.
-496|Potrjeni disk ne vsebuje izbrane namestitve.
-497|Šifrirana namestitev nima razdelka MAN_BOOT.
-498|V /boot ni bilo najdeno jedro z ustreznimi moduli.
-499|Jezik mora spremeniti sistemski pomočnik.
-500|Uveljavljanje vaših nastavitev
-501|Pripravljanje šifriranja diska
-502|Dokončevanje
-503|MAN Setup mora dokončati sistemski pomočnik.
-504|MAN Setup je na tem računalniku že dokončan.
-505|Neznana poudarna barva.
-506|Izbrano ozadje ni na voljo.
-507|Tega sistema ni mogoče šifrirati.
-508|Nastavitveni ključ manjka, zato se šifriranje ne more nadaljevati v ozadju.
-509|Sistem ni nameščen na Btrfs, zato posnetki niso na voljo.
-510|Obnovitev posnetka čaka na ponovni zagon. Najprej znova zaženite računalnik, da jo dokončate.
-511|Neveljaven ID posnetka.
-512|Preverjanje posodobitve
-513|Ustvarjanje posnetka
-514|Pripravljanje območja za posodobitev
-515|Razširjanje novega sistema
-516|Prenašanje vaših računov in nastavitev
-517|Pripravljanje ponovnega zagona
-518|Razširjeno
-519|Računi
-520|Vnovično nameščanje ohranjenih programov
-521|Odstranjevanje programske opreme samo za namestitveni program
-522|Izdelava zagonske slike posodobitve
-523|Dodajanje enkratnega zagonskega vnosa
-524|Posodobitev je pristna
-525|Posnetek je ustvarjen
-526|Preskočeno
-527|Območje za posodobitev je pripravljeno
-528|Pripravljanje novega sistema
-529|Datoteka posodobitve je poškodovana (nadzorna vsota se ne ujema). Znova jo prenesite.
-530|Datoteke posodobitve ni bilo mogoče prebrati v celoti.
-531|Posodobitev ne vsebuje jedra.
-532|Posodobitve mora namestiti sistemski pomočnik.
-533|Izbrane namestitve ni bilo mogoče najti.
-534|Posodobiti je mogoče le zagnano namestitev MAN.
-535|To ni datoteka posodobitve MAN (ni manifesta).
-536|Posodobitev ni podpisana, zato ji ni mogoče zaupati.
-537|Podpis posodobitve je poškodovan.
-538|Posodobitve ni podpisal MAN. Morda je bila spremenjena ali izvira iz nezaupanja vrednega vira.
-539|Manifest posodobitve ni veljaven.
-540|Šifrirno geslo ni pravilno ali šifriranega razdelka ni mogoče odpreti.
-541|Modra
-542|Modrozelena
-543|Zelena
-544|Rumena
-545|Oranžna
-546|Rdeča
-547|Rožnata
-548|Vijolična
-549|Skrilasta
-550|Nameščanje paketov
-551|Nameščajte programe iz datotek .deb, Flatpak in AppImage
-552|Namestitev sistema
-553|Namesti MAN na ta računalnik
-554|Obnovitev sistema
-555|Ustvarjanje in obnavljanje posnetkov sistema
-556|Namestitev sistemskih posodobitev
-557|Namesti datoteko posodobitve sistema MAN
-558|Ponudi namestitev MAN ob zagonu žive seje
-559|Obvestilo o posodobitvi MAN
-560|Po prijavi enkrat sporoči, da je bil MAN posodobljen
-561|Nastavite svoj novi računalnik MAN
-562|Prva nastavitev MAN
-563|Posodobitve MAN
-564|Obvesti vas, ko je na voljo nova različica MAN
+444|Podpore za Windows ni bilo mogoče zagnati.
+445|Zaganjanje programa za Windows
+446|Prvi zagon traja nekaj časa.
+447|Programa za Windows ni bilo mogoče zagnati
+448|Zaganjanje programov za Windows (.exe) ni priporočljivo, saj verjetno lahko vsebujejo zlonamerno programsko opremo ali stvari, ki lahko škodijo vaši zasebnosti.
+449|MAN tega programa ni mogel preveriti glede zlonamerne programske opreme: zbirka podatkov še ni pripravljena. Povežite se z internetom in poskusite znova čez nekaj minut.
+450|Ali želite zagnati ta program za Windows?
+451|_Zaženi
+452|Ali želite zagnati program, označen kot zlonameren?
+453|To je vaša zadnja priložnost, da se ustavite. MAN je v tem programu našel zlonamerno programsko opremo, programi za Windows pa niso ločeni od vaših datotek. Lahko bi:\n\n• ukradel vaša gesla, dokumente in fotografije\n• izbrisal vaše datoteke ali zanje zahteval odkupnino\n• vohunil za vami in še naprej deloval v ozadju\n\nMAN ne more razveljaviti tega, kar stori program. Nadaljujte le, če natančno veste, zakaj je bil ta program označen.
+454|Vseeno _zaženi
+455|MAN je ta program za Windows (.exe) označil kot zlonamerno programsko opremo, ki lahko škodi vašim podatkom ali zasebnosti. Ne bi ga smeli zagnati in bi ga morali premakniti v smeti.
+456|Zaznano kot: {name}
+457|MAN je ta program označil kot zlonameren
+458|_Premakni v smeti
+459|_Obidi in zaženi
+460|Program za Windows
+461|To ni program za Windows
+462|Te datoteke ni mogoče zagnati.
+463|Ta program ne more delovati na tem računalniku
+464|Izdelan je za procesorje {arch}.
+465|Preverjanje tega programa glede zlonamerne programske opreme
+466|Pridobivanje najnovejših seznamov paketov …
+467|Kopiranje programa
+468|Dodajanje programa v meni
+469|Datoteke ni bilo mogoče najti.
+470|Paketa ni bilo mogoče namestiti.
+471|Vnos programa v meniju ni veljaven.
+472|Preverjanje načrta namestitve
+473|Pripravljanje diska
+474|Kopiranje MAN na disk
+475|Nastavljanje novega sistema
+476|Nameščanje zagonskega nalagalnika
+477|Ustvarjanje prvega posnetka
+478|Dokončevanje
+479|Odstranjevanje starih podpisov razdelkov
+480|Ustvarjanje razdelkov
+481|Formatiranje sistemskega razdelka EFI
+482|Šifriranje sistemskega razdelka
+483|Formatiranje zagonskega razdelka
+484|Ustvarjanje datotečnega sistema Btrfs
+485|Odstranjevanje starih podpisov datotečnih sistemov
+486|Odklepanje šifrirane namestitve
+487|Shranjevanje trenutnega sistema kot posnetka
+488|Odstranjevanje prejšnjega sistema
+489|Zapisovanje tabele datotečnih sistemov
+490|Nastavljanje imena in identitete računalnika
+491|Odstranjevanje računov žive seje
+492|Ustvarjanje vašega računa
+493|Pripravljanje MAN Setup za prvi zagon
+494|Nastavljanje časovnega pasu in tipkovnice
+495|Odstranjevanje namestitvenega programa iz novega sistema
+496|Izdelava zagonske slike (initramfs)
+497|Nastavljanje GRUB
+498|Nameščanje GRUB na sistemski razdelek EFI
+499|Nameščanje rezervnega zagonskega nalagalnika
+500|Zapisovanje zagonskega menija
+501|Disk je pripravljen
+502|Ustvarjanje posnetka novega sistema
+503|Dodajanje posnetka v zagonski meni
+504|Odklapljanje
+505|Pomočnik namestitvenega programa mora teči kot root.
+506|Ta računalnik ni bil zagnan v načinu UEFI. MAN zahteva UEFI.
+507|Uporabniško ime ni veljavno.
+508|Geslo je obvezno.
+509|Ime računalnika ni veljavno.
+510|Neznan jezik.
+511|Šifrirno geslo mora imeti vsaj 8 znakov.
+512|Disk se je spremenil po tem, ko ste potrdili namestitev. Nič ni bilo spremenjeno; preglejte in znova potrdite.
+513|Izberite sistemski razdelek.
+514|Potrjeni disk ne vsebuje izbranega sistemskega razdelka.
+515|Zagonski razdelek mora biti ločen od razdelka EFI in sistemskega razdelka.
+516|Zagonski razdelek mora imeti vsaj 512 MB.
+517|Namestitev ni izbrana.
+518|Potrjeni disk ne vsebuje izbrane namestitve.
+519|Šifrirana namestitev nima razdelka MAN_BOOT.
+520|V /boot ni bilo najdeno jedro z ustreznimi moduli.
+521|Jezik mora spremeniti sistemski pomočnik.
+522|Uveljavljanje vaših nastavitev
+523|Pripravljanje šifriranja diska
+524|Dokončevanje
+525|MAN Setup mora dokončati sistemski pomočnik.
+526|MAN Setup je na tem računalniku že dokončan.
+527|Neznana poudarna barva.
+528|Izbrano ozadje ni na voljo.
+529|Tega sistema ni mogoče šifrirati.
+530|Nastavitveni ključ manjka, zato se šifriranje ne more nadaljevati v ozadju.
+531|Sistem ni nameščen na Btrfs, zato posnetki niso na voljo.
+532|Obnovitev posnetka čaka na ponovni zagon. Najprej znova zaženite računalnik, da jo dokončate.
+533|Neveljaven ID posnetka.
+534|Preverjanje posodobitve
+535|Ustvarjanje posnetka
+536|Pripravljanje območja za posodobitev
+537|Razširjanje novega sistema
+538|Prenašanje vaših računov in nastavitev
+539|Pripravljanje ponovnega zagona
+540|Razširjeno
+541|Računi
+542|Vnovično nameščanje ohranjenih programov
+543|Odstranjevanje programske opreme samo za namestitveni program
+544|Izdelava zagonske slike posodobitve
+545|Dodajanje enkratnega zagonskega vnosa
+546|Posodobitev je pristna
+547|Posnetek je ustvarjen
+548|Preskočeno
+549|Območje za posodobitev je pripravljeno
+550|Pripravljanje novega sistema
+551|Datoteka posodobitve je poškodovana (nadzorna vsota se ne ujema). Znova jo prenesite.
+552|Datoteke posodobitve ni bilo mogoče prebrati v celoti.
+553|Posodobitev ne vsebuje jedra.
+554|Posodobitve mora namestiti sistemski pomočnik.
+555|Izbrane namestitve ni bilo mogoče najti.
+556|Posodobiti je mogoče le zagnano namestitev MAN.
+557|To ni datoteka posodobitve MAN (ni manifesta).
+558|Posodobitev ni podpisana, zato ji ni mogoče zaupati.
+559|Podpis posodobitve je poškodovan.
+560|Posodobitve ni podpisal MAN. Morda je bila spremenjena ali izvira iz nezaupanja vrednega vira.
+561|Manifest posodobitve ni veljaven.
+562|Šifrirno geslo ni pravilno ali šifriranega razdelka ni mogoče odpreti.
+563|Modra
+564|Modrozelena
+565|Zelena
+566|Rumena
+567|Oranžna
+568|Rdeča
+569|Rožnata
+570|Vijolična
+571|Skrilasta
+572|Nameščanje paketov
+573|Nameščajte programe iz datotek .deb, Flatpak in AppImage
+574|Namestitev sistema
+575|Namesti MAN na ta računalnik
+576|Obnovitev sistema
+577|Ustvarjanje in obnavljanje posnetkov sistema
+578|Namestitev sistemskih posodobitev
+579|Namesti datoteko posodobitve sistema MAN
+580|Preveri program za Windows glede zlonamerne programske opreme in ga zaženi
+581|Ponudi namestitev MAN ob zagonu žive seje
+582|Obvestilo o posodobitvi MAN
+583|Po prijavi enkrat sporoči, da je bil MAN posodobljen
+584|Nastavite svoj novi računalnik MAN
+585|Prva nastavitev MAN
+586|Posodobitve MAN
+587|Obvesti vas, ko je na voljo nova različica MAN

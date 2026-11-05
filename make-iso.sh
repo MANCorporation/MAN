@@ -75,6 +75,7 @@ root/.cache
 home/*/.cache
 home/*/.bash_history
 lost+found
+var/lib/clamav/*
 EOF
 # An empty machine-id makes every boot of the ISO get its own.
 mksquashfs "$mnt" "$work/iso/live/filesystem.squashfs" -noappend -quiet -progress \
