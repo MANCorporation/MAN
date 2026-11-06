@@ -1,5 +1,5 @@
 import os,sys,subprocess,glob,collections,urllib.parse
-dirs=["/home/kristihack/Documents/MAN/work/apt-gnome51-amd64/archives","/home/kristihack/Documents/MAN/artifacts/debs/amd64","/home/kristihack/Documents/MAN/work/rootfs-amd64-gnome51/var/cache/apt/archives"]
+dirs=["/home/kristihack/Documents/MANRUST/gnome51-cache/work/apt-gnome51-amd64/archives","/home/kristihack/Documents/MAN/artifacts/debs/amd64","/home/kristihack/Documents/MAN/work/rootfs-amd64-gnome51/var/cache/apt/archives"]
 idx={}
 for d in dirs:
     for f in glob.glob(d+"/*.deb"):

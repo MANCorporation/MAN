@@ -71,7 +71,7 @@ extraction; that ownership is now corrected in the disk image.
 3. Only the modified app rebuilds, not entire GNOME
 
 ### GNOME 51 Package Sources
-- **2054 .deb files**: `/home/kristihack/Documents/MAN/work/apt-gnome51-amd64/archives/`
+- **2054 .deb files**: `/home/kristihack/Documents/MANRUST/gnome51-cache/work/apt-gnome51-amd64/archives/`
 - **67 packages at GNOME 51.0**: `gnome-shell_51.0-2_amd64.deb`, `gdm3_51.0-1_amd64.deb`, `mutter_51.0-2_amd64.deb`
 - **BuildStream project**: `/home/kristihack/Documents/MAN/sources/upstream/gnome-build-meta-51/` (544 `.bst` files)
 
