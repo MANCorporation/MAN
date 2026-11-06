@@ -10,275 +10,283 @@ msgstr ""
 msgid "This file is not an app that can be installed here (.deb, .flatpak, .flatpakref or AppImage)."
 msgstr ""
 
-#: appinstaller.rs:128
+#: appinstaller.rs:134
 msgid "This app is made for {arch} computers and does not work on this one (x86-64)."
 msgstr ""
 
-#: appinstaller.rs:313
+#: appinstaller.rs:320
 msgid "The file could not be read. It may be damaged."
 msgstr ""
 
-#: appinstaller.rs:485
+#: appinstaller.rs:492
 msgid "This is not an AppImage."
 msgstr ""
 
-#: appinstaller.rs:679
+#: appinstaller.rs:686
 msgid "Introduction"
 msgstr ""
 
-#: appinstaller.rs:680
+#: appinstaller.rs:687
 msgid "License"
 msgstr ""
 
-#: appinstaller.rs:681
+#: appinstaller.rs:688
 msgid "Destination Select"
 msgstr ""
 
-#: appinstaller.rs:682
+#: appinstaller.rs:689
 msgid "Installation Type"
 msgstr ""
 
-#: appinstaller.rs:683
+#: appinstaller.rs:690
 msgid "Installation"
 msgstr ""
 
-#: appinstaller.rs:684
+#: appinstaller.rs:691
 msgid "Summary"
 msgstr ""
 
-#: appinstaller.rs:788
+#: appinstaller.rs:797
 msgid "_Continue"
 msgstr ""
 
-#: appinstaller.rs:797
+#: appinstaller.rs:806
 msgid "Welcome to the {name} Installer"
 msgstr ""
 
-#: appinstaller.rs:801
+#: appinstaller.rs:810
 msgid "Software License Agreement"
 msgstr ""
 
-#: appinstaller.rs:811
+#: appinstaller.rs:820
 msgid "Do You Agree to the License?"
 msgstr ""
 
-#: appinstaller.rs:812
+#: appinstaller.rs:821
 msgid "To continue installing, you must agree to the terms of the software license agreement."
 msgstr ""
 
-#: appinstaller.rs:814
+#: appinstaller.rs:823
 msgid "_Read License"
 msgstr ""
 
-#: appinstaller.rs:815
+#: appinstaller.rs:824
 msgid "_Agree"
 msgstr ""
 
-#: appinstaller.rs:828
+#: appinstaller.rs:837
 msgid "Select a Destination"
 msgstr ""
 
-#: appinstaller.rs:832
+#: appinstaller.rs:841
 msgid "Standard Install"
 msgstr ""
 
-#: appinstaller.rs:833
+#: appinstaller.rs:842
 msgid "_Install"
 msgstr ""
 
-#: appinstaller.rs:846
+#: appinstaller.rs:855
 msgid "Debian package (.deb)"
 msgstr ""
 
-#: appinstaller.rs:847
+#: appinstaller.rs:856
 msgid "Flatpak app"
 msgstr ""
 
-#: appinstaller.rs:848
+#: appinstaller.rs:857
 msgid "Flatpak app from {source}"
 msgstr ""
 
-#: appinstaller.rs:849
+#: appinstaller.rs:858
 msgid "AppImage"
 msgstr ""
 
-#: appinstaller.rs:867
+#: appinstaller.rs:876
 msgid "You will be guided through the steps necessary to install this software."
 msgstr ""
 
-#: appinstaller.rs:878
+#: appinstaller.rs:887
 msgid "Version"
 msgstr ""
 
-#: appinstaller.rs:881
+#: appinstaller.rs:890
 msgid "Publisher"
 msgstr ""
 
-#: appinstaller.rs:883
+#: appinstaller.rs:892
 msgid "Type"
 msgstr ""
 
-#: appinstaller.rs:885
+#: appinstaller.rs:894
 msgid "Size"
 msgstr ""
 
-#: appinstaller.rs:891
+#: appinstaller.rs:900
 msgid "Website"
 msgstr ""
 
-#: appinstaller.rs:893
+#: appinstaller.rs:902
 msgid "File"
 msgstr ""
 
-#: appinstaller.rs:903
+#: appinstaller.rs:912
 msgid "This app is installed already. Installing it again replaces it."
 msgstr ""
 
-#: appinstaller.rs:906
-msgid "Apps from .deb packages become part of the system. When MAN is updated they are removed and need to be installed again. Flatpak apps and AppImages are kept."
+#: appinstaller.rs:915
+msgid "Apps from .deb packages become part of the system. A MAN update replaces the system, so they are only installed again after an update if you keep them (next steps)."
 msgstr ""
 
-#: appinstaller.rs:909
+#: appinstaller.rs:918
 msgid "Only install apps from sources you trust."
 msgstr ""
 
-#: appinstaller.rs:915
+#: appinstaller.rs:924
 msgid "Where do you want to install {name}?"
 msgstr ""
 
-#: appinstaller.rs:920
+#: appinstaller.rs:929
 msgid "Only your account can use the app."
 msgstr ""
 
-#: appinstaller.rs:921
+#: appinstaller.rs:930
 msgid "Needs administrator rights."
 msgstr ""
 
-#: appinstaller.rs:928
+#: appinstaller.rs:937
 msgid "Only for Me"
 msgstr ""
 
-#: appinstaller.rs:928
+#: appinstaller.rs:937
 msgid "For All Users of This Computer"
 msgstr ""
 
-#: appinstaller.rs:943
+#: appinstaller.rs:952
 msgid "This will take {size} of space on your computer."
 msgstr ""
 
-#: appinstaller.rs:945
+#: appinstaller.rs:954
 msgid "The app is downloaded from {source}."
 msgstr ""
 
-#: appinstaller.rs:947
+#: appinstaller.rs:956
 msgid "The app is installed for all users of this computer."
 msgstr ""
 
-#: appinstaller.rs:947
+#: appinstaller.rs:956
 msgid "The app is installed only for you."
 msgstr ""
 
-#: appinstaller.rs:950
+#: appinstaller.rs:959
 msgid "The AppImage is moved to {folder} and added to your apps."
 msgstr ""
 
-#: appinstaller.rs:952
-msgid "Click Install to install {name}."
+#: appinstaller.rs:965
+msgid "Keep After MAN Updates"
 msgstr ""
 
-#: appinstaller.rs:958
-msgid "Checking what else the app needs…"
-msgstr ""
-
-#: appinstaller.rs:968
-msgid "Also installs the packages it needs: {list}"
+#: appinstaller.rs:966
+msgid "MAN installs the app again after each update. Its package files are kept for that."
 msgstr ""
 
 #: appinstaller.rs:974
+msgid "Click Install to install {name}."
+msgstr ""
+
+#: appinstaller.rs:980
+msgid "Checking what else the app needs…"
+msgstr ""
+
+#: appinstaller.rs:990
+msgid "Also installs the packages it needs: {list}"
+msgstr ""
+
+#: appinstaller.rs:996
 msgid "Some packages the app needs are not available yet. Installing gets the newest package lists first; if they are still missing, the app cannot be installed."
 msgstr ""
 
-#: appinstaller.rs:1035
+#: appinstaller.rs:1057
 msgid "Installing {name}…"
 msgstr ""
 
-#: appinstaller.rs:1041
+#: appinstaller.rs:1063
 msgid "Preparing…"
 msgstr ""
 
-#: appinstaller.rs:1048
+#: appinstaller.rs:1070
 msgid "Details"
 msgstr ""
 
-#: appinstaller.rs:1088
+#: appinstaller.rs:1110
 msgid "Installing the package…"
 msgstr ""
 
-#: appinstaller.rs:1107
+#: appinstaller.rs:1129
 msgid "Moving the app to its folder…"
 msgstr ""
 
-#: appinstaller.rs:1116
+#: appinstaller.rs:1138
 msgid "The app could not be installed."
 msgstr ""
 
-#: appinstaller.rs:1120
+#: appinstaller.rs:1142
 msgid "Installing the app with Flatpak…"
 msgstr ""
 
-#: appinstaller.rs:1139
+#: appinstaller.rs:1166
 msgid "Log"
 msgstr ""
 
-#: appinstaller.rs:1169
+#: appinstaller.rs:1196
 msgid "_Close"
 msgstr ""
 
-#: appinstaller.rs:1179
+#: appinstaller.rs:1206
 msgid "The Installation Was Successful"
 msgstr ""
 
-#: appinstaller.rs:1179
+#: appinstaller.rs:1206
 msgid "The app was installed."
 msgstr ""
 
-#: appinstaller.rs:1184
+#: appinstaller.rs:1211
 msgid "The Installation Failed"
 msgstr ""
 
-#: appinstaller.rs:1195
+#: appinstaller.rs:1222
 msgid "_Open"
 msgstr ""
 
-#: appinstaller.rs:1205
+#: appinstaller.rs:1232
 msgid "_Show Details"
 msgstr ""
 
-#: appinstaller.rs:1208
+#: appinstaller.rs:1235
 msgid "Installation Log"
 msgstr ""
 
-#: appinstaller.rs:1235
+#: appinstaller.rs:1262
 msgid "App Installer"
 msgstr ""
 
-#: appinstaller.rs:1256
+#: appinstaller.rs:1283
 msgid "Go _Back"
 msgstr ""
 
-#: appinstaller.rs:1328
+#: appinstaller.rs:1356
 msgid "Reading the app…"
 msgstr ""
 
-#: appinstaller.rs:1337
+#: appinstaller.rs:1365
 msgid "Install {name}"
 msgstr ""
 
-#: appinstaller.rs:1356
+#: appinstaller.rs:1384
 msgid "Apps"
 msgstr ""
 
-#: appinstaller.rs:1362
+#: appinstaller.rs:1390
 msgid "Choose an App to Install"
 msgstr ""
 
@@ -908,6 +916,150 @@ msgstr ""
 msgid "Search countries"
 msgstr ""
 
+#: malscan.rs:220
+msgid "MAN Flagged This Program as Malware"
+msgstr ""
+
+#: marquee.rs:72
+msgid "Music"
+msgstr ""
+
+#: marquee.rs:73
+msgid "Photos"
+msgstr ""
+
+#: marquee.rs:74
+msgid "Movies"
+msgstr ""
+
+#: marquee.rs:153
+msgid "Sharing as “{name}” at {address}"
+msgstr ""
+
+#: marquee.rs:154
+msgid "Sharing as “{name}”. This computer is not connected to a network yet."
+msgstr ""
+
+#: marquee.rs:155
+msgid "Other computers cannot see your libraries."
+msgstr ""
+
+#: marquee.rs:165
+msgid "Sharing could not start."
+msgstr ""
+
+#: marquee.rs:178
+msgid "The libraries could not be saved."
+msgstr ""
+
+#: marquee.rs:196
+msgid "Stop Sharing"
+msgstr ""
+
+#: marquee.rs:216
+msgid "Stop Sharing “{name}”?"
+msgstr ""
+
+#: marquee.rs:217
+msgid "The files stay on this computer. Other computers just cannot see this library any more."
+msgstr ""
+
+#: marquee.rs:220
+msgid "_Stop Sharing"
+msgstr ""
+
+#: marquee.rs:254
+msgid "“{name}” is shared on this network."
+msgstr ""
+
+#: marquee.rs:263
+msgid "Edit Library"
+msgstr ""
+
+#: marquee.rs:263
+msgid "New Library"
+msgstr ""
+
+#: marquee.rs:267
+msgid "Name"
+msgstr ""
+
+#: marquee.rs:274
+msgid "Folders and Files"
+msgstr ""
+
+#: marquee.rs:276
+msgid "Add Folder…"
+msgstr ""
+
+#: marquee.rs:277
+msgid "Add Files…"
+msgstr ""
+
+#: marquee.rs:286
+msgid "_Save"
+msgstr ""
+
+#: marquee.rs:286
+msgid "C_reate"
+msgstr ""
+
+#: marquee.rs:312
+msgid "Nothing added yet"
+msgstr ""
+
+#: marquee.rs:320
+msgid "Remove"
+msgstr ""
+
+#: marquee.rs:413
+msgid "Shared Libraries"
+msgstr ""
+
+#: marquee.rs:415
+msgid "Create Library"
+msgstr ""
+
+#: marquee.rs:420
+msgid "Share Your Media"
+msgstr ""
+
+#: marquee.rs:421
+msgid "Choose folders or files, and other computers on this network can play them in Marquee."
+msgstr ""
+
+#: marquee.rs:426
+msgid "Anyone on this network can play what you share here, without a password, so share only on networks you trust. On the other computer, open Marquee and go to Network."
+msgstr ""
+
+#: marquee.rs:427
+msgid "Share on This Network"
+msgstr ""
+
+#: marquee.rs:430
+msgid "Libraries"
+msgstr ""
+
+#: marquee.rs:501
+msgid "Create _Shared Library"
+msgstr ""
+
+#: marquee.rs:501
+msgid "Shared _Libraries"
+msgstr ""
+
+#: marquee.rs:504
+msgid "_Open Marquee"
+msgstr ""
+
+#: marquee.rs:513
+msgid "Welcome to Marquee"
+msgstr ""
+
+#: marquee.rs:513
+msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
+msgstr ""
+
 #: oobe.rs:165
 msgid "The system disk was not found."
 msgstr ""
@@ -962,10 +1114,6 @@ msgstr ""
 
 #: oobe.rs:590
 msgid "GNU Lesser General Public License, version 3"
-msgstr ""
-
-#: oobe.rs:590
-msgid "Libraries"
 msgstr ""
 
 #: oobe.rs:591
@@ -1515,15 +1663,15 @@ msgstr ""
 msgid "English (US)"
 msgstr ""
 
-#: updatecheck.rs:273
+#: updatecheck.rs:274
 msgid "MAN {version} Released!"
 msgstr ""
 
-#: updatecheck.rs:274
+#: updatecheck.rs:275
 msgid "You can update to it."
 msgstr ""
 
-#: updatecheck.rs:277
+#: updatecheck.rs:278
 msgid "Open Updates"
 msgstr ""
 
@@ -1781,27 +1929,118 @@ msgstr ""
 msgid "MAN updates"
 msgstr ""
 
-#: apphelper.rs:59
+#: winprogram.rs:95
+msgid "Windows support could not be started."
+msgstr ""
+
+#: winprogram.rs:209
+msgid "Starting the Windows Program"
+msgstr ""
+
+#: winprogram.rs:209
+msgid "The first start takes a moment."
+msgstr ""
+
+#: winprogram.rs:215
+msgid "The Windows Program Could Not Start"
+msgstr ""
+
+#: winprogram.rs:222
+msgid "Running Windows programs (.exe) is not recommended, as they can likely contain malware or things that can harm your privacy."
+msgstr ""
+
+#: winprogram.rs:225
+msgid "MAN could not check this program for malware: the malware database is not ready yet. Connect to the internet and try again in a few minutes."
+msgstr ""
+
+#: winprogram.rs:227
+msgid "_Run It"
+msgstr ""
+
+#: winprogram.rs:228
+msgid "Run This Windows Program?"
+msgstr ""
+
+#: winprogram.rs:233
+msgid "Run _Anyway"
+msgstr ""
+
+#: winprogram.rs:237
+msgid "Run a Program Flagged as Malware?"
+msgstr ""
+
+#: winprogram.rs:238
+msgid ""
+"This is your last chance to stop. MAN found malware in this program, and Windows programs are not isolated from your files. It could:\n"
+"\n"
+"• steal your passwords, documents and photos\n"
+"• delete your files or hold them for ransom\n"
+"• spy on what you do and keep running in the background\n"
+"\n"
+"MAN cannot undo what the program does. Only continue if you know exactly why this program was flagged."
+msgstr ""
+
+#: winprogram.rs:245
+msgid "MAN flagged this Windows program (.exe) as malware, which can harm your data or privacy. It should not be run and should be moved to the trash."
+msgstr ""
+
+#: winprogram.rs:248
+msgid "Detected as: {name}"
+msgstr ""
+
+#: winprogram.rs:253
+msgid "_Move to Trash"
+msgstr ""
+
+#: winprogram.rs:262
+msgid "_Bypass and Run"
+msgstr ""
+
+#: winprogram.rs:282
+msgid "Windows Program"
+msgstr ""
+
+#: winprogram.rs:302
+msgid "This Is Not a Windows Program"
+msgstr ""
+
+#: winprogram.rs:302
+msgid "This file cannot be run."
+msgstr ""
+
+#: winprogram.rs:306
+msgid "This Program Cannot Run on This Computer"
+msgstr ""
+
+#: winprogram.rs:306
+msgid "It was made for {arch} processors."
+msgstr ""
+
+#: winprogram.rs:312
+msgid "Checking This Program for Malware"
+msgstr ""
+
+#: apphelper.rs:97
 msgid "Getting the newest package lists…"
 msgstr ""
 
-#: apphelper.rs:146
+#: apphelper.rs:211
 msgid "Copying the app"
 msgstr ""
 
-#: apphelper.rs:150
+#: apphelper.rs:215
 msgid "Adding the app to the menu"
 msgstr ""
 
-#: apphelper.rs:56
+#: apphelper.rs:94
 msgid "The file was not found."
 msgstr ""
 
-#: apphelper.rs:77
+#: apphelper.rs:116
 msgid "The package could not be installed."
 msgstr ""
 
-#: apphelper.rs:136
+#: apphelper.rs:201
 msgid "The app's menu entry is not valid."
 msgstr ""
 
@@ -1913,27 +2152,27 @@ msgstr ""
 msgid "Installing GRUB to the EFI system partition"
 msgstr ""
 
-#: install.rs:750
+#: install.rs:752
 msgid "Installing the fallback boot loader"
 msgstr ""
 
-#: install.rs:757
+#: install.rs:759
 msgid "Writing the boot menu"
 msgstr ""
 
-#: install.rs:778
+#: install.rs:780
 msgid "Disk ready"
 msgstr ""
 
-#: install.rs:791
+#: install.rs:793
 msgid "Creating a snapshot of the fresh system"
 msgstr ""
 
-#: install.rs:797
+#: install.rs:799
 msgid "Adding the snapshot to the boot menu"
 msgstr ""
 
-#: install.rs:801
+#: install.rs:803
 msgid "Unmounting"
 msgstr ""
 
@@ -2077,67 +2316,71 @@ msgstr ""
 msgid "Preparing the restart"
 msgstr ""
 
-#: update.rs:186
+#: update.rs:195
 msgid "Unpacked"
 msgstr ""
 
-#: update.rs:268
+#: update.rs:278
 msgid "Accounts"
 msgstr ""
 
-#: update.rs:308
+#: update.rs:331
+msgid "Reinstalling kept apps"
+msgstr ""
+
+#: update.rs:386
 msgid "Removing installer-only software"
 msgstr ""
 
-#: update.rs:347
+#: update.rs:426
 msgid "Building the update boot image"
 msgstr ""
 
-#: update.rs:350
+#: update.rs:429
 msgid "Adding the one-time boot entry"
 msgstr ""
 
-#: update.rs:384
+#: update.rs:464
 msgid "The update is genuine"
 msgstr ""
 
-#: update.rs:390
+#: update.rs:470
 msgid "Snapshot created"
 msgstr ""
 
-#: update.rs:392
+#: update.rs:472
 msgid "Skipped"
 msgstr ""
 
-#: update.rs:401
+#: update.rs:481
 msgid "Update area ready"
 msgstr ""
 
-#: update.rs:423
+#: update.rs:504
 msgid "Preparing the new system"
 msgstr ""
 
-#: update.rs:175
+#: update.rs:184
 msgid "The update file is damaged (checksum mismatch). Download it again."
 msgstr ""
 
-#: update.rs:178
+#: update.rs:187
 msgid "The update file could not be read completely."
 msgstr ""
 
-#: update.rs:319
+#: update.rs:398
 msgid "The update contains no kernel."
 msgstr ""
 
-#: update.rs:367
+#: update.rs:446
 msgid "Updates must be installed by the system helper."
 msgstr ""
 
-#: update.rs:376
+#: update.rs:456
 msgid "The chosen installation was not found."
 msgstr ""
 
-#: update.rs:378
+#: update.rs:458
 msgid "Only the running MAN installation can be updated."
 msgstr ""
 
@@ -2209,12 +2452,24 @@ msgstr ""
 msgid "Install apps from .deb, Flatpak and AppImage files"
 msgstr ""
 
+#: com.man.DownloadScan.desktop
+msgid "Check a Windows program for malware and run it"
+msgstr ""
+
 #: com.man.Installer.desktop
 msgid "System Installer"
 msgstr ""
 
 #: com.man.Installer.desktop
 msgid "Install MAN on this computer"
+msgstr ""
+
+#: com.man.Marquee.desktop
+msgid "Marquee"
+msgstr ""
+
+#: com.man.Marquee.desktop
+msgid "Play and share movies, music and photos"
 msgstr ""
 
 #: com.man.Snapshots.desktop

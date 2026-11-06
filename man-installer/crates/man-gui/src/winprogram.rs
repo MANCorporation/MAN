@@ -131,12 +131,12 @@ const CSS: &str = r#"
 
 const WIDTH: i32 = 300;
 
-type Btn = (&'static str, &'static str, Box<dyn Fn(&gtk::Window, &gtk::Button)>);
+pub(crate) type Btn = (&'static str, &'static str, Box<dyn Fn(&gtk::Window, &gtk::Button)>);
 
 /// The popup's content: icon, bold title, file name, text, then the buttons,
 /// side by side when there are two and stacked when there are more. The first
 /// button is the default one (blue, answers Enter). Two buttons show it on the right.
-fn show(window: &gtk::Window, icon: &str, title: &str, body: &str, buttons: Vec<Btn>, spinner: bool) {
+pub(crate) fn show(window: &gtk::Window, icon: &str, title: &str, body: &str, buttons: Vec<Btn>, spinner: bool) {
     let page = gtk::Box::builder().orientation(gtk::Orientation::Vertical).spacing(10).margin_top(22).margin_bottom(18).margin_start(20).margin_end(20).width_request(WIDTH).build();
     let image = gtk::Image::from_icon_name(icon);
     image.set_pixel_size(72);
@@ -328,22 +328,24 @@ fn open_file(app: &adw::Application, path: PathBuf) {
     }
 }
 
+pub(crate) fn load_css() {
+    let provider = gtk::CssProvider::new();
+    provider.load_from_string(include_str!("../../../data/gtk/man-alerts.css"));
+    let own = gtk::CssProvider::new();
+    own.load_from_string(CSS);
+    if let Some(display) = gtk::gdk::Display::default() {
+        #[allow(deprecated)]
+        {
+            gtk::style_context_add_provider_for_display(&display, &provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+            gtk::style_context_add_provider_for_display(&display, &own, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+    }
+}
+
 pub fn main() -> glib::ExitCode {
     crate::i18n::init();
     let app = adw::Application::builder().application_id(APP_ID).flags(gio::ApplicationFlags::HANDLES_OPEN | gio::ApplicationFlags::NON_UNIQUE).build();
-    app.connect_startup(|_| {
-        let provider = gtk::CssProvider::new();
-        provider.load_from_string(include_str!("../../../data/gtk/man-alerts.css"));
-        let own = gtk::CssProvider::new();
-        own.load_from_string(CSS);
-        if let Some(display) = gtk::gdk::Display::default() {
-            #[allow(deprecated)]
-            {
-                gtk::style_context_add_provider_for_display(&display, &provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
-                gtk::style_context_add_provider_for_display(&display, &own, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
-            }
-        }
-    });
+    app.connect_startup(|_| load_css());
     app.connect_open(|app, files, _| {
         for file in files {
             if let Some(path) = file.path() {

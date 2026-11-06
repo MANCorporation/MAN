@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build.py SOURCES OUT.deb: MAN's Dock, Blur and Window Tiling from their upstream sources.
+"""build.py SOURCES OUT.deb: MAN's Dock (its own, man-dock/), and Blur and Window Tiling from their upstream sources.
 
 SOURCES holds the checkouts at the commits in UPSTREAM (see README.md). Each one stays
 under its GPL: the COPYING text and every file's leading copyright comment are kept,
@@ -11,23 +11,16 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SRC, OUT = Path(sys.argv[1]), Path(sys.argv[2])
-VERSION = '1.0'
+VERSION = '1.2'
+BLUR_RADIUS = 60
 HOST = Path(os.environ.get('HOSTBIN', HERE.parent.parent / 'tools/hostbin/root'))
 
 UPSTREAM = {
-    'dock': ('dash-to-dock', 'https://github.com/ubuntu/dash-to-dock', '2dfae3474d', 'GPL-2'),
     'blur': ('blur-my-shell', 'https://github.com/aunetx/blur-my-shell', '309ebdca21', 'GPL-3'),
     'tiling': ('tilingshell', 'https://github.com/domferr/tilingshell', '18.0 (5c3c052cf0)', 'GPL-3'),
 }
 
 RENAMES = {
-    'dock': [
-        ('dash-to-dock@micxgx.gmail.com', 'man-dock@man.invalid'),
-        ('org.gnome.shell.extensions.dash-to-dock', 'com.man.desktop.dock'),
-        ('/org/gnome/shell/extensions/dash-to-dock/', '/com/man/desktop/dock/'),
-        ('Dash to Dock', 'Dock'), ('Dash to dock', 'Dock'), ('Dash-to-Dock', 'Dock'), ('DashToDock', 'ManDock'), ('dashToDock', 'manDock'),
-        ('dashtodock', 'mandock'), ('dash-to-dock', 'man-dock'),
-    ],
     'blur': [
         ('blur-my-shell@aunetx', 'man-blur@man.invalid'),
         ('org.gnome.shell.extensions.blur-my-shell', 'com.man.desktop.blur'),
@@ -121,43 +114,6 @@ def metadata(path, uuid, name, description, schema, domain):
     path.write_text(json.dumps(d, indent=2) + '\n')
 
 
-def build_dock(stage, schemas, locale):
-    src = SRC / 'dash-to-dock'
-    d = stage / 'man-dock@man.invalid'
-    d.mkdir(parents=True)
-    for f in src.iterdir():
-        if f.suffix == '.js' and f.name != 'prefs.js' or f.name in ('COPYING', 'dependencies', '_stylesheet.scss', 'metadata.json'):
-            (shutil.copytree if f.is_dir() else shutil.copy)(f, d / f.name)
-    rename_tree(d, RENAMES['dock'])
-    # MAN: the dock has the same size whether it stays or hides.
-    sub(d / '_stylesheet.scss', '$dock_fixed_inner_margin: $dock_side_margin;', '$dock_fixed_inner_margin: 0px;')
-    # MAN: the same shape and place as the dash of the Activities view.
-    sub(d / '_stylesheet.scss', '$dash_border_radius: $modal_radius * 1.5;', '$dash_border_radius: 28px;')
-    sub(d / '_stylesheet.scss', '$dock_side_margin: $dock_start_margin / 4;', '$dock_side_margin: 12px;')
-    sub(d / '_stylesheet.scss', '$dash_padding: $base_padding + 4px; // 10px', '$dash_padding: 12px;')
-    sub(d / '_stylesheet.scss', '&.focused .overview-icon {\n                        background-color: $remark_color;\n                    }\n', '')
-    sub(d / '_stylesheet.scss', '.dash-item-container .overview-tile.focused .overview-icon,\n', '')
-    sub(d / '_stylesheet.scss', '$remark_color: rgba(238, 238, 238, 0.2);', '$remark_color: rgba(255, 255, 255, 0.07);')
-    sub(d / '_stylesheet.scss', 'offset-y: -$dash_padding + $dash_edge_offset;', 'offset-y: 2px;')
-    sub(d / '_stylesheet.scss', 'margin-bottom: 2px;', 'margin-bottom: 0px;')
-    # MAN: decide the mode first: the edge watcher depends on it (switching always-show off live).
-    sub(d / 'docking.js', "this._updateAutoHideBarriers();\n                this._updateVisibilityMode();\n", "this._updateVisibilityMode();\n                this._updateAutoHideBarriers();\n")
-    # MAN: check where the pointer is now, not where it was when the timer started:
-    # without this the dock often misses the pointer stopping at the screen edge.
-    sub(d / 'docking.js', "this._checkDockDwellNow(x, y);", "this._checkDockDwellNow(...global.get_pointer());")
-    env = dict(os.environ, LD_LIBRARY_PATH=str(HOST / 'usr/lib/x86_64-linux-gnu'))
-    subprocess.run([HOST / 'usr/bin/sassc', d / '_stylesheet.scss', d / 'stylesheet.css'], check=True, env=env)
-    (d / '_stylesheet.scss').unlink()
-    # The menu of the app grid button: no section name, and it opens Settings.
-    sub(d / 'appIcons.js', "this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem(__('Dock')));\n", '')
-    add_prefs(d / 'extension.js', 'multitasking')
-    metadata(d / 'metadata.json', 'man-dock@man.invalid', 'MAN Dock', "MAN's dock.", 'com.man.desktop.dock', 'man-dock')
-    x = schemas / 'com.man.desktop.dock.gschema.xml'
-    x.write_text(rename((src / 'schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml').read_text(), RENAMES['dock']))
-    for po in (src / 'po').glob('*.po'):
-        po_to_mo(po, locale / po.stem / 'LC_MESSAGES/man-dock.mo')
-
-
 def build_blur(stage, schemas):
     src = SRC / 'blur-my-shell'
     d = stage / 'man-blur@man.invalid'
@@ -174,7 +130,12 @@ def build_blur(stage, schemas):
     (d / 'components/dock/dash_to_dock.js').rename(d / 'components/dock/man_dock.js')
     metadata(d / 'metadata.json', 'man-blur@man.invalid', 'MAN Blur', "MAN's blur effects.", 'com.man.desktop.blur', 'man-blur')
     x = schemas / 'com.man.desktop.blur.gschema.xml'
-    x.write_text(rename((src / 'schemas/org.gnome.shell.extensions.blur-my-shell.gschema.xml').read_text(), RENAMES['blur']))
+    text = rename((src / 'schemas/org.gnome.shell.extensions.blur-my-shell.gschema.xml').read_text(), RENAMES['blur'])
+    # MAN: a stronger blur by default, in light and dark.
+    for pipeline in ('pipeline_default', 'pipeline_default_light'):
+        text, n = re.subn(r"('%s': \{.*?'unscaled_radius': <)30(>)" % pipeline, r'\g<1>%d\2' % BLUR_RADIUS, text, count=1, flags=re.S)
+        assert n == 1, pipeline
+    x.write_text(text)
 
 
 def build_tiling(stage, schemas, locale):
@@ -232,10 +193,11 @@ ext = root / 'usr/share/gnome-shell/extensions'
 schemas = root / 'usr/share/glib-2.0/schemas'
 locale = root / 'usr/share/locale'
 schemas.mkdir(parents=True)
-build_dock(ext, schemas, locale)
 build_blur(ext, schemas)
 build_tiling(ext, schemas, locale)
 shutil.copytree(HERE / 'man-look', ext / 'man-look@man.invalid')
+shutil.copytree(HERE / 'man-dock', ext / 'man-dock@man.invalid')
+shutil.move(ext / 'man-dock@man.invalid/com.man.desktop.dock.gschema.xml', schemas)
 for key in UPSTREAM:
     add_notice(ext / f'man-{key}@man.invalid', key)
 shutil.copy(HERE / '20_man-desktop-shell.gschema.override', schemas)
@@ -245,7 +207,7 @@ if problems:
     print(len(problems), 'traces left')
 doc = root / 'usr/share/doc/man-desktop-shell'
 doc.mkdir(parents=True)
-text = "MAN's Dock, Blur and Window Tiling are modified versions of these GNU GPL programs;\nthe license texts are next to the programs (COPYING in each folder under\n/usr/share/gnome-shell/extensions). MAN changed names, settings and menus, removed their\npreference windows, and sets its own defaults. MAN Corporation provides the source on\nrequest for three years; the changes are in src/man-desktop of MAN's repository.\n\n"
+text = "MAN's Blur and Window Tiling are modified versions of these GNU GPL programs;\nthe license texts are next to the programs (COPYING in each folder under\n/usr/share/gnome-shell/extensions). MAN changed names, settings and menus, removed their\npreference windows, and sets its own defaults. MAN Corporation provides the source on\nrequest for three years; the changes are in src/man-desktop of MAN's repository.\n\n"
 text += ''.join(f'  {u[0]}: {u[1]}, {u[2]}, {u[3]}\n' for u in UPSTREAM.values())
 (doc / 'copyright').write_text(text)
 (root / 'DEBIAN').mkdir()
@@ -255,7 +217,7 @@ Architecture: all
 Maintainer: MAN Developers <dev@man.local>
 Section: gnome
 Priority: optional
-Depends: gnome-shell (>= 51~), gnome-shell (<< 52~), gir1.2-dbusmenu-glib-0.4
+Depends: gnome-shell (>= 51~), gnome-shell (<< 52~)
 Description: MAN's dock, blur effects, window tiling and system dialog look
  Parts of MAN's desktop. They are set up in Settings.
 ''')

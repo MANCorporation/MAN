@@ -1,0 +1,10 @@
+[Unit]
+Description=Marquee shared libraries
+
+[Service]
+ExecStart=/usr/libexec/marquee/marquee-share
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

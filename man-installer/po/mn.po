@@ -918,6 +918,150 @@ msgstr "Хэл хайх"
 msgid "Search countries"
 msgstr "Улс хайх"
 
+#: malscan.rs:220
+msgid "MAN Flagged This Program as Malware"
+msgstr "MAN энэ програмыг хортой гэж тэмдэглэлээ"
+
+#: marquee.rs:72
+msgid "Music"
+msgstr "Хөгжим"
+
+#: marquee.rs:73
+msgid "Photos"
+msgstr "Зураг"
+
+#: marquee.rs:74
+msgid "Movies"
+msgstr "Кино"
+
+#: marquee.rs:153
+msgid "Sharing as “{name}” at {address}"
+msgstr "“{name}” нэрээр {address} дээр хуваалцаж байна"
+
+#: marquee.rs:154
+msgid "Sharing as “{name}”. This computer is not connected to a network yet."
+msgstr "“{name}” нэрээр хуваалцаж байна. Энэ компьютер сүлжээнд холбогдоогүй байна."
+
+#: marquee.rs:155
+msgid "Other computers cannot see your libraries."
+msgstr "Бусад компьютер таны номын санг харах боломжгүй."
+
+#: marquee.rs:165
+msgid "Sharing could not start."
+msgstr "Хуваалцаж эхэлж чадсангүй."
+
+#: marquee.rs:178
+msgid "The libraries could not be saved."
+msgstr "Номын санг хадгалж чадсангүй."
+
+#: marquee.rs:196
+msgid "Stop Sharing"
+msgstr "Хуваалцахыг зогсоох"
+
+#: marquee.rs:216
+msgid "Stop Sharing “{name}”?"
+msgstr "“{name}”-г хуваалцахыг зогсоох уу?"
+
+#: marquee.rs:217
+msgid "The files stay on this computer. Other computers just cannot see this library any more."
+msgstr "Файлууд энэ компьютер дээр үлдэнэ. Зөвхөн бусад компьютер энэ номын санг цаашид харахгүй."
+
+#: marquee.rs:220
+msgid "_Stop Sharing"
+msgstr "_Хуваалцахыг зогсоох"
+
+#: marquee.rs:254
+msgid "“{name}” is shared on this network."
+msgstr "“{name}” энэ сүлжээнд хуваалцагдлаа."
+
+#: marquee.rs:263
+msgid "Edit Library"
+msgstr "Номын санг засах"
+
+#: marquee.rs:263
+msgid "New Library"
+msgstr "Шинэ номын сан"
+
+#: marquee.rs:267
+msgid "Name"
+msgstr "Нэр"
+
+#: marquee.rs:274
+msgid "Folders and Files"
+msgstr "Хавтас ба файлууд"
+
+#: marquee.rs:276
+msgid "Add Folder…"
+msgstr "Хавтас нэмэх…"
+
+#: marquee.rs:277
+msgid "Add Files…"
+msgstr "Файл нэмэх…"
+
+#: marquee.rs:286
+msgid "_Save"
+msgstr "_Хадгалах"
+
+#: marquee.rs:286
+msgid "C_reate"
+msgstr "_Үүсгэх"
+
+#: marquee.rs:312
+msgid "Nothing added yet"
+msgstr "Одоогоор юу ч нэмээгүй"
+
+#: marquee.rs:320
+msgid "Remove"
+msgstr "Хасах"
+
+#: marquee.rs:413
+msgid "Shared Libraries"
+msgstr "Хуваалцсан номын сангууд"
+
+#: marquee.rs:415
+msgid "Create Library"
+msgstr "Номын сан үүсгэх"
+
+#: marquee.rs:420
+msgid "Share Your Media"
+msgstr "Медиагаа хуваалцаарай"
+
+#: marquee.rs:421
+msgid "Choose folders or files, and other computers on this network can play them in Marquee."
+msgstr "Хавтас эсвэл файл сонгоход энэ сүлжээний бусад компьютер тэдгээрийг Marquee дээр тоглуулж чадна."
+
+#: marquee.rs:426
+msgid "Anyone on this network can play what you share here, without a password, so share only on networks you trust. On the other computer, open Marquee and go to Network."
+msgstr "Энэ сүлжээнд байгаа хэн ч нууц үггүйгээр таны энд хуваалцсаныг тоглуулж чадах тул зөвхөн итгэлтэй сүлжээнд хуваалцаарай. Нөгөө компьютер дээр Marquee-г нээгээд Network руу орно уу."
+
+#: marquee.rs:427
+msgid "Share on This Network"
+msgstr "Энэ сүлжээнд хуваалцах"
+
+#: marquee.rs:430
+msgid "Libraries"
+msgstr "Сангууд"
+
+#: marquee.rs:501
+msgid "Create _Shared Library"
+msgstr "_Хуваалцсан номын сан үүсгэх"
+
+#: marquee.rs:501
+msgid "Shared _Libraries"
+msgstr "_Хуваалцсан номын сангууд"
+
+#: marquee.rs:504
+msgid "_Open Marquee"
+msgstr "_Marquee нээх"
+
+#: marquee.rs:513
+msgid "Welcome to Marquee"
+msgstr "Marquee-д тавтай морил"
+
+#: marquee.rs:513
+msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
+msgstr "Marquee-г нээх үү, эсвэл кино, хөгжим, зургаа энэ сүлжээний бусад компьютертэй хуваалцах уу?"
+
 #: oobe.rs:165
 msgid "The system disk was not found."
 msgstr "Системийн диск олдсонгүй."
@@ -973,10 +1117,6 @@ msgstr "GTK, GLib болон олон сан"
 #: oobe.rs:590
 msgid "GNU Lesser General Public License, version 3"
 msgstr "GNU Lesser General Public License, 3-р хувилбар"
-
-#: oobe.rs:590
-msgid "Libraries"
-msgstr "Сангууд"
 
 #: oobe.rs:591
 msgid "Mozilla Public License 2.0"
@@ -1796,43 +1936,47 @@ msgstr "MAN шинэчлэлийг нээх"
 msgid "MAN updates"
 msgstr "MAN шинэчлэлүүд"
 
-#: winprogram.rs:127
+#: winprogram.rs:95
 msgid "Windows support could not be started."
 msgstr "Windows дэмжлэгийг эхлүүлж чадсангүй."
 
-#: winprogram.rs:188
+#: winprogram.rs:209
 msgid "Starting the Windows Program"
 msgstr "Windows програмыг эхлүүлж байна"
 
-#: winprogram.rs:188
+#: winprogram.rs:209
 msgid "The first start takes a moment."
 msgstr "Анхны эхлэл бага зэрэг хугацаа шаарддаг."
 
-#: winprogram.rs:197
+#: winprogram.rs:215
 msgid "The Windows Program Could Not Start"
 msgstr "Windows програмыг эхлүүлж чадсангүй"
 
-#: winprogram.rs:210
+#: winprogram.rs:222
 msgid "Running Windows programs (.exe) is not recommended, as they can likely contain malware or things that can harm your privacy."
 msgstr "Windows програмуудыг (.exe) ажиллуулахыг зөвлөдөггүй, учир нь тэдгээрт хортой програм эсвэл таны нууцлалд хор хүргэх зүйл байх магадлалтай."
 
-#: winprogram.rs:213
+#: winprogram.rs:225
 msgid "MAN could not check this program for malware: the malware database is not ready yet. Connect to the internet and try again in a few minutes."
 msgstr "MAN энэ програмыг хортой кодоор шалгаж чадсангүй: мэдээллийн сан хараахан бэлэн болоогүй байна. Интернэтэд холбогдоод хэдэн минутын дараа дахин оролдоно уу."
 
-#: winprogram.rs:215
-msgid "Run This Windows Program?"
-msgstr "Энэ Windows програмыг ажиллуулах уу?"
-
-#: winprogram.rs:217
+#: winprogram.rs:227
 msgid "_Run It"
 msgstr "_Ажиллуулах"
 
-#: winprogram.rs:235
+#: winprogram.rs:228
+msgid "Run This Windows Program?"
+msgstr "Энэ Windows програмыг ажиллуулах уу?"
+
+#: winprogram.rs:233
+msgid "Run _Anyway"
+msgstr "Гэсэн ч _ажиллуулах"
+
+#: winprogram.rs:237
 msgid "Run a Program Flagged as Malware?"
 msgstr "Хортой гэж тэмдэглэсэн програмыг ажиллуулах уу?"
 
-#: winprogram.rs:236
+#: winprogram.rs:238
 msgid ""
 "This is your last chance to stop. MAN found malware in this program, and Windows programs are not isolated from your files. It could:\n"
 "\n"
@@ -1850,51 +1994,43 @@ msgstr ""
 "\n"
 "MAN програмын хийсэн зүйлийг буцааж чадахгүй. Энэ програмыг яагаад тэмдэглэснийг яг таг мэдэж байгаа үедээ л үргэлжлүүлнэ үү."
 
-#: winprogram.rs:239
-msgid "Run _Anyway"
-msgstr "Гэсэн ч _ажиллуулах"
-
-#: winprogram.rs:252
+#: winprogram.rs:245
 msgid "MAN flagged this Windows program (.exe) as malware, which can harm your data or privacy. It should not be run and should be moved to the trash."
 msgstr "MAN энэ Windows програмыг (.exe) таны өгөгдөл эсвэл нууцлалд хор хүргэж болох хортой код гэж тэмдэглэлээ. Үүнийг ажиллуулж болохгүй бөгөөд хогийн сав руу зөөх хэрэгтэй."
 
-#: winprogram.rs:255
+#: winprogram.rs:248
 msgid "Detected as: {name}"
 msgstr "Илэрсэн нэр: {name}"
 
-#: winprogram.rs:257
-msgid "MAN Flagged This Program as Malware"
-msgstr "MAN энэ програмыг хортой гэж тэмдэглэлээ"
-
-#: winprogram.rs:258
+#: winprogram.rs:253
 msgid "_Move to Trash"
 msgstr "Хогийн сав руу _зөөх"
 
-#: winprogram.rs:260
+#: winprogram.rs:262
 msgid "_Bypass and Run"
 msgstr "_Алгасаад ажиллуулах"
 
-#: winprogram.rs:293
+#: winprogram.rs:282
 msgid "Windows Program"
 msgstr "Windows програм"
 
-#: winprogram.rs:312
+#: winprogram.rs:302
 msgid "This Is Not a Windows Program"
 msgstr "Энэ нь Windows програм биш"
 
-#: winprogram.rs:312
+#: winprogram.rs:302
 msgid "This file cannot be run."
 msgstr "Энэ файлыг ажиллуулах боломжгүй."
 
-#: winprogram.rs:313
+#: winprogram.rs:306
 msgid "This Program Cannot Run on This Computer"
 msgstr "Энэ програм энэ компьютер дээр ажиллах боломжгүй"
 
-#: winprogram.rs:313
+#: winprogram.rs:306
 msgid "It was made for {arch} processors."
 msgstr "Энэ нь {arch} процессорт зориулагдсан."
 
-#: winprogram.rs:315
+#: winprogram.rs:312
 msgid "Checking This Program for Malware"
 msgstr "Энэ програмыг хортой кодоор шалгаж байна"
 
@@ -2330,6 +2466,10 @@ msgstr "Багц суулгагч"
 msgid "Install apps from .deb, Flatpak and AppImage files"
 msgstr ".deb, Flatpak, AppImage файлуудаас апп суулгах"
 
+#: com.man.DownloadScan.desktop
+msgid "Check a Windows program for malware and run it"
+msgstr "Windows програмыг хортой кодоор шалгаад ажиллуулах"
+
 #: com.man.Installer.desktop
 msgid "System Installer"
 msgstr "Систем суулгагч"
@@ -2337,6 +2477,14 @@ msgstr "Систем суулгагч"
 #: com.man.Installer.desktop
 msgid "Install MAN on this computer"
 msgstr "MAN-г энэ компьютерт суулгах"
+
+#: com.man.Marquee.desktop
+msgid "Marquee"
+msgstr "Marquee"
+
+#: com.man.Marquee.desktop
+msgid "Play and share movies, music and photos"
+msgstr "Кино, хөгжим, зураг тоглуулж хуваалцаарай"
 
 #: com.man.Snapshots.desktop
 msgid "System Restore"
@@ -2353,10 +2501,6 @@ msgstr "Системийн шинэчлэл суулгагч"
 #: com.man.Updater.desktop
 msgid "Install a MAN system update file"
 msgstr "MAN системийн шинэчлэлийн файл суулгах"
-
-#: com.man.WindowsProgram.desktop
-msgid "Check a Windows program for malware and run it"
-msgstr "Windows програмыг хортой кодоор шалгаад ажиллуулах"
 
 #: com.man.Installer.desktop
 msgid "Offer to install MAN when the live session starts"

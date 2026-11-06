@@ -4,27 +4,6 @@
 # Window Tiling is off until it is turned on in Settings > Multitasking.
 enabled-extensions=['man-look@man.invalid', 'man-dock@man.invalid', 'man-blur@man.invalid']
 
-[com.man.desktop.dock]
-dock-position='BOTTOM'
-dash-max-icon-size=64
-dock-fixed=false
-intellihide=true
-autohide=true
-extend-height=false
-show-trash=false
-show-mounts=false
-disable-overview-on-startup=false
-hot-keys=false
-apply-custom-theme=false
-custom-theme-shrink=false
-# The colour of the dash in the Activities view, slightly see-through for the blur.
-custom-background-color=true
-background-color='#38383b'
-transparency-mode='FIXED'
-background-opacity=0.8
-# Touchscreens, tablets and virtual machines cannot push against the screen edge.
-require-pressure-to-show=false
-
 [com.man.desktop.blur.man-dock]
 # Live blur: what is behind the dock, windows too, not only the wallpaper.
 static-blur=false

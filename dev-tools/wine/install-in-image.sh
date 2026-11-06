@@ -26,6 +26,13 @@ dialogs=""
 apt-get install -y -q --no-install-recommends -o Dpkg::Options::=--force-confold \
     $dialogs "$D"/man-system-tools_*_"$arch".deb "$D"/man-installer_*_"$arch".deb \
     "$D"/man-desktop-shell_*_all.deb "$D"/gnome-control-center_*man*_"$arch".deb
+# Marquee, and Resources as the system monitor.
+# Without MAN's "never replace installed packages" rule for this one command: FFmpeg
+# needs newer libsnappy and libxcb. Only what these packages need gets upgraded.
+apt-get install -y -q --no-install-recommends -o Dpkg::Options::=--force-confold \
+    -o Dir::Etc::Preferences=/dev/null -o Dir::Etc::PreferencesParts=/dev/null \
+    resources yt-dlp ffmpeg libavcodec63 "$D"/marquee_*_"$arch".deb
+apt-get purge -y -q gnome-system-monitor
 systemctl enable clamav-freshclam.service
 # Popups like macOS for the live user too (new users get it from /etc/skel).
 if [ -d /home/MANInstaller ]; then

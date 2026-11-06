@@ -918,6 +918,150 @@ msgstr "ابحث عن لغة"
 msgid "Search countries"
 msgstr "ابحث عن بلد"
 
+#: malscan.rs:220
+msgid "MAN Flagged This Program as Malware"
+msgstr "صنّف MAN هذا البرنامج كبرمجية خبيثة"
+
+#: marquee.rs:72
+msgid "Music"
+msgstr "الموسيقى"
+
+#: marquee.rs:73
+msgid "Photos"
+msgstr "الصور"
+
+#: marquee.rs:74
+msgid "Movies"
+msgstr "الأفلام"
+
+#: marquee.rs:153
+msgid "Sharing as “{name}” at {address}"
+msgstr "تتم المشاركة باسم “{name}” على {address}"
+
+#: marquee.rs:154
+msgid "Sharing as “{name}”. This computer is not connected to a network yet."
+msgstr "تتم المشاركة باسم “{name}”. هذا الحاسوب غير متصل بشبكة بعد."
+
+#: marquee.rs:155
+msgid "Other computers cannot see your libraries."
+msgstr "لا يمكن للحواسيب الأخرى رؤية مكتباتك."
+
+#: marquee.rs:165
+msgid "Sharing could not start."
+msgstr "تعذر بدء المشاركة."
+
+#: marquee.rs:178
+msgid "The libraries could not be saved."
+msgstr "تعذر حفظ المكتبات."
+
+#: marquee.rs:196
+msgid "Stop Sharing"
+msgstr "إيقاف المشاركة"
+
+#: marquee.rs:216
+msgid "Stop Sharing “{name}”?"
+msgstr "إيقاف مشاركة “{name}”؟"
+
+#: marquee.rs:217
+msgid "The files stay on this computer. Other computers just cannot see this library any more."
+msgstr "تبقى الملفات على هذا الحاسوب. لن تتمكن الحواسيب الأخرى من رؤية هذه المكتبة بعد الآن."
+
+#: marquee.rs:220
+msgid "_Stop Sharing"
+msgstr "_إيقاف المشاركة"
+
+#: marquee.rs:254
+msgid "“{name}” is shared on this network."
+msgstr "تمت مشاركة “{name}” على هذه الشبكة."
+
+#: marquee.rs:263
+msgid "Edit Library"
+msgstr "تعديل المكتبة"
+
+#: marquee.rs:263
+msgid "New Library"
+msgstr "مكتبة جديدة"
+
+#: marquee.rs:267
+msgid "Name"
+msgstr "الاسم"
+
+#: marquee.rs:274
+msgid "Folders and Files"
+msgstr "المجلدات والملفات"
+
+#: marquee.rs:276
+msgid "Add Folder…"
+msgstr "إضافة مجلد…"
+
+#: marquee.rs:277
+msgid "Add Files…"
+msgstr "إضافة ملفات…"
+
+#: marquee.rs:286
+msgid "_Save"
+msgstr "_حفظ"
+
+#: marquee.rs:286
+msgid "C_reate"
+msgstr "_إنشاء"
+
+#: marquee.rs:312
+msgid "Nothing added yet"
+msgstr "لم تتم إضافة شيء بعد"
+
+#: marquee.rs:320
+msgid "Remove"
+msgstr "إزالة"
+
+#: marquee.rs:413
+msgid "Shared Libraries"
+msgstr "المكتبات المشتركة"
+
+#: marquee.rs:415
+msgid "Create Library"
+msgstr "إنشاء مكتبة"
+
+#: marquee.rs:420
+msgid "Share Your Media"
+msgstr "شارك وسائطك"
+
+#: marquee.rs:421
+msgid "Choose folders or files, and other computers on this network can play them in Marquee."
+msgstr "اختر مجلدات أو ملفات، وستتمكن الحواسيب الأخرى على هذه الشبكة من تشغيلها في Marquee."
+
+#: marquee.rs:426
+msgid "Anyone on this network can play what you share here, without a password, so share only on networks you trust. On the other computer, open Marquee and go to Network."
+msgstr "يمكن لأي شخص على هذه الشبكة تشغيل ما تشاركه هنا دون كلمة مرور، لذا شارك فقط على الشبكات التي تثق بها. على الحاسوب الآخر، افتح Marquee وانتقل إلى Network."
+
+#: marquee.rs:427
+msgid "Share on This Network"
+msgstr "المشاركة على هذه الشبكة"
+
+#: marquee.rs:430
+msgid "Libraries"
+msgstr "المكتبات"
+
+#: marquee.rs:501
+msgid "Create _Shared Library"
+msgstr "_إنشاء مكتبة مشتركة"
+
+#: marquee.rs:501
+msgid "Shared _Libraries"
+msgstr "_المكتبات المشتركة"
+
+#: marquee.rs:504
+msgid "_Open Marquee"
+msgstr "_فتح Marquee"
+
+#: marquee.rs:513
+msgid "Welcome to Marquee"
+msgstr "مرحبًا بك في Marquee"
+
+#: marquee.rs:513
+msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
+msgstr "هل تريد فتح Marquee، أم مشاركة أفلامك وموسيقاك وصورك مع الحواسيب الأخرى على هذه الشبكة؟"
+
 #: oobe.rs:165
 msgid "The system disk was not found."
 msgstr "لم يُعثر على قرص النظام."
@@ -973,10 +1117,6 @@ msgstr "GTK وGLib وكثير من المكتبات"
 #: oobe.rs:590
 msgid "GNU Lesser General Public License, version 3"
 msgstr "رخصة جنو العمومية الصغرى، الإصدار 3"
-
-#: oobe.rs:590
-msgid "Libraries"
-msgstr "المكتبات"
 
 #: oobe.rs:591
 msgid "Mozilla Public License 2.0"
@@ -1796,43 +1936,47 @@ msgstr "افتح تحديث MAN"
 msgid "MAN updates"
 msgstr "تحديثات MAN"
 
-#: winprogram.rs:127
+#: winprogram.rs:95
 msgid "Windows support could not be started."
 msgstr "تعذر بدء دعم Windows."
 
-#: winprogram.rs:188
+#: winprogram.rs:209
 msgid "Starting the Windows Program"
 msgstr "جارٍ بدء برنامج Windows"
 
-#: winprogram.rs:188
+#: winprogram.rs:209
 msgid "The first start takes a moment."
 msgstr "يستغرق التشغيل الأول بعض الوقت."
 
-#: winprogram.rs:197
+#: winprogram.rs:215
 msgid "The Windows Program Could Not Start"
 msgstr "تعذر بدء برنامج Windows"
 
-#: winprogram.rs:210
+#: winprogram.rs:222
 msgid "Running Windows programs (.exe) is not recommended, as they can likely contain malware or things that can harm your privacy."
 msgstr "لا يُنصح بتشغيل برامج Windows (.exe)، إذ يُحتمل أن تحتوي على برمجيات خبيثة أو أشياء قد تضر بخصوصيتك."
 
-#: winprogram.rs:213
+#: winprogram.rs:225
 msgid "MAN could not check this program for malware: the malware database is not ready yet. Connect to the internet and try again in a few minutes."
 msgstr "تعذر على MAN فحص هذا البرنامج بحثًا عن البرمجيات الخبيثة: قاعدة البيانات ليست جاهزة بعد. اتصل بالإنترنت وحاول مرة أخرى بعد بضع دقائق."
 
-#: winprogram.rs:215
-msgid "Run This Windows Program?"
-msgstr "هل تريد تشغيل برنامج Windows هذا؟"
-
-#: winprogram.rs:217
+#: winprogram.rs:227
 msgid "_Run It"
 msgstr "_شغّله"
 
-#: winprogram.rs:235
+#: winprogram.rs:228
+msgid "Run This Windows Program?"
+msgstr "هل تريد تشغيل برنامج Windows هذا؟"
+
+#: winprogram.rs:233
+msgid "Run _Anyway"
+msgstr "شغّله _رغم ذلك"
+
+#: winprogram.rs:237
 msgid "Run a Program Flagged as Malware?"
 msgstr "هل تريد تشغيل برنامج مُصنّف كبرمجية خبيثة؟"
 
-#: winprogram.rs:236
+#: winprogram.rs:238
 msgid ""
 "This is your last chance to stop. MAN found malware in this program, and Windows programs are not isolated from your files. It could:\n"
 "\n"
@@ -1850,51 +1994,43 @@ msgstr ""
 "\n"
 "لا يستطيع MAN التراجع عما يفعله البرنامج. لا تتابع إلا إذا كنت تعرف بالضبط سبب تصنيف هذا البرنامج."
 
-#: winprogram.rs:239
-msgid "Run _Anyway"
-msgstr "شغّله _رغم ذلك"
-
-#: winprogram.rs:252
+#: winprogram.rs:245
 msgid "MAN flagged this Windows program (.exe) as malware, which can harm your data or privacy. It should not be run and should be moved to the trash."
 msgstr "صنّف MAN برنامج Windows هذا (.exe) كبرمجية خبيثة قد تضر ببياناتك أو خصوصيتك. يجب عدم تشغيله ونقله إلى سلة المهملات."
 
-#: winprogram.rs:255
+#: winprogram.rs:248
 msgid "Detected as: {name}"
 msgstr "تم اكتشافه باسم: {name}"
 
-#: winprogram.rs:257
-msgid "MAN Flagged This Program as Malware"
-msgstr "صنّف MAN هذا البرنامج كبرمجية خبيثة"
-
-#: winprogram.rs:258
+#: winprogram.rs:253
 msgid "_Move to Trash"
 msgstr "_نقل إلى سلة المهملات"
 
-#: winprogram.rs:260
+#: winprogram.rs:262
 msgid "_Bypass and Run"
 msgstr "_تجاوز وتشغيل"
 
-#: winprogram.rs:293
+#: winprogram.rs:282
 msgid "Windows Program"
 msgstr "برنامج Windows"
 
-#: winprogram.rs:312
+#: winprogram.rs:302
 msgid "This Is Not a Windows Program"
 msgstr "هذا ليس برنامج Windows"
 
-#: winprogram.rs:312
+#: winprogram.rs:302
 msgid "This file cannot be run."
 msgstr "لا يمكن تشغيل هذا الملف."
 
-#: winprogram.rs:313
+#: winprogram.rs:306
 msgid "This Program Cannot Run on This Computer"
 msgstr "لا يمكن تشغيل هذا البرنامج على هذا الحاسوب"
 
-#: winprogram.rs:313
+#: winprogram.rs:306
 msgid "It was made for {arch} processors."
 msgstr "صُنع لمعالجات {arch}."
 
-#: winprogram.rs:315
+#: winprogram.rs:312
 msgid "Checking This Program for Malware"
 msgstr "جارٍ فحص هذا البرنامج بحثًا عن البرمجيات الخبيثة"
 
@@ -2330,6 +2466,10 @@ msgstr "مثبّت الحزم"
 msgid "Install apps from .deb, Flatpak and AppImage files"
 msgstr "ثبّت التطبيقات من ملفات ‎.deb وFlatpak وAppImage"
 
+#: com.man.DownloadScan.desktop
+msgid "Check a Windows program for malware and run it"
+msgstr "افحص برنامج Windows بحثًا عن البرمجيات الخبيثة وشغّله"
+
 #: com.man.Installer.desktop
 msgid "System Installer"
 msgstr "مثبّت النظام"
@@ -2337,6 +2477,14 @@ msgstr "مثبّت النظام"
 #: com.man.Installer.desktop
 msgid "Install MAN on this computer"
 msgstr "ثبّت MAN على هذا الحاسوب"
+
+#: com.man.Marquee.desktop
+msgid "Marquee"
+msgstr "Marquee"
+
+#: com.man.Marquee.desktop
+msgid "Play and share movies, music and photos"
+msgstr "شغّل وشارك الأفلام والموسيقى والصور"
 
 #: com.man.Snapshots.desktop
 msgid "System Restore"
@@ -2353,10 +2501,6 @@ msgstr "مثبّت تحديثات النظام"
 #: com.man.Updater.desktop
 msgid "Install a MAN system update file"
 msgstr "ثبّت ملف تحديث نظام MAN"
-
-#: com.man.WindowsProgram.desktop
-msgid "Check a Windows program for malware and run it"
-msgstr "افحص برنامج Windows بحثًا عن البرمجيات الخبيثة وشغّله"
 
 #: com.man.Installer.desktop
 msgid "Offer to install MAN when the live session starts"

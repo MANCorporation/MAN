@@ -1,0 +1,18 @@
+/* MAN's dock: the Shell's own dash, see-through so the blur behind it shows. The Shell paints
+   each icon's tile in the solid colour of the bar, so the tiles are cleared here. Only the
+   dock on the desktop has this class: the dash in the Activities view stays as it is. */
+#dash.man-dock .dash-background {
+    background-color: rgba(56, 56, 59, 0.55);
+}
+#dash.man-dock .dash-item-container .show-apps .overview-icon,
+#dash.man-dock .dash-item-container .overview-tile .overview-icon {
+    background-color: transparent;
+}
+#dash.man-dock .dash-item-container .show-apps:hover .overview-icon,
+#dash.man-dock .dash-item-container .overview-tile:hover .overview-icon {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+#dash.man-dock .dash-item-container .show-apps:active .overview-icon,
+#dash.man-dock .dash-item-container .overview-tile:active .overview-icon {
+    background-color: rgba(255, 255, 255, 0.11);
+}

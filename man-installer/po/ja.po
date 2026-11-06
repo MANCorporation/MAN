@@ -918,6 +918,150 @@ msgstr "言語を検索"
 msgid "Search countries"
 msgstr "国を検索"
 
+#: malscan.rs:220
+msgid "MAN Flagged This Program as Malware"
+msgstr "MAN はこのプログラムをマルウェアとして検出しました"
+
+#: marquee.rs:72
+msgid "Music"
+msgstr "音楽"
+
+#: marquee.rs:73
+msgid "Photos"
+msgstr "写真"
+
+#: marquee.rs:74
+msgid "Movies"
+msgstr "映画"
+
+#: marquee.rs:153
+msgid "Sharing as “{name}” at {address}"
+msgstr "“{name}” として {address} で共有中"
+
+#: marquee.rs:154
+msgid "Sharing as “{name}”. This computer is not connected to a network yet."
+msgstr "“{name}” として共有中。このコンピューターはまだネットワークに接続されていません。"
+
+#: marquee.rs:155
+msgid "Other computers cannot see your libraries."
+msgstr "他のコンピューターからライブラリは見えません。"
+
+#: marquee.rs:165
+msgid "Sharing could not start."
+msgstr "共有を開始できませんでした。"
+
+#: marquee.rs:178
+msgid "The libraries could not be saved."
+msgstr "ライブラリを保存できませんでした。"
+
+#: marquee.rs:196
+msgid "Stop Sharing"
+msgstr "共有を停止"
+
+#: marquee.rs:216
+msgid "Stop Sharing “{name}”?"
+msgstr "“{name}” の共有を停止しますか?"
+
+#: marquee.rs:217
+msgid "The files stay on this computer. Other computers just cannot see this library any more."
+msgstr "ファイルはこのコンピューターに残ります。他のコンピューターからこのライブラリが見えなくなるだけです。"
+
+#: marquee.rs:220
+msgid "_Stop Sharing"
+msgstr "_共有を停止"
+
+#: marquee.rs:254
+msgid "“{name}” is shared on this network."
+msgstr "“{name}” をこのネットワークで共有しました。"
+
+#: marquee.rs:263
+msgid "Edit Library"
+msgstr "ライブラリを編集"
+
+#: marquee.rs:263
+msgid "New Library"
+msgstr "新しいライブラリ"
+
+#: marquee.rs:267
+msgid "Name"
+msgstr "名前"
+
+#: marquee.rs:274
+msgid "Folders and Files"
+msgstr "フォルダーとファイル"
+
+#: marquee.rs:276
+msgid "Add Folder…"
+msgstr "フォルダーを追加…"
+
+#: marquee.rs:277
+msgid "Add Files…"
+msgstr "ファイルを追加…"
+
+#: marquee.rs:286
+msgid "_Save"
+msgstr "_保存"
+
+#: marquee.rs:286
+msgid "C_reate"
+msgstr "_作成"
+
+#: marquee.rs:312
+msgid "Nothing added yet"
+msgstr "まだ何も追加されていません"
+
+#: marquee.rs:320
+msgid "Remove"
+msgstr "削除"
+
+#: marquee.rs:413
+msgid "Shared Libraries"
+msgstr "共有ライブラリ"
+
+#: marquee.rs:415
+msgid "Create Library"
+msgstr "ライブラリを作成"
+
+#: marquee.rs:420
+msgid "Share Your Media"
+msgstr "メディアを共有"
+
+#: marquee.rs:421
+msgid "Choose folders or files, and other computers on this network can play them in Marquee."
+msgstr "フォルダーやファイルを選ぶと、このネットワーク上の他のコンピューターが Marquee で再生できます。"
+
+#: marquee.rs:426
+msgid "Anyone on this network can play what you share here, without a password, so share only on networks you trust. On the other computer, open Marquee and go to Network."
+msgstr "このネットワーク上の誰でも、ここで共有したものをパスワードなしで再生できます。信頼できるネットワークでのみ共有してください。他のコンピューターでは Marquee を開いて Network に進みます。"
+
+#: marquee.rs:427
+msgid "Share on This Network"
+msgstr "このネットワークで共有"
+
+#: marquee.rs:430
+msgid "Libraries"
+msgstr "ライブラリ"
+
+#: marquee.rs:501
+msgid "Create _Shared Library"
+msgstr "_共有ライブラリを作成"
+
+#: marquee.rs:501
+msgid "Shared _Libraries"
+msgstr "_共有ライブラリ"
+
+#: marquee.rs:504
+msgid "_Open Marquee"
+msgstr "_Marquee を開く"
+
+#: marquee.rs:513
+msgid "Welcome to Marquee"
+msgstr "Marquee へようこそ"
+
+#: marquee.rs:513
+msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
+msgstr "Marquee を開きますか? それとも、映画、音楽、写真をこのネットワーク上の他のコンピューターと共有しますか?"
+
 #: oobe.rs:165
 msgid "The system disk was not found."
 msgstr "システムディスクが見つかりません。"
@@ -973,10 +1117,6 @@ msgstr "GTK、GLib と多くのライブラリ"
 #: oobe.rs:590
 msgid "GNU Lesser General Public License, version 3"
 msgstr "GNU 劣等一般公衆利用許諾書 バージョン 3"
-
-#: oobe.rs:590
-msgid "Libraries"
-msgstr "ライブラリ"
 
 #: oobe.rs:591
 msgid "Mozilla Public License 2.0"
@@ -1796,43 +1936,47 @@ msgstr "MAN アップデートを開く"
 msgid "MAN updates"
 msgstr "MAN アップデート"
 
-#: winprogram.rs:127
+#: winprogram.rs:95
 msgid "Windows support could not be started."
 msgstr "Windows サポートを開始できませんでした。"
 
-#: winprogram.rs:188
+#: winprogram.rs:209
 msgid "Starting the Windows Program"
 msgstr "Windows プログラムを起動しています"
 
-#: winprogram.rs:188
+#: winprogram.rs:209
 msgid "The first start takes a moment."
 msgstr "初回の起動には少し時間がかかります。"
 
-#: winprogram.rs:197
+#: winprogram.rs:215
 msgid "The Windows Program Could Not Start"
 msgstr "Windows プログラムを起動できませんでした"
 
-#: winprogram.rs:210
+#: winprogram.rs:222
 msgid "Running Windows programs (.exe) is not recommended, as they can likely contain malware or things that can harm your privacy."
 msgstr "Windows プログラム (.exe) の実行はお勧めしません。マルウェアやプライバシーを損なうものが含まれている可能性が高いためです。"
 
-#: winprogram.rs:213
+#: winprogram.rs:225
 msgid "MAN could not check this program for malware: the malware database is not ready yet. Connect to the internet and try again in a few minutes."
 msgstr "MAN はこのプログラムのマルウェアを確認できませんでした: マルウェアのデータベースがまだ準備できていません。インターネットに接続し、数分後にもう一度お試しください。"
 
-#: winprogram.rs:215
-msgid "Run This Windows Program?"
-msgstr "この Windows プログラムを実行しますか?"
-
-#: winprogram.rs:217
+#: winprogram.rs:227
 msgid "_Run It"
 msgstr "実行する(_R)"
 
-#: winprogram.rs:235
+#: winprogram.rs:228
+msgid "Run This Windows Program?"
+msgstr "この Windows プログラムを実行しますか?"
+
+#: winprogram.rs:233
+msgid "Run _Anyway"
+msgstr "それでも実行する(_A)"
+
+#: winprogram.rs:237
 msgid "Run a Program Flagged as Malware?"
 msgstr "マルウェアとして検出されたプログラムを実行しますか?"
 
-#: winprogram.rs:236
+#: winprogram.rs:238
 msgid ""
 "This is your last chance to stop. MAN found malware in this program, and Windows programs are not isolated from your files. It could:\n"
 "\n"
@@ -1850,51 +1994,43 @@ msgstr ""
 "\n"
 "プログラムが行ったことを MAN は元に戻せません。このプログラムが検出された理由を正確に理解している場合にのみ続行してください。"
 
-#: winprogram.rs:239
-msgid "Run _Anyway"
-msgstr "それでも実行する(_A)"
-
-#: winprogram.rs:252
+#: winprogram.rs:245
 msgid "MAN flagged this Windows program (.exe) as malware, which can harm your data or privacy. It should not be run and should be moved to the trash."
 msgstr "MAN はこの Windows プログラム (.exe) を、データやプライバシーを損なう可能性のあるマルウェアとして検出しました。実行せず、ゴミ箱に移動してください。"
 
-#: winprogram.rs:255
+#: winprogram.rs:248
 msgid "Detected as: {name}"
 msgstr "検出名: {name}"
 
-#: winprogram.rs:257
-msgid "MAN Flagged This Program as Malware"
-msgstr "MAN はこのプログラムをマルウェアとして検出しました"
-
-#: winprogram.rs:258
+#: winprogram.rs:253
 msgid "_Move to Trash"
 msgstr "ゴミ箱に移動(_M)"
 
-#: winprogram.rs:260
+#: winprogram.rs:262
 msgid "_Bypass and Run"
 msgstr "回避して実行(_B)"
 
-#: winprogram.rs:293
+#: winprogram.rs:282
 msgid "Windows Program"
 msgstr "Windows プログラム"
 
-#: winprogram.rs:312
+#: winprogram.rs:302
 msgid "This Is Not a Windows Program"
 msgstr "これは Windows プログラムではありません"
 
-#: winprogram.rs:312
+#: winprogram.rs:302
 msgid "This file cannot be run."
 msgstr "このファイルは実行できません。"
 
-#: winprogram.rs:313
+#: winprogram.rs:306
 msgid "This Program Cannot Run on This Computer"
 msgstr "このプログラムはこのコンピューターでは実行できません"
 
-#: winprogram.rs:313
+#: winprogram.rs:306
 msgid "It was made for {arch} processors."
 msgstr "{arch} プロセッサー用に作られています。"
 
-#: winprogram.rs:315
+#: winprogram.rs:312
 msgid "Checking This Program for Malware"
 msgstr "このプログラムのマルウェアを確認しています"
 
@@ -2330,6 +2466,10 @@ msgstr "パッケージインストーラー"
 msgid "Install apps from .deb, Flatpak and AppImage files"
 msgstr ".deb、Flatpak、AppImage ファイルからアプリをインストールします"
 
+#: com.man.DownloadScan.desktop
+msgid "Check a Windows program for malware and run it"
+msgstr "Windows プログラムのマルウェアを確認して実行します"
+
 #: com.man.Installer.desktop
 msgid "System Installer"
 msgstr "システムインストーラー"
@@ -2337,6 +2477,14 @@ msgstr "システムインストーラー"
 #: com.man.Installer.desktop
 msgid "Install MAN on this computer"
 msgstr "このコンピューターに MAN をインストール"
+
+#: com.man.Marquee.desktop
+msgid "Marquee"
+msgstr "Marquee"
+
+#: com.man.Marquee.desktop
+msgid "Play and share movies, music and photos"
+msgstr "映画、音楽、写真を再生して共有"
 
 #: com.man.Snapshots.desktop
 msgid "System Restore"
@@ -2353,10 +2501,6 @@ msgstr "システムアップデートのインストーラー"
 #: com.man.Updater.desktop
 msgid "Install a MAN system update file"
 msgstr "MAN システムアップデートファイルをインストール"
-
-#: com.man.WindowsProgram.desktop
-msgid "Check a Windows program for malware and run it"
-msgstr "Windows プログラムのマルウェアを確認して実行します"
 
 #: com.man.Installer.desktop
 msgid "Offer to install MAN when the live session starts"

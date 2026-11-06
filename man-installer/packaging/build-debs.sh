@@ -229,11 +229,49 @@ fi
 EOF
 chmod 0755 "$r/DEBIAN/postinst"
 
+# ── marquee ─────────────────────────────────────────────────────────
+# The media centre and its sharing service come from src/marquee/build.sh.
+m=$here/../src/marquee/out/$arch
+r=$stage/marquee
+put "$bin/man-marquee" "$r/usr/bin/marquee" 0755
+put "$m/marquee" "$r/usr/libexec/marquee/marquee" 0755
+put "$m/marquee-share" "$r/usr/libexec/marquee/marquee-share" 0755
+put "$data/marquee/marquee-share.service" "$r/usr/lib/systemd/user/marquee-share.service" 0644
+put "$data/applications/com.man.Marquee.desktop" "$r/usr/share/applications/com.man.Marquee.desktop" 0644
+put "$m/appicon/marquee.svg" "$r/usr/share/icons/hicolor/scalable/apps/marquee.svg" 0644
+d=$r/usr/share/doc/marquee
+mkdir -p "$d"
+{ cat "$m/LICENSE"; echo; echo; cat "$m/THIRD_PARTY_NOTICES.md"; } > "$d/copyright"
+chmod 0644 "$d/copyright"
+mkdir -p "$r/DEBIAN"
+cat > "$r/DEBIAN/control" <<EOF
+Package: marquee
+Version: $version
+Architecture: $arch
+Maintainer: MAN Developers <dev@man.local>
+Section: video
+Priority: optional
+Depends: man-system-tools (= $version), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), libasound2t64, libgl1, libx11-6, libxi6, ffmpeg
+Recommends: yt-dlp
+Description: Living-room media centre, and sharing of libraries on the network
+ Plays movies, music and photos, and shares libraries with other computers
+ on the same network.
+EOF
+cat > "$r/DEBIAN/postinst" <<'EOF'
+#!/bin/sh
+set -e
+if [ "$1" = configure ]; then
+    update-desktop-database -q /usr/share/applications 2>/dev/null || true
+    gtk-update-icon-cache -q -f /usr/share/icons/hicolor 2>/dev/null || true
+fi
+EOF
+chmod 0755 "$r/DEBIAN/postinst"
+
 # Translations: catalogs for both apps go into man-system-tools; the .desktop
 # files of both packages get their Name[xx]/Comment[xx] lines.
 python3 "$here/po/build-mo.py" "$stage/man-system-tools/usr/share/locale" $(find "$stage" -name '*.desktop')
 
-for p in man-system-tools man-installer; do
+for p in man-system-tools man-installer marquee; do
     dpkg-deb --root-owner-group -Zxz -b "$stage/$p" "$out/${p}_${version}_$arch.deb" >/dev/null
     echo "built $out/${p}_${version}_$arch.deb"
 done

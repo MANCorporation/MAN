@@ -31,7 +31,6 @@ from MAN's own packages (`man-installer`, `man-system-tools`), it consists of:
 | Linux kernel 7.3-rc7 | GPL-2.0-only | upstream https://kernel.org + MAN's configuration (`gnome51-fix/0*-kernel-*.sh`) |
 | GNOME Settings `1:51.0-1manN` (patched) | GPL-2.0-or-later | `src/` (Debian source + `man-*.patch`) |
 | GNOME Web 51.1-1manN, shipped as "PCD" (patched) | GPL-3.0-or-later | `src/epiphany/` (Debian source + `man-pcd-branding.patch`) |
-| MAN Dock (`man-desktop-shell`): modified [Dash to Dock](https://github.com/ubuntu/dash-to-dock) `2dfae3474d` | GPL-2.0 | `src/man-desktop/` (`build.py`, `upstream/`) |
 | MAN Blur (`man-desktop-shell`): modified [Blur my Shell](https://github.com/aunetx/blur-my-shell) `309ebdca21` | GPL-3.0 | `src/man-desktop/` (`build.py`, `upstream/`) |
 | MAN Window Tiling (`man-desktop-shell`): modified [Tiling Shell](https://github.com/domferr/tilingshell) 18.0 | GPL-3.0 | `src/man-desktop/` (`build.py`, `upstream/`) |
 | GRUB 2 (boot menu, ISO, DUHACH! partition) | GPL-3.0-or-later | Debian `grub2` |
@@ -70,6 +69,18 @@ the GNOME Foundation, Debian of Software in the Public Interest, Inc.,
 Windows of Microsoft Corporation. These names are used only to describe
 compatibility and origin; MAN is not endorsed by these organisations. The
 Debian logo is not used in MAN (the login screen shows the MAN logo).
+
+## Resources
+
+Resources (system monitor, https://github.com/nokyan/resources, GNU GPL 3) is Debian's package,
+unchanged. Source: https://sources.debian.org/src/resources/.
+
+## Marquee
+
+Marquee is MAN Corporation's own (All Rights Reserved). It contains third-party material with its own
+licences, listed in full in `/usr/share/doc/marquee/copyright`: among them carousel and layout logic
+derived from JacksonDam/FirstRow (CC BY 4.0), Adwaita icons (CC BY-SA 3.0 / LGPL-3.0) and the Lato font
+(SIL OFL 1.1). FFmpeg and yt-dlp are Debian's packages, separate programs under their own licences.
 
 ## Wine and ClamAV
 
