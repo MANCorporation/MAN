@@ -11,6 +11,11 @@ They still load through GNOME Shell's extension loader (system extensions in
 `/usr/share/gnome-shell/extensions`), as that is the only supported way to change the Shell without
 carrying patches to it. The image hides the Extensions app. `man-look` is MAN's own stylesheet.
 
+MAN's changes beyond names: the dock is the same size whether it stays or hides
+(`$dock_fixed_inner_margin: 0`), reaching the screen edge is enough to show it (no pressure, which
+VMs, tablets and touchscreens cannot do, and the check uses the current pointer position), its blur
+is live (`static-blur=false`), and Window Tiling is off until turned on in Settings.
+
 `upstream/` (not in git, made from these sources, needed for the source offer):
 - `dash-to-dock` https://github.com/ubuntu/dash-to-dock `2dfae3474d`
 - `blur-my-shell` https://github.com/aunetx/blur-my-shell `309ebdca21`

@@ -129,6 +129,11 @@ def build_dock(stage, schemas, locale):
         if f.suffix == '.js' and f.name != 'prefs.js' or f.name in ('COPYING', 'dependencies', '_stylesheet.scss', 'metadata.json'):
             (shutil.copytree if f.is_dir() else shutil.copy)(f, d / f.name)
     rename_tree(d, RENAMES['dock'])
+    # MAN: the dock has the same size whether it stays or hides.
+    sub(d / '_stylesheet.scss', '$dock_fixed_inner_margin: $dock_side_margin;', '$dock_fixed_inner_margin: 0px;')
+    # MAN: check where the pointer is now, not where it was when the timer started:
+    # without this the dock often misses the pointer stopping at the screen edge.
+    sub(d / 'docking.js', "this._checkDockDwellNow(x, y);", "this._checkDockDwellNow(...global.get_pointer());")
     env = dict(os.environ, LD_LIBRARY_PATH=str(HOST / 'usr/lib/x86_64-linux-gnu'))
     subprocess.run([HOST / 'usr/bin/sassc', d / '_stylesheet.scss', d / 'stylesheet.css'], check=True, env=env)
     (d / '_stylesheet.scss').unlink()
