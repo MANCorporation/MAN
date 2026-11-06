@@ -11,9 +11,13 @@ They still load through GNOME Shell's extension loader (system extensions in
 `/usr/share/gnome-shell/extensions`), as that is the only supported way to change the Shell without
 carrying patches to it. The image hides the Extensions app. `man-look` is MAN's own stylesheet.
 
-MAN's changes beyond names: the dock is the same size whether it stays or hides
-(`$dock_fixed_inner_margin: 0`), reaching the screen edge is enough to show it (no pressure, which
-VMs, tablets and touchscreens cannot do, and the check uses the current pointer position), its blur
+MAN's changes beyond names: the dock has the shape, size, place and icons of GNOME's dash in the
+Activities view, measured against it pixel by pixel (`dev-tools/vm/dock-vs-stock.sh`, `dockmatch.py`:
+64 px icons, no shrink, radius 28, padding 12, side margin 12, no focus square, running dot in the
+same place, colour #38383b at 80 % so the blur shows), in both modes
+(`$dock_fixed_inner_margin: 0`). Reaching the screen edge is enough to show it (no pressure, which
+VMs, tablets and touchscreens cannot do; the check uses the current pointer position and works after
+switching always-show off live), its blur
 is live (`static-blur=false`), and Window Tiling is off until turned on in Settings.
 
 `upstream/` (not in git, made from these sources, needed for the source offer):

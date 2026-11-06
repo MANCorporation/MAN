@@ -131,6 +131,17 @@ def build_dock(stage, schemas, locale):
     rename_tree(d, RENAMES['dock'])
     # MAN: the dock has the same size whether it stays or hides.
     sub(d / '_stylesheet.scss', '$dock_fixed_inner_margin: $dock_side_margin;', '$dock_fixed_inner_margin: 0px;')
+    # MAN: the same shape and place as the dash of the Activities view.
+    sub(d / '_stylesheet.scss', '$dash_border_radius: $modal_radius * 1.5;', '$dash_border_radius: 28px;')
+    sub(d / '_stylesheet.scss', '$dock_side_margin: $dock_start_margin / 4;', '$dock_side_margin: 12px;')
+    sub(d / '_stylesheet.scss', '$dash_padding: $base_padding + 4px; // 10px', '$dash_padding: 12px;')
+    sub(d / '_stylesheet.scss', '&.focused .overview-icon {\n                        background-color: $remark_color;\n                    }\n', '')
+    sub(d / '_stylesheet.scss', '.dash-item-container .overview-tile.focused .overview-icon,\n', '')
+    sub(d / '_stylesheet.scss', '$remark_color: rgba(238, 238, 238, 0.2);', '$remark_color: rgba(255, 255, 255, 0.07);')
+    sub(d / '_stylesheet.scss', 'offset-y: -$dash_padding + $dash_edge_offset;', 'offset-y: 2px;')
+    sub(d / '_stylesheet.scss', 'margin-bottom: 2px;', 'margin-bottom: 0px;')
+    # MAN: decide the mode first: the edge watcher depends on it (switching always-show off live).
+    sub(d / 'docking.js', "this._updateAutoHideBarriers();\n                this._updateVisibilityMode();\n", "this._updateVisibilityMode();\n                this._updateAutoHideBarriers();\n")
     # MAN: check where the pointer is now, not where it was when the timer started:
     # without this the dock often misses the pointer stopping at the screen edge.
     sub(d / 'docking.js', "this._checkDockDwellNow(x, y);", "this._checkDockDwellNow(...global.get_pointer());")
