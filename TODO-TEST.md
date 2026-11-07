@@ -1,6 +1,6 @@
 # MAN 10: what is left
 
-## Before publishing TEST 4
+## TEST 4 (published)
 Cloud Drives added 2026-11-07 (man-installer 3.15.0 with rclone, Settings man9, desktop 1.4);
 ISOs and `.upd` rebuilt with it:
 - Settings → Cloud Drives below Online Accounts: all rclone providers, popular ones first.
@@ -37,9 +37,9 @@ Fixed today:
   the installed grubenv). Fixed and tested on x86. TEST 3's own ISO still has it: a TEST 3 user who
   left the stick in must remove it for the update to apply (it applies on the next start without it).
 
-Left:
-1. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
-   is not included.
+Published 2026-11-07: pre-release v10-test4 (x86 + ARM ISOs, `.upd`, DUHACH! 1.1.0 x64, all with
+.sha256). GitHub turns "!" in file names into ".", so DUHACH! is uploaded as `DUHACH-<ver>-…zip`.
+DUHACH! for Windows ARM64 is not uploaded: never run on real Windows ARM.
 
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
