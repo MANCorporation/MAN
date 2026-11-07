@@ -10,6 +10,9 @@ Done 2026-11-07 (final build: man-installer 3.14.1, desktop 1.3, Settings man8):
 - Dock: right-click menu OK; two monitors OK.
 - GPL sources: `src/man-desktop/upstream/*.tar.gz` in git.
 
+- ARM ISO (final build): install, first-run setup (encryption offered), /boot and /boot/efi
+  mounted, live session starts on the desktop, one click on Install.
+
 Fixed today:
 - 3.14.1: /boot and /boot/efi had only 10 s to appear (slow disks: unmounted, encryption hidden).
   New installs drop it; an update repairs the kept fstab.
@@ -19,8 +22,7 @@ Fixed today:
   left the stick in must remove it for the update to apply (it applies on the next start without it).
 
 Left:
-1. ARM ISO install with the final build (running 2026-11-07 afternoon).
-2. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
+1. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
    is not included.
 
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
