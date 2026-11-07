@@ -172,7 +172,15 @@ fn detect_encryption() -> Encryption {
     if command("findmnt", &["-n", "-o", "FSTYPE", "--mountpoint", "/"]).as_deref() != Some("btrfs") {
         return Encryption::Unavailable(tr("Encryption needs the Btrfs layout created by the MAN installer.").into());
     }
-    let label = source("/boot").and_then(|b| command("lsblk", &["-n", "-o", "LABEL", &b]));
+    // /boot is nofail: on a slow disk it may not be mounted yet, so fall back to the fstab entry.
+    let boot = source("/boot").filter(|s| !s.is_empty()).or_else(|| {
+        std::fs::read_to_string("/etc/fstab").ok()?.lines().find_map(|l| {
+            let mut f = l.split_whitespace();
+            let (dev, mp) = (f.next()?, f.next()?);
+            (mp == "/boot" && !dev.starts_with('#')).then(|| dev.strip_prefix("UUID=").map_or(dev.to_string(), |u| format!("/dev/disk/by-uuid/{u}")))
+        })
+    });
+    let label = boot.and_then(|b| command("lsblk", &["-n", "-o", "LABEL", &b]));
     if label.as_deref() != Some("MAN_BOOT") {
         return Encryption::Unavailable(tr("This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption.").into());
     }

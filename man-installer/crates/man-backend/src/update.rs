@@ -529,6 +529,17 @@ pub fn finish() -> Result<()> {
     if !Path::new(APPLIED).exists() {
         return Ok(());
     }
+    // The fstab is kept from the old system; older installers gave /boot only 10 s.
+    if let Some(fstab) = read_to_string("/etc/fstab") {
+        let fixed = without_old_device_timeout(&fstab);
+        if fixed != fstab {
+            write_file("/etc/fstab", &fixed, 0o644)?;
+            let _ = run("systemctl", &["daemon-reload"]);
+            info("Gave the boot partitions more time to appear at start.");
+        }
+    }
+    // update-grub below must write to the real boot partition.
+    ensure_boot_mounted();
     let _ = std::fs::remove_dir_all(UPDATE_BOOT);
     let _ = std::fs::remove_file("/boot/grub/grub.cfg.man-update");
     let _ = std::fs::remove_file(STAGED);

@@ -190,9 +190,42 @@ impl Drop for Mounts {
     }
 }
 
+/// Installers before 3.14.1 wrote this into /etc/fstab: a disk slower than 10 s
+/// (a USB stick, an old hard disk) then left /boot and /boot/efi unmounted.
+pub const OLD_DEVICE_TIMEOUT: &str = ",x-systemd.device-timeout=10s";
+
+pub fn without_old_device_timeout(fstab: &str) -> String {
+    fstab.replace(OLD_DEVICE_TIMEOUT, "")
+}
+
+/// Mount the fstab's /boot and /boot/efi if they are not mounted yet. They are
+/// `nofail`, so the desktop can start before a slow disk has shown up.
+pub fn ensure_boot_mounted() {
+    let fstab = read_to_string("/etc/fstab").unwrap_or_default();
+    for mp in ["/boot", "/boot/efi"] {
+        let listed = fstab.lines().any(|l| !l.trim_start().starts_with('#') && l.split_whitespace().nth(1) == Some(mp));
+        if listed && query("findmnt", &["-n", "--mountpoint", mp]).is_none() {
+            if let Err(e) = run("mount", &[mp]) {
+                log(&format!("could not mount {mp}: {e:#}"));
+            }
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn old_device_timeout_removed() {
+        let old = "UUID=a  /boot        ext4   defaults,noatime,nofail,x-systemd.device-timeout=10s  0 2\n\
+                   UUID=b  /boot/efi    vfat   umask=0077,shortname=winnt,nofail,x-systemd.device-timeout=10s  0 2\n";
+        let new = without_old_device_timeout(old);
+        assert!(!new.contains("device-timeout"));
+        assert!(new.contains("defaults,noatime,nofail  0 2"));
+        assert!(new.contains("shortname=winnt,nofail  0 2"));
+        assert_eq!(without_old_device_timeout(&new), new);
+    }
 
     #[test]
     fn civil_dates() {

@@ -574,11 +574,13 @@ fn configure(plan: &Plan, layout: &Layout, t: &Path) -> Result<()> {
         fstab += &format!("UUID={btrfs_uuid}  {mp:<12} btrfs  subvol={sub},{BTRFS_OPTS}  0 0\n");
     }
     if let Some(b) = &layout.boot {
-        fstab += &format!("UUID={}  /boot        ext4   defaults,noatime,nofail,x-systemd.device-timeout=10s  0 2\n", uuid_of(b)?);
+        fstab += &format!("UUID={}  /boot        ext4   defaults,noatime,nofail  0 2\n", uuid_of(b)?);
     }
     // nofail: a missing boot or EFI partition must not keep the desktop
-    // from starting (for example after restoring an older snapshot).
-    fstab += &format!("UUID={esp_uuid}  /boot/efi    vfat   umask=0077,shortname=winnt,nofail,x-systemd.device-timeout=10s  0 2\n");
+    // from starting (for example after restoring an older snapshot); nofail
+    // mounts do not hold up the start either. No short device timeout: a slow
+    // disk (USB stick, old hard disk) then still gets its /boot mounted.
+    fstab += &format!("UUID={esp_uuid}  /boot/efi    vfat   umask=0077,shortname=winnt,nofail  0 2\n");
     write_file(t.join("etc/fstab"), &fstab, 0o644)?;
     if plan.encrypt || layout.btrfs.starts_with("/dev/mapper/") {
         let luks_uuid = uuid_of(&layout.root_part)?;

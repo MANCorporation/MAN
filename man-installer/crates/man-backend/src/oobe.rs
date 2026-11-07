@@ -27,6 +27,7 @@ fn mount_source(target: &str) -> Option<String> {
 }
 
 pub fn encryption_state() -> EncryptionState {
+    ensure_boot_mounted();
     let Some(root) = mount_source("/") else { return EncryptionState::Unavailable("The system disk was not found.".into()) };
     if root.starts_with("/dev/mapper/") || root.starts_with("/dev/dm-") {
         return EncryptionState::Encrypted;
