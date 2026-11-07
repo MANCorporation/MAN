@@ -9,8 +9,17 @@ Done 2026-11-07:
   Notes: `lfs/updates/MAN-10-TEST-4.NOTES.txt`.
 - GPL sources: `src/man-desktop/upstream/*.tar.gz` now in git.
 
+- ARM ISO: installed, first-run setup finished (emulated, ~3 hours).
+
+Found on ARM:
+- `/etc/fstab` gives `/boot` and `/boot/efi` only 10 s (`x-systemd.device-timeout=10s`,
+  `man-backend/src/install.rs:577,581`). The slow emulator missed it: both stayed unmounted and
+  MAN Setup then said encryption is unavailable. A slow USB or hard disk could do the same.
+  Fix proposed: drop the 10 s (systemd's default is 90 s). Needs new packages and ISOs.
+- ARM windows used a fallback font and window buttons (Noto, minimize/maximize) in the emulator;
+  settings in the images are the same as x86. Probably slowness, not checked on real ARM.
+
 Left:
-1. ARM ISO install test (see the report of 2026-11-07 for its state).
 2. Not tested: updating a real TEST 3 system with the `.upd`.
 3. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
    is not included.
