@@ -1,28 +1,30 @@
 # MAN 10: what is left
 
 ## Before publishing TEST 4
-Done 2026-11-07:
-- x86 ISO: installed to a blank disk, first-run setup, reboot, login, desktop: all OK.
-- Dock: right-click menu OK (Dock stays up); two monitors OK (default only on the main one,
-  "Show on All Displays" puts it on both, Super takes it away from both).
-- `lfs/updates/MAN-10-TEST-4.upd` (1.80 GB, base 10.10): signed, verified inside MAN.
-  Notes: `lfs/updates/MAN-10-TEST-4.NOTES.txt`.
-- GPL sources: `src/man-desktop/upstream/*.tar.gz` now in git.
+Done 2026-11-07 (final build: man-installer 3.14.1, desktop 1.3, Settings man8):
+- x86 ISO: install to a blank disk, first-run setup (encryption offered), reboot, login,
+  /boot and /boot/efi mounted, version 10 TEST 4.
+- Update: the published TEST 3 ISO installed, then `lfs/updates/MAN-10-TEST-4.upd` (1.80 GB,
+  base 10.10, signed, verified in MAN) applied with MAN Update from a USB stick. Result:
+  TEST 4, files kept, fstab repaired, "Your System Was Updated" notice.
+- Dock: right-click menu OK; two monitors OK.
+- GPL sources: `src/man-desktop/upstream/*.tar.gz` in git.
 
-- ARM ISO: installed, first-run setup finished (emulated, ~3 hours).
-
-Found on ARM:
-- `/etc/fstab` gives `/boot` and `/boot/efi` only 10 s (`x-systemd.device-timeout=10s`,
-  `man-backend/src/install.rs:577,581`). The slow emulator missed it: both stayed unmounted and
-  MAN Setup then said encryption is unavailable. A slow USB or hard disk could do the same.
-  Fix proposed: drop the 10 s (systemd's default is 90 s). Needs new packages and ISOs.
-- ARM windows used a fallback font and window buttons (Noto, minimize/maximize) in the emulator;
-  settings in the images are the same as x86. Probably slowness, not checked on real ARM.
+Fixed today:
+- 3.14.1: /boot and /boot/efi had only 10 s to appear (slow disks: unmounted, encryption hidden).
+  New installs drop it; an update repairs the kept fstab.
+- Desktop 1.3: the live session opened in the Activities view, so "Install MAN…" needed two clicks.
+- ISO boot menu: with the install USB left in, a staged update was skipped (the menu did not read
+  the installed grubenv). Fixed and tested on x86. TEST 3's own ISO still has it: a TEST 3 user who
+  left the stick in must remove it for the update to apply (it applies on the next start without it).
 
 Left:
-2. Not tested: updating a real TEST 3 system with the `.upd`.
-3. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
+1. ARM ISO install with the final build (running 2026-11-07 afternoon).
+2. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
    is not included.
+
+ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
+("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
 ## TEST 5
 1. Security updates: MAN blocks Debian from updating installed packages, so browser, FFmpeg and ClamAV
