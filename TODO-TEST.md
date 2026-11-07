@@ -1,12 +1,19 @@
 # MAN 10: what is left
 
 ## Before publishing TEST 4
-1. Full install test: install each ISO to a disk, then finish first-run setup.
-2. Build the TEST 4 `.upd` from `lfs/.vmtest/test4.img` (x86), so TEST 3 systems can update.
-3. GPL source with the release: Blur and Window Tiling (`src/man-desktop/upstream/`, not in git),
-   the patched Settings and the patched Wine files.
-4. Dock: test the right-click menu on an icon (does the Dock stay up while it is open?) and two monitors.
-5. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key` is not included.
+Done 2026-11-07:
+- x86 ISO: installed to a blank disk, first-run setup, reboot, login, desktop: all OK.
+- Dock: right-click menu OK (Dock stays up); two monitors OK (default only on the main one,
+  "Show on All Displays" puts it on both, Super takes it away from both).
+- `lfs/updates/MAN-10-TEST-4.upd` (1.80 GB, base 10.10): signed, verified inside MAN.
+  Notes: `lfs/updates/MAN-10-TEST-4.NOTES.txt`.
+- GPL sources: `src/man-desktop/upstream/*.tar.gz` now in git.
+
+Left:
+1. ARM ISO install test (see the report of 2026-11-07 for its state).
+2. Not tested: updating a real TEST 3 system with the `.upd`.
+3. Publishing itself (push, release) needs the owner's OK. Check first that `keys/man-update.key`
+   is not included.
 
 ## TEST 5
 1. Security updates: MAN blocks Debian from updating installed packages, so browser, FFmpeg and ClamAV
