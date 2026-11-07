@@ -11,7 +11,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SRC, OUT = Path(sys.argv[1]), Path(sys.argv[2])
-VERSION = '1.2'
+VERSION = '1.3'
 BLUR_RADIUS = 60
 HOST = Path(os.environ.get('HOSTBIN', HERE.parent.parent / 'tools/hostbin/root'))
 
