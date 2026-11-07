@@ -31,8 +31,11 @@ install -m 0755 "$bin" "$work/pkg/usr/bin/gnome-control-center"
 mkdir -p "$work/pkg/usr/share/locale"
 python3 "$here/man-settings-po/tool.py" build "$work/pkg/usr/share/locale" \
     "$here/gcc-51/panels/man-updates/gnome-man-updates-panel.desktop" \
-    "$work/pkg/usr/share/applications/gnome-man-updates-panel.desktop"
-chmod 0644 "$work/pkg/usr/share/applications/gnome-man-updates-panel.desktop"
+    "$work/pkg/usr/share/applications/gnome-man-updates-panel.desktop" \
+    "$here/gcc-51/panels/man-cloud/gnome-man-cloud-panel.desktop" \
+    "$work/pkg/usr/share/applications/gnome-man-cloud-panel.desktop"
+chmod 0644 "$work/pkg/usr/share/applications/gnome-man-updates-panel.desktop" \
+    "$work/pkg/usr/share/applications/gnome-man-cloud-panel.desktop"
 find "$work/pkg/usr/share/locale" -type d -exec chmod 0755 {} + -o -type f -exec chmod 0644 {} +
 sed -i "s/^Version: .*/Version: 1:${upstream}${suffix}/" "$work/pkg/DEBIAN/control"
 # Built against sid's current AccountsService library.

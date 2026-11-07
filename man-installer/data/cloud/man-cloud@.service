@@ -1,0 +1,21 @@
+# MAN Cloud Drives: one rclone remote (%i) mounted in Files while the user is logged in.
+# Settings → Cloud Drives writes ~/.config/man-cloud/%i.env (NAME, MOUNT) and enables
+# this unit; everything lives in the home folder, so it survives MAN updates.
+[Unit]
+Description=Cloud drive %i in Files
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=notify
+EnvironmentFile=%h/.config/man-cloud/%i.env
+ExecStartPre=-/usr/bin/fusermount3 -uz "${MOUNT}"
+ExecStartPre=/usr/bin/mkdir -p "${MOUNT}"
+ExecStart=/usr/bin/rclone mount "%i:" "${MOUNT}" --volname "${NAME}" --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 20G --dir-cache-time 1m --poll-interval 1m --log-level NOTICE
+ExecStop=/usr/bin/fusermount3 -uz "${MOUNT}"
+# Offline at login, or the provider is unreachable: try again until it works.
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=default.target

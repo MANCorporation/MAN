@@ -48,6 +48,7 @@ put "$bin/man-update" "$r/usr/bin/man-update" 0755
 put "$bin/man-update-check" "$r/usr/bin/man-update-check" 0755
 put "$data/updates/man-update-check.service" "$r/usr/lib/systemd/user/man-update-check.service" 0644
 put "$data/updates/man-update-check.timer" "$r/usr/lib/systemd/user/man-update-check.timer" 0644
+put "$data/cloud/man-cloud@.service" "$r/usr/lib/systemd/user/man-cloud@.service" 0644
 put "$data/updates/com.man.UpdateCheck.service" "$r/usr/share/dbus-1/services/com.man.UpdateCheck.service" 0644
 put "$data/updates/com.man.UpdateCheck.desktop" "$r/usr/share/applications/com.man.UpdateCheck.desktop" 0644
 put "$data/schemas/com.man.Updates.gschema.xml" "$r/usr/share/glib-2.0/schemas/com.man.Updates.gschema.xml" 0644
@@ -123,7 +124,7 @@ Architecture: $arch
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
-Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64, wine, clamav, clamav-freshclam, zenity
+Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64, rclone, fuse3, wine, clamav, clamav-freshclam, zenity
 Description: MAN system backend, MAN Setup and snapshot manager
  Privileged backend used by the MAN installer, the Snapshots app for
  creating and restoring Btrfs system snapshots, MAN Setup (first-start

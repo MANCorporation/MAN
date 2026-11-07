@@ -3,9 +3,9 @@
 
     tool.py msgs                 print the strings (JSON list, the index is N below)
     tool.py import LANG FILE     FILE has "N|translation" lines (\\n escaped) -> LANG.po
-    tool.py build LOCALEDIR DESKTOP-IN DESKTOP-OUT
+    tool.py build LOCALEDIR [DESKTOP-IN DESKTOP-OUT]...
                                  compile every LANG.po to LOCALEDIR/LANG/LC_MESSAGES/man-settings.mo
-                                 and write the Updates panel desktop file with Name[LANG]/Comment[LANG]
+                                 and write the panel desktop files (Updates, Cloud Drives) with Name[LANG]/Comment[LANG]
 
 Strings come from MAN's code in gcc-51: _() / N_() in cc-man-tweaks.c and
 cc-man-updates-panel.c, cc_man_gettext() in the Apps and About panels, and
@@ -20,10 +20,11 @@ DOMAIN = 'man-settings'
 SOURCES = [
     ('panels/common/cc-man-tweaks.c', r'\b(?:N_|_)\s*\('),
     ('panels/man-updates/cc-man-updates-panel.c', r'\b(?:N_|_)\s*\('),
+    ('panels/man-cloud/cc-man-cloud-panel.c', r'\b(?:N_|_)\s*\('),
     ('panels/applications/cc-applications-panel.c', r'\bcc_man_gettext\s*\('),
     ('panels/system/about/cc-about-page.c', r'\bcc_man_gettext\s*\('),
 ]
-DESKTOP = 'panels/man-updates/gnome-man-updates-panel.desktop'
+DESKTOPS = ['panels/man-updates/gnome-man-updates-panel.desktop', 'panels/man-cloud/gnome-man-cloud-panel.desktop']
 LIT = r'"((?:[^"\\]|\\.)*)"'
 
 
@@ -38,10 +39,11 @@ def msgs():
         for m in re.finditer(call + r'\s*((?:' + LIT + r'\s*)+)\)', text):
             s = ''.join(c_unescape(x) for x in re.findall(LIT, m.group(1)))
             out.setdefault(s, f'{rel}:{text.count(chr(10), 0, m.start()) + 1}')
-    for line in (GCC / DESKTOP).read_text(encoding='utf-8').splitlines():
-        m = re.match(r'(Name|Comment)=(.*)', line)
-        if m:
-            out.setdefault(m.group(2), DESKTOP)
+    for desktop in DESKTOPS:
+        for line in (GCC / desktop).read_text(encoding='utf-8').splitlines():
+            m = re.match(r'(Name|Comment)=(.*)', line)
+            if m:
+                out.setdefault(m.group(2), desktop)
     return out
 
 
@@ -127,10 +129,16 @@ def import_tx(lang, path):
     print(f'{lang}: {len(out)} ok')
 
 
-def build(localedir, desktop_in, desktop_out):
+def build(localedir, *desktops):
     catalogs = {po.stem: read_po(po) for po in sorted(HERE.glob('*.po'))}
     for lang, cat in catalogs.items():
         write_mo(Path(localedir) / lang / 'LC_MESSAGES' / f'{DOMAIN}.mo', cat)
+    for desktop_in, desktop_out in zip(desktops[::2], desktops[1::2]):
+        translate_desktop(catalogs, desktop_in, desktop_out)
+    print(f'{len(catalogs)} languages', file=sys.stderr)
+
+
+def translate_desktop(catalogs, desktop_in, desktop_out):
     out = []
     for line in Path(desktop_in).read_text(encoding='utf-8').splitlines():
         if re.match(r'(Name|Comment)\[', line):
@@ -140,7 +148,6 @@ def build(localedir, desktop_in, desktop_out):
         if m:
             out += [f'{m.group(1)}[{lang}]={cat[m.group(2)]}' for lang, cat in catalogs.items() if m.group(2) in cat]
     Path(desktop_out).write_text('\n'.join(out) + '\n', encoding='utf-8')
-    print(f'{len(catalogs)} languages', file=sys.stderr)
 
 
 if __name__ == '__main__':
@@ -153,6 +160,6 @@ if __name__ == '__main__':
     elif cmd == 'import':
         import_tx(sys.argv[2], sys.argv[3])
     elif cmd == 'build':
-        build(*sys.argv[2:5])
+        build(*sys.argv[2:])
     else:
         print(__doc__); sys.exit(2)

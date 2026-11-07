@@ -1,0 +1,1892 @@
+--- a/panels/man-cloud/cc-man-cloud-panel.c
++++ b/panels/man-cloud/cc-man-cloud-panel.c
+@@ -0,0 +1,1800 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*-
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ *
++ * MAN: Settings → Cloud Drives. Every storage provider rclone supports, set up
++ * without a terminal and shown in Files:
++ *
++ *   Add Cloud Drive… → provider list (rclone config providers) → a short form
++ *   with the fields that matter (the rest under More Options) → rclone's own
++ *   setup steps (rclone config create/update --non-interactive): providers with
++ *   a browser login open it and rclone waits for it; anything else rclone needs
++ *   is asked on a page of its own → the drive is mounted.
++ *
++ * A drive is the rclone remote NAME in ~/.config/rclone/rclone.conf, the file
++ * ~/.config/man-cloud/NAME.env (its title and folder) and the systemd user unit
++ * man-cloud@NAME.service, which mounts it in ~/Cloud Drives/TITLE at every login
++ * and retries while offline; Files shows the mounted drive in its sidebar. All
++ * of it is in the home folder, so MAN updates keep it.
++ */
++
++#include <config.h>
++#include <signal.h>
++#include <string.h>
++#include <sys/prctl.h>
++#include <glib/gstdio.h>
++#include <json-glib/json-glib.h>
++
++#include "cc-man-cloud-panel.h"
++#include "cc-man-i18n.h"
++
++#undef _
++#define _(s) cc_man_gettext (s)
++
++#define RCLONE "/usr/bin/rclone"
++#define UNIT_FMT "man-cloud@%s.service"
++
++static char *run_sync (const char * const *argv, int *status);
++
++struct _CcManCloudPanel
++{
++  CcPanel     parent_instance;
++
++  GtkWidget  *drives_group;
++  GPtrArray  *drive_rows;
++  GtkWidget  *empty_row;
++  GtkWidget  *add_row;
++
++  JsonParser *providers;      /* rclone config providers */
++  guint       refresh_id;
++  char       *last_sig;
++  GCancellable *cancellable;
++};
++
++G_DEFINE_TYPE (CcManCloudPanel, cc_man_cloud_panel, CC_TYPE_PANEL)
++
++/* ───────────────────────────── helpers ───────────────────────────── */
++
++static GtkWidget *
++pill (const char *mnemonic, gboolean suggested)
++{
++  GtkWidget *b = gtk_button_new_with_mnemonic (mnemonic);
++
++  gtk_widget_add_css_class (b, "pill");
++  if (suggested)
++    gtk_widget_add_css_class (b, "suggested-action");
++  return b;
++}
++
++/* The fixed bar at the bottom of a page, with its buttons centered. */
++static GtkWidget *
++bottom_bar (GtkWidget *first, ...)
++{
++  GtkWidget *bar = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
++  GtkWidget *w;
++  va_list ap;
++
++  gtk_widget_set_margin_top (bar, 12);
++  gtk_widget_set_margin_bottom (bar, 12);
++  gtk_widget_set_halign (bar, GTK_ALIGN_CENTER);
++  va_start (ap, first);
++  for (w = first; w; w = va_arg (ap, GtkWidget *))
++    {
++      gtk_widget_set_size_request (w, 200, -1);
++      gtk_box_append (GTK_BOX (bar), w);
++    }
++  va_end (ap);
++  return bar;
++}
++
++static AdwNavigationPage *
++subpage (const char *title, const char *tag, GtkWidget *content, GtkWidget *bar)
++{
++  GtkWidget *toolbar = adw_toolbar_view_new ();
++  AdwNavigationPage *page;
++
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar), adw_header_bar_new ());
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar), content);
++  if (bar)
++    {
++      adw_toolbar_view_add_bottom_bar (ADW_TOOLBAR_VIEW (toolbar), bar);
++      adw_toolbar_view_set_bottom_bar_style (ADW_TOOLBAR_VIEW (toolbar), ADW_TOOLBAR_RAISED);
++    }
++  page = adw_navigation_page_new (toolbar, title);
++  adw_navigation_page_set_tag (page, tag);
++  return page;
++}
++
++static void
++pop_subpages (CcManCloudPanel *self)
++{
++  GtkWidget *nav = gtk_widget_get_ancestor (GTK_WIDGET (self), ADW_TYPE_NAVIGATION_VIEW);
++
++  if (nav)
++    adw_navigation_view_pop_to_page (ADW_NAVIGATION_VIEW (nav), ADW_NAVIGATION_PAGE (self));
++}
++
++static void
++replace_top (CcManCloudPanel *self, AdwNavigationPage *page, const char *keep_tag)
++{
++  GtkWidget *nav = gtk_widget_get_ancestor (GTK_WIDGET (self), ADW_TYPE_NAVIGATION_VIEW);
++
++  AdwNavigationPage *keep = nav && keep_tag ? adw_navigation_view_find_page (ADW_NAVIGATION_VIEW (nav), keep_tag) : NULL;
++
++  /* pop_to_tag() returns FALSE when that page is already the visible one. */
++  if (keep)
++    adw_navigation_view_pop_to_page (ADW_NAVIGATION_VIEW (nav), keep);
++  else
++    pop_subpages (self);
++  cc_panel_push_subpage (CC_PANEL (self), page);
++}
++
++static const char *
++jstr (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_VALUE (n) && json_node_get_value_type (n) == G_TYPE_STRING ? json_node_get_string (n) : NULL;
++}
++
++static gboolean
++jbool (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_VALUE (n) && json_node_get_value_type (n) == G_TYPE_BOOLEAN && json_node_get_boolean (n);
++}
++
++static gint64
++jint (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_VALUE (n) && json_node_get_value_type (n) == G_TYPE_INT64 ? json_node_get_int (n) : 0;
++}
++
++static JsonArray *
++jarr (JsonObject *o, const char *member)
++{
++  JsonNode *n = o ? json_object_get_member (o, member) : NULL;
++  return n && JSON_NODE_HOLDS_ARRAY (n) ? json_node_get_array (n) : NULL;
++}
++
++static char *
++config_dir (const char *sub)
++{
++  return g_build_filename (g_get_user_config_dir (), sub, NULL);
++}
++
++static char *
++env_path (const char *remote)
++{
++  g_autofree char *dir = config_dir ("man-cloud");
++  g_autofree char *file = g_strdup_printf ("%s.env", remote);
++  return g_build_filename (dir, file, NULL);
++}
++
++/* ~/.config/man-cloud/NAME.pending exists while a drive is being set up. */
++static void
++pending_mark (const char *remote, gboolean on)
++{
++  g_autofree char *dir = config_dir ("man-cloud");
++  g_autofree char *file = g_strdup_printf ("%s.pending", remote ? remote : "");
++  g_autofree char *path = g_build_filename (dir, file, NULL);
++
++  if (!remote)
++    return;
++  if (on)
++    {
++      g_mkdir_with_parents (dir, 0700);
++      g_file_set_contents (path, "", 0, NULL);
++    }
++  else
++    g_unlink (path);
++}
++
++/* A setup that did not finish (Settings was closed during it) leaves a half
++ * made remote: remove it. */
++static void
++clean_unfinished (void)
++{
++  g_autofree char *dir = config_dir ("man-cloud");
++  g_autoptr(GDir) d = g_dir_open (dir, 0, NULL);
++  const char *name;
++
++  while (d && (name = g_dir_read_name (d)))
++    if (g_str_has_suffix (name, ".pending"))
++      {
++        g_autofree char *remote = g_strndup (name, strlen (name) - strlen (".pending"));
++        g_autofree char *path = g_build_filename (dir, name, NULL);
++        const char *del[] = { RCLONE, "config", "delete", remote, NULL };
++
++        g_free (run_sync (del, NULL));
++        g_unlink (path);
++      }
++}
++
++/* A value of a NAME="..." line written by write_env(). */
++static char *
++env_value (const char *remote, const char *key)
++{
++  g_autofree char *path = env_path (remote);
++  g_autofree char *text = NULL;
++  g_auto(GStrv) lines = NULL;
++  g_autofree char *prefix = g_strdup_printf ("%s=", key);
++
++  if (!g_file_get_contents (path, &text, NULL, NULL))
++    return NULL;
++  lines = g_strsplit (text, "\n", -1);
++  for (char **l = lines; *l; l++)
++    if (g_str_has_prefix (*l, prefix))
++      {
++        const char *v = *l + strlen (prefix);
++        GString *out = g_string_new (NULL);
++        gboolean quoted = *v == '"';
++
++        for (v += quoted; *v && !(quoted && *v == '"'); v++)
++          {
++            if (quoted && *v == '\\' && v[1])
++              v++;
++            g_string_append_c (out, *v);
++          }
++        return g_string_free (out, FALSE);
++      }
++  return NULL;
++}
++
++static void
++env_quote (GString *s, const char *key, const char *value)
++{
++  g_string_append_printf (s, "%s=\"", key);
++  for (const char *p = value; *p; p++)
++    {
++      if (*p == '"' || *p == '\\' || *p == '$' || *p == '`')
++        g_string_append_c (s, '\\');
++      g_string_append_c (s, *p);
++    }
++  g_string_append (s, "\"\n");
++}
++
++static gboolean
++write_env (const char *remote, const char *title, const char *mount, GError **error)
++{
++  g_autofree char *dir = config_dir ("man-cloud");
++  g_autofree char *path = env_path (remote);
++  g_autoptr(GString) s = g_string_new ("# MAN Cloud Drives (Settings → Cloud Drives)\n");
++
++  env_quote (s, "NAME", title);
++  env_quote (s, "MOUNT", mount);
++  g_mkdir_with_parents (dir, 0700);
++  return g_file_set_contents_full (path, s->str, s->len, G_FILE_SET_CONTENTS_CONSISTENT, 0600, error);
++}
++
++/* The Files sidebar: ~/.config/gtk-3.0/bookmarks, "URI LABEL" per line. */
++static void
++set_bookmark (const char *mount, const char *title, gboolean add)
++{
++  g_autofree char *dir = config_dir ("gtk-3.0");
++  g_autofree char *path = g_build_filename (dir, "bookmarks", NULL);
++  g_autofree char *text = NULL;
++  g_autofree char *uri = g_filename_to_uri (mount, NULL, NULL);
++  g_autoptr(GString) out = g_string_new (NULL);
++  g_auto(GStrv) lines = NULL;
++
++  if (!uri)
++    return;
++  g_file_get_contents (path, &text, NULL, NULL);
++  lines = g_strsplit (text ? text : "", "\n", -1);
++  for (char **l = lines; *l; l++)
++    {
++      if (!**l)
++        continue;
++      if (g_strcmp0 (*l, uri) == 0 || (g_str_has_prefix (*l, uri) && (*l)[strlen (uri)] == ' '))
++        continue;
++      g_string_append_printf (out, "%s\n", *l);
++    }
++  if (add)
++    g_string_append_printf (out, "%s %s\n", uri, title);
++  g_mkdir_with_parents (dir, 0700);
++  g_file_set_contents (path, out->str, out->len, NULL);
++}
++
++static void
++spawn_quiet (const char * const *argv)
++{
++  g_autoptr(GSubprocess) p = g_subprocess_newv (argv, G_SUBPROCESS_FLAGS_STDOUT_SILENCE | G_SUBPROCESS_FLAGS_STDERR_SILENCE, NULL);
++}
++
++/* Synchronous: only used for quick local commands (systemctl, rclone listing). */
++static char *
++run_sync (const char * const *argv, int *status)
++{
++  g_autofree char *out = NULL;
++  int st = -1;
++
++  if (!g_spawn_sync (NULL, (char **) argv, NULL, G_SPAWN_SEARCH_PATH | G_SPAWN_STDERR_TO_DEV_NULL, NULL, NULL, &out, NULL, &st, NULL))
++    st = -1;
++  if (status)
++    *status = st;
++  return g_steal_pointer (&out);
++}
++
++/* ─────────────────────────── providers ─────────────────────────── */
++
++/* Not storage services: they wrap other drives, or are this computer. */
++static const char *const not_providers[] = {
++  "alias", "archive", "cache", "chunker", "combine", "compress", "crypt", "hasher",
++  "union", "local", "memory", "tardigrade", NULL,
++};
++
++/* The most used ones come first in the list. */
++static const char *const popular[] = {
++  "drive", "onedrive", "dropbox", "iclouddrive", "protondrive", "mega", "pcloud", "box",
++  "webdav", "s3", "sftp", "smb", "ftp", NULL,
++};
++
++static const struct { const char *name; const char *title; } nice_titles[] = {
++  { "drive", "Google Drive" },
++  { "onedrive", "Microsoft OneDrive" },
++  { "iclouddrive", "iCloud Drive" },
++  { "pcloud", "pCloud" },
++  { "webdav", N_("WebDAV (Nextcloud, ownCloud and others)") },
++  { "s3", N_("Amazon S3 and Compatible Storage") },
++  { "sftp", "SFTP (SSH)" },
++  { "smb", N_("Windows Share (SMB)") },
++  { "seafile", "Seafile" },
++  { "google cloud storage", "Google Cloud Storage" },
++};
++
++static JsonArray *
++provider_list (CcManCloudPanel *self)
++{
++  if (!self->providers)
++    {
++      const char *argv[] = { RCLONE, "config", "providers", NULL };
++      g_autofree char *out = run_sync (argv, NULL);
++
++      self->providers = json_parser_new ();
++      if (!out || !json_parser_load_from_data (self->providers, out, -1, NULL))
++        g_clear_object (&self->providers);
++    }
++  if (!self->providers || !JSON_NODE_HOLDS_ARRAY (json_parser_get_root (self->providers)))
++    return NULL;
++  return json_node_get_array (json_parser_get_root (self->providers));
++}
++
++static JsonObject *
++provider_by_name (CcManCloudPanel *self, const char *name)
++{
++  JsonArray *a = provider_list (self);
++
++  for (guint i = 0; a && i < json_array_get_length (a); i++)
++    {
++      JsonObject *p = json_array_get_object_element (a, i);
++      if (g_strcmp0 (jstr (p, "Name"), name) == 0)
++        return p;
++    }
++  return NULL;
++}
++
++static char *
++provider_title (JsonObject *p)
++{
++  const char *name = jstr (p, "Name");
++  const char *desc = jstr (p, "Description");
++  const char *cut;
++
++  for (guint i = 0; i < G_N_ELEMENTS (nice_titles); i++)
++    if (g_strcmp0 (name, nice_titles[i].name) == 0)
++      return g_strdup (_(nice_titles[i].title));
++  if (!desc || !*desc)
++    return g_strdup (name ? name : "");
++  cut = strstr (desc, " including ");
++  if (!cut)
++    cut = strstr (desc, " (");
++  return cut ? g_strndup (desc, cut - desc) : g_strdup (desc);
++}
++
++static gboolean
++is_provider (JsonObject *p)
++{
++  return p && !g_strv_contains (not_providers, jstr (p, "Name"));
++}
++
++static gboolean
++uses_browser (JsonObject *p)
++{
++  JsonArray *opts = jarr (p, "Options");
++
++  for (guint i = 0; opts && i < json_array_get_length (opts); i++)
++    if (g_strcmp0 (jstr (json_array_get_object_element (opts, i), "Name"), "token") == 0)
++      return TRUE;
++  return FALSE;
++}
++
++static int
++popular_rank (const char *name)
++{
++  for (int i = 0; popular[i]; i++)
++    if (g_strcmp0 (popular[i], name) == 0)
++      return i;
++  return G_N_ELEMENTS (popular);
++}
++
++/* ─────────────────────────── the drive list ─────────────────────────── */
++
++typedef struct {
++  char *remote;
++  char *type;
++} Drive;
++
++static void
++drive_free (Drive *d)
++{
++  g_free (d->remote);
++  g_free (d->type);
++  g_free (d);
++}
++
++static GPtrArray *
++list_drives (void)
++{
++  const char *argv[] = { RCLONE, "config", "dump", NULL };
++  g_autofree char *out = run_sync (argv, NULL);
++  g_autoptr(JsonParser) parser = json_parser_new ();
++  GPtrArray *drives = g_ptr_array_new_with_free_func ((GDestroyNotify) drive_free);
++  JsonNode *root;
++  g_autoptr(GList) names = NULL;
++
++  if (!out || !json_parser_load_from_data (parser, out, -1, NULL))
++    return drives;
++  root = json_parser_get_root (parser);
++  if (!JSON_NODE_HOLDS_OBJECT (root))
++    return drives;
++  names = json_object_get_members (json_node_get_object (root));
++  names = g_list_sort (names, (GCompareFunc) g_utf8_collate);
++  for (GList *l = names; l; l = l->next)
++    {
++      Drive *d = g_new0 (Drive, 1);
++      d->remote = g_strdup (l->data);
++      d->type = g_strdup (jstr (json_object_get_object_member (json_node_get_object (root), l->data), "type"));
++      g_ptr_array_add (drives, d);
++    }
++  return drives;
++}
++
++static char *
++drive_title (const char *remote)
++{
++  char *t = env_value (remote, "NAME");
++  return t ? t : g_strdup (remote);
++}
++
++static char *
++drive_mount (const char *remote)
++{
++  char *m = env_value (remote, "MOUNT");
++  g_autofree char *title = NULL;
++  g_autofree char *root = NULL;
++
++  if (m)
++    return m;
++  title = drive_title (remote);
++  root = g_build_filename (g_get_home_dir (), _("Cloud Drives"), NULL);
++  return g_build_filename (root, title, NULL);
++}
++
++/* ActiveState/SubState/UnitFileState of the drive's unit. */
++static void
++unit_state (const char *remote, char **active, char **sub, char **file_state)
++{
++  g_autofree char *unit = g_strdup_printf (UNIT_FMT, remote);
++  const char *argv[] = { "systemctl", "--user", "show", "-p", "ActiveState,SubState,UnitFileState", unit, NULL };
++  g_autofree char *out = run_sync (argv, NULL);
++  g_auto(GStrv) lines = g_strsplit (out ? out : "", "\n", -1);
++
++  *active = *sub = *file_state = NULL;
++  for (char **l = lines; *l; l++)
++    {
++      if (g_str_has_prefix (*l, "ActiveState="))
++        *active = g_strdup (*l + strlen ("ActiveState="));
++      else if (g_str_has_prefix (*l, "SubState="))
++        *sub = g_strdup (*l + strlen ("SubState="));
++      else if (g_str_has_prefix (*l, "UnitFileState="))
++        *file_state = g_strdup (*l + strlen ("UnitFileState="));
++    }
++}
++
++static void refresh_drives (CcManCloudPanel *self);
++static void start_add (CcManCloudPanel *self);
++
++static gboolean
++refresh_once (gpointer user_data)
++{
++  CcManCloudPanel *self = user_data;
++
++  if (self->drives_group)
++    {
++      g_clear_pointer (&self->last_sig, g_free);
++      refresh_drives (self);
++    }
++  return G_SOURCE_REMOVE;
++}
++
++static void
++refresh_later (CcManCloudPanel *self, guint seconds)
++{
++  g_timeout_add_seconds_full (G_PRIORITY_DEFAULT, seconds, refresh_once, g_object_ref (self), g_object_unref);
++}
++
++static void
++set_connected (const char *remote, gboolean on)
++{
++  g_autofree char *unit = g_strdup_printf (UNIT_FMT, remote);
++  const char *argv[] = { "systemctl", "--user", on ? "enable" : "disable", "--now", unit, NULL };
++
++  if (on)
++    {
++      g_autofree char *title = drive_title (remote);
++      g_autofree char *mount = drive_mount (remote);
++
++      g_autofree char *env = env_value (remote, "MOUNT");
++
++      if (!env)
++        write_env (remote, title, mount, NULL);
++    }
++  spawn_quiet (argv);
++}
++
++static void
++switch_toggled (GtkWidget *row, GParamSpec *pspec, CcManCloudPanel *self)
++{
++  const char *remote = g_object_get_data (G_OBJECT (row), "remote");
++
++  if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (row), "syncing")))
++    return;
++  set_connected (remote, adw_switch_row_get_active (ADW_SWITCH_ROW (row)));
++  refresh_later (self, 1);
++}
++
++static void
++open_in_files (GtkWidget *button, gpointer user_data)
++{
++  const char *remote = g_object_get_data (G_OBJECT (button), "remote");
++  g_autofree char *mount = drive_mount (remote);
++  g_autoptr(GFile) file = g_file_new_for_path (mount);
++  g_autoptr(GtkFileLauncher) launcher = gtk_file_launcher_new (file);
++
++  gtk_file_launcher_launch (launcher, GTK_WINDOW (gtk_widget_get_root (button)), NULL, NULL, NULL);
++}
++
++typedef struct {
++  CcManCloudPanel *self;
++  char *remote;
++} RemoveData;
++
++static void
++remove_response (AdwAlertDialog *dialog, const char *response, RemoveData *rd)
++{
++  if (g_strcmp0 (response, "remove") == 0)
++    {
++      g_autofree char *unit = g_strdup_printf (UNIT_FMT, rd->remote);
++      g_autofree char *title = drive_title (rd->remote);
++      g_autofree char *mount = drive_mount (rd->remote);
++      g_autofree char *env = env_path (rd->remote);
++      g_autofree char *cache = g_build_filename (g_get_user_cache_dir (), "rclone", "vfs", rd->remote, NULL);
++      g_autofree char *meta = g_build_filename (g_get_user_cache_dir (), "rclone", "vfsMeta", rd->remote, NULL);
++      const char *stop[] = { "systemctl", "--user", "disable", "--now", unit, NULL };
++      const char *umount[] = { "fusermount3", "-uz", mount, NULL };
++      const char *del[] = { RCLONE, "config", "delete", rd->remote, NULL };
++      const char *rm[] = { "rm", "-rf", "--", cache, meta, NULL };
++
++      g_free (run_sync (stop, NULL));
++      g_free (run_sync (umount, NULL));
++      g_free (run_sync (del, NULL));
++      g_free (run_sync (rm, NULL));
++      g_unlink (env);
++      g_rmdir (mount);
++      set_bookmark (mount, title, FALSE);
++      refresh_once (rd->self);
++    }
++  g_object_unref (rd->self);
++  g_free (rd->remote);
++  g_free (rd);
++}
++
++static void
++remove_clicked (GtkWidget *button, CcManCloudPanel *self)
++{
++  const char *remote = g_object_get_data (G_OBJECT (button), "remote");
++  g_autofree char *title = drive_title (remote);
++  g_autofree char *heading = g_strdup_printf (_("Remove “%s”?"), title);
++  AdwDialog *dialog = adw_alert_dialog_new (heading, _("Your files stay in the cloud. This computer stops showing them, and its copies of them are deleted."));
++  RemoveData *rd = g_new0 (RemoveData, 1);
++
++  rd->self = g_object_ref (self);
++  rd->remote = g_strdup (remote);
++  adw_alert_dialog_add_responses (ADW_ALERT_DIALOG (dialog), "cancel", _("_Cancel"), "remove", _("_Remove"), NULL);
++  adw_alert_dialog_set_response_appearance (ADW_ALERT_DIALOG (dialog), "remove", ADW_RESPONSE_DESTRUCTIVE);
++  adw_alert_dialog_set_default_response (ADW_ALERT_DIALOG (dialog), "cancel");
++  g_signal_connect (dialog, "response", G_CALLBACK (remove_response), rd);
++  adw_dialog_present (dialog, GTK_WIDGET (self));
++}
++
++static void
++refresh_drives (CcManCloudPanel *self)
++{
++  g_autoptr(GPtrArray) drives = list_drives ();
++
++  g_autoptr(GString) sig = g_string_new (NULL);
++  g_autoptr(GPtrArray) states = g_ptr_array_new_with_free_func (g_free);
++
++  if (!self->drives_group)
++    return;
++  for (guint i = 0; i < drives->len; i++)
++    {
++      Drive *d = g_ptr_array_index (drives, i);
++      g_autofree char *active = NULL, *sub = NULL, *file_state = NULL;
++      g_autofree char *title = drive_title (d->remote);
++
++      unit_state (d->remote, &active, &sub, &file_state);
++      g_ptr_array_add (states, g_strdup_printf ("%s|%s|%s", active ? active : "", sub ? sub : "", file_state ? file_state : ""));
++      g_string_append_printf (sig, "%s\x1f%s\x1f%s\x1e", d->remote, title, (char *) g_ptr_array_index (states, i));
++    }
++  if (self->last_sig && strcmp (self->last_sig, sig->str) == 0)
++    return;
++  g_free (self->last_sig);
++  self->last_sig = g_strdup (sig->str);
++  for (guint i = 0; i < self->drive_rows->len; i++)
++    adw_preferences_group_remove (ADW_PREFERENCES_GROUP (self->drives_group), g_ptr_array_index (self->drive_rows, i));
++  g_ptr_array_set_size (self->drive_rows, 0);
++  gtk_widget_set_visible (self->empty_row, drives->len == 0);
++
++  for (guint i = 0; i < drives->len; i++)
++    {
++      Drive *d = g_ptr_array_index (drives, i);
++      JsonObject *p = provider_by_name (self, d->type);
++      g_autofree char *title = drive_title (d->remote);
++      g_autofree char *ptitle = p ? provider_title (p) : g_strdup (d->type ? d->type : "");
++      g_auto(GStrv) st = g_strsplit (g_ptr_array_index (states, i), "|", 3);
++      const char *active = st[0], *sub = st[1], *file_state = st[2];
++      g_autofree char *subtitle = NULL;
++      const char *status;
++      GtkWidget *row = adw_switch_row_new ();
++      GtkWidget *open = gtk_button_new_from_icon_name ("folder-open-symbolic");
++      GtkWidget *remove = gtk_button_new_from_icon_name ("user-trash-symbolic");
++      gboolean on;
++
++      on = g_strcmp0 (file_state, "enabled") == 0 || g_strcmp0 (active, "active") == 0 || g_strcmp0 (active, "activating") == 0;
++      if (g_strcmp0 (active, "active") == 0)
++        status = _("Connected");
++      else if (g_strcmp0 (sub, "auto-restart") == 0 || g_strcmp0 (active, "failed") == 0)
++        status = _("Cannot connect. Trying again…");
++      else if (g_strcmp0 (active, "activating") == 0)
++        status = _("Connecting…");
++      else
++        status = _("Not shown in Files");
++      subtitle = g_strdup_printf ("%s · %s", ptitle, status);
++
++      adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++      adw_action_row_set_subtitle (ADW_ACTION_ROW (row), subtitle);
++      adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (row), FALSE);
++      g_object_set_data_full (G_OBJECT (row), "remote", g_strdup (d->remote), g_free);
++      g_object_set_data (G_OBJECT (row), "syncing", GINT_TO_POINTER (TRUE));
++      adw_switch_row_set_active (ADW_SWITCH_ROW (row), on);
++      g_object_set_data (G_OBJECT (row), "syncing", GINT_TO_POINTER (FALSE));
++      g_signal_connect (row, "notify::active", G_CALLBACK (switch_toggled), self);
++
++      gtk_widget_set_tooltip_text (open, _("Open in Files"));
++      gtk_widget_set_valign (open, GTK_ALIGN_CENTER);
++      gtk_widget_add_css_class (open, "flat");
++      gtk_widget_set_sensitive (open, g_strcmp0 (active, "active") == 0);
++      g_object_set_data_full (G_OBJECT (open), "remote", g_strdup (d->remote), g_free);
++      g_signal_connect (open, "clicked", G_CALLBACK (open_in_files), NULL);
++      gtk_widget_set_tooltip_text (remove, _("Remove"));
++      gtk_widget_set_valign (remove, GTK_ALIGN_CENTER);
++      gtk_widget_add_css_class (remove, "flat");
++      g_object_set_data_full (G_OBJECT (remove), "remote", g_strdup (d->remote), g_free);
++      g_signal_connect (remove, "clicked", G_CALLBACK (remove_clicked), self);
++      adw_action_row_add_prefix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name ("folder-remote-symbolic"));
++      adw_action_row_add_suffix (ADW_ACTION_ROW (row), open);
++      adw_action_row_add_suffix (ADW_ACTION_ROW (row), remove);
++
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->drives_group), row);
++      g_ptr_array_add (self->drive_rows, row);
++    }
++  /* The add button stays last. */
++  g_object_ref (self->add_row);
++  adw_preferences_group_remove (ADW_PREFERENCES_GROUP (self->drives_group), self->add_row);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->drives_group), self->add_row);
++  g_object_unref (self->add_row);
++}
++
++static gboolean
++refresh_tick (gpointer user_data)
++{
++  CcManCloudPanel *self = user_data;
++
++  if (gtk_widget_get_mapped (GTK_WIDGET (self)))
++    refresh_drives (self);
++  return G_SOURCE_CONTINUE;
++}
++
++/* ─────────────────────────── adding a drive ─────────────────────────── */
++
++typedef enum { FIELD_ENTRY, FIELD_PASSWORD, FIELD_SWITCH, FIELD_COMBO } FieldKind;
++
++typedef struct {
++  char *name;
++  char *provider_cond;   /* rclone's "Provider" condition, "" for all */
++  char *default_str;
++  gboolean required;
++  FieldKind kind;
++  GPtrArray *values;     /* FIELD_COMBO: the example values */
++  GtkWidget *row;
++} Field;
++
++typedef struct {
++  CcManCloudPanel *self;
++  char *type;
++  char *ptitle;
++  gboolean browser;
++  GPtrArray *fields;
++  GtkWidget *name_row;
++  GtkWidget *go;
++  GtkWidget *error;
++
++  /* rclone's setup steps */
++  char *remote;
++  char *title;
++  char *mount;
++  char *state;
++  char *last_state;
++  int repeats;
++  GSubprocess *proc;
++  GCancellable *cancel;
++  GString *out;
++  GString *err;
++  int pending;
++  gboolean cancelled;
++  char *login_url;
++  GtkWidget *login_again;
++  GtkWidget *answer;     /* the widget of a question page */
++  GPtrArray *answer_values;
++  gboolean finished;
++} Setup;
++
++static void
++field_free (Field *f)
++{
++  g_free (f->name);
++  g_free (f->provider_cond);
++  g_free (f->default_str);
++  if (f->values)
++    g_ptr_array_unref (f->values);
++  g_free (f);
++}
++
++static void
++setup_free (Setup *s)
++{
++  if (s->cancel)
++    g_cancellable_cancel (s->cancel);
++  g_clear_object (&s->cancel);
++  g_clear_object (&s->proc);
++  if (s->fields)
++    g_ptr_array_unref (s->fields);
++  if (s->answer_values)
++    g_ptr_array_unref (s->answer_values);
++  if (s->out)
++    g_string_free (s->out, TRUE);
++  if (s->err)
++    g_string_free (s->err, TRUE);
++  g_free (s->type);
++  g_free (s->ptitle);
++  g_free (s->remote);
++  g_free (s->title);
++  g_free (s->mount);
++  g_free (s->state);
++  g_free (s->last_state);
++  g_free (s->login_url);
++  g_object_unref (s->self);
++  g_free (s);
++}
++
++/* Fields shown on the form; the others go under More Options. */
++static const char *const main_fields[] = {
++  "url", "host", "user", "username", "pass", "password", "2fa", "provider", "vendor", "region",
++  "endpoint", "access_key_id", "secret_access_key", "account", "key", "api_key", "email",
++  "apple_id", "domain", "tenant", "site", "service", "namespace", "public_key", "private_key",
++  "cloud_name", "api_secret", "drive_id", "doi", "namenode", "secret", NULL,
++};
++
++/* Never asked: rclone fills them in itself (logins) or they are for experts only. */
++static const char *const hidden_fields[] = {
++  "token", "auth_url", "token_url", "client_credentials", "service_account_credentials",
++  "service_account_file", "env_auth", "key_pem", "pubkey", "pubkey_file", "ssh", NULL,
++};
++
++static const struct { const char *name; const char *label; } labels[] = {
++  { "url", N_("Server Address") }, { "host", N_("Server") }, { "user", N_("User Name") },
++  { "username", N_("User Name") }, { "pass", N_("Password") }, { "password", N_("Password") },
++  { "2fa", N_("Two-Factor Code") }, { "provider", N_("Provider") }, { "vendor", N_("Server Type") },
++  { "region", N_("Region") }, { "endpoint", N_("Endpoint") }, { "access_key_id", N_("Access Key ID") },
++  { "secret_access_key", N_("Secret Access Key") }, { "account", N_("Account") }, { "key", N_("Key") },
++  { "api_key", N_("API Key") }, { "email", N_("Email") }, { "apple_id", N_("Apple ID") },
++  { "domain", N_("Domain") }, { "port", N_("Port") }, { "scope", N_("Access") },
++};
++
++static char *
++field_label (const char *name)
++{
++  g_autofree char *s = NULL;
++
++  for (guint i = 0; i < G_N_ELEMENTS (labels); i++)
++    if (g_strcmp0 (labels[i].name, name) == 0)
++      return g_strdup (_(labels[i].label));
++  s = g_strdup (name);
++  for (char *p = s; *p; p++)
++    if (*p == '_')
++      *p = ' ';
++  if (*s)
++    *s = g_ascii_toupper (*s);
++  return g_steal_pointer (&s);
++}
++
++/* First sentence of rclone's help text (English; rclone has no translations). */
++static char *
++short_help (const char *help)
++{
++  const char *end;
++
++  if (!help)
++    return NULL;
++  end = strpbrk (help, "\n");
++  return end ? g_strndup (help, end - help) : g_strdup (help);
++}
++
++static const char *
++field_value (Field *f)
++{
++  switch (f->kind)
++    {
++    case FIELD_SWITCH:
++      return adw_switch_row_get_active (ADW_SWITCH_ROW (f->row)) ? "true" : "false";
++    case FIELD_COMBO:
++      {
++        guint i = adw_combo_row_get_selected (ADW_COMBO_ROW (f->row));
++        return i < f->values->len ? g_ptr_array_index (f->values, i) : "";
++      }
++    default:
++      return gtk_editable_get_text (GTK_EDITABLE (f->row));
++    }
++}
++
++static gboolean
++cond_matches (const char *cond, const char *provider)
++{
++  gboolean negate;
++  g_auto(GStrv) items = NULL;
++  gboolean found;
++
++  if (!cond || !*cond)
++    return TRUE;
++  negate = cond[0] == '!';
++  items = g_strsplit (cond + negate, ",", -1);
++  found = provider && g_strv_contains ((const char * const *) items, provider);
++  return negate ? !found : found;
++}
++
++static const char *
++chosen_provider (Setup *s)
++{
++  for (guint i = 0; i < s->fields->len; i++)
++    {
++      Field *f = g_ptr_array_index (s->fields, i);
++      if (g_strcmp0 (f->name, "provider") == 0 && (!f->provider_cond || !*f->provider_cond))
++        return field_value (f);
++    }
++  return NULL;
++}
++
++static void
++validate_form (Setup *s)
++{
++  const char *provider = chosen_provider (s);
++  g_autofree char *name = g_strstrip (g_strdup (gtk_editable_get_text (GTK_EDITABLE (s->name_row))));
++  gboolean ok = *name != '\0';
++  g_autoptr(GHashTable) shown = g_hash_table_new (g_str_hash, g_str_equal);
++
++  for (guint i = 0; i < s->fields->len; i++)
++    {
++      Field *f = g_ptr_array_index (s->fields, i);
++      /* rclone lists some options once per provider; show the one that applies. */
++      gboolean visible = cond_matches (f->provider_cond, provider) && !g_hash_table_contains (shown, f->name);
++
++      gtk_widget_set_visible (f->row, visible);
++      if (visible)
++        g_hash_table_add (shown, f->name);
++      if (visible && f->required && f->kind != FIELD_SWITCH && !*field_value (f))
++        ok = FALSE;
++    }
++  gtk_widget_set_sensitive (s->go, ok);
++}
++
++static Field *
++make_field (JsonObject *o)
++{
++  Field *f = g_new0 (Field, 1);
++  JsonArray *ex = jarr (o, "Examples");
++  const char *type = jstr (o, "Type");
++  g_autofree char *label = field_label (jstr (o, "Name"));
++  g_autofree char *help = short_help (jstr (o, "Help"));
++  gboolean exclusive = jbool (o, "Exclusive");
++  guint n_ex = ex ? json_array_get_length (ex) : 0;
++
++  f->name = g_strdup (jstr (o, "Name"));
++  f->provider_cond = g_strdup (jstr (o, "Provider"));
++  f->default_str = g_strdup (jstr (o, "DefaultStr") ? jstr (o, "DefaultStr") : "");
++  f->required = jbool (o, "Required");
++
++  if (g_strcmp0 (type, "bool") == 0)
++    {
++      f->kind = FIELD_SWITCH;
++      f->row = adw_switch_row_new ();
++      adw_switch_row_set_active (ADW_SWITCH_ROW (f->row), g_strcmp0 (f->default_str, "true") == 0);
++      if (help)
++        adw_action_row_set_subtitle (ADW_ACTION_ROW (f->row), help);
++    }
++  else if (n_ex > 0 && (exclusive || g_strcmp0 (f->name, "provider") == 0 || g_strcmp0 (f->name, "vendor") == 0))
++    {
++      g_autoptr(GtkStringList) list = gtk_string_list_new (NULL);
++      guint selected = 0;
++
++      f->kind = FIELD_COMBO;
++      f->values = g_ptr_array_new_with_free_func (g_free);
++      if (!f->required && !exclusive)
++        {
++          /* "Other" leaves the option to rclone's default. */
++          g_ptr_array_add (f->values, g_strdup (""));
++          gtk_string_list_append (list, _("Other"));
++        }
++      for (guint i = 0; i < n_ex; i++)
++        {
++          JsonObject *e = json_array_get_object_element (ex, i);
++          const char *v = jstr (e, "Value") ? jstr (e, "Value") : "";
++          g_autofree char *h = short_help (jstr (e, "Help"));
++
++          if (g_strcmp0 (v, f->default_str) == 0)
++            selected = f->values->len;
++          g_ptr_array_add (f->values, g_strdup (v));
++          gtk_string_list_append (list, h && *h ? h : v);
++        }
++      f->row = adw_combo_row_new ();
++      adw_combo_row_set_model (ADW_COMBO_ROW (f->row), G_LIST_MODEL (list));
++      adw_combo_row_set_selected (ADW_COMBO_ROW (f->row), selected);
++      adw_combo_row_set_enable_search (ADW_COMBO_ROW (f->row), n_ex > 8);
++    }
++  else if (jbool (o, "IsPassword"))
++    {
++      f->kind = FIELD_PASSWORD;
++      f->row = adw_password_entry_row_new ();
++    }
++  else
++    {
++      f->kind = FIELD_ENTRY;
++      f->row = adw_entry_row_new ();
++      gtk_editable_set_text (GTK_EDITABLE (f->row), f->default_str);
++    }
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (f->row), label);
++  adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (f->row), FALSE);
++  if (help && f->kind != FIELD_SWITCH)
++    gtk_widget_set_tooltip_text (f->row, help);
++  return f;
++}
++
++/* A remote name rclone accepts and systemd needs no escaping for. */
++static char *
++remote_name (const char *title)
++{
++  g_autoptr(GPtrArray) drives = list_drives ();
++  g_autoptr(GString) s = g_string_new (NULL);
++  g_autofree char *ascii = g_str_to_ascii (title, NULL);
++  char *base;
++  char *name;
++
++  for (const char *p = ascii; *p; p++)
++    {
++      if (g_ascii_isalnum (*p))
++        g_string_append_c (s, *p);
++      else if (s->len && s->str[s->len - 1] != '_')
++        g_string_append_c (s, '_');
++    }
++  while (s->len && s->str[s->len - 1] == '_')
++    g_string_truncate (s, s->len - 1);
++  if (!s->len)
++    g_string_append (s, "Cloud");
++  base = g_string_free (g_steal_pointer (&s), FALSE);
++  name = g_strdup (base);
++  for (int n = 2;; n++)
++    {
++      gboolean taken = FALSE;
++
++      for (guint i = 0; i < drives->len; i++)
++        if (g_ascii_strcasecmp (((Drive *) g_ptr_array_index (drives, i))->remote, name) == 0)
++          taken = TRUE;
++      if (!taken)
++        break;
++      g_free (name);
++      name = g_strdup_printf ("%s_%d", base, n);
++    }
++  g_free (base);
++  return name;
++}
++
++/* A folder name not used by another drive. */
++static char *
++unique_mount (const char *title)
++{
++  g_autofree char *root = g_build_filename (g_get_home_dir (), _("Cloud Drives"), NULL);
++  g_autofree char *clean = g_strdelimit (g_strdup (title), "/", '-');
++  char *path = g_build_filename (root, clean, NULL);
++
++  for (int n = 2; g_file_test (path, G_FILE_TEST_EXISTS); n++)
++    {
++      g_autofree char *alt = g_strdup_printf ("%s %d", clean, n);
++      g_free (path);
++      path = g_build_filename (root, alt, NULL);
++    }
++  return path;
++}
++
++static void run_step (Setup *s, GPtrArray *argv);
++static void continue_with (Setup *s, const char *result);
++
++static void
++back_to_form (CcManCloudPanel *self)
++{
++  GtkWidget *nav = gtk_widget_get_ancestor (GTK_WIDGET (self), ADW_TYPE_NAVIGATION_VIEW);
++
++  AdwNavigationPage *form = nav ? adw_navigation_view_find_page (ADW_NAVIGATION_VIEW (nav), "form") : NULL;
++
++  if (form)
++    adw_navigation_view_pop_to_page (ADW_NAVIGATION_VIEW (nav), form);
++  else
++    pop_subpages (self);
++}
++
++static void
++show_failure (Setup *s, const char *message)
++{
++  GtkWidget *status = adw_status_page_new ();
++  GtkWidget *back = pill (_("_Back"), TRUE);
++
++  if (s->remote && !s->finished)
++    {
++      const char *del[] = { RCLONE, "config", "delete", s->remote, NULL };
++      spawn_quiet (del);
++      pending_mark (s->remote, FALSE);
++    }
++  adw_status_page_set_icon_name (ADW_STATUS_PAGE (status), "dialog-warning-symbolic");
++  adw_status_page_set_title (ADW_STATUS_PAGE (status), _("Could Not Add the Drive"));
++  {
++    g_autofree char *m = g_markup_escape_text (message && *message ? message : _("Check what you entered and your internet connection, then try again."), -1);
++    adw_status_page_set_description (ADW_STATUS_PAGE (status), m);
++  }
++  g_signal_connect_swapped (back, "clicked", G_CALLBACK (back_to_form), s->self);
++  replace_top (s->self, subpage (s->ptitle, "failed", status, bottom_bar (back, NULL)), "form");
++}
++
++/* The Cancel buttons: s->cancel is replaced at every step, so look it up when clicked. */
++static void
++cancel_clicked (Setup *s)
++{
++  if (s->cancel)
++    g_cancellable_cancel (s->cancel);
++}
++
++static void
++busy_page (Setup *s, const char *title, const char *text)
++{
++  GtkWidget *status = adw_status_page_new ();
++  GtkWidget *spinner = adw_spinner_new ();
++  GtkWidget *cancel = pill (_("_Cancel"), FALSE);
++
++  gtk_widget_set_size_request (spinner, 48, 48);
++  adw_status_page_set_paintable (ADW_STATUS_PAGE (status), NULL);
++  adw_status_page_set_title (ADW_STATUS_PAGE (status), title);
++  adw_status_page_set_description (ADW_STATUS_PAGE (status), text);
++  adw_status_page_set_child (ADW_STATUS_PAGE (status), spinner);
++  g_signal_connect_swapped (cancel, "clicked", G_CALLBACK (cancel_clicked), s);
++  replace_top (s->self, subpage (s->ptitle, "busy", status, bottom_bar (cancel, NULL)), "form");
++}
++
++static void
++login_again (GtkWidget *button, Setup *s)
++{
++  g_autoptr(GtkUriLauncher) launcher = NULL;
++
++  if (!s->login_url)
++    return;
++  launcher = gtk_uri_launcher_new (s->login_url);
++  gtk_uri_launcher_launch (launcher, GTK_WINDOW (gtk_widget_get_root (button)), NULL, NULL, NULL);
++}
++
++static void
++login_page (Setup *s)
++{
++  GtkWidget *status = adw_status_page_new ();
++  GtkWidget *spinner = adw_spinner_new ();
++  GtkWidget *cancel = pill (_("_Cancel"), FALSE);
++  g_autofree char *title = g_strdup_printf (_("Log In to %s"), s->ptitle);
++
++  s->login_again = pill (_("_Open Login Page Again"), FALSE);
++  gtk_widget_set_sensitive (s->login_again, s->login_url != NULL);
++  gtk_widget_set_size_request (spinner, 48, 48);
++  adw_status_page_set_icon_name (ADW_STATUS_PAGE (status), "web-browser-symbolic");
++  adw_status_page_set_title (ADW_STATUS_PAGE (status), title);
++  adw_status_page_set_description (ADW_STATUS_PAGE (status), _("Your web browser opened the login page. Log in there and allow access, then come back here. This page continues by itself."));
++  adw_status_page_set_child (ADW_STATUS_PAGE (status), spinner);
++  g_signal_connect (s->login_again, "clicked", G_CALLBACK (login_again), s);
++  g_signal_connect_swapped (cancel, "clicked", G_CALLBACK (cancel_clicked), s);
++  replace_top (s->self, subpage (s->ptitle, "login", status, bottom_bar (cancel, s->login_again, NULL)), "form");
++}
++
++static void
++answer_clicked (GtkWidget *button, Setup *s)
++{
++  const char *v;
++
++  if (ADW_IS_COMBO_ROW (s->answer))
++    {
++      guint i = adw_combo_row_get_selected (ADW_COMBO_ROW (s->answer));
++      v = s->answer_values && i < s->answer_values->len ? g_ptr_array_index (s->answer_values, i) : "";
++    }
++  else
++    v = gtk_editable_get_text (GTK_EDITABLE (s->answer));
++  continue_with (s, v);
++}
++
++static void cancel_setup (Setup *s);
++
++static void
++question_cancel (Setup *s)
++{
++  cancel_setup (s);
++  setup_free (s);
++}
++
++/* rclone needs something only the user knows (a code, a choice). */
++static void
++question_page (Setup *s, JsonObject *opt, const char *error)
++{
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *go = pill (_("C_ontinue"), TRUE);
++  GtkWidget *cancel = pill (_("_Cancel"), FALSE);
++  JsonArray *ex = jarr (opt, "Examples");
++  guint n_ex = ex ? json_array_get_length (ex) : 0;
++  g_autofree char *label = field_label (jstr (opt, "Name"));
++  const char *help = jstr (opt, "Help");
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (group), _("One More Step"));
++  {
++    g_autofree char *h = g_markup_escape_text (help ? help : "", -1);
++    adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (group), h);
++  }
++  g_clear_pointer (&s->answer_values, g_ptr_array_unref);
++  if (n_ex > 0)
++    {
++      g_autoptr(GtkStringList) list = gtk_string_list_new (NULL);
++      const char *def = jstr (opt, "DefaultStr");
++      guint selected = 0;
++
++      s->answer_values = g_ptr_array_new_with_free_func (g_free);
++      for (guint i = 0; i < n_ex; i++)
++        {
++          JsonObject *e = json_array_get_object_element (ex, i);
++          const char *v = jstr (e, "Value") ? jstr (e, "Value") : "";
++          g_autofree char *h = short_help (jstr (e, "Help"));
++
++          if (g_strcmp0 (v, def) == 0)
++            selected = i;
++          g_ptr_array_add (s->answer_values, g_strdup (v));
++          gtk_string_list_append (list, h && *h ? h : v);
++        }
++      s->answer = adw_combo_row_new ();
++      adw_combo_row_set_model (ADW_COMBO_ROW (s->answer), G_LIST_MODEL (list));
++      adw_combo_row_set_selected (ADW_COMBO_ROW (s->answer), selected);
++    }
++  else if (jbool (opt, "IsPassword"))
++    s->answer = adw_password_entry_row_new ();
++  else
++    {
++      s->answer = adw_entry_row_new ();
++      gtk_editable_set_text (GTK_EDITABLE (s->answer), jstr (opt, "DefaultStr") ? jstr (opt, "DefaultStr") : "");
++    }
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (s->answer), label);
++  adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (s->answer), FALSE);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), s->answer);
++  if (error && *error)
++    {
++      GtkWidget *err = gtk_label_new (error);
++      gtk_label_set_wrap (GTK_LABEL (err), TRUE);
++      gtk_label_set_xalign (GTK_LABEL (err), 0.0);
++      gtk_widget_add_css_class (err, "error");
++      gtk_widget_set_margin_top (err, 12);
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (group), err);
++    }
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (group));
++  if (ADW_IS_ENTRY_ROW (s->answer))
++    g_signal_connect (s->answer, "entry-activated", G_CALLBACK (answer_clicked), s);
++  g_signal_connect (go, "clicked", G_CALLBACK (answer_clicked), s);
++  g_signal_connect_swapped (cancel, "clicked", G_CALLBACK (question_cancel), s);
++  replace_top (s->self, subpage (s->ptitle, "question", page, bottom_bar (cancel, go, NULL)), "form");
++  gtk_widget_grab_focus (s->answer);
++}
++
++static void
++setup_done (Setup *s)
++{
++  g_autoptr(GError) error = NULL;
++  CcManCloudPanel *self = s->self;
++
++  s->finished = TRUE;
++  pending_mark (s->remote, FALSE);
++  if (!write_env (s->remote, s->title, s->mount, &error))
++    {
++      show_failure (s, error->message);
++      return;
++    }
++  g_mkdir_with_parents (s->mount, 0700);
++  set_connected (s->remote, TRUE);
++  pop_subpages (self);
++  refresh_once (self);
++  refresh_later (self, 2);
++}
++
++/* rclone's answer for questions MAN answers itself; NULL to ask the user. */
++static const char *
++auto_answer (Setup *s, JsonObject *opt, const char *error)
++{
++  const char *name = jstr (opt, "Name");
++  const char *def = jstr (opt, "DefaultStr");
++
++  if (g_strcmp0 (name, "config_is_local") == 0)
++    return "true";                      /* log in with this computer's browser */
++  if (g_strcmp0 (name, "config_shared_client_id") == 0)
++    return "true";                      /* keep rclone's own app registration */
++  if (g_str_has_prefix (name ? name : "", "config_fs_advanced") || g_strcmp0 (name, "config_change_team_drive") == 0)
++    return "false";
++  if (error && *error)
++    return NULL;
++  if (!jbool (opt, "Required"))
++    return def ? def : "";
++  if (def && *def)
++    return def;
++  return NULL;
++}
++
++static void
++cancel_setup (Setup *s)
++{
++  if (s->remote && !s->finished)
++    {
++      const char *del[] = { RCLONE, "config", "delete", s->remote, NULL };
++      spawn_quiet (del);
++    }
++  pending_mark (s->remote, FALSE);
++  if (gtk_widget_get_root (GTK_WIDGET (s->self)))
++    back_to_form (s->self);
++}
++
++/* One step of rclone's setup has ended: its stdout is the next question, or
++ * an empty State when the drive is ready. */
++static void
++parse_step (Setup *s, const char *out, const char *err)
++{
++  g_autoptr(JsonParser) parser = json_parser_new ();
++  JsonObject *root, *opt;
++  const char *state, *jerr, *answer;
++
++  if (!out || !*out || !json_parser_load_from_data (parser, out, -1, NULL) ||
++      !JSON_NODE_HOLDS_OBJECT (json_parser_get_root (parser)))
++    {
++      /* rclone stopped with an error message instead of a step. */
++      g_autofree char *msg = NULL;
++      if (err && *err)
++        {
++          g_autofree char *e = g_strstrip (g_strdup (err));
++          g_auto(GStrv) lines = g_strsplit (e, "\n", -1);
++          guint n = g_strv_length (lines);
++          const char *last = n ? lines[n - 1] : e;
++          const char *colon = strstr (last, "ERROR : ");
++          if (!colon)
++            colon = strstr (last, "Fatal error: ");
++          msg = g_strdup (colon ? strchr (colon, ':') + 2 : last);
++        }
++      show_failure (s, msg);
++      setup_free (s);
++      return;
++    }
++  root = json_node_get_object (json_parser_get_root (parser));
++  state = jstr (root, "State");
++  jerr = jstr (root, "Error");
++  opt = json_object_has_member (root, "Option") && JSON_NODE_HOLDS_OBJECT (json_object_get_member (root, "Option"))
++        ? json_object_get_object_member (root, "Option") : NULL;
++
++  if (!state || !*state)
++    {
++      if (jerr && *jerr)
++        show_failure (s, jerr);
++      else
++        setup_done (s);
++      setup_free (s);
++      return;
++    }
++
++  /* The same question again: what MAN answered did not work, so ask. */
++  if (g_strcmp0 (state, s->last_state) == 0)
++    s->repeats++;
++  else
++    s->repeats = 0;
++  g_free (s->last_state);
++  s->last_state = g_strdup (state);
++  g_free (s->state);
++  s->state = g_strdup (state);
++  if (s->repeats > 4)
++    {
++      show_failure (s, jerr);
++      setup_free (s);
++      return;
++    }
++
++  answer = s->repeats ? NULL : auto_answer (s, opt, jerr);
++  if (answer)
++    {
++      if (g_strcmp0 (jstr (opt, "Name"), "config_is_local") == 0)
++        login_page (s);
++      continue_with (s, answer);
++      return;
++    }
++  question_page (s, opt, jerr);
++}
++
++/* A step is done when rclone has exited and its output has been read. */
++static void
++step_part_done (Setup *s)
++{
++  g_autofree char *out = NULL;
++  g_autofree char *err = NULL;
++
++  if (--s->pending > 0)
++    return;
++  g_clear_object (&s->proc);
++  out = g_strdup (s->out->str);
++  err = g_strdup (s->err->str);
++  g_free (s->login_url);
++  s->login_url = NULL;
++  s->login_again = NULL;
++  if (s->cancelled)
++    {
++      cancel_setup (s);
++      setup_free (s);
++      return;
++    }
++  parse_step (s, out, err);
++}
++
++static void
++stdout_done (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  Setup *s = user_data;
++  GBytes *bytes;
++
++  g_output_stream_splice_finish (G_OUTPUT_STREAM (source), res, NULL);
++  bytes = g_memory_output_stream_steal_as_bytes (G_MEMORY_OUTPUT_STREAM (source));
++  g_string_assign (s->out, "");
++  g_string_append_len (s->out, g_bytes_get_data (bytes, NULL), g_bytes_get_size (bytes));
++  g_bytes_unref (bytes);
++  step_part_done (s);
++}
++
++/* stderr, line by line: the login address rclone prints while it waits for
++ * the browser, and its error messages. */
++static void
++stderr_line (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  Setup *s = user_data;
++  g_autofree char *line = g_data_input_stream_read_line_finish_utf8 (G_DATA_INPUT_STREAM (source), res, NULL, NULL);
++  const char *http;
++
++  if (!line)
++    {
++      g_object_unref (source);
++      step_part_done (s);
++      return;
++    }
++  g_string_append_printf (s->err, "%s\n", line);
++  http = strstr (line, "http://127.0.0.1:");
++  if (http && !s->login_url)
++    {
++      s->login_url = g_strndup (http, strcspn (http, " \t"));
++      if (s->login_again)
++        gtk_widget_set_sensitive (s->login_again, TRUE);
++    }
++  g_data_input_stream_read_line_async (G_DATA_INPUT_STREAM (source), G_PRIORITY_DEFAULT, NULL, stderr_line, s);
++}
++
++static void
++proc_exited (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  Setup *s = user_data;
++  g_autoptr(GError) error = NULL;
++
++  if (!g_subprocess_wait_finish (G_SUBPROCESS (source), res, &error) &&
++      g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    {
++      /* Cancel: stop rclone; its pipes close and the step ends. */
++      s->cancelled = TRUE;
++      g_subprocess_force_exit (G_SUBPROCESS (source));
++    }
++  step_part_done (s);
++}
++
++/* rclone waits for the browser login on a fixed port: it must not outlive
++ * Settings, or the next login could not start. */
++static void
++die_with_parent (gpointer data)
++{
++  prctl (PR_SET_PDEATHSIG, SIGTERM);
++}
++
++static void
++run_step (Setup *s, GPtrArray *argv)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GOutputStream) mem = NULL;
++  g_autoptr(GSubprocessLauncher) launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE | G_SUBPROCESS_FLAGS_STDERR_PIPE);
++  GDataInputStream *errs;
++
++  g_ptr_array_add (argv, NULL);
++  g_clear_object (&s->cancel);
++  s->cancel = g_cancellable_new ();
++  pending_mark (s->remote, TRUE);
++  g_subprocess_launcher_set_child_setup (launcher, die_with_parent, NULL, NULL);
++  s->proc = g_subprocess_launcher_spawnv (launcher, (const char * const *) argv->pdata, &error);
++  g_ptr_array_unref (argv);
++  if (!s->proc)
++    {
++      show_failure (s, error->message);
++      setup_free (s);
++      return;
++    }
++  if (!s->out)
++    s->out = g_string_new (NULL);
++  if (!s->err)
++    s->err = g_string_new (NULL);
++  g_string_assign (s->out, "");
++  g_string_assign (s->err, "");
++  s->pending = 3;   /* stdout read, stderr read, process exit */
++  mem = g_memory_output_stream_new_resizable ();
++  g_output_stream_splice_async (mem, g_subprocess_get_stdout_pipe (s->proc),
++                                G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE | G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET,
++                                G_PRIORITY_DEFAULT, NULL, stdout_done, s);
++  errs = g_data_input_stream_new (g_subprocess_get_stderr_pipe (s->proc));
++  g_data_input_stream_read_line_async (errs, G_PRIORITY_DEFAULT, NULL, stderr_line, s);
++  g_subprocess_wait_async (s->proc, s->cancel, proc_exited, s);
++}
++
++static void
++continue_with (Setup *s, const char *result)
++{
++  GPtrArray *argv = g_ptr_array_new_with_free_func (g_free);
++
++  if (!s->login_again)
++    busy_page (s, s->ptitle, _("Setting up the drive…"));
++  g_ptr_array_add (argv, g_strdup (RCLONE));
++  g_ptr_array_add (argv, g_strdup ("config"));
++  g_ptr_array_add (argv, g_strdup ("update"));
++  g_ptr_array_add (argv, g_strdup (s->remote));
++  g_ptr_array_add (argv, g_strdup ("--continue"));
++  g_ptr_array_add (argv, g_strdup ("--state"));
++  g_ptr_array_add (argv, g_strdup (s->state));
++  g_ptr_array_add (argv, g_strdup ("--result"));
++  g_ptr_array_add (argv, g_strdup (result ? result : ""));
++  g_ptr_array_add (argv, g_strdup ("--non-interactive"));
++  run_step (s, argv);
++}
++
++static void
++form_go (GtkWidget *button, Setup *s)
++{
++  GPtrArray *argv = g_ptr_array_new_with_free_func (g_free);
++  g_autofree char *title = g_strstrip (g_strdup (gtk_editable_get_text (GTK_EDITABLE (s->name_row))));
++  Setup *run = g_new0 (Setup, 1);
++
++  /* The form stays open below; each attempt is a setup of its own. */
++  run->self = g_object_ref (s->self);
++  run->type = g_strdup (s->type);
++  run->ptitle = g_strdup (s->ptitle);
++  run->browser = s->browser;
++  run->title = g_strdup (*title ? title : s->ptitle);
++  run->remote = remote_name (run->title);
++  run->mount = unique_mount (run->title);
++
++  g_ptr_array_add (argv, g_strdup (RCLONE));
++  g_ptr_array_add (argv, g_strdup ("config"));
++  g_ptr_array_add (argv, g_strdup ("create"));
++  g_ptr_array_add (argv, g_strdup (run->remote));
++  g_ptr_array_add (argv, g_strdup (s->type));
++  for (guint i = 0; i < s->fields->len; i++)
++    {
++      Field *f = g_ptr_array_index (s->fields, i);
++      const char *v = field_value (f);
++
++      if (!gtk_widget_get_visible (f->row) || !v || (!*v && f->kind != FIELD_SWITCH) || g_strcmp0 (v, f->default_str) == 0)
++        continue;
++      g_ptr_array_add (argv, g_strdup_printf ("%s=%s", f->name, v));
++    }
++  g_ptr_array_add (argv, g_strdup ("--non-interactive"));
++  g_ptr_array_add (argv, g_strdup ("--obscure"));
++  busy_page (run, run->ptitle, run->browser ? _("Opening the login page…") : _("Connecting…"));
++  run_step (run, argv);
++}
++
++static void
++form_changed (Setup *s)
++{
++  validate_form (s);
++}
++
++static void
++form_page_destroyed (gpointer data, GObject *where)
++{
++  setup_free (data);
++}
++
++static void
++show_form (CcManCloudPanel *self, JsonObject *p)
++{
++  Setup *s = g_new0 (Setup, 1);
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *head = adw_preferences_group_new ();
++  GtkWidget *main = adw_preferences_group_new ();
++  GtkWidget *more_group = adw_preferences_group_new ();
++  GtkWidget *more = adw_expander_row_new ();
++  JsonArray *opts = jarr (p, "Options");
++  AdwNavigationPage *nav_page;
++  int n_main = 0, n_more = 0;
++
++  s->self = g_object_ref (self);
++  s->type = g_strdup (jstr (p, "Name"));
++  s->ptitle = provider_title (p);
++  s->browser = uses_browser (p);
++  s->fields = g_ptr_array_new_with_free_func ((GDestroyNotify) field_free);
++
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (head), s->ptitle);
++  adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (head),
++    s->browser ? _("You log in with your web browser. Your password is never entered here.")
++               : _("Enter the details of your account. They are kept in your home folder."));
++  s->name_row = adw_entry_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (s->name_row), _("Name in Files"));
++  {
++    /* "WebDAV (Nextcloud, …)" → "WebDAV" as the folder name. */
++    const char *paren = strstr (s->ptitle, " (");
++    g_autofree char *short_name = paren ? g_strndup (s->ptitle, paren - s->ptitle) : g_strdup (s->ptitle);
++    gtk_editable_set_text (GTK_EDITABLE (s->name_row), short_name);
++  }
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (head), s->name_row);
++  g_signal_connect_swapped (s->name_row, "changed", G_CALLBACK (form_changed), s);
++
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (more), _("More Options"));
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (more_group), more);
++
++  for (guint i = 0; opts && i < json_array_get_length (opts); i++)
++    {
++      JsonObject *o = json_array_get_object_element (opts, i);
++      const char *name = jstr (o, "Name");
++      gboolean is_main;
++      Field *f;
++
++      if (!name || jbool (o, "Advanced") || jint (o, "Hide") != 0 || g_strv_contains (hidden_fields, name))
++        continue;
++      if (s->browser && (g_strcmp0 (name, "client_id") == 0 || g_strcmp0 (name, "client_secret") == 0 || g_strcmp0 (name, "access_token") == 0))
++        is_main = FALSE;
++      else
++        is_main = jbool (o, "Required") || g_strv_contains (main_fields, name);
++      f = make_field (o);
++      g_ptr_array_add (s->fields, f);
++      if (is_main)
++        {
++          adw_preferences_group_add (ADW_PREFERENCES_GROUP (main), f->row);
++          n_main++;
++        }
++      else
++        {
++          adw_expander_row_add_row (ADW_EXPANDER_ROW (more), f->row);
++          n_more++;
++        }
++      if (f->kind == FIELD_COMBO)
++        g_signal_connect_swapped (f->row, "notify::selected", G_CALLBACK (form_changed), s);
++      else if (f->kind == FIELD_SWITCH)
++        g_signal_connect_swapped (f->row, "notify::active", G_CALLBACK (form_changed), s);
++      else
++        g_signal_connect_swapped (f->row, "changed", G_CALLBACK (form_changed), s);
++    }
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (head));
++  if (n_main)
++    adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (main));
++  if (n_more)
++    adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (more_group));
++
++  s->go = pill (s->browser ? _("_Log In") : _("C_onnect"), TRUE);
++  g_signal_connect (s->go, "clicked", G_CALLBACK (form_go), s);
++  nav_page = subpage (s->ptitle, "form", page, bottom_bar (s->go, NULL));
++  g_object_weak_ref (G_OBJECT (nav_page), form_page_destroyed, s);
++  validate_form (s);
++  replace_top (self, nav_page, "providers");
++}
++
++/* ─────────────────────────── the provider list ─────────────────────────── */
++
++static int
++compare_providers (gconstpointer a, gconstpointer b, gpointer self)
++{
++  JsonObject *pa = *(JsonObject **) a, *pb = *(JsonObject **) b;
++  int ra = popular_rank (jstr (pa, "Name")), rb = popular_rank (jstr (pb, "Name"));
++  g_autofree char *ta = NULL, *tb = NULL;
++
++  if (ra != rb)
++    return ra - rb;
++  ta = provider_title (pa);
++  tb = provider_title (pb);
++  return g_utf8_collate (ta, tb);
++}
++
++static void
++provider_activated (GtkWidget *row, CcManCloudPanel *self)
++{
++  JsonObject *p = provider_by_name (self, g_object_get_data (G_OBJECT (row), "provider"));
++
++  if (p)
++    show_form (self, p);
++}
++
++static void
++search_changed (GtkSearchEntry *entry, GPtrArray *rows)
++{
++  g_autofree char *needle = g_utf8_casefold (gtk_editable_get_text (GTK_EDITABLE (entry)), -1);
++
++  for (guint i = 0; i < rows->len; i++)
++    {
++      GtkWidget *row = g_ptr_array_index (rows, i);
++      const char *hay = g_object_get_data (G_OBJECT (row), "search");
++      gtk_widget_set_visible (row, !*needle || strstr (hay, needle) != NULL);
++    }
++}
++
++static void
++rows_free (gpointer data, GClosure *closure)
++{
++  g_ptr_array_unref (data);
++}
++
++static void
++start_add (CcManCloudPanel *self)
++{
++  JsonArray *all = provider_list (self);
++  g_autoptr(GPtrArray) list = g_ptr_array_new ();
++  GPtrArray *rows = g_ptr_array_new ();
++  GtkWidget *page = adw_preferences_page_new ();
++  GtkWidget *top = adw_preferences_group_new ();
++  GtkWidget *popular_group = adw_preferences_group_new ();
++  GtkWidget *other_group = adw_preferences_group_new ();
++  GtkWidget *search = gtk_search_entry_new ();
++  AdwNavigationPage *nav_page;
++
++  if (!all)
++    {
++      AdwDialog *d = adw_alert_dialog_new (_("Cloud Drives Are Not Available"), _("rclone, which connects cloud drives, is not installed."));
++      adw_alert_dialog_add_response (ADW_ALERT_DIALOG (d), "ok", _("_OK"));
++      adw_dialog_present (d, GTK_WIDGET (self));
++      g_ptr_array_unref (rows);
++      return;
++    }
++  for (guint i = 0; i < json_array_get_length (all); i++)
++    if (is_provider (json_array_get_object_element (all, i)))
++      g_ptr_array_add (list, json_array_get_object_element (all, i));
++  g_ptr_array_sort_with_data (list, compare_providers, self);
++
++  gtk_search_entry_set_placeholder_text (GTK_SEARCH_ENTRY (search), _("Search providers"));
++  gtk_widget_set_margin_bottom (search, 6);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (top), search);
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (popular_group), _("Popular"));
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (other_group), _("All Providers"));
++
++  for (guint i = 0; i < list->len; i++)
++    {
++      JsonObject *p = g_ptr_array_index (list, i);
++      g_autofree char *title = provider_title (p);
++      g_autofree char *hay = g_strdup_printf ("%s %s %s", title, jstr (p, "Name"), jstr (p, "Description"));
++      GtkWidget *row = adw_action_row_new ();
++
++      adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), title);
++      adw_preferences_row_set_use_markup (ADW_PREFERENCES_ROW (row), FALSE);
++      if (uses_browser (p))
++        adw_action_row_set_subtitle (ADW_ACTION_ROW (row), _("Log in with your browser"));
++      gtk_list_box_row_set_activatable (GTK_LIST_BOX_ROW (row), TRUE);
++      adw_action_row_add_suffix (ADW_ACTION_ROW (row), gtk_image_new_from_icon_name ("go-next-symbolic"));
++      g_object_set_data_full (G_OBJECT (row), "provider", g_strdup (jstr (p, "Name")), g_free);
++      g_object_set_data_full (G_OBJECT (row), "search", g_utf8_casefold (hay, -1), g_free);
++      g_signal_connect (row, "activated", G_CALLBACK (provider_activated), self);
++      adw_preferences_group_add (ADW_PREFERENCES_GROUP (popular_rank (jstr (p, "Name")) < (int) G_N_ELEMENTS (popular) ? popular_group : other_group), row);
++      g_ptr_array_add (rows, row);
++    }
++  g_signal_connect_data (search, "search-changed", G_CALLBACK (search_changed), rows, rows_free, 0);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (top));
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (popular_group));
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (other_group));
++  nav_page = subpage (_("Add Cloud Drive"), "providers", page, NULL);
++  pop_subpages (self);
++  cc_panel_push_subpage (CC_PANEL (self), nav_page);
++  gtk_widget_grab_focus (search);
++}
++
++/* ─────────────────────────── the panel ─────────────────────────── */
++
++static void
++cc_man_cloud_panel_dispose (GObject *object)
++{
++  CcManCloudPanel *self = CC_MAN_CLOUD_PANEL (object);
++
++  g_clear_handle_id (&self->refresh_id, g_source_remove);
++  g_cancellable_cancel (self->cancellable);
++  g_clear_object (&self->cancellable);
++  g_clear_object (&self->providers);
++  g_clear_pointer (&self->drive_rows, g_ptr_array_unref);
++  g_clear_pointer (&self->last_sig, g_free);
++  self->drives_group = NULL;
++  G_OBJECT_CLASS (cc_man_cloud_panel_parent_class)->dispose (object);
++}
++
++static void
++cc_man_cloud_panel_class_init (CcManCloudPanelClass *klass)
++{
++  G_OBJECT_CLASS (klass)->dispose = cc_man_cloud_panel_dispose;
++}
++
++static void
++cc_man_cloud_panel_init (CcManCloudPanel *self)
++{
++  GtkWidget *toolbar = adw_toolbar_view_new ();
++  GtkWidget *page = adw_preferences_page_new ();
++
++  cc_man_i18n_init ();
++  self->cancellable = g_cancellable_new ();
++  self->drive_rows = g_ptr_array_new ();
++  adw_navigation_page_set_title (ADW_NAVIGATION_PAGE (self), _("Cloud Drives"));
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar), adw_header_bar_new ());
++
++  self->drives_group = adw_preferences_group_new ();
++  adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (self->drives_group), _("Cloud Drives"));
++  adw_preferences_group_set_description (ADW_PREFERENCES_GROUP (self->drives_group),
++    _("Your cloud storage, in Files. Each drive connects by itself every time you log in."));
++  self->empty_row = adw_action_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->empty_row), _("No cloud drives yet"));
++  gtk_widget_add_css_class (self->empty_row, "dim-label");
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->drives_group), self->empty_row);
++  self->add_row = adw_button_row_new ();
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self->add_row), _("_Add Cloud Drive…"));
++  adw_preferences_row_set_use_underline (ADW_PREFERENCES_ROW (self->add_row), TRUE);
++  adw_button_row_set_start_icon_name (ADW_BUTTON_ROW (self->add_row), "list-add-symbolic");
++  g_signal_connect_swapped (self->add_row, "activated", G_CALLBACK (start_add), self);
++  adw_preferences_group_add (ADW_PREFERENCES_GROUP (self->drives_group), self->add_row);
++  adw_preferences_page_add (ADW_PREFERENCES_PAGE (page), ADW_PREFERENCES_GROUP (self->drives_group));
++
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar), page);
++  adw_navigation_page_set_child (ADW_NAVIGATION_PAGE (self), toolbar);
++
++  clean_unfinished ();
++  refresh_drives (self);
++  self->refresh_id = g_timeout_add_seconds (3, refresh_tick, self);
++}
+--- a/panels/man-cloud/cc-man-cloud-panel.h
++++ b/panels/man-cloud/cc-man-cloud-panel.h
+@@ -0,0 +1,11 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#pragma once
++
++#include <shell/cc-panel.h>
++
++G_BEGIN_DECLS
++
++#define CC_TYPE_MAN_CLOUD_PANEL (cc_man_cloud_panel_get_type ())
++G_DECLARE_FINAL_TYPE (CcManCloudPanel, cc_man_cloud_panel, CC, MAN_CLOUD_PANEL, CcPanel)
++
++G_END_DECLS
+--- a/panels/man-cloud/gnome-man-cloud-panel.desktop
++++ b/panels/man-cloud/gnome-man-cloud-panel.desktop
+@@ -0,0 +1,12 @@
++[Desktop Entry]
++Name=Cloud Drives
++Comment=Show Google Drive, OneDrive, Dropbox and other cloud storage in Files
++Exec=gnome-control-center man-cloud
++Icon=folder-remote-symbolic
++Terminal=false
++Type=Application
++NoDisplay=true
++StartupNotify=true
++Categories=GNOME;GTK;Settings;X-GNOME-Settings-Panel;X-GNOME-AccountSettings;
++OnlyShowIn=GNOME;Unity;
++Keywords=Cloud;Drive;Google;OneDrive;Dropbox;iCloud;Mega;Proton;Nextcloud;WebDAV;rclone;Storage;Sync;
+--- a/panels/man-cloud/meson.build
++++ b/panels/man-cloud/meson.build
+@@ -0,0 +1,19 @@
++# SPDX-License-Identifier: GPL-2.0-or-later
++# MAN: Settings → Cloud Drives (rclone).
++
++panels_list += cappletname
++
++# The desktop file carries its own translations (made from MAN's
++# man-settings catalogs), so it is installed as it is.
++install_data(
++  'gnome-man-cloud-panel.desktop',
++  install_dir: control_center_desktopdir,
++)
++
++panels_libs += static_library(
++  cappletname,
++  sources: files('cc-man-cloud-panel.c'),
++  include_directories: [ top_inc, common_inc ],
++  dependencies: [ common_deps, json_glib_dep ],
++  c_args: cflags,
++)
+--- a/panels/meson.build
++++ b/panels/meson.build
+@@ -21,6 +21,7 @@
+   'sound',
+   'system',
+   'man-updates',
++  'man-cloud',
+   'universal-access',
+   'wellbeing',
+   'wwan',
+--- a/shell/cc-panel-list.c
++++ b/shell/cc-panel-list.c
+@@ -355,6 +355,7 @@
+     "notifications",
+     "search",
+     "online-accounts",
++    "man-cloud",
+     "sharing",
+     "wellbeing",
+ 
+--- a/shell/cc-panel-loader.c
++++ b/shell/cc-panel-loader.c
+@@ -56,6 +56,7 @@
+ extern GType cc_sound_panel_get_type (void);
+ extern GType cc_system_panel_get_type (void);
+ extern GType cc_man_updates_panel_get_type (void);
++extern GType cc_man_cloud_panel_get_type (void);
+ extern GType cc_ua_panel_get_type (void);
+ #ifdef BUILD_WACOM
+ extern GType cc_wacom_panel_get_type (void);
+@@ -110,6 +111,7 @@
+     PANEL_TYPE ("sound", cc_sound_panel_get_type, NULL),
+     PANEL_TYPE ("system", cc_system_panel_get_type, NULL),
+     PANEL_TYPE ("man-updates", cc_man_updates_panel_get_type, NULL),
++    PANEL_TYPE ("man-cloud", cc_man_cloud_panel_get_type, NULL),
+     PANEL_TYPE ("universal-access", cc_ua_panel_get_type, NULL),
+ #ifdef BUILD_WACOM
+     PANEL_TYPE ("wacom", cc_wacom_panel_get_type, cc_wacom_panel_static_init_func),
