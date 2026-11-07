@@ -149,6 +149,14 @@ class Dock {
                 this._update();
                 return GLib.SOURCE_REMOVE;
             });
+        } else if (!this._revealed && !this._hideId) {
+            // The pointer kept the dock up while a window came under it: now it
+            // can make room, after the same short delay.
+            this._hideId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, HIDE_DELAY, () => {
+                this._hideId = 0;
+                this._update();
+                return GLib.SOURCE_REMOVE;
+            });
         }
     }
 
