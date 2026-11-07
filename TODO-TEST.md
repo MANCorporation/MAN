@@ -1,7 +1,23 @@
 # MAN 10: what is left
 
 ## Before publishing TEST 4
-Done 2026-11-07 (final build: man-installer 3.14.1, desktop 1.3, Settings man8):
+Cloud Drives added 2026-11-07 (man-installer 3.15.0 with rclone, Settings man9, desktop 1.4);
+ISOs and `.upd` rebuilt with it:
+- Settings → Cloud Drives below Online Accounts: all rclone providers, popular ones first.
+  Tested in a VM with a WebDAV server: connect, files in Files, read/write/upload, still mounted
+  after a reboot, server changes seen within a minute, one sidebar entry, 71 languages.
+- Google Drive and Dropbox: the browser opens the provider's own login page. Cancel and closing
+  Settings mid-login leave nothing behind (no crash, no rclone left waiting, no half drive).
+- New x86 ISO: blank-disk install and first-run setup OK, Cloud Drives page present.
+- ARM ISO: rclone, service and page are in it; not booted again (emulation is slow).
+- `.upd` re-signed (1.82 GB), verified in MAN. The update flow itself is unchanged and was tested
+  earlier today with the previous TEST 4 `.upd`.
+- Dock 1.4: it stayed over a window that opened under the pointer; now it steps aside.
+Not tested: a real login with an account (no test accounts here). Google's login uses rclone's
+shared app key, which Google may retire during 2026; MAN may need its own Google key then.
+rclone's own extra questions (rare, provider-specific) are in English.
+
+Earlier on 2026-11-07 (man-installer 3.14.1, desktop 1.3, Settings man8):
 - x86 ISO: install to a blank disk, first-run setup (encryption offered), reboot, login,
   /boot and /boot/efi mounted, version 10 TEST 4.
 - Update: the published TEST 3 ISO installed, then `lfs/updates/MAN-10-TEST-4.upd` (1.80 GB,
