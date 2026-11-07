@@ -20,7 +20,7 @@ lays itself out as without a dock, also in always-show mode (`_updateWorkAreaBox
 MAN's other changes beyond names: the dock's blur
 is live (`static-blur=false`), and Window Tiling is off until turned on in Settings.
 
-`upstream/` (not in git, made from these sources, needed for the source offer):
+`upstream/` (in git despite `*.tar.gz` being ignored, because the source offer needs it; made from these sources):
 - `blur-my-shell` https://github.com/aunetx/blur-my-shell `309ebdca21`
 - `tilingshell` https://github.com/domferr/tilingshell tag 18.0 (TypeScript source)
 - `tilingshell-release`: its release zip of 18.0, which `build.py` uses
