@@ -98,3 +98,9 @@ set is not installed. Credits, also in `/usr/share/doc/man-live-config/copyright
   Archive, Library of Congress, Prints and Photographs Division. Public domain.
 - Western Alps (towards the Western Alps from Grenoble): photo by Dktue, Wikimedia Commons, CC0 1.0.
 - Hintersee (Berchtesgaden, Germany): source and licence to be confirmed before publishing.
+
+## Sound on Macs (CS8409)
+
+MAN replaces the kernel's `snd-hda-codec-cs8409` module with a build of
+https://github.com/davidjo/snd_hda_macbookpro (GPL-2.0) with the iMac 2017 fixes from
+https://github.com/riqgonzalo/imac-2017-linux-audio-cs8409 (GPL-2.0). Source: `src/mac-audio/`.

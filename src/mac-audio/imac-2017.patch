@@ -1,0 +1,102 @@
+# Parche iMac 2017 (iMac18,x) sobre davidjo/snd_hda_macbookpro @ 89b22ff
+# - Desactiva la inversión del tip-sense del jack en iMac (altavoces mudos)
+# - Añade el parámetro de módulo force_speakers (0 = automático, 1 = forzar altavoces)
+# - install.cirrus.driver.sh: 'exit 0' tras instalar con DKMS
+# Aplicar desde la raíz del driver con: patch -p1 < imac-cs8409.patch
+diff -ru a/install.cirrus.driver.sh b/install.cirrus.driver.sh
+--- a/install.cirrus.driver.sh	2026-10-24 13:17:49.668801041 -0300
++++ b/install.cirrus.driver.sh	2026-10-24 13:17:49.670036564 -0300
+@@ -70,8 +70,8 @@
+     # (although the original module should be copied to under /var/lib/dkms if needed for other distributions)
+     update_dir="/lib/modules/${UNAME}/updates/dkms"
+     echo -e "\ncontents of $update_dir"
+-    ls -lA $update_dir
+-    exit
++    ls -lA $update_dir 2>/dev/null || ls -lA /lib/modules/${UNAME}/extra 2>/dev/null || true
++    exit 0
+ 
+ elif [[ $dkms_action == 'remove' ]]; then
+ 
+diff -ru a/patch_cirrus/cirrus_apple.h b/patch_cirrus/cirrus_apple.h
+--- a/patch_cirrus/cirrus_apple.h	2026-10-24 13:17:49.668884561 -0300
++++ b/patch_cirrus/cirrus_apple.h	2026-10-24 13:17:49.671381232 -0300
+@@ -4,6 +4,11 @@
+ 
+ #include <linux/version.h>
+ 
++static int force_speakers = 0;
++module_param(force_speakers, int, 0644);
++MODULE_PARM_DESC(force_speakers, "Force internal speakers active (1 = always force speakers, 0 = auto)");
++
++
+ //#include "hda_generic.h"
+ 
+ //#include "cs8409.h"
+@@ -2547,7 +2552,7 @@
+                         //*res = (cs42l83->hp_jack_in) ? AC_PINSENSE_PRESENCE : 0;
+                         // initially use my jack_present flag integer
+ 			myprintk("snd_hda_intel: cs 8409 exec verb pin sense 0x%04x %d\n", nid, spec->jack_present);
+-                        *res = (spec->jack_present) ? AC_PINSENSE_PRESENCE : 0;
++                        *res = (!force_speakers && spec->jack_present) ? AC_PINSENSE_PRESENCE : 0;
+                         return 0;
+                 }
+         } else if (nid == CS8409_CS42L83_HP_MIC_PIN_NID) {
+diff -ru a/patch_cirrus/patch_cirrus_new84.h b/patch_cirrus/patch_cirrus_new84.h
+--- a/patch_cirrus/patch_cirrus_new84.h	2026-10-24 13:17:49.669166843 -0300
++++ b/patch_cirrus/patch_cirrus_new84.h	2026-10-24 13:17:49.672688368 -0300
+@@ -1582,7 +1582,7 @@
+ 			struct hda_cvt_setup_apple *p = NULL;
+ 
+ 			// for the moment have junky test here
+-			if (spec->jack_present)
++			if (!force_speakers && spec->jack_present)
+ 			{
+ 				// for the moment I think this works for both MB 14,1 and 14,3 - same hda and headphone chip
+ 				// note that so far only the headphone chip seems to generate unsol responses usually
+@@ -1717,7 +1717,7 @@
+ 		myprintk("snd_hda_intel: command cs_8409_playback_pcm_hook power check 0x01 3 %d", power_chk);
+ 		myprintk("snd_hda_intel: command cs_8409_playback_pcm_hook jack_present %d\n",spec->jack_present);
+ 		// for the moment have junky test here
+-		if (spec->jack_present)
++		if (!force_speakers && spec->jack_present)
+ 		{
+ 			// for the moment I think this works for both MB 14,1 and 14,3 - same hda and headphone chip
+ 			// note that so far only the headphone chip seems to generate unsol responses usually
+diff -ru a/patch_cirrus/patch_cirrus_real84.h b/patch_cirrus/patch_cirrus_real84.h
+--- a/patch_cirrus/patch_cirrus_real84.h	2026-10-24 13:17:49.669211390 -0300
++++ b/patch_cirrus/patch_cirrus_real84.h	2026-10-24 13:17:49.673120364 -0300
+@@ -2198,11 +2198,11 @@
+ 
+         cs42l83_mic_detect(codec);
+ 
+-        // apparently the imacs use an inverted circuit for physical sensing of jack being plugged in
+-        if (codec->core.subsystem_id == 0x106b1000 || codec->core.subsystem_id == 0x106b0f00 || codec->core.subsystem_id == 0x106b0e00)
+-                cs42l83_tip_sense(codec, 1);
+-        else
+-                cs42l83_tip_sense(codec, 0);
++        /* Do not invert tip sense (invert = 0).
++         * Inverting tip sense causes false positive headphone presence on iMacs,
++         * locking the audio subsystem to headphones and muting internal speakers.
++         */
++        cs42l83_tip_sense(codec, 0);
+ 
+         cs42l83_plugin_interrupt_setup(codec);
+ 
+@@ -2213,7 +2213,7 @@
+         retval = cs42l83_headphone_sense(codec);
+         mycodec_info(codec, "cs_8409_boot_setup_real headphone sense 0x%x %s\n", retval, ((retval & 0x80)?"plugged in":"not plugged in"));
+ 
+-        if ((retval & 0x80))
++        if (!force_speakers && (retval & 0x80))
+         {
+                 dev_info(hda_codec_dev(codec), "cs_8409_boot_setup_real headphone ALREADY PLUGGED IN!!\n");
+                 // store for after init
+@@ -4674,7 +4674,7 @@
+                 // and this is where life gets really complicated
+                 // if we have a mike we do a button detect - but that leads to an unsolicited response
+                 // so we only continue here I think if we dont have a mike
+-                if (!(spec->have_mike)) {
++                if (!(spec->have_mike) && !force_speakers) {
+                         cs_8409_cs42l83_mark_jack(codec);
+                         cs_8409_plugin_event_continued(codec);
+                         dev_info(hda_codec_dev(codec), "cs_8409_interrupt_action - headset detect no mike jack_report_sync\n");
