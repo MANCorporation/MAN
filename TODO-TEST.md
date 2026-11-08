@@ -45,6 +45,16 @@ ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic 
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
 ## TEST 5
+IN PROGRESS (stopped 2026-11-08 night) — TEST 5 build:
+- Done: Mac sound (src/mac-audio, module in the x86 image, loads; generic HDA sound still works in
+  a VM), wallpapers, both images stamped "10 TEST 5", release/MAN-10-TEST-5-arm64.iso built,
+  lfs/updates/MAN-10-TEST-5.NOTES.txt + LICENSE.txt written. Image backup: test4-before-test5.img.
+- Left: 1. `.upd` payload (VM: dev-tools/vm/test5/upd.sh, `man-mkupd payload /mnt/sys /mnt/out`,
+  ~50 min), pack with --version "10 TEST 5" --base 10.10, verify inside MAN. 2. x86 ISO
+  (`./make-iso.sh $PWD/lfs/.vmtest/test4.img`, run when no VM uses the image, and not from a
+  command line that contains "qemu"). 3. Install test of the x86 ISO. 4. Before publishing, ask the
+  owner: test the ISO on the iMac first? Hintersee photo licence (unknown)? 5. Publish v10-test5.
+
 Done for TEST 5 (in both images, not in an ISO yet):
 - Wallpapers: man-live-config 1.0.6 ships MAN's own set only (MAN + Hintersee, Golden Gate Bridge,
   Western Alps, Yosemite) and removes gnome-backgrounds. A wallpaper whose file is gone is reset to the
