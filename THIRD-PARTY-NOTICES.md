@@ -88,3 +88,13 @@ Wine (GNU LGPL 2.1+) and ClamAV (GNU GPL 2) are Debian's packages. MAN changes t
 (comdlg32, shell32): the patch and how to rebuild them are in `src/wine/`, and installed in
 `/usr/share/doc/man-wine-dialogs/`. Sources: https://sources.debian.org/src/wine/ and
 https://sources.debian.org/src/clamav/.
+
+## Wallpapers
+
+MAN ships only its own wallpaper set (`/usr/share/backgrounds/man/`, package man-live-config); GNOME's
+set is not installed. Credits, also in `/usr/share/doc/man-live-config/copyright`:
+
+- Golden Gate Bridge and Yosemite National Park: photos by Carol M. Highsmith, Carol M. Highsmith
+  Archive, Library of Congress, Prints and Photographs Division. Public domain.
+- Western Alps (towards the Western Alps from Grenoble): photo by Dktue, Wikimedia Commons, CC0 1.0.
+- Hintersee (Berchtesgaden, Germany): source and licence to be confirmed before publishing.

@@ -5,8 +5,8 @@ if command -v dconf >/dev/null 2>&1; then
     dconf update
 fi
 
-# MAN keeps GNOME's upstream backgrounds but does not ship Debian-branded
-# desktop-base wallpapers in its live image.
+# MAN ships only its own wallpapers: no GNOME set (gnome-backgrounds conflicts)
+# and no Debian-branded desktop-base wallpapers.
 find /usr/share/gnome-background-properties -maxdepth 1 -type f -name 'debian-*.xml' -delete
 for directory in /usr/share/desktop-base/*-theme/wallpaper \
                  /usr/share/desktop-base/*-theme/wallpaper-withlogo \
@@ -14,3 +14,11 @@ for directory in /usr/share/desktop-base/*-theme/wallpaper \
     [ -d "$directory" ] || continue
     find "$directory" -depth -delete
 done
+
+# MAN Setup's wallpaper thumbnails: drop the ones of removed wallpapers, make the new ones.
+if [ -d /var/cache/man-oobe/thumbnails ]; then
+    find /var/cache/man-oobe/thumbnails -maxdepth 1 -type f -name '*.png' -delete
+fi
+if command -v man-oobe >/dev/null 2>&1; then
+    man-oobe --generate-thumbnails >/dev/null 2>&1 || true
+fi

@@ -1,0 +1,16 @@
+#!/bin/sh
+# At login: a wallpaper whose file is gone (for example a GNOME wallpaper, which MAN
+# no longer ships) is reset to the default, the MAN wallpaper, instead of showing nothing.
+for schema in org.gnome.desktop.background org.gnome.desktop.screensaver; do
+    for key in picture-uri picture-uri-dark; do
+        uri=$(gsettings get "$schema" "$key" 2>/dev/null) || continue
+        uri=${uri#\'}; uri=${uri%\'}
+        case $uri in
+            file://*) path=$(printf '%s' "${uri#file://}" | sed 's/%20/ /g') ;;
+            /*) path=$uri ;;
+            *) continue ;;
+        esac
+        [ -e "$path" ] || gsettings reset "$schema" "$key"
+    done
+done
+exit 0

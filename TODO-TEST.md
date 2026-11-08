@@ -45,6 +45,13 @@ ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic 
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
 ## TEST 5
+Done for TEST 5 (in both images, not in an ISO yet):
+- Wallpapers: man-live-config 1.0.6 ships MAN's own set only (MAN + Hintersee, Golden Gate Bridge,
+  Western Alps, Yosemite) and removes gnome-backgrounds. A wallpaper whose file is gone is reset to the
+  MAN one at login (/usr/libexec/man-wallpaper-check). Tested in an x86 VM.
+  Before publishing: confirm the source and licence of hintersee.jpg (unknown; the others are public
+  domain or CC0, credited in THIRD-PARTY-NOTICES.md).
+
 1. Security updates: MAN blocks Debian from updating installed packages, so browser, FFmpeg and ClamAV
    only get fixes through a new `.upd`. Needs automatic updates.
 2. `yt-dlp` needs its own way to update, or YouTube in Marquee stops working.
