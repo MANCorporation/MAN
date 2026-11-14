@@ -19,6 +19,9 @@ read -r s1 n1 s2 n2 s3 n3 < <(/usr/sbin/sfdisk -J $IMG | python3 -c '
 import json,sys; t=json.load(sys.stdin)["partitiontable"]; a=t["partitions"]
 print(*[v for p in a[:3] for v in (p["start"], p["size"])])')
 echo "ESP at $s1 (+$n1), boot at $s2 (+$n2), MAN at $s3 (+$n3) sectors"
+# The Asahi installer only takes images whose size is a multiple of 4 KiB. The file
+# systems end on a 4 KiB boundary, so the partial last block is unused.
+n2=$((n2 / 8 * 8)); n3=$((n3 / 8 * 8))
 
 # EFI partition files and FAT volume id (the Asahi installer formats a new FAT with
 # this id, so the fstab UUID written by the MAN installer stays right).
@@ -49,6 +52,15 @@ with zipfile.ZipFile(out, "w", allowZip64=True) as z:
     z.write(os.path.join(w, "man.icns"), "man.icns", zipfile.ZIP_DEFLATED)
     z.write(os.path.join(w, "boot.img"), "boot.img", zipfile.ZIP_LZMA)
     z.write(os.path.join(w, "root.img"), "root.img", zipfile.ZIP_LZMA)
+PY
+python3 -I - $OUT/$name <<'PY'
+import sys, zipfile
+z = zipfile.ZipFile(sys.argv[1])
+for i in z.infolist():
+    if i.filename.endswith(".img"):
+        assert i.file_size % 4096 == 0, f"{i.filename}: {i.file_size} is not a multiple of 4 KiB"
+        print(f"  {i.filename}: {i.file_size} bytes (4 KiB aligned), compressed {i.compress_size}")
+print("  zip check:", z.testzip() or "all CRCs OK")
 PY
 ls -la $OUT/$name
 size=$(stat -c %s $OUT/$name)
