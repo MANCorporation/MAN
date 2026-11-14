@@ -1,0 +1,12 @@
+[Unit]
+Description=MAN: keep the Mac boot loader (m1n1, device trees, U-Boot) matching the kernel
+ConditionPathExists=/proc/device-tree/chosen/asahi,efi-system-partition
+ConditionPathExists=/usr/bin/update-m1n1
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-apple-m1n1
+
+[Install]
+WantedBy=multi-user.target

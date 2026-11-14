@@ -4,6 +4,7 @@
 # on the serial console) with:
 #   vda  builder system (overlay, 24 GB, keeps apt caches)
 #   vdb  TARGET (default lfs/arm64/man-gnome-arm64.img, raw)
+#   vdc  EXTRA (optional, raw): e.g. the Mac install disk of dev-tools/apple
 #   9p   lfs/arm64/share  -> mount -t 9p -o trans=virtio share /mnt/share
 # Sockets: $RUN/A.serial (shell), A.mon, A.qmp. Stop: echo quit | socat - $RUN/A.mon
 set -euo pipefail
@@ -21,6 +22,7 @@ exec setsid "$q/usr/bin/qemu-system-aarch64" -machine virt,gic-version=3 -cpu ma
     -drive if=pflash,format=raw,file="$d/builder-vars.fd" \
     -drive if=virtio,file="$d/builder.qcow2",format=qcow2,cache=unsafe \
     -drive if=virtio,file="$target",format=raw,cache=unsafe \
+    ${EXTRA:+-drive if=virtio,file="$EXTRA",format=${EXTRA_FMT:-raw},cache=unsafe} \
     -virtfs local,path="$d/share",mount_tag=share,security_model=none,id=share \
     -nic user,model=virtio-net-pci -device virtio-rng-pci \
     -display none -serial unix:"$RUN/A.serial",server,nowait \

@@ -1,0 +1,13 @@
+#!/bin/sh
+# A MAN update (.upd) replaces @system with a new kernel and device trees, but
+# m1n1/boot.bin lives on the EFI partition of the Mac. Rebuild it from the
+# running system and write it only when it differs (update-m1n1 keeps .old).
+set -e
+new=/run/man-m1n1-boot.bin
+update-m1n1 "$new" >/dev/null
+esp=/boot/efi/m1n1/boot.bin
+if [ -f "$esp" ] && cmp -s "$new" "$esp"; then
+    rm -f "$new"; exit 0
+fi
+rm -f "$new"
+update-m1n1

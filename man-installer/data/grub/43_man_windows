@@ -8,7 +8,7 @@ for esp in $(lsblk -nrpo PATH,PARTTYPE 2>/dev/null | awk -v g="$esp_guid" 'tolow
     tmp=
     if [ -z "$mp" ]; then
         tmp=$(mktemp -d)
-        if ! mount -o ro "$esp" "$tmp" 2>/dev/null; then
+        if ! mount -o ro "$esp" "$tmp" >/dev/null 2>&1; then
             rmdir "$tmp"
             continue
         fi

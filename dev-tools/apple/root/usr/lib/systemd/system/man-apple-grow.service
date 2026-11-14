@@ -1,0 +1,13 @@
+[Unit]
+Description=MAN: use the whole MAN partition on this Mac
+Documentation=file:///usr/libexec/man-apple-grow
+ConditionPathExists=!/var/lib/man/apple-grown
+ConditionPathExists=/proc/device-tree/chosen/asahi,efi-system-partition
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-apple-grow
+
+[Install]
+WantedBy=multi-user.target

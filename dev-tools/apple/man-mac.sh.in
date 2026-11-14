@@ -1,0 +1,77 @@
+#!/bin/sh
+# SPDX-License-Identifier: MIT
+# MAN for Apple Silicon Macs: run in the macOS Terminal with
+#   curl -L @URL@/man-mac.sh | sh
+# This is the bootstrap script of the Asahi Linux installer (https://asahilinux.org,
+# MIT licence, Copyright The Asahi Linux Contributors) pointed at MAN: the installer
+# shrinks macOS (if you choose to), creates the MAN partitions, installs the Asahi boot
+# loader (m1n1, U-Boot) and copies MAN. Mac firmware is copied from this Mac's macOS.
+
+# Truncation guard
+if true; then
+    set -e
+
+    if [ ! -e /System ]; then
+        echo "Run this in the Terminal of macOS on your Apple Silicon Mac."
+        echo "(On a PC, use the MAN ISO instead.)"
+        exit 1
+    fi
+
+    if [ "$(uname -m)" != "arm64" ]; then
+        echo "This Mac has an Intel processor: use the normal MAN ISO from a USB stick."
+        exit 1
+    fi
+
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
+    if ! curl --no-progress-meter file:/// >/dev/null 2>&1; then
+        echo "Your version of cURL is too old. Please update macOS (at least 13.5)."
+        exit 1
+    fi
+
+    BASE=@URL@
+    export VERSION_FLAG=$BASE/latest
+    export INSTALLER_BASE=$BASE
+    export INSTALLER_DATA=$BASE/installer_data.json
+    export INSTALLER_DATA_ALT=$INSTALLER_DATA
+    export REPO_BASE=$BASE
+    unset REPORT REPORT_TAG
+
+    TMP=/tmp/man-install
+
+    echo
+    echo "MAN for Apple Silicon Macs"
+    echo "Starting the installer (based on the Asahi Linux installer):"
+
+    if [ -e "$TMP" ]; then
+        mv "$TMP" "$TMP-$(date +%Y%m%d-%H%M%S)"
+    fi
+
+    mkdir -p "$TMP"
+    cd "$TMP"
+
+    echo "  Checking version..."
+    PKG_VER="$(curl --no-progress-meter -L "$VERSION_FLAG")"
+    echo "  Version: $PKG_VER"
+    PKG="installer-$PKG_VER.tar.gz"
+
+    echo "  Downloading..."
+    curl --no-progress-meter -L -o "$PKG" "$INSTALLER_BASE/$PKG"
+    curl --no-progress-meter -L -O "$INSTALLER_DATA"
+
+    echo "  Extracting..."
+    tar xf "$PKG"
+
+    echo "  Initializing..."
+    echo
+
+    if [ "$USER" != "root" ]; then
+        echo "The installer needs to run as root."
+        echo "Please enter your macOS password if asked."
+        exec caffeinate -dis sudo -E ./install.sh "$@"
+    else
+        exec caffeinate -dis ./install.sh "$@"
+    fi
+fi

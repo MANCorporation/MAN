@@ -1,0 +1,9 @@
+#!/bin/sh
+# The MAN Mac installer copies a small system image and then enlarges its
+# partition to the size chosen in the installer. Btrfs grows into it once.
+set -e
+if [ "$(findmnt -n -o FSTYPE /)" = btrfs ]; then
+    btrfs filesystem resize max /
+fi
+mkdir -p /var/lib/man
+date -u +%FT%TZ > /var/lib/man/apple-grown
