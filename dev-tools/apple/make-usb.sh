@@ -101,7 +101,12 @@ Once per Mac, macOS has to register MAN's boot loader (Apple only lets macOS do 
        sh /Volumes/MAN_LIVE/MAN-Mac/install-man.sh
 2. Choose "MAN boot loader only". It needs about 3 GB of free space for a small
    macOS helper and the boot loader; it does not install MAN.
+   If it asks to shrink macOS, give macOS its current size minus about 10GB.
+   Back up with Time Machine first and keep the charger plugged in.
 3. Follow the installer to the end (it asks you to start in recovery mode once).
+4. Back in macOS: System Settings > General > Startup Disk > Macintosh HD, so the
+   Mac keeps starting macOS by default (macOS itself is not changed and keeps
+   Full Security; only the MAN entry has the lower security level).
 From then on: plug in this stick, hold the power button at start-up, choose
 "MAN Live USB": the MAN Live System starts from the stick.
 
