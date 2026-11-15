@@ -44,6 +44,26 @@ pub struct Probe {
     /// Language (locale) of the running system.
     #[serde(default)]
     pub language: Option<String>,
+    /// Running on an Apple Silicon Mac: its internal disk is never offered, only
+    /// external disks and the MAN partitions prepared from macOS (if any).
+    #[serde(default)]
+    pub mac: Option<MacTarget>,
+}
+
+/// The MAN partitions on a Mac's internal disk, made by MAN's Mac installer in macOS
+/// ("boot loader + space for MAN"): the Asahi EFI partition (m1n1, U-Boot, firmware;
+/// never formatted), an empty 1 GiB partition for /boot and the system partition.
+#[derive(Serialize, Deserialize, Debug, Clone, Default)]
+pub struct MacTarget {
+    pub internal_disk: String,
+    pub esp: Option<String>,
+    pub boot: Option<String>,
+    pub root: Option<String>,
+    pub root_size: u64,
+    /// The internal disk for the confirmation token, listing only the partitions
+    /// above (macOS's partitions are left out).
+    #[serde(default)]
+    pub disk: Option<Disk>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

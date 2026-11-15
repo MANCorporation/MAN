@@ -46,7 +46,16 @@ bl.update(name="MAN boot loader only (to start the MAN Live USB stick)",
           default_os_name="MAN Live USB", package=sys.argv[3])
 bl["partitions"] = [p for p in full["partitions"] if p["type"] == "EFI"]
 bl["partitions"][0].pop("volume_id", None)
-d["os_list"] = [full, bl]
+# Boot loader + empty partitions made by macOS's own diskutil: MAN's live USB
+# installer then only formats these two (it never touches macOS's partitions).
+space = copy.deepcopy(bl)
+space.update(name="MAN boot loader + space for MAN (install MAN later from the MAN Live USB)",
+             default_os_name="MAN")
+space["partitions"] = bl["partitions"] + [
+    {"name": "MAN Boot", "type": "Linux", "size": "1073741824B"},
+    {"name": "MAN", "type": "Linux", "size": "20000000000B", "expand": True},
+]
+d["os_list"] = [full, space, bl]
 print(json.dumps(d, indent=1))
 EOF
 cat > "$DST/install-man.sh" <<EOF
@@ -92,42 +101,29 @@ cat > "$DST/README.txt" <<EOF
 MAN for Apple Silicon Macs (M1, M2, M3)
 =======================================
 
-An Apple Silicon Mac starts this stick only after a one-time step in macOS.
+macOS is never changed: the installer only adds MAN's own small partitions next to it
+(with Apple's diskutil) and macOS keeps Full Security. Back up with Time Machine first
+anyway, and keep the charger plugged in.
 
-Start the MAN Live System from this stick
------------------------------------------
-Once per Mac, macOS has to register MAN's boot loader (Apple only lets macOS do this):
-1. In macOS, open Terminal and type (with the stick plugged in):
+1. In macOS, plug in this stick, connect to the internet, open Terminal and type:
        sh /Volumes/MAN_LIVE/MAN-Mac/install-man.sh
-2. Choose "MAN boot loader only". It needs about 3 GB of free space for a small
-   macOS helper and the boot loader; it does not install MAN.
-   If it asks to shrink macOS, give macOS its current size minus about 10GB.
-   Back up with Time Machine first and keep the charger plugged in.
-3. Follow the installer to the end (it asks you to start in recovery mode once).
-4. Back in macOS: System Settings > General > Startup Disk > Macintosh HD, so the
-   Mac keeps starting macOS by default (macOS itself is not changed and keeps
-   Full Security; only the MAN entry has the lower security level).
-From then on: plug in this stick, hold the power button at start-up, choose
-"MAN Live USB": the MAN Live System starts from the stick.
+   Choose one of:
+   - MAN boot loader + space for MAN   (recommended) the MAN Live USB stick can
+     start, and MAN is installed into the prepared space from the live system
+   - MAN boot loader only               just start the MAN Live USB stick
+   - MAN ...                            install MAN directly from macOS
+   If asked to shrink macOS: give macOS its current size minus the space for MAN.
+2. The Mac shuts down by itself. Then press and HOLD the power button until
+   "Loading startup options" appears, and choose "MAN" (Apple requires this
+   one step in person). Type your macOS password when asked; the Mac restarts
+   by itself.
+3. Start the MAN Live System: plug in this stick, hold the power button, choose
+   MAN. In the live system, "Install MAN" offers "Install on This Mac" (the space
+   prepared in step 1) or an external disk; macOS's disk is not even shown.
+4. To start macOS by default again: System Settings > General > Startup Disk.
 
-Install MAN on the Mac
-----------------------
-1. Back up your Mac (Time Machine). The installer can shrink macOS to make room.
-2. Plug in this USB stick and connect to the internet (a small part of Apple's
-   macOS files is downloaded from Apple during the installation).
-3. Open Terminal (Applications > Utilities) and type:
-
-       sh /Volumes/MAN_LIVE/MAN-Mac/install-man.sh
-
-   (Tip: type "sh ", then drag install-man.sh from Finder into the Terminal window.)
-   Choose "MAN 10 ..." (not "boot loader only").
-4. Follow the installer. At the end it asks you to shut down and start in
-   recovery mode once (hold the power button) to confirm MAN. Follow its steps.
-5. MAN starts and MAN Setup appears. Later, hold the power button at start-up to
-   choose between macOS and MAN.
-
-The installer is the Asahi Linux installer (https://asahilinux.org, MIT licence).
-M4 and newer Macs are not supported yet.
+The installer is the Asahi Linux installer (https://asahilinux.org, MIT licence),
+with MAN's changes. M4 and newer Macs are not supported yet.
 EOF
 cp $R/$zip.sha256 "$DST/os/"
 sync

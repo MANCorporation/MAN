@@ -85,12 +85,27 @@ fn validate(plan: &Plan, source: u64) -> Result<(Disk, Vec<Disk>)> {
         bail!("The installer backend must run as root.");
     }
     if probe::is_apple_silicon() {
-        bail!(
-            "MAN cannot be installed from the live system on a Mac with Apple Silicon: erasing or repartitioning its internal disk \
-             would remove macOS's start-up and recovery data, and the Mac could no longer start. \
-             Install MAN from macOS instead: run MAN-Mac/install-man.sh from this USB stick in the macOS Terminal \
-             (see MAN-Mac/README.txt)."
-        );
+        // The Mac's internal disk also holds macOS's start-up and recovery data:
+        // only the MAN partitions prepared from macOS, or external disks.
+        let m = probe::mac_target(&probe::disks()?);
+        let ok = match plan.mode {
+            Mode::Erase => !m.internal_disk.is_empty() && plan.disk != m.internal_disk,
+            Mode::Manual => {
+                m.root.is_some()
+                    && !plan.format_esp
+                    && plan.esp == m.esp
+                    && plan.boot == m.boot
+                    && plan.root == m.root
+            }
+            _ => false,
+        };
+        if !ok {
+            bail!(
+                "On a Mac with Apple Silicon, MAN installs only into the space prepared in macOS \
+                 (MAN-Mac/install-man.sh, \"boot loader + space for MAN\") or onto an external disk. \
+                 Other partitions of the internal disk hold macOS's start-up data and are never changed."
+            );
+        }
     }
     if !Path::new("/sys/firmware/efi").is_dir() {
         bail!("This computer was not started in UEFI mode. MAN requires UEFI.");
@@ -262,7 +277,9 @@ fn format_system(plan: &Plan, root: &str, boot: Option<&str>, mounts: &mut Mount
 fn prepare_manual(plan: &Plan, mounts: &mut Mounts) -> Result<Layout> {
     let esp = plan.esp.clone().unwrap();
     let root = plan.root.clone().unwrap();
-    let boot = if plan.encrypt { plan.boot.clone() } else { None };
+    // On a Mac the /boot partition prepared in macOS is always used (MAN Setup can
+    // encrypt later, and GRUB stays on a plain partition).
+    let boot = if plan.encrypt || probe::is_apple_silicon() { plan.boot.clone() } else { None };
     progress(0.1, "Removing old file system signatures");
     run("wipefs", &["-a", &root])?;
     if let Some(b) = &boot {

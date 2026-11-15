@@ -53,6 +53,57 @@ pub fn is_apple_silicon() -> bool {
         .unwrap_or(false)
 }
 
+const LINUX_DATA: &str = "0fc63daf-8483-4772-8e79-3d69d8477de4";
+
+fn part_start(path: &str) -> u64 {
+    let name = path.rsplit('/').next().unwrap_or("");
+    read_to_string(&format!("/sys/class/block/{name}/start")).and_then(|s| s.trim().parse().ok()).unwrap_or(0)
+}
+
+/// The Mac's internal disk and the MAN partitions prepared on it from macOS: the
+/// EFI partition m1n1 was started from (device tree), then, right after it, a
+/// ~1 GiB Linux partition (/boot) and the Linux system partition, both empty or
+/// MAN's own (a reinstall). Anything else on the internal disk is never offered.
+pub fn mac_target(disks: &[Disk]) -> MacTarget {
+    let esp_uuid = std::fs::read("/proc/device-tree/chosen/asahi,efi-system-partition")
+        .map(|b| String::from_utf8_lossy(&b).trim_matches(char::from(0)).trim().to_lowercase())
+        .unwrap_or_default();
+    let esp = disks.iter().flat_map(|d| d.partitions.iter()).find(|p| {
+        !esp_uuid.is_empty()
+            && query("lsblk", &["-ndo", "PARTUUID", &p.path]).map(|u| u.to_lowercase()) == Some(esp_uuid.clone())
+    });
+    let internal = esp
+        .map(|p| p.disk.clone())
+        .or_else(|| disks.iter().find(|d| d.path.starts_with("/dev/nvme")).map(|d| d.path.clone()))
+        .unwrap_or_default();
+    let mut t = MacTarget { internal_disk: internal.clone(), ..Default::default() };
+    let (Some(esp), Some(disk)) = (esp, disks.iter().find(|d| d.path == internal)) else { return t };
+    t.esp = Some(esp.path.clone());
+    let mut parts: Vec<&Partition> = disk.partitions.iter().collect();
+    parts.sort_by_key(|p| part_start(&p.path));
+    let Some(i) = parts.iter().position(|p| p.path == esp.path) else { return t };
+    let linux = |p: &Partition| p.parttype.as_deref().map(|g| g.to_lowercase()) == Some(LINUX_DATA.into());
+    let (Some(boot), Some(root)) = (parts.get(i + 1), parts.get(i + 2)) else { return t };
+    let boot_ok = linux(boot)
+        && (900 << 20..=1200 << 20).contains(&boot.size)
+        && (boot.fstype.is_none() || boot.label.as_deref() == Some("MAN_BOOT"));
+    let root_ok = linux(root)
+        && (root.fstype.is_none()
+            || root.label.as_deref() == Some(BTRFS_LABEL)
+            || root.fstype.as_deref() == Some("crypto_LUKS"));
+    if boot_ok && root_ok {
+        t.boot = Some(boot.path.clone());
+        t.root = Some(root.path.clone());
+        t.root_size = root.size;
+        let keep = [esp.path.clone(), boot.path.clone(), root.path.clone()];
+        let mut d = disk.clone();
+        d.partitions.retain(|p| keep.contains(&p.path));
+        d.free.clear();
+        t.disk = Some(d);
+    }
+    t
+}
+
 pub fn live_disk() -> Option<String> {
     let mut sources = vec![];
     let installer = installer_partition();
@@ -279,22 +330,22 @@ pub fn current_keyboard() -> String {
 }
 
 pub fn probe() -> Result<Probe> {
-    if is_apple_silicon() {
-        anyhow::bail!(
-            "This is a Mac with Apple Silicon. Try MAN here as much as you like, but install it from macOS: \
-             run MAN-Mac/install-man.sh from this USB stick in the macOS Terminal (see MAN-Mac/README.txt). \
-             Installing from here could erase macOS's start-up data on the internal disk."
-        );
+    let mut disks = disks()?;
+    let mac = is_apple_silicon().then(|| mac_target(&disks));
+    if let Some(m) = &mac {
+        // macOS's start-up, system and recovery data: never shown.
+        disks.retain(|d| d.path != m.internal_disk);
     }
-    let disks = disks()?;
+    let installs = installs(&disks);
     Ok(Probe {
         uefi: Path::new("/sys/firmware/efi").is_dir(),
         live_disk: live_disk(),
-        installs: installs(&disks),
+        installs,
         disks,
         source_bytes: source_bytes(),
         timezone: current_timezone(),
         keyboard: current_keyboard(),
         language: crate::locale::current_language(Path::new("/")),
+        mac,
     })
 }

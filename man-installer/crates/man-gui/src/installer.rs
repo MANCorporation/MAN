@@ -55,12 +55,23 @@ impl Ctx {
         self.probe().source_bytes + HEADROOM
     }
 
+    /// The probe's disks plus, on a Mac, its internal disk with only the MAN
+    /// partitions prepared in macOS (macOS's own partitions are never listed).
+    fn all_disks(&self) -> Vec<Disk> {
+        let p = self.probe();
+        let mut v = p.disks;
+        if let Some(d) = p.mac.and_then(|m| m.disk) {
+            v.push(d);
+        }
+        v
+    }
+
     fn disk(&self, path: &str) -> Option<Disk> {
-        self.probe().disks.into_iter().find(|d| d.path == path)
+        self.all_disks().into_iter().find(|d| d.path == path)
     }
 
     fn partition(&self, path: &str) -> Option<Partition> {
-        self.probe().disks.into_iter().flat_map(|d| d.partitions).find(|p| p.path == path)
+        self.all_disks().into_iter().flat_map(|d| d.partitions).find(|p| p.path == path)
     }
 
     fn install_target(&self) -> Option<ExistingInstall> {
@@ -306,6 +317,19 @@ fn select_defaults(ctx: &C) {
     } else if s.alongside.is_some() {
         s.mode = Mode::Alongside;
     }
+    // A Mac: the space prepared in macOS if there is one, else an external disk.
+    if let Some(m) = probe.mac {
+        s.reinstall = None;
+        s.alongside = None;
+        s.mode = Mode::Erase;
+        if m.root.is_some() {
+            s.mode = Mode::Manual;
+            s.esp = m.esp;
+            s.boot = m.boot;
+            s.root = m.root;
+            s.format_esp = false;
+        }
+    }
 }
 
 // ──────────────────────────── Destination ───────────────────────────
@@ -387,6 +411,23 @@ fn destination_page(ctx: &C) -> adw::NavigationPage {
     type_group.add(&re_row);
     type_group.add(&man_row);
     prefs.add(&type_group);
+    let mac = probe.mac.clone();
+    if let Some(m) = &mac {
+        al_row.set_visible(false);
+        re_row.set_visible(false);
+        erase_row.set_title(tr("Erase an External Disk and Install MAN"));
+        erase_row.set_subtitle(tr("Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."));
+        man_row.set_title(tr("Install on This Mac"));
+        if m.root.is_some() {
+            man_row.set_subtitle(&glib::markup_escape_text(&trf(
+                "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed.",
+                &[("size", &human_size(m.root_size))],
+            )));
+        } else {
+            man_row.set_subtitle(tr("No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose \u{201c}MAN boot loader + space for MAN\u{201d}."));
+            man_row.set_sensitive(false);
+        }
+    }
 
     // Erase: disk list.
     let disk_group = adw::PreferencesGroup::builder().title(tr("Disk")).description(tr("Choose the disk to erase. Disks that cannot be used are shown with the reason.")).build();
@@ -719,12 +760,13 @@ fn destination_page(ctx: &C) -> adw::NavigationPage {
         let hint = hint.clone();
         let (disk_group, re_group, man_group, sec_group, boot_row, pass2) = (disk_group.clone(), re_group.clone(), man_group.clone(), sec_group.clone(), boot_row.clone(), pass2.clone());
         let al_group = al_group.clone();
+        let mac = probe.mac.clone();
         *validate.borrow_mut() = Box::new(move || {
             let s = ctx.state.borrow();
             disk_group.set_visible(s.mode == Mode::Erase);
             al_group.set_visible(s.mode == Mode::Alongside);
             re_group.set_visible(s.mode == Mode::Reinstall);
-            man_group.set_visible(s.mode == Mode::Manual);
+            man_group.set_visible(s.mode == Mode::Manual && mac.is_none());
             sec_group.set_visible(s.mode != Mode::Reinstall);
             boot_row.set_visible(s.encrypt);
             let enc_problem = if s.encrypt && s.mode != Mode::Reinstall {
@@ -922,7 +964,7 @@ fn build_plan(ctx: &C) -> Result<(Plan, Disk), String> {
         Mode::Manual => {
             plan.esp = s.esp.clone();
             plan.root = s.root.clone();
-            plan.boot = if plan.encrypt { s.boot.clone() } else { None };
+            plan.boot = if plan.encrypt || s.probe.as_ref().is_some_and(|p| p.mac.is_some()) { s.boot.clone() } else { None };
             let root = s.root.clone().ok_or(tr("No system partition chosen"))?;
             drop(s);
             plan.disk = ctx.partition(&root).map(|p| p.disk).ok_or(tr("The system partition disappeared"))?;
@@ -958,6 +1000,7 @@ fn summary_page(ctx: &C) -> adw::NavigationPage {
     let dest = adw::PreferencesGroup::builder().title(tr("Destination")).build();
     let mode = match plan.mode {
         Mode::Erase => tr("Erase disk and install"),
+        Mode::Manual if ctx.probe().mac.is_some() => tr("This Mac (space prepared in macOS)"),
         Mode::Manual => tr("Custom partitions"),
         Mode::Reinstall => tr("Reinstall, keeping /home"),
         Mode::Alongside => tr("Alongside Windows"),

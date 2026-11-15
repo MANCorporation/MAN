@@ -90,16 +90,7 @@ EOF
 cat $OUT/installer_data.json
 (cd $OUT && sha256sum $name > $name.sha256)
 
-# The macOS side: MAN's bootstrap script and a copy of the Asahi installer it runs
-# (MIT licence), with installer/patch-urlcache.py applied: HTTP status checks and fresh
-# signed links for downloads from GitHub releases.
-IV=v0.9.2; MV=$IV-man1
-mkdir -p $A/installer
-[ -f $A/installer/installer-$IV.tar.gz ] || curl -sfL -o $A/installer/installer-$IV.tar.gz https://cdn.asahilinux.org/installer/installer-$IV.tar.gz
-rm -rf $A/installer/tree; mkdir -p $A/installer/tree
-tar -C $A/installer/tree -xzf $A/installer/installer-$IV.tar.gz
-python3 -I $p/dev-tools/apple/installer/patch-urlcache.py $A/installer/tree/urlcache.py
-tar -C $A/installer/tree --owner=0 --group=0 -czf $OUT/installer-$MV.tar.gz .
-echo $MV > $OUT/latest
+# The macOS side: MAN's bootstrap script and MAN's copy of the Asahi installer.
+$p/dev-tools/apple/make-installer.sh
 sed "s#@URL@#$URL#g" $p/dev-tools/apple/man-mac.sh.in > $OUT/man-mac.sh
 ls -la $OUT
