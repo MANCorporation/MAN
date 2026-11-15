@@ -88,7 +88,7 @@ print(json.dumps({"os_list": [{
 }]}, indent=1))
 EOF
 cat $OUT/installer_data.json
-sha256sum $OUT/$name > $OUT/$name.sha256
+(cd $OUT && sha256sum $name > $name.sha256)
 
 # The macOS side: MAN's bootstrap script and a copy of the Asahi installer it runs
 # (MIT licence), with installer/patch-urlcache.py applied: HTTP status checks and fresh
