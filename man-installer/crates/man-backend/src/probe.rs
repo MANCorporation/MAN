@@ -44,6 +44,15 @@ pub fn installer_partition() -> Option<String> {
 }
 
 /// The disk holding the running root filesystem (or the live medium).
+/// An Apple Silicon Mac (started by m1n1/U-Boot, Asahi device tree). Its internal
+/// disk also holds macOS's system and recovery containers, which the Mac needs to
+/// start at all: MAN is installed there only by the Mac installer run from macOS.
+pub fn is_apple_silicon() -> bool {
+    std::fs::read("/proc/device-tree/compatible")
+        .map(|c| c.split(|b| *b == 0).any(|s| s.starts_with(b"apple,")))
+        .unwrap_or(false)
+}
+
 pub fn live_disk() -> Option<String> {
     let mut sources = vec![];
     let installer = installer_partition();
@@ -270,6 +279,13 @@ pub fn current_keyboard() -> String {
 }
 
 pub fn probe() -> Result<Probe> {
+    if is_apple_silicon() {
+        anyhow::bail!(
+            "This is a Mac with Apple Silicon. Try MAN here as much as you like, but install it from macOS: \
+             run MAN-Mac/install-man.sh from this USB stick in the macOS Terminal (see MAN-Mac/README.txt). \
+             Installing from here could erase macOS's start-up data on the internal disk."
+        );
+    }
     let disks = disks()?;
     Ok(Probe {
         uefi: Path::new("/sys/firmware/efi").is_dir(),

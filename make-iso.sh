@@ -3,7 +3,8 @@
 #
 #   ./make-iso.sh [IMAGE]          default IMAGE: lfs/man-gnome.img
 #
-# Output: release/MAN-<version>-amd64.iso (+ .sha256), or -arm64.iso for an
+# Output: release/MAN-<version>-amd64.iso (+ .sha256), -apple.iso for the Apple
+# Silicon image (lfs/apple/man-gnome-apple.img, see dev-tools/apple), or -arm64.iso for an
 # ARM64 image (lfs/arm64/man-gnome-arm64.img; UEFI only, GRUB for arm64-efi
 # and busybox from tools/arm64). The x86-64 ISO boots on UEFI and BIOS PCs, from a USB stick (write it with GNOME Disks "Restore Disk
 # Image", dd or any image writer) or a DVD, and in QEMU:
@@ -49,11 +50,18 @@ case $(od -An -tx1 -j18 -N2 "$mnt/usr/bin/bash" | tr -d ' \n') in
     *) echo "Unknown processor in $image" >&2; exit 1 ;;
 esac
 [[ -x $busybox && -d $grub_dir ]] || { echo "Missing $busybox or $grub_dir" >&2; exit 1; }
+# MAN for Apple Silicon Macs (lfs/apple/man-gnome-apple.img, dev-tools/apple): the
+# image's own initramfs (Asahi firmware loading, Mac USB-C drivers) with its
+# scripts/manlive, and the MAN-Mac installer folder for macOS on the medium.
+variant=$arch
+if [[ $arch == arm64 && -d $mnt/usr/share/asahi-scripts ]]; then
+    variant=apple console="boot=manlive"
+fi
 # /usr/lib/man/version: "10.9", or "10 TEST 5" for TEST builds (file name MAN-10-TEST-5-amd64.iso).
 version=$(head -n1 "$mnt/usr/lib/man/version" 2>/dev/null | tr ' ' '-')
 [[ -n $version ]] || version=$(sed -n 's/^VERSION_ID="\{0,1\}\([^"]*\)"\{0,1\}$/\1/p' "$mnt/etc/os-release")
 version=${version:-10.0}
-iso="$out_dir/MAN-$version-$arch.iso"
+iso="$out_dir/MAN-$version-$variant.iso"
 id="MAN-$version-$(date +%Y%m%d%H%M)-$(od -An -N3 -tx1 /dev/urandom | tr -d ' \n')"
 kernel=$(ls "$mnt"/boot/vmlinuz-* | sort -V | tail -n1)
 echo "    MAN $version, kernel $(basename "$kernel"), medium id $id"
@@ -87,6 +95,11 @@ echo "$id" > "$work/iso/live/man-id"
 cp "$kernel" "$work/iso/live/vmlinuz"
 
 echo "==> Building the initramfs"
+if [[ $variant == apple ]]; then
+    cp "$mnt/boot/initrd.img-${kernel##*/vmlinuz-}" "$work/iso/live/initrd.img"
+    echo "==> MAN-Mac installer folder (for the one-time setup from macOS)"
+    "$project_dir/dev-tools/apple/make-usb.sh" "$work/iso"
+else
 cp "$busybox" "$work/initrd/bin/busybox"
 for app in sh mount umount mkdir cat cp sleep switch_root setsid cttyhack printf; do
     ln -s busybox "$work/initrd/bin/$app"
@@ -94,6 +107,7 @@ done
 cp "$project_dir/iso/init" "$work/initrd/init"
 chmod 755 "$work/initrd/init"
 (cd "$work/initrd" && find . | LC_ALL=C sort | cpio -o -H newc -R 0:0 --quiet | zstd -19 -q) > "$work/iso/live/initrd.img"
+fi
 
 echo "==> Writing the ISO"
 sed "s/@ID@/$id/g; s/@CONSOLE@/$console/" "$project_dir/iso/grub.cfg" > "$work/iso/boot/grub/grub.cfg"

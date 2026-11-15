@@ -84,6 +84,14 @@ fn validate(plan: &Plan, source: u64) -> Result<(Disk, Vec<Disk>)> {
     if query("id", &["-u"]).as_deref() != Some("0") {
         bail!("The installer backend must run as root.");
     }
+    if probe::is_apple_silicon() {
+        bail!(
+            "MAN cannot be installed from the live system on a Mac with Apple Silicon: erasing or repartitioning its internal disk \
+             would remove macOS's start-up and recovery data, and the Mac could no longer start. \
+             Install MAN from macOS instead: run MAN-Mac/install-man.sh from this USB stick in the macOS Terminal \
+             (see MAN-Mac/README.txt)."
+        );
+    }
     if !Path::new("/sys/firmware/efi").is_dir() {
         bail!("This computer was not started in UEFI mode. MAN requires UEFI.");
     }

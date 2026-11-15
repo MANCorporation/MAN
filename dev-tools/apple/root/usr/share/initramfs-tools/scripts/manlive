@@ -1,0 +1,77 @@
+# MAN live system for Apple Silicon Macs (initramfs-tools boot script, kernel
+# option boot=manlive). The Mac's own initramfs parts run as usual around it:
+# asahi-scripts loads the Mac firmware from the EFI partition (init-top) and
+# copies it into the live system (init-bottom), the USB-C drivers come from
+# the asahi module list. Here: find the medium with live/filesystem.squashfs,
+# put a RAM overlay on top and mount it as the root.
+#   man.id=ID  only a medium whose live/man-id contains ID
+#   toram      copy the system into RAM (the stick can be removed)
+
+man_find_medium() {
+	for sys in /sys/class/block/*; do
+		dev=/dev/${sys##*/}
+		case ${sys##*/} in loop*|ram*|zram*|dm-*|nvme*) continue ;; esac
+		[ -b "$dev" ] || continue
+		for fs in iso9660 vfat ext4; do
+			mount -t $fs -o ro "$dev" /run/live/medium 2>/dev/null || continue
+			if [ -f /run/live/medium/live/filesystem.squashfs ] &&
+			   { [ -z "$man_id" ] || [ "$(cat /run/live/medium/live/man-id 2>/dev/null)" = "$man_id" ]; }; then
+				log_success_msg "MAN: live system on $dev"
+				return 0
+			fi
+			umount /run/live/medium
+		done
+	done
+	return 1
+}
+
+mountroot() {
+	man_id= man_toram=
+	for opt in $(cat /proc/cmdline); do
+		case $opt in
+			man.id=*) man_id=${opt#man.id=} ;;
+			toram) man_toram=1 ;;
+		esac
+	done
+	for m in usb-storage uas sd_mod isofs squashfs overlay loop vfat nls_cp437 nls_iso8859_1 \
+	         xhci-plat-hcd xhci-pci dwc3 phy-apple-atc tps6598x; do
+		modprobe -q $m 2>/dev/null || true
+	done
+	mkdir -p /run/live/medium /run/live/rootfs /run/live/overlay
+	log_begin_msg "MAN: looking for the live USB stick"
+	# USB-C on a Mac comes up after the Type-C controller and PHY: wait up to 60 s.
+	tries=0
+	until man_find_medium; do
+		tries=$((tries + 1))
+		if [ $tries -ge 120 ]; then
+			echo "MAN: the live USB stick was not found. Disks seen:"
+			cat /proc/partitions
+			panic "MAN: plug the stick into another USB port (on MacBooks: a USB-C port) and type 'exit' to try again."
+			tries=0
+		fi
+		sleep 0.5
+	done
+	log_end_msg
+
+	squash=/run/live/medium/live/filesystem.squashfs
+	if [ -n "$man_toram" ]; then
+		echo "MAN: copying the system into memory..."
+		mkdir -p /run/live/ram
+		mount -t tmpfs -o mode=0755 tmpfs /run/live/ram
+		if cp $squash /run/live/ram/filesystem.squashfs; then
+			squash=/run/live/ram/filesystem.squashfs
+		else
+			echo "MAN: not enough memory, running from the stick."
+			umount /run/live/ram
+		fi
+	fi
+	mount -t squashfs -o ro,loop $squash /run/live/rootfs || panic "MAN: the live system image could not be mounted."
+	[ "$squash" != /run/live/medium/live/filesystem.squashfs ] && umount /run/live/medium
+	mount -t tmpfs -o mode=0755 tmpfs /run/live/overlay
+	mkdir -p /run/live/overlay/upper /run/live/overlay/work
+	mount -t overlay overlay -o lowerdir=/run/live/rootfs,upperdir=/run/live/overlay/upper,workdir=/run/live/overlay/work "${rootmnt}" ||
+		panic "MAN: the live file system could not be set up."
+	printf '# MAN live session\noverlay / overlay rw 0 0\n' > "${rootmnt}/etc/fstab"
+	# asahi-scripts' init-bottom mounts the Mac firmware here.
+	mkdir -p "${rootmnt}/lib/firmware/vendor"
+}

@@ -48,6 +48,14 @@ for p in asahi-scripts asahi-fwextract m1n1 speakersafetyd asahi-audio tiny-dfr;
   inroot dpkg-query -W -f='${Package} ${Version} ${Status}\n' $p
 done
 
+echo "== newer MAN packages (/mnt/share/apple/debs, optional)"
+if ls $S/debs/*.deb >/dev/null 2>&1; then
+  rm -rf $T/tmp/man-new; mkdir -p $T/tmp/man-new; cp $S/debs/*.deb $T/tmp/man-new/
+  inroot sh -c "$APT install --allow-downgrades /tmp/man-new/*.deb" 2>&1 | grep -E '^E:|upgraded,|^Setting up man|^Setting up marquee' || true
+  rm -rf $T/tmp/man-new
+  inroot dpkg-query -W -f='${Package} ${Version}\n' man-installer man-system-tools
+fi
+
 echo "== MAN files for Macs"
 # Files only, owned by root: existing directories (/, /usr, ...) keep their owner and mode.
 tar -C $S/root -cf - . | tar -C $T -xf - --no-same-owner --no-overwrite-dir
