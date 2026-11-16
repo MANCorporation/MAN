@@ -3,6 +3,7 @@
 case "${1:-}" in prereqs) exit 0 ;; esac
 . /usr/share/initramfs-tools/hook-functions
 for m in usb-storage uas sd_mod isofs squashfs overlay loop vfat nls_cp437 nls_iso8859_1 \
-         xhci-plat-hcd xhci-pci dwc3 phy-apple-atc tps6598x; do
+         xhci-plat-hcd xhci-pci dwc3 dwc3-apple phy-apple-atc tps6598x thunderbolt_apple \
+         apple-tunable reset-apple-cio typec pwm-apple; do
 	manual_add_modules $m
 done

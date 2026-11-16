@@ -109,3 +109,12 @@ MAN: the installer copies it from the user's own macOS.
 - In the test VM, the virtio GPU stays dark after the screen blanks (mutter: atomic
   commit fails). VM only; restart gdm or disable blanking.
 - Built-in drivers cannot get Mac firmware (it is only loaded by the initramfs).
+- USB-C on M1/M2 Macs needs `thunderbolt_apple` (the Type-C controllers wait for its
+  Thunderbolt switch; without it they stay in "deferred" and no USB works), plus
+  `dwc3-apple`, `phy-apple-atc`, `tps6598x`: all in the initramfs (`hooks/man-live`).
+- asahi-scripts' `init-top/asahi` mounts the ESP with `mount PARTUUID=...`, which
+  BusyBox's mount does not understand: no firmware. MAN's fixed copy is in
+  `root/etc/initramfs-tools/scripts/init-top/asahi` (uses util-linux blkid).
+- If the live stick is not found, `scripts/manlive` writes `man-live-log.txt` (dmesg,
+  deferred devices, modules) to the Mac's MAN EFI partition; read it in macOS with
+  `diskutil mount disk0sN` (the "EFI - MAN" partition).

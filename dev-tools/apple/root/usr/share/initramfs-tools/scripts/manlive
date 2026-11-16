@@ -25,6 +25,30 @@ man_find_medium() {
 	return 1
 }
 
+# When the stick is not found: the start-up log onto the Mac's MAN EFI partition, as
+# man-live-log.txt (in macOS: diskutil mount the "EFI - MAN" partition).
+man_save_log() {
+	esp=$(tr -d '\000' < /proc/device-tree/chosen/asahi,efi-system-partition 2>/dev/null)
+	[ -n "$esp" ] || return 0
+	dev=$(blkid -t "PARTUUID=$esp" -o device 2>/dev/null | head -n 1)
+	[ -n "$dev" ] || return 0
+	mkdir -p /run/man-esp
+	mount -t vfat "$dev" /run/man-esp 2>/dev/null || return 0
+	{
+		echo "== MAN live start-up log"; cat /proc/cmdline; uname -a
+		echo "== partitions"; cat /proc/partitions
+		echo "== deferred devices"
+		mount -t debugfs debugfs /sys/kernel/debug 2>/dev/null
+		cat /sys/kernel/debug/devices_deferred 2>/dev/null
+		echo "== modules"; cat /proc/modules
+		echo "== usb"; ls -l /sys/bus/usb/devices/ 2>&1
+		echo "== dmesg"; dmesg
+	} > /run/man-esp/man-live-log.txt 2>&1
+	sync
+	umount /run/man-esp
+	echo "MAN: a log was saved on the Mac's MAN boot partition (man-live-log.txt)."
+}
+
 mountroot() {
 	man_id= man_toram=
 	for opt in $(cat /proc/cmdline); do
@@ -34,7 +58,7 @@ mountroot() {
 		esac
 	done
 	for m in usb-storage uas sd_mod isofs squashfs overlay loop vfat nls_cp437 nls_iso8859_1 \
-	         xhci-plat-hcd xhci-pci dwc3 phy-apple-atc tps6598x; do
+	         xhci-plat-hcd xhci-pci dwc3 dwc3-apple phy-apple-atc tps6598x thunderbolt_apple; do
 		modprobe -q $m 2>/dev/null || true
 	done
 	mkdir -p /run/live/medium /run/live/rootfs /run/live/overlay
@@ -46,6 +70,7 @@ mountroot() {
 		if [ $tries -ge 120 ]; then
 			echo "MAN: the live USB stick was not found. Disks seen:"
 			cat /proc/partitions
+			man_save_log
 			panic "MAN: plug the stick into another USB port (on MacBooks: a USB-C port) and type 'exit' to try again."
 			tries=0
 		fi
