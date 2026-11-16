@@ -45,7 +45,10 @@ python3 -I - $W $OUT/$name <<'PY'
 import os, sys, zipfile
 w, out = sys.argv[1], sys.argv[2]
 with zipfile.ZipFile(out, "w", allowZip64=True) as z:
+    # Folder entries too: the Asahi installer only creates folders it finds in the zip.
     for root, dirs, files in os.walk(os.path.join(w, "esp")):
+        dirs.sort()
+        z.write(root, os.path.relpath(root, w) + "/")
         for f in sorted(files):
             path = os.path.join(root, f)
             z.write(path, os.path.relpath(path, w), zipfile.ZIP_DEFLATED)

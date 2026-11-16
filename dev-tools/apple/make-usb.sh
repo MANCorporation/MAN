@@ -10,7 +10,7 @@ p=$(cd -- "$(dirname -- "$(readlink -f "$0")")/../.." && pwd)
 R=$p/release/apple; DST=${1:?mounted USB stick (or folder)}/MAN-Mac
 zip=$(cd $R && ls MAN-*-apple.zip | head -n1)
 inst=$(cd $R && ls installer-*.tar.gz | head -n1)
-need=$(( $(stat -c %s $R/$zip) + $(stat -c %s $R/$inst) + 10*1024*1024 ))
+need=$(( $(stat -c %s $R/$inst) + 20*1024*1024 ))
 free=$(df -B1 --output=avail "$1" | tail -1)
 [ "$free" -gt "$need" ] || { echo "Not enough space on $1"; exit 1; }
 
@@ -25,15 +25,15 @@ d=$A/kernel/dtbs/apple
 { cat $m1 $d/t6*.dtb $d/t81*.dtb; gzip -9 -n -c $A/ub/u-boot-nodtb.bin; } > $B/esp/m1n1/boot.bin
 cp $p/dev-tools/apple/man.icns $B/
 rm -f $R/$bl
+# Folder entries are needed: the Asahi installer only creates folders it finds in the zip.
 python3 -I -c 'import sys, zipfile
 with zipfile.ZipFile(sys.argv[2], "w", zipfile.ZIP_DEFLATED) as z:
-    for f in ("esp/m1n1/boot.bin", "man.icns"):
+    for f in ("esp/", "esp/m1n1/", "esp/m1n1/boot.bin", "man.icns"):
         z.write(sys.argv[1] + "/" + f, f)' $B $R/$bl
 rm -rf $B
 
 rm -rf "$DST"; mkdir -p "$DST/os"
-echo "copying $zip ..."
-cp $R/$zip $R/$bl "$DST/os/"
+cp $R/$bl "$DST/os/"
 cp $R/$inst "$DST/"
 # Same OS entry as the online installer, but the package is the file in os/.
 python3 -I - $R/installer_data.json "$zip" "$bl" > "$DST/installer_data.json" <<'EOF'
@@ -55,7 +55,7 @@ space["partitions"] = bl["partitions"] + [
     {"name": "MAN Boot", "type": "Linux", "size": "1073741824B"},
     {"name": "MAN", "type": "Linux", "size": "20000000000B", "expand": True},
 ]
-d["os_list"] = [full, space, bl]
+d["os_list"] = [space, bl]
 print(json.dumps(d, indent=1))
 EOF
 cat > "$DST/install-man.sh" <<EOF
@@ -125,9 +125,9 @@ anyway, and keep the charger plugged in.
 The installer is the Asahi Linux installer (https://asahilinux.org, MIT licence),
 with MAN's changes. M4 and newer Macs are not supported yet.
 EOF
-cp $R/$zip.sha256 "$DST/os/"
+(cd $R && sha256sum $bl) > "$DST/os/$bl.sha256"
 sync
 echo "checking the copy on the stick ..."
-(cd "$DST/os" && sha256sum -c --quiet $zip.sha256 && echo "package verified on the stick")
+(cd "$DST/os" && sha256sum -c --quiet $bl.sha256 && echo "package verified on the stick")
 sync
 ls -laR "$DST" | grep -v '^total'
