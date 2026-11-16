@@ -43,14 +43,14 @@ full = d["os_list"][0]
 full["package"] = sys.argv[2]
 bl = copy.deepcopy(full)
 bl.update(name="MAN boot loader only (to start the MAN Live USB stick)",
-          default_os_name="MAN Live USB", package=sys.argv[3])
+          default_os_name="MAN", package=sys.argv[3], man_mode="1")
 bl["partitions"] = [p for p in full["partitions"] if p["type"] == "EFI"]
 bl["partitions"][0].pop("volume_id", None)
 # Boot loader + empty partitions made by macOS's own diskutil: MAN's live USB
 # installer then only formats these two (it never touches macOS's partitions).
 space = copy.deepcopy(bl)
 space.update(name="MAN boot loader + space for MAN (install MAN later from the MAN Live USB)",
-             default_os_name="MAN")
+             default_os_name="MAN", man_mode="2")
 space["partitions"] = bl["partitions"] + [
     {"name": "MAN Boot", "type": "Linux", "size": "1073741824B"},
     {"name": "MAN", "type": "Linux", "size": "20000000000B", "expand": True},
@@ -77,7 +77,7 @@ if true; then
     export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
     export PATH="/usr/bin:/bin:/usr/sbin:/sbin:\$PATH"
     USB="\$(cd "\$(dirname "\$0")" && pwd)"
-    export REPO_BASE="\$USB"
+    export REPO_BASE="\$USB" DISTRO=MAN MAN_AUTO=1
     unset REPORT REPORT_TAG
     TMP=/tmp/man-install
     echo
@@ -107,19 +107,19 @@ anyway, and keep the charger plugged in.
 
 1. In macOS, plug in this stick, connect to the internet, open Terminal and type:
        sh /Volumes/MAN_MAC/MAN-Mac/install-man.sh
-   Choose one of:
-   - MAN boot loader + space for MAN   (recommended) the MAN Live USB stick can
-     start, and MAN is installed into the prepared space from the live system
-   - MAN boot loader only               just start the MAN Live USB stick
-   - MAN ...                            install MAN directly from macOS
-   If asked to shrink macOS: give macOS its current size minus the space for MAN.
-2. The Mac shuts down by itself. Then press and HOLD the power button until
-   "Loading startup options" appears, and choose "MAN" (Apple requires this
-   one step in person). Type your macOS password when asked; the Mac restarts
-   by itself.
+   and enter your macOS password. Choose:
+     1  Install only the MAN boot loader (to start the MAN Live USB stick)
+     2  Install the MAN boot loader and make a partition for MAN
+     3  Make a partition for MAN (when the boot loader is already installed)
+   For 2 and 3 type the size for MAN (for example 60GB). The space comes from
+   free space on the disk or from macOS's free space; macOS keeps at least 38 GB free.
+2. After 1 or 2 the Mac shuts down by itself. Then press and HOLD the power button
+   until "Loading startup options" appears, and choose "MAN" (Apple requires this
+   one step in person). Type your macOS password when asked; the Mac restarts by
+   itself.
 3. Start the MAN Live System: plug in this stick, hold the power button, choose
-   MAN. In the live system, "Install MAN" offers "Install on This Mac" (the space
-   prepared in step 1) or an external disk; macOS's disk is not even shown.
+   MAN. In the live system, "Install MAN" offers "Install on This Mac" (the
+   partition from 2 or 3) or an external disk; macOS's disk is not even shown.
 4. To start macOS by default again: System Settings > General > Startup Disk.
 
 The installer is the Asahi Linux installer (https://asahilinux.org, MIT licence),

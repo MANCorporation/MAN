@@ -12,7 +12,7 @@ another system. Like Fedora Asahi Remix, MAN is installed from macOS:
     curl -L https://github.com/MANCorporation/MAN/releases/download/<tag>/man-mac.sh | sh
 
 `man-mac.sh` is Asahi's bootstrap script pointed at MAN's release. It downloads the
-Asahi installer (MAN's copy, `installer-v0.9.2-man1.tar.gz`), which shrinks macOS if
+Asahi installer (MAN's copy, `installer-v0.9.2-man3.tar.gz`), which shrinks macOS if
 asked, creates the partitions, copies the Mac firmware from macOS into the EFI
 partition (`vendorfw/`), installs m1n1 stage 1 and asks the user to confirm it once in
 recoveryOS. After that the Mac boots MAN through m1n1 → U-Boot → GRUB, and MAN Setup
@@ -53,7 +53,7 @@ runs on the first start, like on a PC.
 4. **Package** `make-package.sh "10 TEST 6" https://github.com/MANCorporation/MAN/releases/download/v10-test6`
    → `release/apple/`: `MAN-<ver>-apple.zip` (esp/, boot.img, root.img, man.icns;
    images LZMA-compressed, must stay under GitHub's 2 GiB), `installer_data.json`,
-   `installer-v0.9.2-man1.tar.gz`, `latest`, `man-mac.sh`. Upload all of them to the
+   `installer-v0.9.2-man3.tar.gz`, `latest`, `man-mac.sh`. Upload all of them to the
    release; the URL given must be that release's download URL.
 5. **VM test** `test-vm.sh` boots `disk.img` (overlay) in QEMU with `-cpu max` (16K pages
    work). It checks GRUB, kernel, initramfs, systemd, MAN Setup and the desktop, not
@@ -73,8 +73,24 @@ started by m1n1).
 ## Changes to the Asahi installer
 
 `installer/patch-urlcache.py`: HTTP status checks and re-resolving GitHub's signed
-redirect links during long downloads. Everything else is Asahi's installer v0.9.2 as
-published (MIT licence).
+redirect links during long downloads. `installer/patch-auto.py`: shuts down / restarts
+by itself. `installer/patch-man-menu.py`: with `MAN_AUTO=1` (set by the stick's
+`install-man.sh`, also `DISTRO=MAN`) Asahi's partition list and questions are replaced
+by MAN's menu:
+
+1. only the MAN boot loader (stub macOS + ESP, OS entry `man_mode` 1),
+2. boot loader + empty "MAN Boot" (1 GiB) and "MAN" partitions (`man_mode` 2), asks the size,
+3. only the two empty partitions (boot loader already there), asks the size.
+
+Space comes from free space, else macOS's APFS container is shrunk (never below Asahi's
+limits: 38 GB stays free in macOS). With 1 then 3 the MAN partitions sit right after
+macOS, before the boot loader's partitions; the live installer (`probe.rs` `mac_pair`)
+finds them in either place. Everything else is Asahi's installer v0.9.2 as published
+(MIT licence).
+
+Testing the menu without a Mac: a simulated Mac (fake `diskutil`, macOS and system
+info, real `main.py`/`osinstall.py`) printed every disk change for all three choices
+and the error cases.
 
 ## Licences
 

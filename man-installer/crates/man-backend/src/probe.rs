@@ -82,16 +82,7 @@ pub fn mac_target(disks: &[Disk]) -> MacTarget {
     let mut parts: Vec<&Partition> = disk.partitions.iter().collect();
     parts.sort_by_key(|p| part_start(&p.path));
     let Some(i) = parts.iter().position(|p| p.path == esp.path) else { return t };
-    let linux = |p: &Partition| p.parttype.as_deref().map(|g| g.to_lowercase()) == Some(LINUX_DATA.into());
-    let (Some(boot), Some(root)) = (parts.get(i + 1), parts.get(i + 2)) else { return t };
-    let boot_ok = linux(boot)
-        && (900 << 20..=1200 << 20).contains(&boot.size)
-        && (boot.fstype.is_none() || boot.label.as_deref() == Some("MAN_BOOT"));
-    let root_ok = linux(root)
-        && (root.fstype.is_none()
-            || root.label.as_deref() == Some(BTRFS_LABEL)
-            || root.fstype.as_deref() == Some("crypto_LUKS"));
-    if boot_ok && root_ok {
+    if let Some((boot, root)) = mac_pair(&parts, i) {
         t.boot = Some(boot.path.clone());
         t.root = Some(root.path.clone());
         t.root_size = root.size;
@@ -102,6 +93,30 @@ pub fn mac_target(disks: &[Disk]) -> MacTarget {
         t.disk = Some(d);
     }
     t
+}
+
+/// The empty (or MAN) "MAN Boot" + "MAN" partitions made in macOS, on the Mac's disk
+/// sorted by start: right after the ESP ("boot loader + partition for MAN"), or else
+/// anywhere ("partition for MAN" made later comes right after macOS's container,
+/// before the boot loader's partitions).
+fn mac_pair<'a>(parts: &[&'a Partition], esp: usize) -> Option<(&'a Partition, &'a Partition)> {
+    let linux = |p: &Partition| p.parttype.as_deref().map(|g| g.to_lowercase()) == Some(LINUX_DATA.into());
+    let boot_ok = |boot: &Partition| {
+        linux(boot)
+            && (900 << 20..=1200 << 20).contains(&boot.size)
+            && (boot.fstype.is_none() || boot.label.as_deref() == Some("MAN_BOOT"))
+    };
+    let root_ok = |root: &Partition| {
+        linux(root)
+            && (root.fstype.is_none()
+                || root.label.as_deref() == Some(BTRFS_LABEL)
+                || root.fstype.as_deref() == Some("crypto_LUKS"))
+    };
+    let pair = |j: usize| match (parts.get(j), parts.get(j + 1)) {
+        (Some(b), Some(r)) if boot_ok(b) && root_ok(r) => Some((*b, *r)),
+        _ => None,
+    };
+    pair(esp + 1).or_else(|| (0..parts.len()).find_map(pair))
 }
 
 pub fn live_disk() -> Option<String> {
@@ -348,4 +363,49 @@ pub fn probe() -> Result<Probe> {
         language: crate::locale::current_language(Path::new("/")),
         mac,
     })
+}
+
+#[cfg(test)]
+mod mac_tests {
+    use super::*;
+    fn p(path: &str, size_mib: u64, parttype: &str, fstype: Option<&str>, label: Option<&str>) -> Partition {
+        Partition {
+            path: path.into(),
+            disk: "/dev/nvme0n1".into(),
+            size: size_mib << 20,
+            fstype: fstype.map(Into::into),
+            label: label.map(Into::into),
+            parttype: Some(parttype.into()),
+            ..Default::default()
+        }
+    }
+    const APFS: &str = "7c3457ef-0000-11aa-aa11-00306543ecac";
+    const EFI: &str = "c12a7328-f81f-11d2-ba4b-00a0c93ec93b";
+
+    #[test]
+    fn pair_after_esp() {
+        let v = [p("p1", 900000, APFS, None, None), p("p4", 2500, APFS, None, None), p("p5", 500, EFI, Some("vfat"), None),
+                 p("p6", 1024, LINUX_DATA, None, None), p("p7", 60000, LINUX_DATA, None, None)];
+        let parts: Vec<&Partition> = v.iter().collect();
+        let (b, r) = mac_pair(&parts, 2).unwrap();
+        assert_eq!((b.path.as_str(), r.path.as_str()), ("p6", "p7"));
+    }
+
+    #[test]
+    fn pair_before_boot_loader() {
+        let v = [p("p2", 900000, APFS, None, None), p("p6", 1024, LINUX_DATA, None, None), p("p7", 80000, LINUX_DATA, None, None),
+                 p("p4", 2500, APFS, None, None), p("p5", 500, EFI, Some("vfat"), None)];
+        let parts: Vec<&Partition> = v.iter().collect();
+        let (b, r) = mac_pair(&parts, 4).unwrap();
+        assert_eq!((b.path.as_str(), r.path.as_str()), ("p6", "p7"));
+    }
+
+    #[test]
+    fn other_linux_is_never_taken() {
+        // e.g. Fedora Asahi Remix: ext4 /boot "BOOT" + Btrfs "fedora"
+        let v = [p("p2", 900000, APFS, None, None), p("p6", 1024, LINUX_DATA, Some("ext4"), Some("BOOT")),
+                 p("p7", 80000, LINUX_DATA, Some("btrfs"), Some("fedora")), p("p5", 500, EFI, Some("vfat"), None)];
+        let parts: Vec<&Partition> = v.iter().collect();
+        assert!(mac_pair(&parts, 3).is_none());
+    }
 }
