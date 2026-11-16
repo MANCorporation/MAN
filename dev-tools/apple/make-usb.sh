@@ -106,7 +106,7 @@ macOS is never changed: the installer only adds MAN's own small partitions next 
 anyway, and keep the charger plugged in.
 
 1. In macOS, plug in this stick, connect to the internet, open Terminal and type:
-       sh /Volumes/MAN_LIVE/MAN-Mac/install-man.sh
+       sh /Volumes/MAN_MAC/MAN-Mac/install-man.sh
    Choose one of:
    - MAN boot loader + space for MAN   (recommended) the MAN Live USB stick can
      start, and MAN is installed into the prepared space from the live system

@@ -95,10 +95,20 @@ echo "$id" > "$work/iso/live/man-id"
 cp "$kernel" "$work/iso/live/vmlinuz"
 
 echo "==> Building the initramfs"
+extra_xorriso=()
 if [[ $variant == apple ]]; then
     cp "$mnt/boot/initrd.img-${kernel##*/vmlinuz-}" "$work/iso/live/initrd.img"
     echo "==> MAN-Mac installer folder (for the one-time setup from macOS)"
-    "$project_dir/dev-tools/apple/make-usb.sh" "$work/iso"
+    # On its own FAT32 partition (label MAN_MAC), appended to the ISO: macOS does not
+    # mount the ISO 9660 file system of a USB stick, but reads FAT32.
+    mkdir -p "$work/macfat"
+    "$project_dir/dev-tools/apple/make-usb.sh" "$work/macfat"
+    mac_mib=$(( $(du -sm "$work/macfat" | cut -f1) + 64 ))
+    truncate -s "${mac_mib}M" "$work/macfat.img"
+    mformat -i "$work/macfat.img" -F -v MAN_MAC -T $((mac_mib * 2048)) -h 64 -s 32 ::
+    mcopy -s -i "$work/macfat.img" "$work/macfat/MAN-Mac" ::/
+    rm -rf "$work/macfat"
+    extra_xorriso=(-append_partition 4 0x0c "$work/macfat.img")
 else
 cp "$busybox" "$work/initrd/bin/busybox"
 for app in sh mount umount mkdir cat cp sleep switch_root setsid cttyhack printf; do
@@ -127,7 +137,7 @@ rm -f "$iso.tmp"
 # x86-64: UEFI + BIOS (all platforms installed on this PC); ARM64: arm64-efi only.
 rescue_dirs=(); [[ $arch == arm64 ]] && rescue_dirs=(-d "$grub_dir")
 grub-mkrescue "${rescue_dirs[@]}" -o "$iso.tmp" --fonts=unicode --locales= --themes= \
-    "$work/iso" -- -volid MAN_LIVE -joliet on -compliance iso_9660_level=3 2> "$work/mkrescue.log" ||
+    "$work/iso" -- -volid MAN_LIVE -joliet on -compliance iso_9660_level=3 "${extra_xorriso[@]}" 2> "$work/mkrescue.log" ||
     { cat "$work/mkrescue.log" >&2; exit 1; }
 mv "$iso.tmp" "$iso"
 (cd "$out_dir" && sha256sum "$(basename "$iso")" > "$(basename "$iso").sha256")
