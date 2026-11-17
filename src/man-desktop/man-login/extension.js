@@ -74,11 +74,23 @@ function picturePath(uri) {
     return fileExists(path) ? path : null;
 }
 
+const MAN_WALLPAPER = '/usr/share/backgrounds/man/wallpaper.jpg';
+
+/** The login screen's own background setting, else MAN's wallpaper. */
 function systemDefaultBackground() {
     const s = new Gio.Settings({schema_id: 'org.gnome.desktop.background'});
     const dark = new Gio.Settings({schema_id: 'org.gnome.desktop.interface'}).get_string('color-scheme') === 'prefer-dark';
-    return picturePath(s.get_default_value(dark ? 'picture-uri-dark' : 'picture-uri')?.unpack()) ??
-        picturePath(s.get_default_value('picture-uri')?.unpack());
+    const candidates = [
+        dark ? s.get_string('picture-uri-dark') : null,
+        s.get_string('picture-uri'),
+        s.get_default_value('picture-uri')?.unpack(),
+    ];
+    for (const uri of candidates) {
+        const path = picturePath(uri);
+        if (path)
+            return path;
+    }
+    return fileExists(MAN_WALLPAPER) ? MAN_WALLPAPER : null;
 }
 
 /** Settings > Appearance > Blur > Lock Screen is on (MAN Blur then blurs it). */
