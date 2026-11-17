@@ -38,95 +38,182 @@
 37|Doble clic
 38|Clic del mig
 39|Clic secundari
-40|Super
-41|Alt
-42|Desactivat
-43|Finestres
-44|Adjunta els diàlegs modals
-45|Els diàlegs queden units a la finestra que els ha obert
-46|Centra les finestres noves
-47|Redimensiona amb el clic secundari
-48|Manteniu premuda la tecla d'acció de finestres i arrossegueu amb el botó secundari
-49|Tecla d'acció de finestres
-50|Manteniu-la premuda per a moure o redimensionar finestres des de qualsevol punt de dins
-51|Porta al davant les finestres quan reben el focus
-52|Útil amb el focus en passar el ratolí
-53|Opcions de disposició addicionals
-54|Comportaments addicionals de les tecles per a totes les disposicions de teclat
-55|Per defecte
-56|Opcions activades: %u
-57|Super esquerra
-58|Super dreta
-59|Més opcions del teclat
-60|Drecera de la vista general
-61|La tecla que obre la vista general d'Activitats
-62|Mostra les fonts d'entrada ampliades
-63|Ofereix més disposicions en afegir una font d'entrada
-64|Entrada d'Emacs
-65|Dreceres d'Emacs als camps de text
-66|Comportament de Bloq Maj, canvi de disposició, intercanvi de tecles i més
-67|Enganxa amb el clic del mig
-68|Enganxa el text seleccionat amb el botó del mig
-69|Localitza el punter
-70|Premeu Ctrl per a mostrar on és el punter
-71|Tapa del portàtil
-72|Suspèn en tancar la tapa
-73|Desactiveu-ho perquè l'ordinador continuï funcionant, per exemple amb una pantalla externa
-74|No hi ha aplicacions d'inici
-75|Suprimeix
-76|Afegeix una aplicació d'inici
-77|Cerca aplicacions
-78|Aplicacions d'inici
-79|Afegeix una aplicació
-80|Aquestes aplicacions s'inicien automàticament quan entreu a la sessió
-81|_Aplicacions d'inici
-82|Trieu les aplicacions que s'inicien quan entreu a la sessió
-83|Mai
-84|S'estan cercant actualitzacions…
-85|_Torna a comprovar
-86|MAN està actualitzat
-87|MAN %s és la versió més recent.
-88|MAN %s està disponible
-89|Teniu MAN %s. Mida de la baixada: %s.
-90|Aquesta és una versió TEST. Pot tenir errors.
-91|_Baixa i instal·la…
-92|S'està baixant MAN %s…
-93|Podeu continuar fent servir l'ordinador. L'actualització s'instal·la després de la baixada.
-94|_Cancel·la
-95|No s'han pogut cercar actualitzacions
-96|Comproveu la connexió a Internet i torneu-ho a provar.
-97|_Torna-ho a provar
-98|La baixada ha fallat
-99|Comproveu la connexió a Internet i torneu-ho a provar. La baixada continua on s'havia aturat.
-100|MAN %s s’instal·larà quan reinicieu
-101|Les actualitzacions no estan disponibles aquí
-102|Les actualitzacions s'instal·len des d'un sistema MAN instal·lat i en funcionament, no des de la sessió autònoma.
-103|%s de %s
-104|Actualitzacions
-105|Novetats
-106|Actualitzacions automàtiques
-107|Cerca actualitzacions automàticament
-108|Un cop al dia MAN cerca una versió nova i us avisa
-109|Darrera comprovació
-110|Actualitzacions beta
-111|Obteniu versions TEST de MAN abans que es publiquin. Poden tenir errors.
-112|_Instal·la un fitxer d'actualització…
-113|Fora de l'entorn aïllat
-114|En un entorn aïllat
-115|L'aplicació té accés complet als vostres fitxers, dispositius i al sistema
-116|L'aplicació només pot fer servir els permisos que se li han donat
-117|Voleu treure «%s» de l'entorn aïllat?
-118|L'aplicació tindrà accés complet a aquest ordinador: a tots els vostres fitxers i als del sistema, a cada dispositiu, a la xarxa i a tots els serveis del sistema. Podrà executar ordres fora del seu contenidor i llegir o canviar qualsevol cosa a què tingui accés el vostre compte.\n\nFeu-ho només amb aplicacions en què confieu plenament. Una aplicació nociva o amb errors podria fer malbé el sistema o robar-vos les dades.\n\nPodeu restaurar l'entorn aïllat aquí en qualsevol moment. Cal reiniciar l'aplicació perquè el canvi s'apliqui.
-119|_Continua
-120|L'autenticació ha fallat. No s'ha canviat res.
-121|No s'ha pogut canviar l'entorn aïllat.
-122|«%s» és fora de l'entorn aïllat. Reinicieu-la per a aplicar-ho.
-123|S'ha restaurat l'entorn aïllat de «%s».
-124|Entorn aïllat
-125|Les aplicacions Flatpak s'executen aïllades de la resta del sistema.
-126|_Treu de l'entorn aïllat…
-127|_Restaura l'entorn aïllat
-128|Feu un donatiu a MAN!
-129|MAN és gratuït, però mantenir-lo no ho és.
-130|_Fes un donatiu
-131|Cerca i instal·la versions noves de MAN
+40|Mostra l'acoblador
+41|Amaga automàticament
+42|L'acoblador fa lloc quan una finestra necessita l'espai
+43|Acoblador
+44|Mida de les icones
+45|Mostra a totes les pantalles
+46|Efectes de desenfocament
+47|Desactiveu-ho en ordinadors lents
+48|Desenfocament
+49|Barra superior
+50|Vista general d'activitats
+51|Menús
+52|Pantalla de bloqueig
+53|Disposició de finestres
+54|Organitzeu les finestres en disposicions. Trieu i editeu les disposicions amb el botó de la barra superior.
+55|Assistent d'ajust
+56|Arrossegueu una finestra a dalt de la pantalla per triar-ne el lloc
+57|Ajusta a les vores de la pantalla
+58|Disposició automàtica
+59|Les finestres noves omplen la disposició soles
+60|Mostra el botó de disposició
+61|Espai entre finestres
+62|Espai a les vores de la pantalla
+63|Fons
+64|Igual que el fons de l’escriptori
+65|_Afegeix una imatge…
+66|Pantalla d'inici de sessió
+67|Super
+68|Alt
+69|Desactivat
+70|Finestres
+71|Adjunta els diàlegs modals
+72|Els diàlegs queden units a la finestra que els ha obert
+73|Centra les finestres noves
+74|Redimensiona amb el clic secundari
+75|Manteniu premuda la tecla d'acció de finestres i arrossegueu amb el botó secundari
+76|Tecla d'acció de finestres
+77|Manteniu-la premuda per a moure o redimensionar finestres des de qualsevol punt de dins
+78|Porta al davant les finestres quan reben el focus
+79|Útil amb el focus en passar el ratolí
+80|Opcions de disposició addicionals
+81|Comportaments addicionals de les tecles per a totes les disposicions de teclat
+82|Per defecte
+83|Opcions activades: %u
+84|Super esquerra
+85|Super dreta
+86|Més opcions del teclat
+87|Drecera de la vista general
+88|La tecla que obre la vista general d'Activitats
+89|Mostra les fonts d'entrada ampliades
+90|Ofereix més disposicions en afegir una font d'entrada
+91|Entrada d'Emacs
+92|Dreceres d'Emacs als camps de text
+93|Comportament de Bloq Maj, canvi de disposició, intercanvi de tecles i més
+94|Enganxa amb el clic del mig
+95|Enganxa el text seleccionat amb el botó del mig
+96|Localitza el punter
+97|Premeu Ctrl per a mostrar on és el punter
+98|Tapa del portàtil
+99|Suspèn en tancar la tapa
+100|Desactiveu-ho perquè l'ordinador continuï funcionant, per exemple amb una pantalla externa
+101|No hi ha aplicacions d'inici
+102|Suprimeix
+103|Afegeix una aplicació d'inici
+104|Cerca aplicacions
+105|Aplicacions d'inici
+106|Afegeix una aplicació
+107|Aquestes aplicacions s'inicien automàticament quan entreu a la sessió
+108|_Aplicacions d'inici
+109|Trieu les aplicacions que s'inicien quan entreu a la sessió
+110|Mai
+111|S'estan cercant actualitzacions…
+112|_Torna a comprovar
+113|MAN està actualitzat
+114|MAN %s és la versió més recent.
+115|MAN %s està disponible
+116|Teniu MAN %s. Mida de la baixada: %s.
+117|Aquesta és una versió TEST. Pot tenir errors.
+118|_Baixa i instal·la…
+119|S'està baixant MAN %s…
+120|Podeu continuar fent servir l'ordinador. L'actualització s'instal·la després de la baixada.
+121|_Cancel·la
+122|No s'han pogut cercar actualitzacions
+123|Comproveu la connexió a Internet i torneu-ho a provar.
+124|_Torna-ho a provar
+125|La baixada ha fallat
+126|Comproveu la connexió a Internet i torneu-ho a provar. La baixada continua on s'havia aturat.
+127|MAN %s s’instal·larà quan reinicieu
+128|Les actualitzacions no estan disponibles aquí
+129|Les actualitzacions s'instal·len des d'un sistema MAN instal·lat i en funcionament, no des de la sessió autònoma.
+130|%s de %s
+131|Actualitzacions
+132|Novetats
+133|Actualitzacions automàtiques
+134|Cerca actualitzacions automàticament
+135|Un cop al dia MAN cerca una versió nova i us avisa
+136|Darrera comprovació
+137|Actualitzacions beta
+138|Obteniu versions TEST de MAN abans que es publiquin. Poden tenir errors.
+139|_Instal·la un fitxer d'actualització…
+140|WebDAV (Nextcloud, ownCloud i altres)
+141|Amazon S3 i emmagatzematge compatible
+142|Recurs compartit de Windows (SMB)
+143|Unitats al núvol
+144|Voleu suprimir «%s»?
+145|Els fitxers es queden al núvol. Aquest ordinador deixa de mostrar-los i se n'eliminen les còpies locals.
+146|_Suprimeix
+147|Connectat
+148|No es pot connectar. S'està tornant a provar…
+149|S'està connectant…
+150|No es mostra a Fitxers
+151|Obre a Fitxers
+152|Adreça del servidor
+153|Servidor
+154|Nom d'usuari
+155|Contrasenya
+156|Codi de doble factor
+157|Proveïdor
+158|Tipus de servidor
+159|Regió
+160|Punt final
+161|ID de la clau d'accés
+162|Clau d'accés secreta
+163|Compte
+164|Clau
+165|Clau d'API
+166|Correu electrònic
+167|Apple ID
+168|Domini
+169|Port
+170|Accés
+171|Altres
+172|_Enrere
+173|No s'ha pogut afegir la unitat
+174|Comproveu el que heu introduït i la connexió a Internet, i torneu-ho a provar.
+175|Inicieu la sessió a %s
+176|_Torna a obrir la pàgina d'inici de sessió
+177|El navegador ha obert la pàgina d'inici de sessió. Inicieu-hi la sessió i permeteu l'accés, i després torneu aquí. Aquesta pàgina continua sola.
+178|_Continua
+179|Un pas més
+180|S'està configurant la unitat…
+181|S'està obrint la pàgina d'inici de sessió…
+182|Inicieu la sessió amb el navegador. La contrasenya no s'introdueix mai aquí.
+183|Introduïu les dades del compte. Es desen a la carpeta personal.
+184|Nom a Fitxers
+185|Més opcions
+186|_Inicia la sessió
+187|_Connecta
+188|Les unitats al núvol no estan disponibles
+189|rclone, que connecta les unitats al núvol, no està instal·lat.
+190|_D'acord
+191|Cerca proveïdors
+192|Populars
+193|Tots els proveïdors
+194|Inicieu la sessió amb el navegador
+195|Afegeix una unitat al núvol
+196|El vostre emmagatzematge al núvol, a Fitxers. Cada unitat es connecta sola cada vegada que inicieu la sessió.
+197|Encara no hi ha unitats al núvol
+198|_Afegeix una unitat al núvol…
+199|Fora de l'entorn aïllat
+200|En un entorn aïllat
+201|L'aplicació té accés complet als vostres fitxers, dispositius i al sistema
+202|L'aplicació només pot fer servir els permisos que se li han donat
+203|Voleu treure «%s» de l'entorn aïllat?
+204|L'aplicació tindrà accés complet a aquest ordinador: a tots els vostres fitxers i als del sistema, a cada dispositiu, a la xarxa i a tots els serveis del sistema. Podrà executar ordres fora del seu contenidor i llegir o canviar qualsevol cosa a què tingui accés el vostre compte.\n\nFeu-ho només amb aplicacions en què confieu plenament. Una aplicació nociva o amb errors podria fer malbé el sistema o robar-vos les dades.\n\nPodeu restaurar l'entorn aïllat aquí en qualsevol moment. Cal reiniciar l'aplicació perquè el canvi s'apliqui.
+205|_Continua
+206|L'autenticació ha fallat. No s'ha canviat res.
+207|No s'ha pogut canviar l'entorn aïllat.
+208|«%s» és fora de l'entorn aïllat. Reinicieu-la per a aplicar-ho.
+209|S'ha restaurat l'entorn aïllat de «%s».
+210|Entorn aïllat
+211|Les aplicacions Flatpak s'executen aïllades de la resta del sistema.
+212|_Treu de l'entorn aïllat…
+213|_Restaura l'entorn aïllat
+214|Feu un donatiu a MAN!
+215|MAN és gratuït, però mantenir-lo no ho és.
+216|_Fes un donatiu
+217|Cerca i instal·la versions noves de MAN
+218|Mostra Google Drive, OneDrive, Dropbox i altres emmagatzematges al núvol a Fitxers

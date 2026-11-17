@@ -1,0 +1,138 @@
+/* MAN Login: login and lock screens. */
+
+/* Pictures behind the login dialog. */
+.man-login-backdrop {
+  background-color: #222226;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Users side by side, a large round picture with the name under it. */
+.man-login .login-dialog-user-list-view {
+  width: auto;
+  max-width: 70em;
+  -st-hfade-offset: 3em;
+}
+.man-login .login-dialog-user-list-view .login-dialog-user-list {
+  spacing: 40px;
+  margin: 0 24px;
+}
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item,
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:hover,
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:active,
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:selected,
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:focus {
+  background-color: transparent;
+  box-shadow: none !important;
+  padding: 12px;
+  border-radius: 24px;
+}
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.man-login .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.man-login .login-dialog-user-list-item .user-widget.vertical {
+  spacing: 14px;
+  min-width: 150px;
+}
+.man-login .login-dialog-user-list-item .user-widget.vertical .user-icon {
+  icon-size: 120px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+.man-login .login-dialog-user-list-item .user-widget.vertical .user-icon StIcon {
+  padding: 24px;
+}
+.man-login .login-dialog-user-list-item .user-widget.vertical .user-widget-label {
+  font-size: 1.27em;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* The chosen user above the password field. */
+.man-login .login-dialog .user-widget.vertical .user-icon,
+.unlock-dialog .user-widget.vertical .user-icon {
+  icon-size: 128px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+.man-login .login-dialog .user-widget.vertical .user-icon StIcon,
+.unlock-dialog .user-widget.vertical .user-icon StIcon {
+  padding: 26px;
+}
+.man-login .login-dialog .user-widget .user-widget-label,
+.unlock-dialog .user-widget .user-widget-label {
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* A see-through password field on the picture. */
+.man-login .login-dialog .login-dialog-prompt-entry,
+.unlock-dialog .login-dialog-prompt-entry {
+  background-color: rgba(18, 18, 22, 0.5);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.man-login .login-dialog .login-dialog-prompt-entry:hover,
+.unlock-dialog .login-dialog-prompt-entry:hover {
+  background-color: rgba(18, 18, 22, 0.58);
+}
+.man-login .login-dialog .login-dialog-prompt-entry:focus,
+.unlock-dialog .login-dialog-prompt-entry:focus {
+  background-color: rgba(18, 18, 22, 0.62);
+  color: #ffffff;
+}
+.man-login .login-dialog .login-dialog-prompt-entry StLabel.hint-text,
+.unlock-dialog .login-dialog-prompt-entry StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.75);
+}
+.man-login .login-dialog .login-dialog-message,
+.man-login .login-dialog .login-dialog-message-hint,
+.man-login .login-dialog-not-listed-label,
+.unlock-dialog .login-dialog-message,
+.unlock-dialog .login-dialog-message-hint {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Suspend, Restart, Power Off. */
+.man-login-power {
+  spacing: 48px;
+  margin-bottom: 56px;
+}
+.man-login-power-button {
+  border-radius: 18px;
+  padding: 6px 10px;
+}
+.man-login-power-button:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.man-login-power-item {
+  spacing: 8px;
+}
+.man-login-power-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+}
+.man-login-power-button:hover .man-login-power-circle {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+.man-login-power-button:active .man-login-power-circle {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+.man-login-power-icon {
+  icon-size: 20px;
+  color: #ffffff;
+}
+.man-login-power-label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}

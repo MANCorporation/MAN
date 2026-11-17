@@ -38,95 +38,182 @@
 37|Doble clic
 38|Clic central
 39|Clic secundario
-40|Super
-41|Alt
-42|Desactivado
-43|Ventanas
-44|Adjuntar diálogos modales
-45|Los diálogos se quedan unidos a la ventana que los abrió
-46|Centrar ventanas nuevas
-47|Redimensionar con clic secundario
-48|Mantenga la tecla de acción de ventanas y arrastre con el botón secundario
-49|Tecla de acción de ventanas
-50|Manténgala para mover o redimensionar ventanas desde cualquier punto de su interior
-51|Elevar ventanas al enfocarlas
-52|Útil con el foco al pasar el ratón
-53|Opciones adicionales de distribución
-54|Comportamientos adicionales de teclas para todas las distribuciones de teclado
-55|Predeterminado
-56|Opciones activadas: %u
-57|Super izquierda
-58|Super derecha
-59|Más opciones del teclado
-60|Atajo de la vista general
-61|La tecla que abre la vista general de Actividades
-62|Mostrar fuentes de entrada ampliadas
-63|Ofrecer más distribuciones al añadir una fuente de entrada
-64|Entrada de Emacs
-65|Atajos de teclado de Emacs en los campos de texto
-66|Comportamiento de Bloq Mayús, cambio de distribución, intercambio de teclas y más
-67|Pegar con el clic central
-68|Pegar el texto seleccionado con el botón central
-69|Localizar el puntero
-70|Pulse Ctrl para mostrar dónde está el puntero
-71|Tapa del portátil
-72|Suspender al cerrar la tapa
-73|Desactívelo para que el equipo siga funcionando, por ejemplo con una pantalla externa
-74|No hay aplicaciones de inicio
-75|Quitar
-76|Añadir aplicación de inicio
-77|Buscar aplicaciones
-78|Aplicaciones de inicio
-79|Añadir aplicación
-80|Estas aplicaciones se inician automáticamente al iniciar sesión
-81|_Aplicaciones de inicio
-82|Elija las aplicaciones que se inician al iniciar sesión
-83|Nunca
-84|Buscando actualizaciones…
-85|_Volver a comprobar
-86|MAN está actualizado
-87|MAN %s es la versión más reciente.
-88|MAN %s está disponible
-89|Tiene MAN %s. Tamaño de la descarga: %s.
-90|Esta es una versión TEST. Puede tener errores.
-91|_Descargar e instalar…
-92|Descargando MAN %s…
-93|Puede seguir usando el equipo. La actualización se instala después de la descarga.
-94|_Cancelar
-95|No se pudieron buscar actualizaciones
-96|Compruebe su conexión a Internet e inténtelo de nuevo.
-97|_Reintentar
-98|La descarga ha fallado
-99|Compruebe su conexión a Internet e inténtelo de nuevo. La descarga continúa donde se detuvo.
-100|MAN %s se instalará cuando reinicie
-101|Las actualizaciones no están disponibles aquí
-102|Las actualizaciones se instalan desde un sistema MAN instalado y en ejecución, no desde la sesión en vivo.
-103|%s de %s
-104|Actualizaciones
-105|Novedades
-106|Actualizaciones automáticas
-107|Buscar actualizaciones automáticamente
-108|Una vez al día MAN busca una versión nueva y le avisa
-109|Última comprobación
-110|Actualizaciones beta
-111|Obtenga versiones TEST de MAN antes de su lanzamiento. Pueden tener errores.
-112|_Instalar un archivo de actualización…
-113|Sin aislamiento
-114|Aislada
-115|La aplicación tiene acceso completo a sus archivos, dispositivos y al sistema
-116|La aplicación solo puede usar los permisos que se le dieron
-117|¿Quitar el aislamiento de «%s»?
-118|La aplicación tendrá acceso completo a este equipo: a todos sus archivos y a los del sistema, a cada dispositivo, a la red y a todos los servicios del sistema. Podrá ejecutar órdenes fuera de su contenedor y leer o cambiar cualquier cosa a la que tenga acceso su cuenta.\n\nHágalo solo con aplicaciones en las que confíe por completo. Una aplicación dañina o con fallos podría estropear su sistema o robar sus datos.\n\nPuede restaurar el aislamiento aquí en cualquier momento. Hay que reiniciar la aplicación para que el cambio se aplique.
-119|_Continuar
-120|Falló la autenticación. No se ha cambiado nada.
-121|No se pudo cambiar el aislamiento.
-122|«%s» ya no está aislada. Reiníciela para aplicarlo.
-123|Se restauró el aislamiento de «%s».
-124|Aislamiento
-125|Las aplicaciones Flatpak se ejecutan aisladas del resto del sistema.
-126|_Quitar aislamiento…
-127|_Restaurar aislamiento
-128|¡Done a MAN!
-129|MAN es gratis, pero mantenerlo no lo es.
-130|_Donar
-131|Buscar e instalar versiones nuevas de MAN
+40|Mostrar el dock
+41|Ocultar automáticamente
+42|El dock deja espacio cuando una ventana lo necesita
+43|Dock
+44|Tamaño de los iconos
+45|Mostrar en todas las pantallas
+46|Efectos de desenfoque
+47|Desactívalo en equipos lentos
+48|Desenfoque
+49|Barra superior
+50|Vista de actividades
+51|Menús
+52|Pantalla de bloqueo
+53|Organización de ventanas
+54|Organiza las ventanas en diseños. Elige y edita los diseños con el botón de la barra superior.
+55|Asistente de ajuste
+56|Arrastra una ventana a la parte superior de la pantalla para elegir su lugar
+57|Ajustar a los bordes de la pantalla
+58|Organización automática
+59|Las ventanas nuevas llenan el diseño por sí solas
+60|Mostrar el botón de organización
+61|Espacio entre ventanas
+62|Espacio en los bordes de la pantalla
+63|Fondo
+64|Igual que el fondo del escritorio
+65|_Añadir imagen…
+66|Pantalla de inicio de sesión
+67|Super
+68|Alt
+69|Desactivado
+70|Ventanas
+71|Adjuntar diálogos modales
+72|Los diálogos se quedan unidos a la ventana que los abrió
+73|Centrar ventanas nuevas
+74|Redimensionar con clic secundario
+75|Mantenga la tecla de acción de ventanas y arrastre con el botón secundario
+76|Tecla de acción de ventanas
+77|Manténgala para mover o redimensionar ventanas desde cualquier punto de su interior
+78|Elevar ventanas al enfocarlas
+79|Útil con el foco al pasar el ratón
+80|Opciones adicionales de distribución
+81|Comportamientos adicionales de teclas para todas las distribuciones de teclado
+82|Predeterminado
+83|Opciones activadas: %u
+84|Super izquierda
+85|Super derecha
+86|Más opciones del teclado
+87|Atajo de la vista general
+88|La tecla que abre la vista general de Actividades
+89|Mostrar fuentes de entrada ampliadas
+90|Ofrecer más distribuciones al añadir una fuente de entrada
+91|Entrada de Emacs
+92|Atajos de teclado de Emacs en los campos de texto
+93|Comportamiento de Bloq Mayús, cambio de distribución, intercambio de teclas y más
+94|Pegar con el clic central
+95|Pegar el texto seleccionado con el botón central
+96|Localizar el puntero
+97|Pulse Ctrl para mostrar dónde está el puntero
+98|Tapa del portátil
+99|Suspender al cerrar la tapa
+100|Desactívelo para que el equipo siga funcionando, por ejemplo con una pantalla externa
+101|No hay aplicaciones de inicio
+102|Quitar
+103|Añadir aplicación de inicio
+104|Buscar aplicaciones
+105|Aplicaciones de inicio
+106|Añadir aplicación
+107|Estas aplicaciones se inician automáticamente al iniciar sesión
+108|_Aplicaciones de inicio
+109|Elija las aplicaciones que se inician al iniciar sesión
+110|Nunca
+111|Buscando actualizaciones…
+112|_Volver a comprobar
+113|MAN está actualizado
+114|MAN %s es la versión más reciente.
+115|MAN %s está disponible
+116|Tiene MAN %s. Tamaño de la descarga: %s.
+117|Esta es una versión TEST. Puede tener errores.
+118|_Descargar e instalar…
+119|Descargando MAN %s…
+120|Puede seguir usando el equipo. La actualización se instala después de la descarga.
+121|_Cancelar
+122|No se pudieron buscar actualizaciones
+123|Compruebe su conexión a Internet e inténtelo de nuevo.
+124|_Reintentar
+125|La descarga ha fallado
+126|Compruebe su conexión a Internet e inténtelo de nuevo. La descarga continúa donde se detuvo.
+127|MAN %s se instalará cuando reinicie
+128|Las actualizaciones no están disponibles aquí
+129|Las actualizaciones se instalan desde un sistema MAN instalado y en ejecución, no desde la sesión en vivo.
+130|%s de %s
+131|Actualizaciones
+132|Novedades
+133|Actualizaciones automáticas
+134|Buscar actualizaciones automáticamente
+135|Una vez al día MAN busca una versión nueva y le avisa
+136|Última comprobación
+137|Actualizaciones beta
+138|Obtenga versiones TEST de MAN antes de su lanzamiento. Pueden tener errores.
+139|_Instalar un archivo de actualización…
+140|WebDAV (Nextcloud, ownCloud y otros)
+141|Amazon S3 y almacenamiento compatible
+142|Recurso compartido de Windows (SMB)
+143|Unidades en la nube
+144|¿Quitar «%s»?
+145|Tus archivos se quedan en la nube. Este equipo deja de mostrarlos y se eliminan sus copias locales.
+146|_Quitar
+147|Conectada
+148|No se puede conectar. Reintentando…
+149|Conectando…
+150|No se muestra en Archivos
+151|Abrir en Archivos
+152|Dirección del servidor
+153|Servidor
+154|Nombre de usuario
+155|Contraseña
+156|Código de doble factor
+157|Proveedor
+158|Tipo de servidor
+159|Región
+160|Punto de conexión
+161|ID de clave de acceso
+162|Clave de acceso secreta
+163|Cuenta
+164|Clave
+165|Clave de API
+166|Correo electrónico
+167|ID de Apple
+168|Dominio
+169|Puerto
+170|Acceso
+171|Otro
+172|_Atrás
+173|No se pudo añadir la unidad
+174|Comprueba lo que has introducido y tu conexión a Internet, y vuelve a intentarlo.
+175|Iniciar sesión en %s
+176|_Volver a abrir la página de inicio de sesión
+177|Tu navegador ha abierto la página de inicio de sesión. Inicia sesión allí y permite el acceso, y luego vuelve aquí. Esta página continúa sola.
+178|_Continuar
+179|Un paso más
+180|Configurando la unidad…
+181|Abriendo la página de inicio de sesión…
+182|Inicias sesión con tu navegador. Tu contraseña nunca se introduce aquí.
+183|Introduce los datos de tu cuenta. Se guardan en tu carpeta personal.
+184|Nombre en Archivos
+185|Más opciones
+186|_Iniciar sesión
+187|_Conectar
+188|Las unidades en la nube no están disponibles
+189|rclone, que conecta las unidades en la nube, no está instalado.
+190|_Aceptar
+191|Buscar proveedores
+192|Populares
+193|Todos los proveedores
+194|Inicia sesión con tu navegador
+195|Añadir unidad en la nube
+196|Tu almacenamiento en la nube, en Archivos. Cada unidad se conecta sola cada vez que inicias sesión.
+197|Aún no hay unidades en la nube
+198|_Añadir unidad en la nube…
+199|Sin aislamiento
+200|Aislada
+201|La aplicación tiene acceso completo a sus archivos, dispositivos y al sistema
+202|La aplicación solo puede usar los permisos que se le dieron
+203|¿Quitar el aislamiento de «%s»?
+204|La aplicación tendrá acceso completo a este equipo: a todos sus archivos y a los del sistema, a cada dispositivo, a la red y a todos los servicios del sistema. Podrá ejecutar órdenes fuera de su contenedor y leer o cambiar cualquier cosa a la que tenga acceso su cuenta.\n\nHágalo solo con aplicaciones en las que confíe por completo. Una aplicación dañina o con fallos podría estropear su sistema o robar sus datos.\n\nPuede restaurar el aislamiento aquí en cualquier momento. Hay que reiniciar la aplicación para que el cambio se aplique.
+205|_Continuar
+206|Falló la autenticación. No se ha cambiado nada.
+207|No se pudo cambiar el aislamiento.
+208|«%s» ya no está aislada. Reiníciela para aplicarlo.
+209|Se restauró el aislamiento de «%s».
+210|Aislamiento
+211|Las aplicaciones Flatpak se ejecutan aisladas del resto del sistema.
+212|_Quitar aislamiento…
+213|_Restaurar aislamiento
+214|¡Done a MAN!
+215|MAN es gratis, pero mantenerlo no lo es.
+216|_Donar
+217|Buscar e instalar versiones nuevas de MAN
+218|Muestra Google Drive, OneDrive, Dropbox y otros almacenamientos en la nube en Archivos

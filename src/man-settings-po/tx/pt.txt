@@ -38,95 +38,182 @@
 37|Duplo clique
 38|Clique do meio
 39|Clique secundário
-40|Super
-41|Alt
-42|Desativado
-43|Janelas
-44|Anexar diálogos modais
-45|Os diálogos ficam presos à janela que os abriu
-46|Centrar novas janelas
-47|Redimensionar com clique secundário
-48|Mantenha a tecla de ação de janelas e arraste com o botão secundário
-49|Tecla de ação de janelas
-50|Mantenha-a premida para mover ou redimensionar janelas a partir de qualquer ponto no seu interior
-51|Elevar janelas ao focar
-52|Útil com o foco ao passar o rato
-53|Opções adicionais de esquema
-54|Comportamentos adicionais das teclas para todos os esquemas de teclado
-55|Predefinição
-56|Opções ativadas: %u
-57|Super esquerda
-58|Super direita
-59|Mais opções do teclado
-60|Atalho da vista geral
-61|A tecla que abre a vista geral das Atividades
-62|Mostrar fontes de introdução expandidas
-63|Oferecer mais esquemas ao adicionar uma fonte de introdução
-64|Introdução do Emacs
-65|Atalhos do Emacs nos campos de texto
-66|Comportamento do Caps Lock, troca de esquema, troca de teclas e mais
-67|Colar com o clique do meio
-68|Colar o texto selecionado com o botão do meio
-69|Localizar o ponteiro
-70|Prima Ctrl para mostrar onde está o ponteiro
-71|Tampa do portátil
-72|Suspender ao fechar a tampa
-73|Desative para manter o computador a funcionar, por exemplo com um ecrã externo
-74|Sem aplicações de arranque
-75|Remover
-76|Adicionar aplicação de arranque
-77|Procurar aplicações
-78|Aplicações de arranque
-79|Adicionar aplicação
-80|Estas aplicações iniciam automaticamente quando inicia sessão
-81|_Aplicações de arranque
-82|Escolha as aplicações que iniciam quando inicia sessão
-83|Nunca
-84|A procurar atualizações…
-85|_Verificar novamente
-86|O MAN está atualizado
-87|O MAN %s é a versão mais recente.
-88|O MAN %s está disponível
-89|Tem o MAN %s. Tamanho da transferência: %s.
-90|Esta é uma versão TEST. Pode ter erros.
-91|_Transferir e instalar…
-92|A transferir o MAN %s…
-93|Pode continuar a usar o computador. A atualização é instalada após a transferência.
-94|_Cancelar
-95|Não foi possível procurar atualizações
-96|Verifique a ligação à Internet e tente novamente.
-97|_Tentar novamente
-98|A transferência falhou
-99|Verifique a ligação à Internet e tente novamente. A transferência continua onde parou.
-100|O MAN %s será instalado quando reiniciar
-101|As atualizações não estão disponíveis aqui
-102|As atualizações são instaladas a partir de um sistema MAN instalado e em execução, não da sessão live.
-103|%s de %s
-104|Atualizações
-105|Novidades
-106|Atualizações automáticas
-107|Procurar atualizações automaticamente
-108|Uma vez por dia o MAN procura uma versão nova e avisa-o
-109|Última verificação
-110|Atualizações beta
-111|Receba versões TEST do MAN antes de serem lançadas. Podem ter erros.
-112|_Instalar um ficheiro de atualização…
-113|Fora da sandbox
-114|Na sandbox
-115|A aplicação tem acesso total aos seus ficheiros, dispositivos e ao sistema
-116|A aplicação só pode usar as permissões que lhe foram dadas
-117|Tirar “%s” da sandbox?
-118|A aplicação terá acesso total a este computador: a todos os seus ficheiros e aos do sistema, a cada dispositivo, à rede e a todos os serviços do sistema. Poderá executar comandos fora do seu contentor e ler ou alterar tudo aquilo a que a sua conta tem acesso.\n\nFaça-o apenas com aplicações em que confia totalmente. Uma aplicação nociva ou com erros poderia danificar o sistema ou roubar os seus dados.\n\nPode restaurar a sandbox aqui a qualquer momento. É preciso reiniciar a aplicação para a alteração ter efeito.
-119|_Prosseguir
-120|A autenticação falhou. Nada foi alterado.
-121|Não foi possível alterar a sandbox.
-122|“%s” está fora da sandbox. Reinicie-a para aplicar.
-123|A sandbox de “%s” foi restaurada.
-124|Sandbox
-125|As aplicações Flatpak correm isoladas do resto do sistema.
-126|_Tirar da sandbox…
-127|_Restaurar a sandbox
-128|Faça um donativo ao MAN!
-129|O MAN é gratuito, mas mantê-lo não é.
-130|_Doar
-131|Procurar e instalar novas versões do MAN
+40|Mostrar a doca
+41|Ocultar automaticamente
+42|A doca dá lugar quando uma janela precisa do espaço
+43|Doca
+44|Tamanho dos ícones
+45|Mostrar em todos os ecrãs
+46|Efeitos de desfocagem
+47|Desative isto em computadores lentos
+48|Desfocagem
+49|Barra superior
+50|Vista geral de atividades
+51|Menus
+52|Ecrã de bloqueio
+53|Organização de janelas
+54|Organize as janelas em esquemas. Escolha e edite esquemas com o botão na barra superior.
+55|Assistente de encaixe
+56|Arraste uma janela para o topo do ecrã para escolher o seu lugar
+57|Encaixar nas margens do ecrã
+58|Organização automática
+59|As novas janelas preenchem o esquema sozinhas
+60|Mostrar o botão de organização
+61|Espaço entre janelas
+62|Espaço nas margens do ecrã
+63|Fundo
+64|Igual ao fundo do ambiente de trabalho
+65|_Adicionar imagem…
+66|Ecrã de acesso
+67|Super
+68|Alt
+69|Desativado
+70|Janelas
+71|Anexar diálogos modais
+72|Os diálogos ficam presos à janela que os abriu
+73|Centrar novas janelas
+74|Redimensionar com clique secundário
+75|Mantenha a tecla de ação de janelas e arraste com o botão secundário
+76|Tecla de ação de janelas
+77|Mantenha-a premida para mover ou redimensionar janelas a partir de qualquer ponto no seu interior
+78|Elevar janelas ao focar
+79|Útil com o foco ao passar o rato
+80|Opções adicionais de esquema
+81|Comportamentos adicionais das teclas para todos os esquemas de teclado
+82|Predefinição
+83|Opções ativadas: %u
+84|Super esquerda
+85|Super direita
+86|Mais opções do teclado
+87|Atalho da vista geral
+88|A tecla que abre a vista geral das Atividades
+89|Mostrar fontes de introdução expandidas
+90|Oferecer mais esquemas ao adicionar uma fonte de introdução
+91|Introdução do Emacs
+92|Atalhos do Emacs nos campos de texto
+93|Comportamento do Caps Lock, troca de esquema, troca de teclas e mais
+94|Colar com o clique do meio
+95|Colar o texto selecionado com o botão do meio
+96|Localizar o ponteiro
+97|Prima Ctrl para mostrar onde está o ponteiro
+98|Tampa do portátil
+99|Suspender ao fechar a tampa
+100|Desative para manter o computador a funcionar, por exemplo com um ecrã externo
+101|Sem aplicações de arranque
+102|Remover
+103|Adicionar aplicação de arranque
+104|Procurar aplicações
+105|Aplicações de arranque
+106|Adicionar aplicação
+107|Estas aplicações iniciam automaticamente quando inicia sessão
+108|_Aplicações de arranque
+109|Escolha as aplicações que iniciam quando inicia sessão
+110|Nunca
+111|A procurar atualizações…
+112|_Verificar novamente
+113|O MAN está atualizado
+114|O MAN %s é a versão mais recente.
+115|O MAN %s está disponível
+116|Tem o MAN %s. Tamanho da transferência: %s.
+117|Esta é uma versão TEST. Pode ter erros.
+118|_Transferir e instalar…
+119|A transferir o MAN %s…
+120|Pode continuar a usar o computador. A atualização é instalada após a transferência.
+121|_Cancelar
+122|Não foi possível procurar atualizações
+123|Verifique a ligação à Internet e tente novamente.
+124|_Tentar novamente
+125|A transferência falhou
+126|Verifique a ligação à Internet e tente novamente. A transferência continua onde parou.
+127|O MAN %s será instalado quando reiniciar
+128|As atualizações não estão disponíveis aqui
+129|As atualizações são instaladas a partir de um sistema MAN instalado e em execução, não da sessão live.
+130|%s de %s
+131|Atualizações
+132|Novidades
+133|Atualizações automáticas
+134|Procurar atualizações automaticamente
+135|Uma vez por dia o MAN procura uma versão nova e avisa-o
+136|Última verificação
+137|Atualizações beta
+138|Receba versões TEST do MAN antes de serem lançadas. Podem ter erros.
+139|_Instalar um ficheiro de atualização…
+140|WebDAV (Nextcloud, ownCloud e outros)
+141|Amazon S3 e armazenamento compatível
+142|Partilha do Windows (SMB)
+143|Discos na nuvem
+144|Remover “%s”?
+145|Os seus ficheiros ficam na nuvem. Este computador deixa de os mostrar e as cópias locais são eliminadas.
+146|_Remover
+147|Ligado
+148|Não é possível ligar. A tentar novamente…
+149|A ligar…
+150|Não aparece em Ficheiros
+151|Abrir em Ficheiros
+152|Endereço do servidor
+153|Servidor
+154|Nome de utilizador
+155|Palavra-passe
+156|Código de dois fatores
+157|Fornecedor
+158|Tipo de servidor
+159|Região
+160|Ponto final
+161|ID da chave de acesso
+162|Chave de acesso secreta
+163|Conta
+164|Chave
+165|Chave de API
+166|E-mail
+167|ID Apple
+168|Domínio
+169|Porta
+170|Acesso
+171|Outro
+172|_Voltar
+173|Não foi possível adicionar o disco
+174|Verifique o que introduziu e a ligação à Internet e tente novamente.
+175|Iniciar sessão em %s
+176|_Abrir novamente a página de início de sessão
+177|O navegador abriu a página de início de sessão. Inicie sessão lá e permita o acesso, depois volte aqui. Esta página continua sozinha.
+178|_Continuar
+179|Mais um passo
+180|A configurar o disco…
+181|A abrir a página de início de sessão…
+182|Inicia sessão com o navegador. A sua palavra-passe nunca é introduzida aqui.
+183|Introduza os dados da sua conta. Ficam guardados na sua pasta pessoal.
+184|Nome em Ficheiros
+185|Mais opções
+186|_Iniciar sessão
+187|_Ligar
+188|Os discos na nuvem não estão disponíveis
+189|O rclone, que liga os discos na nuvem, não está instalado.
+190|_OK
+191|Procurar fornecedores
+192|Populares
+193|Todos os fornecedores
+194|Inicie sessão com o navegador
+195|Adicionar disco na nuvem
+196|O seu armazenamento na nuvem, em Ficheiros. Cada disco liga-se sozinho sempre que inicia sessão.
+197|Ainda não há discos na nuvem
+198|_Adicionar disco na nuvem…
+199|Fora da sandbox
+200|Na sandbox
+201|A aplicação tem acesso total aos seus ficheiros, dispositivos e ao sistema
+202|A aplicação só pode usar as permissões que lhe foram dadas
+203|Tirar “%s” da sandbox?
+204|A aplicação terá acesso total a este computador: a todos os seus ficheiros e aos do sistema, a cada dispositivo, à rede e a todos os serviços do sistema. Poderá executar comandos fora do seu contentor e ler ou alterar tudo aquilo a que a sua conta tem acesso.\n\nFaça-o apenas com aplicações em que confia totalmente. Uma aplicação nociva ou com erros poderia danificar o sistema ou roubar os seus dados.\n\nPode restaurar a sandbox aqui a qualquer momento. É preciso reiniciar a aplicação para a alteração ter efeito.
+205|_Prosseguir
+206|A autenticação falhou. Nada foi alterado.
+207|Não foi possível alterar a sandbox.
+208|“%s” está fora da sandbox. Reinicie-a para aplicar.
+209|A sandbox de “%s” foi restaurada.
+210|Sandbox
+211|As aplicações Flatpak correm isoladas do resto do sistema.
+212|_Tirar da sandbox…
+213|_Restaurar a sandbox
+214|Faça um donativo ao MAN!
+215|O MAN é gratuito, mas mantê-lo não é.
+216|_Doar
+217|Procurar e instalar novas versões do MAN
+218|Mostrar Google Drive, OneDrive, Dropbox e outros armazenamentos na nuvem em Ficheiros

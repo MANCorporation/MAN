@@ -38,95 +38,182 @@
 37|Çift Tıklama
 38|Orta Tıklama
 39|İkincil Tıklama
-40|Super
-41|Alt
-42|Devre Dışı
-43|Pencereler
-44|Kalıcı İletişim Pencerelerini Ekle
-45|İletişim pencereleri, onları açan pencereye bağlı kalır
-46|Yeni Pencereleri Ortala
-47|İkincil Tıklamayla Yeniden Boyutlandır
-48|Pencere eylem tuşunu basılı tutun ve ikincil düğmeyle sürükleyin
-49|Pencere Eylem Tuşu
-50|Pencereleri içlerindeki herhangi bir yerden taşımak veya boyutlandırmak için basılı tutun
-51|Odaklanınca Pencereleri Öne Getir
-52|Üzerine gelince odaklanma ile kullanışlı
-53|Ek Düzen Seçenekleri
-54|Tüm klavye düzenleri için tuşların ek davranışları
-55|Öntanımlı
-56|Açık seçenekler: %u
-57|Sol Super
-58|Sağ Super
-59|Diğer Klavye Seçenekleri
-60|Genel Bakış Kısayolu
-61|Etkinlikler genel bakışını açan tuş
-62|Genişletilmiş Giriş Kaynaklarını Göster
-63|Giriş kaynağı eklerken daha fazla düzen sun
-64|Emacs Girişi
-65|Metin alanlarında Emacs kısayolları
-66|Caps Lock davranışı, düzen değiştirme, tuş değiş tokuşu ve daha fazlası
-67|Orta Tıklamayla Yapıştır
-68|Seçili metni orta düğmeyle yapıştır
-69|İşaretçiyi Bul
-70|İşaretçinin nerede olduğunu göstermek için Ctrl'ye basın
-71|Dizüstü Bilgisayar Kapağı
-72|Kapak Kapanınca Askıya Al
-73|Bilgisayarın çalışmaya devam etmesi için kapatın, örneğin harici ekranla
-74|Başlangıç uygulaması yok
-75|Kaldır
-76|Başlangıç Uygulaması Ekle
-77|Uygulama Ara
-78|Başlangıç Uygulamaları
-79|Uygulama Ekle
-80|Bu uygulamalar oturum açtığınızda kendiliğinden başlar
-81|_Başlangıç Uygulamaları
-82|Oturum açtığınızda başlayacak uygulamaları seçin
-83|Hiç
-84|Güncellemeler Denetleniyor…
-85|_Yeniden Denetle
-86|MAN Güncel
-87|MAN %s en yeni sürüm.
-88|MAN %s Kullanılabilir
-89|MAN %s kullanıyorsunuz. İndirme boyutu: %s.
-90|Bu bir TEST sürümüdür. Hatalar içerebilir.
-91|_İndir ve Kur…
-92|MAN %s İndiriliyor…
-93|Bilgisayarı kullanmaya devam edebilirsiniz. Güncelleme indirmeden sonra kurulur.
-94|_İptal
-95|Güncellemeler Denetlenemedi
-96|İnternet bağlantınızı denetleyip yeniden deneyin.
-97|_Yeniden Dene
-98|İndirme Başarısız Oldu
-99|İnternet bağlantınızı denetleyip yeniden deneyin. İndirme kaldığı yerden devam eder.
-100|MAN %s yeniden başlattığınızda kurulacak
-101|Güncellemeler Burada Kullanılamaz
-102|Güncellemeler canlı oturumdan değil, çalışan ve kurulu bir MAN sisteminden kurulur.
-103|%s / %s
-104|Güncellemeler
-105|Yenilikler
-106|Kendiliğinden Güncellemeler
-107|Güncellemeleri Kendiliğinden Denetle
-108|MAN günde bir kez yeni sürüm arar ve size haber verir
-109|Son Denetleme
-110|Beta güncellemeleri
-111|MAN’in TEST sürümlerini yayımlanmadan önce alın. Hatalar içerebilirler.
-112|Güncelleme Dosyası _Kur…
-113|Korumalı Alan Dışında
-114|Korumalı Alanda
-115|Uygulamanın dosyalarınıza, aygıtlarınıza ve sisteme tam erişimi var
-116|Uygulama yalnızca kendisine verilen izinleri kullanabilir
-117|“%s” korumalı alandan çıkarılsın mı?
-118|Uygulama bu bilgisayara tam erişim kazanacak: tüm dosyalarınıza ve sistem dosyalarına, her aygıta, ağa ve tüm sistem hizmetlerine. Kapsayıcısının dışında komut çalıştırabilecek ve hesabınızın erişebildiği her şeyi okuyup değiştirebilecek.\n\nBunu yalnızca tamamen güvendiğiniz uygulamalar için yapın. Zararlı veya hatalı bir uygulama sisteminize zarar verebilir ya da verilerinizi çalabilir.\n\nKorumalı alanı burada istediğiniz zaman geri yükleyebilirsiniz. Değişikliğin uygulanması için uygulama yeniden başlatılmalıdır.
-119|_Devam Et
-120|Kimlik doğrulama başarısız oldu. Hiçbir şey değişmedi.
-121|Korumalı alan değiştirilemedi.
-122|“%s” korumalı alan dışında. Uygulamak için yeniden başlatın.
-123|“%s” uygulamasının korumalı alanı geri yüklendi.
-124|Korumalı Alan
-125|Flatpak uygulamaları sistemin geri kalanından yalıtılmış çalışır.
-126|Korumalı Alandan _Çıkar…
-127|Korumalı Alanı _Geri Yükle
-128|MAN'e Bağış Yapın!
-129|MAN ücretsizdir ama bakımı ücretsiz değildir.
-130|_Bağış Yap
-131|MAN'in yeni sürümlerini bulun ve kurun
+40|Rıhtımı göster
+41|Otomatik gizle
+42|Bir pencerenin alana ihtiyacı olduğunda rıhtım yer açar
+43|Rıhtım
+44|Simge boyutu
+45|Tüm ekranlarda göster
+46|Bulanıklık efektleri
+47|Yavaş bilgisayarlarda bunu kapatın
+48|Bulanıklık
+49|Üst çubuk
+50|Etkinlikler genel görünümü
+51|Menüler
+52|Kilit ekranı
+53|Pencere düzenleme
+54|Pencereleri düzenlere yerleştirin. Düzenleri üst çubuktaki düğmeyle seçin ve düzenleyin.
+55|Yerleştirme yardımcısı
+56|Yerini seçmek için pencereyi ekranın üstüne sürükleyin
+57|Ekran kenarlarına yerleştir
+58|Otomatik düzenleme
+59|Yeni pencereler düzeni kendiliğinden doldurur
+60|Düzenleme düğmesini göster
+61|Pencereler arası boşluk
+62|Ekran kenarlarındaki boşluk
+63|Arka Plan
+64|Masaüstü arka planıyla aynı
+65|Resim _Ekle…
+66|Oturum Açma Ekranı
+67|Super
+68|Alt
+69|Devre Dışı
+70|Pencereler
+71|Kalıcı İletişim Pencerelerini Ekle
+72|İletişim pencereleri, onları açan pencereye bağlı kalır
+73|Yeni Pencereleri Ortala
+74|İkincil Tıklamayla Yeniden Boyutlandır
+75|Pencere eylem tuşunu basılı tutun ve ikincil düğmeyle sürükleyin
+76|Pencere Eylem Tuşu
+77|Pencereleri içlerindeki herhangi bir yerden taşımak veya boyutlandırmak için basılı tutun
+78|Odaklanınca Pencereleri Öne Getir
+79|Üzerine gelince odaklanma ile kullanışlı
+80|Ek Düzen Seçenekleri
+81|Tüm klavye düzenleri için tuşların ek davranışları
+82|Öntanımlı
+83|Açık seçenekler: %u
+84|Sol Super
+85|Sağ Super
+86|Diğer Klavye Seçenekleri
+87|Genel Bakış Kısayolu
+88|Etkinlikler genel bakışını açan tuş
+89|Genişletilmiş Giriş Kaynaklarını Göster
+90|Giriş kaynağı eklerken daha fazla düzen sun
+91|Emacs Girişi
+92|Metin alanlarında Emacs kısayolları
+93|Caps Lock davranışı, düzen değiştirme, tuş değiş tokuşu ve daha fazlası
+94|Orta Tıklamayla Yapıştır
+95|Seçili metni orta düğmeyle yapıştır
+96|İşaretçiyi Bul
+97|İşaretçinin nerede olduğunu göstermek için Ctrl'ye basın
+98|Dizüstü Bilgisayar Kapağı
+99|Kapak Kapanınca Askıya Al
+100|Bilgisayarın çalışmaya devam etmesi için kapatın, örneğin harici ekranla
+101|Başlangıç uygulaması yok
+102|Kaldır
+103|Başlangıç Uygulaması Ekle
+104|Uygulama Ara
+105|Başlangıç Uygulamaları
+106|Uygulama Ekle
+107|Bu uygulamalar oturum açtığınızda kendiliğinden başlar
+108|_Başlangıç Uygulamaları
+109|Oturum açtığınızda başlayacak uygulamaları seçin
+110|Hiç
+111|Güncellemeler Denetleniyor…
+112|_Yeniden Denetle
+113|MAN Güncel
+114|MAN %s en yeni sürüm.
+115|MAN %s Kullanılabilir
+116|MAN %s kullanıyorsunuz. İndirme boyutu: %s.
+117|Bu bir TEST sürümüdür. Hatalar içerebilir.
+118|_İndir ve Kur…
+119|MAN %s İndiriliyor…
+120|Bilgisayarı kullanmaya devam edebilirsiniz. Güncelleme indirmeden sonra kurulur.
+121|_İptal
+122|Güncellemeler Denetlenemedi
+123|İnternet bağlantınızı denetleyip yeniden deneyin.
+124|_Yeniden Dene
+125|İndirme Başarısız Oldu
+126|İnternet bağlantınızı denetleyip yeniden deneyin. İndirme kaldığı yerden devam eder.
+127|MAN %s yeniden başlattığınızda kurulacak
+128|Güncellemeler Burada Kullanılamaz
+129|Güncellemeler canlı oturumdan değil, çalışan ve kurulu bir MAN sisteminden kurulur.
+130|%s / %s
+131|Güncellemeler
+132|Yenilikler
+133|Kendiliğinden Güncellemeler
+134|Güncellemeleri Kendiliğinden Denetle
+135|MAN günde bir kez yeni sürüm arar ve size haber verir
+136|Son Denetleme
+137|Beta güncellemeleri
+138|MAN’in TEST sürümlerini yayımlanmadan önce alın. Hatalar içerebilirler.
+139|Güncelleme Dosyası _Kur…
+140|WebDAV (Nextcloud, ownCloud ve diğerleri)
+141|Amazon S3 ve Uyumlu Depolama
+142|Windows Paylaşımı (SMB)
+143|Bulut Sürücüleri
+144|“%s” kaldırılsın mı?
+145|Dosyalarınız bulutta kalır. Bu bilgisayar onları göstermeyi bırakır ve buradaki kopyaları silinir.
+146|_Kaldır
+147|Bağlı
+148|Bağlanılamıyor. Yeniden deneniyor…
+149|Bağlanıyor…
+150|Dosyalar'da gösterilmiyor
+151|Dosyalar'da Aç
+152|Sunucu Adresi
+153|Sunucu
+154|Kullanıcı Adı
+155|Parola
+156|İki Adımlı Kod
+157|Sağlayıcı
+158|Sunucu Türü
+159|Bölge
+160|Uç Nokta
+161|Erişim Anahtarı Kimliği
+162|Gizli Erişim Anahtarı
+163|Hesap
+164|Anahtar
+165|API Anahtarı
+166|E-posta
+167|Apple Kimliği
+168|Alan Adı
+169|Bağlantı Noktası
+170|Erişim
+171|Diğer
+172|_Geri
+173|Sürücü Eklenemedi
+174|Girdiklerinizi ve internet bağlantınızı denetleyip yeniden deneyin.
+175|%s Hesabına Giriş Yapın
+176|_Giriş Sayfasını Yeniden Aç
+177|Tarayıcınız giriş sayfasını açtı. Orada giriş yapıp erişime izin verin, sonra buraya dönün. Bu sayfa kendiliğinden devam eder.
+178|_Devam Et
+179|Bir Adım Daha
+180|Sürücü ayarlanıyor…
+181|Giriş sayfası açılıyor…
+182|Web tarayıcınızla giriş yaparsınız. Parolanız buraya hiçbir zaman girilmez.
+183|Hesabınızın bilgilerini girin. Ev klasörünüzde saklanır.
+184|Dosyalar'daki Ad
+185|Daha Fazla Seçenek
+186|_Giriş Yap
+187|_Bağlan
+188|Bulut Sürücüleri Kullanılamıyor
+189|Bulut sürücülerini bağlayan rclone kurulu değil.
+190|_Tamam
+191|Sağlayıcı ara
+192|Popüler
+193|Tüm Sağlayıcılar
+194|Tarayıcınızla giriş yapın
+195|Bulut Sürücüsü Ekle
+196|Bulut depolamanız, Dosyalar'da. Her sürücü her giriş yaptığınızda kendiliğinden bağlanır.
+197|Henüz bulut sürücüsü yok
+198|_Bulut Sürücüsü Ekle…
+199|Korumalı Alan Dışında
+200|Korumalı Alanda
+201|Uygulamanın dosyalarınıza, aygıtlarınıza ve sisteme tam erişimi var
+202|Uygulama yalnızca kendisine verilen izinleri kullanabilir
+203|“%s” korumalı alandan çıkarılsın mı?
+204|Uygulama bu bilgisayara tam erişim kazanacak: tüm dosyalarınıza ve sistem dosyalarına, her aygıta, ağa ve tüm sistem hizmetlerine. Kapsayıcısının dışında komut çalıştırabilecek ve hesabınızın erişebildiği her şeyi okuyup değiştirebilecek.\n\nBunu yalnızca tamamen güvendiğiniz uygulamalar için yapın. Zararlı veya hatalı bir uygulama sisteminize zarar verebilir ya da verilerinizi çalabilir.\n\nKorumalı alanı burada istediğiniz zaman geri yükleyebilirsiniz. Değişikliğin uygulanması için uygulama yeniden başlatılmalıdır.
+205|_Devam Et
+206|Kimlik doğrulama başarısız oldu. Hiçbir şey değişmedi.
+207|Korumalı alan değiştirilemedi.
+208|“%s” korumalı alan dışında. Uygulamak için yeniden başlatın.
+209|“%s” uygulamasının korumalı alanı geri yüklendi.
+210|Korumalı Alan
+211|Flatpak uygulamaları sistemin geri kalanından yalıtılmış çalışır.
+212|Korumalı Alandan _Çıkar…
+213|Korumalı Alanı _Geri Yükle
+214|MAN'e Bağış Yapın!
+215|MAN ücretsizdir ama bakımı ücretsiz değildir.
+216|_Bağış Yap
+217|MAN'in yeni sürümlerini bulun ve kurun
+218|Google Drive, OneDrive, Dropbox ve diğer bulut depolamalarını Dosyalar'da göster

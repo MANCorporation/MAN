@@ -38,95 +38,182 @@
 37|Doppelklick
 38|Mittelklick
 39|Rechtsklick
-40|Super
-41|Alt
-42|Deaktiviert
-43|Fenster
-44|Modale Dialoge anhängen
-45|Dialoge bleiben an dem Fenster, das sie geöffnet hat
-46|Neue Fenster zentrieren
-47|Größe mit Rechtsklick ändern
-48|Fensteraktionstaste halten und mit der rechten Maustaste ziehen
-49|Fensteraktionstaste
-50|Gedrückt halten, um Fenster von überall aus zu verschieben oder ihre Größe zu ändern
-51|Fenster bei Fokus anheben
-52|Nützlich mit Fokus beim Überfahren
-53|Weitere Belegungsoptionen
-54|Zusätzliches Verhalten von Tasten für alle Tastaturbelegungen
-55|Standard
-56|Aktive Optionen: %u
-57|Linke Super-Taste
-58|Rechte Super-Taste
-59|Weitere Tastaturoptionen
-60|Taste für die Übersicht
-61|Die Taste, die die Aktivitäten-Übersicht öffnet
-62|Erweiterte Eingabequellen anzeigen
-63|Beim Hinzufügen einer Eingabequelle mehr Belegungen anbieten
-64|Emacs-Eingabe
-65|Emacs-Tastenkürzel in Textfeldern
-66|Verhalten der Feststelltaste, Belegungswechsel, Tastentausch und mehr
-67|Einfügen mit mittlerer Maustaste
-68|Ausgewählten Text mit der mittleren Maustaste einfügen
-69|Zeiger finden
-70|Strg drücken, um anzuzeigen, wo der Zeiger ist
-71|Laptop-Deckel
-72|Bereitschaft beim Schließen des Deckels
-73|Ausschalten, damit der Rechner weiterläuft, zum Beispiel mit externem Bildschirm
-74|Keine Startprogramme
-75|Entfernen
-76|Startprogramm hinzufügen
-77|Anwendungen suchen
-78|Startprogramme
-79|Anwendung hinzufügen
-80|Diese Anwendungen starten automatisch, wenn Sie sich anmelden
-81|_Startprogramme
-82|Wählen Sie Anwendungen, die bei der Anmeldung starten
-83|Nie
-84|Nach Aktualisierungen wird gesucht …
-85|_Erneut suchen
-86|MAN ist auf dem neuesten Stand
-87|MAN %s ist die neueste Version.
-88|MAN %s ist verfügbar
-89|Sie haben MAN %s. Downloadgröße: %s.
-90|Dies ist eine TEST-Version. Sie kann Fehler enthalten.
-91|_Herunterladen und installieren …
-92|MAN %s wird heruntergeladen …
-93|Sie können den Rechner weiter verwenden. Die Aktualisierung wird nach dem Herunterladen installiert.
-94|_Abbrechen
-95|Suche nach Aktualisierungen fehlgeschlagen
-96|Prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.
-97|_Erneut versuchen
-98|Herunterladen fehlgeschlagen
-99|Prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut. Der Download wird dort fortgesetzt, wo er aufgehört hat.
-100|MAN %s wird beim Neustart installiert
-101|Aktualisierungen sind hier nicht verfügbar
-102|Aktualisierungen werden aus einem laufenden, installierten MAN-System installiert, nicht aus der Live-Sitzung.
-103|%s von %s
-104|Aktualisierungen
-105|Was ist neu
-106|Automatische Aktualisierungen
-107|Automatisch nach Aktualisierungen suchen
-108|Einmal am Tag sucht MAN nach einer neuen Version und gibt Ihnen Bescheid
-109|Zuletzt gesucht
-110|Beta-Aktualisierungen
-111|TEST-Versionen von MAN vor ihrer Veröffentlichung erhalten. Sie können Fehler enthalten.
-112|Aktualisierungsdatei _installieren …
-113|Ohne Sandbox
-114|In der Sandbox
-115|Die Anwendung hat vollen Zugriff auf Ihre Dateien, Geräte und das System
-116|Die Anwendung kann nur die Berechtigungen nutzen, die sie erhalten hat
-117|Sandbox für »%s« aufheben?
-118|Die Anwendung erhält vollen Zugriff auf diesen Rechner: auf alle Ihre Dateien und die Systemdateien, jedes Gerät, das Netzwerk und alle Systemdienste. Sie kann Befehle außerhalb ihres Containers ausführen und alles lesen oder ändern, worauf Ihr Konto zugreifen kann.\n\nTun Sie dies nur bei Anwendungen, denen Sie voll vertrauen. Eine schädliche oder fehlerhafte Anwendung könnte Ihr System beschädigen oder Ihre Daten stehlen.\n\nSie können die Sandbox hier jederzeit wiederherstellen. Die Anwendung muss neu gestartet werden, damit die Änderung wirkt.
-119|_Fortfahren
-120|Legitimierung fehlgeschlagen. Es wurde nichts geändert.
-121|Die Sandbox konnte nicht geändert werden.
-122|»%s« läuft ohne Sandbox. Starten Sie die Anwendung neu, damit es wirkt.
-123|Die Sandbox von »%s« wurde wiederhergestellt.
-124|Sandbox
-125|Flatpak-Anwendungen laufen getrennt vom Rest des Systems.
-126|Sandbox _aufheben …
-127|Sandbox _wiederherstellen
-128|Spenden Sie für MAN!
-129|MAN ist kostenlos, aber seine Pflege ist es nicht.
-130|_Spenden
-131|Neue Versionen von MAN suchen und installieren
+40|Dock anzeigen
+41|Automatisch ausblenden
+42|Das Dock macht Platz, wenn ein Fenster ihn braucht
+43|Dock
+44|Symbolgröße
+45|Auf allen Bildschirmen anzeigen
+46|Unschärfeeffekte
+47|Auf langsamen Computern ausschalten
+48|Unschärfe
+49|Obere Leiste
+50|Aktivitäten-Übersicht
+51|Menüs
+52|Sperrbildschirm
+53|Fensteranordnung
+54|Fenster in Layouts anordnen. Layouts wählst und bearbeitest du mit der Taste in der oberen Leiste.
+55|Einrast-Assistent
+56|Ziehe ein Fenster an den oberen Bildschirmrand, um seinen Platz zu wählen
+57|An Bildschirmrändern einrasten
+58|Automatische Anordnung
+59|Neue Fenster füllen das Layout von selbst
+60|Anordnungstaste anzeigen
+61|Abstand zwischen Fenstern
+62|Abstand an Bildschirmrändern
+63|Hintergrund
+64|Wie der Schreibtischhintergrund
+65|Bild _hinzufügen …
+66|Anmeldebildschirm
+67|Super
+68|Alt
+69|Deaktiviert
+70|Fenster
+71|Modale Dialoge anhängen
+72|Dialoge bleiben an dem Fenster, das sie geöffnet hat
+73|Neue Fenster zentrieren
+74|Größe mit Rechtsklick ändern
+75|Fensteraktionstaste halten und mit der rechten Maustaste ziehen
+76|Fensteraktionstaste
+77|Gedrückt halten, um Fenster von überall aus zu verschieben oder ihre Größe zu ändern
+78|Fenster bei Fokus anheben
+79|Nützlich mit Fokus beim Überfahren
+80|Weitere Belegungsoptionen
+81|Zusätzliches Verhalten von Tasten für alle Tastaturbelegungen
+82|Standard
+83|Aktive Optionen: %u
+84|Linke Super-Taste
+85|Rechte Super-Taste
+86|Weitere Tastaturoptionen
+87|Taste für die Übersicht
+88|Die Taste, die die Aktivitäten-Übersicht öffnet
+89|Erweiterte Eingabequellen anzeigen
+90|Beim Hinzufügen einer Eingabequelle mehr Belegungen anbieten
+91|Emacs-Eingabe
+92|Emacs-Tastenkürzel in Textfeldern
+93|Verhalten der Feststelltaste, Belegungswechsel, Tastentausch und mehr
+94|Einfügen mit mittlerer Maustaste
+95|Ausgewählten Text mit der mittleren Maustaste einfügen
+96|Zeiger finden
+97|Strg drücken, um anzuzeigen, wo der Zeiger ist
+98|Laptop-Deckel
+99|Bereitschaft beim Schließen des Deckels
+100|Ausschalten, damit der Rechner weiterläuft, zum Beispiel mit externem Bildschirm
+101|Keine Startprogramme
+102|Entfernen
+103|Startprogramm hinzufügen
+104|Anwendungen suchen
+105|Startprogramme
+106|Anwendung hinzufügen
+107|Diese Anwendungen starten automatisch, wenn Sie sich anmelden
+108|_Startprogramme
+109|Wählen Sie Anwendungen, die bei der Anmeldung starten
+110|Nie
+111|Nach Aktualisierungen wird gesucht …
+112|_Erneut suchen
+113|MAN ist auf dem neuesten Stand
+114|MAN %s ist die neueste Version.
+115|MAN %s ist verfügbar
+116|Sie haben MAN %s. Downloadgröße: %s.
+117|Dies ist eine TEST-Version. Sie kann Fehler enthalten.
+118|_Herunterladen und installieren …
+119|MAN %s wird heruntergeladen …
+120|Sie können den Rechner weiter verwenden. Die Aktualisierung wird nach dem Herunterladen installiert.
+121|_Abbrechen
+122|Suche nach Aktualisierungen fehlgeschlagen
+123|Prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.
+124|_Erneut versuchen
+125|Herunterladen fehlgeschlagen
+126|Prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut. Der Download wird dort fortgesetzt, wo er aufgehört hat.
+127|MAN %s wird beim Neustart installiert
+128|Aktualisierungen sind hier nicht verfügbar
+129|Aktualisierungen werden aus einem laufenden, installierten MAN-System installiert, nicht aus der Live-Sitzung.
+130|%s von %s
+131|Aktualisierungen
+132|Was ist neu
+133|Automatische Aktualisierungen
+134|Automatisch nach Aktualisierungen suchen
+135|Einmal am Tag sucht MAN nach einer neuen Version und gibt Ihnen Bescheid
+136|Zuletzt gesucht
+137|Beta-Aktualisierungen
+138|TEST-Versionen von MAN vor ihrer Veröffentlichung erhalten. Sie können Fehler enthalten.
+139|Aktualisierungsdatei _installieren …
+140|WebDAV (Nextcloud, ownCloud und andere)
+141|Amazon S3 und kompatibler Speicher
+142|Windows-Freigabe (SMB)
+143|Cloud-Speicher
+144|„%s“ entfernen?
+145|Ihre Dateien bleiben in der Cloud. Dieser Computer zeigt sie nicht mehr an, und seine Kopien davon werden gelöscht.
+146|_Entfernen
+147|Verbunden
+148|Keine Verbindung. Neuer Versuch …
+149|Verbindung wird hergestellt …
+150|Nicht in Dateien angezeigt
+151|In Dateien öffnen
+152|Serveradresse
+153|Server
+154|Benutzername
+155|Passwort
+156|Zwei-Faktor-Code
+157|Anbieter
+158|Servertyp
+159|Region
+160|Endpunkt
+161|Zugriffsschlüssel-ID
+162|Geheimer Zugriffsschlüssel
+163|Konto
+164|Schlüssel
+165|API-Schlüssel
+166|E-Mail
+167|Apple-ID
+168|Domäne
+169|Port
+170|Zugriff
+171|Andere
+172|_Zurück
+173|Der Speicher konnte nicht hinzugefügt werden
+174|Prüfen Sie Ihre Eingaben und Ihre Internetverbindung und versuchen Sie es erneut.
+175|Bei %s anmelden
+176|_Anmeldeseite erneut öffnen
+177|Ihr Webbrowser hat die Anmeldeseite geöffnet. Melden Sie sich dort an, erlauben Sie den Zugriff und kehren Sie dann hierher zurück. Diese Seite geht von selbst weiter.
+178|_Fortfahren
+179|Noch ein Schritt
+180|Speicher wird eingerichtet …
+181|Anmeldeseite wird geöffnet …
+182|Sie melden sich mit Ihrem Webbrowser an. Ihr Passwort wird nie hier eingegeben.
+183|Geben Sie die Daten Ihres Kontos ein. Sie werden in Ihrem persönlichen Ordner gespeichert.
+184|Name in Dateien
+185|Weitere Optionen
+186|_Anmelden
+187|_Verbinden
+188|Cloud-Speicher sind nicht verfügbar
+189|rclone, das Cloud-Speicher verbindet, ist nicht installiert.
+190|_OK
+191|Anbieter suchen
+192|Beliebt
+193|Alle Anbieter
+194|Anmeldung mit dem Browser
+195|Cloud-Speicher hinzufügen
+196|Ihr Cloud-Speicher in Dateien. Jeder Speicher verbindet sich bei jeder Anmeldung von selbst.
+197|Noch keine Cloud-Speicher
+198|_Cloud-Speicher hinzufügen …
+199|Ohne Sandbox
+200|In der Sandbox
+201|Die Anwendung hat vollen Zugriff auf Ihre Dateien, Geräte und das System
+202|Die Anwendung kann nur die Berechtigungen nutzen, die sie erhalten hat
+203|Sandbox für »%s« aufheben?
+204|Die Anwendung erhält vollen Zugriff auf diesen Rechner: auf alle Ihre Dateien und die Systemdateien, jedes Gerät, das Netzwerk und alle Systemdienste. Sie kann Befehle außerhalb ihres Containers ausführen und alles lesen oder ändern, worauf Ihr Konto zugreifen kann.\n\nTun Sie dies nur bei Anwendungen, denen Sie voll vertrauen. Eine schädliche oder fehlerhafte Anwendung könnte Ihr System beschädigen oder Ihre Daten stehlen.\n\nSie können die Sandbox hier jederzeit wiederherstellen. Die Anwendung muss neu gestartet werden, damit die Änderung wirkt.
+205|_Fortfahren
+206|Legitimierung fehlgeschlagen. Es wurde nichts geändert.
+207|Die Sandbox konnte nicht geändert werden.
+208|»%s« läuft ohne Sandbox. Starten Sie die Anwendung neu, damit es wirkt.
+209|Die Sandbox von »%s« wurde wiederhergestellt.
+210|Sandbox
+211|Flatpak-Anwendungen laufen getrennt vom Rest des Systems.
+212|Sandbox _aufheben …
+213|Sandbox _wiederherstellen
+214|Spenden Sie für MAN!
+215|MAN ist kostenlos, aber seine Pflege ist es nicht.
+216|_Spenden
+217|Neue Versionen von MAN suchen und installieren
+218|Google Drive, OneDrive, Dropbox und anderen Cloud-Speicher in Dateien anzeigen

@@ -38,95 +38,182 @@
 37|Dobbeltklik
 38|Midterklik
 39|Højreklik
-40|Super
-41|Alt
-42|Deaktiveret
-43|Vinduer
-44|Fastgør modale dialoger
-45|Dialoger bliver ved det vindue, der åbnede dem
-46|Centrér nye vinduer
-47|Tilpas størrelse med højreklik
-48|Hold vindueshandlingstasten nede og træk med højre museknap
-49|Vindueshandlingstast
-50|Hold den nede for at flytte eller tilpasse vinduer hvor som helst inde i dem
-51|Hæv vinduer, når de får fokus
-52|Nyttigt med fokus ved musebevægelse
-53|Yderligere layoutindstillinger
-54|Ekstra tasteopførsel for alle tastaturlayout
-55|Standard
-56|Aktive indstillinger: %u
-57|Venstre Super
-58|Højre Super
-59|Flere tastaturindstillinger
-60|Genvej til oversigten
-61|Tasten, der åbner Aktivitetsoversigten
-62|Vis udvidede inputkilder
-63|Tilbyd flere layout, når der tilføjes en inputkilde
-64|Emacs-input
-65|Emacs-tastaturgenveje i tekstfelter
-66|Caps Lock-opførsel, skift af layout, ombytning af taster og mere
-67|Indsæt med midterklik
-68|Indsæt den markerede tekst med midterknappen
-69|Find markøren
-70|Tryk på Ctrl for at vise, hvor markøren er
-71|Låget på den bærbare
-72|Hvile, når låget lukkes
-73|Slå fra for at holde computeren kørende, for eksempel med en ekstern skærm
-74|Ingen opstartsprogrammer
-75|Fjern
-76|Tilføj opstartsprogram
-77|Søg i programmer
-78|Opstartsprogrammer
-79|Tilføj program
-80|Disse programmer starter automatisk, når du logger ind
-81|_Opstartsprogrammer
-82|Vælg programmer, der starter, når du logger ind
-83|Aldrig
-84|Søger efter opdateringer …
-85|_Tjek igen
-86|MAN er opdateret
-87|MAN %s er den nyeste version.
-88|MAN %s er tilgængelig
-89|Du har MAN %s. Hentningsstørrelse: %s.
-90|Dette er en TEST-version. Den kan have fejl.
-91|_Hent og installér …
-92|Henter MAN %s …
-93|Du kan fortsætte med at bruge computeren. Opdateringen installeres efter hentningen.
-94|_Annullér
-95|Kunne ikke søge efter opdateringer
-96|Tjek din internetforbindelse, og prøv igen.
-97|_Prøv igen
-98|Hentningen mislykkedes
-99|Tjek din internetforbindelse, og prøv igen. Hentningen fortsætter, hvor den stoppede.
-100|MAN %s installeres, når du genstarter
-101|Opdateringer er ikke tilgængelige her
-102|Opdateringer installeres fra et kørende, installeret MAN-system, ikke fra livesessionen.
-103|%s af %s
-104|Opdateringer
-105|Nyheder
-106|Automatiske opdateringer
-107|Søg automatisk efter opdateringer
-108|Én gang om dagen leder MAN efter en ny version og giver dig besked
-109|Sidst tjekket
-110|Betaopdateringer
-111|Få TEST-versioner af MAN, før de udgives. De kan have fejl.
-112|_Installér en opdateringsfil …
-113|Uden sandkasse
-114|I sandkasse
-115|Programmet har fuld adgang til dine filer, enheder og systemet
-116|Programmet kan kun bruge de tilladelser, det har fået
-117|Tag “%s” ud af sandkassen?
-118|Programmet får fuld adgang til denne computer: alle dine filer og systemfilerne, alle enheder, netværket og alle systemtjenester. Det kan køre kommandoer uden for sin container og læse eller ændre alt, din konto har adgang til.\n\nGør kun dette for programmer, du stoler fuldt ud på. Et skadeligt eller fejlbehæftet program kan ødelægge dit system eller stjæle dine data.\n\nDu kan til enhver tid gendanne sandkassen her. Programmet skal genstartes, før ændringen træder i kraft.
-119|_Fortsæt
-120|Godkendelsen mislykkedes. Intet blev ændret.
-121|Sandkassen kunne ikke ændres.
-122|“%s” kører uden sandkasse. Genstart programmet for at anvende ændringen.
-123|Sandkassen for “%s” er gendannet.
-124|Sandkasse
-125|Flatpak-programmer kører isoleret fra resten af systemet.
-126|_Tag ud af sandkassen …
-127|_Gendan sandkassen
-128|Donér til MAN!
-129|MAN er gratis, men vedligeholdelsen er ikke.
-130|_Donér
-131|Søg efter og installér nye versioner af MAN
+40|Vis dok
+41|Skjul automatisk
+42|Dokken giver plads, når et vindue har brug for det
+43|Dok
+44|Ikonstørrelse
+45|Vis på alle skærme
+46|Sløringseffekter
+47|Slå dette fra på langsomme computere
+48|Sløring
+49|Øverste bjælke
+50|Aktivitetsoversigt
+51|Menuer
+52|Låseskærm
+53|Vinduesopdeling
+54|Arranger vinduer i layouts. Vælg og rediger layouts med knappen i øverste bjælke.
+55|Fastgørelsesassistent
+56|Træk et vindue til toppen af skærmen for at vælge dets plads
+57|Fastgør ved skærmkanter
+58|Automatisk opdeling
+59|Nye vinduer udfylder selv layoutet
+60|Vis opdelingsknap
+61|Afstand mellem vinduer
+62|Afstand ved skærmkanter
+63|Baggrund
+64|Samme som skrivebordsbaggrunden
+65|_Tilføj billede …
+66|Loginskærm
+67|Super
+68|Alt
+69|Deaktiveret
+70|Vinduer
+71|Fastgør modale dialoger
+72|Dialoger bliver ved det vindue, der åbnede dem
+73|Centrér nye vinduer
+74|Tilpas størrelse med højreklik
+75|Hold vindueshandlingstasten nede og træk med højre museknap
+76|Vindueshandlingstast
+77|Hold den nede for at flytte eller tilpasse vinduer hvor som helst inde i dem
+78|Hæv vinduer, når de får fokus
+79|Nyttigt med fokus ved musebevægelse
+80|Yderligere layoutindstillinger
+81|Ekstra tasteopførsel for alle tastaturlayout
+82|Standard
+83|Aktive indstillinger: %u
+84|Venstre Super
+85|Højre Super
+86|Flere tastaturindstillinger
+87|Genvej til oversigten
+88|Tasten, der åbner Aktivitetsoversigten
+89|Vis udvidede inputkilder
+90|Tilbyd flere layout, når der tilføjes en inputkilde
+91|Emacs-input
+92|Emacs-tastaturgenveje i tekstfelter
+93|Caps Lock-opførsel, skift af layout, ombytning af taster og mere
+94|Indsæt med midterklik
+95|Indsæt den markerede tekst med midterknappen
+96|Find markøren
+97|Tryk på Ctrl for at vise, hvor markøren er
+98|Låget på den bærbare
+99|Hvile, når låget lukkes
+100|Slå fra for at holde computeren kørende, for eksempel med en ekstern skærm
+101|Ingen opstartsprogrammer
+102|Fjern
+103|Tilføj opstartsprogram
+104|Søg i programmer
+105|Opstartsprogrammer
+106|Tilføj program
+107|Disse programmer starter automatisk, når du logger ind
+108|_Opstartsprogrammer
+109|Vælg programmer, der starter, når du logger ind
+110|Aldrig
+111|Søger efter opdateringer …
+112|_Tjek igen
+113|MAN er opdateret
+114|MAN %s er den nyeste version.
+115|MAN %s er tilgængelig
+116|Du har MAN %s. Hentningsstørrelse: %s.
+117|Dette er en TEST-version. Den kan have fejl.
+118|_Hent og installér …
+119|Henter MAN %s …
+120|Du kan fortsætte med at bruge computeren. Opdateringen installeres efter hentningen.
+121|_Annullér
+122|Kunne ikke søge efter opdateringer
+123|Tjek din internetforbindelse, og prøv igen.
+124|_Prøv igen
+125|Hentningen mislykkedes
+126|Tjek din internetforbindelse, og prøv igen. Hentningen fortsætter, hvor den stoppede.
+127|MAN %s installeres, når du genstarter
+128|Opdateringer er ikke tilgængelige her
+129|Opdateringer installeres fra et kørende, installeret MAN-system, ikke fra livesessionen.
+130|%s af %s
+131|Opdateringer
+132|Nyheder
+133|Automatiske opdateringer
+134|Søg automatisk efter opdateringer
+135|Én gang om dagen leder MAN efter en ny version og giver dig besked
+136|Sidst tjekket
+137|Betaopdateringer
+138|Få TEST-versioner af MAN, før de udgives. De kan have fejl.
+139|_Installér en opdateringsfil …
+140|WebDAV (Nextcloud, ownCloud og andre)
+141|Amazon S3 og kompatibel lagring
+142|Windows-deling (SMB)
+143|Cloud-drev
+144|Fjern “%s”?
+145|Dine filer bliver i skyen. Denne computer holder op med at vise dem, og dens kopier af dem slettes.
+146|_Fjern
+147|Forbundet
+148|Kan ikke forbinde. Prøver igen…
+149|Forbinder…
+150|Vises ikke i Filer
+151|Åbn i Filer
+152|Serveradresse
+153|Server
+154|Brugernavn
+155|Adgangskode
+156|Tofaktorkode
+157|Udbyder
+158|Servertype
+159|Region
+160|Slutpunkt
+161|Adgangsnøgle-id
+162|Hemmelig adgangsnøgle
+163|Konto
+164|Nøgle
+165|API-nøgle
+166|E-mail
+167|Apple-id
+168|Domæne
+169|Port
+170|Adgang
+171|Andet
+172|_Tilbage
+173|Drevet kunne ikke tilføjes
+174|Tjek det, du har indtastet, og din internetforbindelse, og prøv igen.
+175|Log ind på %s
+176|_Åbn loginsiden igen
+177|Din webbrowser har åbnet loginsiden. Log ind der og giv adgang, og kom så tilbage hertil. Denne side fortsætter af sig selv.
+178|_Fortsæt
+179|Et trin mere
+180|Sætter drevet op…
+181|Åbner loginsiden…
+182|Du logger ind med din webbrowser. Din adgangskode indtastes aldrig her.
+183|Indtast oplysningerne om din konto. De gemmes i din hjemmemappe.
+184|Navn i Filer
+185|Flere indstillinger
+186|_Log ind
+187|_Forbind
+188|Cloud-drev er ikke tilgængelige
+189|rclone, som forbinder cloud-drev, er ikke installeret.
+190|_OK
+191|Søg efter udbydere
+192|Populære
+193|Alle udbydere
+194|Log ind med din browser
+195|Tilføj cloud-drev
+196|Din cloud-lagring i Filer. Hvert drev forbinder af sig selv, hver gang du logger ind.
+197|Ingen cloud-drev endnu
+198|_Tilføj cloud-drev…
+199|Uden sandkasse
+200|I sandkasse
+201|Programmet har fuld adgang til dine filer, enheder og systemet
+202|Programmet kan kun bruge de tilladelser, det har fået
+203|Tag “%s” ud af sandkassen?
+204|Programmet får fuld adgang til denne computer: alle dine filer og systemfilerne, alle enheder, netværket og alle systemtjenester. Det kan køre kommandoer uden for sin container og læse eller ændre alt, din konto har adgang til.\n\nGør kun dette for programmer, du stoler fuldt ud på. Et skadeligt eller fejlbehæftet program kan ødelægge dit system eller stjæle dine data.\n\nDu kan til enhver tid gendanne sandkassen her. Programmet skal genstartes, før ændringen træder i kraft.
+205|_Fortsæt
+206|Godkendelsen mislykkedes. Intet blev ændret.
+207|Sandkassen kunne ikke ændres.
+208|“%s” kører uden sandkasse. Genstart programmet for at anvende ændringen.
+209|Sandkassen for “%s” er gendannet.
+210|Sandkasse
+211|Flatpak-programmer kører isoleret fra resten af systemet.
+212|_Tag ud af sandkassen …
+213|_Gendan sandkassen
+214|Donér til MAN!
+215|MAN er gratis, men vedligeholdelsen er ikke.
+216|_Donér
+217|Søg efter og installér nye versioner af MAN
+218|Vis Google Drive, OneDrive, Dropbox og anden cloud-lagring i Filer

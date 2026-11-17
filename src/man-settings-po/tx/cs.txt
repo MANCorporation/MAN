@@ -38,95 +38,182 @@
 37|Dvojklik
 38|Prostřední tlačítko
 39|Pravé tlačítko
-40|Super
-41|Alt
-42|Vypnuto
-43|Okna
-44|Připojit modální dialogy
-45|Dialogy zůstanou připojené k oknu, které je otevřelo
-46|Nová okna na střed
-47|Měnit velikost pravým tlačítkem
-48|Podržte klávesu akce okna a táhněte pravým tlačítkem
-49|Klávesa akce okna
-50|Podržením můžete okna přesouvat nebo měnit jejich velikost odkudkoli uvnitř
-51|Při zaměření okno vyzvednout
-52|Užitečné se zaměřením při najetí myší
-53|Další volby rozložení
-54|Doplňkové chování kláves pro všechna rozložení klávesnice
-55|Výchozí
-56|Zapnuté volby: %u
-57|Levá Super
-58|Pravá Super
-59|Další volby klávesnice
-60|Klávesa přehledu
-61|Klávesa, která otevírá přehled Činností
-62|Zobrazit rozšířené vstupní zdroje
-63|Nabízet více rozložení při přidávání vstupního zdroje
-64|Vstup jako v Emacsu
-65|Klávesové zkratky Emacsu v textových polích
-66|Chování Caps Lock, přepínání rozložení, prohození kláves a další
-67|Vkládání prostředním tlačítkem
-68|Vloží vybraný text prostředním tlačítkem myši
-69|Najít ukazatel
-70|Stiskem Ctrl ukážete, kde je ukazatel
-71|Víko notebooku
-72|Uspat při zavření víka
-73|Vypněte, aby počítač běžel dál, třeba s externí obrazovkou
-74|Žádné aplikace po spuštění
-75|Odebrat
-76|Přidat aplikaci po spuštění
-77|Hledat aplikace
-78|Aplikace po spuštění
-79|Přidat aplikaci
-80|Tyto aplikace se spustí automaticky po přihlášení
-81|_Aplikace po spuštění
-82|Vyberte aplikace, které se spustí po přihlášení
-83|Nikdy
-84|Hledají se aktualizace…
-85|_Zkontrolovat znovu
-86|MAN je aktuální
-87|MAN %s je nejnovější verze.
-88|Je k dispozici MAN %s
-89|Máte MAN %s. Velikost stahování: %s.
-90|Toto je verze TEST. Může obsahovat chyby.
-91|_Stáhnout a nainstalovat…
-92|Stahuje se MAN %s…
-93|Počítač můžete dál používat. Aktualizace se nainstaluje po stažení.
-94|_Zrušit
-95|Aktualizace nelze zkontrolovat
-96|Zkontrolujte připojení k internetu a zkuste to znovu.
-97|_Zkusit znovu
-98|Stahování selhalo
-99|Zkontrolujte připojení k internetu a zkuste to znovu. Stahování naváže tam, kde skončilo.
-100|MAN %s se nainstaluje při restartu
-101|Aktualizace zde nejsou k dispozici
-102|Aktualizace se instalují ze spuštěného nainstalovaného systému MAN, ne z živé relace.
-103|%s z %s
-104|Aktualizace
-105|Co je nového
-106|Automatické aktualizace
-107|Automaticky hledat aktualizace
-108|Jednou denně MAN zkontroluje novou verzi a dá vám vědět
-109|Naposledy zkontrolováno
-110|Beta aktualizace
-111|Získávejte verze TEST systému MAN ještě před vydáním. Mohou obsahovat chyby.
-112|_Nainstalovat soubor aktualizace…
-113|Bez sandboxu
-114|V sandboxu
-115|Aplikace má plný přístup k vašim souborům, zařízením a systému
-116|Aplikace může používat jen oprávnění, která dostala
-117|Vypnout sandbox pro „%s“?
-118|Aplikace získá plný přístup k tomuto počítači: ke všem vašim i systémovým souborům, ke každému zařízení, k síti a ke všem systémovým službám. Může spouštět příkazy mimo svůj kontejner a číst nebo měnit cokoli, k čemu má přístup váš účet.\n\nDělejte to jen u aplikací, kterým plně důvěřujete. Škodlivá nebo chybová aplikace by mohla poškodit systém nebo ukrást vaše data.\n\nSandbox zde můžete kdykoli obnovit. Aby se změna projevila, je třeba aplikaci restartovat.
-119|_Pokračovat
-120|Ověření selhalo. Nic se nezměnilo.
-121|Sandbox nelze změnit.
-122|„%s“ je bez sandboxu. Změna se projeví po restartu aplikace.
-123|Sandbox aplikace „%s“ byl obnoven.
-124|Sandbox
-125|Aplikace Flatpak běží odděleně od zbytku systému.
-126|_Vypnout sandbox…
-127|_Obnovit sandbox
-128|Podpořte MAN!
-129|MAN je zdarma, ale jeho údržba zdarma není.
-130|_Přispět
-131|Hledání a instalace nových verzí MAN
+40|Zobrazit dok
+41|Automaticky skrývat
+42|Dok uvolní místo, když ho okno potřebuje
+43|Dok
+44|Velikost ikon
+45|Zobrazit na všech displejích
+46|Efekty rozostření
+47|Na pomalých počítačích tuto volbu vypněte
+48|Rozostření
+49|Horní lišta
+50|Přehled činností
+51|Nabídky
+52|Uzamčená obrazovka
+53|Skládání oken
+54|Uspořádejte okna do rozložení. Rozložení vyberete a upravíte tlačítkem v horní liště.
+55|Pomocník přichycení
+56|Přetáhněte okno k hornímu okraji obrazovky a vyberte jeho místo
+57|Přichytávat k okrajům obrazovky
+58|Automatické skládání
+59|Nová okna sama vyplní rozložení
+60|Zobrazit tlačítko skládání
+61|Mezera mezi okny
+62|Mezera u okrajů obrazovky
+63|Pozadí
+64|Stejné jako pozadí plochy
+65|_Přidat obrázek…
+66|Přihlašovací obrazovka
+67|Super
+68|Alt
+69|Vypnuto
+70|Okna
+71|Připojit modální dialogy
+72|Dialogy zůstanou připojené k oknu, které je otevřelo
+73|Nová okna na střed
+74|Měnit velikost pravým tlačítkem
+75|Podržte klávesu akce okna a táhněte pravým tlačítkem
+76|Klávesa akce okna
+77|Podržením můžete okna přesouvat nebo měnit jejich velikost odkudkoli uvnitř
+78|Při zaměření okno vyzvednout
+79|Užitečné se zaměřením při najetí myší
+80|Další volby rozložení
+81|Doplňkové chování kláves pro všechna rozložení klávesnice
+82|Výchozí
+83|Zapnuté volby: %u
+84|Levá Super
+85|Pravá Super
+86|Další volby klávesnice
+87|Klávesa přehledu
+88|Klávesa, která otevírá přehled Činností
+89|Zobrazit rozšířené vstupní zdroje
+90|Nabízet více rozložení při přidávání vstupního zdroje
+91|Vstup jako v Emacsu
+92|Klávesové zkratky Emacsu v textových polích
+93|Chování Caps Lock, přepínání rozložení, prohození kláves a další
+94|Vkládání prostředním tlačítkem
+95|Vloží vybraný text prostředním tlačítkem myši
+96|Najít ukazatel
+97|Stiskem Ctrl ukážete, kde je ukazatel
+98|Víko notebooku
+99|Uspat při zavření víka
+100|Vypněte, aby počítač běžel dál, třeba s externí obrazovkou
+101|Žádné aplikace po spuštění
+102|Odebrat
+103|Přidat aplikaci po spuštění
+104|Hledat aplikace
+105|Aplikace po spuštění
+106|Přidat aplikaci
+107|Tyto aplikace se spustí automaticky po přihlášení
+108|_Aplikace po spuštění
+109|Vyberte aplikace, které se spustí po přihlášení
+110|Nikdy
+111|Hledají se aktualizace…
+112|_Zkontrolovat znovu
+113|MAN je aktuální
+114|MAN %s je nejnovější verze.
+115|Je k dispozici MAN %s
+116|Máte MAN %s. Velikost stahování: %s.
+117|Toto je verze TEST. Může obsahovat chyby.
+118|_Stáhnout a nainstalovat…
+119|Stahuje se MAN %s…
+120|Počítač můžete dál používat. Aktualizace se nainstaluje po stažení.
+121|_Zrušit
+122|Aktualizace nelze zkontrolovat
+123|Zkontrolujte připojení k internetu a zkuste to znovu.
+124|_Zkusit znovu
+125|Stahování selhalo
+126|Zkontrolujte připojení k internetu a zkuste to znovu. Stahování naváže tam, kde skončilo.
+127|MAN %s se nainstaluje při restartu
+128|Aktualizace zde nejsou k dispozici
+129|Aktualizace se instalují ze spuštěného nainstalovaného systému MAN, ne z živé relace.
+130|%s z %s
+131|Aktualizace
+132|Co je nového
+133|Automatické aktualizace
+134|Automaticky hledat aktualizace
+135|Jednou denně MAN zkontroluje novou verzi a dá vám vědět
+136|Naposledy zkontrolováno
+137|Beta aktualizace
+138|Získávejte verze TEST systému MAN ještě před vydáním. Mohou obsahovat chyby.
+139|_Nainstalovat soubor aktualizace…
+140|WebDAV (Nextcloud, ownCloud a další)
+141|Amazon S3 a kompatibilní úložiště
+142|Sdílená složka Windows (SMB)
+143|Cloudové disky
+144|Odebrat „%s“?
+145|Vaše soubory zůstanou v cloudu. Tento počítač je přestane zobrazovat a jeho kopie souborů se smažou.
+146|_Odebrat
+147|Připojeno
+148|Nelze se připojit. Zkouší se znovu…
+149|Připojování…
+150|Nezobrazuje se v Souborech
+151|Otevřít v Souborech
+152|Adresa serveru
+153|Server
+154|Uživatelské jméno
+155|Heslo
+156|Dvoufázový kód
+157|Poskytovatel
+158|Typ serveru
+159|Oblast
+160|Koncový bod
+161|ID přístupového klíče
+162|Tajný přístupový klíč
+163|Účet
+164|Klíč
+165|Klíč API
+166|E-mail
+167|Apple ID
+168|Doména
+169|Port
+170|Přístup
+171|Jiné
+172|_Zpět
+173|Disk se nepodařilo přidat
+174|Zkontrolujte, co jste zadali, a připojení k internetu, a zkuste to znovu.
+175|Přihlášení do %s
+176|_Znovu otevřít přihlašovací stránku
+177|Webový prohlížeč otevřel přihlašovací stránku. Přihlaste se tam, povolte přístup a vraťte se sem. Tato stránka pokračuje sama.
+178|_Pokračovat
+179|Ještě jeden krok
+180|Nastavuje se disk…
+181|Otevírá se přihlašovací stránka…
+182|Přihlašujete se ve webovém prohlížeči. Heslo se sem nikdy nezadává.
+183|Zadejte údaje svého účtu. Ukládají se ve vaší domovské složce.
+184|Název v Souborech
+185|Další možnosti
+186|_Přihlásit se
+187|_Připojit
+188|Cloudové disky nejsou k dispozici
+189|Program rclone, který připojuje cloudové disky, není nainstalován.
+190|_OK
+191|Hledat poskytovatele
+192|Oblíbené
+193|Všichni poskytovatelé
+194|Přihlášení v prohlížeči
+195|Přidat cloudový disk
+196|Vaše cloudové úložiště v Souborech. Každý disk se připojí sám při každém přihlášení.
+197|Zatím žádné cloudové disky
+198|_Přidat cloudový disk…
+199|Bez sandboxu
+200|V sandboxu
+201|Aplikace má plný přístup k vašim souborům, zařízením a systému
+202|Aplikace může používat jen oprávnění, která dostala
+203|Vypnout sandbox pro „%s“?
+204|Aplikace získá plný přístup k tomuto počítači: ke všem vašim i systémovým souborům, ke každému zařízení, k síti a ke všem systémovým službám. Může spouštět příkazy mimo svůj kontejner a číst nebo měnit cokoli, k čemu má přístup váš účet.\n\nDělejte to jen u aplikací, kterým plně důvěřujete. Škodlivá nebo chybová aplikace by mohla poškodit systém nebo ukrást vaše data.\n\nSandbox zde můžete kdykoli obnovit. Aby se změna projevila, je třeba aplikaci restartovat.
+205|_Pokračovat
+206|Ověření selhalo. Nic se nezměnilo.
+207|Sandbox nelze změnit.
+208|„%s“ je bez sandboxu. Změna se projeví po restartu aplikace.
+209|Sandbox aplikace „%s“ byl obnoven.
+210|Sandbox
+211|Aplikace Flatpak běží odděleně od zbytku systému.
+212|_Vypnout sandbox…
+213|_Obnovit sandbox
+214|Podpořte MAN!
+215|MAN je zdarma, ale jeho údržba zdarma není.
+216|_Přispět
+217|Hledání a instalace nových verzí MAN
+218|Zobrazit Google Drive, OneDrive, Dropbox a další cloudová úložiště v Souborech

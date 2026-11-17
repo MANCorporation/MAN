@@ -1,0 +1,139 @@
+Description: MAN: Appearance > Login Screen (background of the login screen, MAN Login)
+Author: MAN Developers
+
+--- a/panels/common/cc-man-tweaks.c	2026-11-17 15:20:17.585471709 +0100
++++ b/panels/common/cc-man-tweaks.c	2026-11-17 15:53:38.614725388 +0100
+@@ -637,9 +637,133 @@
+   return g;
+ }
+ 
++/* Login screen background (MAN Login, man-login@man.invalid): the desktop
++ * background, or a picture of the user's own. The desktop session copies it
++ * where the login screen can read it. */
++#define LOGIN_SCHEMA "com.man.desktop.login"
++
++static void
++login_picture_sync (GSettings *settings, const char *key, AdwActionRow *row)
++{
++  g_autofree char *uri = g_settings_get_string (settings, "picture-uri");
++  g_autoptr(GFile) file = uri && *uri ? g_file_new_for_uri (uri) : NULL;
++  g_autofree char *name = file ? g_file_get_basename (file) : NULL;
++
++  /* The file name only while it is the one shown. */
++  if (g_settings_get_boolean (settings, "use-desktop-background"))
++    g_clear_pointer (&name, g_free);
++  adw_action_row_set_subtitle (row, name ? name : "");
++}
++
++static void
++login_copied_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  g_autoptr(GSettings) settings = user_data;
++  g_autoptr(GError) error = NULL;
++  g_autofree char *uri = NULL;
++  g_autoptr(GFile) dir = NULL;
++  g_autofree char *keep = NULL;
++  g_autoptr(GDir) d = NULL;
++  const char *n;
++  GFile *dest;
++
++  if (!g_file_copy_finish (G_FILE (source), res, &error))
++    {
++      g_warning ("Could not keep the login screen picture: %s", error->message);
++      return;
++    }
++  dest = G_FILE (g_object_get_data (source, "man-dest"));
++  uri = g_file_get_uri (dest);
++  g_settings_set_string (settings, "picture-uri", uri);
++  g_settings_set_boolean (settings, "use-desktop-background", FALSE);
++
++  /* Older copies are not needed any more. */
++  dir = g_file_get_parent (dest);
++  keep = g_file_get_basename (dest);
++  d = g_dir_open (g_file_peek_path (dir), 0, NULL);
++  while (d && (n = g_dir_read_name (d)))
++    if (g_strcmp0 (n, keep) != 0)
++      {
++        g_autofree char *old = g_build_filename (g_file_peek_path (dir), n, NULL);
++        g_unlink (old);
++      }
++}
++
++static void
++login_chosen_cb (GObject *source, GAsyncResult *res, gpointer user_data)
++{
++  g_autoptr(GSettings) settings = user_data;
++  g_autoptr(GFile) file = gtk_file_dialog_open_finish (GTK_FILE_DIALOG (source), res, NULL);
++  g_autofree char *dir = NULL;
++  g_autofree char *base = NULL;
++  g_autofree char *dest_path = NULL;
++  GFile *dest;
++
++  if (!file)
++    return;
++  /* A copy of its own, so the picture stays when the original is moved. */
++  dir = g_build_filename (g_get_user_data_dir (), "man-login", NULL);
++  if (g_file_peek_path (file) && g_str_has_prefix (g_file_peek_path (file), dir))
++    {
++      g_autofree char *uri = g_file_get_uri (file);
++      g_settings_set_string (settings, "picture-uri", uri);
++      g_settings_set_boolean (settings, "use-desktop-background", FALSE);
++      return;
++    }
++  g_mkdir_with_parents (dir, 0700);
++  base = g_file_get_basename (file);
++  dest_path = g_build_filename (dir, base, NULL);
++  dest = g_file_new_for_path (dest_path);
++  g_object_set_data_full (G_OBJECT (file), "man-dest", dest, g_object_unref);
++  g_file_copy_async (file, dest, G_FILE_COPY_OVERWRITE, G_PRIORITY_DEFAULT, NULL, NULL, NULL,
++                     login_copied_cb, g_object_ref (settings));
++}
++
++static void
++login_choose_clicked (GtkButton *button, GSettings *settings)
++{
++  g_autoptr(GtkFileDialog) dialog = gtk_file_dialog_new ();
++  g_autoptr(GtkFileFilter) filter = gtk_file_filter_new ();
++  g_autoptr(GListStore) filters = g_list_store_new (GTK_TYPE_FILE_FILTER);
++
++  gtk_file_filter_set_name (filter, _("Background"));
++  gtk_file_filter_add_mime_type (filter, "image/jpeg");
++  gtk_file_filter_add_mime_type (filter, "image/png");
++  gtk_file_filter_add_mime_type (filter, "image/webp");
++  g_list_store_append (filters, filter);
++  gtk_file_dialog_set_filters (dialog, G_LIST_MODEL (filters));
++  gtk_file_dialog_set_title (dialog, _("Background"));
++  gtk_file_dialog_open (dialog, GTK_WINDOW (gtk_widget_get_root (GTK_WIDGET (button))), NULL,
++                        login_chosen_cb, g_object_ref (settings));
++}
++
++static AdwPreferencesGroup *
++login_group (void)
++{
++  GtkWidget *group = adw_preferences_group_new ();
++  GtkWidget *same = switch_row (_("Same as Desktop Background"), NULL, LOGIN_SCHEMA, "use-desktop-background");
++  GtkWidget *picture = adw_action_row_new ();
++  GtkWidget *choose = gtk_button_new_with_mnemonic (_("_Add Picture…"));
++  GSettings *settings = settings_for (picture, LOGIN_SCHEMA);
++  AdwPreferencesGroup *g = ADW_PREFERENCES_GROUP (group);
++
++  adw_preferences_group_set_title (g, _("Login Screen"));
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (picture), _("Background"));
++  gtk_widget_set_valign (choose, GTK_ALIGN_CENTER);
++  adw_action_row_add_suffix (ADW_ACTION_ROW (picture), choose);
++  g_signal_connect_object (choose, "clicked", G_CALLBACK (login_choose_clicked), settings, 0);
++  g_signal_connect_object (settings, "changed", G_CALLBACK (login_picture_sync), picture, 0);
++  login_picture_sync (settings, "picture-uri", ADW_ACTION_ROW (picture));
++  adw_preferences_group_add (g, same);
++  adw_preferences_group_add (g, picture);
++  return g;
++}
++
+ void
+ cc_man_tweaks_add_appearance (AdwPreferencesPage *page)
+ {
++  if (schema_has_key (LOGIN_SCHEMA, "use-desktop-background"))
++    adw_preferences_page_add (page, login_group ());
+   if (schema_has_key (BLUR_SCHEMA ".panel", "blur"))
+     adw_preferences_page_add (page, blur_group ());
+   adw_preferences_page_add (page, fonts_group ());

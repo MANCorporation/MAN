@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="com.man.desktop.login" path="/com/man/desktop/login/">
+    <key name="use-desktop-background" type="b">
+      <default>true</default>
+      <summary>Login screen shows the desktop background</summary>
+      <description>When on, the login screen shows this user's desktop background. When off, it shows picture-uri.</description>
+    </key>
+    <key name="picture-uri" type="s">
+      <default>''</default>
+      <summary>Login screen picture</summary>
+      <description>The picture the login screen shows for this user when use-desktop-background is off.</description>
+    </key>
+  </schema>
+</schemalist>

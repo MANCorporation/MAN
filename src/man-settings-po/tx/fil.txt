@@ -38,95 +38,182 @@
 37|Double-Click
 38|Middle-Click
 39|Secondary-Click
-40|Super
-41|Alt
-42|Naka-disable
-43|Mga Window
-44|Ikabit ang mga Modal na Dialog
-45|Nananatiling nakakabit ang mga dialog sa window na nagbukas sa kanila
-46|Igitna ang mga Bagong Window
-47|Baguhin ang Laki gamit ang Secondary-Click
-48|Pindutin nang matagal ang window action key at i-drag gamit ang secondary na button
-49|Window Action Key
-50|Pindutin ito nang matagal para ilipat o baguhin ang laki ng window mula saanman sa loob nito
-51|Iangat ang mga Window Kapag Naka-focus
-52|Kapaki-pakinabang kapag nagfo-focus sa hover
-53|Karagdagang Opsyon sa Layout
-54|Dagdag na gawi ng mga key para sa lahat ng layout ng keyboard
-55|Default
-56|Mga opsyong naka-on: %u
-57|Kaliwang Super
-58|Kanang Super
-59|Iba pang Opsyon sa Keyboard
-60|Shortcut ng Overview
-61|Ang key na nagbubukas ng Activities overview
-62|Ipakita ang Pinalawak na mga Input Source
-63|Mag-alok ng mas maraming layout kapag nagdadagdag ng input source
-64|Emacs Input
-65|Mga key binding ng Emacs sa mga text field
-66|Gawi ng Caps Lock, paglipat ng layout, pagpapalit ng key, at iba pa
-67|Middle Click Paste
-68|I-paste ang napiling teksto gamit ang gitnang button
-69|Hanapin ang Pointer
-70|Pindutin ang Ctrl para ipakita kung nasaan ang pointer
-71|Takip ng Laptop
-72|I-suspend Kapag Isinara ang Takip
-73|I-off para patuloy na tumakbo ang computer, halimbawa kapag may external na screen
-74|Walang startup app
-75|Alisin
-76|Magdagdag ng Startup App
-77|Maghanap ng mga App
-78|Mga Startup App
-79|Magdagdag ng App
-80|Awtomatikong nagsisimula ang mga app na ito kapag nag-log in ka
-81|Mga _Startup App
-82|Piliin ang mga app na magsisimula kapag nag-log in ka
-83|Hindi kailanman
-84|Naghahanap ng mga Update…
-85|_Suriin Muli
-86|Up to Date ang MAN
-87|Ang MAN %s ang pinakabagong bersyon.
-88|Available na ang MAN %s
-89|Mayroon kang MAN %s. Laki ng download: %s.
-90|Ito ay isang bersyong TEST. Maaaring may mga bug ito.
-91|I-_download at I-install…
-92|Dina-download ang MAN %s…
-93|Maaari mong patuloy na gamitin ang computer. Ii-install ang update pagkatapos ng download.
-94|_Kanselahin
-95|Hindi Masuri ang mga Update
-96|Suriin ang iyong koneksyon sa internet at subukan muli.
-97|_Subukan Muli
-98|Nabigo ang Download
-99|Suriin ang iyong koneksyon sa internet at subukan muli. Magpapatuloy ang download kung saan ito huminto.
-100|Mai-install ang MAN %s kapag nag-restart ka
-101|Hindi Available Dito ang mga Update
-102|Ini-install ang mga update mula sa tumatakbo at naka-install na MAN, hindi mula sa live session.
-103|%s sa %s
-104|Mga Update
-105|Ano ang Bago
-106|Mga Awtomatikong Update
-107|Awtomatikong Maghanap ng mga Update
-108|Isang beses bawat araw, naghahanap ang MAN ng bagong bersyon at ipinapaalam sa iyo
-109|Huling Sinuri
-110|Mga beta na update
-111|Kunin ang mga bersyong TEST ng MAN bago ilabas ang mga ito. Maaaring may mga bug ang mga ito.
-112|Mag-_install ng Update File…
-113|Wala sa Sandbox
-114|Naka-sandbox
-115|May buong access ang app sa iyong mga file, device at sa system
-116|Magagamit lang ng app ang mga pahintulot na ibinigay rito
-117|Alisin ang sandbox ng “%s”?
-118|Magkakaroon ang app ng buong access sa computer na ito: sa lahat ng iyong file at sa mga file ng system, sa bawat device, sa network, at sa lahat ng serbisyo ng system. Makakapagpatakbo ito ng mga utos sa labas ng container nito at makakabasa o makakapagbago ng anumang naa-access ng iyong account.\n\nGawin lang ito para sa mga app na lubos mong pinagkakatiwalaan. Maaaring sirain ng mapanganib o may sirang app ang iyong system o nakawin ang iyong data.\n\nMaibabalik mo ang sandbox dito anumang oras. Kailangang i-restart ang app para mailapat ang pagbabago.
-119|_Magpatuloy
-120|Nabigo ang pagpapatunay. Walang nabago.
-121|Hindi mabago ang sandbox.
-122|Wala nang sandbox ang “%s”. I-restart ito para mailapat.
-123|Naibalik ang sandbox ng “%s”.
-124|Sandbox
-125|Tumatakbo nang hiwalay sa ibang bahagi ng system ang mga Flatpak app.
-126|_Alisin ang Sandbox…
-127|_Ibalik ang Sandbox
-128|Mag-donate sa MAN!
-129|Libre ang MAN, pero hindi libre ang pagpapanatili nito.
-130|Mag-_donate
-131|Maghanap at mag-install ng mga bagong bersyon ng MAN
+40|Ipakita ang dock
+41|Awtomatikong itago
+42|Nagbibigay-daan ang dock kapag kailangan ng window ang espasyo
+43|Dock
+44|Laki ng icon
+45|Ipakita sa lahat ng display
+46|Mga blur effect
+47|I-off ito sa mabagal na computer
+48|Blur
+49|Itaas na bar
+50|Pangkalahatang-ideya ng mga aktibidad
+51|Mga menu
+52|Lock screen
+53|Pag-aayos ng window
+54|Ayusin ang mga window sa mga layout. Pumili at mag-edit ng mga layout gamit ang button sa itaas na bar.
+55|Snap Assistant
+56|I-drag ang window sa itaas ng screen para piliin ang lugar nito
+57|Mag-snap sa mga gilid ng screen
+58|Awtomatikong pag-aayos
+59|Kusang pinupuno ng mga bagong window ang layout
+60|Ipakita ang button ng pag-aayos
+61|Espasyo sa pagitan ng mga window
+62|Espasyo sa mga gilid ng screen
+63|Background
+64|Kapareho ng background ng desktop
+65|_Magdagdag ng larawan…
+66|Screen sa pag-login
+67|Super
+68|Alt
+69|Naka-disable
+70|Mga Window
+71|Ikabit ang mga Modal na Dialog
+72|Nananatiling nakakabit ang mga dialog sa window na nagbukas sa kanila
+73|Igitna ang mga Bagong Window
+74|Baguhin ang Laki gamit ang Secondary-Click
+75|Pindutin nang matagal ang window action key at i-drag gamit ang secondary na button
+76|Window Action Key
+77|Pindutin ito nang matagal para ilipat o baguhin ang laki ng window mula saanman sa loob nito
+78|Iangat ang mga Window Kapag Naka-focus
+79|Kapaki-pakinabang kapag nagfo-focus sa hover
+80|Karagdagang Opsyon sa Layout
+81|Dagdag na gawi ng mga key para sa lahat ng layout ng keyboard
+82|Default
+83|Mga opsyong naka-on: %u
+84|Kaliwang Super
+85|Kanang Super
+86|Iba pang Opsyon sa Keyboard
+87|Shortcut ng Overview
+88|Ang key na nagbubukas ng Activities overview
+89|Ipakita ang Pinalawak na mga Input Source
+90|Mag-alok ng mas maraming layout kapag nagdadagdag ng input source
+91|Emacs Input
+92|Mga key binding ng Emacs sa mga text field
+93|Gawi ng Caps Lock, paglipat ng layout, pagpapalit ng key, at iba pa
+94|Middle Click Paste
+95|I-paste ang napiling teksto gamit ang gitnang button
+96|Hanapin ang Pointer
+97|Pindutin ang Ctrl para ipakita kung nasaan ang pointer
+98|Takip ng Laptop
+99|I-suspend Kapag Isinara ang Takip
+100|I-off para patuloy na tumakbo ang computer, halimbawa kapag may external na screen
+101|Walang startup app
+102|Alisin
+103|Magdagdag ng Startup App
+104|Maghanap ng mga App
+105|Mga Startup App
+106|Magdagdag ng App
+107|Awtomatikong nagsisimula ang mga app na ito kapag nag-log in ka
+108|Mga _Startup App
+109|Piliin ang mga app na magsisimula kapag nag-log in ka
+110|Hindi kailanman
+111|Naghahanap ng mga Update…
+112|_Suriin Muli
+113|Up to Date ang MAN
+114|Ang MAN %s ang pinakabagong bersyon.
+115|Available na ang MAN %s
+116|Mayroon kang MAN %s. Laki ng download: %s.
+117|Ito ay isang bersyong TEST. Maaaring may mga bug ito.
+118|I-_download at I-install…
+119|Dina-download ang MAN %s…
+120|Maaari mong patuloy na gamitin ang computer. Ii-install ang update pagkatapos ng download.
+121|_Kanselahin
+122|Hindi Masuri ang mga Update
+123|Suriin ang iyong koneksyon sa internet at subukan muli.
+124|_Subukan Muli
+125|Nabigo ang Download
+126|Suriin ang iyong koneksyon sa internet at subukan muli. Magpapatuloy ang download kung saan ito huminto.
+127|Mai-install ang MAN %s kapag nag-restart ka
+128|Hindi Available Dito ang mga Update
+129|Ini-install ang mga update mula sa tumatakbo at naka-install na MAN, hindi mula sa live session.
+130|%s sa %s
+131|Mga Update
+132|Ano ang Bago
+133|Mga Awtomatikong Update
+134|Awtomatikong Maghanap ng mga Update
+135|Isang beses bawat araw, naghahanap ang MAN ng bagong bersyon at ipinapaalam sa iyo
+136|Huling Sinuri
+137|Mga beta na update
+138|Kunin ang mga bersyong TEST ng MAN bago ilabas ang mga ito. Maaaring may mga bug ang mga ito.
+139|Mag-_install ng Update File…
+140|WebDAV (Nextcloud, ownCloud at iba pa)
+141|Amazon S3 at Compatible na Storage
+142|Windows Share (SMB)
+143|Mga Cloud Drive
+144|Alisin ang “%s”?
+145|Mananatili sa cloud ang iyong mga file. Hindi na ipapakita ng computer na ito ang mga ito, at buburahin ang mga kopya nito.
+146|_Alisin
+147|Nakakonekta
+148|Hindi makakonekta. Sinusubukang muli…
+149|Kumokonekta…
+150|Hindi ipinapakita sa Files
+151|Buksan sa Files
+152|Address ng Server
+153|Server
+154|User Name
+155|Password
+156|Two-Factor Code
+157|Provider
+158|Uri ng Server
+159|Rehiyon
+160|Endpoint
+161|Access Key ID
+162|Secret Access Key
+163|Account
+164|Key
+165|API Key
+166|Email
+167|Apple ID
+168|Domain
+169|Port
+170|Access
+171|Iba pa
+172|_Bumalik
+173|Hindi Maidagdag ang Drive
+174|Suriin ang inilagay mo at ang koneksyon mo sa internet, pagkatapos ay subukang muli.
+175|Mag-log In sa %s
+176|_Buksan Muli ang Login Page
+177|Binuksan ng iyong web browser ang login page. Mag-log in doon at payagan ang access, pagkatapos ay bumalik dito. Kusang magpapatuloy ang page na ito.
+178|_Magpatuloy
+179|Isa Pang Hakbang
+180|Sine-set up ang drive…
+181|Binubuksan ang login page…
+182|Magla-log in ka gamit ang web browser. Hindi kailanman inilalagay dito ang iyong password.
+183|Ilagay ang mga detalye ng iyong account. Itinatago ang mga ito sa iyong home folder.
+184|Pangalan sa Files
+185|Higit pang Opsyon
+186|_Mag-log In
+187|_Kumonekta
+188|Hindi Available ang Mga Cloud Drive
+189|Hindi naka-install ang rclone, na kumokonekta sa mga cloud drive.
+190|_OK
+191|Maghanap ng provider
+192|Sikat
+193|Lahat ng Provider
+194|Mag-log in gamit ang iyong browser
+195|Magdagdag ng Cloud Drive
+196|Ang iyong cloud storage, nasa Files. Kusang kumokonekta ang bawat drive tuwing magla-log in ka.
+197|Wala pang cloud drive
+198|_Magdagdag ng Cloud Drive…
+199|Wala sa Sandbox
+200|Naka-sandbox
+201|May buong access ang app sa iyong mga file, device at sa system
+202|Magagamit lang ng app ang mga pahintulot na ibinigay rito
+203|Alisin ang sandbox ng “%s”?
+204|Magkakaroon ang app ng buong access sa computer na ito: sa lahat ng iyong file at sa mga file ng system, sa bawat device, sa network, at sa lahat ng serbisyo ng system. Makakapagpatakbo ito ng mga utos sa labas ng container nito at makakabasa o makakapagbago ng anumang naa-access ng iyong account.\n\nGawin lang ito para sa mga app na lubos mong pinagkakatiwalaan. Maaaring sirain ng mapanganib o may sirang app ang iyong system o nakawin ang iyong data.\n\nMaibabalik mo ang sandbox dito anumang oras. Kailangang i-restart ang app para mailapat ang pagbabago.
+205|_Magpatuloy
+206|Nabigo ang pagpapatunay. Walang nabago.
+207|Hindi mabago ang sandbox.
+208|Wala nang sandbox ang “%s”. I-restart ito para mailapat.
+209|Naibalik ang sandbox ng “%s”.
+210|Sandbox
+211|Tumatakbo nang hiwalay sa ibang bahagi ng system ang mga Flatpak app.
+212|_Alisin ang Sandbox…
+213|_Ibalik ang Sandbox
+214|Mag-donate sa MAN!
+215|Libre ang MAN, pero hindi libre ang pagpapanatili nito.
+216|Mag-_donate
+217|Maghanap at mag-install ng mga bagong bersyon ng MAN
+218|Ipakita ang Google Drive, OneDrive, Dropbox at iba pang cloud storage sa Files

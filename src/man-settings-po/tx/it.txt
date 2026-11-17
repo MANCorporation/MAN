@@ -38,95 +38,182 @@
 37|Doppio clic
 38|Clic centrale
 39|Clic secondario
-40|Super
-41|Alt
-42|Disattivato
-43|Finestre
-44|Collega le finestre di dialogo modali
-45|Le finestre di dialogo restano collegate alla finestra che le ha aperte
-46|Centra le nuove finestre
-47|Ridimensiona con il clic secondario
-48|Tieni premuto il tasto azione finestra e trascina con il pulsante secondario
-49|Tasto azione finestra
-50|Tienilo premuto per spostare o ridimensionare le finestre da qualsiasi punto al loro interno
-51|Porta in primo piano le finestre attivate
-52|Utile con il focus al passaggio del mouse
-53|Opzioni aggiuntive del layout
-54|Comportamenti aggiuntivi dei tasti per tutti i layout di tastiera
-55|Predefinito
-56|Opzioni attive: %u
-57|Super sinistro
-58|Super destro
-59|Altre opzioni della tastiera
-60|Scorciatoia della panoramica
-61|Il tasto che apre la panoramica delle Attività
-62|Mostra sorgenti di input estese
-63|Offri più layout quando si aggiunge una sorgente di input
-64|Input di Emacs
-65|Scorciatoie di Emacs nei campi di testo
-66|Comportamento di Bloc Maiusc, cambio di layout, scambio di tasti e altro
-67|Incolla con il clic centrale
-68|Incolla il testo selezionato con il pulsante centrale
-69|Individua il puntatore
-70|Premi Ctrl per mostrare dove si trova il puntatore
-71|Coperchio del portatile
-72|Sospendi alla chiusura del coperchio
-73|Disattiva per lasciare acceso il computer, per esempio con uno schermo esterno
-74|Nessuna applicazione all'avvio
-75|Rimuovi
-76|Aggiungi applicazione all'avvio
-77|Cerca applicazioni
-78|Applicazioni all'avvio
-79|Aggiungi applicazione
-80|Queste applicazioni si avviano automaticamente all'accesso
-81|_Applicazioni all'avvio
-82|Scegli le applicazioni che si avviano all'accesso
-83|Mai
-84|Ricerca di aggiornamenti…
-85|_Controlla di nuovo
-86|MAN è aggiornato
-87|MAN %s è la versione più recente.
-88|MAN %s è disponibile
-89|Hai MAN %s. Dimensione del download: %s.
-90|Questa è una versione TEST. Può contenere errori.
-91|_Scarica e installa…
-92|Download di MAN %s…
-93|Puoi continuare a usare il computer. L'aggiornamento viene installato dopo il download.
-94|_Annulla
-95|Impossibile cercare aggiornamenti
-96|Controlla la connessione a Internet e riprova.
-97|_Riprova
-98|Il download non è riuscito
-99|Controlla la connessione a Internet e riprova. Il download riprende da dove si era fermato.
-100|MAN %s verrà installato al riavvio
-101|Gli aggiornamenti non sono disponibili qui
-102|Gli aggiornamenti si installano da un sistema MAN installato e in esecuzione, non dalla sessione live.
-103|%s di %s
-104|Aggiornamenti
-105|Novità
-106|Aggiornamenti automatici
-107|Cerca aggiornamenti automaticamente
-108|Una volta al giorno MAN cerca una nuova versione e ti avvisa
-109|Ultimo controllo
-110|Aggiornamenti beta
-111|Ricevi le versioni TEST di MAN prima del rilascio. Possono contenere errori.
-112|_Installa un file di aggiornamento…
-113|Fuori dalla sandbox
-114|In sandbox
-115|L'applicazione ha accesso completo ai tuoi file, ai dispositivi e al sistema
-116|L'applicazione può usare solo i permessi che le sono stati dati
-117|Togliere «%s» dalla sandbox?
-118|L'applicazione avrà accesso completo a questo computer: a tutti i tuoi file e ai file di sistema, a ogni dispositivo, alla rete e a tutti i servizi di sistema. Potrà eseguire comandi fuori dal suo contenitore e leggere o cambiare qualsiasi cosa a cui il tuo account può accedere.\n\nFallo solo per applicazioni di cui ti fidi completamente. Un'applicazione dannosa o difettosa potrebbe danneggiare il sistema o rubare i tuoi dati.\n\nPuoi ripristinare la sandbox qui in qualsiasi momento. Per applicare la modifica bisogna riavviare l'applicazione.
-119|_Procedi
-120|Autenticazione non riuscita. Non è stato cambiato nulla.
-121|Impossibile cambiare la sandbox.
-122|«%s» è fuori dalla sandbox. Riavviala per applicare.
-123|La sandbox di «%s» è stata ripristinata.
-124|Sandbox
-125|Le applicazioni Flatpak sono isolate dal resto del sistema.
-126|_Togli dalla sandbox…
-127|_Ripristina la sandbox
-128|Fai una donazione a MAN!
-129|MAN è gratuito, ma mantenerlo non lo è.
-130|_Dona
-131|Cerca e installa le nuove versioni di MAN
+40|Mostra il dock
+41|Nascondi automaticamente
+42|Il dock fa spazio quando una finestra ne ha bisogno
+43|Dock
+44|Dimensione icone
+45|Mostra su tutti gli schermi
+46|Effetti di sfocatura
+47|Disattivalo sui computer lenti
+48|Sfocatura
+49|Barra superiore
+50|Panoramica attività
+51|Menu
+52|Schermata di blocco
+53|Disposizione finestre
+54|Disponi le finestre in layout. Scegli e modifica i layout con il pulsante nella barra superiore.
+55|Assistente di aggancio
+56|Trascina una finestra in cima allo schermo per sceglierne il posto
+57|Aggancia ai bordi dello schermo
+58|Disposizione automatica
+59|Le nuove finestre riempiono il layout da sole
+60|Mostra il pulsante di disposizione
+61|Spazio tra le finestre
+62|Spazio ai bordi dello schermo
+63|Sfondo
+64|Come lo sfondo della scrivania
+65|_Aggiungi immagine…
+66|Schermata di accesso
+67|Super
+68|Alt
+69|Disattivato
+70|Finestre
+71|Collega le finestre di dialogo modali
+72|Le finestre di dialogo restano collegate alla finestra che le ha aperte
+73|Centra le nuove finestre
+74|Ridimensiona con il clic secondario
+75|Tieni premuto il tasto azione finestra e trascina con il pulsante secondario
+76|Tasto azione finestra
+77|Tienilo premuto per spostare o ridimensionare le finestre da qualsiasi punto al loro interno
+78|Porta in primo piano le finestre attivate
+79|Utile con il focus al passaggio del mouse
+80|Opzioni aggiuntive del layout
+81|Comportamenti aggiuntivi dei tasti per tutti i layout di tastiera
+82|Predefinito
+83|Opzioni attive: %u
+84|Super sinistro
+85|Super destro
+86|Altre opzioni della tastiera
+87|Scorciatoia della panoramica
+88|Il tasto che apre la panoramica delle Attività
+89|Mostra sorgenti di input estese
+90|Offri più layout quando si aggiunge una sorgente di input
+91|Input di Emacs
+92|Scorciatoie di Emacs nei campi di testo
+93|Comportamento di Bloc Maiusc, cambio di layout, scambio di tasti e altro
+94|Incolla con il clic centrale
+95|Incolla il testo selezionato con il pulsante centrale
+96|Individua il puntatore
+97|Premi Ctrl per mostrare dove si trova il puntatore
+98|Coperchio del portatile
+99|Sospendi alla chiusura del coperchio
+100|Disattiva per lasciare acceso il computer, per esempio con uno schermo esterno
+101|Nessuna applicazione all'avvio
+102|Rimuovi
+103|Aggiungi applicazione all'avvio
+104|Cerca applicazioni
+105|Applicazioni all'avvio
+106|Aggiungi applicazione
+107|Queste applicazioni si avviano automaticamente all'accesso
+108|_Applicazioni all'avvio
+109|Scegli le applicazioni che si avviano all'accesso
+110|Mai
+111|Ricerca di aggiornamenti…
+112|_Controlla di nuovo
+113|MAN è aggiornato
+114|MAN %s è la versione più recente.
+115|MAN %s è disponibile
+116|Hai MAN %s. Dimensione del download: %s.
+117|Questa è una versione TEST. Può contenere errori.
+118|_Scarica e installa…
+119|Download di MAN %s…
+120|Puoi continuare a usare il computer. L'aggiornamento viene installato dopo il download.
+121|_Annulla
+122|Impossibile cercare aggiornamenti
+123|Controlla la connessione a Internet e riprova.
+124|_Riprova
+125|Il download non è riuscito
+126|Controlla la connessione a Internet e riprova. Il download riprende da dove si era fermato.
+127|MAN %s verrà installato al riavvio
+128|Gli aggiornamenti non sono disponibili qui
+129|Gli aggiornamenti si installano da un sistema MAN installato e in esecuzione, non dalla sessione live.
+130|%s di %s
+131|Aggiornamenti
+132|Novità
+133|Aggiornamenti automatici
+134|Cerca aggiornamenti automaticamente
+135|Una volta al giorno MAN cerca una nuova versione e ti avvisa
+136|Ultimo controllo
+137|Aggiornamenti beta
+138|Ricevi le versioni TEST di MAN prima del rilascio. Possono contenere errori.
+139|_Installa un file di aggiornamento…
+140|WebDAV (Nextcloud, ownCloud e altri)
+141|Amazon S3 e archiviazione compatibile
+142|Condivisione Windows (SMB)
+143|Unità cloud
+144|Rimuovere «%s»?
+145|I tuoi file restano nel cloud. Questo computer smette di mostrarli e le sue copie vengono eliminate.
+146|_Rimuovi
+147|Connessa
+148|Impossibile connettersi. Nuovo tentativo…
+149|Connessione…
+150|Non mostrata in File
+151|Apri in File
+152|Indirizzo del server
+153|Server
+154|Nome utente
+155|Password
+156|Codice a due fattori
+157|Provider
+158|Tipo di server
+159|Regione
+160|Endpoint
+161|ID chiave di accesso
+162|Chiave di accesso segreta
+163|Account
+164|Chiave
+165|Chiave API
+166|Email
+167|ID Apple
+168|Dominio
+169|Porta
+170|Accesso
+171|Altro
+172|_Indietro
+173|Impossibile aggiungere l'unità
+174|Controlla i dati inseriti e la connessione a Internet, poi riprova.
+175|Accedi a %s
+176|_Riapri la pagina di accesso
+177|Il browser ha aperto la pagina di accesso. Accedi e consenti l'accesso, poi torna qui. Questa pagina prosegue da sola.
+178|_Continua
+179|Ancora un passaggio
+180|Configurazione dell'unità…
+181|Apertura della pagina di accesso…
+182|Accedi con il browser. La password non viene mai inserita qui.
+183|Inserisci i dati del tuo account. Vengono conservati nella tua cartella home.
+184|Nome in File
+185|Altre opzioni
+186|_Accedi
+187|_Connetti
+188|Le unità cloud non sono disponibili
+189|rclone, che connette le unità cloud, non è installato.
+190|_OK
+191|Cerca provider
+192|Popolari
+193|Tutti i provider
+194|Accedi con il browser
+195|Aggiungi unità cloud
+196|Il tuo spazio cloud, in File. Ogni unità si connette da sola a ogni accesso.
+197|Ancora nessuna unità cloud
+198|_Aggiungi unità cloud…
+199|Fuori dalla sandbox
+200|In sandbox
+201|L'applicazione ha accesso completo ai tuoi file, ai dispositivi e al sistema
+202|L'applicazione può usare solo i permessi che le sono stati dati
+203|Togliere «%s» dalla sandbox?
+204|L'applicazione avrà accesso completo a questo computer: a tutti i tuoi file e ai file di sistema, a ogni dispositivo, alla rete e a tutti i servizi di sistema. Potrà eseguire comandi fuori dal suo contenitore e leggere o cambiare qualsiasi cosa a cui il tuo account può accedere.\n\nFallo solo per applicazioni di cui ti fidi completamente. Un'applicazione dannosa o difettosa potrebbe danneggiare il sistema o rubare i tuoi dati.\n\nPuoi ripristinare la sandbox qui in qualsiasi momento. Per applicare la modifica bisogna riavviare l'applicazione.
+205|_Procedi
+206|Autenticazione non riuscita. Non è stato cambiato nulla.
+207|Impossibile cambiare la sandbox.
+208|«%s» è fuori dalla sandbox. Riavviala per applicare.
+209|La sandbox di «%s» è stata ripristinata.
+210|Sandbox
+211|Le applicazioni Flatpak sono isolate dal resto del sistema.
+212|_Togli dalla sandbox…
+213|_Ripristina la sandbox
+214|Fai una donazione a MAN!
+215|MAN è gratuito, ma mantenerlo non lo è.
+216|_Dona
+217|Cerca e installa le nuove versioni di MAN
+218|Mostra Google Drive, OneDrive, Dropbox e altri spazi cloud in File

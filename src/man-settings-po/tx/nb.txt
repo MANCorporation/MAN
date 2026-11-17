@@ -38,95 +38,182 @@
 37|Dobbeltklikk
 38|Midtklikk
 39|Høyreklikk
-40|Super
-41|Alt
-42|Deaktivert
-43|Vinduer
-44|Fest modale dialoger
-45|Dialoger blir festet til vinduet som åpnet dem
-46|Sentrer nye vinduer
-47|Endre størrelse med høyreklikk
-48|Hold inne vindushandlingstasten og dra med høyre museknapp
-49|Vindushandlingstast
-50|Hold den inne for å flytte eller endre størrelse på vinduer fra hvor som helst inni dem
-51|Hev vinduer når de får fokus
-52|Nyttig med fokus ved peking
-53|Flere oppsettsvalg
-54|Ekstra oppførsel for taster i alle tastaturoppsett
-55|Standard
-56|Påslåtte valg: %u
-57|Venstre Super
-58|Høyre Super
-59|Flere tastaturvalg
-60|Snarvei til oversikten
-61|Tasten som åpner Aktivitetsoversikten
-62|Vis utvidede inndatakilder
-63|Tilby flere oppsett når en inndatakilde legges til
-64|Emacs-inndata
-65|Emacs-tastatursnarveier i tekstfelt
-66|Caps Lock-oppførsel, bytte av oppsett, bytte av taster og mer
-67|Lim inn med midtklikk
-68|Lim inn den merkede teksten med midtknappen
-69|Finn pekeren
-70|Trykk Ctrl for å vise hvor pekeren er
-71|Lokket på bærbar datamaskin
-72|Hvilemodus når lokket lukkes
-73|Slå av for å la datamaskinen kjøre videre, for eksempel med en ekstern skjerm
-74|Ingen oppstartsprogrammer
-75|Fjern
-76|Legg til oppstartsprogram
-77|Søk etter programmer
-78|Oppstartsprogrammer
-79|Legg til program
-80|Disse programmene starter automatisk når du logger inn
-81|_Oppstartsprogrammer
-82|Velg programmer som starter når du logger inn
-83|Aldri
-84|Ser etter oppdateringer …
-85|_Sjekk igjen
-86|MAN er oppdatert
-87|MAN %s er den nyeste versjonen.
-88|MAN %s er tilgjengelig
-89|Du har MAN %s. Nedlastingsstørrelse: %s.
-90|Dette er en TEST-versjon. Den kan ha feil.
-91|_Last ned og installer …
-92|Laster ned MAN %s …
-93|Du kan fortsette å bruke datamaskinen. Oppdateringen installeres etter nedlastingen.
-94|_Avbryt
-95|Kunne ikke se etter oppdateringer
-96|Sjekk internettilkoblingen og prøv igjen.
-97|_Prøv igjen
-98|Nedlastingen mislyktes
-99|Sjekk internettilkoblingen og prøv igjen. Nedlastingen fortsetter der den stoppet.
-100|MAN %s installeres når du starter på nytt
-101|Oppdateringer er ikke tilgjengelige her
-102|Oppdateringer installeres fra et kjørende, installert MAN-system, ikke fra live-økten.
-103|%s av %s
-104|Oppdateringer
-105|Nyheter
-106|Automatiske oppdateringer
-107|Se etter oppdateringer automatisk
-108|Én gang om dagen ser MAN etter en ny versjon og gir deg beskjed
-109|Sist sjekket
-110|Betaoppdateringer
-111|Få TEST-versjoner av MAN før de blir utgitt. De kan ha feil.
-112|_Installer en oppdateringsfil …
-113|Uten sandkasse
-114|I sandkasse
-115|Programmet har full tilgang til filene dine, enhetene og systemet
-116|Programmet kan bare bruke tillatelsene det har fått
-117|Ta «%s» ut av sandkassen?
-118|Programmet får full tilgang til denne datamaskinen: alle filene dine og systemfilene, alle enheter, nettverket og alle systemtjenester. Det kan kjøre kommandoer utenfor beholderen sin og lese eller endre alt kontoen din har tilgang til.\n\nGjør dette bare for programmer du stoler fullt på. Et skadelig eller feilaktig program kan ødelegge systemet eller stjele dataene dine.\n\nDu kan gjenopprette sandkassen her når som helst. Programmet må startes på nytt for at endringen skal gjelde.
-119|_Fortsett
-120|Autentiseringen mislyktes. Ingenting ble endret.
-121|Sandkassen kunne ikke endres.
-122|«%s» kjører uten sandkasse. Start programmet på nytt for å ta det i bruk.
-123|Sandkassen for «%s» er gjenopprettet.
-124|Sandkasse
-125|Flatpak-programmer kjører isolert fra resten av systemet.
-126|_Ta ut av sandkassen …
-127|_Gjenopprett sandkassen
-128|Doner til MAN!
-129|MAN er gratis, men vedlikeholdet er ikke det.
-130|_Doner
-131|Se etter og installer nye versjoner av MAN
+40|Vis dokk
+41|Skjul automatisk
+42|Dokken gir plass når et vindu trenger det
+43|Dokk
+44|Ikonstørrelse
+45|Vis på alle skjermer
+46|Sløringseffekter
+47|Slå av dette på trege datamaskiner
+48|Sløring
+49|Øverste felt
+50|Aktivitetsoversikt
+51|Menyer
+52|Låseskjerm
+53|Vindusinndeling
+54|Ordne vinduer i oppsett. Velg og rediger oppsett med knappen i øverste felt.
+55|Festeassistent
+56|Dra et vindu til toppen av skjermen for å velge plassen
+57|Fest ved skjermkanter
+58|Automatisk inndeling
+59|Nye vinduer fyller oppsettet av seg selv
+60|Vis inndelingsknapp
+61|Mellomrom mellom vinduer
+62|Mellomrom ved skjermkanter
+63|Bakgrunn
+64|Samme som skrivebordsbakgrunnen
+65|_Legg til bilde…
+66|Innloggingsskjerm
+67|Super
+68|Alt
+69|Deaktivert
+70|Vinduer
+71|Fest modale dialoger
+72|Dialoger blir festet til vinduet som åpnet dem
+73|Sentrer nye vinduer
+74|Endre størrelse med høyreklikk
+75|Hold inne vindushandlingstasten og dra med høyre museknapp
+76|Vindushandlingstast
+77|Hold den inne for å flytte eller endre størrelse på vinduer fra hvor som helst inni dem
+78|Hev vinduer når de får fokus
+79|Nyttig med fokus ved peking
+80|Flere oppsettsvalg
+81|Ekstra oppførsel for taster i alle tastaturoppsett
+82|Standard
+83|Påslåtte valg: %u
+84|Venstre Super
+85|Høyre Super
+86|Flere tastaturvalg
+87|Snarvei til oversikten
+88|Tasten som åpner Aktivitetsoversikten
+89|Vis utvidede inndatakilder
+90|Tilby flere oppsett når en inndatakilde legges til
+91|Emacs-inndata
+92|Emacs-tastatursnarveier i tekstfelt
+93|Caps Lock-oppførsel, bytte av oppsett, bytte av taster og mer
+94|Lim inn med midtklikk
+95|Lim inn den merkede teksten med midtknappen
+96|Finn pekeren
+97|Trykk Ctrl for å vise hvor pekeren er
+98|Lokket på bærbar datamaskin
+99|Hvilemodus når lokket lukkes
+100|Slå av for å la datamaskinen kjøre videre, for eksempel med en ekstern skjerm
+101|Ingen oppstartsprogrammer
+102|Fjern
+103|Legg til oppstartsprogram
+104|Søk etter programmer
+105|Oppstartsprogrammer
+106|Legg til program
+107|Disse programmene starter automatisk når du logger inn
+108|_Oppstartsprogrammer
+109|Velg programmer som starter når du logger inn
+110|Aldri
+111|Ser etter oppdateringer …
+112|_Sjekk igjen
+113|MAN er oppdatert
+114|MAN %s er den nyeste versjonen.
+115|MAN %s er tilgjengelig
+116|Du har MAN %s. Nedlastingsstørrelse: %s.
+117|Dette er en TEST-versjon. Den kan ha feil.
+118|_Last ned og installer …
+119|Laster ned MAN %s …
+120|Du kan fortsette å bruke datamaskinen. Oppdateringen installeres etter nedlastingen.
+121|_Avbryt
+122|Kunne ikke se etter oppdateringer
+123|Sjekk internettilkoblingen og prøv igjen.
+124|_Prøv igjen
+125|Nedlastingen mislyktes
+126|Sjekk internettilkoblingen og prøv igjen. Nedlastingen fortsetter der den stoppet.
+127|MAN %s installeres når du starter på nytt
+128|Oppdateringer er ikke tilgjengelige her
+129|Oppdateringer installeres fra et kjørende, installert MAN-system, ikke fra live-økten.
+130|%s av %s
+131|Oppdateringer
+132|Nyheter
+133|Automatiske oppdateringer
+134|Se etter oppdateringer automatisk
+135|Én gang om dagen ser MAN etter en ny versjon og gir deg beskjed
+136|Sist sjekket
+137|Betaoppdateringer
+138|Få TEST-versjoner av MAN før de blir utgitt. De kan ha feil.
+139|_Installer en oppdateringsfil …
+140|WebDAV (Nextcloud, ownCloud og andre)
+141|Amazon S3 og kompatibel lagring
+142|Windows-deling (SMB)
+143|Skydisker
+144|Fjerne «%s»?
+145|Filene dine blir i skyen. Denne datamaskinen slutter å vise dem, og kopiene dens slettes.
+146|_Fjern
+147|Tilkoblet
+148|Kan ikke koble til. Prøver igjen…
+149|Kobler til…
+150|Vises ikke i Filer
+151|Åpne i Filer
+152|Serveradresse
+153|Server
+154|Brukernavn
+155|Passord
+156|Tofaktorkode
+157|Leverandør
+158|Servertype
+159|Region
+160|Endepunkt
+161|Tilgangsnøkkel-ID
+162|Hemmelig tilgangsnøkkel
+163|Konto
+164|Nøkkel
+165|API-nøkkel
+166|E-post
+167|Apple-ID
+168|Domene
+169|Port
+170|Tilgang
+171|Annet
+172|_Tilbake
+173|Kunne ikke legge til disken
+174|Sjekk det du skrev inn og internettforbindelsen, og prøv igjen.
+175|Logg inn på %s
+176|_Åpne innloggingssiden igjen
+177|Nettleseren åpnet innloggingssiden. Logg inn der og gi tilgang, og kom så tilbake hit. Denne siden fortsetter av seg selv.
+178|_Fortsett
+179|Ett trinn til
+180|Setter opp disken…
+181|Åpner innloggingssiden…
+182|Du logger inn med nettleseren. Passordet ditt skrives aldri inn her.
+183|Skriv inn opplysningene om kontoen din. De lagres i hjemmemappen din.
+184|Navn i Filer
+185|Flere alternativer
+186|_Logg inn
+187|_Koble til
+188|Skydisker er ikke tilgjengelige
+189|rclone, som kobler til skydisker, er ikke installert.
+190|_OK
+191|Søk etter leverandører
+192|Populære
+193|Alle leverandører
+194|Logg inn med nettleseren
+195|Legg til skydisk
+196|Skylagringen din i Filer. Hver disk kobler seg til av seg selv hver gang du logger inn.
+197|Ingen skydisker ennå
+198|_Legg til skydisk…
+199|Uten sandkasse
+200|I sandkasse
+201|Programmet har full tilgang til filene dine, enhetene og systemet
+202|Programmet kan bare bruke tillatelsene det har fått
+203|Ta «%s» ut av sandkassen?
+204|Programmet får full tilgang til denne datamaskinen: alle filene dine og systemfilene, alle enheter, nettverket og alle systemtjenester. Det kan kjøre kommandoer utenfor beholderen sin og lese eller endre alt kontoen din har tilgang til.\n\nGjør dette bare for programmer du stoler fullt på. Et skadelig eller feilaktig program kan ødelegge systemet eller stjele dataene dine.\n\nDu kan gjenopprette sandkassen her når som helst. Programmet må startes på nytt for at endringen skal gjelde.
+205|_Fortsett
+206|Autentiseringen mislyktes. Ingenting ble endret.
+207|Sandkassen kunne ikke endres.
+208|«%s» kjører uten sandkasse. Start programmet på nytt for å ta det i bruk.
+209|Sandkassen for «%s» er gjenopprettet.
+210|Sandkasse
+211|Flatpak-programmer kjører isolert fra resten av systemet.
+212|_Ta ut av sandkassen …
+213|_Gjenopprett sandkassen
+214|Doner til MAN!
+215|MAN er gratis, men vedlikeholdet er ikke det.
+216|_Doner
+217|Se etter og installer nye versjoner av MAN
+218|Vis Google Drive, OneDrive, Dropbox og annen skylagring i Filer

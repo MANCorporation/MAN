@@ -38,95 +38,182 @@
 37|Podwójne kliknięcie
 38|Kliknięcie środkowym przyciskiem
 39|Kliknięcie prawym przyciskiem
-40|Super
-41|Alt
-42|Wyłączone
-43|Okna
-44|Dołączaj okna modalne
-45|Okna dialogowe pozostają przy oknie, które je otworzyło
-46|Wyśrodkowuj nowe okna
-47|Zmiana rozmiaru prawym przyciskiem
-48|Przytrzymaj klawisz działań okien i przeciągnij prawym przyciskiem
-49|Klawisz działań okien
-50|Przytrzymaj go, aby przenosić okna lub zmieniać ich rozmiar z dowolnego miejsca wewnątrz
-51|Wysuwaj okna na wierzch po aktywacji
-52|Przydatne z aktywacją po najechaniu
-53|Dodatkowe opcje układu
-54|Dodatkowe zachowanie klawiszy dla wszystkich układów klawiatury
-55|Domyślne
-56|Włączone opcje: %u
-57|Lewy Super
-58|Prawy Super
-59|Więcej opcji klawiatury
-60|Skrót przeglądu
-61|Klawisz otwierający przegląd Podglądu
-62|Wyświetlanie rozszerzonych źródeł wprowadzania
-63|Oferuj więcej układów podczas dodawania źródła wprowadzania
-64|Wprowadzanie jak w Emacsie
-65|Skróty klawiszowe Emacsa w polach tekstowych
-66|Działanie Caps Lock, przełączanie układów, zamiana klawiszy i inne
-67|Wklejanie środkowym przyciskiem
-68|Wklej zaznaczony tekst środkowym przyciskiem myszy
-69|Wskazywanie kursora
-70|Naciśnij Ctrl, aby pokazać, gdzie jest kursor
-71|Pokrywa laptopa
-72|Usypianie po zamknięciu pokrywy
-73|Wyłącz, aby komputer dalej działał, na przykład z zewnętrznym ekranem
-74|Brak aplikacji startowych
-75|Usuń
-76|Dodaj aplikację startową
-77|Wyszukaj aplikacje
-78|Aplikacje startowe
-79|Dodaj aplikację
-80|Te aplikacje uruchamiają się automatycznie po zalogowaniu
-81|_Aplikacje startowe
-82|Wybierz aplikacje uruchamiane po zalogowaniu
-83|Nigdy
-84|Wyszukiwanie aktualizacji…
-85|_Sprawdź ponownie
-86|MAN jest aktualny
-87|MAN %s to najnowsza wersja.
-88|Dostępny jest MAN %s
-89|Masz MAN %s. Rozmiar pobierania: %s.
-90|To jest wersja TEST. Może zawierać błędy.
-91|_Pobierz i zainstaluj…
-92|Pobieranie MAN %s…
-93|Możesz dalej korzystać z komputera. Aktualizacja zostanie zainstalowana po pobraniu.
-94|_Anuluj
-95|Nie można wyszukać aktualizacji
-96|Sprawdź połączenie z Internetem i spróbuj ponownie.
-97|_Spróbuj ponownie
-98|Pobieranie się nie powiodło
-99|Sprawdź połączenie z Internetem i spróbuj ponownie. Pobieranie zostanie wznowione od miejsca przerwania.
-100|MAN %s zostanie zainstalowany po ponownym uruchomieniu
-101|Aktualizacje nie są tutaj dostępne
-102|Aktualizacje instaluje się z działającego, zainstalowanego systemu MAN, a nie z sesji live.
-103|%s z %s
-104|Aktualizacje
-105|Co nowego
-106|Automatyczne aktualizacje
-107|Automatyczne wyszukiwanie aktualizacji
-108|Raz dziennie MAN sprawdza, czy jest nowa wersja, i daje znać
-109|Ostatnie sprawdzenie
-110|Aktualizacje beta
-111|Otrzymuj wersje TEST systemu MAN przed ich wydaniem. Mogą zawierać błędy.
-112|_Zainstaluj plik aktualizacji…
-113|Poza piaskownicą
-114|W piaskownicy
-115|Aplikacja ma pełny dostęp do Twoich plików, urządzeń i systemu
-116|Aplikacja może korzystać tylko z przyznanych jej uprawnień
-117|Wyjąć „%s” z piaskownicy?
-118|Aplikacja uzyska pełny dostęp do tego komputera: do wszystkich Twoich plików i plików systemowych, każdego urządzenia, sieci i wszystkich usług systemowych. Będzie mogła uruchamiać polecenia poza swoim kontenerem oraz odczytywać i zmieniać wszystko, do czego ma dostęp Twoje konto.\n\nRób to tylko dla aplikacji, którym w pełni ufasz. Szkodliwa lub błędna aplikacja mogłaby uszkodzić system lub wykraść Twoje dane.\n\nPiaskownicę możesz tu przywrócić w każdej chwili. Aby zmiana zadziałała, aplikację trzeba uruchomić ponownie.
-119|_Kontynuuj
-120|Uwierzytelnienie się nie powiodło. Niczego nie zmieniono.
-121|Nie można zmienić piaskownicy.
-122|„%s” działa poza piaskownicą. Uruchom ją ponownie, aby zastosować.
-123|Przywrócono piaskownicę aplikacji „%s”.
-124|Piaskownica
-125|Aplikacje Flatpak działają odizolowane od reszty systemu.
-126|_Wyjmij z piaskownicy…
-127|_Przywróć piaskownicę
-128|Wesprzyj MAN!
-129|MAN jest darmowy, ale jego utrzymanie nie.
-130|_Wesprzyj
-131|Wyszukiwanie i instalowanie nowych wersji MAN
+40|Pokaż dok
+41|Ukrywaj automatycznie
+42|Dok robi miejsce, gdy potrzebuje go okno
+43|Dok
+44|Rozmiar ikon
+45|Pokaż na wszystkich ekranach
+46|Efekty rozmycia
+47|Wyłącz to na wolnych komputerach
+48|Rozmycie
+49|Górny pasek
+50|Podgląd czynności
+51|Menu
+52|Ekran blokady
+53|Układanie okien
+54|Układaj okna w układach. Wybieraj i edytuj układy przyciskiem na górnym pasku.
+55|Asystent przyciągania
+56|Przeciągnij okno na górę ekranu, aby wybrać jego miejsce
+57|Przyciągaj do krawędzi ekranu
+58|Automatyczne układanie
+59|Nowe okna same wypełniają układ
+60|Pokaż przycisk układania
+61|Odstęp między oknami
+62|Odstęp przy krawędziach ekranu
+63|Tło
+64|Taki sam jak tło pulpitu
+65|_Dodaj obraz…
+66|Ekran logowania
+67|Super
+68|Alt
+69|Wyłączone
+70|Okna
+71|Dołączaj okna modalne
+72|Okna dialogowe pozostają przy oknie, które je otworzyło
+73|Wyśrodkowuj nowe okna
+74|Zmiana rozmiaru prawym przyciskiem
+75|Przytrzymaj klawisz działań okien i przeciągnij prawym przyciskiem
+76|Klawisz działań okien
+77|Przytrzymaj go, aby przenosić okna lub zmieniać ich rozmiar z dowolnego miejsca wewnątrz
+78|Wysuwaj okna na wierzch po aktywacji
+79|Przydatne z aktywacją po najechaniu
+80|Dodatkowe opcje układu
+81|Dodatkowe zachowanie klawiszy dla wszystkich układów klawiatury
+82|Domyślne
+83|Włączone opcje: %u
+84|Lewy Super
+85|Prawy Super
+86|Więcej opcji klawiatury
+87|Skrót przeglądu
+88|Klawisz otwierający przegląd Podglądu
+89|Wyświetlanie rozszerzonych źródeł wprowadzania
+90|Oferuj więcej układów podczas dodawania źródła wprowadzania
+91|Wprowadzanie jak w Emacsie
+92|Skróty klawiszowe Emacsa w polach tekstowych
+93|Działanie Caps Lock, przełączanie układów, zamiana klawiszy i inne
+94|Wklejanie środkowym przyciskiem
+95|Wklej zaznaczony tekst środkowym przyciskiem myszy
+96|Wskazywanie kursora
+97|Naciśnij Ctrl, aby pokazać, gdzie jest kursor
+98|Pokrywa laptopa
+99|Usypianie po zamknięciu pokrywy
+100|Wyłącz, aby komputer dalej działał, na przykład z zewnętrznym ekranem
+101|Brak aplikacji startowych
+102|Usuń
+103|Dodaj aplikację startową
+104|Wyszukaj aplikacje
+105|Aplikacje startowe
+106|Dodaj aplikację
+107|Te aplikacje uruchamiają się automatycznie po zalogowaniu
+108|_Aplikacje startowe
+109|Wybierz aplikacje uruchamiane po zalogowaniu
+110|Nigdy
+111|Wyszukiwanie aktualizacji…
+112|_Sprawdź ponownie
+113|MAN jest aktualny
+114|MAN %s to najnowsza wersja.
+115|Dostępny jest MAN %s
+116|Masz MAN %s. Rozmiar pobierania: %s.
+117|To jest wersja TEST. Może zawierać błędy.
+118|_Pobierz i zainstaluj…
+119|Pobieranie MAN %s…
+120|Możesz dalej korzystać z komputera. Aktualizacja zostanie zainstalowana po pobraniu.
+121|_Anuluj
+122|Nie można wyszukać aktualizacji
+123|Sprawdź połączenie z Internetem i spróbuj ponownie.
+124|_Spróbuj ponownie
+125|Pobieranie się nie powiodło
+126|Sprawdź połączenie z Internetem i spróbuj ponownie. Pobieranie zostanie wznowione od miejsca przerwania.
+127|MAN %s zostanie zainstalowany po ponownym uruchomieniu
+128|Aktualizacje nie są tutaj dostępne
+129|Aktualizacje instaluje się z działającego, zainstalowanego systemu MAN, a nie z sesji live.
+130|%s z %s
+131|Aktualizacje
+132|Co nowego
+133|Automatyczne aktualizacje
+134|Automatyczne wyszukiwanie aktualizacji
+135|Raz dziennie MAN sprawdza, czy jest nowa wersja, i daje znać
+136|Ostatnie sprawdzenie
+137|Aktualizacje beta
+138|Otrzymuj wersje TEST systemu MAN przed ich wydaniem. Mogą zawierać błędy.
+139|_Zainstaluj plik aktualizacji…
+140|WebDAV (Nextcloud, ownCloud i inne)
+141|Amazon S3 i zgodne magazyny
+142|Udział Windows (SMB)
+143|Dyski w chmurze
+144|Usunąć „%s”?
+145|Twoje pliki pozostają w chmurze. Ten komputer przestaje je wyświetlać, a jego kopie są usuwane.
+146|_Usuń
+147|Połączono
+148|Nie można połączyć. Ponawianie…
+149|Łączenie…
+150|Nie wyświetla się w Plikach
+151|Otwórz w Plikach
+152|Adres serwera
+153|Serwer
+154|Nazwa użytkownika
+155|Hasło
+156|Kod dwuetapowy
+157|Dostawca
+158|Typ serwera
+159|Region
+160|Punkt końcowy
+161|Identyfikator klucza dostępu
+162|Tajny klucz dostępu
+163|Konto
+164|Klucz
+165|Klucz API
+166|E-mail
+167|Apple ID
+168|Domena
+169|Port
+170|Dostęp
+171|Inne
+172|_Wstecz
+173|Nie można dodać dysku
+174|Sprawdź wprowadzone dane i połączenie z internetem, a następnie spróbuj ponownie.
+175|Zaloguj się do %s
+176|_Otwórz ponownie stronę logowania
+177|Przeglądarka otworzyła stronę logowania. Zaloguj się tam i zezwól na dostęp, a potem wróć tutaj. Ta strona przejdzie dalej sama.
+178|_Kontynuuj
+179|Jeszcze jeden krok
+180|Konfigurowanie dysku…
+181|Otwieranie strony logowania…
+182|Logujesz się w przeglądarce. Hasło nigdy nie jest tu wpisywane.
+183|Wpisz dane konta. Są przechowywane w Twoim katalogu domowym.
+184|Nazwa w Plikach
+185|Więcej opcji
+186|_Zaloguj się
+187|_Połącz
+188|Dyski w chmurze są niedostępne
+189|rclone, który łączy dyski w chmurze, nie jest zainstalowany.
+190|_OK
+191|Szukaj dostawców
+192|Popularne
+193|Wszyscy dostawcy
+194|Logowanie przez przeglądarkę
+195|Dodaj dysk w chmurze
+196|Twoja przestrzeń w chmurze, w Plikach. Każdy dysk łączy się sam przy każdym logowaniu.
+197|Nie ma jeszcze dysków w chmurze
+198|_Dodaj dysk w chmurze…
+199|Poza piaskownicą
+200|W piaskownicy
+201|Aplikacja ma pełny dostęp do Twoich plików, urządzeń i systemu
+202|Aplikacja może korzystać tylko z przyznanych jej uprawnień
+203|Wyjąć „%s” z piaskownicy?
+204|Aplikacja uzyska pełny dostęp do tego komputera: do wszystkich Twoich plików i plików systemowych, każdego urządzenia, sieci i wszystkich usług systemowych. Będzie mogła uruchamiać polecenia poza swoim kontenerem oraz odczytywać i zmieniać wszystko, do czego ma dostęp Twoje konto.\n\nRób to tylko dla aplikacji, którym w pełni ufasz. Szkodliwa lub błędna aplikacja mogłaby uszkodzić system lub wykraść Twoje dane.\n\nPiaskownicę możesz tu przywrócić w każdej chwili. Aby zmiana zadziałała, aplikację trzeba uruchomić ponownie.
+205|_Kontynuuj
+206|Uwierzytelnienie się nie powiodło. Niczego nie zmieniono.
+207|Nie można zmienić piaskownicy.
+208|„%s” działa poza piaskownicą. Uruchom ją ponownie, aby zastosować.
+209|Przywrócono piaskownicę aplikacji „%s”.
+210|Piaskownica
+211|Aplikacje Flatpak działają odizolowane od reszty systemu.
+212|_Wyjmij z piaskownicy…
+213|_Przywróć piaskownicę
+214|Wesprzyj MAN!
+215|MAN jest darmowy, ale jego utrzymanie nie.
+216|_Wesprzyj
+217|Wyszukiwanie i instalowanie nowych wersji MAN
+218|Wyświetlaj Google Drive, OneDrive, Dropbox i inne chmury w Plikach

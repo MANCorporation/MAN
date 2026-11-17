@@ -1,0 +1,73 @@
+#!/usr/bin/python3 -I
+"""MAN Login: copy the calling user's login screen background where the
+login screen (GDM) can read it. Run through pkexec (com.man.login-background).
+
+  man-login-background set     picture on stdin (JPEG, PNG or WebP, at most 64 MB)
+  man-login-background last    this user was the last to log in
+  man-login-background clear   remove this user's picture
+
+The picture comes on stdin, read by the user's own session, so this never
+opens a file with root's rights.
+"""
+import os, pwd, re, sys, tempfile
+
+STORE = '/var/lib/man-login'
+LIMIT = 64 << 20
+KINDS = {'jpg': (b'\xff\xd8\xff',), 'png': (b'\x89PNG\r\n\x1a\n',)}
+
+
+def kind_of(data):
+    for k, magics in KINDS.items():
+        if any(data.startswith(m) for m in magics):
+            return k
+    if data[:4] == b'RIFF' and data[8:12] == b'WEBP':
+        return 'webp'
+    return None
+
+
+def write(path, data, mode=0o644):
+    fd, tmp = tempfile.mkstemp(dir=STORE, prefix='.new-')
+    try:
+        with os.fdopen(fd, 'wb') as f:
+            f.write(data)
+        os.chmod(tmp, mode)
+        os.replace(tmp, path)
+    except BaseException:
+        os.unlink(tmp)
+        raise
+
+
+def remove_pictures(name, keep=None):
+    for k in ('jpg', 'png', 'webp'):
+        if k != keep:
+            try:
+                os.unlink(f'{STORE}/{name}.{k}')
+            except FileNotFoundError:
+                pass
+
+
+def main():
+    if len(sys.argv) != 2 or sys.argv[1] not in ('set', 'last', 'clear'):
+        sys.exit(__doc__)
+    uid = os.environ.get('PKEXEC_UID')
+    if not uid or not uid.isdigit() or int(uid) < 1000:
+        sys.exit('man-login-background: run it through pkexec as a normal user')
+    name = pwd.getpwuid(int(uid)).pw_name
+    if not re.fullmatch(r'[a-z_][a-z0-9_.-]*\$?', name, re.I):
+        sys.exit('man-login-background: unusual user name')
+    os.makedirs(STORE, mode=0o755, exist_ok=True)
+    if sys.argv[1] == 'set':
+        data = sys.stdin.buffer.read(LIMIT + 1)
+        if len(data) > LIMIT:
+            sys.exit('man-login-background: the picture is larger than 64 MB')
+        kind = kind_of(data)
+        if not kind:
+            sys.exit('man-login-background: not a JPEG, PNG or WebP picture')
+        write(f'{STORE}/{name}.{kind}', data)
+        remove_pictures(name, keep=kind)
+    elif sys.argv[1] == 'clear':
+        remove_pictures(name)
+    write(f'{STORE}/last', (name + '\n').encode())
+
+
+main()

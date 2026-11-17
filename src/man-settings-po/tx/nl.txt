@@ -38,95 +38,182 @@
 37|Dubbelklikken
 38|Middelklikken
 39|Rechtsklikken
-40|Super
-41|Alt
-42|Uitgeschakeld
-43|Vensters
-44|Modale dialogen vastmaken
-45|Dialogen blijven vast aan het venster dat ze opende
-46|Nieuwe vensters centreren
-47|Grootte wijzigen met rechtsklikken
-48|Houd de venster-actietoets ingedrukt en sleep met de rechtermuisknop
-49|Venster-actietoets
-50|Houd hem ingedrukt om vensters overal vanbinnen te verplaatsen of te vergroten
-51|Vensters naar voren halen bij focus
-52|Handig met focus bij aanwijzen
-53|Extra indelingsopties
-54|Extra gedrag van toetsen voor alle toetsenbordindelingen
-55|Standaard
-56|Ingeschakelde opties: %u
-57|Linker Super
-58|Rechter Super
-59|Meer toetsenbordopties
-60|Sneltoets voor het overzicht
-61|De toets die het Activiteitenoverzicht opent
-62|Uitgebreide invoerbronnen tonen
-63|Meer indelingen aanbieden bij het toevoegen van een invoerbron
-64|Emacs-invoer
-65|Emacs-sneltoetsen in tekstvelden
-66|Gedrag van Caps Lock, wisselen van indeling, toetsen omwisselen en meer
-67|Plakken met middelklikken
-68|Geselecteerde tekst plakken met de middelste knop
-69|Aanwijzer tonen
-70|Druk op Ctrl om te zien waar de aanwijzer is
-71|Laptopdeksel
-72|Pauzestand bij sluiten van het deksel
-73|Schakel uit om de computer te laten doorwerken, bijvoorbeeld met een extern scherm
-74|Geen opstarttoepassingen
-75|Verwijderen
-76|Opstarttoepassing toevoegen
-77|Toepassingen zoeken
-78|Opstarttoepassingen
-79|Toepassing toevoegen
-80|Deze toepassingen starten automatisch als je je aanmeldt
-81|_Opstarttoepassingen
-82|Kies toepassingen die starten als je je aanmeldt
-83|Nooit
-84|Zoeken naar updates…
-85|_Opnieuw controleren
-86|MAN is bijgewerkt
-87|MAN %s is de nieuwste versie.
-88|MAN %s is beschikbaar
-89|Je hebt MAN %s. Downloadgrootte: %s.
-90|Dit is een TEST-versie. Er kunnen fouten in zitten.
-91|_Downloaden en installeren…
-92|MAN %s wordt gedownload…
-93|Je kunt de computer blijven gebruiken. De update wordt na het downloaden geïnstalleerd.
-94|_Annuleren
-95|Kan niet zoeken naar updates
-96|Controleer je internetverbinding en probeer het opnieuw.
-97|_Opnieuw proberen
-98|Het downloaden is mislukt
-99|Controleer je internetverbinding en probeer het opnieuw. Het downloaden gaat verder waar het stopte.
-100|MAN %s wordt geïnstalleerd als je herstart
-101|Updates zijn hier niet beschikbaar
-102|Updates worden geïnstalleerd vanaf een draaiend, geïnstalleerd MAN-systeem, niet vanuit de livesessie.
-103|%s van %s
-104|Updates
-105|Wat is er nieuw
-106|Automatische updates
-107|Automatisch zoeken naar updates
-108|Eén keer per dag zoekt MAN naar een nieuwe versie en laat het je weten
-109|Laatst gecontroleerd
-110|Bèta-updates
-111|Ontvang TEST-versies van MAN voordat ze uitkomen. Er kunnen fouten in zitten.
-112|Updatebestand _installeren…
-113|Buiten de sandbox
-114|In de sandbox
-115|De toepassing heeft volledige toegang tot je bestanden, apparaten en het systeem
-116|De toepassing kan alleen de rechten gebruiken die ze heeft gekregen
-117|„%s” uit de sandbox halen?
-118|De toepassing krijgt volledige toegang tot deze computer: tot al je bestanden en de systeembestanden, elk apparaat, het netwerk en alle systeemdiensten. Ze kan opdrachten buiten haar container uitvoeren en alles lezen of wijzigen waar je account bij kan.\n\nDoe dit alleen bij toepassingen die je volledig vertrouwt. Een schadelijke of foutieve toepassing kan je systeem beschadigen of je gegevens stelen.\n\nJe kunt de sandbox hier altijd herstellen. De toepassing moet opnieuw gestart worden om de wijziging toe te passen.
-119|_Doorgaan
-120|Authenticatie mislukt. Er is niets gewijzigd.
-121|De sandbox kon niet worden gewijzigd.
-122|„%s” draait buiten de sandbox. Herstart de toepassing om dit toe te passen.
-123|De sandbox van „%s” is hersteld.
-124|Sandbox
-125|Flatpak-toepassingen draaien afgeschermd van de rest van het systeem.
-126|Uit de _sandbox halen…
-127|Sandbox _herstellen
-128|Doneer aan MAN!
-129|MAN is gratis, maar het onderhoud niet.
-130|_Doneren
-131|Nieuwe versies van MAN zoeken en installeren
+40|Dock tonen
+41|Automatisch verbergen
+42|Het dock maakt plaats als een venster de ruimte nodig heeft
+43|Dock
+44|Pictogramgrootte
+45|Op alle beeldschermen tonen
+46|Vervagingseffecten
+47|Schakel dit uit op trage computers
+48|Vervaging
+49|Bovenbalk
+50|Activiteitenoverzicht
+51|Menu's
+52|Vergrendelscherm
+53|Vensterschikking
+54|Schik vensters in lay-outs. Kies en bewerk lay-outs met de knop in de bovenbalk.
+55|Vastklikassistent
+56|Sleep een venster naar de bovenkant van het scherm om de plaats te kiezen
+57|Vastklikken aan schermranden
+58|Automatisch schikken
+59|Nieuwe vensters vullen de lay-out vanzelf
+60|Schikknop tonen
+61|Ruimte tussen vensters
+62|Ruimte aan schermranden
+63|Achtergrond
+64|Gelijk aan de bureaubladachtergrond
+65|_Afbeelding toevoegen…
+66|Aanmeldscherm
+67|Super
+68|Alt
+69|Uitgeschakeld
+70|Vensters
+71|Modale dialogen vastmaken
+72|Dialogen blijven vast aan het venster dat ze opende
+73|Nieuwe vensters centreren
+74|Grootte wijzigen met rechtsklikken
+75|Houd de venster-actietoets ingedrukt en sleep met de rechtermuisknop
+76|Venster-actietoets
+77|Houd hem ingedrukt om vensters overal vanbinnen te verplaatsen of te vergroten
+78|Vensters naar voren halen bij focus
+79|Handig met focus bij aanwijzen
+80|Extra indelingsopties
+81|Extra gedrag van toetsen voor alle toetsenbordindelingen
+82|Standaard
+83|Ingeschakelde opties: %u
+84|Linker Super
+85|Rechter Super
+86|Meer toetsenbordopties
+87|Sneltoets voor het overzicht
+88|De toets die het Activiteitenoverzicht opent
+89|Uitgebreide invoerbronnen tonen
+90|Meer indelingen aanbieden bij het toevoegen van een invoerbron
+91|Emacs-invoer
+92|Emacs-sneltoetsen in tekstvelden
+93|Gedrag van Caps Lock, wisselen van indeling, toetsen omwisselen en meer
+94|Plakken met middelklikken
+95|Geselecteerde tekst plakken met de middelste knop
+96|Aanwijzer tonen
+97|Druk op Ctrl om te zien waar de aanwijzer is
+98|Laptopdeksel
+99|Pauzestand bij sluiten van het deksel
+100|Schakel uit om de computer te laten doorwerken, bijvoorbeeld met een extern scherm
+101|Geen opstarttoepassingen
+102|Verwijderen
+103|Opstarttoepassing toevoegen
+104|Toepassingen zoeken
+105|Opstarttoepassingen
+106|Toepassing toevoegen
+107|Deze toepassingen starten automatisch als je je aanmeldt
+108|_Opstarttoepassingen
+109|Kies toepassingen die starten als je je aanmeldt
+110|Nooit
+111|Zoeken naar updates…
+112|_Opnieuw controleren
+113|MAN is bijgewerkt
+114|MAN %s is de nieuwste versie.
+115|MAN %s is beschikbaar
+116|Je hebt MAN %s. Downloadgrootte: %s.
+117|Dit is een TEST-versie. Er kunnen fouten in zitten.
+118|_Downloaden en installeren…
+119|MAN %s wordt gedownload…
+120|Je kunt de computer blijven gebruiken. De update wordt na het downloaden geïnstalleerd.
+121|_Annuleren
+122|Kan niet zoeken naar updates
+123|Controleer je internetverbinding en probeer het opnieuw.
+124|_Opnieuw proberen
+125|Het downloaden is mislukt
+126|Controleer je internetverbinding en probeer het opnieuw. Het downloaden gaat verder waar het stopte.
+127|MAN %s wordt geïnstalleerd als je herstart
+128|Updates zijn hier niet beschikbaar
+129|Updates worden geïnstalleerd vanaf een draaiend, geïnstalleerd MAN-systeem, niet vanuit de livesessie.
+130|%s van %s
+131|Updates
+132|Wat is er nieuw
+133|Automatische updates
+134|Automatisch zoeken naar updates
+135|Eén keer per dag zoekt MAN naar een nieuwe versie en laat het je weten
+136|Laatst gecontroleerd
+137|Bèta-updates
+138|Ontvang TEST-versies van MAN voordat ze uitkomen. Er kunnen fouten in zitten.
+139|Updatebestand _installeren…
+140|WebDAV (Nextcloud, ownCloud en andere)
+141|Amazon S3 en compatibele opslag
+142|Windows-share (SMB)
+143|Cloudschijven
+144|‘%s’ verwijderen?
+145|Je bestanden blijven in de cloud. Deze computer toont ze niet meer en zijn kopieën worden verwijderd.
+146|_Verwijderen
+147|Verbonden
+148|Kan geen verbinding maken. Opnieuw proberen…
+149|Verbinden…
+150|Niet getoond in Bestanden
+151|Openen in Bestanden
+152|Serveradres
+153|Server
+154|Gebruikersnaam
+155|Wachtwoord
+156|Tweestapscode
+157|Aanbieder
+158|Servertype
+159|Regio
+160|Eindpunt
+161|Toegangssleutel-ID
+162|Geheime toegangssleutel
+163|Account
+164|Sleutel
+165|API-sleutel
+166|E-mail
+167|Apple ID
+168|Domein
+169|Poort
+170|Toegang
+171|Overig
+172|_Terug
+173|De schijf kon niet worden toegevoegd
+174|Controleer wat je hebt ingevoerd en je internetverbinding, en probeer het opnieuw.
+175|Inloggen bij %s
+176|_Inlogpagina opnieuw openen
+177|Je webbrowser heeft de inlogpagina geopend. Log daar in en geef toegang, en kom dan hier terug. Deze pagina gaat vanzelf verder.
+178|_Doorgaan
+179|Nog één stap
+180|Schijf instellen…
+181|Inlogpagina openen…
+182|Je logt in met je webbrowser. Je wachtwoord wordt hier nooit ingevoerd.
+183|Voer de gegevens van je account in. Ze worden in je persoonlijke map bewaard.
+184|Naam in Bestanden
+185|Meer opties
+186|_Inloggen
+187|_Verbinden
+188|Cloudschijven zijn niet beschikbaar
+189|rclone, dat cloudschijven verbindt, is niet geïnstalleerd.
+190|_OK
+191|Aanbieders zoeken
+192|Populair
+193|Alle aanbieders
+194|Inloggen met je browser
+195|Cloudschijf toevoegen
+196|Je cloudopslag, in Bestanden. Elke schijf maakt vanzelf verbinding telkens als je inlogt.
+197|Nog geen cloudschijven
+198|_Cloudschijf toevoegen…
+199|Buiten de sandbox
+200|In de sandbox
+201|De toepassing heeft volledige toegang tot je bestanden, apparaten en het systeem
+202|De toepassing kan alleen de rechten gebruiken die ze heeft gekregen
+203|„%s” uit de sandbox halen?
+204|De toepassing krijgt volledige toegang tot deze computer: tot al je bestanden en de systeembestanden, elk apparaat, het netwerk en alle systeemdiensten. Ze kan opdrachten buiten haar container uitvoeren en alles lezen of wijzigen waar je account bij kan.\n\nDoe dit alleen bij toepassingen die je volledig vertrouwt. Een schadelijke of foutieve toepassing kan je systeem beschadigen of je gegevens stelen.\n\nJe kunt de sandbox hier altijd herstellen. De toepassing moet opnieuw gestart worden om de wijziging toe te passen.
+205|_Doorgaan
+206|Authenticatie mislukt. Er is niets gewijzigd.
+207|De sandbox kon niet worden gewijzigd.
+208|„%s” draait buiten de sandbox. Herstart de toepassing om dit toe te passen.
+209|De sandbox van „%s” is hersteld.
+210|Sandbox
+211|Flatpak-toepassingen draaien afgeschermd van de rest van het systeem.
+212|Uit de _sandbox halen…
+213|Sandbox _herstellen
+214|Doneer aan MAN!
+215|MAN is gratis, maar het onderhoud niet.
+216|_Doneren
+217|Nieuwe versies van MAN zoeken en installeren
+218|Google Drive, OneDrive, Dropbox en andere cloudopslag in Bestanden tonen

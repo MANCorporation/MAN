@@ -38,95 +38,182 @@
 37|Dupla kattintás
 38|Középső kattintás
 39|Másodlagos kattintás
-40|Super
-41|Alt
-42|Letiltva
-43|Ablakok
-44|Modális ablakok csatolása
-45|A párbeszédablakok az őket megnyitó ablakhoz csatolva maradnak
-46|Új ablakok középre helyezése
-47|Átméretezés másodlagos kattintással
-48|Tartsa lenyomva az ablakművelet billentyűt, és húzzon a másodlagos gombbal
-49|Ablakművelet billentyű
-50|Lenyomva tartva bárhonnan mozgathatja vagy átméretezheti az ablakokat
-51|Ablakok előtérbe hozása fókuszáláskor
-52|Hasznos a rámutatásra fókuszálással
-53|További kiosztási beállítások
-54|A billentyűk további viselkedése minden billentyűzetkiosztáshoz
-55|Alapértelmezett
-56|Bekapcsolt beállítások: %u
-57|Bal Super
-58|Jobb Super
-59|További billentyűzetbeállítások
-60|Áttekintő gyorsbillentyűje
-61|A Tevékenységek áttekintőt megnyitó billentyű
-62|Bővített beviteli források megjelenítése
-63|Több kiosztás felajánlása beviteli forrás hozzáadásakor
-64|Emacs-bevitel
-65|Emacs gyorsbillentyűk a szövegmezőkben
-66|A Caps Lock viselkedése, kiosztásváltás, billentyűcsere és egyebek
-67|Beillesztés középső kattintással
-68|A kijelölt szöveg beillesztése a középső gombbal
-69|Mutató megkeresése
-70|Nyomja meg a Ctrl billentyűt, hogy lássa, hol a mutató
-71|Laptop fedele
-72|Felfüggesztés a fedél lecsukásakor
-73|Kapcsolja ki, hogy a számítógép tovább fusson, például külső kijelzővel
-74|Nincsenek indítási alkalmazások
-75|Eltávolítás
-76|Indítási alkalmazás hozzáadása
-77|Alkalmazások keresése
-78|Indítási alkalmazások
-79|Alkalmazás hozzáadása
-80|Ezek az alkalmazások bejelentkezéskor automatikusan elindulnak
-81|_Indítási alkalmazások
-82|Válassza ki a bejelentkezéskor induló alkalmazásokat
-83|Soha
-84|Frissítések keresése…
-85|_Ellenőrzés újra
-86|A MAN naprakész
-87|A MAN %s a legújabb verzió.
-88|Elérhető a MAN %s
-89|Önnek a MAN %s van meg. Letöltési méret: %s.
-90|Ez egy TEST verzió. Hibák lehetnek benne.
-91|_Letöltés és telepítés…
-92|A MAN %s letöltése…
-93|Közben tovább használhatja a számítógépet. A frissítés a letöltés után települ.
-94|_Mégse
-95|Nem sikerült frissítéseket keresni
-96|Ellenőrizze az internetkapcsolatot, és próbálja újra.
-97|_Újra
-98|A letöltés sikertelen
-99|Ellenőrizze az internetkapcsolatot, és próbálja újra. A letöltés ott folytatódik, ahol abbamaradt.
-100|A MAN %s újraindításkor települ
-101|Itt nem érhetők el frissítések
-102|A frissítések futó, telepített MAN rendszerről települnek, nem az élő munkamenetből.
-103|%s / %s
-104|Frissítések
-105|Újdonságok
-106|Automatikus frissítések
-107|Frissítések automatikus keresése
-108|A MAN naponta egyszer új verziót keres, és szól Önnek
-109|Utolsó ellenőrzés
-110|Béta frissítések
-111|A MAN TEST verzióinak megkapása a kiadásuk előtt. Hibák lehetnek bennük.
-112|Frissítési fájl _telepítése…
-113|Homokozón kívül
-114|Homokozóban
-115|Az alkalmazás teljes hozzáféréssel rendelkezik a fájljaihoz, eszközeihez és a rendszerhez
-116|Az alkalmazás csak a kapott engedélyeket használhatja
-117|Kiveszi a(z) „%s” alkalmazást a homokozóból?
-118|Az alkalmazás teljes hozzáférést kap ehhez a számítógéphez: minden fájljához és a rendszerfájlokhoz, minden eszközhöz, a hálózathoz és az összes rendszerszolgáltatáshoz. Parancsokat futtathat a konténerén kívül, és bármit olvashat vagy módosíthat, amihez a fiókja hozzáfér.\n\nCsak olyan alkalmazásnál tegye ezt, amelyben teljesen megbízik. Egy kártékony vagy hibás alkalmazás kárt tehet a rendszerben vagy ellophatja az adatait.\n\nA homokozót itt bármikor visszaállíthatja. A változás érvényesítéséhez az alkalmazást újra kell indítani.
-119|_Folytatás
-120|A hitelesítés sikertelen. Semmi sem változott.
-121|A homokozót nem sikerült módosítani.
-122|A(z) „%s” homokozón kívül fut. A változáshoz indítsa újra.
-123|A(z) „%s” homokozója visszaállítva.
-124|Homokozó
-125|A Flatpak alkalmazások a rendszer többi részétől elszigetelten futnak.
-126|_Kivétel a homokozóból…
-127|Homokozó _visszaállítása
-128|Támogassa a MAN-t!
-129|A MAN ingyenes, de a karbantartása nem az.
-130|_Támogatás
-131|A MAN új verzióinak keresése és telepítése
+40|Dokk megjelenítése
+41|Automatikus elrejtés
+42|A dokk helyet ad, ha egy ablaknak szüksége van rá
+43|Dokk
+44|Ikonméret
+45|Megjelenítés minden kijelzőn
+46|Elmosási effektusok
+47|Lassú számítógépeken kapcsold ki
+48|Elmosás
+49|Felső sáv
+50|Tevékenységek áttekintés
+51|Menük
+52|Zárolási képernyő
+53|Ablakok elrendezése
+54|Rendezd az ablakokat elrendezésekbe. Az elrendezéseket a felső sáv gombjával választhatod ki és szerkesztheted.
+55|Illesztési segéd
+56|Húzz egy ablakot a képernyő tetejére a helye kiválasztásához
+57|Illesztés a képernyő széleihez
+58|Automatikus elrendezés
+59|Az új ablakok maguktól kitöltik az elrendezést
+60|Elrendezés gomb megjelenítése
+61|Ablakok közötti hely
+62|Hely a képernyő széleinél
+63|Háttér
+64|Ugyanaz, mint az asztalháttér
+65|Fénykép _hozzáadása…
+66|Bejelentkezési képernyő
+67|Super
+68|Alt
+69|Letiltva
+70|Ablakok
+71|Modális ablakok csatolása
+72|A párbeszédablakok az őket megnyitó ablakhoz csatolva maradnak
+73|Új ablakok középre helyezése
+74|Átméretezés másodlagos kattintással
+75|Tartsa lenyomva az ablakművelet billentyűt, és húzzon a másodlagos gombbal
+76|Ablakművelet billentyű
+77|Lenyomva tartva bárhonnan mozgathatja vagy átméretezheti az ablakokat
+78|Ablakok előtérbe hozása fókuszáláskor
+79|Hasznos a rámutatásra fókuszálással
+80|További kiosztási beállítások
+81|A billentyűk további viselkedése minden billentyűzetkiosztáshoz
+82|Alapértelmezett
+83|Bekapcsolt beállítások: %u
+84|Bal Super
+85|Jobb Super
+86|További billentyűzetbeállítások
+87|Áttekintő gyorsbillentyűje
+88|A Tevékenységek áttekintőt megnyitó billentyű
+89|Bővített beviteli források megjelenítése
+90|Több kiosztás felajánlása beviteli forrás hozzáadásakor
+91|Emacs-bevitel
+92|Emacs gyorsbillentyűk a szövegmezőkben
+93|A Caps Lock viselkedése, kiosztásváltás, billentyűcsere és egyebek
+94|Beillesztés középső kattintással
+95|A kijelölt szöveg beillesztése a középső gombbal
+96|Mutató megkeresése
+97|Nyomja meg a Ctrl billentyűt, hogy lássa, hol a mutató
+98|Laptop fedele
+99|Felfüggesztés a fedél lecsukásakor
+100|Kapcsolja ki, hogy a számítógép tovább fusson, például külső kijelzővel
+101|Nincsenek indítási alkalmazások
+102|Eltávolítás
+103|Indítási alkalmazás hozzáadása
+104|Alkalmazások keresése
+105|Indítási alkalmazások
+106|Alkalmazás hozzáadása
+107|Ezek az alkalmazások bejelentkezéskor automatikusan elindulnak
+108|_Indítási alkalmazások
+109|Válassza ki a bejelentkezéskor induló alkalmazásokat
+110|Soha
+111|Frissítések keresése…
+112|_Ellenőrzés újra
+113|A MAN naprakész
+114|A MAN %s a legújabb verzió.
+115|Elérhető a MAN %s
+116|Önnek a MAN %s van meg. Letöltési méret: %s.
+117|Ez egy TEST verzió. Hibák lehetnek benne.
+118|_Letöltés és telepítés…
+119|A MAN %s letöltése…
+120|Közben tovább használhatja a számítógépet. A frissítés a letöltés után települ.
+121|_Mégse
+122|Nem sikerült frissítéseket keresni
+123|Ellenőrizze az internetkapcsolatot, és próbálja újra.
+124|_Újra
+125|A letöltés sikertelen
+126|Ellenőrizze az internetkapcsolatot, és próbálja újra. A letöltés ott folytatódik, ahol abbamaradt.
+127|A MAN %s újraindításkor települ
+128|Itt nem érhetők el frissítések
+129|A frissítések futó, telepített MAN rendszerről települnek, nem az élő munkamenetből.
+130|%s / %s
+131|Frissítések
+132|Újdonságok
+133|Automatikus frissítések
+134|Frissítések automatikus keresése
+135|A MAN naponta egyszer új verziót keres, és szól Önnek
+136|Utolsó ellenőrzés
+137|Béta frissítések
+138|A MAN TEST verzióinak megkapása a kiadásuk előtt. Hibák lehetnek bennük.
+139|Frissítési fájl _telepítése…
+140|WebDAV (Nextcloud, ownCloud és mások)
+141|Amazon S3 és kompatibilis tárhely
+142|Windows-megosztás (SMB)
+143|Felhőmeghajtók
+144|Eltávolítja: „%s”?
+145|A fájljai a felhőben maradnak. Ez a számítógép többé nem jeleníti meg őket, és a helyi másolatok törlődnek.
+146|_Eltávolítás
+147|Csatlakoztatva
+148|Nem sikerül csatlakozni. Újrapróbálkozás…
+149|Csatlakozás…
+150|Nem jelenik meg a Fájlokban
+151|Megnyitás a Fájlokban
+152|Kiszolgáló címe
+153|Kiszolgáló
+154|Felhasználónév
+155|Jelszó
+156|Kétlépcsős kód
+157|Szolgáltató
+158|Kiszolgáló típusa
+159|Régió
+160|Végpont
+161|Hozzáférési kulcs azonosítója
+162|Titkos hozzáférési kulcs
+163|Fiók
+164|Kulcs
+165|API-kulcs
+166|E-mail
+167|Apple ID
+168|Tartomány
+169|Port
+170|Hozzáférés
+171|Egyéb
+172|_Vissza
+173|A meghajtót nem sikerült hozzáadni
+174|Ellenőrizze, amit megadott, és az internetkapcsolatát, majd próbálja újra.
+175|Bejelentkezés: %s
+176|_Bejelentkezési oldal újbóli megnyitása
+177|A böngésző megnyitotta a bejelentkezési oldalt. Jelentkezzen be ott, engedélyezze a hozzáférést, majd térjen vissza ide. Ez az oldal magától folytatódik.
+178|_Folytatás
+179|Még egy lépés
+180|A meghajtó beállítása…
+181|A bejelentkezési oldal megnyitása…
+182|A böngészőben jelentkezik be. A jelszavát soha nem kell itt megadni.
+183|Adja meg a fiókja adatait. A saját mappájában tárolódnak.
+184|Név a Fájlokban
+185|További beállítások
+186|_Bejelentkezés
+187|_Csatlakozás
+188|A felhőmeghajtók nem érhetők el
+189|A felhőmeghajtókat csatlakoztató rclone nincs telepítve.
+190|_OK
+191|Szolgáltatók keresése
+192|Népszerű
+193|Minden szolgáltató
+194|Bejelentkezés böngészővel
+195|Felhőmeghajtó hozzáadása
+196|Felhőtárhelye a Fájlokban. Minden meghajtó magától csatlakozik minden bejelentkezéskor.
+197|Még nincs felhőmeghajtó
+198|_Felhőmeghajtó hozzáadása…
+199|Homokozón kívül
+200|Homokozóban
+201|Az alkalmazás teljes hozzáféréssel rendelkezik a fájljaihoz, eszközeihez és a rendszerhez
+202|Az alkalmazás csak a kapott engedélyeket használhatja
+203|Kiveszi a(z) „%s” alkalmazást a homokozóból?
+204|Az alkalmazás teljes hozzáférést kap ehhez a számítógéphez: minden fájljához és a rendszerfájlokhoz, minden eszközhöz, a hálózathoz és az összes rendszerszolgáltatáshoz. Parancsokat futtathat a konténerén kívül, és bármit olvashat vagy módosíthat, amihez a fiókja hozzáfér.\n\nCsak olyan alkalmazásnál tegye ezt, amelyben teljesen megbízik. Egy kártékony vagy hibás alkalmazás kárt tehet a rendszerben vagy ellophatja az adatait.\n\nA homokozót itt bármikor visszaállíthatja. A változás érvényesítéséhez az alkalmazást újra kell indítani.
+205|_Folytatás
+206|A hitelesítés sikertelen. Semmi sem változott.
+207|A homokozót nem sikerült módosítani.
+208|A(z) „%s” homokozón kívül fut. A változáshoz indítsa újra.
+209|A(z) „%s” homokozója visszaállítva.
+210|Homokozó
+211|A Flatpak alkalmazások a rendszer többi részétől elszigetelten futnak.
+212|_Kivétel a homokozóból…
+213|Homokozó _visszaállítása
+214|Támogassa a MAN-t!
+215|A MAN ingyenes, de a karbantartása nem az.
+216|_Támogatás
+217|A MAN új verzióinak keresése és telepítése
+218|A Google Drive, a OneDrive, a Dropbox és más felhőtárhelyek megjelenítése a Fájlokban

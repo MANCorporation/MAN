@@ -11,7 +11,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SRC, OUT = Path(sys.argv[1]), Path(sys.argv[2])
-VERSION = '1.4'
+VERSION = '1.5'
 BLUR_RADIUS = 60
 HOST = Path(os.environ.get('HOSTBIN', HERE.parent.parent / 'tools/hostbin/root'))
 
@@ -198,6 +198,17 @@ build_tiling(ext, schemas, locale)
 shutil.copytree(HERE / 'man-look', ext / 'man-look@man.invalid')
 shutil.copytree(HERE / 'man-dock', ext / 'man-dock@man.invalid')
 shutil.move(ext / 'man-dock@man.invalid/com.man.desktop.dock.gschema.xml', schemas)
+# MAN Login: login and lock screens; the login screen reads the users' pictures
+# from /var/lib/man-login, written by the helper through pkexec.
+shutil.copytree(HERE / 'man-login', ext / 'man-login@man.invalid')
+shutil.move(ext / 'man-login@man.invalid/com.man.desktop.login.gschema.xml', schemas)
+LOGIN = HERE / 'login-system'
+for src, dest in [('man-login-background', 'usr/libexec/man/man-login-background'),
+                  ('com.man.login-background.policy', 'usr/share/polkit-1/actions/com.man.login-background.policy'),
+                  ('man-login.tmpfiles', 'usr/lib/tmpfiles.d/man-login.conf'),
+                  ('96-man-login', 'usr/share/gdm/dconf/96-man-login')]:
+    (root / dest).parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy(LOGIN / src, root / dest)
 for key in UPSTREAM:
     add_notice(ext / f'man-{key}@man.invalid', key)
 shutil.copy(HERE / '20_man-desktop-shell.gschema.override', schemas)
@@ -218,17 +229,29 @@ Maintainer: MAN Developers <dev@man.local>
 Section: gnome
 Priority: optional
 Depends: gnome-shell (>= 51~), gnome-shell (<< 52~)
-Description: MAN's dock, blur effects, window tiling and system dialog look
+Description: MAN's dock, blur effects, window tiling, login screen and dialog look
  Parts of MAN's desktop. They are set up in Settings.
 ''')
-(root / 'DEBIAN/postinst').write_text('#!/bin/sh\nset -e\nif [ "$1" = configure ]; then\n    glib-compile-schemas /usr/share/glib-2.0/schemas\nfi\n')
+(root / 'DEBIAN/postinst').write_text('''#!/bin/sh
+set -e
+if [ "$1" = configure ]; then
+    glib-compile-schemas /usr/share/glib-2.0/schemas
+    systemd-tmpfiles --create /usr/lib/tmpfiles.d/man-login.conf || true
+    # The login screen's own settings (MAN Login on).
+    if [ -x /usr/share/gdm/generate-config ]; then
+        /usr/share/gdm/generate-config || true
+    fi
+fi
+''')
 (root / 'DEBIAN/postinst').chmod(0o755)
 for dirpath, dirs, files in os.walk(root):
     os.chmod(dirpath, 0o755)
     for f in files:
         p = Path(dirpath) / f
-        if p.name != 'postinst':
+        if p.name not in ('postinst', 'man-login-background'):
             p.chmod(0o644)
+        else:
+            p.chmod(0o755)
 OUT.parent.mkdir(parents=True, exist_ok=True)
 subprocess.run(['dpkg-deb', '--root-owner-group', '-Zxz', '-b', root, OUT], check=True, stdout=subprocess.DEVNULL)
 print('built', OUT, sum(1 for _ in root.rglob('*') if _.is_file()), 'files')
