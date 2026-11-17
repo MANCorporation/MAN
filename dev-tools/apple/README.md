@@ -28,6 +28,18 @@ runs on the first start, like on a PC.
 | kernel, initramfs | Asahi kernel built here | `/boot` (ext4) |
 | firmware | the Mac's own macOS, by the Asahi installer | EFI `vendorfw/`, loaded by the initramfs (asahi-scripts) |
 
+## On the Mac (MAN side)
+
+- Startup Disk (`root/usr/bin/man-startup-disk`, GTK 4/libadwaita): Start MAN / Show a
+  start menu / Start macOS, and Restart to macOS. Changes go through
+  `/usr/libexec/man-apple-boot` (pkexec, polkit `com.man.apple-boot`), which uses
+  `asahi-bless` (Asahi, MIT; `build-bless.sh`) on the Mac's NVRAM.
+- "Restart to macOS…" in the power menu: extension `man-mac@man.invalid` (only on Macs).
+- "Show a start menu": `/etc/grub.d/44_man_macos` adds a GRUB entry "macOS"; it sets
+  `man_next=macos` in grubenv and starts MAN, whose `man-apple-next.service` sets macOS for
+  the next start and restarts.
+- DUHACH! for Mac: `duhach/mac` (README there); also on the stick's MAN_MAC partition.
+
 ## Building
 
 1. **Kernel** `build-kernel.sh` → `lfs/apple/kernel/`. Source: `lfs/apple/linux`

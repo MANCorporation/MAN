@@ -44,6 +44,19 @@ DUHACH! for Windows ARM64 is not uploaded: never run on real Windows ARM.
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
+## TEST 6
+Apple Silicon Macs (M1, M2, M3), tested by the owner on a MacBook Pro 14" M1 Pro: MAN Live USB
+(boot loader set up from macOS with DUHACH! for Mac or MAN-Mac/install-man.sh: choice 1 boot
+loader only, 2 boot loader + space, 3 space only), live system with Wi-Fi, sound, keyboard,
+trackpad, screen, battery; install onto an external SSD; Startup Disk + "Restart to macOS"
+(power menu); DUHACH! for Mac (AppleScript guide worked on the Mac; the new Adwaita-look
+window, main.js, not yet run on a Mac). Images stamped "10 TEST 6" (base 10.10), man-installer
+3.16.2 in all (PC: GRUB 43_man_windows fix). PC: Erase install with 3.16.2 + first start into
+MAN Setup tested in a UEFI VM; PC ISO boots to the live welcome. Not tested: "Install on This
+Mac" on the real Mac, the GRUB "macOS" entry (Show a start menu), m1n1 with the MAN logo
+(m1n1 is not built here: its maintainers forbid AI tools; logo PNGs in dev-tools/apple/logo).
+Mac online install (curl man-mac.sh, full package) is not published: untested.
+
 ## TEST 5
 Published 2026-11-09: pre-release v10-test5 (x86 + ARM ISOs, `.upd` 1.79 GB signed and verified in
 MAN, DUHACH! 1.1.0 x64). Mac sound (CS8409 driver) and MAN-only wallpapers. x86 ISO install +
