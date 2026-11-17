@@ -212,8 +212,8 @@ const KEEP: &[&str] = &[
     "usr/local", "opt",
 ];
 
-fn copy_over(new: &Path, rel: &str) -> Result<()> {
-    let src = Path::new("/").join(rel);
+fn copy_over(old: &Path, new: &Path, rel: &str) -> Result<()> {
+    let src = old.join(rel);
     if std::fs::symlink_metadata(&src).is_err() {
         return Ok(());
     }
@@ -238,11 +238,11 @@ fn read_db(path: &Path) -> Vec<String> {
 /// Accounts: the running system decides for every account it has; the new
 /// system only adds accounts it introduces (new system users), never the
 /// live session's accounts or anything colliding with an existing id.
-fn merge_accounts(new: &Path) -> Result<()> {
+fn merge_accounts(old_root: &Path, new: &Path) -> Result<()> {
     const LIVE_ONLY: &[&str] = &["MANInstaller", OOBE_USER];
     let id_of = |line: &str| line.split(':').nth(2).map(String::from).unwrap_or_default();
     for (file, has_id) in [("etc/passwd", true), ("etc/group", true), ("etc/shadow", false), ("etc/gshadow", false)] {
-        let old = read_db(&Path::new("/").join(file));
+        let old = read_db(&old_root.join(file));
         let fresh = read_db(&new.join(file));
         let name = |l: &String| l.split(':').next().unwrap_or("").to_string();
         let old_names: Vec<String> = old.iter().map(name).collect();
@@ -271,12 +271,19 @@ fn merge_accounts(new: &Path) -> Result<()> {
 }
 
 fn migrate(new: &Path) -> Result<()> {
+    migrate_from(Path::new("/"), new)
+}
+
+/// Carry the machine (accounts, settings, kept data) from the system at
+/// `old` over to the new system at `new` (also used when MAN Recovery
+/// reinstalls MAN).
+pub fn migrate_from(old: &Path, new: &Path) -> Result<()> {
     for (i, rel) in KEEP.iter().enumerate() {
         progress(i as f64 / KEEP.len() as f64 * 0.8, &format!("/{rel}"));
-        copy_over(new, rel)?;
+        copy_over(old, new, rel)?;
     }
     progress(0.85, "Accounts");
-    merge_accounts(new)?;
+    merge_accounts(old, new)?;
     // The live session's leftovers never belong on an installed system.
     let _ = std::fs::remove_file(new.join("etc/sudoers.d/90-maninstaller"));
     let _ = std::fs::remove_file(new.join("etc/polkit-1/rules.d/49-man-live.rules"));
@@ -325,11 +332,11 @@ fn reinstall_kept(new: &Path) {
         }
     }
     let rel = KEPT_DEBS.trim_start_matches('/');
-    if copy_over(new, rel).is_err() || debs.is_empty() {
+    if copy_over(Path::new("/"), new, rel).is_err() || debs.is_empty() {
         return;
     }
     progress(0.2, "Reinstalling kept apps");
-    let _ = copy_over(new, "var/lib/apt/lists");
+    let _ = copy_over(Path::new("/"), new, "var/lib/apt/lists");
     // Name resolution for apt: resolv.conf points into /run, a fresh tmpfs here.
     if let (Ok(text), Ok(target)) = (std::fs::read_to_string("/etc/resolv.conf"), std::fs::read_link(new.join("etc/resolv.conf"))) {
         let inside = if target.is_absolute() { new.join(target.strip_prefix("/").unwrap_or(&target)) } else { new.join("etc").join(target) };
@@ -383,6 +390,17 @@ fn prepare_new_system(dev: &str, new: &Path, mounts: &mut Mounts) -> Result<()> 
     if Path::new("/boot/efi").is_dir() && query("findmnt", &["-n", "--mountpoint", "/boot/efi"]).is_some() {
         mounts.mount("/boot/efi", &new.join("boot/efi"), &["--bind"])?;
     }
+    // MAN Recovery from the new system while it still has the installer;
+    // its kernel is added once the new system's initramfs is built.
+    progress(0.05, "Preparing MAN Recovery");
+    let top = Path::new(TOP);
+    let recovery_started = match crate::recovery::begin(top, new) {
+        Ok(()) => true,
+        Err(e) => {
+            info(format!("Warning: MAN Recovery will not be updated: {e:#}"));
+            false
+        }
+    };
     progress(0.1, "Removing installer-only software");
     if query("chroot", &[new.to_str().unwrap(), "dpkg-query", "-W", "-f=${Status}", "man-installer"]).is_some_and(|s| s.contains("installed")) {
         let _ = chroot(new, &["dpkg", "--purge", "man-installer"]);
@@ -400,6 +418,12 @@ fn prepare_new_system(dev: &str, new: &Path, mounts: &mut Mounts) -> Result<()> 
     for v in &kernels {
         let mode = if new.join(format!("boot/initrd.img-{v}")).exists() { "-u" } else { "-c" };
         chroot(new, &["update-initramfs", mode, "-k", v])?;
+    }
+    if recovery_started {
+        let boot = separate_boot().then(|| new.join("boot"));
+        if let Err(e) = crate::recovery::finish(top, new, boot.as_deref(), &|f, d| progress(0.4 + f * 0.3, d)) {
+            info(format!("Warning: MAN Recovery was not updated: {e:#}"));
+        }
     }
     progress(0.75, "Writing the boot menu");
     // GRUB seen from inside the new system calls it @update; after the swap

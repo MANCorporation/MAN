@@ -275,7 +275,8 @@ pub fn installs(disks: &[Disk]) -> Vec<ExistingInstall> {
             let fstype = p.fstype.as_deref();
             let encrypted = fstype == Some("crypto_LUKS") && label == Some(LUKS_LABEL);
             let plain = fstype == Some("btrfs") && label == Some(BTRFS_LABEL);
-            if !(encrypted || plain) || !p.mountpoints.is_empty() {
+            // MAN Recovery runs from (a part of) the installation it may reinstall.
+            if !(encrypted || plain) || (!p.mountpoints.is_empty() && !crate::recovery::active()) {
                 continue;
             }
             let mut inst = ExistingInstall {

@@ -1,0 +1,29 @@
+#!/bin/sh
+# MAN: "MAN Recovery" in the boot menu (see man-recovery in the initramfs).
+set -e
+prefix="/usr"
+exec_prefix="/usr"
+datarootdir="/usr/share"
+. "${pkgdatadir:-/usr/share/grub}/grub-mkconfig_lib"
+
+[ -f /var/lib/man/recovery ] || exit 0
+[ -n "${GRUB_DEVICE_UUID}" ] || exit 0
+if [ -f /boot/man-recovery/vmlinuz ] && [ -f /boot/man-recovery/initrd.img ] &&
+   [ "$(stat -c %d /boot)" != "$(stat -c %d /)" ]; then
+    # Separate /boot partition: Recovery's own copy there.
+    device=${GRUB_DEVICE_BOOT}
+    kernel=$(make_system_path_relative_to_its_root /boot/man-recovery/vmlinuz)
+    initrd=$(make_system_path_relative_to_its_root /boot/man-recovery/initrd.img)
+else
+    # Everything on the Btrfs: the copy inside @recovery itself.
+    device=${GRUB_DEVICE}
+    kernel=/@recovery/boot/man-recovery/vmlinuz
+    initrd=/@recovery/boot/man-recovery/initrd.img
+fi
+echo "Found MAN Recovery" >&2
+echo "menuentry 'MAN Recovery' --class recovery \$menuentry_id_option 'man-recovery' {"
+prepare_grub_to_access_device "${device}" | sed 's/^/  /'
+echo "  echo 'Starting MAN Recovery...'"
+echo "  linux ${kernel} root=UUID=${GRUB_DEVICE_UUID} ro rootflags=subvol=@recovery ${GRUB_CMDLINE_LINUX} quiet splash man.recovery=1"
+echo "  initrd ${initrd}"
+echo "}"

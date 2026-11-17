@@ -1,0 +1,6 @@
+#!/bin/sh
+# MAN Recovery session: a minimal mutter compositor running only MAN Recovery
+# (and the Terminal it opens).
+export XDG_CURRENT_DESKTOP=GNOME
+export XDG_SESSION_DESKTOP=man-recovery
+exec mutter --wayland --display-server --no-x11 -- /usr/bin/man-recovery

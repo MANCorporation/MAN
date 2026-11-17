@@ -314,55 +314,55 @@ msgstr "Thao tác này cần quyền quản trị."
 msgid "The system helper stopped unexpectedly."
 msgstr "Trình trợ giúp hệ thống dừng đột ngột."
 
-#: installer.rs:78
+#: installer.rs:89
 msgid "No EFI system partition"
 msgstr "Không có phân vùng hệ thống EFI"
 
-#: installer.rs:82
+#: installer.rs:93
 msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
 msgstr "Chỉ còn trống {free}, MAN cần {need}. Hãy giải phóng dung lượng bằng DUHACH! trong Windows."
 
-#: installer.rs:83
+#: installer.rs:94
 msgid "No free space. Start DUHACH! in Windows to make room for MAN."
 msgstr "Không còn dung lượng trống. Hãy chạy DUHACH! trong Windows để dành chỗ cho MAN."
 
-#: installer.rs:92
+#: installer.rs:103
 msgid "MAN is running from this disk"
 msgstr "MAN đang chạy từ ổ đĩa này"
 
-#: installer.rs:96
+#: installer.rs:107
 msgid "In use: a partition is mounted"
 msgstr "Đang dùng: có phân vùng đang được gắn"
 
-#: installer.rs:98
+#: installer.rs:109
 msgid "Too small, MAN needs {need}"
 msgstr "Quá nhỏ, MAN cần {need}"
 
-#: installer.rs:108
+#: installer.rs:119
 msgid "Install MAN"
 msgstr "Cài đặt MAN"
 
-#: installer.rs:126
+#: installer.rs:137
 msgid "MAN is being installed. Please wait until it finishes."
 msgstr "MAN đang được cài đặt. Vui lòng chờ đến khi xong."
 
-#: installer.rs:143
+#: installer.rs:154
 msgid "Language"
 msgstr "Ngôn ngữ"
 
-#: installer.rs:155
+#: installer.rs:166
 msgid "_Restart in This Language"
 msgstr "_Khởi động lại bằng ngôn ngữ này"
 
-#: installer.rs:167
+#: installer.rs:178
 msgid "The live session restarts in the chosen language, and MAN is installed in it."
 msgstr "Phiên live sẽ khởi động lại bằng ngôn ngữ đã chọn, và MAN được cài bằng ngôn ngữ đó."
 
-#: installer.rs:213
+#: installer.rs:224
 msgid "Welcome to MAN"
 msgstr "Chào mừng đến với MAN"
 
-#: installer.rs:214
+#: installer.rs:225
 msgid ""
 "A fast, open and fully customizable GNOME system.\n"
 "Install it on this computer, or keep exploring the live session."
@@ -370,543 +370,567 @@ msgstr ""
 "Hệ thống GNOME nhanh, mở và tùy biến hoàn toàn.\n"
 "Cài đặt lên máy tính này, hoặc tiếp tục khám phá phiên live."
 
-#: installer.rs:218
+#: installer.rs:229
 msgid "_Install MAN…"
 msgstr "_Cài đặt MAN…"
 
-#: installer.rs:220
+#: installer.rs:231
 msgid "_Keep Trying MAN"
 msgstr "_Tiếp tục dùng thử MAN"
 
-#: installer.rs:223
+#: installer.rs:234
 msgid "Looking for disks…"
 msgstr "Đang tìm ổ đĩa…"
 
-#: installer.rs:250
+#: installer.rs:261
 msgid "Welcome"
 msgstr "Chào mừng"
 
-#: installer.rs:265
+#: installer.rs:276
 msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
 msgstr "Máy tính này khởi động ở chế độ BIOS cũ. MAN chỉ cài được trên máy tính UEFI: hãy khởi động lại và chọn tùy chọn khởi động UEFI."
 
-#: installer.rs:283
+#: installer.rs:294
 msgid "The system helper returned no disk information."
 msgstr "Trình trợ giúp hệ thống không trả về thông tin ổ đĩa."
 
-#: installer.rs:348
+#: installer.rs:372
 msgid "  ·  EFI"
 msgstr "  ·  EFI"
 
-#: installer.rs:356
+#: installer.rs:380
 msgid "_Next"
 msgstr "_Tiếp"
 
-#: installer.rs:364
+#: installer.rs:388
 msgid "Erase Disk and Install MAN"
 msgstr "Xóa ổ đĩa và cài MAN"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Everything on the chosen disk is deleted, Windows included."
 msgstr "Mọi thứ trên ổ đĩa đã chọn sẽ bị xóa, kể cả Windows."
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Recommended. Everything on the chosen disk is deleted."
 msgstr "Khuyên dùng. Mọi thứ trên ổ đĩa đã chọn sẽ bị xóa."
 
-#: installer.rs:369
+#: installer.rs:393
 msgid "Install Alongside Windows"
 msgstr "Cài bên cạnh Windows"
 
-#: installer.rs:370
+#: installer.rs:394
 msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
 msgstr "Khuyên dùng. MAN dùng dung lượng trống cạnh Windows; Windows và tệp của nó vẫn giữ nguyên. Chọn hệ thống mỗi lần khởi động."
 
-#: installer.rs:377
+#: installer.rs:401
 msgid "Reinstall MAN"
 msgstr "Cài lại MAN"
 
-#: installer.rs:378
+#: installer.rs:402
 msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
 msgstr "Thay hệ thống nhưng giữ tệp cá nhân trong /home. Hệ thống hiện tại được lưu thành ảnh chụp."
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "Custom Partitions"
 msgstr "Phân vùng tùy chỉnh"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "For experts: choose partitions yourself, or create them with Disks."
 msgstr "Dành cho chuyên gia: tự chọn phân vùng, hoặc tạo bằng Đĩa."
 
-#: installer.rs:392
+#: installer.rs:418
+msgid "Erase an External Disk and Install MAN"
+msgstr "Xóa một đĩa ngoài và cài đặt MAN"
+
+#: installer.rs:419
+msgid "Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."
+msgstr "Mọi thứ trên đĩa ngoài đã chọn sẽ bị xóa. Đĩa trong của Mac không được hiển thị và không bị thay đổi."
+
+#: installer.rs:420
+msgid "Install on This Mac"
+msgstr "Cài đặt trên Mac này"
+
+#: installer.rs:422
+msgid "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed."
+msgstr "Khuyến nghị. Vào {size} đã chuẩn bị trong macOS. macOS và các phân vùng của nó không bị thay đổi."
+
+#: installer.rs:427
+msgid "No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."
+msgstr "Chưa có chỗ nào được chuẩn bị cho MAN. Trong macOS, hãy chạy MAN-Mac/install-man.sh từ USB của MAN và chọn “MAN boot loader + space for MAN”."
+
+#: installer.rs:433
 msgid "Disk"
 msgstr "Ổ đĩa"
 
-#: installer.rs:392
+#: installer.rs:433
 msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
 msgstr "Chọn ổ đĩa sẽ bị xóa. Các ổ không dùng được sẽ hiện kèm lý do."
 
-#: installer.rs:418
+#: installer.rs:459
 msgid "No disks were found"
 msgstr "Không tìm thấy ổ đĩa"
 
-#: installer.rs:425
+#: installer.rs:466
 msgid "Free Space Next to Windows"
 msgstr "Dung lượng trống cạnh Windows"
 
-#: installer.rs:426
+#: installer.rs:467
 msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
 msgstr "Các phân vùng của Windows không bị động đến. MAN dùng chung phân vùng hệ thống EFI và thêm Windows vào trình đơn khởi động."
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "{size} free"
 msgstr "Trống {size}"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "no free space"
 msgstr "không còn trống"
 
-#: installer.rs:437
+#: installer.rs:478
 msgid "{model} (Windows)"
 msgstr "{model} (Windows)"
 
-#: installer.rs:456
+#: installer.rs:497
 msgid "Installation to Replace"
 msgstr "Bản cài đặt sẽ thay thế"
 
-#: installer.rs:477
+#: installer.rs:518
 msgid "no home folders"
 msgstr "không có thư mục nhà"
 
-#: installer.rs:479
+#: installer.rs:520
 msgid "home folders: {list}"
 msgstr "thư mục nhà: {list}"
 
-#: installer.rs:481
+#: installer.rs:522
 msgid "snapshots: {n}"
 msgstr "ảnh chụp: {n}"
 
-#: installer.rs:485
+#: installer.rs:526
 msgid "MAN on {model}"
 msgstr "MAN trên {model}"
 
-#: installer.rs:499
+#: installer.rs:540
 msgid "Passphrase for {device}"
 msgstr "Cụm mật khẩu cho {device}"
 
-#: installer.rs:500
+#: installer.rs:541
 msgid "Unlock"
 msgstr "Mở khóa"
 
-#: installer.rs:537
+#: installer.rs:578
 msgid "The installation could not be inspected."
 msgstr "Không thể kiểm tra bản cài đặt."
 
-#: installer.rs:554
+#: installer.rs:595
 msgid "Partitions"
 msgstr "Phân vùng"
 
-#: installer.rs:555
+#: installer.rs:596
 msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
 msgstr "Phân vùng hệ thống được định dạng Btrfs và chứa @system, @home và @snapshots. Các phân vùng trên ổ đĩa MAN đang chạy không được liệt kê."
 
-#: installer.rs:557
+#: installer.rs:598
 msgid "Open Disks to create or resize partitions"
 msgstr "Mở Đĩa để tạo hoặc đổi kích thước phân vùng"
 
-#: installer.rs:559
+#: installer.rs:600
 msgid "Refresh the partition list"
 msgstr "Làm mới danh sách phân vùng"
 
-#: installer.rs:567
+#: installer.rs:608
 msgid "Choose a partition"
 msgstr "Chọn phân vùng"
 
-#: installer.rs:579
+#: installer.rs:620
 msgid "EFI System Partition"
 msgstr "Phân vùng hệ thống EFI"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Format EFI System Partition"
 msgstr "Định dạng phân vùng hệ thống EFI"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Leave off to keep boot loaders of other systems"
 msgstr "Để tắt để giữ trình nạp khởi động của các hệ thống khác"
 
-#: installer.rs:582
+#: installer.rs:623
 msgid "System Partition (formatted as Btrfs)"
 msgstr "Phân vùng hệ thống (định dạng Btrfs)"
 
-#: installer.rs:583
+#: installer.rs:624
 msgid "Boot Partition (needed with encryption)"
 msgstr "Phân vùng khởi động (cần khi mã hóa)"
 
-#: installer.rs:642
+#: installer.rs:683
 msgid "Partition list refreshed"
 msgstr "Đã làm mới danh sách phân vùng"
 
-#: installer.rs:650
+#: installer.rs:691
 msgid "Security"
 msgstr "Bảo mật"
 
-#: installer.rs:652
+#: installer.rs:693
 msgid "Encrypt the System"
 msgstr "Mã hóa hệ thống"
 
-#: installer.rs:653
+#: installer.rs:694
 msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
 msgstr "Bảo vệ dữ liệu nếu máy tính bị mất hoặc bị đánh cắp. Mỗi lần khởi động sẽ hỏi cụm mật khẩu."
 
-#: installer.rs:656
+#: installer.rs:697
 msgid "Passphrase"
 msgstr "Cụm mật khẩu"
 
-#: installer.rs:657
+#: installer.rs:698
 msgid "Confirm Passphrase"
 msgstr "Xác nhận cụm mật khẩu"
 
-#: installer.rs:659
+#: installer.rs:700
 msgid "Keep this passphrase safe"
 msgstr "Hãy giữ cụm mật khẩu này an toàn"
 
-#: installer.rs:660
+#: installer.rs:701
 msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
 msgstr "Nếu mất, không ai khôi phục được dữ liệu. Nhân và tệp khởi động nằm trên một phân vùng khởi động nhỏ không mã hóa."
 
-#: installer.rs:732
+#: installer.rs:774
 msgid "The passphrase needs at least 8 characters."
 msgstr "Cụm mật khẩu phải có ít nhất 8 ký tự."
 
-#: installer.rs:734
+#: installer.rs:776
 msgid "The passphrases do not match."
 msgstr "Cụm mật khẩu không khớp."
 
-#: installer.rs:748
+#: installer.rs:790
 msgid "Choose a disk."
 msgstr "Hãy chọn ổ đĩa."
 
-#: installer.rs:758
+#: installer.rs:800
 msgid "Choose the disk with Windows."
 msgstr "Hãy chọn ổ đĩa có Windows."
 
-#: installer.rs:767
+#: installer.rs:809
 msgid "Choose the installation to replace."
 msgstr "Hãy chọn bản cài đặt sẽ thay thế."
 
-#: installer.rs:768
+#: installer.rs:810
 msgid "Unlock the encrypted installation first."
 msgstr "Hãy mở khóa bản cài đặt đã mã hóa trước."
 
-#: installer.rs:769
+#: installer.rs:811
 msgid "This partition holds no MAN system."
 msgstr "Phân vùng này không chứa hệ thống MAN."
 
-#: installer.rs:776
+#: installer.rs:818
 msgid "Choose an EFI system partition."
 msgstr "Hãy chọn phân vùng hệ thống EFI."
 
-#: installer.rs:778
+#: installer.rs:820
 msgid "Choose the system partition."
 msgstr "Hãy chọn phân vùng hệ thống."
 
-#: installer.rs:780
+#: installer.rs:822
 msgid "The EFI and system partitions must be different."
 msgstr "Phân vùng EFI và phân vùng hệ thống phải khác nhau."
 
-#: installer.rs:782
+#: installer.rs:824
 msgid "Encryption needs a separate boot partition."
 msgstr "Mã hóa cần một phân vùng khởi động riêng."
 
-#: installer.rs:791
+#: installer.rs:833
 msgid "The system partition must be at least {size}."
 msgstr "Phân vùng hệ thống phải có ít nhất {size}."
 
-#: installer.rs:793
+#: installer.rs:835
 msgid "The EFI partition is not FAT formatted; turn on formatting."
 msgstr "Phân vùng EFI không phải định dạng FAT; hãy bật định dạng."
 
-#: installer.rs:795
+#: installer.rs:837
 msgid "The system partition is mounted; unmount it in Disks first."
 msgstr "Phân vùng hệ thống đang được gắn; hãy gỡ nó trong Đĩa trước."
 
-#: installer.rs:817
+#: installer.rs:859
 msgid "Where Should MAN Be Installed?"
 msgstr "Cài MAN vào đâu?"
 
-#: installer.rs:824
+#: installer.rs:866
 msgid "Time and Keyboard"
 msgstr "Thời gian và bàn phím"
 
-#: installer.rs:829
+#: installer.rs:871
 msgid "Time Zone"
 msgstr "Múi giờ"
 
-#: installer.rs:833
+#: installer.rs:875
 msgid "Keyboard Layout"
 msgstr "Bố cục bàn phím"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Test Your Keyboard"
 msgstr "Thử bàn phím"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Type here to check that your keys produce the right characters."
 msgstr "Gõ vào đây để kiểm tra các phím có tạo đúng ký tự không."
 
-#: installer.rs:844
+#: installer.rs:886
 msgid "Type here"
 msgstr "Gõ vào đây"
 
-#: installer.rs:877
+#: installer.rs:919
 msgid "Time Zone and Keyboard"
 msgstr "Múi giờ và bàn phím"
 
-#: installer.rs:920
+#: installer.rs:962
 msgid "No disk chosen"
 msgstr "Chưa chọn ổ đĩa"
 
-#: installer.rs:926
+#: installer.rs:968
 msgid "No system partition chosen"
 msgstr "Chưa chọn phân vùng hệ thống"
 
-#: installer.rs:928
+#: installer.rs:970
 msgid "The system partition disappeared"
 msgstr "Phân vùng hệ thống đã biến mất"
 
-#: installer.rs:933
+#: installer.rs:975
 msgid "No installation chosen"
 msgstr "Chưa chọn bản cài đặt"
 
-#: installer.rs:944
+#: installer.rs:986
 msgid "The disk disappeared"
 msgstr "Ổ đĩa đã biến mất"
 
-#: installer.rs:955
+#: installer.rs:997
 msgid "Review"
 msgstr "Xem lại"
 
-#: installer.rs:958
+#: installer.rs:1000
 msgid "Destination"
 msgstr "Đích"
 
-#: installer.rs:960
+#: installer.rs:1002
 msgid "Erase disk and install"
 msgstr "Xóa ổ đĩa và cài đặt"
 
-#: installer.rs:961
+#: installer.rs:1003
+msgid "This Mac (space prepared in macOS)"
+msgstr "Mac này (chỗ đã chuẩn bị trong macOS)"
+
+#: installer.rs:1004
 msgid "Custom partitions"
 msgstr "Phân vùng tùy chỉnh"
 
-#: installer.rs:962
+#: installer.rs:1005
 msgid "Reinstall, keeping /home"
 msgstr "Cài lại, giữ /home"
 
-#: installer.rs:963
+#: installer.rs:1006
 msgid "Alongside Windows"
 msgstr "Cạnh Windows"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (will be formatted)"
 msgstr " (sẽ được định dạng)"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (kept)"
 msgstr " (giữ nguyên)"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "System Partition"
 msgstr "Phân vùng hệ thống"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "{partition} (will be formatted)"
 msgstr "{partition} (sẽ được định dạng)"
 
-#: installer.rs:972
+#: installer.rs:1015
 msgid "Boot Partition"
 msgstr "Phân vùng khởi động"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "Space for MAN"
 msgstr "Chỗ cho MAN"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "{free} of free space (a boot partition and the system partition are created)"
 msgstr "{free} dung lượng trống (tạo phân vùng khởi động và phân vùng hệ thống)"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Windows"
 msgstr "Windows"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
 msgstr "Không thay đổi. Nó xuất hiện trong trình đơn khởi động của MAN; phân vùng hệ thống EFI được dùng chung."
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Encryption"
 msgstr "Mã hóa"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "On (LUKS2)"
 msgstr "Bật (LUKS2)"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Off"
 msgstr "Tắt"
 
-#: installer.rs:985
+#: installer.rs:1028
 msgid "File System"
 msgstr "Hệ thống tệp"
 
-#: installer.rs:986
+#: installer.rs:1029
 msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
 msgstr "Btrfs: @system cho MAN, @home cho tệp của bạn, @snapshots cho điểm khôi phục. Tất cả dùng chung dung lượng trống."
 
-#: installer.rs:991
+#: installer.rs:1034
 msgid "System"
 msgstr "Hệ thống"
 
-#: installer.rs:993
+#: installer.rs:1036
 msgid "Your Account"
 msgstr "Tài khoản của bạn"
 
-#: installer.rs:994
+#: installer.rs:1037
 msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
 msgstr "Được tạo trong MAN Setup khi máy tính khởi động lần đầu, cùng với tên máy, giao diện và cài đặt quyền riêng tư."
 
-#: installer.rs:998
+#: installer.rs:1041
 msgid "Keyboard"
 msgstr "Bàn phím"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "All data on {model} ({path}) will be erased."
 msgstr "Toàn bộ dữ liệu trên {model} ({path}) sẽ bị xóa."
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "_Erase and Install"
 msgstr "_Xóa và cài đặt"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "The chosen partitions will be formatted. Other partitions are not changed."
 msgstr "Các phân vùng đã chọn sẽ được định dạng. Các phân vùng khác không thay đổi."
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "_Format and Install"
 msgstr "_Định dạng và cài đặt"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
 msgstr "Hệ thống hiện tại sẽ bị thay. Tệp của bạn trong /home được giữ, và hệ thống cũ được lưu thành ảnh chụp."
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "_Reinstall"
 msgstr "Cài _lại"
 
-#: installer.rs:1005
+#: installer.rs:1048
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN được cài vào dung lượng trống. Windows và tệp của nó không thay đổi."
 
-#: installer.rs:1019
+#: installer.rs:1062
 msgid "Ready to Install"
 msgstr "Sẵn sàng cài đặt"
 
-#: installer.rs:1029
+#: installer.rs:1072
 msgid "Erase {model}?"
 msgstr "Xóa {model}?"
 
-#: installer.rs:1030
+#: installer.rs:1073
 msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
 msgstr "Mọi tệp và phân vùng trên {path} ({size}) sẽ bị xóa vĩnh viễn. Không thể hoàn tác."
 
-#: installer.rs:1031
+#: installer.rs:1074
 msgid "Erase and Install"
 msgstr "Xóa và cài đặt"
 
-#: installer.rs:1035
+#: installer.rs:1078
 msgid "Format the Chosen Partitions?"
 msgstr "Định dạng các phân vùng đã chọn?"
 
-#: installer.rs:1036
+#: installer.rs:1079
 msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
 msgstr "Toàn bộ dữ liệu trên các phân vùng đã chọn sẽ bị xóa vĩnh viễn. Các phân vùng khác không thay đổi."
 
-#: installer.rs:1037
+#: installer.rs:1080
 msgid "Format and Install"
 msgstr "Định dạng và cài đặt"
 
-#: installer.rs:1041
+#: installer.rs:1084
 msgid "Install MAN Alongside Windows?"
 msgstr "Cài MAN bên cạnh Windows?"
 
-#: installer.rs:1042
+#: installer.rs:1085
 msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
 msgstr "MAN được cài vào {free} dung lượng trống trên {model} ({path}). Windows và tệp của nó không thay đổi."
 
-#: installer.rs:1046
+#: installer.rs:1089
 msgid "Install"
 msgstr "Cài đặt"
 
-#: installer.rs:1050
+#: installer.rs:1093
 msgid "Reinstall MAN?"
 msgstr "Cài lại MAN?"
 
-#: installer.rs:1051
+#: installer.rs:1094
 msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
 msgstr "Hệ thống đã cài sẽ được thay bằng một bản mới. Tệp cá nhân trong /home được giữ và hệ thống cũ vẫn có sẵn dưới dạng ảnh chụp."
 
-#: installer.rs:1052
+#: installer.rs:1095
 msgid "Reinstall"
 msgstr "Cài lại"
 
-#: installer.rs:1057
+#: installer.rs:1100
 msgid "_Cancel"
 msgstr "_Hủy"
 
-#: installer.rs:1076
+#: installer.rs:1119
 msgid "Installing MAN"
 msgstr "Đang cài MAN"
 
-#: installer.rs:1077
+#: installer.rs:1120
 msgid "Starting…"
 msgstr "Đang bắt đầu…"
 
-#: installer.rs:1090
+#: installer.rs:1133
 msgid "Installing"
 msgstr "Đang cài đặt"
 
-#: installer.rs:1103
+#: installer.rs:1146
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Bước {index}/{n}  ·  {title}"
 
-#: installer.rs:1138
+#: installer.rs:1181
 msgid "MAN Is Installed"
 msgstr "Đã cài MAN"
 
-#: installer.rs:1143
+#: installer.rs:1186
 msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
 msgstr "Khởi động lại máy để bắt đầu dùng MAN. Mỗi lần khởi động, trình đơn cho phép chọn MAN hoặc Windows; MAN sẽ gỡ phân vùng cài đặt tạm thời ở lần khởi động đầu tiên."
 
-#: installer.rs:1149
+#: installer.rs:1192
 msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
 msgstr "Khởi động lại máy để bắt đầu dùng MAN. Bạn có thể rút phương tiện cài đặt; nếu vẫn cắm, MAN vẫn khởi động từ ổ đĩa mới."
 
-#: installer.rs:1156
+#: installer.rs:1199
 msgid "_Restart Now"
 msgstr "_Khởi động lại ngay"
 
-#: installer.rs:1171
+#: installer.rs:1214
 msgid "Done"
 msgstr "Xong"
 
-#: installer.rs:1182
+#: installer.rs:1225
 msgid "Installation Failed"
 msgstr "Cài đặt thất bại"
 
-#: installer.rs:1186
+#: installer.rs:1229
 msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
 msgstr "Không ổ đĩa nào khác bị thay đổi, và trình cài đặt đã giải phóng ổ đĩa đích. Bạn có thể xem lại kế hoạch rồi thử lại."
 
-#: installer.rs:1191
+#: installer.rs:1234
 msgid "_Review and Try Again"
 msgstr "_Xem lại và thử lại"
 
@@ -1062,413 +1086,557 @@ msgstr "Chào mừng đến với Marquee"
 msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
 msgstr "Bạn muốn mở Marquee, hay chia sẻ phim, nhạc và ảnh với các máy tính khác trên mạng này?"
 
-#: oobe.rs:165
-msgid "The system disk was not found."
-msgstr "Không tìm thấy ổ đĩa hệ thống."
-
-#: oobe.rs:173
-msgid "Encryption needs the Btrfs layout created by the MAN installer."
-msgstr "Mã hóa cần bố cục Btrfs do trình cài đặt MAN tạo."
-
-#: oobe.rs:177
-msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
-msgstr "Bản cài đặt này không có phân vùng khởi động riêng mà mã hóa cần. Hãy cài lại MAN với “Xóa ổ đĩa” để dùng mã hóa."
-
-#: oobe.rs:501
-msgid "MAN Setup"
-msgstr "MAN Setup"
-
-#: oobe.rs:554
-msgid "Where Are You?"
-msgstr "Bạn đang ở đâu?"
-
-#: oobe.rs:554
-msgid "Your country or region sets the date, time and number formats."
-msgstr "Quốc gia hoặc vùng của bạn quyết định định dạng ngày, giờ và số."
-
-#: oobe.rs:572
-msgid "Country"
-msgstr "Quốc gia"
-
-#: oobe.rs:587
-msgid "GNU General Public License, version 2"
-msgstr "Giấy phép Công cộng GNU, phiên bản 2"
-
-#: oobe.rs:587
-msgid "The Linux kernel and many system tools"
-msgstr "Nhân Linux và nhiều công cụ hệ thống"
-
-#: oobe.rs:588
-msgid "GNU General Public License, version 3"
-msgstr "Giấy phép Công cộng GNU, phiên bản 3"
-
-#: oobe.rs:588
-msgid "Many GNU and GNOME programs"
-msgstr "Nhiều chương trình GNU và GNOME"
-
-#: oobe.rs:589
-msgid "GNU Lesser General Public License, version 2.1"
-msgstr "Giấy phép Công cộng Hạn chế GNU, phiên bản 2.1"
-
-#: oobe.rs:589
-msgid "GTK, GLib and many libraries"
-msgstr "GTK, GLib và nhiều thư viện"
-
-#: oobe.rs:590
-msgid "GNU Lesser General Public License, version 3"
-msgstr "Giấy phép Công cộng Hạn chế GNU, phiên bản 3"
-
-#: oobe.rs:591
-msgid "Mozilla Public License 2.0"
-msgstr "Giấy phép Công cộng Mozilla 2.0"
-
-#: oobe.rs:591
-msgid "Programs and libraries from Mozilla and others"
-msgstr "Chương trình và thư viện của Mozilla và những bên khác"
-
-#: oobe.rs:592
-msgid "Apache License 2.0"
-msgstr "Giấy phép Apache 2.0"
-
-#: oobe.rs:592
-msgid "Libraries and tools"
-msgstr "Thư viện và công cụ"
-
-#: oobe.rs:597
-msgid "License Agreement"
-msgstr "Thỏa thuận giấy phép"
-
-#: oobe.rs:597
-msgid "Please read and accept the terms under which MAN is provided."
-msgstr "Vui lòng đọc và chấp nhận các điều khoản cung cấp MAN."
-
-#: oobe.rs:608
-msgid "Licenses"
-msgstr "Giấy phép"
-
-#: oobe.rs:616
-msgid "The license text is not available ({path})."
-msgstr "Không có văn bản giấy phép ({path})."
-
-#: oobe.rs:622
-msgid "I have read and accept the license terms"
-msgstr "Tôi đã đọc và chấp nhận điều khoản giấy phép"
-
-#: oobe.rs:692
+#: net.rs:59
 msgid "Wired"
 msgstr "Có dây"
 
-#: oobe.rs:698
+#: net.rs:65
 msgid "Not connected"
 msgstr "Chưa kết nối"
 
-#: oobe.rs:732
-msgid "Connect to the Internet"
-msgstr "Kết nối Internet"
-
-#: oobe.rs:732
-msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
-msgstr "Khi có kết nối, MAN có thể chỉnh giờ và giữ phần mềm luôn mới. Bạn cũng có thể làm việc này sau."
-
-#: oobe.rs:734
-msgid "Checking the connection…"
-msgstr "Đang kiểm tra kết nối…"
-
-#: oobe.rs:740
-msgid "Wi-Fi Networks"
-msgstr "Mạng Wi-Fi"
-
-#: oobe.rs:742
-msgid "Search Again"
-msgstr "Tìm lại"
-
-#: oobe.rs:753
-msgid "_Skip"
-msgstr "_Bỏ qua"
-
-#: oobe.rs:754
-msgid "You can connect later in Settings."
-msgstr "Bạn có thể kết nối sau trong Cài đặt."
-
-#: oobe.rs:763
-msgid "Connected"
-msgstr "Đã kết nối"
-
-#: oobe.rs:763
-msgid "Not Connected"
-msgstr "Chưa kết nối"
-
-#: oobe.rs:791
-msgid "No networks found"
-msgstr "Không tìm thấy mạng"
-
-#: oobe.rs:817
-msgid "Internet"
-msgstr "Internet"
-
-#: oobe.rs:864
+#: net.rs:121
 msgid "Connected to “{ssid}”"
 msgstr "Đã kết nối với “{ssid}”"
 
-#: oobe.rs:864
+#: net.rs:121
 msgid "Could not connect to “{ssid}”"
 msgstr "Không thể kết nối với “{ssid}”"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Connect to “{ssid}”"
 msgstr "Kết nối với “{ssid}”"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Enter the network password."
 msgstr "Nhập mật khẩu mạng."
 
-#: oobe.rs:878
+#: net.rs:135
 msgid "C_onnect"
 msgstr "_Kết nối"
 
-#: oobe.rs:901
+#: oobe.rs:166
+msgid "The system disk was not found."
+msgstr "Không tìm thấy ổ đĩa hệ thống."
+
+#: oobe.rs:174
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Mã hóa cần bố cục Btrfs do trình cài đặt MAN tạo."
+
+#: oobe.rs:186
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Bản cài đặt này không có phân vùng khởi động riêng mà mã hóa cần. Hãy cài lại MAN với “Xóa ổ đĩa” để dùng mã hóa."
+
+#: oobe.rs:510
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:563
+msgid "Where Are You?"
+msgstr "Bạn đang ở đâu?"
+
+#: oobe.rs:563
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Quốc gia hoặc vùng của bạn quyết định định dạng ngày, giờ và số."
+
+#: oobe.rs:581
+msgid "Country"
+msgstr "Quốc gia"
+
+#: oobe.rs:596
+msgid "GNU General Public License, version 2"
+msgstr "Giấy phép Công cộng GNU, phiên bản 2"
+
+#: oobe.rs:596
+msgid "The Linux kernel and many system tools"
+msgstr "Nhân Linux và nhiều công cụ hệ thống"
+
+#: oobe.rs:597
+msgid "GNU General Public License, version 3"
+msgstr "Giấy phép Công cộng GNU, phiên bản 3"
+
+#: oobe.rs:597
+msgid "Many GNU and GNOME programs"
+msgstr "Nhiều chương trình GNU và GNOME"
+
+#: oobe.rs:598
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "Giấy phép Công cộng Hạn chế GNU, phiên bản 2.1"
+
+#: oobe.rs:598
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib và nhiều thư viện"
+
+#: oobe.rs:599
+msgid "GNU Lesser General Public License, version 3"
+msgstr "Giấy phép Công cộng Hạn chế GNU, phiên bản 3"
+
+#: oobe.rs:600
+msgid "Mozilla Public License 2.0"
+msgstr "Giấy phép Công cộng Mozilla 2.0"
+
+#: oobe.rs:600
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Chương trình và thư viện của Mozilla và những bên khác"
+
+#: oobe.rs:601
+msgid "Apache License 2.0"
+msgstr "Giấy phép Apache 2.0"
+
+#: oobe.rs:601
+msgid "Libraries and tools"
+msgstr "Thư viện và công cụ"
+
+#: oobe.rs:606
+msgid "License Agreement"
+msgstr "Thỏa thuận giấy phép"
+
+#: oobe.rs:606
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Vui lòng đọc và chấp nhận các điều khoản cung cấp MAN."
+
+#: oobe.rs:617
+msgid "Licenses"
+msgstr "Giấy phép"
+
+#: oobe.rs:625
+msgid "The license text is not available ({path})."
+msgstr "Không có văn bản giấy phép ({path})."
+
+#: oobe.rs:631
+msgid "I have read and accept the license terms"
+msgstr "Tôi đã đọc và chấp nhận điều khoản giấy phép"
+
+#: oobe.rs:658
+msgid "Connect to the Internet"
+msgstr "Kết nối Internet"
+
+#: oobe.rs:658
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Khi có kết nối, MAN có thể chỉnh giờ và giữ phần mềm luôn mới. Bạn cũng có thể làm việc này sau."
+
+#: oobe.rs:660
+msgid "Checking the connection…"
+msgstr "Đang kiểm tra kết nối…"
+
+#: oobe.rs:666
+msgid "Wi-Fi Networks"
+msgstr "Mạng Wi-Fi"
+
+#: oobe.rs:668
+msgid "Search Again"
+msgstr "Tìm lại"
+
+#: oobe.rs:679
+msgid "_Skip"
+msgstr "_Bỏ qua"
+
+#: oobe.rs:680
+msgid "You can connect later in Settings."
+msgstr "Bạn có thể kết nối sau trong Cài đặt."
+
+#: oobe.rs:689
+msgid "Connected"
+msgstr "Đã kết nối"
+
+#: oobe.rs:689
+msgid "Not Connected"
+msgstr "Chưa kết nối"
+
+#: oobe.rs:717
+msgid "No networks found"
+msgstr "Không tìm thấy mạng"
+
+#: oobe.rs:746
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:777
 msgid "Create Your Account"
 msgstr "Tạo tài khoản của bạn"
 
-#: oobe.rs:901
+#: oobe.rs:777
 msgid "You will be the administrator of this computer, with full root access through sudo."
 msgstr "Bạn sẽ là quản trị viên của máy tính này, với toàn quyền root qua sudo."
 
-#: oobe.rs:904
+#: oobe.rs:780
 msgid "Full Name"
 msgstr "Họ và tên"
 
-#: oobe.rs:905
+#: oobe.rs:781
 msgid "Username"
 msgstr "Tên người dùng"
 
-#: oobe.rs:906
+#: oobe.rs:782
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: oobe.rs:907
+#: oobe.rs:783
 msgid "Confirm Password"
 msgstr "Xác nhận mật khẩu"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Log In Automatically"
 msgstr "Tự động đăng nhập"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Skip the login screen when the computer starts"
 msgstr "Bỏ qua màn hình đăng nhập khi máy khởi động"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Existing Home Folders"
 msgstr "Thư mục nhà hiện có"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Use the same username to keep using a folder kept from a previous installation."
 msgstr "Dùng cùng tên người dùng để tiếp tục dùng thư mục giữ lại từ bản cài đặt trước."
 
-#: oobe.rs:919
+#: oobe.rs:795
 msgid "Use"
 msgstr "Dùng"
 
-#: oobe.rs:929
+#: oobe.rs:805
 msgid "Advanced"
 msgstr "Nâng cao"
 
-#: oobe.rs:930
+#: oobe.rs:806
 msgid "Computer Name"
 msgstr "Tên máy tính"
 
-#: oobe.rs:932
+#: oobe.rs:808
 msgid "Set a Root Password"
 msgstr "Đặt mật khẩu root"
 
-#: oobe.rs:933
+#: oobe.rs:809
 msgid "Allows logging in as root directly. Without it, use sudo with your own password."
 msgstr "Cho phép đăng nhập trực tiếp bằng root. Nếu không đặt, hãy dùng sudo với mật khẩu của bạn."
 
-#: oobe.rs:937
+#: oobe.rs:813
 msgid "Root Password"
 msgstr "Mật khẩu root"
 
-#: oobe.rs:938
+#: oobe.rs:814
 msgid "Confirm Root Password"
 msgstr "Xác nhận mật khẩu root"
 
-#: oobe.rs:962
+#: oobe.rs:838
 msgid "Enter your name."
 msgstr "Nhập tên của bạn."
 
-#: oobe.rs:964
+#: oobe.rs:840
 msgid "Choose a username."
 msgstr "Chọn tên người dùng."
 
-#: oobe.rs:966
+#: oobe.rs:842
 msgid "This username is already used by the system."
 msgstr "Tên người dùng này đã được hệ thống dùng."
 
-#: oobe.rs:969
+#: oobe.rs:845
 msgid "This username is reserved by the system."
 msgstr "Tên người dùng này được hệ thống dành riêng."
 
-#: oobe.rs:971
+#: oobe.rs:847
 msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
 msgstr "Tên người dùng gồm chữ thường không dấu, chữ số, - và _, và bắt đầu bằng một chữ cái."
 
-#: oobe.rs:974
+#: oobe.rs:850
 msgid "Choose a password."
 msgstr "Chọn mật khẩu."
 
-#: oobe.rs:976
+#: oobe.rs:852
 msgid "The passwords do not match."
 msgstr "Mật khẩu không khớp."
 
-#: oobe.rs:978
+#: oobe.rs:854
 msgid "The computer name may contain letters, digits and dashes."
 msgstr "Tên máy tính có thể chứa chữ cái, chữ số và dấu gạch ngang."
 
-#: oobe.rs:980
+#: oobe.rs:856
 msgid "Enter the root password twice."
 msgstr "Nhập mật khẩu root hai lần."
 
-#: oobe.rs:986
+#: oobe.rs:862
 msgid "Tip: a password with 8 or more characters is much safer."
 msgstr "Mẹo: mật khẩu từ 8 ký tự trở lên an toàn hơn nhiều."
 
-#: oobe.rs:1066
+#: oobe.rs:942
 msgid "Account"
 msgstr "Tài khoản"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Dark"
 msgstr "Tối"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Light"
 msgstr "Sáng"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Make It Yours"
 msgstr "Làm theo ý bạn"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
 msgstr "Chọn kiểu, màu nhấn và hình nền. Bạn thấy mọi thay đổi ngay lập tức."
 
-#: oobe.rs:1095
+#: oobe.rs:971
 msgid "Style"
 msgstr "Kiểu"
 
-#: oobe.rs:1115
+#: oobe.rs:991
 msgid "Accent Color"
 msgstr "Màu nhấn"
 
-#: oobe.rs:1158
+#: oobe.rs:1034
 msgid "Wallpaper"
 msgstr "Hình nền"
 
-#: oobe.rs:1202
+#: oobe.rs:1078
 msgid "Customize"
 msgstr "Tùy biến"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Privacy"
 msgstr "Quyền riêng tư"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Choose which features may use information about you. You can change this at any time in Settings."
 msgstr "Chọn những tính năng được dùng thông tin về bạn. Bạn có thể đổi bất cứ lúc nào trong Cài đặt."
 
-#: oobe.rs:1212
+#: oobe.rs:1088
 msgid "Location Services"
 msgstr "Dịch vụ vị trí"
 
-#: oobe.rs:1213
+#: oobe.rs:1089
 msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
 msgstr "Cho phép các ứng dụng như Bản đồ và Thời tiết tìm vị trí gần đúng của bạn qua các mạng Wi-Fi gần đó."
 
-#: oobe.rs:1217
+#: oobe.rs:1093
 msgid "Automatic Time Zone"
 msgstr "Múi giờ tự động"
 
-#: oobe.rs:1218
+#: oobe.rs:1094
 msgid "Uses your location to keep the time zone right when you travel."
 msgstr "Dùng vị trí của bạn để giữ múi giờ đúng khi đi du lịch."
 
-#: oobe.rs:1251
+#: oobe.rs:1127
 msgid "_Finish Setup"
 msgstr "_Hoàn tất thiết lập"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your Disk Is Encrypted"
 msgstr "Ổ đĩa của bạn đã được mã hóa"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your data is protected. The passphrase is asked every time the computer starts."
 msgstr "Dữ liệu của bạn được bảo vệ. Cụm mật khẩu được hỏi mỗi lần máy khởi động."
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Disk Encryption"
 msgstr "Mã hóa ổ đĩa"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Encryption protects your data if the computer is lost or stolen."
 msgstr "Mã hóa bảo vệ dữ liệu nếu máy tính bị mất hoặc bị đánh cắp."
 
-#: oobe.rs:1261
+#: oobe.rs:1137
 msgid "Not available on this installation"
 msgstr "Không có trên bản cài đặt này"
 
-#: oobe.rs:1267
+#: oobe.rs:1143
 msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
 msgstr "Mã hóa bảo vệ tệp của bạn nếu máy tính bị mất hoặc bị đánh cắp. Không có cụm mật khẩu thì không ai đọc được ổ đĩa."
 
-#: oobe.rs:1270
+#: oobe.rs:1146
 msgid "Encrypt the Disk"
 msgstr "Mã hóa ổ đĩa"
 
-#: oobe.rs:1271
+#: oobe.rs:1147
 msgid "The passphrase is asked every time the computer starts."
 msgstr "Cụm mật khẩu được hỏi mỗi lần máy khởi động."
 
-#: oobe.rs:1279
+#: oobe.rs:1155
 msgid "Encryption starts at the next restart"
 msgstr "Mã hóa bắt đầu ở lần khởi động lại tiếp theo"
 
-#: oobe.rs:1280
+#: oobe.rs:1156
 msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
 msgstr "Sau đó ổ đĩa được mã hóa ở chế độ nền trong lúc bạn dùng máy. Nếu mất cụm mật khẩu, không ai khôi phục được dữ liệu."
 
-#: oobe.rs:1377
+#: oobe.rs:1253
 msgid "Preparing MAN"
 msgstr "Đang chuẩn bị MAN"
 
-#: oobe.rs:1378
+#: oobe.rs:1254
 msgid "Getting everything ready…"
 msgstr "Đang chuẩn bị mọi thứ…"
 
-#: oobe.rs:1383
+#: oobe.rs:1259
 msgid "_Reboot"
 msgstr "_Khởi động lại"
 
-#: oobe.rs:1385
+#: oobe.rs:1261
 msgid "_Go Back"
 msgstr "_Quay lại"
 
-#: oobe.rs:1399
+#: oobe.rs:1275
 msgid "Preparing"
 msgstr "Đang chuẩn bị"
 
-#: oobe.rs:1412
+#: oobe.rs:1288
 msgid "Setup Log"
 msgstr "Nhật ký thiết lập"
 
-#: oobe.rs:1444
+#: oobe.rs:1320
 msgid "All Done!"
 msgstr "Xong hết rồi!"
 
-#: oobe.rs:1454
+#: oobe.rs:1330
 msgid "Something Went Wrong"
 msgstr "Đã xảy ra lỗi"
+
+#: recovery.rs:113
+msgid "MAN Recovery"
+msgstr "Khôi phục MAN"
+
+#: recovery.rs:114
+msgid "Restore your system, reinstall MAN or open a Terminal. First, an administrator of this computer signs in."
+msgstr "Khôi phục hệ thống, cài đặt lại MAN hoặc mở Terminal. Trước tiên, một quản trị viên của máy tính này đăng nhập."
+
+#: recovery.rs:122
+msgid "Administrator"
+msgstr "Quản trị viên"
+
+#: recovery.rs:131
+msgid "No installed system was found on this disk. You can reinstall MAN."
+msgstr "Không tìm thấy hệ thống đã cài trên đĩa này. Bạn có thể cài đặt lại MAN."
+
+#: recovery.rs:198
+msgid "This computer has MAN {version}."
+msgstr "Máy tính này có MAN {version}."
+
+#: recovery.rs:199
+msgid "What Would You Like to Do?"
+msgstr "Bạn muốn làm gì?"
+
+#: recovery.rs:202
+msgid "Restore a Snapshot"
+msgstr "Khôi phục một ảnh chụp nhanh"
+
+#: recovery.rs:202
+msgid "Your system broke? Go back to a moment when everything worked. Your files stay."
+msgstr "Hệ thống bị hỏng? Quay về thời điểm mọi thứ còn chạy tốt. Các tập tin của bạn được giữ lại."
+
+#: recovery.rs:203
+msgid "Download the newest MAN and install it again. Your files, accounts and settings stay."
+msgstr "Tải MAN mới nhất và cài đặt lại. Tập tin, tài khoản và cài đặt của bạn được giữ lại."
+
+#: recovery.rs:204
+msgid "Terminal"
+msgstr "Terminal"
+
+#: recovery.rs:204
+msgid "For experts: type commands with full control of the computer."
+msgstr "Dành cho chuyên gia: gõ lệnh với toàn quyền điều khiển máy tính."
+
+#: recovery.rs:207
+msgid "There are no snapshots on this computer."
+msgstr "Không có ảnh chụp nhanh nào trên máy tính này."
+
+#: recovery.rs:240
+msgid "Choose a moment when everything worked. The files in your home folder stay as they are now."
+msgstr "Chọn một thời điểm mọi thứ còn chạy tốt. Các tập tin trong thư mục riêng của bạn giữ nguyên như hiện tại."
+
+#: recovery.rs:257
+msgid "Restore “{name}”?"
+msgstr "Khôi phục “{name}”?"
+
+#: recovery.rs:258
+msgid "Your system goes back to how it was on {date}. Your files stay. The system as it is now is kept as a snapshot, so you can come back to it."
+msgstr "Hệ thống của bạn trở về trạng thái ngày {date}. Các tập tin của bạn được giữ lại. Hệ thống hiện tại được giữ dưới dạng ảnh chụp nhanh để bạn có thể quay lại."
+
+#: recovery.rs:261
+msgid "_Restore"
+msgstr "_Khôi phục"
+
+#: recovery.rs:270
+msgid "Restoring Your System"
+msgstr "Đang khôi phục hệ thống"
+
+#: recovery.rs:275
+msgid "Your system was restored. Restart to use it."
+msgstr "Hệ thống đã được khôi phục. Khởi động lại để sử dụng."
+
+#: recovery.rs:283
+msgid "MAN Recovery downloads the newest MAN. Connect to a network first."
+msgstr "Khôi phục MAN tải về MAN mới nhất. Hãy kết nối mạng trước."
+
+#: recovery.rs:388
+msgid "Looking for the newest MAN…"
+msgstr "Đang tìm MAN mới nhất…"
+
+#: recovery.rs:394
+msgid "Your files, accounts and settings stay."
+msgstr "Tập tin, tài khoản và cài đặt của bạn được giữ lại."
+
+#: recovery.rs:395
+msgid "Apps you installed as Flatpaks stay; other apps you added may need to be installed again."
+msgstr "Các ứng dụng cài dạng Flatpak được giữ lại; các ứng dụng khác bạn đã thêm có thể cần cài lại."
+
+#: recovery.rs:396
+msgid "The system as it is now is kept as a snapshot."
+msgstr "Hệ thống hiện tại được giữ dưới dạng ảnh chụp nhanh."
+
+#: recovery.rs:397
+msgid "Keep the computer plugged in. This takes a while."
+msgstr "Hãy giữ máy tính cắm điện. Việc này mất một lúc."
+
+#: recovery.rs:407
+msgid "_Reinstall MAN"
+msgstr "_Cài đặt lại MAN"
+
+#: recovery.rs:426
+msgid "MAN {version} ({size}) will be downloaded and installed on this computer."
+msgstr "MAN {version} ({size}) sẽ được tải về và cài đặt trên máy tính này."
+
+#: recovery.rs:437
+msgid "No MAN for this computer was found."
+msgstr "Không tìm thấy MAN cho máy tính này."
+
+#: recovery.rs:445
+msgid "Reinstalling MAN"
+msgstr "Đang cài đặt lại MAN"
+
+#: recovery.rs:460
+msgid "MAN was installed again. Your files and accounts were kept. Restart to use it."
+msgstr "MAN đã được cài đặt lại. Tập tin và tài khoản của bạn được giữ lại. Khởi động lại để sử dụng."
+
+#: recovery.rs:472
+msgid "Do not turn the computer off."
+msgstr "Đừng tắt máy tính."
+
+#: recovery.rs:519
+msgid "That Did Not Work"
+msgstr "Không thành công"
+
+#: recovery.rs:521
+msgid "_Details"
+msgstr "_Chi tiết"
+
+#: recovery.rs:529
+msgid "_Restart"
+msgstr "_Khởi động lại"
+
+#: recovery.rs:533
+msgid "_Back to MAN Recovery"
+msgstr "_Quay lại Khôi phục MAN"
+
+#: recovery.rs:575
+msgid "_Shut Down"
+msgstr "_Tắt máy"
+
+#: recovery.rs:605
+msgid "Looking at this computer…"
+msgstr "Đang xem xét máy tính này…"
 
 #: snapshots.rs:84
 msgid "Daily"
@@ -1559,10 +1727,6 @@ msgstr ""
 "Sau khi khởi động lại, hệ thống sẽ trở về “{description}” lúc {date}. Tệp cá nhân của bạn không thay đổi.\n"
 "\n"
 "Hệ thống hiện tại được lưu thành ảnh chụp trước, nên có thể hoàn tác."
-
-#: snapshots.rs:278
-msgid "_Restore"
-msgstr "_Khôi phục"
 
 #: snapshots.rs:291
 msgid "Restart to Finish Restoring"
@@ -2058,199 +2222,211 @@ msgstr "Không thể cài đặt gói."
 msgid "The app's menu entry is not valid."
 msgstr "Mục trình đơn của ứng dụng không hợp lệ."
 
-#: install.rs:16
+#: install.rs:17
 msgid "Checking the installation plan"
 msgstr "Đang kiểm tra kế hoạch cài đặt"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Preparing the disk"
 msgstr "Đang chuẩn bị ổ đĩa"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Copying MAN to the disk"
 msgstr "Đang chép MAN vào ổ đĩa"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Configuring the new system"
 msgstr "Đang cấu hình hệ thống mới"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Installing the bootloader"
 msgstr "Đang cài trình nạp khởi động"
 
-#: install.rs:16
+#: install.rs:17
+msgid "Preparing MAN Recovery"
+msgstr "Đang chuẩn bị Khôi phục MAN"
+
+#: install.rs:17
 msgid "Creating the first snapshot"
 msgstr "Đang tạo ảnh chụp đầu tiên"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Finishing up"
 msgstr "Đang hoàn tất"
 
-#: install.rs:199
+#: install.rs:232
 msgid "Removing old partition signatures"
 msgstr "Đang gỡ chữ ký phân vùng cũ"
 
-#: install.rs:205
+#: install.rs:238
 msgid "Creating partitions"
 msgstr "Đang tạo phân vùng"
 
-#: install.rs:226
+#: install.rs:259
 msgid "Formatting the EFI system partition"
 msgstr "Đang định dạng phân vùng hệ thống EFI"
 
-#: install.rs:234
+#: install.rs:267
 msgid "Encrypting the system partition"
 msgstr "Đang mã hóa phân vùng hệ thống"
 
-#: install.rs:246
+#: install.rs:279
 msgid "Formatting the boot partition"
 msgstr "Đang định dạng phân vùng khởi động"
 
-#: install.rs:249
+#: install.rs:282
 msgid "Creating the Btrfs file system"
 msgstr "Đang tạo hệ thống tệp Btrfs"
 
-#: install.rs:258
+#: install.rs:293
 msgid "Removing old file system signatures"
 msgstr "Đang gỡ chữ ký hệ thống tệp cũ"
 
-#: install.rs:330
+#: install.rs:372
 msgid "Unlocking the encrypted installation"
 msgstr "Đang mở khóa bản cài đặt đã mã hóa"
 
-#: install.rs:356
+#: install.rs:399
 msgid "Saving the current system as a snapshot"
 msgstr "Đang lưu hệ thống hiện tại thành ảnh chụp"
 
-#: install.rs:362
+#: install.rs:406
 msgid "Removing the previous system"
 msgstr "Đang gỡ hệ thống trước"
 
-#: install.rs:571
+#: install.rs:615
 msgid "Writing file system table"
 msgstr "Đang ghi bảng hệ thống tệp"
 
-#: install.rs:593
+#: install.rs:639
 msgid "Setting computer name and identity"
 msgstr "Đang đặt tên và định danh máy tính"
 
-#: install.rs:608
+#: install.rs:654
 msgid "Removing the live session accounts"
 msgstr "Đang gỡ các tài khoản phiên live"
 
-#: install.rs:641
+#: install.rs:687
 msgid "Creating your account"
 msgstr "Đang tạo tài khoản của bạn"
 
-#: install.rs:649
+#: install.rs:699
 msgid "Preparing MAN Setup for the first start"
 msgstr "Đang chuẩn bị MAN Setup cho lần khởi động đầu"
 
-#: install.rs:655
+#: install.rs:705
 msgid "Setting time zone and keyboard"
 msgstr "Đang đặt múi giờ và bàn phím"
 
-#: install.rs:680
+#: install.rs:730
 msgid "Removing the installer from the new system"
 msgstr "Đang gỡ trình cài đặt khỏi hệ thống mới"
 
-#: install.rs:687
+#: install.rs:737
 msgid "Building the boot image (initramfs)"
 msgstr "Đang tạo ảnh khởi động (initramfs)"
 
-#: install.rs:717
+#: install.rs:767
 msgid "Configuring GRUB"
 msgstr "Đang cấu hình GRUB"
 
-#: install.rs:735
+#: install.rs:785
 msgid "Installing GRUB to the EFI system partition"
 msgstr "Đang cài GRUB vào phân vùng hệ thống EFI"
 
-#: install.rs:752
+#: install.rs:802
 msgid "Installing the fallback boot loader"
 msgstr "Đang cài trình nạp khởi động dự phòng"
 
-#: install.rs:759
+#: install.rs:809
 msgid "Writing the boot menu"
 msgstr "Đang ghi trình đơn khởi động"
 
-#: install.rs:780
+#: install.rs:834
 msgid "Disk ready"
 msgstr "Ổ đĩa đã sẵn sàng"
 
-#: install.rs:793
+#: install.rs:853
+msgid "Keeping your accounts and settings"
+msgstr "Đang giữ tài khoản và cài đặt của bạn"
+
+#: install.rs:869
+msgid "Skipped"
+msgstr "Đã bỏ qua"
+
+#: install.rs:873
 msgid "Creating a snapshot of the fresh system"
 msgstr "Đang tạo ảnh chụp của hệ thống mới"
 
-#: install.rs:799
+#: install.rs:879
 msgid "Adding the snapshot to the boot menu"
 msgstr "Đang thêm ảnh chụp vào trình đơn khởi động"
 
-#: install.rs:803
+#: install.rs:883
 msgid "Unmounting"
 msgstr "Đang gỡ gắn"
 
-#: install.rs:85
+#: install.rs:93
 msgid "The installer backend must run as root."
 msgstr "Trình trợ giúp của bộ cài phải chạy với quyền root."
 
-#: install.rs:88
+#: install.rs:121
 msgid "This computer was not started in UEFI mode. MAN requires UEFI."
 msgstr "Máy tính này không khởi động ở chế độ UEFI. MAN cần UEFI."
 
-#: install.rs:92
+#: install.rs:125
 msgid "The username is not valid."
 msgstr "Tên người dùng không hợp lệ."
 
-#: install.rs:95
+#: install.rs:128
 msgid "A password is required."
 msgstr "Cần có mật khẩu."
 
-#: install.rs:99
+#: install.rs:132
 msgid "The computer name is not valid."
 msgstr "Tên máy tính không hợp lệ."
 
-#: install.rs:105
+#: install.rs:138
 msgid "Unknown language."
 msgstr "Ngôn ngữ không xác định."
 
-#: install.rs:111
+#: install.rs:144
 msgid "The encryption passphrase must have at least 8 characters."
 msgstr "Cụm mật khẩu mã hóa phải có ít nhất 8 ký tự."
 
-#: install.rs:122
+#: install.rs:155
 msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
 msgstr "Ổ đĩa đã thay đổi sau khi bạn xác nhận cài đặt. Chưa có gì bị sửa; hãy xem lại và xác nhận lần nữa."
 
-#: install.rs:138
+#: install.rs:171
 msgid "Choose a system partition."
 msgstr "Hãy chọn phân vùng hệ thống."
 
-#: install.rs:145
+#: install.rs:178
 msgid "The confirmed disk does not hold the chosen system partition."
 msgstr "Ổ đĩa đã xác nhận không chứa phân vùng hệ thống đã chọn."
 
-#: install.rs:157
+#: install.rs:190
 msgid "The boot partition must be separate from the EFI and system partitions."
 msgstr "Phân vùng khởi động phải tách biệt với phân vùng EFI và phân vùng hệ thống."
 
-#: install.rs:160
+#: install.rs:193
 msgid "The boot partition must be at least 512 MB."
 msgstr "Phân vùng khởi động phải có ít nhất 512 MB."
 
-#: install.rs:175
+#: install.rs:208
 msgid "No installation chosen."
 msgstr "Chưa chọn bản cài đặt."
 
-#: install.rs:179
+#: install.rs:212
 msgid "The confirmed disk does not hold the chosen installation."
 msgstr "Ổ đĩa đã xác nhận không chứa bản cài đặt đã chọn."
 
-#: install.rs:337
+#: install.rs:379
 msgid "The encrypted installation has no MAN_BOOT partition."
 msgstr "Bản cài đặt đã mã hóa không có phân vùng MAN_BOOT."
 
-#: install.rs:695
+#: install.rs:745
 msgid "No kernel with matching modules was found in /boot."
 msgstr "Không tìm thấy nhân có mô-đun phù hợp trong /boot."
 
@@ -2258,41 +2434,109 @@ msgstr "Không tìm thấy nhân có mô-đun phù hợp trong /boot."
 msgid "The language must be changed by the system helper."
 msgstr "Ngôn ngữ phải do trình trợ giúp hệ thống thay đổi."
 
-#: oobe.rs:204
+#: oobe.rs:205
 msgid "Applying your settings"
 msgstr "Đang áp dụng cài đặt của bạn"
 
-#: oobe.rs:212
+#: oobe.rs:213
 msgid "Preparing disk encryption"
 msgstr "Đang chuẩn bị mã hóa ổ đĩa"
 
-#: oobe.rs:216
+#: oobe.rs:217
 msgid "Finishing"
 msgstr "Đang hoàn tất"
 
-#: oobe.rs:100
+#: oobe.rs:101
 msgid "MAN Setup must be finished by the system helper."
 msgstr "MAN Setup phải do trình trợ giúp hệ thống hoàn tất."
 
-#: oobe.rs:103
+#: oobe.rs:104
 msgid "MAN Setup has already been completed on this computer."
 msgstr "MAN Setup đã được hoàn tất trên máy này."
 
-#: oobe.rs:124
+#: oobe.rs:125
 msgid "Unknown accent color."
 msgstr "Màu nhấn không xác định."
 
-#: oobe.rs:128
+#: oobe.rs:129
 msgid "The chosen wallpaper is not available."
 msgstr "Hình nền đã chọn không có sẵn."
 
-#: oobe.rs:146
+#: oobe.rs:147
 msgid "This system cannot be encrypted."
 msgstr "Không thể mã hóa hệ thống này."
 
-#: oobe.rs:257
+#: oobe.rs:258
 msgid "The setup key is missing, so encryption cannot continue in the background."
 msgstr "Thiếu khóa thiết lập, nên không thể tiếp tục mã hóa ở chế độ nền."
+
+#: recovery.rs:450
+msgid "Downloading MAN"
+msgstr "Đang tải MAN"
+
+#: recovery.rs:459
+msgid "Opening the downloaded MAN"
+msgstr "Đang mở MAN đã tải về"
+
+#: recovery.rs:85
+msgid "Leaving out what Recovery does not need"
+msgstr "Đang bỏ những gì Khôi phục không cần"
+
+#: recovery.rs:87
+msgid "Setting up the recovery system"
+msgstr "Đang thiết lập hệ thống khôi phục"
+
+#: recovery.rs:89
+msgid "Adding its start-up files"
+msgstr "Đang thêm các tập tin khởi động của nó"
+
+#: recovery.rs:104
+msgid "MAN Recovery is ready"
+msgstr "Khôi phục MAN đã sẵn sàng"
+
+#: recovery.rs:64
+msgid "This MAN has no MAN Recovery program."
+msgstr "MAN này không có chương trình Khôi phục MAN."
+
+#: recovery.rs:82
+msgid "MAN Recovery was not started."
+msgstr "Khôi phục MAN chưa được bắt đầu."
+
+#: recovery.rs:206
+msgid "The installed system has no kernel for MAN Recovery."
+msgstr "Hệ thống đã cài không có nhân cho Khôi phục MAN."
+
+#: recovery.rs:234
+msgid "MAN Recovery was not started from the boot menu."
+msgstr "Khôi phục MAN không được khởi động từ trình đơn khởi động."
+
+#: recovery.rs:235
+msgid "The disk of this MAN was not found."
+msgstr "Không tìm thấy đĩa của MAN này."
+
+#: recovery.rs:240
+msgid "This works only in MAN Recovery."
+msgstr "Chức năng này chỉ hoạt động trong Khôi phục MAN."
+
+#: recovery.rs:290
+msgid "The password is not correct."
+msgstr "Mật khẩu không đúng."
+
+#: recovery.rs:333
+msgid "Invalid snapshot id."
+msgstr "ID ảnh chụp không hợp lệ."
+
+#: recovery.rs:405
+msgid "No MAN for this computer was found on MAN's download page."
+msgstr "Không tìm thấy MAN cho máy tính này trên trang tải về của MAN."
+
+#: recovery.rs:434
+msgid "The downloaded MAN is damaged (its checksum does not match). Try again."
+msgstr "MAN đã tải về bị hỏng (tổng kiểm tra không khớp). Hãy thử lại."
+
+#: recovery.rs:491
+msgid "The partition of this MAN was not found."
+msgstr "Không tìm thấy phân vùng của MAN này."
 
 #: snapshots.rs:48
 msgid "The system is not installed on Btrfs, so snapshots are not available."
@@ -2301,10 +2545,6 @@ msgstr "Hệ thống không được cài trên Btrfs, nên không có ảnh ch�
 #: snapshots.rs:50
 msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
 msgstr "Một lần khôi phục ảnh chụp đang chờ khởi động lại. Hãy khởi động lại máy trước để hoàn tất."
-
-#: snapshots.rs:99
-msgid "Invalid snapshot id."
-msgstr "ID ảnh chụp không hợp lệ."
 
 #: update.rs:32
 msgid "Checking the update"
@@ -2334,43 +2574,39 @@ msgstr "Đang chuẩn bị khởi động lại"
 msgid "Unpacked"
 msgstr "Đã giải nén"
 
-#: update.rs:278
+#: update.rs:285
 msgid "Accounts"
 msgstr "Tài khoản"
 
-#: update.rs:331
+#: update.rs:338
 msgid "Reinstalling kept apps"
 msgstr "Đang cài đặt lại các ứng dụng được giữ"
 
-#: update.rs:386
+#: update.rs:404
 msgid "Removing installer-only software"
 msgstr "Đang gỡ phần mềm chỉ dành cho trình cài đặt"
 
-#: update.rs:426
+#: update.rs:450
 msgid "Building the update boot image"
 msgstr "Đang tạo ảnh khởi động của bản cập nhật"
 
-#: update.rs:429
+#: update.rs:453
 msgid "Adding the one-time boot entry"
 msgstr "Đang thêm mục khởi động dùng một lần"
 
-#: update.rs:464
+#: update.rs:488
 msgid "The update is genuine"
 msgstr "Bản cập nhật là chính thức"
 
-#: update.rs:470
+#: update.rs:494
 msgid "Snapshot created"
 msgstr "Đã tạo ảnh chụp"
 
-#: update.rs:472
-msgid "Skipped"
-msgstr "Đã bỏ qua"
-
-#: update.rs:481
+#: update.rs:505
 msgid "Update area ready"
 msgstr "Vùng cập nhật đã sẵn sàng"
 
-#: update.rs:504
+#: update.rs:528
 msgid "Preparing the new system"
 msgstr "Đang chuẩn bị hệ thống mới"
 
@@ -2382,19 +2618,19 @@ msgstr "Tệp cập nhật bị hỏng (tổng kiểm không khớp). Hãy tải
 msgid "The update file could not be read completely."
 msgstr "Không thể đọc hết tệp cập nhật."
 
-#: update.rs:398
+#: update.rs:416
 msgid "The update contains no kernel."
 msgstr "Bản cập nhật không chứa nhân."
 
-#: update.rs:446
+#: update.rs:470
 msgid "Updates must be installed by the system helper."
 msgstr "Bản cập nhật phải do trình trợ giúp hệ thống cài."
 
-#: update.rs:456
+#: update.rs:480
 msgid "The chosen installation was not found."
 msgstr "Không tìm thấy bản cài đặt đã chọn."
 
-#: update.rs:458
+#: update.rs:482
 msgid "Only the running MAN installation can be updated."
 msgstr "Chỉ cập nhật được bản cài MAN đang chạy."
 
@@ -2521,6 +2757,10 @@ msgstr "Thiết lập máy tính MAN mới của bạn"
 #: man-oobe.desktop
 msgid "First-start setup of MAN"
 msgstr "Thiết lập MAN lần đầu"
+
+#: com.man.Recovery.desktop
+msgid "Restore or reinstall MAN"
+msgstr "Khôi phục hoặc cài đặt lại MAN"
 
 #: com.man.UpdateCheck.desktop
 msgid "MAN Updates"

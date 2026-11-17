@@ -256,7 +256,8 @@ pub fn boot_cleanup() -> Result<()> {
     let mut changed = false;
     for e in std::fs::read_dir(&top)?.filter_map(|e| e.ok()) {
         let name = e.file_name().to_string_lossy().into_owned();
-        if name.starts_with("@system.old-") {
+        // Systems replaced by a restore, and a MAN Recovery replaced while it ran.
+        if name.starts_with("@system.old-") || name.starts_with("@recovery.old-") {
             match delete_subvolume_tree(&top, &name) {
                 Ok(()) => changed = true,
                 Err(err) => info(format!("Warning: could not remove {name}: {err:#}")),

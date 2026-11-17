@@ -102,6 +102,10 @@ put "$data/grub/43_man_windows" "$r/etc/grub.d/43_man_windows" 0755
 put "$data/duhach/man-duhach-cleanup" "$r/usr/libexec/man/man-duhach-cleanup" 0755
 put "$data/initramfs/man-rollback.hook" "$r/usr/share/initramfs-tools/hooks/man-rollback" 0755
 put "$data/initramfs/man-rollback.premount" "$r/usr/share/initramfs-tools/scripts/local-premount/man-rollback" 0755
+put "$data/grub/45_man_recovery" "$r/etc/grub.d/45_man_recovery" 0755
+put "$data/initramfs/man-recovery.hook" "$r/usr/share/initramfs-tools/hooks/man-recovery" 0755
+put "$data/initramfs/man-recovery.bottom" "$r/usr/share/initramfs-tools/scripts/local-bottom/man-recovery" 0755
+put "$data/initramfs/man-recovery.post-update" "$r/etc/initramfs/post-update.d/man-recovery" 0755
 for u in man-kept-debs.service man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
     put "$data/systemd/$u" "$r/usr/lib/systemd/system/$u" 0644
 done
@@ -204,6 +208,12 @@ put "$data/autostart/com.man.Installer.desktop" "$r/etc/xdg/autostart/com.man.In
 put "$data/metainfo/com.man.Installer.metainfo.xml" "$r/usr/share/metainfo/com.man.Installer.metainfo.xml" 0644
 put "$data/icons/com.man.Installer.svg" "$r/usr/share/icons/hicolor/scalable/apps/com.man.Installer.svg" 0644
 put "$data/polkit/49-man-live.rules" "$r/etc/polkit-1/rules.d/49-man-live.rules" 0644
+# MAN Recovery: only inside the recovery system (@recovery), which is made
+# from a system that still has this package.
+put "$bin/man-recovery" "$r/usr/bin/man-recovery" 0755
+put "$data/recovery/man-recovery-session" "$r/usr/libexec/man-recovery/man-recovery-session" 0755
+put "$data/recovery/man-recovery.desktop" "$r/usr/share/wayland-sessions/man-recovery.desktop" 0644
+put "$data/recovery/com.man.Recovery.desktop" "$r/usr/share/applications/com.man.Recovery.desktop" 0644
 copyright "$r"
 mkdir -p "$r/DEBIAN"
 cat > "$r/DEBIAN/control" <<EOF

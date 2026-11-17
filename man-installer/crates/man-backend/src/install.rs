@@ -1,4 +1,5 @@
 use crate::probe;
+use crate::recovery;
 use crate::snapshots::{delete_subvolume_tree, write_info};
 use crate::util::*;
 use anyhow::{anyhow, bail, Context, Result};
@@ -13,15 +14,20 @@ const TARGET: &str = "/run/man-installer/target";
 const MAPPER: &str = "man_root";
 const BTRFS_OPTS: &str = "compress=zstd:1,noatime";
 
-const STEPS: [&str; 7] = [
+const STEPS: [&str; 8] = [
     "Checking the installation plan",
     "Preparing the disk",
     "Copying MAN to the disk",
     "Configuring the new system",
     "Installing the bootloader",
+    "Preparing MAN Recovery",
     "Creating the first snapshot",
     "Finishing up",
 ];
+
+/// Size of `plan.source` when it is not the running live system (MAN
+/// Recovery sets it from the downloaded ISO).
+pub static SOURCE_BYTES: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
 
 fn step(i: usize) {
     emit(&Event::Step { index: i as u32 + 1, total: STEPS.len() as u32, title: STEPS[i].into() });
@@ -32,11 +38,11 @@ fn progress(fraction: f64, detail: &str) {
 }
 
 /// Paths never copied from the live system.
-const EXCLUDES: &[&str] = &[
+pub const EXCLUDES: &[&str] = &[
     "/dev/*", "/proc/*", "/sys/*", "/run/*", "/tmp/*", "/var/tmp/*", "/mnt/*", "/media/*",
     "/lost+found", "/home/*", "/root/*", "/.snapshots/*", "/swapfile", "/boot/efi/*",
     "/var/cache/apt/archives/*.deb", "/var/log/journal/*", "/var/lib/systemd/random-seed",
-    "/var/lib/AccountsService/users/MANInstaller", "/var/lib/gdm3/.cache/*",
+    "/var/lib/AccountsService/users/MANInstaller", "/var/lib/gdm3/.cache/*", "/var/lib/man-login/*",
 ];
 
 struct Layout {
@@ -62,7 +68,9 @@ fn ensure_unused(p: &Partition, live: Option<&str>) -> Result<()> {
     if p.label.as_deref() == Some(LIVE_LABEL) {
         bail!("{} is the boot partition of the MAN live medium.", p.path);
     }
-    if !p.mountpoints.is_empty() {
+    // MAN Recovery runs from the installation it reinstalls (read-only, in
+    // its own subvolume); only Recovery's own mounts are allowed.
+    if !p.mountpoints.is_empty() && !(recovery::active() && p.mountpoints.iter().all(|m| m.starts_with("/run/man-recovery/") || m == "/")) {
         bail!("{} is in use ({}). Unmount it first.", p.path, p.mountpoints.join(", "));
     }
     if live == Some(p.disk.as_str()) {
@@ -97,6 +105,8 @@ fn validate(plan: &Plan, source: u64) -> Result<(Disk, Vec<Disk>)> {
                     && plan.boot == m.boot
                     && plan.root == m.root
             }
+            // MAN Recovery reinstalling the MAN it belongs to.
+            Mode::Reinstall => recovery::active(),
             _ => false,
         };
         if !ok {
@@ -351,7 +361,14 @@ fn prepare_reinstall(plan: &Plan, disks: &[Disk], mounts: &mut Mounts) -> Result
     let installs = probe::installs(disks);
     let inst = installs.iter().find(|i| i.device == root).ok_or_else(|| anyhow!("{root} is not a MAN installation."))?;
     let esp = plan.esp.clone().or_else(|| inst.esp.clone()).ok_or_else(|| anyhow!("No EFI system partition found next to {root}."))?;
-    let btrfs = if inst.encrypted {
+    let open = query("lsblk", &["-nlo", "PATH,TYPE", &root])
+        .unwrap_or_default()
+        .lines()
+        .find_map(|l| l.split_once(' ').filter(|(_, t)| t.trim() == "crypt").map(|(p, _)| p.to_string()));
+    let btrfs = if let Some(mapper) = open.filter(|_| inst.encrypted) {
+        // MAN Recovery: already unlocked when it started.
+        mapper
+    } else if inst.encrypted {
         progress(0.1, "Unlocking the encrypted installation");
         mounts.luks_open(&root, MAPPER, plan.passphrase.as_deref().unwrap_or_default(), false)?
     } else {
@@ -373,13 +390,15 @@ fn prepare_reinstall(plan: &Plan, disks: &[Disk], mounts: &mut Mounts) -> Result
 
 /// Set up @system/@home/@snapshots. On reinstall the old @system is kept as
 /// a read-only snapshot, so the reinstall itself can be rolled back.
-fn create_subvolumes(layout: &Layout, reinstall: bool, mounts: &mut Mounts) -> Result<()> {
+fn create_subvolumes(layout: &Layout, reinstall: bool, mounts: &mut Mounts) -> Result<Option<String>> {
     let top = Path::new(TOP);
     mounts.mount(&layout.btrfs, top, &["-o", &format!("subvolid=5,{BTRFS_OPTS}")])?;
     let sys = top.join("@system");
+    let mut saved = None;
     if reinstall && sys.is_dir() {
         progress(0.5, "Saving the current system as a snapshot");
         let id = snapshot_id(now());
+        saved = Some(id.clone());
         let dir = top.join("@snapshots").join(&id);
         std::fs::create_dir_all(&dir)?;
         run("btrfs", &["subvolume", "snapshot", "-r", sys.to_str().unwrap(), dir.join("snapshot").to_str().unwrap()])?;
@@ -392,7 +411,7 @@ fn create_subvolumes(layout: &Layout, reinstall: bool, mounts: &mut Mounts) -> R
             run("btrfs", &["subvolume", "create", top.join(name).to_str().unwrap()])?;
         }
     }
-    Ok(())
+    Ok(saved)
 }
 
 fn mount_target(layout: &Layout, mounts: &mut Mounts) -> Result<PathBuf> {
@@ -407,13 +426,13 @@ fn mount_target(layout: &Layout, mounts: &mut Mounts) -> Result<PathBuf> {
     Ok(t)
 }
 
-fn copy_system(target: &Path) -> Result<()> {
+fn copy_system(source: &Path, target: &Path) -> Result<()> {
     let mut args: Vec<String> = ["-aAXH", "--numeric-ids", "--one-file-system", "--info=progress2", "--no-inc-recursive"]
         .iter()
         .map(|s| s.to_string())
         .collect();
     args.extend(EXCLUDES.iter().map(|e| format!("--exclude={e}")));
-    args.push("/".into());
+    args.push(format!("{}/", source.display()).replace("//", "/"));
     args.push(format!("{}/", target.display()));
     info(format!("$ rsync {}", args.join(" ")));
     let mut child = Command::new("rsync")
@@ -672,6 +691,10 @@ fn configure(plan: &Plan, layout: &Layout, t: &Path) -> Result<()> {
             let text = read_to_string(&gdm).unwrap_or_default();
             write_file(&gdm, &gdm_config(&text, u.autologin.then_some(u.username.as_str()), None), 0o644)?;
         }
+        None if plan.keep_accounts => {
+            // The accounts of the previous system are put back (keep_machine).
+            set_root_password(t, None)?;
+        }
         None => {
             progress(0.35, "Preparing MAN Setup for the first start");
             set_root_password(t, None)?;
@@ -790,7 +813,11 @@ fn install_bootloader(t: &Path) -> Result<()> {
 
 pub fn install(plan: Plan) -> Result<String> {
     step(0);
-    let source = probe::source_bytes();
+    let source_root = PathBuf::from(plan.source.clone().unwrap_or_else(|| "/".into()));
+    let source = match SOURCE_BYTES.load(std::sync::atomic::Ordering::Relaxed) {
+        0 => probe::source_bytes(),
+        n => n,
+    };
     let (disk, disks) = validate(&plan, source)?;
     info(format!("Installing to {} ({} {}), mode {:?}, encrypted: {}", disk.path, disk.model, human_size(disk.size), plan.mode, plan.encrypt));
 
@@ -802,21 +829,47 @@ pub fn install(plan: Plan) -> Result<String> {
         Mode::Reinstall => prepare_reinstall(&plan, &disks, &mut mounts)?,
         Mode::Alongside => prepare_alongside(&plan, &disk, &mut mounts)?,
     };
-    create_subvolumes(&layout, plan.mode == Mode::Reinstall, &mut mounts)?;
+    let saved = create_subvolumes(&layout, plan.mode == Mode::Reinstall, &mut mounts)?;
     let t = mount_target(&layout, &mut mounts)?;
     progress(1.0, "Disk ready");
 
     step(2);
-    copy_system(&t)?;
+    copy_system(&source_root, &t)?;
+    // MAN Recovery starts as a snapshot of the copied system while it still
+    // has the installer. A missing Recovery never stops an installation.
+    let recovery_started = match recovery::begin(Path::new(TOP), &Path::new(TOP).join("@system")) {
+        Ok(()) => true,
+        Err(e) => {
+            info(format!("Warning: MAN Recovery was not prepared: {e:#}"));
+            false
+        }
+    };
 
     step(3);
     bind_system(&t, &mut mounts)?;
     configure(&plan, &layout, &t)?;
+    if plan.keep_accounts {
+        if let Some(id) = &saved {
+            progress(0.9, "Keeping your accounts and settings");
+            let old = Path::new(TOP).join("@snapshots").join(id).join("snapshot");
+            recovery::keep_machine(&old, &t)?;
+        }
+    }
 
     step(4);
     install_bootloader(&t)?;
 
     step(5);
+    if recovery_started {
+        let boot = layout.boot.as_ref().map(|_| t.join("boot"));
+        if let Err(e) = recovery::finish(Path::new(TOP), &t, boot.as_deref(), &|f, d| progress(f, d)) {
+            info(format!("Warning: MAN Recovery was not prepared: {e:#}"));
+        }
+    } else {
+        progress(1.0, "Skipped");
+    }
+
+    step(6);
     progress(0.2, "Creating a snapshot of the fresh system");
     let id = snapshot_id(now());
     let dir = Path::new(TOP).join("@snapshots").join(&id);
@@ -826,7 +879,7 @@ pub fn install(plan: Plan) -> Result<String> {
     progress(0.6, "Adding the snapshot to the boot menu");
     chroot(&t, &["update-grub"])?;
 
-    step(6);
+    step(7);
     progress(0.5, "Unmounting");
     mounts.release();
     progress(1.0, "Done");

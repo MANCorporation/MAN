@@ -1,0 +1,11 @@
+#!/bin/sh
+# MAN Recovery boots the installed system's kernel and initramfs (copied to
+# /boot/man-recovery). When that initramfs is rebuilt (for example when
+# encryption is turned on), copy it again so Recovery can unlock the disk too.
+# Called by update-initramfs: $1 = kernel version, $2 = the new initramfs.
+mark=/var/lib/man/recovery
+[ -f "$mark" ] && [ -d /boot/man-recovery ] || exit 0
+kernel=$(sed -n 's/^KERNEL=//p' "$mark")
+[ -n "$kernel" ] && [ "$1" = "$kernel" ] && [ -f "$2" ] || exit 0
+cp "$2" /boot/man-recovery/initrd.img.new && mv /boot/man-recovery/initrd.img.new /boot/man-recovery/initrd.img
+exit 0

@@ -314,55 +314,55 @@ msgstr "Энэ үйлдэлд администраторын эрх хэрэгт
 msgid "The system helper stopped unexpectedly."
 msgstr "Системийн туслах гэнэт зогслоо."
 
-#: installer.rs:78
+#: installer.rs:89
 msgid "No EFI system partition"
 msgstr "EFI системийн хуваалт алга"
 
-#: installer.rs:82
+#: installer.rs:93
 msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
 msgstr "Зөвхөн {free} сул, MAN-д {need} хэрэгтэй. Windows дээр DUHACH!-аар зай чөлөөлнө үү."
 
-#: installer.rs:83
+#: installer.rs:94
 msgid "No free space. Start DUHACH! in Windows to make room for MAN."
 msgstr "Сул зай алга. MAN-д зай гаргахын тулд Windows дээр DUHACH!-г эхлүүлнэ үү."
 
-#: installer.rs:92
+#: installer.rs:103
 msgid "MAN is running from this disk"
 msgstr "MAN энэ дискнээс ажиллаж байна"
 
-#: installer.rs:96
+#: installer.rs:107
 msgid "In use: a partition is mounted"
 msgstr "Ашиглагдаж байна: хуваалт холбогдсон байна"
 
-#: installer.rs:98
+#: installer.rs:109
 msgid "Too small, MAN needs {need}"
 msgstr "Хэт жижиг, MAN-д {need} хэрэгтэй"
 
-#: installer.rs:108
+#: installer.rs:119
 msgid "Install MAN"
 msgstr "MAN суулгах"
 
-#: installer.rs:126
+#: installer.rs:137
 msgid "MAN is being installed. Please wait until it finishes."
 msgstr "MAN суулгаж байна. Дуустал хүлээнэ үү."
 
-#: installer.rs:143
+#: installer.rs:154
 msgid "Language"
 msgstr "Хэл"
 
-#: installer.rs:155
+#: installer.rs:166
 msgid "_Restart in This Language"
 msgstr "Энэ хэлээр _дахин эхлүүлэх"
 
-#: installer.rs:167
+#: installer.rs:178
 msgid "The live session restarts in the chosen language, and MAN is installed in it."
 msgstr "Шууд сесс сонгосон хэлээр дахин эхэлж, MAN уг хэлээр суулгагдана."
 
-#: installer.rs:213
+#: installer.rs:224
 msgid "Welcome to MAN"
 msgstr "MAN-д тавтай морилно уу"
 
-#: installer.rs:214
+#: installer.rs:225
 msgid ""
 "A fast, open and fully customizable GNOME system.\n"
 "Install it on this computer, or keep exploring the live session."
@@ -370,543 +370,567 @@ msgstr ""
 "Хурдан, нээлттэй, бүрэн тохируулж болох GNOME систем.\n"
 "Үүнийг энэ компьютерт суулгах эсвэл шууд сессийг үргэлжлүүлэн судлаарай."
 
-#: installer.rs:218
+#: installer.rs:229
 msgid "_Install MAN…"
 msgstr "MAN _суулгах…"
 
-#: installer.rs:220
+#: installer.rs:231
 msgid "_Keep Trying MAN"
 msgstr "MAN-г _үргэлжлүүлэн туршиж үзэх"
 
-#: installer.rs:223
+#: installer.rs:234
 msgid "Looking for disks…"
 msgstr "Диск хайж байна…"
 
-#: installer.rs:250
+#: installer.rs:261
 msgid "Welcome"
 msgstr "Тавтай морилно уу"
 
-#: installer.rs:265
+#: installer.rs:276
 msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
 msgstr "Энэ компьютер хуучин BIOS горимд асчээ. MAN-г зөвхөн UEFI компьютерт суулгах боломжтой: дахин эхлүүлээд UEFI ачаалах сонголтыг сонгоно уу."
 
-#: installer.rs:283
+#: installer.rs:294
 msgid "The system helper returned no disk information."
 msgstr "Системийн туслах дискний мэдээлэл буцаасангүй."
 
-#: installer.rs:348
+#: installer.rs:372
 msgid "  ·  EFI"
 msgstr "  ·  EFI"
 
-#: installer.rs:356
+#: installer.rs:380
 msgid "_Next"
 msgstr "_Дараах"
 
-#: installer.rs:364
+#: installer.rs:388
 msgid "Erase Disk and Install MAN"
 msgstr "Дискийг арилгаад MAN суулгах"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Everything on the chosen disk is deleted, Windows included."
 msgstr "Сонгосон диск дээрх бүх зүйл, Windows ч мөн устгагдана."
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Recommended. Everything on the chosen disk is deleted."
 msgstr "Зөвлөмжтэй. Сонгосон диск дээрх бүх зүйл устгагдана."
 
-#: installer.rs:369
+#: installer.rs:393
 msgid "Install Alongside Windows"
 msgstr "Windows-ийн хажууд суулгах"
 
-#: installer.rs:370
+#: installer.rs:394
 msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
 msgstr "Зөвлөмжтэй. MAN Windows-ийн хажуу дахь сул зайг ашиглана; Windows болон түүний файлууд хэвээр үлдэнэ. Асаах бүртээ системээ сонгоно."
 
-#: installer.rs:377
+#: installer.rs:401
 msgid "Reinstall MAN"
 msgstr "MAN-г дахин суулгах"
 
-#: installer.rs:378
+#: installer.rs:402
 msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
 msgstr "Системийг солих боловч /home доторх хувийн файлуудыг хадгална. Одоогийн систем агшин зураг болж хадгалагдана."
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "Custom Partitions"
 msgstr "Өөрийн хуваалтууд"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "For experts: choose partitions yourself, or create them with Disks."
 msgstr "Мэргэжилтнүүдэд: хуваалтуудыг өөрөө сонгох эсвэл Дискүүд програмаар үүсгэнэ үү."
 
-#: installer.rs:392
+#: installer.rs:418
+msgid "Erase an External Disk and Install MAN"
+msgstr "Гадаад дискийг арилгаж MAN суулгах"
+
+#: installer.rs:419
+msgid "Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."
+msgstr "Сонгосон гадаад диск дээрх бүх зүйл устгагдана. Mac-ийн дотоод диск харагдахгүй, өөрчлөгдөхгүй."
+
+#: installer.rs:420
+msgid "Install on This Mac"
+msgstr "Энэ Mac дээр суулгах"
+
+#: installer.rs:422
+msgid "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed."
+msgstr "Зөвлөмж болгож байна. macOS дээр бэлдсэн {size} зайд. macOS болон түүний хуваалтууд өөрчлөгдөхгүй."
+
+#: installer.rs:427
+msgid "No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."
+msgstr "MAN-д зориулсан зай одоогоор бэлдээгүй байна. macOS дээр MAN USB-ээс MAN-Mac/install-man.sh-г ажиллуулж “MAN boot loader + space for MAN”-г сонгоно уу."
+
+#: installer.rs:433
 msgid "Disk"
 msgstr "Диск"
 
-#: installer.rs:392
+#: installer.rs:433
 msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
 msgstr "Арилгах дискээ сонгоно уу. Ашиглах боломжгүй дискийг шалтгааны хамт харуулна."
 
-#: installer.rs:418
+#: installer.rs:459
 msgid "No disks were found"
 msgstr "Диск олдсонгүй"
 
-#: installer.rs:425
+#: installer.rs:466
 msgid "Free Space Next to Windows"
 msgstr "Windows-ийн хажуу дахь сул зай"
 
-#: installer.rs:426
+#: installer.rs:467
 msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
 msgstr "Windows-ийн хуваалтуудад хүрэхгүй. MAN EFI системийн хуваалтыг хамтран ашиглаж, Windows-г ачаалах цэсэндээ нэмнэ."
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "{size} free"
 msgstr "{size} сул"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "no free space"
 msgstr "сул зай алга"
 
-#: installer.rs:437
+#: installer.rs:478
 msgid "{model} (Windows)"
 msgstr "{model} (Windows)"
 
-#: installer.rs:456
+#: installer.rs:497
 msgid "Installation to Replace"
 msgstr "Солих суулгац"
 
-#: installer.rs:477
+#: installer.rs:518
 msgid "no home folders"
 msgstr "гэрийн хавтас алга"
 
-#: installer.rs:479
+#: installer.rs:520
 msgid "home folders: {list}"
 msgstr "гэрийн хавтаснууд: {list}"
 
-#: installer.rs:481
+#: installer.rs:522
 msgid "snapshots: {n}"
 msgstr "агшин зургууд: {n}"
 
-#: installer.rs:485
+#: installer.rs:526
 msgid "MAN on {model}"
 msgstr "{model} дээрх MAN"
 
-#: installer.rs:499
+#: installer.rs:540
 msgid "Passphrase for {device}"
 msgstr "{device}-ийн нууц хэллэг"
 
-#: installer.rs:500
+#: installer.rs:541
 msgid "Unlock"
 msgstr "Түгжээ тайлах"
 
-#: installer.rs:537
+#: installer.rs:578
 msgid "The installation could not be inspected."
 msgstr "Суулгацыг шалгаж чадсангүй."
 
-#: installer.rs:554
+#: installer.rs:595
 msgid "Partitions"
 msgstr "Хуваалтууд"
 
-#: installer.rs:555
+#: installer.rs:596
 msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
 msgstr "Системийн хуваалтыг Btrfs-ээр форматлах ба @system, @home, @snapshots-ийг агуулна. MAN ажиллаж буй дискний хуваалтуудыг жагсаахгүй."
 
-#: installer.rs:557
+#: installer.rs:598
 msgid "Open Disks to create or resize partitions"
 msgstr "Хуваалт үүсгэх эсвэл хэмжээг өөрчлөхийн тулд Дискүүдийг нээх"
 
-#: installer.rs:559
+#: installer.rs:600
 msgid "Refresh the partition list"
 msgstr "Хуваалтын жагсаалтыг шинэчлэх"
 
-#: installer.rs:567
+#: installer.rs:608
 msgid "Choose a partition"
 msgstr "Хуваалт сонгох"
 
-#: installer.rs:579
+#: installer.rs:620
 msgid "EFI System Partition"
 msgstr "EFI системийн хуваалт"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Format EFI System Partition"
 msgstr "EFI системийн хуваалтыг форматлах"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Leave off to keep boot loaders of other systems"
 msgstr "Бусад системийн ачаалагчийг хадгалахын тулд унтраалттай үлдээнэ үү"
 
-#: installer.rs:582
+#: installer.rs:623
 msgid "System Partition (formatted as Btrfs)"
 msgstr "Системийн хуваалт (Btrfs-ээр форматлана)"
 
-#: installer.rs:583
+#: installer.rs:624
 msgid "Boot Partition (needed with encryption)"
 msgstr "Ачаалах хуваалт (шифрлэлтэд хэрэгтэй)"
 
-#: installer.rs:642
+#: installer.rs:683
 msgid "Partition list refreshed"
 msgstr "Хуваалтын жагсаалтыг шинэчиллээ"
 
-#: installer.rs:650
+#: installer.rs:691
 msgid "Security"
 msgstr "Аюулгүй байдал"
 
-#: installer.rs:652
+#: installer.rs:693
 msgid "Encrypt the System"
 msgstr "Системийг шифрлэх"
 
-#: installer.rs:653
+#: installer.rs:694
 msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
 msgstr "Компьютер алдагдах эсвэл хулгайд алдагдвал таны өгөгдлийг хамгаална. Асаах бүрт нууц хэллэг асууна."
 
-#: installer.rs:656
+#: installer.rs:697
 msgid "Passphrase"
 msgstr "Нууц хэллэг"
 
-#: installer.rs:657
+#: installer.rs:698
 msgid "Confirm Passphrase"
 msgstr "Нууц хэллэгээ баталгаажуулах"
 
-#: installer.rs:659
+#: installer.rs:700
 msgid "Keep this passphrase safe"
 msgstr "Энэ нууц хэллэгийг найдвартай газар хадгална уу"
 
-#: installer.rs:660
+#: installer.rs:701
 msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
 msgstr "Алдвал хэн ч өгөгдлийг сэргээж чадахгүй. Цөм болон ачаалах файлууд шифрлээгүй жижиг ачаалах хуваалтад үлдэнэ."
 
-#: installer.rs:732
+#: installer.rs:774
 msgid "The passphrase needs at least 8 characters."
 msgstr "Нууц хэллэг дор хаяж 8 тэмдэгттэй байх ёстой."
 
-#: installer.rs:734
+#: installer.rs:776
 msgid "The passphrases do not match."
 msgstr "Нууц хэллэгүүд таарахгүй байна."
 
-#: installer.rs:748
+#: installer.rs:790
 msgid "Choose a disk."
 msgstr "Диск сонгоно уу."
 
-#: installer.rs:758
+#: installer.rs:800
 msgid "Choose the disk with Windows."
 msgstr "Windows-тэй дискийг сонгоно уу."
 
-#: installer.rs:767
+#: installer.rs:809
 msgid "Choose the installation to replace."
 msgstr "Солих суулгацыг сонгоно уу."
 
-#: installer.rs:768
+#: installer.rs:810
 msgid "Unlock the encrypted installation first."
 msgstr "Эхлээд шифрлэсэн суулгацын түгжээг тайлна уу."
 
-#: installer.rs:769
+#: installer.rs:811
 msgid "This partition holds no MAN system."
 msgstr "Энэ хуваалтад MAN систем алга."
 
-#: installer.rs:776
+#: installer.rs:818
 msgid "Choose an EFI system partition."
 msgstr "EFI системийн хуваалт сонгоно уу."
 
-#: installer.rs:778
+#: installer.rs:820
 msgid "Choose the system partition."
 msgstr "Системийн хуваалтыг сонгоно уу."
 
-#: installer.rs:780
+#: installer.rs:822
 msgid "The EFI and system partitions must be different."
 msgstr "EFI болон системийн хуваалт өөр өөр байх ёстой."
 
-#: installer.rs:782
+#: installer.rs:824
 msgid "Encryption needs a separate boot partition."
 msgstr "Шифрлэлтэд тусдаа ачаалах хуваалт хэрэгтэй."
 
-#: installer.rs:791
+#: installer.rs:833
 msgid "The system partition must be at least {size}."
 msgstr "Системийн хуваалт дор хаяж {size} байх ёстой."
 
-#: installer.rs:793
+#: installer.rs:835
 msgid "The EFI partition is not FAT formatted; turn on formatting."
 msgstr "EFI хуваалт FAT форматтай биш байна; форматлахыг асаана уу."
 
-#: installer.rs:795
+#: installer.rs:837
 msgid "The system partition is mounted; unmount it in Disks first."
 msgstr "Системийн хуваалт холбогдсон байна; эхлээд Дискүүдэд салгана уу."
 
-#: installer.rs:817
+#: installer.rs:859
 msgid "Where Should MAN Be Installed?"
 msgstr "MAN-г хаана суулгах вэ?"
 
-#: installer.rs:824
+#: installer.rs:866
 msgid "Time and Keyboard"
 msgstr "Цаг ба гар"
 
-#: installer.rs:829
+#: installer.rs:871
 msgid "Time Zone"
 msgstr "Цагийн бүс"
 
-#: installer.rs:833
+#: installer.rs:875
 msgid "Keyboard Layout"
 msgstr "Гарын байршил"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Test Your Keyboard"
 msgstr "Гараа туршаарай"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Type here to check that your keys produce the right characters."
 msgstr "Товчнууд зөв тэмдэгт гаргаж байгааг шалгахын тулд энд бичнэ үү."
 
-#: installer.rs:844
+#: installer.rs:886
 msgid "Type here"
 msgstr "Энд бичнэ үү"
 
-#: installer.rs:877
+#: installer.rs:919
 msgid "Time Zone and Keyboard"
 msgstr "Цагийн бүс ба гар"
 
-#: installer.rs:920
+#: installer.rs:962
 msgid "No disk chosen"
 msgstr "Диск сонгоогүй"
 
-#: installer.rs:926
+#: installer.rs:968
 msgid "No system partition chosen"
 msgstr "Системийн хуваалт сонгоогүй"
 
-#: installer.rs:928
+#: installer.rs:970
 msgid "The system partition disappeared"
 msgstr "Системийн хуваалт алга болжээ"
 
-#: installer.rs:933
+#: installer.rs:975
 msgid "No installation chosen"
 msgstr "Суулгац сонгоогүй"
 
-#: installer.rs:944
+#: installer.rs:986
 msgid "The disk disappeared"
 msgstr "Диск алга болжээ"
 
-#: installer.rs:955
+#: installer.rs:997
 msgid "Review"
 msgstr "Хянах"
 
-#: installer.rs:958
+#: installer.rs:1000
 msgid "Destination"
 msgstr "Очих газар"
 
-#: installer.rs:960
+#: installer.rs:1002
 msgid "Erase disk and install"
 msgstr "Дискийг арилгаад суулгах"
 
-#: installer.rs:961
+#: installer.rs:1003
+msgid "This Mac (space prepared in macOS)"
+msgstr "Энэ Mac (macOS дээр бэлдсэн зай)"
+
+#: installer.rs:1004
 msgid "Custom partitions"
 msgstr "Өөрийн хуваалтууд"
 
-#: installer.rs:962
+#: installer.rs:1005
 msgid "Reinstall, keeping /home"
 msgstr "/home-г хадгалж дахин суулгах"
 
-#: installer.rs:963
+#: installer.rs:1006
 msgid "Alongside Windows"
 msgstr "Windows-ийн хажууд"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (will be formatted)"
 msgstr " (форматлагдана)"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (kept)"
 msgstr " (хадгалагдана)"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "System Partition"
 msgstr "Системийн хуваалт"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "{partition} (will be formatted)"
 msgstr "{partition} (форматлагдана)"
 
-#: installer.rs:972
+#: installer.rs:1015
 msgid "Boot Partition"
 msgstr "Ачаалах хуваалт"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "Space for MAN"
 msgstr "MAN-д зориулсан зай"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "{free} of free space (a boot partition and the system partition are created)"
 msgstr "{free} сул зай (ачаалах болон системийн хуваалт үүсгэнэ)"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Windows"
 msgstr "Windows"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
 msgstr "Өөрчлөгдөхгүй. MAN-ий ачаалах цэсэнд гарч ирнэ; EFI системийн хуваалт дундын."
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Encryption"
 msgstr "Шифрлэлт"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "On (LUKS2)"
 msgstr "Асаалттай (LUKS2)"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Off"
 msgstr "Унтраалттай"
 
-#: installer.rs:985
+#: installer.rs:1028
 msgid "File System"
 msgstr "Файлын систем"
 
-#: installer.rs:986
+#: installer.rs:1029
 msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
 msgstr "Btrfs: @system нь MAN-д, @home нь таны файлд, @snapshots нь сэргээх цэгүүдэд. Бүгд сул зайг хуваалцана."
 
-#: installer.rs:991
+#: installer.rs:1034
 msgid "System"
 msgstr "Систем"
 
-#: installer.rs:993
+#: installer.rs:1036
 msgid "Your Account"
 msgstr "Таны бүртгэл"
 
-#: installer.rs:994
+#: installer.rs:1037
 msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
 msgstr "Компьютер анх асахад MAN Setup дотор компьютерийн нэр, харагдах байдал, нууцлалын тохиргоотой хамт үүснэ."
 
-#: installer.rs:998
+#: installer.rs:1041
 msgid "Keyboard"
 msgstr "Гар"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "All data on {model} ({path}) will be erased."
 msgstr "{model} ({path}) дээрх бүх өгөгдлийг арилгана."
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "_Erase and Install"
 msgstr "_Арилгаад суулгах"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "The chosen partitions will be formatted. Other partitions are not changed."
 msgstr "Сонгосон хуваалтуудыг форматлана. Бусад хуваалт өөрчлөгдөхгүй."
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "_Format and Install"
 msgstr "_Форматлаад суулгах"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
 msgstr "Одоогийн системийг солино. /home доторх таны файлууд хадгалагдаж, хуучин систем агшин зураг болж хадгалагдана."
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "_Reinstall"
 msgstr "_Дахин суулгах"
 
-#: installer.rs:1005
+#: installer.rs:1048
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN сул зайд суулгагдана. Windows болон түүний файлууд өөрчлөгдөхгүй."
 
-#: installer.rs:1019
+#: installer.rs:1062
 msgid "Ready to Install"
 msgstr "Суулгахад бэлэн"
 
-#: installer.rs:1029
+#: installer.rs:1072
 msgid "Erase {model}?"
 msgstr "{model}-г арилгах уу?"
 
-#: installer.rs:1030
+#: installer.rs:1073
 msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
 msgstr "{path} ({size}) дээрх бүх файл, хуваалт бүрмөсөн устгагдана. Үүнийг буцаах боломжгүй."
 
-#: installer.rs:1031
+#: installer.rs:1074
 msgid "Erase and Install"
 msgstr "Арилгаад суулгах"
 
-#: installer.rs:1035
+#: installer.rs:1078
 msgid "Format the Chosen Partitions?"
 msgstr "Сонгосон хуваалтуудыг форматлах уу?"
 
-#: installer.rs:1036
+#: installer.rs:1079
 msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
 msgstr "Сонгосон хуваалтууд дээрх бүх өгөгдөл бүрмөсөн устгагдана. Бусад хуваалт өөрчлөгдөхгүй."
 
-#: installer.rs:1037
+#: installer.rs:1080
 msgid "Format and Install"
 msgstr "Форматлаад суулгах"
 
-#: installer.rs:1041
+#: installer.rs:1084
 msgid "Install MAN Alongside Windows?"
 msgstr "MAN-г Windows-ийн хажууд суулгах уу?"
 
-#: installer.rs:1042
+#: installer.rs:1085
 msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
 msgstr "MAN нь {model} ({path}) дээрх {free} сул зайд суулгагдана. Windows болон түүний файлууд өөрчлөгдөхгүй."
 
-#: installer.rs:1046
+#: installer.rs:1089
 msgid "Install"
 msgstr "Суулгах"
 
-#: installer.rs:1050
+#: installer.rs:1093
 msgid "Reinstall MAN?"
 msgstr "MAN-г дахин суулгах уу?"
 
-#: installer.rs:1051
+#: installer.rs:1094
 msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
 msgstr "Суулгасан системийг шинэ хуулбараар солино. /home доторх хувийн файлууд хадгалагдаж, хуучин систем агшин зураг болж ашиглах боломжтой үлдэнэ."
 
-#: installer.rs:1052
+#: installer.rs:1095
 msgid "Reinstall"
 msgstr "Дахин суулгах"
 
-#: installer.rs:1057
+#: installer.rs:1100
 msgid "_Cancel"
 msgstr "_Цуцлах"
 
-#: installer.rs:1076
+#: installer.rs:1119
 msgid "Installing MAN"
 msgstr "MAN суулгаж байна"
 
-#: installer.rs:1077
+#: installer.rs:1120
 msgid "Starting…"
 msgstr "Эхлүүлж байна…"
 
-#: installer.rs:1090
+#: installer.rs:1133
 msgid "Installing"
 msgstr "Суулгаж байна"
 
-#: installer.rs:1103
+#: installer.rs:1146
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "{n} алхмын {index}-р алхам  ·  {title}"
 
-#: installer.rs:1138
+#: installer.rs:1181
 msgid "MAN Is Installed"
 msgstr "MAN суулгагдлаа"
 
-#: installer.rs:1143
+#: installer.rs:1186
 msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
 msgstr "MAN-г ашиглаж эхлэхийн тулд компьютерээ дахин эхлүүлнэ үү. Асаах бүрт цэснээс MAN эсвэл Windows-г сонгож болно; түр суулгагчийн хуваалтыг MAN анх асахдаа устгана."
 
-#: installer.rs:1149
+#: installer.rs:1192
 msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
 msgstr "MAN-г ашиглаж эхлэхийн тулд компьютерээ дахин эхлүүлнэ үү. Суулгах төхөөрөмжийг салгаж болно; холбогдсон хэвээр байсан ч MAN шинэ дискнээс асна."
 
-#: installer.rs:1156
+#: installer.rs:1199
 msgid "_Restart Now"
 msgstr "Одоо _дахин эхлүүлэх"
 
-#: installer.rs:1171
+#: installer.rs:1214
 msgid "Done"
 msgstr "Дууссан"
 
-#: installer.rs:1182
+#: installer.rs:1225
 msgid "Installation Failed"
 msgstr "Суулгалт амжилтгүй боллоо"
 
-#: installer.rs:1186
+#: installer.rs:1229
 msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
 msgstr "Өөр ямар ч диск өөрчлөгдөөгүй бөгөөд суулгагч зорилтот дискийг чөлөөлсөн. Төлөвлөгөөг хянаад дахин оролдож болно."
 
-#: installer.rs:1191
+#: installer.rs:1234
 msgid "_Review and Try Again"
 msgstr "_Хянаад дахин оролдох"
 
@@ -1062,413 +1086,557 @@ msgstr "Marquee-д тавтай морил"
 msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
 msgstr "Marquee-г нээх үү, эсвэл кино, хөгжим, зургаа энэ сүлжээний бусад компьютертэй хуваалцах уу?"
 
-#: oobe.rs:165
-msgid "The system disk was not found."
-msgstr "Системийн диск олдсонгүй."
-
-#: oobe.rs:173
-msgid "Encryption needs the Btrfs layout created by the MAN installer."
-msgstr "Шифрлэлтэд MAN суулгагчийн үүсгэсэн Btrfs бүтэц хэрэгтэй."
-
-#: oobe.rs:177
-msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
-msgstr "Энэ суулгацад шифрлэлтэд хэрэгтэй тусдаа ачаалах хуваалт алга. Шифрлэлт ашиглахын тулд MAN-г «Дискийг арилгах»-аар дахин суулгана уу."
-
-#: oobe.rs:501
-msgid "MAN Setup"
-msgstr "MAN Setup"
-
-#: oobe.rs:554
-msgid "Where Are You?"
-msgstr "Та хаана байна вэ?"
-
-#: oobe.rs:554
-msgid "Your country or region sets the date, time and number formats."
-msgstr "Таны улс эсвэл бүс нутаг огноо, цаг, тооны форматыг тодорхойлно."
-
-#: oobe.rs:572
-msgid "Country"
-msgstr "Улс"
-
-#: oobe.rs:587
-msgid "GNU General Public License, version 2"
-msgstr "GNU General Public License, 2-р хувилбар"
-
-#: oobe.rs:587
-msgid "The Linux kernel and many system tools"
-msgstr "Linux цөм болон олон системийн хэрэгсэл"
-
-#: oobe.rs:588
-msgid "GNU General Public License, version 3"
-msgstr "GNU General Public License, 3-р хувилбар"
-
-#: oobe.rs:588
-msgid "Many GNU and GNOME programs"
-msgstr "Олон GNU болон GNOME програм"
-
-#: oobe.rs:589
-msgid "GNU Lesser General Public License, version 2.1"
-msgstr "GNU Lesser General Public License, 2.1 хувилбар"
-
-#: oobe.rs:589
-msgid "GTK, GLib and many libraries"
-msgstr "GTK, GLib болон олон сан"
-
-#: oobe.rs:590
-msgid "GNU Lesser General Public License, version 3"
-msgstr "GNU Lesser General Public License, 3-р хувилбар"
-
-#: oobe.rs:591
-msgid "Mozilla Public License 2.0"
-msgstr "Mozilla Public License 2.0"
-
-#: oobe.rs:591
-msgid "Programs and libraries from Mozilla and others"
-msgstr "Mozilla болон бусдын програм, сангууд"
-
-#: oobe.rs:592
-msgid "Apache License 2.0"
-msgstr "Apache лиценз 2.0"
-
-#: oobe.rs:592
-msgid "Libraries and tools"
-msgstr "Сан болон хэрэгслүүд"
-
-#: oobe.rs:597
-msgid "License Agreement"
-msgstr "Лицензийн гэрээ"
-
-#: oobe.rs:597
-msgid "Please read and accept the terms under which MAN is provided."
-msgstr "MAN-г ямар нөхцөлөөр олгож байгааг уншаад зөвшөөрнө үү."
-
-#: oobe.rs:608
-msgid "Licenses"
-msgstr "Лицензүүд"
-
-#: oobe.rs:616
-msgid "The license text is not available ({path})."
-msgstr "Лицензийн бичвэр байхгүй ({path})."
-
-#: oobe.rs:622
-msgid "I have read and accept the license terms"
-msgstr "Би лицензийн нөхцөлийг уншиж, зөвшөөрч байна"
-
-#: oobe.rs:692
+#: net.rs:59
 msgid "Wired"
 msgstr "Утастай"
 
-#: oobe.rs:698
+#: net.rs:65
 msgid "Not connected"
 msgstr "Холбогдоогүй"
 
-#: oobe.rs:732
-msgid "Connect to the Internet"
-msgstr "Интернэтэд холбогдох"
-
-#: oobe.rs:732
-msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
-msgstr "Холболттой бол MAN цагийг тохируулж, програм хангамжаа шинэчилж чадна. Үүнийг дараа ч хийж болно."
-
-#: oobe.rs:734
-msgid "Checking the connection…"
-msgstr "Холболтыг шалгаж байна…"
-
-#: oobe.rs:740
-msgid "Wi-Fi Networks"
-msgstr "Wi-Fi сүлжээнүүд"
-
-#: oobe.rs:742
-msgid "Search Again"
-msgstr "Дахин хайх"
-
-#: oobe.rs:753
-msgid "_Skip"
-msgstr "_Алгасах"
-
-#: oobe.rs:754
-msgid "You can connect later in Settings."
-msgstr "Дараа нь Тохиргоонд холбогдож болно."
-
-#: oobe.rs:763
-msgid "Connected"
-msgstr "Холбогдсон"
-
-#: oobe.rs:763
-msgid "Not Connected"
-msgstr "Холбогдоогүй"
-
-#: oobe.rs:791
-msgid "No networks found"
-msgstr "Сүлжээ олдсонгүй"
-
-#: oobe.rs:817
-msgid "Internet"
-msgstr "Интернэт"
-
-#: oobe.rs:864
+#: net.rs:121
 msgid "Connected to “{ssid}”"
 msgstr "«{ssid}»-д холбогдлоо"
 
-#: oobe.rs:864
+#: net.rs:121
 msgid "Could not connect to “{ssid}”"
 msgstr "«{ssid}»-д холбогдож чадсангүй"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Connect to “{ssid}”"
 msgstr "«{ssid}»-д холбогдох"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Enter the network password."
 msgstr "Сүлжээний нууц үгийг оруулна уу."
 
-#: oobe.rs:878
+#: net.rs:135
 msgid "C_onnect"
 msgstr "_Холбогдох"
 
-#: oobe.rs:901
+#: oobe.rs:166
+msgid "The system disk was not found."
+msgstr "Системийн диск олдсонгүй."
+
+#: oobe.rs:174
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Шифрлэлтэд MAN суулгагчийн үүсгэсэн Btrfs бүтэц хэрэгтэй."
+
+#: oobe.rs:186
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Энэ суулгацад шифрлэлтэд хэрэгтэй тусдаа ачаалах хуваалт алга. Шифрлэлт ашиглахын тулд MAN-г «Дискийг арилгах»-аар дахин суулгана уу."
+
+#: oobe.rs:510
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:563
+msgid "Where Are You?"
+msgstr "Та хаана байна вэ?"
+
+#: oobe.rs:563
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Таны улс эсвэл бүс нутаг огноо, цаг, тооны форматыг тодорхойлно."
+
+#: oobe.rs:581
+msgid "Country"
+msgstr "Улс"
+
+#: oobe.rs:596
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, 2-р хувилбар"
+
+#: oobe.rs:596
+msgid "The Linux kernel and many system tools"
+msgstr "Linux цөм болон олон системийн хэрэгсэл"
+
+#: oobe.rs:597
+msgid "GNU General Public License, version 3"
+msgstr "GNU General Public License, 3-р хувилбар"
+
+#: oobe.rs:597
+msgid "Many GNU and GNOME programs"
+msgstr "Олон GNU болон GNOME програм"
+
+#: oobe.rs:598
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU Lesser General Public License, 2.1 хувилбар"
+
+#: oobe.rs:598
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib болон олон сан"
+
+#: oobe.rs:599
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU Lesser General Public License, 3-р хувилбар"
+
+#: oobe.rs:600
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:600
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla болон бусдын програм, сангууд"
+
+#: oobe.rs:601
+msgid "Apache License 2.0"
+msgstr "Apache лиценз 2.0"
+
+#: oobe.rs:601
+msgid "Libraries and tools"
+msgstr "Сан болон хэрэгслүүд"
+
+#: oobe.rs:606
+msgid "License Agreement"
+msgstr "Лицензийн гэрээ"
+
+#: oobe.rs:606
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "MAN-г ямар нөхцөлөөр олгож байгааг уншаад зөвшөөрнө үү."
+
+#: oobe.rs:617
+msgid "Licenses"
+msgstr "Лицензүүд"
+
+#: oobe.rs:625
+msgid "The license text is not available ({path})."
+msgstr "Лицензийн бичвэр байхгүй ({path})."
+
+#: oobe.rs:631
+msgid "I have read and accept the license terms"
+msgstr "Би лицензийн нөхцөлийг уншиж, зөвшөөрч байна"
+
+#: oobe.rs:658
+msgid "Connect to the Internet"
+msgstr "Интернэтэд холбогдох"
+
+#: oobe.rs:658
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Холболттой бол MAN цагийг тохируулж, програм хангамжаа шинэчилж чадна. Үүнийг дараа ч хийж болно."
+
+#: oobe.rs:660
+msgid "Checking the connection…"
+msgstr "Холболтыг шалгаж байна…"
+
+#: oobe.rs:666
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi сүлжээнүүд"
+
+#: oobe.rs:668
+msgid "Search Again"
+msgstr "Дахин хайх"
+
+#: oobe.rs:679
+msgid "_Skip"
+msgstr "_Алгасах"
+
+#: oobe.rs:680
+msgid "You can connect later in Settings."
+msgstr "Дараа нь Тохиргоонд холбогдож болно."
+
+#: oobe.rs:689
+msgid "Connected"
+msgstr "Холбогдсон"
+
+#: oobe.rs:689
+msgid "Not Connected"
+msgstr "Холбогдоогүй"
+
+#: oobe.rs:717
+msgid "No networks found"
+msgstr "Сүлжээ олдсонгүй"
+
+#: oobe.rs:746
+msgid "Internet"
+msgstr "Интернэт"
+
+#: oobe.rs:777
 msgid "Create Your Account"
 msgstr "Бүртгэлээ үүсгэнэ үү"
 
-#: oobe.rs:901
+#: oobe.rs:777
 msgid "You will be the administrator of this computer, with full root access through sudo."
 msgstr "Та энэ компьютерийн администратор болж, sudo-гоор root эрхийг бүрэн эзэмшинэ."
 
-#: oobe.rs:904
+#: oobe.rs:780
 msgid "Full Name"
 msgstr "Бүтэн нэр"
 
-#: oobe.rs:905
+#: oobe.rs:781
 msgid "Username"
 msgstr "Хэрэглэгчийн нэр"
 
-#: oobe.rs:906
+#: oobe.rs:782
 msgid "Password"
 msgstr "Нууц үг"
 
-#: oobe.rs:907
+#: oobe.rs:783
 msgid "Confirm Password"
 msgstr "Нууц үгээ баталгаажуулах"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Log In Automatically"
 msgstr "Автоматаар нэвтрэх"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Skip the login screen when the computer starts"
 msgstr "Компьютер асахад нэвтрэх дэлгэцийг алгасах"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Existing Home Folders"
 msgstr "Одоо байгаа гэрийн хавтаснууд"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Use the same username to keep using a folder kept from a previous installation."
 msgstr "Өмнөх суулгацаас үлдсэн хавтсыг үргэлжлүүлэн ашиглахын тулд ижил хэрэглэгчийн нэр ашиглана уу."
 
-#: oobe.rs:919
+#: oobe.rs:795
 msgid "Use"
 msgstr "Ашиглах"
 
-#: oobe.rs:929
+#: oobe.rs:805
 msgid "Advanced"
 msgstr "Нарийвчилсан"
 
-#: oobe.rs:930
+#: oobe.rs:806
 msgid "Computer Name"
 msgstr "Компьютерийн нэр"
 
-#: oobe.rs:932
+#: oobe.rs:808
 msgid "Set a Root Password"
 msgstr "root нууц үг тохируулах"
 
-#: oobe.rs:933
+#: oobe.rs:809
 msgid "Allows logging in as root directly. Without it, use sudo with your own password."
 msgstr "Шууд root-ээр нэвтрэх боломж олгоно. Үгүй бол өөрийн нууц үгээр sudo ашиглана уу."
 
-#: oobe.rs:937
+#: oobe.rs:813
 msgid "Root Password"
 msgstr "root нууц үг"
 
-#: oobe.rs:938
+#: oobe.rs:814
 msgid "Confirm Root Password"
 msgstr "root нууц үгээ баталгаажуулах"
 
-#: oobe.rs:962
+#: oobe.rs:838
 msgid "Enter your name."
 msgstr "Нэрээ оруулна уу."
 
-#: oobe.rs:964
+#: oobe.rs:840
 msgid "Choose a username."
 msgstr "Хэрэглэгчийн нэр сонгоно уу."
 
-#: oobe.rs:966
+#: oobe.rs:842
 msgid "This username is already used by the system."
 msgstr "Энэ хэрэглэгчийн нэрийг систем аль хэдийн ашиглаж байна."
 
-#: oobe.rs:969
+#: oobe.rs:845
 msgid "This username is reserved by the system."
 msgstr "Энэ хэрэглэгчийн нэрийг систем нөөцөлсөн."
 
-#: oobe.rs:971
+#: oobe.rs:847
 msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
 msgstr "Хэрэглэгчийн нэр жижиг латин үсэг, цифр, - болон _-аас бүрдэх ба үсгээр эхэлнэ."
 
-#: oobe.rs:974
+#: oobe.rs:850
 msgid "Choose a password."
 msgstr "Нууц үг сонгоно уу."
 
-#: oobe.rs:976
+#: oobe.rs:852
 msgid "The passwords do not match."
 msgstr "Нууц үгнүүд таарахгүй байна."
 
-#: oobe.rs:978
+#: oobe.rs:854
 msgid "The computer name may contain letters, digits and dashes."
 msgstr "Компьютерийн нэр үсэг, цифр, зураас агуулж болно."
 
-#: oobe.rs:980
+#: oobe.rs:856
 msgid "Enter the root password twice."
 msgstr "root нууц үгийг хоёр удаа оруулна уу."
 
-#: oobe.rs:986
+#: oobe.rs:862
 msgid "Tip: a password with 8 or more characters is much safer."
 msgstr "Зөвлөгөө: 8 буюу түүнээс олон тэмдэгттэй нууц үг хамаагүй найдвартай."
 
-#: oobe.rs:1066
+#: oobe.rs:942
 msgid "Account"
 msgstr "Бүртгэл"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Dark"
 msgstr "Бараан"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Light"
 msgstr "Цайвар"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Make It Yours"
 msgstr "Өөрийнхөөрөө болго"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
 msgstr "Загвар, онцлох өнгө, ханын зургаа сонгоно уу. Өөрчлөлт бүрийг даруй харна."
 
-#: oobe.rs:1095
+#: oobe.rs:971
 msgid "Style"
 msgstr "Загвар"
 
-#: oobe.rs:1115
+#: oobe.rs:991
 msgid "Accent Color"
 msgstr "Онцлох өнгө"
 
-#: oobe.rs:1158
+#: oobe.rs:1034
 msgid "Wallpaper"
 msgstr "Ханын зураг"
 
-#: oobe.rs:1202
+#: oobe.rs:1078
 msgid "Customize"
 msgstr "Тохируулах"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Privacy"
 msgstr "Нууцлал"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Choose which features may use information about you. You can change this at any time in Settings."
 msgstr "Ямар боломжууд таны тухай мэдээллийг ашиглаж болохыг сонгоно уу. Үүнийг Тохиргоонд хүссэн үедээ өөрчилж болно."
 
-#: oobe.rs:1212
+#: oobe.rs:1088
 msgid "Location Services"
 msgstr "Байршлын үйлчилгээ"
 
-#: oobe.rs:1213
+#: oobe.rs:1089
 msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
 msgstr "Газрын зураг, Цаг агаар зэрэг програмд ойролцоох Wi-Fi сүлжээгээр таны ойролцоо байршлыг тодорхойлох боломж олгоно."
 
-#: oobe.rs:1217
+#: oobe.rs:1093
 msgid "Automatic Time Zone"
 msgstr "Автомат цагийн бүс"
 
-#: oobe.rs:1218
+#: oobe.rs:1094
 msgid "Uses your location to keep the time zone right when you travel."
 msgstr "Аялах үед цагийн бүсийг зөв байлгахын тулд таны байршлыг ашиглана."
 
-#: oobe.rs:1251
+#: oobe.rs:1127
 msgid "_Finish Setup"
 msgstr "Тохируулгыг _дуусгах"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your Disk Is Encrypted"
 msgstr "Таны диск шифрлэгдсэн"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your data is protected. The passphrase is asked every time the computer starts."
 msgstr "Таны өгөгдөл хамгаалагдсан. Компьютер асах бүрт нууц хэллэг асууна."
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Disk Encryption"
 msgstr "Дискний шифрлэлт"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Encryption protects your data if the computer is lost or stolen."
 msgstr "Шифрлэлт компьютер алдагдах эсвэл хулгайд алдагдвал таны өгөгдлийг хамгаална."
 
-#: oobe.rs:1261
+#: oobe.rs:1137
 msgid "Not available on this installation"
 msgstr "Энэ суулгацад боломжгүй"
 
-#: oobe.rs:1267
+#: oobe.rs:1143
 msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
 msgstr "Шифрлэлт компьютер алдагдах эсвэл хулгайд алдагдвал таны файлуудыг хамгаална. Нууц хэллэггүйгээр хэн ч дискийг уншиж чадахгүй."
 
-#: oobe.rs:1270
+#: oobe.rs:1146
 msgid "Encrypt the Disk"
 msgstr "Дискийг шифрлэх"
 
-#: oobe.rs:1271
+#: oobe.rs:1147
 msgid "The passphrase is asked every time the computer starts."
 msgstr "Компьютер асах бүрт нууц хэллэг асууна."
 
-#: oobe.rs:1279
+#: oobe.rs:1155
 msgid "Encryption starts at the next restart"
 msgstr "Шифрлэлт дараагийн дахин эхлүүлэлтээр эхэлнэ"
 
-#: oobe.rs:1280
+#: oobe.rs:1156
 msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
 msgstr "Дараа нь таныг компьютер ашиглаж байх хооронд диск арын горимд шифрлэгдэнэ. Нууц хэллэгээ алдвал хэн ч өгөгдлийг сэргээж чадахгүй."
 
-#: oobe.rs:1377
+#: oobe.rs:1253
 msgid "Preparing MAN"
 msgstr "MAN-г бэлтгэж байна"
 
-#: oobe.rs:1378
+#: oobe.rs:1254
 msgid "Getting everything ready…"
 msgstr "Бүгдийг бэлтгэж байна…"
 
-#: oobe.rs:1383
+#: oobe.rs:1259
 msgid "_Reboot"
 msgstr "_Дахин эхлүүлэх"
 
-#: oobe.rs:1385
+#: oobe.rs:1261
 msgid "_Go Back"
 msgstr "_Буцах"
 
-#: oobe.rs:1399
+#: oobe.rs:1275
 msgid "Preparing"
 msgstr "Бэлтгэж байна"
 
-#: oobe.rs:1412
+#: oobe.rs:1288
 msgid "Setup Log"
 msgstr "Тохируулгын бүртгэл"
 
-#: oobe.rs:1444
+#: oobe.rs:1320
 msgid "All Done!"
 msgstr "Бүгд бэлэн боллоо!"
 
-#: oobe.rs:1454
+#: oobe.rs:1330
 msgid "Something Went Wrong"
 msgstr "Ямар нэг зүйл буруу боллоо"
+
+#: recovery.rs:113
+msgid "MAN Recovery"
+msgstr "MAN сэргээх"
+
+#: recovery.rs:114
+msgid "Restore your system, reinstall MAN or open a Terminal. First, an administrator of this computer signs in."
+msgstr "Системээ сэргээх, MAN-г дахин суулгах эсвэл терминал нээх. Эхлээд энэ компьютерийн админ нэвтэрнэ."
+
+#: recovery.rs:122
+msgid "Administrator"
+msgstr "Админ"
+
+#: recovery.rs:131
+msgid "No installed system was found on this disk. You can reinstall MAN."
+msgstr "Энэ диск дээр суулгасан систем олдсонгүй. Та MAN-г дахин суулгаж болно."
+
+#: recovery.rs:198
+msgid "This computer has MAN {version}."
+msgstr "Энэ компьютерт MAN {version} байна."
+
+#: recovery.rs:199
+msgid "What Would You Like to Do?"
+msgstr "Та юу хийхийг хүсэж байна вэ?"
+
+#: recovery.rs:202
+msgid "Restore a Snapshot"
+msgstr "Агшин зургийг сэргээх"
+
+#: recovery.rs:202
+msgid "Your system broke? Go back to a moment when everything worked. Your files stay."
+msgstr "Систем эвдэрсэн үү? Бүх зүйл ажиллаж байсан мөч рүү буцна уу. Таны файлууд үлдэнэ."
+
+#: recovery.rs:203
+msgid "Download the newest MAN and install it again. Your files, accounts and settings stay."
+msgstr "Хамгийн шинэ MAN-г татаж аваад дахин суулгана. Таны файл, бүртгэл, тохиргоо үлдэнэ."
+
+#: recovery.rs:204
+msgid "Terminal"
+msgstr "Терминал"
+
+#: recovery.rs:204
+msgid "For experts: type commands with full control of the computer."
+msgstr "Мэргэжилтнүүдэд: компьютерийг бүрэн удирдан тушаал бичих."
+
+#: recovery.rs:207
+msgid "There are no snapshots on this computer."
+msgstr "Энэ компьютерт агшин зураг алга."
+
+#: recovery.rs:240
+msgid "Choose a moment when everything worked. The files in your home folder stay as they are now."
+msgstr "Бүх зүйл ажиллаж байсан мөчийг сонгоно уу. Таны гэрийн хавтасны файлууд одоогийнхоороо үлдэнэ."
+
+#: recovery.rs:257
+msgid "Restore “{name}”?"
+msgstr "«{name}»-г сэргээх үү?"
+
+#: recovery.rs:258
+msgid "Your system goes back to how it was on {date}. Your files stay. The system as it is now is kept as a snapshot, so you can come back to it."
+msgstr "Таны систем {date}-ний байдалд буцна. Таны файлууд үлдэнэ. Одоогийн систем агшин зураг болж хадгалагдах тул түүн рүү буцаж болно."
+
+#: recovery.rs:261
+msgid "_Restore"
+msgstr "_Сэргээх"
+
+#: recovery.rs:270
+msgid "Restoring Your System"
+msgstr "Системийг сэргээж байна"
+
+#: recovery.rs:275
+msgid "Your system was restored. Restart to use it."
+msgstr "Систем сэргээгдлээ. Ашиглахын тулд дахин эхлүүлнэ үү."
+
+#: recovery.rs:283
+msgid "MAN Recovery downloads the newest MAN. Connect to a network first."
+msgstr "MAN сэргээх нь хамгийн шинэ MAN-г татаж авна. Эхлээд сүлжээнд холбогдоно уу."
+
+#: recovery.rs:388
+msgid "Looking for the newest MAN…"
+msgstr "Хамгийн шинэ MAN-г хайж байна…"
+
+#: recovery.rs:394
+msgid "Your files, accounts and settings stay."
+msgstr "Таны файл, бүртгэл, тохиргоо үлдэнэ."
+
+#: recovery.rs:395
+msgid "Apps you installed as Flatpaks stay; other apps you added may need to be installed again."
+msgstr "Flatpak-аар суулгасан аппууд үлдэнэ; таны нэмсэн бусад аппыг дахин суулгах шаардлагатай байж магадгүй."
+
+#: recovery.rs:396
+msgid "The system as it is now is kept as a snapshot."
+msgstr "Одоогийн систем агшин зураг болж хадгалагдана."
+
+#: recovery.rs:397
+msgid "Keep the computer plugged in. This takes a while."
+msgstr "Компьютерийг цахилгаанд залгаатай байлгана уу. Энэ хэсэг хугацаа шаардана."
+
+#: recovery.rs:407
+msgid "_Reinstall MAN"
+msgstr "_MAN-г дахин суулгах"
+
+#: recovery.rs:426
+msgid "MAN {version} ({size}) will be downloaded and installed on this computer."
+msgstr "MAN {version} ({size}) татагдаж энэ компьютерт суулгагдана."
+
+#: recovery.rs:437
+msgid "No MAN for this computer was found."
+msgstr "Энэ компьютерт зориулсан MAN олдсонгүй."
+
+#: recovery.rs:445
+msgid "Reinstalling MAN"
+msgstr "MAN-г дахин суулгаж байна"
+
+#: recovery.rs:460
+msgid "MAN was installed again. Your files and accounts were kept. Restart to use it."
+msgstr "MAN дахин суулгагдлаа. Таны файл, бүртгэл хадгалагдсан. Ашиглахын тулд дахин эхлүүлнэ үү."
+
+#: recovery.rs:472
+msgid "Do not turn the computer off."
+msgstr "Компьютерийг бүү унтраа."
+
+#: recovery.rs:519
+msgid "That Did Not Work"
+msgstr "Амжилтгүй боллоо"
+
+#: recovery.rs:521
+msgid "_Details"
+msgstr "_Дэлгэрэнгүй"
+
+#: recovery.rs:529
+msgid "_Restart"
+msgstr "_Дахин эхлүүлэх"
+
+#: recovery.rs:533
+msgid "_Back to MAN Recovery"
+msgstr "_MAN сэргээх рүү буцах"
+
+#: recovery.rs:575
+msgid "_Shut Down"
+msgstr "_Унтраах"
+
+#: recovery.rs:605
+msgid "Looking at this computer…"
+msgstr "Энэ компьютерийг шалгаж байна…"
 
 #: snapshots.rs:84
 msgid "Daily"
@@ -1559,10 +1727,6 @@ msgstr ""
 "Дахин эхлүүлсний дараа систем {date}-ны «{description}» төлөвт буцна. Таны хувийн файлууд өөрчлөгдөхгүй.\n"
 "\n"
 "Одоогийн систем эхлээд агшин зураг болж хадгалагдах тул үүнийг буцааж болно."
-
-#: snapshots.rs:278
-msgid "_Restore"
-msgstr "_Сэргээх"
 
 #: snapshots.rs:291
 msgid "Restart to Finish Restoring"
@@ -2058,199 +2222,211 @@ msgstr "Багцыг суулгаж чадсангүй."
 msgid "The app's menu entry is not valid."
 msgstr "Аппын цэсний бичлэг буруу байна."
 
-#: install.rs:16
+#: install.rs:17
 msgid "Checking the installation plan"
 msgstr "Суулгах төлөвлөгөөг шалгаж байна"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Preparing the disk"
 msgstr "Дискийг бэлтгэж байна"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Copying MAN to the disk"
 msgstr "MAN-г диск рүү хуулж байна"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Configuring the new system"
 msgstr "Шинэ системийг тохируулж байна"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Installing the bootloader"
 msgstr "Ачаалагчийг суулгаж байна"
 
-#: install.rs:16
+#: install.rs:17
+msgid "Preparing MAN Recovery"
+msgstr "MAN сэргээхийг бэлдэж байна"
+
+#: install.rs:17
 msgid "Creating the first snapshot"
 msgstr "Эхний агшин зургийг үүсгэж байна"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Finishing up"
 msgstr "Дуусгаж байна"
 
-#: install.rs:199
+#: install.rs:232
 msgid "Removing old partition signatures"
 msgstr "Хуучин хуваалтын гарын үсгийг устгаж байна"
 
-#: install.rs:205
+#: install.rs:238
 msgid "Creating partitions"
 msgstr "Хуваалт үүсгэж байна"
 
-#: install.rs:226
+#: install.rs:259
 msgid "Formatting the EFI system partition"
 msgstr "EFI системийн хуваалтыг форматлаж байна"
 
-#: install.rs:234
+#: install.rs:267
 msgid "Encrypting the system partition"
 msgstr "Системийн хуваалтыг шифрлэж байна"
 
-#: install.rs:246
+#: install.rs:279
 msgid "Formatting the boot partition"
 msgstr "Ачаалах хуваалтыг форматлаж байна"
 
-#: install.rs:249
+#: install.rs:282
 msgid "Creating the Btrfs file system"
 msgstr "Btrfs файлын систем үүсгэж байна"
 
-#: install.rs:258
+#: install.rs:293
 msgid "Removing old file system signatures"
 msgstr "Хуучин файлын системийн гарын үсгийг устгаж байна"
 
-#: install.rs:330
+#: install.rs:372
 msgid "Unlocking the encrypted installation"
 msgstr "Шифрлэсэн суулгацын түгжээг тайлж байна"
 
-#: install.rs:356
+#: install.rs:399
 msgid "Saving the current system as a snapshot"
 msgstr "Одоогийн системийг агшин зураг болгон хадгалж байна"
 
-#: install.rs:362
+#: install.rs:406
 msgid "Removing the previous system"
 msgstr "Өмнөх системийг устгаж байна"
 
-#: install.rs:571
+#: install.rs:615
 msgid "Writing file system table"
 msgstr "Файлын системийн хүснэгтийг бичиж байна"
 
-#: install.rs:593
+#: install.rs:639
 msgid "Setting computer name and identity"
 msgstr "Компьютерийн нэр, таних тэмдгийг тохируулж байна"
 
-#: install.rs:608
+#: install.rs:654
 msgid "Removing the live session accounts"
 msgstr "Шууд сессийн бүртгэлүүдийг устгаж байна"
 
-#: install.rs:641
+#: install.rs:687
 msgid "Creating your account"
 msgstr "Таны бүртгэлийг үүсгэж байна"
 
-#: install.rs:649
+#: install.rs:699
 msgid "Preparing MAN Setup for the first start"
 msgstr "MAN Setup-г анхны асалтад бэлтгэж байна"
 
-#: install.rs:655
+#: install.rs:705
 msgid "Setting time zone and keyboard"
 msgstr "Цагийн бүс ба гарыг тохируулж байна"
 
-#: install.rs:680
+#: install.rs:730
 msgid "Removing the installer from the new system"
 msgstr "Суулгагчийг шинэ системээс устгаж байна"
 
-#: install.rs:687
+#: install.rs:737
 msgid "Building the boot image (initramfs)"
 msgstr "Ачаалах дүрс (initramfs) бүтээж байна"
 
-#: install.rs:717
+#: install.rs:767
 msgid "Configuring GRUB"
 msgstr "GRUB тохируулж байна"
 
-#: install.rs:735
+#: install.rs:785
 msgid "Installing GRUB to the EFI system partition"
 msgstr "GRUB-г EFI системийн хуваалтад суулгаж байна"
 
-#: install.rs:752
+#: install.rs:802
 msgid "Installing the fallback boot loader"
 msgstr "Нөөц ачаалагч суулгаж байна"
 
-#: install.rs:759
+#: install.rs:809
 msgid "Writing the boot menu"
 msgstr "Ачаалах цэсийг бичиж байна"
 
-#: install.rs:780
+#: install.rs:834
 msgid "Disk ready"
 msgstr "Диск бэлэн"
 
-#: install.rs:793
+#: install.rs:853
+msgid "Keeping your accounts and settings"
+msgstr "Таны бүртгэл, тохиргоог хадгалж байна"
+
+#: install.rs:869
+msgid "Skipped"
+msgstr "Алгассан"
+
+#: install.rs:873
 msgid "Creating a snapshot of the fresh system"
 msgstr "Шинэ системийн агшин зураг үүсгэж байна"
 
-#: install.rs:799
+#: install.rs:879
 msgid "Adding the snapshot to the boot menu"
 msgstr "Агшин зургийг ачаалах цэсэнд нэмж байна"
 
-#: install.rs:803
+#: install.rs:883
 msgid "Unmounting"
 msgstr "Салгаж байна"
 
-#: install.rs:85
+#: install.rs:93
 msgid "The installer backend must run as root."
 msgstr "Суулгагчийн туслах root-ээр ажиллах ёстой."
 
-#: install.rs:88
+#: install.rs:121
 msgid "This computer was not started in UEFI mode. MAN requires UEFI."
 msgstr "Энэ компьютер UEFI горимд асаагүй. MAN-д UEFI хэрэгтэй."
 
-#: install.rs:92
+#: install.rs:125
 msgid "The username is not valid."
 msgstr "Хэрэглэгчийн нэр буруу байна."
 
-#: install.rs:95
+#: install.rs:128
 msgid "A password is required."
 msgstr "Нууц үг шаардлагатай."
 
-#: install.rs:99
+#: install.rs:132
 msgid "The computer name is not valid."
 msgstr "Компьютерийн нэр буруу байна."
 
-#: install.rs:105
+#: install.rs:138
 msgid "Unknown language."
 msgstr "Үл мэдэгдэх хэл."
 
-#: install.rs:111
+#: install.rs:144
 msgid "The encryption passphrase must have at least 8 characters."
 msgstr "Шифрлэлтийн нууц хэллэг дор хаяж 8 тэмдэгттэй байх ёстой."
 
-#: install.rs:122
+#: install.rs:155
 msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
 msgstr "Таныг суулгалтыг баталгаажуулсны дараа диск өөрчлөгджээ. Юу ч өөрчлөөгүй; хянаад дахин баталгаажуулна уу."
 
-#: install.rs:138
+#: install.rs:171
 msgid "Choose a system partition."
 msgstr "Системийн хуваалт сонгоно уу."
 
-#: install.rs:145
+#: install.rs:178
 msgid "The confirmed disk does not hold the chosen system partition."
 msgstr "Баталгаажуулсан дискэнд сонгосон системийн хуваалт алга."
 
-#: install.rs:157
+#: install.rs:190
 msgid "The boot partition must be separate from the EFI and system partitions."
 msgstr "Ачаалах хуваалт EFI болон системийн хуваалтаас тусдаа байх ёстой."
 
-#: install.rs:160
+#: install.rs:193
 msgid "The boot partition must be at least 512 MB."
 msgstr "Ачаалах хуваалт дор хаяж 512 MB байх ёстой."
 
-#: install.rs:175
+#: install.rs:208
 msgid "No installation chosen."
 msgstr "Суулгац сонгоогүй."
 
-#: install.rs:179
+#: install.rs:212
 msgid "The confirmed disk does not hold the chosen installation."
 msgstr "Баталгаажуулсан дискэнд сонгосон суулгац алга."
 
-#: install.rs:337
+#: install.rs:379
 msgid "The encrypted installation has no MAN_BOOT partition."
 msgstr "Шифрлэсэн суулгацад MAN_BOOT хуваалт алга."
 
-#: install.rs:695
+#: install.rs:745
 msgid "No kernel with matching modules was found in /boot."
 msgstr "/boot дотор тохирох модультай цөм олдсонгүй."
 
@@ -2258,41 +2434,109 @@ msgstr "/boot дотор тохирох модультай цөм олдсонг
 msgid "The language must be changed by the system helper."
 msgstr "Хэлийг системийн туслах өөрчлөх ёстой."
 
-#: oobe.rs:204
+#: oobe.rs:205
 msgid "Applying your settings"
 msgstr "Таны тохиргоог хэрэгжүүлж байна"
 
-#: oobe.rs:212
+#: oobe.rs:213
 msgid "Preparing disk encryption"
 msgstr "Дискний шифрлэлтийг бэлтгэж байна"
 
-#: oobe.rs:216
+#: oobe.rs:217
 msgid "Finishing"
 msgstr "Дуусгаж байна"
 
-#: oobe.rs:100
+#: oobe.rs:101
 msgid "MAN Setup must be finished by the system helper."
 msgstr "MAN Setup-г системийн туслах дуусгах ёстой."
 
-#: oobe.rs:103
+#: oobe.rs:104
 msgid "MAN Setup has already been completed on this computer."
 msgstr "Энэ компьютер дээр MAN Setup аль хэдийн дууссан."
 
-#: oobe.rs:124
+#: oobe.rs:125
 msgid "Unknown accent color."
 msgstr "Үл мэдэгдэх онцлох өнгө."
 
-#: oobe.rs:128
+#: oobe.rs:129
 msgid "The chosen wallpaper is not available."
 msgstr "Сонгосон ханын зураг байхгүй."
 
-#: oobe.rs:146
+#: oobe.rs:147
 msgid "This system cannot be encrypted."
 msgstr "Энэ системийг шифрлэх боломжгүй."
 
-#: oobe.rs:257
+#: oobe.rs:258
 msgid "The setup key is missing, so encryption cannot continue in the background."
 msgstr "Тохируулгын түлхүүр алга тул шифрлэлт арын горимд үргэлжлэх боломжгүй."
+
+#: recovery.rs:450
+msgid "Downloading MAN"
+msgstr "MAN-г татаж байна"
+
+#: recovery.rs:459
+msgid "Opening the downloaded MAN"
+msgstr "Татсан MAN-г нээж байна"
+
+#: recovery.rs:85
+msgid "Leaving out what Recovery does not need"
+msgstr "Сэргээхэд хэрэггүйг хасаж байна"
+
+#: recovery.rs:87
+msgid "Setting up the recovery system"
+msgstr "Сэргээх системийг тохируулж байна"
+
+#: recovery.rs:89
+msgid "Adding its start-up files"
+msgstr "Эхлүүлэх файлуудыг нэмж байна"
+
+#: recovery.rs:104
+msgid "MAN Recovery is ready"
+msgstr "MAN сэргээх бэлэн боллоо"
+
+#: recovery.rs:64
+msgid "This MAN has no MAN Recovery program."
+msgstr "Энэ MAN-д MAN сэргээх програм алга."
+
+#: recovery.rs:82
+msgid "MAN Recovery was not started."
+msgstr "MAN сэргээх эхлээгүй."
+
+#: recovery.rs:206
+msgid "The installed system has no kernel for MAN Recovery."
+msgstr "Суулгасан системд MAN сэргээхэд зориулсан цөм алга."
+
+#: recovery.rs:234
+msgid "MAN Recovery was not started from the boot menu."
+msgstr "MAN сэргээхийг ачаалах цэснээс эхлүүлээгүй байна."
+
+#: recovery.rs:235
+msgid "The disk of this MAN was not found."
+msgstr "Энэ MAN-ийн диск олдсонгүй."
+
+#: recovery.rs:240
+msgid "This works only in MAN Recovery."
+msgstr "Энэ нь зөвхөн MAN сэргээх дотор ажиллана."
+
+#: recovery.rs:290
+msgid "The password is not correct."
+msgstr "Нууц үг буруу байна."
+
+#: recovery.rs:333
+msgid "Invalid snapshot id."
+msgstr "Агшин зургийн ID буруу."
+
+#: recovery.rs:405
+msgid "No MAN for this computer was found on MAN's download page."
+msgstr "MAN-ийн татаж авах хуудаснаас энэ компьютерт зориулсан MAN олдсонгүй."
+
+#: recovery.rs:434
+msgid "The downloaded MAN is damaged (its checksum does not match). Try again."
+msgstr "Татсан MAN гэмтсэн байна (шалгах нийлбэр таарахгүй байна). Дахин оролдоно уу."
+
+#: recovery.rs:491
+msgid "The partition of this MAN was not found."
+msgstr "Энэ MAN-ийн хуваалт олдсонгүй."
 
 #: snapshots.rs:48
 msgid "The system is not installed on Btrfs, so snapshots are not available."
@@ -2301,10 +2545,6 @@ msgstr "Систем Btrfs дээр суугаагүй тул агшин зур�
 #: snapshots.rs:50
 msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
 msgstr "Агшин зургийн сэргээлт дахин эхлүүлэхийг хүлээж байна. Дуусгахын тулд эхлээд компьютерээ дахин эхлүүлнэ үү."
-
-#: snapshots.rs:99
-msgid "Invalid snapshot id."
-msgstr "Агшин зургийн ID буруу."
 
 #: update.rs:32
 msgid "Checking the update"
@@ -2334,43 +2574,39 @@ msgstr "Дахин эхлүүлэхийг бэлтгэж байна"
 msgid "Unpacked"
 msgstr "Задалсан"
 
-#: update.rs:278
+#: update.rs:285
 msgid "Accounts"
 msgstr "Бүртгэлүүд"
 
-#: update.rs:331
+#: update.rs:338
 msgid "Reinstalling kept apps"
 msgstr "Хадгалсан аппуудыг дахин суулгаж байна"
 
-#: update.rs:386
+#: update.rs:404
 msgid "Removing installer-only software"
 msgstr "Зөвхөн суулгагчид зориулсан програмыг устгаж байна"
 
-#: update.rs:426
+#: update.rs:450
 msgid "Building the update boot image"
 msgstr "Шинэчлэлийн ачаалах дүрсийг бүтээж байна"
 
-#: update.rs:429
+#: update.rs:453
 msgid "Adding the one-time boot entry"
 msgstr "Нэг удаагийн ачаалах бичлэг нэмж байна"
 
-#: update.rs:464
+#: update.rs:488
 msgid "The update is genuine"
 msgstr "Шинэчлэл жинхэнэ байна"
 
-#: update.rs:470
+#: update.rs:494
 msgid "Snapshot created"
 msgstr "Агшин зураг үүслээ"
 
-#: update.rs:472
-msgid "Skipped"
-msgstr "Алгассан"
-
-#: update.rs:481
+#: update.rs:505
 msgid "Update area ready"
 msgstr "Шинэчлэлийн хэсэг бэлэн"
 
-#: update.rs:504
+#: update.rs:528
 msgid "Preparing the new system"
 msgstr "Шинэ системийг бэлтгэж байна"
 
@@ -2382,19 +2618,19 @@ msgstr "Шинэчлэлийн файл гэмтсэн (шалгах нийлб�
 msgid "The update file could not be read completely."
 msgstr "Шинэчлэлийн файлыг бүрэн уншиж чадсангүй."
 
-#: update.rs:398
+#: update.rs:416
 msgid "The update contains no kernel."
 msgstr "Шинэчлэлд цөм алга."
 
-#: update.rs:446
+#: update.rs:470
 msgid "Updates must be installed by the system helper."
 msgstr "Шинэчлэлийг системийн туслах суулгах ёстой."
 
-#: update.rs:456
+#: update.rs:480
 msgid "The chosen installation was not found."
 msgstr "Сонгосон суулгац олдсонгүй."
 
-#: update.rs:458
+#: update.rs:482
 msgid "Only the running MAN installation can be updated."
 msgstr "Зөвхөн ажиллаж буй MAN суулгацыг шинэчлэх боломжтой."
 
@@ -2521,6 +2757,10 @@ msgstr "Шинэ MAN компьютераа тохируулаарай"
 #: man-oobe.desktop
 msgid "First-start setup of MAN"
 msgstr "MAN-ийн анхны тохируулга"
+
+#: com.man.Recovery.desktop
+msgid "Restore or reinstall MAN"
+msgstr "MAN-г сэргээх эсвэл дахин суулгах"
 
 #: com.man.UpdateCheck.desktop
 msgid "MAN Updates"

@@ -7,6 +7,7 @@ mod install;
 mod locale;
 mod oobe;
 mod probe;
+mod recovery;
 mod snapshots;
 mod update;
 mod updfile;
@@ -47,6 +48,17 @@ fn handle(req: Request) -> anyhow::Result<String> {
         }
         Request::UpdateStage { path, device, snapshot } => update::stage(&path, &device, snapshot),
         Request::SetLiveLanguage { locale } => locale::set_live_language(&locale),
+        Request::RecoveryInfo => {
+            emit(&Event::Recovery { info: recovery::info()? });
+            Ok(String::new())
+        }
+        Request::RecoveryUnlock { user, password } => recovery::unlock(&user, &password),
+        Request::RecoveryRestore { user, password, id } => recovery::restore(&user, &password, &id),
+        Request::RecoveryFindRelease => {
+            emit(&Event::Release { release: recovery::find_release()? });
+            Ok(String::new())
+        }
+        Request::RecoveryReinstall { user, password, version } => recovery::reinstall(&user, &password, &version),
     }
 }
 
@@ -66,6 +78,7 @@ fn request() -> i32 {
     let op = match &req {
         Request::Install { .. } => "install",
         Request::UpdateStage { .. } => "update",
+        Request::RecoveryReinstall { .. } => "reinstall",
         Request::Probe => "probe",
         _ => "request",
     };

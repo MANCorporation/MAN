@@ -314,55 +314,55 @@ msgstr "Teastaíonn cearta riarthóra don ghníomh seo."
 msgid "The system helper stopped unexpectedly."
 msgstr "Stop cúntóir an chórais gan choinne."
 
-#: installer.rs:78
+#: installer.rs:89
 msgid "No EFI system partition"
 msgstr "Níl aon deighilt chórais EFI ann"
 
-#: installer.rs:82
+#: installer.rs:93
 msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
 msgstr "Níl ach {free} saor, teastaíonn {need} ó MAN. Saor spás le DUHACH! i Windows."
 
-#: installer.rs:83
+#: installer.rs:94
 msgid "No free space. Start DUHACH! in Windows to make room for MAN."
 msgstr "Níl aon spás saor. Tosaigh DUHACH! i Windows chun spás a dhéanamh do MAN."
 
-#: installer.rs:92
+#: installer.rs:103
 msgid "MAN is running from this disk"
 msgstr "Tá MAN ag rith ón diosca seo"
 
-#: installer.rs:96
+#: installer.rs:107
 msgid "In use: a partition is mounted"
 msgstr "In úsáid: tá deighilt feistithe"
 
-#: installer.rs:98
+#: installer.rs:109
 msgid "Too small, MAN needs {need}"
 msgstr "Ró-bheag, teastaíonn {need} ó MAN"
 
-#: installer.rs:108
+#: installer.rs:119
 msgid "Install MAN"
 msgstr "Suiteáil MAN"
 
-#: installer.rs:126
+#: installer.rs:137
 msgid "MAN is being installed. Please wait until it finishes."
 msgstr "Tá MAN á shuiteáil. Fan go gcríochnóidh sé."
 
-#: installer.rs:143
+#: installer.rs:154
 msgid "Language"
 msgstr "Teanga"
 
-#: installer.rs:155
+#: installer.rs:166
 msgid "_Restart in This Language"
 msgstr "_Atosaigh sa teanga seo"
 
-#: installer.rs:167
+#: installer.rs:178
 msgid "The live session restarts in the chosen language, and MAN is installed in it."
 msgstr "Atosóidh an seisiún beo sa teanga a roghnaíodh, agus suiteálfar MAN inti."
 
-#: installer.rs:213
+#: installer.rs:224
 msgid "Welcome to MAN"
 msgstr "Fáilte go MAN"
 
-#: installer.rs:214
+#: installer.rs:225
 msgid ""
 "A fast, open and fully customizable GNOME system.\n"
 "Install it on this computer, or keep exploring the live session."
@@ -370,543 +370,567 @@ msgstr ""
 "Córas GNOME tapa, oscailte agus inoiriúnaithe go hiomlán.\n"
 "Suiteáil ar an ríomhaire seo é, nó lean ort ag fiosrú an tseisiúin bheo."
 
-#: installer.rs:218
+#: installer.rs:229
 msgid "_Install MAN…"
 msgstr "_Suiteáil MAN…"
 
-#: installer.rs:220
+#: installer.rs:231
 msgid "_Keep Trying MAN"
 msgstr "_Lean ort ag triail MAN"
 
-#: installer.rs:223
+#: installer.rs:234
 msgid "Looking for disks…"
 msgstr "Dioscaí á lorg…"
 
-#: installer.rs:250
+#: installer.rs:261
 msgid "Welcome"
 msgstr "Fáilte"
 
-#: installer.rs:265
+#: installer.rs:276
 msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
 msgstr "Tosaíodh an ríomhaire seo i mód BIOS oidhreachta. Ní féidir MAN a shuiteáil ach ar ríomhairí UEFI: atosaigh agus roghnaigh an rogha tosaithe UEFI."
 
-#: installer.rs:283
+#: installer.rs:294
 msgid "The system helper returned no disk information."
 msgstr "Níor sheol cúntóir an chórais aon fhaisnéis faoi dhioscaí."
 
-#: installer.rs:348
+#: installer.rs:372
 msgid "  ·  EFI"
 msgstr "  ·  EFI"
 
-#: installer.rs:356
+#: installer.rs:380
 msgid "_Next"
 msgstr "_Ar aghaidh"
 
-#: installer.rs:364
+#: installer.rs:388
 msgid "Erase Disk and Install MAN"
 msgstr "Glan an diosca agus suiteáil MAN"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Everything on the chosen disk is deleted, Windows included."
 msgstr "Scriosfar gach rud ar an diosca roghnaithe, Windows san áireamh."
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Recommended. Everything on the chosen disk is deleted."
 msgstr "Molta. Scriosfar gach rud ar an diosca roghnaithe."
 
-#: installer.rs:369
+#: installer.rs:393
 msgid "Install Alongside Windows"
 msgstr "Suiteáil taobh le Windows"
 
-#: installer.rs:370
+#: installer.rs:394
 msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
 msgstr "Molta. Úsáideann MAN an spás saor taobh le Windows; fanann Windows agus a chuid comhad. Roghnaigh an córas gach uair a thosaíonn tú."
 
-#: installer.rs:377
+#: installer.rs:401
 msgid "Reinstall MAN"
 msgstr "Athshuiteáil MAN"
 
-#: installer.rs:378
+#: installer.rs:402
 msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
 msgstr "Cuireann sé córas nua in ionad an chórais ach coimeádann sé comhaid phearsanta i /home. Sábháiltear an córas reatha mar léargas."
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "Custom Partitions"
 msgstr "Deighiltí saincheaptha"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "For experts: choose partitions yourself, or create them with Disks."
 msgstr "Do shaineolaithe: roghnaigh na deighiltí tú féin, nó cruthaigh iad le Dioscaí."
 
-#: installer.rs:392
+#: installer.rs:418
+msgid "Erase an External Disk and Install MAN"
+msgstr "Scrios diosca seachtrach agus suiteáil MAN"
+
+#: installer.rs:419
+msgid "Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."
+msgstr "Scriosfar gach rud ar an diosca seachtrach a roghnaíodh. Ní thaispeántar agus ní athraítear diosca inmheánach an Mac."
+
+#: installer.rs:420
+msgid "Install on This Mac"
+msgstr "Suiteáil ar an Mac seo"
+
+#: installer.rs:422
+msgid "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed."
+msgstr "Molta. Sa {size} a ullmhaíodh i macOS. Ní athraítear macOS ná a dheighiltí."
+
+#: installer.rs:427
+msgid "No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."
+msgstr "Níor ullmhaíodh spás do MAN fós. In macOS, rith MAN-Mac/install-man.sh ó mhaide USB MAN agus roghnaigh “MAN boot loader + space for MAN”."
+
+#: installer.rs:433
 msgid "Disk"
 msgstr "Diosca"
 
-#: installer.rs:392
+#: installer.rs:433
 msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
 msgstr "Roghnaigh an diosca a ghlanfar. Taispeántar dioscaí nach féidir a úsáid in éineacht leis an gcúis."
 
-#: installer.rs:418
+#: installer.rs:459
 msgid "No disks were found"
 msgstr "Níor aimsíodh aon dioscaí"
 
-#: installer.rs:425
+#: installer.rs:466
 msgid "Free Space Next to Windows"
 msgstr "Spás saor taobh le Windows"
 
-#: installer.rs:426
+#: installer.rs:467
 msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
 msgstr "Ní dhéantar teagmháil le deighiltí Windows. Roinneann MAN deighilt chórais EFI agus cuireann sé Windows lena roghchlár tosaithe."
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "{size} free"
 msgstr "{size} saor"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "no free space"
 msgstr "gan spás saor"
 
-#: installer.rs:437
+#: installer.rs:478
 msgid "{model} (Windows)"
 msgstr "{model} (Windows)"
 
-#: installer.rs:456
+#: installer.rs:497
 msgid "Installation to Replace"
 msgstr "Suiteáil le hathsholáthar"
 
-#: installer.rs:477
+#: installer.rs:518
 msgid "no home folders"
 msgstr "gan fillteáin bhaile"
 
-#: installer.rs:479
+#: installer.rs:520
 msgid "home folders: {list}"
 msgstr "fillteáin bhaile: {list}"
 
-#: installer.rs:481
+#: installer.rs:522
 msgid "snapshots: {n}"
 msgstr "léargais: {n}"
 
-#: installer.rs:485
+#: installer.rs:526
 msgid "MAN on {model}"
 msgstr "MAN ar {model}"
 
-#: installer.rs:499
+#: installer.rs:540
 msgid "Passphrase for {device}"
 msgstr "Frása faire do {device}"
 
-#: installer.rs:500
+#: installer.rs:541
 msgid "Unlock"
 msgstr "Díghlasáil"
 
-#: installer.rs:537
+#: installer.rs:578
 msgid "The installation could not be inspected."
 msgstr "Níorbh fhéidir an tsuiteáil a scrúdú."
 
-#: installer.rs:554
+#: installer.rs:595
 msgid "Partitions"
 msgstr "Deighiltí"
 
-#: installer.rs:555
+#: installer.rs:596
 msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
 msgstr "Formáidítear deighilt an chórais le Btrfs agus tá @system, @home agus @snapshots inti. Ní liostaítear deighiltí ar an diosca óna bhfuil MAN ag rith."
 
-#: installer.rs:557
+#: installer.rs:598
 msgid "Open Disks to create or resize partitions"
 msgstr "Oscail Dioscaí chun deighiltí a chruthú nó a athmhéadú"
 
-#: installer.rs:559
+#: installer.rs:600
 msgid "Refresh the partition list"
 msgstr "Athnuaigh liosta na ndeighiltí"
 
-#: installer.rs:567
+#: installer.rs:608
 msgid "Choose a partition"
 msgstr "Roghnaigh deighilt"
 
-#: installer.rs:579
+#: installer.rs:620
 msgid "EFI System Partition"
 msgstr "Deighilt chórais EFI"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Format EFI System Partition"
 msgstr "Formáidigh deighilt chórais EFI"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Leave off to keep boot loaders of other systems"
 msgstr "Fág as chun lódálaithe tosaithe córas eile a choimeád"
 
-#: installer.rs:582
+#: installer.rs:623
 msgid "System Partition (formatted as Btrfs)"
 msgstr "Deighilt chórais (formáidithe mar Btrfs)"
 
-#: installer.rs:583
+#: installer.rs:624
 msgid "Boot Partition (needed with encryption)"
 msgstr "Deighilt tosaithe (riachtanach le criptiú)"
 
-#: installer.rs:642
+#: installer.rs:683
 msgid "Partition list refreshed"
 msgstr "Athnuadh liosta na ndeighiltí"
 
-#: installer.rs:650
+#: installer.rs:691
 msgid "Security"
 msgstr "Slándáil"
 
-#: installer.rs:652
+#: installer.rs:693
 msgid "Encrypt the System"
 msgstr "Criptigh an córas"
 
-#: installer.rs:653
+#: installer.rs:694
 msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
 msgstr "Cosnaíonn sé do shonraí má chailltear nó má ghoidtear an ríomhaire. Iarrtar frása faire gach uair a thosaíonn sé."
 
-#: installer.rs:656
+#: installer.rs:697
 msgid "Passphrase"
 msgstr "Frása faire"
 
-#: installer.rs:657
+#: installer.rs:698
 msgid "Confirm Passphrase"
 msgstr "Deimhnigh an frása faire"
 
-#: installer.rs:659
+#: installer.rs:700
 msgid "Keep this passphrase safe"
 msgstr "Coimeád an frása faire seo slán"
 
-#: installer.rs:660
+#: installer.rs:701
 msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
 msgstr "Má chailltear é, ní féidir le duine ar bith na sonraí a aisghabháil. Fanann an t-eithne agus comhaid tosaithe ar dheighilt tosaithe bheag gan chriptiú."
 
-#: installer.rs:732
+#: installer.rs:774
 msgid "The passphrase needs at least 8 characters."
 msgstr "Caithfidh 8 gcarachtar ar a laghad a bheith sa fhrása faire."
 
-#: installer.rs:734
+#: installer.rs:776
 msgid "The passphrases do not match."
 msgstr "Ní mheaitseálann na frásaí faire."
 
-#: installer.rs:748
+#: installer.rs:790
 msgid "Choose a disk."
 msgstr "Roghnaigh diosca."
 
-#: installer.rs:758
+#: installer.rs:800
 msgid "Choose the disk with Windows."
 msgstr "Roghnaigh an diosca ina bhfuil Windows."
 
-#: installer.rs:767
+#: installer.rs:809
 msgid "Choose the installation to replace."
 msgstr "Roghnaigh an tsuiteáil le hathsholáthar."
 
-#: installer.rs:768
+#: installer.rs:810
 msgid "Unlock the encrypted installation first."
 msgstr "Díghlasáil an tsuiteáil chriptithe ar dtús."
 
-#: installer.rs:769
+#: installer.rs:811
 msgid "This partition holds no MAN system."
 msgstr "Níl córas MAN sa deighilt seo."
 
-#: installer.rs:776
+#: installer.rs:818
 msgid "Choose an EFI system partition."
 msgstr "Roghnaigh deighilt chórais EFI."
 
-#: installer.rs:778
+#: installer.rs:820
 msgid "Choose the system partition."
 msgstr "Roghnaigh deighilt an chórais."
 
-#: installer.rs:780
+#: installer.rs:822
 msgid "The EFI and system partitions must be different."
 msgstr "Caithfidh an deighilt EFI agus deighilt an chórais a bheith difriúil."
 
-#: installer.rs:782
+#: installer.rs:824
 msgid "Encryption needs a separate boot partition."
 msgstr "Teastaíonn deighilt tosaithe ar leith don chriptiú."
 
-#: installer.rs:791
+#: installer.rs:833
 msgid "The system partition must be at least {size}."
 msgstr "Caithfidh deighilt an chórais a bheith {size} ar a laghad."
 
-#: installer.rs:793
+#: installer.rs:835
 msgid "The EFI partition is not FAT formatted; turn on formatting."
 msgstr "Níl an deighilt EFI formáidithe mar FAT; cas formáidiú air."
 
-#: installer.rs:795
+#: installer.rs:837
 msgid "The system partition is mounted; unmount it in Disks first."
 msgstr "Tá deighilt an chórais feistithe; díshuiteáil i nDioscaí í ar dtús."
 
-#: installer.rs:817
+#: installer.rs:859
 msgid "Where Should MAN Be Installed?"
 msgstr "Cá suiteálfar MAN?"
 
-#: installer.rs:824
+#: installer.rs:866
 msgid "Time and Keyboard"
 msgstr "Am agus méarchlár"
 
-#: installer.rs:829
+#: installer.rs:871
 msgid "Time Zone"
 msgstr "Crios ama"
 
-#: installer.rs:833
+#: installer.rs:875
 msgid "Keyboard Layout"
 msgstr "Leagan amach méarchláir"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Test Your Keyboard"
 msgstr "Tástáil do mhéarchlár"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Type here to check that your keys produce the right characters."
 msgstr "Clóscríobh anseo chun a sheiceáil go dtugann na heochracha na carachtair cheart."
 
-#: installer.rs:844
+#: installer.rs:886
 msgid "Type here"
 msgstr "Clóscríobh anseo"
 
-#: installer.rs:877
+#: installer.rs:919
 msgid "Time Zone and Keyboard"
 msgstr "Crios ama agus méarchlár"
 
-#: installer.rs:920
+#: installer.rs:962
 msgid "No disk chosen"
 msgstr "Níor roghnaíodh diosca"
 
-#: installer.rs:926
+#: installer.rs:968
 msgid "No system partition chosen"
 msgstr "Níor roghnaíodh deighilt chórais"
 
-#: installer.rs:928
+#: installer.rs:970
 msgid "The system partition disappeared"
 msgstr "D'imigh deighilt an chórais"
 
-#: installer.rs:933
+#: installer.rs:975
 msgid "No installation chosen"
 msgstr "Níor roghnaíodh suiteáil"
 
-#: installer.rs:944
+#: installer.rs:986
 msgid "The disk disappeared"
 msgstr "D'imigh an diosca"
 
-#: installer.rs:955
+#: installer.rs:997
 msgid "Review"
 msgstr "Athbhreithniú"
 
-#: installer.rs:958
+#: installer.rs:1000
 msgid "Destination"
 msgstr "Ceann scríbe"
 
-#: installer.rs:960
+#: installer.rs:1002
 msgid "Erase disk and install"
 msgstr "Glan an diosca agus suiteáil"
 
-#: installer.rs:961
+#: installer.rs:1003
+msgid "This Mac (space prepared in macOS)"
+msgstr "An Mac seo (spás ullmhaithe i macOS)"
+
+#: installer.rs:1004
 msgid "Custom partitions"
 msgstr "Deighiltí saincheaptha"
 
-#: installer.rs:962
+#: installer.rs:1005
 msgid "Reinstall, keeping /home"
 msgstr "Athshuiteáil, ag coimeád /home"
 
-#: installer.rs:963
+#: installer.rs:1006
 msgid "Alongside Windows"
 msgstr "Taobh le Windows"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (will be formatted)"
 msgstr " (formáidfear í)"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (kept)"
 msgstr " (coimeádtar í)"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "System Partition"
 msgstr "Deighilt chórais"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "{partition} (will be formatted)"
 msgstr "{partition} (formáidfear í)"
 
-#: installer.rs:972
+#: installer.rs:1015
 msgid "Boot Partition"
 msgstr "Deighilt tosaithe"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "Space for MAN"
 msgstr "Spás do MAN"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "{free} of free space (a boot partition and the system partition are created)"
 msgstr "{free} spás saor (cruthaítear deighilt tosaithe agus deighilt an chórais)"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Windows"
 msgstr "Windows"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
 msgstr "Gan athrú. Feictear é i roghchlár tosaithe MAN; roinntear deighilt chórais EFI."
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Encryption"
 msgstr "Criptiú"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "On (LUKS2)"
 msgstr "Ar siúl (LUKS2)"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Off"
 msgstr "As"
 
-#: installer.rs:985
+#: installer.rs:1028
 msgid "File System"
 msgstr "Córas comhad"
 
-#: installer.rs:986
+#: installer.rs:1029
 msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
 msgstr "Btrfs: @system do MAN, @home do do chomhaid, @snapshots do phointí athchóirithe. Roinneann siad uile an spás saor."
 
-#: installer.rs:991
+#: installer.rs:1034
 msgid "System"
 msgstr "Córas"
 
-#: installer.rs:993
+#: installer.rs:1036
 msgid "Your Account"
 msgstr "Do chuntas"
 
-#: installer.rs:994
+#: installer.rs:1037
 msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
 msgstr "Cruthaítear é in MAN Setup nuair a thosaíonn an ríomhaire den chéad uair, mar aon le hainm an ríomhaire, an chuma agus socruithe príobháideachais."
 
-#: installer.rs:998
+#: installer.rs:1041
 msgid "Keyboard"
 msgstr "Méarchlár"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "All data on {model} ({path}) will be erased."
 msgstr "Glanfar na sonraí go léir ar {model} ({path})."
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "_Erase and Install"
 msgstr "_Glan agus suiteáil"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "The chosen partitions will be formatted. Other partitions are not changed."
 msgstr "Formáidfear na deighiltí roghnaithe. Ní athraíonn deighiltí eile."
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "_Format and Install"
 msgstr "_Formáidigh agus suiteáil"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
 msgstr "Cuirtear córas nua in ionad an chórais reatha. Coimeádtar do chomhaid i /home, agus sábháiltear an seanchóras mar léargas."
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "_Reinstall"
 msgstr "_Athshuiteáil"
 
-#: installer.rs:1005
+#: installer.rs:1048
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "Suiteáiltear MAN sa spás saor. Ní athraíonn Windows ná a chuid comhad."
 
-#: installer.rs:1019
+#: installer.rs:1062
 msgid "Ready to Install"
 msgstr "Réidh le suiteáil"
 
-#: installer.rs:1029
+#: installer.rs:1072
 msgid "Erase {model}?"
 msgstr "Glan {model}?"
 
-#: installer.rs:1030
+#: installer.rs:1073
 msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
 msgstr "Scriosfar gach comhad agus deighilt ar {path} ({size}) go buan. Ní féidir é seo a chealú."
 
-#: installer.rs:1031
+#: installer.rs:1074
 msgid "Erase and Install"
 msgstr "Glan agus suiteáil"
 
-#: installer.rs:1035
+#: installer.rs:1078
 msgid "Format the Chosen Partitions?"
 msgstr "Formáidigh na deighiltí roghnaithe?"
 
-#: installer.rs:1036
+#: installer.rs:1079
 msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
 msgstr "Scriosfar na sonraí go léir ar na deighiltí roghnaithe go buan. Ní athraíonn deighiltí eile."
 
-#: installer.rs:1037
+#: installer.rs:1080
 msgid "Format and Install"
 msgstr "Formáidigh agus suiteáil"
 
-#: installer.rs:1041
+#: installer.rs:1084
 msgid "Install MAN Alongside Windows?"
 msgstr "Suiteáil MAN taobh le Windows?"
 
-#: installer.rs:1042
+#: installer.rs:1085
 msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
 msgstr "Suiteáiltear MAN sa {free} spás saor ar {model} ({path}). Ní athraíonn Windows ná a chuid comhad."
 
-#: installer.rs:1046
+#: installer.rs:1089
 msgid "Install"
 msgstr "Suiteáil"
 
-#: installer.rs:1050
+#: installer.rs:1093
 msgid "Reinstall MAN?"
 msgstr "Athshuiteáil MAN?"
 
-#: installer.rs:1051
+#: installer.rs:1094
 msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
 msgstr "Cuirfear cóip úr in ionad an chórais suiteáilte. Coimeádtar comhaid phearsanta i /home agus fanann an seanchóras ar fáil mar léargas."
 
-#: installer.rs:1052
+#: installer.rs:1095
 msgid "Reinstall"
 msgstr "Athshuiteáil"
 
-#: installer.rs:1057
+#: installer.rs:1100
 msgid "_Cancel"
 msgstr "_Cealaigh"
 
-#: installer.rs:1076
+#: installer.rs:1119
 msgid "Installing MAN"
 msgstr "MAN á shuiteáil"
 
-#: installer.rs:1077
+#: installer.rs:1120
 msgid "Starting…"
 msgstr "Á thosú…"
 
-#: installer.rs:1090
+#: installer.rs:1133
 msgid "Installing"
 msgstr "Á shuiteáil"
 
-#: installer.rs:1103
+#: installer.rs:1146
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Céim {index} as {n}  ·  {title}"
 
-#: installer.rs:1138
+#: installer.rs:1181
 msgid "MAN Is Installed"
 msgstr "Tá MAN suiteáilte"
 
-#: installer.rs:1143
+#: installer.rs:1186
 msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
 msgstr "Atosaigh an ríomhaire chun tosú ag úsáid MAN. Ligeann roghchlár gach tosú duit MAN nó Windows a roghnú; baineann MAN deighilt shealadach an tsuiteálaí ag an gcéad tosú."
 
-#: installer.rs:1149
+#: installer.rs:1192
 msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
 msgstr "Atosaigh an ríomhaire chun tosú ag úsáid MAN. Is féidir leat an meán suiteála a bhaint; má fhanann sé ceangailte, tosaíonn MAN ón diosca nua mar sin féin."
 
-#: installer.rs:1156
+#: installer.rs:1199
 msgid "_Restart Now"
 msgstr "_Atosaigh anois"
 
-#: installer.rs:1171
+#: installer.rs:1214
 msgid "Done"
 msgstr "Déanta"
 
-#: installer.rs:1182
+#: installer.rs:1225
 msgid "Installation Failed"
 msgstr "Theip ar an tsuiteáil"
 
-#: installer.rs:1186
+#: installer.rs:1229
 msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
 msgstr "Níor athraíodh aon diosca eile, agus scaoil an suiteálaí an sprioc-diosca. Is féidir leat an plean a athbhreithniú agus triail eile a bhaint as."
 
-#: installer.rs:1191
+#: installer.rs:1234
 msgid "_Review and Try Again"
 msgstr "_Athbhreithnigh agus triail arís"
 
@@ -1062,413 +1086,557 @@ msgstr "Fáilte go Marquee"
 msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
 msgstr "Ar mhaith leat Marquee a oscailt, nó do chuid scannán, ceoil agus grianghraf a roinnt le ríomhairí eile ar an líonra seo?"
 
-#: oobe.rs:165
-msgid "The system disk was not found."
-msgstr "Níor aimsíodh diosca an chórais."
-
-#: oobe.rs:173
-msgid "Encryption needs the Btrfs layout created by the MAN installer."
-msgstr "Teastaíonn an leagan amach Btrfs a chruthaíonn suiteálaí MAN don chriptiú."
-
-#: oobe.rs:177
-msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
-msgstr "Níl deighilt tosaithe ar leith sa tsuiteáil seo, rud a theastaíonn don chriptiú. Athshuiteáil MAN le “Glan an diosca” chun criptiú a úsáid."
-
-#: oobe.rs:501
-msgid "MAN Setup"
-msgstr "MAN Setup"
-
-#: oobe.rs:554
-msgid "Where Are You?"
-msgstr "Cá bhfuil tú?"
-
-#: oobe.rs:554
-msgid "Your country or region sets the date, time and number formats."
-msgstr "Socraíonn do thír nó do réigiún formáid an dáta, an ama agus na n-uimhreacha."
-
-#: oobe.rs:572
-msgid "Country"
-msgstr "Tír"
-
-#: oobe.rs:587
-msgid "GNU General Public License, version 2"
-msgstr "Ceadúnas Poiblí Ginearálta GNU, leagan 2"
-
-#: oobe.rs:587
-msgid "The Linux kernel and many system tools"
-msgstr "Eithne Linux agus go leor uirlisí córais"
-
-#: oobe.rs:588
-msgid "GNU General Public License, version 3"
-msgstr "Ceadúnas Poiblí Ginearálta GNU, leagan 3"
-
-#: oobe.rs:588
-msgid "Many GNU and GNOME programs"
-msgstr "Go leor clár GNU agus GNOME"
-
-#: oobe.rs:589
-msgid "GNU Lesser General Public License, version 2.1"
-msgstr "Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 2.1"
-
-#: oobe.rs:589
-msgid "GTK, GLib and many libraries"
-msgstr "GTK, GLib agus go leor leabharlann"
-
-#: oobe.rs:590
-msgid "GNU Lesser General Public License, version 3"
-msgstr "Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 3"
-
-#: oobe.rs:591
-msgid "Mozilla Public License 2.0"
-msgstr "Ceadúnas Poiblí Mozilla 2.0"
-
-#: oobe.rs:591
-msgid "Programs and libraries from Mozilla and others"
-msgstr "Cláir agus leabharlanna ó Mozilla agus daoine eile"
-
-#: oobe.rs:592
-msgid "Apache License 2.0"
-msgstr "Ceadúnas Apache 2.0"
-
-#: oobe.rs:592
-msgid "Libraries and tools"
-msgstr "Leabharlanna agus uirlisí"
-
-#: oobe.rs:597
-msgid "License Agreement"
-msgstr "Comhaontú ceadúnais"
-
-#: oobe.rs:597
-msgid "Please read and accept the terms under which MAN is provided."
-msgstr "Léigh agus glac leis na téarmaí faoina gcuirtear MAN ar fáil."
-
-#: oobe.rs:608
-msgid "Licenses"
-msgstr "Ceadúnais"
-
-#: oobe.rs:616
-msgid "The license text is not available ({path})."
-msgstr "Níl téacs an cheadúnais ar fáil ({path})."
-
-#: oobe.rs:622
-msgid "I have read and accept the license terms"
-msgstr "Léigh mé téarmaí an cheadúnais agus glacaim leo"
-
-#: oobe.rs:692
+#: net.rs:59
 msgid "Wired"
 msgstr "Sreangaithe"
 
-#: oobe.rs:698
+#: net.rs:65
 msgid "Not connected"
 msgstr "Gan cheangal"
 
-#: oobe.rs:732
-msgid "Connect to the Internet"
-msgstr "Ceangail leis an idirlíon"
-
-#: oobe.rs:732
-msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
-msgstr "Le ceangal, is féidir le MAN an t-am a shocrú agus do bhogearraí a choimeád cothrom le dáta. Is féidir é seo a dhéanamh níos déanaí freisin."
-
-#: oobe.rs:734
-msgid "Checking the connection…"
-msgstr "An ceangal á sheiceáil…"
-
-#: oobe.rs:740
-msgid "Wi-Fi Networks"
-msgstr "Líonraí Wi-Fi"
-
-#: oobe.rs:742
-msgid "Search Again"
-msgstr "Cuardaigh arís"
-
-#: oobe.rs:753
-msgid "_Skip"
-msgstr "_Scipeáil"
-
-#: oobe.rs:754
-msgid "You can connect later in Settings."
-msgstr "Is féidir leat ceangal níos déanaí sna Socruithe."
-
-#: oobe.rs:763
-msgid "Connected"
-msgstr "Ceangailte"
-
-#: oobe.rs:763
-msgid "Not Connected"
-msgstr "Gan cheangal"
-
-#: oobe.rs:791
-msgid "No networks found"
-msgstr "Níor aimsíodh aon líonraí"
-
-#: oobe.rs:817
-msgid "Internet"
-msgstr "Idirlíon"
-
-#: oobe.rs:864
+#: net.rs:121
 msgid "Connected to “{ssid}”"
 msgstr "Ceangailte le “{ssid}”"
 
-#: oobe.rs:864
+#: net.rs:121
 msgid "Could not connect to “{ssid}”"
 msgstr "Níorbh fhéidir ceangal le “{ssid}”"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Connect to “{ssid}”"
 msgstr "Ceangail le “{ssid}”"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Enter the network password."
 msgstr "Cuir isteach pasfhocal an líonra."
 
-#: oobe.rs:878
+#: net.rs:135
 msgid "C_onnect"
 msgstr "_Ceangail"
 
-#: oobe.rs:901
+#: oobe.rs:166
+msgid "The system disk was not found."
+msgstr "Níor aimsíodh diosca an chórais."
+
+#: oobe.rs:174
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Teastaíonn an leagan amach Btrfs a chruthaíonn suiteálaí MAN don chriptiú."
+
+#: oobe.rs:186
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Níl deighilt tosaithe ar leith sa tsuiteáil seo, rud a theastaíonn don chriptiú. Athshuiteáil MAN le “Glan an diosca” chun criptiú a úsáid."
+
+#: oobe.rs:510
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:563
+msgid "Where Are You?"
+msgstr "Cá bhfuil tú?"
+
+#: oobe.rs:563
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Socraíonn do thír nó do réigiún formáid an dáta, an ama agus na n-uimhreacha."
+
+#: oobe.rs:581
+msgid "Country"
+msgstr "Tír"
+
+#: oobe.rs:596
+msgid "GNU General Public License, version 2"
+msgstr "Ceadúnas Poiblí Ginearálta GNU, leagan 2"
+
+#: oobe.rs:596
+msgid "The Linux kernel and many system tools"
+msgstr "Eithne Linux agus go leor uirlisí córais"
+
+#: oobe.rs:597
+msgid "GNU General Public License, version 3"
+msgstr "Ceadúnas Poiblí Ginearálta GNU, leagan 3"
+
+#: oobe.rs:597
+msgid "Many GNU and GNOME programs"
+msgstr "Go leor clár GNU agus GNOME"
+
+#: oobe.rs:598
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 2.1"
+
+#: oobe.rs:598
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib agus go leor leabharlann"
+
+#: oobe.rs:599
+msgid "GNU Lesser General Public License, version 3"
+msgstr "Ceadúnas Poiblí Ginearálta Laghdaithe GNU, leagan 3"
+
+#: oobe.rs:600
+msgid "Mozilla Public License 2.0"
+msgstr "Ceadúnas Poiblí Mozilla 2.0"
+
+#: oobe.rs:600
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Cláir agus leabharlanna ó Mozilla agus daoine eile"
+
+#: oobe.rs:601
+msgid "Apache License 2.0"
+msgstr "Ceadúnas Apache 2.0"
+
+#: oobe.rs:601
+msgid "Libraries and tools"
+msgstr "Leabharlanna agus uirlisí"
+
+#: oobe.rs:606
+msgid "License Agreement"
+msgstr "Comhaontú ceadúnais"
+
+#: oobe.rs:606
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Léigh agus glac leis na téarmaí faoina gcuirtear MAN ar fáil."
+
+#: oobe.rs:617
+msgid "Licenses"
+msgstr "Ceadúnais"
+
+#: oobe.rs:625
+msgid "The license text is not available ({path})."
+msgstr "Níl téacs an cheadúnais ar fáil ({path})."
+
+#: oobe.rs:631
+msgid "I have read and accept the license terms"
+msgstr "Léigh mé téarmaí an cheadúnais agus glacaim leo"
+
+#: oobe.rs:658
+msgid "Connect to the Internet"
+msgstr "Ceangail leis an idirlíon"
+
+#: oobe.rs:658
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Le ceangal, is féidir le MAN an t-am a shocrú agus do bhogearraí a choimeád cothrom le dáta. Is féidir é seo a dhéanamh níos déanaí freisin."
+
+#: oobe.rs:660
+msgid "Checking the connection…"
+msgstr "An ceangal á sheiceáil…"
+
+#: oobe.rs:666
+msgid "Wi-Fi Networks"
+msgstr "Líonraí Wi-Fi"
+
+#: oobe.rs:668
+msgid "Search Again"
+msgstr "Cuardaigh arís"
+
+#: oobe.rs:679
+msgid "_Skip"
+msgstr "_Scipeáil"
+
+#: oobe.rs:680
+msgid "You can connect later in Settings."
+msgstr "Is féidir leat ceangal níos déanaí sna Socruithe."
+
+#: oobe.rs:689
+msgid "Connected"
+msgstr "Ceangailte"
+
+#: oobe.rs:689
+msgid "Not Connected"
+msgstr "Gan cheangal"
+
+#: oobe.rs:717
+msgid "No networks found"
+msgstr "Níor aimsíodh aon líonraí"
+
+#: oobe.rs:746
+msgid "Internet"
+msgstr "Idirlíon"
+
+#: oobe.rs:777
 msgid "Create Your Account"
 msgstr "Cruthaigh do chuntas"
 
-#: oobe.rs:901
+#: oobe.rs:777
 msgid "You will be the administrator of this computer, with full root access through sudo."
 msgstr "Beidh tú i do riarthóir ar an ríomhaire seo, le rochtain iomlán root trí sudo."
 
-#: oobe.rs:904
+#: oobe.rs:780
 msgid "Full Name"
 msgstr "Ainm iomlán"
 
-#: oobe.rs:905
+#: oobe.rs:781
 msgid "Username"
 msgstr "Ainm úsáideora"
 
-#: oobe.rs:906
+#: oobe.rs:782
 msgid "Password"
 msgstr "Pasfhocal"
 
-#: oobe.rs:907
+#: oobe.rs:783
 msgid "Confirm Password"
 msgstr "Deimhnigh an pasfhocal"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Log In Automatically"
 msgstr "Logáil isteach go huathoibríoch"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Skip the login screen when the computer starts"
 msgstr "Scipeáil an scáileán logála isteach nuair a thosaíonn an ríomhaire"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Existing Home Folders"
 msgstr "Fillteáin bhaile atá ann"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Use the same username to keep using a folder kept from a previous installation."
 msgstr "Úsáid an t-ainm úsáideora céanna chun leanúint ag úsáid fillteáin ó shuiteáil roimhe seo."
 
-#: oobe.rs:919
+#: oobe.rs:795
 msgid "Use"
 msgstr "Úsáid"
 
-#: oobe.rs:929
+#: oobe.rs:805
 msgid "Advanced"
 msgstr "Ardleibhéal"
 
-#: oobe.rs:930
+#: oobe.rs:806
 msgid "Computer Name"
 msgstr "Ainm an ríomhaire"
 
-#: oobe.rs:932
+#: oobe.rs:808
 msgid "Set a Root Password"
 msgstr "Socraigh pasfhocal root"
 
-#: oobe.rs:933
+#: oobe.rs:809
 msgid "Allows logging in as root directly. Without it, use sudo with your own password."
 msgstr "Ceadaíonn sé logáil isteach go díreach mar root. Gan é, úsáid sudo le do phasfhocal féin."
 
-#: oobe.rs:937
+#: oobe.rs:813
 msgid "Root Password"
 msgstr "Pasfhocal root"
 
-#: oobe.rs:938
+#: oobe.rs:814
 msgid "Confirm Root Password"
 msgstr "Deimhnigh an pasfhocal root"
 
-#: oobe.rs:962
+#: oobe.rs:838
 msgid "Enter your name."
 msgstr "Cuir isteach d'ainm."
 
-#: oobe.rs:964
+#: oobe.rs:840
 msgid "Choose a username."
 msgstr "Roghnaigh ainm úsáideora."
 
-#: oobe.rs:966
+#: oobe.rs:842
 msgid "This username is already used by the system."
 msgstr "Tá an t-ainm úsáideora seo in úsáid ag an gcóras cheana."
 
-#: oobe.rs:969
+#: oobe.rs:845
 msgid "This username is reserved by the system."
 msgstr "Tá an t-ainm úsáideora seo curtha in áirithe ag an gcóras."
 
-#: oobe.rs:971
+#: oobe.rs:847
 msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
 msgstr "Úsáideann ainmneacha úsáideora litreacha beaga, digití, - agus _, agus tosaíonn siad le litir."
 
-#: oobe.rs:974
+#: oobe.rs:850
 msgid "Choose a password."
 msgstr "Roghnaigh pasfhocal."
 
-#: oobe.rs:976
+#: oobe.rs:852
 msgid "The passwords do not match."
 msgstr "Ní mheaitseálann na pasfhocail."
 
-#: oobe.rs:978
+#: oobe.rs:854
 msgid "The computer name may contain letters, digits and dashes."
 msgstr "Is féidir litreacha, digití agus fleiscíní a bheith in ainm an ríomhaire."
 
-#: oobe.rs:980
+#: oobe.rs:856
 msgid "Enter the root password twice."
 msgstr "Cuir isteach an pasfhocal root faoi dhó."
 
-#: oobe.rs:986
+#: oobe.rs:862
 msgid "Tip: a password with 8 or more characters is much safer."
 msgstr "Leid: tá pasfhocal le 8 gcarachtar nó níos mó i bhfad níos sábháilte."
 
-#: oobe.rs:1066
+#: oobe.rs:942
 msgid "Account"
 msgstr "Cuntas"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Dark"
 msgstr "Dorcha"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Light"
 msgstr "Geal"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Make It Yours"
 msgstr "Déan do chuid féin de"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
 msgstr "Roghnaigh stíl, dath béime agus cúlbhrat. Feiceann tú gach athrú láithreach."
 
-#: oobe.rs:1095
+#: oobe.rs:971
 msgid "Style"
 msgstr "Stíl"
 
-#: oobe.rs:1115
+#: oobe.rs:991
 msgid "Accent Color"
 msgstr "Dath béime"
 
-#: oobe.rs:1158
+#: oobe.rs:1034
 msgid "Wallpaper"
 msgstr "Cúlbhrat"
 
-#: oobe.rs:1202
+#: oobe.rs:1078
 msgid "Customize"
 msgstr "Saincheap"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Privacy"
 msgstr "Príobháideacht"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Choose which features may use information about you. You can change this at any time in Settings."
 msgstr "Roghnaigh cé na gnéithe ar féidir leo faisnéis fút a úsáid. Is féidir é seo a athrú am ar bith sna Socruithe."
 
-#: oobe.rs:1212
+#: oobe.rs:1088
 msgid "Location Services"
 msgstr "Seirbhísí suímh"
 
-#: oobe.rs:1213
+#: oobe.rs:1089
 msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
 msgstr "Ligeann sé d'aipeanna mar Léarscáileanna agus Aimsir do shuíomh garbh a aimsiú trí líonraí Wi-Fi in aice láimhe."
 
-#: oobe.rs:1217
+#: oobe.rs:1093
 msgid "Automatic Time Zone"
 msgstr "Crios ama uathoibríoch"
 
-#: oobe.rs:1218
+#: oobe.rs:1094
 msgid "Uses your location to keep the time zone right when you travel."
 msgstr "Úsáideann sé do shuíomh chun an crios ama a choimeád ceart agus tú ag taisteal."
 
-#: oobe.rs:1251
+#: oobe.rs:1127
 msgid "_Finish Setup"
 msgstr "_Críochnaigh an socrú"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your Disk Is Encrypted"
 msgstr "Tá do dhiosca criptithe"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your data is protected. The passphrase is asked every time the computer starts."
 msgstr "Tá do shonraí cosanta. Iarrtar an frása faire gach uair a thosaíonn an ríomhaire."
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Disk Encryption"
 msgstr "Criptiú diosca"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Encryption protects your data if the computer is lost or stolen."
 msgstr "Cosnaíonn criptiú do shonraí má chailltear nó má ghoidtear an ríomhaire."
 
-#: oobe.rs:1261
+#: oobe.rs:1137
 msgid "Not available on this installation"
 msgstr "Níl sé ar fáil ar an tsuiteáil seo"
 
-#: oobe.rs:1267
+#: oobe.rs:1143
 msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
 msgstr "Cosnaíonn criptiú do chomhaid má chailltear nó má ghoidtear an ríomhaire. Gan an frása faire, ní féidir le duine ar bith an diosca a léamh."
 
-#: oobe.rs:1270
+#: oobe.rs:1146
 msgid "Encrypt the Disk"
 msgstr "Criptigh an diosca"
 
-#: oobe.rs:1271
+#: oobe.rs:1147
 msgid "The passphrase is asked every time the computer starts."
 msgstr "Iarrtar an frása faire gach uair a thosaíonn an ríomhaire."
 
-#: oobe.rs:1279
+#: oobe.rs:1155
 msgid "Encryption starts at the next restart"
 msgstr "Tosóidh an criptiú ag an gcéad atosú eile"
 
-#: oobe.rs:1280
+#: oobe.rs:1156
 msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
 msgstr "Ansin criptítear do dhiosca sa chúlra agus tú ag úsáid an ríomhaire. Má chailltear an frása faire, ní féidir le duine ar bith na sonraí a aisghabháil."
 
-#: oobe.rs:1377
+#: oobe.rs:1253
 msgid "Preparing MAN"
 msgstr "MAN á ullmhú"
 
-#: oobe.rs:1378
+#: oobe.rs:1254
 msgid "Getting everything ready…"
 msgstr "Gach rud á ullmhú…"
 
-#: oobe.rs:1383
+#: oobe.rs:1259
 msgid "_Reboot"
 msgstr "_Atosaigh"
 
-#: oobe.rs:1385
+#: oobe.rs:1261
 msgid "_Go Back"
 msgstr "_Siar"
 
-#: oobe.rs:1399
+#: oobe.rs:1275
 msgid "Preparing"
 msgstr "Á ullmhú"
 
-#: oobe.rs:1412
+#: oobe.rs:1288
 msgid "Setup Log"
 msgstr "Logchomhad socraithe"
 
-#: oobe.rs:1444
+#: oobe.rs:1320
 msgid "All Done!"
 msgstr "Gach rud déanta!"
 
-#: oobe.rs:1454
+#: oobe.rs:1330
 msgid "Something Went Wrong"
 msgstr "Chuaigh rud éigin mícheart"
+
+#: recovery.rs:113
+msgid "MAN Recovery"
+msgstr "Athshlánú MAN"
+
+#: recovery.rs:114
+msgid "Restore your system, reinstall MAN or open a Terminal. First, an administrator of this computer signs in."
+msgstr "Aischuir do chóras, athshuiteáil MAN nó oscail Teirminéal. Ar dtús, síníonn riarthóir an ríomhaire seo isteach."
+
+#: recovery.rs:122
+msgid "Administrator"
+msgstr "Riarthóir"
+
+#: recovery.rs:131
+msgid "No installed system was found on this disk. You can reinstall MAN."
+msgstr "Níor aimsíodh córas suiteáilte ar an diosca seo. Is féidir leat MAN a athshuiteáil."
+
+#: recovery.rs:198
+msgid "This computer has MAN {version}."
+msgstr "Tá MAN {version} ar an ríomhaire seo."
+
+#: recovery.rs:199
+msgid "What Would You Like to Do?"
+msgstr "Cad ba mhaith leat a dhéanamh?"
+
+#: recovery.rs:202
+msgid "Restore a Snapshot"
+msgstr "Aischuir grianghraf"
+
+#: recovery.rs:202
+msgid "Your system broke? Go back to a moment when everything worked. Your files stay."
+msgstr "Bhris do chóras? Téigh siar go dtí nóiméad nuair a bhí gach rud ag obair. Fanann do chomhaid."
+
+#: recovery.rs:203
+msgid "Download the newest MAN and install it again. Your files, accounts and settings stay."
+msgstr "Íoslódáil an MAN is nuaí agus suiteáil arís é. Fanann do chomhaid, do chuntais agus do shocruithe."
+
+#: recovery.rs:204
+msgid "Terminal"
+msgstr "Teirminéal"
+
+#: recovery.rs:204
+msgid "For experts: type commands with full control of the computer."
+msgstr "Do shaineolaithe: clóscríobh orduithe le smacht iomlán ar an ríomhaire."
+
+#: recovery.rs:207
+msgid "There are no snapshots on this computer."
+msgstr "Níl aon ghrianghraif ar an ríomhaire seo."
+
+#: recovery.rs:240
+msgid "Choose a moment when everything worked. The files in your home folder stay as they are now."
+msgstr "Roghnaigh nóiméad nuair a bhí gach rud ag obair. Fanann na comhaid i d’fhillteán baile mar atá siad anois."
+
+#: recovery.rs:257
+msgid "Restore “{name}”?"
+msgstr "Aischuir “{name}”?"
+
+#: recovery.rs:258
+msgid "Your system goes back to how it was on {date}. Your files stay. The system as it is now is kept as a snapshot, so you can come back to it."
+msgstr "Filleann do chóras ar an gcaoi a raibh sé ar {date}. Fanann do chomhaid. Coimeádtar an córas mar atá sé anois mar ghrianghraf, ionas gur féidir leat filleadh air."
+
+#: recovery.rs:261
+msgid "_Restore"
+msgstr "_Athchóirigh"
+
+#: recovery.rs:270
+msgid "Restoring Your System"
+msgstr "Do chóras á aischur"
+
+#: recovery.rs:275
+msgid "Your system was restored. Restart to use it."
+msgstr "Aischuireadh do chóras. Atosaigh chun é a úsáid."
+
+#: recovery.rs:283
+msgid "MAN Recovery downloads the newest MAN. Connect to a network first."
+msgstr "Íoslódálann Athshlánú MAN an MAN is nuaí. Ceangail le líonra ar dtús."
+
+#: recovery.rs:388
+msgid "Looking for the newest MAN…"
+msgstr "An MAN is nuaí á lorg…"
+
+#: recovery.rs:394
+msgid "Your files, accounts and settings stay."
+msgstr "Fanann do chomhaid, do chuntais agus do shocruithe."
+
+#: recovery.rs:395
+msgid "Apps you installed as Flatpaks stay; other apps you added may need to be installed again."
+msgstr "Fanann aipeanna a suiteáladh mar Flatpak; b’fhéidir go mbeidh ort aipeanna eile a chuir tú leis a shuiteáil arís."
+
+#: recovery.rs:396
+msgid "The system as it is now is kept as a snapshot."
+msgstr "Coimeádtar an córas mar atá sé anois mar ghrianghraf."
+
+#: recovery.rs:397
+msgid "Keep the computer plugged in. This takes a while."
+msgstr "Coinnigh an ríomhaire plugáilte isteach. Tógann sé seo tamall."
+
+#: recovery.rs:407
+msgid "_Reinstall MAN"
+msgstr "_Athshuiteáil MAN"
+
+#: recovery.rs:426
+msgid "MAN {version} ({size}) will be downloaded and installed on this computer."
+msgstr "Íoslódálfar MAN {version} ({size}) agus suiteálfar é ar an ríomhaire seo."
+
+#: recovery.rs:437
+msgid "No MAN for this computer was found."
+msgstr "Níor aimsíodh MAN don ríomhaire seo."
+
+#: recovery.rs:445
+msgid "Reinstalling MAN"
+msgstr "MAN á athshuiteáil"
+
+#: recovery.rs:460
+msgid "MAN was installed again. Your files and accounts were kept. Restart to use it."
+msgstr "Suiteáladh MAN arís. Coimeádadh do chomhaid agus do chuntais. Atosaigh chun é a úsáid."
+
+#: recovery.rs:472
+msgid "Do not turn the computer off."
+msgstr "Ná múch an ríomhaire."
+
+#: recovery.rs:519
+msgid "That Did Not Work"
+msgstr "Níor oibrigh sé sin"
+
+#: recovery.rs:521
+msgid "_Details"
+msgstr "_Sonraí"
+
+#: recovery.rs:529
+msgid "_Restart"
+msgstr "_Atosaigh"
+
+#: recovery.rs:533
+msgid "_Back to MAN Recovery"
+msgstr "_Ar ais go hAthshlánú MAN"
+
+#: recovery.rs:575
+msgid "_Shut Down"
+msgstr "_Múch"
+
+#: recovery.rs:605
+msgid "Looking at this computer…"
+msgstr "An ríomhaire seo á scrúdú…"
 
 #: snapshots.rs:84
 msgid "Daily"
@@ -1559,10 +1727,6 @@ msgstr ""
 "Fillfidh an córas ar “{description}” ó {date} tar éis atosú. Ní athraíonn do chomhaid phearsanta.\n"
 "\n"
 "Sábháiltear an córas reatha mar léargas ar dtús, mar sin is féidir é seo a chealú."
-
-#: snapshots.rs:278
-msgid "_Restore"
-msgstr "_Athchóirigh"
 
 #: snapshots.rs:291
 msgid "Restart to Finish Restoring"
@@ -2058,199 +2222,211 @@ msgstr "Níorbh fhéidir an pacáiste a shuiteáil."
 msgid "The app's menu entry is not valid."
 msgstr "Níl iontráil roghchláir na haipe bailí."
 
-#: install.rs:16
+#: install.rs:17
 msgid "Checking the installation plan"
 msgstr "An plean suiteála á sheiceáil"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Preparing the disk"
 msgstr "An diosca á ullmhú"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Copying MAN to the disk"
 msgstr "MAN á chóipeáil chuig an diosca"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Configuring the new system"
 msgstr "An córas nua á chumrú"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Installing the bootloader"
 msgstr "An lódálaí tosaithe á shuiteáil"
 
-#: install.rs:16
+#: install.rs:17
+msgid "Preparing MAN Recovery"
+msgstr "Athshlánú MAN á ullmhú"
+
+#: install.rs:17
 msgid "Creating the first snapshot"
 msgstr "An chéad léargas á chruthú"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Finishing up"
 msgstr "Á chríochnú"
 
-#: install.rs:199
+#: install.rs:232
 msgid "Removing old partition signatures"
 msgstr "Seanshínithe deighiltí á mbaint"
 
-#: install.rs:205
+#: install.rs:238
 msgid "Creating partitions"
 msgstr "Deighiltí á gcruthú"
 
-#: install.rs:226
+#: install.rs:259
 msgid "Formatting the EFI system partition"
 msgstr "Deighilt chórais EFI á formáidiú"
 
-#: install.rs:234
+#: install.rs:267
 msgid "Encrypting the system partition"
 msgstr "Deighilt an chórais á criptiú"
 
-#: install.rs:246
+#: install.rs:279
 msgid "Formatting the boot partition"
 msgstr "An deighilt tosaithe á formáidiú"
 
-#: install.rs:249
+#: install.rs:282
 msgid "Creating the Btrfs file system"
 msgstr "An córas comhad Btrfs á chruthú"
 
-#: install.rs:258
+#: install.rs:293
 msgid "Removing old file system signatures"
 msgstr "Seanshínithe córas comhad á mbaint"
 
-#: install.rs:330
+#: install.rs:372
 msgid "Unlocking the encrypted installation"
 msgstr "An tsuiteáil chriptithe á díghlasáil"
 
-#: install.rs:356
+#: install.rs:399
 msgid "Saving the current system as a snapshot"
 msgstr "An córas reatha á shábháil mar léargas"
 
-#: install.rs:362
+#: install.rs:406
 msgid "Removing the previous system"
 msgstr "An córas roimhe seo á bhaint"
 
-#: install.rs:571
+#: install.rs:615
 msgid "Writing file system table"
 msgstr "Tábla na gcóras comhad á scríobh"
 
-#: install.rs:593
+#: install.rs:639
 msgid "Setting computer name and identity"
 msgstr "Ainm agus aitheantas an ríomhaire á socrú"
 
-#: install.rs:608
+#: install.rs:654
 msgid "Removing the live session accounts"
 msgstr "Cuntais an tseisiúin bheo á mbaint"
 
-#: install.rs:641
+#: install.rs:687
 msgid "Creating your account"
 msgstr "Do chuntas á chruthú"
 
-#: install.rs:649
+#: install.rs:699
 msgid "Preparing MAN Setup for the first start"
 msgstr "MAN Setup á ullmhú don chéad tosú"
 
-#: install.rs:655
+#: install.rs:705
 msgid "Setting time zone and keyboard"
 msgstr "An crios ama agus an méarchlár á socrú"
 
-#: install.rs:680
+#: install.rs:730
 msgid "Removing the installer from the new system"
 msgstr "An suiteálaí á bhaint as an gcóras nua"
 
-#: install.rs:687
+#: install.rs:737
 msgid "Building the boot image (initramfs)"
 msgstr "An íomhá tosaithe (initramfs) á tógáil"
 
-#: install.rs:717
+#: install.rs:767
 msgid "Configuring GRUB"
 msgstr "GRUB á chumrú"
 
-#: install.rs:735
+#: install.rs:785
 msgid "Installing GRUB to the EFI system partition"
 msgstr "GRUB á shuiteáil ar dheighilt chórais EFI"
 
-#: install.rs:752
+#: install.rs:802
 msgid "Installing the fallback boot loader"
 msgstr "An lódálaí tosaithe cúltaca á shuiteáil"
 
-#: install.rs:759
+#: install.rs:809
 msgid "Writing the boot menu"
 msgstr "An roghchlár tosaithe á scríobh"
 
-#: install.rs:780
+#: install.rs:834
 msgid "Disk ready"
 msgstr "Diosca réidh"
 
-#: install.rs:793
+#: install.rs:853
+msgid "Keeping your accounts and settings"
+msgstr "Do chuntais agus do shocruithe á gcoimeád"
+
+#: install.rs:869
+msgid "Skipped"
+msgstr "Scipeáilte"
+
+#: install.rs:873
 msgid "Creating a snapshot of the fresh system"
 msgstr "Léargas den chóras nua á chruthú"
 
-#: install.rs:799
+#: install.rs:879
 msgid "Adding the snapshot to the boot menu"
 msgstr "An léargas á chur leis an roghchlár tosaithe"
 
-#: install.rs:803
+#: install.rs:883
 msgid "Unmounting"
 msgstr "Á dhífheistiú"
 
-#: install.rs:85
+#: install.rs:93
 msgid "The installer backend must run as root."
 msgstr "Caithfidh cúntóir an tsuiteálaí rith mar root."
 
-#: install.rs:88
+#: install.rs:121
 msgid "This computer was not started in UEFI mode. MAN requires UEFI."
 msgstr "Níor tosaíodh an ríomhaire seo i mód UEFI. Teastaíonn UEFI ó MAN."
 
-#: install.rs:92
+#: install.rs:125
 msgid "The username is not valid."
 msgstr "Níl an t-ainm úsáideora bailí."
 
-#: install.rs:95
+#: install.rs:128
 msgid "A password is required."
 msgstr "Teastaíonn pasfhocal."
 
-#: install.rs:99
+#: install.rs:132
 msgid "The computer name is not valid."
 msgstr "Níl ainm an ríomhaire bailí."
 
-#: install.rs:105
+#: install.rs:138
 msgid "Unknown language."
 msgstr "Teanga anaithnid."
 
-#: install.rs:111
+#: install.rs:144
 msgid "The encryption passphrase must have at least 8 characters."
 msgstr "Caithfidh 8 gcarachtar ar a laghad a bheith i bhfrása faire an chriptithe."
 
-#: install.rs:122
+#: install.rs:155
 msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
 msgstr "D'athraigh an diosca tar éis duit an tsuiteáil a dheimhniú. Níor athraíodh aon rud; athbhreithnigh agus deimhnigh arís."
 
-#: install.rs:138
+#: install.rs:171
 msgid "Choose a system partition."
 msgstr "Roghnaigh deighilt chórais."
 
-#: install.rs:145
+#: install.rs:178
 msgid "The confirmed disk does not hold the chosen system partition."
 msgstr "Níl an deighilt chórais roghnaithe ar an diosca deimhnithe."
 
-#: install.rs:157
+#: install.rs:190
 msgid "The boot partition must be separate from the EFI and system partitions."
 msgstr "Caithfidh an deighilt tosaithe a bheith ar leith ó dheighiltí EFI agus an chórais."
 
-#: install.rs:160
+#: install.rs:193
 msgid "The boot partition must be at least 512 MB."
 msgstr "Caithfidh an deighilt tosaithe a bheith 512 MB ar a laghad."
 
-#: install.rs:175
+#: install.rs:208
 msgid "No installation chosen."
 msgstr "Níor roghnaíodh suiteáil."
 
-#: install.rs:179
+#: install.rs:212
 msgid "The confirmed disk does not hold the chosen installation."
 msgstr "Níl an tsuiteáil roghnaithe ar an diosca deimhnithe."
 
-#: install.rs:337
+#: install.rs:379
 msgid "The encrypted installation has no MAN_BOOT partition."
 msgstr "Níl deighilt MAN_BOOT ag an tsuiteáil chriptithe."
 
-#: install.rs:695
+#: install.rs:745
 msgid "No kernel with matching modules was found in /boot."
 msgstr "Níor aimsíodh eithne le modúil chomhoiriúnacha i /boot."
 
@@ -2258,41 +2434,109 @@ msgstr "Níor aimsíodh eithne le modúil chomhoiriúnacha i /boot."
 msgid "The language must be changed by the system helper."
 msgstr "Caithfidh cúntóir an chórais an teanga a athrú."
 
-#: oobe.rs:204
+#: oobe.rs:205
 msgid "Applying your settings"
 msgstr "Do shocruithe á gcur i bhfeidhm"
 
-#: oobe.rs:212
+#: oobe.rs:213
 msgid "Preparing disk encryption"
 msgstr "Criptiú diosca á ullmhú"
 
-#: oobe.rs:216
+#: oobe.rs:217
 msgid "Finishing"
 msgstr "Á chríochnú"
 
-#: oobe.rs:100
+#: oobe.rs:101
 msgid "MAN Setup must be finished by the system helper."
 msgstr "Caithfidh cúntóir an chórais MAN Setup a chríochnú."
 
-#: oobe.rs:103
+#: oobe.rs:104
 msgid "MAN Setup has already been completed on this computer."
 msgstr "Tá MAN Setup críochnaithe cheana ar an ríomhaire seo."
 
-#: oobe.rs:124
+#: oobe.rs:125
 msgid "Unknown accent color."
 msgstr "Dath béime anaithnid."
 
-#: oobe.rs:128
+#: oobe.rs:129
 msgid "The chosen wallpaper is not available."
 msgstr "Níl an cúlbhrat roghnaithe ar fáil."
 
-#: oobe.rs:146
+#: oobe.rs:147
 msgid "This system cannot be encrypted."
 msgstr "Ní féidir an córas seo a chriptiú."
 
-#: oobe.rs:257
+#: oobe.rs:258
 msgid "The setup key is missing, so encryption cannot continue in the background."
 msgstr "Tá eochair an tsocraithe in easnamh, mar sin ní féidir leis an gcriptiú leanúint ar aghaidh sa chúlra."
+
+#: recovery.rs:450
+msgid "Downloading MAN"
+msgstr "MAN á íoslódáil"
+
+#: recovery.rs:459
+msgid "Opening the downloaded MAN"
+msgstr "An MAN íoslódáilte á oscailt"
+
+#: recovery.rs:85
+msgid "Leaving out what Recovery does not need"
+msgstr "An méid nach dteastaíonn ón Athshlánú á fhágáil amach"
+
+#: recovery.rs:87
+msgid "Setting up the recovery system"
+msgstr "An córas athshlánaithe á shocrú"
+
+#: recovery.rs:89
+msgid "Adding its start-up files"
+msgstr "A chomhaid tosaithe á gcur leis"
+
+#: recovery.rs:104
+msgid "MAN Recovery is ready"
+msgstr "Tá Athshlánú MAN réidh"
+
+#: recovery.rs:64
+msgid "This MAN has no MAN Recovery program."
+msgstr "Níl an clár Athshlánú MAN ag an MAN seo."
+
+#: recovery.rs:82
+msgid "MAN Recovery was not started."
+msgstr "Níor tosaíodh Athshlánú MAN."
+
+#: recovery.rs:206
+msgid "The installed system has no kernel for MAN Recovery."
+msgstr "Níl eithne ag an gcóras suiteáilte d’Athshlánú MAN."
+
+#: recovery.rs:234
+msgid "MAN Recovery was not started from the boot menu."
+msgstr "Níor tosaíodh Athshlánú MAN ón roghchlár tosaithe."
+
+#: recovery.rs:235
+msgid "The disk of this MAN was not found."
+msgstr "Níor aimsíodh diosca an MAN seo."
+
+#: recovery.rs:240
+msgid "This works only in MAN Recovery."
+msgstr "Ní oibríonn sé seo ach in Athshlánú MAN."
+
+#: recovery.rs:290
+msgid "The password is not correct."
+msgstr "Níl an focal faire ceart."
+
+#: recovery.rs:333
+msgid "Invalid snapshot id."
+msgstr "Aitheantas léargais neamhbhailí."
+
+#: recovery.rs:405
+msgid "No MAN for this computer was found on MAN's download page."
+msgstr "Níor aimsíodh MAN don ríomhaire seo ar leathanach íoslódála MAN."
+
+#: recovery.rs:434
+msgid "The downloaded MAN is damaged (its checksum does not match). Try again."
+msgstr "Tá an MAN íoslódáilte damáistithe (ní mheaitseálann a sheiceáilsuim). Bain triail eile as."
+
+#: recovery.rs:491
+msgid "The partition of this MAN was not found."
+msgstr "Níor aimsíodh deighilt an MAN seo."
 
 #: snapshots.rs:48
 msgid "The system is not installed on Btrfs, so snapshots are not available."
@@ -2301,10 +2545,6 @@ msgstr "Níl an córas suiteáilte ar Btrfs, mar sin níl léargais ar fáil."
 #: snapshots.rs:50
 msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
 msgstr "Tá athchóiriú léargais ag fanacht le hatosú. Atosaigh an ríomhaire ar dtús chun é a chríochnú."
-
-#: snapshots.rs:99
-msgid "Invalid snapshot id."
-msgstr "Aitheantas léargais neamhbhailí."
 
 #: update.rs:32
 msgid "Checking the update"
@@ -2334,43 +2574,39 @@ msgstr "An t-atosú á ullmhú"
 msgid "Unpacked"
 msgstr "Díphacáilte"
 
-#: update.rs:278
+#: update.rs:285
 msgid "Accounts"
 msgstr "Cuntais"
 
-#: update.rs:331
+#: update.rs:338
 msgid "Reinstalling kept apps"
 msgstr "Ag athshuiteáil na n-aipeanna a coinníodh"
 
-#: update.rs:386
+#: update.rs:404
 msgid "Removing installer-only software"
 msgstr "Bogearraí an tsuiteálaí amháin á mbaint"
 
-#: update.rs:426
+#: update.rs:450
 msgid "Building the update boot image"
 msgstr "Íomhá tosaithe an nuashonraithe á tógáil"
 
-#: update.rs:429
+#: update.rs:453
 msgid "Adding the one-time boot entry"
 msgstr "An iontráil tosaithe aon uaire á cur leis"
 
-#: update.rs:464
+#: update.rs:488
 msgid "The update is genuine"
 msgstr "Tá an nuashonrú barántúil"
 
-#: update.rs:470
+#: update.rs:494
 msgid "Snapshot created"
 msgstr "Cruthaíodh an léargas"
 
-#: update.rs:472
-msgid "Skipped"
-msgstr "Scipeáilte"
-
-#: update.rs:481
+#: update.rs:505
 msgid "Update area ready"
 msgstr "Limistéar an nuashonraithe réidh"
 
-#: update.rs:504
+#: update.rs:528
 msgid "Preparing the new system"
 msgstr "An córas nua á ullmhú"
 
@@ -2382,19 +2618,19 @@ msgstr "Tá comhad an nuashonraithe damáistithe (ní mheaitseálann an tsuim se
 msgid "The update file could not be read completely."
 msgstr "Níorbh fhéidir comhad an nuashonraithe a léamh go hiomlán."
 
-#: update.rs:398
+#: update.rs:416
 msgid "The update contains no kernel."
 msgstr "Níl eithne sa nuashonrú."
 
-#: update.rs:446
+#: update.rs:470
 msgid "Updates must be installed by the system helper."
 msgstr "Caithfidh cúntóir an chórais nuashonruithe a shuiteáil."
 
-#: update.rs:456
+#: update.rs:480
 msgid "The chosen installation was not found."
 msgstr "Níor aimsíodh an tsuiteáil roghnaithe."
 
-#: update.rs:458
+#: update.rs:482
 msgid "Only the running MAN installation can be updated."
 msgstr "Ní féidir ach an tsuiteáil MAN atá ag rith a nuashonrú."
 
@@ -2521,6 +2757,10 @@ msgstr "Socraigh do ríomhaire MAN nua"
 #: man-oobe.desktop
 msgid "First-start setup of MAN"
 msgstr "Céad socrú MAN"
+
+#: com.man.Recovery.desktop
+msgid "Restore or reinstall MAN"
+msgstr "Aischuir nó athshuiteáil MAN"
 
 #: com.man.UpdateCheck.desktop
 msgid "MAN Updates"

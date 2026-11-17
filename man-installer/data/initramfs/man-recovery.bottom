@@ -1,0 +1,23 @@
+#!/bin/sh
+# MAN Recovery ("man.recovery=1", boot menu): its system (@recovery) is
+# mounted read-only; put a RAM overlay over it so it can run normally and
+# never changes on the disk.
+PREREQ=""
+prereqs() { echo "$PREREQ"; }
+case "$1" in prereqs) prereqs; exit 0 ;; esac
+
+grep -qw "man.recovery=1" /proc/cmdline || exit 0
+. /scripts/functions
+base=/run/man-recovery
+mkdir -p "$base/lower" "$base/rw"
+if ! mount -t tmpfs -o mode=0755 tmpfs "$base/rw"; then
+    log_failure_msg "MAN Recovery: no memory for its changes"
+    exit 0
+fi
+mkdir -p "$base/rw/upper" "$base/rw/work"
+mount -n -o move "${rootmnt}" "$base/lower" || exit 0
+if ! mount -t overlay overlay -o "lowerdir=$base/lower,upperdir=$base/rw/upper,workdir=$base/rw/work" "${rootmnt}"; then
+    log_failure_msg "MAN Recovery: overlay failed, starting it read-only"
+    mount -n -o move "$base/lower" "${rootmnt}"
+fi
+exit 0

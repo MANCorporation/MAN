@@ -178,6 +178,41 @@ pub struct Plan {
     /// it first. None: the live session's language.
     #[serde(default)]
     pub language: Option<String>,
+    /// Root of the system to copy (MAN Recovery: the downloaded ISO's system).
+    /// None: the running live system.
+    #[serde(default)]
+    pub source: Option<String>,
+    /// Reinstall: keep the user accounts (with their passwords) and the
+    /// computer's name, language and keyboard instead of running MAN Setup.
+    #[serde(default)]
+    pub keep_accounts: bool,
+}
+
+/// MAN Recovery: an account that may use it (an administrator of the installed system).
+#[derive(Serialize, Deserialize, Debug, Clone, Default, PartialEq)]
+pub struct RecoveryUser {
+    pub name: String,
+    pub real_name: String,
+}
+
+/// MAN Recovery: what it found on this computer.
+#[derive(Serialize, Deserialize, Debug, Clone, Default)]
+pub struct RecoveryInfo {
+    /// MAN version of the installed system ("" when it is missing).
+    pub version: String,
+    pub admins: Vec<RecoveryUser>,
+    /// Newest first.
+    pub snapshots: Vec<SnapshotInfo>,
+    pub encrypted: bool,
+}
+
+/// MAN Recovery: the newest MAN for this computer, from the published releases.
+#[derive(Serialize, Deserialize, Debug, Clone, Default)]
+pub struct RecoveryRelease {
+    pub version: String,
+    pub size: u64,
+    pub url: String,
+    pub sha256_url: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone, Default, PartialEq)]
@@ -319,6 +354,17 @@ pub fn upd_file_version(name: &str, arch: &str) -> Option<String> {
     };
     (file_arch == arch).then(|| version_from_file_name(stem))
 }
+
+/// The version in an ISO file name made for `arch` (amd64, arm64, apple),
+/// e.g. "MAN-10-TEST-6-apple.iso" → "10 TEST 6".
+pub fn iso_file_version(name: &str, arch: &str) -> Option<String> {
+    let stem = name.strip_prefix("MAN-")?.strip_suffix(".iso")?;
+    let (v, a) = stem.rsplit_once('-')?;
+    (a == arch).then(|| version_from_file_name(v))
+}
+
+/// Marks a MAN Recovery system (its root holds this file).
+pub const RECOVERY_MARK: &str = "/etc/man-recovery";
 
 /// `manifest.json` inside a `.upd` file. Signed as a whole (`manifest.sig`).
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -480,6 +526,16 @@ pub enum Request {
     UpdateInspect { path: String },
     /// Prepare the update in @update; it is applied at the next restart.
     UpdateStage { path: String, device: String, snapshot: bool },
+    /// MAN Recovery: accounts, snapshots and version of the installed system.
+    RecoveryInfo,
+    /// MAN Recovery: check an administrator's password.
+    RecoveryUnlock { user: String, password: String },
+    /// MAN Recovery: make a snapshot the system again (takes effect at the restart).
+    RecoveryRestore { user: String, password: String, id: String },
+    /// MAN Recovery: the newest MAN that can be downloaded for this computer.
+    RecoveryFindRelease,
+    /// MAN Recovery: download that MAN and install it again, keeping files and accounts.
+    RecoveryReinstall { user: String, password: String, version: String },
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -492,6 +548,8 @@ pub enum Event {
     Probe { probe: Probe },
     Inspect { install: ExistingInstall },
     Update { info: UpdateInfo },
+    Recovery { info: RecoveryInfo },
+    Release { release: RecoveryRelease },
     Done { message: String },
     Error { message: String, detail: String },
 }
@@ -553,6 +611,15 @@ pub fn human_size(bytes: u64) -> String {
 
 #[cfg(test)]
 mod tests {
+    #[test]
+    fn iso_names() {
+        assert_eq!(super::iso_file_version("MAN-10-TEST-6-amd64.iso", "amd64").as_deref(), Some("10 TEST 6"));
+        assert_eq!(super::iso_file_version("MAN-10-TEST-6-apple.iso", "apple").as_deref(), Some("10 TEST 6"));
+        assert_eq!(super::iso_file_version("MAN-10-TEST-6-apple.iso", "arm64"), None);
+        assert_eq!(super::iso_file_version("MAN-10a-arm64.iso", "arm64").as_deref(), Some("10a"));
+        assert_eq!(super::iso_file_version("MAN-10-TEST-6-amd64.iso.sha256", "amd64"), None);
+    }
+
     use super::*;
 
     #[test]

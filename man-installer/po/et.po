@@ -314,55 +314,55 @@ msgstr "Selleks toiminguks on vaja administraatori õigusi."
 msgid "The system helper stopped unexpectedly."
 msgstr "Süsteemiabiline peatus ootamatult."
 
-#: installer.rs:78
+#: installer.rs:89
 msgid "No EFI system partition"
 msgstr "EFI süsteemisektsioon puudub"
 
-#: installer.rs:82
+#: installer.rs:93
 msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
 msgstr "Vaba on ainult {free}, MAN vajab {need}. Vabasta ruumi Windowsis DUHACH!-iga."
 
-#: installer.rs:83
+#: installer.rs:94
 msgid "No free space. Start DUHACH! in Windows to make room for MAN."
 msgstr "Vaba ruumi pole. Käivita Windowsis DUHACH!, et teha MAN-ile ruumi."
 
-#: installer.rs:92
+#: installer.rs:103
 msgid "MAN is running from this disk"
 msgstr "MAN töötab sellelt kettalt"
 
-#: installer.rs:96
+#: installer.rs:107
 msgid "In use: a partition is mounted"
 msgstr "Kasutusel: sektsioon on haagitud"
 
-#: installer.rs:98
+#: installer.rs:109
 msgid "Too small, MAN needs {need}"
 msgstr "Liiga väike, MAN vajab {need}"
 
-#: installer.rs:108
+#: installer.rs:119
 msgid "Install MAN"
 msgstr "Paigalda MAN"
 
-#: installer.rs:126
+#: installer.rs:137
 msgid "MAN is being installed. Please wait until it finishes."
 msgstr "MAN-i paigaldatakse. Palun oota, kuni see lõpeb."
 
-#: installer.rs:143
+#: installer.rs:154
 msgid "Language"
 msgstr "Keel"
 
-#: installer.rs:155
+#: installer.rs:166
 msgid "_Restart in This Language"
 msgstr "_Taaskäivita selles keeles"
 
-#: installer.rs:167
+#: installer.rs:178
 msgid "The live session restarts in the chosen language, and MAN is installed in it."
 msgstr "Live-seanss taaskäivitub valitud keeles ja MAN paigaldatakse selles keeles."
 
-#: installer.rs:213
+#: installer.rs:224
 msgid "Welcome to MAN"
 msgstr "Tere tulemast MAN-i"
 
-#: installer.rs:214
+#: installer.rs:225
 msgid ""
 "A fast, open and fully customizable GNOME system.\n"
 "Install it on this computer, or keep exploring the live session."
@@ -370,543 +370,567 @@ msgstr ""
 "Kiire, avatud ja täielikult kohandatav GNOME süsteem.\n"
 "Paigalda see sellesse arvutisse või jätka live-seansi avastamist."
 
-#: installer.rs:218
+#: installer.rs:229
 msgid "_Install MAN…"
 msgstr "_Paigalda MAN…"
 
-#: installer.rs:220
+#: installer.rs:231
 msgid "_Keep Trying MAN"
 msgstr "_Jätka MAN-i proovimist"
 
-#: installer.rs:223
+#: installer.rs:234
 msgid "Looking for disks…"
 msgstr "Ketaste otsimine…"
 
-#: installer.rs:250
+#: installer.rs:261
 msgid "Welcome"
 msgstr "Tere tulemast"
 
-#: installer.rs:265
+#: installer.rs:276
 msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
 msgstr "See arvuti käivitati vanas BIOS-režiimis. MAN-i saab paigaldada ainult UEFI-arvutitesse: taaskäivita ja vali UEFI alglaadimisvalik."
 
-#: installer.rs:283
+#: installer.rs:294
 msgid "The system helper returned no disk information."
 msgstr "Süsteemiabiline ei tagastanud ketaste teavet."
 
-#: installer.rs:348
+#: installer.rs:372
 msgid "  ·  EFI"
 msgstr "  ·  EFI"
 
-#: installer.rs:356
+#: installer.rs:380
 msgid "_Next"
 msgstr "_Edasi"
 
-#: installer.rs:364
+#: installer.rs:388
 msgid "Erase Disk and Install MAN"
 msgstr "Kustuta ketas ja paigalda MAN"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Everything on the chosen disk is deleted, Windows included."
 msgstr "Kõik valitud kettal kustutatakse, ka Windows."
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Recommended. Everything on the chosen disk is deleted."
 msgstr "Soovitatav. Kõik valitud kettal kustutatakse."
 
-#: installer.rs:369
+#: installer.rs:393
 msgid "Install Alongside Windows"
 msgstr "Paigalda Windowsi kõrvale"
 
-#: installer.rs:370
+#: installer.rs:394
 msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
 msgstr "Soovitatav. MAN kasutab Windowsi kõrval olevat vaba ruumi; Windows ja selle failid jäävad alles. Süsteemi valid igal käivitamisel."
 
-#: installer.rs:377
+#: installer.rs:401
 msgid "Reinstall MAN"
 msgstr "Paigalda MAN uuesti"
 
-#: installer.rs:378
+#: installer.rs:402
 msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
 msgstr "Asendab süsteemi, kuid hoiab alles isiklikud failid kaustas /home. Praegune süsteem salvestatakse hetktõmmisena."
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "Custom Partitions"
 msgstr "Kohandatud sektsioonid"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "For experts: choose partitions yourself, or create them with Disks."
 msgstr "Asjatundjatele: vali sektsioonid ise või loo need rakendusega Kettad."
 
-#: installer.rs:392
+#: installer.rs:418
+msgid "Erase an External Disk and Install MAN"
+msgstr "Kustuta väline ketas ja paigalda MAN"
+
+#: installer.rs:419
+msgid "Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."
+msgstr "Kõik valitud välisel kettal kustutatakse. Maci sisemist ketast ei näidata ega muudeta."
+
+#: installer.rs:420
+msgid "Install on This Mac"
+msgstr "Paigalda sellesse Maci"
+
+#: installer.rs:422
+msgid "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed."
+msgstr "Soovitatav. macOS-is ettevalmistatud {size} sisse. macOS-i ja selle partitsioone ei muudeta."
+
+#: installer.rs:427
+msgid "No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."
+msgstr "MAN-i jaoks pole veel ruumi ette valmistatud. Käivita macOS-is MAN-i USB-pulgalt MAN-Mac/install-man.sh ja vali “MAN boot loader + space for MAN”."
+
+#: installer.rs:433
 msgid "Disk"
 msgstr "Ketas"
 
-#: installer.rs:392
+#: installer.rs:433
 msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
 msgstr "Vali kustutatav ketas. Kasutamiskõlbmatud kettad kuvatakse koos põhjusega."
 
-#: installer.rs:418
+#: installer.rs:459
 msgid "No disks were found"
 msgstr "Kettaid ei leitud"
 
-#: installer.rs:425
+#: installer.rs:466
 msgid "Free Space Next to Windows"
 msgstr "Vaba ruum Windowsi kõrval"
 
-#: installer.rs:426
+#: installer.rs:467
 msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
 msgstr "Windowsi sektsioone ei puudutata. MAN jagab EFI süsteemisektsiooni ja lisab Windowsi oma alglaadimismenüüsse."
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "{size} free"
 msgstr "vaba {size}"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "no free space"
 msgstr "vaba ruumi pole"
 
-#: installer.rs:437
+#: installer.rs:478
 msgid "{model} (Windows)"
 msgstr "{model} (Windows)"
 
-#: installer.rs:456
+#: installer.rs:497
 msgid "Installation to Replace"
 msgstr "Asendatav paigaldus"
 
-#: installer.rs:477
+#: installer.rs:518
 msgid "no home folders"
 msgstr "kodukaustu pole"
 
-#: installer.rs:479
+#: installer.rs:520
 msgid "home folders: {list}"
 msgstr "kodukaustad: {list}"
 
-#: installer.rs:481
+#: installer.rs:522
 msgid "snapshots: {n}"
 msgstr "hetktõmmiseid: {n}"
 
-#: installer.rs:485
+#: installer.rs:526
 msgid "MAN on {model}"
 msgstr "MAN kettal {model}"
 
-#: installer.rs:499
+#: installer.rs:540
 msgid "Passphrase for {device}"
 msgstr "Paroolifraas seadmele {device}"
 
-#: installer.rs:500
+#: installer.rs:541
 msgid "Unlock"
 msgstr "Ava lukk"
 
-#: installer.rs:537
+#: installer.rs:578
 msgid "The installation could not be inspected."
 msgstr "Paigaldust ei saanud uurida."
 
-#: installer.rs:554
+#: installer.rs:595
 msgid "Partitions"
 msgstr "Sektsioonid"
 
-#: installer.rs:555
+#: installer.rs:596
 msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
 msgstr "Süsteemisektsioon vormindatakse Btrfs-iks ja see sisaldab @system, @home ja @snapshots alamköiteid. Ketta, millelt MAN töötab, sektsioone ei näidata."
 
-#: installer.rs:557
+#: installer.rs:598
 msgid "Open Disks to create or resize partitions"
 msgstr "Ava Kettad sektsioonide loomiseks või suuruse muutmiseks"
 
-#: installer.rs:559
+#: installer.rs:600
 msgid "Refresh the partition list"
 msgstr "Värskenda sektsioonide loendit"
 
-#: installer.rs:567
+#: installer.rs:608
 msgid "Choose a partition"
 msgstr "Vali sektsioon"
 
-#: installer.rs:579
+#: installer.rs:620
 msgid "EFI System Partition"
 msgstr "EFI süsteemisektsioon"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Format EFI System Partition"
 msgstr "Vorminda EFI süsteemisektsioon"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Leave off to keep boot loaders of other systems"
 msgstr "Jäta välja lülitatuks, et teiste süsteemide alglaadurid alles jääksid"
 
-#: installer.rs:582
+#: installer.rs:623
 msgid "System Partition (formatted as Btrfs)"
 msgstr "Süsteemisektsioon (vormindatakse Btrfs-iks)"
 
-#: installer.rs:583
+#: installer.rs:624
 msgid "Boot Partition (needed with encryption)"
 msgstr "Alglaadimissektsioon (vajalik krüptimisel)"
 
-#: installer.rs:642
+#: installer.rs:683
 msgid "Partition list refreshed"
 msgstr "Sektsioonide loend värskendatud"
 
-#: installer.rs:650
+#: installer.rs:691
 msgid "Security"
 msgstr "Turvalisus"
 
-#: installer.rs:652
+#: installer.rs:693
 msgid "Encrypt the System"
 msgstr "Krüpti süsteem"
 
-#: installer.rs:653
+#: installer.rs:694
 msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
 msgstr "Kaitseb sinu andmeid, kui arvuti kaob või varastatakse. Igal käivitamisel küsitakse paroolifraasi."
 
-#: installer.rs:656
+#: installer.rs:697
 msgid "Passphrase"
 msgstr "Paroolifraas"
 
-#: installer.rs:657
+#: installer.rs:698
 msgid "Confirm Passphrase"
 msgstr "Kinnita paroolifraas"
 
-#: installer.rs:659
+#: installer.rs:700
 msgid "Keep this passphrase safe"
 msgstr "Hoia seda paroolifraasi kindlas kohas"
 
-#: installer.rs:660
+#: installer.rs:701
 msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
 msgstr "Kui see kaob, ei saa keegi andmeid taastada. Tuum ja alglaadimisfailid jäävad väikesele krüptimata alglaadimissektsioonile."
 
-#: installer.rs:732
+#: installer.rs:774
 msgid "The passphrase needs at least 8 characters."
 msgstr "Paroolifraas peab olema vähemalt 8 märki."
 
-#: installer.rs:734
+#: installer.rs:776
 msgid "The passphrases do not match."
 msgstr "Paroolifraasid ei kattu."
 
-#: installer.rs:748
+#: installer.rs:790
 msgid "Choose a disk."
 msgstr "Vali ketas."
 
-#: installer.rs:758
+#: installer.rs:800
 msgid "Choose the disk with Windows."
 msgstr "Vali Windowsiga ketas."
 
-#: installer.rs:767
+#: installer.rs:809
 msgid "Choose the installation to replace."
 msgstr "Vali asendatav paigaldus."
 
-#: installer.rs:768
+#: installer.rs:810
 msgid "Unlock the encrypted installation first."
 msgstr "Ava esmalt krüptitud paigalduse lukk."
 
-#: installer.rs:769
+#: installer.rs:811
 msgid "This partition holds no MAN system."
 msgstr "Selles sektsioonis pole MAN-i süsteemi."
 
-#: installer.rs:776
+#: installer.rs:818
 msgid "Choose an EFI system partition."
 msgstr "Vali EFI süsteemisektsioon."
 
-#: installer.rs:778
+#: installer.rs:820
 msgid "Choose the system partition."
 msgstr "Vali süsteemisektsioon."
 
-#: installer.rs:780
+#: installer.rs:822
 msgid "The EFI and system partitions must be different."
 msgstr "EFI- ja süsteemisektsioon peavad olema erinevad."
 
-#: installer.rs:782
+#: installer.rs:824
 msgid "Encryption needs a separate boot partition."
 msgstr "Krüptimiseks on vaja eraldi alglaadimissektsiooni."
 
-#: installer.rs:791
+#: installer.rs:833
 msgid "The system partition must be at least {size}."
 msgstr "Süsteemisektsioon peab olema vähemalt {size}."
 
-#: installer.rs:793
+#: installer.rs:835
 msgid "The EFI partition is not FAT formatted; turn on formatting."
 msgstr "EFI-sektsioon pole FAT-vormingus; lülita vormindamine sisse."
 
-#: installer.rs:795
+#: installer.rs:837
 msgid "The system partition is mounted; unmount it in Disks first."
 msgstr "Süsteemisektsioon on haagitud; haagi see esmalt rakenduses Kettad lahti."
 
-#: installer.rs:817
+#: installer.rs:859
 msgid "Where Should MAN Be Installed?"
 msgstr "Kuhu MAN paigaldada?"
 
-#: installer.rs:824
+#: installer.rs:866
 msgid "Time and Keyboard"
 msgstr "Aeg ja klaviatuur"
 
-#: installer.rs:829
+#: installer.rs:871
 msgid "Time Zone"
 msgstr "Ajavöönd"
 
-#: installer.rs:833
+#: installer.rs:875
 msgid "Keyboard Layout"
 msgstr "Klaviatuuripaigutus"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Test Your Keyboard"
 msgstr "Proovi klaviatuuri"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Type here to check that your keys produce the right characters."
 msgstr "Kirjuta siia, et kontrollida, kas klahvid annavad õiged märgid."
 
-#: installer.rs:844
+#: installer.rs:886
 msgid "Type here"
 msgstr "Kirjuta siia"
 
-#: installer.rs:877
+#: installer.rs:919
 msgid "Time Zone and Keyboard"
 msgstr "Ajavöönd ja klaviatuur"
 
-#: installer.rs:920
+#: installer.rs:962
 msgid "No disk chosen"
 msgstr "Ketast pole valitud"
 
-#: installer.rs:926
+#: installer.rs:968
 msgid "No system partition chosen"
 msgstr "Süsteemisektsiooni pole valitud"
 
-#: installer.rs:928
+#: installer.rs:970
 msgid "The system partition disappeared"
 msgstr "Süsteemisektsioon kadus"
 
-#: installer.rs:933
+#: installer.rs:975
 msgid "No installation chosen"
 msgstr "Paigaldust pole valitud"
 
-#: installer.rs:944
+#: installer.rs:986
 msgid "The disk disappeared"
 msgstr "Ketas kadus"
 
-#: installer.rs:955
+#: installer.rs:997
 msgid "Review"
 msgstr "Ülevaade"
 
-#: installer.rs:958
+#: installer.rs:1000
 msgid "Destination"
 msgstr "Sihtkoht"
 
-#: installer.rs:960
+#: installer.rs:1002
 msgid "Erase disk and install"
 msgstr "Kustuta ketas ja paigalda"
 
-#: installer.rs:961
+#: installer.rs:1003
+msgid "This Mac (space prepared in macOS)"
+msgstr "See Mac (macOS-is ettevalmistatud ruum)"
+
+#: installer.rs:1004
 msgid "Custom partitions"
 msgstr "Kohandatud sektsioonid"
 
-#: installer.rs:962
+#: installer.rs:1005
 msgid "Reinstall, keeping /home"
 msgstr "Paigalda uuesti, hoia /home alles"
 
-#: installer.rs:963
+#: installer.rs:1006
 msgid "Alongside Windows"
 msgstr "Windowsi kõrvale"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (will be formatted)"
 msgstr " (vormindatakse)"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (kept)"
 msgstr " (jääb alles)"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "System Partition"
 msgstr "Süsteemisektsioon"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "{partition} (will be formatted)"
 msgstr "{partition} (vormindatakse)"
 
-#: installer.rs:972
+#: installer.rs:1015
 msgid "Boot Partition"
 msgstr "Alglaadimissektsioon"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "Space for MAN"
 msgstr "Ruum MAN-i jaoks"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "{free} of free space (a boot partition and the system partition are created)"
 msgstr "{free} vaba ruumi (luuakse alglaadimissektsioon ja süsteemisektsioon)"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Windows"
 msgstr "Windows"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
 msgstr "Muutmata. See ilmub MAN-i alglaadimismenüüsse; EFI süsteemisektsioon on ühine."
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Encryption"
 msgstr "Krüptimine"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "On (LUKS2)"
 msgstr "Sees (LUKS2)"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Off"
 msgstr "Väljas"
 
-#: installer.rs:985
+#: installer.rs:1028
 msgid "File System"
 msgstr "Failisüsteem"
 
-#: installer.rs:986
+#: installer.rs:1029
 msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
 msgstr "Btrfs: @system MAN-ile, @home sinu failidele, @snapshots taastepunktidele. Kõik jagavad vaba ruumi."
 
-#: installer.rs:991
+#: installer.rs:1034
 msgid "System"
 msgstr "Süsteem"
 
-#: installer.rs:993
+#: installer.rs:1036
 msgid "Your Account"
 msgstr "Sinu konto"
 
-#: installer.rs:994
+#: installer.rs:1037
 msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
 msgstr "Luuakse MAN Setupis arvuti esimesel käivitamisel koos arvuti nime, välimuse ja privaatsusseadetega."
 
-#: installer.rs:998
+#: installer.rs:1041
 msgid "Keyboard"
 msgstr "Klaviatuur"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "All data on {model} ({path}) will be erased."
 msgstr "Kõik andmed kettal {model} ({path}) kustutatakse."
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "_Erase and Install"
 msgstr "_Kustuta ja paigalda"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "The chosen partitions will be formatted. Other partitions are not changed."
 msgstr "Valitud sektsioonid vormindatakse. Teised sektsioonid ei muutu."
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "_Format and Install"
 msgstr "_Vorminda ja paigalda"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
 msgstr "Praegune süsteem asendatakse. Sinu failid kaustas /home jäävad alles ja vana süsteem salvestatakse hetktõmmisena."
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "_Reinstall"
 msgstr "Paigalda _uuesti"
 
-#: installer.rs:1005
+#: installer.rs:1048
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN paigaldatakse vabasse ruumi. Windows ja selle failid ei muutu."
 
-#: installer.rs:1019
+#: installer.rs:1062
 msgid "Ready to Install"
 msgstr "Valmis paigaldamiseks"
 
-#: installer.rs:1029
+#: installer.rs:1072
 msgid "Erase {model}?"
 msgstr "Kas kustutada {model}?"
 
-#: installer.rs:1030
+#: installer.rs:1073
 msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
 msgstr "Kõik failid ja sektsioonid kettal {path} ({size}) kustutatakse jäädavalt. Seda ei saa tagasi võtta."
 
-#: installer.rs:1031
+#: installer.rs:1074
 msgid "Erase and Install"
 msgstr "Kustuta ja paigalda"
 
-#: installer.rs:1035
+#: installer.rs:1078
 msgid "Format the Chosen Partitions?"
 msgstr "Kas vormindada valitud sektsioonid?"
 
-#: installer.rs:1036
+#: installer.rs:1079
 msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
 msgstr "Kõik andmed valitud sektsioonidel kustutatakse jäädavalt. Teised sektsioonid ei muutu."
 
-#: installer.rs:1037
+#: installer.rs:1080
 msgid "Format and Install"
 msgstr "Vorminda ja paigalda"
 
-#: installer.rs:1041
+#: installer.rs:1084
 msgid "Install MAN Alongside Windows?"
 msgstr "Kas paigaldada MAN Windowsi kõrvale?"
 
-#: installer.rs:1042
+#: installer.rs:1085
 msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
 msgstr "MAN paigaldatakse kettal {model} ({path}) olevasse {free} vabasse ruumi. Windows ja selle failid ei muutu."
 
-#: installer.rs:1046
+#: installer.rs:1089
 msgid "Install"
 msgstr "Paigalda"
 
-#: installer.rs:1050
+#: installer.rs:1093
 msgid "Reinstall MAN?"
 msgstr "Kas paigaldada MAN uuesti?"
 
-#: installer.rs:1051
+#: installer.rs:1094
 msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
 msgstr "Paigaldatud süsteem asendatakse värske koopiaga. Isiklikud failid kaustas /home jäävad alles ja vana süsteem on saadaval hetktõmmisena."
 
-#: installer.rs:1052
+#: installer.rs:1095
 msgid "Reinstall"
 msgstr "Paigalda uuesti"
 
-#: installer.rs:1057
+#: installer.rs:1100
 msgid "_Cancel"
 msgstr "_Loobu"
 
-#: installer.rs:1076
+#: installer.rs:1119
 msgid "Installing MAN"
 msgstr "MAN-i paigaldamine"
 
-#: installer.rs:1077
+#: installer.rs:1120
 msgid "Starting…"
 msgstr "Alustamine…"
 
-#: installer.rs:1090
+#: installer.rs:1133
 msgid "Installing"
 msgstr "Paigaldamine"
 
-#: installer.rs:1103
+#: installer.rs:1146
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "Samm {index}/{n}  ·  {title}"
 
-#: installer.rs:1138
+#: installer.rs:1181
 msgid "MAN Is Installed"
 msgstr "MAN on paigaldatud"
 
-#: installer.rs:1143
+#: installer.rs:1186
 msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
 msgstr "Taaskäivita arvuti, et MAN-i kasutama hakata. Igal käivitamisel saad menüüst valida MAN-i või Windowsi; ajutise paigaldussektsiooni eemaldab MAN esimesel käivitamisel."
 
-#: installer.rs:1149
+#: installer.rs:1192
 msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
 msgstr "Taaskäivita arvuti, et MAN-i kasutama hakata. Paigaldusmeediumi võid eemaldada; kui see jääb ühendatuks, käivitub MAN ikkagi uuelt kettalt."
 
-#: installer.rs:1156
+#: installer.rs:1199
 msgid "_Restart Now"
 msgstr "_Taaskäivita kohe"
 
-#: installer.rs:1171
+#: installer.rs:1214
 msgid "Done"
 msgstr "Valmis"
 
-#: installer.rs:1182
+#: installer.rs:1225
 msgid "Installation Failed"
 msgstr "Paigaldamine nurjus"
 
-#: installer.rs:1186
+#: installer.rs:1229
 msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
 msgstr "Ühtegi teist ketast ei muudetud ja paigaldaja vabastas sihtketta. Võid plaani üle vaadata ja uuesti proovida."
 
-#: installer.rs:1191
+#: installer.rs:1234
 msgid "_Review and Try Again"
 msgstr "_Vaata üle ja proovi uuesti"
 
@@ -1062,413 +1086,557 @@ msgstr "Tere tulemast Marqueesse"
 msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
 msgstr "Kas soovid avada Marquee või jagada oma filme, muusikat ja fotosid teiste selle võrgu arvutitega?"
 
-#: oobe.rs:165
-msgid "The system disk was not found."
-msgstr "Süsteemiketast ei leitud."
-
-#: oobe.rs:173
-msgid "Encryption needs the Btrfs layout created by the MAN installer."
-msgstr "Krüptimiseks on vaja MAN-i paigaldaja loodud Btrfs-paigutust."
-
-#: oobe.rs:177
-msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
-msgstr "Sellel paigaldusel pole eraldi alglaadimissektsiooni, mida krüptimine vajab. Krüptimiseks paigalda MAN uuesti valikuga „Kustuta ketas“."
-
-#: oobe.rs:501
-msgid "MAN Setup"
-msgstr "MAN Setup"
-
-#: oobe.rs:554
-msgid "Where Are You?"
-msgstr "Kus sa asud?"
-
-#: oobe.rs:554
-msgid "Your country or region sets the date, time and number formats."
-msgstr "Sinu riik või piirkond määrab kuupäeva, kellaaja ja arvude vormingu."
-
-#: oobe.rs:572
-msgid "Country"
-msgstr "Riik"
-
-#: oobe.rs:587
-msgid "GNU General Public License, version 2"
-msgstr "GNU üldine avalik litsents, versioon 2"
-
-#: oobe.rs:587
-msgid "The Linux kernel and many system tools"
-msgstr "Linuxi tuum ja palju süsteemitööriistu"
-
-#: oobe.rs:588
-msgid "GNU General Public License, version 3"
-msgstr "GNU üldine avalik litsents, versioon 3"
-
-#: oobe.rs:588
-msgid "Many GNU and GNOME programs"
-msgstr "Palju GNU ja GNOME programme"
-
-#: oobe.rs:589
-msgid "GNU Lesser General Public License, version 2.1"
-msgstr "GNU vähem üldine avalik litsents, versioon 2.1"
-
-#: oobe.rs:589
-msgid "GTK, GLib and many libraries"
-msgstr "GTK, GLib ja palju teeke"
-
-#: oobe.rs:590
-msgid "GNU Lesser General Public License, version 3"
-msgstr "GNU vähem üldine avalik litsents, versioon 3"
-
-#: oobe.rs:591
-msgid "Mozilla Public License 2.0"
-msgstr "Mozilla avalik litsents 2.0"
-
-#: oobe.rs:591
-msgid "Programs and libraries from Mozilla and others"
-msgstr "Mozilla ja teiste programmid ja teegid"
-
-#: oobe.rs:592
-msgid "Apache License 2.0"
-msgstr "Apache litsents 2.0"
-
-#: oobe.rs:592
-msgid "Libraries and tools"
-msgstr "Teegid ja tööriistad"
-
-#: oobe.rs:597
-msgid "License Agreement"
-msgstr "Litsentsileping"
-
-#: oobe.rs:597
-msgid "Please read and accept the terms under which MAN is provided."
-msgstr "Palun loe ja nõustu tingimustega, millel MAN-i pakutakse."
-
-#: oobe.rs:608
-msgid "Licenses"
-msgstr "Litsentsid"
-
-#: oobe.rs:616
-msgid "The license text is not available ({path})."
-msgstr "Litsentsi tekst pole saadaval ({path})."
-
-#: oobe.rs:622
-msgid "I have read and accept the license terms"
-msgstr "Olen litsentsitingimused läbi lugenud ja nõustun nendega"
-
-#: oobe.rs:692
+#: net.rs:59
 msgid "Wired"
 msgstr "Juhtmega"
 
-#: oobe.rs:698
+#: net.rs:65
 msgid "Not connected"
 msgstr "Pole ühendatud"
 
-#: oobe.rs:732
-msgid "Connect to the Internet"
-msgstr "Ühenda internetiga"
-
-#: oobe.rs:732
-msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
-msgstr "Ühendusega saab MAN kella õigeks seada ja tarkvara ajakohasena hoida. Saad seda teha ka hiljem."
-
-#: oobe.rs:734
-msgid "Checking the connection…"
-msgstr "Ühenduse kontrollimine…"
-
-#: oobe.rs:740
-msgid "Wi-Fi Networks"
-msgstr "Wi-Fi võrgud"
-
-#: oobe.rs:742
-msgid "Search Again"
-msgstr "Otsi uuesti"
-
-#: oobe.rs:753
-msgid "_Skip"
-msgstr "_Jäta vahele"
-
-#: oobe.rs:754
-msgid "You can connect later in Settings."
-msgstr "Saad hiljem ühenduda menüüs Seaded."
-
-#: oobe.rs:763
-msgid "Connected"
-msgstr "Ühendatud"
-
-#: oobe.rs:763
-msgid "Not Connected"
-msgstr "Pole ühendatud"
-
-#: oobe.rs:791
-msgid "No networks found"
-msgstr "Võrke ei leitud"
-
-#: oobe.rs:817
-msgid "Internet"
-msgstr "Internet"
-
-#: oobe.rs:864
+#: net.rs:121
 msgid "Connected to “{ssid}”"
 msgstr "Ühendatud võrguga „{ssid}“"
 
-#: oobe.rs:864
+#: net.rs:121
 msgid "Could not connect to “{ssid}”"
 msgstr "Võrguga „{ssid}“ ei saanud ühendust"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Connect to “{ssid}”"
 msgstr "Ühenda võrguga „{ssid}“"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Enter the network password."
 msgstr "Sisesta võrgu parool."
 
-#: oobe.rs:878
+#: net.rs:135
 msgid "C_onnect"
 msgstr "_Ühenda"
 
-#: oobe.rs:901
+#: oobe.rs:166
+msgid "The system disk was not found."
+msgstr "Süsteemiketast ei leitud."
+
+#: oobe.rs:174
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "Krüptimiseks on vaja MAN-i paigaldaja loodud Btrfs-paigutust."
+
+#: oobe.rs:186
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "Sellel paigaldusel pole eraldi alglaadimissektsiooni, mida krüptimine vajab. Krüptimiseks paigalda MAN uuesti valikuga „Kustuta ketas“."
+
+#: oobe.rs:510
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:563
+msgid "Where Are You?"
+msgstr "Kus sa asud?"
+
+#: oobe.rs:563
+msgid "Your country or region sets the date, time and number formats."
+msgstr "Sinu riik või piirkond määrab kuupäeva, kellaaja ja arvude vormingu."
+
+#: oobe.rs:581
+msgid "Country"
+msgstr "Riik"
+
+#: oobe.rs:596
+msgid "GNU General Public License, version 2"
+msgstr "GNU üldine avalik litsents, versioon 2"
+
+#: oobe.rs:596
+msgid "The Linux kernel and many system tools"
+msgstr "Linuxi tuum ja palju süsteemitööriistu"
+
+#: oobe.rs:597
+msgid "GNU General Public License, version 3"
+msgstr "GNU üldine avalik litsents, versioon 3"
+
+#: oobe.rs:597
+msgid "Many GNU and GNOME programs"
+msgstr "Palju GNU ja GNOME programme"
+
+#: oobe.rs:598
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU vähem üldine avalik litsents, versioon 2.1"
+
+#: oobe.rs:598
+msgid "GTK, GLib and many libraries"
+msgstr "GTK, GLib ja palju teeke"
+
+#: oobe.rs:599
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU vähem üldine avalik litsents, versioon 3"
+
+#: oobe.rs:600
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla avalik litsents 2.0"
+
+#: oobe.rs:600
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla ja teiste programmid ja teegid"
+
+#: oobe.rs:601
+msgid "Apache License 2.0"
+msgstr "Apache litsents 2.0"
+
+#: oobe.rs:601
+msgid "Libraries and tools"
+msgstr "Teegid ja tööriistad"
+
+#: oobe.rs:606
+msgid "License Agreement"
+msgstr "Litsentsileping"
+
+#: oobe.rs:606
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "Palun loe ja nõustu tingimustega, millel MAN-i pakutakse."
+
+#: oobe.rs:617
+msgid "Licenses"
+msgstr "Litsentsid"
+
+#: oobe.rs:625
+msgid "The license text is not available ({path})."
+msgstr "Litsentsi tekst pole saadaval ({path})."
+
+#: oobe.rs:631
+msgid "I have read and accept the license terms"
+msgstr "Olen litsentsitingimused läbi lugenud ja nõustun nendega"
+
+#: oobe.rs:658
+msgid "Connect to the Internet"
+msgstr "Ühenda internetiga"
+
+#: oobe.rs:658
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "Ühendusega saab MAN kella õigeks seada ja tarkvara ajakohasena hoida. Saad seda teha ka hiljem."
+
+#: oobe.rs:660
+msgid "Checking the connection…"
+msgstr "Ühenduse kontrollimine…"
+
+#: oobe.rs:666
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi võrgud"
+
+#: oobe.rs:668
+msgid "Search Again"
+msgstr "Otsi uuesti"
+
+#: oobe.rs:679
+msgid "_Skip"
+msgstr "_Jäta vahele"
+
+#: oobe.rs:680
+msgid "You can connect later in Settings."
+msgstr "Saad hiljem ühenduda menüüs Seaded."
+
+#: oobe.rs:689
+msgid "Connected"
+msgstr "Ühendatud"
+
+#: oobe.rs:689
+msgid "Not Connected"
+msgstr "Pole ühendatud"
+
+#: oobe.rs:717
+msgid "No networks found"
+msgstr "Võrke ei leitud"
+
+#: oobe.rs:746
+msgid "Internet"
+msgstr "Internet"
+
+#: oobe.rs:777
 msgid "Create Your Account"
 msgstr "Loo oma konto"
 
-#: oobe.rs:901
+#: oobe.rs:777
 msgid "You will be the administrator of this computer, with full root access through sudo."
 msgstr "Sinust saab selle arvuti administraator, kellel on sudo kaudu täielik root-ligipääs."
 
-#: oobe.rs:904
+#: oobe.rs:780
 msgid "Full Name"
 msgstr "Täisnimi"
 
-#: oobe.rs:905
+#: oobe.rs:781
 msgid "Username"
 msgstr "Kasutajanimi"
 
-#: oobe.rs:906
+#: oobe.rs:782
 msgid "Password"
 msgstr "Parool"
 
-#: oobe.rs:907
+#: oobe.rs:783
 msgid "Confirm Password"
 msgstr "Kinnita parool"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Log In Automatically"
 msgstr "Logi automaatselt sisse"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Skip the login screen when the computer starts"
 msgstr "Jäta arvuti käivitamisel sisselogimisekraan vahele"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Existing Home Folders"
 msgstr "Olemasolevad kodukaustad"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Use the same username to keep using a folder kept from a previous installation."
 msgstr "Kasuta sama kasutajanime, et jätkata eelmisest paigaldusest jäänud kausta kasutamist."
 
-#: oobe.rs:919
+#: oobe.rs:795
 msgid "Use"
 msgstr "Kasuta"
 
-#: oobe.rs:929
+#: oobe.rs:805
 msgid "Advanced"
 msgstr "Täpsemad"
 
-#: oobe.rs:930
+#: oobe.rs:806
 msgid "Computer Name"
 msgstr "Arvuti nimi"
 
-#: oobe.rs:932
+#: oobe.rs:808
 msgid "Set a Root Password"
 msgstr "Määra root-parool"
 
-#: oobe.rs:933
+#: oobe.rs:809
 msgid "Allows logging in as root directly. Without it, use sudo with your own password."
 msgstr "Võimaldab otse root-kasutajana sisse logida. Ilma selleta kasuta sudo oma parooliga."
 
-#: oobe.rs:937
+#: oobe.rs:813
 msgid "Root Password"
 msgstr "Root-parool"
 
-#: oobe.rs:938
+#: oobe.rs:814
 msgid "Confirm Root Password"
 msgstr "Kinnita root-parool"
 
-#: oobe.rs:962
+#: oobe.rs:838
 msgid "Enter your name."
 msgstr "Sisesta oma nimi."
 
-#: oobe.rs:964
+#: oobe.rs:840
 msgid "Choose a username."
 msgstr "Vali kasutajanimi."
 
-#: oobe.rs:966
+#: oobe.rs:842
 msgid "This username is already used by the system."
 msgstr "Seda kasutajanime kasutab juba süsteem."
 
-#: oobe.rs:969
+#: oobe.rs:845
 msgid "This username is reserved by the system."
 msgstr "See kasutajanimi on süsteemi jaoks reserveeritud."
 
-#: oobe.rs:971
+#: oobe.rs:847
 msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
 msgstr "Kasutajanimed koosnevad väiketähtedest, numbritest, - ja _ märgist ning algavad tähega."
 
-#: oobe.rs:974
+#: oobe.rs:850
 msgid "Choose a password."
 msgstr "Vali parool."
 
-#: oobe.rs:976
+#: oobe.rs:852
 msgid "The passwords do not match."
 msgstr "Paroolid ei kattu."
 
-#: oobe.rs:978
+#: oobe.rs:854
 msgid "The computer name may contain letters, digits and dashes."
 msgstr "Arvuti nimi võib sisaldada tähti, numbreid ja sidekriipse."
 
-#: oobe.rs:980
+#: oobe.rs:856
 msgid "Enter the root password twice."
 msgstr "Sisesta root-parool kaks korda."
 
-#: oobe.rs:986
+#: oobe.rs:862
 msgid "Tip: a password with 8 or more characters is much safer."
 msgstr "Nõuanne: 8 või enama märgiga parool on palju turvalisem."
 
-#: oobe.rs:1066
+#: oobe.rs:942
 msgid "Account"
 msgstr "Konto"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Dark"
 msgstr "Tume"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Light"
 msgstr "Hele"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Make It Yours"
 msgstr "Tee see enda omaks"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
 msgstr "Vali stiil, rõhuvärv ja taustapilt. Näed iga muudatust kohe."
 
-#: oobe.rs:1095
+#: oobe.rs:971
 msgid "Style"
 msgstr "Stiil"
 
-#: oobe.rs:1115
+#: oobe.rs:991
 msgid "Accent Color"
 msgstr "Rõhuvärv"
 
-#: oobe.rs:1158
+#: oobe.rs:1034
 msgid "Wallpaper"
 msgstr "Taustapilt"
 
-#: oobe.rs:1202
+#: oobe.rs:1078
 msgid "Customize"
 msgstr "Kohanda"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Privacy"
 msgstr "Privaatsus"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Choose which features may use information about you. You can change this at any time in Settings."
 msgstr "Vali, millised funktsioonid tohivad sinu kohta teavet kasutada. Saad seda igal ajal muuta menüüs Seaded."
 
-#: oobe.rs:1212
+#: oobe.rs:1088
 msgid "Location Services"
 msgstr "Asukohateenused"
 
-#: oobe.rs:1213
+#: oobe.rs:1089
 msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
 msgstr "Lubab rakendustel nagu Kaardid ja Ilm leida sinu ligikaudse asukoha lähedalasuvate Wi-Fi võrkude abil."
 
-#: oobe.rs:1217
+#: oobe.rs:1093
 msgid "Automatic Time Zone"
 msgstr "Automaatne ajavöönd"
 
-#: oobe.rs:1218
+#: oobe.rs:1094
 msgid "Uses your location to keep the time zone right when you travel."
 msgstr "Kasutab sinu asukohta, et reisides ajavöönd õige püsiks."
 
-#: oobe.rs:1251
+#: oobe.rs:1127
 msgid "_Finish Setup"
 msgstr "_Lõpeta seadistamine"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your Disk Is Encrypted"
 msgstr "Sinu ketas on krüptitud"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your data is protected. The passphrase is asked every time the computer starts."
 msgstr "Sinu andmed on kaitstud. Paroolifraasi küsitakse iga kord, kui arvuti käivitub."
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Disk Encryption"
 msgstr "Ketta krüptimine"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Encryption protects your data if the computer is lost or stolen."
 msgstr "Krüptimine kaitseb sinu andmeid, kui arvuti kaob või varastatakse."
 
-#: oobe.rs:1261
+#: oobe.rs:1137
 msgid "Not available on this installation"
 msgstr "Selles paigalduses pole saadaval"
 
-#: oobe.rs:1267
+#: oobe.rs:1143
 msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
 msgstr "Krüptimine kaitseb sinu faile, kui arvuti kaob või varastatakse. Ilma paroolifraasita ei saa keegi ketast lugeda."
 
-#: oobe.rs:1270
+#: oobe.rs:1146
 msgid "Encrypt the Disk"
 msgstr "Krüpti ketas"
 
-#: oobe.rs:1271
+#: oobe.rs:1147
 msgid "The passphrase is asked every time the computer starts."
 msgstr "Paroolifraasi küsitakse iga kord, kui arvuti käivitub."
 
-#: oobe.rs:1279
+#: oobe.rs:1155
 msgid "Encryption starts at the next restart"
 msgstr "Krüptimine algab järgmisel taaskäivitusel"
 
-#: oobe.rs:1280
+#: oobe.rs:1156
 msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
 msgstr "Seejärel krüptitakse ketas taustal, kuni sa arvutit kasutad. Kui paroolifraas kaob, ei saa keegi andmeid taastada."
 
-#: oobe.rs:1377
+#: oobe.rs:1253
 msgid "Preparing MAN"
 msgstr "MAN-i ettevalmistamine"
 
-#: oobe.rs:1378
+#: oobe.rs:1254
 msgid "Getting everything ready…"
 msgstr "Kõike valmistatakse ette…"
 
-#: oobe.rs:1383
+#: oobe.rs:1259
 msgid "_Reboot"
 msgstr "_Taaskäivita"
 
-#: oobe.rs:1385
+#: oobe.rs:1261
 msgid "_Go Back"
 msgstr "_Tagasi"
 
-#: oobe.rs:1399
+#: oobe.rs:1275
 msgid "Preparing"
 msgstr "Ettevalmistamine"
 
-#: oobe.rs:1412
+#: oobe.rs:1288
 msgid "Setup Log"
 msgstr "Seadistuslogi"
 
-#: oobe.rs:1444
+#: oobe.rs:1320
 msgid "All Done!"
 msgstr "Kõik valmis!"
 
-#: oobe.rs:1454
+#: oobe.rs:1330
 msgid "Something Went Wrong"
 msgstr "Midagi läks valesti"
+
+#: recovery.rs:113
+msgid "MAN Recovery"
+msgstr "MAN-i taaste"
+
+#: recovery.rs:114
+msgid "Restore your system, reinstall MAN or open a Terminal. First, an administrator of this computer signs in."
+msgstr "Taasta oma süsteem, paigalda MAN uuesti või ava terminal. Kõigepealt logib sisse selle arvuti administraator."
+
+#: recovery.rs:122
+msgid "Administrator"
+msgstr "Administraator"
+
+#: recovery.rs:131
+msgid "No installed system was found on this disk. You can reinstall MAN."
+msgstr "Sellelt kettalt ei leitud paigaldatud süsteemi. Saad MAN-i uuesti paigaldada."
+
+#: recovery.rs:198
+msgid "This computer has MAN {version}."
+msgstr "Selles arvutis on MAN {version}."
+
+#: recovery.rs:199
+msgid "What Would You Like to Do?"
+msgstr "Mida soovid teha?"
+
+#: recovery.rs:202
+msgid "Restore a Snapshot"
+msgstr "Taasta hetktõmmis"
+
+#: recovery.rs:202
+msgid "Your system broke? Go back to a moment when everything worked. Your files stay."
+msgstr "Süsteem läks katki? Mine tagasi hetke, mil kõik töötas. Sinu failid jäävad alles."
+
+#: recovery.rs:203
+msgid "Download the newest MAN and install it again. Your files, accounts and settings stay."
+msgstr "Laadi alla uusim MAN ja paigalda see uuesti. Sinu failid, kontod ja seaded jäävad alles."
+
+#: recovery.rs:204
+msgid "Terminal"
+msgstr "Terminal"
+
+#: recovery.rs:204
+msgid "For experts: type commands with full control of the computer."
+msgstr "Asjatundjatele: sisesta käske arvuti täieliku juhtimisega."
+
+#: recovery.rs:207
+msgid "There are no snapshots on this computer."
+msgstr "Selles arvutis pole hetktõmmiseid."
+
+#: recovery.rs:240
+msgid "Choose a moment when everything worked. The files in your home folder stay as they are now."
+msgstr "Vali hetk, mil kõik töötas. Sinu kodukausta failid jäävad nii, nagu need praegu on."
+
+#: recovery.rs:257
+msgid "Restore “{name}”?"
+msgstr "Kas taastada „{name}“?"
+
+#: recovery.rs:258
+msgid "Your system goes back to how it was on {date}. Your files stay. The system as it is now is kept as a snapshot, so you can come back to it."
+msgstr "Süsteem läheb tagasi olekusse, milles see oli {date}. Sinu failid jäävad alles. Süsteem praegusel kujul hoitakse hetktõmmisena, nii et saad selle juurde tagasi tulla."
+
+#: recovery.rs:261
+msgid "_Restore"
+msgstr "_Taasta"
+
+#: recovery.rs:270
+msgid "Restoring Your System"
+msgstr "Süsteemi taastamine"
+
+#: recovery.rs:275
+msgid "Your system was restored. Restart to use it."
+msgstr "Sinu süsteem on taastatud. Kasutamiseks taaskäivita."
+
+#: recovery.rs:283
+msgid "MAN Recovery downloads the newest MAN. Connect to a network first."
+msgstr "MAN-i taaste laadib alla uusima MAN-i. Ühendu kõigepealt võrguga."
+
+#: recovery.rs:388
+msgid "Looking for the newest MAN…"
+msgstr "Uusima MAN-i otsimine…"
+
+#: recovery.rs:394
+msgid "Your files, accounts and settings stay."
+msgstr "Sinu failid, kontod ja seaded jäävad alles."
+
+#: recovery.rs:395
+msgid "Apps you installed as Flatpaks stay; other apps you added may need to be installed again."
+msgstr "Flatpakina paigaldatud rakendused jäävad alles; teised lisatud rakendused tuleb võib-olla uuesti paigaldada."
+
+#: recovery.rs:396
+msgid "The system as it is now is kept as a snapshot."
+msgstr "Süsteem praegusel kujul hoitakse hetktõmmisena."
+
+#: recovery.rs:397
+msgid "Keep the computer plugged in. This takes a while."
+msgstr "Hoia arvuti vooluvõrgus. See võtab aega."
+
+#: recovery.rs:407
+msgid "_Reinstall MAN"
+msgstr "_Paigalda MAN uuesti"
+
+#: recovery.rs:426
+msgid "MAN {version} ({size}) will be downloaded and installed on this computer."
+msgstr "MAN {version} ({size}) laaditakse alla ja paigaldatakse sellesse arvutisse."
+
+#: recovery.rs:437
+msgid "No MAN for this computer was found."
+msgstr "Selle arvuti jaoks MAN-i ei leitud."
+
+#: recovery.rs:445
+msgid "Reinstalling MAN"
+msgstr "MAN-i uuesti paigaldamine"
+
+#: recovery.rs:460
+msgid "MAN was installed again. Your files and accounts were kept. Restart to use it."
+msgstr "MAN paigaldati uuesti. Sinu failid ja kontod jäid alles. Kasutamiseks taaskäivita."
+
+#: recovery.rs:472
+msgid "Do not turn the computer off."
+msgstr "Ära lülita arvutit välja."
+
+#: recovery.rs:519
+msgid "That Did Not Work"
+msgstr "See ei õnnestunud"
+
+#: recovery.rs:521
+msgid "_Details"
+msgstr "_Üksikasjad"
+
+#: recovery.rs:529
+msgid "_Restart"
+msgstr "_Taaskäivita"
+
+#: recovery.rs:533
+msgid "_Back to MAN Recovery"
+msgstr "_Tagasi MAN-i taastesse"
+
+#: recovery.rs:575
+msgid "_Shut Down"
+msgstr "_Lülita välja"
+
+#: recovery.rs:605
+msgid "Looking at this computer…"
+msgstr "Selle arvuti vaatamine…"
 
 #: snapshots.rs:84
 msgid "Daily"
@@ -1559,10 +1727,6 @@ msgstr ""
 "Pärast taaskäivitust naaseb süsteem olekusse „{description}“ ({date}). Sinu isiklikud failid ei muutu.\n"
 "\n"
 "Praegune süsteem salvestatakse enne hetktõmmisena, nii et seda saab tagasi võtta."
-
-#: snapshots.rs:278
-msgid "_Restore"
-msgstr "_Taasta"
 
 #: snapshots.rs:291
 msgid "Restart to Finish Restoring"
@@ -2058,199 +2222,211 @@ msgstr "Paketti ei saanud paigaldada."
 msgid "The app's menu entry is not valid."
 msgstr "Rakenduse menüükirje on vigane."
 
-#: install.rs:16
+#: install.rs:17
 msgid "Checking the installation plan"
 msgstr "Paigaldusplaani kontrollimine"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Preparing the disk"
 msgstr "Ketta ettevalmistamine"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Copying MAN to the disk"
 msgstr "MAN-i kopeerimine kettale"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Configuring the new system"
 msgstr "Uue süsteemi seadistamine"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Installing the bootloader"
 msgstr "Alglaaduri paigaldamine"
 
-#: install.rs:16
+#: install.rs:17
+msgid "Preparing MAN Recovery"
+msgstr "MAN-i taaste ettevalmistamine"
+
+#: install.rs:17
 msgid "Creating the first snapshot"
 msgstr "Esimese hetktõmmise loomine"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Finishing up"
 msgstr "Lõpetamine"
 
-#: install.rs:199
+#: install.rs:232
 msgid "Removing old partition signatures"
 msgstr "Vanade sektsioonisignatuuride eemaldamine"
 
-#: install.rs:205
+#: install.rs:238
 msgid "Creating partitions"
 msgstr "Sektsioonide loomine"
 
-#: install.rs:226
+#: install.rs:259
 msgid "Formatting the EFI system partition"
 msgstr "EFI süsteemisektsiooni vormindamine"
 
-#: install.rs:234
+#: install.rs:267
 msgid "Encrypting the system partition"
 msgstr "Süsteemisektsiooni krüptimine"
 
-#: install.rs:246
+#: install.rs:279
 msgid "Formatting the boot partition"
 msgstr "Alglaadimissektsiooni vormindamine"
 
-#: install.rs:249
+#: install.rs:282
 msgid "Creating the Btrfs file system"
 msgstr "Btrfs-failisüsteemi loomine"
 
-#: install.rs:258
+#: install.rs:293
 msgid "Removing old file system signatures"
 msgstr "Vanade failisüsteemisignatuuride eemaldamine"
 
-#: install.rs:330
+#: install.rs:372
 msgid "Unlocking the encrypted installation"
 msgstr "Krüptitud paigalduse lukust avamine"
 
-#: install.rs:356
+#: install.rs:399
 msgid "Saving the current system as a snapshot"
 msgstr "Praeguse süsteemi salvestamine hetktõmmisena"
 
-#: install.rs:362
+#: install.rs:406
 msgid "Removing the previous system"
 msgstr "Eelmise süsteemi eemaldamine"
 
-#: install.rs:571
+#: install.rs:615
 msgid "Writing file system table"
 msgstr "Failisüsteemide tabeli kirjutamine"
 
-#: install.rs:593
+#: install.rs:639
 msgid "Setting computer name and identity"
 msgstr "Arvuti nime ja identiteedi määramine"
 
-#: install.rs:608
+#: install.rs:654
 msgid "Removing the live session accounts"
 msgstr "Live-seansi kontode eemaldamine"
 
-#: install.rs:641
+#: install.rs:687
 msgid "Creating your account"
 msgstr "Sinu konto loomine"
 
-#: install.rs:649
+#: install.rs:699
 msgid "Preparing MAN Setup for the first start"
 msgstr "MAN Setupi ettevalmistamine esimeseks käivituseks"
 
-#: install.rs:655
+#: install.rs:705
 msgid "Setting time zone and keyboard"
 msgstr "Ajavööndi ja klaviatuuri määramine"
 
-#: install.rs:680
+#: install.rs:730
 msgid "Removing the installer from the new system"
 msgstr "Paigaldaja eemaldamine uuest süsteemist"
 
-#: install.rs:687
+#: install.rs:737
 msgid "Building the boot image (initramfs)"
 msgstr "Alglaadimistõmmise (initramfs) koostamine"
 
-#: install.rs:717
+#: install.rs:767
 msgid "Configuring GRUB"
 msgstr "GRUB-i seadistamine"
 
-#: install.rs:735
+#: install.rs:785
 msgid "Installing GRUB to the EFI system partition"
 msgstr "GRUB-i paigaldamine EFI süsteemisektsiooni"
 
-#: install.rs:752
+#: install.rs:802
 msgid "Installing the fallback boot loader"
 msgstr "Varualglaaduri paigaldamine"
 
-#: install.rs:759
+#: install.rs:809
 msgid "Writing the boot menu"
 msgstr "Alglaadimismenüü kirjutamine"
 
-#: install.rs:780
+#: install.rs:834
 msgid "Disk ready"
 msgstr "Ketas valmis"
 
-#: install.rs:793
+#: install.rs:853
+msgid "Keeping your accounts and settings"
+msgstr "Sinu kontode ja seadete säilitamine"
+
+#: install.rs:869
+msgid "Skipped"
+msgstr "Vahele jäetud"
+
+#: install.rs:873
 msgid "Creating a snapshot of the fresh system"
 msgstr "Uue süsteemi hetktõmmise loomine"
 
-#: install.rs:799
+#: install.rs:879
 msgid "Adding the snapshot to the boot menu"
 msgstr "Hetktõmmise lisamine alglaadimismenüüsse"
 
-#: install.rs:803
+#: install.rs:883
 msgid "Unmounting"
 msgstr "Lahtihaakimine"
 
-#: install.rs:85
+#: install.rs:93
 msgid "The installer backend must run as root."
 msgstr "Paigaldaja abiline peab töötama root-kasutajana."
 
-#: install.rs:88
+#: install.rs:121
 msgid "This computer was not started in UEFI mode. MAN requires UEFI."
 msgstr "Seda arvutit ei käivitatud UEFI-režiimis. MAN vajab UEFI-t."
 
-#: install.rs:92
+#: install.rs:125
 msgid "The username is not valid."
 msgstr "Kasutajanimi pole sobiv."
 
-#: install.rs:95
+#: install.rs:128
 msgid "A password is required."
 msgstr "Parool on nõutav."
 
-#: install.rs:99
+#: install.rs:132
 msgid "The computer name is not valid."
 msgstr "Arvuti nimi pole sobiv."
 
-#: install.rs:105
+#: install.rs:138
 msgid "Unknown language."
 msgstr "Tundmatu keel."
 
-#: install.rs:111
+#: install.rs:144
 msgid "The encryption passphrase must have at least 8 characters."
 msgstr "Krüptimise paroolifraas peab olema vähemalt 8 märki."
 
-#: install.rs:122
+#: install.rs:155
 msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
 msgstr "Ketas muutus pärast paigalduse kinnitamist. Midagi ei muudetud; vaata üle ja kinnita uuesti."
 
-#: install.rs:138
+#: install.rs:171
 msgid "Choose a system partition."
 msgstr "Vali süsteemisektsioon."
 
-#: install.rs:145
+#: install.rs:178
 msgid "The confirmed disk does not hold the chosen system partition."
 msgstr "Kinnitatud ketas ei sisalda valitud süsteemisektsiooni."
 
-#: install.rs:157
+#: install.rs:190
 msgid "The boot partition must be separate from the EFI and system partitions."
 msgstr "Alglaadimissektsioon peab olema EFI- ja süsteemisektsioonist eraldi."
 
-#: install.rs:160
+#: install.rs:193
 msgid "The boot partition must be at least 512 MB."
 msgstr "Alglaadimissektsioon peab olema vähemalt 512 MB."
 
-#: install.rs:175
+#: install.rs:208
 msgid "No installation chosen."
 msgstr "Paigaldust pole valitud."
 
-#: install.rs:179
+#: install.rs:212
 msgid "The confirmed disk does not hold the chosen installation."
 msgstr "Kinnitatud ketas ei sisalda valitud paigaldust."
 
-#: install.rs:337
+#: install.rs:379
 msgid "The encrypted installation has no MAN_BOOT partition."
 msgstr "Krüptitud paigaldusel pole MAN_BOOT sektsiooni."
 
-#: install.rs:695
+#: install.rs:745
 msgid "No kernel with matching modules was found in /boot."
 msgstr "Kaustast /boot ei leitud sobivate moodulitega tuuma."
 
@@ -2258,41 +2434,109 @@ msgstr "Kaustast /boot ei leitud sobivate moodulitega tuuma."
 msgid "The language must be changed by the system helper."
 msgstr "Keelt peab muutma süsteemiabiline."
 
-#: oobe.rs:204
+#: oobe.rs:205
 msgid "Applying your settings"
 msgstr "Sinu seadete rakendamine"
 
-#: oobe.rs:212
+#: oobe.rs:213
 msgid "Preparing disk encryption"
 msgstr "Ketta krüptimise ettevalmistamine"
 
-#: oobe.rs:216
+#: oobe.rs:217
 msgid "Finishing"
 msgstr "Lõpetamine"
 
-#: oobe.rs:100
+#: oobe.rs:101
 msgid "MAN Setup must be finished by the system helper."
 msgstr "MAN Setupi peab lõpetama süsteemiabiline."
 
-#: oobe.rs:103
+#: oobe.rs:104
 msgid "MAN Setup has already been completed on this computer."
 msgstr "MAN Setup on selles arvutis juba tehtud."
 
-#: oobe.rs:124
+#: oobe.rs:125
 msgid "Unknown accent color."
 msgstr "Tundmatu rõhuvärv."
 
-#: oobe.rs:128
+#: oobe.rs:129
 msgid "The chosen wallpaper is not available."
 msgstr "Valitud taustapilt pole saadaval."
 
-#: oobe.rs:146
+#: oobe.rs:147
 msgid "This system cannot be encrypted."
 msgstr "Seda süsteemi ei saa krüptida."
 
-#: oobe.rs:257
+#: oobe.rs:258
 msgid "The setup key is missing, so encryption cannot continue in the background."
 msgstr "Seadistusvõti puudub, seega ei saa krüptimine taustal jätkuda."
+
+#: recovery.rs:450
+msgid "Downloading MAN"
+msgstr "MAN-i allalaadimine"
+
+#: recovery.rs:459
+msgid "Opening the downloaded MAN"
+msgstr "Allalaaditud MAN-i avamine"
+
+#: recovery.rs:85
+msgid "Leaving out what Recovery does not need"
+msgstr "Taastele mittevajaliku väljajätmine"
+
+#: recovery.rs:87
+msgid "Setting up the recovery system"
+msgstr "Taastesüsteemi seadistamine"
+
+#: recovery.rs:89
+msgid "Adding its start-up files"
+msgstr "Selle käivitusfailide lisamine"
+
+#: recovery.rs:104
+msgid "MAN Recovery is ready"
+msgstr "MAN-i taaste on valmis"
+
+#: recovery.rs:64
+msgid "This MAN has no MAN Recovery program."
+msgstr "Sellel MAN-il pole MAN-i taaste programmi."
+
+#: recovery.rs:82
+msgid "MAN Recovery was not started."
+msgstr "MAN-i taastet ei alustatud."
+
+#: recovery.rs:206
+msgid "The installed system has no kernel for MAN Recovery."
+msgstr "Paigaldatud süsteemil pole MAN-i taaste jaoks tuuma."
+
+#: recovery.rs:234
+msgid "MAN Recovery was not started from the boot menu."
+msgstr "MAN-i taastet ei käivitatud alglaadimismenüüst."
+
+#: recovery.rs:235
+msgid "The disk of this MAN was not found."
+msgstr "Selle MAN-i ketast ei leitud."
+
+#: recovery.rs:240
+msgid "This works only in MAN Recovery."
+msgstr "See töötab ainult MAN-i taastes."
+
+#: recovery.rs:290
+msgid "The password is not correct."
+msgstr "Parool pole õige."
+
+#: recovery.rs:333
+msgid "Invalid snapshot id."
+msgstr "Vigane hetktõmmise ID."
+
+#: recovery.rs:405
+msgid "No MAN for this computer was found on MAN's download page."
+msgstr "MAN-i allalaadimislehelt ei leitud selle arvuti jaoks MAN-i."
+
+#: recovery.rs:434
+msgid "The downloaded MAN is damaged (its checksum does not match). Try again."
+msgstr "Allalaaditud MAN on kahjustatud (kontrollsumma ei klapi). Proovi uuesti."
+
+#: recovery.rs:491
+msgid "The partition of this MAN was not found."
+msgstr "Selle MAN-i partitsiooni ei leitud."
 
 #: snapshots.rs:48
 msgid "The system is not installed on Btrfs, so snapshots are not available."
@@ -2301,10 +2545,6 @@ msgstr "Süsteem pole paigaldatud Btrfs-ile, seega hetktõmmised pole saadaval."
 #: snapshots.rs:50
 msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
 msgstr "Hetktõmmise taastamine ootab taaskäivitust. Lõpetamiseks taaskäivita esmalt arvuti."
-
-#: snapshots.rs:99
-msgid "Invalid snapshot id."
-msgstr "Vigane hetktõmmise ID."
 
 #: update.rs:32
 msgid "Checking the update"
@@ -2334,43 +2574,39 @@ msgstr "Taaskäivituse ettevalmistamine"
 msgid "Unpacked"
 msgstr "Lahti pakitud"
 
-#: update.rs:278
+#: update.rs:285
 msgid "Accounts"
 msgstr "Kontod"
 
-#: update.rs:331
+#: update.rs:338
 msgid "Reinstalling kept apps"
 msgstr "Säilitatud rakenduste uuesti paigaldamine"
 
-#: update.rs:386
+#: update.rs:404
 msgid "Removing installer-only software"
 msgstr "Ainult paigaldaja tarkvara eemaldamine"
 
-#: update.rs:426
+#: update.rs:450
 msgid "Building the update boot image"
 msgstr "Uuenduse alglaadimistõmmise koostamine"
 
-#: update.rs:429
+#: update.rs:453
 msgid "Adding the one-time boot entry"
 msgstr "Ühekordse alglaadimiskirje lisamine"
 
-#: update.rs:464
+#: update.rs:488
 msgid "The update is genuine"
 msgstr "Uuendus on ehtne"
 
-#: update.rs:470
+#: update.rs:494
 msgid "Snapshot created"
 msgstr "Hetktõmmis loodud"
 
-#: update.rs:472
-msgid "Skipped"
-msgstr "Vahele jäetud"
-
-#: update.rs:481
+#: update.rs:505
 msgid "Update area ready"
 msgstr "Uuendusala valmis"
 
-#: update.rs:504
+#: update.rs:528
 msgid "Preparing the new system"
 msgstr "Uue süsteemi ettevalmistamine"
 
@@ -2382,19 +2618,19 @@ msgstr "Uuendusfail on rikutud (kontrollsumma ei klapi). Laadi see uuesti alla."
 msgid "The update file could not be read completely."
 msgstr "Uuendusfaili ei saanud täielikult lugeda."
 
-#: update.rs:398
+#: update.rs:416
 msgid "The update contains no kernel."
 msgstr "Uuendus ei sisalda tuuma."
 
-#: update.rs:446
+#: update.rs:470
 msgid "Updates must be installed by the system helper."
 msgstr "Uuendusi peab paigaldama süsteemiabiline."
 
-#: update.rs:456
+#: update.rs:480
 msgid "The chosen installation was not found."
 msgstr "Valitud paigaldust ei leitud."
 
-#: update.rs:458
+#: update.rs:482
 msgid "Only the running MAN installation can be updated."
 msgstr "Uuendada saab ainult töötavat MAN-i paigaldust."
 
@@ -2521,6 +2757,10 @@ msgstr "Seadista oma uus MAN-i arvuti"
 #: man-oobe.desktop
 msgid "First-start setup of MAN"
 msgstr "MAN-i esmane seadistamine"
+
+#: com.man.Recovery.desktop
+msgid "Restore or reinstall MAN"
+msgstr "Taasta või paigalda MAN uuesti"
 
 #: com.man.UpdateCheck.desktop
 msgid "MAN Updates"

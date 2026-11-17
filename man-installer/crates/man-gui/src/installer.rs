@@ -424,7 +424,7 @@ fn destination_page(ctx: &C) -> adw::NavigationPage {
                 &[("size", &human_size(m.root_size))],
             )));
         } else {
-            man_row.set_subtitle(tr("No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose \u{201c}MAN boot loader + space for MAN\u{201d}."));
+            man_row.set_subtitle(tr("No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."));
             man_row.set_sensitive(false);
         }
     }

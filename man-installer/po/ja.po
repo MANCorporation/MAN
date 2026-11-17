@@ -314,55 +314,55 @@ msgstr "この操作には管理者権限が必要です。"
 msgid "The system helper stopped unexpectedly."
 msgstr "システムヘルパーが予期せず停止しました。"
 
-#: installer.rs:78
+#: installer.rs:89
 msgid "No EFI system partition"
 msgstr "EFI システムパーティションがありません"
 
-#: installer.rs:82
+#: installer.rs:93
 msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
 msgstr "空き容量は {free} だけです。MAN には {need} 必要です。Windows の DUHACH! で空き容量を増やしてください。"
 
-#: installer.rs:83
+#: installer.rs:94
 msgid "No free space. Start DUHACH! in Windows to make room for MAN."
 msgstr "空き容量がありません。Windows で DUHACH! を起動して MAN 用の領域を作ってください。"
 
-#: installer.rs:92
+#: installer.rs:103
 msgid "MAN is running from this disk"
 msgstr "MAN はこのディスクから起動しています"
 
-#: installer.rs:96
+#: installer.rs:107
 msgid "In use: a partition is mounted"
 msgstr "使用中: パーティションがマウントされています"
 
-#: installer.rs:98
+#: installer.rs:109
 msgid "Too small, MAN needs {need}"
 msgstr "小さすぎます。MAN には {need} 必要です"
 
-#: installer.rs:108
+#: installer.rs:119
 msgid "Install MAN"
 msgstr "MAN をインストール"
 
-#: installer.rs:126
+#: installer.rs:137
 msgid "MAN is being installed. Please wait until it finishes."
 msgstr "MAN をインストールしています。完了するまでお待ちください。"
 
-#: installer.rs:143
+#: installer.rs:154
 msgid "Language"
 msgstr "言語"
 
-#: installer.rs:155
+#: installer.rs:166
 msgid "_Restart in This Language"
 msgstr "この言語で再起動(_R)"
 
-#: installer.rs:167
+#: installer.rs:178
 msgid "The live session restarts in the chosen language, and MAN is installed in it."
 msgstr "ライブセッションが選んだ言語で再起動し、MAN もその言語でインストールされます。"
 
-#: installer.rs:213
+#: installer.rs:224
 msgid "Welcome to MAN"
 msgstr "MAN へようこそ"
 
-#: installer.rs:214
+#: installer.rs:225
 msgid ""
 "A fast, open and fully customizable GNOME system.\n"
 "Install it on this computer, or keep exploring the live session."
@@ -370,543 +370,567 @@ msgstr ""
 "高速でオープン、自由にカスタマイズできる GNOME システムです。\n"
 "このコンピューターにインストールするか、ライブセッションを引き続きお試しください。"
 
-#: installer.rs:218
+#: installer.rs:229
 msgid "_Install MAN…"
 msgstr "MAN をインストール(_I)…"
 
-#: installer.rs:220
+#: installer.rs:231
 msgid "_Keep Trying MAN"
 msgstr "MAN を試し続ける(_K)"
 
-#: installer.rs:223
+#: installer.rs:234
 msgid "Looking for disks…"
 msgstr "ディスクを検索しています…"
 
-#: installer.rs:250
+#: installer.rs:261
 msgid "Welcome"
 msgstr "ようこそ"
 
-#: installer.rs:265
+#: installer.rs:276
 msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
 msgstr "このコンピューターはレガシー BIOS モードで起動しています。MAN は UEFI コンピューターにのみインストールできます。再起動して UEFI の起動オプションを選んでください。"
 
-#: installer.rs:283
+#: installer.rs:294
 msgid "The system helper returned no disk information."
 msgstr "システムヘルパーからディスク情報が返されませんでした。"
 
-#: installer.rs:348
+#: installer.rs:372
 msgid "  ·  EFI"
 msgstr "  ·  EFI"
 
-#: installer.rs:356
+#: installer.rs:380
 msgid "_Next"
 msgstr "次へ(_N)"
 
-#: installer.rs:364
+#: installer.rs:388
 msgid "Erase Disk and Install MAN"
 msgstr "ディスクを消去して MAN をインストール"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Everything on the chosen disk is deleted, Windows included."
 msgstr "選んだディスクのすべてが消去されます。Windows も含みます。"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Recommended. Everything on the chosen disk is deleted."
 msgstr "おすすめ。選んだディスクのすべてが消去されます。"
 
-#: installer.rs:369
+#: installer.rs:393
 msgid "Install Alongside Windows"
 msgstr "Windows と並べてインストール"
 
-#: installer.rs:370
+#: installer.rs:394
 msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
 msgstr "おすすめ。MAN は Windows の横の空き領域を使います。Windows とそのファイルは残ります。起動のたびにシステムを選べます。"
 
-#: installer.rs:377
+#: installer.rs:401
 msgid "Reinstall MAN"
 msgstr "MAN を再インストール"
 
-#: installer.rs:378
+#: installer.rs:402
 msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
 msgstr "システムを置き換えますが、/home の個人ファイルは残します。現在のシステムはスナップショットとして保存されます。"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "Custom Partitions"
 msgstr "カスタムパーティション"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "For experts: choose partitions yourself, or create them with Disks."
 msgstr "上級者向け: パーティションを自分で選ぶか、ディスクアプリで作成します。"
 
-#: installer.rs:392
+#: installer.rs:418
+msgid "Erase an External Disk and Install MAN"
+msgstr "外付けディスクを消去して MAN をインストール"
+
+#: installer.rs:419
+msgid "Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."
+msgstr "選んだ外付けディスクの内容はすべて消去されます。Mac の内蔵ディスクは表示されず、変更されません。"
+
+#: installer.rs:420
+msgid "Install on This Mac"
+msgstr "この Mac にインストール"
+
+#: installer.rs:422
+msgid "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed."
+msgstr "おすすめ。macOS で用意した {size} に入れます。macOS とそのパーティションは変更されません。"
+
+#: installer.rs:427
+msgid "No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."
+msgstr "MAN 用の領域がまだ用意されていません。macOS で MAN USB メモリーの MAN-Mac/install-man.sh を実行し、“MAN boot loader + space for MAN” を選んでください。"
+
+#: installer.rs:433
 msgid "Disk"
 msgstr "ディスク"
 
-#: installer.rs:392
+#: installer.rs:433
 msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
 msgstr "消去するディスクを選んでください。使えないディスクは理由とともに表示されます。"
 
-#: installer.rs:418
+#: installer.rs:459
 msgid "No disks were found"
 msgstr "ディスクが見つかりません"
 
-#: installer.rs:425
+#: installer.rs:466
 msgid "Free Space Next to Windows"
 msgstr "Windows の横の空き領域"
 
-#: installer.rs:426
+#: installer.rs:467
 msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
 msgstr "Windows のパーティションには手を加えません。MAN は EFI システムパーティションを共有し、起動メニューに Windows を追加します。"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "{size} free"
 msgstr "空き {size}"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "no free space"
 msgstr "空き容量なし"
 
-#: installer.rs:437
+#: installer.rs:478
 msgid "{model} (Windows)"
 msgstr "{model} (Windows)"
 
-#: installer.rs:456
+#: installer.rs:497
 msgid "Installation to Replace"
 msgstr "置き換えるインストール"
 
-#: installer.rs:477
+#: installer.rs:518
 msgid "no home folders"
 msgstr "ホームフォルダーなし"
 
-#: installer.rs:479
+#: installer.rs:520
 msgid "home folders: {list}"
 msgstr "ホームフォルダー: {list}"
 
-#: installer.rs:481
+#: installer.rs:522
 msgid "snapshots: {n}"
 msgstr "スナップショット: {n}"
 
-#: installer.rs:485
+#: installer.rs:526
 msgid "MAN on {model}"
 msgstr "{model} 上の MAN"
 
-#: installer.rs:499
+#: installer.rs:540
 msgid "Passphrase for {device}"
 msgstr "{device} のパスフレーズ"
 
-#: installer.rs:500
+#: installer.rs:541
 msgid "Unlock"
 msgstr "ロック解除"
 
-#: installer.rs:537
+#: installer.rs:578
 msgid "The installation could not be inspected."
 msgstr "インストールを調べられませんでした。"
 
-#: installer.rs:554
+#: installer.rs:595
 msgid "Partitions"
 msgstr "パーティション"
 
-#: installer.rs:555
+#: installer.rs:596
 msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
 msgstr "システムパーティションは Btrfs でフォーマットされ、@system、@home、@snapshots を含みます。MAN が起動しているディスクのパーティションは表示されません。"
 
-#: installer.rs:557
+#: installer.rs:598
 msgid "Open Disks to create or resize partitions"
 msgstr "ディスクアプリを開いてパーティションを作成・サイズ変更"
 
-#: installer.rs:559
+#: installer.rs:600
 msgid "Refresh the partition list"
 msgstr "パーティション一覧を更新"
 
-#: installer.rs:567
+#: installer.rs:608
 msgid "Choose a partition"
 msgstr "パーティションを選択"
 
-#: installer.rs:579
+#: installer.rs:620
 msgid "EFI System Partition"
 msgstr "EFI システムパーティション"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Format EFI System Partition"
 msgstr "EFI システムパーティションをフォーマット"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Leave off to keep boot loaders of other systems"
 msgstr "他のシステムのブートローダーを残すにはオフのままにしてください"
 
-#: installer.rs:582
+#: installer.rs:623
 msgid "System Partition (formatted as Btrfs)"
 msgstr "システムパーティション (Btrfs でフォーマット)"
 
-#: installer.rs:583
+#: installer.rs:624
 msgid "Boot Partition (needed with encryption)"
 msgstr "ブートパーティション (暗号化に必要)"
 
-#: installer.rs:642
+#: installer.rs:683
 msgid "Partition list refreshed"
 msgstr "パーティション一覧を更新しました"
 
-#: installer.rs:650
+#: installer.rs:691
 msgid "Security"
 msgstr "セキュリティ"
 
-#: installer.rs:652
+#: installer.rs:693
 msgid "Encrypt the System"
 msgstr "システムを暗号化"
 
-#: installer.rs:653
+#: installer.rs:694
 msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
 msgstr "コンピューターを紛失したり盗まれたりしてもデータを守ります。起動するたびにパスフレーズを尋ねます。"
 
-#: installer.rs:656
+#: installer.rs:697
 msgid "Passphrase"
 msgstr "パスフレーズ"
 
-#: installer.rs:657
+#: installer.rs:698
 msgid "Confirm Passphrase"
 msgstr "パスフレーズの確認"
 
-#: installer.rs:659
+#: installer.rs:700
 msgid "Keep this passphrase safe"
 msgstr "このパスフレーズは安全に保管してください"
 
-#: installer.rs:660
+#: installer.rs:701
 msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
 msgstr "失くすと、誰もデータを復元できません。カーネルと起動ファイルは暗号化されていない小さなブートパーティションに置かれます。"
 
-#: installer.rs:732
+#: installer.rs:774
 msgid "The passphrase needs at least 8 characters."
 msgstr "パスフレーズは 8 文字以上にしてください。"
 
-#: installer.rs:734
+#: installer.rs:776
 msgid "The passphrases do not match."
 msgstr "パスフレーズが一致しません。"
 
-#: installer.rs:748
+#: installer.rs:790
 msgid "Choose a disk."
 msgstr "ディスクを選んでください。"
 
-#: installer.rs:758
+#: installer.rs:800
 msgid "Choose the disk with Windows."
 msgstr "Windows のあるディスクを選んでください。"
 
-#: installer.rs:767
+#: installer.rs:809
 msgid "Choose the installation to replace."
 msgstr "置き換えるインストールを選んでください。"
 
-#: installer.rs:768
+#: installer.rs:810
 msgid "Unlock the encrypted installation first."
 msgstr "先に暗号化されたインストールのロックを解除してください。"
 
-#: installer.rs:769
+#: installer.rs:811
 msgid "This partition holds no MAN system."
 msgstr "このパーティションには MAN システムがありません。"
 
-#: installer.rs:776
+#: installer.rs:818
 msgid "Choose an EFI system partition."
 msgstr "EFI システムパーティションを選んでください。"
 
-#: installer.rs:778
+#: installer.rs:820
 msgid "Choose the system partition."
 msgstr "システムパーティションを選んでください。"
 
-#: installer.rs:780
+#: installer.rs:822
 msgid "The EFI and system partitions must be different."
 msgstr "EFI パーティションとシステムパーティションは別にしてください。"
 
-#: installer.rs:782
+#: installer.rs:824
 msgid "Encryption needs a separate boot partition."
 msgstr "暗号化には別のブートパーティションが必要です。"
 
-#: installer.rs:791
+#: installer.rs:833
 msgid "The system partition must be at least {size}."
 msgstr "システムパーティションは {size} 以上必要です。"
 
-#: installer.rs:793
+#: installer.rs:835
 msgid "The EFI partition is not FAT formatted; turn on formatting."
 msgstr "EFI パーティションが FAT でフォーマットされていません。フォーマットをオンにしてください。"
 
-#: installer.rs:795
+#: installer.rs:837
 msgid "The system partition is mounted; unmount it in Disks first."
 msgstr "システムパーティションがマウントされています。先にディスクアプリでアンマウントしてください。"
 
-#: installer.rs:817
+#: installer.rs:859
 msgid "Where Should MAN Be Installed?"
 msgstr "MAN をどこにインストールしますか?"
 
-#: installer.rs:824
+#: installer.rs:866
 msgid "Time and Keyboard"
 msgstr "時刻とキーボード"
 
-#: installer.rs:829
+#: installer.rs:871
 msgid "Time Zone"
 msgstr "タイムゾーン"
 
-#: installer.rs:833
+#: installer.rs:875
 msgid "Keyboard Layout"
 msgstr "キーボード配列"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Test Your Keyboard"
 msgstr "キーボードを試す"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Type here to check that your keys produce the right characters."
 msgstr "ここに入力して、キーが正しい文字を入力するか確認してください。"
 
-#: installer.rs:844
+#: installer.rs:886
 msgid "Type here"
 msgstr "ここに入力"
 
-#: installer.rs:877
+#: installer.rs:919
 msgid "Time Zone and Keyboard"
 msgstr "タイムゾーンとキーボード"
 
-#: installer.rs:920
+#: installer.rs:962
 msgid "No disk chosen"
 msgstr "ディスクが選ばれていません"
 
-#: installer.rs:926
+#: installer.rs:968
 msgid "No system partition chosen"
 msgstr "システムパーティションが選ばれていません"
 
-#: installer.rs:928
+#: installer.rs:970
 msgid "The system partition disappeared"
 msgstr "システムパーティションが見つからなくなりました"
 
-#: installer.rs:933
+#: installer.rs:975
 msgid "No installation chosen"
 msgstr "インストールが選ばれていません"
 
-#: installer.rs:944
+#: installer.rs:986
 msgid "The disk disappeared"
 msgstr "ディスクが見つからなくなりました"
 
-#: installer.rs:955
+#: installer.rs:997
 msgid "Review"
 msgstr "確認"
 
-#: installer.rs:958
+#: installer.rs:1000
 msgid "Destination"
 msgstr "インストール先"
 
-#: installer.rs:960
+#: installer.rs:1002
 msgid "Erase disk and install"
 msgstr "ディスクを消去してインストール"
 
-#: installer.rs:961
+#: installer.rs:1003
+msgid "This Mac (space prepared in macOS)"
+msgstr "この Mac (macOS で用意した領域)"
+
+#: installer.rs:1004
 msgid "Custom partitions"
 msgstr "カスタムパーティション"
 
-#: installer.rs:962
+#: installer.rs:1005
 msgid "Reinstall, keeping /home"
 msgstr "/home を残して再インストール"
 
-#: installer.rs:963
+#: installer.rs:1006
 msgid "Alongside Windows"
 msgstr "Windows と並べて"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (will be formatted)"
 msgstr " (フォーマットされます)"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (kept)"
 msgstr " (保持)"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "System Partition"
 msgstr "システムパーティション"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "{partition} (will be formatted)"
 msgstr "{partition} (フォーマットされます)"
 
-#: installer.rs:972
+#: installer.rs:1015
 msgid "Boot Partition"
 msgstr "ブートパーティション"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "Space for MAN"
 msgstr "MAN 用の領域"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "{free} of free space (a boot partition and the system partition are created)"
 msgstr "空き領域 {free} (ブートパーティションとシステムパーティションを作成)"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Windows"
 msgstr "Windows"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
 msgstr "変更なし。MAN の起動メニューに表示されます。EFI システムパーティションは共有されます。"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Encryption"
 msgstr "暗号化"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "On (LUKS2)"
 msgstr "オン (LUKS2)"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Off"
 msgstr "オフ"
 
-#: installer.rs:985
+#: installer.rs:1028
 msgid "File System"
 msgstr "ファイルシステム"
 
-#: installer.rs:986
+#: installer.rs:1029
 msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
 msgstr "Btrfs: MAN 用の @system、ファイル用の @home、復元ポイント用の @snapshots。すべてが空き領域を共有します。"
 
-#: installer.rs:991
+#: installer.rs:1034
 msgid "System"
 msgstr "システム"
 
-#: installer.rs:993
+#: installer.rs:1036
 msgid "Your Account"
 msgstr "あなたのアカウント"
 
-#: installer.rs:994
+#: installer.rs:1037
 msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
 msgstr "初めてコンピューターを起動したときに MAN Setup で、コンピューター名、外観、プライバシー設定とともに作成されます。"
 
-#: installer.rs:998
+#: installer.rs:1041
 msgid "Keyboard"
 msgstr "キーボード"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "All data on {model} ({path}) will be erased."
 msgstr "{model} ({path}) のすべてのデータが消去されます。"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "_Erase and Install"
 msgstr "消去してインストール(_E)"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "The chosen partitions will be formatted. Other partitions are not changed."
 msgstr "選んだパーティションがフォーマットされます。ほかのパーティションは変わりません。"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "_Format and Install"
 msgstr "フォーマットしてインストール(_F)"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
 msgstr "現在のシステムが置き換えられます。/home のファイルは残り、古いシステムはスナップショットとして保存されます。"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "_Reinstall"
 msgstr "再インストール(_R)"
 
-#: installer.rs:1005
+#: installer.rs:1048
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "MAN は空き領域にインストールされます。Windows とそのファイルは変わりません。"
 
-#: installer.rs:1019
+#: installer.rs:1062
 msgid "Ready to Install"
 msgstr "インストールの準備ができました"
 
-#: installer.rs:1029
+#: installer.rs:1072
 msgid "Erase {model}?"
 msgstr "{model} を消去しますか?"
 
-#: installer.rs:1030
+#: installer.rs:1073
 msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
 msgstr "{path} ({size}) のすべてのファイルとパーティションが完全に削除されます。元に戻せません。"
 
-#: installer.rs:1031
+#: installer.rs:1074
 msgid "Erase and Install"
 msgstr "消去してインストール"
 
-#: installer.rs:1035
+#: installer.rs:1078
 msgid "Format the Chosen Partitions?"
 msgstr "選んだパーティションをフォーマットしますか?"
 
-#: installer.rs:1036
+#: installer.rs:1079
 msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
 msgstr "選んだパーティションのすべてのデータが完全に削除されます。ほかのパーティションは変わりません。"
 
-#: installer.rs:1037
+#: installer.rs:1080
 msgid "Format and Install"
 msgstr "フォーマットしてインストール"
 
-#: installer.rs:1041
+#: installer.rs:1084
 msgid "Install MAN Alongside Windows?"
 msgstr "MAN を Windows と並べてインストールしますか?"
 
-#: installer.rs:1042
+#: installer.rs:1085
 msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
 msgstr "MAN は {model} ({path}) の空き領域 {free} にインストールされます。Windows とそのファイルは変わりません。"
 
-#: installer.rs:1046
+#: installer.rs:1089
 msgid "Install"
 msgstr "インストール"
 
-#: installer.rs:1050
+#: installer.rs:1093
 msgid "Reinstall MAN?"
 msgstr "MAN を再インストールしますか?"
 
-#: installer.rs:1051
+#: installer.rs:1094
 msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
 msgstr "インストール済みのシステムが新しいコピーに置き換えられます。/home の個人ファイルは残り、古いシステムはスナップショットとして利用できます。"
 
-#: installer.rs:1052
+#: installer.rs:1095
 msgid "Reinstall"
 msgstr "再インストール"
 
-#: installer.rs:1057
+#: installer.rs:1100
 msgid "_Cancel"
 msgstr "キャンセル(_C)"
 
-#: installer.rs:1076
+#: installer.rs:1119
 msgid "Installing MAN"
 msgstr "MAN をインストール中"
 
-#: installer.rs:1077
+#: installer.rs:1120
 msgid "Starting…"
 msgstr "開始しています…"
 
-#: installer.rs:1090
+#: installer.rs:1133
 msgid "Installing"
 msgstr "インストール中"
 
-#: installer.rs:1103
+#: installer.rs:1146
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "ステップ {index}/{n}  ·  {title}"
 
-#: installer.rs:1138
+#: installer.rs:1181
 msgid "MAN Is Installed"
 msgstr "MAN がインストールされました"
 
-#: installer.rs:1143
+#: installer.rs:1186
 msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
 msgstr "コンピューターを再起動すると MAN を使い始められます。起動のたびにメニューで MAN か Windows を選べます。一時的なインストーラーのパーティションは、MAN が初回起動時に削除します。"
 
-#: installer.rs:1149
+#: installer.rs:1192
 msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
 msgstr "コンピューターを再起動すると MAN を使い始められます。インストールメディアは取り外せます。つないだままでも、MAN は新しいディスクから起動します。"
 
-#: installer.rs:1156
+#: installer.rs:1199
 msgid "_Restart Now"
 msgstr "今すぐ再起動(_R)"
 
-#: installer.rs:1171
+#: installer.rs:1214
 msgid "Done"
 msgstr "完了"
 
-#: installer.rs:1182
+#: installer.rs:1225
 msgid "Installation Failed"
 msgstr "インストールに失敗しました"
 
-#: installer.rs:1186
+#: installer.rs:1229
 msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
 msgstr "ほかのディスクは変更されておらず、インストーラーはインストール先ディスクを解放しました。内容を確認してもう一度お試しください。"
 
-#: installer.rs:1191
+#: installer.rs:1234
 msgid "_Review and Try Again"
 msgstr "確認してやり直す(_R)"
 
@@ -1062,413 +1086,557 @@ msgstr "Marquee へようこそ"
 msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
 msgstr "Marquee を開きますか? それとも、映画、音楽、写真をこのネットワーク上の他のコンピューターと共有しますか?"
 
-#: oobe.rs:165
-msgid "The system disk was not found."
-msgstr "システムディスクが見つかりません。"
-
-#: oobe.rs:173
-msgid "Encryption needs the Btrfs layout created by the MAN installer."
-msgstr "暗号化には MAN インストーラーが作成した Btrfs 構成が必要です。"
-
-#: oobe.rs:177
-msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
-msgstr "このインストールには暗号化に必要な別のブートパーティションがありません。暗号化を使うには「ディスクを消去」で MAN を再インストールしてください。"
-
-#: oobe.rs:501
-msgid "MAN Setup"
-msgstr "MAN Setup"
-
-#: oobe.rs:554
-msgid "Where Are You?"
-msgstr "どこにお住まいですか?"
-
-#: oobe.rs:554
-msgid "Your country or region sets the date, time and number formats."
-msgstr "国や地域によって日付、時刻、数値の形式が決まります。"
-
-#: oobe.rs:572
-msgid "Country"
-msgstr "国"
-
-#: oobe.rs:587
-msgid "GNU General Public License, version 2"
-msgstr "GNU 一般公衆利用許諾書 バージョン 2"
-
-#: oobe.rs:587
-msgid "The Linux kernel and many system tools"
-msgstr "Linux カーネルと多くのシステムツール"
-
-#: oobe.rs:588
-msgid "GNU General Public License, version 3"
-msgstr "GNU 一般公衆利用許諾書 バージョン 3"
-
-#: oobe.rs:588
-msgid "Many GNU and GNOME programs"
-msgstr "多くの GNU と GNOME のプログラム"
-
-#: oobe.rs:589
-msgid "GNU Lesser General Public License, version 2.1"
-msgstr "GNU 劣等一般公衆利用許諾書 バージョン 2.1"
-
-#: oobe.rs:589
-msgid "GTK, GLib and many libraries"
-msgstr "GTK、GLib と多くのライブラリ"
-
-#: oobe.rs:590
-msgid "GNU Lesser General Public License, version 3"
-msgstr "GNU 劣等一般公衆利用許諾書 バージョン 3"
-
-#: oobe.rs:591
-msgid "Mozilla Public License 2.0"
-msgstr "Mozilla Public License 2.0"
-
-#: oobe.rs:591
-msgid "Programs and libraries from Mozilla and others"
-msgstr "Mozilla などのプログラムとライブラリ"
-
-#: oobe.rs:592
-msgid "Apache License 2.0"
-msgstr "Apache License 2.0"
-
-#: oobe.rs:592
-msgid "Libraries and tools"
-msgstr "ライブラリとツール"
-
-#: oobe.rs:597
-msgid "License Agreement"
-msgstr "使用許諾契約"
-
-#: oobe.rs:597
-msgid "Please read and accept the terms under which MAN is provided."
-msgstr "MAN が提供される条件を読んで同意してください。"
-
-#: oobe.rs:608
-msgid "Licenses"
-msgstr "ライセンス"
-
-#: oobe.rs:616
-msgid "The license text is not available ({path})."
-msgstr "ライセンスの本文を表示できません ({path})。"
-
-#: oobe.rs:622
-msgid "I have read and accept the license terms"
-msgstr "ライセンス条項を読み、同意します"
-
-#: oobe.rs:692
+#: net.rs:59
 msgid "Wired"
 msgstr "有線"
 
-#: oobe.rs:698
+#: net.rs:65
 msgid "Not connected"
 msgstr "未接続"
 
-#: oobe.rs:732
-msgid "Connect to the Internet"
-msgstr "インターネットに接続"
-
-#: oobe.rs:732
-msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
-msgstr "接続すると、MAN が時刻を合わせ、ソフトウェアを最新に保てます。あとで設定することもできます。"
-
-#: oobe.rs:734
-msgid "Checking the connection…"
-msgstr "接続を確認しています…"
-
-#: oobe.rs:740
-msgid "Wi-Fi Networks"
-msgstr "Wi-Fi ネットワーク"
-
-#: oobe.rs:742
-msgid "Search Again"
-msgstr "再検索"
-
-#: oobe.rs:753
-msgid "_Skip"
-msgstr "スキップ(_S)"
-
-#: oobe.rs:754
-msgid "You can connect later in Settings."
-msgstr "あとで「設定」から接続できます。"
-
-#: oobe.rs:763
-msgid "Connected"
-msgstr "接続済み"
-
-#: oobe.rs:763
-msgid "Not Connected"
-msgstr "未接続"
-
-#: oobe.rs:791
-msgid "No networks found"
-msgstr "ネットワークが見つかりません"
-
-#: oobe.rs:817
-msgid "Internet"
-msgstr "インターネット"
-
-#: oobe.rs:864
+#: net.rs:121
 msgid "Connected to “{ssid}”"
 msgstr "「{ssid}」に接続しました"
 
-#: oobe.rs:864
+#: net.rs:121
 msgid "Could not connect to “{ssid}”"
 msgstr "「{ssid}」に接続できませんでした"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Connect to “{ssid}”"
 msgstr "「{ssid}」に接続"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Enter the network password."
 msgstr "ネットワークのパスワードを入力してください。"
 
-#: oobe.rs:878
+#: net.rs:135
 msgid "C_onnect"
 msgstr "接続(_O)"
 
-#: oobe.rs:901
+#: oobe.rs:166
+msgid "The system disk was not found."
+msgstr "システムディスクが見つかりません。"
+
+#: oobe.rs:174
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "暗号化には MAN インストーラーが作成した Btrfs 構成が必要です。"
+
+#: oobe.rs:186
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "このインストールには暗号化に必要な別のブートパーティションがありません。暗号化を使うには「ディスクを消去」で MAN を再インストールしてください。"
+
+#: oobe.rs:510
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:563
+msgid "Where Are You?"
+msgstr "どこにお住まいですか?"
+
+#: oobe.rs:563
+msgid "Your country or region sets the date, time and number formats."
+msgstr "国や地域によって日付、時刻、数値の形式が決まります。"
+
+#: oobe.rs:581
+msgid "Country"
+msgstr "国"
+
+#: oobe.rs:596
+msgid "GNU General Public License, version 2"
+msgstr "GNU 一般公衆利用許諾書 バージョン 2"
+
+#: oobe.rs:596
+msgid "The Linux kernel and many system tools"
+msgstr "Linux カーネルと多くのシステムツール"
+
+#: oobe.rs:597
+msgid "GNU General Public License, version 3"
+msgstr "GNU 一般公衆利用許諾書 バージョン 3"
+
+#: oobe.rs:597
+msgid "Many GNU and GNOME programs"
+msgstr "多くの GNU と GNOME のプログラム"
+
+#: oobe.rs:598
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "GNU 劣等一般公衆利用許諾書 バージョン 2.1"
+
+#: oobe.rs:598
+msgid "GTK, GLib and many libraries"
+msgstr "GTK、GLib と多くのライブラリ"
+
+#: oobe.rs:599
+msgid "GNU Lesser General Public License, version 3"
+msgstr "GNU 劣等一般公衆利用許諾書 バージョン 3"
+
+#: oobe.rs:600
+msgid "Mozilla Public License 2.0"
+msgstr "Mozilla Public License 2.0"
+
+#: oobe.rs:600
+msgid "Programs and libraries from Mozilla and others"
+msgstr "Mozilla などのプログラムとライブラリ"
+
+#: oobe.rs:601
+msgid "Apache License 2.0"
+msgstr "Apache License 2.0"
+
+#: oobe.rs:601
+msgid "Libraries and tools"
+msgstr "ライブラリとツール"
+
+#: oobe.rs:606
+msgid "License Agreement"
+msgstr "使用許諾契約"
+
+#: oobe.rs:606
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "MAN が提供される条件を読んで同意してください。"
+
+#: oobe.rs:617
+msgid "Licenses"
+msgstr "ライセンス"
+
+#: oobe.rs:625
+msgid "The license text is not available ({path})."
+msgstr "ライセンスの本文を表示できません ({path})。"
+
+#: oobe.rs:631
+msgid "I have read and accept the license terms"
+msgstr "ライセンス条項を読み、同意します"
+
+#: oobe.rs:658
+msgid "Connect to the Internet"
+msgstr "インターネットに接続"
+
+#: oobe.rs:658
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "接続すると、MAN が時刻を合わせ、ソフトウェアを最新に保てます。あとで設定することもできます。"
+
+#: oobe.rs:660
+msgid "Checking the connection…"
+msgstr "接続を確認しています…"
+
+#: oobe.rs:666
+msgid "Wi-Fi Networks"
+msgstr "Wi-Fi ネットワーク"
+
+#: oobe.rs:668
+msgid "Search Again"
+msgstr "再検索"
+
+#: oobe.rs:679
+msgid "_Skip"
+msgstr "スキップ(_S)"
+
+#: oobe.rs:680
+msgid "You can connect later in Settings."
+msgstr "あとで「設定」から接続できます。"
+
+#: oobe.rs:689
+msgid "Connected"
+msgstr "接続済み"
+
+#: oobe.rs:689
+msgid "Not Connected"
+msgstr "未接続"
+
+#: oobe.rs:717
+msgid "No networks found"
+msgstr "ネットワークが見つかりません"
+
+#: oobe.rs:746
+msgid "Internet"
+msgstr "インターネット"
+
+#: oobe.rs:777
 msgid "Create Your Account"
 msgstr "アカウントを作成"
 
-#: oobe.rs:901
+#: oobe.rs:777
 msgid "You will be the administrator of this computer, with full root access through sudo."
 msgstr "あなたはこのコンピューターの管理者になり、sudo で root の全権限を使えます。"
 
-#: oobe.rs:904
+#: oobe.rs:780
 msgid "Full Name"
 msgstr "氏名"
 
-#: oobe.rs:905
+#: oobe.rs:781
 msgid "Username"
 msgstr "ユーザー名"
 
-#: oobe.rs:906
+#: oobe.rs:782
 msgid "Password"
 msgstr "パスワード"
 
-#: oobe.rs:907
+#: oobe.rs:783
 msgid "Confirm Password"
 msgstr "パスワードの確認"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Log In Automatically"
 msgstr "自動ログイン"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Skip the login screen when the computer starts"
 msgstr "コンピューター起動時にログイン画面を省略"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Existing Home Folders"
 msgstr "既存のホームフォルダー"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Use the same username to keep using a folder kept from a previous installation."
 msgstr "以前のインストールから残したフォルダーを使い続けるには、同じユーザー名を使ってください。"
 
-#: oobe.rs:919
+#: oobe.rs:795
 msgid "Use"
 msgstr "使用"
 
-#: oobe.rs:929
+#: oobe.rs:805
 msgid "Advanced"
 msgstr "詳細設定"
 
-#: oobe.rs:930
+#: oobe.rs:806
 msgid "Computer Name"
 msgstr "コンピューター名"
 
-#: oobe.rs:932
+#: oobe.rs:808
 msgid "Set a Root Password"
 msgstr "root パスワードを設定"
 
-#: oobe.rs:933
+#: oobe.rs:809
 msgid "Allows logging in as root directly. Without it, use sudo with your own password."
 msgstr "root として直接ログインできるようにします。設定しない場合は、自分のパスワードで sudo を使います。"
 
-#: oobe.rs:937
+#: oobe.rs:813
 msgid "Root Password"
 msgstr "root パスワード"
 
-#: oobe.rs:938
+#: oobe.rs:814
 msgid "Confirm Root Password"
 msgstr "root パスワードの確認"
 
-#: oobe.rs:962
+#: oobe.rs:838
 msgid "Enter your name."
 msgstr "名前を入力してください。"
 
-#: oobe.rs:964
+#: oobe.rs:840
 msgid "Choose a username."
 msgstr "ユーザー名を選んでください。"
 
-#: oobe.rs:966
+#: oobe.rs:842
 msgid "This username is already used by the system."
 msgstr "このユーザー名はすでにシステムで使われています。"
 
-#: oobe.rs:969
+#: oobe.rs:845
 msgid "This username is reserved by the system."
 msgstr "このユーザー名はシステムで予約されています。"
 
-#: oobe.rs:971
+#: oobe.rs:847
 msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
 msgstr "ユーザー名には英小文字、数字、- と _ を使い、英字で始めます。"
 
-#: oobe.rs:974
+#: oobe.rs:850
 msgid "Choose a password."
 msgstr "パスワードを選んでください。"
 
-#: oobe.rs:976
+#: oobe.rs:852
 msgid "The passwords do not match."
 msgstr "パスワードが一致しません。"
 
-#: oobe.rs:978
+#: oobe.rs:854
 msgid "The computer name may contain letters, digits and dashes."
 msgstr "コンピューター名には英字、数字、ハイフンを使えます。"
 
-#: oobe.rs:980
+#: oobe.rs:856
 msgid "Enter the root password twice."
 msgstr "root パスワードを 2 回入力してください。"
 
-#: oobe.rs:986
+#: oobe.rs:862
 msgid "Tip: a password with 8 or more characters is much safer."
 msgstr "ヒント: 8 文字以上のパスワードのほうがずっと安全です。"
 
-#: oobe.rs:1066
+#: oobe.rs:942
 msgid "Account"
 msgstr "アカウント"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Dark"
 msgstr "ダーク"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Light"
 msgstr "ライト"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Make It Yours"
 msgstr "自分好みに"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
 msgstr "スタイル、アクセントカラー、壁紙を選んでください。変更はすぐに反映されます。"
 
-#: oobe.rs:1095
+#: oobe.rs:971
 msgid "Style"
 msgstr "スタイル"
 
-#: oobe.rs:1115
+#: oobe.rs:991
 msgid "Accent Color"
 msgstr "アクセントカラー"
 
-#: oobe.rs:1158
+#: oobe.rs:1034
 msgid "Wallpaper"
 msgstr "壁紙"
 
-#: oobe.rs:1202
+#: oobe.rs:1078
 msgid "Customize"
 msgstr "カスタマイズ"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Privacy"
 msgstr "プライバシー"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Choose which features may use information about you. You can change this at any time in Settings."
 msgstr "あなたに関する情報を使える機能を選んでください。「設定」でいつでも変更できます。"
 
-#: oobe.rs:1212
+#: oobe.rs:1088
 msgid "Location Services"
 msgstr "位置情報サービス"
 
-#: oobe.rs:1213
+#: oobe.rs:1089
 msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
 msgstr "マップや天気などのアプリが、近くの Wi-Fi ネットワークからおおよその現在地を調べられるようにします。"
 
-#: oobe.rs:1217
+#: oobe.rs:1093
 msgid "Automatic Time Zone"
 msgstr "タイムゾーンを自動設定"
 
-#: oobe.rs:1218
+#: oobe.rs:1094
 msgid "Uses your location to keep the time zone right when you travel."
 msgstr "旅行中も現在地を使ってタイムゾーンを正しく保ちます。"
 
-#: oobe.rs:1251
+#: oobe.rs:1127
 msgid "_Finish Setup"
 msgstr "セットアップを完了(_F)"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your Disk Is Encrypted"
 msgstr "ディスクは暗号化されています"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your data is protected. The passphrase is asked every time the computer starts."
 msgstr "データは保護されています。コンピューターを起動するたびにパスフレーズを尋ねます。"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Disk Encryption"
 msgstr "ディスクの暗号化"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Encryption protects your data if the computer is lost or stolen."
 msgstr "暗号化は、コンピューターを紛失したり盗まれたりしてもデータを守ります。"
 
-#: oobe.rs:1261
+#: oobe.rs:1137
 msgid "Not available on this installation"
 msgstr "このインストールでは利用できません"
 
-#: oobe.rs:1267
+#: oobe.rs:1143
 msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
 msgstr "暗号化は、コンピューターを紛失したり盗まれたりしてもファイルを守ります。パスフレーズがなければ誰もディスクを読めません。"
 
-#: oobe.rs:1270
+#: oobe.rs:1146
 msgid "Encrypt the Disk"
 msgstr "ディスクを暗号化"
 
-#: oobe.rs:1271
+#: oobe.rs:1147
 msgid "The passphrase is asked every time the computer starts."
 msgstr "コンピューターを起動するたびにパスフレーズを尋ねます。"
 
-#: oobe.rs:1279
+#: oobe.rs:1155
 msgid "Encryption starts at the next restart"
 msgstr "暗号化は次回の再起動時に始まります"
 
-#: oobe.rs:1280
+#: oobe.rs:1156
 msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
 msgstr "その後、コンピューターを使っている間にバックグラウンドでディスクが暗号化されます。パスフレーズを失くすと、誰もデータを復元できません。"
 
-#: oobe.rs:1377
+#: oobe.rs:1253
 msgid "Preparing MAN"
 msgstr "MAN を準備しています"
 
-#: oobe.rs:1378
+#: oobe.rs:1254
 msgid "Getting everything ready…"
 msgstr "準備しています…"
 
-#: oobe.rs:1383
+#: oobe.rs:1259
 msgid "_Reboot"
 msgstr "再起動(_R)"
 
-#: oobe.rs:1385
+#: oobe.rs:1261
 msgid "_Go Back"
 msgstr "戻る(_G)"
 
-#: oobe.rs:1399
+#: oobe.rs:1275
 msgid "Preparing"
 msgstr "準備中"
 
-#: oobe.rs:1412
+#: oobe.rs:1288
 msgid "Setup Log"
 msgstr "セットアップログ"
 
-#: oobe.rs:1444
+#: oobe.rs:1320
 msgid "All Done!"
 msgstr "完了しました!"
 
-#: oobe.rs:1454
+#: oobe.rs:1330
 msgid "Something Went Wrong"
 msgstr "問題が発生しました"
+
+#: recovery.rs:113
+msgid "MAN Recovery"
+msgstr "MAN リカバリー"
+
+#: recovery.rs:114
+msgid "Restore your system, reinstall MAN or open a Terminal. First, an administrator of this computer signs in."
+msgstr "システムの復元、MAN の再インストール、ターミナルの起動ができます。まず、このコンピューターの管理者がサインインします。"
+
+#: recovery.rs:122
+msgid "Administrator"
+msgstr "管理者"
+
+#: recovery.rs:131
+msgid "No installed system was found on this disk. You can reinstall MAN."
+msgstr "このディスクにインストール済みのシステムが見つかりません。MAN を再インストールできます。"
+
+#: recovery.rs:198
+msgid "This computer has MAN {version}."
+msgstr "このコンピューターには MAN {version} が入っています。"
+
+#: recovery.rs:199
+msgid "What Would You Like to Do?"
+msgstr "何をしますか?"
+
+#: recovery.rs:202
+msgid "Restore a Snapshot"
+msgstr "スナップショットを復元"
+
+#: recovery.rs:202
+msgid "Your system broke? Go back to a moment when everything worked. Your files stay."
+msgstr "システムが壊れましたか? すべてが動いていた時点に戻ります。ファイルはそのまま残ります。"
+
+#: recovery.rs:203
+msgid "Download the newest MAN and install it again. Your files, accounts and settings stay."
+msgstr "最新の MAN をダウンロードしてもう一度インストールします。ファイル、アカウント、設定はそのまま残ります。"
+
+#: recovery.rs:204
+msgid "Terminal"
+msgstr "ターミナル"
+
+#: recovery.rs:204
+msgid "For experts: type commands with full control of the computer."
+msgstr "上級者向け: コンピューターを完全に操作するコマンドを入力します。"
+
+#: recovery.rs:207
+msgid "There are no snapshots on this computer."
+msgstr "このコンピューターにはスナップショットがありません。"
+
+#: recovery.rs:240
+msgid "Choose a moment when everything worked. The files in your home folder stay as they are now."
+msgstr "すべてが動いていた時点を選んでください。ホームフォルダーのファイルは今のまま残ります。"
+
+#: recovery.rs:257
+msgid "Restore “{name}”?"
+msgstr "“{name}” を復元しますか?"
+
+#: recovery.rs:258
+msgid "Your system goes back to how it was on {date}. Your files stay. The system as it is now is kept as a snapshot, so you can come back to it."
+msgstr "システムは {date} の状態に戻ります。ファイルはそのまま残ります。今のシステムはスナップショットとして保存されるので、あとで戻れます。"
+
+#: recovery.rs:261
+msgid "_Restore"
+msgstr "復元(_R)"
+
+#: recovery.rs:270
+msgid "Restoring Your System"
+msgstr "システムを復元しています"
+
+#: recovery.rs:275
+msgid "Your system was restored. Restart to use it."
+msgstr "システムを復元しました。使うには再起動してください。"
+
+#: recovery.rs:283
+msgid "MAN Recovery downloads the newest MAN. Connect to a network first."
+msgstr "MAN リカバリーは最新の MAN をダウンロードします。先にネットワークに接続してください。"
+
+#: recovery.rs:388
+msgid "Looking for the newest MAN…"
+msgstr "最新の MAN を探しています…"
+
+#: recovery.rs:394
+msgid "Your files, accounts and settings stay."
+msgstr "ファイル、アカウント、設定はそのまま残ります。"
+
+#: recovery.rs:395
+msgid "Apps you installed as Flatpaks stay; other apps you added may need to be installed again."
+msgstr "Flatpak でインストールしたアプリは残ります。その他に追加したアプリは再インストールが必要な場合があります。"
+
+#: recovery.rs:396
+msgid "The system as it is now is kept as a snapshot."
+msgstr "今のシステムはスナップショットとして保存されます。"
+
+#: recovery.rs:397
+msgid "Keep the computer plugged in. This takes a while."
+msgstr "コンピューターを電源につないだままにしてください。しばらく時間がかかります。"
+
+#: recovery.rs:407
+msgid "_Reinstall MAN"
+msgstr "MAN を再インストール(_R)"
+
+#: recovery.rs:426
+msgid "MAN {version} ({size}) will be downloaded and installed on this computer."
+msgstr "MAN {version} ({size}) をダウンロードしてこのコンピューターにインストールします。"
+
+#: recovery.rs:437
+msgid "No MAN for this computer was found."
+msgstr "このコンピューター用の MAN が見つかりません。"
+
+#: recovery.rs:445
+msgid "Reinstalling MAN"
+msgstr "MAN を再インストールしています"
+
+#: recovery.rs:460
+msgid "MAN was installed again. Your files and accounts were kept. Restart to use it."
+msgstr "MAN を再インストールしました。ファイルとアカウントはそのまま残っています。使うには再起動してください。"
+
+#: recovery.rs:472
+msgid "Do not turn the computer off."
+msgstr "コンピューターの電源を切らないでください。"
+
+#: recovery.rs:519
+msgid "That Did Not Work"
+msgstr "うまくいきませんでした"
+
+#: recovery.rs:521
+msgid "_Details"
+msgstr "詳細(_D)"
+
+#: recovery.rs:529
+msgid "_Restart"
+msgstr "再起動(_R)"
+
+#: recovery.rs:533
+msgid "_Back to MAN Recovery"
+msgstr "MAN リカバリーに戻る(_B)"
+
+#: recovery.rs:575
+msgid "_Shut Down"
+msgstr "電源を切る(_S)"
+
+#: recovery.rs:605
+msgid "Looking at this computer…"
+msgstr "このコンピューターを調べています…"
 
 #: snapshots.rs:84
 msgid "Daily"
@@ -1559,10 +1727,6 @@ msgstr ""
 "再起動後、システムは {date} の「{description}」の状態に戻ります。個人ファイルは変わりません。\n"
 "\n"
 "現在のシステムは先にスナップショットとして保存されるので、元に戻せます。"
-
-#: snapshots.rs:278
-msgid "_Restore"
-msgstr "復元(_R)"
 
 #: snapshots.rs:291
 msgid "Restart to Finish Restoring"
@@ -2058,199 +2222,211 @@ msgstr "パッケージをインストールできませんでした。"
 msgid "The app's menu entry is not valid."
 msgstr "アプリのメニュー項目が正しくありません。"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Checking the installation plan"
 msgstr "インストール計画を確認しています"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Preparing the disk"
 msgstr "ディスクを準備しています"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Copying MAN to the disk"
 msgstr "MAN をディスクにコピーしています"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Configuring the new system"
 msgstr "新しいシステムを設定しています"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Installing the bootloader"
 msgstr "ブートローダーをインストールしています"
 
-#: install.rs:16
+#: install.rs:17
+msgid "Preparing MAN Recovery"
+msgstr "MAN リカバリーを準備しています"
+
+#: install.rs:17
 msgid "Creating the first snapshot"
 msgstr "最初のスナップショットを作成しています"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Finishing up"
 msgstr "仕上げています"
 
-#: install.rs:199
+#: install.rs:232
 msgid "Removing old partition signatures"
 msgstr "古いパーティションの署名を削除しています"
 
-#: install.rs:205
+#: install.rs:238
 msgid "Creating partitions"
 msgstr "パーティションを作成しています"
 
-#: install.rs:226
+#: install.rs:259
 msgid "Formatting the EFI system partition"
 msgstr "EFI システムパーティションをフォーマットしています"
 
-#: install.rs:234
+#: install.rs:267
 msgid "Encrypting the system partition"
 msgstr "システムパーティションを暗号化しています"
 
-#: install.rs:246
+#: install.rs:279
 msgid "Formatting the boot partition"
 msgstr "ブートパーティションをフォーマットしています"
 
-#: install.rs:249
+#: install.rs:282
 msgid "Creating the Btrfs file system"
 msgstr "Btrfs ファイルシステムを作成しています"
 
-#: install.rs:258
+#: install.rs:293
 msgid "Removing old file system signatures"
 msgstr "古いファイルシステムの署名を削除しています"
 
-#: install.rs:330
+#: install.rs:372
 msgid "Unlocking the encrypted installation"
 msgstr "暗号化されたインストールのロックを解除しています"
 
-#: install.rs:356
+#: install.rs:399
 msgid "Saving the current system as a snapshot"
 msgstr "現在のシステムをスナップショットとして保存しています"
 
-#: install.rs:362
+#: install.rs:406
 msgid "Removing the previous system"
 msgstr "以前のシステムを削除しています"
 
-#: install.rs:571
+#: install.rs:615
 msgid "Writing file system table"
 msgstr "ファイルシステムテーブルを書き込んでいます"
 
-#: install.rs:593
+#: install.rs:639
 msgid "Setting computer name and identity"
 msgstr "コンピューター名と識別情報を設定しています"
 
-#: install.rs:608
+#: install.rs:654
 msgid "Removing the live session accounts"
 msgstr "ライブセッションのアカウントを削除しています"
 
-#: install.rs:641
+#: install.rs:687
 msgid "Creating your account"
 msgstr "アカウントを作成しています"
 
-#: install.rs:649
+#: install.rs:699
 msgid "Preparing MAN Setup for the first start"
 msgstr "初回起動用に MAN Setup を準備しています"
 
-#: install.rs:655
+#: install.rs:705
 msgid "Setting time zone and keyboard"
 msgstr "タイムゾーンとキーボードを設定しています"
 
-#: install.rs:680
+#: install.rs:730
 msgid "Removing the installer from the new system"
 msgstr "新しいシステムからインストーラーを削除しています"
 
-#: install.rs:687
+#: install.rs:737
 msgid "Building the boot image (initramfs)"
 msgstr "起動イメージ (initramfs) を作成しています"
 
-#: install.rs:717
+#: install.rs:767
 msgid "Configuring GRUB"
 msgstr "GRUB を設定しています"
 
-#: install.rs:735
+#: install.rs:785
 msgid "Installing GRUB to the EFI system partition"
 msgstr "EFI システムパーティションに GRUB をインストールしています"
 
-#: install.rs:752
+#: install.rs:802
 msgid "Installing the fallback boot loader"
 msgstr "予備のブートローダーをインストールしています"
 
-#: install.rs:759
+#: install.rs:809
 msgid "Writing the boot menu"
 msgstr "起動メニューを書き込んでいます"
 
-#: install.rs:780
+#: install.rs:834
 msgid "Disk ready"
 msgstr "ディスクの準備完了"
 
-#: install.rs:793
+#: install.rs:853
+msgid "Keeping your accounts and settings"
+msgstr "アカウントと設定を引き継いでいます"
+
+#: install.rs:869
+msgid "Skipped"
+msgstr "スキップしました"
+
+#: install.rs:873
 msgid "Creating a snapshot of the fresh system"
 msgstr "新しいシステムのスナップショットを作成しています"
 
-#: install.rs:799
+#: install.rs:879
 msgid "Adding the snapshot to the boot menu"
 msgstr "スナップショットを起動メニューに追加しています"
 
-#: install.rs:803
+#: install.rs:883
 msgid "Unmounting"
 msgstr "アンマウントしています"
 
-#: install.rs:85
+#: install.rs:93
 msgid "The installer backend must run as root."
 msgstr "インストーラーのヘルパーは root で実行する必要があります。"
 
-#: install.rs:88
+#: install.rs:121
 msgid "This computer was not started in UEFI mode. MAN requires UEFI."
 msgstr "このコンピューターは UEFI モードで起動していません。MAN には UEFI が必要です。"
 
-#: install.rs:92
+#: install.rs:125
 msgid "The username is not valid."
 msgstr "ユーザー名が正しくありません。"
 
-#: install.rs:95
+#: install.rs:128
 msgid "A password is required."
 msgstr "パスワードが必要です。"
 
-#: install.rs:99
+#: install.rs:132
 msgid "The computer name is not valid."
 msgstr "コンピューター名が正しくありません。"
 
-#: install.rs:105
+#: install.rs:138
 msgid "Unknown language."
 msgstr "不明な言語です。"
 
-#: install.rs:111
+#: install.rs:144
 msgid "The encryption passphrase must have at least 8 characters."
 msgstr "暗号化のパスフレーズは 8 文字以上にしてください。"
 
-#: install.rs:122
+#: install.rs:155
 msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
 msgstr "インストールを確定した後にディスクが変化しました。何も変更していません。内容を確認して、もう一度確定してください。"
 
-#: install.rs:138
+#: install.rs:171
 msgid "Choose a system partition."
 msgstr "システムパーティションを選んでください。"
 
-#: install.rs:145
+#: install.rs:178
 msgid "The confirmed disk does not hold the chosen system partition."
 msgstr "確定したディスクに、選んだシステムパーティションがありません。"
 
-#: install.rs:157
+#: install.rs:190
 msgid "The boot partition must be separate from the EFI and system partitions."
 msgstr "ブートパーティションは EFI パーティションやシステムパーティションと別にしてください。"
 
-#: install.rs:160
+#: install.rs:193
 msgid "The boot partition must be at least 512 MB."
 msgstr "ブートパーティションは 512 MB 以上必要です。"
 
-#: install.rs:175
+#: install.rs:208
 msgid "No installation chosen."
 msgstr "インストールが選ばれていません。"
 
-#: install.rs:179
+#: install.rs:212
 msgid "The confirmed disk does not hold the chosen installation."
 msgstr "確定したディスクに、選んだインストールがありません。"
 
-#: install.rs:337
+#: install.rs:379
 msgid "The encrypted installation has no MAN_BOOT partition."
 msgstr "暗号化されたインストールに MAN_BOOT パーティションがありません。"
 
-#: install.rs:695
+#: install.rs:745
 msgid "No kernel with matching modules was found in /boot."
 msgstr "/boot に対応するモジュールのあるカーネルが見つかりません。"
 
@@ -2258,41 +2434,109 @@ msgstr "/boot に対応するモジュールのあるカーネルが見つかり
 msgid "The language must be changed by the system helper."
 msgstr "言語はシステムヘルパーが変更する必要があります。"
 
-#: oobe.rs:204
+#: oobe.rs:205
 msgid "Applying your settings"
 msgstr "設定を適用しています"
 
-#: oobe.rs:212
+#: oobe.rs:213
 msgid "Preparing disk encryption"
 msgstr "ディスクの暗号化を準備しています"
 
-#: oobe.rs:216
+#: oobe.rs:217
 msgid "Finishing"
 msgstr "仕上げています"
 
-#: oobe.rs:100
+#: oobe.rs:101
 msgid "MAN Setup must be finished by the system helper."
 msgstr "MAN Setup はシステムヘルパーが完了させる必要があります。"
 
-#: oobe.rs:103
+#: oobe.rs:104
 msgid "MAN Setup has already been completed on this computer."
 msgstr "このコンピューターでは MAN Setup はすでに完了しています。"
 
-#: oobe.rs:124
+#: oobe.rs:125
 msgid "Unknown accent color."
 msgstr "不明なアクセントカラーです。"
 
-#: oobe.rs:128
+#: oobe.rs:129
 msgid "The chosen wallpaper is not available."
 msgstr "選んだ壁紙は利用できません。"
 
-#: oobe.rs:146
+#: oobe.rs:147
 msgid "This system cannot be encrypted."
 msgstr "このシステムは暗号化できません。"
 
-#: oobe.rs:257
+#: oobe.rs:258
 msgid "The setup key is missing, so encryption cannot continue in the background."
 msgstr "セットアップキーがないため、バックグラウンドで暗号化を続けられません。"
+
+#: recovery.rs:450
+msgid "Downloading MAN"
+msgstr "MAN をダウンロードしています"
+
+#: recovery.rs:459
+msgid "Opening the downloaded MAN"
+msgstr "ダウンロードした MAN を開いています"
+
+#: recovery.rs:85
+msgid "Leaving out what Recovery does not need"
+msgstr "リカバリーに不要なものを除いています"
+
+#: recovery.rs:87
+msgid "Setting up the recovery system"
+msgstr "リカバリーシステムを設定しています"
+
+#: recovery.rs:89
+msgid "Adding its start-up files"
+msgstr "起動用ファイルを追加しています"
+
+#: recovery.rs:104
+msgid "MAN Recovery is ready"
+msgstr "MAN リカバリーの準備ができました"
+
+#: recovery.rs:64
+msgid "This MAN has no MAN Recovery program."
+msgstr "この MAN には MAN リカバリーのプログラムがありません。"
+
+#: recovery.rs:82
+msgid "MAN Recovery was not started."
+msgstr "MAN リカバリーが開始されていません。"
+
+#: recovery.rs:206
+msgid "The installed system has no kernel for MAN Recovery."
+msgstr "インストール済みのシステムに MAN リカバリー用のカーネルがありません。"
+
+#: recovery.rs:234
+msgid "MAN Recovery was not started from the boot menu."
+msgstr "MAN リカバリーは起動メニューから起動されていません。"
+
+#: recovery.rs:235
+msgid "The disk of this MAN was not found."
+msgstr "この MAN のディスクが見つかりません。"
+
+#: recovery.rs:240
+msgid "This works only in MAN Recovery."
+msgstr "これは MAN リカバリーでのみ使えます。"
+
+#: recovery.rs:290
+msgid "The password is not correct."
+msgstr "パスワードが正しくありません。"
+
+#: recovery.rs:333
+msgid "Invalid snapshot id."
+msgstr "スナップショット ID が正しくありません。"
+
+#: recovery.rs:405
+msgid "No MAN for this computer was found on MAN's download page."
+msgstr "MAN のダウンロードページにこのコンピューター用の MAN が見つかりません。"
+
+#: recovery.rs:434
+msgid "The downloaded MAN is damaged (its checksum does not match). Try again."
+msgstr "ダウンロードした MAN が壊れています (チェックサムが一致しません)。もう一度試してください。"
+
+#: recovery.rs:491
+msgid "The partition of this MAN was not found."
+msgstr "この MAN のパーティションが見つかりません。"
 
 #: snapshots.rs:48
 msgid "The system is not installed on Btrfs, so snapshots are not available."
@@ -2301,10 +2545,6 @@ msgstr "システムが Btrfs にインストールされていないため、�
 #: snapshots.rs:50
 msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
 msgstr "スナップショットの復元が再起動を待っています。完了するには先にコンピューターを再起動してください。"
-
-#: snapshots.rs:99
-msgid "Invalid snapshot id."
-msgstr "スナップショット ID が正しくありません。"
 
 #: update.rs:32
 msgid "Checking the update"
@@ -2334,43 +2574,39 @@ msgstr "再起動を準備しています"
 msgid "Unpacked"
 msgstr "展開しました"
 
-#: update.rs:278
+#: update.rs:285
 msgid "Accounts"
 msgstr "アカウント"
 
-#: update.rs:331
+#: update.rs:338
 msgid "Reinstalling kept apps"
 msgstr "保持したアプリを再インストールしています"
 
-#: update.rs:386
+#: update.rs:404
 msgid "Removing installer-only software"
 msgstr "インストーラー専用のソフトウェアを削除しています"
 
-#: update.rs:426
+#: update.rs:450
 msgid "Building the update boot image"
 msgstr "アップデートの起動イメージを作成しています"
 
-#: update.rs:429
+#: update.rs:453
 msgid "Adding the one-time boot entry"
 msgstr "1 回限りの起動エントリーを追加しています"
 
-#: update.rs:464
+#: update.rs:488
 msgid "The update is genuine"
 msgstr "アップデートは正規のものです"
 
-#: update.rs:470
+#: update.rs:494
 msgid "Snapshot created"
 msgstr "スナップショットを作成しました"
 
-#: update.rs:472
-msgid "Skipped"
-msgstr "スキップしました"
-
-#: update.rs:481
+#: update.rs:505
 msgid "Update area ready"
 msgstr "アップデート領域の準備完了"
 
-#: update.rs:504
+#: update.rs:528
 msgid "Preparing the new system"
 msgstr "新しいシステムを準備しています"
 
@@ -2382,19 +2618,19 @@ msgstr "アップデートファイルが壊れています (チェックサム�
 msgid "The update file could not be read completely."
 msgstr "アップデートファイルをすべて読み込めませんでした。"
 
-#: update.rs:398
+#: update.rs:416
 msgid "The update contains no kernel."
 msgstr "アップデートにカーネルが含まれていません。"
 
-#: update.rs:446
+#: update.rs:470
 msgid "Updates must be installed by the system helper."
 msgstr "アップデートはシステムヘルパーがインストールする必要があります。"
 
-#: update.rs:456
+#: update.rs:480
 msgid "The chosen installation was not found."
 msgstr "選んだインストールが見つかりません。"
 
-#: update.rs:458
+#: update.rs:482
 msgid "Only the running MAN installation can be updated."
 msgstr "アップデートできるのは実行中の MAN インストールだけです。"
 
@@ -2521,6 +2757,10 @@ msgstr "新しい MAN コンピューターをセットアップ"
 #: man-oobe.desktop
 msgid "First-start setup of MAN"
 msgstr "MAN の初回セットアップ"
+
+#: com.man.Recovery.desktop
+msgid "Restore or reinstall MAN"
+msgstr "MAN を復元または再インストール"
 
 #: com.man.UpdateCheck.desktop
 msgid "MAN Updates"

@@ -314,55 +314,55 @@ msgstr "يتطلب هذا الإجراء صلاحيات المدير."
 msgid "The system helper stopped unexpectedly."
 msgstr "توقف مساعد النظام بشكل غير متوقع."
 
-#: installer.rs:78
+#: installer.rs:89
 msgid "No EFI system partition"
 msgstr "لا يوجد قسم نظام EFI"
 
-#: installer.rs:82
+#: installer.rs:93
 msgid "Only {free} free, MAN needs {need}. Make more room with DUHACH! in Windows."
 msgstr "المساحة الحرة {free} فقط، ويحتاج MAN إلى {need}. أفرغ مساحة باستخدام DUHACH! في Windows."
 
-#: installer.rs:83
+#: installer.rs:94
 msgid "No free space. Start DUHACH! in Windows to make room for MAN."
 msgstr "لا توجد مساحة حرة. شغّل DUHACH! في Windows لإفساح مكان لـ MAN."
 
-#: installer.rs:92
+#: installer.rs:103
 msgid "MAN is running from this disk"
 msgstr "يعمل MAN من هذا القرص"
 
-#: installer.rs:96
+#: installer.rs:107
 msgid "In use: a partition is mounted"
 msgstr "قيد الاستخدام: يوجد قسم موصول"
 
-#: installer.rs:98
+#: installer.rs:109
 msgid "Too small, MAN needs {need}"
 msgstr "صغير جدًا، يحتاج MAN إلى {need}"
 
-#: installer.rs:108
+#: installer.rs:119
 msgid "Install MAN"
 msgstr "ثبّت MAN"
 
-#: installer.rs:126
+#: installer.rs:137
 msgid "MAN is being installed. Please wait until it finishes."
 msgstr "جارٍ تثبيت MAN. انتظر حتى ينتهي."
 
-#: installer.rs:143
+#: installer.rs:154
 msgid "Language"
 msgstr "اللغة"
 
-#: installer.rs:155
+#: installer.rs:166
 msgid "_Restart in This Language"
 msgstr "_أعد التشغيل بهذه اللغة"
 
-#: installer.rs:167
+#: installer.rs:178
 msgid "The live session restarts in the chosen language, and MAN is installed in it."
 msgstr "تُعاد الجلسة الحية بالّلغة المختارة، ويُثبَّت MAN بها."
 
-#: installer.rs:213
+#: installer.rs:224
 msgid "Welcome to MAN"
 msgstr "مرحبًا بك في MAN"
 
-#: installer.rs:214
+#: installer.rs:225
 msgid ""
 "A fast, open and fully customizable GNOME system.\n"
 "Install it on this computer, or keep exploring the live session."
@@ -370,543 +370,567 @@ msgstr ""
 "نظام GNOME سريع ومفتوح وقابل للتخصيص بالكامل.\n"
 "ثبّته على هذا الحاسوب، أو تابع استكشاف الجلسة الحية."
 
-#: installer.rs:218
+#: installer.rs:229
 msgid "_Install MAN…"
 msgstr "_ثبّت MAN…"
 
-#: installer.rs:220
+#: installer.rs:231
 msgid "_Keep Trying MAN"
 msgstr "_تابع تجربة MAN"
 
-#: installer.rs:223
+#: installer.rs:234
 msgid "Looking for disks…"
 msgstr "جارٍ البحث عن الأقراص…"
 
-#: installer.rs:250
+#: installer.rs:261
 msgid "Welcome"
 msgstr "مرحبًا"
 
-#: installer.rs:265
+#: installer.rs:276
 msgid "This computer was started in legacy BIOS mode. MAN can only be installed on UEFI computers: restart and choose the UEFI boot option."
 msgstr "بدأ هذا الحاسوب في وضع BIOS القديم. لا يمكن تثبيت MAN إلا على حواسيب UEFI: أعد التشغيل واختر خيار الإقلاع UEFI."
 
-#: installer.rs:283
+#: installer.rs:294
 msgid "The system helper returned no disk information."
 msgstr "لم يُرجع مساعد النظام أي معلومات عن الأقراص."
 
-#: installer.rs:348
+#: installer.rs:372
 msgid "  ·  EFI"
 msgstr "  ·  EFI"
 
-#: installer.rs:356
+#: installer.rs:380
 msgid "_Next"
 msgstr "_التالي"
 
-#: installer.rs:364
+#: installer.rs:388
 msgid "Erase Disk and Install MAN"
 msgstr "امسح القرص وثبّت MAN"
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Everything on the chosen disk is deleted, Windows included."
 msgstr "يُحذف كل ما على القرص المختار، بما في ذلك Windows."
 
-#: installer.rs:365
+#: installer.rs:389
 msgid "Recommended. Everything on the chosen disk is deleted."
 msgstr "موصى به. يُحذف كل ما على القرص المختار."
 
-#: installer.rs:369
+#: installer.rs:393
 msgid "Install Alongside Windows"
 msgstr "ثبّت بجانب Windows"
 
-#: installer.rs:370
+#: installer.rs:394
 msgid "Recommended. MAN uses the free space next to Windows; Windows and its files stay. Choose the system at every start."
 msgstr "موصى به. يستخدم MAN المساحة الحرة بجانب Windows، ويبقى Windows وملفاته. تختار النظام عند كل إقلاع."
 
-#: installer.rs:377
+#: installer.rs:401
 msgid "Reinstall MAN"
 msgstr "أعد تثبيت MAN"
 
-#: installer.rs:378
+#: installer.rs:402
 msgid "Replaces the system but keeps personal files in /home. The current system is saved as a snapshot."
 msgstr "يستبدل النظام لكنه يحتفظ بالملفات الشخصية في ‎/home. يُحفظ النظام الحالي كلقطة."
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "Custom Partitions"
 msgstr "أقسام مخصصة"
 
-#: installer.rs:383
+#: installer.rs:407
 msgid "For experts: choose partitions yourself, or create them with Disks."
 msgstr "للخبراء: اختر الأقسام بنفسك أو أنشئها باستخدام «الأقراص»."
 
-#: installer.rs:392
+#: installer.rs:418
+msgid "Erase an External Disk and Install MAN"
+msgstr "امسح قرصًا خارجيًا وثبّت MAN"
+
+#: installer.rs:419
+msgid "Everything on the chosen external disk is deleted. The Mac's internal disk is not shown and not changed."
+msgstr "سيُحذف كل ما على القرص الخارجي المختار. لا يُعرض القرص الداخلي لجهاز Mac ولا يُغيَّر."
+
+#: installer.rs:420
+msgid "Install on This Mac"
+msgstr "التثبيت على جهاز Mac هذا"
+
+#: installer.rs:422
+msgid "Recommended. Into the {size} prepared in macOS. macOS and its partitions are not changed."
+msgstr "موصى به. في المساحة {size} المجهزة في macOS. لا يتغير macOS ولا أقسامه."
+
+#: installer.rs:427
+msgid "No space for MAN was prepared yet. In macOS, run MAN-Mac/install-man.sh from the MAN USB stick and choose “MAN boot loader + space for MAN”."
+msgstr "لم تُجهَّز مساحة لـ MAN بعد. في macOS، شغّل MAN-Mac/install-man.sh من ذاكرة USB الخاصة بـ MAN واختر “MAN boot loader + space for MAN”."
+
+#: installer.rs:433
 msgid "Disk"
 msgstr "القرص"
 
-#: installer.rs:392
+#: installer.rs:433
 msgid "Choose the disk to erase. Disks that cannot be used are shown with the reason."
 msgstr "اختر القرص الذي سيُمسح. تظهر الأقراص غير القابلة للاستخدام مع السبب."
 
-#: installer.rs:418
+#: installer.rs:459
 msgid "No disks were found"
 msgstr "لم يُعثر على أقراص"
 
-#: installer.rs:425
+#: installer.rs:466
 msgid "Free Space Next to Windows"
 msgstr "المساحة الحرة بجانب Windows"
 
-#: installer.rs:426
+#: installer.rs:467
 msgid "Windows' partitions are not touched. MAN shares the EFI system partition and adds Windows to its start menu."
 msgstr "لا تُمس أقسام Windows. يشارك MAN قسم نظام EFI ويضيف Windows إلى قائمة الإقلاع الخاصة به."
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "{size} free"
 msgstr "{size} حرة"
 
-#: installer.rs:432
+#: installer.rs:473
 msgid "no free space"
 msgstr "لا توجد مساحة حرة"
 
-#: installer.rs:437
+#: installer.rs:478
 msgid "{model} (Windows)"
 msgstr "{model} (Windows)"
 
-#: installer.rs:456
+#: installer.rs:497
 msgid "Installation to Replace"
 msgstr "التثبيت المراد استبداله"
 
-#: installer.rs:477
+#: installer.rs:518
 msgid "no home folders"
 msgstr "لا توجد مجلدات منزلية"
 
-#: installer.rs:479
+#: installer.rs:520
 msgid "home folders: {list}"
 msgstr "المجلدات المنزلية: {list}"
 
-#: installer.rs:481
+#: installer.rs:522
 msgid "snapshots: {n}"
 msgstr "اللقطات: {n}"
 
-#: installer.rs:485
+#: installer.rs:526
 msgid "MAN on {model}"
 msgstr "MAN على {model}"
 
-#: installer.rs:499
+#: installer.rs:540
 msgid "Passphrase for {device}"
 msgstr "عبارة المرور لـ {device}"
 
-#: installer.rs:500
+#: installer.rs:541
 msgid "Unlock"
 msgstr "افتح القفل"
 
-#: installer.rs:537
+#: installer.rs:578
 msgid "The installation could not be inspected."
 msgstr "تعذّر فحص التثبيت."
 
-#: installer.rs:554
+#: installer.rs:595
 msgid "Partitions"
 msgstr "الأقسام"
 
-#: installer.rs:555
+#: installer.rs:596
 msgid "The system partition is formatted with Btrfs and holds @system, @home and @snapshots. Partitions on the disk MAN is running from are not listed."
 msgstr "يُهيّأ قسم النظام بنظام Btrfs ويحتوي على ‎@system و‎@home و‎@snapshots. لا تظهر أقسام القرص الذي يعمل منه MAN."
 
-#: installer.rs:557
+#: installer.rs:598
 msgid "Open Disks to create or resize partitions"
 msgstr "افتح «الأقراص» لإنشاء الأقسام أو تغيير حجمها"
 
-#: installer.rs:559
+#: installer.rs:600
 msgid "Refresh the partition list"
 msgstr "حدّث قائمة الأقسام"
 
-#: installer.rs:567
+#: installer.rs:608
 msgid "Choose a partition"
 msgstr "اختر قسمًا"
 
-#: installer.rs:579
+#: installer.rs:620
 msgid "EFI System Partition"
 msgstr "قسم نظام EFI"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Format EFI System Partition"
 msgstr "هيّئ قسم نظام EFI"
 
-#: installer.rs:580
+#: installer.rs:621
 msgid "Leave off to keep boot loaders of other systems"
 msgstr "اتركه معطّلًا للإبقاء على محمّلات الإقلاع للأنظمة الأخرى"
 
-#: installer.rs:582
+#: installer.rs:623
 msgid "System Partition (formatted as Btrfs)"
 msgstr "قسم النظام (يُهيّأ بنظام Btrfs)"
 
-#: installer.rs:583
+#: installer.rs:624
 msgid "Boot Partition (needed with encryption)"
 msgstr "قسم الإقلاع (مطلوب مع التشفير)"
 
-#: installer.rs:642
+#: installer.rs:683
 msgid "Partition list refreshed"
 msgstr "حُدّثت قائمة الأقسام"
 
-#: installer.rs:650
+#: installer.rs:691
 msgid "Security"
 msgstr "الأمان"
 
-#: installer.rs:652
+#: installer.rs:693
 msgid "Encrypt the System"
 msgstr "شفّر النظام"
 
-#: installer.rs:653
+#: installer.rs:694
 msgid "Protects your data if the computer is lost or stolen. A passphrase is asked at every start."
 msgstr "يحمي بياناتك إذا فُقد الحاسوب أو سُرق. تُطلب عبارة مرور عند كل إقلاع."
 
-#: installer.rs:656
+#: installer.rs:697
 msgid "Passphrase"
 msgstr "عبارة المرور"
 
-#: installer.rs:657
+#: installer.rs:698
 msgid "Confirm Passphrase"
 msgstr "أكّد عبارة المرور"
 
-#: installer.rs:659
+#: installer.rs:700
 msgid "Keep this passphrase safe"
 msgstr "احتفظ بعبارة المرور هذه في مكان آمن"
 
-#: installer.rs:660
+#: installer.rs:701
 msgid "If it is lost, the data cannot be recovered by anyone. The kernel and boot files stay on a small unencrypted boot partition."
 msgstr "إذا فقدتها فلن يستطيع أحد استعادة البيانات. تبقى النواة وملفات الإقلاع على قسم إقلاع صغير غير مشفّر."
 
-#: installer.rs:732
+#: installer.rs:774
 msgid "The passphrase needs at least 8 characters."
 msgstr "يجب أن تتكون عبارة المرور من 8 محارف على الأقل."
 
-#: installer.rs:734
+#: installer.rs:776
 msgid "The passphrases do not match."
 msgstr "عبارتا المرور غير متطابقتين."
 
-#: installer.rs:748
+#: installer.rs:790
 msgid "Choose a disk."
 msgstr "اختر قرصًا."
 
-#: installer.rs:758
+#: installer.rs:800
 msgid "Choose the disk with Windows."
 msgstr "اختر القرص الذي عليه Windows."
 
-#: installer.rs:767
+#: installer.rs:809
 msgid "Choose the installation to replace."
 msgstr "اختر التثبيت المراد استبداله."
 
-#: installer.rs:768
+#: installer.rs:810
 msgid "Unlock the encrypted installation first."
 msgstr "افتح قفل التثبيت المشفّر أولًا."
 
-#: installer.rs:769
+#: installer.rs:811
 msgid "This partition holds no MAN system."
 msgstr "لا يحتوي هذا القسم على نظام MAN."
 
-#: installer.rs:776
+#: installer.rs:818
 msgid "Choose an EFI system partition."
 msgstr "اختر قسم نظام EFI."
 
-#: installer.rs:778
+#: installer.rs:820
 msgid "Choose the system partition."
 msgstr "اختر قسم النظام."
 
-#: installer.rs:780
+#: installer.rs:822
 msgid "The EFI and system partitions must be different."
 msgstr "يجب أن يكون قسم EFI وقسم النظام مختلفين."
 
-#: installer.rs:782
+#: installer.rs:824
 msgid "Encryption needs a separate boot partition."
 msgstr "يحتاج التشفير إلى قسم إقلاع منفصل."
 
-#: installer.rs:791
+#: installer.rs:833
 msgid "The system partition must be at least {size}."
 msgstr "يجب ألا يقل قسم النظام عن {size}."
 
-#: installer.rs:793
+#: installer.rs:835
 msgid "The EFI partition is not FAT formatted; turn on formatting."
 msgstr "قسم EFI غير مهيّأ بنظام FAT؛ فعّل التهيئة."
 
-#: installer.rs:795
+#: installer.rs:837
 msgid "The system partition is mounted; unmount it in Disks first."
 msgstr "قسم النظام موصول؛ افصله أولًا في «الأقراص»."
 
-#: installer.rs:817
+#: installer.rs:859
 msgid "Where Should MAN Be Installed?"
 msgstr "أين يُثبَّت MAN؟"
 
-#: installer.rs:824
+#: installer.rs:866
 msgid "Time and Keyboard"
 msgstr "الوقت ولوحة المفاتيح"
 
-#: installer.rs:829
+#: installer.rs:871
 msgid "Time Zone"
 msgstr "المنطقة الزمنية"
 
-#: installer.rs:833
+#: installer.rs:875
 msgid "Keyboard Layout"
 msgstr "تخطيط لوحة المفاتيح"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Test Your Keyboard"
 msgstr "جرّب لوحة المفاتيح"
 
-#: installer.rs:843
+#: installer.rs:885
 msgid "Type here to check that your keys produce the right characters."
 msgstr "اكتب هنا للتأكد من أن المفاتيح تُخرج المحارف الصحيحة."
 
-#: installer.rs:844
+#: installer.rs:886
 msgid "Type here"
 msgstr "اكتب هنا"
 
-#: installer.rs:877
+#: installer.rs:919
 msgid "Time Zone and Keyboard"
 msgstr "المنطقة الزمنية ولوحة المفاتيح"
 
-#: installer.rs:920
+#: installer.rs:962
 msgid "No disk chosen"
 msgstr "لم يُختر قرص"
 
-#: installer.rs:926
+#: installer.rs:968
 msgid "No system partition chosen"
 msgstr "لم يُختر قسم نظام"
 
-#: installer.rs:928
+#: installer.rs:970
 msgid "The system partition disappeared"
 msgstr "اختفى قسم النظام"
 
-#: installer.rs:933
+#: installer.rs:975
 msgid "No installation chosen"
 msgstr "لم يُختر تثبيت"
 
-#: installer.rs:944
+#: installer.rs:986
 msgid "The disk disappeared"
 msgstr "اختفى القرص"
 
-#: installer.rs:955
+#: installer.rs:997
 msgid "Review"
 msgstr "المراجعة"
 
-#: installer.rs:958
+#: installer.rs:1000
 msgid "Destination"
 msgstr "الوجهة"
 
-#: installer.rs:960
+#: installer.rs:1002
 msgid "Erase disk and install"
 msgstr "امسح القرص وثبّت"
 
-#: installer.rs:961
+#: installer.rs:1003
+msgid "This Mac (space prepared in macOS)"
+msgstr "جهاز Mac هذا (مساحة مجهزة في macOS)"
+
+#: installer.rs:1004
 msgid "Custom partitions"
 msgstr "أقسام مخصصة"
 
-#: installer.rs:962
+#: installer.rs:1005
 msgid "Reinstall, keeping /home"
 msgstr "أعد التثبيت مع الإبقاء على ‎/home"
 
-#: installer.rs:963
+#: installer.rs:1006
 msgid "Alongside Windows"
 msgstr "بجانب Windows"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (will be formatted)"
 msgstr " (سيُهيّأ)"
 
-#: installer.rs:969
+#: installer.rs:1012
 msgid " (kept)"
 msgstr " (يُحتفظ به)"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "System Partition"
 msgstr "قسم النظام"
 
-#: installer.rs:970
+#: installer.rs:1013
 msgid "{partition} (will be formatted)"
 msgstr "{partition} (سيُهيّأ)"
 
-#: installer.rs:972
+#: installer.rs:1015
 msgid "Boot Partition"
 msgstr "قسم الإقلاع"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "Space for MAN"
 msgstr "مساحة لـ MAN"
 
-#: installer.rs:980
+#: installer.rs:1023
 msgid "{free} of free space (a boot partition and the system partition are created)"
 msgstr "{free} مساحة حرة (يُنشأ قسم إقلاع وقسم النظام)"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Windows"
 msgstr "Windows"
 
-#: installer.rs:981
+#: installer.rs:1024
 msgid "Not changed. It appears in MAN's start menu; the EFI system partition is shared."
 msgstr "بلا تغيير. يظهر في قائمة إقلاع MAN، وقسم نظام EFI مشترك."
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Encryption"
 msgstr "التشفير"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "On (LUKS2)"
 msgstr "مفعّل (LUKS2)"
 
-#: installer.rs:983
+#: installer.rs:1026
 msgid "Off"
 msgstr "معطّل"
 
-#: installer.rs:985
+#: installer.rs:1028
 msgid "File System"
 msgstr "نظام الملفات"
 
-#: installer.rs:986
+#: installer.rs:1029
 msgid "Btrfs: @system for MAN, @home for your files, @snapshots for restore points. All share the free space."
 msgstr "Btrfs: ‏@system لـ MAN، و‎@home لملفاتك، و‎@snapshots لنقاط الاستعادة. تتشارك جميعها المساحة الحرة."
 
-#: installer.rs:991
+#: installer.rs:1034
 msgid "System"
 msgstr "النظام"
 
-#: installer.rs:993
+#: installer.rs:1036
 msgid "Your Account"
 msgstr "حسابك"
 
-#: installer.rs:994
+#: installer.rs:1037
 msgid "Created in MAN Setup when the computer starts for the first time, together with the computer name, look and privacy settings."
 msgstr "يُنشأ في MAN Setup عند أول تشغيل للحاسوب، مع اسم الحاسوب والمظهر وإعدادات الخصوصية."
 
-#: installer.rs:998
+#: installer.rs:1041
 msgid "Keyboard"
 msgstr "لوحة المفاتيح"
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "All data on {model} ({path}) will be erased."
 msgstr "ستُمسح كل البيانات على {model} ({path})."
 
-#: installer.rs:1002
+#: installer.rs:1045
 msgid "_Erase and Install"
 msgstr "_امسح وثبّت"
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "The chosen partitions will be formatted. Other partitions are not changed."
 msgstr "ستُهيّأ الأقسام المختارة. لا تتغير الأقسام الأخرى."
 
-#: installer.rs:1003
+#: installer.rs:1046
 msgid "_Format and Install"
 msgstr "_هيّئ وثبّت"
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "The current system is replaced. Your files in /home are kept, and the old system is saved as a snapshot."
 msgstr "يُستبدل النظام الحالي. تبقى ملفاتك في ‎/home، ويُحفظ النظام القديم كلقطة."
 
-#: installer.rs:1004
+#: installer.rs:1047
 msgid "_Reinstall"
 msgstr "_أعد التثبيت"
 
-#: installer.rs:1005
+#: installer.rs:1048
 msgid "MAN is installed into the free space. Windows and its files are not changed."
 msgstr "يُثبَّت MAN في المساحة الحرة. لا يتغير Windows ولا ملفاته."
 
-#: installer.rs:1019
+#: installer.rs:1062
 msgid "Ready to Install"
 msgstr "جاهز للتثبيت"
 
-#: installer.rs:1029
+#: installer.rs:1072
 msgid "Erase {model}?"
 msgstr "أأمسح {model}؟"
 
-#: installer.rs:1030
+#: installer.rs:1073
 msgid "Every file and partition on {path} ({size}) will be permanently deleted. This cannot be undone."
 msgstr "ستُحذف كل الملفات والأقسام على {path} ({size}) نهائيًا. لا يمكن التراجع عن هذا."
 
-#: installer.rs:1031
+#: installer.rs:1074
 msgid "Erase and Install"
 msgstr "امسح وثبّت"
 
-#: installer.rs:1035
+#: installer.rs:1078
 msgid "Format the Chosen Partitions?"
 msgstr "أأهيّئ الأقسام المختارة؟"
 
-#: installer.rs:1036
+#: installer.rs:1079
 msgid "All data on the chosen partitions will be permanently deleted. Other partitions are not changed."
 msgstr "ستُحذف كل البيانات على الأقسام المختارة نهائيًا. لا تتغير الأقسام الأخرى."
 
-#: installer.rs:1037
+#: installer.rs:1080
 msgid "Format and Install"
 msgstr "هيّئ وثبّت"
 
-#: installer.rs:1041
+#: installer.rs:1084
 msgid "Install MAN Alongside Windows?"
 msgstr "أأثبّت MAN بجانب Windows؟"
 
-#: installer.rs:1042
+#: installer.rs:1085
 msgid "MAN goes into the {free} of free space on {model} ({path}). Windows and its files are not changed."
 msgstr "يُثبَّت MAN في {free} من المساحة الحرة على {model} ({path}). لا يتغير Windows ولا ملفاته."
 
-#: installer.rs:1046
+#: installer.rs:1089
 msgid "Install"
 msgstr "ثبّت"
 
-#: installer.rs:1050
+#: installer.rs:1093
 msgid "Reinstall MAN?"
 msgstr "أأعيد تثبيت MAN؟"
 
-#: installer.rs:1051
+#: installer.rs:1094
 msgid "The installed system will be replaced by a fresh copy. Personal files in /home are kept and the old system remains available as a snapshot."
 msgstr "سيُستبدل النظام المثبّت بنسخة جديدة. تبقى الملفات الشخصية في ‎/home، ويبقى النظام القديم متاحًا كلقطة."
 
-#: installer.rs:1052
+#: installer.rs:1095
 msgid "Reinstall"
 msgstr "أعد التثبيت"
 
-#: installer.rs:1057
+#: installer.rs:1100
 msgid "_Cancel"
 msgstr "_ألغِ"
 
-#: installer.rs:1076
+#: installer.rs:1119
 msgid "Installing MAN"
 msgstr "جارٍ تثبيت MAN"
 
-#: installer.rs:1077
+#: installer.rs:1120
 msgid "Starting…"
 msgstr "جارٍ البدء…"
 
-#: installer.rs:1090
+#: installer.rs:1133
 msgid "Installing"
 msgstr "جارٍ التثبيت"
 
-#: installer.rs:1103
+#: installer.rs:1146
 msgid "Step {index} of {n}  ·  {title}"
 msgstr "الخطوة {index} من {n}  ·  {title}"
 
-#: installer.rs:1138
+#: installer.rs:1181
 msgid "MAN Is Installed"
 msgstr "ثُبّت MAN"
 
-#: installer.rs:1143
+#: installer.rs:1186
 msgid "Restart the computer to start using MAN. A menu at every start lets you choose MAN or Windows; the temporary MAN installer partition is removed by MAN on its first start."
 msgstr "أعد تشغيل الحاسوب لتبدأ باستخدام MAN. تتيح لك قائمة عند كل إقلاع اختيار MAN أو Windows، ويزيل MAN قسم المثبّت المؤقت عند أول تشغيل."
 
-#: installer.rs:1149
+#: installer.rs:1192
 msgid "Restart the computer to start using MAN. You can remove the installation media; if it stays connected, MAN still starts from the new disk."
 msgstr "أعد تشغيل الحاسوب لتبدأ باستخدام MAN. يمكنك إزالة وسيط التثبيت، وإن بقي موصولًا فسيبدأ MAN من القرص الجديد."
 
-#: installer.rs:1156
+#: installer.rs:1199
 msgid "_Restart Now"
 msgstr "_أعد التشغيل الآن"
 
-#: installer.rs:1171
+#: installer.rs:1214
 msgid "Done"
 msgstr "تم"
 
-#: installer.rs:1182
+#: installer.rs:1225
 msgid "Installation Failed"
 msgstr "فشل التثبيت"
 
-#: installer.rs:1186
+#: installer.rs:1229
 msgid "No other disk was changed, and the installer has released the target disk. You can review the plan and try again."
 msgstr "لم يتغير أي قرص آخر، وحرّر المثبّت القرص الهدف. يمكنك مراجعة الخطة والمحاولة مجددًا."
 
-#: installer.rs:1191
+#: installer.rs:1234
 msgid "_Review and Try Again"
 msgstr "_راجع وأعد المحاولة"
 
@@ -1062,413 +1086,557 @@ msgstr "مرحبًا بك في Marquee"
 msgid "Would you like to open Marquee, or share your movies, music and photos with other computers on this network?"
 msgstr "هل تريد فتح Marquee، أم مشاركة أفلامك وموسيقاك وصورك مع الحواسيب الأخرى على هذه الشبكة؟"
 
-#: oobe.rs:165
-msgid "The system disk was not found."
-msgstr "لم يُعثر على قرص النظام."
-
-#: oobe.rs:173
-msgid "Encryption needs the Btrfs layout created by the MAN installer."
-msgstr "يتطلب التشفير تخطيط Btrfs الذي ينشئه مثبّت MAN."
-
-#: oobe.rs:177
-msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
-msgstr "لا يحتوي هذا التثبيت على قسم إقلاع منفصل يحتاجه التشفير. أعد تثبيت MAN باختيار «امسح القرص» لاستخدام التشفير."
-
-#: oobe.rs:501
-msgid "MAN Setup"
-msgstr "MAN Setup"
-
-#: oobe.rs:554
-msgid "Where Are You?"
-msgstr "أين أنت؟"
-
-#: oobe.rs:554
-msgid "Your country or region sets the date, time and number formats."
-msgstr "يحدد بلدك أو منطقتك تنسيق التاريخ والوقت والأرقام."
-
-#: oobe.rs:572
-msgid "Country"
-msgstr "البلد"
-
-#: oobe.rs:587
-msgid "GNU General Public License, version 2"
-msgstr "رخصة جنو العمومية، الإصدار 2"
-
-#: oobe.rs:587
-msgid "The Linux kernel and many system tools"
-msgstr "نواة لينكس وكثير من أدوات النظام"
-
-#: oobe.rs:588
-msgid "GNU General Public License, version 3"
-msgstr "رخصة جنو العمومية، الإصدار 3"
-
-#: oobe.rs:588
-msgid "Many GNU and GNOME programs"
-msgstr "كثير من برامج جنو وجنوم"
-
-#: oobe.rs:589
-msgid "GNU Lesser General Public License, version 2.1"
-msgstr "رخصة جنو العمومية الصغرى، الإصدار 2.1"
-
-#: oobe.rs:589
-msgid "GTK, GLib and many libraries"
-msgstr "GTK وGLib وكثير من المكتبات"
-
-#: oobe.rs:590
-msgid "GNU Lesser General Public License, version 3"
-msgstr "رخصة جنو العمومية الصغرى، الإصدار 3"
-
-#: oobe.rs:591
-msgid "Mozilla Public License 2.0"
-msgstr "رخصة موزيلا العمومية 2.0"
-
-#: oobe.rs:591
-msgid "Programs and libraries from Mozilla and others"
-msgstr "برامج ومكتبات من موزيلا وغيرها"
-
-#: oobe.rs:592
-msgid "Apache License 2.0"
-msgstr "رخصة أباتشي 2.0"
-
-#: oobe.rs:592
-msgid "Libraries and tools"
-msgstr "المكتبات والأدوات"
-
-#: oobe.rs:597
-msgid "License Agreement"
-msgstr "اتفاقية الترخيص"
-
-#: oobe.rs:597
-msgid "Please read and accept the terms under which MAN is provided."
-msgstr "اقرأ الشروط التي يُقدَّم بها MAN ووافق عليها."
-
-#: oobe.rs:608
-msgid "Licenses"
-msgstr "التراخيص"
-
-#: oobe.rs:616
-msgid "The license text is not available ({path})."
-msgstr "نص الترخيص غير متاح ({path})."
-
-#: oobe.rs:622
-msgid "I have read and accept the license terms"
-msgstr "قرأت شروط الترخيص وأوافق عليها"
-
-#: oobe.rs:692
+#: net.rs:59
 msgid "Wired"
 msgstr "سلكي"
 
-#: oobe.rs:698
+#: net.rs:65
 msgid "Not connected"
 msgstr "غير متصل"
 
-#: oobe.rs:732
-msgid "Connect to the Internet"
-msgstr "اتصل بالإنترنت"
-
-#: oobe.rs:732
-msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
-msgstr "يتيح الاتصال لـ MAN ضبط الوقت وإبقاء برامجك محدّثة. يمكنك فعل ذلك لاحقًا أيضًا."
-
-#: oobe.rs:734
-msgid "Checking the connection…"
-msgstr "جارٍ التحقق من الاتصال…"
-
-#: oobe.rs:740
-msgid "Wi-Fi Networks"
-msgstr "شبكات Wi-Fi"
-
-#: oobe.rs:742
-msgid "Search Again"
-msgstr "ابحث مجددًا"
-
-#: oobe.rs:753
-msgid "_Skip"
-msgstr "_تخطَّ"
-
-#: oobe.rs:754
-msgid "You can connect later in Settings."
-msgstr "يمكنك الاتصال لاحقًا من الإعدادات."
-
-#: oobe.rs:763
-msgid "Connected"
-msgstr "متصل"
-
-#: oobe.rs:763
-msgid "Not Connected"
-msgstr "غير متصل"
-
-#: oobe.rs:791
-msgid "No networks found"
-msgstr "لم يُعثر على شبكات"
-
-#: oobe.rs:817
-msgid "Internet"
-msgstr "الإنترنت"
-
-#: oobe.rs:864
+#: net.rs:121
 msgid "Connected to “{ssid}”"
 msgstr "متصل بـ «{ssid}»"
 
-#: oobe.rs:864
+#: net.rs:121
 msgid "Could not connect to “{ssid}”"
 msgstr "تعذّر الاتصال بـ «{ssid}»"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Connect to “{ssid}”"
 msgstr "اتصل بـ «{ssid}»"
 
-#: oobe.rs:874
+#: net.rs:131
 msgid "Enter the network password."
 msgstr "أدخل كلمة سر الشبكة."
 
-#: oobe.rs:878
+#: net.rs:135
 msgid "C_onnect"
 msgstr "_اتصل"
 
-#: oobe.rs:901
+#: oobe.rs:166
+msgid "The system disk was not found."
+msgstr "لم يُعثر على قرص النظام."
+
+#: oobe.rs:174
+msgid "Encryption needs the Btrfs layout created by the MAN installer."
+msgstr "يتطلب التشفير تخطيط Btrfs الذي ينشئه مثبّت MAN."
+
+#: oobe.rs:186
+msgid "This installation has no separate boot partition, which encryption needs. Reinstall MAN with “Erase Disk” to use encryption."
+msgstr "لا يحتوي هذا التثبيت على قسم إقلاع منفصل يحتاجه التشفير. أعد تثبيت MAN باختيار «امسح القرص» لاستخدام التشفير."
+
+#: oobe.rs:510
+msgid "MAN Setup"
+msgstr "MAN Setup"
+
+#: oobe.rs:563
+msgid "Where Are You?"
+msgstr "أين أنت؟"
+
+#: oobe.rs:563
+msgid "Your country or region sets the date, time and number formats."
+msgstr "يحدد بلدك أو منطقتك تنسيق التاريخ والوقت والأرقام."
+
+#: oobe.rs:581
+msgid "Country"
+msgstr "البلد"
+
+#: oobe.rs:596
+msgid "GNU General Public License, version 2"
+msgstr "رخصة جنو العمومية، الإصدار 2"
+
+#: oobe.rs:596
+msgid "The Linux kernel and many system tools"
+msgstr "نواة لينكس وكثير من أدوات النظام"
+
+#: oobe.rs:597
+msgid "GNU General Public License, version 3"
+msgstr "رخصة جنو العمومية، الإصدار 3"
+
+#: oobe.rs:597
+msgid "Many GNU and GNOME programs"
+msgstr "كثير من برامج جنو وجنوم"
+
+#: oobe.rs:598
+msgid "GNU Lesser General Public License, version 2.1"
+msgstr "رخصة جنو العمومية الصغرى، الإصدار 2.1"
+
+#: oobe.rs:598
+msgid "GTK, GLib and many libraries"
+msgstr "GTK وGLib وكثير من المكتبات"
+
+#: oobe.rs:599
+msgid "GNU Lesser General Public License, version 3"
+msgstr "رخصة جنو العمومية الصغرى، الإصدار 3"
+
+#: oobe.rs:600
+msgid "Mozilla Public License 2.0"
+msgstr "رخصة موزيلا العمومية 2.0"
+
+#: oobe.rs:600
+msgid "Programs and libraries from Mozilla and others"
+msgstr "برامج ومكتبات من موزيلا وغيرها"
+
+#: oobe.rs:601
+msgid "Apache License 2.0"
+msgstr "رخصة أباتشي 2.0"
+
+#: oobe.rs:601
+msgid "Libraries and tools"
+msgstr "المكتبات والأدوات"
+
+#: oobe.rs:606
+msgid "License Agreement"
+msgstr "اتفاقية الترخيص"
+
+#: oobe.rs:606
+msgid "Please read and accept the terms under which MAN is provided."
+msgstr "اقرأ الشروط التي يُقدَّم بها MAN ووافق عليها."
+
+#: oobe.rs:617
+msgid "Licenses"
+msgstr "التراخيص"
+
+#: oobe.rs:625
+msgid "The license text is not available ({path})."
+msgstr "نص الترخيص غير متاح ({path})."
+
+#: oobe.rs:631
+msgid "I have read and accept the license terms"
+msgstr "قرأت شروط الترخيص وأوافق عليها"
+
+#: oobe.rs:658
+msgid "Connect to the Internet"
+msgstr "اتصل بالإنترنت"
+
+#: oobe.rs:658
+msgid "Connecting lets MAN set the time and keep your software up to date. You can also do this later."
+msgstr "يتيح الاتصال لـ MAN ضبط الوقت وإبقاء برامجك محدّثة. يمكنك فعل ذلك لاحقًا أيضًا."
+
+#: oobe.rs:660
+msgid "Checking the connection…"
+msgstr "جارٍ التحقق من الاتصال…"
+
+#: oobe.rs:666
+msgid "Wi-Fi Networks"
+msgstr "شبكات Wi-Fi"
+
+#: oobe.rs:668
+msgid "Search Again"
+msgstr "ابحث مجددًا"
+
+#: oobe.rs:679
+msgid "_Skip"
+msgstr "_تخطَّ"
+
+#: oobe.rs:680
+msgid "You can connect later in Settings."
+msgstr "يمكنك الاتصال لاحقًا من الإعدادات."
+
+#: oobe.rs:689
+msgid "Connected"
+msgstr "متصل"
+
+#: oobe.rs:689
+msgid "Not Connected"
+msgstr "غير متصل"
+
+#: oobe.rs:717
+msgid "No networks found"
+msgstr "لم يُعثر على شبكات"
+
+#: oobe.rs:746
+msgid "Internet"
+msgstr "الإنترنت"
+
+#: oobe.rs:777
 msgid "Create Your Account"
 msgstr "أنشئ حسابك"
 
-#: oobe.rs:901
+#: oobe.rs:777
 msgid "You will be the administrator of this computer, with full root access through sudo."
 msgstr "ستكون مدير هذا الحاسوب، مع صلاحيات root كاملة عبر sudo."
 
-#: oobe.rs:904
+#: oobe.rs:780
 msgid "Full Name"
 msgstr "الاسم الكامل"
 
-#: oobe.rs:905
+#: oobe.rs:781
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: oobe.rs:906
+#: oobe.rs:782
 msgid "Password"
 msgstr "كلمة السر"
 
-#: oobe.rs:907
+#: oobe.rs:783
 msgid "Confirm Password"
 msgstr "أكّد كلمة السر"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Log In Automatically"
 msgstr "ادخل تلقائيًا"
 
-#: oobe.rs:908
+#: oobe.rs:784
 msgid "Skip the login screen when the computer starts"
 msgstr "تخطَّ شاشة الدخول عند تشغيل الحاسوب"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Existing Home Folders"
 msgstr "المجلدات المنزلية الموجودة"
 
-#: oobe.rs:915
+#: oobe.rs:791
 msgid "Use the same username to keep using a folder kept from a previous installation."
 msgstr "استخدم اسم المستخدم نفسه لتواصل استخدام مجلد محفوظ من تثبيت سابق."
 
-#: oobe.rs:919
+#: oobe.rs:795
 msgid "Use"
 msgstr "استخدم"
 
-#: oobe.rs:929
+#: oobe.rs:805
 msgid "Advanced"
 msgstr "متقدم"
 
-#: oobe.rs:930
+#: oobe.rs:806
 msgid "Computer Name"
 msgstr "اسم الحاسوب"
 
-#: oobe.rs:932
+#: oobe.rs:808
 msgid "Set a Root Password"
 msgstr "عيّن كلمة سر root"
 
-#: oobe.rs:933
+#: oobe.rs:809
 msgid "Allows logging in as root directly. Without it, use sudo with your own password."
 msgstr "يسمح بالدخول مباشرة باسم root. بدونها، استخدم sudo بكلمة سرك."
 
-#: oobe.rs:937
+#: oobe.rs:813
 msgid "Root Password"
 msgstr "كلمة سر root"
 
-#: oobe.rs:938
+#: oobe.rs:814
 msgid "Confirm Root Password"
 msgstr "أكّد كلمة سر root"
 
-#: oobe.rs:962
+#: oobe.rs:838
 msgid "Enter your name."
 msgstr "أدخل اسمك."
 
-#: oobe.rs:964
+#: oobe.rs:840
 msgid "Choose a username."
 msgstr "اختر اسم مستخدم."
 
-#: oobe.rs:966
+#: oobe.rs:842
 msgid "This username is already used by the system."
 msgstr "يستخدم النظام اسم المستخدم هذا بالفعل."
 
-#: oobe.rs:969
+#: oobe.rs:845
 msgid "This username is reserved by the system."
 msgstr "اسم المستخدم هذا محجوز للنظام."
 
-#: oobe.rs:971
+#: oobe.rs:847
 msgid "Usernames use lowercase letters, digits, - and _, and start with a letter."
 msgstr "تتكون أسماء المستخدمين من أحرف لاتينية صغيرة وأرقام و- و_، وتبدأ بحرف."
 
-#: oobe.rs:974
+#: oobe.rs:850
 msgid "Choose a password."
 msgstr "اختر كلمة سر."
 
-#: oobe.rs:976
+#: oobe.rs:852
 msgid "The passwords do not match."
 msgstr "كلمتا السر غير متطابقتين."
 
-#: oobe.rs:978
+#: oobe.rs:854
 msgid "The computer name may contain letters, digits and dashes."
 msgstr "يمكن أن يحتوي اسم الحاسوب على أحرف وأرقام وشرطات."
 
-#: oobe.rs:980
+#: oobe.rs:856
 msgid "Enter the root password twice."
 msgstr "أدخل كلمة سر root مرتين."
 
-#: oobe.rs:986
+#: oobe.rs:862
 msgid "Tip: a password with 8 or more characters is much safer."
 msgstr "نصيحة: كلمة السر المكونة من 8 محارف أو أكثر أكثر أمانًا بكثير."
 
-#: oobe.rs:1066
+#: oobe.rs:942
 msgid "Account"
 msgstr "الحساب"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Dark"
 msgstr "داكن"
 
-#: oobe.rs:1084
+#: oobe.rs:960
 msgid "Light"
 msgstr "فاتح"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Make It Yours"
 msgstr "اجعله لك"
 
-#: oobe.rs:1092
+#: oobe.rs:968
 msgid "Pick a style, an accent color and a wallpaper. You see every change right away."
 msgstr "اختر نمطًا ولون تمييز وخلفية. ترى كل تغيير على الفور."
 
-#: oobe.rs:1095
+#: oobe.rs:971
 msgid "Style"
 msgstr "النمط"
 
-#: oobe.rs:1115
+#: oobe.rs:991
 msgid "Accent Color"
 msgstr "لون التمييز"
 
-#: oobe.rs:1158
+#: oobe.rs:1034
 msgid "Wallpaper"
 msgstr "الخلفية"
 
-#: oobe.rs:1202
+#: oobe.rs:1078
 msgid "Customize"
 msgstr "التخصيص"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Privacy"
 msgstr "الخصوصية"
 
-#: oobe.rs:1209
+#: oobe.rs:1085
 msgid "Choose which features may use information about you. You can change this at any time in Settings."
 msgstr "اختر الميزات المسموح لها باستخدام معلومات عنك. يمكنك تغيير ذلك في أي وقت من الإعدادات."
 
-#: oobe.rs:1212
+#: oobe.rs:1088
 msgid "Location Services"
 msgstr "خدمات الموقع"
 
-#: oobe.rs:1213
+#: oobe.rs:1089
 msgid "Allows apps such as Maps and Weather to find your approximate location, using nearby Wi-Fi networks."
 msgstr "تسمح لتطبيقات مثل «الخرائط» و«الطقس» بمعرفة موقعك التقريبي عبر شبكات Wi-Fi القريبة."
 
-#: oobe.rs:1217
+#: oobe.rs:1093
 msgid "Automatic Time Zone"
 msgstr "المنطقة الزمنية التلقائية"
 
-#: oobe.rs:1218
+#: oobe.rs:1094
 msgid "Uses your location to keep the time zone right when you travel."
 msgstr "يستخدم موقعك لإبقاء المنطقة الزمنية صحيحة عند السفر."
 
-#: oobe.rs:1251
+#: oobe.rs:1127
 msgid "_Finish Setup"
 msgstr "_أنهِ الإعداد"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your Disk Is Encrypted"
 msgstr "قرصك مشفّر"
 
-#: oobe.rs:1256
+#: oobe.rs:1132
 msgid "Your data is protected. The passphrase is asked every time the computer starts."
 msgstr "بياناتك محمية. تُطلب عبارة المرور عند كل تشغيل للحاسوب."
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Disk Encryption"
 msgstr "تشفير القرص"
 
-#: oobe.rs:1259
+#: oobe.rs:1135
 msgid "Encryption protects your data if the computer is lost or stolen."
 msgstr "يحمي التشفير بياناتك إذا فُقد الحاسوب أو سُرق."
 
-#: oobe.rs:1261
+#: oobe.rs:1137
 msgid "Not available on this installation"
 msgstr "غير متاح في هذا التثبيت"
 
-#: oobe.rs:1267
+#: oobe.rs:1143
 msgid "Encryption protects your files if the computer is lost or stolen. Without the passphrase, nobody can read the disk."
 msgstr "يحمي التشفير ملفاتك إذا فُقد الحاسوب أو سُرق. لا يستطيع أحد قراءة القرص دون عبارة المرور."
 
-#: oobe.rs:1270
+#: oobe.rs:1146
 msgid "Encrypt the Disk"
 msgstr "شفّر القرص"
 
-#: oobe.rs:1271
+#: oobe.rs:1147
 msgid "The passphrase is asked every time the computer starts."
 msgstr "تُطلب عبارة المرور عند كل تشغيل للحاسوب."
 
-#: oobe.rs:1279
+#: oobe.rs:1155
 msgid "Encryption starts at the next restart"
 msgstr "يبدأ التشفير عند إعادة التشغيل التالية"
 
-#: oobe.rs:1280
+#: oobe.rs:1156
 msgid "Your disk is then encrypted in the background while you use the computer. If the passphrase is lost, the data cannot be recovered by anyone."
 msgstr "يُشفَّر القرص بعدها في الخلفية أثناء استخدامك للحاسوب. إذا فقدت عبارة المرور فلن يستطيع أحد استعادة البيانات."
 
-#: oobe.rs:1377
+#: oobe.rs:1253
 msgid "Preparing MAN"
 msgstr "جارٍ تجهيز MAN"
 
-#: oobe.rs:1378
+#: oobe.rs:1254
 msgid "Getting everything ready…"
 msgstr "جارٍ تجهيز كل شيء…"
 
-#: oobe.rs:1383
+#: oobe.rs:1259
 msgid "_Reboot"
 msgstr "_أعد التشغيل"
 
-#: oobe.rs:1385
+#: oobe.rs:1261
 msgid "_Go Back"
 msgstr "_ارجع"
 
-#: oobe.rs:1399
+#: oobe.rs:1275
 msgid "Preparing"
 msgstr "جارٍ التجهيز"
 
-#: oobe.rs:1412
+#: oobe.rs:1288
 msgid "Setup Log"
 msgstr "سجل الإعداد"
 
-#: oobe.rs:1444
+#: oobe.rs:1320
 msgid "All Done!"
 msgstr "اكتمل كل شيء!"
 
-#: oobe.rs:1454
+#: oobe.rs:1330
 msgid "Something Went Wrong"
 msgstr "حدث خطأ ما"
+
+#: recovery.rs:113
+msgid "MAN Recovery"
+msgstr "استرداد MAN"
+
+#: recovery.rs:114
+msgid "Restore your system, reinstall MAN or open a Terminal. First, an administrator of this computer signs in."
+msgstr "استعد نظامك أو أعد تثبيت MAN أو افتح طرفية. أولًا، يسجّل مدير لهذا الحاسوب دخوله."
+
+#: recovery.rs:122
+msgid "Administrator"
+msgstr "المدير"
+
+#: recovery.rs:131
+msgid "No installed system was found on this disk. You can reinstall MAN."
+msgstr "لم يُعثر على نظام مثبت على هذا القرص. يمكنك إعادة تثبيت MAN."
+
+#: recovery.rs:198
+msgid "This computer has MAN {version}."
+msgstr "على هذا الحاسوب MAN {version}."
+
+#: recovery.rs:199
+msgid "What Would You Like to Do?"
+msgstr "ماذا تريد أن تفعل؟"
+
+#: recovery.rs:202
+msgid "Restore a Snapshot"
+msgstr "استعادة لقطة"
+
+#: recovery.rs:202
+msgid "Your system broke? Go back to a moment when everything worked. Your files stay."
+msgstr "تعطّل نظامك؟ عد إلى لحظة كان فيها كل شيء يعمل. تبقى ملفاتك."
+
+#: recovery.rs:203
+msgid "Download the newest MAN and install it again. Your files, accounts and settings stay."
+msgstr "نزّل أحدث MAN وثبّته من جديد. تبقى ملفاتك وحساباتك وإعداداتك."
+
+#: recovery.rs:204
+msgid "Terminal"
+msgstr "الطرفية"
+
+#: recovery.rs:204
+msgid "For experts: type commands with full control of the computer."
+msgstr "للخبراء: اكتب أوامر بتحكم كامل في الحاسوب."
+
+#: recovery.rs:207
+msgid "There are no snapshots on this computer."
+msgstr "لا توجد لقطات على هذا الحاسوب."
+
+#: recovery.rs:240
+msgid "Choose a moment when everything worked. The files in your home folder stay as they are now."
+msgstr "اختر لحظة كان فيها كل شيء يعمل. تبقى الملفات في مجلدك الشخصي كما هي الآن."
+
+#: recovery.rs:257
+msgid "Restore “{name}”?"
+msgstr "استعادة “{name}”؟"
+
+#: recovery.rs:258
+msgid "Your system goes back to how it was on {date}. Your files stay. The system as it is now is kept as a snapshot, so you can come back to it."
+msgstr "سيعود نظامك إلى ما كان عليه في {date}. تبقى ملفاتك. يُحفظ النظام كما هو الآن كلقطة، فيمكنك العودة إليه."
+
+#: recovery.rs:261
+msgid "_Restore"
+msgstr "_استعد"
+
+#: recovery.rs:270
+msgid "Restoring Your System"
+msgstr "جارٍ استعادة نظامك"
+
+#: recovery.rs:275
+msgid "Your system was restored. Restart to use it."
+msgstr "استُعيد نظامك. أعد التشغيل لاستخدامه."
+
+#: recovery.rs:283
+msgid "MAN Recovery downloads the newest MAN. Connect to a network first."
+msgstr "ينزّل استرداد MAN أحدث MAN. اتصل بشبكة أولًا."
+
+#: recovery.rs:388
+msgid "Looking for the newest MAN…"
+msgstr "جارٍ البحث عن أحدث MAN…"
+
+#: recovery.rs:394
+msgid "Your files, accounts and settings stay."
+msgstr "تبقى ملفاتك وحساباتك وإعداداتك."
+
+#: recovery.rs:395
+msgid "Apps you installed as Flatpaks stay; other apps you added may need to be installed again."
+msgstr "تبقى التطبيقات التي ثبّتها كـ Flatpak؛ وقد تحتاج التطبيقات الأخرى التي أضفتها إلى إعادة تثبيت."
+
+#: recovery.rs:396
+msgid "The system as it is now is kept as a snapshot."
+msgstr "يُحفظ النظام كما هو الآن كلقطة."
+
+#: recovery.rs:397
+msgid "Keep the computer plugged in. This takes a while."
+msgstr "أبقِ الحاسوب موصولًا بالكهرباء. يستغرق هذا بعض الوقت."
+
+#: recovery.rs:407
+msgid "_Reinstall MAN"
+msgstr "_إعادة تثبيت MAN"
+
+#: recovery.rs:426
+msgid "MAN {version} ({size}) will be downloaded and installed on this computer."
+msgstr "سيُنزَّل MAN {version} ‏({size}) ويُثبَّت على هذا الحاسوب."
+
+#: recovery.rs:437
+msgid "No MAN for this computer was found."
+msgstr "لم يُعثر على MAN لهذا الحاسوب."
+
+#: recovery.rs:445
+msgid "Reinstalling MAN"
+msgstr "جارٍ إعادة تثبيت MAN"
+
+#: recovery.rs:460
+msgid "MAN was installed again. Your files and accounts were kept. Restart to use it."
+msgstr "أُعيد تثبيت MAN. حُفظت ملفاتك وحساباتك. أعد التشغيل لاستخدامه."
+
+#: recovery.rs:472
+msgid "Do not turn the computer off."
+msgstr "لا تطفئ الحاسوب."
+
+#: recovery.rs:519
+msgid "That Did Not Work"
+msgstr "لم ينجح ذلك"
+
+#: recovery.rs:521
+msgid "_Details"
+msgstr "_التفاصيل"
+
+#: recovery.rs:529
+msgid "_Restart"
+msgstr "_إعادة التشغيل"
+
+#: recovery.rs:533
+msgid "_Back to MAN Recovery"
+msgstr "_العودة إلى استرداد MAN"
+
+#: recovery.rs:575
+msgid "_Shut Down"
+msgstr "_إيقاف التشغيل"
+
+#: recovery.rs:605
+msgid "Looking at this computer…"
+msgstr "جارٍ فحص هذا الحاسوب…"
 
 #: snapshots.rs:84
 msgid "Daily"
@@ -1559,10 +1727,6 @@ msgstr ""
 "سيعود النظام إلى «{description}» بتاريخ {date} بعد إعادة التشغيل. لا تتغير ملفاتك الشخصية.\n"
 "\n"
 "يُحفظ النظام الحالي أولًا كلقطة، لذا يمكن التراجع عن ذلك."
-
-#: snapshots.rs:278
-msgid "_Restore"
-msgstr "_استعد"
 
 #: snapshots.rs:291
 msgid "Restart to Finish Restoring"
@@ -2058,199 +2222,211 @@ msgstr "تعذر تثبيت الحزمة."
 msgid "The app's menu entry is not valid."
 msgstr "مدخل القائمة الخاص بالتطبيق غير صالح."
 
-#: install.rs:16
+#: install.rs:17
 msgid "Checking the installation plan"
 msgstr "جارٍ التحقق من خطة التثبيت"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Preparing the disk"
 msgstr "جارٍ تجهيز القرص"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Copying MAN to the disk"
 msgstr "جارٍ نسخ MAN إلى القرص"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Configuring the new system"
 msgstr "جارٍ ضبط النظام الجديد"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Installing the bootloader"
 msgstr "جارٍ تثبيت محمّل الإقلاع"
 
-#: install.rs:16
+#: install.rs:17
+msgid "Preparing MAN Recovery"
+msgstr "جارٍ تجهيز استرداد MAN"
+
+#: install.rs:17
 msgid "Creating the first snapshot"
 msgstr "جارٍ إنشاء أول لقطة"
 
-#: install.rs:16
+#: install.rs:17
 msgid "Finishing up"
 msgstr "جارٍ الإنهاء"
 
-#: install.rs:199
+#: install.rs:232
 msgid "Removing old partition signatures"
 msgstr "جارٍ إزالة تواقيع الأقسام القديمة"
 
-#: install.rs:205
+#: install.rs:238
 msgid "Creating partitions"
 msgstr "جارٍ إنشاء الأقسام"
 
-#: install.rs:226
+#: install.rs:259
 msgid "Formatting the EFI system partition"
 msgstr "جارٍ تهيئة قسم نظام EFI"
 
-#: install.rs:234
+#: install.rs:267
 msgid "Encrypting the system partition"
 msgstr "جارٍ تشفير قسم النظام"
 
-#: install.rs:246
+#: install.rs:279
 msgid "Formatting the boot partition"
 msgstr "جارٍ تهيئة قسم الإقلاع"
 
-#: install.rs:249
+#: install.rs:282
 msgid "Creating the Btrfs file system"
 msgstr "جارٍ إنشاء نظام ملفات Btrfs"
 
-#: install.rs:258
+#: install.rs:293
 msgid "Removing old file system signatures"
 msgstr "جارٍ إزالة تواقيع أنظمة الملفات القديمة"
 
-#: install.rs:330
+#: install.rs:372
 msgid "Unlocking the encrypted installation"
 msgstr "جارٍ فتح قفل التثبيت المشفّر"
 
-#: install.rs:356
+#: install.rs:399
 msgid "Saving the current system as a snapshot"
 msgstr "جارٍ حفظ النظام الحالي كلقطة"
 
-#: install.rs:362
+#: install.rs:406
 msgid "Removing the previous system"
 msgstr "جارٍ إزالة النظام السابق"
 
-#: install.rs:571
+#: install.rs:615
 msgid "Writing file system table"
 msgstr "جارٍ كتابة جدول أنظمة الملفات"
 
-#: install.rs:593
+#: install.rs:639
 msgid "Setting computer name and identity"
 msgstr "جارٍ تعيين اسم الحاسوب وهويته"
 
-#: install.rs:608
+#: install.rs:654
 msgid "Removing the live session accounts"
 msgstr "جارٍ إزالة حسابات الجلسة الحية"
 
-#: install.rs:641
+#: install.rs:687
 msgid "Creating your account"
 msgstr "جارٍ إنشاء حسابك"
 
-#: install.rs:649
+#: install.rs:699
 msgid "Preparing MAN Setup for the first start"
 msgstr "جارٍ تجهيز MAN Setup لأول تشغيل"
 
-#: install.rs:655
+#: install.rs:705
 msgid "Setting time zone and keyboard"
 msgstr "جارٍ ضبط المنطقة الزمنية ولوحة المفاتيح"
 
-#: install.rs:680
+#: install.rs:730
 msgid "Removing the installer from the new system"
 msgstr "جارٍ إزالة المثبّت من النظام الجديد"
 
-#: install.rs:687
+#: install.rs:737
 msgid "Building the boot image (initramfs)"
 msgstr "جارٍ بناء صورة الإقلاع (initramfs)"
 
-#: install.rs:717
+#: install.rs:767
 msgid "Configuring GRUB"
 msgstr "جارٍ ضبط GRUB"
 
-#: install.rs:735
+#: install.rs:785
 msgid "Installing GRUB to the EFI system partition"
 msgstr "جارٍ تثبيت GRUB على قسم نظام EFI"
 
-#: install.rs:752
+#: install.rs:802
 msgid "Installing the fallback boot loader"
 msgstr "جارٍ تثبيت محمّل الإقلاع الاحتياطي"
 
-#: install.rs:759
+#: install.rs:809
 msgid "Writing the boot menu"
 msgstr "جارٍ كتابة قائمة الإقلاع"
 
-#: install.rs:780
+#: install.rs:834
 msgid "Disk ready"
 msgstr "القرص جاهز"
 
-#: install.rs:793
+#: install.rs:853
+msgid "Keeping your accounts and settings"
+msgstr "جارٍ الإبقاء على حساباتك وإعداداتك"
+
+#: install.rs:869
+msgid "Skipped"
+msgstr "تُخطّي"
+
+#: install.rs:873
 msgid "Creating a snapshot of the fresh system"
 msgstr "جارٍ إنشاء لقطة للنظام الجديد"
 
-#: install.rs:799
+#: install.rs:879
 msgid "Adding the snapshot to the boot menu"
 msgstr "جارٍ إضافة اللقطة إلى قائمة الإقلاع"
 
-#: install.rs:803
+#: install.rs:883
 msgid "Unmounting"
 msgstr "جارٍ الفصل"
 
-#: install.rs:85
+#: install.rs:93
 msgid "The installer backend must run as root."
 msgstr "يجب تشغيل مساعد المثبّت بصلاحيات root."
 
-#: install.rs:88
+#: install.rs:121
 msgid "This computer was not started in UEFI mode. MAN requires UEFI."
 msgstr "لم يبدأ هذا الحاسوب في وضع UEFI. يتطلب MAN وجود UEFI."
 
-#: install.rs:92
+#: install.rs:125
 msgid "The username is not valid."
 msgstr "اسم المستخدم غير صالح."
 
-#: install.rs:95
+#: install.rs:128
 msgid "A password is required."
 msgstr "كلمة السر مطلوبة."
 
-#: install.rs:99
+#: install.rs:132
 msgid "The computer name is not valid."
 msgstr "اسم الحاسوب غير صالح."
 
-#: install.rs:105
+#: install.rs:138
 msgid "Unknown language."
 msgstr "لغة غير معروفة."
 
-#: install.rs:111
+#: install.rs:144
 msgid "The encryption passphrase must have at least 8 characters."
 msgstr "يجب أن تتكون عبارة مرور التشفير من 8 محارف على الأقل."
 
-#: install.rs:122
+#: install.rs:155
 msgid "The disk changed after you confirmed the installation. Nothing was modified; please review and confirm again."
 msgstr "تغيّر القرص بعد تأكيدك للتثبيت. لم يُعدَّل شيء؛ راجع وأكّد مجددًا."
 
-#: install.rs:138
+#: install.rs:171
 msgid "Choose a system partition."
 msgstr "اختر قسم نظام."
 
-#: install.rs:145
+#: install.rs:178
 msgid "The confirmed disk does not hold the chosen system partition."
 msgstr "لا يحتوي القرص المؤكَّد على قسم النظام المختار."
 
-#: install.rs:157
+#: install.rs:190
 msgid "The boot partition must be separate from the EFI and system partitions."
 msgstr "يجب أن يكون قسم الإقلاع منفصلًا عن قسمي EFI والنظام."
 
-#: install.rs:160
+#: install.rs:193
 msgid "The boot partition must be at least 512 MB."
 msgstr "يجب ألا يقل قسم الإقلاع عن 512 MB."
 
-#: install.rs:175
+#: install.rs:208
 msgid "No installation chosen."
 msgstr "لم يُختر تثبيت."
 
-#: install.rs:179
+#: install.rs:212
 msgid "The confirmed disk does not hold the chosen installation."
 msgstr "لا يحتوي القرص المؤكَّد على التثبيت المختار."
 
-#: install.rs:337
+#: install.rs:379
 msgid "The encrypted installation has no MAN_BOOT partition."
 msgstr "لا يحتوي التثبيت المشفّر على قسم MAN_BOOT."
 
-#: install.rs:695
+#: install.rs:745
 msgid "No kernel with matching modules was found in /boot."
 msgstr "لم يُعثر في ‎/boot على نواة بوحدات مطابقة."
 
@@ -2258,41 +2434,109 @@ msgstr "لم يُعثر في ‎/boot على نواة بوحدات مطابقة.
 msgid "The language must be changed by the system helper."
 msgstr "يجب أن يغيّر مساعد النظام اللغة."
 
-#: oobe.rs:204
+#: oobe.rs:205
 msgid "Applying your settings"
 msgstr "جارٍ تطبيق إعداداتك"
 
-#: oobe.rs:212
+#: oobe.rs:213
 msgid "Preparing disk encryption"
 msgstr "جارٍ تجهيز تشفير القرص"
 
-#: oobe.rs:216
+#: oobe.rs:217
 msgid "Finishing"
 msgstr "جارٍ الإنهاء"
 
-#: oobe.rs:100
+#: oobe.rs:101
 msgid "MAN Setup must be finished by the system helper."
 msgstr "يجب أن يُنهي مساعد النظام MAN Setup."
 
-#: oobe.rs:103
+#: oobe.rs:104
 msgid "MAN Setup has already been completed on this computer."
 msgstr "اكتمل MAN Setup على هذا الحاسوب من قبل."
 
-#: oobe.rs:124
+#: oobe.rs:125
 msgid "Unknown accent color."
 msgstr "لون تمييز غير معروف."
 
-#: oobe.rs:128
+#: oobe.rs:129
 msgid "The chosen wallpaper is not available."
 msgstr "الخلفية المختارة غير متاحة."
 
-#: oobe.rs:146
+#: oobe.rs:147
 msgid "This system cannot be encrypted."
 msgstr "لا يمكن تشفير هذا النظام."
 
-#: oobe.rs:257
+#: oobe.rs:258
 msgid "The setup key is missing, so encryption cannot continue in the background."
 msgstr "مفتاح الإعداد مفقود، لذا لا يمكن متابعة التشفير في الخلفية."
+
+#: recovery.rs:450
+msgid "Downloading MAN"
+msgstr "جارٍ تنزيل MAN"
+
+#: recovery.rs:459
+msgid "Opening the downloaded MAN"
+msgstr "جارٍ فتح MAN المنزَّل"
+
+#: recovery.rs:85
+msgid "Leaving out what Recovery does not need"
+msgstr "جارٍ حذف ما لا يحتاجه الاسترداد"
+
+#: recovery.rs:87
+msgid "Setting up the recovery system"
+msgstr "جارٍ إعداد نظام الاسترداد"
+
+#: recovery.rs:89
+msgid "Adding its start-up files"
+msgstr "جارٍ إضافة ملفات بدء تشغيله"
+
+#: recovery.rs:104
+msgid "MAN Recovery is ready"
+msgstr "استرداد MAN جاهز"
+
+#: recovery.rs:64
+msgid "This MAN has no MAN Recovery program."
+msgstr "لا يحتوي MAN هذا على برنامج استرداد MAN."
+
+#: recovery.rs:82
+msgid "MAN Recovery was not started."
+msgstr "لم يبدأ استرداد MAN."
+
+#: recovery.rs:206
+msgid "The installed system has no kernel for MAN Recovery."
+msgstr "لا يحتوي النظام المثبت على نواة لاسترداد MAN."
+
+#: recovery.rs:234
+msgid "MAN Recovery was not started from the boot menu."
+msgstr "لم يُشغَّل استرداد MAN من قائمة الإقلاع."
+
+#: recovery.rs:235
+msgid "The disk of this MAN was not found."
+msgstr "لم يُعثر على قرص MAN هذا."
+
+#: recovery.rs:240
+msgid "This works only in MAN Recovery."
+msgstr "يعمل هذا في استرداد MAN فقط."
+
+#: recovery.rs:290
+msgid "The password is not correct."
+msgstr "كلمة السر غير صحيحة."
+
+#: recovery.rs:333
+msgid "Invalid snapshot id."
+msgstr "معرّف لقطة غير صالح."
+
+#: recovery.rs:405
+msgid "No MAN for this computer was found on MAN's download page."
+msgstr "لم يُعثر على MAN لهذا الحاسوب في صفحة تنزيل MAN."
+
+#: recovery.rs:434
+msgid "The downloaded MAN is damaged (its checksum does not match). Try again."
+msgstr "MAN المنزَّل تالف (مجموعه الاختباري لا يطابق). حاول مرة أخرى."
+
+#: recovery.rs:491
+msgid "The partition of this MAN was not found."
+msgstr "لم يُعثر على قسم MAN هذا."
 
 #: snapshots.rs:48
 msgid "The system is not installed on Btrfs, so snapshots are not available."
@@ -2301,10 +2545,6 @@ msgstr "النظام غير مثبّت على Btrfs، لذا اللقطات غي
 #: snapshots.rs:50
 msgid "A snapshot restore is waiting for a restart. Restart the computer to finish it first."
 msgstr "استعادة لقطة بانتظار إعادة التشغيل. أعد تشغيل الحاسوب أولًا لإكمالها."
-
-#: snapshots.rs:99
-msgid "Invalid snapshot id."
-msgstr "معرّف لقطة غير صالح."
 
 #: update.rs:32
 msgid "Checking the update"
@@ -2334,43 +2574,39 @@ msgstr "جارٍ تجهيز إعادة التشغيل"
 msgid "Unpacked"
 msgstr "فُكّ الضغط"
 
-#: update.rs:278
+#: update.rs:285
 msgid "Accounts"
 msgstr "الحسابات"
 
-#: update.rs:331
+#: update.rs:338
 msgid "Reinstalling kept apps"
 msgstr "جارٍ إعادة تثبيت التطبيقات المحتفظ بها"
 
-#: update.rs:386
+#: update.rs:404
 msgid "Removing installer-only software"
 msgstr "جارٍ إزالة البرامج الخاصة بالمثبّت فقط"
 
-#: update.rs:426
+#: update.rs:450
 msgid "Building the update boot image"
 msgstr "جارٍ بناء صورة إقلاع التحديث"
 
-#: update.rs:429
+#: update.rs:453
 msgid "Adding the one-time boot entry"
 msgstr "جارٍ إضافة مدخل إقلاع لمرة واحدة"
 
-#: update.rs:464
+#: update.rs:488
 msgid "The update is genuine"
 msgstr "التحديث أصلي"
 
-#: update.rs:470
+#: update.rs:494
 msgid "Snapshot created"
 msgstr "أُنشئت اللقطة"
 
-#: update.rs:472
-msgid "Skipped"
-msgstr "تُخطّي"
-
-#: update.rs:481
+#: update.rs:505
 msgid "Update area ready"
 msgstr "منطقة التحديث جاهزة"
 
-#: update.rs:504
+#: update.rs:528
 msgid "Preparing the new system"
 msgstr "جارٍ تجهيز النظام الجديد"
 
@@ -2382,19 +2618,19 @@ msgstr "ملف التحديث تالف (المجموع الاختباري غير
 msgid "The update file could not be read completely."
 msgstr "تعذّرت قراءة ملف التحديث بالكامل."
 
-#: update.rs:398
+#: update.rs:416
 msgid "The update contains no kernel."
 msgstr "لا يحتوي التحديث على نواة."
 
-#: update.rs:446
+#: update.rs:470
 msgid "Updates must be installed by the system helper."
 msgstr "يجب أن يثبّت مساعد النظام التحديثات."
 
-#: update.rs:456
+#: update.rs:480
 msgid "The chosen installation was not found."
 msgstr "لم يُعثر على التثبيت المختار."
 
-#: update.rs:458
+#: update.rs:482
 msgid "Only the running MAN installation can be updated."
 msgstr "يمكن تحديث تثبيت MAN قيد التشغيل فقط."
 
@@ -2521,6 +2757,10 @@ msgstr "أعدّ حاسوب MAN الجديد"
 #: man-oobe.desktop
 msgid "First-start setup of MAN"
 msgstr "إعداد MAN عند أول تشغيل"
+
+#: com.man.Recovery.desktop
+msgid "Restore or reinstall MAN"
+msgstr "استعادة MAN أو إعادة تثبيته"
 
 #: com.man.UpdateCheck.desktop
 msgid "MAN Updates"
