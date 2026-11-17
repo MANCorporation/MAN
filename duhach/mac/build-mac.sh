@@ -14,8 +14,20 @@ A="$W/DUHACH!.app/Contents"
 mkdir -p "$A/MacOS" "$A/Resources"
 sed "s/@VERSION@/$VER/" "$here/Info.plist.in" > "$A/Info.plist"
 install -m 755 "$here/DUHACH" "$A/MacOS/DUHACH"
-cp "$here/guide.applescript" "$A/Resources/"
-python3 "$here/make-icns.py" "$p/duhach/data/icons/hicolor/scalable/apps/com.mancorporation.Duhach.svg" "$A/Resources/duhach.icns"
+cp "$here/guide.applescript" "$here/main.js" "$A/Resources/"
+svg="$p/duhach/data/icons/hicolor/scalable/apps/com.mancorporation.Duhach.svg"
+python3 "$here/make-icns.py" "$svg" "$A/Resources/duhach.icns"
+# ui.html: the page with the app icon inlined (the web view loads it as one string).
+python3 - "$svg" "$here/ui/index.html" "$A/Resources/ui.html" <<'PY'
+import base64, sys, gi
+gi.require_version("GdkPixbuf", "2.0")
+from gi.repository import GdkPixbuf
+ok, png = GdkPixbuf.Pixbuf.new_from_file_at_size(sys.argv[1], 256, 256).save_to_bufferv("png", [], [])
+html = open(sys.argv[2], encoding="utf-8").read()
+assert '"/*ICON*/"' in html and "/*DATA*/null" in html
+html = html.replace('"/*ICON*/"', '"data:image/png;base64,' + base64.b64encode(png).decode() + '"')
+open(sys.argv[3], "w", encoding="utf-8").write(html)
+PY
 "$p/dev-tools/apple/make-usb.sh" "$A/Resources" > "$W/usb.log"
 grep -q "package verified" "$W/usb.log" || { cat "$W/usb.log"; exit 1; }
 rm -f "$A/Resources/MAN-Mac/README.txt"

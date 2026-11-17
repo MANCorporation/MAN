@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DUHACH!</title>
+<style>
+/* DUHACH! for Mac: the same pages and layout as DUHACH! for Windows (GTK 4 /
+   libadwaita), drawn in a macOS web view with libadwaita's look. */
+:root {
+  --accent: #3584e4; --accent-fg: #fff; --accent-text: #1c71d8;
+  --destructive: #e01b24; --success: #26a269; --warning: #c88800; --error: #e01b24;
+  --window-bg: #fafafb; --window-fg: rgba(0,0,6,.8); --view-bg: #fff;
+  --headerbar-bg: #ffffff; --headerbar-shade: rgba(0,0,6,.12);
+  --card-bg: #ffffff; --card-shade: rgba(0,0,6,.07); --row-sep: rgba(0,0,6,.07);
+  --dim: .55; --button-bg: rgba(0,0,6,.08); --button-hover: rgba(0,0,6,.12);
+  --trough: rgba(0,0,6,.10); --legend-mac: #77767b; --legend-free: rgba(119,118,123,.35); --legend-man: #1c71d8;
+  --dialog-bg: #ffffff; --backdrop: rgba(0,0,6,.3);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #3584e4; --accent-text: #81d0ff;
+    --destructive: #c01c28; --success: #26a269; --warning: #cd9309; --error: #ff7b63;
+    --window-bg: #222226; --window-fg: #fff; --view-bg: #1d1d20;
+    --headerbar-bg: #2e2e32; --headerbar-shade: rgba(0,0,6,.36);
+    --card-bg: rgba(255,255,255,.08); --card-shade: rgba(0,0,6,.36); --row-sep: rgba(255,255,255,.07);
+    --button-bg: rgba(255,255,255,.1); --button-hover: rgba(255,255,255,.15);
+    --trough: rgba(255,255,255,.15); --legend-free: rgba(154,153,150,.35);
+    --dialog-bg: #36363a; --backdrop: rgba(0,0,0,.5);
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; }
+body {
+  font: 15px/1.4 "Adwaita Sans", "Cantarell", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  background: var(--window-bg); color: var(--window-fg);
+  -webkit-user-select: none; user-select: none; cursor: default;
+  -webkit-font-smoothing: antialiased;
+}
+/* AdwNavigationView: pages slide in from the right */
+#nav { position: absolute; inset: 0; overflow: hidden; }
+.page { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--window-bg);
+  transition: transform .25s cubic-bezier(.25,.46,.45,.94), opacity .25s; }
+.page.below { transform: translateX(-30%); opacity: .6; }
+.page.enter { transform: translateX(100%); }
+/* AdwHeaderBar (room for the macOS window buttons on the left) */
+.headerbar { flex: none; height: 47px; display: flex; align-items: center; padding: 0 6px 0 78px;
+  background: var(--headerbar-bg); box-shadow: inset 0 -1px var(--headerbar-shade); -webkit-app-region: drag; position: relative; }
+.headerbar .title { position: absolute; left: 0; right: 0; text-align: center; font-weight: 700; pointer-events: none; }
+.headerbar .back { -webkit-app-region: no-drag; position: relative; z-index: 1; }
+/* scrolled + AdwClamp(600) */
+.scroll { flex: 1; overflow-y: auto; }
+.clamp { max-width: 624px; margin: 0 auto; padding: 12px 12px 24px; min-height: 100%; display: flex; flex-direction: column; gap: 18px; }
+.clamp.center { justify-content: center; }
+.bottom { flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 12px 18px; }
+/* labels */
+.hero-icon { width: 128px; height: 128px; margin: 0 auto; display: block; }
+.hero-title { font-weight: 900; font-size: 2.4em; letter-spacing: .02em; text-align: center; margin: 0; }
+.step-title { font-weight: 800; font-size: 1.6em; text-align: center; margin: 0; }
+.dim { opacity: var(--dim); text-align: center; margin: 0; }
+.caption { font-size: .82em; }
+/* buttons */
+button { font: inherit; font-weight: 700; color: inherit; border: 0; border-radius: 6px; padding: 5px 10px; min-height: 34px;
+  background: var(--button-bg); cursor: default; }
+button:hover:not(:disabled) { background: var(--button-hover); }
+button:disabled { opacity: .5; }
+button:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent); outline-offset: 1px; }
+button.pill { border-radius: 9999px; padding: 10px 32px; min-width: 0; }
+button.suggested { background: var(--accent); color: var(--accent-fg); }
+button.suggested:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 88%, white); }
+button.destructive { background: var(--destructive); color: #fff; }
+button.destructive:hover:not(:disabled) { background: color-mix(in srgb, var(--destructive) 88%, white); }
+button.flat { background: transparent; }
+button.flat:hover:not(:disabled) { background: var(--button-bg); }
+button.circular { border-radius: 9999px; width: 34px; padding: 0; }
+/* AdwPreferencesGroup + boxed-list */
+.group > h4 { margin: 0 0 6px; font-size: .9em; font-weight: 700; }
+.group > .desc { margin: -4px 0 8px; font-size: .9em; opacity: var(--dim); }
+.boxed-list, .card { background: var(--card-bg); border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(0,0,6,.03), 0 1px 3px 1px var(--card-shade), 0 2px 6px 2px rgba(0,0,6,.03); overflow: hidden; }
+.row { display: flex; align-items: center; gap: 12px; min-height: 50px; padding: 8px 12px; }
+.row + .row { box-shadow: inset 0 1px var(--row-sep); }
+.row.activatable:hover { background: var(--button-bg); }
+.row.disabled { opacity: .5; }
+.row .text { flex: 1; min-width: 0; }
+.row .t { font-weight: 400; }
+.row .s { font-size: .9em; opacity: var(--dim); }
+.row.property .t { font-size: .9em; opacity: var(--dim); }
+.row.property .s { font-size: 1em; opacity: 1; }
+.icon { width: 16px; height: 16px; flex: none; fill: currentColor; }
+.success { color: var(--success); } .warning { color: var(--warning); } .error { color: var(--error); } .accent { color: var(--accent-text); }
+/* GtkCheckButton in radio mode */
+.radio { width: 18px; height: 18px; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 2px currentColor; opacity: .5; }
+.row.selected .radio { opacity: 1; box-shadow: inset 0 0 0 5px var(--accent); background: #fff; color: var(--accent); }
+/* AdwSwitchRow */
+.switch { width: 48px; height: 26px; border-radius: 9999px; background: var(--trough); position: relative; flex: none; transition: background .2s; }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2); transition: left .2s; }
+.switch.on { background: var(--accent); } .switch.on::after { left: 25px; }
+/* AdwSpinRow */
+.spin { display: flex; align-items: center; gap: 6px; }
+.spin input { width: 64px; font: inherit; font-weight: 700; text-align: center; border: 0; border-radius: 6px; padding: 6px;
+  background: var(--button-bg); color: inherit; -webkit-user-select: text; }
+.spin input:focus { outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent); }
+/* space bar (DUHACH! for Windows' "Make Room") */
+.card .inner { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.bar { display: flex; height: 28px; border-radius: 8px; overflow: hidden; background: var(--legend-free); }
+.bar > div { transition: flex-grow .2s; }
+.legends { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; font-size: .9em; }
+.legend { display: flex; flex-direction: column; gap: 2px; }
+.legend .head { display: flex; align-items: center; gap: 6px; opacity: var(--dim); }
+.dot { width: 12px; height: 12px; border-radius: 99px; }
+.big-number { font-weight: 800; font-size: 1.5em; font-variant-numeric: tabular-nums; }
+/* AdwStatusPage */
+.status { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.status .big { width: 128px; height: 128px; }
+.status h1 { font-weight: 800; font-size: 2em; margin: 6px 0 0; }
+.status p { margin: 0; opacity: var(--dim); max-width: 520px; }
+.steps { text-align: left; display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 560px; }
+/* AdwAlertDialog */
+#dialog { position: fixed; inset: 0; background: var(--backdrop); display: none; align-items: center; justify-content: center; }
+#dialog.open { display: flex; }
+#dialog .box { width: 372px; background: var(--dialog-bg); border-radius: 13px; box-shadow: 0 4px 24px rgba(0,0,0,.3); overflow: hidden; text-align: center; }
+#dialog .box h2 { font-size: 1.36em; font-weight: 800; margin: 24px 24px 10px; }
+#dialog .box p { margin: 0 24px 24px; }
+#dialog .buttons { display: flex; gap: 12px; padding: 0 24px 24px; }
+#dialog .buttons button { flex: 1; min-height: 40px; border-radius: 9999px; }
+/* AdwToast */
+#toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 120px); background: rgba(30,30,30,.92); color: #fff;
+  padding: 10px 20px; border-radius: 9999px; transition: transform .25s; font-weight: 600; max-width: 90%; }
+#toast.show { transform: translate(-50%, 0); }
+.demo { text-align: center; }
+</style>
+</head>
+<body>
+<div id="nav"></div>
+<div id="dialog"><div class="box"><h2></h2><p></p><div class="buttons"></div></div></div>
+<div id="toast"></div>
+<script>
+"use strict";
+// Filled in by main.js (JXA) before the page loads; a demo for a normal browser.
+const SYS = /*DATA*/null || {
+  demo: true, model: "MacBook Pro (14-inch, 2021)", chip: "Apple M1 Pro", arm64: true, macos: "15.1",
+  diskGB: 1000, freeGB: 412, charger: true, internet: true, loader: false, version: "1.0.0"
+};
+const ICON = "/*ICON*/";
+const MIN_MAN = 20, MACOS_KEEPS = 38, LOADER_GB = 4;
+
+// ── small SVG icons (drawn for DUHACH!, in the style of symbolic icons) ──
+const SVG = {
+  ok: '<path d="M13.3 3.3 6 10.6 2.7 7.3 1.3 8.7 6 13.4l8.7-8.7z"/>',
+  warn: '<path d="M8 1 0.5 14.5h15zm-.9 4.5h1.8v4.5H7.1zm0 5.6h1.8v1.8H7.1z"/>',
+  err: '<path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM5.2 4 8 6.8 10.8 4l1.2 1.2L9.2 8l2.8 2.8-1.2 1.2L8 9.2 5.2 12 4 10.8 6.8 8 4 5.2z"/>',
+  info: '<path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm-.9 3h1.8v1.8H7.1zm0 3h1.8v5H7.1z"/>',
+  back: '<path d="M10.7 2.3 5 8l5.7 5.7 1.4-1.4L7.8 8l4.3-4.3z"/>',
+  disk: '<path d="M2 3h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 6v3h12V9zm9 1h2v1h-2z"/>',
+  mac: '<path d="M3 3h10a1 1 0 0 1 1 1v6H2V4a1 1 0 0 1 1-1zm0 1v5h10V4zM0 11h16v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1z"/>',
+  power: '<path d="M7 1h2v7H7zM4.2 3.1l1.2 1.5A4.5 4.5 0 1 0 10.6 4.6l1.2-1.5A6.5 6.5 0 1 1 4.2 3.1z"/>',
+  usb: '<path d="M5 1h6v6h1v8H4V7h1zm1 1v5h4V2zm1 1h1v2H7zm2 0h1v2H9z"/>',
+  next: '<path d="M5.3 2.3 11 8l-5.7 5.7-1.4-1.4L8.2 8 3.9 3.7z"/>',
+  term: '<path d="M1 2h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm0 2v9h14V4zm2 1.5 3 2.5-3 2.5-.8-1L4.4 8 2.2 6.5zM7 10h4v1H7z"/>',
+  wifi: '<path d="M8 3c2.9 0 5.5 1.1 7.4 3l-1.4 1.4A8.5 8.5 0 0 0 8 5a8.5 8.5 0 0 0-6 2.4L.6 6C2.5 4.1 5.1 3 8 3zm0 4c1.8 0 3.4.7 4.6 1.9l-1.4 1.4A4.5 4.5 0 0 0 8 9a4.5 4.5 0 0 0-3.2 1.3L3.4 8.9A6.5 6.5 0 0 1 8 7zm0 4a2 2 0 0 1 1.4.6L8 13l-1.4-1.4A2 2 0 0 1 8 11z"/>',
+};
+function icon(name, cls) { return `<svg class="icon ${cls || ""}" viewBox="0 0 16 16">${SVG[name]}</svg>`; }
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+// ── native side (main.js) ──
+function native(msg) {
+  try { window.webkit.messageHandlers.duhach.postMessage(msg); return true; }
+  catch (e) { toast("Demo: " + JSON.stringify(msg)); return false; }
+}
+
+// ── AdwNavigationView ──
+const nav = document.getElementById("nav");
+const stack = [];
+function page(title, body, bottom, opts = {}) {
+  const el = document.createElement("div");
+  el.className = "page";
+  const canBack = opts.canBack !== false && stack.length > 0;
+  el.innerHTML = `<div class="headerbar">${canBack ? `<button class="flat back" title="Back">${icon("back")}</button>` : ""}<div class="title">${esc(title)}</div></div>
+    <div class="scroll"><div class="clamp ${opts.center ? "center" : ""}">${body}</div></div>${bottom ? `<div class="bottom">${bottom}</div>` : ""}`;
+  if (canBack) el.querySelector(".back").onclick = pop;
+  return el;
+}
+function push(el) {
+  const prev = stack[stack.length - 1];
+  el.classList.add("enter");
+  nav.appendChild(el);
+  stack.push(el);
+  requestAnimationFrame(() => requestAnimationFrame(() => { el.classList.remove("enter"); prev && prev.classList.add("below"); }));
+  (el.querySelector(".bottom button") || el).focus?.();
+}
+function replace(el) { stack.splice(0).forEach(p => p.remove()); nav.appendChild(el); stack.push(el); }
+function pop() {
+  if (stack.length < 2) return;
+  const top = stack.pop(), prev = stack[stack.length - 1];
+  top.classList.add("enter"); prev.classList.remove("below");
+  setTimeout(() => top.remove(), 260);
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape") { if (dialogOpen()) closeDialog(); else pop(); } });
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+let toastTimer;
+function toast(text) {
+  const t = document.getElementById("toast"); t.textContent = text; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 5000);
+}
+const dlg = document.getElementById("dialog");
+function dialogOpen() { return dlg.classList.contains("open"); }
+function closeDialog() { dlg.classList.remove("open"); }
+function alertDialog(heading, body, responses) {
+  dlg.querySelector("h2").textContent = heading;
+  dlg.querySelector("p").textContent = body;
+  const b = dlg.querySelector(".buttons"); b.innerHTML = "";
+  for (const r of responses) {
+    const btn = document.createElement("button");
+    btn.textContent = r.label; if (r.cls) btn.className = r.cls;
+    btn.onclick = () => { closeDialog(); r.action && r.action(); };
+    b.appendChild(btn);
+  }
+  dlg.classList.add("open");
+  b.lastChild.focus();
+}
+
+// ── state ──
+const st = { choice: null, manGB: 0, backedUp: false };
+const maxMan = c => SYS.freeGB - MACOS_KEEPS - (c === "3" ? 1 : LOADER_GB + 1);
+const CHOICES = {
+  "1": { title: "Install the MAN Boot Loader", sub: "Your Mac can start MAN from the MAN USB stick or an external SSD. Nothing else on the Mac changes." },
+  "2": { title: "Install the Boot Loader and Make Space for MAN", sub: "Also makes room on this Mac's disk, to install MAN on it from the MAN USB stick." },
+  "3": { title: "Make Space for MAN", sub: "When the MAN boot loader is already on this Mac: only makes room on its disk for MAN." },
+};
+
+function row(title, sub, prefix, cls = "", attrs = "") {
+  return `<div class="row ${cls}" ${attrs}>${prefix || ""}<div class="text"><div class="t">${esc(title)}</div>${sub ? `<div class="s">${esc(sub)}</div>` : ""}</div></div>`;
+}
+const infoRow = (title, value, ic) => row(title, value, icon(ic), "property");
+
+// ── Welcome ──
+function checks() {
+  const c = [];
+  const supported = SYS.arm64 && /\bM[123]\b/.test(SYS.chip);
+  c.push({ ok: supported, blocking: !supported, title: SYS.model || "This Mac",
+    detail: !SYS.arm64 ? "Intel Mac: start the normal MAN USB stick instead (hold Option at start-up)."
+      : supported ? SYS.chip : SYS.chip + " is not supported yet (MAN runs on M1, M2 and M3)." });
+  const [maj, min] = SYS.macos.split(".").map(Number);
+  const newEnough = maj > 13 || (maj === 13 && (min || 0) >= 5);
+  c.push({ ok: newEnough, blocking: !newEnough, title: "macOS " + SYS.macos,
+    detail: newEnough ? "New enough." : "Please update macOS to 13.5 or newer first (System Settings > General > Software Update)." });
+  c.push({ ok: SYS.freeGB >= MACOS_KEEPS + LOADER_GB, blocking: false, title: `${SYS.freeGB} GB Free`,
+    detail: SYS.freeGB >= MACOS_KEEPS + MIN_MAN + LOADER_GB ? "Enough for the boot loader and space for MAN."
+      : SYS.freeGB >= MACOS_KEEPS + LOADER_GB ? "Enough for the boot loader. Free up space to make room for MAN on this Mac."
+      : "Little free space: macOS keeps 38 GB for itself. Empty the Trash, or restart the Mac to clear cached files." });
+  c.push({ ok: SYS.charger, blocking: false, title: SYS.charger ? "Charger Connected" : "On Battery",
+    detail: SYS.charger ? "Keep it plugged in until the end." : "Please plug in the charger." });
+  c.push({ ok: SYS.internet, blocking: false, title: SYS.internet ? "Connected to the Internet" : "No Internet",
+    detail: SYS.internet ? "Your Mac's own start-up files are downloaded from Apple." : "The boot loader needs the internet: Apple's start-up files for this Mac are downloaded." });
+  if (SYS.loader) c.push({ ok: true, info: true, blocking: false, title: "MAN Boot Loader Installed", detail: "This Mac can already start MAN. DUHACH! can make space for MAN on its disk." });
+  return c;
+}
+function welcomePage() {
+  const cs = checks();
+  const blocking = cs.some(c => c.blocking);
+  const rows = cs.map(c => row(c.title, c.detail,
+    icon(c.info ? "info" : c.ok ? "ok" : c.blocking ? "err" : "warn", c.info ? "accent" : c.ok ? "success" : c.blocking ? "error" : "warning"))).join("");
+  const body = `<img class="hero-icon" src="${ICON}" alt="">
+    <h1 class="hero-title">DUHACH!</h1>
+    <p class="dim">Get this Mac ready for MAN, right from macOS.<br>macOS stays, and you choose which one to start.</p>
+    <div class="group"><h4>Checking This Mac</h4><div class="boxed-list">${rows}</div></div>
+    ${SYS.demo ? '<p class="dim caption demo">Demo mode: this is not a Mac app, so nothing is changed.</p>' : ""}`;
+  const el = page("DUHACH!", body, `<button class="pill suggested" id="next" ${blocking ? "disabled" : ""}>Continue</button>`, { center: true });
+  el.querySelector("#next").onclick = () => push(choosePage());
+  return el;
+}
+
+// ── Choose ──
+function choosePage() {
+  if (!st.choice) st.choice = SYS.loader ? "3" : "1";
+  const items = Object.entries(CHOICES).map(([k, v]) => {
+    const off = SYS.loader && k !== "3";
+    const sub = off ? "The MAN boot loader is already installed on this Mac." : v.sub;
+    return row(v.title, sub, '<div class="radio"></div>', `activatable choice ${off ? "disabled" : ""} ${st.choice === k ? "selected" : ""}`, `data-k="${k}"`);
+  }).join("");
+  const body = `<h1 class="step-title">What Should DUHACH! Do?</h1>
+    <p class="dim">MAN's boot loader lets this Mac start MAN. macOS, your apps and your files stay where they are.</p>
+    <div class="group"><div class="boxed-list">${items}</div></div>
+    <p class="dim caption">Not sure? Install the boot loader: you can make space for MAN later.</p>`;
+  const el = page("Choose", body, `<button class="pill suggested" id="next">Continue</button>`);
+  el.querySelectorAll(".choice").forEach(r => r.onclick = () => {
+    if (r.classList.contains("disabled")) return;
+    st.choice = r.dataset.k;
+    el.querySelectorAll(".choice").forEach(x => x.classList.toggle("selected", x === r));
+  });
+  el.querySelector("#next").onclick = () => {
+    if (st.choice === "1") return push(readyPage());
+    if (maxMan(st.choice) < MIN_MAN) {
+      return alertDialog("Not Enough Free Space",
+        `macOS has ${SYS.freeGB} GB free. MAN needs at least ${MIN_MAN} GB, and macOS keeps ${MACOS_KEEPS} GB for itself so that it keeps working well. Empty the Trash or move files to another disk, then open DUHACH! again.`,
+        [{ label: "OK" }]);
+    }
+    push(spacePage());
+  };
+  return el;
+}
+
+// ── Make Room ──
+function spacePage() {
+  const max = maxMan(st.choice);
+  if (!(st.manGB >= MIN_MAN && st.manGB <= max)) st.manGB = Math.min(max, Math.max(60, Math.min(Math.round(SYS.freeGB / 3), max)));
+  const used = SYS.diskGB - SYS.freeGB;
+  const body = `<h1 class="step-title">Make Room for MAN</h1>
+    <p class="dim">macOS gives part of its free space to MAN. Your files and apps stay where they are. ${SYS.diskGB} GB disk.</p>
+    <div class="card"><div class="inner">
+      <div class="bar"><div id="b-mac" style="background:var(--legend-mac)"></div><div id="b-free" style="background:var(--legend-free)"></div><div id="b-man" style="background:var(--legend-man)"></div></div>
+      <div class="legends">
+        <div class="legend"><div class="head"><span class="dot" style="background:var(--legend-mac)"></span>macOS files</div><div class="big-number">${used} GB</div></div>
+        <div class="legend"><div class="head"><span class="dot" style="background:var(--legend-free)"></span>Free for macOS</div><div class="big-number" id="v-free"></div></div>
+        <div class="legend"><div class="head"><span class="dot" style="background:var(--legend-man)"></span>MAN</div><div class="big-number" id="v-man"></div></div>
+      </div></div></div>
+    <div class="group"><div class="boxed-list">
+      <div class="row"><div class="text"><div class="t">Space for MAN</div><div class="s">Between ${MIN_MAN} and ${max} GB</div></div>
+        <div class="spin"><button class="circular" id="minus">&minus;</button><input id="gb" inputmode="numeric" value="${st.manGB}"><button class="circular" id="plus">+</button></div></div>
+    </div></div>
+    <p class="dim caption">macOS keeps at least ${MACOS_KEEPS} GB free, so it keeps working well.${st.choice === "2" ? " The boot loader takes about 3 GB more." : ""}</p>`;
+  const el = page("Make Room", body, `<button class="pill suggested" id="next">Continue</button>`);
+  const input = el.querySelector("#gb");
+  const take = st.choice === "3" ? 1 : LOADER_GB;
+  function sync() {
+    const v = Math.max(MIN_MAN, Math.min(max, Math.round(Number(input.value) || MIN_MAN)));
+    st.manGB = v; input.value = v;
+    el.querySelector("#b-mac").style.flex = `${used} 0 0`;
+    el.querySelector("#b-free").style.flex = `${SYS.freeGB - v - take} 0 0`;
+    el.querySelector("#b-man").style.flex = `${v} 0 0`;
+    el.querySelector("#v-free").textContent = `${SYS.freeGB - v - take} GB`;
+    el.querySelector("#v-man").textContent = `${v} GB`;
+  }
+  el.querySelector("#minus").onclick = () => { input.value = st.manGB - 5; sync(); };
+  el.querySelector("#plus").onclick = () => { input.value = st.manGB + 5; sync(); };
+  input.onchange = sync;
+  input.onkeydown = e => { if (e.key === "Enter") sync(); };
+  sync();
+  el.querySelector("#next").onclick = () => { sync(); push(readyPage()); };
+  return el;
+}
+
+// ── Ready ──
+function readyPage() {
+  const c = st.choice, what = [];
+  if (c !== "3") {
+    what.push(infoRow("MAN Boot Loader", "A small MAN start-up volume (2.5 GB) and boot partition (500 MB) next to macOS", "disk"));
+  }
+  if (c !== "1") what.push(infoRow("Space for MAN", `${st.manGB} GB, empty, for “Install on This Mac”`, "mac"));
+  what.push(infoRow("macOS", c === "1" ? "Gives about 3 GB of its free space. Your files and apps stay." :
+    `Gives ${st.manGB + (c === "2" ? 3 : 1)} GB of its free space. Your files and apps stay.`, "disk"));
+  if (c !== "3") what.push(infoRow("Start-Up Step", "The Mac shuts down. Then hold the power button, choose MAN and type your password: Apple asks for this once, in person. The Mac restarts by itself.", "power"));
+  const after = c === "1"
+    ? infoRow("Start MAN", "Plug in the MAN USB stick or an SSD with MAN, hold the power button at start-up, choose MAN.", "usb")
+    : infoRow("Install MAN", "Start the MAN USB stick, open Install MAN and choose “Install on This Mac”.", "usb");
+  const body = `<h1 class="step-title">Ready to Prepare MAN</h1>
+    <div class="group"><h4>What DUHACH! Will Do</h4><div class="boxed-list">${what.join("")}</div></div>
+    <div class="group"><h4>After That</h4><div class="boxed-list">${after}
+      ${infoRow("Start macOS", "Hold the power button at start-up and choose Macintosh HD, or use Startup Disk in MAN.", "next")}</div></div>
+    <div class="group"><div class="boxed-list"><div class="row activatable" id="backup"><div class="text"><div class="t">I have a Time Machine backup</div>
+      <div class="s">Changing partitions is safe, but a power cut in the middle could lose data.</div></div><div class="switch ${st.backedUp ? "on" : ""}"></div></div></div></div>`;
+  const el = page("Ready", body, `<button class="pill destructive" id="go" ${st.backedUp ? "" : "disabled"}>Prepare MAN</button>`);
+  const go = el.querySelector("#go");
+  el.querySelector("#backup").onclick = () => {
+    st.backedUp = !st.backedUp;
+    el.querySelector(".switch").classList.toggle("on", st.backedUp);
+    go.disabled = !st.backedUp;
+  };
+  go.onclick = () => alertDialog("Prepare MAN?",
+    "Terminal opens and shows the progress. Type your Mac password there when it asks: nothing appears while you type, that is normal.",
+    [{ label: "Cancel" }, { label: "Prepare", cls: "destructive", action: start }]);
+  return el;
+}
+
+function start() {
+  native({ action: "start", choice: st.choice, size: st.choice === "1" ? "" : String(st.manGB) });
+  replace(terminalPage());
+}
+
+// ── Continue in Terminal ──
+function terminalPage() {
+  const c = st.choice;
+  const steps = [infoRow("1", "Terminal shows the progress. Type your Mac password when it asks" + (c === "3" ? "." : " (twice)."), "term")];
+  if (c === "3") {
+    steps.push(infoRow("2", "When it is done, the Mac shuts down by itself.", "power"));
+    steps.push(infoRow("3", "Plug in the MAN USB stick, press and hold the power button until “Loading startup options” appears, choose MAN.", "usb"));
+    steps.push(infoRow("4", "In MAN, open Install MAN and choose “Install on This Mac”.", "mac"));
+  } else {
+    steps.push(infoRow("2", "The Mac shuts down by itself.", "power"));
+    steps.push(infoRow("3", "Press and hold the power button until “Loading startup options” appears, then choose MAN.", "power"));
+    steps.push(infoRow("4", "Type your Mac password once more. The Mac restarts by itself: with the MAN USB stick or a MAN SSD plugged in, it starts MAN.", "usb"));
+  }
+  const body = `<div class="status"><img class="big" src="${ICON}" alt=""><h1>Continue in Terminal</h1>
+    <p>DUHACH! has opened Terminal, which prepares MAN now. Keep the Mac on and plugged in.</p></div>
+    <div class="group"><h4>What Happens Next</h4><div class="boxed-list">${steps.join("")}</div></div>`;
+  const el = page("DUHACH!", body, `<button class="pill" id="close">Close DUHACH!</button>`, { canBack: false, center: true });
+  el.querySelector("#close").onclick = () => native({ action: "quit" });
+  return el;
+}
+
+replace(welcomePage());
+
+// Demo in a normal browser only (screenshots while building): #choose, #space, #ready,
+// #dialog, #terminal, #dark-... open that page directly.
+if (SYS.demo && location.hash) {
+  const h = location.hash.slice(1).replace(/^dark-/, "");
+  document.querySelectorAll(".page").forEach(p => p.style.transition = "none");
+  const noAnim = el => { el.style.transition = "none"; return el; };
+  st.choice = "2"; st.backedUp = true; st.manGB = 60;
+  const go = el => { noAnim(el); push(el); stack.forEach(p => p !== el && (p.style.display = "none")); el.classList.remove("enter"); };
+  if (h === "choose") go(choosePage());
+  if (h === "space") go(spacePage());
+  if (h === "ready" || h === "dialog") go(readyPage());
+  if (h === "dialog") stack[stack.length - 1].querySelector("#go").click();
+  if (h === "terminal") { replace(terminalPage()); }
+}
+</script>
+</body>
+</html>

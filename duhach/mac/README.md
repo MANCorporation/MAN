@@ -9,21 +9,25 @@ guide in native macOS windows. Same three choices as `MAN-Mac/install-man.sh`:
 
 ## How it works
 
-`DUHACH!.app` has no compiled code (so it can be built without a Mac):
+`DUHACH!.app` has no compiled code (so it can be built without a Mac). It has the same
+pages and layout as DUHACH! for Windows (GTK 4/libadwaita): Welcome with "Checking This
+Mac", Choose, Make Room (space bar + size), Ready (with the backup switch), Continue in
+Terminal. The look is libadwaita's (header bar, boxed lists, pill buttons, light/dark),
+drawn in HTML/CSS; real GTK on macOS would need building on a Mac.
 
-- `Contents/MacOS/DUHACH`: runs `osascript guide.applescript <Resources>`.
-- `guide.applescript`: checks Apple Silicon and the chip (M1-M3), shows Welcome,
-  Before you start (Time Machine, charger, internet, password), the choice, the size
-  (from `df`, macOS keeps 38 GB free), and what happens next. Then it writes a
-  `.command` file and opens it in Terminal (no Automation permission needed):
-  `MAN_CHOICE=<1|2|3> MAN_SIZE=<GB> sh MAN-Mac/install-man.sh`.
-- `MAN-Mac/`: from `dev-tools/apple/make-usb.sh`: MAN's copy of the Asahi installer
-  (with `installer/patch-man-menu.py`, which takes `MAN_CHOICE`/`MAN_SIZE`), MAN's boot
-  loader package. Terminal shows the progress and asks only for the password; then the
-  Mac shuts down by itself for Apple's one-time step (hold the power button, choose
-  MAN, password).
-
-The guide is plain ASCII on purpose (AppleScript text files and non-ASCII characters).
+- `Contents/MacOS/DUHACH`: runs `osascript -l JavaScript main.js <Resources>`; if that
+  cannot start, the simpler guide in macOS dialogs (`guide.applescript`) runs instead.
+- `main.js` (JavaScript for Automation): collects facts (model, chip, macOS version,
+  APFS container size/free, charger, internet, MAN boot loader present), opens an
+  NSWindow with a WKWebView showing `ui.html`, and handles its messages
+  (`start`: writes a `.command` file and opens it in Terminal, no Automation permission
+  needed; `quit`).
+- `ui/index.html` -> `ui.html` (icon inlined by build-mac.sh). In a normal browser it runs
+  as a demo; `#choose`, `#space`, `#ready`, `#dialog`, `#terminal` open a page directly.
+- Terminal runs `MAN_CHOICE=<1|2|3> MAN_SIZE=<GB> sh MAN-Mac/install-man.sh`:
+  MAN's copy of the Asahi installer (`dev-tools/apple/installer/patch-man-menu.py` takes
+  the answers) with MAN's boot loader package. It shows the progress and asks only for
+  the password; then the Mac shuts down for Apple's one-time step.
 
 ## Building
 
@@ -41,6 +45,7 @@ it the first time: System Settings > Privacy & Security > "Open Anyway".
 
 ## Not tested
 
-The guide's AppleScript has not run on a real Mac yet (no macOS here): the installer
-part with the answers was tested on a simulated Mac (`dev-tools/apple/installer/sim-mac.py`),
-the Terminal command with a path containing spaces and "!" on Linux.
+main.js has not run on a real Mac yet (no macOS here). The pages were checked in
+headless Firefox screenshots, the installer part with the answers on a simulated Mac
+(`dev-tools/apple/installer/sim-mac.py`), the Terminal command with a path containing
+spaces and "!" on Linux. The AppleScript guide (the fallback) worked on the M1 Pro.

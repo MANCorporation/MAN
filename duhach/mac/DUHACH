@@ -1,4 +1,7 @@
 #!/bin/sh
-# DUHACH! for Mac: the app's program. The guide itself is guide.applescript.
+# DUHACH! for Mac: the app's program. main.js (JavaScript for Automation) opens the
+# window with DUHACH!'s pages (ui.html). If it cannot start, the simpler guide in
+# macOS dialogs (guide.applescript) runs instead.
 res="$(cd "$(dirname "$0")/../Resources" && pwd)"
+/usr/bin/osascript -l JavaScript "$res/main.js" "$res" && exit 0
 exec /usr/bin/osascript "$res/guide.applescript" "$res"
