@@ -4,6 +4,7 @@
   1  Install only the MAN boot loader
   2  Install the MAN boot loader and make a partition for MAN   (asks the size)
   3  Make a partition for MAN (boot loader already installed)   (asks the size)
+MAN_CHOICE=1|2|3 and MAN_SIZE=<GB> (DUHACH! for Mac) answer these without asking.
 Space comes from free space on the disk if there is enough, otherwise macOS's APFS
 container is shrunk with Apple's diskutil, never below what Asahi's installer keeps
 free for macOS (38 GB free + diskutil's own minimum). Then the normal Asahi steps
@@ -31,6 +32,11 @@ METHODS = r'''
         p_message("macOS is not changed: only MAN's own partitions are added next to it.")
         p_message("Keep the charger plugged in.")
         print()
+        # DUHACH! for Mac asks in its own windows and passes the answer.
+        pre = os.environ.get("MAN_CHOICE", "")
+        if pre in ("1", "2", "3"):
+            p_message(f"Chosen in DUHACH!: {pre}")
+            return pre
         p_question("What do you want to do?")
         return self.choice("Choice", {
             "1": "Install only the MAN boot loader (to start the MAN Live USB stick)",
@@ -124,6 +130,17 @@ METHODS = r'''
             p_error(f"but macOS can give only {ssize(max(give, free))}.")
             p_message("Free up space in macOS (delete files, empty the Trash) and try again.")
             sys.exit(1)
+        pre = os.environ.get("MAN_SIZE", "")
+        if pre:
+            try:
+                size = align_down(psize(pre.upper() if pre.upper().endswith("B") else pre.upper() + "GB"), PART_ALIGN)
+            except Exception:
+                size = None
+            if size is not None and minimum <= size <= maximum:
+                p_message(f"Size for MAN (chosen in DUHACH!): {ssize(size)}")
+                print()
+                return size
+            p_warning(f"The size {pre} is not possible here; please type a size.")
         default = min(maximum, psize("64GB"))
         default = f"{default // 1000**3}GB"
         p_question("How much space should MAN get?")

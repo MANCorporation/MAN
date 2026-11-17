@@ -1,0 +1,4 @@
+#!/bin/sh
+# DUHACH! for Mac: the app's program. The guide itself is guide.applescript.
+res="$(cd "$(dirname "$0")/../Resources" && pwd)"
+exec /usr/bin/osascript "$res/guide.applescript" "$res"

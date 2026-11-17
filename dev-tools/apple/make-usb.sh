@@ -81,13 +81,13 @@ if true; then
     unset REPORT REPORT_TAG
     TMP=/tmp/man-install
     echo
-    echo "MAN for Apple Silicon Macs (from the USB stick)"
+    echo "MAN for Apple Silicon Macs"
     [ -e "\$TMP" ] && mv "\$TMP" "\$TMP-\$(date +%Y%m%d-%H%M%S)"
     mkdir -p "\$TMP"; cd "\$TMP"
     echo "  Extracting the installer..."
     tar xf "\$USB/$inst"
     cp "\$USB/installer_data.json" .
-    echo "  Starting (keep the USB stick plugged in until the installer is done)..."
+    echo "  Starting (keep this window open until the installer is done)..."
     echo
     if [ "\$USER" != "root" ]; then
         echo "The installer needs to run as root. Enter your macOS password if asked."
@@ -105,7 +105,10 @@ macOS is never changed: the installer only adds MAN's own small partitions next 
 (with Apple's diskutil) and macOS keeps Full Security. Back up with Time Machine first
 anyway, and keep the charger plugged in.
 
-1. In macOS, plug in this stick, connect to the internet, open Terminal and type:
+Easiest: in macOS, open this stick (MAN_MAC) and double-click DUHACH!.app. It asks
+the questions below in simple windows and guides you through each step.
+
+1. Or by hand: in macOS, plug in this stick, connect to the internet, open Terminal and type:
        sh /Volumes/MAN_MAC/MAN-Mac/install-man.sh
    and enter your macOS password. Choose:
      1  Install only the MAN boot loader (to start the MAN Live USB stick)

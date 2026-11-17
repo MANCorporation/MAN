@@ -104,3 +104,16 @@ set is not installed. Credits, also in `/usr/share/doc/man-live-config/copyright
 MAN replaces the kernel's `snd-hda-codec-cs8409` module with a build of
 https://github.com/davidjo/snd_hda_macbookpro (GPL-2.0) with the iMac 2017 fixes from
 https://github.com/riqgonzalo/imac-2017-linux-audio-cs8409 (GPL-2.0). Source: `src/mac-audio/`.
+
+## Apple Silicon Macs
+
+MAN for Apple Silicon Macs uses software of the Asahi Linux project
+(https://asahilinux.org): the Asahi Linux kernel (GPL-2.0), U-Boot (GPL-2.0+), m1n1
+(MIT, Debian package), asahi-scripts and asahi-fwextract (MIT), and asahi-bless 0.4.4
+(MIT, Copyright (c) 2022 The Asahi Linux Contributors; built unchanged from crates.io
+by `dev-tools/apple/build-bless.sh`, used by Startup Disk). The macOS step and
+DUHACH! for Mac run MAN's copy of the Asahi Linux installer v0.9.2 (MIT, The Asahi
+Linux Contributors) with MAN's changes in `dev-tools/apple/installer/`. The kernel and
+U-Boot sources (tags in `dev-tools/apple/README.md`) are offered with each release.
+Mac firmware is never distributed by MAN: the installer copies it from the Mac's own
+macOS.

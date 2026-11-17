@@ -103,10 +103,12 @@ if [[ $variant == apple ]]; then
     # mount the ISO 9660 file system of a USB stick, but reads FAT32.
     mkdir -p "$work/macfat"
     "$project_dir/dev-tools/apple/make-usb.sh" "$work/macfat"
+    # DUHACH! for Mac: the same setup with a step-by-step guide (double-click in macOS).
+    "$project_dir/duhach/mac/build-mac.sh" "$work/macfat"
     mac_mib=$(( $(du -sm "$work/macfat" | cut -f1) + 64 ))
     truncate -s "${mac_mib}M" "$work/macfat.img"
     mformat -i "$work/macfat.img" -F -v MAN_MAC -T $((mac_mib * 2048)) -h 64 -s 32 ::
-    mcopy -s -i "$work/macfat.img" "$work/macfat/MAN-Mac" ::/
+    mcopy -s -i "$work/macfat.img" "$work/macfat/MAN-Mac" "$work/macfat/DUHACH!.app" ::/
     rm -rf "$work/macfat"
     extra_xorriso=(-append_partition 4 0x0c "$work/macfat.img")
 else
