@@ -1,0 +1,170 @@
+#!/usr/bin/python3
+# MAN Startup Disk: which system an Apple Silicon Mac starts (MAN, macOS, or a start
+# menu), and "Restart to macOS". The changes are made by /usr/libexec/man-apple-boot
+# through pkexec (polkit action com.man.apple-boot: no password for the local user).
+import subprocess
+import sys
+
+import gi
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
+from gi.repository import Adw, Gio, GLib, Gtk
+
+HELPER = "/usr/libexec/man-apple-boot"
+MODES = [
+    ("man", "Start MAN", "The Mac starts MAN. To start macOS once, use Restart to macOS."),
+    ("menu", "Show a start menu", "At each start, choose MAN or macOS in a short menu."),
+    ("macos", "Start macOS", "The Mac starts macOS. To start MAN, hold the power button at start-up and choose MAN."),
+]
+
+
+def helper(*args, on_done):
+    """Runs the helper as root without blocking the window."""
+    try:
+        proc = Gio.Subprocess.new(["pkexec", HELPER, *args],
+                                  Gio.SubprocessFlags.STDOUT_PIPE | Gio.SubprocessFlags.STDERR_PIPE)
+    except GLib.Error as e:
+        on_done(False, "", e.message)
+        return
+
+    def finished(p, res):
+        try:
+            _, out, err = p.communicate_utf8_finish(res)
+            on_done(p.get_successful(), out or "", err or "")
+        except GLib.Error as e:
+            on_done(False, "", e.message)
+    proc.communicate_utf8_async(None, None, finished)
+
+
+class Window(Adw.ApplicationWindow):
+    def __init__(self, app):
+        super().__init__(application=app, title="Startup Disk", default_width=520, default_height=560)
+        self.busy = False
+        self.mode = None
+        self.live = False
+        self.toasts = Adw.ToastOverlay()
+        view = Adw.ToolbarView()
+        view.add_top_bar(Adw.HeaderBar())
+        self.toasts.set_child(view)
+        self.set_content(self.toasts)
+
+        page = Adw.PreferencesPage()
+        view.set_content(page)
+        self.group = Adw.PreferencesGroup(
+            title="When the Mac starts",
+            description="This sets the Mac's start-up disk, the same setting as Startup Disk in macOS.")
+        page.add(self.group)
+        self.rows = {}
+        first = None
+        for key, title, subtitle in MODES:
+            check = Gtk.CheckButton(valign=Gtk.Align.CENTER)
+            if first is None:
+                first = check
+            else:
+                check.set_group(first)
+            row = Adw.ActionRow(title=title, subtitle=subtitle, activatable_widget=check)
+            row.add_prefix(check)
+            check.connect("toggled", self.on_toggled, key)
+            self.group.add(row)
+            self.rows[key] = (row, check)
+
+        now = Adw.PreferencesGroup()
+        page.add(now)
+        restart = Adw.ButtonRow(title="Restart to macOS…", start_icon_name="system-reboot-symbolic")
+        restart.connect("activated", self.on_restart)
+        now.add(restart)
+        self.group.set_sensitive(False)
+        helper("status", on_done=self.on_status)
+
+    def on_status(self, ok, out, err):
+        if not ok:
+            self.toast("The start-up disk could not be read: " + (err.strip() or "unknown error"))
+            return
+        mode, where = (out.split() + ["man", "installed"])[:2]
+        self.live = where == "live"
+        self.mode = mode
+        self.busy = True
+        self.rows[mode][1].set_active(True)
+        self.busy = False
+        # The start menu belongs to installed MAN (the live system's menu is the stick's).
+        self.rows["menu"][0].set_visible(not self.live or mode == "menu")
+        self.group.set_sensitive(True)
+
+    def on_toggled(self, check, key):
+        if self.busy or not check.get_active() or key == self.mode:
+            return
+        self.group.set_sensitive(False)
+
+        def done(ok, out, err):
+            self.group.set_sensitive(True)
+            if ok:
+                self.mode = key
+                self.toast("Saved. " + dict((k, t) for k, t, _ in MODES)[key] + " from now on.")
+            else:
+                self.toast("Not changed: " + (err.strip() or "unknown error"))
+                self.busy = True
+                if self.mode:
+                    self.rows[self.mode][1].set_active(True)
+                self.busy = False
+        helper("default", key, on_done=done)
+
+    def on_restart(self, _row):
+        ask_restart_to_macos(self, lambda error: error and self.toast(error))
+
+    def toast(self, text):
+        self.toasts.add_toast(Adw.Toast(title=text, timeout=6))
+
+
+def ask_restart_to_macos(parent, on_error):
+    """"Restart to macOS?" -> macOS for the next start only, then a normal restart."""
+    dialog = Adw.AlertDialog(
+        heading="Restart to macOS?",
+        body="The Mac starts macOS once. Open apps are closed, so save your work first.")
+    dialog.add_response("cancel", "Cancel")
+    dialog.add_response("restart", "Restart")
+    dialog.set_response_appearance("restart", Adw.ResponseAppearance.SUGGESTED)
+    dialog.set_default_response("restart")
+
+    def response(_d, answer):
+        if answer != "restart":
+            on_error(None)
+            return
+
+        def done(ok, out, err):
+            if ok:
+                subprocess.Popen(["gnome-session-quit", "--reboot", "--no-prompt"])
+                on_error(None)
+            else:
+                on_error("macOS could not be set as the next start: " + (err.strip() or "unknown error"))
+        helper("restart-macos", on_done=done)
+    dialog.connect("response", response)
+    dialog.present(parent)
+
+
+class App(Adw.Application):
+    def __init__(self):
+        super().__init__(application_id="com.man.StartupDisk",
+                         flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
+
+    def do_command_line(self, cmdline):
+        if "--restart-macos" in cmdline.get_arguments()[1:]:
+            # Only the question (from the top bar's power menu), no window.
+            self.hold()
+
+            def finished(error):
+                if error:
+                    note = Gio.Notification.new("Startup Disk")
+                    note.set_body(error)
+                    self.send_notification(None, note)
+                self.release()
+            ask_restart_to_macos(self.props.active_window, finished)
+        else:
+            self.activate()
+        return 0
+
+    def do_activate(self):
+        (self.props.active_window or Window(self)).present()
+
+
+if __name__ == "__main__":
+    sys.exit(App().run(sys.argv))

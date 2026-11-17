@@ -1,0 +1,13 @@
+[Unit]
+Description=MAN: "macOS" chosen in the start menu -> restart to macOS
+ConditionPathExists=/proc/device-tree/chosen/asahi,efi-system-partition
+ConditionPathExists=/boot/grub/grubenv
+After=local-fs.target systemd-udevd.service
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man-apple-boot boot-check
+
+[Install]
+WantedBy=multi-user.target

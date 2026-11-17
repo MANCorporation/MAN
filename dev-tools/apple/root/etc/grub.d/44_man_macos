@@ -1,0 +1,20 @@
+#!/bin/sh
+# MAN on an Apple Silicon Mac with "Show a start menu" (Startup Disk): a "macOS"
+# entry. GRUB cannot start macOS itself, so the entry notes the choice in grubenv
+# and starts MAN, which (man-apple-next.service) sets macOS as the next start
+# with asahi-bless and restarts right away.
+set -e
+[ -e /proc/device-tree/chosen/asahi,efi-system-partition ] || exit 0
+[ -e /etc/default/grub.d/90-man-mac-menu.cfg ] || exit 0
+cat <<'CFG'
+load_env man_next
+if [ "${man_next}" = macos ]; then
+  set timeout=0
+  set default=0
+fi
+menuentry 'macOS' --class macos --class os {
+  set man_next=macos
+  save_env man_next
+  configfile ${prefix}/grub.cfg
+}
+CFG

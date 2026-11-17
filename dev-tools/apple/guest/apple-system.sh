@@ -59,8 +59,12 @@ fi
 echo "== MAN files for Macs"
 # Files only, owned by root: existing directories (/, /usr, ...) keep their owner and mode.
 tar -C $S/root -cf - . | tar -C $T -xf - --no-same-owner --no-overwrite-dir
-chown -R root:root $T/usr/lib/systemd/system/man-apple-*.service $T/usr/libexec/man-apple-*
-inroot systemctl enable man-apple-grow.service man-apple-m1n1.service
+chown -R root:root $T/usr/lib/systemd/system/man-apple-*.service $T/usr/libexec/man-apple-* \
+  $T/usr/bin/man-startup-disk $T/etc/grub.d/44_man_macos $T/usr/share/gnome-shell/extensions/man-mac@man.invalid
+# asahi-bless (Asahi, MIT): sets the Mac's start-up disk; built by dev-tools/apple/build-bless.sh.
+install -m 755 -o root -g root $S/asahi-bless $T/usr/bin/asahi-bless
+inroot systemctl enable man-apple-grow.service man-apple-m1n1.service man-apple-next.service
+inroot glib-compile-schemas /usr/share/glib-2.0/schemas
 # speakersafetyd is started by its udev rule on Macs whose speakers need it.
 inroot systemctl disable speakersafetyd.service 2>/dev/null || true
 

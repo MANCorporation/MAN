@@ -1,0 +1,95 @@
+#!/bin/sh
+# MAN on Apple Silicon Macs: which system the Mac starts, with Asahi's asahi-bless
+# (writes the Mac's start-up disk into its NVRAM, like macOS's Startup Disk).
+#   status          prints: <mode> <live|installed>   mode = man | macos | menu
+#   default man     the Mac starts MAN (the MAN boot loader's stub volume)
+#   default macos   the Mac starts macOS (MAN: hold the power button, choose MAN)
+#   default menu    the Mac starts MAN and GRUB shows "MAN" and "macOS" each time
+#   restart-macos   macOS for the next start only (then this setting again)
+#   boot-check      at start-up: the GRUB entry "macOS" was chosen -> restart to macOS
+# Run as root (pkexec, polkit action com.man.apple-boot).
+set -eu
+export PATH=/usr/sbin:/usr/bin:/sbin:/bin
+MENU_CFG=/etc/default/grub.d/90-man-mac-menu.cfg
+NVRAM=/dev/mtd/by-name/nvram
+GRUBENV=/boot/grub/grubenv
+
+die() { echo "man-apple-boot: $*" >&2; exit 1; }
+[ -e /proc/device-tree/chosen/asahi,efi-system-partition ] || die "this is not a Mac started by the MAN boot loader"
+[ "$(id -u)" = 0 ] || die "must run as root"
+
+wait_nvram() {
+	i=0
+	while [ ! -e $NVRAM ] && [ $i -lt 50 ]; do i=$((i + 1)); sleep 0.2; done
+	[ -e $NVRAM ] || die "the Mac's NVRAM ($NVRAM) is not available"
+}
+
+live() { [ -d /run/live/medium ] || grep -q 'boot=manlive' /proc/cmdline; }
+
+# The MAN boot loader's volume: named "MAN", or else the only volume that is not macOS.
+man_volume() {
+	list=$(asahi-bless --list-volumes 2>/dev/null | sed 's/^[ *]*[0-9]*) //')
+	if printf '%s\n' "$list" | grep -qx 'MAN'; then
+		echo MAN
+		return
+	fi
+	others=$(printf '%s\n' "$list" | grep -v '^Macintosh' | grep -v '^$' || true)
+	[ "$(printf '%s\n' "$others" | grep -c .)" = 1 ] || die "the MAN boot loader's volume was not found: $list"
+	echo "$others"
+}
+
+update_grub() {
+	live && return 0
+	command -v update-grub >/dev/null && update-grub >/dev/null 2>&1 || true
+}
+
+case "${1:-}" in
+status)
+	wait_nvram
+	cur=$(asahi-bless --get-boot 2>/dev/null || true)
+	case $cur in
+	Macintosh*) mode=macos ;;
+	*) if [ -e $MENU_CFG ]; then mode=menu; else mode=man; fi ;;
+	esac
+	if live; then echo "$mode live"; else echo "$mode installed"; fi
+	;;
+default)
+	wait_nvram
+	case "${2:-}" in
+	man | menu)
+		asahi-bless --set-boot "$(man_volume)" -y >/dev/null
+		# "menu": GRUB's menu (which also has MAN's snapshot entries) gets a "macOS"
+		# entry (/etc/grub.d/44_man_macos) and stays up a little longer.
+		if [ "$2" = menu ] && ! live; then
+			mkdir -p /etc/default/grub.d
+			printf '%s\n' '# MAN on a Mac: show the start menu (MAN, macOS) at each start.' \
+				'GRUB_TIMEOUT=5' 'GRUB_TIMEOUT_STYLE=menu' > $MENU_CFG
+		else
+			rm -f $MENU_CFG
+		fi
+		update_grub
+		;;
+	macos)
+		asahi-bless --set-boot-macos -y >/dev/null
+		;;
+	*) die "default man|macos|menu" ;;
+	esac
+	;;
+restart-macos)
+	wait_nvram
+	asahi-bless --set-boot-macos --next -y >/dev/null
+	;;
+boot-check)
+	[ -e $GRUBENV ] || exit 0
+	grub-editenv $GRUBENV list 2>/dev/null | grep -qx 'man_next=macos' || exit 0
+	grub-editenv $GRUBENV unset man_next
+	wait_nvram
+	asahi-bless --set-boot-macos --next -y >/dev/null
+	echo "man-apple-boot: macOS was chosen in the start menu, restarting to macOS"
+	systemctl reboot
+	;;
+*)
+	sed -n '2,10p' "$0" >&2
+	exit 2
+	;;
+esac
