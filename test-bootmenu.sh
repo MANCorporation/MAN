@@ -1,6 +1,7 @@
 #!/bin/sh
 # The new boot menu on the installed test MAN (a copy: t7-bootmenu.qcow2 is an
-# overlay on t7-target.qcow2, which stays as it was). Click into the window,
+# overlay on t7-target.qcow2, which stays as it was; it also has the start-up
+# screen, with Plymouth installed by hand). Click into the window,
 # then hold Alt from the start until the icons appear.
 cd "$(dirname "$0")"
 exec qemu-system-x86_64 -machine q35 -enable-kvm -m 4096 -smp 4 \

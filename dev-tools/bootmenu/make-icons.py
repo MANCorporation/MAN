@@ -15,7 +15,6 @@ import sys
 
 RSVG = os.path.expanduser("~/Documents/MANRUST/tools/rsvg/rsvg-convert")
 
-M_PATH = "M30 84 V32 L60 66 L90 32 V84"  # the MAN logo's M (120 px box)
 
 
 def svg(body, defs=""):
@@ -70,34 +69,45 @@ def stick(c1, c2, emblem, emblem_defs=""):
 
 
 # ── emblems, drawn around (0,0), about 56 px wide ──
+# The MAN logo (version 2, man-installer/data/logo/man-logo-v2.svg).
+LOGO_PATH = "M653 642 H3443 L4096 3268 L3348 3453 L2838 1414 H1257 L748 3453 L0 3268 Z"
+LOGO_GREEN = "#26ea75"
+
+
+def logo(width, cx=0, cy=0, color=LOGO_GREEN):
+    s = width / 4096
+    h = 2811 * s
+    return (f'<g transform="translate({cx - width / 2} {cy - h / 2 - 642 * s}) scale({s})">'
+            f'<path d="{LOGO_PATH}" fill="{color}"/></g>')
+
+
 def man_badge(size=54):
-    s = size / 120
-    return (f'<g transform="translate({-size/2} {-size/2}) scale({s})">'
-            '<rect x="0" y="6" width="120" height="114" rx="28" fill="#1a5fb4"/>'
-            '<rect x="0" y="0" width="120" height="114" rx="28" fill="url(#mb)"/>'
-            f'<path d="{M_PATH}" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g>')
+    # A dark rounded badge with the green logo.
+    s = size / 54
+    return (f'<g transform="scale({s})">'
+            '<rect x="-27" y="-24" width="54" height="54" rx="13" fill="#000" opacity=".35"/>'
+            '<rect x="-27" y="-27" width="54" height="54" rx="13" fill="url(#mb)"/>'
+            '<rect x="-26.5" y="-26.5" width="53" height="53" rx="12.5" fill="none" stroke="#fff" stroke-opacity=".12"/>'
+            + logo(36) + '</g>')
 
 
-MAN_DEFS = lin("mb", [(0, "#62a0ea"), (1, "#1c71d8")])
+MAN_DEFS = lin("mb", [(0, "#3d3846"), (1, "#1e1e20")])
 
 
 def m_white(size=46, width=13):
-    s = size / 120
-    return (f'<g transform="translate({-size/2} {-size*0.48}) scale({s})">'
-            f'<path d="{M_PATH}" fill="none" stroke="#fff" stroke-width="{width}" stroke-linecap="round" stroke-linejoin="round"/></g>')
+    return logo(size)
 
 
 def recovery_badge():
-    # Slate badge, white circular arrow around a small M: "start over / repair".
-    return ('<rect x="-27" y="-24" width="54" height="54" rx="13" fill="#241f31"/>'
+    # The same badge, a white circular arrow around a small logo: "start over / repair".
+    return ('<rect x="-27" y="-24" width="54" height="54" rx="13" fill="#000" opacity=".35"/>'
             '<rect x="-27" y="-27" width="54" height="54" rx="13" fill="url(#rb)"/>'
             '<path d="M -13.5 -9 A 16 16 0 1 1 -16 4" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>'
             '<path d="M -21 -14 L -12 -2 L -6 -15 Z" fill="#fff"/>'
-            '<g transform="translate(-9 -7.5) scale(.15)"><path d="' + M_PATH + '" fill="none" stroke="#99c1f1" '
-            'stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>')
+            + logo(15))
 
 
-REC_DEFS = lin("rb", [(0, "#5e5c64"), (1, "#3d3846")])
+REC_DEFS = lin("rb", [(0, "#3d3846"), (1, "#1e1e20")])
 
 
 def win11(c1="#4cc2ff", c2="#0067c0"):
@@ -202,7 +212,7 @@ def icons():
         out[name] = drive(t, g)
     out["os"] = drive('<circle r="22" fill="none" stroke="#9a9996" stroke-width="5"/><circle r="6" fill="#9a9996"/>')
     out["usb"] = stick("#ffa348", "#ff7800", usb_symbol())
-    out["usb-man"] = stick("#62a0ea", "#1c71d8", m_white(60, 15))
+    out["usb-man"] = stick("#3d3846", "#1e1e20", logo(52))
     w, d = win11("#ffffff", "#deddda"); out["usb-windows"] = stick("#5e5c64", "#3d3846", w, d)
     t, g = mac_tile(*MACOS["macos"], "usb"); out["usb-macos"] = stick("#deddda", "#9a9996", t, g)
     out["marker"] = marker()

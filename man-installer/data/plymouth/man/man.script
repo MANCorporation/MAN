@@ -1,0 +1,144 @@
+# MAN start-up screen (Plymouth "script" theme): black, the MAN logo in the
+# middle, a thin progress bar below it (like a Mac). Plymouth estimates the
+# progress from how long the last starts took. An encrypted disk's password
+# is asked for under the logo. Shutting down and restarting show the logo only.
+
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+
+W = Window.GetWidth();
+H = Window.GetHeight();
+X0 = Window.GetX();
+Y0 = Window.GetY();
+mode = Plymouth.GetMode();
+
+# The logo: 11% of the screen height, a little above the middle.
+logo_image = Image("logo.png");
+logo_h = Math.Int(H * 0.11);
+logo_w = Math.Int(logo_image.GetWidth() * logo_h / logo_image.GetHeight());
+logo = Sprite(logo_image.Scale(logo_w, logo_h));
+logo.SetX(X0 + Math.Int((W - logo_w) / 2));
+logo.SetY(Y0 + Math.Int(H / 2 - logo_h * 0.6));
+logo.SetZ(10);
+
+# The progress bar: 18% of the width, near the bottom, round ends.
+bar_w = Math.Int(W * 0.18);
+bar_h = Math.Int(H * 0.006);
+if (bar_h < 4) bar_h = 4;
+bar_x = X0 + Math.Int((W - bar_w) / 2);
+bar_y = Y0 + Math.Int(H * 0.86);
+
+cap_l = Image("cap-left.png").Scale(Math.Int(bar_h / 2), bar_h);
+cap_r = Image("cap-right.png").Scale(Math.Int(bar_h / 2), bar_h);
+track_l = Image("track-left.png").Scale(Math.Int(bar_h / 2), bar_h);
+track_r = Image("track-right.png").Scale(Math.Int(bar_h / 2), bar_h);
+half = Math.Int(bar_h / 2);
+
+track_left = Sprite(track_l);
+track_left.SetPosition(bar_x, bar_y, 20);
+track_mid = Sprite(Image("track.png").Scale(bar_w - 2 * half, bar_h));
+track_mid.SetPosition(bar_x + half, bar_y, 20);
+track_right = Sprite(track_r);
+track_right.SetPosition(bar_x + bar_w - half, bar_y, 20);
+
+fill_left = Sprite(cap_l);
+fill_left.SetPosition(bar_x, bar_y, 21);
+fill_mid = Sprite();
+fill_mid.SetPosition(bar_x + half, bar_y, 21);
+fill_right = Sprite(cap_r);
+fill_right.SetPosition(bar_x + half, bar_y, 21);
+fill_image = Image("fill.png");
+
+shown = 0;
+fun set_progress(p) {
+  if (p < shown) p = shown;
+  if (p > 1) p = 1;
+  shown = p;
+  len = Math.Int((bar_w - 2 * half) * p);
+  if (len >= 1) {
+    fill_mid.SetImage(fill_image.Scale(len, bar_h));
+    fill_mid.SetOpacity(1);
+  } else {
+    fill_mid.SetOpacity(0);
+  }
+  fill_right.SetX(bar_x + half + len);
+}
+
+fun show_bar(on) {
+  track_left.SetOpacity(on); track_mid.SetOpacity(on); track_right.SetOpacity(on);
+  fill_left.SetOpacity(on); fill_right.SetOpacity(on);
+  if (on == 0) fill_mid.SetOpacity(0); else set_progress(shown);
+}
+
+if (mode == "boot" || mode == "updates" || mode == "system-upgrade" || mode == "firmware-upgrade") {
+  show_bar(1);
+  set_progress(0);
+} else {
+  show_bar(0);
+}
+
+fun boot_progress(duration, progress) {
+  if (asking == 0 && (mode == "boot" || mode == "updates" || mode == "system-upgrade" || mode == "firmware-upgrade"))
+    set_progress(progress);
+}
+Plymouth.SetBootProgressFunction(boot_progress);
+
+# The password of an encrypted disk: a rounded field with dots under the logo.
+asking = 0;
+field_w = Math.Int(W * 0.2);
+if (field_w < 240) field_w = 240;
+field_h = Math.Int(field_w * 0.14);
+field_x = X0 + Math.Int((W - field_w) / 2);
+field_y = Y0 + Math.Int(H / 2 + logo_h * 0.9);
+field = Sprite(Image("field.png").Scale(field_w, field_h));
+field.SetPosition(field_x, field_y, 30);
+field.SetOpacity(0);
+prompt_sprite = Sprite();
+prompt_sprite.SetZ(30);
+bullet_image = Image("bullet.png").Scale(Math.Int(field_h * 0.28), Math.Int(field_h * 0.28));
+bullets = [];
+for (i = 0; i < 40; i++) {
+  bullets[i] = Sprite(bullet_image);
+  bullets[i].SetZ(31);
+  bullets[i].SetOpacity(0);
+}
+
+fun display_password(prompt, count) {
+  asking = 1;
+  show_bar(0);
+  field.SetOpacity(1);
+  text = "Enter the password to unlock this disk";
+  t = Image.Text(text, 0.75, 0.75, 0.75, 1, "Sans 11");
+  prompt_sprite.SetImage(t);
+  prompt_sprite.SetPosition(X0 + Math.Int((W - t.GetWidth()) / 2), field_y - Math.Int(t.GetHeight() * 1.8), 30);
+  prompt_sprite.SetOpacity(1);
+  step = Math.Int(field_h * 0.45);
+  start = field_x + Math.Int(field_h * 0.4);
+  for (i = 0; i < 40; i++) {
+    if (i < count && start + i * step < field_x + field_w - field_h * 0.4) {
+      bullets[i].SetPosition(start + i * step, field_y + Math.Int((field_h - bullet_image.GetHeight()) / 2), 31);
+      bullets[i].SetOpacity(1);
+    } else {
+      bullets[i].SetOpacity(0);
+    }
+  }
+}
+Plymouth.SetDisplayPasswordFunction(display_password);
+
+fun display_normal() {
+  asking = 0;
+  field.SetOpacity(0);
+  prompt_sprite.SetOpacity(0);
+  for (i = 0; i < 40; i++) bullets[i].SetOpacity(0);
+  if (mode == "boot" || mode == "updates" || mode == "system-upgrade" || mode == "firmware-upgrade") show_bar(1);
+}
+Plymouth.SetDisplayNormalFunction(display_normal);
+
+# No status text on this screen (it is in the journal).
+fun message(text) { }
+Plymouth.SetMessageFunction(message);
+
+fun quit() {
+  if (mode == "boot") set_progress(1);
+}
+Plymouth.SetQuitFunction(quit);

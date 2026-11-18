@@ -12,6 +12,12 @@ start menu on, e.g. "macOS Golden Gate"), bootable USB drives and MAN Recovery.
 | Ctrl+Enter | start it, and from now on start it by default (stored in `EFI/MAN/bootmenu.env` on the EFI partition) |
 | Shift+Enter on MAN, or Esc | "MAN Advanced Options": the full GRUB list (other kernels, recovery mode, snapshots, a staged update, firmware settings) |
 
+Without Alt the start is quiet: no Debian background, no "Loading Linux"
+text, and MAN's start-up screen (Plymouth theme `man`: the MAN logo on black
+with a thin progress bar, a password field for encrypted disks) until the
+login screen. Plymouth learns how long a start takes, so the bar is only
+rough on the very first start.
+
 Pressing Esc early at power-on also opens the list. On the live USB stick the
 picker always shows (5 s), with "Try or Install MAN"; Shift+Enter on it lists
 the other ways to start the stick.
@@ -39,7 +45,16 @@ the other ways to start the stick.
   diverted to `grub-install.debian`; MAN's modules are used unless
   `--directory` is given), `man-grub-refresh` (puts the new GRUB on the EFI
   partition after an upgrade or MAN update, no NVRAM writes), the theme
-  `/usr/share/grub/themes/man`.
+  `/usr/share/grub/themes/man`, the start-up screen
+  `/usr/share/plymouth/themes/man` (made by `dev-tools/bootmenu/make-splash.sh`
+  from `man-installer/data/logo/man-logo-v2.svg`), `/etc/grub.d/10_man_linux`
+  (Debian's `10_linux`, diverted to `/usr/lib/man/grub/10_linux.debian`, run
+  with `quiet_boot=1`), `05_debian_theme` diverted away (no background) and
+  `/etc/default/grub.d/80-man-boot-splash.cfg` (`quiet splash`, quiet systemd,
+  `gfxpayload=keep`). Depends on `plymouth` and `plymouth-label`, which the
+  images do not have yet.
+  Never ship a file at a diverted conffile's path (`/etc/grub.d/10_linux`):
+  dpkg sets it aside as `.dpkg-dist` and the menu loses MAN's entry.
 - `man-installer/data/grub/`: `06_man_bootmenu` (top of grub.cfg: Alt, Ctrl,
   views, USB scan), `49_man_bootmenu` (writes `/boot/grub/man-picker.cfg`),
   `bootmenu-lib.sh` (Windows version from bootmgfw.efi, macOS version noted by

@@ -35,7 +35,6 @@ for id in $ids; do
     rel_initrd=$(make_system_path_relative_to_its_root "/boot/initrd.img-$version")
     echo "  menuentry '${desc:-Snapshot} -- ${created}UTC' --class snapshot --class recovery \$menuentry_id_option 'man-snapshot-$id' {"
     prepare_grub_to_access_device "${GRUB_DEVICE_BOOT}" | sed 's/^/    /'
-    echo "    echo 'Restoring MAN snapshot $id...'"
     echo "    linux ${rel_kernel} root=UUID=${GRUB_DEVICE_UUID} ro rootflags=subvol=@system ${GRUB_CMDLINE_LINUX} man.rollback=$id"
     echo "    initrd ${rel_initrd}"
     echo "  }"

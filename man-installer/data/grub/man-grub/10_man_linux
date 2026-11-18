@@ -1,0 +1,9 @@
+#!/bin/sh
+# MAN: Debian's 10_linux (moved to /usr/lib/man/grub/10_linux.debian by
+# man-grub) without the "Loading Linux ..." lines on MAN's own entry: MAN's
+# start-up screen (Plymouth) shows instead of text.
+set -e
+script=$(mktemp)
+trap 'rm -f "$script"' EXIT
+sed 's/^quiet_boot="0"$/quiet_boot="1"/' /usr/lib/man/grub/10_linux.debian > "$script"
+sh "$script" "$@"
