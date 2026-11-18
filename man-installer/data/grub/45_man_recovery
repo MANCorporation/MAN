@@ -21,7 +21,7 @@ else
     initrd=/@recovery/boot/man-recovery/initrd.img
 fi
 echo "Found MAN Recovery" >&2
-echo "menuentry 'MAN Recovery' --class recovery \$menuentry_id_option 'man-recovery' {"
+echo "menuentry 'MAN Recovery' --class man-recovery --class recovery \$menuentry_id_option 'man-recovery' {"
 prepare_grub_to_access_device "${device}" | sed 's/^/  /'
 echo "  echo 'Starting MAN Recovery...'"
 echo "  linux ${kernel} root=UUID=${GRUB_DEVICE_UUID} ro rootflags=subvol=@recovery ${GRUB_CMDLINE_LINUX} quiet splash man.recovery=1"

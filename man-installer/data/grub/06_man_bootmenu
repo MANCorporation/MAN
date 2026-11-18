@@ -1,0 +1,276 @@
+#!/bin/sh
+# MAN boot menu, part 1 (part 2: 49_man_bootmenu). MAN starts straight away;
+# the menu only shows while Alt (Option on a Mac keyboard) is held at power-on,
+# or after Esc is pressed early. It has two views:
+#   picker  a row of large icons (MAN, Windows, macOS, USB drives, MAN Recovery),
+#           like a Mac's start-up disk picker: man-picker.cfg next to grub.cfg
+#           (written by 49_man_bootmenu), opened from here with configfile.
+#           Enter starts, Ctrl+Enter makes it the system that starts by
+#           default, Shift+Enter on MAN or Esc open:
+#   list    grub.cfg itself: everything GRUB offers (kernels, recovery mode,
+#           snapshots, updates, firmware settings).
+# Choosing in the picker reads grub.cfg again with man_boot set (man_start),
+# which then starts that list entry without showing anything.
+set -e
+prefix="/usr"
+exec_prefix="/usr"
+datarootdir="/usr/share"
+. "${pkgdatadir:-/usr/share/grub}/grub-mkconfig_lib"
+
+src=/usr/share/grub/themes/man
+dst=/boot/grub/themes/man
+[ -f "$src/theme.txt" ] || exit 0
+
+# GRUB reads the theme from /boot (stays readable when the system is encrypted).
+mkdir -p "$dst"
+cp -ru "$src/." "$dst/"
+[ -d "$dst/icons" ] || exit 0
+
+# Ctrl+Enter's choice lives on the EFI partition: GRUB cannot write to Btrfs.
+env_uuid=
+env_rel=
+if mountpoint -q /boot/efi 2>/dev/null; then
+    mkdir -p /boot/efi/EFI/MAN
+    [ -f /boot/efi/EFI/MAN/bootmenu.env ] || grub-editenv /boot/efi/EFI/MAN/bootmenu.env create
+    env_uuid=$(findmnt -nro UUID /boot/efi 2>/dev/null || true)
+    env_rel=/EFI/MAN/bootmenu.env
+fi
+
+# A Mac with "Show a start menu" (Startup Disk): the picker shows every time.
+always=
+timeout=${GRUB_TIMEOUT:-5}
+[ -e /etc/default/grub.d/90-man-mac-menu.cfg ] && always=1
+
+theme_dev=$(${grub_probe} --target=device "$dst")
+theme_rel=$(make_system_path_relative_to_its_root "$dst")
+grub_rel=$(make_system_path_relative_to_its_root /boot/grub)
+
+echo "Found MAN boot menu theme" >&2
+cat <<EOF
+### MAN boot menu ###
+insmod regexp
+insmod keystatus
+insmod loadenv
+insmod gfxmenu
+insmod png
+EOF
+prepare_grub_to_access_device "$theme_dev"
+cat <<EOF
+set man_theme_dir="(\$root)$theme_rel"
+set man_picker_cfg="(\$root)$grub_rel/man-picker.cfg"
+for f in "\$man_theme_dir"/*.pf2; do loadfont "\$f"; done
+if [ -z "\$man_cfg" ]; then set man_cfg="\$prefix/grub.cfg"; fi
+set man_env=
+EOF
+if [ -n "$env_uuid" ]; then
+    cat <<EOF
+if search --no-floppy --fs-uuid --set=man_esp $env_uuid; then
+  set man_env="(\$man_esp)$env_rel"
+  load_env --file "\$man_env" man_default
+fi
+EOF
+fi
+cat <<EOF
+
+# man_start ID; configfile \$man_cfg: the picker's entries. Ctrl: ID starts by
+# default from now on. Shift on MAN: the list view. Otherwise the reloaded
+# grub.cfg starts ID. (The entry reloads, not man_start: a function cannot
+# be defined again while it runs.)
+function man_start {
+  if [ "\$menu_mod" = ctrl ]; then
+    if [ "\$1" = 0 ]; then set man_default=; else set man_default="\$1"; fi
+    if [ -n "\$man_env" ]; then save_env --file "\$man_env" man_default; fi
+  fi
+  if [ "\$menu_mod" = shift -a "\$1" = 0 ]; then
+    set man_view=list
+    set man_boot=
+  else
+    set man_boot="\$1"
+  fi
+  export man_view
+  export man_boot
+  export man_cfg
+}
+
+# USB drives and other disks that can start (only scanned for the picker).
+function man_chain {
+  set root=\$1
+  chainloader (\$1)\$man_efi_file
+  boot
+}
+function man_live {
+  # A MAN USB stick: its own menu, starting its live session.
+  set root=\$1
+  set man_live_pick=1
+  export man_live_pick
+}
+function man_usb_entry {
+  set man_d=\$1
+  set man_dev=\$2
+  set man_cls=usb
+  set man_title=
+  probe --label --set=man_title (\$man_dev)
+  if [ -z "\$man_title" ]; then set man_title="EFI Boot"; fi
+  set man_live_dev=
+  for q in "" ,msdos1 ,gpt1 ,msdos2 ,gpt2; do
+    if [ -f (\$man_d\$q)/live/man-id -a -f (\$man_d\$q)/boot/grub/grub.cfg ]; then set man_live_dev="\$man_d\$q"; break; fi
+  done
+  if [ -n "\$man_live_dev" ]; then
+    set man_title="MAN Live"
+    eval "menuentry \"\\\$man_title\" --class usb-man --class usb { man_live \$man_live_dev; configfile (\$man_live_dev)/boot/grub/grub.cfg }"
+    return
+  fi
+  for q in "" ,msdos1 ,gpt1 ,msdos2 ,gpt2; do
+    if [ -f (\$man_d\$q)/sources/boot.wim -o -f (\$man_d\$q)/sources/install.wim -o -f (\$man_d\$q)/sources/install.esd ]; then
+      set man_cls=usb-windows
+      set man_title="Windows Installer"
+      break
+    fi
+  done
+  eval "menuentry \"\\\$man_title\" --class \$man_cls --class usb { man_chain \$man_dev }"
+}
+# Firmware "fast boot" often leaves USB drives off: start every device. The
+# disk names (hd0, ...) may change then, so MAN's own are found again by UUID.
+function man_connect_all {
+  # Everything needed afterwards is loaded first: $prefix may be wrong until
+  # MAN's own disk is found again.
+  insmod search
+  insmod search_fs_uuid
+  insmod probe
+  insmod part_gpt
+  insmod part_msdos
+  insmod fat
+  insmod iso9660
+  insmod chain
+  insmod eval
+  set man_pu=; set man_ru=; set man_eu=; set man_tu=; set man_lu=
+  regexp --set=1:man_pd --set=2:man_pp '^\\(([^)]*)\\)(.*)\$' "\$prefix"
+  regexp --set=1:man_td --set=2:man_tp '^\\(([^)]*)\\)(.*)\$' "\$man_theme_dir"
+  probe --fs-uuid --set=man_pu (\$man_pd)
+  probe --fs-uuid --set=man_ru (\$root)
+  probe --fs-uuid --set=man_tu (\$man_td)
+  if [ -n "\$man_esp" ]; then probe --fs-uuid --set=man_eu (\$man_esp); fi
+  if [ -n "\$man_live_root" ]; then probe --fs-uuid --set=man_lu (\$man_live_root); fi
+  if man_connect; then
+    # (GRUB's scripts have no "&&".)
+    if [ -n "\$man_pu" ]; then
+      if search --no-floppy --fs-uuid --set=man_x \$man_pu; then set prefix="(\$man_x)\$man_pp"; fi
+    fi
+    if [ -n "\$man_ru" ]; then
+      if search --no-floppy --fs-uuid --set=man_x \$man_ru; then set root=\$man_x; fi
+    fi
+    if [ -n "\$man_tu" ]; then
+      if search --no-floppy --fs-uuid --set=man_x \$man_tu; then
+        set man_theme_dir="(\$man_x)\$man_tp"
+        set theme="\$man_theme_dir/theme.txt"
+      fi
+    fi
+    if [ -n "\$man_eu" ]; then
+      if search --no-floppy --fs-uuid --set=man_x \$man_eu; then
+        set man_esp=\$man_x
+        set man_env="(\$man_esp)/EFI/MAN/bootmenu.env"
+      fi
+    fi
+    if [ -n "\$man_lu" ]; then
+      if search --no-floppy --fs-uuid --set=man_x \$man_lu; then set man_live_root=\$man_x; fi
+    fi
+  fi
+}
+function man_scan_usb {
+  if [ "\$grub_platform" != efi ]; then return; fi
+  man_connect_all
+  if [ "\$grub_cpu" = x86_64 ]; then set man_efi_file=/EFI/BOOT/BOOTX64.EFI
+  elif [ "\$grub_cpu" = arm64 ]; then set man_efi_file=/EFI/BOOT/BOOTAA64.EFI
+  elif [ "\$grub_cpu" = i386 ]; then set man_efi_file=/EFI/BOOT/BOOTIA32.EFI
+  else return; fi
+  # Not the disks MAN itself starts from.
+  set man_skip1=; set man_skip2=; set man_skip3=
+  regexp --set=1:man_skip1 '^\\(?([^,)]*)' "\$prefix"
+  regexp --set=1:man_skip2 '^([^,]*)' "\$man_esp"
+  regexp --set=1:man_skip3 '^([^,]*)' "\$man_live_root"
+  for d in hd0 hd1 hd2 hd3 hd4 hd5 hd6 hd7 hd8 hd9; do
+    if [ "\$d" = "\$man_skip1" -o "\$d" = "\$man_skip2" -o "\$d" = "\$man_skip3" ]; then continue; fi
+    for p in ,gpt1 ,gpt2 ,gpt3 ,gpt4 ,msdos1 ,msdos2 ,msdos3 ""; do
+      if [ -f (\$d\$p)\$man_efi_file ]; then
+        # Windows on another internal disk is already in the menu.
+        if [ -f (\$d\$p)/EFI/Microsoft/Boot/bootmgfw.efi ]; then break; fi
+        man_usb_entry \$d \$d\$p
+        break
+      fi
+    done
+  done
+}
+
+# What the picker (its own config file) needs from here.
+export man_theme_dir
+export man_picker_cfg
+export man_cfg
+export man_env
+export man_esp
+export man_default
+export man_live_root
+
+# Which view, and whether to show it.
+set man_picker=
+if [ -n "\$man_boot" ]; then
+  # Chosen in the picker: start that entry, show nothing.
+  set default="\$man_boot"
+  set man_boot=
+  export man_boot
+  set timeout=0
+  set timeout_style=hidden
+elif [ "\$man_view" = list ]; then
+  # Shift+Enter on MAN in the picker.
+  set man_view=
+  export man_view
+  set default=0
+  set timeout=-1
+  set timeout_style=menu
+elif [ -n "\$boot_once" ]; then
+  # A one-time entry (an update being installed): no menu.
+  set timeout=0
+  set timeout_style=hidden
+EOF
+if [ -n "$always" ]; then
+    cat <<EOF
+else
+  set man_picker=$timeout
+fi
+EOF
+else
+    cat <<EOF
+elif [ -n "\$man_force_picker" ]; then
+  # Started from MAN's USB stick (its grub.cfg reads this one): the picker,
+  # with "Try or Install MAN" added.
+  set man_picker="\$man_force_timeout"
+elif keystatus --alt --wait 250; then
+  set man_picker=-1
+else
+  # MAN (or the system chosen with Ctrl+Enter), straight away. Esc pressed
+  # early still opens the list.
+  set timeout=0
+  set timeout_style=hidden
+  if [ -n "\$man_default" ]; then set default="\$man_default"; fi
+fi
+EOF
+fi
+cat <<EOF
+if [ -n "\$man_picker" ]; then
+  set man_picker_timeout="\$man_picker"
+  export man_picker_timeout
+  set theme="\$man_theme_dir/theme.txt"
+  set menu_layout=horizontal
+  export theme
+  export menu_layout
+  configfile "\$man_picker_cfg"
+  # Esc in the picker (or no picker file): the list.
+  set default=0
+  set timeout=-1
+  set timeout_style=menu
+fi
+set theme="\$man_theme_dir/advanced.txt"
+set menu_layout=
+export theme
+export menu_layout
+### end of the MAN boot menu header ###
+EOF

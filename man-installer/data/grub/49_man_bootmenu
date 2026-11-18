@@ -1,0 +1,65 @@
+#!/bin/sh
+# MAN boot menu, part 2 (see 06_man_bootmenu): writes the picker,
+# /boot/grub/man-picker.cfg: MAN, Windows, macOS, MAN's USB stick when the
+# menu was started from it, other bootable USB drives (found while the menu
+# opens), MAN Recovery. Each entry starts the grub.cfg entry with that id.
+set -e
+[ -f /boot/grub/themes/man/theme.txt ] || exit 0
+. /usr/lib/man/grub/bootmenu-lib.sh
+
+q() { printf '%s' "$1" | sed "s/'/'\\\\''/g"; }
+
+out=/boot/grub/man-picker.cfg
+{
+cat <<'EOF'
+# MAN boot menu: the picker (written by /etc/grub.d/49_man_bootmenu with
+# update-grub, opened by grub.cfg while Alt is held at power-on).
+insmod part_gpt
+insmod part_msdos
+insmod fat
+insmod iso9660
+insmod chain
+insmod probe
+insmod eval
+set theme="$man_theme_dir/theme.txt"
+set menu_layout=horizontal
+set timeout="$man_picker_timeout"
+set timeout_style=menu
+if [ -n "$man_default" ]; then set default="$man_default"; else set default=man; fi
+menuentry 'MAN' --class man --id man {
+  man_start 0
+  configfile "$man_cfg"
+}
+EOF
+if w=$(man_windows); then
+    set -- $w
+    cls=$2; shift 2
+    echo "menuentry '$(q "$*")' --class $cls --class windows --id man-windows {"
+    echo "  man_start man-windows"
+    echo '  configfile "$man_cfg"'
+    echo "}"
+fi
+if m=$(man_macos); then
+    set -- $m
+    cls=$1; shift
+    echo "menuentry '$(q "$*")' --class $cls --class macos --id man-macos {"
+    echo "  man_start man-macos"
+    echo '  configfile "$man_cfg"'
+    echo "}"
+fi
+cat <<'EOF'
+# Started from MAN's USB stick: its "Try or Install MAN" (its grub.cfg).
+if [ -n "$man_iso_cfg" ]; then man_iso_entries; fi
+man_scan_usb
+EOF
+if man_recovery; then
+    cat <<'EOF'
+menuentry 'MAN Recovery' --class man-recovery --id man-recovery {
+  man_start man-recovery
+  configfile "$man_cfg"
+}
+EOF
+fi
+} > "$out.new"
+mv "$out.new" "$out"
+echo "Wrote the MAN boot menu picker ($out)" >&2

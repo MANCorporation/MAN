@@ -1,0 +1,29 @@
+#!/bin/sh
+# MAN: puts MAN's GRUB on the EFI system partition again when it changed
+# (package upgrade, MAN update). Same places as the installer: EFI/MAN, and
+# EFI/BOOT (the fallback path) unless Windows shares the partition. The
+# firmware's boot entries are left alone (no NVRAM writes).
+#   man-grub-refresh [--force]
+set -eu
+export PATH=/usr/sbin:/usr/bin:/sbin:/bin
+version=$(cat /usr/lib/man/grub/version)
+stamp=/boot/grub/man-grub.version
+[ "${1:-}" = --force ] || [ "$(cat "$stamp" 2>/dev/null)" != "$version" ] || exit 0
+# Only on an installed, UEFI-started MAN (not the live session or an image build).
+[ -d /sys/firmware/efi ] || exit 0
+[ -d /run/live ] && exit 0
+mountpoint -q /boot/efi || exit 0
+[ -f /boot/grub/grub.cfg ] || exit 0
+[ -d /boot/efi/EFI/MAN ] || exit 0
+case $(uname -m) in
+    x86_64) target=x86_64-efi ;;
+    aarch64) target=arm64-efi ;;
+    *) exit 0 ;;
+esac
+args="--target=$target --efi-directory=/boot/efi --bootloader-id=MAN --no-uefi-secure-boot --no-nvram"
+grub-install $args
+if [ ! -d /boot/efi/EFI/Microsoft ] && [ -d /boot/efi/EFI/BOOT ]; then
+    grub-install $args --removable
+fi
+echo "$version" > "$stamp"
+echo "MAN's boot loader was refreshed ($version)."

@@ -3,6 +3,7 @@
 #   installer/patch-urlcache.py  HTTP status checks, fresh GitHub signed links
 #   installer/patch-auto.py      shuts down / restarts by itself, no extra key presses
 #   installer/patch-man-menu.py  MAN's 3-choice menu (MAN_AUTO=1, from install-man.sh)
+#   installer/patch-macos-version.py  notes the macOS version for the boot menu
 # Output: release/apple/installer-<ver>-man2.tar.gz and release/apple/latest
 set -euo pipefail
 p=$(cd -- "$(dirname -- "$(readlink -f "$0")")/../.." && pwd)
@@ -15,6 +16,7 @@ tar -C $A/installer/tree -xzf $A/installer/installer-$IV.tar.gz
 python3 -I $p/dev-tools/apple/installer/patch-urlcache.py $A/installer/tree/urlcache.py
 python3 -I $p/dev-tools/apple/installer/patch-auto.py $A/installer/tree
 python3 -I $p/dev-tools/apple/installer/patch-man-menu.py $A/installer/tree
+python3 -I $p/dev-tools/apple/installer/patch-macos-version.py $A/installer/tree
 for f in $OUT/installer-*.tar.gz; do [ -e "$f" ] && rm -f "$f"; done
 tar -C $A/installer/tree --owner=0 --group=0 -czf $OUT/installer-$MV.tar.gz .
 echo $MV > $OUT/latest

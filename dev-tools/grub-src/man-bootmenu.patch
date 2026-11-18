@@ -1,0 +1,613 @@
+MAN boot menu additions for GRUB (Debian grub2 2.12-9+deb13u2; applies to 2.14 too).
+  gfxmenu: layout = horizontal (start-up disk picker), icon_percent, icon_min,
+           icon_max, large_item_font, large_font_from_height, selected_marker
+  normal:  menu_layout=horizontal: Left/Right move; menu_mod = modifier held with Enter
+  efi console: modifiers reported without a key waiting; Shift with Enter
+  keystatus: --wait MS
+  efidisk: man_connect (start USB and other drives, list the disks again)
+License: GPL-3.0-or-later (as GRUB).
+
+--- a/grub-core/gfxmenu/gui_list.c
++++ b/grub-core/gfxmenu/gui_list.c
+@@ -24,6 +24,9 @@
+ #include <grub/gfxmenu_view.h>
+ #include <grub/gfxwidgets.h>
+ #include <grub/color.h>
++#include <grub/bitmap.h>
++#include <grub/bitmap_scale.h>
++#include <grub/env.h>
+ 
+ enum scrollbar_slice_mode {
+   SCROLLBAR_SLICE_WEST,
+@@ -82,6 +85,19 @@
+   grub_gfxmenu_icon_manager_t icon_manager;
+ 
+   grub_gfxmenu_view_t view;
++
++  /* MAN: "layout = horizontal" draws a row of large icons with the title
++     below each (a start-up disk picker).  Sizes follow the screen height.  */
++  int horizontal;
++  int icon_percent;
++  int icon_min;
++  int icon_max;
++  grub_font_t large_item_font;
++  int large_font_from_height;
++  char *marker_name;
++  int marker_tried;
++  struct grub_video_bitmap *marker;
++  struct grub_video_bitmap *marker_scaled;
+ };
+ 
+ typedef struct grub_gui_list_impl *list_impl_t;
+@@ -107,6 +123,11 @@
+     self->scrollbar_thumb->destroy (self->scrollbar_thumb);
+   if (self->scrollbar_frame)
+     self->scrollbar_frame->destroy (self->scrollbar_frame);
++  if (self->marker_scaled)
++    grub_video_bitmap_destroy (self->marker_scaled);
++  if (self->marker)
++    grub_video_bitmap_destroy (self->marker);
++  grub_free (self->marker_name);
+   grub_free (self->scrollbar_thumb_pattern);
+   grub_free (self->scrollbar_frame_pattern);
+   grub_free (self);
+@@ -451,6 +472,224 @@
+ 			   oviewport.height);
+ }
+ 
++
++/* MAN: the horizontal picker.  Every item is a square cell: the icon, with
++   the selected item's box (selected_item_pixmap_style) behind it, the title
++   centred below and the marker (an image) below the selected title.  */
++static void
++draw_title_centered (const char *title, grub_font_t font,
++		     grub_video_color_t color, int center_x, int baseline,
++		     int max_width)
++{
++  int width = grub_font_get_string_width (font, title);
++  char *cut = 0;
++
++  if (width > max_width)
++    {
++      grub_size_t len = grub_strlen (title);
++      cut = grub_malloc (len + 4);
++      if (!cut)
++	return;
++      while (len > 0)
++	{
++	  len--;
++	  /* Do not cut inside a UTF-8 sequence.  */
++	  while (len > 0 && (title[len] & 0xc0) == 0x80)
++	    len--;
++	  grub_memcpy (cut, title, len);
++	  grub_strcpy (cut + len, "...");
++	  width = grub_font_get_string_width (font, cut);
++	  if (width <= max_width)
++	    break;
++	}
++      title = cut;
++    }
++  grub_font_draw_string (title, font, color, center_x - width / 2, baseline);
++  grub_free (cut);
++}
++
++static struct grub_video_bitmap *
++get_marker (list_impl_t self, int size)
++{
++  if (!self->marker_name || size <= 0)
++    return 0;
++  if (!self->marker && !self->marker_tried && self->theme_dir)
++    {
++      char *path = grub_resolve_relative_path (self->theme_dir,
++					       self->marker_name);
++      self->marker_tried = 1;
++      if (path)
++	{
++	  grub_video_bitmap_load (&self->marker, path);
++	  grub_errno = GRUB_ERR_NONE;
++	  grub_free (path);
++	}
++    }
++  if (!self->marker)
++    return 0;
++  if (self->marker_scaled
++      && (int) grub_video_bitmap_get_width (self->marker_scaled) != size)
++    {
++      grub_video_bitmap_destroy (self->marker_scaled);
++      self->marker_scaled = 0;
++    }
++  if (!self->marker_scaled)
++    {
++      grub_video_bitmap_create_scaled (&self->marker_scaled, size, size,
++				       self->marker,
++				       GRUB_VIDEO_BITMAP_SCALE_METHOD_BEST);
++      grub_errno = GRUB_ERR_NONE;
++    }
++  return self->marker_scaled;
++}
++
++static void
++draw_menu_horizontal (list_impl_t self)
++{
++  grub_video_rect_t vp;
++  int n = self->view->menu->size;
++  int screen_h = self->view->screen.height;
++  int icon, pad, cell, gap, pitch, shown, first, total, x0, i;
++  int ascent, descent, label_base, marker_size, marker_top;
++  grub_font_t font = self->item_font;
++  grub_font_t sel_font = self->selected_item_font;
++  grub_gfxmenu_box_t selbox = self->selected_item_box;
++  grub_video_color_t item_color, sel_color;
++  struct grub_video_bitmap *marker;
++
++  if (n <= 0)
++    return;
++  grub_video_get_viewport ((unsigned *) &vp.x, (unsigned *) &vp.y,
++			   &vp.width, &vp.height);
++
++  icon = screen_h * self->icon_percent / 100;
++  if (icon < self->icon_min)
++    icon = self->icon_min;
++  if (icon > self->icon_max)
++    icon = self->icon_max;
++  if (icon != self->icon_width || icon != self->icon_height)
++    {
++      self->icon_width = icon;
++      self->icon_height = icon;
++      grub_gfxmenu_icon_manager_set_icon_size (self->icon_manager, icon, icon);
++    }
++  if (self->large_item_font && screen_h >= self->large_font_from_height)
++    {
++      font = self->large_item_font;
++      sel_font = self->large_item_font;
++    }
++
++  /* item_padding: room around the icon inside the selection box, and
++     item_spacing: room between two cells, both in percent of the icon.  */
++  pad = icon * self->item_padding / 100;
++  cell = icon + 2 * pad;
++  gap = icon * self->item_spacing / 100;
++  pitch = cell + gap;
++
++  /* Too many for one row: closer together first, then smaller icons (down
++     to icon_min); only after that does the row scroll.  */
++  if (n * pitch - gap > (int) vp.width)
++    {
++      int fit_gap = ((int) vp.width - n * cell) / (n > 1 ? n - 1 : 1);
++      int min_gap = icon * 25 / 100;
++      gap = fit_gap > min_gap ? fit_gap : min_gap;
++      if (gap > icon * self->item_spacing / 100)
++	gap = icon * self->item_spacing / 100;
++      while (n * (cell + gap) - gap > (int) vp.width && icon > self->icon_min)
++	{
++	  icon -= 4;
++	  if (icon < self->icon_min)
++	    icon = self->icon_min;
++	  pad = icon * self->item_padding / 100;
++	  cell = icon + 2 * pad;
++	  gap = icon * 25 / 100;
++	}
++      pitch = cell + gap;
++      if (icon != self->icon_width)
++	{
++	  self->icon_width = icon;
++	  self->icon_height = icon;
++	  grub_gfxmenu_icon_manager_set_icon_size (self->icon_manager,
++						   icon, icon);
++	}
++    }
++
++  shown = ((int) vp.width + gap) / pitch;
++  if (shown < 1)
++    shown = 1;
++  if (shown > n)
++    shown = n;
++  first = self->first_shown_index;
++  if (self->view->selected >= 0)
++    {
++      if (self->view->selected < first)
++	first = self->view->selected;
++      else if (self->view->selected >= first + shown)
++	first = self->view->selected - shown + 1;
++    }
++  if (first > n - shown)
++    first = n - shown;
++  if (first < 0)
++    first = 0;
++  self->first_shown_index = first;
++
++  total = shown * pitch - gap;
++  x0 = ((int) vp.width - total) / 2;
++
++  ascent = grub_font_get_ascent (font);
++  descent = grub_font_get_descent (font);
++  label_base = cell + icon / 10 + ascent;
++  marker_size = icon * 28 / 100;
++  marker_top = label_base + descent + icon / 8;
++
++  item_color = grub_video_map_rgba_color (self->item_color);
++  sel_color = grub_video_map_rgba_color (self->selected_item_color);
++  marker = get_marker (self, marker_size);
++
++  for (i = first; i < first + shown; i++)
++    {
++      int x = x0 + (i - first) * pitch;
++      int is_selected = (i == self->view->selected);
++      grub_menu_entry_t entry = grub_menu_get_entry (self->view->menu, i);
++      struct grub_video_bitmap *bmp;
++
++      if (!entry)
++	continue;
++      if (is_selected && selbox)
++	{
++	  int l = selbox->get_left_pad (selbox);
++	  int r = selbox->get_right_pad (selbox);
++	  int t = selbox->get_top_pad (selbox);
++	  int b = selbox->get_bottom_pad (selbox);
++	  if (cell > l + r && cell > t + b)
++	    {
++	      selbox->set_content_size (selbox, cell - l - r, cell - t - b);
++	      selbox->draw (selbox, x, 0);
++	    }
++	}
++      bmp = get_item_icon (self, i);
++      if (bmp)
++	grub_video_blit_bitmap (bmp, GRUB_VIDEO_BLIT_BLEND, x + pad, pad,
++				0, 0, icon, icon);
++      draw_title_centered (entry->title, is_selected ? sel_font : font,
++			   is_selected ? sel_color : item_color,
++			   x + cell / 2, label_base, pitch - 8);
++      if (is_selected && marker)
++	grub_video_blit_bitmap (marker, GRUB_VIDEO_BLIT_BLEND,
++				x + cell / 2 - marker_size / 2, marker_top,
++				0, 0, marker_size, marker_size);
++    }
++
++  /* More items to the left or right than fit on the screen.  */
++  if (first > 0)
++    grub_font_draw_string ("<", font, item_color,
++			   x0 - gap / 2 - grub_font_get_string_width (font, "<"),
++			   cell / 2 + ascent / 2);
++  if (first + shown < n)
++    grub_font_draw_string (">", font, item_color, x0 + total + gap / 2,
++			   cell / 2 + ascent / 2);
++}
++
+ static void
+ list_paint (void *vself, const grub_video_rect_t *region)
+ {
+@@ -507,7 +746,13 @@
+       }
+ 
+     grub_gui_set_viewport (&content_rect, &vpsave2);
+-    draw_menu (self, num_shown_items);
++    if (self->horizontal)
++      {
++	draw_menu_horizontal (self);
++	drawing_scrollbar = 0;
++      }
++    else
++      draw_menu (self, num_shown_items);
+     grub_gui_restore_viewport (&vpsave2);
+ 
+     if (drawing_scrollbar)
+@@ -824,9 +1069,40 @@
+     {
+       self->draw_scrollbar = grub_strcmp (value, "false") != 0;
+     }
++  else if (grub_strcmp (name, "layout") == 0)
++    {
++      self->horizontal = value && grub_strcmp (value, "horizontal") == 0;
++    }
++  else if (grub_strcmp (name, "icon_percent") == 0)
++    {
++      self->icon_percent = grub_strtol (value, 0, 10);
++    }
++  else if (grub_strcmp (name, "icon_min") == 0)
++    {
++      self->icon_min = grub_strtol (value, 0, 10);
++    }
++  else if (grub_strcmp (name, "icon_max") == 0)
++    {
++      self->icon_max = grub_strtol (value, 0, 10);
++    }
++  else if (grub_strcmp (name, "large_item_font") == 0)
++    {
++      self->large_item_font = value ? grub_font_get (value) : 0;
++    }
++  else if (grub_strcmp (name, "large_font_from_height") == 0)
++    {
++      self->large_font_from_height = grub_strtol (value, 0, 10);
++    }
++  else if (grub_strcmp (name, "selected_marker") == 0)
++    {
++      grub_free (self->marker_name);
++      self->marker_name = value ? grub_strdup (value) : 0;
++      self->marker_tried = 0;
++    }
+   else if (grub_strcmp (name, "theme_dir") == 0)
+     {
+       self->need_to_recreate_boxes = 1;
++      self->marker_tried = 0;
+       grub_free (self->theme_dir);
+       self->theme_dir = value ? grub_strdup (value) : 0;
+     }
+@@ -930,6 +1206,13 @@
+ 
+   self->first_shown_index = 0;
+ 
++  self->horizontal = 0;
++  self->icon_percent = 14;
++  self->icon_min = 64;
++  self->icon_max = 256;
++  self->large_item_font = 0;
++  self->large_font_from_height = 1200;
++
+   self->need_to_recreate_boxes = 0;
+   self->theme_dir = 0;
+   self->menu_box_pattern = 0;
+--- a/grub-core/normal/menu.c
++++ b/grub-core/normal/menu.c
+@@ -565,6 +565,36 @@
+   grub_refresh ();
+ }
+ 
++/* MAN: with "menu_layout=horizontal" (a row of icons) Left and Right move
++   between entries.  The modifier held with Enter is passed to the entry in
++   "menu_mod" (shift, ctrl, alt or empty), so an entry can, for example, open
++   its options with Shift+Enter or become the default with Ctrl+Enter.  */
++static int
++menu_is_horizontal (void)
++{
++  const char *layout = grub_env_get ("menu_layout");
++  return layout && grub_strcmp (layout, "horizontal") == 0;
++}
++
++static void
++menu_note_modifier (int key)
++{
++  int mods = grub_getkeystatus ();
++  const char *mod = "";
++
++  if ((key & GRUB_TERM_SHIFT)
++      || (mods & (GRUB_TERM_STATUS_LSHIFT | GRUB_TERM_STATUS_RSHIFT)))
++    mod = "shift";
++  else if ((key & GRUB_TERM_CTRL)
++	   || (mods & (GRUB_TERM_STATUS_LCTRL | GRUB_TERM_STATUS_RCTRL)))
++    mod = "ctrl";
++  else if ((key & GRUB_TERM_ALT)
++	   || (mods & (GRUB_TERM_STATUS_LALT | GRUB_TERM_STATUS_RALT)))
++    mod = "alt";
++  grub_env_set ("menu_mod", mod);
++  grub_env_export ("menu_mod");
++}
++
+ #define GRUB_MENU_PAGE_SIZE 10
+ 
+ /* Show the menu and handle menu entry selection.  Returns the menu entry
+@@ -677,6 +707,9 @@
+ 	}
+     }
+ 
++  grub_env_set ("menu_mod", "");
++  grub_env_export ("menu_mod");
++
+   /* If timeout is 0, drawing is pointless (and ugly).  */
+   if (timeout == 0)
+     {
+@@ -735,6 +768,23 @@
+ 	      clear_timeout ();
+ 	    }
+ 
++	  if (menu_is_horizontal ())
++	    {
++	      if (c == GRUB_TERM_KEY_LEFT)
++		c = GRUB_TERM_KEY_UP;
++	      else if (c == GRUB_TERM_KEY_RIGHT)
++		c = GRUB_TERM_KEY_DOWN;
++	    }
++	  {
++	    int plain = c & ~(GRUB_TERM_SHIFT | GRUB_TERM_CTRL | GRUB_TERM_ALT);
++	    if (plain == '\n' || plain == '\r'
++		|| c == (GRUB_TERM_CTRL | 'j') || c == (GRUB_TERM_CTRL | 'm'))
++	      {
++		menu_note_modifier (c);
++		c = '\r';
++	      }
++	  }
++
+ 	  switch (c)
+ 	    {
+ 	    case GRUB_TERM_KEY_HOME:
+--- a/grub-core/term/efi/console.c
++++ b/grub-core/term/efi/console.c
+@@ -269,9 +269,18 @@
+ 
+   key = grub_efi_translate_key (key_data.key);
+   if (key == GRUB_TERM_NO_KEY) {
++    /* MAN: with no key waiting, many firmwares (EDK2) still fill in the
++       modifiers held right now.  Pass them on (and nothing stale), so that
++       a held Alt or Shift can be seen.  */
++    grub_memset (&key_data, 0, sizeof (key_data));
+     status = text_input->read_key_stroke (text_input, &key_data);
+     if (status != GRUB_EFI_SUCCESS)
+-      return GRUB_ERR_EOF;
++      {
++	*key_data_ret = key_data;
++	*key_ret = GRUB_TERM_NO_KEY;
++	grub_memset (&key_data.key, 0, sizeof (key_data.key));
++	return GRUB_ERR_EOF;
++      }
+ 
+     key = grub_efi_translate_key (key_data.key);
+   }
+@@ -302,9 +311,10 @@
+   kss = key_data.key_state.key_shift_state;
+   if (kss & GRUB_EFI_SHIFT_STATE_VALID)
+     {
++      /* MAN: also Shift+Enter (the boot menu's "options" key).  */
+       if ((kss & GRUB_EFI_LEFT_SHIFT_PRESSED
+ 	   || kss & GRUB_EFI_RIGHT_SHIFT_PRESSED)
+-	  && (key & GRUB_TERM_EXTENDED))
++	  && ((key & GRUB_TERM_EXTENDED) || key == '\r'))
+ 	key |= GRUB_TERM_SHIFT;
+       if (kss & GRUB_EFI_LEFT_ALT_PRESSED || kss & GRUB_EFI_RIGHT_ALT_PRESSED)
+ 	key |= GRUB_TERM_ALT;
+@@ -326,7 +336,9 @@
+   if (grub_efi_is_finished)
+     return 0;
+ 
+-  if (grub_console_read_key_stroke (term->data, &key_data, &key, 0))
++  grub_memset (&key_data, 0, sizeof (key_data));
++  if (grub_console_read_key_stroke (term->data, &key_data, &key, 0)
++      && !(key_data.key_state.key_shift_state & GRUB_EFI_SHIFT_STATE_VALID))
+     return 0;
+ 
+   kss = key_data.key_state.key_shift_state;
+--- a/grub-core/commands/keystatus.c
++++ b/grub-core/commands/keystatus.c
+@@ -22,6 +22,7 @@
+ #include <grub/extcmd.h>
+ #include <grub/term.h>
+ #include <grub/i18n.h>
++#include <grub/time.h>
+ 
+ GRUB_MOD_LICENSE ("GPLv3+");
+ 
+@@ -32,6 +33,10 @@
+     {"shift", 's', 0, N_("Check Shift key."), 0, 0},
+     {"ctrl", 'c', 0, N_("Check Control key."), 0, 0},
+     {"alt", 'a', 0, N_("Check Alt key."), 0, 0},
++    /* MAN: keep looking for up to MS milliseconds (a key held at power-on
++       may only be seen once the firmware has polled the keyboard again).  */
++    {"wait", 'w', 0, N_("Keep checking for up to MS milliseconds."), "MS",
++     ARG_TYPE_INT},
+     {0, 0, 0, 0, 0, 0}
+   };
+ 
+@@ -70,12 +75,20 @@
+       return 0;
+     }
+ 
+-  mods = grub_getkeystatus ();
+-  grub_dprintf ("keystatus", "mods: %d\n", mods);
+-  if (mods >= 0 && (mods & expect_mods) != 0)
+-    return 0;
+-  else
+-    return grub_error (GRUB_ERR_TEST_FAILURE, N_("false"));
++  {
++    grub_uint64_t wait = state[3].set ? grub_strtoul (state[3].arg, 0, 10) : 0;
++    grub_uint64_t start = grub_get_time_ms ();
++
++    do
++      {
++	mods = grub_getkeystatus ();
++	grub_dprintf ("keystatus", "mods: %d\n", mods);
++	if (mods >= 0 && (mods & expect_mods) != 0)
++	  return 0;
++      }
++    while (grub_get_time_ms () - start < wait);
++  }
++  return grub_error (GRUB_ERR_TEST_FAILURE, N_("false"));
+ }
+ 
+ static grub_extcmd_t cmd;
+@@ -83,7 +96,7 @@
+ GRUB_MOD_INIT(keystatus)
+ {
+   cmd = grub_register_extcmd ("keystatus", grub_cmd_keystatus, 0,
+-			      "[--shift] [--ctrl] [--alt]",
++			      "[--shift] [--ctrl] [--alt] [--wait MS]",
+ 			      /* TRANSLATORS: there are 3 modifiers.  */
+ 			      N_("Check key modifier status."),
+ 			      options);
+--- a/grub-core/disk/efi/efidisk.c
++++ b/grub-core/disk/efi/efidisk.c
+@@ -26,6 +26,8 @@
+ #include <grub/efi/api.h>
+ #include <grub/efi/efi.h>
+ #include <grub/efi/disk.h>
++#include <grub/command.h>
++#include <grub/efi/pci.h>
+ 
+ struct grub_efidisk_data
+ {
+@@ -663,6 +665,69 @@
+   grub_disk_dev_unregister (&grub_efidisk_dev);
+ }
+ 
++/* MAN: "man_connect" asks the firmware to start the drivers of all devices
++   below the PCI root bridges and lists the disks again.  With "fast boot" many firmwares only start the
++   disk they boot from, so USB drives stay invisible until then.  Known
++   disks keep their names; new ones come after them.  The old list entries
++   are not freed (open disks may still point at them), and scripts still
++   find their own disks again by UUID afterwards in case one went away.  */
++/* The new list with the disks already known first, in their old order, so
++   their names (hd0, ...) and anything open on them stay right.  */
++static struct grub_efidisk_data *
++keep_order (struct grub_efidisk_data *old, struct grub_efidisk_data *fresh)
++{
++  struct grub_efidisk_data *head = 0, **tail = &head, *o, **pp;
++
++  for (o = old; o; o = o->next)
++    for (pp = &fresh; *pp; pp = &(*pp)->next)
++      if ((*pp)->handle == o->handle)
++	{
++	  struct grub_efidisk_data *d = *pp;
++	  *pp = d->next;
++	  d->next = 0;
++	  *tail = d;
++	  tail = &d->next;
++	  break;
++	}
++  *tail = fresh;
++  return head;
++}
++
++static grub_err_t
++grub_cmd_man_connect (grub_command_t cmd __attribute__ ((unused)),
++		      int argc __attribute__ ((unused)),
++		      char **args __attribute__ ((unused)))
++{
++  static grub_guid_t root_guid = GRUB_EFI_PCI_ROOT_IO_GUID;
++  grub_efi_handle_t *handles;
++  grub_efi_uintn_t n = 0, i;
++  grub_efi_boot_services_t *b = grub_efi_system_table->boot_services;
++
++  /* Like "connectefi pciroot" elsewhere: everything below the PCI root
++     bridges (USB controllers, their hubs and drives, other disks).  */
++  handles = grub_efi_locate_handle (GRUB_EFI_BY_PROTOCOL, &root_guid, NULL, &n);
++  if (!handles)
++    return grub_errno;
++  for (i = 0; i < n; i++)
++    b->connect_controller (handles[i], NULL, NULL, 1);
++  grub_free (handles);
++
++  {
++    struct grub_efidisk_data *old_fd = fd_devices, *old_hd = hd_devices;
++    struct grub_efidisk_data *old_cd = cd_devices;
++
++    fd_devices = 0;
++    hd_devices = 0;
++    cd_devices = 0;
++    enumerate_disks ();
++    fd_devices = keep_order (old_fd, fd_devices);
++    hd_devices = keep_order (old_hd, hd_devices);
++    cd_devices = keep_order (old_cd, cd_devices);
++  }
++  grub_disk_cache_invalidate_all ();
++  return GRUB_ERR_NONE;
++}
++
+ void
+ grub_efidisk_init (void)
+ {
+@@ -670,6 +735,8 @@
+ 
+   enumerate_disks ();
+   grub_disk_dev_register (&grub_efidisk_dev);
++  grub_register_command ("man_connect", grub_cmd_man_connect, 0,
++			 "Start all devices' drivers and list the disks again.");
+ }
+ 
+ /* Some utility functions to map GRUB devices with EFI devices.  */

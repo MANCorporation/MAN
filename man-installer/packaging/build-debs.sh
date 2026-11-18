@@ -103,6 +103,10 @@ put "$data/duhach/man-duhach-cleanup" "$r/usr/libexec/man/man-duhach-cleanup" 07
 put "$data/initramfs/man-rollback.hook" "$r/usr/share/initramfs-tools/hooks/man-rollback" 0755
 put "$data/initramfs/man-rollback.premount" "$r/usr/share/initramfs-tools/scripts/local-premount/man-rollback" 0755
 put "$data/grub/45_man_recovery" "$r/etc/grub.d/45_man_recovery" 0755
+# The boot menu (picker shown while Alt is held); its GRUB and theme: man-grub.
+put "$data/grub/06_man_bootmenu" "$r/etc/grub.d/06_man_bootmenu" 0755
+put "$data/grub/49_man_bootmenu" "$r/etc/grub.d/49_man_bootmenu" 0755
+put "$data/grub/bootmenu-lib.sh" "$r/usr/lib/man/grub/bootmenu-lib.sh" 0644
 put "$data/initramfs/man-recovery.hook" "$r/usr/share/initramfs-tools/hooks/man-recovery" 0755
 put "$data/initramfs/man-recovery.bottom" "$r/usr/share/initramfs-tools/scripts/local-bottom/man-recovery" 0755
 put "$data/initramfs/man-recovery.post-update" "$r/etc/initramfs/post-update.d/man-recovery" 0755
@@ -128,7 +132,7 @@ Architecture: $arch
 Maintainer: MAN Developers <dev@man.local>
 Section: admin
 Priority: optional
-Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64, rclone, fuse3, wine, clamav, clamav-freshclam, zenity
+Depends: libc6 (>= 2.34), libgtk-4-1 (>= 4.16), libadwaita-1-0 (>= 1.6), btrfs-progs, rsync, gdisk, parted, dosfstools, e2fsprogs, cryptsetup, cryptsetup-initramfs, initramfs-tools, busybox, $grub_efi, grub2-common, man-grub, pkexec, polkitd, util-linux, mutter, network-manager, dbus-daemon, dconf-cli, zstd, tar, efibootmgr, locales, iso-codes, tzdata, curl, apt, flatpak, libfuse2t64, rclone, fuse3, wine, clamav, clamav-freshclam, zenity
 Description: MAN system backend, MAN Setup and snapshot manager
  Privileged backend used by the MAN installer, the Snapshots app for
  creating and restoring Btrfs system snapshots, MAN Setup (first-start
@@ -137,7 +141,7 @@ Description: MAN system backend, MAN Setup and snapshot manager
  Installer (.deb, Flatpak and AppImage files) and the malware check and
  warnings for Windows programs.
 EOF
-printf '%s\n' /etc/grub.d/41_man_update /etc/grub.d/42_man_snapshots /etc/grub.d/43_man_windows /etc/apt/apt.conf.d/80man-snapshot /etc/man/snapshots.conf /etc/xdg/gnome-mimeapps.list /etc/apt/sources.list.d/man-debian.sources /etc/apt/preferences.d/man-debian > "$r/DEBIAN/conffiles"
+printf '%s\n' /etc/grub.d/06_man_bootmenu /etc/grub.d/41_man_update /etc/grub.d/42_man_snapshots /etc/grub.d/43_man_windows /etc/grub.d/49_man_bootmenu /etc/apt/apt.conf.d/80man-snapshot /etc/man/snapshots.conf /etc/xdg/gnome-mimeapps.list /etc/apt/sources.list.d/man-debian.sources /etc/apt/preferences.d/man-debian > "$r/DEBIAN/conffiles"
 cat > "$r/DEBIAN/postinst" <<'EOF'
 #!/bin/sh
 set -e

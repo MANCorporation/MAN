@@ -1,0 +1,39 @@
+# MAN boot menu: the start-up disk picker (shown while Alt is held at power-on).
+# Needs MAN's GRUB ("layout", "icon_percent", "selected_marker" are MAN additions;
+# a stock GRUB shows the same entries as a plain list).
+title-text: ""
+desktop-color: "#000000"
+terminal-font: "Adwaita Sans Regular 18"
+terminal-box: "list_*.png"
+
++ boot_menu {
+    left = 0
+    top = 30%
+    width = 100%
+    height = 45%
+    layout = "horizontal"
+    icon_percent = 15
+    icon_min = 80
+    icon_max = 240
+    item_padding = 14
+    item_spacing = 70
+    item_font = "Adwaita Sans Regular 18"
+    large_item_font = "Adwaita Sans Regular 32"
+    large_font_from_height = 1400
+    item_color = "#ffffff"
+    selected_item_color = "#ffffff"
+    selected_item_pixmap_style = "select_*.png"
+    selected_marker = "icons/marker.png"
+    scrollbar = false
+}
+
++ label {
+    left = 0
+    top = 100%-56
+    width = 100%
+    height = 24
+    align = "center"
+    font = "Adwaita Sans Regular 14"
+    color = "#77767b"
+    text = "Enter: start      Ctrl+Enter: always start this      Shift+Enter on MAN: more options"
+}

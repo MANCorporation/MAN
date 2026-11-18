@@ -33,7 +33,8 @@ from MAN's own packages (`man-installer`, `man-system-tools`), it consists of:
 | GNOME Web 51.1-1manN, shipped as "PCD" (patched) | GPL-3.0-or-later | `src/epiphany/` (Debian source + `man-pcd-branding.patch`) |
 | MAN Blur (`man-desktop-shell`): modified [Blur my Shell](https://github.com/aunetx/blur-my-shell) `309ebdca21` | GPL-3.0 | `src/man-desktop/` (`build.py`, `upstream/`) |
 | MAN Window Tiling (`man-desktop-shell`): modified [Tiling Shell](https://github.com/domferr/tilingshell) 18.0 | GPL-3.0 | `src/man-desktop/` (`build.py`, `upstream/`) |
-| GRUB 2 (boot menu, ISO, DUHACH! partition) | GPL-3.0-or-later | Debian `grub2` |
+| GRUB 2 (boot menu, ISO, DUHACH! partition), patched: MAN's boot menu picker (`man-grub`) | GPL-3.0-or-later | `dev-tools/grub-src/` (Debian `grub2` 2.14-3, 2.14-4 and 2.12-9+deb13u2 sources + `man-bootmenu.patch`) |
+| Adwaita Sans (boot menu fonts, made into GRUB fonts) | SIL Open Font License 1.1 | Debian `fonts-adwaita`; `dev-tools/bootmenu/fonts/` |
 | BusyBox (ISO start-up, `iso/init` uses it) | GPL-2.0-only | Debian `busybox` 1:1.37.0-6 |
 | Firmware (Wi-Fi, Bluetooth, GPU, sound, CPU microcode) | vendors' redistribution licenses, unmodified | Debian `firmware-*`, `/usr/share/doc/firmware-*/copyright` |
 | Noto fonts | SIL Open Font License 1.1 | Debian `fonts-noto-*` |
@@ -66,9 +67,10 @@ the source location (`THIRD-PARTY-NOTICES.txt`) into the zip.
 
 Linux is a registered trademark of Linus Torvalds. GNOME is a trademark of
 the GNOME Foundation, Debian of Software in the Public Interest, Inc.,
-Windows of Microsoft Corporation. These names are used only to describe
-compatibility and origin; MAN is not endorsed by these organisations. The
-Debian logo is not used in MAN (the login screen shows the MAN logo).
+Windows of Microsoft Corporation, macOS of Apple Inc. These names are used
+only to describe compatibility and origin (the boot menu names the system an
+entry starts; its icons are MAN's own drawings); MAN is not endorsed by these
+organisations. The Debian logo is not used in MAN (the login screen shows the MAN logo).
 
 ## Resources
 

@@ -49,6 +49,23 @@ case $(od -An -tx1 -j18 -N2 "$mnt/usr/bin/bash" | tr -d ' \n') in
           grub_dir="$project_dir/tools/arm64/root/usr/lib/grub/arm64-efi" loader=grubaa64.efi console="console=ttyAMA0,115200" ;;
     *) echo "Unknown processor in $image" >&2; exit 1 ;;
 esac
+# MAN's GRUB (the boot menu picker, dev-tools/grub-src). PC: built from
+# Debian's 2.12, as this computer's grub-mkrescue (UEFI and BIOS, build.sh
+# iso-efi + iso-pc). ARM64: the image's own (man-grub).
+grub_lib=
+if [[ $arch == amd64 ]]; then
+    s=$project_dir/dev-tools/grub-src/build/stage/usr/lib/grub
+    if [[ -f $s/x86_64-efi/kernel.img && -f $s/i386-pc/kernel.img ]]; then
+        grub_lib=$s
+    else
+        echo "Note: no MAN GRUB build in $s (dev-tools/grub-src/build.sh iso-efi, iso-pc): plain GRUB menu" >&2
+    fi
+elif [[ -f $mnt/usr/lib/man/grub/arm64-efi/kernel.img ]]; then
+    grub_lib=$work/grublib
+    mkdir -p "$grub_lib"
+    cp -r "$mnt/usr/lib/man/grub/arm64-efi" "$grub_lib/"
+fi
+[[ -n $grub_lib ]] && grub_dir=$grub_lib/$(basename "$grub_dir")
 [[ -x $busybox && -d $grub_dir ]] || { echo "Missing $busybox or $grub_dir" >&2; exit 1; }
 # MAN for Apple Silicon Macs (lfs/apple/man-gnome-apple.img, dev-tools/apple): the
 # image's own initramfs (Asahi firmware loading, Mac USB-C drivers) with its
@@ -123,6 +140,9 @@ fi
 
 echo "==> Writing the ISO"
 sed "s/@ID@/$id/g; s/@CONSOLE@/$console/" "$project_dir/iso/grub.cfg" > "$work/iso/boot/grub/grub.cfg"
+# The boot menu's theme (picker icons, fonts), the same as man-grub's.
+mkdir -p "$work/iso/boot/grub/themes"
+cp -r "$project_dir/man-installer/data/grub/theme/man" "$work/iso/boot/grub/themes/man"
 # For DUHACH! (installing from Windows): a GRUB that starts these files from
 # a FAT partition on the hard disk. It finds the partition by live/man-id,
 # then reads the same boot menu, modules and font as the ISO.
@@ -138,7 +158,13 @@ grub-mkstandalone -d "$grub_dir" -O "$(basename "$grub_dir")" -o "$work/iso/EFI/
 rm -f "$iso.tmp"
 # x86-64: UEFI + BIOS (all platforms installed on this PC); ARM64: arm64-efi only.
 rescue_dirs=(); [[ $arch == arm64 ]] && rescue_dirs=(-d "$grub_dir")
-grub-mkrescue "${rescue_dirs[@]}" -o "$iso.tmp" --fonts=unicode --locales= --themes= \
+# grub-mkrescue only takes one --directory, so for both PC platforms MAN's
+# GRUB is put over /usr/lib/grub in a private mount namespace (rootless).
+in_ns=()
+if [[ $arch == amd64 && -n $grub_lib && -d $grub_lib/i386-pc ]]; then
+    in_ns=(unshare -rm sh -c 'mount --bind "$1" /usr/lib/grub && shift && exec "$@"' sh "$grub_lib")
+fi
+"${in_ns[@]}" grub-mkrescue "${rescue_dirs[@]}" -o "$iso.tmp" --fonts=unicode --locales= --themes= \
     "$work/iso" -- -volid MAN_LIVE -joliet on -compliance iso_9660_level=3 "${extra_xorriso[@]}" 2> "$work/mkrescue.log" ||
     { cat "$work/mkrescue.log" >&2; exit 1; }
 mv "$iso.tmp" "$iso"

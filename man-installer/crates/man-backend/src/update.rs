@@ -548,6 +548,8 @@ pub fn stage(path: &str, device: &str, take_snapshot: bool) -> Result<String> {
     Ok(format!("MAN {} is ready to install. Restart the computer to finish.", m.version))
 }
 
+const GRUB_REFRESH: &str = "/usr/libexec/man/man-grub-refresh";
+
 /// New system, first start after the swap (man-update-finish.service).
 pub fn finish() -> Result<()> {
     if !Path::new(APPLIED).exists() {
@@ -572,6 +574,12 @@ pub fn finish() -> Result<()> {
         let _ = std::fs::remove_file(INFO);
     }
     std::fs::remove_file(APPLIED)?;
+    // The update may bring a newer MAN GRUB (man-grub): onto the EFI partition.
+    if Path::new(GRUB_REFRESH).exists() {
+        if let Err(e) = run(GRUB_REFRESH, &[]) {
+            info(format!("Warning: could not refresh the boot loader: {e:#}"));
+        }
+    }
     if let Err(e) = run("update-grub", &[]) {
         info(format!("Warning: could not refresh the boot menu: {e:#}"));
     }

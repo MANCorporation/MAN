@@ -18,7 +18,7 @@ ids=$(for d in "$SNAPDIR"/*/; do
 [ -n "$ids" ] || exit 0
 
 echo "Found MAN snapshots: $(echo $ids | wc -w)" >&2
-echo "submenu 'Restore a MAN snapshot' --class recovery \$menuentry_id_option 'man-snapshots' {"
+echo "submenu 'Restore a MAN snapshot' --class snapshot --class recovery \$menuentry_id_option 'man-snapshots' {"
 for id in $ids; do
     info="$SNAPDIR/$id/info.json"
     desc=$(sed -n 's/.*"description":"\([^"]*\)".*/\1/p' "$info" | tr -cd 'A-Za-z0-9 .,:()+_/-')
@@ -33,7 +33,7 @@ for id in $ids; do
     version=${kernel#/boot/vmlinuz-}
     rel_kernel=$(make_system_path_relative_to_its_root "$kernel")
     rel_initrd=$(make_system_path_relative_to_its_root "/boot/initrd.img-$version")
-    echo "  menuentry '${desc:-Snapshot} -- ${created}UTC' --class recovery \$menuentry_id_option 'man-snapshot-$id' {"
+    echo "  menuentry '${desc:-Snapshot} -- ${created}UTC' --class snapshot --class recovery \$menuentry_id_option 'man-snapshot-$id' {"
     prepare_grub_to_access_device "${GRUB_DEVICE_BOOT}" | sed 's/^/    /'
     echo "    echo 'Restoring MAN snapshot $id...'"
     echo "    linux ${rel_kernel} root=UUID=${GRUB_DEVICE_UUID} ro rootflags=subvol=@system ${GRUB_CMDLINE_LINUX} man.rollback=$id"

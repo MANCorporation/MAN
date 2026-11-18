@@ -1,0 +1,30 @@
+#!/bin/sh
+# MAN: grub-install with MAN's GRUB (man-grub: the start-up disk picker, held
+# Alt, Shift/Ctrl+Enter, USB drives). Debian's own is /usr/sbin/grub-install.debian.
+# MAN's modules are used unless a --directory is given.
+real=/usr/sbin/grub-install.debian
+target=
+prev=
+for a in "$@"; do
+    case $a in
+        -d | --directory | --directory=*) exec "$real" "$@" ;;
+        --target=*) target=${a#--target=} ;;
+    esac
+    [ "$prev" = --target ] && target=$a
+    prev=$a
+done
+if [ -z "$target" ]; then
+    if [ -d /sys/firmware/efi ]; then
+        case $(uname -m) in
+            x86_64) target=x86_64-efi ;;
+            aarch64) target=arm64-efi ;;
+        esac
+    else
+        target=i386-pc
+    fi
+fi
+dir=/usr/lib/man/grub/$target
+if [ -n "$target" ] && [ -f "$dir/normal.mod" ] && [ -f "$dir/kernel.img" ]; then
+    exec "$real" --directory="$dir" "$@"
+fi
+exec "$real" "$@"

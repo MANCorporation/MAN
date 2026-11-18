@@ -6,15 +6,21 @@
 set -e
 [ -e /proc/device-tree/chosen/asahi,efi-system-partition ] || exit 0
 [ -e /etc/default/grub.d/90-man-mac-menu.cfg ] || exit 0
-cat <<'CFG'
+# Title and icon: the macOS version MAN's Mac installer noted (bootmenu-lib.sh).
+cls=macos title=macOS
+if [ -f /usr/lib/man/grub/bootmenu-lib.sh ]; then
+  . /usr/lib/man/grub/bootmenu-lib.sh
+  if m=$(man_macos); then set -- $m; cls=$1; shift; title=$*; fi
+fi
+cat <<CFG
 load_env man_next
-if [ "${man_next}" = macos ]; then
+if [ "\${man_next}" = macos ]; then
   set timeout=0
   set default=0
 fi
-menuentry 'macOS' --class macos --class os {
+menuentry '$title' --class $cls --class macos --class os --id man-macos {
   set man_next=macos
   save_env man_next
-  configfile ${prefix}/grub.cfg
+  configfile \${prefix}/grub.cfg
 }
 CFG
