@@ -120,7 +120,17 @@ put "$data/config/snapshots.conf" "$r/etc/man/snapshots.conf" 0644
 for l in man-logo man-logo-text man-logo-text-dark; do
     put "$data/logo/$l.svg" "$r/usr/share/icons/hicolor/scalable/apps/$l.svg" 0644
 done
+for l in man-logo-badge man-logo-gdm; do
+    put "$data/logo/$l.svg" "$r/usr/share/icons/hicolor/scalable/apps/$l.svg" 0644
+done
 put "$data/gdm/95-man-logo" "$r/usr/share/gdm/dconf/95-man-logo" 0644
+# MAN's sound theme: the error sound for errors and the alert bell (GNOME's
+# "bell-window-system", terminals' bell); the rest from freedesktop.
+put "$data/sounds/man/index.theme" "$r/usr/share/sounds/man/index.theme" 0644
+put "$data/sounds/man/stereo/dialog-error.wav" "$r/usr/share/sounds/man/stereo/dialog-error.wav" 0644
+for s in bell bell-window-system bell-terminal dialog-warning; do
+    ln -s dialog-error.wav "$r/usr/share/sounds/man/stereo/$s.wav"
+done
 put "$data/gdm/man-gdm-logo.png" "$r/usr/share/pixmaps/man-gdm-logo.png" 0644
 put "$data/schemas/20_man-desktop.gschema.override" "$r/usr/share/glib-2.0/schemas/20_man-desktop.gschema.override" 0644
 copyright "$r"
