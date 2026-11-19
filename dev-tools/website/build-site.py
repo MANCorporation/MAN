@@ -34,7 +34,21 @@ def icon(name, cls=""):
     return f'<span class="icon{(" " + cls) if cls else ""}" style="-webkit-mask-image:{u};mask-image:{u}" aria-hidden="true"></span>'
 
 
+# {SZ:file}: the size of a download, looked up in release/ and lfs/updates/.
+SIZE_DIRS = [os.path.join(here, "..", "..", d) for d in ("release", "release/test7", "lfs/updates")]
+
+
+def size_of(name):
+    for d in SIZE_DIRS:
+        f = os.path.join(d, name)
+        if os.path.isfile(f):
+            n = os.path.getsize(f)
+            return f"{n / 1e9:.2f} GB" if n >= 1e9 else f"{n / 1e6:.1f} MB"
+    raise SystemExit(f"size unknown: {name} (build it first)")
+
+
 def expand(text):
+    text = re.sub(r"\{SZ:([^}]+)\}", lambda m: size_of(m.group(1)), text)
     text = re.sub(r"\{tile:([a-z]+):([a-z0-9-]+)\}",
                   lambda m: f'<span class="tile" style="--c:var(--tile-{m.group(1)})">{icon(m.group(2))}</span>', text)
     text = re.sub(r"\{stile:([a-z]+):([a-z0-9-]+)\}",

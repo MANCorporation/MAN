@@ -8,7 +8,7 @@
 set -euo pipefail
 here=$(cd -- "$(dirname -- "$(readlink -f "$0")")" && pwd)
 p=$(cd -- "$here/../.." && pwd)
-VER=1.0.0
+VER=1.0.1
 W=$(mktemp -d); trap 'rm -rf "$W"' EXIT
 A="$W/DUHACH!.app/Contents"
 mkdir -p "$A/MacOS" "$A/Resources"

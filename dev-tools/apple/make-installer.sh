@@ -8,7 +8,7 @@
 set -euo pipefail
 p=$(cd -- "$(dirname -- "$(readlink -f "$0")")/../.." && pwd)
 A=$p/lfs/apple; OUT=$p/release/apple
-IV=v0.9.2; MV=$IV-man3
+IV=v0.9.2; MV=$IV-man4
 mkdir -p $A/installer $OUT
 [ -f $A/installer/installer-$IV.tar.gz ] || curl -sfL -o $A/installer/installer-$IV.tar.gz https://cdn.asahilinux.org/installer/installer-$IV.tar.gz
 rm -rf $A/installer/tree; mkdir -p $A/installer/tree
