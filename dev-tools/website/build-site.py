@@ -23,7 +23,7 @@ os.makedirs(out, exist_ok=True)
 NAV = [
     ("overview", "index.html", "Overview", "go-home"),
     ("download", "download.html", "Get MAN", "folder-download"),
-    ("whatsnew", "releases.html", "What's New", "software-update-available"),
+    ("whatsnew", "whatsnew.html", "What's New", "software-update-available"),
     ("apps", "apps.html", "Apps", "view-app-grid"),
     ("help", "help.html", "Questions", "help-about"),
 ]
@@ -58,8 +58,8 @@ def page(name, title, desc, nav, body):
   <meta property="og:image" content="images/card.png">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/adwaita.css?v=1">
-  <script src="js/site.js?v=1" defer></script>
+  <link rel="stylesheet" href="css/adwaita.css?v=2">
+  <script src="js/site.js?v=2" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -77,7 +77,7 @@ def page(name, title, desc, nav, body):
 <footer>
   <div class="clamp">
     <nav aria-label="More">
-      <a href="index.html">Overview</a><a href="download.html">Get MAN</a><a href="releases.html">What's New</a>
+      <a href="index.html">Overview</a><a href="download.html">Get MAN</a><a href="whatsnew.html">What's New</a>
       <a href="apps.html">Apps</a><a href="help.html">Questions</a><a href="donate.html">Donate</a>
       <a href="https://github.com/MANCorporation/MAN">MAN on GitHub</a>
     </nav>
@@ -93,6 +93,9 @@ def page(name, title, desc, nav, body):
 """
 
 
+# Old addresses that now forward to their new page.
+for f in ("releases.html",):
+    shutil.copy(os.path.join(src, f), os.path.join(out, f))
 for d in ("css", "js", "icons", "fonts", "images", "data"):
     s = os.path.join(src, d)
     if os.path.isdir(s):
