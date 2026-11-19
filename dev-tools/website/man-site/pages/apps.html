@@ -1,0 +1,33 @@
+<!-- title: Apps — MAN | desc: Thousands of apps you can install on MAN with one click: Firefox, Chrome, Spotify, Steam, LibreOffice and more. | nav: apps -->
+<div class="clamp">
+  <div class="statuspage" style="padding-bottom:1.4rem">
+    <span class="tile" style="--c:var(--tile-teal);width:72px;height:72px;border-radius:18px"><span class="icon" style="-webkit-mask-image:url(icons/view-app-grid-symbolic.svg);mask-image:url(icons/view-app-grid-symbolic.svg);width:36px;height:36px"></span></span>
+    <h1 style="margin-top:1rem">Apps</h1>
+    <p class="desc">Apps you can install on MAN with one click. Type what you are looking for, for example <b>photos</b>, <b>music</b> or <b>Firefox</b>.</p>
+  </div>
+
+  <label class="search">{i:system-search}<input id="appsearch" type="search" placeholder="Search apps" aria-label="Search apps" autocomplete="off"></label>
+  <div class="chips" id="appcats" role="group" aria-label="Kinds of apps">
+    <button type="button" data-cat="" aria-pressed="true">All</button>
+    <button type="button" data-cat="network" aria-pressed="false">Internet</button>
+    <button type="button" data-cat="audiovideo" aria-pressed="false">Music &amp; Video</button>
+    <button type="button" data-cat="game" aria-pressed="false">Games</button>
+    <button type="button" data-cat="office" aria-pressed="false">Office</button>
+    <button type="button" data-cat="graphics" aria-pressed="false">Photos &amp; Art</button>
+    <button type="button" data-cat="education" aria-pressed="false">Learning</button>
+    <button type="button" data-cat="development" aria-pressed="false">Making Apps</button>
+    <button type="button" data-cat="system" aria-pressed="false">System</button>
+    <button type="button" data-cat="utility" aria-pressed="false">Tools</button>
+  </div>
+  <p class="caption center" id="appcount"></p>
+  <div class="appgrid" id="applist"></div>
+  <div class="actions" style="margin-top:1.4rem"><button class="btn pill" id="appmore" type="button" hidden>Show More Apps</button></div>
+
+  <section class="clamp narrow">
+    <div class="group">
+      <ul class="boxed-list">
+        <li><div class="row">{i:dialog-information}<span class="text"><span class="title">How does "one click" work?</span><span class="subtitle">Press Install next to an app in Software. When it is done, the app is in your apps, ready to use. The list comes from <a href="https://flathub.org">Flathub</a>; names and icons belong to their makers.</span></span></div></li>
+      </ul>
+    </div>
+  </section>
+</div>
