@@ -1,4 +1,4 @@
-# clk.py X Y: real click at screen pixel (1920x1056)
+# clk.py X Y: real click at screen pixel (screen size W x H from the environment, default 1920x1056; Q = QMP socket)
 import json,socket,sys,time,os
 s=socket.socket(socket.AF_UNIX); s.connect(os.environ['Q']); f=s.makefile('rw'); f.readline()
 def cmd(c,a=None):
@@ -7,7 +7,7 @@ def cmd(c,a=None):
         r=json.loads(f.readline())
         if 'return' in r or 'error' in r: return r
 cmd("qmp_capabilities")
-W,H=1920,1056; x,y=int(sys.argv[1]),int(sys.argv[2])
+W,H=int(os.environ.get("W",1920)),int(os.environ.get("H",1056)); x,y=int(sys.argv[1]),int(sys.argv[2])
 def mv(x,y): cmd("input-send-event",{"events":[{"type":"abs","data":{"axis":"x","value":int(x*32767/W)}},{"type":"abs","data":{"axis":"y","value":int(y*32767/H)}}]})
 mv(x-6,y-6); time.sleep(0.15); mv(x,y); time.sleep(0.25)
 def btn(d): cmd("input-send-event",{"events":[{"type":"btn","data":{"down":d,"button":"left"}}]})

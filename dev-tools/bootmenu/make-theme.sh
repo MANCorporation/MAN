@@ -61,6 +61,8 @@ PY
 }
 box select 22 'rgba(255,255,255,0.20)'
 box list 12 'rgba(255,255,255,0.14)'
+# The picker's terminal box: invisible (no frame flashing up when an entry starts).
+box clear 1 'rgba(0,0,0,0)'
 
 for s in 14 18 24 32; do
     grub-mkfont -s $s -o "$out/adwaita-sans-$s.pf2" "$here/fonts/AdwaitaSans-Regular.ttf" 2>/dev/null

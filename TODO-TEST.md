@@ -44,6 +44,18 @@ DUHACH! for Windows ARM64 is not uploaded: never run on real Windows ARM.
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
+## TEST 7 (PC built 2026-11-19, not published)
+PC image lfs/.vmtest/test4.img stamped "10 TEST 7" (base 10.10); backup of TEST 6:
+lfs/.vmtest/test4-before-test7.img. New in it: man-installer / man-system-tools / marquee 3.17.0
+(MAN Recovery, new logo everywhere, MAN error sound theme), man-desktop-shell 1.5 (MAN Login),
+Settings man10 (login background), man-grub 2.14-3+man5 (boot picker on Alt, start-up screen,
+quiet GRUB) with plymouth + plymouth-label 26.134.222-1 from Debian.
+ISO release/MAN-10-TEST-7-amd64.iso (2.0 GB). Tested in a UEFI VM: live session, Erase install,
+restart with the stick still in (picker 5 s -> installed MAN -> logo + bar -> MAN Setup).
+Fixed after that test: a frame flashed after the picker (man5: invisible terminal box).
+Known: ~2 s blue screen before MAN Setup appears; live session shows shutdown text ~2 s.
+Not done: ARM and Apple images, .upd, DUHACH! zips, publishing. Next: film the video (user sends songs).
+
 ## TEST 6
 Apple Silicon Macs (M1, M2, M3), tested by the owner on a MacBook Pro 14" M1 Pro: MAN Live USB
 (boot loader set up from macOS with DUHACH! for Mac or MAN-Mac/install-man.sh: choice 1 boot
