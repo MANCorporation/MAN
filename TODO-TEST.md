@@ -44,7 +44,7 @@ DUHACH! for Windows ARM64 is not uploaded: never run on real Windows ARM.
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
-## TEST 7 (PC built 2026-11-19, not published)
+## TEST 7 (published 2026-11-20: pre-release v10-test7, all files)
 PC image lfs/.vmtest/test4.img stamped "10 TEST 7" (base 10.10); backup of TEST 6:
 lfs/.vmtest/test4-before-test7.img. New in it: man-installer / man-system-tools / marquee 3.17.0
 (MAN Recovery, new logo everywhere, MAN error sound theme), man-desktop-shell 1.5 (MAN Login),
@@ -54,7 +54,10 @@ ISO release/MAN-10-TEST-7-amd64.iso (2.0 GB). Tested in a UEFI VM: live session,
 restart with the stick still in (picker 5 s -> installed MAN -> logo + bar -> MAN Setup).
 Fixed after that test: a frame flashed after the picker (man5: invisible terminal box).
 Known: ~2 s blue screen before MAN Setup appears; live session shows shutdown text ~2 s.
-Not done: ARM and Apple images, .upd, DUHACH! zips, publishing. Next: film the video (user sends songs).
+2026-11-20: ARM + Apple images TEST 7 (same packages, Settings man10 arm64); ISOs amd64/arm64/apple;
+MAN-10-TEST-7.upd (base 10.10, verified in MAN); DUHACH! 1.1.1 / 1.0.1 (new logo); Asahi installer man4.
+Live USB now shows the start-up screen too (plymouth.ignore-serial-consoles, selinux=0 in iso/grub.cfg).
+ARM ISO only booted in emulation; Mac ISO not booted (no Mac here). Next: the video (user sends songs).
 
 ## TEST 6
 Apple Silicon Macs (M1, M2, M3), tested by the owner on a MacBook Pro 14" M1 Pro: MAN Live USB

@@ -72,8 +72,8 @@ def page(name, title, desc, nav, body):
   <meta property="og:image" content="images/card.png">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/adwaita.css?v=2">
-  <script src="js/site.js?v=2" defer></script>
+  <link rel="stylesheet" href="css/adwaita.css?v=3">
+  <script src="js/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
