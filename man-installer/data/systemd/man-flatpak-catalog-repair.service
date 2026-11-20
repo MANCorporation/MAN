@@ -1,0 +1,14 @@
+[Unit]
+Description=Get the Flathub app catalog again when it is missing
+# Only while it is missing (see /usr/libexec/man/man-flatpak-catalog-repair).
+ConditionPathExists=/var/lib/flatpak/repo/config
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/man/man-flatpak-catalog-repair
+TimeoutStartSec=15min
+
+[Install]
+WantedBy=multi-user.target

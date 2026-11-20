@@ -53,6 +53,7 @@ put "$data/updates/com.man.UpdateCheck.service" "$r/usr/share/dbus-1/services/co
 put "$data/updates/com.man.UpdateCheck.desktop" "$r/usr/share/applications/com.man.UpdateCheck.desktop" 0644
 put "$data/schemas/com.man.Updates.gschema.xml" "$r/usr/share/glib-2.0/schemas/com.man.Updates.gschema.xml" 0644
 put "$data/flatpak/man-flatpak-sandbox" "$r/usr/libexec/man/man-flatpak-sandbox" 0755
+put "$data/flatpak/man-flatpak-catalog-repair" "$r/usr/libexec/man/man-flatpak-catalog-repair" 0755
 put "$data/polkit/com.man.flatpak.policy" "$r/usr/share/polkit-1/actions/com.man.flatpak.policy" 0644
 put "$bin/man-mkupd" "$r/usr/bin/man-mkupd" 0755
 put "$data/version/man-set-version" "$r/usr/bin/man-set-version" 0755
@@ -110,7 +111,7 @@ put "$data/grub/bootmenu-lib.sh" "$r/usr/lib/man/grub/bootmenu-lib.sh" 0644
 put "$data/initramfs/man-recovery.hook" "$r/usr/share/initramfs-tools/hooks/man-recovery" 0755
 put "$data/initramfs/man-recovery.bottom" "$r/usr/share/initramfs-tools/scripts/local-bottom/man-recovery" 0755
 put "$data/initramfs/man-recovery.post-update" "$r/etc/initramfs/post-update.d/man-recovery" 0755
-for u in man-kept-debs.service man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
+for u in man-kept-debs.service man-flatpak-catalog-repair.service man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
     put "$data/systemd/$u" "$r/usr/lib/systemd/system/$u" 0644
 done
 put "$data/apt/80man-snapshot" "$r/etc/apt/apt.conf.d/80man-snapshot" 0644
@@ -161,7 +162,7 @@ if [ "$1" = configure ]; then
     systemctl --global enable man-download-scan.service >/dev/null 2>&1 || true
     # Per-user tmpfiles (Flatpak export folders exist before GNOME starts).
     systemctl --global enable systemd-tmpfiles-setup.service >/dev/null 2>&1 || true
-    systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service >/dev/null 2>&1 || true
+    systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service man-flatpak-catalog-repair.service >/dev/null 2>&1 || true
     # The malware database for Windows programs stays up to date by itself.
     systemctl enable clamav-freshclam.service >/dev/null 2>&1 || true
     if [ -d /run/systemd/system ]; then

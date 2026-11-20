@@ -1,14 +1,23 @@
 # director.py: film a scene in a QEMU VM. Records the screen (QMP screendump,
-# PPM frames + times.txt) while moving the mouse along smooth eased paths and
+# into take.mp4) while moving the mouse along smooth eased paths and
 # logging every pointer position and click to cursor.json, so the editor can
 # draw a cursor on top (screendump does not include the pointer).
 #
 #   from director import Scene
 #   with Scene("VD.qmp", "out/sF", 1920, 1080) as s:
 #       s.move(900, 500, 0.8); s.click(); s.type("sudoku"); s.wait(2)
-import json, math, os, socket, threading, time
+import json, math, os, socket, subprocess, threading, time
 
-KEYS = {"\n": "ret", ' ': 'spc', '-': 'minus', '.': 'dot', '/': 'slash', '\n': 'ret'}
+# Frames go straight into an H.264 file (take.mp4) at a constant frame rate, so a
+# long take needs a few hundred MB instead of 6 MB per raw frame.
+FF = os.environ.get('FFMPEG', 'ffmpeg')
+
+KEYS = {"\n": "ret", ' ': 'spc', '-': 'minus', '.': 'dot', '/': 'slash', ';': 'semicolon', ',': 'comma',
+        '=': 'equal', "'": 'apostrophe', '[': 'bracket_left', ']': 'bracket_right', '`': 'grave_accent', '\\': 'backslash'}
+# Characters typed with Shift (US layout).
+SHIFTED = {':': 'semicolon', '!': '1', '@': '2', '#': '3', '$': '4', '%': '5', '^': '6', '&': '7', '*': '8',
+           '(': '9', ')': '0', '_': 'minus', '+': 'equal', '|': 'backslash', '>': 'dot', '<': 'comma',
+           '?': 'slash', '"': 'apostrophe', '~': 'grave_accent', '{': 'bracket_left', '}': 'bracket_right'}
 
 
 class Qmp:
@@ -40,7 +49,7 @@ def ease(t):  # smooth in-out
 
 
 class Scene:
-    def __init__(self, sock, out, w=1920, h=1080, fps=15, start=(960, 600)):
+    def __init__(self, sock, out, w=1920, h=1080, fps=25, start=(960, 600)):
         self.sock, self.out, self.w, self.h, self.fps = sock, os.path.abspath(out), w, h, fps
         self.x, self.y = start
         self.log = []
@@ -49,16 +58,26 @@ class Scene:
     # ── recording ──
     def _record(self):
         q = self.q
-        n = 0
-        times = []
+        shm = f"/dev/shm/director-{os.getpid()}.ppm"
+        enc = subprocess.Popen([FF, '-v', 'error', '-y', '-f', 'image2pipe', '-c:v', 'ppm', '-framerate', str(self.fps),
+                                '-i', '-', '-vf', f'scale={self.w}:{self.h}:force_original_aspect_ratio=decrease:flags=lanczos,'
+                                f'pad={self.w}:{self.h}:(ow-iw)/2:(oh-ih)/2', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-pix_fmt', 'yuv420p',
+                                f"{self.out}/take.mp4"], stdin=subprocess.PIPE)
+        sent = 0
         while not self.stop:
             t = time.time()
-            q.cmd("screendump", {"filename": f"{self.out}/f{n:05d}.ppm", "format": "ppm"})
-            times.append(t - self.t0)
-            n += 1
+            q.cmd("screendump", {"filename": shm, "format": "ppm"})
+            with open(shm, 'rb') as f:
+                data = f.read()
+            # Frame k shows the screen at k/fps seconds: repeat when capture is slow.
+            due = int((time.time() - self.t0) * self.fps) + 1
+            while sent < due:
+                enc.stdin.write(data)
+                sent += 1
             time.sleep(max(0, 1 / self.fps - (time.time() - t)))
-        with open(f"{self.out}/times.txt", "w") as f:
-            f.write("\n".join(f"{x:.3f}" for x in times))
+        enc.stdin.close()
+        enc.wait()
+        os.unlink(shm)
 
     def __enter__(self):
         self.q = Qmp(self.sock)
@@ -125,17 +144,12 @@ class Scene:
 
     def type(self, text, cps=9):
         for ch in text:
-            if ch == ':':
-                self.key('shift', 'semicolon'); time.sleep(1 / cps); continue
-            if ch == '\\':
-                self.key('backslash'); time.sleep(1 / cps); continue
-            if ch == '!':
-                self.key('shift', '1'); time.sleep(1 / cps); continue
-            name = KEYS.get(ch, ch.lower())
-            if ch.isupper():
-                self.key('shift', name)
+            if ch in SHIFTED:
+                self.key('shift', SHIFTED[ch])
+            elif ch.isupper():
+                self.key('shift', ch.lower())
             else:
-                self.key(name)
+                self.key(KEYS.get(ch, ch))
             time.sleep(1 / cps)
 
     def scroll(self, n, pause=0.06):

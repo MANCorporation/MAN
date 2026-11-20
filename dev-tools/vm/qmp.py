@@ -1,6 +1,6 @@
 # qmp.py sock click X Y | move X Y | key...  -- absolute pointer events via QMP (screen 1280x800)
-import socket,sys,json,time
-W,H=1280,800
+import socket,sys,json,time,os
+W,H=int(os.environ.get("W",1280)),int(os.environ.get("H",800))
 s=socket.socket(socket.AF_UNIX); s.connect(sys.argv[1]); f=s.makefile('rw')
 f.readline()
 def cmd(c,a=None):

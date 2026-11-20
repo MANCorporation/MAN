@@ -1,0 +1,17 @@
+#!/bin/sh
+# man-flatpak-catalog-repair: gets Flathub's app catalog (the app list that
+# Software shows) again when it is missing. MAN 10 TEST 7's installer could
+# copy the live system while Flatpak was replacing the catalog, which left
+# an empty catalog folder and a reference to catalog data that was never
+# copied; Flatpak then neither shows apps nor downloads the catalog again.
+# Run by man-flatpak-catalog-repair.service only while the catalog is missing.
+set -u
+arch=$(flatpak --default-arch 2>/dev/null || uname -m)
+dir=/var/lib/flatpak/appstream/flathub/$arch/active
+[ -s "$dir/appstream.xml.gz" ] && exit 0
+flatpak remotes --system --columns=name 2>/dev/null | grep -qx flathub || exit 0
+# The references point at data that is not there: drop them so the next
+# download starts fresh instead of failing with "No such metadata object".
+rm -f "/var/lib/flatpak/repo/refs/remotes/flathub/appstream/$arch" \
+      "/var/lib/flatpak/repo/refs/remotes/flathub/appstream2/$arch"
+flatpak update --appstream --system --noninteractive flathub

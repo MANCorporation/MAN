@@ -427,10 +427,32 @@ fn mount_target(layout: &Layout, mounts: &mut Mounts) -> Result<PathBuf> {
 }
 
 fn copy_system(source: &Path, target: &Path) -> Result<()> {
+    // The live session keeps working while it is copied: with internet,
+    // Software refreshes the Flathub catalog about a minute after the start,
+    // and Flatpak replaces those files. Files that vanish mid-copy (rsync code
+    // 24) left the installed system with an empty catalog, so copy again until
+    // a pass is complete; later passes only send what changed and remove what
+    // the live system no longer has.
+    for pass in 1..=4 {
+        match rsync_pass(source, target, pass > 1)? {
+            0 => return Ok(()),
+            _ if pass < 4 => info(format!("Some files changed during the copy; copying again (pass {}).", pass + 1)),
+            _ => info("Some files kept changing during the copy (live-session caches); continuing."),
+        }
+    }
+    Ok(())
+}
+
+/// One rsync run; returns 0, or 24 when files vanished during it.
+fn rsync_pass(source: &Path, target: &Path, again: bool) -> Result<i32> {
     let mut args: Vec<String> = ["-aAXH", "--numeric-ids", "--one-file-system", "--info=progress2", "--no-inc-recursive"]
         .iter()
         .map(|s| s.to_string())
         .collect();
+    if again {
+        // Excluded paths (such as /home) are never deleted.
+        args.push("--delete".into());
+    }
     args.extend(EXCLUDES.iter().map(|e| format!("--exclude={e}")));
     args.push(format!("{}/", source.display()).replace("//", "/"));
     args.push(format!("{}/", target.display()));
@@ -460,7 +482,9 @@ fn copy_system(source: &Path, target: &Path) -> Result<()> {
             if last.elapsed() >= Duration::from_millis(400) {
                 last = Instant::now();
                 let speed = tokens.iter().find(|t| t.ends_with("/s")).copied().unwrap_or("");
-                progress(pct / 100.0, &format!("{pct:.0}% copied  ·  {speed}"));
+                // A repeated pass is short: show it as the end of the copy.
+                let f = if again { 0.99 } else { pct / 100.0 };
+                progress(f, &format!("{pct:.0}% copied  ·  {speed}"));
             }
         }
     }
@@ -469,9 +493,10 @@ fn copy_system(source: &Path, target: &Path) -> Result<()> {
     for l in err.lines().take(40) {
         log(&format!("  {l}"));
     }
-    // 24: some files vanished during the copy (caches of the live session).
     match status.code() {
-        Some(0) | Some(24) => Ok(()),
+        Some(0) => Ok(0),
+        // 24: some files vanished during the copy.
+        Some(24) => Ok(24),
         _ => bail!("Copying the system failed ({status}): {}", err.lines().last().unwrap_or("")),
     }
 }
