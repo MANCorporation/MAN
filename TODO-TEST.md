@@ -44,6 +44,14 @@ DUHACH! for Windows ARM64 is not uploaded: never run on real Windows ARM.
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
+## TEST 9 (built 2026-11-21/22)
+man-installer 3.18.0 + man-grub man6 in PC, ARM, Apple images ("10 TEST 9", base 10.10; PC backup
+test4-before-test9.img); Apple image also got dev-tools/apple/root (DUHACH! top-bar menu, More Options,
+man-apple-delete-macos). DUHACH! for Mac 1.1.0 .pkg (menu bar). MAN side tested in VMs (verbose start,
+restore requested from "macOS", Delete macOS on a fake disk plain + LUKS). NOT tested on a real Mac:
+the .pkg, the menu bar app, Boot into MAN, Delete MAN, Delete macOS, the top-bar menu on the Mac.
+TEST 9 ISOs not boot-tested (same build steps as TEST 8). .upd verified in MAN.
+
 ## TEST 8 (built 2026-11-21)
 Fix release, man-installer/man-system-tools/marquee 3.17.1 in PC, ARM and Apple images (stamped "10 TEST 8",
 base 10.10; PC backup lfs/.vmtest/test4-before-test8.img). Fixes: installer copies again when files vanish

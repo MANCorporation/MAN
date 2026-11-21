@@ -35,7 +35,7 @@ def icon(name, cls=""):
 
 
 # {SZ:file}: the size of a download, looked up in release/ and lfs/updates/.
-SIZE_DIRS = [os.path.join(here, "..", "..", d) for d in ("release", "release/test8", "release/test7", "lfs/updates")]
+SIZE_DIRS = [os.path.join(here, "..", "..", d) for d in ("release", "release/test9", "release/test8", "lfs/updates")]
 
 
 def size_of(name):
