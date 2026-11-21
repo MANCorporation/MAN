@@ -44,6 +44,14 @@ DUHACH! for Windows ARM64 is not uploaded: never run on real Windows ARM.
 ARM in the emulator: GNOME needs >2 min to start, so GDM gives up the automatic login
 ("Session never registered") and shows the login screen; one click logs in. Real ARM is fast.
 
+## TEST 8 (built 2026-11-21)
+Fix release, man-installer/man-system-tools/marquee 3.17.1 in PC, ARM and Apple images (stamped "10 TEST 8",
+base 10.10; PC backup lfs/.vmtest/test4-before-test8.img). Fixes: installer copies again when files vanish
+(empty Software after TEST 7 installs), man-flatpak-catalog-repair service for installed TEST 7 systems
+(tested from the broken state: catalog back, Spotify found), App Installer apt status on fd 3 (Chrome
+installs), Windows program window no longer hangs on the malware check. PC ISO install with internet
+tested (catalog intact). MAN-10-TEST-8.upd verified in MAN. ARM/Mac ISOs not booted.
+
 ## TEST 7 (published 2026-11-20: pre-release v10-test7, all files)
 PC image lfs/.vmtest/test4.img stamped "10 TEST 7" (base 10.10); backup of TEST 6:
 lfs/.vmtest/test4-before-test7.img. New in it: man-installer / man-system-tools / marquee 3.17.0
