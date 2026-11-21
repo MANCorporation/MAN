@@ -72,8 +72,8 @@ def page(name, title, desc, nav, body):
   <meta property="og:image" content="images/card.png">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/adwaita.css?v=3">
-  <script src="js/site.js?v=3" defer></script>
+  <link rel="stylesheet" href="css/adwaita.css?v=4">
+  <script src="js/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -114,6 +114,13 @@ for d in ("css", "js", "icons", "fonts", "images", "data"):
     s = os.path.join(src, d)
     if os.path.isdir(s):
         shutil.copytree(s, os.path.join(out, d), dirs_exist_ok=True)
+# Videos are not in git (too big): copied from video/ in the repository.
+VIDEOS = ["MAN-10-TEST-7-showcase.mp4"]
+os.makedirs(os.path.join(out, "video"), exist_ok=True)
+for v in VIDEOS:
+    vs, vd = os.path.join(here, "..", "..", "video", v), os.path.join(out, "video", v)
+    if not (os.path.exists(vd) and os.path.getsize(vd) == os.path.getsize(vs)):
+        shutil.copy(vs, vd)
 for f in sorted(os.listdir(os.path.join(src, "pages"))):
     text = open(os.path.join(src, "pages", f)).read()
     head, body = text.split("\n", 1)

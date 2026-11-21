@@ -174,6 +174,8 @@ section { padding: 2.6rem 0 1rem; }
 }
 .screenshot { padding: 0; overflow: hidden; margin: 1rem auto 0; max-width: 900px; }
 .screenshot img { display: block; width: 100%; }
+.screenshot video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.screenshot.video { max-width: 1000px; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
 .feature { padding: 1.2rem 1.2rem 1.1rem; }
@@ -268,3 +270,5 @@ footer p { max-width: 44rem; margin: .3rem auto; }
   .row .text { flex-basis: calc(100% - 4rem); }
   .row .suffix { width: 100%; justify-content: flex-end; }
 }
+
+section[id] { scroll-margin-top: 72px; }
