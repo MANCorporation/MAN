@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """live.py SOCK OUTDIR — keep filming while commands arrive one by one, so a
 scene can be worked out step by step (the pauses are cut in editing).
-Commands, one per line, sent with say.py: move X Y [DUR] | click | dclick |
+Commands, one per line, sent with say.py: move X Y [DUR] | click | dclick | hold KEY MS | reset |
 drag X Y [DUR] | key K [K..] | type TEXT | scroll N | wait S | mark NAME | stop
 'mark' writes the current take time with a name to marks.txt (for editing)."""
 import os, sys, time
@@ -29,6 +29,9 @@ with Scene(sock, out) as s:
         elif c == 'dclick': s.click(double=True)
         elif c == 'drag': s.drag(float(a[1]), float(a[2]), float(a[3]) if len(a) > 3 else 1.0)
         elif c == 'key': s.key(*a[1:])
+        elif c == 'hold':  # hold KEY MS: one key held down (e.g. Alt at power-on)
+            s.q.cmd('send-key', {'keys': [{'type': 'qcode', 'data': a[1]}], 'hold-time': int(a[2])})
+        elif c == 'reset': s.q.cmd('system_reset')
         elif c == 'type': s.type(line.split(' ', 1)[1].rstrip('\n'))
         elif c == 'scroll': s.scroll(int(a[1]), 0.1)
         elif c == 'wait': s.wait(float(a[1]))
