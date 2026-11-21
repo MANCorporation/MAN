@@ -49,3 +49,28 @@ main.js has not run on a real Mac yet (no macOS here). The pages were checked in
 headless Firefox screenshots, the installer part with the answers on a simulated Mac
 (`dev-tools/apple/installer/sim-mac.py`), the Terminal command with a path containing
 spaces and "!" on Linux. The AppleScript guide (the fallback) worked on the M1 Pro.
+
+## 1.1.0: installer package and menu bar (2026-11-21)
+
+`build-mac.sh` makes `release/DUHACH-1.1.0-mac.pkg` (made on Linux by `make-pkg.py`:
+a payload-free product archive whose postinstall copies DUHACH!.app to /Applications,
+installs `/Library/LaunchAgents/com.mancorporation.Duhach.plist` and starts DUHACH! for
+the logged-in user). Not signed: macOS asks once (Privacy & Security → Open Anyway).
+
+DUHACH! then lives in the menu bar (`main.js --menubar`, started at each login):
+- **Boot into MAN**: `bless --mount <MAN stub volume> --setBoot --nextonly --user … --stdinpass`
+  (asks the login password), then a normal restart. If macOS refuses, Startup Disk opens.
+- **Restore MAN Snapshot…**: reads `EFI/MAN/snapshots.json` on MAN's EFI partition (MAN
+  writes it whenever its snapshots change), writes `EFI/MAN/restore-request` and boots
+  MAN; `man-esp-requests.service` restores before the login screen and restarts.
+  `EFI/MAN/restore-result` tells DUHACH! how it went.
+- **More Settings…**: when the Mac starts (macOS / MAN), start-up options shared with
+  MAN (`EFI/MAN/bootmenu.env`, read by GRUB: `man_verbose`, `man_debug`,
+  `man_always_menu`), copy disk information, repair MAN's boot loader, start at login,
+  and **Delete MAN** (24 hours after asking; Shift+Command held while clicking: at once).
+  Deleting runs Asahi's uninstall steps and gives the space back to macOS
+  (`diskutil apfs resizeContainer <macOS> 0`).
+- **Install MAN…**: the installer window as before.
+
+The disk logic is in `duhach-core.js`, tested on Linux with `node test-core.js`
+(simulated diskutil plists). main.js (JXA) has NOT been run on a real Mac yet.

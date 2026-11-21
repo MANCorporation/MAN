@@ -3,6 +3,7 @@
 //!   man-installer-backend request          JSON Request on stdin, JSON-line Events on stdout (via pkexec)
 //!   man-installer-backend snapshot-auto K  K = daily | pre-update (systemd timer, apt hook)
 //!   man-installer-backend boot-cleanup     after a rollback (systemd, at boot)
+mod esp;
 mod install;
 mod locale;
 mod oobe;
@@ -122,6 +123,19 @@ fn main() {
             }
         },
         ["oobe-cleanup"] => report(oobe::cleanup()),
+        ["esp-export"] => {
+            esp::export_snapshots();
+            0
+        }
+        // Exit code 10: a restore asked for in macOS is ready, restart now.
+        ["esp-requests"] => match esp::handle_requests() {
+            Ok(true) => 10,
+            Ok(false) => 0,
+            Err(e) => {
+                eprintln!("man esp requests: {e:#}");
+                1
+            }
+        },
         ["update-finish"] => report(update::finish()),
         ["encrypt-online"] => report(oobe::encrypt_online()),
         ["boot-cleanup"] => match snapshots::boot_cleanup() {
@@ -132,7 +146,7 @@ fn main() {
             }
         },
         _ => {
-            eprintln!("usage: man-installer-backend request | snapshot-auto daily|pre-update | boot-cleanup | oobe-cleanup | encrypt-online | update-finish");
+            eprintln!("usage: man-installer-backend request | snapshot-auto daily|pre-update | boot-cleanup | esp-export | esp-requests | oobe-cleanup | encrypt-online | update-finish");
             2
         }
     };

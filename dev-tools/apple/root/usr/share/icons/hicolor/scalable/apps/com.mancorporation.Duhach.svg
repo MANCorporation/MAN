@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- DUHACH!: a PC receiving MAN -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffbe6f"/>
+      <stop offset="1" stop-color="#e66100"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d3846"/>
+      <stop offset="1" stop-color="#1e1e20"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="12" width="112" height="108" rx="24" fill="#c64600"/>
+  <rect x="8" y="8" width="112" height="104" rx="24" fill="url(#tile)"/>
+  <!-- monitor -->
+  <rect x="24" y="30" width="80" height="54" rx="7" fill="#fff"/>
+  <rect x="29" y="35" width="70" height="44" rx="4" fill="url(#screen)"/>
+  <rect x="56" y="84" width="16" height="8" fill="#fff"/>
+  <rect x="44" y="91" width="40" height="6" rx="3" fill="#fff"/>
+  <!-- the MAN logo -->
+  <g transform="translate(44 37.04) scale(0.009766)"><path d="M653 642 H3443 L4096 3268 L3348 3453 L2838 1414 H1257 L748 3453 L0 3268 Z" fill="#26ea75"/></g>
+  <!-- the "!" -->
+  <circle cx="104" cy="28" r="15" fill="#fff"/>
+  <path d="M104 19 V30" stroke="#e01b24" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="104" cy="37" r="3" fill="#e01b24"/>
+</svg>

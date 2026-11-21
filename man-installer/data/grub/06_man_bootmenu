@@ -66,10 +66,26 @@ if [ -n "$env_uuid" ]; then
     cat <<EOF
 if search --no-floppy --fs-uuid --set=man_esp $env_uuid; then
   set man_env="(\$man_esp)$env_rel"
-  load_env --file "\$man_env" man_default
+  load_env --file "\$man_env" man_default man_always_menu man_verbose man_debug
 fi
 EOF
 fi
+cat <<'EOF'
+
+# Start-up options (DUHACH! on a Mac, in macOS or MAN, writes them into the
+# same file): man_verbose shows the start-up text instead of the logo,
+# man_debug keeps a detailed start-up log, man_always_menu always shows the
+# picker. The kernel line of the MAN entries is $man_quiet (/etc/default/grub.d/
+# 80-man-boot-splash.cfg); menu entries only see exported variables.
+set man_quiet="quiet splash loglevel=3 rd.udev.log_level=3 systemd.show_status=false rd.systemd.show_status=false vt.global_cursor_default=0"
+if [ "$man_verbose" = 1 ]; then
+  set man_quiet="loglevel=6 systemd.show_status=true"
+fi
+if [ "$man_debug" = 1 ]; then
+  set man_quiet="$man_quiet systemd.log_level=debug udev.log_level=info log_buf_len=16M printk.devkmsg=on"
+fi
+export man_quiet
+EOF
 cat <<EOF
 
 # man_start ID; configfile \$man_cfg: the picker's entries. Ctrl: ID starts by
@@ -239,6 +255,9 @@ fi
 EOF
 else
     cat <<EOF
+elif [ "\$man_always_menu" = 1 ]; then
+  # DUHACH!'s "Always show the start menu".
+  set man_picker=$timeout
 elif [ -n "\$man_force_picker" ]; then
   # Started from MAN's USB stick (its grub.cfg reads this one): the picker,
   # with "Try or Install MAN" added.

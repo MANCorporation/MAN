@@ -1,16 +1,27 @@
 #!/usr/bin/python3
-# MAN Startup Disk: which system an Apple Silicon Mac starts (MAN, macOS, or a start
-# menu), and "Restart to macOS". The changes are made by /usr/libexec/man-apple-boot
-# through pkexec (polkit action com.man.apple-boot: no password for the local user).
+# DUHACH! in MAN on an Apple Silicon Mac ("More Options" of the DUHACH! menu in the
+# top bar; formerly Startup Disk): which system the Mac starts (MAN, macOS, or a
+# start menu), "Restart to macOS", start-up options for finding problems, a problem
+# report, and "Delete macOS". The changes are made by /usr/libexec/man-apple-boot
+# (polkit com.man.apple-boot: no password for the local user) and
+# /usr/libexec/man-apple-delete-macos (polkit com.man.apple-delete-macos: password).
+import json
 import subprocess
 import sys
+import time
 
 import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gio, GLib, Gtk
+from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
 HELPER = "/usr/libexec/man-apple-boot"
+DELETE = "/usr/libexec/man-apple-delete-macos"
+OPTIONS = [
+    ("verbose", "Show start-up messages", "Text about each step while MAN starts, instead of the logo. Helps to see where a start stops."),
+    ("debug", "Keep a detailed start-up log", "Much more detail in the log of each start. For finding problems; leave it off otherwise."),
+    ("always_menu", "Always show the start menu", "MAN, MAN Recovery and the other systems at every start, without holding Alt."),
+]
 MODES = [
     ("man", "Start MAN", "The Mac starts MAN. To start macOS once, use Restart to macOS."),
     ("menu", "Show a start menu", "At each start, choose MAN or macOS in a short menu."),
@@ -18,11 +29,13 @@ MODES = [
 ]
 
 
-def helper(*args, on_done):
-    """Runs the helper as root without blocking the window."""
+def helper(*args, on_done, program=HELPER, stdin=None):
+    """Runs a helper as root without blocking the window."""
+    flags = Gio.SubprocessFlags.STDOUT_PIPE | Gio.SubprocessFlags.STDERR_PIPE
+    if stdin is not None:
+        flags |= Gio.SubprocessFlags.STDIN_PIPE
     try:
-        proc = Gio.Subprocess.new(["pkexec", HELPER, *args],
-                                  Gio.SubprocessFlags.STDOUT_PIPE | Gio.SubprocessFlags.STDERR_PIPE)
+        proc = Gio.Subprocess.new(["pkexec", program, *args], flags)
     except GLib.Error as e:
         on_done(False, "", e.message)
         return
@@ -33,12 +46,20 @@ def helper(*args, on_done):
             on_done(p.get_successful(), out or "", err or "")
         except GLib.Error as e:
             on_done(False, "", e.message)
-    proc.communicate_utf8_async(None, None, finished)
+    proc.communicate_utf8_async(stdin, None, finished)
+
+
+def gb(n):
+    return f"{n / 10**9:.0f} GB"
+
+
+def when(ts):
+    return time.strftime("%A %H:%M", time.localtime(ts))
 
 
 class Window(Adw.ApplicationWindow):
     def __init__(self, app):
-        super().__init__(application=app, title="Startup Disk", default_width=520, default_height=560)
+        super().__init__(application=app, title="DUHACH!", default_width=560, default_height=720)
         self.busy = False
         self.mode = None
         self.live = False
@@ -73,8 +94,45 @@ class Window(Adw.ApplicationWindow):
         restart = Adw.ButtonRow(title="Restart to macOS…", start_icon_name="system-reboot-symbolic")
         restart.connect("activated", self.on_restart)
         now.add(restart)
+        self.restart_row = restart
+
+        # For finding problems: start-up options (GRUB reads them at each start).
+        self.opts = Adw.PreferencesGroup(
+            title="For finding problems",
+            description="These take effect the next time MAN starts. DUHACH! in macOS shows the same settings.")
+        page.add(self.opts)
+        self.switches = {}
+        for key, title, subtitle in OPTIONS:
+            row = Adw.SwitchRow(title=title, subtitle=subtitle)
+            row.connect("notify::active", self.on_option, key)
+            self.opts.add(row)
+            self.switches[key] = row
+        report = Adw.ButtonRow(title="Save a Problem Report…", start_icon_name="document-save-symbolic")
+        report.connect("activated", self.on_report)
+        self.opts.add(report)
+        self.opts.set_sensitive(False)
+        self.loading_options = True
+
+        # Removing macOS: 24 hours after asking, or at once with Shift+Ctrl held.
+        self.mac = Adw.PreferencesGroup(
+            title="macOS",
+            description="Removing macOS gives its space to MAN. MAN's boot loader and the Mac's own recovery stay.")
+        page.add(self.mac)
+        self.delete_row = Adw.ActionRow(title="Delete macOS", subtitle="Checking…")
+        self.delete_btn = Gtk.Button(label="Delete…", valign=Gtk.Align.CENTER)
+        self.delete_btn.add_css_class("destructive-action")
+        self.delete_btn.connect("clicked", self.on_delete)
+        self.delete_row.add_suffix(self.delete_btn)
+        self.mac.add(self.delete_row)
+        self.cancel_btn = Gtk.Button(label="Cancel Request", valign=Gtk.Align.CENTER, visible=False)
+        self.cancel_btn.connect("clicked", self.on_cancel_delete)
+        self.delete_row.add_suffix(self.cancel_btn)
+        self.mac_status = None
+
         self.group.set_sensitive(False)
         helper("status", on_done=self.on_status)
+        helper("options", on_done=self.on_options)
+        self.refresh_delete()
 
     def on_status(self, ok, out, err):
         if not ok:
@@ -107,6 +165,157 @@ class Window(Adw.ApplicationWindow):
                     self.rows[self.mode][1].set_active(True)
                 self.busy = False
         helper("default", key, on_done=done)
+
+    # ── start-up options ──
+    def on_options(self, ok, out, err):
+        values = dict(line.split("=", 1) for line in out.split() if "=" in line) if ok else {}
+        for key, row in self.switches.items():
+            row.set_active(values.get(key) == "1")
+        self.loading_options = False
+        self.opts.set_sensitive(ok and not self.live)
+        if not ok:
+            self.toast("The start-up options could not be read: " + (err.strip() or "unknown error"))
+
+    def on_option(self, row, _pspec, key):
+        if self.loading_options:
+            return
+        value = "1" if row.get_active() else "0"
+
+        def done(ok, out, err):
+            if ok:
+                self.toast("Saved. It takes effect the next time MAN starts.")
+            else:
+                self.loading_options = True
+                row.set_active(not row.get_active())
+                self.loading_options = False
+                self.toast("Not changed: " + (err.strip() or "unknown error"))
+        helper("option", key, value, on_done=done)
+
+    def on_report(self, _row):
+        dialog = Gtk.FileDialog(title="Save the Problem Report",
+                                initial_name=time.strftime("MAN problem report %Y-%m-%d %H-%M.txt"))
+
+        def chosen(d, res):
+            try:
+                f = d.save_finish(res)
+            except GLib.Error:
+                return
+
+            def done(ok, out, err):
+                if not ok:
+                    self.toast("The report could not be made: " + (err.strip() or "unknown error"))
+                    return
+                try:
+                    f.replace_contents(out.encode(), None, False, Gio.FileCreateFlags.REPLACE_DESTINATION, None)
+                    self.toast("Saved: " + (f.get_basename() or "report"))
+                except GLib.Error as e:
+                    self.toast("Not saved: " + e.message)
+            helper("report", on_done=done)
+        dialog.save(self, None, chosen)
+
+    # ── delete macOS ──
+    def refresh_delete(self):
+        def done(ok, out, err):
+            if not ok:
+                self.mac.set_visible(False)
+                return
+            st = json.loads(out)
+            self.mac_status = st
+            if not st["macos"]:
+                # Nothing to remove (or already removed): no macOS rows at all.
+                self.mac.set_visible(False)
+                self.restart_row.set_visible(False)
+                self.rows["macos"][0].set_visible(False)
+                self.rows["menu"][0].set_visible(False)
+                return
+            size = gb(sum(p["bytes"] for p in st["macos"]))
+            self.cancel_btn.set_visible(bool(st["requested_at"]))
+            if not st["requested_at"]:
+                self.delete_row.set_subtitle(f"macOS uses {size}. After asking, the deletion can be done 24 hours later.")
+                self.delete_btn.set_label("Delete…")
+            elif st["now"] < st["ready_at"]:
+                self.delete_row.set_subtitle(f"Asked. macOS ({size}) can be deleted from {when(st['ready_at'])}.")
+                self.delete_btn.set_label("Delete…")
+            else:
+                self.delete_row.set_subtitle(f"The 24 hours are over. macOS ({size}) can be deleted now.")
+                self.delete_btn.set_label("Delete Now…")
+        helper("status", on_done=done, program=DELETE)
+
+    def shift_ctrl_held(self):
+        seat = self.get_display().get_default_seat()
+        kbd = seat.get_keyboard() if seat else None
+        state = kbd.get_modifier_state() if kbd else 0
+        want = Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.CONTROL_MASK
+        return (state & want) == want
+
+    def on_delete(self, _btn):
+        st = self.mac_status
+        if not st:
+            return
+        immediate = self.shift_ctrl_held()
+        ready = st["requested_at"] and st["now"] >= st["ready_at"]
+        size = gb(sum(p["bytes"] for p in st["macos"]))
+        if not immediate and not st["requested_at"]:
+            dialog = Adw.AlertDialog(
+                heading="Delete macOS?",
+                body=f"macOS and everything in it ({size}: apps, files, settings) will be gone for good, "
+                     "and its space goes to MAN. Copy anything you need from macOS first.\n\n"
+                     "To be safe, the deletion can be done 24 hours from now. You can cancel until then.")
+            dialog.add_response("cancel", "Cancel")
+            dialog.add_response("ask", "Start the 24 Hours")
+            dialog.set_response_appearance("ask", Adw.ResponseAppearance.DESTRUCTIVE)
+
+            def response(_d, answer):
+                if answer == "ask":
+                    helper("request", on_done=lambda ok, o, e: (self.refresh_delete(), self.toast(
+                        "Asked. macOS can be deleted in 24 hours." if ok else "Not asked: " + (e.strip() or "unknown error"))),
+                        program=DELETE)
+            dialog.connect("response", response)
+            dialog.present(self)
+            return
+        if not immediate and not ready:
+            self.toast(f"Not yet: macOS can be deleted from {when(st['ready_at'])}.")
+            return
+        self.confirm_delete(size, st["encrypted"], immediate)
+
+    def confirm_delete(self, size, encrypted, immediate):
+        dialog = Adw.AlertDialog(
+            heading="Delete macOS Now?",
+            body=f"This removes macOS ({size}) for good and gives the space to MAN. It cannot be undone. "
+                 "The Mac will always start MAN. Keep the Mac plugged in.")
+        entry = None
+        if encrypted:
+            entry = Adw.PasswordEntryRow(title="MAN's disk password")
+            box = Gtk.ListBox(selection_mode=Gtk.SelectionMode.NONE)
+            box.add_css_class("boxed-list")
+            box.append(entry)
+            dialog.set_extra_child(box)
+        dialog.add_response("cancel", "Cancel")
+        dialog.add_response("delete", "Delete macOS")
+        dialog.set_response_appearance("delete", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_close_response("cancel")
+
+        def response(_d, answer):
+            if answer != "delete":
+                return
+            self.mac.set_sensitive(False)
+            self.delete_row.set_subtitle("Deleting macOS… This takes a few minutes.")
+
+            def done(ok, out, err):
+                self.mac.set_sensitive(True)
+                self.refresh_delete()
+                self.toast((out.strip().splitlines() or ["Done."])[-1] if ok else
+                           "macOS was not deleted: " + (err.strip() or "unknown error"))
+            # --immediate only when Shift+Ctrl was held at the click; else the 24 h apply.
+            args = ["now", "--immediate"] if immediate else ["now"]
+            helper(*args, on_done=done, program=DELETE,
+                   stdin=(entry.get_text() + "\n") if entry else "")
+        dialog.connect("response", response)
+        dialog.present(self)
+
+    def on_cancel_delete(self, _btn):
+        helper("cancel", on_done=lambda ok, o, e: (self.refresh_delete(), self.toast(
+            "Cancelled. macOS stays." if ok else "Not cancelled: " + (e.strip() or "unknown error"))), program=DELETE)
 
     def on_restart(self, _row):
         ask_restart_to_macos(self, lambda error: error and self.toast(error))

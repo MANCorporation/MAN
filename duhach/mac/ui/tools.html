@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DUHACH!</title>
+<style>
+/*STYLE*/
+.snap-kind { font-size: .8em; padding: 1px 8px; border-radius: 99px; background: var(--button-bg); margin-left: 6px; }
+.row button { flex: none; }
+.danger h4 { color: var(--error); }
+</style>
+</head>
+<body>
+<div id="nav"><div class="page"><div class="headerbar"><div class="title" id="title">DUHACH!</div></div>
+<div class="scroll"><div class="clamp" id="content"></div></div></div></div>
+<div id="dialog"><div class="box"><h2></h2><p></p><div class="buttons"></div></div></div>
+<div id="toast"></div>
+<script>
+"use strict";
+// DUHACH! for Mac, the menu bar's windows: "Restore MAN Snapshot" and "More Settings".
+// main.js fills DATA and calls update(data) / toast(text) after each action.
+let DATA = /*DATA*/null;
+const post = (m) => window.webkit.messageHandlers.duhach.postMessage(m);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const $ = (id) => document.getElementById(id);
+const KIND = {install: "Installed", manual: "Made by you", daily: "Daily", "pre-update": "Before an update",
+  "pre-rollback": "Before a restore", "pre-reinstall": "Before reinstalling"};
+
+function when(iso) {
+  const d = new Date(iso);
+  return isNaN(d) ? iso : d.toLocaleString(undefined, {weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
+}
+function toast(text) {
+  const t = $("toast"); t.textContent = text; t.classList.add("show");
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove("show"), 5000);
+}
+function dialog(title, body, buttons) {
+  const d = $("dialog");
+  d.querySelector("h2").textContent = title;
+  d.querySelector("p").textContent = body;
+  const box = d.querySelector(".buttons"); box.innerHTML = "";
+  buttons.forEach(([label, cls, fn]) => {
+    const b = document.createElement("button"); b.textContent = label; if (cls) b.className = cls;
+    b.onclick = () => { d.classList.remove("open"); fn && fn(); };
+    box.appendChild(b);
+  });
+  d.classList.add("open");
+}
+function busy(text) { $("content").innerHTML = `<div class="status" style="margin-top:80px"><h1>${esc(text)}</h1><p>Please wait.</p></div>`; }
+
+// ── Restore MAN Snapshot ──
+function snapshots(d) {
+  $("title").textContent = "Restore MAN Snapshot";
+  let h = `<div class="group"><h4>MAN's Snapshots</h4><p class="desc" style="text-align:left">MAN restarts and goes back to how it was then. Your files in your Home folder stay as they are. The current state is saved as a snapshot first, so you can come back.</p>`;
+  if (d.error) {
+    h += `<div class="boxed-list"><div class="row"><div class="text"><div class="t">${esc(d.error)}</div></div></div></div>`;
+  } else if (!d.snapshots.length) {
+    h += `<div class="boxed-list"><div class="row"><div class="text"><div class="t">MAN has no snapshots yet.</div><div class="s">MAN makes one every day and before each update.</div></div></div></div>`;
+  } else {
+    h += `<div class="boxed-list">` + d.snapshots.map((s, i) =>
+      `<div class="row"><div class="text"><div class="t">${esc(s.description)}<span class="snap-kind">${esc(KIND[s.kind] || s.kind)}</span></div><div class="s">${esc(when(s.created))}</div></div><button data-i="${i}">Restore…</button></div>`).join("") + `</div>`;
+  }
+  h += `</div>`;
+  if (d.lastResult) {
+    const ok = d.lastResult.ok;
+    h += `<div class="group"><h4>Last Restore</h4><div class="boxed-list"><div class="row"><div class="text"><div class="t ${ok ? "success" : "error"}">${ok ? "MAN was restored." : "MAN could not be restored."}</div><div class="s">${esc(when(d.lastResult.when))}${d.lastResult.detail ? " · " + esc(d.lastResult.detail) : ""}</div></div></div></div></div>`;
+  }
+  if (d.manVersion) h += `<p class="dim caption">${esc(d.manVersion)}</p>`;
+  $("content").innerHTML = h;
+  $("content").querySelectorAll("button[data-i]").forEach(b => b.onclick = () => {
+    const s = d.snapshots[+b.dataset.i];
+    dialog(`Restore MAN to “${s.description}”?`,
+      `The Mac restarts into MAN, which goes back to ${when(s.created)}. Save your work in macOS first.`,
+      [["Cancel"], ["Restore and Restart", "destructive", () => { busy("Getting MAN ready…"); post({action: "restore", id: s.id}); }]]);
+  });
+}
+
+// ── More Settings ──
+function row(title, sub, right, cls) {
+  return `<div class="row ${cls || ""}"><div class="text"><div class="t">${title}</div>${sub ? `<div class="s">${sub}</div>` : ""}</div>${right || ""}</div>`;
+}
+function settings(d) {
+  $("title").textContent = "More Settings";
+  const opt = d.options || {};
+  const radio = (key, title, sub) => `<div class="row activatable ${d.startup === key ? "selected" : ""}" data-startup="${key}"><div class="radio"></div><div class="text"><div class="t">${title}</div><div class="s">${sub}</div></div></div>`;
+  const sw = (key, title, sub) => `<div class="row activatable" data-opt="${key}"><div class="text"><div class="t">${title}</div><div class="s">${sub}</div></div><div class="switch ${opt[key] ? "on" : ""}"></div></div>`;
+  let h = "";
+  if (d.man) {
+    h += `<div class="group"><h4>When the Mac Starts</h4><p class="desc" style="text-align:left">The same setting as Startup Disk in System Settings.</p><div class="boxed-list">` +
+      radio("macos", "macOS", "To start MAN, choose Boot into MAN in the menu bar, or hold the power button at start-up.") +
+      radio("man", "MAN", "To start macOS, choose Restart to macOS in MAN's top bar.") + `</div></div>`;
+    h += `<div class="group"><h4>For Finding Problems</h4><p class="desc" style="text-align:left">These take effect the next time MAN starts. DUHACH! in MAN shows the same settings.</p><div class="boxed-list">` +
+      sw("verbose", "Show Start-up Messages", "Text about each step while MAN starts, instead of the logo. Shows where a start stops.") +
+      sw("debug", "Keep a Detailed Start-up Log", "Much more detail in MAN's log of each start. Leave it off otherwise.") +
+      sw("always_menu", "Always Show the Start Menu", "MAN, MAN Recovery and the other choices at every start of MAN's boot loader.") +
+      row("Copy Disk Information", "The Mac's partitions and where MAN is, for a problem report.", `<button data-act="copyinfo">Copy</button>`) +
+      row("Repair MAN's Boot Loader", "Installs MAN's boot loader again (needs the internet). MAN itself is not changed.", `<button data-act="repair">Repair…</button>`) +
+      `</div></div>`;
+  } else {
+    h += `<div class="group"><div class="boxed-list">` + row("MAN is not on this Mac yet", "Choose Install MAN in the menu bar to begin.", `<button data-act="install" class="suggested">Install MAN…</button>`) + `</div></div>`;
+  }
+  h += `<div class="group"><h4>DUHACH!</h4><div class="boxed-list">` +
+    `<div class="row activatable" data-login="1"><div class="text"><div class="t">Start DUHACH! When You Log In</div><div class="s">Keeps DUHACH! in the menu bar.</div></div><div class="switch ${d.loginItem ? "on" : ""}"></div></div>` +
+    row("Version", esc(d.version), "", "property") + `</div></div>`;
+  if (d.man) {
+    const del = d.delete || {state: "none"};
+    let sub = `MAN uses ${esc(d.manSize)}. Deleting MAN gives the space back to macOS.`, btn = "Delete…";
+    if (del.state === "waiting") sub = `Asked. MAN can be deleted from ${esc(when(new Date(del.readyAt).toISOString()))}.`;
+    if (del.state === "ready") { sub = `The 24 hours are over. MAN (${esc(d.manSize)}) can be deleted now.`; btn = "Delete Now…"; }
+    h += `<div class="group danger"><h4>Delete MAN</h4><div class="boxed-list">` +
+      row("Delete MAN", sub, (del.state !== "none" ? `<button data-act="delcancel" class="flat">Cancel Request</button>` : "") +
+        `<button data-act="delete" class="destructive">${btn}</button>`) + `</div></div>`;
+  }
+  $("content").innerHTML = h;
+  const c = $("content");
+  c.querySelectorAll("[data-startup]").forEach(r => r.onclick = () => {
+    if (d.startup !== r.dataset.startup) post({action: "startup", value: r.dataset.startup});
+  });
+  c.querySelectorAll("[data-opt]").forEach(r => r.onclick = () => {
+    const key = r.dataset.opt; post({action: "option", key, value: !opt[key]});
+  });
+  c.querySelectorAll("[data-login]").forEach(r => r.onclick = () => post({action: "login", value: !d.loginItem}));
+  c.querySelectorAll("button[data-act]").forEach(b => b.onclick = (e) => {
+    e.stopPropagation();
+    const act = b.dataset.act;
+    if (act === "delete") return onDelete(d, e.shiftKey && e.metaKey);
+    if (act === "delcancel") return post({action: "delcancel"});
+    if (act === "repair") return dialog("Repair MAN's Boot Loader?", "A Terminal window opens and installs MAN's boot loader again. Follow it to the end.",
+      [["Cancel"], ["Repair", "suggested", () => post({action: "repair"})]]);
+    post({action: act});
+  });
+}
+function onDelete(d, immediate) {
+  const del = d.delete || {state: "none"};
+  if (!immediate && del.state === "none") {
+    return dialog("Delete MAN?",
+      `MAN and everything in it (${d.manSize}: apps, files, settings) will be gone for good, and the space goes back to macOS. Copy anything you need from MAN first. To be safe, MAN can be deleted 24 hours from now; you can cancel until then.`,
+      [["Cancel"], ["Start the 24 Hours", "destructive", () => post({action: "delrequest"})]]);
+  }
+  if (!immediate && del.state === "waiting") return toast(`Not yet: MAN can be deleted from ${when(new Date(del.readyAt).toISOString())}.`);
+  dialog("Delete MAN Now?",
+    `This removes MAN (${d.manSize}) for good and gives the space back to macOS. It cannot be undone. Keep the Mac plugged in.`,
+    [["Cancel"], ["Delete MAN", "destructive", () => { busy("Deleting MAN…"); post({action: "delete", immediate}); }]]);
+}
+
+function update(d) { DATA = d; (d.view === "snapshots" ? snapshots : settings)(d); }
+window.update = update; window.toast = toast;
+if (DATA) update(DATA);
+</script>
+</body>
+</html>

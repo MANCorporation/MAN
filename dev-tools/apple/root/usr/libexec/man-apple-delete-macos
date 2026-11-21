@@ -1,0 +1,232 @@
+#!/usr/bin/python3
+"""man-apple-delete-macos: removes macOS from an Apple Silicon Mac and gives its
+space to MAN (DUHACH! in MAN: More Options -> Delete macOS). Run as root
+(pkexec, polkit action com.man.apple-delete-macos: always the password).
+
+    status            JSON: the macOS partitions found, the request, when it may run
+    request           starts the 24-hour waiting time
+    cancel            cancels the request
+    now [--immediate] deletes macOS (only 24 h after "request"; --immediate: at once)
+                      An encrypted MAN reads its disk password from stdin.
+
+What stays: the Mac's own start-up partition (iBoot system container), its
+recovery partition, and MAN's boot loader (its small APFS "stub" container
+with the EFI partition after it). Every other APFS container on the internal
+disk (macOS) is removed; the freed space becomes a new partition that is added
+to MAN's Btrfs file system (encrypted like MAN when MAN is encrypted).
+
+Test without a Mac: MAN_FAKE_MAC=1 (no Mac check, no asahi-bless), and with it
+MAN_TEST_ESP=/dev/vdb3 (MAN's EFI partition) and MAN_TEST_ROOT=/mnt/root (the
+mounted Btrfs that gets the space, instead of /).
+"""
+import json
+import os
+import subprocess
+import sys
+import time
+
+APFS = "7C3457EF-0000-11AA-AA11-00306543ECAC"
+ESP = "C12A7328-F81F-11D2-BA4B-00A0C93EC93B"
+LINUX = "0FC63DAF-8483-4772-8E79-3D69D8477DE4"
+REQUEST = "/var/lib/man/delete-macos-request"
+DONE = "/var/lib/man/macos-deleted"
+WAIT = 24 * 3600
+FAKE = os.environ.get("MAN_FAKE_MAC") == "1"
+TEST_ESP = os.environ.get("MAN_TEST_ESP") if FAKE else None
+ROOT = (os.environ.get("MAN_TEST_ROOT") if FAKE else None) or "/"
+
+
+def die(msg):
+    print(f"man-apple-delete-macos: {msg}", file=sys.stderr)
+    sys.exit(1)
+
+
+def run(*cmd, inp=None, check=True):
+    p = subprocess.run(cmd, input=inp, capture_output=True, text=True)
+    if check and p.returncode != 0:
+        die(f"{' '.join(cmd)}: {(p.stderr or p.stdout).strip()}")
+    return p.stdout
+
+
+def esp_partition():
+    if TEST_ESP:
+        return os.path.realpath(TEST_ESP)
+    src = run("findmnt", "-n", "-o", "SOURCE", "--mountpoint", "/boot/efi", check=False).strip()
+    if not src:
+        die("the EFI partition (/boot/efi) is not mounted")
+    return os.path.realpath(src)
+
+
+def layout():
+    """The internal disk, its logical sector size and its partitions in disk order:
+    dicts with node, type (GUID), partn, start and end (logical sectors), bytes."""
+    esp = esp_partition()
+    disk = "/dev/" + run("lsblk", "-no", "PKNAME", esp).strip()
+    ss = int(open(f"/sys/block/{os.path.basename(disk)}/queue/logical_block_size").read())
+    parts = []
+    def flat(devs):  # lsblk lists partitions as children or (some versions) beside the disk
+        for d in devs:
+            yield d
+            yield from flat(d.get("children") or [])
+    for c in flat(json.loads(run("lsblk", "-J", "-b", "-o", "PATH,PARTTYPE,PARTN,START,SIZE,TYPE", disk))["blockdevices"]):
+        if True:
+            if c.get("type") != "part":
+                continue
+            start = int(c["start"]) * 512 // ss  # sysfs counts 512-byte units
+            size = int(c["size"])
+            parts.append({"node": c["path"], "type": (c["parttype"] or "").upper(), "partn": int(c["partn"]),
+                          "start": start, "end": start + size // ss - 1, "bytes": size})
+    parts.sort(key=lambda p: p["start"])
+    return disk, esp, ss, parts
+
+
+def macos_partitions(parts, esp):
+    """Every APFS container except MAN's stub (the APFS container right before MAN's
+    EFI partition)."""
+    idx = next((i for i, p in enumerate(parts) if os.path.realpath(p["node"]) == esp), None)
+    if idx is None or idx == 0 or parts[idx - 1]["type"] != APFS:
+        die("MAN's boot loader (an APFS container right before MAN's EFI partition) was not found")
+    stub = parts[idx - 1]["node"]
+    return [p for p in parts if p["type"] == APFS and p["node"] != stub]
+
+
+def status():
+    disk, esp, ss, parts = layout()
+    macs = macos_partitions(parts, esp)
+    req = None
+    if os.path.exists(REQUEST):
+        try:
+            req = int(open(REQUEST).read().strip())
+        except ValueError:
+            req = None
+    return {
+        "disk": disk,
+        "macos": [{"node": p["node"], "bytes": p["bytes"]} for p in macs],
+        "deleted": os.path.exists(DONE) and not macs,
+        "requested_at": req,
+        "ready_at": req + WAIT if req else None,
+        "now": int(time.time()),
+        "encrypted": root_device()[1],
+    }
+
+
+def root_device():
+    """(device of /, encrypted?)"""
+    src = run("findmnt", "-n", "-o", "SOURCE", "--mountpoint", ROOT).strip().split("[")[0]
+    if src.startswith("/dev/mapper/"):
+        return src, True
+    return src, False
+
+
+def delete_now(immediate):
+    st = status()
+    if not st["macos"]:
+        die("there is no macOS on this Mac")
+    if not immediate:
+        if not st["requested_at"]:
+            die("ask first: the deletion can be done 24 hours after asking")
+        if time.time() < st["ready_at"]:
+            die("the 24 hours are not over yet")
+    if not FAKE and (os.path.ismount("/run/live/medium") or "boot=manlive" in open("/proc/cmdline").read()):
+        die("not from the live system")
+    rootdev, encrypted = root_device()
+    passphrase = sys.stdin.read().rstrip("\n") if encrypted else None
+    if encrypted and not passphrase:
+        die("the disk password of MAN is needed")
+    disk, esp, ss, parts = layout()
+    macs = macos_partitions(parts, esp)
+
+    # The Mac must keep starting MAN once macOS is gone.
+    if not FAKE:
+        run("/usr/libexec/man-apple-boot", "default", "man")
+
+    # The area MAN gets: from the end of the partition before the (first) macOS
+    # container to the start of the partition after it.
+    gone = {p["node"] for p in macs}
+    keep = [p for p in parts if p["node"] not in gone]
+    big = max(macs, key=lambda p: p["bytes"])
+    before = [p for p in keep if p["end"] < big["start"]]
+    after = [p for p in keep if p["start"] > big["end"]]
+    start = (before[-1]["end"] + 1) if before else big["start"]
+    end = (after[0]["start"] - 1) if after else big["end"]
+    for p in macs:
+        print(f"Removing macOS: {p['node']}")
+        run("sgdisk", "-d", str(p["partn"]), disk)
+        # The disk is in use (MAN runs from it): tell the kernel one partition at a time.
+        run("partx", "-d", "--nr", str(p["partn"]), disk, check=False)
+    print(f"New partition for MAN: sectors {start}..{end}")
+    run("sgdisk", "-a", "1", "-n", f"0:{start}:{end}", "-t", "0:8300", "-c", "0:MAN extra", disk)
+    newpart = None
+    num = None
+    for line in run("sgdisk", "-p", disk).splitlines():
+        f = line.split()
+        if len(f) > 2 and f[0].isdigit() and f[1] == str(start):
+            num = f[0]
+    if num:
+        run("partx", "-a", "--nr", num, disk, check=False)
+        run("udevadm", "settle", check=False)
+        for p in layout()[3]:
+            if str(p["partn"]) == num:
+                newpart = p["node"]
+    if not newpart or not os.path.exists(newpart):
+        die("the new partition did not appear")
+    size = (end - start + 1) * ss
+
+    if encrypted:
+        run("cryptsetup", "luksFormat", "--type", "luks2", "--batch-mode", "--label", "MAN_EXTRA",
+            "--key-file=-", newpart, inp=passphrase)
+        run("cryptsetup", "open", "--key-file=-", newpart, "man-extra", inp=passphrase)
+        uuid = run("blkid", "-s", "UUID", "-o", "value", newpart).strip()
+        # One password at start-up for both: the initramfs keeps it in the kernel
+        # keyring (decrypt_keyctl) and unlocks the second with it.
+        # Both lines share the key name "man-disk" (the keyring entry).
+        lines = []
+        for line in open("/etc/crypttab").read().splitlines():
+            f = line.split()
+            if f and not f[0].startswith("#") and len(f) >= 4 and "keyscript=" not in f[3]:
+                f[2] = "man-disk"
+                f[3] += ",keyscript=decrypt_keyctl"
+                line = " ".join(f)
+            lines.append(line)
+        lines.append(f"man-extra UUID={uuid} man-disk luks,discard,initramfs,keyscript=decrypt_keyctl")
+        open("/etc/crypttab", "w").write("\n".join(lines) + "\n")
+        device = "/dev/mapper/man-extra"
+    else:
+        device = newpart
+    run("btrfs", "device", "add", "-f", device, ROOT)
+    if encrypted:
+        run("update-initramfs", "-u", "-k", "all")
+    os.makedirs(os.path.dirname(DONE), exist_ok=True)
+    open(DONE, "w").write(time.strftime("%Y-%m-%dT%H:%M:%SZ\n", time.gmtime()))
+    if os.path.exists(REQUEST):
+        os.remove(REQUEST)
+    run("update-grub", check=False)
+    run("/usr/libexec/man-installer/man-installer-backend", "esp-export", check=False)
+    print(f"macOS was removed. MAN now has {size // 10**9} GB more space.")
+
+
+def main():
+    if os.geteuid() != 0:
+        die("must run as root")
+    if not FAKE and not os.path.exists("/proc/device-tree/chosen/asahi,efi-system-partition"):
+        die("this is not a Mac started by the MAN boot loader")
+    cmd = sys.argv[1:] or ["status"]
+    if cmd[0] == "status":
+        print(json.dumps(status()))
+    elif cmd[0] == "request":
+        os.makedirs(os.path.dirname(REQUEST), exist_ok=True)
+        open(REQUEST, "w").write(f"{int(time.time())}\n")
+        print(json.dumps(status()))
+    elif cmd[0] == "cancel":
+        if os.path.exists(REQUEST):
+            os.remove(REQUEST)
+        print(json.dumps(status()))
+    elif cmd[0] == "now":
+        delete_now("--immediate" in cmd[1:])
+    else:
+        print(__doc__, file=sys.stderr)
+        sys.exit(2)
+
+
+if __name__ == "__main__":
+    main()

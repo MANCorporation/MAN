@@ -1,0 +1,17 @@
+[Unit]
+Description=Restore a MAN snapshot chosen in macOS (DUHACH! for Mac)
+# DUHACH! for Mac writes the request onto the EFI partition (macOS cannot read
+# MAN's Btrfs). MAN restores before anyone logs in, then restarts into it.
+ConditionPathExists=/boot/efi/EFI/MAN/restore-request
+RequiresMountsFor=/boot/efi /.snapshots
+After=local-fs.target plymouth-start.service
+Before=display-manager.service systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStartPre=-/usr/bin/plymouth display-message --text="Restoring MAN from a snapshot…"
+ExecStart=/bin/sh -c '/usr/libexec/man-installer/man-installer-backend esp-requests; rc=$?; [ $rc = 10 ] && exec systemctl reboot; exit 0'
+TimeoutStartSec=20min
+
+[Install]
+WantedBy=multi-user.target

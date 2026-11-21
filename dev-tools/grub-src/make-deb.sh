@@ -17,7 +17,7 @@ case $arch in
     *) echo "amd64 or arm64" >&2; exit 2 ;;
 esac
 # Bump the last number for every change to the patch or the theme.
-version=$base+man5
+version=$base+man6
 r=$(mktemp -d)
 trap 'rm -r "$r"' EXIT
 

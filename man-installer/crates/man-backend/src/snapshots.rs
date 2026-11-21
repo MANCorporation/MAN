@@ -91,6 +91,7 @@ pub fn create(description: &str, kind: &str, grub: bool) -> Result<SnapshotInfo>
     if grub {
         update_grub();
     }
+    crate::esp::export_snapshots();
     Ok(info)
 }
 
@@ -111,6 +112,7 @@ pub fn delete(id: &str) -> Result<()> {
     system_device()?;
     remove(id)?;
     update_grub();
+    crate::esp::export_snapshots();
     Ok(())
 }
 
@@ -121,6 +123,7 @@ fn prune(kind: &str, keep: u32) {
             info(format!("Warning: could not remove old snapshot {}: {e:#}", old.id));
         }
     }
+    crate::esp::export_snapshots();
 }
 
 pub fn config() -> SnapshotConfig {
@@ -273,5 +276,6 @@ pub fn boot_cleanup() -> Result<()> {
     if changed {
         update_grub();
     }
+    crate::esp::export_snapshots();
     Ok(())
 }

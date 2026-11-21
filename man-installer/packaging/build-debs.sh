@@ -111,7 +111,7 @@ put "$data/grub/bootmenu-lib.sh" "$r/usr/lib/man/grub/bootmenu-lib.sh" 0644
 put "$data/initramfs/man-recovery.hook" "$r/usr/share/initramfs-tools/hooks/man-recovery" 0755
 put "$data/initramfs/man-recovery.bottom" "$r/usr/share/initramfs-tools/scripts/local-bottom/man-recovery" 0755
 put "$data/initramfs/man-recovery.post-update" "$r/etc/initramfs/post-update.d/man-recovery" 0755
-for u in man-kept-debs.service man-flatpak-catalog-repair.service man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
+for u in man-kept-debs.service man-flatpak-catalog-repair.service man-esp-requests.service man-snapshot-daily.service man-snapshot-daily.timer man-boot-cleanup.service man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service; do
     put "$data/systemd/$u" "$r/usr/lib/systemd/system/$u" 0644
 done
 put "$data/apt/80man-snapshot" "$r/etc/apt/apt.conf.d/80man-snapshot" 0644
@@ -162,7 +162,7 @@ if [ "$1" = configure ]; then
     systemctl --global enable man-download-scan.service >/dev/null 2>&1 || true
     # Per-user tmpfiles (Flatpak export folders exist before GNOME starts).
     systemctl --global enable systemd-tmpfiles-setup.service >/dev/null 2>&1 || true
-    systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service man-flatpak-catalog-repair.service >/dev/null 2>&1 || true
+    systemctl enable man-snapshot-daily.timer man-boot-cleanup.timer man-oobe-cleanup.service man-encrypt.service man-update-finish.service man-duhach-cleanup.service man-kept-debs.service man-flatpak-catalog-repair.service man-esp-requests.service >/dev/null 2>&1 || true
     # The malware database for Windows programs stays up to date by itself.
     systemctl enable clamav-freshclam.service >/dev/null 2>&1 || true
     if [ -d /run/systemd/system ]; then

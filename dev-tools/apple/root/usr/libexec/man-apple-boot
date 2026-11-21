@@ -7,12 +7,17 @@
 #   default menu    the Mac starts MAN and GRUB shows "MAN" and "macOS" each time
 #   restart-macos   macOS for the next start only (then this setting again)
 #   boot-check      at start-up: the GRUB entry "macOS" was chosen -> restart to macOS
+#   options         prints the start-up options (verbose, debug, always_menu): NAME=0|1
+#   option NAME 0|1 sets one (EFI/MAN/bootmenu.env, read by GRUB; DUHACH! for Mac
+#                   in macOS writes the same file)
+#   report          prints this start's and the previous start's log (problem report)
 # Run as root (pkexec, polkit action com.man.apple-boot).
 set -eu
 export PATH=/usr/sbin:/usr/bin:/sbin:/bin
 MENU_CFG=/etc/default/grub.d/90-man-mac-menu.cfg
 NVRAM=/dev/mtd/by-name/nvram
 GRUBENV=/boot/grub/grubenv
+ESPENV=/boot/efi/EFI/MAN/bootmenu.env
 
 die() { echo "man-apple-boot: $*" >&2; exit 1; }
 [ -e /proc/device-tree/chosen/asahi,efi-system-partition ] || die "this is not a Mac started by the MAN boot loader"
@@ -78,6 +83,31 @@ default)
 restart-macos)
 	wait_nvram
 	asahi-bless --set-boot-macos --next -y >/dev/null
+	;;
+options)
+	for n in verbose debug always_menu; do
+		v=$(grub-editenv $ESPENV list 2>/dev/null | sed -n "s/^man_$n=//p")
+		echo "$n=${v:-0}"
+	done
+	;;
+option)
+	case "${2:-}" in verbose | debug | always_menu) ;; *) die "option verbose|debug|always_menu 0|1" ;; esac
+	mountpoint -q /boot/efi || die "the EFI partition is not mounted"
+	mkdir -p "$(dirname $ESPENV)"
+	[ -f $ESPENV ] || grub-editenv $ESPENV create
+	case "${3:-}" in
+	1) grub-editenv $ESPENV set "man_$2=1" ;;
+	0) grub-editenv $ESPENV unset "man_$2" ;;
+	*) die "option NAME 0|1" ;;
+	esac
+	;;
+report)
+	echo "MAN problem report, $(date -R)"
+	echo "MAN $(cat /usr/lib/man/version 2>/dev/null) on $(cat /proc/device-tree/model 2>/dev/null | tr -d '\0')"
+	uname -a
+	echo; echo "=== Start-up options"; "$0" options
+	echo; echo "=== This start"; journalctl -b 0 --no-pager -o short-monotonic 2>&1 | tail -n 4000
+	echo; echo "=== The start before"; journalctl -b -1 --no-pager -o short-monotonic 2>&1 | tail -n 2000
 	;;
 boot-check)
 	[ -e $GRUBENV ] || exit 0
