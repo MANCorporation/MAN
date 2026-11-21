@@ -310,13 +310,22 @@ fn open_file(app: &adw::Application, path: PathBuf) {
             // Usually known since the download: the popup then opens with the
             // answer. Only a real wait shows the waiting state.
             show(&window, "man-alert-warning", tr("Checking This Program for Malware"), "", vec![cancel_button(tr("_Cancel"))], true);
-            let w = window.clone();
-            let shown = glib::timeout_add_local_once(std::time::Duration::from_millis(400), move || w.present());
+            // The timer is taken out of the slot by whichever comes first: removing
+            // a timer that already ran panics, which left the window spinning
+            // whenever a check took longer than 400 ms.
+            let pending: std::rc::Rc<std::cell::Cell<Option<glib::SourceId>>> = Default::default();
+            let (w, slot) = (window.clone(), pending.clone());
+            pending.set(Some(glib::timeout_add_local_once(std::time::Duration::from_millis(400), move || {
+                slot.take();
+                w.present();
+            })));
             let window = window.clone();
             glib::spawn_future_local(async move {
                 let p = path.clone();
                 let result = gio::spawn_blocking(move || malscan::check(&p)).await.unwrap_or(Scan::Failed);
-                shown.remove();
+                if let Some(timer) = pending.take() {
+                    timer.remove();
+                }
                 match result {
                     Scan::Clean => warn_page(&window, path, true),
                     Scan::Failed => warn_page(&window, path, false),
