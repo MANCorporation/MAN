@@ -14,4 +14,7 @@ flatpak remotes --system --columns=name 2>/dev/null | grep -qx flathub || exit 0
 # download starts fresh instead of failing with "No such metadata object".
 rm -f "/var/lib/flatpak/repo/refs/remotes/flathub/appstream/$arch" \
       "/var/lib/flatpak/repo/refs/remotes/flathub/appstream2/$arch"
+# The half-copied folder looks up to date to Flatpak, which then downloads
+# nothing: remove it so the catalog is unpacked again.
+rm -rf "/var/lib/flatpak/appstream/flathub/$arch"
 flatpak update --appstream --system --noninteractive flathub
