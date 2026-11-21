@@ -103,8 +103,12 @@ fn deb_install(path: &str, keep: bool) -> R {
     }
     progress(0.0, "Installing the package…");
     let cached = archive_debs();
-    let mut child = match Command::new("apt-get")
-        .args(["install", "-y", "--no-install-recommends", "-o", "APT::Status-Fd=1", "-o", "Dpkg::Use-Pty=0"])
+    // Status lines on their own descriptor: with APT::Status-Fd=1 the
+    // packages' own scripts had no usable output (Google Chrome's failed with
+    // "sed: couldn't close stdout: Bad file descriptor"). So fd 3 is our
+    // stdout pipe (status only) and apt's normal output goes to stderr.
+    let mut child = match Command::new("sh")
+        .args(["-c", "exec apt-get install -y --no-install-recommends -o APT::Status-Fd=3 -o Dpkg::Use-Pty=0 \"$1\" 3>&1 1>&2", "sh"])
         .arg(&file)
         .env("DEBIAN_FRONTEND", "noninteractive")
         .stdin(Stdio::null())
@@ -129,6 +133,7 @@ fn deb_install(path: &str, keep: bool) -> R {
             let fraction = parts[2].parse::<f64>().unwrap_or(0.0) / 100.0;
             emit(&Event::Progress { fraction, detail: parts[3].to_string() });
         } else {
+            // pmerror and the like: worth showing when it fails.
             log(&line);
             tail.push(line);
         }
@@ -143,7 +148,9 @@ fn deb_install(path: &str, keep: bool) -> R {
         remember(&file, keep, &downloaded);
         Ok("The app was installed.".into())
     } else {
-        let mut detail: Vec<&str> = err.lines().collect();
+        // apt's own output (now on stderr) ends with the error; keep it short.
+        let lines: Vec<&str> = err.lines().collect();
+        let mut detail: Vec<&str> = lines[lines.len().saturating_sub(30)..].to_vec();
         detail.extend(tail.iter().rev().take(8).rev().map(String::as_str));
         fail("The package could not be installed.", detail.join("\n"))
     }
